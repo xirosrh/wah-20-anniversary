@@ -50,6 +50,7 @@
 #include "window.h"
 #include "list_menu.h"
 #include "malloc.h"
+#include "new_shop.h"
 #include "constants/event_objects.h"
 
 typedef u16 (*SpecialFunc)(void);
@@ -1991,7 +1992,11 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreatePokemartMenu(ptr);
+    #else
     CreatePokemartMenu(ptr);
+    #endif // MUDSKIP_SHOP_UI
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2000,7 +2005,11 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateDecorationShop1Menu(ptr);
+    #else
     CreateDecorationShop1Menu(ptr);
+    #endif // MUDSKIP_SHOP_UI
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2010,7 +2019,11 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateDecorationShop2Menu(ptr);
+    #else
     CreateDecorationShop2Menu(ptr);
+    #endif // MUDSKIP_SHOP_UI
     ScriptContext_Stop();
     return TRUE;
 }
