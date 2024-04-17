@@ -86,12 +86,13 @@ enum {
     #endif // MUDSKIP_OUTFIT_SYSTEM
 };
 
-// mugshot id
+// seller id
 enum
 {
-    MUGSHOT_JERRY, // OBJ_EVENT_GFX_MART_EMPLOYEE
-    MUGSHOT_JENNIE, // OBJ_EVENT_GFX_WOMAN_3
-    MUGSHOT_COUNT,
+    SELLER_NONE,
+    SELLER_JERRY, // OBJ_EVENT_GFX_MART_EMPLOYEE
+    SELLER_JENNIE, // OBJ_EVENT_GFX_WOMAN_3
+    SELLER_COUNT,
 };
 
 struct MartInfo
@@ -121,7 +122,7 @@ struct ShopData
     struct GridMenu *gridItems;
 };
 
-struct SellerMugshot
+struct Seller
 {
     // Add more id "param" on the union here
     union {
@@ -137,12 +138,13 @@ static EWRAM_DATA struct ListMenuItem *sListMenuItems = NULL;
 static EWRAM_DATA u8 (*sItemNames)[ITEM_NAME_LENGTH + 2] = {0};
 static EWRAM_DATA u8 sPurchaseHistoryId = 0;
 
-const u32 sNewShopMenu_Gfx[] = INCBIN_U32("graphics/new_shop/menu.4bpp.lz");
-const u32 sNewShopMenu_Pal[] = INCBIN_U32("graphics/new_shop/menu.gbapal.lz");
-const u32 sNewShopMenu_Tilemap[] = INCBIN_U32("graphics/new_shop/menu.bin.lz");
-const u32 sNewShopMenu_ScrollGfx[] = INCBIN_U32("graphics/new_shop/scroll.4bpp.lz");
-const u32 sNewShopMenu_ScrollTilemap[] = INCBIN_U32("graphics/new_shop/scroll.bin.lz");
-const u16 sNewShopMenu_CursorGfx[] = INCBIN_U16("graphics/new_shop/cursor.4bpp"); // uses the menu palette
+const u32 sNewShopMenu_DefaultMenuGfx[] = INCBIN_U32("graphics/new_shop/menu.4bpp.lz");
+const u32 sNewShopMenu_DefaultMenuPal[] = INCBIN_U32("graphics/new_shop/menu.gbapal.lz");
+const u32 sNewShopMenu_DefaultMenuTilemap[] = INCBIN_U32("graphics/new_shop/menu.bin.lz");
+const u32 sNewShopMenu_DefaultScrollGfx[] = INCBIN_U32("graphics/new_shop/scroll.4bpp.lz");
+const u32 sNewShopMenu_DefaultScrollTilemap[] = INCBIN_U32("graphics/new_shop/scroll.bin.lz");
+const u32 sNewShopMenuMoney_Gfx[] = INCBIN_U32("graphics/new_shop/money.4bpp.lz");
+const u16 sNewShopMenu_DefaultCursorGfx[] = INCBIN_U16("graphics/new_shop/cursor.4bpp"); // uses the menu palette
 
 const u8 sNewShopMenu_SellerMugshotGfx_Jerry[] = INCBIN_U8("graphics/new_shop/sellers/jerry/mugshot.4bpp");
 const u16 sNewShopMenu_SellerMugshotPal_Jerry[] = INCBIN_U16("graphics/new_shop/sellers/jerry/mugshot.gbapal");
@@ -368,7 +370,7 @@ static const u8 sShopBuyMenuTextColors[][3] =
 };
 
 static const struct CompressedSpritePalette sCursor_SpritePalette = {
-    .data = sNewShopMenu_Pal,
+    .data = sNewShopMenu_DefaultMenuPal,
     .tag = PALTAG_CURSOR,
 };
 
@@ -383,8 +385,8 @@ static const union AnimCmd *const sCursorAnims[] = { sCursorAnim };
 
 static const struct SpriteFrameImage sCursorPicTable[] =
 {
-    overworld_frame(sNewShopMenu_CursorGfx, 8, 8, 0),
-    overworld_frame(sNewShopMenu_CursorGfx, 8, 8, 1),
+    overworld_frame(sNewShopMenu_DefaultCursorGfx, 8, 8, 0),
+    overworld_frame(sNewShopMenu_DefaultCursorGfx, 8, 8, 1),
 };
 
 static const struct OamData sCursor_SpriteOamData = {
@@ -408,9 +410,9 @@ static const struct SpriteTemplate sCursor_SpriteTemplate = {
 };
 
 #define MUGSHOT(num, gfxid, id) \
-    [MUGSHOT_ ## num] = {{.gfxId=OBJ_EVENT_GFX_ ## gfxid}, .gfx=sNewShopMenu_SellerMugshotGfx_ ## id, .pal=sNewShopMenu_SellerMugshotPal_ ## id}
+    [SELLER_ ## num] = {{.gfxId=OBJ_EVENT_GFX_ ## gfxid}, .gfx=sNewShopMenu_SellerMugshotGfx_ ## id, .pal=sNewShopMenu_SellerMugshotPal_ ## id}
 
-static const struct SellerMugshot sSellerMugshots[] = {
+static const struct Seller sSellers[] = {
     // both are same thing btw, is just one is shortened with macro and others are pure
     MUGSHOT(JERRY, MART_EMPLOYEE, Jerry),
     {{.gfxId=OBJ_EVENT_GFX_WOMAN_3}, .gfx=sNewShopMenu_SellerMugshotGfx_Jennie, .pal=sNewShopMenu_SellerMugshotPal_Jennie},
@@ -937,11 +939,11 @@ static void BuyMenuInitBgs(void)
 
 static void BuyMenuDecompressBgGraphics(void)
 {
-    DecompressAndCopyTileDataToVram(2, sNewShopMenu_Gfx, 0, 9, 0);
-    DecompressAndCopyTileDataToVram(2, sNewShopMenu_ScrollGfx, 0, 0, 0);
-    LZDecompressWram(sNewShopMenu_Tilemap, sShopData->tilemapBuffers[0]);
-    LZDecompressWram(sNewShopMenu_ScrollTilemap, sShopData->tilemapBuffers[1]);
-    LoadCompressedPalette(sNewShopMenu_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+    DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, 9, 0);
+    DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
+    LZDecompressWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
+    LZDecompressWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
+    LoadCompressedPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
 }
 
 static inline void SpawnWindow(u8 winId)
@@ -1014,14 +1016,14 @@ static void SetupSellerMugshot(void)
         return;
     }
 
-    // loop over all of the mugshots
-    for (i = 0; i < MUGSHOT_COUNT; i++)
+    // loop over all of the sellers
+    for (i = SELLER_NONE; i < SELLER_COUNT; i++)
     {
-        if (gfxId == sSellerMugshots[i].id.gfxId)
+        if (gfxId == sSellers[i].id.gfxId)
         {
-            if (sSellerMugshots[i].gfx != NULL || sSellerMugshots[i].pal != NULL)
+            if (sSellers[i].gfx != NULL || sSellers[i].pal != NULL)
             {
-                LoadSellerMugshot(sSellerMugshots[i].gfx, sSellerMugshots[i].pal);
+                LoadSellerMugshot(sSellers[i].gfx, sSellers[i].pal);
             }
             else
             {
