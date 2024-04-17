@@ -409,13 +409,17 @@ static const struct SpriteTemplate sCursor_SpriteTemplate = {
     .oam = &sCursor_SpriteOamData,
 };
 
-#define MUGSHOT(num, gfxid, id) \
-    [SELLER_ ## num] = {{.gfxId=OBJ_EVENT_GFX_ ## gfxid}, .gfx=sNewShopMenu_SellerMugshotGfx_ ## id, .pal=sNewShopMenu_SellerMugshotPal_ ## id}
-
 static const struct Seller sSellers[] = {
-    // both are same thing btw, is just one is shortened with macro and others are pure
-    MUGSHOT(JERRY, MART_EMPLOYEE, Jerry),
-    {{.gfxId=OBJ_EVENT_GFX_WOMAN_3}, .gfx=sNewShopMenu_SellerMugshotGfx_Jennie, .pal=sNewShopMenu_SellerMugshotPal_Jennie},
+    [SELLER_JERRY] = {
+        { .gfxId = OBJ_EVENT_GFX_MART_EMPLOYEE },
+        .gfx = sNewShopMenu_SellerMugshotGfx_Jerry,
+        .pal = sNewShopMenu_SellerMugshotPal_Jerry,
+    },
+    [SELLER_JENNIE] = {
+        { .gfxId = OBJ_EVENT_GFX_WOMAN_3 },
+        .gfx = sNewShopMenu_SellerMugshotGfx_Jennie,
+        .pal = sNewShopMenu_SellerMugshotPal_Jennie,
+    },
 };
 
 const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.{PAUSE_UNTIL_PRESS}");
