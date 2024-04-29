@@ -920,45 +920,50 @@ static void SetupSellerMugshot(void)
     }
 }
 
-static void ReformatItemDescription(u16 item, u8 *dest)
+// credit to Vexx on PRET Discord
+static void FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str, s16 letterSpacing)
 {
-    u8 count = 0;
-    u8 numLines = 1;
-    u8 maxChars = 14;
-    u8 *desc = (u8 *)ItemId_GetDescription(sMartInfo.itemList[item]);
+    u8 *end, *ptr, *curLine, *lastSpace;
 
-    while (*desc != EOS)
+    end = result;
+    // copy string, replacing all space and line breaks with EOS
+    while (*str != EOS) 
     {
-        if (count >= maxChars)
-        {
-            while (*desc != CHAR_SPACE && *desc != CHAR_NEWLINE)
-            {
-                *dest = *desc;  //finish word
-                dest++;
-                desc++;
-            }
+        if (*str == CHAR_SPACE || *str == CHAR_NEWLINE) 
+            *end = EOS;
+        else 
+            *end = *str;
 
-            *dest = CHAR_NEWLINE;
-            count = 0;
-            numLines++;
-            dest++;
-            desc++;
-            continue;
-        }
-
-        *dest = *desc;
-        if (*desc == CHAR_NEWLINE)
-        {
-            *dest = CHAR_SPACE;
-        }
-
-        dest++;
-        desc++;
-        count++;
+        end++;
+        str++;
     }
+    *end = EOS; // now end points to the true end of the string
 
-    // finish string
-    *dest = EOS;
+    ptr = result;
+    curLine = ptr;
+
+    while (*ptr != EOS)
+        ptr++;
+    // now ptr is the first EOS char
+
+    while (ptr != end) 
+    {
+        // all the EOS chars (except *end) must be replaced by either ' ' or '\n'
+        lastSpace = ptr++; // this points at the EOS
+
+        // check that adding the next word this line still fits
+        *lastSpace = CHAR_SPACE;
+        if (GetStringWidth(fontId, curLine, letterSpacing) > maxWidth) 
+        {
+            *lastSpace = CHAR_NEWLINE;
+
+            curLine = ptr;
+        }
+
+        while (*ptr != EOS) 
+            ptr++;
+        // now ptr is the next EOS char
+    }
 }
 
 static void BuyMenuInitWindows(void)
@@ -986,7 +991,7 @@ static void BuyMenuInitWindows(void)
         if (ItemId_GetPocket(item) == POCKET_TM_HM)
         {
             const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-            ReformatItemDescription(0, gStringVar2);
+            FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[0]), 0);
             desc = gStringVar2;
             BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
         }
@@ -1005,7 +1010,8 @@ static void BuyMenuInitWindows(void)
     }
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-    BuyMenuPrint(WIN_ITEM_DESCRIPTION, desc, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
+    BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
     SetupSellerMugshot();
 }
 
@@ -1127,7 +1133,7 @@ static void UpdateItemData(void)
             if (ItemId_GetPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
             {
                 const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-                ReformatItemDescription(i, gStringVar2);
+                FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[i]), 0);
                 desc = gStringVar2;
                 BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
             }
@@ -1145,7 +1151,8 @@ static void UpdateItemData(void)
             PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
         }
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-        BuyMenuPrint(WIN_ITEM_DESCRIPTION, desc, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+        FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
+        BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
     }
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
 }
