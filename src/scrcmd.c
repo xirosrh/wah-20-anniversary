@@ -1991,12 +1991,17 @@ bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
+    bool16 useVariablePrices = ScriptReadHalfword(ctx);
 
-    #ifdef MUDSKIP_SHOP_UI
-    NewShop_CreatePokemartMenu(ptr);
-    #else
-    CreatePokemartMenu(ptr);
-    #endif // MUDSKIP_SHOP_UI
+    if (useVariablePrices)
+    {
+        NewShop_CreateVariablePokemartMenu(ptr);
+    }
+    else
+    {
+        NewShop_CreatePokemartMenu(ptr);
+    }
+
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2005,11 +2010,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    #ifdef MUDSKIP_SHOP_UI
     NewShop_CreateDecorationShop1Menu(ptr);
-    #else
-    CreateDecorationShop1Menu(ptr);
-    #endif // MUDSKIP_SHOP_UI
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2019,11 +2020,7 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    #ifdef MUDSKIP_SHOP_UI
     NewShop_CreateDecorationShop2Menu(ptr);
-    #else
-    CreateDecorationShop2Menu(ptr);
-    #endif // MUDSKIP_SHOP_UI
     ScriptContext_Stop();
     return TRUE;
 }
