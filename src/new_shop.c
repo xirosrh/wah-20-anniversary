@@ -134,12 +134,6 @@ struct Seller
     const u32 *scrollMap;
     const u16 *cursorGfx;
     const u32 *cursorPal;
-    // use seperate palette for scrolling bg,
-    // this can be used if your scrolling bg
-    // colors cant fit to the menu's graphics
-    // palette. uses bg pal slot 1, after the
-    // menu pal slot (0)
-    bool8 useScrollPal;
 };
 
 static EWRAM_DATA struct MartInfo sMartInfo = {0};
@@ -904,12 +898,9 @@ static void BuyMenuDecompressBgGraphics(void)
                         sSellers[i].menuPal :
                         sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
 
-    if (sSellers[i].useScrollPal == TRUE)
-    {
-        LoadCompressedPalette(sSellers[i].scrollPal ?
-                                sSellers[i].scrollPal :
-                                sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
-    }
+    LoadCompressedPalette(sSellers[i].scrollPal ?
+                        sSellers[i].scrollPal :
+                        sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
 }
 
 static inline void SpawnWindow(u8 winId)
