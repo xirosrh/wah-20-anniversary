@@ -77,12 +77,12 @@ enum {
 
 enum {
     MART_TYPE_NORMAL,
-    MART_TYPE_DECOR,
-    MART_TYPE_DECOR2,
     #ifdef MUDSKIP_OUTFIT_SYSTEM
     MART_TYPE_OUTFIT,
     #endif // MUDSKIP_OUTFIT_SYSTEM
     MART_TYPE_VARIABLE,
+    MART_TYPE_DECOR,
+    MART_TYPE_DECOR2,
 };
 
 // seller id
@@ -453,21 +453,26 @@ static u8 CreateShopMenu(u8 martType)
     DebugPrintf("lastTalked: %d", gSpecialVar_LastTalked);
     sMartInfo.martType = martType;
 
-    if (martType == MART_TYPE_NORMAL || martType == MART_TYPE_VARIABLE)
+    switch (martType)
     {
-        struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
-        winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
-        sMartInfo.windowId = AddWindow(&winTemplate);
-        sMartInfo.menuActions = sShopMenuActions_BuySellQuit;
-        numMenuItems = ARRAY_COUNT(sShopMenuActions_BuySellQuit);
-    }
-    else
-    {
-        struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_QUIT];
-        winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuyQuit, ARRAY_COUNT(sShopMenuActions_BuyQuit));
-        sMartInfo.windowId = AddWindow(&winTemplate);
-        sMartInfo.menuActions = sShopMenuActions_BuyQuit;
-        numMenuItems = ARRAY_COUNT(sShopMenuActions_BuyQuit);
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        {
+            struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_QUIT];
+            winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuyQuit, ARRAY_COUNT(sShopMenuActions_BuyQuit));
+            sMartInfo.windowId = AddWindow(&winTemplate);
+            sMartInfo.menuActions = sShopMenuActions_BuyQuit;
+            numMenuItems = ARRAY_COUNT(sShopMenuActions_BuyQuit);
+            break;
+        }
+        default:
+        {
+            struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
+            winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
+            sMartInfo.windowId = AddWindow(&winTemplate);
+            sMartInfo.menuActions = sShopMenuActions_BuySellQuit;
+            numMenuItems = ARRAY_COUNT(sShopMenuActions_BuySellQuit);
+            break;
+        }
     }
 
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
@@ -500,7 +505,9 @@ static void SetShopItemsForSale(const u16 *items)
         i++;
 
         if (sMartInfo.martType == MART_TYPE_VARIABLE)
+        {
             i++;
+        }
     }
     sMartInfo.itemCount++; // for ITEM_NONE / DECOR_NONE
     DebugPrintf("SetShopItemsForSale \n"
@@ -741,53 +748,67 @@ static void BuyMenuFreeMemory(void)
 
 static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
 {
-    u32 i = sShopData->gridItems->topLeftItemIndex + idx;
+    u32 i = sShopData->gridItems->topLeftItemIndex + idx, x, y;
+
     if (i >= sMartInfo.itemCount)
+    {
         return;
-
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
-    {
-        if (sMartInfo.itemList[i] == ITEM_NONE)
-            sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
-        else
-            sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, sMartInfo.itemList[i]);
-
-        gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-        gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = ((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
     }
-    #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+
+    x = (((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]);
+    y = (((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]);
+
+    switch (sMartInfo.martType)
     {
-        //! TODO: Fix coord of this
-        u32 x, y;
-        u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(sMartInfo.itemList[i], PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
-
-        x = (((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]) - 40;
-        y = (((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]) - 36;
-        if (sMartInfo.itemList[i] == OUTFIT_NONE) // is 0 as DECOR/ITEM_NONE
-            sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
-        else
-            sShopData->gridItems->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfxId, SpriteCallbackDummy, x, y, 0);
-
-        gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-        gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = ((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
-    }
-    #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-    {
-        u32 x, y;
-
-        x = (((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]) - 4;
-        y = (((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]) - 4;
-
-        if (sMartInfo.itemList[i] == DECOR_NONE) // DECOR_NONE has the same value as ITEM_NONE but this is for clarity
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
         {
-            sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
-            gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-            gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = ((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
+            // DECOR_NONE has the same value as ITEM_NONE but this is for clarity
+            if (sMartInfo.itemList[i] == DECOR_NONE)
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
+                gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x + 4;
+                gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y + 4;
+            }
+            else
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddDecorationIconObject(sMartInfo.itemList[i], x, y, 2, GFXTAG_ITEM + idx, PALTAG_ITEM + idx);
+            }
         }
-        else
-            sShopData->gridItems->iconSpriteIds[idx] = AddDecorationIconObject(sMartInfo.itemList[i], x, y, 2, GFXTAG_ITEM + idx, PALTAG_ITEM + idx);
+        default:
+        {
+            if (sMartInfo.itemList[i] == ITEM_NONE)
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
+            }
+            else
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, sMartInfo.itemList[i]);
+            }
+
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
+        }
+        // custom
+        #ifdef MUDSKIP_OUTFIT_SYSTEM
+        case MART_TYPE_OUTFIT:
+        {
+            //! TODO: Fix coord of this
+            u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(sMartInfo.itemList[i], PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+
+            if (sMartInfo.itemList[i] == OUTFIT_NONE) // is 0 as DECOR/ITEM_NONE
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
+            }
+            else
+            {
+                x -= 40, y -= 36;
+                sShopData->gridItems->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfxId, SpriteCallbackDummy, x, y, 0);
+            }
+
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
+        }
+        #endif // MUDSKIP_OUTFIT_SYSTEM
     }
 }
 
@@ -919,40 +940,52 @@ static inline void SpawnWindow(u8 winId)
 
 static inline const u8 *BuyMenuGetItemName(u32 id)
 {
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
-        return ItemId_GetName(sMartInfo.itemList[id]);
+    switch (sMartInfo.martType)
+    {
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            return gDecorations[sMartInfo.itemList[id]].name;
+        default:
+            return ItemId_GetName(sMartInfo.itemList[id]);
+        // custom
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-        return gOutfits[sMartInfo.itemList[id]].name;
+        case MART_TYPE_OUTFIT:
+            return gOutfits[sMartInfo.itemList[id]].name;
     #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-        return gDecorations[sMartInfo.itemList[id]].name;
+    }
 }
 
 static inline const u8 *BuyMenuGetItemDesc(u32 id)
 {
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
-        return ItemId_GetDescription(sMartInfo.itemList[id]);
+    switch (sMartInfo.martType)
+    {
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            return gDecorations[sMartInfo.itemList[id]].description;
+        default:
+            return ItemId_GetDescription(sMartInfo.itemList[id]);
+        // custom
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-        return gOutfits[sMartInfo.itemList[id]].desc;
+        case MART_TYPE_OUTFIT:
+            return gOutfits[sMartInfo.itemList[id]].desc;
     #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-        return gDecorations[sMartInfo.itemList[id]].description;
+    }
 }
 
 static inline u32 BuyMenuGetItemPrice(u32 id)
 {
-    if (sMartInfo.martType == MART_TYPE_NORMAL)
-        return ItemId_GetPrice(sMartInfo.itemList[id]);
-    else if (sMartInfo.martType == MART_TYPE_VARIABLE)
-        return SearchItemListForPrice(sMartInfo.itemList[id]);
+    switch (sMartInfo.martType)
+    {
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            return gDecorations[sMartInfo.itemList[id]].price;
+        default:
+            return ItemId_GetPrice(sMartInfo.itemList[id]);
+        // custom
+        case MART_TYPE_VARIABLE:
+            return SearchItemListForPrice(sMartInfo.itemList[id]);
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-        return GetOutfitPrice(sMartInfo.itemList[id]);
+        case MART_TYPE_OUTFIT:
+            return GetOutfitPrice(sMartInfo.itemList[id]);
     #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-        return gDecorations[sMartInfo.itemList[id]].price;
+    }
 }
 
 static void LoadSellerMugshot(const u8 *gfx, const u16 *pal)
@@ -1066,29 +1099,37 @@ static void BuyMenuInitWindows(void)
     BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("PRICE"), 0, 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
     BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("IN BAG"), 0, 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
 
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+    switch (sMartInfo.martType)
     {
-        u32 item = sMartInfo.itemList[0];
-        u16 quantity = CountTotalItemQuantityInBag(item);
-        if (ItemId_GetPocket(item) == POCKET_TM_HM)
+        default:
         {
-            const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-            FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[0]), 0);
-            desc = gStringVar2;
-            BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            u32 item = sMartInfo.itemList[0];
+            u16 quantity = CountTotalItemQuantityInBag(item);
+            if (ItemId_GetPocket(item) == POCKET_TM_HM)
+            {
+                const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
+                FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[0]), 0);
+                desc = gStringVar2;
+                BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            }
+
+            if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
+                BuyMenuPrint(WIN_MULTI, sText_ThatItemIsSoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_ThatItemIsSoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            else
+                PrintMoneyLocal(WIN_MULTI, 2*8, price, 84, COLORID_BLACK, FALSE);
+
+            ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
+            BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            break;
         }
-
-        if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
-            BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-        else
+    #ifdef MUDSKIP_OUTFIT_SYSTEM
+        case MART_TYPE_OUTFIT:
+    #endif // MUDSKIP_OUTFIT_SYSTEM
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        {
             PrintMoneyLocal(WIN_MULTI, 2*8, price, 84, COLORID_BLACK, FALSE);
-
-        ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
-        BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-    }
-    else
-    {
-        PrintMoneyLocal(WIN_MULTI, 2*8, price, 84, COLORID_BLACK, FALSE);
+            break;
+        }
     }
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
@@ -1196,8 +1237,10 @@ static void UpdateItemData(void)
         BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Return to Field"), 0, 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
         BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
 
-        if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+        if (sMartInfo.martType < MART_TYPE_DECOR)
+        {
             BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+        }
 
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
         BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_QuitShopping, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
@@ -1209,29 +1252,37 @@ static void UpdateItemData(void)
         const u8 *desc = BuyMenuGetItemDesc(i);
         BuyMenuPrint(WIN_MULTI, BuyMenuGetItemName(i), 0, 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
 
-        if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+        switch (sMartInfo.martType)
         {
-            u16 quantity = CountTotalItemQuantityInBag(item);
-            if (ItemId_GetPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
+            default:
             {
-                const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-                FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[i]), 0);
-                desc = gStringVar2;
-                BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                u16 quantity = CountTotalItemQuantityInBag(item);
+                if (ItemId_GetPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
+                {
+                    const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
+                    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[i]), 0);
+                    desc = gStringVar2;
+                    BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                }
+
+                if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
+                    BuyMenuPrint(WIN_MULTI, sText_ThatItemIsSoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_ThatItemIsSoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                else
+                    PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+
+                ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
+                BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                break;
             }
-
-            if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
-                BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-            else
+        #ifdef MUDSKIP_OUTFIT_SYSTEM
+            case MART_TYPE_OUTFIT:
+        #endif // MUDSKIP_OUTFIT_SYSTEM
+            case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            {
                 PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+            }
+        }
 
-            ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
-            BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-        }
-        else
-        {
-            PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
-        }
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
         FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
         BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
@@ -1270,14 +1321,14 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u32 cost = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+    if (sMartInfo.martType < MART_TYPE_DECOR)
         sShopData->totalCost = (cost >> IsPokeNewsActive(POKENEWS_SLATEPORT));
     else
         sShopData->totalCost = cost;
 
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
 
-    if (sMartInfo.martType != MART_TYPE_DECOR || sMartInfo.martType != MART_TYPE_DECOR2)
+    if (sMartInfo.martType < MART_TYPE_DECOR)
     {
         if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
         {
@@ -1297,46 +1348,50 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     else
     {
         PlaySE(SE_SELECT);
-        if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+        switch (sMartInfo.martType)
         {
-            CopyItemName(sShopData->currentItemId, gStringVar1);
-            if (ItemId_GetImportance(sShopData->currentItemId))
+            default:
             {
-                u32 price = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
+                CopyItemName(sShopData->currentItemId, gStringVar1);
+                if (ItemId_GetImportance(sShopData->currentItemId))
+                {
+                    u32 price = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
+                    ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                    tItemCount = 1;
+                    sShopData->totalCost = (price >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                    BuyMenuDisplayMessage(taskId, sText_YouWantedVar1ThatllBeVar2, BuyMenuConfirmPurchase);
+                }
+                else if (ItemId_GetPocket(sShopData->currentItemId) == POCKET_TM_HM)
+                {
+                    BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
+                }
+                else
+                {
+                    BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
+                }
+                break;
+            }
+            case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            {
+                const u8 *str = sText_Var1IsItThatllBeVar2;
+                StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                tItemCount = 1;
-                sShopData->totalCost = (price >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
-                BuyMenuDisplayMessage(taskId, sText_YouWantedVar1ThatllBeVar2, BuyMenuConfirmPurchase);
-            }
-            else if (ItemId_GetPocket(sShopData->currentItemId) == POCKET_TM_HM)
-            {
-                BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
-            }
-            else
-            {
-                BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
-            }
-        }
-        #ifdef MUDSKIP_OUTFIT_SYSTEM
-        else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-        {
-            BufferOutfitStrings(gStringVar1, sShopData->currentItemId, OUTFIT_BUFFER_NAME);
-            ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-            StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1OutfitThatllBeVar2);
-            BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
-        }
-        #endif // MUDSKIP_OUTFIT_SYSTEM
-        else
-        {
-            const u8 *str;
-            StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
-            ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-            if (sMartInfo.martType == MART_TYPE_DECOR)
-                str = sText_Var1IsItThatllBeVar2;
-            else // MART_TYPE_DECOR2
-                str = sText_YouWantedVar1ThatllBeVar2;
+                if (sMartInfo.martType == MART_TYPE_DECOR2)
+                    str = sText_YouWantedVar1ThatllBeVar2;
 
-            BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
+                BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
+                break;
+            }
+        #ifdef MUDSKIP_OUTFIT_SYSTEM
+            case MART_TYPE_OUTFIT:
+            {
+                BufferOutfitStrings(gStringVar1, sShopData->currentItemId, OUTFIT_BUFFER_NAME);
+                ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1OutfitThatllBeVar2);
+                BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
+                break;
+            }
+        #endif // MUDSKIP_OUTFIT_SYSTEM
         }
     }
 }
@@ -1442,40 +1497,50 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
+
+    switch (sMartInfo.martType)
     {
-        if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
+        default:
         {
-            RecordItemPurchase(taskId);
-            BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+            if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
+            {
+                BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+                RecordItemPurchase(taskId);
+            }
+            else
+            {
+                gTasks[taskId].data[0] = 20;
+                BuyMenuDisplayMessage(taskId, sText_NoMoreRoomForThis, Task_ReturnToItemListWaitMsg);
+            }
+            break;
         }
-        else
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
         {
-            gTasks[taskId].data[0] = 20;
-            BuyMenuDisplayMessage(taskId, sText_NoMoreRoomForThis, Task_ReturnToItemListWaitMsg);
+            if (DecorationAdd(sShopData->currentItemId))
+            {
+                const u8 *str = sText_ThankYouIllSendItHome;
+                if (sMartInfo.martType == MART_TYPE_DECOR2)
+                {
+                    str = sText_ThanksIllSendItHome;
+                }
+
+                BuyMenuDisplayMessage(taskId, str, BuyMenuSubtractMoney);
+            }
+            else
+            {
+                gTasks[taskId].data[0] = 20;
+                BuyMenuDisplayMessage(taskId, sText_SpaceForVar1Full, Task_ReturnToItemListWaitMsg);
+            }
+            break;
         }
-    }
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-    {
-        UnlockOutfit(sShopData->currentItemId);
-        BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
-    }
+        case MART_TYPE_OUTFIT:
+        {
+            UnlockOutfit(sShopData->currentItemId);
+            BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
+            break;
+        }
     #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-    {
-        if (DecorationAdd(sShopData->currentItemId))
-        {
-            if (sMartInfo.martType == MART_TYPE_DECOR)
-                BuyMenuDisplayMessage(taskId, sText_ThankYouIllSendItHome, BuyMenuSubtractMoney);
-            else // MART_TYPE_DECOR2
-                BuyMenuDisplayMessage(taskId, sText_ThanksIllSendItHome, BuyMenuSubtractMoney);
-        }
-        else
-        {
-            gTasks[taskId].data[0] = 20;
-            BuyMenuDisplayMessage(taskId, sText_SpaceForVar1Full, Task_ReturnToItemListWaitMsg);
-        }
     }
 }
 
@@ -1487,14 +1552,21 @@ static void BuyMenuSubtractMoney(u8 taskId)
     FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
     PrintMoneyLocal(WIN_MONEY, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
 
-    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_VARIABLE)
-        gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
+    switch (sMartInfo.martType)
+    {
+        default:
+            gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
+            break;
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            gTasks[taskId].func = Task_ReturnToItemListAfterDecorationPurchase;
+            break;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
-        gTasks[taskId].func = Task_ReturnToItemListAfterOutfitPurchase;
+        case MART_TYPE_OUTFIT:
+            gTasks[taskId].func = Task_ReturnToItemListAfterOutfitPurchase;
+            break;
     #endif // MUDSKIP_OUTFIT_SYSTEM
-    else
-        gTasks[taskId].func = Task_ReturnToItemListAfterDecorationPurchase;
+    }
+
 }
 
 // This is hacky but this'd do it
