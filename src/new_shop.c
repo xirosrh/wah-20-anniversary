@@ -140,6 +140,24 @@ static EWRAM_DATA struct MartInfo sMartInfo = {0};
 static EWRAM_DATA struct ShopData *sShopData = NULL;
 static EWRAM_DATA u8 sPurchaseHistoryId = 0;
 
+const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.");
+const u8 sText_SoldOut[] = _("SOLD OUT");
+const u8 sText_Price[] = _("PRICE");
+const u8 sText_InBag[] = _("IN BAG");
+const u8 sText_ReturnToField[] = _("Return to Field");
+const u8 sText_Var1CertainlyHowMany[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
+const u8 sText_Var1CertainlyHowMany2[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
+const u8 sText_Var1AndYouWantedVar2[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be ¥{STR_VAR_3}.");
+const u8 sText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be ¥{STR_VAR_2}.\nDo you want it?");
+const u8 sText_YouWantedVar1ThatllBeVar2[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}.");
+const u8 sText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to\nyour home PC.");
+const u8 sText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your\nPC at home.");
+const u8 sText_YouDontHaveMoney[] = _("You don't have\nenough money.");
+const u8 sText_NoMoreRoomForThis[] = _("You have no more\nroom for this\nitem.");
+const u8 sText_SpaceForVar1Full[] = _("The space for\n{STR_VAR_1}\nis full.");
+const u8 sText_ThrowInPremierBall[] = _("I'll throw in\na PREMIER BALL,\ntoo.");
+const u8 sText_ThrowInPremierBalls[] = _("I'll throw in\n{STR_VAR_1} PREMIER BALLS,\ntoo.");
+
 const u32 sNewShopMenu_DefaultMenuGfx[] = INCBIN_U32("graphics/new_shop/menu.4bpp.lz");
 const u32 sNewShopMenu_DefaultMenuPal[] = INCBIN_U32("graphics/new_shop/menu.gbapal.lz");
 const u32 sNewShopMenu_DefaultMenuTilemap[] = INCBIN_U32("graphics/new_shop/menu.bin.lz");
@@ -424,20 +442,6 @@ static const struct Seller sSellers[] = {
         .cursorPal = sNewShopMenu_SellerCursorPal_Jennie,
     },
 };
-
-const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.{PAUSE_UNTIL_PRESS}");
-const u8 sText_Var1CertainlyHowMany[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
-const u8 sText_Var1CertainlyHowMany2[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
-const u8 sText_Var1AndYouWantedVar2[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be ¥{STR_VAR_3}.");
-const u8 sText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be ¥{STR_VAR_2}.\nDo you want it?");
-const u8 sText_YouWantedVar1ThatllBeVar2[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}.");
-const u8 sText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to\nyour home PC.");
-const u8 sText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your\nPC at home.");
-const u8 sText_YouDontHaveMoney[] = _("You don't have\nenough money.{PAUSE_UNTIL_PRESS}");
-const u8 sText_NoMoreRoomForThis[] = _("You have no more\nroom for this\nitem.{PAUSE_UNTIL_PRESS}");
-const u8 sText_SpaceForVar1Full[] = _("The space for\n{STR_VAR_1}\nis full.{PAUSE_UNTIL_PRESS}");
-const u8 sText_ThrowInPremierBall[] = _("I'll throw in\na PREMIER BALL,\ntoo.{PAUSE_UNTIL_PRESS}");
-const u8 sText_ThrowInPremierBalls[] = _("I'll throw in\n{STR_VAR_1} PREMIER BALLS,\ntoo.{PAUSE_UNTIL_PRESS}");
 
 static u8 CreateShopMenu(u8 martType)
 {
@@ -1275,7 +1279,7 @@ static void UpdateCursorPosition(void)
 
 static void Task_WaitMessage(u8 taskId)
 {
-    if (--gTasks[taskId].data[0] == 0)
+    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
     {
         UpdateItemData();
         gTasks[taskId].func = Task_BuyMenu;
@@ -1305,7 +1309,6 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
         if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
         {
             PlaySE(SE_BOO);
-            gTasks[taskId].data[0] = 70;
             BuyMenuDisplayMessage(taskId, sText_ThatItemIsSoldOut, Task_WaitMessage);
             return;
         }
@@ -1314,7 +1317,6 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
     {
         PlaySE(SE_BOO);
-        gTasks[taskId].data[0] = 70;
         BuyMenuDisplayMessage(taskId, sText_YouDontHaveMoney, Task_WaitMessage);
     }
     else
@@ -1476,7 +1478,6 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             }
             else
             {
-                gTasks[taskId].data[0] = 20;
                 BuyMenuDisplayMessage(taskId, sText_NoMoreRoomForThis, Task_ReturnToItemListWaitMsg);
             }
             break;
@@ -1495,7 +1496,6 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             }
             else
             {
-                gTasks[taskId].data[0] = 20;
                 BuyMenuDisplayMessage(taskId, sText_SpaceForVar1Full, Task_ReturnToItemListWaitMsg);
             }
             break;
@@ -1536,51 +1536,62 @@ static void BuyMenuSubtractMoney(u8 taskId)
 
 }
 
-// This is hacky but this'd do it
 static void Task_ReturnToItemListWaitMsg(u8 taskId)
 {
-    if (gTasks[taskId].data[0] == 0)
+    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
     {
         if (JOY_NEW(A_BUTTON | B_BUTTON))
+        {
             BuyMenuReturnToItemList(taskId);
+        }
     }
-    else
-        gTasks[taskId].data[0]--;
 }
 
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    if (ItemId_GetPocket(sShopData->currentItemId) == POCKET_POKE_BALLS)
     {
-        u16 premierBallsToAdd = tItemCount / 10;
-
-        if (premierBallsToAdd >= 1
-         && ((I_PREMIER_BALL_BONUS <= GEN_7 && sShopData->currentItemId == ITEM_POKE_BALL)
-          || (I_PREMIER_BALL_BONUS >= GEN_8 && (ItemId_GetPocket(sShopData->currentItemId) == POCKET_POKE_BALLS))))
+        if (IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
         {
-            u32 spaceAvailable = GetFreeSpaceForItemInBag(ITEM_PREMIER_BALL);
-            if (spaceAvailable < premierBallsToAdd)
-                premierBallsToAdd = spaceAvailable;
-        }
-        else
-        {
-            premierBallsToAdd = 0;
+            return;
         }
 
-        if (gTasks[taskId].data[0] != 20)
-            PlaySE(SE_SELECT);
-
-        AddBagItem(ITEM_PREMIER_BALL, premierBallsToAdd);
-        if (premierBallsToAdd > 0)
+        if (JOY_NEW(A_BUTTON | B_BUTTON))
         {
-            FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-            ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
-            StringExpandPlaceholders(gStringVar2, (premierBallsToAdd >= 2 ? sText_ThrowInPremierBalls : sText_ThrowInPremierBall));
-            BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+            // credit to pokeemerald-expansion
+            u16 premierBallsToAdd = tItemCount / 10;
+
+            if (premierBallsToAdd >= 1
+             && ((I_PREMIER_BALL_BONUS <= GEN_7 && sShopData->currentItemId == ITEM_POKE_BALL)
+             || (I_PREMIER_BALL_BONUS >= GEN_8 && (ItemId_GetPocket(sShopData->currentItemId) == POCKET_POKE_BALLS))))
+            {
+                u32 spaceAvailable = GetFreeSpaceForItemInBag(ITEM_PREMIER_BALL);
+                if (spaceAvailable < premierBallsToAdd)
+                {
+                    premierBallsToAdd = spaceAvailable;
+                }
+            }
+            else
+            {
+                premierBallsToAdd = 0;
+            }
+
+            AddBagItem(ITEM_PREMIER_BALL, premierBallsToAdd);
+            if (premierBallsToAdd > 0)
+            {
+                FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
+                ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
+                StringExpandPlaceholders(gStringVar2, (premierBallsToAdd >= 2 ? sText_ThrowInPremierBalls : sText_ThrowInPremierBall));
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+            }
+
+            gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
         }
-        gTasks[taskId].data[0] = 20;
+    }
+    else
+    {
         gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
     }
 }
@@ -1588,20 +1599,26 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 static void Task_ReturnToItemListAfterOutfitPurchase(u8 taskId)
 {
-    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
     {
-        PlaySE(SE_SELECT);
-        BuyMenuReturnToItemList(taskId);
+        if (JOY_NEW(A_BUTTON | B_BUTTON))
+        {
+            PlaySE(SE_SELECT);
+            BuyMenuReturnToItemList(taskId);
+        }
     }
 }
 #endif // MUDSKIP_OUTFIT_SYSTEM
 
 static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId)
 {
-    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
     {
-        PlaySE(SE_SELECT);
-        BuyMenuReturnToItemList(taskId);
+        if (JOY_NEW(A_BUTTON | B_BUTTON))
+        {
+            PlaySE(SE_SELECT);
+            BuyMenuReturnToItemList(taskId);
+        }
     }
 }
 
