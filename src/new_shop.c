@@ -212,10 +212,6 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId);
 static void BuyMenuSubtractMoney(u8 taskId);
 static void RecordItemPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId);
-#ifdef MUDSKIP_OUTFIT_SYSTEM
-static void Task_ReturnToItemListAfterOutfitPurchase(u8 taskId);
-#endif // MUDSKIP_OUTFIT_SYSTEM
-static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId);
 static void Task_HandleShopMenuBuy(u8 taskId);
 static void Task_HandleShopMenuSell(u8 taskId);
 static void PrintMoneyLocal(u8 windowId, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy);
@@ -1277,15 +1273,6 @@ static void UpdateCursorPosition(void)
     gSprites[sShopData->cursorSpriteId].y = y;
 }
 
-static void Task_WaitMessage(u8 taskId)
-{
-    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
-    {
-        UpdateItemData();
-        gTasks[taskId].func = Task_BuyMenu;
-    }
-}
-
 static void BuyMenuDisplayMessage(u8 taskId, const u8 *str, TaskFunc nextFunc)
 {
     StringExpandPlaceholders(gStringVar4, str);
@@ -1309,7 +1296,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
         if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
         {
             PlaySE(SE_BOO);
-            BuyMenuDisplayMessage(taskId, sText_ThatItemIsSoldOut, Task_WaitMessage);
+            BuyMenuDisplayMessage(taskId, sText_ThatItemIsSoldOut, Task_ReturnToItemListWaitMsg);
             return;
         }
     }
@@ -1317,7 +1304,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
     {
         PlaySE(SE_BOO);
-        BuyMenuDisplayMessage(taskId, sText_YouDontHaveMoney, Task_WaitMessage);
+        BuyMenuDisplayMessage(taskId, sText_YouDontHaveMoney, Task_ReturnToItemListWaitMsg);
     }
     else
     {
@@ -1524,14 +1511,12 @@ static void BuyMenuSubtractMoney(u8 taskId)
         default:
             gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
             break;
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
-            gTasks[taskId].func = Task_ReturnToItemListAfterDecorationPurchase;
-            break;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
         case MART_TYPE_OUTFIT:
-            gTasks[taskId].func = Task_ReturnToItemListAfterOutfitPurchase;
-            break;
     #endif // MUDSKIP_OUTFIT_SYSTEM
+        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
+            break;
     }
 
 }
@@ -1542,6 +1527,10 @@ static void Task_ReturnToItemListWaitMsg(u8 taskId)
     {
         if (JOY_NEW(A_BUTTON | B_BUTTON))
         {
+            if (!IsSEPlaying())
+            {
+                PlaySE(SE_SELECT);
+            }
             BuyMenuReturnToItemList(taskId);
         }
     }
@@ -1581,6 +1570,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
             AddBagItem(ITEM_PREMIER_BALL, premierBallsToAdd);
             if (premierBallsToAdd > 0)
             {
+                PlaySE(SE_SELECT);
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
                 ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
                 StringExpandPlaceholders(gStringVar2, (premierBallsToAdd >= 2 ? sText_ThrowInPremierBalls : sText_ThrowInPremierBall));
@@ -1593,32 +1583,6 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
     else
     {
         gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
-    }
-}
-
-#ifdef MUDSKIP_OUTFIT_SYSTEM
-static void Task_ReturnToItemListAfterOutfitPurchase(u8 taskId)
-{
-    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
-    {
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            PlaySE(SE_SELECT);
-            BuyMenuReturnToItemList(taskId);
-        }
-    }
-}
-#endif // MUDSKIP_OUTFIT_SYSTEM
-
-static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId)
-{
-    if (!IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
-    {
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            PlaySE(SE_SELECT);
-            BuyMenuReturnToItemList(taskId);
-        }
     }
 }
 
