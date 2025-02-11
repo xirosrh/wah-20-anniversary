@@ -220,7 +220,7 @@ enum
     LIST_AI_CHECK_VIABILITY,
     LIST_AI_SETUP_FIRST_TURN,
     LIST_AI_RISKY,
-    LIST_AI_PREFER_STRONGEST_MOVE,
+    LIST_AI_TRY_TO_2HKO,
     LIST_AI_PREFER_BATON_PASS,
     LIST_AI_DOUBLE_BATTLE,
     LIST_AI_HP_AWARE,
@@ -385,7 +385,7 @@ static const u8 sText_TryToFaint[] = _("Try to Faint");
 static const u8 sText_CheckViability[] = _("Check Viability");
 static const u8 sText_SetUpFirstTurn[] = _("Setup First Turn");
 static const u8 sText_Risky[] = _("Risky");
-static const u8 sText_PreferStrongestMove[] = _("Prefer Strongest Move");
+static const u8 sText_TryTo2HKO[] = _("Try to 2HKO");
 static const u8 sText_PreferBatonPass[] = _("Prefer Baton Pass");
 static const u8 sText_DoubleBattle[] = _("Double Battle");
 static const u8 sText_HpAware[] = _("HP Aware");
@@ -628,7 +628,7 @@ static const struct ListMenuItem sAIListItems[] =
     {sText_CheckViability, LIST_AI_CHECK_VIABILITY},
     {sText_SetUpFirstTurn, LIST_AI_SETUP_FIRST_TURN},
     {sText_Risky, LIST_AI_RISKY},
-    {sText_PreferStrongestMove, LIST_AI_PREFER_STRONGEST_MOVE},
+    {sText_TryTo2HKO, LIST_AI_TRY_TO_2HKO},
     {sText_PreferBatonPass, LIST_AI_PREFER_BATON_PASS},
     {sText_DoubleBattle, LIST_AI_DOUBLE_BATTLE},
     {sText_HpAware, LIST_AI_HP_AWARE},
@@ -1670,7 +1670,7 @@ static void PrintSecondaryEntries(struct BattleDebugMenu *data)
     case LIST_ITEM_TYPES:
         for (i = 0; i < 3; i++)
         {
-            u8 *types = &gBattleMons[data->battlerId].type1;
+            u8 *types = &gBattleMons[data->battlerId].types[0];
 
             PadString(gTypesInfo[types[i]].name, text);
             printer.currentY = printer.y = (i * yMultiplier) + sSecondaryListTemplate.upText_Y;
@@ -2070,9 +2070,9 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         data->modifyArrows.minValue = 0;
         data->modifyArrows.maxValue = NUMBER_OF_MON_TYPES - 1;
         data->modifyArrows.maxDigits = 2;
-        data->modifyArrows.modifiedValPtr = (u8 *)((&gBattleMons[data->battlerId].type1) + data->currentSecondaryListItemId);
+        data->modifyArrows.modifiedValPtr = (u8 *)((&gBattleMons[data->battlerId].types[0]) + data->currentSecondaryListItemId);
         data->modifyArrows.typeOfVal = VAL_U8;
-        data->modifyArrows.currValue = *(u8 *)((&gBattleMons[data->battlerId].type1) + data->currentSecondaryListItemId);
+        data->modifyArrows.currValue = *(u8 *)((&gBattleMons[data->battlerId].types[0]) + data->currentSecondaryListItemId);
         break;
     case LIST_ITEM_STATS:
         data->modifyArrows.minValue = 0;
@@ -2269,13 +2269,8 @@ static void UpdateMonData(struct BattleDebugMenu *data)
     {
         if (data->battlerWasChanged[i])
         {
-            struct Pokemon *mon;
+            struct Pokemon *mon = GetPartyBattlerData(i);
             struct BattlePokemon *battleMon = &gBattleMons[i];
-
-            if (GetBattlerSide(i) == B_SIDE_PLAYER)
-                mon = &gPlayerParty[gBattlerPartyIndexes[i]];
-            else
-                mon = &gEnemyParty[gBattlerPartyIndexes[i]];
 
             SetMonData(mon, MON_DATA_HELD_ITEM, &battleMon->item);
             SetMonData(mon, MON_DATA_STATUS, &battleMon->status1);
@@ -2435,6 +2430,7 @@ static const u8 sText_HoldEffectCovertCloak[] = _("Covert Cloak");
 static const u8 sText_HoldEffectLoadedDice[] = _("Loaded Dice");
 static const u8 sText_HoldEffectBoosterEnergy[] = _("Booster Energy");
 static const u8 sText_HoldEffectBerserkGene[] = _("Berserk Gene");
+static const u8 sText_HoldEffectOgerponMask[] = _("Ogerpon Mask");
 static const u8 *const sHoldEffectNames[] =
 {
     [HOLD_EFFECT_NONE] = sText_HoldEffectNone,
@@ -2585,6 +2581,7 @@ static const u8 *const sHoldEffectNames[] =
     [HOLD_EFFECT_LOADED_DICE] = sText_HoldEffectLoadedDice,
     [HOLD_EFFECT_BOOSTER_ENERGY] = sText_HoldEffectBoosterEnergy,
     [HOLD_EFFECT_BERSERK_GENE] = sText_HoldEffectBerserkGene,
+    [HOLD_EFFECT_OGERPON_MASK] = sText_HoldEffectOgerponMask,
 };
 static const u8 *GetHoldEffectName(u16 holdEffect)
 {
