@@ -351,7 +351,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 0,
         .width = 13,
         .height = 12,
-        .paletteNum = 1,
+        .paletteNum = 2,
         .baseBlock = 1,
     },
     DUMMY_WIN_TEMPLATE
@@ -967,7 +967,7 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
 static void LoadSellerMugshot(const u8 *gfx, const u16 *pal)
 {
     CopyToWindowPixelBuffer(WIN_MUGSHOT, gfx, 4992, 0);
-    LoadPalette(pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadPalette(pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
     PutWindowTilemap(WIN_MUGSHOT);
     CopyWindowToVram(WIN_MUGSHOT, COPYWIN_FULL);
 }
