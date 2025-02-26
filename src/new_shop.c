@@ -876,6 +876,7 @@ static void BuyMenuDecompressBgGraphics(void)
         LZDecompressWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
         LZDecompressWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
         LoadCompressedPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        LoadCompressedPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         return;
     }
     DecompressAndCopyTileDataToVram(2, sSellers[i].menuGfx ?
