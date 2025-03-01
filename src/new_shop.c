@@ -1008,12 +1008,13 @@ static void BuyMenuInitBgs(void)
     ShowBg(3);
 }
 
+#define DEFAULT_MENU_TILE_OFFSET 9
 static void BuyMenuDecompressBgGraphics(void)
 {
     u32 i = sShopData->sellerId;
     if (gSpecialVar_LastTalked == 0 || i == SELLER_NONE)
     {
-        DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, 9, 0);
+        DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, DEFAULT_MENU_TILE_OFFSET, 0);
         DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
         LZDecompressWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
         LZDecompressWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
@@ -1021,7 +1022,7 @@ static void BuyMenuDecompressBgGraphics(void)
         LoadCompressedPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         return;
     }
-    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), 0, sSellers[i].menuTileOffset, 0);
+    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), 0, sSellers[i].menuTileOffset != ? sSellers[i].menuTileOffset : DEFAULT_MENU_TILE_OFFSET, 0);
     DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_SCROLL_GFX), 0, 0, 0);
 
     LZDecompressWram(Shop_GetSellerGraphics(SELLER_GFX_MENU_MAP), sShopData->tilemapBuffers[0]);
