@@ -142,6 +142,7 @@ struct Seller
     const u8 *mugshotGfx;
     const u16 *mugshotPal;
 
+    u32 menuTileOffset;
     const u32 *menuGfx;
     const u32 *menuPal;
     const u32 *menuMap;
@@ -926,7 +927,7 @@ static void BuyMenuDecompressBgGraphics(void)
     }
     DecompressAndCopyTileDataToVram(2, sSellers[i].menuGfx ?
                                         sSellers[i].menuGfx :
-                                        sNewShopMenu_DefaultMenuGfx, 0, 9, 0);
+                                        sNewShopMenu_DefaultMenuGfx, 0, (sSellers[i].menuTileOffset != -1) ? sSellers[i].menuTileOffset : 9, 0);
 
     DecompressAndCopyTileDataToVram(2, sSellers[i].scrollGfx ?
                                         sSellers[i].scrollGfx :
