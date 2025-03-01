@@ -109,6 +109,23 @@ enum Seller_MessageIds
     SELLER_MSG_COUNT,
 };
 
+enum Seller_GraphicsIds
+{
+    SELLER_GFX_MUGSHOT_GFX = 0,
+    SELLER_GFX_MUGSHOT_PAL,
+
+    SELLER_GFX_MENU_GFX,
+    SELLER_GFX_MENU_PAL,
+    SELLER_GFX_MENU_MAP,
+
+    SELLER_GFX_SCROLL_GFX,
+    SELLER_GFX_SCROLL_PAL,
+    SELLER_GFX_SCROLL_MAP,
+
+    SELLER_GFX_CURSOR_GFX,
+    SELLER_GFX_CURSOR_PAL,
+};
+
 struct MartInfo
 {
     void (*callback)(void);
@@ -439,6 +456,7 @@ static const struct Seller sSellers[] = {
         { .gfxId = OBJ_EVENT_GFX_MART_EMPLOYEE },
         .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Jerry,
         .mugshotPal = sNewShopMenu_SellerMugshotPal_Jerry,
+        .menuTileOffset = 9,
         .menuGfx = sNewShopMenu_SellerMenuGfx_Jerry,
         .menuPal = sNewShopMenu_SellerMenuPal_Jerry,
         .menuMap = sNewShopMenu_SellerMenuMap_Jerry,
@@ -465,6 +483,7 @@ static const struct Seller sSellers[] = {
         { .gfxId = OBJ_EVENT_GFX_WOMAN_3 },
         .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Jennie,
         .mugshotPal = sNewShopMenu_SellerMugshotPal_Jennie,
+        .menuTileOffset = 9,
         .menuGfx = sNewShopMenu_SellerMenuGfx_Jennie,
         .menuPal = sNewShopMenu_SellerMenuPal_Jennie,
         .menuMap = sNewShopMenu_SellerMenuMap_Jennie,
@@ -591,9 +610,39 @@ static u32 SearchItemListForPrice(u32 itemId)
     return 0;
 }
 
+void SetShopSellerId(void)
+{
+    u32 i;
+    u32 objId = GetObjectEventIdByLocalIdAndMap(gSpecialVar_LastTalked,
+                                                    gSaveBlock1Ptr->location.mapNum,
+                                                    gSaveBlock1Ptr->location.mapGroup);
+    u32 gfxId = gObjectEvents[objId].graphicsId;
+
+    if (gSpecialVar_LastTalked == 0) // failsafe
+    {
+        sShopData->sellerId = SELLER_NONE;
+        return;
+    }
+
+    if (gfxId >= OBJ_EVENT_GFX_VAR_0 && gfxId <= OBJ_EVENT_GFX_VAR_F)
+    {
+        gfxId = VarGetObjectEventGraphicsId(gfxId);
+    }
+
+    // loop over all of the sellers
+    for (i = SELLER_NONE; i < SELLER_COUNT; i++)
+    {
+        if (gfxId == sSellers[i].id.gfxId)
+        {
+            sShopData->sellerId = i;
+            break;
+        }
+    }
+}
+
 static inline const u8 *Shop_GetSellerMessage(enum Seller_MessageIds msgId)
 {
-    u32 martType = sMartInfo.martType, sellerId = sShopData->sellerId;
+    u32 sellerId = sShopData->sellerId;
 
     if (sSellers[sellerId].message[msgId] == NULL)
     {
@@ -601,6 +650,52 @@ static inline const u8 *Shop_GetSellerMessage(enum Seller_MessageIds msgId)
     }
 
     return sSellers[sellerId].message[msgId];
+}
+
+static const void *Shop_GetSellerGraphics(enum Seller_GraphicsIds gfxId)
+{
+    u32 sellerId = sShopData->sellerId;
+    const struct Seller *seller = &sSellers[sellerId];
+
+    switch (gfxId)
+    {
+    case SELLER_GFX_MUGSHOT_GFX:
+        return seller->mugshotGfx != NULL ? seller->mugshotGfx : sNewShopMenu_SellerMugshotGfx_Jerry;
+        break;
+    case SELLER_GFX_MUGSHOT_PAL:
+        return seller->mugshotPal != NULL ? seller->mugshotPal : sNewShopMenu_SellerMugshotPal_Jerry;
+        break;
+
+    case SELLER_GFX_MENU_GFX:
+        return seller->menuGfx != NULL ? seller->menuGfx : sNewShopMenu_DefaultMenuGfx;
+        break;
+    case SELLER_GFX_MENU_PAL:
+        return seller->menuPal != NULL ? seller->menuPal : sNewShopMenu_DefaultMenuPal;
+        break;
+    case SELLER_GFX_MENU_MAP:
+        return seller->menuMap != NULL ? seller->menuMap : sNewShopMenu_DefaultMenuTilemap;
+        break;
+
+    case SELLER_GFX_SCROLL_GFX:
+        return seller->scrollGfx != NULL ? seller->scrollGfx : sNewShopMenu_DefaultScrollGfx;
+        break;
+    case SELLER_GFX_SCROLL_PAL:
+        return seller->scrollPal != NULL ? seller->scrollPal : sNewShopMenu_DefaultMenuPal;
+        break;
+    case SELLER_GFX_SCROLL_MAP:
+        return seller->scrollMap != NULL ? seller->scrollMap : sNewShopMenu_DefaultScrollTilemap;
+        break;
+
+    case SELLER_GFX_CURSOR_GFX:
+        return seller->cursorGfx != NULL ? seller->cursorGfx : sNewShopMenu_DefaultCursorGfx;
+        break;
+    case SELLER_GFX_CURSOR_PAL:
+        return seller->cursorPal != NULL ? seller->cursorPal : sNewShopMenu_DefaultMenuPal;
+        break;
+
+    }
+
+    return NULL;
 }
 
 static void Task_ShopMenu(u8 taskId)
@@ -718,7 +813,7 @@ static void CB2_InitBuyMenu(void)
     switch (gMain.state)
     {
     case 0:
-        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000)
+        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
         ResetVramOamAndBgCntRegs();
         SetVBlankHBlankCallbacksToNull();
         CpuFastFill(0, (void *)OAM, OAM_SIZE);
@@ -731,6 +826,7 @@ static void CB2_InitBuyMenu(void)
         ClearScheduledBgCopiesToVram();
         sShopData = AllocZeroed(sizeof(struct ShopData));
         InitShopItemsForSale();
+        SetShopSellerId();
         BuyMenuInitBgs();
         BuyMenuInitGrid();
         BuyMenuInitWindows();
@@ -925,29 +1021,14 @@ static void BuyMenuDecompressBgGraphics(void)
         LoadCompressedPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         return;
     }
-    DecompressAndCopyTileDataToVram(2, sSellers[i].menuGfx ?
-                                        sSellers[i].menuGfx :
-                                        sNewShopMenu_DefaultMenuGfx, 0, (sSellers[i].menuTileOffset != -1) ? sSellers[i].menuTileOffset : 9, 0);
+    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), 0, sSellers[i].menuTileOffset, 0);
+    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_SCROLL_GFX), 0, 0, 0);
 
-    DecompressAndCopyTileDataToVram(2, sSellers[i].scrollGfx ?
-                                        sSellers[i].scrollGfx :
-                                        sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
+    LZDecompressWram(Shop_GetSellerGraphics(SELLER_GFX_MENU_MAP), sShopData->tilemapBuffers[0]);
+    LZDecompressWram(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_MAP), sShopData->tilemapBuffers[1]);
 
-    LZDecompressWram(sSellers[i].menuMap ?
-                        sSellers[i].menuMap :
-                        sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
-
-    LZDecompressWram(sSellers[i].scrollMap ?
-                        sSellers[i].scrollMap :
-                        sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
-
-    LoadCompressedPalette(sSellers[i].menuPal ?
-                        sSellers[i].menuPal :
-                        sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
-
-    LoadCompressedPalette(sSellers[i].scrollPal ?
-                        sSellers[i].scrollPal :
-                        sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadCompressedPalette(Shop_GetSellerGraphics(SELLER_GFX_MENU_PAL), BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+    LoadCompressedPalette(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_PAL), BG_PLTT_ID(1), PLTT_SIZE_4BPP);
 }
 
 static inline void SpawnWindow(u8 winId)
@@ -1013,45 +1094,6 @@ static void LoadSellerMugshot(const u8 *gfx, const u16 *pal)
     LoadPalette(pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
     PutWindowTilemap(WIN_MUGSHOT);
     CopyWindowToVram(WIN_MUGSHOT, COPYWIN_FULL);
-}
-
-static void SetupSellerMugshot(void)
-{
-    u32 i;
-    u32 objId = GetObjectEventIdByLocalIdAndMap(gSpecialVar_LastTalked,
-                                                    gSaveBlock1Ptr->location.mapNum,
-                                                    gSaveBlock1Ptr->location.mapGroup);
-    u32 gfxId = gObjectEvents[objId].graphicsId;
-
-    if (gfxId >= OBJ_EVENT_GFX_VAR_0 && gfxId <= OBJ_EVENT_GFX_VAR_F)
-    {
-        gfxId = VarGetObjectEventGraphicsId(gfxId);
-    }
-
-    if (gSpecialVar_LastTalked == 0) // failsafe
-    {
-        LoadSellerMugshot(sNewShopMenu_SellerMugshotGfx_Jerry, sNewShopMenu_SellerMugshotPal_Jerry);
-        sShopData->sellerId = SELLER_NONE;
-        return;
-    }
-
-    // loop over all of the sellers
-    for (i = SELLER_NONE; i < SELLER_COUNT; i++)
-    {
-        if (gfxId == sSellers[i].id.gfxId)
-        {
-            if (sSellers[i].mugshotGfx != NULL || sSellers[i].mugshotPal != NULL)
-            {
-                LoadSellerMugshot(sSellers[i].mugshotGfx, sSellers[i].mugshotPal);
-            }
-            else
-            {
-                LoadSellerMugshot(sNewShopMenu_SellerMugshotGfx_Jerry, sNewShopMenu_SellerMugshotPal_Jerry);
-            }
-            sShopData->sellerId = i;
-            return;
-        }
-    }
 }
 
 // credit to Vexx on PRET Discord
@@ -1154,19 +1196,19 @@ static void BuyMenuInitWindows(void)
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
     FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
     BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
-    SetupSellerMugshot();
+    LoadSellerMugshot(Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_GFX), Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_PAL));
 }
 
 static bool32 LoadSellerCursor(void)
 {
     u32 i = sShopData->sellerId;
     struct SpriteSheet gfx = {
-        .data = sSellers[i].cursorGfx ? sSellers[i].cursorGfx : sNewShopMenu_DefaultCursorGfx,
+        .data = Shop_GetSellerGraphics(SELLER_GFX_CURSOR_GFX),
         .size = 64*64*2,
         .tag = GFXTAG_CURSOR,
     };
     struct CompressedSpritePalette pal = {
-        .data = sSellers[i].cursorPal ? sSellers[i].cursorPal : sNewShopMenu_DefaultMenuPal,
+        .data = Shop_GetSellerGraphics(SELLER_GFX_CURSOR_PAL),
         .tag = PALTAG_CURSOR
     };
 
