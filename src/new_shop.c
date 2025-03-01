@@ -94,6 +94,21 @@ enum
     SELLER_COUNT,
 };
 
+enum Seller_MessageIds
+{
+    SELLER_MSG_RETURN_TO_FIELD = 0,
+    SELLER_MSG_BUY_PROMPT,
+    SELLER_MSG_BUY_PROMPT_PLURAL,
+    SELLER_MSG_BUY_CONFIRM,
+    SELLER_MSG_BUY_SUCCESS,
+    SELLER_MSG_BUY_FAIL_NO_SPACE,
+    SELLER_MSG_BUY_FAIL_NO_MONEY,
+    SELLER_MSG_BUY_FAIL_SOLD_OUT,
+    SELLER_MGS_BUY_PREMIER_BONUS,
+    SELLER_MSG_BUY_PREMIER_BONUS_PLURAL,
+    SELLER_MSG_COUNT,
+};
+
 struct MartInfo
 {
     void (*callback)(void);
@@ -126,30 +141,35 @@ struct Seller
     } id;
     const u8 *mugshotGfx;
     const u16 *mugshotPal;
+
     const u32 *menuGfx;
     const u32 *menuPal;
     const u32 *menuMap;
+
     const u32 *scrollGfx;
     const u32 *scrollPal;
     const u32 *scrollMap;
+
     const u16 *cursorGfx;
     const u32 *cursorPal;
+
+    const u8 *message[SELLER_MSG_COUNT];
 };
 
 static EWRAM_DATA struct MartInfo sMartInfo = {0};
 static EWRAM_DATA struct ShopData *sShopData = NULL;
 static EWRAM_DATA u8 sPurchaseHistoryId = 0;
 
-const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.");
 const u8 sText_SoldOut[] = _("SOLD OUT");
 const u8 sText_Price[] = _("PRICE");
 const u8 sText_InBag[] = _("IN BAG");
 const u8 sText_ReturnToField[] = _("Return to Field");
+
+const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.");
 const u8 sText_Var1CertainlyHowMany[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
-const u8 sText_Var1CertainlyHowMany2[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
 const u8 sText_Var1AndYouWantedVar2[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be ¥{STR_VAR_3}.");
-const u8 sText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be ¥{STR_VAR_2}.\nDo you want it?");
 const u8 sText_YouWantedVar1ThatllBeVar2[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}.");
+const u8 sText_HereYouGoThankYou[] = _("Here you go!\nThank you very much.");
 const u8 sText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to\nyour home PC.");
 const u8 sText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your\nPC at home.");
 const u8 sText_YouDontHaveMoney[] = _("You don't have\nenough money.");
@@ -411,6 +431,9 @@ static const struct SpriteTemplate sCursor_SpriteTemplate = {
 };
 
 static const struct Seller sSellers[] = {
+    // this is THE default seller id that the code will use as
+    // a last resort, so try not to delete any of the already
+    // set fields here.
     [SELLER_JERRY] = {
         { .gfxId = OBJ_EVENT_GFX_MART_EMPLOYEE },
         .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Jerry,
@@ -423,6 +446,19 @@ static const struct Seller sSellers[] = {
         .scrollMap = sNewShopMenu_SellerScrollMap_Jerry,
         .cursorGfx = sNewShopMenu_SellerCursorGfx_Jerry,
         .cursorPal = sNewShopMenu_SellerCursorPal_Jerry,
+
+        .message = {
+            [SELLER_MSG_RETURN_TO_FIELD]   = gText_AnythingElseICanHelp,
+            [SELLER_MSG_BUY_PROMPT]        = sText_YouWantedVar1ThatllBeVar2,
+            [SELLER_MSG_BUY_PROMPT_PLURAL] = sText_Var1CertainlyHowMany,
+            [SELLER_MSG_BUY_CONFIRM]       = sText_Var1AndYouWantedVar2,
+            [SELLER_MSG_BUY_SUCCESS]       = sText_HereYouGoThankYou,
+            [SELLER_MSG_BUY_FAIL_NO_SPACE] = sText_NoMoreRoomForThis,
+            [SELLER_MSG_BUY_FAIL_NO_MONEY] = sText_YouDontHaveMoney,
+            [SELLER_MSG_BUY_FAIL_SOLD_OUT] = sText_ThatItemIsSoldOut,
+            [SELLER_MGS_BUY_PREMIER_BONUS] = sText_ThrowInPremierBall,
+            [SELLER_MSG_BUY_PREMIER_BONUS_PLURAL] = sText_ThrowInPremierBalls,
+        },
     },
     [SELLER_JENNIE] = {
         { .gfxId = OBJ_EVENT_GFX_WOMAN_3 },
@@ -554,6 +590,18 @@ static u32 SearchItemListForPrice(u32 itemId)
     return 0;
 }
 
+static inline const u8 *Shop_GetSellerMessage(enum Seller_MessageIds msgId)
+{
+    u32 martType = sMartInfo.martType, sellerId = sShopData->sellerId;
+
+    if (sSellers[sellerId].message[msgId] == NULL)
+    {
+        sellerId = SELLER_NONE + 1;
+    }
+
+    return sSellers[sellerId].message[msgId];
+}
+
 static void Task_ShopMenu(u8 taskId)
 {
     s8 inputCode = Menu_ProcessInputNoWrap();
@@ -631,10 +679,7 @@ static void Task_ReturnToShopMenu(u8 taskId)
 {
     if (IsWeatherNotFadingIn() == TRUE)
     {
-        if (sMartInfo.martType == MART_TYPE_DECOR2)
-            DisplayItemMessageOnField(taskId, gText_CanIHelpWithAnythingElse, ShowShopMenuAfterExitingBuyOrSellMenu);
-        else
-            DisplayItemMessageOnField(taskId, gText_AnythingElseICanHelp, ShowShopMenuAfterExitingBuyOrSellMenu);
+        DisplayItemMessageOnField(taskId, Shop_GetSellerMessage(SELLER_MSG_RETURN_TO_FIELD), ShowShopMenuAfterExitingBuyOrSellMenu);
     }
 }
 
@@ -1285,6 +1330,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u32 cost = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
+    const u8 *str;
     if (sMartInfo.martType < MART_TYPE_DECOR)
         sShopData->totalCost = (cost >> IsPokeNewsActive(POKENEWS_SLATEPORT));
     else
@@ -1297,7 +1343,8 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
         if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
         {
             PlaySE(SE_BOO);
-            BuyMenuDisplayMessage(taskId, sText_ThatItemIsSoldOut, Task_ReturnToItemListWaitMsg);
+            str = Shop_GetSellerMessage(SELLER_MSG_BUY_FAIL_SOLD_OUT);
+            BuyMenuDisplayMessage(taskId, str, Task_ReturnToItemListWaitMsg);
             return;
         }
     }
@@ -1305,10 +1352,12 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
     {
         PlaySE(SE_BOO);
-        BuyMenuDisplayMessage(taskId, sText_YouDontHaveMoney, Task_ReturnToItemListWaitMsg);
+        str = Shop_GetSellerMessage(SELLER_MSG_BUY_FAIL_NO_MONEY);
+        BuyMenuDisplayMessage(taskId, str, Task_ReturnToItemListWaitMsg);
     }
     else
     {
+        str = Shop_GetSellerMessage(SELLER_MSG_BUY_PROMPT);
         PlaySE(SE_SELECT);
         switch (sMartInfo.martType)
         {
@@ -1321,26 +1370,19 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                     ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                     tItemCount = 1;
                     sShopData->totalCost = (price >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
-                    BuyMenuDisplayMessage(taskId, sText_YouWantedVar1ThatllBeVar2, BuyMenuConfirmPurchase);
-                }
-                else if (ItemId_GetPocket(sShopData->currentItemId) == POCKET_TM_HM)
-                {
-                    BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
+                    BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
                 }
                 else
                 {
-                    BuyMenuDisplayMessage(taskId, sText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
+                    str = Shop_GetSellerMessage(SELLER_MSG_BUY_PROMPT_PLURAL);
+                    BuyMenuDisplayMessage(taskId, str, Task_BuyHowManyDialogueInit);
                 }
                 break;
             }
             case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
             {
-                const u8 *str = sText_Var1IsItThatllBeVar2;
                 StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                if (sMartInfo.martType == MART_TYPE_DECOR2)
-                    str = sText_YouWantedVar1ThatllBeVar2;
-
                 BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
                 break;
             }
@@ -1349,7 +1391,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
             {
                 BufferOutfitStrings(gStringVar1, sShopData->currentItemId, OUTFIT_BUFFER_NAME);
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1OutfitThatllBeVar2);
+                StringExpandPlaceholders(gStringVar4, str);
                 BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 break;
             }
@@ -1433,7 +1475,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             else
                 CopyItemName(sShopData->currentItemId, gStringVar1);
 
-            BuyMenuDisplayMessage(taskId, sText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+            BuyMenuDisplayMessage(taskId, Shop_GetSellerMessage(SELLER_MSG_BUY_CONFIRM), BuyMenuConfirmPurchase);
         }
         else if (JOY_NEW(B_BUTTON))
         {
@@ -1459,14 +1501,17 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     {
         default:
         {
+            const u8 *str;
             if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
             {
-                BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+                str = Shop_GetSellerMessage(SELLER_MSG_BUY_SUCCESS);
+                BuyMenuDisplayMessage(taskId, str, BuyMenuSubtractMoney);
                 RecordItemPurchase(taskId);
             }
             else
             {
-                BuyMenuDisplayMessage(taskId, sText_NoMoreRoomForThis, Task_ReturnToItemListWaitMsg);
+                str = Shop_GetSellerMessage(SELLER_MSG_BUY_FAIL_NO_SPACE);
+                BuyMenuDisplayMessage(taskId, str, Task_ReturnToItemListWaitMsg);
             }
             break;
         }
@@ -1571,10 +1616,11 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
             AddBagItem(ITEM_PREMIER_BALL, premierBallsToAdd);
             if (premierBallsToAdd > 0)
             {
+                const u8 *str = Shop_GetSellerMessage(premierBallsToAdd >= 2 ? SELLER_MSG_BUY_PREMIER_BONUS_PLURAL : SELLER_MGS_BUY_PREMIER_BONUS);
                 PlaySE(SE_SELECT);
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
                 ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
-                StringExpandPlaceholders(gStringVar2, (premierBallsToAdd >= 2 ? sText_ThrowInPremierBalls : sText_ThrowInPremierBall));
+                StringExpandPlaceholders(gStringVar2, str);
                 BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
             }
 
