@@ -35,6 +35,7 @@
 #include "tv.h"
 #include "grid_menu.h"
 #include "event_data.h"
+#include "move.h"
 #include "constants/decorations.h"
 #include "constants/items.h"
 #include "constants/metatile_behaviors.h"
@@ -883,13 +884,16 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
             if (sMartInfo.itemList[i] == DECOR_NONE)
             {
                 sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
-                gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x + 4;
-                gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y + 4;
+                gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
+                gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
             }
             else
             {
+                x -= 4;
+                y -= 4;
                 sShopData->gridItems->iconSpriteIds[idx] = AddDecorationIconObject(sMartInfo.itemList[i], x, y, 2, GFXTAG_ITEM + idx, PALTAG_ITEM + idx);
             }
+            break;
         }
         default:
         {
@@ -904,6 +908,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
 
             gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
             gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
+            break;
         }
         // custom
         #ifdef MUDSKIP_OUTFIT_SYSTEM
@@ -924,6 +929,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
 
             gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
             gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
+            break;
         }
         #endif // MUDSKIP_OUTFIT_SYSTEM
     }
@@ -1342,6 +1348,7 @@ static void UpdateItemData(void)
             case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
             {
                 PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+                break;
             }
         }
 
