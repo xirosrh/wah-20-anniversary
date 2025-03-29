@@ -2492,17 +2492,24 @@ bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
-    bool16 useVariablePrices = ScriptReadHalfword(ctx);
+    u16 shopType = ScriptReadHalfword(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    if (useVariablePrices)
+    switch (shopType)
     {
+    case SHOP_TYPE_VARIABLE:
         NewShop_CreateVariablePokemartMenu(ptr);
-    }
-    else
-    {
+        break;
+    case SHOP_TYPE_COINS:
+        NewShop_CreateCoinPokemartMenu(ptr);
+        break;
+    case SHOP_TYPE_POINTS:
+        NewShop_CreatePointsPokemartMenu(ptr);
+        break;
+    default:
         NewShop_CreatePokemartMenu(ptr);
+        break;
     }
     ScriptContext_Stop();
     return TRUE;
