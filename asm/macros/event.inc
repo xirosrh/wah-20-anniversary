@@ -1206,10 +1206,20 @@
 
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
-	.macro pokemart products:req, useVariablePrices=FALSE
+	.macro pokemart products:req, shopType=SHOP_TYPE_NORMAL
 	.byte SCR_OP_POKEMART
 	.4byte \products
-	.2byte \useVariablePrices
+	.2byte \shopType
+	.endm
+
+	@ Pokemart using coins for currency
+	.macro coinmart products:req
+	pokemart \products, SHOP_TYPE_COIN
+	.endm
+
+	@ Pokemart using battle points for currency
+	.macro battlepointmart products:req
+	pokemart \products, SHOP_TYPE_POINTS
 	.endm
 
 	@ Used as the endpoint for a Pokemart item list
