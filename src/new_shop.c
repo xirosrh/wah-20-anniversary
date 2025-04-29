@@ -46,7 +46,11 @@
 #include "constants/event_objects.h"
 
 #ifdef MUDSKIP_SHOP_UI
-// #include "outfit_menu.h" // uncomment this out if you have my outfit system
+
+#ifdef MUDSKIP_OUTFIT_SYSTEM
+#include "outfit_menu.h"
+#endif
+
 #include "new_shop.h"
 
 #define GFXTAG_CURSOR 0x1300
@@ -1868,9 +1872,12 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
                 ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
                 StringExpandPlaceholders(gStringVar2, str);
                 BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
             }
-
-            gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
+            else
+            {
+                gTasks[taskId].func = BuyMenuReturnToItemList;
+            }
         }
     }
     else
