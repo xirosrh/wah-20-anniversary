@@ -29,5 +29,6 @@ void HideMoneyBox(void);
 void AddMoneyLabelObject(u16 x, u16 y);
 void RemoveMoneyLabelObject(void);
 u32 CalculateMoneyTextHorizontalPosition(u32 amount);
+u32 CalculateLeadingSpacesForMoney(u32 numDigits);
 
 #endif // GUARD_MONEY_H

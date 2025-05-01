@@ -64,6 +64,8 @@
 
 #define MAX_ITEMS_SHOWN sShopData->gridItems->numItems
 
+#define RIGHT_ALIGNED_X -1
+
 enum {
     WIN_BUY_SELL_QUIT,
     WIN_BUY_QUIT,
@@ -285,7 +287,7 @@ static void RecordItemPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId);
 static void Task_HandleShopMenuBuy(u8 taskId);
 static void Task_HandleShopMenuSell(u8 taskId);
-static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy);
+static void PrintMoneyLocal(u8 windowId, u32 x, u32 y, u32 amount, u8 colorIdx, u32 align, bool32 copy);
 static void UpdateItemData(void);
 static void Task_ReturnToItemListWaitMsg(u8 taskId);
 
@@ -1277,7 +1279,7 @@ static void BuyMenuInitWindows(void)
             if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
                 BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
             else
-                PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_BLACK, FALSE);
+                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
 
             ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
             BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
@@ -1290,13 +1292,13 @@ static void BuyMenuInitWindows(void)
             if (GetOutfitStatus(outfit))
                 BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
             else
-                PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
+                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
             break;
         }
     #endif // MUDSKIP_OUTFIT_SYSTEM
         case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
         {
-            PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_BLACK, FALSE);
+            PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
             break;
         }
     }
@@ -1361,34 +1363,33 @@ static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 c
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
-const u8 sText_CoinsVar1[] = _("{STR_VAR_1}");
-const u8 sText_PokedollarVar1[] = _("¥{STR_VAR_1}");
-const u8 sText_BattlePointsVar1[] = _("BP {STR_VAR_1}");
-// Tried adding in support for more than 6 max digits, but only success so far is supporting 7 digits
-static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy)
+static const u8 sText_CoinsVar1[] = _("{STR_VAR_1}");
+static const u8 sText_PokedollarVar1[] = _("¥{STR_VAR_1}");
+static const u8 sText_BattlePointsVar1[] = _("BP {STR_VAR_1}");
+static void PrintMoneyLocal(u8 windowId, u32 x, u32 y, u32 amount, u8 colorIdx, u32 align, bool32 copy)
 {
-    u8 *txtPtr;
-    //s32 strLength;
-    //s32 temp;
+    u8 *txtPtr = gStringVar1;
     u32 numDigits = CountDigits(amount);
-    u32 maxDigits = (numDigits > 7) ? MAX_MONEY_DIGITS: 7;
+    u32 width = (sShopMenuWindowTemplates[windowId].width * 8) + 8; // + 8 is required otherwise it'll be off by.. well, 8 pixels
 
     if (IsMartTypePoints(sMartInfo.martType))
-        maxDigits = 5;
+        numDigits = 5;
 
-    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_RIGHT_ALIGN, maxDigits);
-
-    txtPtr = gStringVar4;
+    ConvertIntToDecimalStringN(txtPtr, amount, align, numDigits);
 
     if (IsMartTypeCoin(sMartInfo.martType))
-        StringExpandPlaceholders(txtPtr, sText_CoinsVar1);
+        StringExpandPlaceholders(gStringVar4, sText_CoinsVar1);
     else if (IsMartTypePoints(sMartInfo.martType))
-        StringExpandPlaceholders(txtPtr, sText_BattlePointsVar1);
+        StringExpandPlaceholders(gStringVar4, sText_BattlePointsVar1);
     else
-        StringExpandPlaceholders(txtPtr, sText_PokedollarVar1);
-    //temp = GetStringRightAlignXOffset(FONT_NORMAL, txtPtr, width);
+        StringExpandPlaceholders(gStringVar4, sText_PokedollarVar1);
+
     if (numDigits > 7)
         PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_SMALL, width);
+
+    if (x == RIGHT_ALIGNED_X)
+        x = GetStringRightAlignXOffset(GetFontIdToFit(gStringVar4, FONT_SMALL, 0, width), gStringVar4, width);
+
     AddTextPrinterParameterized4(windowId, FONT_SMALL, x, y, 0, 0, sShopBuyMenuTextColors[colorIdx], TEXT_SKIP_DRAW, gStringVar4);
     PutWindowTilemap(windowId);
     if (copy)
@@ -1398,11 +1399,12 @@ static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 co
 static void BuyMenuDrawGraphics(void)
 {
     if (IsMartTypeCoin(sMartInfo.martType))
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetCoins(), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
     else if (IsMartTypePoints(sMartInfo.martType))
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetBattlePoints(), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetBattlePoints(), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
     else // if (IsMartTypeMoney(sMartInfo.martType))
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetMoney(&gSaveBlock1Ptr->money), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
+
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -1416,10 +1418,10 @@ static void UpdateItemData(void)
         return;
 
     FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 0, 0, 84, 16);
-    FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 34, 1*8, 84, 40);
+    FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 24, 2*8, 84, 16);
+    FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 32, 4*8, 84, 16);
     if (sMartInfo.itemList[GridMenu_SelectedIndex(sShopData->gridItems)] == ITEM_NONE)
     {
-        FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 0, 0, 84, 16);
         BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Return to Field"), 0, 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
         BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
 
@@ -1435,7 +1437,9 @@ static void UpdateItemData(void)
     {
         u32 i = GridMenu_SelectedIndex(sShopData->gridItems);
         u32 item = sMartInfo.itemList[i];
+        u32 price = BuyMenuGetItemPrice(i);
         const u8 *desc = BuyMenuGetItemDesc(i);
+
         BuyMenuPrint(WIN_MULTI, BuyMenuGetItemName(i), 0, 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
 
         switch (sMartInfo.martType)
@@ -1454,7 +1458,7 @@ static void UpdateItemData(void)
                 if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
                     BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
                 else
-                    PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
 
                 ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
                 BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
@@ -1467,13 +1471,13 @@ static void UpdateItemData(void)
                 if (GetOutfitStatus(outfit))
                     BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
                 else
-                    PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
                 break;
             }
         #endif // MUDSKIP_OUTFIT_SYSTEM
             case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
             {
-                PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_BLACK, FALSE);
+                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, 2*8, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
                 break;
             }
         }
@@ -1785,21 +1789,21 @@ static void BuyMenuSubtractMoney(u8 taskId)
         RemoveCoins(sShopData->totalCost);
         PlaySE(SE_SHOP);
         FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetCoins(), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
     }
     else if (IsMartTypePoints(sMartInfo.martType))
     {
         RemoveBattlePoints(sShopData->totalCost);
         PlaySE(SE_SHOP);
         FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetBattlePoints(), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetBattlePoints(), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
     }
     else //if (IsMartTypeMoney(sMartInfo.martType))
     {
         RemoveMoney(&gSaveBlock1Ptr->money, sShopData->totalCost);
         PlaySE(SE_SHOP);
         FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
-        PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, RIGHT_ALIGNED_X, 0, GetMoney(&gSaveBlock1Ptr->money), COLORID_NORMAL, STR_CONV_MODE_RIGHT_ALIGN, TRUE);
     }
 
     switch (sMartInfo.martType)
@@ -1897,7 +1901,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(0));
-    PrintMoneyLocal(WIN_QUANTITY_PRICE, 13, 13, sShopData->totalCost, 56, COLORID_BLACK, FALSE);
+    PrintMoneyLocal(WIN_QUANTITY_PRICE, 13, 13, sShopData->totalCost, COLORID_BLACK, STR_CONV_MODE_RIGHT_ALIGN, FALSE);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, 29, 3, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
