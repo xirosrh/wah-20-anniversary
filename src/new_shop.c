@@ -52,6 +52,7 @@
 #endif
 
 #include "new_shop.h"
+#include "constants/new_shop.h"
 
 #define GFXTAG_CURSOR 0x1300
 #define PALTAG_CURSOR 0x1300
@@ -87,18 +88,6 @@ enum {
 enum {
     COLORID_NORMAL,      // Money amount
     COLORID_BLACK,       // Item descriptions, quantity in bag, and quantity/price
-};
-
-enum {
-    MART_TYPE_NORMAL,
-    MART_TYPE_VARIABLE,
-    MART_TYPE_COINS,
-    MART_TYPE_POINTS,
-    MART_TYPE_DECOR,
-    MART_TYPE_DECOR2,
-    #ifdef MUDSKIP_OUTFIT_SYSTEM
-    MART_TYPE_OUTFIT,
-    #endif // MUDSKIP_OUTFIT_SYSTEM
 };
 
 // seller id
@@ -547,12 +536,12 @@ static const struct Seller sSellers[] = {
 
 static inline bool32 IsMartTypePoints(u8 martType)
 {
-    return martType == MART_TYPE_POINTS;
+    return martType == NEW_SHOP_TYPE_POINTS;
 }
 
 static inline bool32 IsMartTypeCoin(u8 martType)
 {
-    return martType == MART_TYPE_COINS;
+    return martType == NEW_SHOP_TYPE_COINS;
 }
 
 static inline bool32 IsMartTypeMoney(u8 martType)
@@ -562,21 +551,21 @@ static inline bool32 IsMartTypeMoney(u8 martType)
 
 static inline bool32 IsMartTypeItem(u8 martType)
 {
-    return martType <= MART_TYPE_POINTS;
+    return martType <= NEW_SHOP_TYPE_POINTS;
 }
 
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 static inline bool32 IsMartTypeOutfit(u8 martType)
 {
-    return martType == MART_TYPE_OUTFIT;
+    return martType == NEW_SHOP_TYPE_OUTFIT;
 }
 #endif // MUDSKIP_OUTFIT_SYSTEM
 
 // This only exist because of the Slateport sale
 static inline bool32 IsMartTypeMoneyItem(u8 martType)
 {
-    return martType == MART_TYPE_NORMAL
-        || martType == MART_TYPE_VARIABLE;
+    return martType == NEW_SHOP_TYPE_NORMAL
+        || martType == NEW_SHOP_TYPE_VARIABLE;
 }
 
 static u8 CreateShopMenu(u8 martType)
@@ -597,8 +586,8 @@ static u8 CreateShopMenu(u8 martType)
             numMenuItems = ARRAY_COUNT(sShopMenuActions_BuyQuit);
             break;
         }
-        case MART_TYPE_NORMAL:
-        case MART_TYPE_VARIABLE:
+        case NEW_SHOP_TYPE_NORMAL:
+        case NEW_SHOP_TYPE_VARIABLE:
         {
             struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
             winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
@@ -636,7 +625,7 @@ static void SetShopItemsForSale(const u16 *items)
         sMartInfo.itemCount++;
         i++;
 
-        if (sMartInfo.martType == MART_TYPE_VARIABLE)
+        if (sMartInfo.martType == NEW_SHOP_TYPE_VARIABLE)
         {
             i++;
         }
@@ -663,7 +652,7 @@ static void InitShopItemsForSale(void)
         itemList++;
         j++;
 
-        if (sMartInfo.martType == MART_TYPE_VARIABLE)
+        if (sMartInfo.martType == NEW_SHOP_TYPE_VARIABLE)
         {
             *itemPriceList = sMartInfo.itemSource[i];
             i++;
@@ -966,7 +955,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
 
     switch (sMartInfo.martType)
     {
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
         {
             // DECOR_NONE has the same value as ITEM_NONE but this is for clarity
             if (sMartInfo.itemList[i] == DECOR_NONE)
@@ -1000,7 +989,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
         }
         // custom
         #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
         {
             //! TODO: Fix coord of this
             u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(sMartInfo.itemList[i], PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
@@ -1142,13 +1131,13 @@ static inline const u8 *BuyMenuGetItemName(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].name;
         default:
             return ItemId_GetName(sMartInfo.itemList[id]);
         // custom
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
             return gOutfits[sMartInfo.itemList[id]].name;
     #endif // MUDSKIP_OUTFIT_SYSTEM
     }
@@ -1158,13 +1147,13 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].description;
         default:
             return ItemId_GetDescription(sMartInfo.itemList[id]);
         // custom
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
             return gOutfits[sMartInfo.itemList[id]].desc;
     #endif // MUDSKIP_OUTFIT_SYSTEM
     }
@@ -1174,19 +1163,19 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].price;
         default:
             return ItemId_GetPrice(sMartInfo.itemList[id]);
         // custom
-        case MART_TYPE_VARIABLE:
+        case NEW_SHOP_TYPE_VARIABLE:
             return SearchItemListForPrice(sMartInfo.itemList[id]);
-        case MART_TYPE_COINS:
+        case NEW_SHOP_TYPE_COINS:
             return ItemId_GetCoinPrice(sMartInfo.itemList[id]);
-        case MART_TYPE_POINTS:
+        case NEW_SHOP_TYPE_POINTS:
             return ItemId_GetBpPrice(sMartInfo.itemList[id]);
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
             return GetOutfitPrice(sMartInfo.itemList[id]);
     #endif // MUDSKIP_OUTFIT_SYSTEM
     }
@@ -1433,7 +1422,7 @@ static void UpdateItemData(void)
                 break;
             }
         #ifdef MUDSKIP_OUTFIT_SYSTEM
-            case MART_TYPE_OUTFIT:
+            case NEW_SHOP_TYPE_OUTFIT:
             {
                 u32 outfit = item;
                 if (GetOutfitStatus(outfit))
@@ -1443,7 +1432,7 @@ static void UpdateItemData(void)
                 break;
             }
         #endif // MUDSKIP_OUTFIT_SYSTEM
-            case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             {
                 PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
                 break;
@@ -1567,7 +1556,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                 }
                 break;
             }
-            case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+            case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             {
                 StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
@@ -1575,7 +1564,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                 break;
             }
         #ifdef MUDSKIP_OUTFIT_SYSTEM
-            case MART_TYPE_OUTFIT:
+            case NEW_SHOP_TYPE_OUTFIT:
             {
                 BufferOutfitStrings(gStringVar1, sShopData->currentItemId, OUTFIT_BUFFER_NAME);
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
@@ -1720,12 +1709,12 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             }
             break;
         }
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
         {
             if (DecorationAdd(sShopData->currentItemId))
             {
                 const u8 *str = sText_ThankYouIllSendItHome;
-                if (sMartInfo.martType == MART_TYPE_DECOR2)
+                if (sMartInfo.martType == NEW_SHOP_TYPE_DECOR2)
                 {
                     str = sText_ThanksIllSendItHome;
                 }
@@ -1739,7 +1728,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             break;
         }
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
         {
             UnlockOutfit(sShopData->currentItemId);
             BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
@@ -1780,9 +1769,9 @@ static void BuyMenuSubtractMoney(u8 taskId)
             gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
             break;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_OUTFIT:
+        case NEW_SHOP_TYPE_OUTFIT:
     #endif // MUDSKIP_OUTFIT_SYSTEM
-        case MART_TYPE_DECOR ... MART_TYPE_DECOR2:
+        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
             break;
     }
@@ -1929,7 +1918,7 @@ static void RecordItemPurchase(u8 taskId)
 
 void NewShop_CreatePokemartMenu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_NORMAL);
+    CreateShopMenu(NEW_SHOP_TYPE_NORMAL);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
@@ -1937,14 +1926,14 @@ void NewShop_CreatePokemartMenu(const u16 *itemsForSale)
 
 void NewShop_CreateDecorationShop1Menu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_DECOR);
+    CreateShopMenu(NEW_SHOP_TYPE_DECOR);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
 
 void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_DECOR2);
+    CreateShopMenu(NEW_SHOP_TYPE_DECOR2);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
@@ -1952,7 +1941,7 @@ void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_OUTFIT);
+    CreateShopMenu(NEW_SHOP_TYPE_OUTFIT);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
@@ -1960,7 +1949,7 @@ void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 
 void NewShop_CreateVariablePokemartMenu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_VARIABLE);
+    CreateShopMenu(NEW_SHOP_TYPE_VARIABLE);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
@@ -1968,7 +1957,7 @@ void NewShop_CreateVariablePokemartMenu(const u16 *itemsForSale)
 
 void NewShop_CreateCoinPokemartMenu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_COINS);
+    CreateShopMenu(NEW_SHOP_TYPE_COINS);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
@@ -1976,7 +1965,7 @@ void NewShop_CreateCoinPokemartMenu(const u16 *itemsForSale)
 
 void NewShop_CreatePointsPokemartMenu(const u16 *itemsForSale)
 {
-    CreateShopMenu(MART_TYPE_POINTS);
+    CreateShopMenu(NEW_SHOP_TYPE_POINTS);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);

@@ -56,6 +56,7 @@
 #include "malloc.h"
 #include "new_shop.h"
 #include "constants/event_objects.h"
+#include "constants/new_shop.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -2498,13 +2499,13 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 
     switch (shopType)
     {
-    case SHOP_TYPE_VARIABLE:
+    case NEW_SHOP_PRICE_TYPE_VARIABLE:
         NewShop_CreateVariablePokemartMenu(ptr);
         break;
-    case SHOP_TYPE_COINS:
+    case NEW_SHOP_PRICE_TYPE_COINS:
         NewShop_CreateCoinPokemartMenu(ptr);
         break;
-    case SHOP_TYPE_POINTS:
+    case NEW_SHOP_PRICE_TYPE_POINTS:
         NewShop_CreatePointsPokemartMenu(ptr);
         break;
     default:
@@ -2526,7 +2527,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
     return TRUE;
 }
 
-// Changes clerk dialogue slightly from above. See MART_TYPE_DECOR2
+// Changes clerk dialogue slightly from above. See NEW_SHOP_TYPE_DECOR2
 bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);

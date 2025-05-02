@@ -91,11 +91,4 @@
 // Config to toggle using the new shop menu.
 #define MUDSKIP_SHOP_UI
 
-// Some defines for specific type of shop used
-
-#define SHOP_TYPE_NORMAL    0
-#define SHOP_TYPE_VARIABLE  1
-#define SHOP_TYPE_COINS     2
-#define SHOP_TYPE_POINTS    3
-
 #endif // GUARD_CONFIG_GENERAL_H
