@@ -1214,7 +1214,7 @@
 
 	@ Pokemart using coins for currency
 	.macro coinmart products:req
-	pokemart \products, NEW_SHOP_PRICE_TYPE_COIN
+	pokemart \products, NEW_SHOP_PRICE_TYPE_COINS
 	.endm
 
 	@ Pokemart using battle points for currency
