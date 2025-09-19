@@ -56,9 +56,9 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
-        [TRAINER_WAH_ADMIN_CHEVE_1] =
+        [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡No te confíes! Nadie que crea que soy un árbol podrá derrotarme."),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!"),
         },
     },
 };

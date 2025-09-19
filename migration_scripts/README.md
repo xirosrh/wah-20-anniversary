@@ -155,7 +155,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 
 #### [src/data/trainers.party](..src/data/trainers.party)
 ```diff
-+=== TRAINER_WAH_ADMIN_CHEVE_1 ===
++=== TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 +Name: SAWYER
 +Class: Hiker
 +Pic: Hiker

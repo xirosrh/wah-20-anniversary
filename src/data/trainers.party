@@ -81,7 +81,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_WAH_ADMIN_CHEVE_1 ===
+=== TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 Name: Cheve
 Class: WAH Admin
 Pic: Cheve
@@ -146,21 +146,69 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Disable
 
 
-
-
-
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE ===
+Name: Cheve
+Class: WAH Admin
+Pic: Cheve
 Gender: Male
-Music: Aqua
+Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Poochyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dragonite @ Leftovers  
+Level: 21  
+Ability: Multiscale  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Dragon Dance  
+- Roost  
+- Dragon Claw  
+- Fire Punch  
+
+Charizard @ Leftovers  
+Level: 21  
+Ability: Blaze  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Flare Blitz  
+- Earthquake  
+- Thunder Punch  
+- Roost  
+
+Espeon @ Leftovers  
+Level: 21  
+Ability: Magic Bounce  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Calm Mind  
+- Baton Pass  
+- Stored Power  
+- Substitute  
+
+Cresselia @ Flame Orb  
+Level: 21  
+Ability: Levitate  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Psychic  
+- Psycho Shift  
+- Rest  
+- Sleep Talk  
+
+Houndoom @ Houndoominite  
+Level: 21  
+Ability: Solar Power  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Nasty Plot  
+- Fire Blast  
+- Dark Pulse  
+- Solar Beam  
+
+Suicune @ Leftovers  
+Level: 21  
+Ability: Pressure  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Calm Mind  
+- Scald  
+- Rest  
+- Sleep Talk  
+
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
