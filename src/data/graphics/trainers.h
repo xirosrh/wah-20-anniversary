@@ -307,6 +307,21 @@ const u16 gTrainerPalette_Zero[] = INCBIN_U16("graphics/trainers/palettes/admins
 const u32 gTrainerFrontPic_Aguiar[] = INCBIN_U32("graphics/trainers/front_pics/admins/aguiar.4bpp.smol");
 const u16 gTrainerPalette_Aguiar[] = INCBIN_U16("graphics/trainers/palettes/admins/aguiar.gbapal");
 
+const u32 gTrainerFrontPic_Baro[] = INCBIN_U32("graphics/trainers/front_pics/admins/baro.4bpp.smol");
+const u16 gTrainerPalette_Baro[] = INCBIN_U16("graphics/trainers/palettes/admins/baro.gbapal");
+
+const u32 gTrainerFrontPic_Goce[] = INCBIN_U32("graphics/trainers/front_pics/admins/goce.4bpp.smol");
+const u16 gTrainerPalette_Goce[] = INCBIN_U16("graphics/trainers/palettes/admins/goce.gbapal");
+
+const u32 gTrainerFrontPic_PkPower[] = INCBIN_U32("graphics/trainers/front_pics/admins/pkpower.4bpp.smol");
+const u16 gTrainerPalette_PkPower[] = INCBIN_U16("graphics/trainers/palettes/admins/pkpower.gbapal");
+
+const u32 gTrainerFrontPic_Klein[] = INCBIN_U32("graphics/trainers/front_pics/admins/klein.4bpp.smol");
+const u16 gTrainerPalette_Klein[] = INCBIN_U16("graphics/trainers/palettes/admins/klein.gbapal");
+
+const u32 gTrainerFrontPic_JackJohnson[] = INCBIN_U32("graphics/trainers/front_pics/admins/jack_johnson.4bpp.smol");
+const u16 gTrainerPalette_JackJohnson[] = INCBIN_U16("graphics/trainers/palettes/admins/jack_johnson.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -437,6 +452,11 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_COSARARA, gTrainerFrontPic_Cosarara, gTrainerPalette_Cosarara),
     TRAINER_SPRITE(TRAINER_PIC_ZERO, gTrainerFrontPic_Zero, gTrainerPalette_Zero),
     TRAINER_SPRITE(TRAINER_PIC_AGUIAR, gTrainerFrontPic_Aguiar, gTrainerPalette_Aguiar),
+    TRAINER_SPRITE(TRAINER_PIC_BARO, gTrainerFrontPic_Baro, gTrainerPalette_Baro),
+    TRAINER_SPRITE(TRAINER_PIC_GOCE, gTrainerFrontPic_Goce, gTrainerPalette_Goce),
+    TRAINER_SPRITE(TRAINER_PIC_PKPOWER, gTrainerFrontPic_PkPower, gTrainerPalette_PkPower),
+    TRAINER_SPRITE(TRAINER_PIC_KLEIN, gTrainerFrontPic_Klein, gTrainerPalette_Klein),
+    TRAINER_SPRITE(TRAINER_PIC_JACK_JOHNSON, gTrainerFrontPic_JackJohnson, gTrainerPalette_JackJohnson),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
