@@ -280,6 +280,33 @@ const u16 gTrainerPalette_RubySapphireBrendan[] = INCBIN_U16("graphics/trainers/
 const u32 gTrainerFrontPic_RubySapphireMay[] = INCBIN_U32("graphics/trainers/front_pics/may_rs.4bpp.smol");
 const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/palettes/may_rs.gbapal");
 
+const u32 gTrainerFrontPic_Cheve[] = INCBIN_U32("graphics/trainers/front_pics/admins/cheve.4bpp.smol");
+const u16 gTrainerPalette_Cheve[] = INCBIN_U16("graphics/trainers/palettes/admins/cheve.gbapal");
+
+const u32 gTrainerFrontPic_Xiros[] = INCBIN_U32("graphics/trainers/front_pics/admins/xiros.4bpp.smol");
+const u16 gTrainerPalette_Xiros[] = INCBIN_U16("graphics/trainers/palettes/admins/xiros.gbapal");
+
+const u32 gTrainerFrontPic_Eing[] = INCBIN_U32("graphics/trainers/front_pics/admins/eing.4bpp.smol");
+const u16 gTrainerPalette_Eing[] = INCBIN_U16("graphics/trainers/palettes/admins/eing.gbapal");
+
+const u32 gTrainerFrontPic_Reoneky[] = INCBIN_U32("graphics/trainers/front_pics/admins/reoneky.4bpp.smol");
+const u16 gTrainerPalette_Reoneky[] = INCBIN_U16("graphics/trainers/palettes/admins/reoneky.gbapal");
+
+const u32 gTrainerFrontPic_Angel[] = INCBIN_U32("graphics/trainers/front_pics/admins/angel.4bpp.smol");
+const u16 gTrainerPalette_Angel[] = INCBIN_U16("graphics/trainers/palettes/admins/angel.gbapal");
+
+const u32 gTrainerFrontPic_Scarex[] = INCBIN_U32("graphics/trainers/front_pics/admins/scarex.4bpp.smol");
+const u16 gTrainerPalette_Scarex[] = INCBIN_U16("graphics/trainers/palettes/admins/scarex.gbapal");
+
+const u32 gTrainerFrontPic_Cosarara[] = INCBIN_U32("graphics/trainers/front_pics/admins/cosarara.4bpp.smol");
+const u16 gTrainerPalette_Cosarara[] = INCBIN_U16("graphics/trainers/palettes/admins/cosarara.gbapal");
+
+const u32 gTrainerFrontPic_Zero[] = INCBIN_U32("graphics/trainers/front_pics/admins/zero.4bpp.smol");
+const u16 gTrainerPalette_Zero[] = INCBIN_U16("graphics/trainers/palettes/admins/zero.gbapal");
+
+const u32 gTrainerFrontPic_Aguiar[] = INCBIN_U32("graphics/trainers/front_pics/admins/aguiar.4bpp.smol");
+const u16 gTrainerPalette_Aguiar[] = INCBIN_U16("graphics/trainers/palettes/admins/aguiar.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -401,6 +428,15 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
+    TRAINER_SPRITE(TRAINER_PIC_CHEVE, gTrainerFrontPic_Cheve, gTrainerPalette_Cheve),
+    TRAINER_SPRITE(TRAINER_PIC_XIROS, gTrainerFrontPic_Xiros, gTrainerPalette_Xiros),
+    TRAINER_SPRITE(TRAINER_PIC_EING, gTrainerFrontPic_Eing, gTrainerPalette_Eing),
+    TRAINER_SPRITE(TRAINER_PIC_REONEKY, gTrainerFrontPic_Reoneky, gTrainerPalette_Reoneky),
+    TRAINER_SPRITE(TRAINER_PIC_ANGEL, gTrainerFrontPic_Angel, gTrainerPalette_Angel),
+    TRAINER_SPRITE(TRAINER_PIC_SCAREX, gTrainerFrontPic_Scarex, gTrainerPalette_Scarex),
+    TRAINER_SPRITE(TRAINER_PIC_COSARARA, gTrainerFrontPic_Cosarara, gTrainerPalette_Cosarara),
+    TRAINER_SPRITE(TRAINER_PIC_ZERO, gTrainerFrontPic_Zero, gTrainerPalette_Zero),
+    TRAINER_SPRITE(TRAINER_PIC_AGUIAR, gTrainerFrontPic_Aguiar, gTrainerPalette_Aguiar),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
