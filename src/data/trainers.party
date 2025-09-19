@@ -90,13 +90,64 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Geodude
+Umbreon
 Level: 21
+Ability: Synchronize
+Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Toxic
+- Heal Bell
+- Yawn
+- Moonlight
 
-Pikachu
+Meganium @Leftovers
 Level: 21
+Ability: Leaf Guard
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Seed
+- Protect
+- Toxic
+- Synthesis
+
+Noctowl @Leftovers
+Level: 21
+Ability: Insomnia
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Wing Attack
+- Sky Attack
+- Shadow Ball
+- Hypnosis
+
+Weavile @Iron Ball
+Level: 21
+Ability: Pickpocket
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fling
+- Ice Shard
+- Fake Out
+- Brick Break
+
+Swampert @Swampertite
+Level: 21
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Waterfall
+- Earthquake
+- Ice Punch
+- Stealth Rock
+
+Gengar @Choice Scarf
+Level: 21
+Ability: Cursed Body
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Will-o-Wisp
+- Hex
+- Substitute
+- Disable
+
+
+
+
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
 Name: GRUNT
