@@ -1,0 +1,9 @@
+mapscripts CheveRoom_MapScripts {}
+
+script CheveRoom_EventScript_CheveChallenge {
+    lock
+    msgbox("Holi")
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_1, "asd")
+    release
+    end
+}
