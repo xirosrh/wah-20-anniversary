@@ -286,6 +286,15 @@ const u16 gTrainerPalette_Cheve[] = INCBIN_U16("graphics/trainers/palettes/admin
 const u32 gTrainerFrontPic_Xiros[] = INCBIN_U32("graphics/trainers/front_pics/admins/xiros.4bpp.smol");
 const u16 gTrainerPalette_Xiros[] = INCBIN_U16("graphics/trainers/palettes/admins/xiros.gbapal");
 
+const u32 gTrainerFrontPic_Sayer[] = INCBIN_U32("graphics/trainers/front_pics/admins/sayer.4bpp.smol");
+const u16 gTrainerPalette_Sayer[] = INCBIN_U16("graphics/trainers/palettes/admins/sayer.gbapal");
+
+const u32 gTrainerFrontPic_Blax[] = INCBIN_U32("graphics/trainers/front_pics/admins/blax.4bpp.smol");
+const u16 gTrainerPalette_Blax[] = INCBIN_U16("graphics/trainers/palettes/admins/blax.gbapal");
+
+const u32 gTrainerFrontPic_Ozumas[] = INCBIN_U32("graphics/trainers/front_pics/admins/ozumas.4bpp.smol");
+const u16 gTrainerPalette_Ozumas[] = INCBIN_U16("graphics/trainers/palettes/admins/ozumas.gbapal");
+
 const u32 gTrainerFrontPic_Eing[] = INCBIN_U32("graphics/trainers/front_pics/admins/eing.4bpp.smol");
 const u16 gTrainerPalette_Eing[] = INCBIN_U16("graphics/trainers/palettes/admins/eing.gbapal");
 
@@ -445,6 +454,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_CHEVE, gTrainerFrontPic_Cheve, gTrainerPalette_Cheve),
     TRAINER_SPRITE(TRAINER_PIC_XIROS, gTrainerFrontPic_Xiros, gTrainerPalette_Xiros),
+    TRAINER_SPRITE(TRAINER_PIC_SAYER, gTrainerFrontPic_Sayer, gTrainerPalette_Sayer),
+    TRAINER_SPRITE(TRAINER_PIC_BLAX, gTrainerFrontPic_Blax, gTrainerPalette_Blax),
+    TRAINER_SPRITE(TRAINER_PIC_OZUMAS, gTrainerFrontPic_Ozumas, gTrainerPalette_Ozumas),
     TRAINER_SPRITE(TRAINER_PIC_EING, gTrainerFrontPic_Eing, gTrainerPalette_Eing),
     TRAINER_SPRITE(TRAINER_PIC_REONEKY, gTrainerFrontPic_Reoneky, gTrainerPalette_Reoneky),
     TRAINER_SPRITE(TRAINER_PIC_ANGEL, gTrainerFrontPic_Angel, gTrainerPalette_Angel),
