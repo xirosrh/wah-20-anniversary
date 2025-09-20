@@ -122,7 +122,10 @@
 #define TRAINER_PIC_PKPOWER               104
 #define TRAINER_PIC_KLEIN                 105
 #define TRAINER_PIC_JACK_JOHNSON          106
-#define TRAINER_PIC_COUNT                 107
+#define TRAINER_PIC_SAYER                 107
+#define TRAINER_PIC_BLAX                  108
+#define TRAINER_PIC_OZUMAS                109
+#define TRAINER_PIC_COUNT                 110
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
