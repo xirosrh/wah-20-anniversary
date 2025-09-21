@@ -564,3 +564,6 @@ gSpecials::
 	def_special GetCodeFeedback
 	def_special SetHiddenNature
 	def_special MoveObjectToPosWithVars
+	def_special DirectCameraMovementsToPos
+
+

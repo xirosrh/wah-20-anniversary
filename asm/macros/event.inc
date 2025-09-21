@@ -1894,6 +1894,7 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+
 	@ Perform the pathfinding at movements to the specified (index) Object. Also closes any standard message boxes that are still open.
 	@ If no map is specified, then the current map is used.
 	.macro moveobjecttopos index:req, posx:req, posy:req, facing:req, map
@@ -1914,6 +1915,7 @@
 		.endif
 	.endm
 
+
 @ Supplementary
 
 	.macro moveobjecttoposwithvars id:req, x_var:req, y_var:req, facing_dir:req
@@ -1922,6 +1924,18 @@
 	copyvar VAR_0x8005, \y_var
 	setvar VAR_0x8009, \facing_dir
 	special MoveObjectToPosWithVars
+	.endm
+
+	.macro directcameramovementtopos x:req, y:req
+	setvar VAR_0x8004, \x
+	setvar VAR_0x8005, \y
+	special DirectCameraMovementsToPos
+	.endm
+
+	.macro directcameramovementtoposwithvars x_var:req, y_var:req
+	copyvar VAR_0x8004, \x_var
+	copyvar VAR_0x8005, \y_var
+	special DirectCameraMovementsToPos
 	.endm
 
 	.macro goto_if_unset flag:req, dest:req
