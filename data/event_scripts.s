@@ -1117,3 +1117,29 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/CheveRoom/scripts.inc"
+
+	.include "data/maps/OmegaRoom/scripts.inc"
+
+	.include "data/maps/ScarexOzumasRoom/scripts.inc"
+
+	.include "data/maps/DriveKatherineRoom/scripts.inc"
+
+	.include "data/maps/JackJohnsonRoom/scripts.inc"
+
+	.include "data/maps/CosararaRoom/scripts.inc"
+
+	.include "data/maps/TokynWarRoom/scripts.inc"
+
+	.include "data/maps/GoceRoom/scripts.inc"
+
+	.include "data/maps/AguiarRoom/scripts.inc"
+
+	.include "data/maps/ReyBooRoom/scripts.inc"
+
+	.include "data/maps/Javi4315Room/scripts.inc"
+
+	.include "data/maps/DavZeroRoom/scripts.inc"
+
+	.include "data/maps/SayerBlaxRoom/scripts.inc"
+
+	.include "data/maps/AngelRoom/scripts.inc"

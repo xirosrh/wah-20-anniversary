@@ -127,6 +127,13 @@ Common_Movement_WalkDown::
     walk_down
     step_end
 
+Common_Movement_WalkDown4::
+    walk_down
+	walk_down
+	walk_down
+	walk_down
+    step_end
+
 Common_Movement_WalkRight::
     walk_right
     step_end
@@ -166,3 +173,8 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+
+Common_Movement_JumpInPlaceDown:
+	jump_in_place_down
+	step_end

@@ -1,5 +1,6 @@
 {
   "group_order": [
+    "gMapGroup_WahChallenge",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -32,8 +33,23 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124",
-    "gMapGroup_WahChallenge"
+    "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_WahChallenge": [
+    "OmegaRoom",
+    "CheveRoom",
+    "GoceRoom",
+    "TokynWarRoom",
+    "JackJohnsonRoom",
+    "ScarexOzumasRoom",
+    "CosararaRoom",
+    "DriveKatherineRoom",
+    "AguiarRoom",
+    "AngelRoom",
+    "SayerBlaxRoom",
+    "ReyBooRoom",
+    "DavZeroRoom",
+    "Javi4315Room"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -603,8 +619,5 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
-  ],
-  "gMapGroup_WahChallenge": [
-    "CheveRoom"
   ]
 }
