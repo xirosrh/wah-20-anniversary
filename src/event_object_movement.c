@@ -201,6 +201,7 @@ static void FollowerSetGraphics(struct ObjectEvent *objEvent, u32 species, bool3
 static void ObjectEventSetGraphics(struct ObjectEvent *, const struct ObjectEventGraphicsInfo *);
 static void SpriteCB_VirtualObject(struct Sprite *);
 static void DoShadowFieldEffect(struct ObjectEvent *);
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *, s16, s16);
 static void SetJumpSpriteData(struct Sprite *, u8, u8, u8);
 static void SetWalkSlowSpriteData(struct Sprite *, u8);
 static bool8 UpdateWalkSlowAnim(struct Sprite *);
@@ -11135,6 +11136,40 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
     {
         sprite->sActionFuncId = 2;
         return TRUE;
+    }
+    return FALSE;
+}
+
+
+u8 CheckCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir, u8 currentElevation)
+{
+    u8 direction = dir;
+    if (MapGridGetCollisionAt(x, y) || GetMapBorderIdAt(x, y) == CONNECTION_INVALID || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction))
+        return COLLISION_IMPASSABLE;
+    else if (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction))
+        return COLLISION_IMPASSABLE;
+    else if (IsElevationMismatchAt(currentElevation, x, y))
+        return COLLISION_ELEVATION_MISMATCH;
+    else if (DoesObjectCollideWithObjectAtZ(objectEvent, x, y))
+        return COLLISION_OBJECT_EVENT;
+    return COLLISION_NONE;
+}
+
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *objectEvent, s16 x, s16 y)
+{
+    u8 i;
+    struct ObjectEvent *curObject;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        curObject = &gObjectEvents[i];
+        if (curObject->active && curObject != objectEvent)
+        {
+            if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
+            {
+                return TRUE;
+            }
+        }
     }
     return FALSE;
 }

@@ -1894,7 +1894,35 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+	@ Perform the pathfinding at movements to the specified (index) Object. Also closes any standard message boxes that are still open.
+	@ If no map is specified, then the current map is used.
+	.macro moveobjecttopos index:req, posx:req, posy:req, facing:req, map
+		.ifb \map
+			.byte SCR_OP_MOVEOBJECTTOPOS
+			.2byte \index
+			.2byte \posx
+			.2byte \posy
+			.2byte \facing
+		.else
+			@ Really only useful if the object has followed from one map to another (e.g. Wally during the catching event).
+			.byte SCR_OP_MOVEOBJECTTOPOS_AT
+			.2byte \index
+			.2byte \posx
+			.2byte \posy
+			.2byte \facing
+			map \map
+		.endif
+	.endm
+
 @ Supplementary
+
+	.macro moveobjecttoposwithvars id:req, x_var:req, y_var:req, facing_dir:req
+	setvar VAR_0x8008, \id
+	copyvar VAR_0x8004, \x_var
+	copyvar VAR_0x8005, \y_var
+	setvar VAR_0x8009, \facing_dir
+	special MoveObjectToPosWithVars
+	.endm
 
 	.macro goto_if_unset flag:req, dest:req
 	checkflag \flag

@@ -484,4 +484,6 @@ bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
+u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
+
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H
