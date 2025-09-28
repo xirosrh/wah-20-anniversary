@@ -21,6 +21,8 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
     waitmovement(LOCALID_CAMERA)
     special(RemoveCameraObject)
+    msgbox("XXX")
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_MAIN, "XX")
     release
     end
 }

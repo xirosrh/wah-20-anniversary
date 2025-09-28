@@ -38,6 +38,10 @@ OmegaRoom_EventScript_StartChallenge::
 # 23 "data/maps/OmegaRoom/scripts.pory"
 	special RemoveCameraObject
 # 24 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_2
+# 25 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_3
+# 26 "data/maps/OmegaRoom/scripts.pory"
 	release
 	end
 
@@ -57,3 +61,11 @@ OmegaRoom_EventScript_StartChallenge_Text_0:
 OmegaRoom_EventScript_StartChallenge_Text_1:
 # 14 "data/maps/OmegaRoom/scripts.pory"
 	.string "Ostras, une nuevo desafiante.$"
+
+OmegaRoom_EventScript_StartChallenge_Text_2:
+# 24 "data/maps/OmegaRoom/scripts.pory"
+	.string "XXX$"
+
+OmegaRoom_EventScript_StartChallenge_Text_3:
+# 25 "data/maps/OmegaRoom/scripts.pory"
+	.string "XX$"

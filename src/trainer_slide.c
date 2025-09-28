@@ -56,6 +56,11 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Cookie, excelente trabajo."),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.")
+        },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!"),
