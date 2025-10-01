@@ -2699,3 +2699,9 @@
 	callnative ScriptChangeFollowerNPCBattlePartner
 	.2byte \battlePartner
 	.endm
+
+
+	.macro applymovementandwait localId:req, movements:req, map
+	applymovement \localId, \movements, \map
+	waitmovement 0
+	.endm

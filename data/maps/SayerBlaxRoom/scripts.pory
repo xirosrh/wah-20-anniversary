@@ -6,35 +6,32 @@ mapscripts SayerBlaxRoom_MapScripts {
 
 script SayerBlaxRoom_OnFrame {
     lock
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp3)
-    waitmovement(0)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(SpawnCameraObject)
     directcameramovementtopos(6,5)
     waitmovement(0)
-    applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft)
     waitmovement(0)
     msgbox(format("Fuaaah, ¡qué cansancio! Con lo que me hacía falta descansar...\p¿Ya es el día del aniversario?"), MSGBOX_AUTOCLOSE)
-    applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         walk_left
         walk_down
         walk_left
         face_down
         delay_16))
-    waitmovement(0)
     playse(SE_PIN)
-    applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         emote_question_mark
         jump_in_place_down * 2
         delay_16
     ))
-    waitmovement(0)
     msgbox(format("¿Tú quién eres?"), MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown4)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown5)
     waitmovement(LOCALID_CAMERA)
     msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval.\pHemos pasado una pandemia incluso... Pero si insistes... No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE)
     delay(20)
-    applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         face_up
         delay_16
         face_right
@@ -42,16 +39,41 @@ script SayerBlaxRoom_OnFrame {
         face_left
         delay_16
     ))
-    waitmovement(0)
     msgbox(format("¿Y ahora dónde se ha metido Sayer…? Se supone nos tocaba combatir a los dos."), MSGBOX_AUTOCLOSE)
-    applymovement(LOCALID_SAYERBLAXROOM_SAYER, moves(
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(
         jump_2_right * 2
         jump_right
     ))
-    waitmovement(0)
     msgbox(format("Welcome to the jungle!"))
     special(RemoveCameraObject)
-    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_GOCE_MAIN, "Perdi blax", TRAINER_WAH_ADMIN_OMEGA_MAIN, "Perdi sayer")
+    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_OMEGA_MAIN, "Perdi sayer")
+    applymovement(LOCALID_SAYERBLAXROOM_SAYER, moves(
+        emote_x
+        lock_facing_direction
+        jump_2_left
+        unlock_facing_direction
+    ))
+    applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(
+        emote_x
+        lock_facing_direction
+        jump_2_up
+        unlock_facing_direction
+    ))
+    waitmovement(0)
+    delay(20)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown2)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    msgbox(format("Ha sido un combate espectacular. Confirmamos que estoy más oxidado de lo que pensaba."), MSGBOX_DEFAULT)
+    playse(SE_PIN)
+    //applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SmileWithSweetWithDelay48)
+    msgbox(format("Todavía te quedan muchos combates por delante, pero aprovecha cada uno de ellos para celebrar estos 20 años del mejor foro de ROM Hacking y fangaming de Pokémon del mundo.\pDicho esto... Me vuelvo a dormir. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
+        walk_up * 6
+        walk_right * 3
+        face_down
+    ))
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_WalkRight2)
+    msgbox(format("Y recuerda: No la líes y si puedes, pues si."), MSGBOX_AUTOCLOSE)
     setvar(VAR_SAYER_BLAX_ROOM_STATE, 1)
     release
     end

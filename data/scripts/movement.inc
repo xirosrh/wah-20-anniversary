@@ -154,6 +154,11 @@ Common_Movement_WalkDown::
     walk_down
     step_end
 
+Common_Movement_WalkDown2::
+    walk_down
+	walk_down
+    step_end
+
 Common_Movement_WalkDown4::
     walk_down
 	walk_down
@@ -181,6 +186,11 @@ Common_Movement_WalkDown6::
 Common_Movement_WalkRight::
     walk_right
     step_end
+
+Common_Movement_WalkRight2:
+	walk_right
+	walk_right
+	step_end
 
 Common_Movement_WalkLeft::
     walk_left
