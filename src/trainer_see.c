@@ -66,7 +66,7 @@ static const u8 sEmotion_QuestionMarkGfx[] = INCBIN_U8("graphics/field_effects/p
 static const u8 sEmotion_HeartGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_heart.4bpp");
 static const u8 sEmotion_DoubleExclamationMarkGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_double_exclamation.4bpp");
 static const u8 sEmotion_XGfx[] = INCBIN_U8("graphics/field_effects/pics/emote_x.4bpp");
-static const u8 sEmotion_SmileWithSweatGfx[] = INCBIN_U8("graphics/field_effects/pics/emote_smile_with_sweat.4bpp");
+static const u8 sEmotion_SweatDropGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_sweat_drop.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
 
@@ -153,8 +153,8 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
         .size = sizeof(sEmotion_XGfx)
     },
     {
-        .data = sEmotion_SmileWithSweatGfx,
-        .size = sizeof(sEmotion_SmileWithSweatGfx)
+        .data = sEmotion_SweatDropGfx,
+        .size = sizeof(sEmotion_SweatDropGfx)
     }
 };
 
@@ -984,7 +984,7 @@ u8 FldEff_XIcon(void)
     return 0;
 }
 
-u8 FldEff_SmileWithSweatIcon(void)
+u8 FldEff_SweatDropIcon(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
 

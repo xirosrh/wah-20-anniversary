@@ -245,7 +245,7 @@
 #define MOVEMENT_ACTION_FLY_DOWN                        0x9D
 #define MOVEMENT_ACTION_EMOTE_X                         0x9E
 #define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
-#define MOVEMENT_ACTION_EMOTE_SMILE_WITH_SWEAT          0xB2
+#define MOVEMENT_ACTION_EMOTE_SWEAT_DROP          0xB2
 #define MOVEMENT_ACTION_EXIT_POKEBALL                   0xA0
 #define MOVEMENT_ACTION_ENTER_POKEBALL                  0xA1
 #define MOVEMENT_ACTION_RUN_DOWN_SLOW                   0xA2    // slow running for rocky stairs

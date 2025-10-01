@@ -453,6 +453,7 @@ u8 (*const gMovementActionFuncs_FlyUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteSweatDrop[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunDownSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunUpSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunLeftSlow[])(struct ObjectEvent *, struct Sprite *);
@@ -632,7 +633,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_FLY_UP] = gMovementActionFuncs_FlyUp,
     [MOVEMENT_ACTION_FLY_DOWN] = gMovementActionFuncs_FlyDown,
     [MOVEMENT_ACTION_EMOTE_X] = gMovementActionFuncs_EmoteX,
-    [MOVEMENT_ACTION_EMOTE_SMILE_WITH_SWEAT] = gMovementActionFuncs_EmoteSmileWithSweat,
+    [MOVEMENT_ACTION_EMOTE_SWEAT_DROP] = gMovementActionFuncs_EmoteSweatDrop,
     [MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK] = gMovementActionFuncs_EmoteDoubleExclMark,
     [MOVEMENT_ACTION_EXIT_POKEBALL] = gMovementActionFuncs_ExitPokeball,
     [MOVEMENT_ACTION_ENTER_POKEBALL] = gMovementActionFuncs_EnterPokeball,
@@ -1587,8 +1588,8 @@ u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *)
     MovementAction_Finish,
 };
 
-u8 (*const gMovementActionFuncs_EmoteSmileWithSweat[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_EmoteSmileWithSweat_Step0,
+u8 (*const gMovementActionFuncs_EmoteSweatDrop[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteSweatDrop_Step0,
     MovementAction_Finish,
 };
 

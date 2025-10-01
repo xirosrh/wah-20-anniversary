@@ -232,3 +232,14 @@ Common_Movement_WalkLeftFaster::
 Common_Movement_JumpInPlaceDown:
 	jump_in_place_down
 	step_end
+
+Common_Movement_SweatDrop:
+	emote_sweat_drop
+	step_end
+
+Common_Movement_SweatDropWithDelay48:
+	emote_sweat_drop
+	delay_16
+	delay_16
+	delay_16
+	step_end
