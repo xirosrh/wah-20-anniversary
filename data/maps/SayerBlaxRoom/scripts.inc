@@ -74,6 +74,8 @@ SayerBlaxRoom_OnFrame::
 	msgbox SayerBlaxRoom_OnFrame_Text_7, MSGBOX_DEFAULT
 # 68 "data/maps/SayerBlaxRoom/scripts.pory"
 	playse SE_PIN
+# 69 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48
 # 70 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE
 # 71 "data/maps/SayerBlaxRoom/scripts.pory"

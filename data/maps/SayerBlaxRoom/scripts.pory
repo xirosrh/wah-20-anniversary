@@ -66,7 +66,7 @@ script SayerBlaxRoom_OnFrame {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     msgbox(format("Ha sido un combate espectacular. Confirmamos que estoy más oxidado de lo que pensaba."), MSGBOX_DEFAULT)
     playse(SE_PIN)
-    //applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SmileWithSweetWithDelay48)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48)
     msgbox(format("Todavía te quedan muchos combates por delante, pero aprovecha cada uno de ellos para celebrar estos 20 años del mejor foro de ROM Hacking y fangaming de Pokémon del mundo.\pDicho esto... Me vuelvo a dormir. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         walk_up * 5
