@@ -29,5 +29,9 @@ void PlayerFaceTrainerAfterBattle(void);
 u8 FldEff_DoubleExclMarkIcon(void);
 u8 FldEff_XIcon(void);
 u8 FldEff_SweatDropIcon(void);
+u8 FldEff_ThinkingIcon(void);
+u8 FldEff_VersusIcon(void);
+u8 FldEff_HappyIcon(void);
+u8 FldEff_SleepingIcon(void);
 
 #endif // GUARD_TRAINER_SEE_H

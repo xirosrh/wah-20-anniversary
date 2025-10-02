@@ -162,10 +162,14 @@
 	create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
 	create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
 	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
-	create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
-	create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
-	create_movement_action emote_sweat_drop, MOVEMENT_ACTION_EMOTE_SWEAT_DROP
-	create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
+        create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
+        create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
+        create_movement_action emote_sweat_drop, MOVEMENT_ACTION_EMOTE_SWEAT_DROP
+        create_movement_action emote_thinking, MOVEMENT_ACTION_EMOTE_THINKING
+        create_movement_action emote_versus, MOVEMENT_ACTION_EMOTE_VERSUS
+        create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
+        create_movement_action emote_sleeping, MOVEMENT_ACTION_EMOTE_SLEEPING
+        create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
 	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
 	create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
 	create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT

@@ -234,8 +234,24 @@ Common_Movement_JumpInPlaceDown:
 	step_end
 
 Common_Movement_SweatDrop:
-	emote_sweat_drop
-	step_end
+        emote_sweat_drop
+        step_end
+
+Common_Movement_Thinking:
+        emote_thinking
+        step_end
+
+Common_Movement_Versus:
+        emote_versus
+        step_end
+
+Common_Movement_Happy:
+        emote_happy
+        step_end
+
+Common_Movement_Sleeping:
+        emote_sleeping
+        step_end
 
 Common_Movement_SweatDropWithDelay48:
 	emote_sweat_drop
