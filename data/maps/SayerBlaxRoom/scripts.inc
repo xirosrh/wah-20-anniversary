@@ -109,6 +109,10 @@ SayerBlaxRoom_OnFrame::
 # 89 "data/maps/SayerBlaxRoom/scripts.pory"
 	setvar VAR_SAYER_BLAX_ROOM_STATE, 1
 # 90 "data/maps/SayerBlaxRoom/scripts.pory"
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+# 91 "data/maps/SayerBlaxRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX
+# 92 "data/maps/SayerBlaxRoom/scripts.pory"
 	release
 	end
 

@@ -87,6 +87,8 @@ script SayerBlaxRoom_OnFrame {
     turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Y recuerda: No la líes y si puedes, pues si."), MSGBOX_AUTOCLOSE)
     setvar(VAR_SAYER_BLAX_ROOM_STATE, 1)
+    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+    setflag(FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX)
     release
     end
 
