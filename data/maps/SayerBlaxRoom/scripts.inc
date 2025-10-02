@@ -11,235 +11,252 @@ SayerBlaxRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 SayerBlaxRoom_OnFrame::
 # 8 "data/maps/SayerBlaxRoom/scripts.pory"
-	lock
-# 9 "data/maps/SayerBlaxRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkUp3
-# 10 "data/maps/SayerBlaxRoom/scripts.pory"
+# 9 "data/maps/SayerBlaxRoom/scripts.pory"
 	special SpawnCameraObject
-# 11 "data/maps/SayerBlaxRoom/scripts.pory"
+# 10 "data/maps/SayerBlaxRoom/scripts.pory"
 	directcameramovementtopos 6, 5
+# 11 "data/maps/SayerBlaxRoom/scripts.pory"
+	waitmovement 0
 # 12 "data/maps/SayerBlaxRoom/scripts.pory"
-	waitmovement 0
+	delay 200
 # 13 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft
+	setobjectmovementtype2 LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_FACE_DOWN
 # 14 "data/maps/SayerBlaxRoom/scripts.pory"
-	waitmovement 0
+	turnobject LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH
 # 15 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE
+	delay 30
 # 16 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_0
-# 22 "data/maps/SayerBlaxRoom/scripts.pory"
-	playse SE_PIN
-# 23 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_1
-# 28 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE
+# 17 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft
+# 18 "data/maps/SayerBlaxRoom/scripts.pory"
+	waitmovement 0
+# 19 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE
-# 29 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown4
-# 30 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkDown5
-# 31 "data/maps/SayerBlaxRoom/scripts.pory"
-	waitmovement LOCALID_CAMERA
+# 20 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_0
+# 26 "data/maps/SayerBlaxRoom/scripts.pory"
+	playse SE_PIN
+# 27 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_1
 # 32 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE
 # 33 "data/maps/SayerBlaxRoom/scripts.pory"
-	delay 20
+	applymovement LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown4
 # 34 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_2
-# 42 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovement LOCALID_CAMERA, Common_Movement_WalkDown5
+# 35 "data/maps/SayerBlaxRoom/scripts.pory"
+	waitmovement LOCALID_CAMERA
+# 36 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE
-# 43 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_SAYER, SayerBlaxRoom_OnFrame_Movement_3
-# 47 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_4
-# 48 "data/maps/SayerBlaxRoom/scripts.pory"
-	special RemoveCameraObject
-# 49 "data/maps/SayerBlaxRoom/scripts.pory"
-	turnobject LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH
-# 50 "data/maps/SayerBlaxRoom/scripts.pory"
-	playse SE_PIN
-# 51 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_VersusWithDelay48
-# 52 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_VersusWithDelay48
-# 53 "data/maps/SayerBlaxRoom/scripts.pory"
-	waitmovement 0
-# 54 "data/maps/SayerBlaxRoom/scripts.pory"
-	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_OnFrame_Text_5, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_OnFrame_Text_6
-# 55 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_SAYERBLAXROOM_SAYER, SayerBlaxRoom_OnFrame_Movement_4
-# 61 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovement LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_5
-# 67 "data/maps/SayerBlaxRoom/scripts.pory"
-	waitmovement 0
-# 68 "data/maps/SayerBlaxRoom/scripts.pory"
+# 37 "data/maps/SayerBlaxRoom/scripts.pory"
 	delay 20
-# 69 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown2
-# 70 "data/maps/SayerBlaxRoom/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
-# 71 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_7, MSGBOX_DEFAULT
-# 72 "data/maps/SayerBlaxRoom/scripts.pory"
+# 38 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_2
+# 46 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE
+# 47 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_SAYER, SayerBlaxRoom_OnFrame_Movement_3
+# 51 "data/maps/SayerBlaxRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 52 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_OnFrame_Text_5
+# 53 "data/maps/SayerBlaxRoom/scripts.pory"
+	special RemoveCameraObject
+# 54 "data/maps/SayerBlaxRoom/scripts.pory"
+	turnobject LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH
+# 55 "data/maps/SayerBlaxRoom/scripts.pory"
 	playse SE_PIN
+# 56 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovement LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_VersusWithDelay48
+# 57 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovement LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_VersusWithDelay48
+# 58 "data/maps/SayerBlaxRoom/scripts.pory"
+	waitmovement 0
+# 59 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_OnFrame_Text_6, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_OnFrame_Text_7
+# 60 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovement LOCALID_SAYERBLAXROOM_SAYER, SayerBlaxRoom_OnFrame_Movement_4
+# 66 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovement LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_5
+# 72 "data/maps/SayerBlaxRoom/scripts.pory"
+	waitmovement 0
 # 73 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48
+	delay 20
 # 74 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown2
 # 75 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_6
-# 80 "data/maps/SayerBlaxRoom/scripts.pory"
-	applymovementandwait LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_WalkRight2
-# 81 "data/maps/SayerBlaxRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_OnFrame_Text_8, MSGBOX_DEFAULT
+# 77 "data/maps/SayerBlaxRoom/scripts.pory"
+	playse SE_PIN
+# 78 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48
+# 79 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
-# 82 "data/maps/SayerBlaxRoom/scripts.pory"
+# 80 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_6
+# 85 "data/maps/SayerBlaxRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_SLEEPING
+# 86 "data/maps/SayerBlaxRoom/scripts.pory"
+	applymovementandwait LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_WalkRight2
+# 87 "data/maps/SayerBlaxRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 88 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE
+# 89 "data/maps/SayerBlaxRoom/scripts.pory"
 	setvar VAR_SAYER_BLAX_ROOM_STATE, 1
-# 83 "data/maps/SayerBlaxRoom/scripts.pory"
+# 90 "data/maps/SayerBlaxRoom/scripts.pory"
 	release
 	end
 
 
-# 16 "data/maps/SayerBlaxRoom/scripts.pory"
-SayerBlaxRoom_OnFrame_Movement_0:
-# 17 "data/maps/SayerBlaxRoom/scripts.pory"
-	walk_left
-# 18 "data/maps/SayerBlaxRoom/scripts.pory"
-	walk_down
-# 19 "data/maps/SayerBlaxRoom/scripts.pory"
-	walk_left
 # 20 "data/maps/SayerBlaxRoom/scripts.pory"
-	face_down
+SayerBlaxRoom_OnFrame_Movement_0:
 # 21 "data/maps/SayerBlaxRoom/scripts.pory"
-	delay_16
-	step_end
-
+	walk_left
+# 22 "data/maps/SayerBlaxRoom/scripts.pory"
+	walk_down
 # 23 "data/maps/SayerBlaxRoom/scripts.pory"
-SayerBlaxRoom_OnFrame_Movement_1:
+	walk_left
 # 24 "data/maps/SayerBlaxRoom/scripts.pory"
-	emote_question_mark
+	face_down
 # 25 "data/maps/SayerBlaxRoom/scripts.pory"
-	jump_in_place_down
-# 25 "data/maps/SayerBlaxRoom/scripts.pory"
-	jump_in_place_down
-# 26 "data/maps/SayerBlaxRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 34 "data/maps/SayerBlaxRoom/scripts.pory"
-SayerBlaxRoom_OnFrame_Movement_2:
-# 35 "data/maps/SayerBlaxRoom/scripts.pory"
-	face_up
-# 36 "data/maps/SayerBlaxRoom/scripts.pory"
+# 27 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Movement_1:
+# 28 "data/maps/SayerBlaxRoom/scripts.pory"
+	emote_question_mark
+# 29 "data/maps/SayerBlaxRoom/scripts.pory"
+	jump_in_place_down
+# 29 "data/maps/SayerBlaxRoom/scripts.pory"
+	jump_in_place_down
+# 30 "data/maps/SayerBlaxRoom/scripts.pory"
 	delay_16
-# 37 "data/maps/SayerBlaxRoom/scripts.pory"
-	face_right
+	step_end
+
 # 38 "data/maps/SayerBlaxRoom/scripts.pory"
-	delay_16
+SayerBlaxRoom_OnFrame_Movement_2:
 # 39 "data/maps/SayerBlaxRoom/scripts.pory"
-	face_left
+	face_up
 # 40 "data/maps/SayerBlaxRoom/scripts.pory"
 	delay_16
+# 41 "data/maps/SayerBlaxRoom/scripts.pory"
+	face_right
+# 42 "data/maps/SayerBlaxRoom/scripts.pory"
+	delay_16
+# 43 "data/maps/SayerBlaxRoom/scripts.pory"
+	face_left
+# 44 "data/maps/SayerBlaxRoom/scripts.pory"
+	delay_16
 	step_end
 
-# 43 "data/maps/SayerBlaxRoom/scripts.pory"
+# 47 "data/maps/SayerBlaxRoom/scripts.pory"
 SayerBlaxRoom_OnFrame_Movement_3:
-# 44 "data/maps/SayerBlaxRoom/scripts.pory"
+# 48 "data/maps/SayerBlaxRoom/scripts.pory"
 	jump_2_right
-# 44 "data/maps/SayerBlaxRoom/scripts.pory"
+# 48 "data/maps/SayerBlaxRoom/scripts.pory"
 	jump_2_right
-# 45 "data/maps/SayerBlaxRoom/scripts.pory"
+# 49 "data/maps/SayerBlaxRoom/scripts.pory"
 	jump_right
 	step_end
 
-# 55 "data/maps/SayerBlaxRoom/scripts.pory"
+# 60 "data/maps/SayerBlaxRoom/scripts.pory"
 SayerBlaxRoom_OnFrame_Movement_4:
-# 56 "data/maps/SayerBlaxRoom/scripts.pory"
-	emote_x
-# 57 "data/maps/SayerBlaxRoom/scripts.pory"
-	lock_facing_direction
-# 58 "data/maps/SayerBlaxRoom/scripts.pory"
-	jump_2_left
-# 59 "data/maps/SayerBlaxRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
 # 61 "data/maps/SayerBlaxRoom/scripts.pory"
-SayerBlaxRoom_OnFrame_Movement_5:
-# 62 "data/maps/SayerBlaxRoom/scripts.pory"
 	emote_x
-# 63 "data/maps/SayerBlaxRoom/scripts.pory"
+# 62 "data/maps/SayerBlaxRoom/scripts.pory"
 	lock_facing_direction
+# 63 "data/maps/SayerBlaxRoom/scripts.pory"
+	jump_2_left
 # 64 "data/maps/SayerBlaxRoom/scripts.pory"
-	jump_2_up
-# 65 "data/maps/SayerBlaxRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 75 "data/maps/SayerBlaxRoom/scripts.pory"
+# 66 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Movement_5:
+# 67 "data/maps/SayerBlaxRoom/scripts.pory"
+	emote_x
+# 68 "data/maps/SayerBlaxRoom/scripts.pory"
+	lock_facing_direction
+# 69 "data/maps/SayerBlaxRoom/scripts.pory"
+	jump_2_up
+# 70 "data/maps/SayerBlaxRoom/scripts.pory"
+	unlock_facing_direction
+	step_end
+
+# 80 "data/maps/SayerBlaxRoom/scripts.pory"
 SayerBlaxRoom_OnFrame_Movement_6:
-# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+# 81 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_up
-# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+# 81 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_up
-# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+# 81 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_up
-# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+# 81 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_up
-# 76 "data/maps/SayerBlaxRoom/scripts.pory"
+# 81 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_up
-# 77 "data/maps/SayerBlaxRoom/scripts.pory"
+# 82 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_right
-# 77 "data/maps/SayerBlaxRoom/scripts.pory"
+# 82 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_right
-# 77 "data/maps/SayerBlaxRoom/scripts.pory"
+# 82 "data/maps/SayerBlaxRoom/scripts.pory"
 	walk_right
-# 78 "data/maps/SayerBlaxRoom/scripts.pory"
+# 83 "data/maps/SayerBlaxRoom/scripts.pory"
 	face_down
 	step_end
 
 SayerBlaxRoom_OnFrame_Text_0:
-# 15 "data/maps/SayerBlaxRoom/scripts.pory"
+# 16 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Fuaaah, ¡qué cansancio! Con lo que me\n"
-	.string "hacía falta descansar...\p"
-	.string "¿Ya es el día del aniversario?$"
+	.string "hacía falta descansar...$"
 
 SayerBlaxRoom_OnFrame_Text_1:
-# 28 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Tú quién eres?$"
+# 19 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "¿Ya es el día del aniversario?$"
 
 SayerBlaxRoom_OnFrame_Text_2:
 # 32 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "¿Tú quién eres?$"
+
+SayerBlaxRoom_OnFrame_Text_3:
+# 36 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "¿Cómo, que quieres combatir? Yo me\n"
 	.string "jubilé hace muchos años chaval.\p"
 	.string "Hemos pasado una pandemia incluso...\n"
 	.string "Pero si insistes... No creas que te lo\l"
 	.string "pondré fácil.$"
 
-SayerBlaxRoom_OnFrame_Text_3:
-# 42 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_4:
+# 46 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "¿Y ahora dónde se ha metido Sayer…? Se\n"
 	.string "supone nos tocaba combatir a los dos.$"
 
-SayerBlaxRoom_OnFrame_Text_4:
-# 47 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_5:
+# 52 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Welcome to the jungle!$"
 
-SayerBlaxRoom_OnFrame_Text_5:
-# 54 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_6:
+# 59 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
 
-SayerBlaxRoom_OnFrame_Text_6:
-# 54 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_7:
+# 59 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Pues si que la has liado.$"
 
-SayerBlaxRoom_OnFrame_Text_7:
-# 71 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_8:
+# 76 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Ha sido un combate espectacular.\n"
 	.string "Confirmamos que estoy más oxidado de\l"
 	.string "lo que pensaba.$"
 
-SayerBlaxRoom_OnFrame_Text_8:
-# 74 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_9:
+# 79 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Todavía te quedan muchos combates por\n"
 	.string "delante, pero aprovecha cada uno de\l"
 	.string "ellos para celebrar estos 20 años del\l"
@@ -248,7 +265,7 @@ SayerBlaxRoom_OnFrame_Text_8:
 	.string "Dicho esto... Me vuelvo a dormir. ¡Mucha\n"
 	.string "suerte!$"
 
-SayerBlaxRoom_OnFrame_Text_9:
-# 81 "data/maps/SayerBlaxRoom/scripts.pory"
+SayerBlaxRoom_OnFrame_Text_10:
+# 88 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Y recuerda: No la líes y si puedes, pues\n"
 	.string "si.$"

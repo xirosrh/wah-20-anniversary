@@ -5,14 +5,18 @@ mapscripts SayerBlaxRoom_MapScripts {
 }
 
 script SayerBlaxRoom_OnFrame {
-    lock
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(SpawnCameraObject)
     directcameramovementtopos(6,5)
     waitmovement(0)
+    delay(200)
+    setobjectmovementtype2(LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_FACE_DOWN)
+    turnobject(LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH)
+    delay(30)
+    msgbox(format("Fuaaah, ¡qué cansancio! Con lo que me hacía falta descansar..."), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft)
     waitmovement(0)
-    msgbox(format("Fuaaah, ¡qué cansancio! Con lo que me hacía falta descansar...\p¿Ya es el día del aniversario?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¿Ya es el día del aniversario?"), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         walk_left
         walk_down
@@ -44,6 +48,7 @@ script SayerBlaxRoom_OnFrame {
         jump_2_right * 2
         jump_right
     ))
+    turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Welcome to the jungle!"))
     special(RemoveCameraObject)
     turnobject(LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH)
@@ -77,7 +82,9 @@ script SayerBlaxRoom_OnFrame {
         walk_right * 3
         face_down
     ))
+    setobjectmovementtype2(LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_SLEEPING)
     applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_WalkRight2)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Y recuerda: No la líes y si puedes, pues si."), MSGBOX_AUTOCLOSE)
     setvar(VAR_SAYER_BLAX_ROOM_STATE, 1)
     release
