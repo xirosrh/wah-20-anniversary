@@ -5673,7 +5673,7 @@ bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Spr
 {
     ClearObjectEventMovement(objectEvent, sprite);
     sprite->sDirection = objectEvent->facingDirection;
-    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_SMOKING);
+    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_SMOKING_LOOP);
     objectEvent->singleMovementActive = FALSE;
     sprite->sTypeFuncId = 1;
     return TRUE;
@@ -5681,12 +5681,10 @@ bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Spr
 
 bool8 MovementType_SmokingLoop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    u8 direction = objectEvent->facingDirection;
-
-    if (direction != sprite->sDirection)
+     if (WaitForMovementDelay(sprite))
     {
-        sprite->sDirection = direction;
-        StartSpriteAnimInDirection(objectEvent, sprite, direction, ANIM_SMOKING);
+        sprite->sTypeFuncId = 0;
+        return TRUE;
     }
     return FALSE;
 }
