@@ -80,6 +80,10 @@
 #define FLDEFF_USE_ROCK_CLIMB            75
 #define FLDEFF_ROCK_CLIMB_DUST           76
 #define FLDEFF_SWEAT_DROP_ICON     77
+#define FLDEFF_THINKING_ICON       78
+#define FLDEFF_VERSUS_ICON         79
+#define FLDEFF_HAPPY_ICON          80
+#define FLDEFF_SLEEPING_ICON       81
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

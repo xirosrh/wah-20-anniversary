@@ -243,3 +243,26 @@ Common_Movement_SweatDropWithDelay48:
 	delay_16
 	delay_16
 	step_end
+
+Common_Movement_Thinking:
+	emote_thinking
+	step_end
+
+Common_Movement_Versus:
+	emote_versus
+	step_end
+
+Common_Movement_VersusWithDelay48:
+	emote_versus
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Happy:
+	emote_happy
+	step_end
+
+Common_Movement_Sleeping:
+	emote_sleeping
+	step_end
