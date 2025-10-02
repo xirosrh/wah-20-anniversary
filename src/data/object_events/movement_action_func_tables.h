@@ -1618,6 +1618,7 @@ u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprit
 
 u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteSleeping_Step0,
+    MovementAction_EmoteSleeping_Step1,
     MovementAction_Finish,
 };
 

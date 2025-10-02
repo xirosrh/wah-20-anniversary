@@ -441,6 +441,13 @@ u8 (*const gMovementTypeFuncs_WalkSlowlyInPlace[])(struct ObjectEvent *, struct 
     MovementType_MoveInPlace_Step1,
 };
 
+u8 (*const gMovementTypeFuncs_Sleeping[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementType_Sleeping_Step0,
+    MovementType_Sleeping_Step1,
+    MovementType_Sleeping_Step2,
+    MovementType_Sleeping_Step3
+};
+
 u8 (*const gMovementTypeFuncs_JogInPlace[])(struct ObjectEvent *, struct Sprite *) = {
     MovementType_JogInPlace_Step0,
     MovementType_MoveInPlace_Step1,

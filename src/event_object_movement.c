@@ -332,6 +332,7 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_SLEEPING]  = MovementType_Sleeping
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -461,6 +462,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
+    [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -5623,6 +5625,43 @@ bool8 MovementType_WalkSlowlyInPlace_Step0(struct ObjectEvent *objectEvent, stru
     ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkInPlaceSlowMovementAction(objectEvent->facingDirection));
     sprite->sTypeFuncId = 1;
     return TRUE;
+}
+
+movement_type_def(MovementType_Sleeping, gMovementTypeFuncs_Sleeping)
+
+bool8 MovementType_Sleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_Sleeping_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_EMOTE_SLEEPING);
+    sprite->sTypeFuncId = 2;
+    return TRUE;
+}
+
+bool8 MovementType_Sleeping_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        SetMovementDelay(sprite, 192);
+        objectEvent->singleMovementActive = FALSE;
+        sprite->sTypeFuncId = 3;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_Sleeping_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
 }
 
 movement_type_def(MovementType_JogInPlace, gMovementTypeFuncs_JogInPlace)
@@ -10855,11 +10894,19 @@ bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *objectEvent, struct Sp
 
 bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SLEEPING);
+    return MovementAction_EmoteSleeping_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
     FieldEffectStart(FLDEFF_SLEEPING_ICON);
+    sprite->data[2] = 1;
     sprite->sActionFuncId = 1;
     return TRUE;
 }
+
 
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {

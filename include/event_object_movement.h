@@ -286,6 +286,7 @@ void MovementType_WalkInPlace(struct Sprite *sprite);
 void MovementType_JogInPlace(struct Sprite *sprite);
 void MovementType_RunInPlace(struct Sprite *sprite);
 void MovementType_Invisible(struct Sprite *sprite);
+void MovementType_Sleeping(struct Sprite *);
 void MovementType_WalkSlowlyInPlace(struct Sprite *sprite);
 void MovementType_FollowPlayer(struct Sprite *sprite);
 u8 GetSlideMovementAction(u32);
@@ -457,6 +458,10 @@ u8 MovementType_Buried_Step0(struct ObjectEvent *objectEvent, struct Sprite *spr
 u8 MovementType_WalkInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_MoveInPlace_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_WalkSlowlyInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+u8 MovementType_Sleeping_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step3(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_JogInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_RunInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -487,6 +492,8 @@ bool8 MovementAction_EmoteThinking_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteVersus_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *, struct Sprite *);
+
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
 u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
