@@ -84,7 +84,8 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
 #define MOVEMENT_TYPE_SLEEPING                         0x52
-#define NUM_MOVEMENT_TYPES                             0x53
+#define MOVEMENT_TYPE_SMOKING_LOOP                     0x53
+#define NUM_MOVEMENT_TYPES                             0x54
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1
@@ -335,6 +336,7 @@
 #define ANIM_NURSE_BOW (ANIM_STD_COUNT + 0)
 #define ANIM_RAISE_HAND (ANIM_STD_COUNT + 0)
 #define ANIM_SLEEPING (ANIM_STD_COUNT + 0)
+#define ANIM_SMOKING (ANIM_STD_COUNT + 1)
 
 #define ANIM_FIELD_MOVE 0
 

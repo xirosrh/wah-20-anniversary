@@ -912,6 +912,19 @@ static const union AnimCmd sAnim_Sleeping[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_Smoking[] =
+{
+    ANIMCMD_FRAME(5, 16),
+    ANIMCMD_FRAME(6, 16),
+    ANIMCMD_FRAME(7, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(9, 24),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(7, 16),
+    ANIMCMD_FRAME(6, 16),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_RockBreak[] =
 {
     ANIMCMD_FRAME(0, 8),
@@ -1480,6 +1493,7 @@ static const union AnimCmd *const sAnimTable_StandardWithSleeping[] = {
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
     [ANIM_SLEEPING] = sAnim_Sleeping,
+    [ANIM_SMOKING] = sAnim_Smoking,
 };
 
 static const union AnimCmd *const sAnimTable_FieldMove[] = {
