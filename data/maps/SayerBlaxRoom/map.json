@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_SAYERBLAXROOM_BLAX",
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_BLAX",
       "x": 9,
       "y": 4,
       "elevation": 0,
