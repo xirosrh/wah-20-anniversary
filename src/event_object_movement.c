@@ -332,7 +332,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
-    [MOVEMENT_TYPE_SLEEPING]  = MovementType_Sleeping
+    [MOVEMENT_TYPE_SLEEPING]  = MovementType_Sleeping,
+    [MOVEMENT_TYPE_SMOKING_LOOP]  = MovementType_SmokingLoop
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -462,7 +463,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
-    [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH
+    [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
+    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -5662,6 +5664,14 @@ bool8 MovementType_Sleeping_Step3(struct ObjectEvent *objectEvent, struct Sprite
         sprite->sTypeFuncId = 0;
         return TRUE;
     }
+    return FALSE;
+}
+
+movement_type_def(MovementType_SmokingLoop, gMovementTypeFuncs_SmokingLoop)
+
+bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SMOKING_LOOP);
     return FALSE;
 }
 

@@ -809,7 +809,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_StandardWithSleeping,
+    .anims = sAnimTable_SmokingLoop,
     .images = sPicTable_Aguiar,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
