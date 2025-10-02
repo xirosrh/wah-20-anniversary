@@ -792,7 +792,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_StandardWithSleeping,
     .images = sPicTable_Blax,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
