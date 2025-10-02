@@ -2705,3 +2705,10 @@
 	applymovement \localId, \movements, \map
 	waitmovement 0
 	.endm
+
+
+	.macro setobjectmovementtype2 localId:req, movementType:req
+    setvar VAR_0x8005, \localId
+    setvar VAR_0x8006, \movementType
+    special SetObjectMovementType
+    .endm
