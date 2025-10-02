@@ -117,6 +117,18 @@ SayerBlaxRoom_OnFrame::
 	end
 
 
+SayerBlaxRoom_EventScript_Blax::
+# 98 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_EventScript_Blax_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
+SayerBlaxRoom_EventScript_Sayer::
+# 103 "data/maps/SayerBlaxRoom/scripts.pory"
+	msgbox SayerBlaxRoom_EventScript_Sayer_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
 # 20 "data/maps/SayerBlaxRoom/scripts.pory"
 SayerBlaxRoom_OnFrame_Movement_0:
 # 21 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -273,3 +285,14 @@ SayerBlaxRoom_OnFrame_Text_10:
 # 88 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Y recuerda: No la líes y si puedes, pues\n"
 	.string "si.$"
+
+SayerBlaxRoom_EventScript_Blax_Text_0:
+# 98 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "Zzz... ¡Ve, BLAxTOISE!\p"
+	.string "Zzz...$"
+
+SayerBlaxRoom_EventScript_Sayer_Text_0:
+# 103 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "No me puedo quejar la verdad, quedé\n"
+	.string "bastante contento con la batalla.\p"
+	.string "Avanza, fiera.$"

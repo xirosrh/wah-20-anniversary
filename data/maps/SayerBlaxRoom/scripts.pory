@@ -93,3 +93,13 @@ script SayerBlaxRoom_OnFrame {
     end
 
 }
+
+script SayerBlaxRoom_EventScript_Blax {
+    msgbox(format("Zzz... ¡Ve, BLAxTOISE!\pZzz..."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script SayerBlaxRoom_EventScript_Sayer {
+    msgbox(format("No me puedo quejar la verdad, quedé bastante contento con la batalla.\pAvanza, fiera."), MSGBOX_AUTOCLOSE)
+    end
+}
