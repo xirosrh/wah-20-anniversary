@@ -230,7 +230,7 @@ SayerBlaxRoom_OnFrame_Movement_6:
 SayerBlaxRoom_OnFrame_Text_0:
 # 16 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Fuaaah, ¡qué cansancio! Con lo que me\n"
-	.string "hacía falta descansar...$"
+	.string "hacía falta descansar…$"
 
 SayerBlaxRoom_OnFrame_Text_1:
 # 19 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -244,8 +244,8 @@ SayerBlaxRoom_OnFrame_Text_3:
 # 36 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "¿Cómo, que quieres combatir? Yo me\n"
 	.string "jubilé hace muchos años chaval.\p"
-	.string "Hemos pasado una pandemia incluso...\n"
-	.string "Pero si insistes... No creas que te lo\l"
+	.string "Hemos pasado una pandemia incluso…\n"
+	.string "Pero si insistes… No creas que te lo\l"
 	.string "pondré fácil.$"
 
 SayerBlaxRoom_OnFrame_Text_4:
@@ -278,7 +278,7 @@ SayerBlaxRoom_OnFrame_Text_9:
 	.string "ellos para celebrar estos 20 años del\l"
 	.string "mejor foro de ROM Hacking y fangaming\l"
 	.string "de Pokémon del mundo.\p"
-	.string "Dicho esto... Me vuelvo a dormir. ¡Mucha\n"
+	.string "Dicho esto… Me vuelvo a dormir. ¡Mucha\n"
 	.string "suerte!$"
 
 SayerBlaxRoom_OnFrame_Text_10:
@@ -288,8 +288,8 @@ SayerBlaxRoom_OnFrame_Text_10:
 
 SayerBlaxRoom_EventScript_Blax_Text_0:
 # 98 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Zzz... ¡Ve, BLAxTOISE!\p"
-	.string "Zzz...$"
+	.string "Zzz… ¡Ve, BLAxTOISE!\p"
+	.string "Zzz…$"
 
 SayerBlaxRoom_EventScript_Sayer_Text_0:
 # 103 "data/maps/SayerBlaxRoom/scripts.pory"
