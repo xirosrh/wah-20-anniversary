@@ -2,6 +2,11 @@ mapscripts AguiarRoom_MapScripts {}
 
 
 script AguiarRoom_EventScript_Aguiar {
+    if(flag(FLAG_DEFEATED_ADMIN_AGUIAR)){
+        msgbox(format("Aquí sigo, como siempre: tranquilo, fumando y esperando a ver quién aparece."), MSGBOX_NPC)
+        release
+        end
+    }
     lock
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_FACE_DOWN)
     faceplayer
@@ -22,7 +27,14 @@ script AguiarRoom_EventScript_Aguiar {
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)
     waitse
     msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE)
-    //TODO: Battle vs Aguiar
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
+    delay(10)
+    msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette)
+    delay(20)
+    msgbox(format("No está mal, no está nada mal. Ya puedes seguir avanzando."), MSGBOX_AUTOCLOSE)
+    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+    setflag(FLAG_DEFEATED_ADMIN_AGUIAR)
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_SMOKING_LOOP)
     release
     end

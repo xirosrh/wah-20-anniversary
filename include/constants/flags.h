@@ -46,7 +46,7 @@
 #define FLAG_DEFEATED_ADMIN_OMEGA    0x20 // Used WAH
 #define FLAG_DEFEATED_ADMIN_GOCE    0x21 // Used WAH
 #define FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX 0x22 // Used WAH
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_DEFEATED_ADMIN_AGUIAR    0x23 // Used WAH
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag

@@ -392,13 +392,12 @@ Poochyena
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MARCEL ===
-Name: MARCEL
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_ADMIN_AGUIAR_MAIN ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -410,12 +409,12 @@ Shiftry
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_ALBERTO ===
-Name: ALBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
+=== TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
 Gender: Male
-Music: Cool
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
