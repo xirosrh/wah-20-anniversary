@@ -1,1 +1,29 @@
 mapscripts AguiarRoom_MapScripts {}
+
+
+script AguiarRoom_EventScript_Aguiar {
+    lock
+    setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_FACE_DOWN)
+    faceplayer
+    msgbox(format("¡Pero mírate! Al final has llegado hasta aquí.\pY yo que pensaba que iba a pasarme el día tirado, con el cigarro y poco más…"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette)
+    delay(20)
+    msgbox(format("No esperaba visitas, pero oye, me viene de lujo: así me entretengo un rato."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)
+    waitse
+    msgbox(format("Aquí todos se lo toman tan en serio, como si esto fuese cuestión de vida o muerte.\pYo prefiero reírme, dar un par de caladas, y ver qué trae el que se planta delante."), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette)
+    delay(20)
+    msgbox(format("No te voy a dar discursos épicos ni consejos de abuelo, que para eso hay otros.\p
+                Si quieres pelear, perfecto. Si pierdo, pues nada, me enciendo otro.\p
+                Y si gano… bueno, tampoco me voy a hacer un póster con tu cara, ¿eh?"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)
+    waitse
+    msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE)
+    //TODO: Battle vs Aguiar
+    setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_SMOKING_LOOP)
+    release
+    end
+}

@@ -263,6 +263,17 @@ Common_Movement_Happy:
 	emote_happy
 	step_end
 
+Common_Movement_HappyWithDelay48:
+	emote_happy
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
 Common_Movement_Sleeping:
 	emote_sleeping
+	step_end
+
+Common_Movement_SmokeCigarette:
+	smoke_cigarette
 	step_end
