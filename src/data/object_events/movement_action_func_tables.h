@@ -1220,7 +1220,8 @@ u8 (*const gMovementActionFuncs_NurseJoyBowDown[])(struct ObjectEvent *, struct 
 
 u8 (*const gMovementActionFuncs_SmokeCigarette[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_SmokeCigarette_Step0,
-    MovementAction_Finish,
+    MovementAction_WaitSpriteAnim,
+    MovementAction_PauseSpriteAnim,
 };
 
 u8 (*const gMovementActionFuncs_EnableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *) = {

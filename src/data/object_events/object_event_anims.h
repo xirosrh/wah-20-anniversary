@@ -930,6 +930,17 @@ static const union AnimCmd sAnim_SmokingLoop[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_SmokeCigarette[] =
+{
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(5, 8),
+    ANIMCMD_FRAME(6, 8),
+    ANIMCMD_FRAME(7, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_FRAME(9, 8),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_RockBreak[] =
 {
     ANIMCMD_FRAME(0, 8),
@@ -1499,6 +1510,7 @@ static const union AnimCmd *const sAnimTable_StandardWithSleeping[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
     [ANIM_SLEEPING] = sAnim_Sleeping,
     [ANIM_SMOKING_LOOP] = sAnim_SmokingLoop,
+    [ANIM_SMOKE_CIGARETTE] = sAnim_SmokeCigarette,
 };
 
 static const union AnimCmd *const sAnimTable_FieldMove[] = {

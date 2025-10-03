@@ -8195,9 +8195,8 @@ bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, stru
 
 bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKING_LOOP);
-    objectEvent->singleMovementActive = FALSE;
-    return TRUE;
+    StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
+    return FALSE;
 }
 
 bool8 MovementAction_EnableJumpLandingGroundEffect_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
