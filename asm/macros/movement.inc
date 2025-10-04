@@ -173,6 +173,7 @@
         create_movement_action emote_thinking, MOVEMENT_ACTION_EMOTE_THINKING
         create_movement_action emote_versus, MOVEMENT_ACTION_EMOTE_VERSUS
         create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
+        create_movement_action emote_sad, MOVEMENT_ACTION_EMOTE_SAD
         create_movement_action emote_sleeping, MOVEMENT_ACTION_EMOTE_SLEEPING
         create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
 	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP

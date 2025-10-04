@@ -88,6 +88,7 @@ gFieldEffectScriptPointers::
         .4byte gFldEffScript_VersusIcon                @ FLDEFF_VERSUS_ICON
         .4byte gFldEffScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
         .4byte gFldEffScript_SleepingIcon              @ FLDEFF_SLEEPING_ICON
+        .4byte gFldEffScript_SadIcon                   @ FLDEFF_SAD_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -390,6 +391,10 @@ gFldEffScript_HappyIcon::
 
 gFldEffScript_SleepingIcon::
         field_eff_callnative FldEff_SleepingIcon
+        field_eff_end
+
+gFldEffScript_SadIcon::
+        field_eff_callnative FldEff_SadIcon
         field_eff_end
 
 gFieldEffectScript_TracksBug::
