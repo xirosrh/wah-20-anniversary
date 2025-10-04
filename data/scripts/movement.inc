@@ -85,6 +85,10 @@ Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
 	step_end
 
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
+	step_end
+
 @ End of follower-safe movements
 Common_Movement_FollowerSafeEnd::
 	step_end
@@ -233,6 +237,14 @@ Common_Movement_JumpInPlaceDown:
 	jump_in_place_down
 	step_end
 
+Common_Movement_JumpInPlaceLeft:
+	jump_in_place_left
+	step_end
+
+Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
 Common_Movement_SweatDrop:
 	emote_sweat_drop
 	step_end
@@ -277,3 +289,50 @@ Common_Movement_Sleeping:
 Common_Movement_SmokeCigarette:
 	smoke_cigarette
 	step_end
+
+Common_Movement_WalkLeftLockFacingDirection:
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkRightLockFacingDirection:
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkUpLockFacingDirection:
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkDownLockFacingDirection:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpDownLockFacingDirection:
+	lock_facing_direction
+	jump_down
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpUpLockFacingDirection:
+	lock_facing_direction
+	jump_up
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpDownFaceLeft:
+	jump_down
+	face_left
+	step_end
+
+Common_Movement_JumpDownFaceRight:
+	jump_down
+	face_right
+	step_end
+

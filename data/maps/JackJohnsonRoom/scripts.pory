@@ -1,1 +1,160 @@
-mapscripts JackJohnsonRoom_MapScripts {}
+mapscripts JackJohnsonRoom_MapScripts {    
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_JACK_JOHNSON_ROOM_STATE, 0: JackJohnsonRoom_OnFrame
+	]
+    MAP_SCRIPT_ON_TRANSITION: JackJohnsonRoom_OnTransition
+}
+
+script JackJohnsonRoom_OnTransition {
+    setflag(FLAG_JACKROOM_HIDE_POKEBALL1)
+    setflag(FLAG_JACKROOM_HIDE_POKEBALL2)
+    setflag(FLAG_JACKROOM_HIDE_POKEBALL3)
+    setflag(FLAG_JACKROOM_HIDE_POKEBALL4)
+    end
+}
+
+script JackJohnsonRoom_OnFrame {
+    special(SpawnCameraObject)
+    directcameramovementtopos(6,9)
+    waitmovement(0)
+    msgbox(format("¡Desde el principio! ¡Quiero que cada movimiento sea perfecto!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
+    delay(30)
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown)
+    applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkInPlaceDown)
+    applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkInPlaceDown)
+    applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("¡Empecemos!"), MSGBOX_AUTOCLOSE)
+    directcameramovementtopos(6,7)
+    waitmovement(0)
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_WalkRightLockFacingDirection)
+    waitmovement(0)
+    delay(10)
+    applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkDownLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_WalkDownLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkUpLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkUpLockFacingDirection)
+    waitmovement(0)
+    msgbox(format("¡Uno, dos… salto ya!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_FirstCombinationNpc1And3)
+    applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_FirstCombinationNpc1And3)
+    applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_FirstCombinationNpc2And4)
+    applymovement(LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_FirstCombinationNpc2And4)
+    waitmovement(0)
+    applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_JumpDownLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_JumpUpLockFacingDirection)
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_JumpInPlaceLeft)
+    applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_JumpInPlaceRight)
+    waitmovement(LOCALID_JACKROOM_NPC3)
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_JumpDownFaceLeft)
+    applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight)
+    msgbox(format("¡Giro! ¡Más energía, que parezca un huracán!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs)
+    applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_SecondCombinationNpcs)
+    applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_SecondCombinationNpcs)
+    applymovement(LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_SecondCombinationNpcs)
+    waitmovement(0)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    turnobject(LOCALID_JACKROOM_NPC1, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC2, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC3, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
+    release
+    playse(SE_PIN)
+    applymovement(LOCALID_JACKROOM_JACK, moves(
+        emote_happy
+        jump_in_place_up
+        delay_16 * 2
+    ))
+    msgbox(format("¡Perfecto! ¡Lo hemos clavado!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("¡Formación!"), MSGBOX_AUTOCLOSE)
+    lock
+    applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_FaceLeft)
+    applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkDown)
+    applymovement(LOCALID_JACKROOM_NPC4, moves(walk_fast_right * 6, face_down))
+    applymovement(LOCALID_JACKROOM_NPC2, moves(walk_up * 3, walk_fast_right * 6, face_down))
+    waitmovement(LOCALID_JACKROOM_NPC2)
+    msgbox(format("¡Ahora!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1)
+    applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_JumpRoundNpc3)
+    applymovement(LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_JumpRoundNpc4)
+    //applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_JumpRoundNpc2)
+    waitmovement(LOCALID_JACKROOM_NPC4)
+    //applymovement(LOCALID_JACKROOM_NPC1, moves(jump_up, fly_up, fly_down))
+    special(RemoveCameraObject)
+    setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
+    release 
+    end
+}
+
+movement JackJohnsonRoom_Movement_JumpRoundNpc1 {
+    walk_fast_left * 3
+    jump_in_place_left
+    walk_fast_left * 3
+    delay_16 * 2
+    walk_fast_up * 3
+}
+
+movement JackJohnsonRoom_Movement_JumpRoundNpc3 {
+    delay_16
+    walk_fast_down
+    walk_in_place_left
+    delay_16 * 4
+    walk_fast_left * 3
+    jump_left
+    walk_fast_left * 2
+    delay_16
+    walk_fast_up * 2
+}
+
+movement JackJohnsonRoom_Movement_JumpRoundNpc4 {
+    delay_16
+    walk_fast_down
+    delay_16 * 7
+    walk_fast_down
+    walk_in_place_left
+    delay_16 * 3
+    walk_fast_left * 2
+    jump_2_left
+    delay_16
+    walk_fast_left * 2
+    delay_16
+    walk_fast_up
+}
+
+
+movement JackJohnsonRoom_Movement_FirstCombinationNpc1And3 {
+    jump_in_place_right
+    delay_16
+    delay_16
+    jump_2_right
+    jump_2_right
+    face_left
+}
+
+movement JackJohnsonRoom_Movement_FirstCombinationNpc2And4 {
+    jump_in_place_left
+    delay_16
+    delay_16
+    jump_2_left
+    jump_2_left
+    face_right
+}
+
+movement JackJohnsonRoom_Movement_SecondCombinationNpcs {
+    jump_in_place_up_down * 2
+    jump_in_place_left_right * 2
+    jump_in_place_down_up * 2
+    jump_in_place_right_left * 2
+    jump_in_place_down
+}
