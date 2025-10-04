@@ -316,6 +316,10 @@ u8 (*const gMovementActionFuncs_Jump2Down[])(struct ObjectEvent *, struct Sprite
 u8 (*const gMovementActionFuncs_Jump2Up[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_Jump2Left[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_Jump2Right[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_Jump3Down[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_Jump3Up[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_Jump3Left[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_Jump3Right[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_Delay1[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_Delay2[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_Delay4[])(struct ObjectEvent *, struct Sprite *);
