@@ -272,6 +272,10 @@
 #define MOVEMENT_ACTION_EMOTE_HAPPY                     0xB5
 #define MOVEMENT_ACTION_EMOTE_SLEEPING                  0xB6
 #define MOVEMENT_ACTION_SMOKE_CIGARETTE                 0xB7
+#define MOVEMENT_ACTION_JUMP_3_DOWN                     0xB8
+#define MOVEMENT_ACTION_JUMP_3_UP                       0xB9
+#define MOVEMENT_ACTION_JUMP_3_LEFT                     0xBA
+#define MOVEMENT_ACTION_JUMP_3_RIGHT                    0xBB
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -371,5 +375,6 @@
 #define COPY_MOVE_JUMP2          8
 #define COPY_MOVE_EMPTY_1        9
 #define COPY_MOVE_EMPTY_2       10
+#define COPY_MOVE_JUMP3         11
 
 #endif // GUARD_CONSTANTS_EVENT_OBJECT_MOVEMENT_H

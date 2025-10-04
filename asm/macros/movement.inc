@@ -16,10 +16,14 @@
 	create_movement_action walk_up, MOVEMENT_ACTION_WALK_NORMAL_UP
 	create_movement_action walk_left, MOVEMENT_ACTION_WALK_NORMAL_LEFT
 	create_movement_action walk_right, MOVEMENT_ACTION_WALK_NORMAL_RIGHT
-	create_movement_action jump_2_down, MOVEMENT_ACTION_JUMP_2_DOWN
-	create_movement_action jump_2_up, MOVEMENT_ACTION_JUMP_2_UP
-	create_movement_action jump_2_left, MOVEMENT_ACTION_JUMP_2_LEFT
-	create_movement_action jump_2_right, MOVEMENT_ACTION_JUMP_2_RIGHT
+        create_movement_action jump_2_down, MOVEMENT_ACTION_JUMP_2_DOWN
+        create_movement_action jump_2_up, MOVEMENT_ACTION_JUMP_2_UP
+        create_movement_action jump_2_left, MOVEMENT_ACTION_JUMP_2_LEFT
+        create_movement_action jump_2_right, MOVEMENT_ACTION_JUMP_2_RIGHT
+        create_movement_action jump_3_down, MOVEMENT_ACTION_JUMP_3_DOWN
+        create_movement_action jump_3_up, MOVEMENT_ACTION_JUMP_3_UP
+        create_movement_action jump_3_left, MOVEMENT_ACTION_JUMP_3_LEFT
+        create_movement_action jump_3_right, MOVEMENT_ACTION_JUMP_3_RIGHT
 	create_movement_action delay_1, MOVEMENT_ACTION_DELAY_1
 	create_movement_action delay_2, MOVEMENT_ACTION_DELAY_2
 	create_movement_action delay_4, MOVEMENT_ACTION_DELAY_4
