@@ -243,6 +243,28 @@ script JackJohnsonRoom_OnFrame {
     waitmovement(0)
     special(RemoveCameraObject)
     msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."))
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, format("Has  tomado el mando, enhorabuena."))
+    setobjectxy(LOCALID_JACKROOM_NPC2, 3, 6)
+    setobjectxy(LOCALID_JACKROOM_NPC4, 5, 6)
+    setobjectxy(LOCALID_JACKROOM_NPC3, 7, 6)
+    setobjectxy(LOCALID_JACKROOM_NPC1, 9, 6)
+    setobjectxyperm(LOCALID_JACKROOM_NPC2, 3, 6)
+    setobjectxyperm(LOCALID_JACKROOM_NPC4, 5, 6)
+    setobjectxyperm(LOCALID_JACKROOM_NPC3, 7, 6)
+    setobjectxyperm(LOCALID_JACKROOM_NPC1, 9, 6)
+    delay(20)
+    msgbox(format("Magnífico… impecable. Cada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE)
+    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+    applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp4)
+    msgbox(format("Y ustedes… ¡a trabajar!"), MSGBOX_AUTOCLOSE)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    setobjectmovementtype2(LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    turnobject(LOCALID_JACKROOM_NPC1, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC2, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC3, DIR_SOUTH)
+    turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
     setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
     release 
     end
@@ -334,4 +356,35 @@ movement JackJohnsonRoom_Movement_SecondCombinationNpcs {
     jump_in_place_down_up * 2
     jump_in_place_right_left * 2
     jump_in_place_down
+}
+
+script JackJohnsonRoom_EventScript_Jack {
+    applymovement(LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2)
+    msgbox(format("¡Eso es! ¡Más rápido!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(20)
+    faceplayer
+    msgbox(format("¿Sigues ahí? Pues venga, no te quedes mirando…\l¡Súmate al ensayo!"), MSGBOX_AUTOCLOSE)
+    turnobject(LOCALID_JACKROOM_JACK, DIR_NORTH)
+    end
+}
+
+script JackJohnsonRoom_EventScript_NPC1 {
+    msgbox(format("¡Debemos ser los mejores!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script JackJohnsonRoom_EventScript_NPC2 {
+    msgbox(format("¡No puedo fallar de nuevo!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script JackJohnsonRoom_EventScript_NPC3 {
+    msgbox(format("¡No me distraigas!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script JackJohnsonRoom_EventScript_NPC4 {
+    msgbox(format("¡Quiero ir a dormir!"), MSGBOX_AUTOCLOSE)
+    end
 }

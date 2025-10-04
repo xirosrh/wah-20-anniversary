@@ -252,6 +252,15 @@ Common_Movement_JumpInPlaceRight:
 	jump_in_place_right
 	step_end
 
+Common_Movement_JumpInPlaceUp:
+	jump_in_place_up
+	step_end
+
+Common_Movement_JumpInPlaceUp2:
+	jump_in_place_up
+	jump_in_place_up
+	step_end
+
 Common_Movement_SweatDrop:
 	emote_sweat_drop
 	step_end
