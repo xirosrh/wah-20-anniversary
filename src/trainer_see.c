@@ -174,12 +174,12 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
         .size = sizeof(sEmotion_HappyGfx)
     },
     {
-        .data = sEmotion_SadGfx,
-        .size = sizeof(sEmotion_SadGfx)
-    },
-    {
         .data = sEmotion_SleepingGfx,
         .size = sizeof(sEmotion_SleepingGfx)
+    },
+    {
+        .data = sEmotion_SadGfx,
+        .size = sizeof(sEmotion_SadGfx)
     }
 };
 
