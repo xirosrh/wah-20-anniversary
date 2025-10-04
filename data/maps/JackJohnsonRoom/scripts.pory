@@ -88,8 +88,8 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1)
     applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_JumpRoundNpc3)
     applymovement(LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_JumpRoundNpc4)
-    //applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_JumpRoundNpc2)
-    waitmovement(LOCALID_JACKROOM_NPC4)
+    applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_JumpRoundNpc2)
+    waitmovement(LOCALID_JACKROOM_NPC2)
     //applymovement(LOCALID_JACKROOM_NPC1, moves(jump_up, fly_up, fly_down))
     special(RemoveCameraObject)
     setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
@@ -130,6 +130,21 @@ movement JackJohnsonRoom_Movement_JumpRoundNpc4 {
     walk_fast_left * 2
     delay_16
     walk_fast_up
+}
+
+movement JackJohnsonRoom_Movement_JumpRoundNpc2 {
+    delay_16 * 2
+    walk_fast_down
+    delay_16 * 12
+    walk_fast_down * 2
+    walk_in_place_left
+    delay_16 * 2
+    walk_fast_left * 2
+    jump_2_left
+    delay_16
+    walk_fast_left * 2
+    delay_16
+    walk_in_place_up
 }
 
 
