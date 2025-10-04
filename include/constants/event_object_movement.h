@@ -276,6 +276,7 @@
 #define MOVEMENT_ACTION_JUMP_3_UP                       0xB9
 #define MOVEMENT_ACTION_JUMP_3_LEFT                     0xBA
 #define MOVEMENT_ACTION_JUMP_3_RIGHT                    0xBB
+#define MOVEMENT_ACTION_EMOTE_SAD                       0xBC
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF

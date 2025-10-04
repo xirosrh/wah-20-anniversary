@@ -84,6 +84,7 @@
 #define FLDEFF_VERSUS_ICON         79
 #define FLDEFF_HAPPY_ICON          80
 #define FLDEFF_SLEEPING_ICON       81
+#define FLDEFF_SAD_ICON            82
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
