@@ -818,7 +818,7 @@ static const s16 sJumpDisplacements[] = {
     [JUMP_DISTANCE_IN_PLACE] = 0,
     [JUMP_DISTANCE_NORMAL] = 0,
     [JUMP_DISTANCE_FAR] = 1,
-    [JUMP_DISTANCE_FARTHER] = 1,
+    [JUMP_DISTANCE_FARTHER] = 2,
 };
 
 u8 (*const gMovementActionFuncs_Jump2Down[])(struct ObjectEvent *, struct Sprite *) = {
