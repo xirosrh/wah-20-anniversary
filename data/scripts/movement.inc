@@ -336,3 +336,8 @@ Common_Movement_JumpDownFaceRight:
 	face_right
 	step_end
 
+
+Common_Movement_WalkDiagSouthEast:
+	walk_diag_southeast
+	step_end
+
