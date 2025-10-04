@@ -224,7 +224,10 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp5)
     waitmovement(0)
     turnobject(LOCALID_JACKROOM_JACK, DIR_WEST)
-    msgbox(format("¿Qué estabas haciendo? Ya viste como es esto: una distracción y a volar."))
+    msgbox(format("¿Qué estabas haciendo? Ya viste como es esto: una distracción y a volar."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_JACKROOM_NPC2, Common_Movement_SadWithDelay48)
+    waitse
     applymovementandwait(LOCALID_JACKROOM_JACK, moves(
         face_up
         delay_16
