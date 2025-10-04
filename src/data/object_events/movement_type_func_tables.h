@@ -397,6 +397,7 @@ bool8 (*const gCopyPlayerMovementFuncs[])(struct ObjectEvent *, struct Sprite *,
     [COPY_MOVE_JUMP_IN_PLACE] = CopyablePlayerMovement_JumpInPlace,
     [COPY_MOVE_JUMP]          = CopyablePlayerMovement_Jump,
     [COPY_MOVE_JUMP2]         = CopyablePlayerMovement_Jump2,
+    [COPY_MOVE_JUMP3]         = CopyablePlayerMovement_Jump3,
     [COPY_MOVE_EMPTY_1]       = CopyablePlayerMovement_None,
     [COPY_MOVE_EMPTY_2]       = CopyablePlayerMovement_None,
 };
@@ -417,6 +418,7 @@ bool8 (*const gFollowPlayerMovementFuncs[])(struct ObjectEvent *, struct Sprite 
     [COPY_MOVE_JUMP_IN_PLACE] = FollowablePlayerMovement_JumpInPlace,
     [COPY_MOVE_JUMP] = FollowablePlayerMovement_GoSpeed4,
     [COPY_MOVE_JUMP2] = FollowablePlayerMovement_Step,
+    [COPY_MOVE_JUMP3] = FollowablePlayerMovement_Step,
     [COPY_MOVE_EMPTY_1] = FollowablePlayerMovement_Idle,
     [COPY_MOVE_EMPTY_2] = FollowablePlayerMovement_Idle,
 };
