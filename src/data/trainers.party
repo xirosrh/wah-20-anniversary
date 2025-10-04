@@ -456,12 +456,12 @@ Carvanha
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DECLAN ===
-Name: DECLAN
-Class: Swimmer M
-Pic: Swimmer M
+=== TRAINER_WAH_ADMIN_ANGEL_MAIN ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
 Gender: Male
-Music: Swimmer
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -469,10 +469,10 @@ Gyarados
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No

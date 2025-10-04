@@ -207,6 +207,11 @@ Common_Movement_WalkLeft::
     walk_left
     step_end
 
+Common_Movement_WalkLeft2:
+    walk_left
+	walk_left
+    step_end
+
 Common_Movement_WalkUpFast::
     walk_fast_up
     step_end

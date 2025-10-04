@@ -1,1 +1,74 @@
 mapscripts AngelRoom_MapScripts {}
+
+
+script AngelRoom_EventScript_Angel {
+    if(flag(FLAG_DEFEATED_ADMIN_ANGEL)){
+        msgbox(format("¡Me alegro de verte de nuevo! Espero que sigas siendo tan fuerte como la última vez."), MSGBOX_NPC)
+        release
+        end
+    }
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(LOCALID_ANGELROOM_ANGEL, moves(
+        emote_double_exclamation_mark
+        lock_facing_direction
+        jump_in_place_down
+        unlock_facing_direction
+    ))
+    msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Ha pasado mucho desde la última vez, ¿verdad?\pEspero que este reencuentro... ¡SEA MEMORABLE!"), MSGBOX_AUTOCLOSE)
+    delay(10)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_HappyWithDelay48)
+    waitse
+    delay(30)
+    getobjectfacingdirection(LOCALID_PLAYER, VAR_TEMP_0)
+    switch(var(VAR_TEMP_0)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_WalkUp2)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_WalkDown2)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_ANGELROOM_ANGEL,Common_Movement_WalkLeft2)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_WalkRight2)
+            break
+    }
+    msgbox(format("Veamos tu potencial."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    switch(var(VAR_TEMP_0)) {
+    case DIR_NORTH:
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_down, delay_16 * 2))
+        break
+    case DIR_SOUTH:
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL,moves(emote_versus, jump_2_up, delay_16 * 2))
+        break
+    case DIR_WEST:
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_right, delay_16 * 2))
+        break
+    case DIR_EAST:
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_left, delay_16 * 2))
+        break
+    }
+    waitse
+    msgbox(format("¡Ven! ¡Atácame con todo lo que tengas!"))
+
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
+    delay(20)
+    playse(SE_PIN)
+    applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_ExclamationMarkWithDelay48) //TODO Xiros Emote surprise
+    msgbox(format("¡Increíble! ¡El poder de la nueva generación es asombroso!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("No esperaba perder y aún así, no me dejaste opciones.\pDejo en tus manos el legado de toda mi generación. ¡Espero de verdad que volvamos a encontrarnos algún día y poder volver a pelear juntos!"), MSGBOX_AUTOCLOSE)
+    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+    setflag(FLAG_DEFEATED_ADMIN_ANGEL)
+    release
+    end
+}

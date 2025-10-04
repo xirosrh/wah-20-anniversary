@@ -266,6 +266,7 @@ script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_JACKROOM_NPC3, DIR_SOUTH)
     turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
     setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
+    setflag(FLAG_DEFEATED_ADMIN_JACK_JOHNSON)
     release 
     end
 }
