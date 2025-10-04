@@ -34,6 +34,7 @@
 #include "menu.h"
 #include "money.h"
 #include "move.h"
+#include "movement_path_planning.h"
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -3228,4 +3229,35 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         StopScript(ctx);
+}
+
+
+bool8 ScrCmd_MoveObjectToPos(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u16 posX = VarGet(ScriptReadHalfword(ctx));
+    u16 posY = VarGet(ScriptReadHalfword(ctx));
+    u16 facing = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    MovementPathPlanning_MoveObjectToPos(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, posX,posY,facing);
+    // sMovingNpcId = localId;
+    return FALSE;
+}
+
+bool8 ScrCmd_MoveObjectToPos_at(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u16 posX = VarGet(ScriptReadHalfword(ctx));	
+    u16 posY = VarGet(ScriptReadHalfword(ctx));
+    u16 facing = VarGet(ScriptReadHalfword(ctx));
+    u8 mapGroup = ScriptReadByte(ctx);
+    u8 mapNum = ScriptReadByte(ctx);
+    
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    MovementPathPlanning_MoveObjectToPos(localId, mapNum, mapGroup, posX,posY,facing);
+    // sMovingNpcId = localId;
+    return FALSE;
 }

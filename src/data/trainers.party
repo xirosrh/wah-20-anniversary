@@ -81,6 +81,66 @@ Gender: Male
 Music: Male
 Double Battle: No
 
+=== TRAINER_WAH_ADMIN_OMEGA_MAIN ===
+Name: Omega
+Class: WAH Admin
+Pic: Cheve
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer
+
+Pidgey
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pidgey
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Zubat
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_WAH_ADMIN_GOCE_MAIN ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Aerodactyl
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Poochyena
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 Name: Cheve
 Class: WAH Admin
@@ -209,126 +269,120 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Rest  
 - Sleep Talk  
 
-
-=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_BLAX_MAIN ===
+Name: Blax
+Class: WAH Admin
+Pic: Blax
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+BLAxTOISE (Blastoise) (M) @ Blastoisinite  
+Ability: Torrent
+Level: 35  
+Tera Type: Water  
+EVs: 176 HP / 252 Atk / 80 Spe  
+Adamant Nature  
+- Shell Smash  
+- Flip Turn  
+- Earthquake  
+- Liquidation  
 
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SiriusBLAx (Dragapult) @ Roseli Berry  
+Ability: Cursed Body
+Level: 35    
+Shiny: Yes  
+Tera Type: Dragon  
+EVs: 232 HP / 252 Atk / 24 Spe  
+Adamant Nature  
+- Dragon Darts  
+- Phantom Force  
+- Outrage  
+- Acrobatics  
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+BLAxThePatcher (Aron) @ Shell Bell  
+Ability: Sturdy  
+Level: 10  
+Shiny: Yes  
+Tera Type: Steel  
+EVs: 236 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Endeavor
+
+=== TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE ===
+Name: Blax
+Class: WAH Admin
+Pic: Blax
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rey BLAxtasar (Reuniclus) @ Twisted Spoon  
+Ability: Regenerator
+Level: 35    
+Shiny: Yes  
+Tera Type: Psychic  
+EVs: 120 HP / 252 Def / 136 SpA  
+Modest Nature  
+IVs: 0 Atk  
+- Stored Power  
+- Calm Mind  
+- Light Screen  
+- Substitute  
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Toise D. BLAx (Iron Valiant) @ Booster Energy  
+Ability: Quark Drive
+Level: 35    
+Tera Type: Fairy
+EVs: 252 SpA / 124 SpD / 132 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Aura Sphere  
+- Dazzling Gleam  
+- Psychic  
+- Shadow Ball  
+
+BLAx-Atlas (Zacian) @ Rusted Sword  
+Ability: Intrepid Sword
+Level: 35  
+Shiny: Yes  
+Tera Type: Fairy  
+EVs: 4 HP / 252 Atk / 252 Spe  
+Adamant Nature  
+- Play Rough  
+- Iron Head  
+- Protect  
+- Psychic Fangs
+
+=== TRAINER_WAH_ADMIN_SAYER_MAIN ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Poochyena
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Carvanha
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Zubat
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GABRIELLE_1 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Skitty
+Swampert @Swampertite
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Poochyena
+Metagross
+Level: 26
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tyranitar
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lotad
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seedot
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Taillow
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -338,13 +392,12 @@ Poochyena
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MARCEL ===
-Name: MARCEL
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_ADMIN_AGUIAR_MAIN ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -356,12 +409,12 @@ Shiftry
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_ALBERTO ===
-Name: ALBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
+=== TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
 Gender: Male
-Music: Cool
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -373,12 +426,12 @@ Xatu
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ED ===
-Name: ED
-Class: Collector
-Pic: Collector
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
+Name: Jack
+Class: WAH Admin
+Pic: Jack Johnson
 Gender: Male
-Music: Suspicious
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -390,7 +443,7 @@ Seviper
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt F
@@ -403,12 +456,12 @@ Carvanha
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DECLAN ===
-Name: DECLAN
-Class: Swimmer M
-Pic: Swimmer M
+=== TRAINER_WAH_ADMIN_ANGEL_MAIN ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
 Gender: Male
-Music: Swimmer
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -416,10 +469,10 @@ Gyarados
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No

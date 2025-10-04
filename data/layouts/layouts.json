@@ -4090,6 +4090,136 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/CheveRoom/border.bin",
       "blockdata_filepath": "data/layouts/CheveRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_OMEGA_ROOM",
+      "name": "OmegaRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/OmegaRoom/border.bin",
+      "blockdata_filepath": "data/layouts/OmegaRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCAREX_OZUMAS_ROOM",
+      "name": "ScarexOzumasRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/ScarexOzumasRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ScarexOzumasRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_DRIVE_KATHERINE_ROOM",
+      "name": "DriveKatherineRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/DriveKatherineRoom/border.bin",
+      "blockdata_filepath": "data/layouts/DriveKatherineRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_JACK_JOHNSON_ROOM",
+      "name": "JackJohnsonRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/JackJohnsonRoom/border.bin",
+      "blockdata_filepath": "data/layouts/JackJohnsonRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_TOKYN_WAR_ROOM",
+      "name": "TokynWarRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/TokynWarRoom/border.bin",
+      "blockdata_filepath": "data/layouts/TokynWarRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_GOCE_ROOM",
+      "name": "GoceRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/GoceRoom/border.bin",
+      "blockdata_filepath": "data/layouts/GoceRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_COSARARA_ROOM",
+      "name": "CosararaRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/CosararaRoom/border.bin",
+      "blockdata_filepath": "data/layouts/CosararaRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_AGUIAR_ROOM",
+      "name": "AguiarRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/AguiarRoom/border.bin",
+      "blockdata_filepath": "data/layouts/AguiarRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAV_ZERO_ROOM",
+      "name": "DavZeroRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/DavZeroRoom/border.bin",
+      "blockdata_filepath": "data/layouts/DavZeroRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_REY_BOO_ROOM",
+      "name": "ReyBooRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/ReyBooRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ReyBooRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_ANGEL_ROOM",
+      "name": "AngelRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/AngelRoom/border.bin",
+      "blockdata_filepath": "data/layouts/AngelRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAVI4315ROOM",
+      "name": "Javi4315Room_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/Javi4315Room/border.bin",
+      "blockdata_filepath": "data/layouts/Javi4315Room/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAYER_BLAX_ROOM",
+      "name": "SayerBlaxRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
+      "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
     }
   ]
 }

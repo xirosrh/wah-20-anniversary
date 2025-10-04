@@ -286,10 +286,13 @@ void MovementType_WalkInPlace(struct Sprite *sprite);
 void MovementType_JogInPlace(struct Sprite *sprite);
 void MovementType_RunInPlace(struct Sprite *sprite);
 void MovementType_Invisible(struct Sprite *sprite);
+void MovementType_Sleeping(struct Sprite *);
+void MovementType_SmokingLoop(struct Sprite *sprite);
 void MovementType_WalkSlowlyInPlace(struct Sprite *sprite);
 void MovementType_FollowPlayer(struct Sprite *sprite);
 u8 GetSlideMovementAction(u32);
 u8 GetJump2MovementAction(u32);
+u8 GetJump3MovementAction(u32);
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
 u8 CreateCopySpriteAt(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
 bool8 IsElevationMismatchAt(u8, s16, s16);
@@ -452,11 +455,18 @@ bool8 FollowablePlayerMovement_JumpInPlace(struct ObjectEvent *objectEvent, stru
 bool8 FollowablePlayerMovement_GoSpeed4(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8, bool8 tileCallback(u8));
 bool8 FollowablePlayerMovement_Jump(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8, bool8 tileCallback(u8));
 bool8 CopyablePlayerMovement_Jump2(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8, bool8 tileCallback(u8));
+bool8 CopyablePlayerMovement_Jump3(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8, bool8 tileCallback(u8));
 u8 MovementType_CopyPlayerInGrass_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Buried_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_WalkInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_MoveInPlace_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_WalkSlowlyInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+u8 MovementType_Sleeping_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_Sleeping_Step3(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_SmokingLoop_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_SmokingLoop_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_JogInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_RunInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -482,6 +492,16 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteSweatDrop_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteThinking_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteVersus_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteSad_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *, struct Sprite *);
+
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
+
+u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

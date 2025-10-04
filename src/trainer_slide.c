@@ -56,9 +56,20 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Cookie, excelente trabajo."),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.")
+        },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!"),
+        },
+        [TRAINER_WAH_ADMIN_BLAX_MAIN] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo."),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("-.-' Menuda suerte el colega."),
         },
     },
 };

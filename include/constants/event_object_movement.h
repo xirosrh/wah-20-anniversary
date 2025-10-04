@@ -83,7 +83,9 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT        0x4F
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
-#define NUM_MOVEMENT_TYPES                             0x52
+#define MOVEMENT_TYPE_SLEEPING                         0x52
+#define MOVEMENT_TYPE_SMOKING_LOOP                     0x53
+#define NUM_MOVEMENT_TYPES                             0x54
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1
@@ -264,6 +266,17 @@
 #define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xAF
 #define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xB0
 #define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xB1
+#define MOVEMENT_ACTION_EMOTE_SWEAT_DROP                0xB2
+#define MOVEMENT_ACTION_EMOTE_THINKING                  0xB3
+#define MOVEMENT_ACTION_EMOTE_VERSUS                    0xB4
+#define MOVEMENT_ACTION_EMOTE_HAPPY                     0xB5
+#define MOVEMENT_ACTION_EMOTE_SLEEPING                  0xB6
+#define MOVEMENT_ACTION_SMOKE_CIGARETTE                 0xB7
+#define MOVEMENT_ACTION_JUMP_3_DOWN                     0xB8
+#define MOVEMENT_ACTION_JUMP_3_UP                       0xB9
+#define MOVEMENT_ACTION_JUMP_3_LEFT                     0xBA
+#define MOVEMENT_ACTION_JUMP_3_RIGHT                    0xBB
+#define MOVEMENT_ACTION_EMOTE_SAD                       0xBC
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -328,6 +341,9 @@
 
 #define ANIM_NURSE_BOW (ANIM_STD_COUNT + 0)
 #define ANIM_RAISE_HAND (ANIM_STD_COUNT + 0)
+#define ANIM_SLEEPING         (ANIM_STD_COUNT + 0)
+#define ANIM_SMOKING_LOOP     (ANIM_STD_COUNT + 1)
+#define ANIM_SMOKE_CIGARETTE  (ANIM_STD_COUNT + 2)
 
 #define ANIM_FIELD_MOVE 0
 
@@ -360,5 +376,6 @@
 #define COPY_MOVE_JUMP2          8
 #define COPY_MOVE_EMPTY_1        9
 #define COPY_MOVE_EMPTY_2       10
+#define COPY_MOVE_JUMP3         11
 
 #endif // GUARD_CONSTANTS_EVENT_OBJECT_MOVEMENT_H

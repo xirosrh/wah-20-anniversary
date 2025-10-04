@@ -83,6 +83,7 @@ enum {
     JUMP_DISTANCE_IN_PLACE,
     JUMP_DISTANCE_NORMAL,
     JUMP_DISTANCE_FAR,
+    JUMP_DISTANCE_FARTHER,
 };
 
 // Used for storing conditional emotes
@@ -201,6 +202,7 @@ static void FollowerSetGraphics(struct ObjectEvent *objEvent, u32 species, bool3
 static void ObjectEventSetGraphics(struct ObjectEvent *, const struct ObjectEventGraphicsInfo *);
 static void SpriteCB_VirtualObject(struct Sprite *);
 static void DoShadowFieldEffect(struct ObjectEvent *);
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *, s16, s16);
 static void SetJumpSpriteData(struct Sprite *, u8, u8, u8);
 static void SetWalkSlowSpriteData(struct Sprite *, u8);
 static bool8 UpdateWalkSlowAnim(struct Sprite *);
@@ -331,6 +333,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_SLEEPING] = MovementType_Sleeping,
+    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -460,6 +464,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
+    [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
+    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -506,6 +512,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
+    {gObjectEventPal_Aguiar,                OBJ_EVENT_PAL_TAG_AGUIAR},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -818,6 +826,13 @@ const u8 gJump2MovementActions[] = {
     MOVEMENT_ACTION_JUMP_2_UP,
     MOVEMENT_ACTION_JUMP_2_LEFT,
     MOVEMENT_ACTION_JUMP_2_RIGHT,
+};
+const u8 gJump3MovementActions[] = {
+    MOVEMENT_ACTION_JUMP_3_DOWN,
+    MOVEMENT_ACTION_JUMP_3_DOWN,
+    MOVEMENT_ACTION_JUMP_3_UP,
+    MOVEMENT_ACTION_JUMP_3_LEFT,
+    MOVEMENT_ACTION_JUMP_3_RIGHT,
 };
 const u8 gJumpInPlaceMovementActions[] = {
     MOVEMENT_ACTION_JUMP_IN_PLACE_DOWN,
@@ -5140,6 +5155,27 @@ bool8 CopyablePlayerMovement_Jump2(struct ObjectEvent *objectEvent, struct Sprit
     return TRUE;
 }
 
+bool8 CopyablePlayerMovement_Jump3(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 playerDirection, bool8 tileCallback(u8))
+{
+    u32 direction;
+    s16 x;
+    s16 y;
+
+    direction = playerDirection;
+    direction = GetCopyDirection(gInitialMovementTypeFacingDirections[objectEvent->movementType], objectEvent->directionSequenceIndex, direction);
+    x = objectEvent->currentCoords.x;
+    y = objectEvent->currentCoords.y;
+    MoveCoordsInDirection(direction, &x, &y, 3, 3);
+    ObjectEventSetSingleMovement(objectEvent, sprite, GetJump3MovementAction(direction));
+
+    if (GetCollisionAtCoords(objectEvent, x, y, direction) || (tileCallback != NULL && !tileCallback(MapGridGetMetatileBehaviorAt(x, y))))
+        ObjectEventSetSingleMovement(objectEvent, sprite, GetFaceDirectionMovementAction(direction));
+
+    objectEvent->singleMovementActive = TRUE;
+    sprite->sTypeFuncId = 2;
+    return TRUE;
+}
+
 static bool32 EndFollowerTransformEffect(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (!sprite)
@@ -5621,6 +5657,65 @@ bool8 MovementType_WalkSlowlyInPlace_Step0(struct ObjectEvent *objectEvent, stru
     ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkInPlaceSlowMovementAction(objectEvent->facingDirection));
     sprite->sTypeFuncId = 1;
     return TRUE;
+}
+
+movement_type_def(MovementType_Sleeping, gMovementTypeFuncs_Sleeping)
+
+bool8 MovementType_Sleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_Sleeping_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_EMOTE_SLEEPING);
+    sprite->sTypeFuncId = 2;
+    return TRUE;
+}
+
+bool8 MovementType_Sleeping_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        SetMovementDelay(sprite, 192);
+        objectEvent->singleMovementActive = FALSE;
+        sprite->sTypeFuncId = 3;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_Sleeping_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+movement_type_def(MovementType_SmokingLoop, gMovementTypeFuncs_SmokingLoop)
+
+bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sDirection = objectEvent->facingDirection;
+    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_SMOKING_LOOP);
+    objectEvent->singleMovementActive = FALSE;
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_SmokingLoop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+     if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
 }
 
 movement_type_def(MovementType_JogInPlace, gMovementTypeFuncs_JogInPlace)
@@ -6256,6 +6351,7 @@ static const u8 sActionIdToCopyableMovement[] = {
     [MOVEMENT_ACTION_FACE_DOWN ... MOVEMENT_ACTION_FACE_RIGHT] = COPY_MOVE_FACE,
     [MOVEMENT_ACTION_WALK_SLOW_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT] = COPY_MOVE_WALK,
     [MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT] = COPY_MOVE_JUMP2,
+    [MOVEMENT_ACTION_JUMP_3_DOWN ... MOVEMENT_ACTION_JUMP_3_RIGHT] = COPY_MOVE_JUMP3,
     [MOVEMENT_ACTION_WALK_FAST_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT] = COPY_MOVE_WALK,
     [MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN ... MOVEMENT_ACTION_PLAYER_RUN_RIGHT] = COPY_MOVE_WALK,
     // Not a typo; follower needs to take an action with a duration == JUMP's,
@@ -6386,6 +6482,7 @@ dirn_to_anim(GetWalkFasterMovementAction, gWalkFasterMovementActions);
 dirn_to_anim(GetSlideMovementAction, gSlideMovementActions);
 dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
 dirn_to_anim(GetJump2MovementAction, gJump2MovementActions);
+dirn_to_anim(GetJump3MovementAction, gJump3MovementActions);
 dirn_to_anim(GetJumpInPlaceMovementAction, gJumpInPlaceMovementActions);
 dirn_to_anim(GetJumpInPlaceTurnAroundMovementAction, gJumpInPlaceTurnAroundMovementActions);
 dirn_to_anim(GetJumpMovementAction, gJumpMovementActions);
@@ -7032,6 +7129,74 @@ bool8 MovementAction_Jump2Right_Step0(struct ObjectEvent *objectEvent, struct Sp
 }
 
 bool8 MovementAction_Jump2Right_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (DoJumpAnim(objectEvent, sprite))
+    {
+        objectEvent->noShadow = FALSE;
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_Jump3Down_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitJumpRegular(objectEvent, sprite, DIR_SOUTH, JUMP_DISTANCE_FARTHER, JUMP_TYPE_HIGH);
+    return MovementAction_Jump3Down_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_Jump3Down_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (DoJumpAnim(objectEvent, sprite))
+    {
+        objectEvent->noShadow = FALSE;
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_Jump3Up_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitJumpRegular(objectEvent, sprite, DIR_NORTH, JUMP_DISTANCE_FARTHER, JUMP_TYPE_HIGH);
+    return MovementAction_Jump3Up_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_Jump3Up_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (DoJumpAnim(objectEvent, sprite))
+    {
+        objectEvent->noShadow = FALSE;
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_Jump3Left_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitJumpRegular(objectEvent, sprite, DIR_WEST, JUMP_DISTANCE_FARTHER, JUMP_TYPE_HIGH);
+    return MovementAction_Jump3Left_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_Jump3Left_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (DoJumpAnim(objectEvent, sprite))
+    {
+        objectEvent->noShadow = FALSE;
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_Jump3Right_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitJumpRegular(objectEvent, sprite, DIR_EAST, JUMP_DISTANCE_FARTHER, JUMP_TYPE_HIGH);
+    return MovementAction_Jump3Right_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_Jump3Right_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (DoJumpAnim(objectEvent, sprite))
     {
@@ -8124,6 +8289,12 @@ bool8 MovementAction_FaceOriginalDirection_Step0(struct ObjectEvent *objectEvent
 bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_NURSE_BOW);
+    return FALSE;
+}
+
+bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
     return FALSE;
 }
 
@@ -10287,12 +10458,14 @@ static u8 DoJumpSpriteMovement(struct Sprite *sprite)
         [JUMP_DISTANCE_IN_PLACE] = 16,
         [JUMP_DISTANCE_NORMAL] = 16,
         [JUMP_DISTANCE_FAR] = 32,
+        [JUMP_DISTANCE_FARTHER] = 64,
     };
     u8 distanceToShift[] =
     {
         [JUMP_DISTANCE_IN_PLACE] = 0,
         [JUMP_DISTANCE_NORMAL] = 0,
         [JUMP_DISTANCE_FAR] = 1,
+        [JUMP_DISTANCE_FARTHER] = 2,
     };
     u8 result = 0;
 
@@ -10336,11 +10509,13 @@ static u8 DoJumpSpecialSpriteMovement(struct Sprite *sprite)
         [JUMP_DISTANCE_IN_PLACE] = 32,
         [JUMP_DISTANCE_NORMAL] = 32,
         [JUMP_DISTANCE_FAR] = 64,
+        [JUMP_DISTANCE_FARTHER] = 128,
     };
     u8 distanceToShift[] = {
         [JUMP_DISTANCE_IN_PLACE] = 1,
         [JUMP_DISTANCE_NORMAL] = 1,
         [JUMP_DISTANCE_FAR] = 2,
+        [JUMP_DISTANCE_FARTHER] = 3,
     };
     u8 result = 0;
 
@@ -10819,6 +10994,62 @@ bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *objectEvent, struct Sprite
     return TRUE;
 }
 
+bool8 MovementAction_EmoteSweatDrop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SWEAT_DROP_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteThinking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_THINKING_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteVersus_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_VERSUS_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_HAPPY_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteSad_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SAD_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SLEEPING);
+    return MovementAction_EmoteSleeping_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SLEEPING_ICON);
+    sprite->data[2] = 1;
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
@@ -11137,4 +11368,51 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
         return TRUE;
     }
     return FALSE;
+}
+
+
+u8 CheckCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir, u8 currentElevation)
+{
+    u8 direction = dir;
+    if (MapGridGetCollisionAt(x, y) || GetMapBorderIdAt(x, y) == CONNECTION_INVALID || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction))
+        return COLLISION_IMPASSABLE;
+    else if (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction))
+        return COLLISION_IMPASSABLE;
+    else if (IsElevationMismatchAt(currentElevation, x, y))
+        return COLLISION_ELEVATION_MISMATCH;
+    else if (DoesObjectCollideWithObjectAtZ(objectEvent, x, y))
+        return COLLISION_OBJECT_EVENT;
+    return COLLISION_NONE;
+}
+
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *objectEvent, s16 x, s16 y)
+{
+    u8 i;
+    struct ObjectEvent *curObject;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        curObject = &gObjectEvents[i];
+        if (curObject->active && curObject != objectEvent)
+        {
+            if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+
+void SetObjectMovementType(void)
+{
+    struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalId(gSpecialVar_0x8005)];
+    u8 movementType = gSpecialVar_0x8006;
+    
+    objectEvent->movementType = movementType;
+    objectEvent->directionSequenceIndex = 0;
+    objectEvent->playerCopyableMovement = 0;
+    gSprites[objectEvent->spriteId].callback = sMovementTypeCallbacks[movementType];
+    gSprites[objectEvent->spriteId].data[1] = 0;
 }

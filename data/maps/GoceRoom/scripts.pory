@@ -1,0 +1,28 @@
+mapscripts GoceRoom_MapScripts {}
+
+
+script GoceRoom_EventScript_Goce {
+    if(flag(FLAG_DEFEATED_ADMIN_GOCE)){
+        msgbox(format("Ya puedes avanzar al siguiente desafío.\pTodavía queda mucho por recorrer."), MSGBOX_NPC)
+        release
+        end
+    }
+    else {
+          lock
+        faceplayer
+        msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."))
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, format("Increíble como han evolucionado en estos últimos 20 años..."))
+        delay(10)
+        msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgulloso/a."), MSGBOX_AUTOCLOSE) //TODO Xiros
+        playse(SE_PIN)
+        applymovement(LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48)
+        waitmovement(0)
+        waitse
+        //TODO Xiros niño/a
+        msgbox(format("Eh, ¿así que no sabes quién soy? Me conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\pIgual, lo que importa no es mi nombre, sino que lo que comenzó siga vivo.\pTú acabas de demostrarme que lo está, niño(a).\pPuedes continuar."), MSGBOX_AUTOCLOSE)
+        call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+        setflag(FLAG_DEFEATED_ADMIN_GOCE)
+        release
+    }
+    end
+}

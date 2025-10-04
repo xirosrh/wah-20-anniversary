@@ -16,10 +16,14 @@
 	create_movement_action walk_up, MOVEMENT_ACTION_WALK_NORMAL_UP
 	create_movement_action walk_left, MOVEMENT_ACTION_WALK_NORMAL_LEFT
 	create_movement_action walk_right, MOVEMENT_ACTION_WALK_NORMAL_RIGHT
-	create_movement_action jump_2_down, MOVEMENT_ACTION_JUMP_2_DOWN
-	create_movement_action jump_2_up, MOVEMENT_ACTION_JUMP_2_UP
-	create_movement_action jump_2_left, MOVEMENT_ACTION_JUMP_2_LEFT
-	create_movement_action jump_2_right, MOVEMENT_ACTION_JUMP_2_RIGHT
+        create_movement_action jump_2_down, MOVEMENT_ACTION_JUMP_2_DOWN
+        create_movement_action jump_2_up, MOVEMENT_ACTION_JUMP_2_UP
+        create_movement_action jump_2_left, MOVEMENT_ACTION_JUMP_2_LEFT
+        create_movement_action jump_2_right, MOVEMENT_ACTION_JUMP_2_RIGHT
+        create_movement_action jump_3_down, MOVEMENT_ACTION_JUMP_3_DOWN
+        create_movement_action jump_3_up, MOVEMENT_ACTION_JUMP_3_UP
+        create_movement_action jump_3_left, MOVEMENT_ACTION_JUMP_3_LEFT
+        create_movement_action jump_3_right, MOVEMENT_ACTION_JUMP_3_RIGHT
 	create_movement_action delay_1, MOVEMENT_ACTION_DELAY_1
 	create_movement_action delay_2, MOVEMENT_ACTION_DELAY_2
 	create_movement_action delay_4, MOVEMENT_ACTION_DELAY_4
@@ -82,9 +86,10 @@
 	create_movement_action jump_in_place_up_down, MOVEMENT_ACTION_JUMP_IN_PLACE_UP_DOWN
 	create_movement_action jump_in_place_left_right, MOVEMENT_ACTION_JUMP_IN_PLACE_LEFT_RIGHT
 	create_movement_action jump_in_place_right_left, MOVEMENT_ACTION_JUMP_IN_PLACE_RIGHT_LEFT
-	create_movement_action face_original_direction, MOVEMENT_ACTION_FACE_ORIGINAL_DIRECTION
-	create_movement_action nurse_joy_bow, MOVEMENT_ACTION_NURSE_JOY_BOW_DOWN
-	create_movement_action enable_jump_landing_ground_effect, MOVEMENT_ACTION_ENABLE_JUMP_LANDING_GROUND_EFFECT
+        create_movement_action face_original_direction, MOVEMENT_ACTION_FACE_ORIGINAL_DIRECTION
+        create_movement_action nurse_joy_bow, MOVEMENT_ACTION_NURSE_JOY_BOW_DOWN
+        create_movement_action smoke_cigarette, MOVEMENT_ACTION_SMOKE_CIGARETTE
+        create_movement_action enable_jump_landing_ground_effect, MOVEMENT_ACTION_ENABLE_JUMP_LANDING_GROUND_EFFECT
 	create_movement_action disable_jump_landing_ground_effect, MOVEMENT_ACTION_DISABLE_JUMP_LANDING_GROUND_EFFECT
 	create_movement_action disable_anim, MOVEMENT_ACTION_DISABLE_ANIMATION
 	create_movement_action restore_anim, MOVEMENT_ACTION_RESTORE_ANIMATION
@@ -162,9 +167,15 @@
 	create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
 	create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
 	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
-	create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
-	create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
-	create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
+        create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
+        create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
+        create_movement_action emote_sweat_drop, MOVEMENT_ACTION_EMOTE_SWEAT_DROP
+        create_movement_action emote_thinking, MOVEMENT_ACTION_EMOTE_THINKING
+        create_movement_action emote_versus, MOVEMENT_ACTION_EMOTE_VERSUS
+        create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
+        create_movement_action emote_sad, MOVEMENT_ACTION_EMOTE_SAD
+        create_movement_action emote_sleeping, MOVEMENT_ACTION_EMOTE_SLEEPING
+        create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
 	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
 	create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
 	create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT

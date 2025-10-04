@@ -816,6 +816,17 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
         SetFollowerNPCData(FNPC_DATA_DELAYED_STATE, MOVEMENT_ACTION_JUMP_2_DOWN);
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
 
+    case MOVEMENT_ACTION_JUMP_3_DOWN ... MOVEMENT_ACTION_JUMP_3_RIGHT:
+        // Long ledge jump.
+        if (delayedState == MOVEMENT_ACTION_JUMP_3_DOWN)
+            return (MOVEMENT_ACTION_JUMP_3_DOWN + (direction - 1));
+
+        if (delayedState == MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_DOWN)
+            return (MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_DOWN + (direction - 1));
+
+        SetFollowerNPCData(FNPC_DATA_DELAYED_STATE, MOVEMENT_ACTION_JUMP_3_DOWN);
+        RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
+
     case MOVEMENT_ACTION_WALK_FAST_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT:
         // Handle ice tile (some walking animation).
         if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
@@ -1151,6 +1162,7 @@ void NPCFollow(struct ObjectEvent *npc, u32 state, bool32 ignoreScriptActive)
     switch (newState) 
     {
     case MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT:
+    case MOVEMENT_ACTION_JUMP_3_DOWN ... MOVEMENT_ACTION_JUMP_3_RIGHT:
     case MOVEMENT_ACTION_JUMP_DOWN ... MOVEMENT_ACTION_JUMP_RIGHT:
     case MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_RIGHT:
         // Synchronize movements on stairs and ledges.

@@ -9,6 +9,27 @@ Common_Movement_ExclamationMark:
 	emote_exclamation_mark
 	step_end
 
+Common_Movement_ExclamationMarkWithDelay48:
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_DoubleExclamationMarkWithDelay48:
+	emote_double_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_QuestionMarkWithDelay48:
+	emote_question_mark
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
 Common_Movement_Delay48:
 	delay_16
 	delay_16
@@ -71,14 +92,29 @@ Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
 	step_end
 
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
+	step_end
+
 @ End of follower-safe movements
 Common_Movement_FollowerSafeEnd::
 	step_end
 
-Common_Movement_WalkUp6:
+Common_Movement_Delay32:
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_WalkUp::
+	walk_up
+	step_end
+
+Common_Movement_WalkUp2::
 	walk_up
 	walk_up
-	walk_up
+	step_end
+
+Common_Movement_WalkUp3::
 	walk_up
 	walk_up
 	walk_up
@@ -91,17 +127,19 @@ Common_Movement_WalkUp4:
 	walk_up
 	step_end
 
-Common_Movement_Delay32:
-	delay_16
-	delay_16
-	step_end
-
-Common_Movement_WalkUp::
+Common_Movement_WalkUp5:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_up
 	step_end
 
-@ Unused
-Common_Movement_WalkUp2::
+Common_Movement_WalkUp6:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	step_end
@@ -127,12 +165,51 @@ Common_Movement_WalkDown::
     walk_down
     step_end
 
+Common_Movement_WalkDown2::
+    walk_down
+	walk_down
+    step_end
+
+Common_Movement_WalkDown4::
+    walk_down
+	walk_down
+	walk_down
+	walk_down
+    step_end
+
+Common_Movement_WalkDown5::
+    walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+    step_end
+
+Common_Movement_WalkDown6::
+    walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+    step_end
+
 Common_Movement_WalkRight::
     walk_right
     step_end
 
+Common_Movement_WalkRight2:
+	walk_right
+	walk_right
+	step_end
+
 Common_Movement_WalkLeft::
     walk_left
+    step_end
+
+Common_Movement_WalkLeft2:
+    walk_left
+	walk_left
     step_end
 
 Common_Movement_WalkUpFast::
@@ -166,3 +243,133 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+
+Common_Movement_JumpInPlaceDown:
+	jump_in_place_down
+	step_end
+
+Common_Movement_JumpInPlaceLeft:
+	jump_in_place_left
+	step_end
+
+Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceUp:
+	jump_in_place_up
+	step_end
+
+Common_Movement_JumpInPlaceUp2:
+	jump_in_place_up
+	jump_in_place_up
+	step_end
+
+Common_Movement_SweatDrop:
+	emote_sweat_drop
+	step_end
+
+Common_Movement_SweatDropWithDelay48:
+	emote_sweat_drop
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Thinking:
+	emote_thinking
+	step_end
+
+Common_Movement_Versus:
+	emote_versus
+	step_end
+
+Common_Movement_VersusWithDelay48:
+	emote_versus
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Happy:
+        emote_happy
+        step_end
+
+Common_Movement_HappyWithDelay48:
+        emote_happy
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Sad:
+        emote_sad
+        step_end
+
+Common_Movement_SadWithDelay48:
+        emote_sad
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Sleeping:
+        emote_sleeping
+        step_end
+
+Common_Movement_SmokeCigarette:
+	smoke_cigarette
+	step_end
+
+Common_Movement_WalkLeftLockFacingDirection:
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkRightLockFacingDirection:
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkUpLockFacingDirection:
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	step_end
+
+Common_Movement_WalkDownLockFacingDirection:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpDownLockFacingDirection:
+	lock_facing_direction
+	jump_down
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpUpLockFacingDirection:
+	lock_facing_direction
+	jump_up
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpDownFaceLeft:
+	jump_down
+	face_left
+	step_end
+
+Common_Movement_JumpDownFaceRight:
+	jump_down
+	face_right
+	step_end
+
+
+Common_Movement_WalkDiagSouthEast:
+	walk_diag_southeast
+	step_end
+

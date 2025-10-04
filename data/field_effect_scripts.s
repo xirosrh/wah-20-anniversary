@@ -83,6 +83,12 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
+        .4byte gFldEffScript_SweatDropIcon             @ FLDEFF_SWEAT_DROP_ICON
+        .4byte gFldEffScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
+        .4byte gFldEffScript_VersusIcon                @ FLDEFF_VERSUS_ICON
+        .4byte gFldEffScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
+        .4byte gFldEffScript_SleepingIcon              @ FLDEFF_SLEEPING_ICON
+        .4byte gFldEffScript_SadIcon                   @ FLDEFF_SAD_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -366,6 +372,30 @@ gFldEffScript_XIcon::
 gFldEffScript_DoubleExclMarkIcon::
 	field_eff_callnative FldEff_DoubleExclMarkIcon
 	field_eff_end
+
+gFldEffScript_SweatDropIcon::
+        field_eff_callnative FldEff_SweatDropIcon
+        field_eff_end
+
+gFldEffScript_ThinkingIcon::
+        field_eff_callnative FldEff_ThinkingIcon
+        field_eff_end
+
+gFldEffScript_VersusIcon::
+        field_eff_callnative FldEff_VersusIcon
+        field_eff_end
+
+gFldEffScript_HappyIcon::
+        field_eff_callnative FldEff_HappyIcon
+        field_eff_end
+
+gFldEffScript_SleepingIcon::
+        field_eff_callnative FldEff_SleepingIcon
+        field_eff_end
+
+gFldEffScript_SadIcon::
+        field_eff_callnative FldEff_SadIcon
+        field_eff_end
 
 gFieldEffectScript_TracksBug::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug

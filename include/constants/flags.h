@@ -43,12 +43,12 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define FLAG_DEFEATED_ADMIN_OMEGA    0x20 // Used WAH
+#define FLAG_DEFEATED_ADMIN_GOCE    0x21 // Used WAH
+#define FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX 0x22 // Used WAH
+#define FLAG_DEFEATED_ADMIN_AGUIAR    0x23 // Used WAH
+#define FLAG_DEFEATED_ADMIN_JACK_JOHNSON    0x24 // Used WAH
+#define FLAG_DEFEATED_ADMIN_ANGEL    0x25 // Used WAH
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
@@ -84,13 +84,13 @@
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_JACKROOM_HIDE_ELECTRODE    0x49 // Used WAH
+#define FLAG_JACKROOM_HIDE_SPOINK_LEFT    0x4A // Used WAH
+#define FLAG_JACKROOM_HIDE_SPOINK_RIGHT    0x4B // Used WAH
+#define FLAG_JACKROOM_HIDE_NPC1_BALL    0x4C // Used WAH
+#define FLAG_JACKROOM_HIDE_NPC3_BALL    0x4D // Used WAH
+#define FLAG_JACKROOM_HIDE_NPC4_BALL    0x4E // Used WAH
+#define FLAG_UNUSED_0x04F    0x4F // Unused flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
