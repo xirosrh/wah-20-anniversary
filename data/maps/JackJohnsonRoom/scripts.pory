@@ -6,10 +6,9 @@ mapscripts JackJohnsonRoom_MapScripts {
 }
 
 script JackJohnsonRoom_OnTransition {
-    setflag(FLAG_JACKROOM_HIDE_POKEBALL1)
-    setflag(FLAG_JACKROOM_HIDE_POKEBALL2)
-    setflag(FLAG_JACKROOM_HIDE_POKEBALL3)
-    setflag(FLAG_JACKROOM_HIDE_POKEBALL4)
+    setflag(FLAG_JACKROOM_HIDE_NPC1_BALL)
+    setflag(FLAG_JACKROOM_HIDE_NPC3_BALL)
+    setflag(FLAG_JACKROOM_HIDE_NPC4_BALL)
     setflag(FLAG_JACKROOM_HIDE_SPOINK_LEFT)
     setflag(FLAG_JACKROOM_HIDE_SPOINK_RIGHT)
     setflag(FLAG_JACKROOM_HIDE_ELECTRODE)
@@ -17,6 +16,7 @@ script JackJohnsonRoom_OnTransition {
 }
 
 script JackJohnsonRoom_OnFrame {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
     special(SpawnCameraObject)
     directcameramovementtopos(6,9)
     waitmovement(0)
@@ -106,47 +106,140 @@ script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_JACKROOM_NPC2, DIR_SOUTH)
     turnobject(LOCALID_JACKROOM_NPC3, DIR_SOUTH)
     turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
-    clearflag(FLAG_JACKROOM_HIDE_POKEBALL3)
-    clearflag(FLAG_JACKROOM_HIDE_POKEBALL4)
-    addobject(LOCALID_JACKROOM_BALL3)
-    addobject(LOCALID_JACKROOM_BALL4)
-    showobjectat(LOCALID_JACKROOM_BALL3, MAP_JACK_JOHNSON_ROOM)
-    showobjectat(LOCALID_JACKROOM_BALL4, MAP_JACK_JOHNSON_ROOM)
-    applymovement(LOCALID_JACKROOM_BALL3, Common_Movement_WalkDiagSouthEast)
-    applymovement(LOCALID_JACKROOM_BALL4, Common_Movement_WalkDiagSouthEast)
+    clearflag(FLAG_JACKROOM_HIDE_NPC3_BALL)
+    clearflag(FLAG_JACKROOM_HIDE_NPC4_BALL)
+    addobject(LOCALID_JACKROOM_NPC3_BALL)
+    addobject(LOCALID_JACKROOM_NPC4_BALL)
+    showobjectat(LOCALID_JACKROOM_NPC3_BALL, MAP_JACK_JOHNSON_ROOM)
+    showobjectat(LOCALID_JACKROOM_NPC4_BALL, MAP_JACK_JOHNSON_ROOM)
+    applymovement(LOCALID_JACKROOM_NPC3_BALL, Common_Movement_WalkDiagSouthEast)
+    applymovement(LOCALID_JACKROOM_NPC4_BALL, Common_Movement_WalkDiagSouthEast)
     waitmovement(0)
 	playse(SE_BALL_OPEN)
-	fadescreenswapbuffers(FADE_TO_WHITE)
-    removeobject(LOCALID_JACKROOM_BALL3)
-    removeobject(LOCALID_JACKROOM_BALL4)
+	fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_JACKROOM_NPC3_BALL)
+    removeobject(LOCALID_JACKROOM_NPC4_BALL)
     clearflag(FLAG_JACKROOM_HIDE_SPOINK_LEFT)
     clearflag(FLAG_JACKROOM_HIDE_SPOINK_RIGHT)
     addobject(LOCALID_JACKROOM_SPOINK_LEFT)
     addobject(LOCALID_JACKROOM_SPOINK_RIGHT)
-    fadescreenswapbuffers(FADE_FROM_WHITE)
+    fadescreen(FADE_FROM_WHITE)
     applymovement(LOCALID_JACKROOM_SPOINK_LEFT, JackJohnsonRoom_Movement_SpoinkHighJump)
     applymovement(LOCALID_JACKROOM_SPOINK_RIGHT, JackJohnsonRoom_Movement_SpoinkHighJump)
     waitmovement(0)
-    //TODO Xiros
-    fadescreenswapbuffers(FADE_TO_WHITE)
+    fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_JACKROOM_SPOINK_LEFT)
+    removeobject(LOCALID_JACKROOM_SPOINK_RIGHT)
+    fadescreen(FADE_FROM_WHITE)
+    applymovement(LOCALID_JACKROOM_NPC1, moves(
+        lock_facing_direction
+        walk_fast_left * 3
+        unlock_facing_direction))
+    applymovement(LOCALID_JACKROOM_NPC2, moves(
+        lock_facing_direction
+        face_left
+        walk_fast_down
+        walk_fast_right
+        unlock_facing_direction))
+    applymovement(LOCALID_JACKROOM_NPC3, moves(
+        walk_fast_down * 2
+        face_left
+        lock_facing_direction
+        walk_fast_right * 2
+        unlock_facing_direction))
+    applymovement(LOCALID_JACKROOM_NPC4, moves(
+        walk_fast_down * 2
+        face_right
+        lock_facing_direction
+        walk_fast_left * 2
+        unlock_facing_direction))
+    waitmovement(LOCALID_JACKROOM_NPC4)
+    clearflag(FLAG_JACKROOM_HIDE_NPC1_BALL)
+    addobject(LOCALID_JACKROOM_NPC1_BALL)
+    showobjectat(LOCALID_JACKROOM_NPC1_BALL, MAP_JACK_JOHNSON_ROOM)
+    applymovement(LOCALID_JACKROOM_NPC1_BALL, Common_Movement_WalkDiagSouthEast)
+    waitmovement(0)
+	playse(SE_BALL_OPEN)
+	fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_JACKROOM_NPC1_BALL)
     clearflag(FLAG_JACKROOM_HIDE_ELECTRODE)
     addobject(LOCALID_JACKROOM_ELECTRODE)
-    fadescreenswapbuffers(FADE_FROM_WHITE)
+    fadescreen(FADE_FROM_WHITE)
+    msgbox(format("¡Preparados para la detonación elegante!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_JACKROOM_NPC1, moves(
+        lock_facing_direction
+        walk_up * 2
+        unlock_facing_direction 
+    ))
+    applymovement(LOCALID_JACKROOM_NPC4, moves(
+        lock_facing_direction
+        walk_left * 2
+        unlock_facing_direction 
+    ))
+    applymovement(LOCALID_JACKROOM_NPC3, moves(
+        lock_facing_direction
+        walk_right * 2
+        unlock_facing_direction 
+    ))
+    applymovement(LOCALID_JACKROOM_JACK, moves(
+        lock_facing_direction
+        walk_down * 2
+        unlock_facing_direction
+    ))
+    waitmovement(0)
+    //TODO Xiros: Electrode start shining
+    delay(20)
+    setweather(WEATHER_NONE)
+    doweather
+    setvar(VAR_RESULT, 2)
     playse(SE_ORB)
     special(DoOrbEffect)
-
     setvar(VAR_0x8004, 1)  // vertical pan
     setvar(VAR_0x8005, 1)  // horizontal pan
     setvar(VAR_0x8006, 8)  // num shakes
     setvar(VAR_0x8007, 5)  // shake delay
     special(ShakeCamera)
     waitstate
-
+    applymovement(LOCALID_JACKROOM_NPC2, moves(
+        face_right
+        lock_facing_direction
+        jump_3_left
+        unlock_facing_direction
+    ))
+    waitmovement(0)
     delay(30)
-    
     special(FadeOutOrbEffect)
+    fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_JACKROOM_ELECTRODE)
     waitstate
+    fadescreen(FADE_FROM_WHITE)
+    getobjectxy(LOCALID_JACKROOM_JACK, CURRENT_POSITION, VAR_TEMP_C, VAR_TEMP_D)
+    directcameramovementtoposwithvars(VAR_TEMP_C, VAR_TEMP_D)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¡Alto!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    applymovement(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp5)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp5)
+    waitmovement(0)
+    turnobject(LOCALID_JACKROOM_JACK, DIR_WEST)
+    msgbox(format("¿Qué estabas haciendo? Ya viste como es esto: una distracción y a volar."))
+    applymovementandwait(LOCALID_JACKROOM_JACK, moves(
+        face_up
+        delay_16
+        face_right)
+    )
+    msgbox(format("Estuvo cerca… muy cerca, pero hasta que salga impecable, no descansaremos."))
+    turnobject(LOCALID_JACKROOM_JACK, DIR_SOUTH)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
+    msgbox(format("¿Y tú? ¿Qué haces ahí parado?"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_CAMERA, moves(walk_down * 8))
+    applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 7, delay_16))
+    waitmovement(0)
     special(RemoveCameraObject)
+    msgbox("Si no vas a unirte al ensayo… voy a tener que retarte a un combate.")
     setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
     release 
     end
