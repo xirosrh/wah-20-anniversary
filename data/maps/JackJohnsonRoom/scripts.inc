@@ -887,14 +887,10 @@ JackJohnsonRoom_OnFrame_Movement_17:
 	walk_down
 # 238 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 238 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_down
 	step_end
 
 # 239 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_18:
-# 239 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_down
 # 239 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
 # 239 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -966,4 +962,5 @@ JackJohnsonRoom_OnFrame_Text_11:
 
 JackJohnsonRoom_OnFrame_Text_12:
 # 242 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Si no vas a unirte al ensayo… voy a tener que retarte a un combate.$"
+	.string "Si no vas a unirte al ensayo… voy a\n"
+	.string "tener que retarte a un combate.$"

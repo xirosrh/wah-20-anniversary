@@ -235,11 +235,11 @@ script JackJohnsonRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
     msgbox(format("¿Y tú? ¿Qué haces ahí parado?"), MSGBOX_AUTOCLOSE)
-    applymovement(LOCALID_CAMERA, moves(walk_down * 8))
-    applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 7, delay_16))
+    applymovement(LOCALID_CAMERA, moves(walk_down * 7))
+    applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 6, delay_16))
     waitmovement(0)
     special(RemoveCameraObject)
-    msgbox("Si no vas a unirte al ensayo… voy a tener que retarte a un combate.")
+    msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."))
     setvar(VAR_JACK_JOHNSON_ROOM_STATE, 1)
     release 
     end
