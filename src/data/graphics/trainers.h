@@ -337,6 +337,18 @@ const u16 gTrainerPalette_War[] = INCBIN_U16("graphics/trainers/palettes/admins/
 const u32 gTrainerFrontPic_Sergio[] = INCBIN_U32("graphics/trainers/front_pics/admins/sergio.4bpp.smol");
 const u16 gTrainerPalette_Sergio[] = INCBIN_U16("graphics/trainers/palettes/admins/sergio.gbapal");
 
+const u32 gTrainerFrontPic_Omega[] = INCBIN_U32("graphics/trainers/front_pics/admins/omega.4bpp.smol");
+const u16 gTrainerPalette_Omega[] = INCBIN_U16("graphics/trainers/palettes/admins/omega.gbapal");
+
+const u32 gTrainerFrontPic_Drive[] = INCBIN_U32("graphics/trainers/front_pics/admins/drive.4bpp.smol");
+const u16 gTrainerPalette_Drive[] = INCBIN_U16("graphics/trainers/palettes/admins/drive.gbapal");
+
+const u32 gTrainerFrontPic_Boo[] = INCBIN_U32("graphics/trainers/front_pics/admins/boo.4bpp.smol");
+const u16 gTrainerPalette_Boo[] = INCBIN_U16("graphics/trainers/palettes/admins/boo.gbapal");
+
+const u32 gTrainerFrontPic_Katherine[] = INCBIN_U32("graphics/trainers/front_pics/admins/katherine.4bpp.smol");
+const u16 gTrainerPalette_Katherine[] = INCBIN_U16("graphics/trainers/palettes/admins/katherine.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -477,6 +489,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_JACK_JOHNSON, gTrainerFrontPic_JackJohnson, gTrainerPalette_JackJohnson),
     TRAINER_SPRITE(TRAINER_PIC_WAR, gTrainerFrontPic_War, gTrainerPalette_War),
     TRAINER_SPRITE(TRAINER_PIC_SERGIO, gTrainerFrontPic_Sergio, gTrainerPalette_Sergio),
+    TRAINER_SPRITE(TRAINER_PIC_OMEGA, gTrainerFrontPic_Omega, gTrainerPalette_Omega),
+    TRAINER_SPRITE(TRAINER_PIC_DRIVE, gTrainerFrontPic_Drive, gTrainerPalette_Drive),
+    TRAINER_SPRITE(TRAINER_PIC_BOO, gTrainerFrontPic_Boo, gTrainerPalette_Boo),
+    TRAINER_SPRITE(TRAINER_PIC_KATHERINE, gTrainerFrontPic_Katherine, gTrainerPalette_Katherine),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
