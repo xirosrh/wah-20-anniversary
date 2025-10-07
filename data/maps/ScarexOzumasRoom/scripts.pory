@@ -1,1 +1,38 @@
-mapscripts ScarexOzumasRoom_MapScripts {}
+mapscripts ScarexOzumasRoom_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ScarexOzumasRoom_OnTransition
+}
+
+script ScarexOzumasRoom_OnTransition {
+}
+
+script ScarexOzumasRoom_EventScript_EnterRoom {
+    lock
+    special(SpawnCameraObject)
+    directcameramovementtopos(6,5)
+    waitmovement(0)
+    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    delay(20)
+    showobjectat(LOCALID_SCAREXOZUROOM_OZUMAS, MAP_SCAREX_OZUMAS_ROOM)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_WalkDown)
+    delay(20)
+    call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+        fly_up
+        set_visible
+        fly_down
+        walk_in_place_down
+        walk_in_place_right
+        walk_in_place_left
+        walk_in_place_up
+        walk_in_place_down
+    ))
+
+}
+
+script ScarexOzumasRoom_EventScript_Ozumas {
+    end
+}
+
+script ScarexOzumasRoom_EventScript_Scarex {
+    end
+}
