@@ -945,7 +945,7 @@ static const union AnimCmd sAnim_SmokeCigarette[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_StandardFallDown[] UNUSED =
+static const union AnimCmd sAnim_StandardFallDown[] =
 {
     ANIMCMD_FRAME(8, 16),
     ANIMCMD_JUMP(0),
@@ -1164,6 +1164,7 @@ static const union AnimCmd *const sAnimTable_QuintyPlump[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_QuintyPlumpGoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_QuintyPlumpGoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_QuintyPlumpGoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd *const sAnimTable_Standard[] = {
@@ -1187,6 +1188,7 @@ static const union AnimCmd *const sAnimTable_Standard[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd *const sAnimTable_StandardWithFall[] UNUSED = {
@@ -1239,6 +1241,7 @@ const union AnimCmd *const sAnimTable_Following[] = {
     [ANIM_EXIT_POKEBALL_FAST_NORTH] = sAnim_ExitPokeballFastNorth,
     [ANIM_EXIT_POKEBALL_FAST_WEST] = sAnim_ExitPokeballFastWest,
     [ANIM_EXIT_POKEBALL_FAST_EAST] = sAnim_ExitPokeballFastEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 // Like the above, but has separate frames for facing right
@@ -1267,6 +1270,7 @@ const union AnimCmd *const sAnimTable_Following_Asym[] = {
     [ANIM_EXIT_POKEBALL_FAST_NORTH] = sAnim_ExitPokeballFastNorth,
     [ANIM_EXIT_POKEBALL_FAST_WEST] = sAnim_ExitPokeballFastWest,
     [ANIM_EXIT_POKEBALL_FAST_EAST] = sAnim_ExitPokeballFastEast_Asym,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd *const sAnimTable_HoOh[] = {
@@ -1290,6 +1294,7 @@ static const union AnimCmd *const sAnimTable_HoOh[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 // The movements for going up use the animations for going right instead.
@@ -1314,6 +1319,7 @@ static const union AnimCmd *const sAnimTable_GroudonSide[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestEast,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd sAnim_RayquazaCoiledAwake[] =
@@ -1398,6 +1404,7 @@ static const union AnimCmd *const sAnimTable_Rayquaza[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_RayquazaFlyUp,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_RayquazaCoiledMouthOpen,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_RayquazaNormal,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
@@ -1421,6 +1428,7 @@ static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
     [ANIM_RUN_SOUTH] = sAnim_RunSouth,
     [ANIM_RUN_NORTH] = sAnim_RunNorth,
     [ANIM_RUN_WEST] = sAnim_RunWest,
@@ -1468,6 +1476,7 @@ static const union AnimCmd *const sAnimTable_AcroBike[] = {
     [ANIM_MOVING_WHEELIE_NORTH] = sAnim_MovingWheelieNorth,
     [ANIM_MOVING_WHEELIE_WEST] = sAnim_MovingWheelieWest,
     [ANIM_MOVING_WHEELIE_EAST] = sAnim_MovingWheelieEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
 
 static const union AnimCmd *const sAnimTable_Surfing[] = {
@@ -1491,6 +1500,7 @@ static const union AnimCmd *const sAnimTable_Surfing[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
     [ANIM_GET_ON_OFF_POKEMON_SOUTH] = sAnim_GetOnOffSurfBlobSouth,
     [ANIM_GET_ON_OFF_POKEMON_NORTH] = sAnim_GetOnOffSurfBlobNorth,
     [ANIM_GET_ON_OFF_POKEMON_WEST] = sAnim_GetOnOffSurfBlobWest,
@@ -1518,6 +1528,7 @@ static const union AnimCmd *const sAnimTable_Nurse[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
     [ANIM_NURSE_BOW] = sAnim_NurseBow,
 };
 
@@ -1542,6 +1553,7 @@ static const union AnimCmd *const sAnimTable_StandardWithSleeping[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
     [ANIM_SLEEPING] = sAnim_Sleeping,
     [ANIM_SMOKING_LOOP] = sAnim_SmokingLoop,
     [ANIM_SMOKE_CIGARETTE] = sAnim_SmokeCigarette,
