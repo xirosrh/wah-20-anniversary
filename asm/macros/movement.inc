@@ -164,9 +164,10 @@
 	create_movement_action levitate, MOVEMENT_ACTION_LEVITATE
 	create_movement_action stop_levitate, MOVEMENT_ACTION_STOP_LEVITATE
 	create_movement_action destroy_extra_task, MOVEMENT_ACTION_STOP_LEVITATE_AT_TOP
-	create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
-	create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
-	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
+        create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
+        create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
+        create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
+        create_movement_action fall_down, MOVEMENT_ACTION_FALL_DOWN
         create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
         create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
         create_movement_action emote_sweat_drop, MOVEMENT_ACTION_EMOTE_SWEAT_DROP
