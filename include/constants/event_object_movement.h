@@ -277,6 +277,7 @@
 #define MOVEMENT_ACTION_JUMP_3_LEFT                     0xBA
 #define MOVEMENT_ACTION_JUMP_3_RIGHT                    0xBB
 #define MOVEMENT_ACTION_EMOTE_SAD                       0xBC
+#define MOVEMENT_ACTION_FALL_DOWN                       0xBD
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -344,6 +345,7 @@
 #define ANIM_SLEEPING         (ANIM_STD_COUNT + 0)
 #define ANIM_SMOKING_LOOP     (ANIM_STD_COUNT + 1)
 #define ANIM_SMOKE_CIGARETTE  (ANIM_STD_COUNT + 2)
+#define ANIM_STD_FALL_DOWN    (ANIM_STD_COUNT + 3)
 
 #define ANIM_FIELD_MOVE 0
 

@@ -10812,6 +10812,12 @@ u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *
     MovementAction_Fly_Finish,
 };
 
+u8 (*const gMovementActionFuncs_FallDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_FallDown_Step0,
+    MovementAction_FallDown_Step1,
+    MovementAction_Fly_Finish,
+};
+
 u8 MovementAction_LockAnim_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     bool32 ableToStore = FALSE;
@@ -10977,6 +10983,33 @@ u8 MovementAction_FlyDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *
 
     if(!sprite->y2)
         sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_FallDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 = -DISPLAY_HEIGHT;
+    sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_FallDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 += 8;
+
+    if (sprite->y2 >= 0)
+    {
+        sprite->y2 = 0;
+        objectEvent->triggerGroundEffectsOnStop = TRUE;
+        objectEvent->landingJump = TRUE;
+        ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+        FieldEffectStart(FLDEFF_X_ICON);
+        StartSpriteAnim(sprite, ANIM_STD_FALL_DOWN);
+        sprite->animPaused = TRUE;
+        if (OW_OBJECT_VANILLA_SHADOWS)
+            objectEvent->jumpDone = TRUE;
+        sprite->sActionFuncId++;
+    }
     return FALSE;
 }
 
