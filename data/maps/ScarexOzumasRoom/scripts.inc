@@ -49,15 +49,57 @@ ScarexOzumasRoom_EventScript_EnterRoom_Movement_0:
 # 21 "data/maps/ScarexOzumasRoom/scripts.pory"
 	set_visible
 # 22 "data/maps/ScarexOzumasRoom/scripts.pory"
-	fly_down
+	fall_down
 # 23 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_in_place_down
+	emote_x
 # 24 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_in_place_right
+	delay_16
+# 24 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_16
+# 24 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_16
 # 25 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_in_place_left
+	jump_in_place_down_up
 # 26 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_in_place_up
+	delay_4
 # 27 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_up_down
+# 28 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_4
+# 29 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_down
+# 29 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_down
+# 30 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_right_left
+# 31 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_4
+# 32 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_left_right
+# 33 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_4
+# 34 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_right
+# 34 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_right
+# 35 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_right_left
+# 36 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_4
+# 37 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_left
+# 37 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_left
+# 38 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_down_up
+# 39 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay_4
+# 40 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_up
+# 41 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_up_down
+# 42 "data/maps/ScarexOzumasRoom/scripts.pory"
+	walk_in_place_down
+# 42 "data/maps/ScarexOzumasRoom/scripts.pory"
 	walk_in_place_down
 	step_end

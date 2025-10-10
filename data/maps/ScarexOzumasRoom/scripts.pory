@@ -19,12 +19,27 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         fly_up
         set_visible
-        fly_down
-        walk_in_place_down
-        walk_in_place_right
-        walk_in_place_left
+        fall_down
+        emote_x
+        delay_16 * 3
+        jump_in_place_down_up
+        delay_4
+        jump_in_place_up_down
+        delay_4
+        walk_in_place_down * 2
+        jump_in_place_right_left
+        delay_4
+        jump_in_place_left_right
+        delay_4
+        walk_in_place_right * 2
+        jump_in_place_right_left
+        delay_4
+        walk_in_place_left * 2
+        jump_in_place_down_up
+        delay_4
         walk_in_place_up
-        walk_in_place_down
+        jump_in_place_up_down
+        walk_in_place_down * 2
     ))
 
 }
