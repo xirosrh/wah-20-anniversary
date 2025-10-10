@@ -11002,8 +11002,6 @@ u8 MovementAction_FallDown_Step1(struct ObjectEvent *objectEvent, struct Sprite 
         sprite->y2 = 0;
         objectEvent->triggerGroundEffectsOnStop = TRUE;
         objectEvent->landingJump = TRUE;
-        ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
-        FieldEffectStart(FLDEFF_X_ICON);
         StartSpriteAnim(sprite, ANIM_STD_FALL_DOWN);
         sprite->animPaused = TRUE;
         if (OW_OBJECT_VANILLA_SHADOWS)

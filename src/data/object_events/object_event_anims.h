@@ -945,9 +945,9 @@ static const union AnimCmd sAnim_SmokeCigarette[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_StandardFallDown[] UNUSED =
+static const union AnimCmd sAnim_StandardFallDown[] =
 {
-    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(9, 16),
     ANIMCMD_JUMP(0),
 };
 
@@ -1189,7 +1189,7 @@ static const union AnimCmd *const sAnimTable_Standard[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
 };
 
-static const union AnimCmd *const sAnimTable_StandardWithFall[] UNUSED = {
+static const union AnimCmd *const sAnimTable_StandardWithFall[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
@@ -1631,6 +1631,10 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
      {
         .anims = sAnimTable_StandardWithSleeping,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_StandardWithFall,
         .animPos = {1, 3, 0, 2},
     },
     {},

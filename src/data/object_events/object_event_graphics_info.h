@@ -146,7 +146,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy1 = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_StandardWithFall,
     .images = sPicTable_Boy1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
