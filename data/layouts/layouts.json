@@ -4174,8 +4174,8 @@
     {
       "id": "LAYOUT_DAV_ZERO_ROOM",
       "name": "DavZeroRoom_Layout",
-      "width": 13,
-      "height": 14,
+      "width": 19,
+      "height": 20,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/DavZeroRoom/border.bin",

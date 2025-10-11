@@ -1,1 +1,80 @@
-mapscripts DavZeroRoom_MapScripts {}
+mapscripts DavZeroRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_DAVZERO_ROOM_STATE, 0: DavZeroRoom_OnFrame
+	]
+}
+
+script DavZeroRoom_OnFrame {
+    applymovementandwait(LOCALID_PLAYER, moves(walk_up * 13, face_right))
+    special(SpawnCameraObject)
+    directcameramovementtopos(16,6)
+    waitmovement(0)
+    msgbox(format("Bien, recordad: las palabras agudas se acentúan cuando acaban en vocal, {COLOR RED}n{COLOR DARK_GRAY} o {COLOR BLUE}s{COLOR DARK_GRAY}."))
+    playse(SE_PIN)
+    applymovement(LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoySurprised)
+    applymovement(LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoySurprised)
+    waitmovement(0)
+    waitse
+    delay(20)
+    turnobject(LOCALID_ZEROROOM_DAVZERO, DIR_WEST)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_DoubleExclamationMarkWithDelay48)
+    delay(20)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Esperad un segundo... ¡Creo que hoy tenemos compañía!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_left * 7, face_down))
+    applymovement(LOCALID_CAMERA, moves(walk_left * 7, delay_16))
+    waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    msgbox(format("Ajá, con que por fin has llegado hasta aquí.\pEs un placer verte, ¿me reconoces?"))
+    dynmultichoice(0,0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Sí, ¡eres inconfundible!"), format("Me suenas, ¡pareces Machoke!"), format("¿Debería conocerte?"))
+    if(var(VAR_RESULT) == 2)
+    {
+        msgbox(format("En breves sabrás quién soy."))
+    }
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48)
+    closemessage
+    delay(10)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(walk_left * 5, face_right))
+    applymovement(LOCALID_PLAYER, moves(walk_up, face_left))
+    msgbox(format("He tenido que dejar de hacer mi cuarta serie con 110 kg en press de banca.\pTodo porque escuchaba que un contendiente se acercaba a este nivel.\pY justo me has pillado enseñando las reglas de acentuación a mi alumnado…"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SweatDropWithDelay48)
+    msgbox(format("A ver, menos mal que pueden practicar un rato mientras combatimos.\pAunque creo que estarán muy expectantes, porque presiento que este será un combate sin parangón."), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_JumpInPlaceRight2)
+    delay(20)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkRight4)
+    msgbox(format("Dime… ¿cuál es tu objetivo? ¿quieres desafiar al loco con lanzallamas que te espera al final?"))
+
+// Dime. ¿Cuál es tu objetivo? ¿Quieres desafiar al loco con lanzallamas que te espera al final? A estas alturas ya lo sabrás, ya que para llegar aquí te has debido enfrentar a diversos compañeros, pero yo no te lo pondré nada fácil en este combate. He estado entrenando cuerpo, mente y Pokémon esperando tu llegada. Pocos aspirantes logran llegar hasta aquí. Enhorabuena. 
+
+// ¿Sabes? Muchos creen que un combate es pura fuerza, pero para mí es memoria. Cada ataque, cada estrategia, cada fallo… es un recordatorio de quiénes fuimos y en qué nos convertimos. Quiero que te quede claro lo siguiente: no soy tu rival. Soy la voz que te recuerda que cada paso, incluso dentro de estas cuatro paredes, puede marcarte más de lo que crees.
+
+// Hay quien lucha para ganar, y hay quien lucha para no volver a cometer el mismo fallo. ¿Cuál de esos eres tú? Déjame comprobarlo, ya que tu mirada me produce curiosidad... Me hace recordar aquella época loca en la que frecuentaba aquel lugar que antaño fue nuestro hogar.
+
+// Bueno, ya está bien, que al final me pongo intenso y esto acabará pareciendo un poema de Benedetti.... y en esta ocasión no traigo rosas para acompañarlo, sino Pokéball. ¡No te amedrentes ahora!
+    setvar(VAR_DAVZERO_ROOM_STATE, 1)
+    release
+    end
+}
+
+movement DavZeroRoom_Movement_GirlAndBoySurprised {
+    emote_surprise
+    walk_in_place_up
+    delay_16 * 2
+}
+
+script DavZeroRoom_EventScript_SchoolGirl {
+    lock
+    faceplayer
+    msgbox(format("¿Sabías qué? Ya terminé la escuela hace años.\p¡Solamente vengo aquí porque Zero es tan sexy!\pSerá nuestro secreto, shhh."), MSGBOX_AUTOCLOSE)
+    turnobject(LOCALID_ZEROROOM_SCHOOLGIRL, DIR_NORTH)
+    release
+    end
+}
+
+script DavZeroRoom_EventScript_SchoolBoy {
+
+}
+

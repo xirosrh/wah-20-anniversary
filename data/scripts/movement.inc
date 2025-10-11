@@ -203,6 +203,14 @@ Common_Movement_WalkRight2:
 	walk_right
 	step_end
 
+Common_Movement_WalkRight4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+
 Common_Movement_WalkLeft::
     walk_left
     step_end
@@ -254,6 +262,11 @@ Common_Movement_JumpInPlaceLeft:
 	step_end
 
 Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceRight2:
+	jump_in_place_right
 	jump_in_place_right
 	step_end
 
