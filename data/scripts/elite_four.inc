@@ -26,8 +26,8 @@ PokemonLeague_EliteFour_OpenRoomDoorMetatiles::
 
 //TODO Xiros: Probably this will be temp
 PokemonLeague_EliteFour_CloseRoomDoorMetatiles::
-	setmetatile 6, 1, METATILE_EliteFour_ClosedDoor_Frame, FALSE
-	setmetatile 6, 2, METATILE_EliteFour_ClosedDoor_Opening, FALSE
+	setmetatile 6, 1, METATILE_EliteFour_ClosedDoor_Frame, TRUE
+	setmetatile 6, 2, METATILE_EliteFour_ClosedDoor_Opening, TRUE
 	special DrawWholeMapView
 	return
 

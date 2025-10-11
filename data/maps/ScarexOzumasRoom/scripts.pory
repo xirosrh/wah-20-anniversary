@@ -1,3 +1,5 @@
+const VAR_TEMP_0_ADMINS_IN_ROOM = VAR_TEMP_0
+
 mapscripts ScarexOzumasRoom_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: ScarexOzumasRoom_OnTransition
 }
@@ -7,6 +9,7 @@ script ScarexOzumasRoom_OnTransition {
 
 script ScarexOzumasRoom_EventScript_EnterRoom {
     lock
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
     special(SpawnCameraObject)
     directcameramovementtopos(6,5)
     waitmovement(0)
@@ -63,6 +66,15 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
         walk_in_place_down * 2
     ))
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_SweatDropWithDelay48)
+    delay(20)
+    setobjectmovementtype2(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)
+    turnobject(LOCALID_SCAREXOZUROOM_OZUMAS, DIR_SOUTH)
+    directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setvar(VAR_TEMP_0_ADMINS_IN_ROOM, 1)
+    release
+    end
 
 }
 
