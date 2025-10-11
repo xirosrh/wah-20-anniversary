@@ -278,6 +278,11 @@
 #define MOVEMENT_ACTION_JUMP_3_RIGHT                    0xBB
 #define MOVEMENT_ACTION_EMOTE_SAD                       0xBC
 #define MOVEMENT_ACTION_FALL_DOWN                       0xBD
+#define MOVEMENT_ACTION_EMOTE_SMILE                     0xBE
+#define MOVEMENT_ACTION_EMOTE_CRY                       0xBF
+#define MOVEMENT_ACTION_EMOTE_ANGRY                     0xC0
+#define MOVEMENT_ACTION_EMOTE_SURPRISE                  0xC1
+#define MOVEMENT_ACTION_EMOTE_V                         0xC2
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF

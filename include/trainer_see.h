@@ -34,5 +34,10 @@ u8 FldEff_VersusIcon(void);
 u8 FldEff_HappyIcon(void);
 u8 FldEff_SleepingIcon(void);
 u8 FldEff_SadIcon(void);
+u8 FldEff_SmileIcon(void);
+u8 FldEff_CryIcon(void);
+u8 FldEff_AngryIcon(void);
+u8 FldEff_SurpriseIcon(void);
+u8 FldEff_VIcon(void);
 
 #endif // GUARD_TRAINER_SEE_H

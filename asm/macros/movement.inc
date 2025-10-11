@@ -176,10 +176,15 @@
         create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
         create_movement_action emote_sad, MOVEMENT_ACTION_EMOTE_SAD
         create_movement_action emote_sleeping, MOVEMENT_ACTION_EMOTE_SLEEPING
+        create_movement_action emote_smile, MOVEMENT_ACTION_EMOTE_SMILE
+        create_movement_action emote_cry, MOVEMENT_ACTION_EMOTE_CRY
+        create_movement_action emote_angry, MOVEMENT_ACTION_EMOTE_ANGRY
+        create_movement_action emote_surprise, MOVEMENT_ACTION_EMOTE_SURPRISE
+        create_movement_action emote_v, MOVEMENT_ACTION_EMOTE_V
         create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
-	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
-	create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
-	create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
+        create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
+        create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
+        create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
 
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL
 	create_movement_action enter_pokeball, MOVEMENT_ACTION_ENTER_POKEBALL
