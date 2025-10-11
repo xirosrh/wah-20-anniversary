@@ -180,6 +180,26 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
     {
         .data = sEmotion_SadGfx,
         .size = sizeof(sEmotion_SadGfx)
+    },
+    {
+        .data = sEmotion_HappyGfx,
+        .size = sizeof(sEmotion_HappyGfx)
+    },
+    {
+        .data = sEmotion_SadGfx,
+        .size = sizeof(sEmotion_SadGfx)
+    },
+    {
+        .data = sEmotion_XGfx,
+        .size = sizeof(sEmotion_XGfx)
+    },
+    {
+        .data = sEmotion_DoubleExclamationMarkGfx,
+        .size = sizeof(sEmotion_DoubleExclamationMarkGfx)
+    },
+    {
+        .data = sEmotion_VersusGfx,
+        .size = sizeof(sEmotion_VersusGfx)
     }
 };
 
@@ -366,6 +386,36 @@ static const union AnimCmd sSpriteAnim_Icons10[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_Icons11[] =
+{
+    ANIMCMD_FRAME(10, 60),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Icons12[] =
+{
+    ANIMCMD_FRAME(11, 60),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Icons13[] =
+{
+    ANIMCMD_FRAME(12, 60),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Icons14[] =
+{
+    ANIMCMD_FRAME(13, 60),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Icons15[] =
+{
+    ANIMCMD_FRAME(14, 60),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteAnimTable_Icons[] =
 {
     sSpriteAnim_Icons1,
@@ -377,7 +427,12 @@ static const union AnimCmd *const sSpriteAnimTable_Icons[] =
     sSpriteAnim_Icons7,
     sSpriteAnim_Icons8,
     sSpriteAnim_Icons9,
-    sSpriteAnim_Icons10
+    sSpriteAnim_Icons10,
+    sSpriteAnim_Icons11,
+    sSpriteAnim_Icons12,
+    sSpriteAnim_Icons13,
+    sSpriteAnim_Icons14,
+    sSpriteAnim_Icons15
 };
 
 static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
@@ -1113,6 +1168,71 @@ u8 FldEff_SadIcon(void)
     if (spriteId != MAX_SPRITES)
     {
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 9);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_SmileIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 10);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_CryIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 11);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_AngryIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 12);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_SurpriseIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 13);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_VIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 14);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 

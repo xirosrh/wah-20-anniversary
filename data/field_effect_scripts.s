@@ -89,6 +89,11 @@ gFieldEffectScriptPointers::
         .4byte gFldEffScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
         .4byte gFldEffScript_SleepingIcon              @ FLDEFF_SLEEPING_ICON
         .4byte gFldEffScript_SadIcon                   @ FLDEFF_SAD_ICON
+        .4byte gFldEffScript_SmileIcon                 @ FLDEFF_SMILE_ICON
+        .4byte gFldEffScript_CryIcon                   @ FLDEFF_CRY_ICON
+        .4byte gFldEffScript_AngryIcon                 @ FLDEFF_ANGRY_ICON
+        .4byte gFldEffScript_SurpriseIcon              @ FLDEFF_SURPRISE_ICON
+        .4byte gFldEffScript_VIcon                     @ FLDEFF_V_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -395,6 +400,26 @@ gFldEffScript_SleepingIcon::
 
 gFldEffScript_SadIcon::
         field_eff_callnative FldEff_SadIcon
+        field_eff_end
+
+gFldEffScript_SmileIcon::
+        field_eff_callnative FldEff_SmileIcon
+        field_eff_end
+
+gFldEffScript_CryIcon::
+        field_eff_callnative FldEff_CryIcon
+        field_eff_end
+
+gFldEffScript_AngryIcon::
+        field_eff_callnative FldEff_AngryIcon
+        field_eff_end
+
+gFldEffScript_SurpriseIcon::
+        field_eff_callnative FldEff_SurpriseIcon
+        field_eff_end
+
+gFldEffScript_VIcon::
+        field_eff_callnative FldEff_VIcon
         field_eff_end
 
 gFieldEffectScript_TracksBug::
