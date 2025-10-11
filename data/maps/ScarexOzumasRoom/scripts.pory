@@ -137,8 +137,6 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     }
     msgbox(format("Vamos a ver qué historia sale de esta batalla."))
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
-    playse(SE_PIN)
-    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_VersusWithDelay48)
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, "¡Eso ha estado muy guay!")
     msgbox(format("Has demostrado que tienes fuerza y convicción… ¡te felicito!\pPero si quieres ganar, aún queda un largo camino por delante…"))
     if(!flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
@@ -158,65 +156,95 @@ script ScarexOzumasRoom_EventScript_Ozumas {
 script ScarexOzumasRoom_EventScript_Scarex {
     lock
     faceplayer
+    if(flag(FLAG_DEFEATED_ADMIN_SCAREX)){
+        random(10)
+        playse(SE_PIN)
+        switch(var(VAR_RESULT)) {
+            case 0:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SurpriseWithDelay48)
+            case 1:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SmileWithDelay48)
+            case 2:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
+            case 3:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_AngryWithDelay48)
+            case 4:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HeartWithDelay48)
+            case 5:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SweatDropWithDelay48)
+            case 6:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_CryWithDelay48)
+            case 7:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VWithDelay48)
+            case 8:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_ThinkingWithDelay48)
+            case 9:
+                applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SadWithDelay48)
+        }
+        waitse
+        release
+        end
+
+    }
     playse(SE_PIN)
-    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
-    msgbox(format("¡Hola!"), MSGBOX_AUTOCLOSE)
-    waitmovement(0)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SurpriseWithDelay48)
+    waitse
     delay(20)
-    //TODO Xiros: Semantics
-    msgbox(format("Un nuevo aspirante a ganar el desafío… ¡qué curioso!"))
     playse(SE_PIN)
-    //TODO Xiros: Surprise icon
+    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HeartWithDelay48)
+    waitmovement(0)
+    waitse
+    delay(10)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+        lock_facing_direction
+        jump_in_place_down * 2
+        unlock_facing_direction
+    ))
+    playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
-    msgbox(format("He estado dias matándome para estar a la altura de esta batalla.\pMira, te mostraré lo que he aprendido."), MSGBOX_AUTOCLOSE)
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)
-    switch(var(VAR_RESULT)) {
+    waitse
+    delay(30)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
+    waitse
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VersusWithDelay48)
+    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+        lock_facing_direction
+        jump_in_place_down * 2
+        unlock_facing_direction
+    ))
+    applymovement(LOCALID_PLAYER, moves(
+        lock_facing_direction
+        jump_in_place_down * 2
+        unlock_facing_direction
+    ))
+    waitmovement(0)
+    getdirectiontoface(VAR_RESULT,  LOCALID_PLAYER, LOCALID_SCAREXOZUROOM_SCAREX)
+    switch(var(VAR_RESULT)){
         case DIR_NORTH:
-            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-                lock_facing_direction
-                walk_up
-                unlock_facing_direction
-            ))
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
             break
         case DIR_SOUTH:
-            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-                lock_facing_direction
-                walk_down
-                unlock_facing_direction
-            ))
-            break
-        case DIR_WEST:
-            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX,moves(
-                lock_facing_direction
-                walk_left
-                unlock_facing_direction
-            ))
+            turnobject(LOCALID_PLAYER, DIR_SOUTH)
             break
         case DIR_EAST:
-            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-                lock_facing_direction
-                walk_right
-                unlock_facing_direction
-            ))
+            turnobject(LOCALID_PLAYER, DIR_EAST)
+            break
+        case DIR_WEST:
+            turnobject(LOCALID_PLAYER, DIR_WEST)
             break
     }
-    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-        jump_in_place_down_up * 2
-        delay_4
-        jump_in_place_up_down * 2
-        delay_4
-        jump_in_place_right_left * 2
-        delay_4
-        jump_in_place_left_right * 2
-        delay_4
-        face_player
-    ))
-    //TODO Xiros: Semantics
-    msgbox(format("Te sientes intimidado/a,  ¿verdad? No te preocupes, no muerdo.\pBueno, quizá un poco."))
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_MAIN, "...")
     playse(SE_PIN)
-    //TODO Xiros: Smile
-    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SweatDropWithDelay48)
-    //TODO Xiros: Trainerbattle
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VWithDelay48)
+    waitse
+    if(flag(FLAG_DEFEATED_ADMIN_OZUMAS)) {
+        applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_FaceRight)
+        call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+        delay(20)
+        applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_FacePlayer)
+    }
     setflag(FLAG_DEFEATED_ADMIN_SCAREX)
     release
     end

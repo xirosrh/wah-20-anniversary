@@ -157,28 +157,24 @@ ScarexOzumasRoom_EventScript_Ozumas_4:
 # 139 "data/maps/ScarexOzumasRoom/scripts.pory"
 	call ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer
 # 140 "data/maps/ScarexOzumasRoom/scripts.pory"
-	playse SE_PIN
-# 141 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_VersusWithDelay48
-# 142 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OZUMAS_MAIN, ScarexOzumasRoom_EventScript_Ozumas_Text_8
-# 143 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 141 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_Ozumas_Text_9
-# 144 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 142 "data/maps/ScarexOzumasRoom/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_ADMIN_SCAREX, ScarexOzumasRoom_EventScript_Ozumas_12
 ScarexOzumasRoom_EventScript_Ozumas_11:
-# 147 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 145 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_Ozumas_Text_11
-# 148 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 146 "data/maps/ScarexOzumasRoom/scripts.pory"
 	delay 20
-# 149 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 147 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_Ozumas_Text_12
-# 150 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 148 "data/maps/ScarexOzumasRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_SCAREX, ScarexOzumasRoom_EventScript_Ozumas_15
 ScarexOzumasRoom_EventScript_Ozumas_14:
-# 153 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 151 "data/maps/ScarexOzumasRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_OZUMAS
-# 154 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 152 "data/maps/ScarexOzumasRoom/scripts.pory"
 	release
 	end
 
@@ -207,85 +203,211 @@ ScarexOzumasRoom_EventScript_Ozumas_9:
 	goto ScarexOzumasRoom_EventScript_Ozumas_8
 
 ScarexOzumasRoom_EventScript_Ozumas_12:
-# 145 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 143 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_Ozumas_Text_10
 	goto ScarexOzumasRoom_EventScript_Ozumas_11
 
 ScarexOzumasRoom_EventScript_Ozumas_15:
-# 151 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 149 "data/maps/ScarexOzumasRoom/scripts.pory"
 	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
 	goto ScarexOzumasRoom_EventScript_Ozumas_14
 
 
 ScarexOzumasRoom_EventScript_Scarex::
-# 159 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 157 "data/maps/ScarexOzumasRoom/scripts.pory"
 	lock
-# 160 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 158 "data/maps/ScarexOzumasRoom/scripts.pory"
 	faceplayer
-# 161 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 159 "data/maps/ScarexOzumasRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_ADMIN_SCAREX, ScarexOzumasRoom_EventScript_Scarex_2
+# 189 "data/maps/ScarexOzumasRoom/scripts.pory"
 	playse SE_PIN
-# 162 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovement LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48
-# 163 "data/maps/ScarexOzumasRoom/scripts.pory"
-	msgbox ScarexOzumasRoom_EventScript_Scarex_Text_0
-# 164 "data/maps/ScarexOzumasRoom/scripts.pory"
-	waitmovement 0
-# 165 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 190 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SurpriseWithDelay48
+# 191 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 192 "data/maps/ScarexOzumasRoom/scripts.pory"
 	delay 20
-# 167 "data/maps/ScarexOzumasRoom/scripts.pory"
-	msgbox ScarexOzumasRoom_EventScript_Scarex_Text_1
-# 168 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 193 "data/maps/ScarexOzumasRoom/scripts.pory"
 	playse SE_PIN
-# 170 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48
-# 171 "data/maps/ScarexOzumasRoom/scripts.pory"
-	msgbox ScarexOzumasRoom_EventScript_Scarex_Text_2, MSGBOX_AUTOCLOSE
-# 172 "data/maps/ScarexOzumasRoom/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 173 "data/maps/ScarexOzumasRoom/scripts.pory"
-	switch VAR_RESULT
-# 174 "data/maps/ScarexOzumasRoom/scripts.pory"
-	case DIR_NORTH, ScarexOzumasRoom_EventScript_Scarex_3
-# 181 "data/maps/ScarexOzumasRoom/scripts.pory"
-	case DIR_SOUTH, ScarexOzumasRoom_EventScript_Scarex_4
-# 188 "data/maps/ScarexOzumasRoom/scripts.pory"
-	case DIR_WEST, ScarexOzumasRoom_EventScript_Scarex_5
+# 194 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovement LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HeartWithDelay48
 # 195 "data/maps/ScarexOzumasRoom/scripts.pory"
-	case DIR_EAST, ScarexOzumasRoom_EventScript_Scarex_6
-ScarexOzumasRoom_EventScript_Scarex_1:
+	waitmovement 0
+# 196 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 197 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay 10
+# 198 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_0
 # 203 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_4
-# 215 "data/maps/ScarexOzumasRoom/scripts.pory"
-	msgbox ScarexOzumasRoom_EventScript_Scarex_Text_3
-# 216 "data/maps/ScarexOzumasRoom/scripts.pory"
 	playse SE_PIN
-# 218 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SweatDropWithDelay48
-# 220 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 204 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48
+# 205 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 206 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay 30
+# 207 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48
+# 208 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 209 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay 20
+# 210 "data/maps/ScarexOzumasRoom/scripts.pory"
+	playse SE_PIN
+# 211 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VersusWithDelay48
+# 212 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovement LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_0
+# 217 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, ScarexOzumasRoom_EventScript_Scarex_Movement_0
+# 222 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitmovement 0
+# 223 "data/maps/ScarexOzumasRoom/scripts.pory"
+	getdirectiontoface VAR_RESULT, LOCALID_PLAYER, LOCALID_SCAREXOZUROOM_SCAREX
+# 224 "data/maps/ScarexOzumasRoom/scripts.pory"
+	switch VAR_RESULT
+# 225 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case DIR_NORTH, ScarexOzumasRoom_EventScript_Scarex_6
+# 228 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case DIR_SOUTH, ScarexOzumasRoom_EventScript_Scarex_7
+# 231 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case DIR_EAST, ScarexOzumasRoom_EventScript_Scarex_8
+# 234 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case DIR_WEST, ScarexOzumasRoom_EventScript_Scarex_9
+ScarexOzumasRoom_EventScript_Scarex_4:
+# 238 "data/maps/ScarexOzumasRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_SCAREX_MAIN, ScarexOzumasRoom_EventScript_Scarex_Text_0
+# 239 "data/maps/ScarexOzumasRoom/scripts.pory"
+	playse SE_PIN
+# 240 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VWithDelay48
+# 241 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 242 "data/maps/ScarexOzumasRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_ADMIN_OZUMAS, ScarexOzumasRoom_EventScript_Scarex_23
+ScarexOzumasRoom_EventScript_Scarex_22:
+# 248 "data/maps/ScarexOzumasRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_SCAREX
-# 221 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 249 "data/maps/ScarexOzumasRoom/scripts.pory"
 	release
 	end
 
-ScarexOzumasRoom_EventScript_Scarex_3:
+ScarexOzumasRoom_EventScript_Scarex_2:
+# 160 "data/maps/ScarexOzumasRoom/scripts.pory"
+	random 10
+# 161 "data/maps/ScarexOzumasRoom/scripts.pory"
+	playse SE_PIN
+# 162 "data/maps/ScarexOzumasRoom/scripts.pory"
+	switch VAR_RESULT
+# 163 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 0, ScarexOzumasRoom_EventScript_Scarex_12
+# 165 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 1, ScarexOzumasRoom_EventScript_Scarex_13
+# 167 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 2, ScarexOzumasRoom_EventScript_Scarex_14
+# 169 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 3, ScarexOzumasRoom_EventScript_Scarex_15
+# 171 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 4, ScarexOzumasRoom_EventScript_Scarex_16
+# 173 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 5, ScarexOzumasRoom_EventScript_Scarex_17
 # 175 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_0
-	goto ScarexOzumasRoom_EventScript_Scarex_1
-
-ScarexOzumasRoom_EventScript_Scarex_4:
-# 182 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_1
-	goto ScarexOzumasRoom_EventScript_Scarex_1
-
-ScarexOzumasRoom_EventScript_Scarex_5:
-# 189 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_2
-	goto ScarexOzumasRoom_EventScript_Scarex_1
+	case 6, ScarexOzumasRoom_EventScript_Scarex_18
+# 177 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 7, ScarexOzumasRoom_EventScript_Scarex_19
+# 179 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 8, ScarexOzumasRoom_EventScript_Scarex_20
+# 181 "data/maps/ScarexOzumasRoom/scripts.pory"
+	case 9, ScarexOzumasRoom_EventScript_Scarex_21
+ScarexOzumasRoom_EventScript_Scarex_10:
+# 184 "data/maps/ScarexOzumasRoom/scripts.pory"
+	waitse
+# 185 "data/maps/ScarexOzumasRoom/scripts.pory"
+	release
+	end
 
 ScarexOzumasRoom_EventScript_Scarex_6:
-# 196 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, ScarexOzumasRoom_EventScript_Scarex_Movement_3
-	goto ScarexOzumasRoom_EventScript_Scarex_1
+# 226 "data/maps/ScarexOzumasRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+	goto ScarexOzumasRoom_EventScript_Scarex_4
+
+ScarexOzumasRoom_EventScript_Scarex_7:
+# 229 "data/maps/ScarexOzumasRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	goto ScarexOzumasRoom_EventScript_Scarex_4
+
+ScarexOzumasRoom_EventScript_Scarex_8:
+# 232 "data/maps/ScarexOzumasRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_EAST
+	goto ScarexOzumasRoom_EventScript_Scarex_4
+
+ScarexOzumasRoom_EventScript_Scarex_9:
+# 235 "data/maps/ScarexOzumasRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+	goto ScarexOzumasRoom_EventScript_Scarex_4
+
+ScarexOzumasRoom_EventScript_Scarex_12:
+# 164 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SurpriseWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_13:
+# 166 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SmileWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_14:
+# 168 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_15:
+# 170 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_AngryWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_16:
+# 172 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HeartWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_17:
+# 174 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SweatDropWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_18:
+# 176 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_CryWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_19:
+# 178 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_20:
+# 180 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_ThinkingWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_21:
+# 182 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SadWithDelay48
+	goto ScarexOzumasRoom_EventScript_Scarex_10
+
+ScarexOzumasRoom_EventScript_Scarex_23:
+# 243 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_FaceRight
+# 244 "data/maps/ScarexOzumasRoom/scripts.pory"
+	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+# 245 "data/maps/ScarexOzumasRoom/scripts.pory"
+	delay 20
+# 246 "data/maps/ScarexOzumasRoom/scripts.pory"
+	applymovementandwait LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_FacePlayer
+	goto ScarexOzumasRoom_EventScript_Scarex_22
 
 
 # 31 "data/maps/ScarexOzumasRoom/scripts.pory"
@@ -384,74 +506,16 @@ ScarexOzumasRoom_EventScript_EnterRoom_Movement_2:
 	walk_in_place_down
 	step_end
 
-# 175 "data/maps/ScarexOzumasRoom/scripts.pory"
-ScarexOzumasRoom_EventScript_Scarex_Movement_0:
-# 176 "data/maps/ScarexOzumasRoom/scripts.pory"
-	lock_facing_direction
-# 177 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_up
-# 178 "data/maps/ScarexOzumasRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
-# 182 "data/maps/ScarexOzumasRoom/scripts.pory"
-ScarexOzumasRoom_EventScript_Scarex_Movement_1:
-# 183 "data/maps/ScarexOzumasRoom/scripts.pory"
-	lock_facing_direction
-# 184 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_down
-# 185 "data/maps/ScarexOzumasRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
-# 189 "data/maps/ScarexOzumasRoom/scripts.pory"
-ScarexOzumasRoom_EventScript_Scarex_Movement_2:
-# 190 "data/maps/ScarexOzumasRoom/scripts.pory"
-	lock_facing_direction
-# 191 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_left
-# 192 "data/maps/ScarexOzumasRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
-# 196 "data/maps/ScarexOzumasRoom/scripts.pory"
-ScarexOzumasRoom_EventScript_Scarex_Movement_3:
-# 197 "data/maps/ScarexOzumasRoom/scripts.pory"
-	lock_facing_direction
 # 198 "data/maps/ScarexOzumasRoom/scripts.pory"
-	walk_right
+ScarexOzumasRoom_EventScript_Scarex_Movement_0:
 # 199 "data/maps/ScarexOzumasRoom/scripts.pory"
+	lock_facing_direction
+# 200 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_down
+# 200 "data/maps/ScarexOzumasRoom/scripts.pory"
+	jump_in_place_down
+# 201 "data/maps/ScarexOzumasRoom/scripts.pory"
 	unlock_facing_direction
-	step_end
-
-# 203 "data/maps/ScarexOzumasRoom/scripts.pory"
-ScarexOzumasRoom_EventScript_Scarex_Movement_4:
-# 204 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_down_up
-# 204 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_down_up
-# 205 "data/maps/ScarexOzumasRoom/scripts.pory"
-	delay_4
-# 206 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_up_down
-# 206 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_up_down
-# 207 "data/maps/ScarexOzumasRoom/scripts.pory"
-	delay_4
-# 208 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_right_left
-# 208 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_right_left
-# 209 "data/maps/ScarexOzumasRoom/scripts.pory"
-	delay_4
-# 210 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_left_right
-# 210 "data/maps/ScarexOzumasRoom/scripts.pory"
-	jump_in_place_left_right
-# 211 "data/maps/ScarexOzumasRoom/scripts.pory"
-	delay_4
-# 212 "data/maps/ScarexOzumasRoom/scripts.pory"
-	face_player
 	step_end
 
 ScarexOzumasRoom_EventScript_EnterRoom_Text_0:
@@ -511,23 +575,23 @@ ScarexOzumasRoom_EventScript_Ozumas_Text_7:
 	.string "batalla.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_8:
-# 142 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 140 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "¡Eso ha estado muy guay!$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_9:
-# 143 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 141 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "Has demostrado que tienes fuerza y\n"
 	.string "convicción… ¡te felicito!\p"
 	.string "Pero si quieres ganar, aún queda un\n"
 	.string "largo camino por delante…$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_10:
-# 145 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 143 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "Primero, deberás enfrentarte a Scarex\n"
 	.string "para poder avanzar a la siguiente sala.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_11:
-# 147 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 145 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "Más adelante, aguarda una batalla\n"
 	.string "contra alguien muy cercano a mí.\p"
 	.string "Es un gran amigo y rival. Quizá lo\n"
@@ -536,27 +600,10 @@ ScarexOzumasRoom_EventScript_Ozumas_Text_11:
 	.string "realmente puedes ganar el desafío.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_12:
-# 149 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 147 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "Estoy seguro de que lo harás genial.\n"
 	.string "¡Mucha suerte!$"
 
 ScarexOzumasRoom_EventScript_Scarex_Text_0:
-# 163 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "¡Hola$"
-
-ScarexOzumasRoom_EventScript_Scarex_Text_1:
-# 167 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Un nuevo aspirante a ganar el desafío…\n"
-	.string "¡qué curioso!$"
-
-ScarexOzumasRoom_EventScript_Scarex_Text_2:
-# 171 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "He estado dias matándome para estar a\n"
-	.string "la altura de esta batalla. Mira, te\l"
-	.string "mostraré lo que he aprendido.$"
-
-ScarexOzumasRoom_EventScript_Scarex_Text_3:
-# 215 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Te sientes intimidado/a, ¿verdad? No te\n"
-	.string "preocupes, no muerdo.\p"
-	.string "Bueno, quizá un poco.$"
+# 238 "data/maps/ScarexOzumasRoom/scripts.pory"
+	.string "...$"
