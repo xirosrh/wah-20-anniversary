@@ -271,6 +271,8 @@ u8 MovementAction_FlyUp_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_Fly_Finish(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_FlyDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_FlyDown_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_FallDown_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_FallDown_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementActionFunc_RunSlowDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlowUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlowLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -465,6 +467,7 @@ u8 (*const gMovementActionFuncs_StopLevitateAtTop[])(struct ObjectEvent *, struc
 u8 (*const gMovementActionFuncs_Figure8[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FlyUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_FallDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSweatDrop[])(struct ObjectEvent *, struct Sprite *);
@@ -473,6 +476,11 @@ u8 (*const gMovementActionFuncs_EmoteVersus[])(struct ObjectEvent *, struct Spri
 u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSad[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteSmile[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteCry[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteAngry[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteSurprise[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteV[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunDownSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunUpSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunLeftSlow[])(struct ObjectEvent *, struct Sprite *);
@@ -656,6 +664,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_FIGURE_8] = gMovementActionFuncs_Figure8,
     [MOVEMENT_ACTION_FLY_UP] = gMovementActionFuncs_FlyUp,
     [MOVEMENT_ACTION_FLY_DOWN] = gMovementActionFuncs_FlyDown,
+    [MOVEMENT_ACTION_FALL_DOWN] = gMovementActionFuncs_FallDown,
     [MOVEMENT_ACTION_EMOTE_X] = gMovementActionFuncs_EmoteX,
     [MOVEMENT_ACTION_EMOTE_SWEAT_DROP] = gMovementActionFuncs_EmoteSweatDrop,
     [MOVEMENT_ACTION_EMOTE_THINKING] = gMovementActionFuncs_EmoteThinking,
@@ -663,6 +672,11 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,
     [MOVEMENT_ACTION_EMOTE_SAD] = gMovementActionFuncs_EmoteSad,
     [MOVEMENT_ACTION_EMOTE_SLEEPING] = gMovementActionFuncs_EmoteSleeping,
+    [MOVEMENT_ACTION_EMOTE_SMILE] = gMovementActionFuncs_EmoteSmile,
+    [MOVEMENT_ACTION_EMOTE_CRY] = gMovementActionFuncs_EmoteCry,
+    [MOVEMENT_ACTION_EMOTE_ANGRY] = gMovementActionFuncs_EmoteAngry,
+    [MOVEMENT_ACTION_EMOTE_SURPRISE] = gMovementActionFuncs_EmoteSurprise,
+    [MOVEMENT_ACTION_EMOTE_V] = gMovementActionFuncs_EmoteV,
     [MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK] = gMovementActionFuncs_EmoteDoubleExclMark,
     [MOVEMENT_ACTION_EXIT_POKEBALL] = gMovementActionFuncs_ExitPokeball,
     [MOVEMENT_ACTION_ENTER_POKEBALL] = gMovementActionFuncs_EnterPokeball,
@@ -1667,6 +1681,31 @@ u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprit
 
 u8 (*const gMovementActionFuncs_EmoteSad[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteSad_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteSmile[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteSmile_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteCry[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteCry_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteAngry[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteAngry_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteSurprise[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteSurprise_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteV[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteV_Step0,
     MovementAction_Finish,
 };
 

@@ -164,9 +164,10 @@
 	create_movement_action levitate, MOVEMENT_ACTION_LEVITATE
 	create_movement_action stop_levitate, MOVEMENT_ACTION_STOP_LEVITATE
 	create_movement_action destroy_extra_task, MOVEMENT_ACTION_STOP_LEVITATE_AT_TOP
-	create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
-	create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
-	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
+        create_movement_action figure_8, MOVEMENT_ACTION_FIGURE_8
+        create_movement_action fly_up, MOVEMENT_ACTION_FLY_UP
+        create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
+        create_movement_action fall_down, MOVEMENT_ACTION_FALL_DOWN
         create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
         create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
         create_movement_action emote_sweat_drop, MOVEMENT_ACTION_EMOTE_SWEAT_DROP
@@ -175,10 +176,15 @@
         create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
         create_movement_action emote_sad, MOVEMENT_ACTION_EMOTE_SAD
         create_movement_action emote_sleeping, MOVEMENT_ACTION_EMOTE_SLEEPING
+        create_movement_action emote_smile, MOVEMENT_ACTION_EMOTE_SMILE
+        create_movement_action emote_cry, MOVEMENT_ACTION_EMOTE_CRY
+        create_movement_action emote_angry, MOVEMENT_ACTION_EMOTE_ANGRY
+        create_movement_action emote_surprise, MOVEMENT_ACTION_EMOTE_SURPRISE
+        create_movement_action emote_v, MOVEMENT_ACTION_EMOTE_V
         create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
-	create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
-	create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
-	create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
+        create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
+        create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
+        create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
 
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL
 	create_movement_action enter_pokeball, MOVEMENT_ACTION_ENTER_POKEBALL

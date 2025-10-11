@@ -144,6 +144,8 @@
 #define METATILE_Dewford_Door_BattleTower  0x25D
 
 // gTileset_EliteFour
+#define METATILE_EliteFour_ClosedDoor_Frame          0x202
+#define METATILE_EliteFour_ClosedDoor_Opening        0x20A
 #define METATILE_EliteFour_EntryDoor_ClosedBottom    0x20E
 #define METATILE_EliteFour_EntryDoor_ClosedTop       0x206
 #define METATILE_EliteFour_LeftSpotlightOff          0x2DD

@@ -10812,6 +10812,12 @@ u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *
     MovementAction_Fly_Finish,
 };
 
+u8 (*const gMovementActionFuncs_FallDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_FallDown_Step0,
+    MovementAction_FallDown_Step1,
+    MovementAction_Fly_Finish,
+};
+
 u8 MovementAction_LockAnim_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     bool32 ableToStore = FALSE;
@@ -10980,6 +10986,31 @@ u8 MovementAction_FlyDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *
     return FALSE;
 }
 
+u8 MovementAction_FallDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 = -DISPLAY_HEIGHT;
+    sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_FallDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 += 8;
+
+    if (sprite->y2 >= 0)
+    {
+        sprite->y2 = 0;
+        objectEvent->triggerGroundEffectsOnStop = TRUE;
+        objectEvent->landingJump = TRUE;
+        StartSpriteAnim(sprite, ANIM_STD_FALL_DOWN);
+        sprite->animPaused = TRUE;
+        if (OW_OBJECT_VANILLA_SHADOWS)
+            objectEvent->jumpDone = TRUE;
+        sprite->sActionFuncId++;
+    }
+    return FALSE;
+}
+
 // though this function returns TRUE without doing anything, this header is required due to being in an array of functions which needs it.
 u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
@@ -11030,6 +11061,46 @@ bool8 MovementAction_EmoteSad_Step0(struct ObjectEvent *objectEvent, struct Spri
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
     FieldEffectStart(FLDEFF_SAD_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteSmile_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SMILE_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteCry_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_CRY_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_ANGRY_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_SURPRISE_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_V_ICON);
     sprite->sActionFuncId = 1;
     return TRUE;
 }

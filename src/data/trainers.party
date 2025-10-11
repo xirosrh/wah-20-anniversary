@@ -482,10 +482,10 @@ Poochyena
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -499,10 +499,10 @@ Poochyena
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -516,31 +516,24 @@ Carvanha
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_SCAREX_MAIN ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 26
+Magikarp
+Level: 1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_MUSEUM_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
 Gender: Male
 Music: Aqua
 Double Battle: No
