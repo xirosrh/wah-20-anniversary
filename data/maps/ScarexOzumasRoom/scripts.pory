@@ -127,6 +127,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
     msgbox(format("¿Así que no me conoces? Pues no te preocupes, han pasado muchos años ya."))
     playse(SE_PIN)
+    //TODO Xiros: SMile
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_HappyWithDelay48)
     msgbox(format("Si quieres saber algo de mí, te diré que desde siempre me atrajeron las historias de Johto.\pPasé años tratando de contar al mundo sus leyendas."))
     if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
@@ -155,5 +156,68 @@ script ScarexOzumasRoom_EventScript_Ozumas {
 }
 
 script ScarexOzumasRoom_EventScript_Scarex {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
+    msgbox(format("¡Hola!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(20)
+    //TODO Xiros: Semantics
+    msgbox(format("Un nuevo aspirante a ganar el desafío… ¡qué curioso!"))
+    playse(SE_PIN)
+    //TODO Xiros: Surprise icon
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
+    msgbox(format("He estado dias matándome para estar a la altura de esta batalla.\pMira, te mostraré lo que he aprendido."), MSGBOX_AUTOCLOSE)
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+                lock_facing_direction
+                walk_up
+                unlock_facing_direction
+            ))
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+                lock_facing_direction
+                walk_down
+                unlock_facing_direction
+            ))
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX,moves(
+                lock_facing_direction
+                walk_left
+                unlock_facing_direction
+            ))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+                lock_facing_direction
+                walk_right
+                unlock_facing_direction
+            ))
+            break
+    }
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
+        jump_in_place_down_up * 2
+        delay_4
+        jump_in_place_up_down * 2
+        delay_4
+        jump_in_place_right_left * 2
+        delay_4
+        jump_in_place_left_right * 2
+        delay_4
+        face_player
+    ))
+    //TODO Xiros: Semantics
+    msgbox(format("Te sientes intimidado/a,  ¿verdad? No te preocupes, no muerdo.\pBueno, quizá un poco."))
+    playse(SE_PIN)
+    //TODO Xiros: Smile
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_SweatDropWithDelay48)
+    //TODO Xiros: Trainerbattle
+    setflag(FLAG_DEFEATED_ADMIN_SCAREX)
+    release
     end
 }
