@@ -5,6 +5,13 @@ mapscripts ScarexOzumasRoom_MapScripts {
 }
 
 script ScarexOzumasRoom_OnTransition {
+    if(var(VAR_TEMP_0_ADMINS_IN_ROOM) == 1) {
+        setobjectmovementtype(LOCALID_SCAREXOZUROOM_OZUMAS, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectmovementtype(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectxy(LOCALID_SCAREXOZUROOM_OZUMAS, 8, 5)
+        setobjectxyperm(LOCALID_SCAREXOZUROOM_OZUMAS, 8, 5)
+    }
+    end
 }
 
 script ScarexOzumasRoom_EventScript_EnterRoom {
@@ -16,13 +23,16 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
     delay(20)
     showobjectat(LOCALID_SCAREXOZUROOM_OZUMAS, MAP_SCAREX_OZUMAS_ROOM)
+    setobjectmovementtype(LOCALID_SCAREXOZUROOM_OZUMAS, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype2(LOCALID_SCAREXOZUROOM_OZUMAS, MOVEMENT_TYPE_FACE_DOWN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_WalkDown)
     delay(20)
     call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(
-        walk_down * 2
+        walk_down
         walk_right
+        walk_down
+        walk_right 
         face_down
         delay_8
         face_right
@@ -33,6 +43,7 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
         delay_8
         face_down
     ))
+    setobjectxyperm(LOCALID_SCAREXOZUROOM_OZUMAS, 8, 5)
     playse(SE_PIN)
     applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMarkWithDelay48)
     msgbox(format("¿Y Scarex? Se supone ya debería estar aquí."), MSGBOX_AUTOCLOSE)
@@ -67,6 +78,7 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
     ))
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_SweatDropWithDelay48)
     delay(20)
+    setobjectmovementtype(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype2(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)
     turnobject(LOCALID_SCAREXOZUROOM_OZUMAS, DIR_SOUTH)
     directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
@@ -78,7 +90,67 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
 
 }
 
+script ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
 script ScarexOzumasRoom_EventScript_Ozumas {
+    if(flag(FLAG_DEFEATED_ADMIN_OZUMAS)){
+        lock
+        faceplayer
+        msgbox(format("Oye, estuve repitiendo nuestro combate en mi cabeza, y no puedo mentir: me diste una buena paliza."))
+        if(!flag(FLAG_DEFEATED_ADMIN_SCAREX)){
+            msgbox(format("Ya has demostrado tu fuerza. Ahora ve a enfrentarte a Scarex."))
+        }
+        release
+        end
+    }
+    lock
+    faceplayer
+    msgbox(format("Bueno, parece que ha llegado el momento que teníamos pendiente.\pSoy Ozumas, de la sangre de la legendaria dinastía Mendrax.\pHace mucho, fuimos muy conocidos, sobretodo por nunca escapar a un reto."))
+    
+    call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
+    msgbox(format("¿Así que no me conoces? Pues no te preocupes, han pasado muchos años ya."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_HappyWithDelay48)
+    msgbox(format("Si quieres saber algo de mí, te diré que desde siempre me atrajeron las historias de Johto.\pPasé años tratando de contar al mundo sus leyendas."))
+    if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
+        msgbox(format("Parece que ya has derrotado a Scarex, así que si logras vencerme, podrás avanzar."))
+    } else {
+        msgbox(format("Si quieres avanzar, primero tendrás que derrotar a Scarex y a mí.\pParece que yo seré tu primer contrincante."))
+    }
+    msgbox(format("Vamos a ver qué historia sale de esta batalla."))
+    call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_VersusWithDelay48)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, "¡Eso ha estado muy guay!")
+    msgbox(format("Has demostrado que tienes fuerza y convicción… ¡te felicito!\pPero si quieres ganar, aún queda un largo camino por delante…"))
+    if(!flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
+        msgbox(format("Primero, deberás enfrentarte a Scarex para poder avanzar a la siguiente sala."))
+    }
+    msgbox(format("Más adelante, aguarda una batalla contra alguien muy cercano a mí.\pEs un gran amigo y rival. Quizá lo conozcas, se llama Xiros.\pSerá esa prueba la que determine si realmente puedes ganar el desafío."))
+    delay(20)
+    msgbox(format("Estoy seguro de que lo harás genial. ¡Mucha suerte!"))
+    if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
+        call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    }
+    setflag(FLAG_DEFEATED_ADMIN_OZUMAS)
+    release
     end
 }
 

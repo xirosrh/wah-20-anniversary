@@ -49,8 +49,8 @@
 #define FLAG_DEFEATED_ADMIN_AGUIAR    0x23 // Used WAH
 #define FLAG_DEFEATED_ADMIN_JACK_JOHNSON    0x24 // Used WAH
 #define FLAG_DEFEATED_ADMIN_ANGEL    0x25 // Used WAH
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_DEFEATED_ADMIN_OZUMAS    0x26 // Used WAH
+#define FLAG_DEFEATED_ADMIN_SCAREX    0x27 // Used WAH
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag

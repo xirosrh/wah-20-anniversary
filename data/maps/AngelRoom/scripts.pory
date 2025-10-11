@@ -19,7 +19,7 @@ script AngelRoom_EventScript_Angel {
     msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE)
     waitmovement(0)
     delay(30)
-    msgbox(format("Ha pasado mucho desde la última vez, ¿verdad?\pEspero que este reencuentro... ¡SEA MEMORABLE!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Ha pasado mucho desde la última vez, ¿verdad?\pEspero que este reencuentro… ¡SEA MEMORABLE!"), MSGBOX_AUTOCLOSE)
     delay(10)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_HappyWithDelay48)

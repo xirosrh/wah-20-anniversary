@@ -209,7 +209,7 @@ AngelRoom_EventScript_Angel_Text_2:
 # 22 "data/maps/AngelRoom/scripts.pory"
 	.string "Ha pasado mucho desde la última vez,\n"
 	.string "¿verdad?\p"
-	.string "Espero que este reencuentro... ¡SEA\n"
+	.string "Espero que este reencuentro… ¡SEA\n"
 	.string "MEMORABLE!$"
 
 AngelRoom_EventScript_Angel_Text_3:
