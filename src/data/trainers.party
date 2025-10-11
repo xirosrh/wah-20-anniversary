@@ -543,10 +543,10 @@ Carvanha
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MUSEUM_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_DAVZERO_MAIN ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -560,12 +560,12 @@ Carvanha
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SPACE_CENTER_1 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+=== TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 

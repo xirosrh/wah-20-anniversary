@@ -261,6 +261,10 @@ Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
 
+Common_Movement_JumpInPlaceLeftRight:
+	jump_in_place_left_right
+	step_end
+
 Common_Movement_JumpInPlaceRight:
 	jump_in_place_right
 	step_end

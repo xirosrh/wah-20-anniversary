@@ -2,6 +2,15 @@ mapscripts DavZeroRoom_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_DAVZERO_ROOM_STATE, 0: DavZeroRoom_OnFrame
 	]
+    MAP_SCRIPT_ON_TRANSITION: DavZeroRoom_OnTransition
+}
+
+script DavZeroRoom_OnTransition {
+    if(var(VAR_DAVZERO_ROOM_STATE) == 0) {
+        setflag(FLAG_ZEROROOM_HIDE_MILOTIC)
+        setflag(FLAG_ZEROROOM_HIDE_BALL)
+    }
+    end
 }
 
 script DavZeroRoom_OnFrame {
@@ -23,7 +32,7 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
     msgbox(format("Esperad un segundo... ¡Creo que hoy tenemos compañía!"), MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_left * 7, face_down))
-    applymovement(LOCALID_CAMERA, moves(walk_left * 7, delay_16))
+    applymovement(LOCALID_CAMERA, moves(walk_left * 7, delay_8))
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     msgbox(format("Ajá, con que por fin has llegado hasta aquí.\pEs un placer verte, ¿me reconoces?"))
@@ -42,18 +51,49 @@ script DavZeroRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SweatDropWithDelay48)
     msgbox(format("A ver, menos mal que pueden practicar un rato mientras combatimos.\pAunque creo que estarán muy expectantes, porque presiento que este será un combate sin parangón."), MSGBOX_AUTOCLOSE)
-    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_JumpInPlaceRight2)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(emote_happy, jump_in_place_right * 2, delay_16))
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkRight4)
     msgbox(format("Dime… ¿cuál es tu objetivo? ¿quieres desafiar al loco con lanzallamas que te espera al final?"))
-
-// Dime. ¿Cuál es tu objetivo? ¿Quieres desafiar al loco con lanzallamas que te espera al final? A estas alturas ya lo sabrás, ya que para llegar aquí te has debido enfrentar a diversos compañeros, pero yo no te lo pondré nada fácil en este combate. He estado entrenando cuerpo, mente y Pokémon esperando tu llegada. Pocos aspirantes logran llegar hasta aquí. Enhorabuena. 
-
-// ¿Sabes? Muchos creen que un combate es pura fuerza, pero para mí es memoria. Cada ataque, cada estrategia, cada fallo… es un recordatorio de quiénes fuimos y en qué nos convertimos. Quiero que te quede claro lo siguiente: no soy tu rival. Soy la voz que te recuerda que cada paso, incluso dentro de estas cuatro paredes, puede marcarte más de lo que crees.
-
-// Hay quien lucha para ganar, y hay quien lucha para no volver a cometer el mismo fallo. ¿Cuál de esos eres tú? Déjame comprobarlo, ya que tu mirada me produce curiosidad... Me hace recordar aquella época loca en la que frecuentaba aquel lugar que antaño fue nuestro hogar.
-
-// Bueno, ya está bien, que al final me pongo intenso y esto acabará pareciendo un poema de Benedetti.... y en esta ocasión no traigo rosas para acompañarlo, sino Pokéball. ¡No te amedrentes ahora!
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkLeft)
+    msgbox(format("A estas alturas ya lo sabrás, ya que para llegar aquí te has debido enfrentar a diversos compañeros."))
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_JumpInPlaceLeftRight)
+    msgbox(format("¡Pero yo no te lo pondré nada fácil en este combate!\pHe estado entrenando cuerpo, mente y Pokémon esperando tu llegada."))
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkRight)
+    msgbox(format("Pocos aspirantes logran llegar hasta aquí. Enhorabuena."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SmileWithDelay48)
+    msgbox(format("Ven, vayamos a la zona de combate."), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_right, walk_down * 4))
+    applymovement(LOCALID_PLAYER, moves(walk_down * 7, face_up))
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown5)
+    waitmovement(LOCALID_PLAYER)
+    msgbox(format("¿Sabes? Muchos creen que un combate es pura fuerza, pero para mí es memoria.\pCada ataque, cada estrategia, cada fallo… es un recordatorio de quiénes fuimos y en qué nos convertimos."))
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Quiero que te quede claro lo siguiente: no soy tu rival.\pSoy la voz que te recuerda que cada paso, incluso dentro de estas cuatro paredes, puede marcarte más de lo que crees."))
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Hay quien lucha para ganar, y hay quien lucha para no volver a cometer el mismo fallo.\p¿Cuál de esos eres tú? Déjame comprobarlo, ya que tu mirada me produce curiosidad…\pMe hace recordar aquella época loca en la que frecuentaba aquel lugar que antaño fue nuestro hogar."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_CryWithDelay48)
+    msgbox(format("Bueno, ya está bien, que al final me pongo intenso y esto acabará pareciendo un poema de Benedetti…\pY en esta ocasión no traigo rosas para acompañarlo, sino Pokéball."), MSGBOX_AUTOCLOSE)
+    clearflag(FLAG_ZEROROOM_HIDE_BALL)
+    addobject(LOCALID_ZEROROOM_POKEBALL)
+    showobjectat(LOCALID_ZEROROOM_POKEBALL, MAP_DAV_ZERO_ROOM)
+    applymovement(LOCALID_ZEROROOM_POKEBALL, Common_Movement_WalkDiagSouthEast)
+    waitmovement(0)
+	playse(SE_BALL_OPEN)
+	fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_ZEROROOM_POKEBALL)
+    clearflag(FLAG_ZEROROOM_HIDE_MILOTIC)
+    addobject(LOCALID_ZEROROOM_MILOTIC)
+    fadescreen(FADE_FROM_WHITE)
+    setobjectmovementtype2(LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN)   
+    release
+    msgbox(format("¡No te amedrentes ahora!"))
+    //Trainerbattle
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido. Ha sido uno de esos combates que a mí me gustan: intensos, donde cada movimiento parece pesar el doble y cada decisión importa."))
+    
+    special(RemoveCameraObject)
     setvar(VAR_DAVZERO_ROOM_STATE, 1)
     release
     end
