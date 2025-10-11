@@ -281,6 +281,15 @@ Common_Movement_Thinking:
 	emote_thinking
 	step_end
 
+
+Common_Movement_ThinkingWithDelay48:
+	emote_thinking
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+
 Common_Movement_Versus:
 	emote_versus
 	step_end
@@ -293,30 +302,96 @@ Common_Movement_VersusWithDelay48:
 	step_end
 
 Common_Movement_Happy:
-        emote_happy
-        step_end
+	emote_happy
+	step_end
 
 Common_Movement_HappyWithDelay48:
-        emote_happy
-        delay_16
-        delay_16
-        delay_16
-        step_end
+	emote_happy
+	delay_16
+	delay_16
+	delay_16
+	step_end
 
 Common_Movement_Sad:
-        emote_sad
-        step_end
+	emote_sad
+	step_end
 
 Common_Movement_SadWithDelay48:
-        emote_sad
-        delay_16
-        delay_16
-        delay_16
-        step_end
+	emote_sad
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Smile:
+	emote_smile
+	step_end
+
+Common_Movement_SmileWithDelay48:
+	emote_smile
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Angry:
+	emote_angry
+	step_end
+
+Common_Movement_AngryWithDelay48:
+	emote_angry
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_V:
+	emote_v
+	step_end
+
+Common_Movement_VWithDelay48:
+	emote_v
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Surprise:
+	emote_surprise
+	step_end
+
+Common_Movement_SurpriseWithDelay48:
+	emote_surprise
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Cry:
+	emote_cry
+	step_end
+
+Common_Movement_CryWithDelay48:
+	emote_cry
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_Heart:
+	emote_heart
+	step_end
+
+Common_Movement_HeartWithDelay48:
+	emote_heart
+	delay_16
+	delay_16
+	delay_16
+	step_end
 
 Common_Movement_Sleeping:
-        emote_sleeping
-        step_end
+	emote_sleeping
+	step_end
 
 Common_Movement_SmokeCigarette:
 	smoke_cigarette

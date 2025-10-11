@@ -72,6 +72,11 @@ static const u8 sEmotion_VersusGfx[] = INCBIN_U8("graphics/field_effects/pics/em
 static const u8 sEmotion_HappyGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_happy.4bpp");
 static const u8 sEmotion_SadGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_sad.4bpp");
 static const u8 sEmotion_SleepingGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_sleeping.4bpp");
+static const u8 sEmotion_SmileGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_smile.4bpp");
+static const u8 sEmotion_CryGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_cry.4bpp");
+static const u8 sEmotion_AngryGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_angry.4bpp");
+static const u8 sEmotion_SurpriseGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_surprise.4bpp");
+static const u8 sEmotion_VGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_v.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
 
@@ -182,24 +187,24 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
         .size = sizeof(sEmotion_SadGfx)
     },
     {
-        .data = sEmotion_HappyGfx,
-        .size = sizeof(sEmotion_HappyGfx)
+        .data = sEmotion_SmileGfx,
+        .size = sizeof(sEmotion_SmileGfx)
     },
     {
-        .data = sEmotion_SadGfx,
-        .size = sizeof(sEmotion_SadGfx)
+        .data = sEmotion_CryGfx,
+        .size = sizeof(sEmotion_CryGfx)
     },
     {
-        .data = sEmotion_XGfx,
-        .size = sizeof(sEmotion_XGfx)
+        .data = sEmotion_AngryGfx,
+        .size = sizeof(sEmotion_AngryGfx)
     },
     {
-        .data = sEmotion_DoubleExclamationMarkGfx,
-        .size = sizeof(sEmotion_DoubleExclamationMarkGfx)
+        .data = sEmotion_SurpriseGfx,
+        .size = sizeof(sEmotion_SurpriseGfx)
     },
     {
-        .data = sEmotion_VersusGfx,
-        .size = sizeof(sEmotion_VersusGfx)
+        .data = sEmotion_VGfx,
+        .size = sizeof(sEmotion_VGfx)
     }
 };
 
