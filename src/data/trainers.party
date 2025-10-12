@@ -552,13 +552,66 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Benji (Braviary) @ Choice Scarf
+Ability: Keen Eye
+Level: 10
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Brave Bird
+- Close Combat
+- U-turn
+- Rock Slide
 
-Carvanha
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Samus (Charizard-Mega-X) (F) @ Charizardite X
+Ability: Tough Claws
+Level: 10
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Flare Blitz
+- Dragon Claw
+- Earthquake
+
+0 (Milotic) (M) @ Leftovers
+Ability: Marvel Scale
+Shiny: Yes
+Level: 10
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
+Iris (Xerneas) @ Power Herb
+Ability: Fairy Aura
+Level: 10
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Geomancy
+- Moonblast
+- Thunderbolt
+- Focus Blast
+
+Hydreigon (F) @ Choice Specs
+Ability: Levitate
+Level: 10
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Draco Meteor
+- Dark Pulse
+- Flamethrower
+- Earth Power
+
+Kingambit (M) @ Leftovers
+Ability: Supreme Overlord
+Level: 10
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Swords Dance
+- Iron Head
+- Kowtow Cleave
+- Sucker Punch
 
 === TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE ===
 Name: Zero
