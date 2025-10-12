@@ -276,18 +276,24 @@ DavZeroRoom_OnFrame_1:
 # 143 "data/maps/DavZeroRoom/scripts.pory"
 	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_SmileWithDelay48
 # 144 "data/maps/DavZeroRoom/scripts.pory"
-	special SpawnCameraObject
+	delay 20
 # 145 "data/maps/DavZeroRoom/scripts.pory"
-	directcameramovementtopos 9, 12
+	moveobjecttopos LOCALID_ZEROROOM_DAVZERO, 16, 5, DIR_SOUTH
 # 146 "data/maps/DavZeroRoom/scripts.pory"
 	waitmovement 0
 # 147 "data/maps/DavZeroRoom/scripts.pory"
-	special RemoveCameraObject
+	special SpawnCameraObject
 # 148 "data/maps/DavZeroRoom/scripts.pory"
-	setvar VAR_DAVZERO_ROOM_STATE, 1
+	directcameramovementtopos 9, 12
 # 149 "data/maps/DavZeroRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_DAVZERO
+	waitmovement 0
 # 150 "data/maps/DavZeroRoom/scripts.pory"
+	special RemoveCameraObject
+# 151 "data/maps/DavZeroRoom/scripts.pory"
+	setvar VAR_DAVZERO_ROOM_STATE, 1
+# 152 "data/maps/DavZeroRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_DAVZERO
+# 153 "data/maps/DavZeroRoom/scripts.pory"
 	release
 	end
 
@@ -297,28 +303,28 @@ DavZeroRoom_OnFrame_2:
 	goto DavZeroRoom_OnFrame_1
 
 
-# 154 "data/maps/DavZeroRoom/scripts.pory"
+# 157 "data/maps/DavZeroRoom/scripts.pory"
 DavZeroRoom_Movement_GirlAndBoySurprised:
-# 155 "data/maps/DavZeroRoom/scripts.pory"
+# 158 "data/maps/DavZeroRoom/scripts.pory"
 	emote_surprise
-# 156 "data/maps/DavZeroRoom/scripts.pory"
+# 159 "data/maps/DavZeroRoom/scripts.pory"
 	walk_in_place_up
-# 157 "data/maps/DavZeroRoom/scripts.pory"
+# 160 "data/maps/DavZeroRoom/scripts.pory"
 	delay_16
-# 157 "data/maps/DavZeroRoom/scripts.pory"
+# 160 "data/maps/DavZeroRoom/scripts.pory"
 	delay_16
 	step_end
 
 DavZeroRoom_EventScript_SchoolGirl::
-# 161 "data/maps/DavZeroRoom/scripts.pory"
-	lock
-# 162 "data/maps/DavZeroRoom/scripts.pory"
-	faceplayer
-# 163 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_EventScript_SchoolGirl_Text_0, MSGBOX_AUTOCLOSE
 # 164 "data/maps/DavZeroRoom/scripts.pory"
-	turnobject LOCALID_ZEROROOM_SCHOOLGIRL, DIR_NORTH
+	lock
 # 165 "data/maps/DavZeroRoom/scripts.pory"
+	faceplayer
+# 166 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_SchoolGirl_Text_0, MSGBOX_AUTOCLOSE
+# 167 "data/maps/DavZeroRoom/scripts.pory"
+	turnobject LOCALID_ZEROROOM_SCHOOLGIRL, DIR_NORTH
+# 168 "data/maps/DavZeroRoom/scripts.pory"
 	release
 	end
 
@@ -751,7 +757,7 @@ DavZeroRoom_OnFrame_Text_39:
 	.string "te diga... Yo tan solo soy Zero.$"
 
 DavZeroRoom_EventScript_SchoolGirl_Text_0:
-# 163 "data/maps/DavZeroRoom/scripts.pory"
+# 166 "data/maps/DavZeroRoom/scripts.pory"
 	.string "¿Te cuento un secreto? Ya terminé la\n"
 	.string "escuela hace años.\p"
 	.string "¡Solamente vengo aquí porque Zero es\n"
