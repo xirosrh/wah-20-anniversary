@@ -132,56 +132,162 @@ DavZeroRoom_OnFrame_1:
 # 70 "data/maps/DavZeroRoom/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 71 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_OnFrame_Text_14
+	special RemoveCameraObject
 # 72 "data/maps/DavZeroRoom/scripts.pory"
-	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+	msgbox DavZeroRoom_OnFrame_Text_14
 # 73 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_OnFrame_Text_15
-# 74 "data/maps/DavZeroRoom/scripts.pory"
 	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 74 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_15
 # 75 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_OnFrame_Text_16
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
 # 76 "data/maps/DavZeroRoom/scripts.pory"
-	playse SE_PIN
+	msgbox DavZeroRoom_OnFrame_Text_16
 # 77 "data/maps/DavZeroRoom/scripts.pory"
-	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_CryWithDelay48
+	playse SE_PIN
 # 78 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_CryWithDelay48
 # 79 "data/maps/DavZeroRoom/scripts.pory"
-	clearflag FLAG_ZEROROOM_HIDE_BALL
+	msgbox DavZeroRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE
 # 80 "data/maps/DavZeroRoom/scripts.pory"
-	addobject LOCALID_ZEROROOM_POKEBALL
+	clearflag FLAG_ZEROROOM_HIDE_BALL
 # 81 "data/maps/DavZeroRoom/scripts.pory"
-	showobjectat LOCALID_ZEROROOM_POKEBALL, MAP_DAV_ZERO_ROOM
+	addobject LOCALID_ZEROROOM_POKEBALL
 # 82 "data/maps/DavZeroRoom/scripts.pory"
-	applymovement LOCALID_ZEROROOM_POKEBALL, Common_Movement_WalkDiagSouthEast
+	showobjectat LOCALID_ZEROROOM_POKEBALL, MAP_DAV_ZERO_ROOM
 # 83 "data/maps/DavZeroRoom/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_ZEROROOM_POKEBALL, Common_Movement_WalkDiagSouthEast
 # 84 "data/maps/DavZeroRoom/scripts.pory"
-	playse SE_BALL_OPEN
+	waitmovement 0
 # 85 "data/maps/DavZeroRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	playse SE_BALL_OPEN
 # 86 "data/maps/DavZeroRoom/scripts.pory"
-	removeobject LOCALID_ZEROROOM_POKEBALL
+	fadescreen FADE_TO_WHITE
 # 87 "data/maps/DavZeroRoom/scripts.pory"
-	clearflag FLAG_ZEROROOM_HIDE_MILOTIC
+	removeobject LOCALID_ZEROROOM_POKEBALL
 # 88 "data/maps/DavZeroRoom/scripts.pory"
-	addobject LOCALID_ZEROROOM_MILOTIC
+	clearflag FLAG_ZEROROOM_HIDE_MILOTIC
 # 89 "data/maps/DavZeroRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	addobject LOCALID_ZEROROOM_MILOTIC
 # 90 "data/maps/DavZeroRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN
+	fadescreen FADE_FROM_WHITE
 # 91 "data/maps/DavZeroRoom/scripts.pory"
-	release
+	setobjectmovementtype2 LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN
 # 92 "data/maps/DavZeroRoom/scripts.pory"
+	release
+# 93 "data/maps/DavZeroRoom/scripts.pory"
 	msgbox DavZeroRoom_OnFrame_Text_18
-# 94 "data/maps/DavZeroRoom/scripts.pory"
+# 95 "data/maps/DavZeroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_DAVZERO_MAIN, DavZeroRoom_OnFrame_Text_19
 # 96 "data/maps/DavZeroRoom/scripts.pory"
-	special RemoveCameraObject
+	fadescreen FADE_TO_WHITE
 # 97 "data/maps/DavZeroRoom/scripts.pory"
-	setvar VAR_DAVZERO_ROOM_STATE, 1
+	removeobject LOCALID_ZEROROOM_MILOTIC
 # 98 "data/maps/DavZeroRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 99 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkDown3
+# 100 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_20
+# 101 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 102 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_ThinkingWithDelay48
+# 103 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_21
+# 104 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 105 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_22
+# 106 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 107 "data/maps/DavZeroRoom/scripts.pory"
+	applymovement LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48
+# 108 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_23
+# 109 "data/maps/DavZeroRoom/scripts.pory"
+	waitmovement 0
+# 110 "data/maps/DavZeroRoom/scripts.pory"
+	closemessage
+# 111 "data/maps/DavZeroRoom/scripts.pory"
+	delay 20
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, DavZeroRoom_OnFrame_Movement_8
+# 113 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_24
+# 114 "data/maps/DavZeroRoom/scripts.pory"
+	delay 10
+# 115 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_25
+# 116 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 117 "data/maps/DavZeroRoom/scripts.pory"
+	delay 20
+# 118 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_26
+# 119 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 120 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_SweatDropWithDelay48
+# 121 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_27
+# 122 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 123 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_28, MSGBOX_AUTOCLOSE
+# 124 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 125 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48
+# 126 "data/maps/DavZeroRoom/scripts.pory"
+	delay 10
+# 127 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkUp2
+# 128 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_29
+# 129 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_FaceDown
+# 130 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_30, MSGBOX_AUTOCLOSE
+# 131 "data/maps/DavZeroRoom/scripts.pory"
+	delay 20
+# 132 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkDown2
+# 133 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_31
+# 134 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 135 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_32
+# 136 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_ThinkingWithDelay48
+# 137 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_33
+# 138 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown
+# 139 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_34
+# 140 "data/maps/DavZeroRoom/scripts.pory"
+	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, DavZeroRoom_OnFrame_Text_35, DavZeroRoom_OnFrame_Text_36, DavZeroRoom_OnFrame_Text_37, DavZeroRoom_OnFrame_Text_38
+# 141 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_OnFrame_Text_39
+# 142 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 143 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_SmileWithDelay48
+# 144 "data/maps/DavZeroRoom/scripts.pory"
+	special SpawnCameraObject
+# 145 "data/maps/DavZeroRoom/scripts.pory"
+	directcameramovementtopos 9, 12
+# 146 "data/maps/DavZeroRoom/scripts.pory"
+	waitmovement 0
+# 147 "data/maps/DavZeroRoom/scripts.pory"
+	special RemoveCameraObject
+# 148 "data/maps/DavZeroRoom/scripts.pory"
+	setvar VAR_DAVZERO_ROOM_STATE, 1
+# 149 "data/maps/DavZeroRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_DAVZERO
+# 150 "data/maps/DavZeroRoom/scripts.pory"
 	release
 	end
 
@@ -191,28 +297,28 @@ DavZeroRoom_OnFrame_2:
 	goto DavZeroRoom_OnFrame_1
 
 
-# 102 "data/maps/DavZeroRoom/scripts.pory"
+# 154 "data/maps/DavZeroRoom/scripts.pory"
 DavZeroRoom_Movement_GirlAndBoySurprised:
-# 103 "data/maps/DavZeroRoom/scripts.pory"
+# 155 "data/maps/DavZeroRoom/scripts.pory"
 	emote_surprise
-# 104 "data/maps/DavZeroRoom/scripts.pory"
+# 156 "data/maps/DavZeroRoom/scripts.pory"
 	walk_in_place_up
-# 105 "data/maps/DavZeroRoom/scripts.pory"
+# 157 "data/maps/DavZeroRoom/scripts.pory"
 	delay_16
-# 105 "data/maps/DavZeroRoom/scripts.pory"
+# 157 "data/maps/DavZeroRoom/scripts.pory"
 	delay_16
 	step_end
 
 DavZeroRoom_EventScript_SchoolGirl::
-# 109 "data/maps/DavZeroRoom/scripts.pory"
+# 161 "data/maps/DavZeroRoom/scripts.pory"
 	lock
-# 110 "data/maps/DavZeroRoom/scripts.pory"
+# 162 "data/maps/DavZeroRoom/scripts.pory"
 	faceplayer
-# 111 "data/maps/DavZeroRoom/scripts.pory"
+# 163 "data/maps/DavZeroRoom/scripts.pory"
 	msgbox DavZeroRoom_EventScript_SchoolGirl_Text_0, MSGBOX_AUTOCLOSE
-# 112 "data/maps/DavZeroRoom/scripts.pory"
+# 164 "data/maps/DavZeroRoom/scripts.pory"
 	turnobject LOCALID_ZEROROOM_SCHOOLGIRL, DIR_NORTH
-# 113 "data/maps/DavZeroRoom/scripts.pory"
+# 165 "data/maps/DavZeroRoom/scripts.pory"
 	release
 	end
 
@@ -339,8 +445,6 @@ DavZeroRoom_OnFrame_Movement_6:
 	walk_down
 # 67 "data/maps/DavZeroRoom/scripts.pory"
 	walk_down
-# 67 "data/maps/DavZeroRoom/scripts.pory"
-	walk_down
 	step_end
 
 # 68 "data/maps/DavZeroRoom/scripts.pory"
@@ -361,6 +465,30 @@ DavZeroRoom_OnFrame_Movement_7:
 	walk_down
 # 68 "data/maps/DavZeroRoom/scripts.pory"
 	face_up
+	step_end
+
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+DavZeroRoom_OnFrame_Movement_8:
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_left
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	emote_thinking
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_left
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_right
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_right
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_right
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_right
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_left
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	walk_left
+# 112 "data/maps/DavZeroRoom/scripts.pory"
+	face_down
 	step_end
 
 DavZeroRoom_OnFrame_Text_0:
@@ -441,7 +569,7 @@ DavZeroRoom_OnFrame_Text_13:
 	.string "Ven, vayamos a la zona de combate.$"
 
 DavZeroRoom_OnFrame_Text_14:
-# 71 "data/maps/DavZeroRoom/scripts.pory"
+# 72 "data/maps/DavZeroRoom/scripts.pory"
 	.string "¿Sabes? Muchos creen que un combate\n"
 	.string "es pura fuerza, pero para mí es memoria.\p"
 	.string "Cada ataque, cada estrategia, cada\n"
@@ -449,7 +577,7 @@ DavZeroRoom_OnFrame_Text_14:
 	.string "fuimos y en qué nos convertimos.$"
 
 DavZeroRoom_OnFrame_Text_15:
-# 73 "data/maps/DavZeroRoom/scripts.pory"
+# 74 "data/maps/DavZeroRoom/scripts.pory"
 	.string "Quiero que te quede claro lo siguiente:\n"
 	.string "no soy tu rival.\p"
 	.string "Soy la voz que te recuerda que cada\n"
@@ -458,7 +586,7 @@ DavZeroRoom_OnFrame_Text_15:
 	.string "crees.$"
 
 DavZeroRoom_OnFrame_Text_16:
-# 75 "data/maps/DavZeroRoom/scripts.pory"
+# 76 "data/maps/DavZeroRoom/scripts.pory"
 	.string "Hay quien lucha para ganar, y hay quien\n"
 	.string "lucha para no volver a cometer el mismo\l"
 	.string "fallo.\p"
@@ -470,7 +598,7 @@ DavZeroRoom_OnFrame_Text_16:
 	.string "antaño fue nuestro hogar.$"
 
 DavZeroRoom_OnFrame_Text_17:
-# 78 "data/maps/DavZeroRoom/scripts.pory"
+# 79 "data/maps/DavZeroRoom/scripts.pory"
 	.string "Bueno, ya está bien, que al final me\n"
 	.string "pongo intenso y esto acabará\l"
 	.string "pareciendo un poema de Benedetti…\p"
@@ -478,21 +606,155 @@ DavZeroRoom_OnFrame_Text_17:
 	.string "acompañarlo, sino Pokéball.$"
 
 DavZeroRoom_OnFrame_Text_18:
-# 92 "data/maps/DavZeroRoom/scripts.pory"
+# 93 "data/maps/DavZeroRoom/scripts.pory"
 	.string "¡No te amedrentes ahora!$"
 
 DavZeroRoom_OnFrame_Text_19:
-# 94 "data/maps/DavZeroRoom/scripts.pory"
+# 95 "data/maps/DavZeroRoom/scripts.pory"
 	.string "Uf… no puedo negarlo, me has\n"
-	.string "sorprendido. Ha sido uno de esos\l"
-	.string "combates que a mí me gustan: intensos,\l"
-	.string "donde cada movimiento parece pesar el\l"
-	.string "doble y cada decisión importa.$"
+	.string "sorprendido.\p"
+	.string "Ha sido uno de esos combates que a\n"
+	.string "mí me gustan: intensos, donde cada\l"
+	.string "movimiento parece pesar el doble\l"
+	.string "y cada decisión importa.$"
+
+DavZeroRoom_OnFrame_Text_20:
+# 100 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Hoy has sido tú quien ha salido\n"
+	.string "victorioso, y lo reconozco sin rodeos.\p"
+	.string "Aunque debes tener claro que no\n"
+	.string "siempre te alzarás con la victoria.$"
+
+DavZeroRoom_OnFrame_Text_21:
+# 103 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Pero escucha algo: la derrota no es el\n"
+	.string "final de nada. Al contrario, es un\l"
+	.string "espejo.\p"
+	.string "Refleja lo que todavía no queremos ver\n"
+	.string "de nosotros mismos, aquello que\l"
+	.string "evitamos afrontar.$"
+
+DavZeroRoom_OnFrame_Text_22:
+# 105 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Yo también lo he aprendido así,\n"
+	.string "perdiendo, equivocándome, cayendo una\l"
+	.string "y otra vez…$"
+
+DavZeroRoom_OnFrame_Text_23:
+# 108 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Riéndome.$"
+
+DavZeroRoom_OnFrame_Text_24:
+# 113 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿Sabes? El éxito y la victoria no está\n"
+	.string "en acumular triunfos, ni en aplastar\l"
+	.string "rivales, ni siquiera en vencerme a mí\l"
+	.string "ahora.\p"
+	.string "El éxito está en levantarte después de\n"
+	.string "caer, en seguir caminando con las\l"
+	.string "cicatrices bien visibles, en no rendirte\l"
+	.string "aunque la vida o un combate te hayan\l"
+	.string "dejado tocado.$"
+
+DavZeroRoom_OnFrame_Text_25:
+# 115 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Quiero que entiendas eso.$"
+
+DavZeroRoom_OnFrame_Text_26:
+# 118 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Hoy me has derrotado, y me alegra que lo\n"
+	.string "hayas hecho.\p"
+	.string "Porque eso significa que tú también\n"
+	.string "estás aprendiendo lo que de verdad\l"
+	.string "importa…\p"
+	.string "Y que yo también tengo cosas que\n"
+	.string "aprender.$"
+
+DavZeroRoom_OnFrame_Text_27:
+# 121 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Quédate con eso, porque es un\n"
+	.string "conocimiento que ningún Pokémon,\l"
+	.string "ningún rival y ninguna medalla pueden\l"
+	.string "quitarte jamás.$"
+
+DavZeroRoom_OnFrame_Text_28:
+# 123 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Definitivamente no me equivocaba:\n"
+	.string "tienes una mirada diferente.\p"
+	.string "Estoy orgulloso de que hayas vencido,\n"
+	.string "porque cada victoria como la tuya\l"
+	.string "mantiene viva la llama de este lugar.$"
+
+DavZeroRoom_OnFrame_Text_29:
+# 128 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Aquí termina nuestro encuentro, pero\n"
+	.string "no tu camino.\p"
+	.string "Yo solo fui un obstáculo, como esas\n"
+	.string "mancuernas que parecen imposibles\l"
+	.string "hasta que un día te das cuenta de que\l"
+	.string "puedes con ellas.$"
+
+DavZeroRoom_OnFrame_Text_30:
+# 130 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Y oye, si algún día coincidimos en el\n"
+	.string "gimnasio, no me mires raro si te pido que\l"
+	.string "me ayudes a subir la barra.\p"
+	.string "Nadie es invencible.$"
+
+DavZeroRoom_OnFrame_Text_31:
+# 133 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Ahora ve, compañero. Sigue tu camino,\n"
+	.string "comete errores y aprende.$"
+
+DavZeroRoom_OnFrame_Text_32:
+# 135 "data/maps/DavZeroRoom/scripts.pory"
+	.string "No tengas miedo de perder. Lo peor que\n"
+	.string "puedes hacer es dejar de intentarlo por\l"
+	.string "miedo a no estar a la altura.\p"
+	.string "Yo lo sé bien… demasiadas veces me\n"
+	.string "quedé paralizado pensando en qué dirán\l"
+	.string "de mí, en si mis errores me definían.$"
+
+DavZeroRoom_OnFrame_Text_33:
+# 137 "data/maps/DavZeroRoom/scripts.pory"
+	.string "No eres tus fracasos, ni tus caídas, ni\n"
+	.string "lo que el resto piense de ti.\p"
+	.string "Eres todo lo que haces a pesar de ellos.\n"
+	.string "Si hoy has sido capaz de vencerme aquí,\l"
+	.string "en este lugar, recuerda que también\l"
+	.string "serás capaz de enfrentarte a cualquier\l"
+	.string "cosa ahí fuera.$"
+
+DavZeroRoom_OnFrame_Text_34:
+# 139 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿Qué pasa, por qué me miras así?$"
+
+DavZeroRoom_OnFrame_Text_35:
+# 140 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Gran consejo, digno de un sabio.$"
+
+DavZeroRoom_OnFrame_Text_36:
+# 140 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Me hiciste pensar un poco.$"
+
+DavZeroRoom_OnFrame_Text_37:
+# 140 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿Falta mucho del discurso?$"
+
+DavZeroRoom_OnFrame_Text_38:
+# 140 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿Eso fue una clase?$"
+
+DavZeroRoom_OnFrame_Text_39:
+# 141 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿No te esperabas esto? Qué quieres que\n"
+	.string "te diga... Yo tan solo soy Zero.$"
 
 DavZeroRoom_EventScript_SchoolGirl_Text_0:
-# 111 "data/maps/DavZeroRoom/scripts.pory"
-	.string "¿Sabías qué? Ya terminé la escuela\n"
-	.string "hace años.\p"
+# 163 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¿Te cuento un secreto? Ya terminé la\n"
+	.string "escuela hace años.\p"
 	.string "¡Solamente vengo aquí porque Zero es\n"
-	.string "tan sexy!\p"
-	.string "Será nuestro secreto, shhh.$"
+	.string "tan interesante!\p"
+	.string "Podría quedarme todo el día\n"
+	.string "escuchándolo hablar.$"
