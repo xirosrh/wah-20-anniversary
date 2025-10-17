@@ -330,7 +330,29 @@ DavZeroRoom_EventScript_SchoolGirl::
 
 
 DavZeroRoom_EventScript_SchoolBoy::
-	return
+# 173 "data/maps/DavZeroRoom/scripts.pory"
+	lock
+# 174 "data/maps/DavZeroRoom/scripts.pory"
+	faceplayer
+# 175 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_SchoolBoy_Text_0
+# 176 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 177 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_SCHOOLBOY, Common_Movement_SmileWithDelay48
+# 178 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_SchoolBoy_Text_1, MSGBOX_AUTOCLOSE
+# 179 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 180 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48
+# 181 "data/maps/DavZeroRoom/scripts.pory"
+	delay 20
+# 182 "data/maps/DavZeroRoom/scripts.pory"
+	turnobject LOCALID_ZEROROOM_SCHOOLBOY, DIR_NORTH
+# 183 "data/maps/DavZeroRoom/scripts.pory"
+	release
+	end
 
 
 # 17 "data/maps/DavZeroRoom/scripts.pory"
@@ -764,3 +786,13 @@ DavZeroRoom_EventScript_SchoolGirl_Text_0:
 	.string "tan interesante!\p"
 	.string "Podría quedarme todo el día\n"
 	.string "escuchándolo hablar.$"
+
+DavZeroRoom_EventScript_SchoolBoy_Text_0:
+# 175 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¡El profe Zero es muy guay!$"
+
+DavZeroRoom_EventScript_SchoolBoy_Text_1:
+# 178 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Cuando teníamos seis años nos enseñó\n"
+	.string "inglés y aprendimos los meses del año al\l"
+	.string "ritmo de La Macarena.$"

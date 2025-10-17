@@ -170,6 +170,17 @@ script DavZeroRoom_EventScript_SchoolGirl {
 }
 
 script DavZeroRoom_EventScript_SchoolBoy {
-
+    lock
+    faceplayer
+    msgbox(format("¡El profe Zero es muy guay!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_SCHOOLBOY, Common_Movement_SmileWithDelay48)
+    msgbox(format("Cuando teníamos seis años nos enseñó inglés y aprendimos los meses del año al ritmo de La Macarena."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
+    delay(20)
+    turnobject(LOCALID_ZEROROOM_SCHOOLBOY, DIR_NORTH)
+    release
+    end
 }
 
