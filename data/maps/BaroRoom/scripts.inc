@@ -71,7 +71,7 @@ BaroRoom_OnFrame::
 # 46 "data/maps/BaroRoom/scripts.pory"
 	applymovement LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_2
 # 47 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_3
+	message BaroRoom_OnFrame_Text_3
 # 48 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
 # 49 "data/maps/BaroRoom/scripts.pory"
@@ -102,29 +102,61 @@ BaroRoom_OnFrame::
 	applymovement LOCALID_BAROROOM_BARO, Common_Movement_WalkRight3
 # 64 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
+# 65 "data/maps/BaroRoom/scripts.pory"
+	delay 20
 # 66 "data/maps/BaroRoom/scripts.pory"
-	special RemoveCameraObject
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 67 "data/maps/BaroRoom/scripts.pory"
-	setvar VAR_BARO_ROOM_STATE, 1
+	applymovement LOCALID_BAROROOM_BARO, Common_Movement_FaceLeft
 # 68 "data/maps/BaroRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_BARO
+	waitmovement 0
 # 69 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
+# 70 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 71 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_FaceRight
+# 72 "data/maps/BaroRoom/scripts.pory"
+	call BaroRoom_EventScript_OpenSideDoor
+# 73 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_4
+# 74 "data/maps/BaroRoom/scripts.pory"
+	removeobject LOCALID_BAROROOM_BARO
+# 75 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_BAROROOM_HIDE_BARO
+# 76 "data/maps/BaroRoom/scripts.pory"
+	call BaroRoom_EventScript_CloseSideDoor
+# 77 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkLeft3
+# 78 "data/maps/BaroRoom/scripts.pory"
+	special RemoveCameraObject
+# 79 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceUp
+# 80 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 81 "data/maps/BaroRoom/scripts.pory"
+	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+# 82 "data/maps/BaroRoom/scripts.pory"
+	setvar VAR_BARO_ROOM_STATE, 1
+# 83 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_BARO
+# 84 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
 
 BaroRoom_EventScript_OpenSideDoor::
-# 76 "data/maps/BaroRoom/scripts.pory"
+# 91 "data/maps/BaroRoom/scripts.pory"
 	setmetatile 12, 6, METATILE_EliteFour_SideDoor_Open, FALSE
-# 77 "data/maps/BaroRoom/scripts.pory"
+# 92 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BaroRoom_EventScript_CloseSideDoor::
-# 83 "data/maps/BaroRoom/scripts.pory"
+# 98 "data/maps/BaroRoom/scripts.pory"
 	setmetatile 12, 6, METATILE_EliteFour_SideDoor_Closed, FALSE
-# 84 "data/maps/BaroRoom/scripts.pory"
+# 99 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
@@ -199,6 +231,16 @@ BaroRoom_OnFrame_Movement_3:
 	walk_down
 	step_end
 
+# 73 "data/maps/BaroRoom/scripts.pory"
+BaroRoom_OnFrame_Movement_4:
+# 73 "data/maps/BaroRoom/scripts.pory"
+	walk_right
+# 73 "data/maps/BaroRoom/scripts.pory"
+	walk_in_place_right
+# 73 "data/maps/BaroRoom/scripts.pory"
+	set_invisible
+	step_end
+
 BaroRoom_OnFrame_Text_0:
 # 32 "data/maps/BaroRoom/scripts.pory"
 	.string "Erhm… Tú eres {PLAYER}, ¿no?\n"
@@ -224,8 +266,8 @@ BaroRoom_OnFrame_Text_4:
 BaroRoom_OnFrame_Text_5:
 # 51 "data/maps/BaroRoom/scripts.pory"
 	.string "Supongo que lo de reminiscir del pasado\n"
-	.string "es apropiado para el momento. Tu viaje y\l"
-	.string "todo eso.\p"
+	.string "es apropiado para el momento.\l"
+	.string "Tu viaje y todo eso.\p"
 	.string "En fin, nada, que me han pedido que me\n"
 	.string "pase por aquí a hacer una peleilla\l"
 	.string "contigo. ¿Vamos?$"
@@ -241,3 +283,7 @@ BaroRoom_OnFrame_Text_7:
 BaroRoom_OnFrame_Text_8:
 # 57 "data/maps/BaroRoom/scripts.pory"
 	.string "Pues ya estaría. Ya he cumplido. Chao.$"
+
+BaroRoom_OnFrame_Text_9:
+# 69 "data/maps/BaroRoom/scripts.pory"
+	.string "Bueno, buena suerte y tal.$"

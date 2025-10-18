@@ -90,7 +90,7 @@
 #define FLAG_JACKROOM_HIDE_NPC1_BALL    0x4C // Used WAH
 #define FLAG_JACKROOM_HIDE_NPC3_BALL    0x4D // Used WAH
 #define FLAG_JACKROOM_HIDE_NPC4_BALL    0x4E // Used WAH
-#define FLAG_UNUSED_0x04F    0x4F // Unused flag
+#define FLAG_BAROROOM_HIDE_BARO    0x4F // Used WAH
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
