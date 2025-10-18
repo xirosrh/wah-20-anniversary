@@ -77,6 +77,7 @@ static const u8 sEmotion_CryGfx[] = INCBIN_U8("graphics/field_effects/pics/emoti
 static const u8 sEmotion_AngryGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_angry.4bpp");
 static const u8 sEmotion_SurpriseGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_surprise.4bpp");
 static const u8 sEmotion_VGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_v.4bpp");
+static const u8 sEmotion_IdeaGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_idea.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
 
@@ -205,6 +206,10 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
     {
         .data = sEmotion_VGfx,
         .size = sizeof(sEmotion_VGfx)
+    },
+    {
+        .data = sEmotion_IdeaGfx,
+        .size = sizeof(sEmotion_IdeaGfx)
     }
 };
 
@@ -421,6 +426,12 @@ static const union AnimCmd sSpriteAnim_Icons15[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_Icons16[] =
+{
+    ANIMCMD_FRAME(15, 60),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteAnimTable_Icons[] =
 {
     sSpriteAnim_Icons1,
@@ -437,7 +448,8 @@ static const union AnimCmd *const sSpriteAnimTable_Icons[] =
     sSpriteAnim_Icons12,
     sSpriteAnim_Icons13,
     sSpriteAnim_Icons14,
-    sSpriteAnim_Icons15
+    sSpriteAnim_Icons15,
+    sSpriteAnim_Icons16
 };
 
 static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
@@ -1238,6 +1250,19 @@ u8 FldEff_VIcon(void)
     if (spriteId != MAX_SPRITES)
     {
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 14);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_IdeaIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 15);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 

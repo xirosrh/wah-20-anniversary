@@ -373,15 +373,26 @@ Common_Movement_V:
 	step_end
 
 Common_Movement_VWithDelay48:
-	emote_v
-	delay_16
-	delay_16
-	delay_16
-	step_end
+        emote_v
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Idea:
+        emote_idea
+        step_end
+
+Common_Movement_IdeaWithDelay48:
+        emote_idea
+        delay_16
+        delay_16
+        delay_16
+        step_end
 
 Common_Movement_Surprise:
-	emote_surprise
-	step_end
+        emote_surprise
+        step_end
 
 Common_Movement_SurpriseWithDelay48:
 	emote_surprise

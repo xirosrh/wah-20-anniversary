@@ -11105,6 +11105,14 @@ bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *objectEvent, struct Sprite
     return TRUE;
 }
 
+bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_IDEA_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
 bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, DIR_SOUTH, ANIM_SLEEPING);
