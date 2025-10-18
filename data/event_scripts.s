@@ -1143,3 +1143,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SayerBlaxRoom/scripts.inc"
 
 	.include "data/maps/AngelRoom/scripts.inc"
+
+	.include "data/maps/BaroRoom/scripts.inc"

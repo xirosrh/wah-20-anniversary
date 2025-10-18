@@ -4220,6 +4220,16 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
       "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_BARO_ROOM",
+      "name": "BaroRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/BaroRoom/border.bin",
+      "blockdata_filepath": "data/layouts/BaroRoom/map.bin"
     }
   ]
 }

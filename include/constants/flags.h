@@ -52,7 +52,7 @@
 #define FLAG_DEFEATED_ADMIN_OZUMAS    0x26 // Used WAH
 #define FLAG_DEFEATED_ADMIN_SCAREX    0x27 // Used WAH
 #define FLAG_DEFEATED_ADMIN_DAVZERO    0x28 // Used WAH
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_DEFEATED_ADMIN_BARO    0x29 // Used WAH
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
