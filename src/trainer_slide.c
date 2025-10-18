@@ -58,19 +58,31 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
     {
         [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Cookie, excelente trabajo."),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.")
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Cookie, excelente trabajo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.{PAUSE_UNTIL_PRESS}")
         },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_BLAX_MAIN] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo."),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("-.-' Menuda suerte el colega."),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("-.-' Menuda suerte el colega.{PAUSE_UNTIL_PRESS}"),
         },
+        [TRAINER_WAH_ADMIN_DAVZERO_MAIN] = 
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Cada combate es un espejo… veamos qué reflejas tú.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tranquilo, he recibido peores golpes… de la vida.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Parece que has hecho los deberes.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("La batalla apenas comienza. ¡Enséñame de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Me parece que alguien ha estudiado muy poco… ¿Tendré que suspenderte?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ha llegado el momento... Aquí se decide todo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Este es el límite… ¡y justo aquí es donde yo me crezco!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¿Listo para ver mi verdadera fuerza?{PAUSE_UNTIL_PRESS}"),
+
+        }
     },
 };
 

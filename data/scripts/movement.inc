@@ -170,6 +170,12 @@ Common_Movement_WalkDown2::
 	walk_down
     step_end
 
+Common_Movement_WalkDown3:
+	walk_down
+	walk_down
+	walk_down
+    step_end
+
 Common_Movement_WalkDown4::
     walk_down
 	walk_down
@@ -202,6 +208,14 @@ Common_Movement_WalkRight2:
 	walk_right
 	walk_right
 	step_end
+
+Common_Movement_WalkRight4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 
 Common_Movement_WalkLeft::
     walk_left
@@ -253,7 +267,16 @@ Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
 
+Common_Movement_JumpInPlaceLeftRight:
+	jump_in_place_left_right
+	step_end
+
 Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceRight2:
+	jump_in_place_right
 	jump_in_place_right
 	step_end
 
@@ -350,15 +373,26 @@ Common_Movement_V:
 	step_end
 
 Common_Movement_VWithDelay48:
-	emote_v
-	delay_16
-	delay_16
-	delay_16
-	step_end
+        emote_v
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Idea:
+        emote_idea
+        step_end
+
+Common_Movement_IdeaWithDelay48:
+        emote_idea
+        delay_16
+        delay_16
+        delay_16
+        step_end
 
 Common_Movement_Surprise:
-	emote_surprise
-	step_end
+        emote_surprise
+        step_end
 
 Common_Movement_SurpriseWithDelay48:
 	emote_surprise

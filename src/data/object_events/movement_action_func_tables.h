@@ -481,6 +481,7 @@ u8 (*const gMovementActionFuncs_EmoteCry[])(struct ObjectEvent *, struct Sprite 
 u8 (*const gMovementActionFuncs_EmoteAngry[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSurprise[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteV[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteIdea[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunDownSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunUpSlow[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RunLeftSlow[])(struct ObjectEvent *, struct Sprite *);
@@ -677,6 +678,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_ANGRY] = gMovementActionFuncs_EmoteAngry,
     [MOVEMENT_ACTION_EMOTE_SURPRISE] = gMovementActionFuncs_EmoteSurprise,
     [MOVEMENT_ACTION_EMOTE_V] = gMovementActionFuncs_EmoteV,
+    [MOVEMENT_ACTION_EMOTE_IDEA] = gMovementActionFuncs_EmoteIdea,
     [MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK] = gMovementActionFuncs_EmoteDoubleExclMark,
     [MOVEMENT_ACTION_EXIT_POKEBALL] = gMovementActionFuncs_ExitPokeball,
     [MOVEMENT_ACTION_ENTER_POKEBALL] = gMovementActionFuncs_EnterPokeball,
@@ -1706,6 +1708,11 @@ u8 (*const gMovementActionFuncs_EmoteSurprise[])(struct ObjectEvent *, struct Sp
 
 u8 (*const gMovementActionFuncs_EmoteV[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteV_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteIdea[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteIdea_Step0,
     MovementAction_Finish,
 };
 
