@@ -20,8 +20,8 @@ script DavZeroRoom_OnFrame {
     waitmovement(0)
     msgbox(format("Bien, recordad: las palabras agudas se acentúan cuando acaban en vocal, {COLOR RED}n{COLOR DARK_GRAY} o {COLOR BLUE}s{COLOR DARK_GRAY}."))
     playse(SE_PIN)
-    applymovement(LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoySurprised)
-    applymovement(LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoySurprised)
+    applymovement(LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoyLearning)
+    applymovement(LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoyLearning)
     waitmovement(0)
     waitse
     delay(20)
@@ -154,8 +154,8 @@ script DavZeroRoom_OnFrame {
     end
 }
 
-movement DavZeroRoom_Movement_GirlAndBoySurprised {
-    emote_surprise
+movement DavZeroRoom_Movement_GirlAndBoyLearning {
+    emote_idea
     walk_in_place_up
     delay_16 * 2
 }

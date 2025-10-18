@@ -40,9 +40,9 @@ DavZeroRoom_OnFrame::
 # 22 "data/maps/DavZeroRoom/scripts.pory"
 	playse SE_PIN
 # 23 "data/maps/DavZeroRoom/scripts.pory"
-	applymovement LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoySurprised
+	applymovement LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoyLearning
 # 24 "data/maps/DavZeroRoom/scripts.pory"
-	applymovement LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoySurprised
+	applymovement LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoyLearning
 # 25 "data/maps/DavZeroRoom/scripts.pory"
 	waitmovement 0
 # 26 "data/maps/DavZeroRoom/scripts.pory"
@@ -304,9 +304,9 @@ DavZeroRoom_OnFrame_2:
 
 
 # 157 "data/maps/DavZeroRoom/scripts.pory"
-DavZeroRoom_Movement_GirlAndBoySurprised:
+DavZeroRoom_Movement_GirlAndBoyLearning:
 # 158 "data/maps/DavZeroRoom/scripts.pory"
-	emote_surprise
+	emote_idea
 # 159 "data/maps/DavZeroRoom/scripts.pory"
 	walk_in_place_up
 # 160 "data/maps/DavZeroRoom/scripts.pory"
