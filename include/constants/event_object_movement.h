@@ -283,6 +283,7 @@
 #define MOVEMENT_ACTION_EMOTE_ANGRY                     0xC0
 #define MOVEMENT_ACTION_EMOTE_SURPRISE                  0xC1
 #define MOVEMENT_ACTION_EMOTE_V                         0xC2
+#define MOVEMENT_ACTION_EMOTE_IDEA                      0xC3
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
