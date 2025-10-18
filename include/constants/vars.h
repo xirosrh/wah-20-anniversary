@@ -267,7 +267,7 @@
 #define VAR_SAYER_BLAX_ROOM_STATE                                0x40F7 // WAH
 #define VAR_JACK_JOHNSON_ROOM_STATE                                0x40F8 // WAH
 #define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_BARO_ROOM_STATE                                0x40FA //WAH
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

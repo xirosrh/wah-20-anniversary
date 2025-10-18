@@ -30,7 +30,7 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_DoubleExclamationMarkWithDelay48)
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Esperad un segundo... ¡Creo que hoy tenemos compañía!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Esperad un segundo… ¡Creo que hoy tenemos compañía!"), MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_left * 7, face_down))
     applymovement(LOCALID_CAMERA, moves(walk_left * 7, delay_8))
     waitmovement(0)
@@ -91,7 +91,6 @@ script DavZeroRoom_OnFrame {
     setobjectmovementtype2(LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN)   
     release
     msgbox(format("¡No te amedrentes ahora!"))
-    //Trainerbattle
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_ZEROROOM_MILOTIC)
