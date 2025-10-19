@@ -403,6 +403,17 @@ Common_Movement_IdeaWithDelay48:
         delay_16
         step_end
 
+Common_Movement_XD:
+        emote_xd
+        step_end
+
+Common_Movement_XDWithDelay48:
+        emote_xd
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
 Common_Movement_Surprise:
         emote_surprise
         step_end
