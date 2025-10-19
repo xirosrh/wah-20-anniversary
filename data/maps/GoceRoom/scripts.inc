@@ -25,13 +25,13 @@ GoceRoom_EventScript_Goce::
 	waitmovement 0
 # 20 "data/maps/GoceRoom/scripts.pory"
 	waitse
-# 22 "data/maps/GoceRoom/scripts.pory"
+# 21 "data/maps/GoceRoom/scripts.pory"
 	msgbox GoceRoom_EventScript_Goce_Text_4, MSGBOX_AUTOCLOSE
-# 23 "data/maps/GoceRoom/scripts.pory"
+# 22 "data/maps/GoceRoom/scripts.pory"
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-# 24 "data/maps/GoceRoom/scripts.pory"
+# 23 "data/maps/GoceRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_GOCE
-# 25 "data/maps/GoceRoom/scripts.pory"
+# 24 "data/maps/GoceRoom/scripts.pory"
 	release
 	end
 
@@ -66,15 +66,14 @@ GoceRoom_EventScript_Goce_Text_2:
 GoceRoom_EventScript_Goce_Text_3:
 # 16 "data/maps/GoceRoom/scripts.pory"
 	.string "¡Gran batalla! Has podido derrotar al\n"
-	.string "gran fundador, seguro estarás\l"
-	.string "orgulloso/a.$"
+	.string "gran fundador, seguro estarás orgullos{OA}.$"
 
 GoceRoom_EventScript_Goce_Text_4:
-# 22 "data/maps/GoceRoom/scripts.pory"
+# 21 "data/maps/GoceRoom/scripts.pory"
 	.string "Eh, ¿así que no sabes quién soy? Me\n"
 	.string "conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\p"
 	.string "Igual, lo que importa no es mi nombre,\n"
 	.string "sino que lo que comenzó siga vivo.\p"
 	.string "Tú acabas de demostrarme que lo está,\n"
-	.string "niño(a).\p"
+	.string "niñ{OA}.\p"
 	.string "Puedes continuar.$"

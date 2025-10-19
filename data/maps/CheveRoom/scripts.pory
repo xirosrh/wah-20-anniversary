@@ -1,9 +1,47 @@
 mapscripts CheveRoom_MapScripts {}
 
-script CheveRoom_EventScript_CheveChallenge {
+script CheveRoom_EventScript_Cheve {
     lock
     msgbox("Holi")
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_MAIN, "asd")
+    release
+    end
+}
+
+script CheveRoom_EventScript_CuttableTree {
+    lock
+    moveobjecttopos(LOCALID_PLAYER, 6, 5, DIR_NORTH)
+    waitmovement(0)
+    msgbox(format("¿Por qué me estás mirando así?"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, moves(
+        emote_double_exclamation_mark, 
+        lock_facing_direction, 
+        jump_in_place_up, 
+        jump_down, 
+        unlock_facing_direction))
+    msgbox(format("¿Quieres cortarme?\p¡No me lastimes, soy Cheve!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
+    delay(20)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown)
+    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    delay(20)
+    showobjectat(LOCALID_CHEVEROOM_CHEVE, MAP_CHEVE_ROOM)
+    setobjectmovementtype(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype2(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown)
+    delay(20)
+    call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
+    delay(10)
+    //TODO Xiros
+    applymovementandwait(LOCALID_CHEVEROOM_TREE, Movement_CutTreeDown)
+    delay(10)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown2)
+    msgbox(format("Caíste redondit{OA}. ¿En serio creíste que yo era un árbol?"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48)
+
     release
     end
 }
