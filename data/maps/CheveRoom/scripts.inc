@@ -147,7 +147,7 @@ CheveRoom_EventScript_CuttableTree::
 # 84 "data/maps/CheveRoom/scripts.pory"
 	playse SE_PIN
 # 85 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_HappyWithDelay48
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48
 # 86 "data/maps/CheveRoom/scripts.pory"
 	msgbox CheveRoom_EventScript_CuttableTree_Text_7
 # 87 "data/maps/CheveRoom/scripts.pory"

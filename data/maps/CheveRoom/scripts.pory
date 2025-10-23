@@ -8,7 +8,7 @@ script CheveRoom_EventScript_Cheve {
     delay(10)
     msgbox(format("Ni lo sueñes. Estoy en pleno proceso creativo… o sea, procrastinando."))
     playse(SE_PIN)
-    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48) //TODO Xiros Wink
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48)
     delay(10)
     msgbox(format("Igual te agradezco la visita. Es lindo cuando alguien vuelve a tu habitación, aunque sea para saludar al árbol que no era árbol."))
     playse(SE_PIN)
@@ -82,7 +82,7 @@ script CheveRoom_EventScript_CuttableTree {
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown2)
     msgbox(format("Aunque aviso… no soy muy fan de los combates largos.\pPrefiero procrastinar… ¡mi acción favorita!"))
     playse(SE_PIN)
-    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_HappyWithDelay48) //TODO Xiros Wink
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48)
     msgbox(format("¡Vamos!"))
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_MAIN, format("¡Muy buen combate! Me recordó a mis enfrentamientos con Xavi."))
     msgbox(format("Uf… qué paliza."))
