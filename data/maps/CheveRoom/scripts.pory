@@ -72,6 +72,7 @@ script CheveRoom_EventScript_CuttableTree {
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown)
     delay(20)
     call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
+    msgbox(format("¡Ve, Plantita!"), MSGBOX_AUTOCLOSE)
     special(RemoveCameraObject)
     clearflag(FLAG_CHEVEROOM_HIDE_POKEBALL)
     addobject(LOCALID_CHEVEROOM_POKEBALL)
@@ -93,6 +94,10 @@ script CheveRoom_EventScript_CuttableTree {
     ))
     playse(SE_M_CUT)
     waitmovement(0)
+    release
+	load_field_pic(FP_CUT_ATTACK, 121, 75, VAR_TEMP_2)
+    delay(60)
+    destroy_field_pic(FP_CUT_ATTACK, VAR_TEMP_2)
     applymovementandwait(LOCALID_CHEVEROOM_TREE, Movement_CutTreeDown)
     delay(20)
     playse(SE_BALL_OPEN)
