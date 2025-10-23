@@ -79,8 +79,8 @@
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_CHEVEROOM_HIDE_MEGANIUM    0x44 // Used WAH
+#define FLAG_CHEVEROOM_HIDE_POKEBALL    0x45 // Used WAH
 #define FLAG_CHEVEROOM_HIDE_TREE    0x46 // Used WAH
 #define FLAG_ZEROROOM_HIDE_MILOTIC    0x47 // Used WAH
 #define FLAG_ZEROROOM_HIDE_BALL    0x48 // Used WAH
