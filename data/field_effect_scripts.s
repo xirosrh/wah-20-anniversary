@@ -96,6 +96,7 @@ gFieldEffectScriptPointers::
         .4byte gFldEffScript_VIcon                     @ FLDEFF_V_ICON
         .4byte gFldEffScript_IdeaIcon                  @ FLDEFF_IDEA_ICON
         .4byte gFldEffScript_XdIcon                    @ FLDEFF_XD_ICON
+        .4byte gFldEffScript_WinkIcon                  @ FLDEFF_WINK_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -430,6 +431,10 @@ gFldEffScript_IdeaIcon::
 
 gFldEffScript_XdIcon::
         field_eff_callnative FldEff_XdIcon
+        field_eff_end
+
+gFldEffScript_WinkIcon::
+        field_eff_callnative FldEff_WinkIcon
         field_eff_end
 
 gFieldEffectScript_TracksBug::
