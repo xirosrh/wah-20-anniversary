@@ -276,6 +276,11 @@ Common_Movement_JumpInPlaceDown:
 	jump_in_place_down
 	step_end
 
+Common_Movement_JumpInPlaceDown2:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
 Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end

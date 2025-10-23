@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CheveRoom_EventScript_CuttableTree",
-      "flag": "0"
+      "flag": "FLAG_CHEVEROOM_HIDE_TREE"
     }
   ],
   "warp_events": [
