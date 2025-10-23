@@ -1941,11 +1941,12 @@
 @ Field pic macros
 	
 	@ Loads the desired pic on screen. Sprite id returned in VAR_RESULT and copied to the desired variable if given.
-	.macro load_field_pic id:req, x:req, y:req, dst=0
+	.macro load_field_pic id:req, x:req, y:req, dst=0, apply_weather=FALSE
 	setvar VAR_0x8004, \id
 	setvar VAR_0x8005, \x
 	setvar VAR_0x8006, \y
-	callnative LoadFieldPic
+	setvar VAR_0x8007, \apply_weather
+	callnative LoadFieldPicSpecial
 		.if \dst != 0
 			copyvar \dst, VAR_RESULT
 		.endif
@@ -1957,7 +1958,7 @@
 	setvar VAR_0x8004, \sprite_id
 	callnative HideFieldPic
 	.endm
-
+	
 	@ Shows a pic that was loaded and hidden afterwards.
 	.macro show_field_pic sprite_id:req
 	setvar VAR_0x8004, \sprite_id
@@ -1975,7 +1976,7 @@
 	.macro destroy_field_pic id:req, sprite_id=0xff
 	setvar VAR_0x8004, \id
 	setvar VAR_0x8005, \sprite_id
-	callnative DestroyFieldPic
+	callnative DestroyFieldPicSpecial
 	.endm
 
 	.macro goto_if_unset flag:req, dest:req

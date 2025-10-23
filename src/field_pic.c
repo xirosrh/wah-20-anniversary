@@ -1,7 +1,11 @@
 #include "global.h"
 #include "event_data.h"
 #include "decompress.h"
+#include "field_effect.h"
+#include "field_pic.h"
+#include "field_weather.h"
 #include "sprite.h"
+#include "constants/field_pics.h"
 
 #define TAG_PIC 0x3333
 
@@ -15,67 +19,59 @@ struct Pic
     SpriteCallback callback;
 };
 
-// These are example entries.
-static const union AnimCmd sAnimCmdLoop[] =
+static const union AnimCmd sAnimCmdCutAttack[] =
 {
-    ANIMCMD_FRAME(0, 50),
-    ANIMCMD_FRAME(64, 50),
-    ANIMCMD_JUMP(0),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(16, 10),
+    ANIMCMD_FRAME(32, 10),
+    ANIMCMD_FRAME(64, 10),
+    ANIMCMD_END,
 };
 
-static const union AnimCmd *const sAnims[] =
+static const union AnimCmd *const sAnimsCutAttack[] =
 {
-    sAnimCmdLoop
+    sAnimCmdCutAttack
 };
 
-static const u32 sPic1Gfx[] = INCBIN_U32("graphics/pokemon/altaria/anim_front.4bpp.lz");
-static const u16 sPic1Pal[] = INCBIN_U16("graphics/pokemon/altaria/normal.gbapal");
-
-static const u32 sPic2Gfx[] = INCBIN_U32("graphics/battle_anims/sprites/duck.4bpp.lz");
-static const u16 sPic2Pal[] = INCBIN_U16("graphics/battle_anims/sprites/duck.gbapal");
-
-/* And this is an example script.
 
 
-FieldPicExample_2pics:
-	load_field_pic 0, 190, 98, VAR_0x8008
-	load_field_pic 1, 32, 112, VAR_0x8009
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
-	destroy_field_pic 0, VAR_0x8008
-	destroy_field_pic 1, VAR_0x8009
-	return
-
-    @ Some arguments can be omitted
-FieldPicExample_1pic:
-	load_field_pic 0, 190, 98
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
-	destroy_field_pic 0
-	return
-
-*/
+static const u32 sPicCutAttack[] = INCBIN_U32("graphics/field_pics/cut.4bpp.lz");
+static const u16 sCutAttackPal[] = INCBIN_U16("graphics/field_pics/cut.gbapal");
 
 static const struct Pic sPics[] =
 {
-    {sPic1Gfx, sPic1Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
-    {sPic2Gfx, sPic2Pal, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16)},
+    [FP_CUT_ATTACK] = {sPicCutAttack, sCutAttackPal, SPRITE_SHAPE(32x32), SPRITE_SIZE(32x32), sAnimsCutAttack},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
 
-void LoadFieldPic(void)
+void LoadFieldPicSpecial()
 {
+    u32 id = VarGet(gSpecialVar_0x8004);
+    s16 x = (s16)(VarGet(gSpecialVar_0x8005));
+    s16 y = (s16)(VarGet(gSpecialVar_0x8006));
+    bool8 applyWeather = VarGet(gSpecialVar_0x8007);
+    u8 lastPicId = DoLoadFieldPic(id, x, y, FALSE, applyWeather);
+    gSpecialVar_Result = lastPicId;
+}
+
+void LoadFieldPic(u32 id, s16 x, s16 y, bool8 applyWeather)
+{
+    DoLoadFieldPic(id, x, y, FALSE, applyWeather);
+}
+
+u8 DoLoadFieldPic(u32 id, s16 x, s16 y, bool8 loadOnFadedBuffer, bool8 applyWeather)
+{
+    u8 paletteNum;
     struct CompressedSpriteSheet sheet;
     struct SpritePalette palSheet;
     struct SpriteTemplate spriteTempl;
     struct OamData oam = {0};
-    u32 id = VarGet(gSpecialVar_0x8004);
-    s16 x = (s16)(VarGet(gSpecialVar_0x8005));
-    s16 y = (s16)(VarGet(gSpecialVar_0x8006));
 
     gSpecialVar_Result = 0xFF;
 
     if (id >= ARRAY_COUNT(sPics))
-        return;
+        return 0;
 
     if (GetSpriteTileStartByTag(TAG_PIC + id) == 0xFFFF)
     {
@@ -84,18 +80,20 @@ void LoadFieldPic(void)
         sheet.tag = TAG_PIC + id;
         sheet.data = sPics[id].gfx;
         sheet.size = (gfxPtr[3] << 16) | (gfxPtr[2] << 8) | gfxPtr[1];
-
+        
         LoadCompressedSpriteSheet(&sheet);
     }
 
-    if (IndexOfSpritePaletteTag(TAG_PIC + id) == 0xFF)
+    paletteNum = IndexOfSpritePaletteTag(TAG_PIC + id);
+    if (paletteNum == 0xFF)
     {
         palSheet.tag = TAG_PIC + id;
         palSheet.data = sPics[id].pal;
-
-        LoadSpritePalette(&palSheet);
+        paletteNum = LoadSpritePalette(&palSheet);
     }
-
+    if(applyWeather) {
+        UpdateSpritePaletteWithWeather(paletteNum, FALSE);
+    }
     oam.size = sPics[id].size;
     oam.shape = sPics[id].shape;
     oam.priority = 1;
@@ -107,12 +105,11 @@ void LoadFieldPic(void)
         spriteTempl.callback = sPics[id].callback;
     if (sPics[id].anims)
         spriteTempl.anims = sPics[id].anims;
-
     sLastPicId = CreateSprite(&spriteTempl, x, y, 0);
     if (sLastPicId == MAX_SPRITES)
-        return;
+        return 0;
 
-    gSpecialVar_Result = sLastPicId;
+   return sLastPicId;
 }
 
 void HideFieldPic(void)
@@ -146,11 +143,15 @@ void ChangeFieldPicFrame(void)
         StartSpriteAnim(&gSprites[spriteId], num);
 }
 
-void DestroyFieldPic(void)
+void DestroyFieldPicSpecial(void)
 {
     u32 id = VarGet(gSpecialVar_0x8004);
     u32 spriteId = VarGet(gSpecialVar_0x8005);
+    DestroyFieldPic(id, spriteId);
+}
 
+void DestroyFieldPic(u32 id, u32 spriteId)
+{
     if (spriteId == 0xFF)
         DestroySprite(&gSprites[sLastPicId]);
     else
