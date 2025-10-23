@@ -95,6 +95,8 @@ gFieldEffectScriptPointers::
         .4byte gFldEffScript_SurpriseIcon              @ FLDEFF_SURPRISE_ICON
         .4byte gFldEffScript_VIcon                     @ FLDEFF_V_ICON
         .4byte gFldEffScript_IdeaIcon                  @ FLDEFF_IDEA_ICON
+        .4byte gFldEffScript_XdIcon                    @ FLDEFF_XD_ICON
+        .4byte gFldEffScript_WinkIcon                  @ FLDEFF_WINK_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -427,9 +429,17 @@ gFldEffScript_IdeaIcon::
         field_eff_callnative FldEff_IdeaIcon
         field_eff_end
 
+gFldEffScript_XdIcon::
+        field_eff_callnative FldEff_XdIcon
+        field_eff_end
+
+gFldEffScript_WinkIcon::
+        field_eff_callnative FldEff_WinkIcon
+        field_eff_end
+
 gFieldEffectScript_TracksBug::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug
-	field_eff_end
+        field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug
+        field_eff_end
 
 gFieldEffectScript_TracksSpot::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSpot

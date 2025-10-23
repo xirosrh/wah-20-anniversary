@@ -496,6 +496,7 @@ bool8 MovementAction_EmoteSweatDrop_Step0(struct ObjectEvent *, struct Sprite *)
 bool8 MovementAction_EmoteThinking_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteVersus_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteWink_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSad_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSleeping_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *, struct Sprite *);
@@ -505,6 +506,7 @@ bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteXD_Step0(struct ObjectEvent *, struct Sprite *);
 
 
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);

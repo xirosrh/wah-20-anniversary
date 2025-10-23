@@ -91,6 +91,8 @@
 #define FLDEFF_SURPRISE_ICON       86
 #define FLDEFF_V_ICON              87
 #define FLDEFF_IDEA_ICON           88
+#define FLDEFF_XD_ICON             89
+#define FLDEFF_WINK_ICON           90
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

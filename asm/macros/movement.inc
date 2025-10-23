@@ -182,6 +182,8 @@
         create_movement_action emote_surprise, MOVEMENT_ACTION_EMOTE_SURPRISE
         create_movement_action emote_v, MOVEMENT_ACTION_EMOTE_V
         create_movement_action emote_idea, MOVEMENT_ACTION_EMOTE_IDEA
+        create_movement_action emote_xd, MOVEMENT_ACTION_EMOTE_XD
+        create_movement_action emote_wink, MOVEMENT_ACTION_EMOTE_WINK
         create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
         create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
         create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT

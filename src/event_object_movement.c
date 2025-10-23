@@ -11057,6 +11057,14 @@ bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *objectEvent, struct Sp
     return TRUE;
 }
 
+bool8 MovementAction_EmoteWink_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_WINK_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
 bool8 MovementAction_EmoteSad_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
@@ -11109,6 +11117,14 @@ bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *objectEvent, struct Spr
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
     FieldEffectStart(FLDEFF_IDEA_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteXD_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_XD_ICON);
     sprite->sActionFuncId = 1;
     return TRUE;
 }

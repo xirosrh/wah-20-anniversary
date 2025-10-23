@@ -319,6 +319,9 @@ const u16 gTrainerPalette_Aguiar[] = INCBIN_U16("graphics/trainers/palettes/admi
 const u32 gTrainerFrontPic_Baro[] = INCBIN_U32("graphics/trainers/front_pics/admins/baro.4bpp.smol");
 const u16 gTrainerPalette_Baro[] = INCBIN_U16("graphics/trainers/palettes/admins/baro.gbapal");
 
+const u32 gTrainerFrontPic_Javs[] = INCBIN_U32("graphics/trainers/front_pics/admins/javs.4bpp.smol");
+const u16 gTrainerPalette_Javs[] = INCBIN_U16("graphics/trainers/palettes/admins/javs.gbapal");
+
 const u32 gTrainerFrontPic_Goce[] = INCBIN_U32("graphics/trainers/front_pics/admins/goce.4bpp.smol");
 const u16 gTrainerPalette_Goce[] = INCBIN_U16("graphics/trainers/palettes/admins/goce.gbapal");
 
@@ -483,6 +486,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_ZERO, gTrainerFrontPic_Zero, gTrainerPalette_Zero),
     TRAINER_SPRITE(TRAINER_PIC_AGUIAR, gTrainerFrontPic_Aguiar, gTrainerPalette_Aguiar),
     TRAINER_SPRITE(TRAINER_PIC_BARO, gTrainerFrontPic_Baro, gTrainerPalette_Baro),
+    TRAINER_SPRITE(TRAINER_PIC_JAVS, gTrainerFrontPic_Javs, gTrainerPalette_Javs),
     TRAINER_SPRITE(TRAINER_PIC_GOCE, gTrainerFrontPic_Goce, gTrainerPalette_Goce),
     TRAINER_SPRITE(TRAINER_PIC_PKPOWER, gTrainerFrontPic_PkPower, gTrainerPalette_PkPower),
     TRAINER_SPRITE(TRAINER_PIC_KLEIN, gTrainerFrontPic_Klein, gTrainerPalette_Klein),

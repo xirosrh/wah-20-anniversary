@@ -276,6 +276,11 @@ Common_Movement_JumpInPlaceDown:
 	jump_in_place_down
 	step_end
 
+Common_Movement_JumpInPlaceDown2:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
 Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
@@ -348,6 +353,17 @@ Common_Movement_HappyWithDelay48:
 	delay_16
 	step_end
 
+Common_Movement_Wink:
+	emote_wink
+	step_end
+
+Common_Movement_WinkWithDelay48:
+	emote_wink
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
 Common_Movement_Sad:
 	emote_sad
 	step_end
@@ -398,6 +414,17 @@ Common_Movement_Idea:
 
 Common_Movement_IdeaWithDelay48:
         emote_idea
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_XD:
+        emote_xd
+        step_end
+
+Common_Movement_XDWithDelay48:
+        emote_xd
         delay_16
         delay_16
         delay_16
