@@ -2033,3 +2033,18 @@ void HBlankCB_DoublePopupWindow(void)
         REG_BG0VOFS = 512 - offset;
     }
 }
+
+void SetMsgboxTop()
+{
+    gWindows[0].window.tilemapTop = 1;
+}
+
+void SetMsgboxCenter()
+{
+    gWindows[0].window.tilemapTop = 8;
+}
+
+void SetMsgboxBottom()
+{
+    gWindows[0].window.tilemapTop = 15;
+}
