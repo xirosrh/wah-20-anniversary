@@ -1,1 +1,173 @@
-mapscripts ReyBooRoom_MapScripts {}
+mapscripts ReyBooRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_REY_BOO_ROOM_STATE, 0: ReyBooRoom_OnFrame
+    ]
+    MAP_SCRIPT_ON_TRANSITION: ReyBooRoom_OnTransition
+}
+
+script ReyBooRoom_OnTransition {
+    if (var(VAR_REY_BOO_ROOM_STATE) == 0) {
+        clearflag(FLAG_REYBOOROOM_HIDE_BOO)
+        clearflag(FLAG_REYBOOROOM_HIDE_VIGOROTH)
+    } else {
+        setflag(FLAG_REYBOOROOM_HIDE_BOO)
+        setflag(FLAG_REYBOOROOM_HIDE_VIGOROTH)
+    }
+    end
+}
+
+script ReyBooRoom_OnFrame {
+    applymovementandwait(LOCALID_PLAYER, moves(walk_up * 5, face_up))
+    special(SpawnCameraObject)
+    directcameramovementtopos(6, 5)
+    waitmovement(0)
+    turnobject(LOCALID_REYBOOROOM_BOO, DIR_SOUTH)
+    turnobject(LOCALID_REYBOOROOM_VIGOROTH, DIR_NORTH)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_down, face_down))
+    msgbox(format("¡Esta es la mejor idea del mundo, con esto podré jubilarme, yupi! ¡Vamos a ello!"))
+    msgbox(format("¡Adelante, usa Día de Pago!"))
+    applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_WalkInPlaceUp)
+    msgbox(format("¡Vamos, saca tu energía cósmica, Día de Pago!"))
+    turnobject(LOCALID_REYBOOROOM_VIGOROTH, DIR_SOUTH)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Estúpido mono..."))
+    playbgm(MUS_HELP, FALSE)
+    applymovement(LOCALID_PLAYER, Common_Movement_JumpInPlaceDown)
+    applymovement(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown)
+    applymovement(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_JumpInPlaceUp)
+    waitmovement(0)
+    applymovement(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooPanic)
+    applymovement(LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_Movement_VigorothChase)
+    applymovement(LOCALID_CAMERA, ReyBooRoom_Movement_CameraChase)
+    waitmovement(0)
+    fadeoutbgm(1)
+    delay(20)
+    moveobjecttopos(LOCALID_REYBOOROOM_BOO, 6, 13, DIR_SOUTH)
+    moveobjecttopos(LOCALID_REYBOOROOM_VIGOROTH, 6, 13, DIR_SOUTH)
+    removeobject(LOCALID_REYBOOROOM_VIGOROTH)
+    setflag(FLAG_REYBOOROOM_HIDE_VIGOROTH)
+    delay(20)
+    fadedefaultbgm()
+    moveobjecttopos(LOCALID_REYBOOROOM_BOO, 6, 12, DIR_NORTH)
+    applymovement(LOCALID_CAMERA, ReyBooRoom_Movement_CameraReturn)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooReturn)
+    waitmovement(LOCALID_CAMERA)
+    msgbox(format("Menos mal."))
+    msgbox(format("Madre mía, qué mala bestia..."))
+    special(RemoveCameraObject)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_ExclamationMarkWithDelay48)
+    msgbox(format("¡Ejem...!"))
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooApproachPlayer)
+    msgbox(format("De modo que eres tú quien me ha invocado..."))
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, format("Muy bien, has pasado la prueba física..."))
+    msgbox(format("Ahora prepárate para la inesperada..."))
+    playbgm(MUS_WEATHER_GROUDON, FALSE)
+    msgbox(format("¡Mis fenomenales poderes!"))
+    fadescreen(FADE_TO_WHITE)
+    fadescreen(FADE_FROM_WHITE)
+    delay(10)
+    fadescreen(FADE_TO_WHITE)
+    fadescreen(FADE_FROM_WHITE)
+    special(ShakeCamera)
+    delay(20)
+    fadeoutbgm(1)
+    delay(20)
+    playse(SE_FAILURE)
+    msgbox(format("Batería baja {DOWN_ARROW_2}"))
+    msgbox(format("¡¡Maldita sea!!"))
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_x, delay_16 * 2))
+    turnobject(LOCALID_REYBOOROOM_BOO, DIR_SOUTH)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Muy bien..."))
+    applymovementandwait(LOCALID_PLAYER, moves(walk_down * 2, face_up))
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooSlowRetreat)
+    msgbox(format("Por esta vez has ganado."))
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooSecondLook)
+    msgbox(format("¡Volveré!"))
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, ReyBooRoom_Movement_BooFinalEscape)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitse
+    playbgm(MUS_CONTEST_RESULTS, FALSE)
+    setflag(FLAG_REYBOOROOM_HIDE_BOO)
+    removeobject(LOCALID_REYBOOROOM_BOO)
+    setvar(VAR_REY_BOO_ROOM_STATE, 1)
+    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+    setflag(FLAG_DEFEATED_ADMIN_REY_BOO)
+    release
+    end
+}
+
+movement ReyBooRoom_Movement_BooPanic {
+    walk_fast_right
+    walk_fast_left
+    walk_fast_right
+    walk_fast_left
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+}
+
+movement ReyBooRoom_Movement_VigorothChase {
+    delay_16
+    walk_fast_right
+    walk_fast_left
+    walk_fast_right
+    walk_fast_left
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+    walk_fast_down
+}
+
+movement ReyBooRoom_Movement_CameraChase {
+    delay_8
+    walk_fast_down * 6
+}
+
+movement ReyBooRoom_Movement_BooReturn {
+    walk_fast_up
+    walk_fast_up
+    face_down
+    delay_16
+    face_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    face_down
+}
+
+movement ReyBooRoom_Movement_CameraReturn {
+    walk_fast_up * 6
+}
+
+movement ReyBooRoom_Movement_BooApproachPlayer {
+    walk_down
+    face_down
+}
+
+movement ReyBooRoom_Movement_BooSlowRetreat {
+    walk_slow_down
+    delay_16
+    face_up
+    delay_16
+    face_down
+}
+
+movement ReyBooRoom_Movement_BooSecondLook {
+    walk_slow_down
+    face_up
+    delay_8
+    face_down
+}
+
+movement ReyBooRoom_Movement_BooFinalEscape {
+    walk_fast_down * 4
+}

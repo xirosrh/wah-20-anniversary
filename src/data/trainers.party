@@ -652,6 +652,144 @@ Carvanha
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_WAH_ADMIN_REYBOO_MAIN ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Cosmo (Vigoroth) @ Silk Scarf
+Ability: Vital Spirit
+Level: 10
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Pay Day
+- Night Slash
+- Slash
+- U-turn
+
+Lunita (Lunatone) @ Power Herb
+Ability: Levitate
+Level: 10
+EVs: 252 HP / 4 SpA / 252 SpD
+Calm Nature
+- Meteor Beam
+- Moonblast
+- Cosmic Power
+- Hypnosis
+
+Stella (Clefable) @ Leftovers
+Ability: Magic Guard
+Level: 10
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Moonblast
+- Calm Mind
+- Soft-Boiled
+- Thunder Wave
+
+Tesoro (Persian) @ Amulet Coin
+Ability: Technician
+Level: 10
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Fake Out
+- Pay Day
+- Knock Off
+- Parting Shot
+
+Orbit (Beheeyem) @ Life Orb
+Ability: Analytic
+Level: 10
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Thunderbolt
+- Shadow Ball
+- Nasty Plot
+
+Florin (Meowscarada) @ Choice Band
+Ability: Protean
+Level: 10
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Flower Trick
+- Knock Off
+- Play Rough
+- U-turn
+
+=== TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Cosmo (Vigoroth) @ Silk Scarf
+Ability: Vital Spirit
+Level: 10
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Pay Day
+- Night Slash
+- Slash
+- Encore
+
+Astro (Lunatone) @ Leftovers
+Ability: Levitate
+Level: 10
+EVs: 252 HP / 4 SpA / 252 SpD
+Calm Nature
+- Power Gem
+- Moonblast
+- Cosmic Power
+- Hypnosis
+
+Estrella (Clefable) @ Kee Berry
+Ability: Magic Guard
+Level: 10
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Moonblast
+- Stored Power
+- Soft-Boiled
+- Thunder Wave
+
+Capital (Persian) @ Expert Belt
+Ability: Technician
+Level: 10
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Fake Out
+- Pay Day
+- Knock Off
+- U-turn
+
+Orbita (Beheeyem) @ Wise Glasses
+Ability: Analytic
+Level: 10
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Energy Ball
+- Shadow Ball
+- Nasty Plot
+
+Dividend (Meowscarada) @ Focus Sash
+Ability: Protean
+Level: 10
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Flower Trick
+- Knock Off
+- Low Kick
+- U-turn
+
 === TRAINER_GRUNT_MT_PYRE_3 ===
 Name: GRUNT
 Class: Team Aqua
