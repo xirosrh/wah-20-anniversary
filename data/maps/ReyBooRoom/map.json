@@ -20,7 +20,7 @@
       "x": 6,
       "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -31,10 +31,10 @@
     {
       "local_id": "LOCALID_REYBOOROOM_VIGOROTH",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VIGOROTH)",
-      "x": 6,
-      "y": 7,
+      "x": 7,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -52,6 +52,88 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var_value": "0",
+      "script": "ReyBooRoom_EventScript_BooEncounter"
+    }
+  ],
   "bg_events": []
 }
