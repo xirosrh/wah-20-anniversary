@@ -54,7 +54,7 @@
 #define FLAG_DEFEATED_ADMIN_DAVZERO    0x28 // Used WAH
 #define FLAG_DEFEATED_ADMIN_BARO    0x29 // Used WAH
 #define FLAG_DEFEATED_ADMIN_CHEVE    0x2A // Used WAH
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_DEFEATED_ADMIN_REY_BOO    0x2B // Used WAH
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -64,8 +64,8 @@
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_REYBOOROOM_HIDE_BOO    0x35 // Used WAH
+#define FLAG_REYBOOROOM_HIDE_VIGOROTH    0x36 // Used WAH
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag

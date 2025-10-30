@@ -109,6 +109,10 @@ gStdScripts::
 	.4byte Std_RegisteredInMatchCall   @ STD_REGISTER_MATCH_CALL
 	.4byte Std_MsgboxGetPoints         @ MSGBOX_GETPOINTS
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
+	.4byte Std_MsgboxDefaultTop   	   @ MSGBOX_DEFAULT_TOP
+	.4byte Std_MsgboxAutocloseTop      @ MSGBOX_AUTOCLOSE_TOP
+	.4byte Std_MsgboxDefaultCenter     @ MSGBOX_DEFAULT_CENTER
+	.4byte Std_MsgboxAutocloseCenter   @ MSGBOX_AUTOCLOSE_CENTER
 gStdScripts_End::
 
 	.include "data/maps/PetalburgCity/scripts.inc"

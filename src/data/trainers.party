@@ -652,10 +652,10 @@ Carvanha
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_WAH_ADMIN_REYBOO_MAIN ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -669,11 +669,11 @@ Carvanha
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
-Gender: Female
+=== TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move

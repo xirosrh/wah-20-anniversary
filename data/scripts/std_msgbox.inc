@@ -42,6 +42,38 @@ Std_MsgboxPokenav:
 	waitmessage
 	return
 
+Std_MsgboxDefaultTop:
+	special SetMsgboxTop
+	message NULL
+	waitmessage
+	waitbuttonpress
+	return
+
+Std_MsgboxAutocloseTop:
+	special SetMsgboxTop
+	message NULL
+	waitmessage
+	waitbuttonpress
+	release
+	special SetMsgboxBottom
+	return
+
+Std_MsgboxDefaultCenter:
+	special SetMsgboxCenter
+	message NULL
+	waitmessage
+	waitbuttonpress
+	return
+
+Std_MsgboxAutocloseCenter:
+	special SetMsgboxCenter
+	message NULL
+	waitmessage
+	waitbuttonpress
+	release
+	special SetMsgboxBottom
+	return
+
 EventScript_UnusedReturn:
 	return
 

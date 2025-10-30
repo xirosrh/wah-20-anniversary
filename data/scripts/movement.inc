@@ -92,6 +92,11 @@ Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
 	step_end
 
+Common_Movement_WalkInPlaceRight2:
+	walk_in_place_right
+	walk_in_place_right
+	step_end
+
 Common_Movement_WalkInPlaceUp:
 	walk_in_place_up
 	step_end
@@ -392,6 +397,17 @@ Common_Movement_Angry:
 
 Common_Movement_AngryWithDelay48:
 	emote_angry
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_X:
+	emote_x
+	step_end
+
+Common_Movement_XWithDelay48:
+	emote_x
 	delay_16
 	delay_16
 	delay_16

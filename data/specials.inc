@@ -566,6 +566,8 @@ gSpecials::
 	def_special MoveObjectToPosWithVars
 	def_special DirectCameraMovementsToPos
 	def_special SetObjectMovementType
-
+	def_special SetMsgboxTop
+	def_special SetMsgboxCenter
+	def_special SetMsgboxBottom
 
 
