@@ -39,7 +39,7 @@ script CosararaRoom_EventScript_Cosarara {
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_MAIN, format("Me ha hecho muy feliz esta batalla."))
     setflag(FLAG_DEFEATED_ADMIN_COSARARA)
     delay(20)
-    msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, que si no será imposible reconocerte.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, ya que me cuesta mucho saber quién es quien.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE)
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
     delay(20)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)

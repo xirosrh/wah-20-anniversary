@@ -129,6 +129,6 @@ CosararaRoom_EventScript_Cosarara_Text_6:
 # 42 "data/maps/CosararaRoom/scripts.pory"
 	.string "Ha sido una buena batalla, {PLAYER}.\n"
 	.string "Creo que te recordaré.\p"
-	.string "Recuerda no cambiar de nick, que si no\n"
-	.string "será imposible reconocerte.\p"
+	.string "Recuerda no cambiar de nick, ya que me\n"
+	.string "cuesta mucho saber quién es quien.\p"
 	.string "Ya puedes avanzar.$"
