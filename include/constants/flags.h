@@ -55,7 +55,7 @@
 #define FLAG_DEFEATED_ADMIN_BARO    0x29 // Used WAH
 #define FLAG_DEFEATED_ADMIN_CHEVE    0x2A // Used WAH
 #define FLAG_DEFEATED_ADMIN_REY_BOO    0x2B // Used WAH
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_DEFEATED_ADMIN_COSARARA    0x2C // Used WAH
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
