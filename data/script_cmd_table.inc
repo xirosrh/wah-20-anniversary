@@ -251,8 +251,9 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_BUFFERITEMNAMEPLURAL          ScrCmd_bufferitemnameplural,        requests_effects=1  @ 0xe2
 	script_cmd_table_entry SCR_OP_DYNMULTICHOICE                ScrCmd_dynmultichoice,              requests_effects=1  @ 0xe3
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush,                requests_effects=1  @ 0xe4
-	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS               ScrCmd_MoveObjectToPos,              requests_effects=1   @ 0xe5
-	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS_AT            ScrCmd_MoveObjectToPos_at,           requests_effects=1   @ 0xe6
+	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
+	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS               ScrCmd_MoveObjectToPos,              requests_effects=1   @ 0xe6
+	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS_AT            ScrCmd_MoveObjectToPos_at,           requests_effects=1   @ 0xe7
 	
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
