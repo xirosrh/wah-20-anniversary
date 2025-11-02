@@ -1,1 +1,119 @@
 mapscripts DriveKatherineRoom_MapScripts {}
+
+script DriveKatherineRoom_EventScript_Katherine {
+    lock
+    faceplayer
+    msgbox(format("Katherine: Oh, hola. Bienvenid{OA} a esta sala. Aquí todo está preparado para celebrar."))
+    call(DriveKatherineRoom_EventScript_WalkInPlaceKatherineFacingPlayer)
+    delay(10)
+    msgbox(format("Katherine: ¿Así que quieres superar este desafío?"))
+    msgbox(format("Katherine: Estaré encantada de ayudarte."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
+    msgbox(format("Katherine: Pero antes, debes hablar con Drive. Tiene su discurso preparado… y está muy entusiasmado."))
+    release
+    end
+}
+
+script DriveKatherineRoom_EventScript_WalkInPlaceKatherineFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
+script DriveKatherineRoom_EventScript_Drive {
+    lock
+    faceplayer
+    msgbox(format("Drive: ¡Ah, por fin un comensal con hambre de fiesta!"))
+    call(DriveKatherineRoom_EventScript_JumpInPlaceDriveFacingPlayer)
+    delay(10)
+    msgbox(format("Drive: Ven, tenemos un lugar especial para ti."))
+    moveobjecttopos(LOCALID_PLAYER, 9, 9, DIR_NORTH)
+    waitmovement(0)
+    turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
+    turnobject(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DIR_SOUTH)
+    delay(10)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(walk_down))
+    msgbox(format("Drive: Bienvenid{OA} al gran restaurante de la celebración.\pAquí servimos emociones recién hechas y recuerdos al fuego lento. Yo soy Drive, tu chef y maître del banquete."))
+    call(DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer)
+    msgbox(format("Drive: Hoy, el plato principal eres tú."))
+    msgbox(format("Drive: Cada plato cuenta una historia,\ny cada batalla… ¡una receta para el alma!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_smile, jump_in_place_down))
+    msgbox(format("Drive: Empezaremos con un entrante de entusiasmo,\nun toque de curiosidad y una pizca de locura."))
+    msgbox(format("Drive: Después, el plato principal: un duelo doble delicioso."))
+    turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_EAST)
+    msgbox(format("Drive: Katherine, ¿listos los ingredientes?"))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceRight)
+    delay(10)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(walk_down))
+    msgbox(format("Katherine: Todos cortados y preparados, Drive."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
+    msgbox(format("Katherine: Pero recuerda: no todo se trata de ganar,\nsino de disfrutar el proceso. Vamos a darle la bienvenida como se merece."))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceDown)
+    turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
+    msgbox(format("Drive: ¡Entonces, que empiece el banquete!"))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Drive: Dos chefs, un banquete, un nuevo desafío.\p¡A tus hornallas, entrenador{a}!"))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_versus, jump_in_place_down))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(emote_versus, jump_in_place_down))
+    trainerbattle_double(TRAINER_WAH_ADMIN_DRIVE_AND_KATHERINE_MAIN, NULL, NULL, format("Necesitas dos Pokémon para saborear este banquete."))
+    msgbox(format("Drive: Un sabor intenso, equilibrado… inolvidable.\pSi cada celebración tuviera este toque,\nel mundo sería un festín eterno."))
+    msgbox(format("Katherine: Fue una danza perfecta.\pEn cada paso se sentía la alegría de este día.\pGracias por compartirlo con nosotros."))
+    msgbox(format("Drive: ¡Brindo por eso!\pY por los comensales que no temen probar cosas nuevas."))
+    msgbox(format("Katherine: Has superado esta sala con elegancia.\pSigue disfrutando de la celebración…\ny hasta que nos volvamos a ver…\nmiau revoir~"))
+    release
+    end
+}
+
+script DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
+script DriveKatherineRoom_EventScript_JumpInPlaceDriveFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down * 2))
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_up * 2))
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_right * 2))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_left * 2))
+            break
+    }
+    return
+}
