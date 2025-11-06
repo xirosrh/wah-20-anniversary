@@ -1,7 +1,7 @@
 {
-  "id": "MAP_TOKYN_WAR_ROOM",
-  "name": "TokynWarRoom",
-  "layout": "LAYOUT_TOKYN_WAR_ROOM",
+  "id": "MAP_JavsJavi4315Room",
+  "name": "JavsJavi4315Room",
+  "layout": "LAYOUT_JavsJavi4315Room",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_TOKYNWARROOM_TOKYN",
+      "local_id": "LOCALID_JAVSJAVIROOM_JAVS",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 5,
       "y": 5,
@@ -29,7 +29,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TOKYNWARROOM_WAR",
+      "local_id": "LOCALID_JAVSJAVIROOM_JAVI4315",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 7,
       "y": 5,
