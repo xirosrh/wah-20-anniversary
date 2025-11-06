@@ -708,12 +708,12 @@ Zubat
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_FREDRICK ===
-Name: FREDRICK
-Class: Expert
-Pic: Expert M
+=== TRAINER_WAH_ADMIN_DRIVE_MAIN ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
 Gender: Male
-Music: Intense
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -721,14 +721,11 @@ Makuhita
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Machoke
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_MATT ===
-Name: MATT
-Class: Aqua Admin
-Pic: Aqua Admin M
+=== TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
 Gender: Male
 Music: Aqua
 Items: Super Potion
@@ -739,16 +736,12 @@ Mightyena
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Golbat
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-=== TRAINER_ZANDER ===
-Name: ZANDER
-Class: Black Belt
-Pic: Black Belt
-Gender: Male
-Music: Intense
+=== TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
+Gender: Female
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -756,10 +749,10 @@ Hariyama
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_SHELLY_WEATHER_INSTITUTE ===
-Name: SHELLY
-Class: Aqua Admin
-Pic: Aqua Admin F
+=== TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
 Gender: Female
 Music: Aqua
 Double Battle: No
