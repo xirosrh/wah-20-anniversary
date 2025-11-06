@@ -37,7 +37,6 @@
   ],
   "gMapGroup_WahChallenge": [
     "OmegaRoom",
-    "CheveRoom",
     "GoceRoom",
     "TokynWarRoom",
     "JackJohnsonRoom",
@@ -49,8 +48,15 @@
     "SayerBlaxRoom",
     "ReyBooRoom",
     "DavZeroRoom",
-    "Javi4315Room",
-    "BaroRoom"
+    "JavsJavi4315Room",
+    "GallegoRoom",
+    "ReonekyRoom",
+    "CheveRoom",
+    "BaroRoom",
+    "KleinPkPowerRoom",
+    "EingRoom",
+    "XirosRoom",
+    "SergioRoom"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

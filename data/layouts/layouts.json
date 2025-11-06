@@ -4202,14 +4202,14 @@
       "blockdata_filepath": "data/layouts/AngelRoom/map.bin"
     },
     {
-      "id": "LAYOUT_JAVI4315ROOM",
-      "name": "Javi4315Room_Layout",
+      "id": "LAYOUT_JavsJavi4315Room",
+      "name": "JavsJavi4315Room_Layout",
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_EliteFour",
-      "border_filepath": "data/layouts/Javi4315Room/border.bin",
-      "blockdata_filepath": "data/layouts/Javi4315Room/map.bin"
+      "border_filepath": "data/layouts/JavsJavi4315Room/border.bin",
+      "blockdata_filepath": "data/layouts/JavsJavi4315Room/map.bin"
     },
     {
       "id": "LAYOUT_SAYER_BLAX_ROOM",
@@ -4230,6 +4230,66 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/BaroRoom/border.bin",
       "blockdata_filepath": "data/layouts/BaroRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_GALLEGO_ROOM",
+      "name": "GallegoRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/GallegoRoom/border.bin",
+      "blockdata_filepath": "data/layouts/GallegoRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_REONEKY_ROOM",
+      "name": "ReonekyRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/ReonekyRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ReonekyRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_KLEIN_PK_POWER_ROOM",
+      "name": "KleinPkPowerRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
+      "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_EING_ROOM",
+      "name": "EingRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/EingRoom/border.bin",
+      "blockdata_filepath": "data/layouts/EingRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_XIROS_ROOM",
+      "name": "XirosRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/XirosRoom/border.bin",
+      "blockdata_filepath": "data/layouts/XirosRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_SERGIO_ROOM",
+      "name": "SergioRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/SergioRoom/border.bin",
+      "blockdata_filepath": "data/layouts/SergioRoom/map.bin"
     }
   ]
 }

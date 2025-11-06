@@ -1,7 +1,7 @@
 {
-  "id": "MAP_JAVI4315ROOM",
-  "name": "Javi4315Room",
-  "layout": "LAYOUT_JAVI4315ROOM",
+  "id": "MAP_KLEIN_PK_POWER_ROOM",
+  "name": "KleinPkPowerRoom",
+  "layout": "LAYOUT_KLEIN_PK_POWER_ROOM",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,

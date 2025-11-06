@@ -522,6 +522,7 @@ Common_Movement_JumpUpLockFacingDirection:
 	jump_up
 	unlock_facing_direction
 	step_end
+	
 
 Common_Movement_JumpDownFaceLeft:
 	jump_down

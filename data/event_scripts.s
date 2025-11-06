@@ -1141,7 +1141,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ReyBooRoom/scripts.inc"
 
-	.include "data/maps/Javi4315Room/scripts.inc"
+	.include "data/maps/JavsJavi4315Room/scripts.inc"
 
 	.include "data/maps/DavZeroRoom/scripts.inc"
 
@@ -1150,3 +1150,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AngelRoom/scripts.inc"
 
 	.include "data/maps/BaroRoom/scripts.inc"
+
+	.include "data/maps/GallegoRoom/scripts.inc"
+
+	.include "data/maps/ReonekyRoom/scripts.inc"
+
+	.include "data/maps/KleinPkPowerRoom/scripts.inc"
+
+	.include "data/maps/EingRoom/scripts.inc"
+
+	.include "data/maps/XirosRoom/scripts.inc"
+
+	.include "data/maps/SergioRoom/scripts.inc"
