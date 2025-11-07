@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ReonekyRoom_EventScript_Reoneky",
       "flag": "0"
     },
     {
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_REONEKYROOM_HIDE_TYPHLOSION"
     },
     {
       "local_id": "LOCALID_REOROOM_CRANE",
@@ -58,7 +58,7 @@
     },
     {
       "local_id": "LOCALID_REOROOM_FIREATTACK",
-      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
       "x": 6,
       "y": 8,
       "elevation": 0,
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_REONEKYROOM_HIDE_FIRE"
     },
     {
       "local_id": "LOCALID_REOROOM_HAUNTER",
@@ -82,7 +82,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_REONEKYROOM_HIDE_HAUNTER"
     }
   ],
   "warp_events": [

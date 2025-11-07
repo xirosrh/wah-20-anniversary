@@ -269,7 +269,7 @@
 #define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
 #define VAR_BARO_ROOM_STATE                                0x40FA //WAH
 #define VAR_REY_BOO_ROOM_STATE                             0x40FB //WAH
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_REONEKY_ROOM_STATE                                0x40FC // WAH
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

@@ -1,1 +1,179 @@
-mapscripts ReonekyRoom_MapScripts {}
+mapscripts ReonekyRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_REONEKY_ROOM_STATE, 0: ReonekyRoom_OnFrame
+    ]
+    MAP_SCRIPT_ON_TRANSITION: ReonekyRoom_OnTransition
+}
+
+script ReonekyRoom_OnTransition {
+    if(flag(FLAG_DEFEATED_ADMIN_REONEKY)) {
+        setvar(VAR_REONEKY_ROOM_STATE, 2)
+        setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
+        setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+        setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+        call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    }
+    else if(var(VAR_REONEKY_ROOM_STATE) == 0) {
+        clearflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
+        addobject(LOCALID_REOROOM_TYPHLOSION)
+        showobjectat(LOCALID_REOROOM_TYPHLOSION, MAP_REONEKY_ROOM)
+        clearflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+        addobject(LOCALID_REOROOM_HAUNTER)
+        showobjectat(LOCALID_REOROOM_HAUNTER, MAP_REONEKY_ROOM)
+        setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    }
+    else {
+        setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
+        setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+        setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    }
+    end
+}
+
+script ReonekyRoom_OnFrame {
+    applymovementandwait(LOCALID_PLAYER, moves(walk_up * 2, face_up))
+    special(SpawnCameraObject)
+    directcameramovementtopos(5, 7)
+    waitmovement(0)
+    turnobject(LOCALID_REOROOM_REONEKY, DIR_EAST)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
+    msgbox(format("Reoneky: ¡Typhlosion, mantén la posición!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_Movement_TyphlosionBrace)
+    msgbox(format("Reoneky: ¡Esa grúa poseída encarna la injusticia administrativa!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_HAUNTER, ReonekyRoom_Movement_HaunterLaugh)
+    msgbox(format("Haunter: ¡Hauuun-haun-haunterrr!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Reoneky: ¡No te rías, espectro de la ineficiencia!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Reoneky: ¡No pienso rendirme ante esta multa injusta! ¡Fueron solo unos minutos!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ExclamationMarkWithDelay48)
+    msgbox(format("Reoneky: ¡Typhlosion, usa Puño Trueno!"))
+    playse(SE_M_THUNDERBOLT2)
+    applymovement(LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_Movement_TyphlosionThunderPunch)
+    applymovement(LOCALID_REOROOM_CRANE, ReonekyRoom_Movement_CraneJolt)
+    waitmovement(LOCALID_REOROOM_TYPHLOSION)
+    waitmovement(LOCALID_REOROOM_CRANE)
+    msgbox(format("Reoneky: ¡Bien! ¡Ahora Rueda Fuego!"))
+    playse(SE_M_FLAME_WHEEL)
+    clearflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    addobject(LOCALID_REOROOM_FIREATTACK)
+    showobjectat(LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM)
+    applymovement(LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_Movement_TyphlosionFireWheel)
+    applymovement(LOCALID_REOROOM_FIREATTACK, ReonekyRoom_Movement_FireWheel)
+    waitmovement(LOCALID_REOROOM_FIREATTACK)
+    msgbox(format("Las chispas envuelven la grúa y empiezan a brotar llamaradas."), MSGBOX_AUTOCLOSE)
+    playse(SE_M_FIRE_PUNCH)
+    msgbox(format("Haunter: ¡Hauuunterrr!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_HAUNTER, ReonekyRoom_Movement_HaunterRetreat)
+    setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    removeobject(LOCALID_REOROOM_HAUNTER)
+    msgbox(format("Reoneky: ¡Sí! ¡Por fin nos libramos del fantasma de la multa!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SmileWithDelay48)
+    msgbox(format("Reoneky: Y Keltill decía que nada malo podía pasar con J15 al mando..."))
+    msgbox(format("Reoneky: Buen trabajo, regresa a tu Poké Ball."), MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_TO_WHITE)
+    waitmovement(0)
+    setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
+    removeobject(LOCALID_REOROOM_TYPHLOSION)
+    setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    removeobject(LOCALID_REOROOM_FIREATTACK)
+    fadescreen(FADE_FROM_WHITE)
+    setvar(VAR_REONEKY_ROOM_STATE, 1)
+    turnobject(LOCALID_REOROOM_REONEKY, DIR_SOUTH)
+    directcameramovementtopos(6, 11)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    release
+    end
+}
+
+script ReonekyRoom_EventScript_Reoneky {
+    if(flag(FLAG_DEFEATED_ADMIN_REONEKY)) {
+        lock
+        faceplayer
+        msgbox(format("La puerta está abierta. Procura no hacer ruido, aún huele a burocracia quemada."), MSGBOX_NPC)
+        release
+        end
+    }
+    lock
+    faceplayer
+    msgbox(format("¿Vienes a tramitar reclamaciones o a desafiarme?\pEn cualquier caso, tengo toda la documentación lista."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("No daré ni un paso atrás. Tras esa grúa estaba el abuso de poder… y ahora estás tú."))
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Así se sella un expediente impecable."))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SmileWithDelay48)
+    msgbox(format("Firma aquí: acabas de ganarte el derecho a continuar."), MSGBOX_AUTOCLOSE)
+    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    setflag(FLAG_DEFEATED_ADMIN_REONEKY)
+    setvar(VAR_REONEKY_ROOM_STATE, 2)
+    release
+    end
+}
+
+movement ReonekyRoom_Movement_TyphlosionBrace {
+    emote_double_exclamation_mark
+    walk_in_place_right
+    delay_16
+}
+
+movement ReonekyRoom_Movement_TyphlosionThunderPunch {
+    lock_facing_direction
+    walk_fast_right
+    jump_in_place_right
+    walk_fast_left
+    unlock_facing_direction
+}
+
+movement ReonekyRoom_Movement_CraneJolt {
+    emote_question
+    lock_facing_direction
+    walk_in_place_left
+    walk_in_place_right
+    delay_16
+    unlock_facing_direction
+}
+
+movement ReonekyRoom_Movement_TyphlosionFireWheel {
+    emote_angry
+    lock_facing_direction
+    jump_in_place_right
+    walk_fast_right
+    walk_fast_left
+    jump_in_place_right
+    unlock_facing_direction
+}
+
+movement ReonekyRoom_Movement_FireWheel {
+    set_visible
+    lock_facing_direction
+    walk_fast_up
+    walk_fast_right
+    walk_fast_down
+    walk_fast_left
+    set_invisible
+    unlock_facing_direction
+}
+
+movement ReonekyRoom_Movement_HaunterLaugh {
+    emote_versus
+    jump_in_place_up
+    jump_in_place_down
+    delay_16
+    jump_in_place_up
+}
+
+movement ReonekyRoom_Movement_HaunterRetreat {
+    emote_happy
+    lock_facing_direction
+    jump_up
+    walk_fast_up * 2
+    set_invisible
+    unlock_facing_direction
+}

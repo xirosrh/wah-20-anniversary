@@ -770,6 +770,78 @@ Mightyena
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
+=== TRAINER_WAH_ADMIN_REONEKY_MAIN ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Typhlosion @ Charcoal
+Level: 35
+Ability: Blaze
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunder Punch
+- Flame Wheel
+- Smokescreen
+- Quick Attack
+
+Manectric @ Magnet
+Level: 34
+Ability: Static
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Thunderbolt
+- Bite
+- Thunder Wave
+- Howl
+
+Hariyama @ Black Belt
+Level: 34
+Ability: Guts
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Brick Break
+- Knock Off
+- Fake Out
+- Bulk Up
+
+=== TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Typhlosion @ Leftovers
+Level: 38
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Eruption
+- Thunder Punch
+- Flamethrower
+- Sunny Day
+
+Raichu @ Magnet
+Level: 37
+Ability: Static
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Thunderbolt
+- Encore
+- Brick Break
+- Double Team
+
+Machamp @ Lum Berry
+Level: 37
+Ability: Guts
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Cross Chop
+- Rock Slide
+- Bulk Up
+- Earthquake
+
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
 Name: SHELLY
 Class: Aqua Admin
