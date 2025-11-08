@@ -59,8 +59,8 @@
     {
       "local_id": "LOCALID_REOROOM_FIREATTACK",
       "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
-      "x": 2,
-      "y": 9,
+      "x": 5,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -73,8 +73,8 @@
     {
       "local_id": "LOCALID_REOROOM_HAUNTER",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAUNTER)",
-      "x": 3,
-      "y": 10,
+      "x": 11,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
