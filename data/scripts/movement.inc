@@ -487,6 +487,10 @@ Common_Movement_SmokeCigarette:
 	smoke_cigarette
 	step_end
 
+Common_Movement_CraneStartBurning:
+	crane_start_burning
+	step_end
+
 Common_Movement_WalkLeftLockFacingDirection:
 	lock_facing_direction
 	walk_left

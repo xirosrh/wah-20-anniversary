@@ -286,6 +286,7 @@
 #define MOVEMENT_ACTION_EMOTE_IDEA                      0xC3
 #define MOVEMENT_ACTION_EMOTE_XD                        0xC4
 #define MOVEMENT_ACTION_EMOTE_WINK                      0xC5
+#define MOVEMENT_ACTION_CRANE_START_BURNING                     0xC6
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -354,6 +355,7 @@
 #define ANIM_SMOKING_LOOP     (ANIM_STD_COUNT + 1)
 #define ANIM_SMOKE_CIGARETTE  (ANIM_STD_COUNT + 2)
 #define ANIM_STD_FALL_DOWN    (ANIM_STD_COUNT + 3)
+#define ANIM_CRANE_START_BURNING    (ANIM_STD_COUNT + 0)
 
 #define ANIM_FIELD_MOVE 0
 

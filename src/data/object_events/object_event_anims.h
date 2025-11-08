@@ -946,6 +946,19 @@ static const union AnimCmd sAnim_SmokeCigarette[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_CraneStartBurning[] =
+{
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_StandardFallDown[] =
 {
     ANIMCMD_FRAME(9, 16),
@@ -1349,6 +1362,7 @@ static const union AnimCmd *const sAnimTable_Crane[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_CRANE_START_BURNING] = sAnim_CraneStartBurning
 };
 
 

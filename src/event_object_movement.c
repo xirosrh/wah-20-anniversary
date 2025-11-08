@@ -8297,6 +8297,12 @@ bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struc
     return FALSE;
 }
 
+bool8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_CRANE_START_BURNING);
+    return FALSE;
+}
+
 bool8 MovementAction_EnableJumpLandingGroundEffect_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     objectEvent->disableJumpLandingGroundEffect = FALSE;
