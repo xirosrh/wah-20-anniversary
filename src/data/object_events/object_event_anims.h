@@ -959,6 +959,17 @@ static const union AnimCmd sAnim_CraneStartBurning[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_CraneBurningUp[] =
+{
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(5, 8),
+    ANIMCMD_FRAME(6, 8),
+    ANIMCMD_FRAME(7, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_FRAME(9, 8),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_StandardFallDown[] =
 {
     ANIMCMD_FRAME(9, 16),
@@ -1362,7 +1373,8 @@ static const union AnimCmd *const sAnimTable_Crane[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
-    [ANIM_CRANE_START_BURNING] = sAnim_CraneStartBurning
+    [ANIM_CRANE_START_BURNING] = sAnim_CraneStartBurning,
+    [ANIM_CRANE_BURNING_UP] = sAnim_CraneBurningUp
 };
 
 

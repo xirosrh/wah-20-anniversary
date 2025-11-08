@@ -85,7 +85,8 @@
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
 #define MOVEMENT_TYPE_SLEEPING                         0x52
 #define MOVEMENT_TYPE_SMOKING_LOOP                     0x53
-#define NUM_MOVEMENT_TYPES                             0x54
+#define MOVEMENT_TYPE_CRANE_BURNING_UP                 0x54
+#define NUM_MOVEMENT_TYPES                             0x55
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1
@@ -356,6 +357,7 @@
 #define ANIM_SMOKE_CIGARETTE  (ANIM_STD_COUNT + 2)
 #define ANIM_STD_FALL_DOWN    (ANIM_STD_COUNT + 3)
 #define ANIM_CRANE_START_BURNING    (ANIM_STD_COUNT + 0)
+#define ANIM_CRANE_BURNING_UP       (ANIM_STD_COUNT + 1)
 
 #define ANIM_FIELD_MOVE 0
 

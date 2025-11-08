@@ -334,7 +334,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
     [MOVEMENT_TYPE_SLEEPING] = MovementType_Sleeping,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop
+    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = MovementType_CraneBurningUp
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -465,7 +466,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
     [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH
+    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = DIR_WEST
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -5710,6 +5712,29 @@ bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Spr
 bool8 MovementType_SmokingLoop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
      if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+movement_type_def(MovementType_CraneBurningUp, gMovementTypeFuncs_CraneBurningUp)
+
+bool8 MovementType_CraneBurningUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    FaceDirection(objectEvent, sprite, DIR_WEST);
+    sprite->sDirection = DIR_WEST;
+    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_CRANE_BURNING_UP);
+    objectEvent->singleMovementActive = FALSE;
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_CraneBurningUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (WaitForMovementDelay(sprite))
     {
         sprite->sTypeFuncId = 0;
         return TRUE;
