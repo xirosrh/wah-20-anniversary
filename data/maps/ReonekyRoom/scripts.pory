@@ -49,7 +49,12 @@ script ReonekyRoom_OnFrame {
         walk_right
         delay_16
         unlock_facing_direction))
+    release
+    delay(30)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkLeftLockFacingDirection)
     msgbox(format("¡Bien! ¡Ahora Rueda Fuego!"))
+    delay(20)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpLeftLockFacingDirection)
     playse(SE_M_FLAME_WHEEL)
     clearflag(FLAG_REONEKYROOM_HIDE_FIRE)
     addobject(LOCALID_REOROOM_FIREATTACK)
@@ -63,11 +68,33 @@ script ReonekyRoom_OnFrame {
     playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
     fadescreen(FADE_TO_WHITE)
     turnobject(LOCALID_REOROOM_CRANE, DIR_SOUTH)
+    clearflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    addobject(LOCALID_REOROOM_HAUNTER)
+    showobjectat(LOCALID_REOROOM_HAUNTER, MAP_REONEKY_ROOM)
     delay(30)
     release
     fadescreen(FADE_FROM_WHITE)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_REOROOM_HAUNTER, ReonekyRoom_Movement_HaunterRetreat)
+    applymovementandwait(LOCALID_REOROOM_HAUNTER, moves(
+        emote_cry
+        walk_fast_right
+        walk_fast_down * 2
+        walk_fast_left * 2
+        delay_16
+        set_invisible
+        delay_8
+        set_visible
+        delay_8
+        set_invisible
+        delay_16
+        set_visible
+        delay_8
+        set_invisible
+        delay_16
+        set_visible
+        delay_8
+        set_invisible
+    ))
     setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
     removeobject(LOCALID_REOROOM_HAUNTER)
     msgbox(format("¡Sí! ¡Por fin nos libramos del fantasma de la multa!"))
@@ -149,11 +176,3 @@ movement ReonekyRoom_Movement_FireWheel {
 }
 
 
-movement ReonekyRoom_Movement_HaunterRetreat {
-    emote_happy
-    lock_facing_direction
-    jump_up
-    walk_fast_up * 2
-    set_invisible
-    unlock_facing_direction
-}
