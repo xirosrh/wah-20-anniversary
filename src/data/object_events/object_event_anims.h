@@ -1170,6 +1170,19 @@ static const union AnimCmd sAnim_CraneGoWest[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_FlameWheelAttack[] =
+{
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(5, 4),
+    ANIMCMD_FRAME(6, 4),
+    ANIMCMD_FRAME(7, 4),
+    ANIMCMD_JUMP(0),
+};
+
 
 static const union AnimCmd *const sAnimTable_Inanimate[] = {
     [ANIM_STAY_STILL] = sAnim_StayStill,
@@ -1371,6 +1384,11 @@ static const union AnimCmd *const sAnimTable_Crane[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
     [ANIM_CRANE_START_BURNING] = sAnim_CraneStartBurning,
     [ANIM_CRANE_BURNING_UP] = sAnim_CraneBurningUp
+};
+
+
+static const union AnimCmd *const sAnimTable_FlameWheelAttack[] = {
+    [ANIM_STAY_STILL] = sAnim_FlameWheelAttack,
 };
 
 
