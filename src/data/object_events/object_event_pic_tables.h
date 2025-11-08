@@ -473,6 +473,10 @@ static const struct SpriteFrameImage sPicTable_CableCar[] = {
     obj_frame_tiles(gObjectEventPic_CableCar),
 };
 
+static const struct SpriteFrameImage sPicTable_Crane[] = {
+    overworld_ascending_frames(gObjectEventPic_Crane, 8, 8),
+};
+
 static const struct SpriteFrameImage sPicTable_Scientist2[] = {
     overworld_ascending_frames(gObjectEventPic_Scientist2, 2, 4),
 };
