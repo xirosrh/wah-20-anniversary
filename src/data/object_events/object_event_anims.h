@@ -961,12 +961,8 @@ static const union AnimCmd sAnim_CraneStartBurning[] =
 
 static const union AnimCmd sAnim_CraneBurningUp[] =
 {
-    ANIMCMD_FRAME(4, 8),
     ANIMCMD_FRAME(5, 8),
     ANIMCMD_FRAME(6, 8),
-    ANIMCMD_FRAME(7, 8),
-    ANIMCMD_FRAME(8, 8),
-    ANIMCMD_FRAME(9, 8),
     ANIMCMD_JUMP(0),
 };
 

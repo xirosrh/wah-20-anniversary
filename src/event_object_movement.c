@@ -467,7 +467,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
     [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
     [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH,
-    [MOVEMENT_TYPE_CRANE_BURNING_UP] = DIR_WEST
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -5724,8 +5724,7 @@ movement_type_def(MovementType_CraneBurningUp, gMovementTypeFuncs_CraneBurningUp
 bool8 MovementType_CraneBurningUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     ClearObjectEventMovement(objectEvent, sprite);
-    FaceDirection(objectEvent, sprite, DIR_WEST);
-    sprite->sDirection = DIR_WEST;
+    sprite->sDirection = DIR_SOUTH;
     StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_CRANE_BURNING_UP);
     objectEvent->singleMovementActive = FALSE;
     sprite->sTypeFuncId = 1;
