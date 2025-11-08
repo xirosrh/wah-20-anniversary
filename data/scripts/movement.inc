@@ -16,6 +16,10 @@ Common_Movement_ExclamationMarkWithDelay48:
 	delay_16
 	step_end
 
+Common_Movement_DoubleExclamationMark:
+	emote_double_exclamation_mark
+	step_end
+
 Common_Movement_DoubleExclamationMarkWithDelay48:
 	emote_double_exclamation_mark
 	delay_16
