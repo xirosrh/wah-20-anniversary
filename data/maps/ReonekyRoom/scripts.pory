@@ -41,7 +41,13 @@ script ReonekyRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_VersusWithDelay48)
     playse(SE_M_THUNDERBOLT2)
-    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_Movement_TyphlosionThunderPunch)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, moves(
+        lock_facing_direction
+        walk_fast_right
+        jump_in_place_right
+        walk_fast_left
+        unlock_facing_direction
+    ))
     applymovementandwait(LOCALID_REOROOM_CRANE, moves(
         emote_x
         lock_facing_direction
@@ -59,14 +65,17 @@ script ReonekyRoom_OnFrame {
     clearflag(FLAG_REONEKYROOM_HIDE_FIRE)
     addobject(LOCALID_REOROOM_FIREATTACK)
     showobjectat(LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM)
-    applymovement(LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_Movement_TyphlosionFireWheel)
-    applymovement(LOCALID_REOROOM_FIREATTACK, ReonekyRoom_Movement_FireWheel)
-    waitmovement(LOCALID_REOROOM_FIREATTACK)
+	setobjectsubpriority(LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM, 0)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceRight2)
     playse(SE_M_FIRE_PUNCH)
+    applymovementandwait(LOCALID_REOROOM_FIREATTACK, Common_Movement_WalkRight3)
+    release
     applymovementandwait(LOCALID_REOROOM_CRANE, Common_Movement_CraneStartBurning)
     setobjectmovementtype2(LOCALID_REOROOM_CRANE, MOVEMENT_TYPE_CRANE_BURNING_UP)
     playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
     fadescreen(FADE_TO_WHITE)
+    setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    removeobject(LOCALID_REOROOM_FIREATTACK)
     turnobject(LOCALID_REOROOM_CRANE, DIR_SOUTH)
     clearflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
     addobject(LOCALID_REOROOM_HAUNTER)
@@ -106,8 +115,6 @@ script ReonekyRoom_OnFrame {
     waitmovement(0)
     setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
     removeobject(LOCALID_REOROOM_TYPHLOSION)
-    setflag(FLAG_REONEKYROOM_HIDE_FIRE)
-    removeobject(LOCALID_REOROOM_FIREATTACK)
     fadescreen(FADE_FROM_WHITE)
     setvar(VAR_REONEKY_ROOM_STATE, 1)
     turnobject(LOCALID_REOROOM_REONEKY, DIR_SOUTH)
@@ -145,34 +152,5 @@ script ReonekyRoom_EventScript_Reoneky {
 }
 
 
-movement ReonekyRoom_Movement_TyphlosionThunderPunch {
-    lock_facing_direction
-    walk_fast_right
-    jump_in_place_right
-    walk_fast_left
-    unlock_facing_direction
-}
-
-
-movement ReonekyRoom_Movement_TyphlosionFireWheel {
-    emote_angry
-    lock_facing_direction
-    jump_in_place_right
-    walk_fast_right
-    walk_fast_left
-    jump_in_place_right
-    unlock_facing_direction
-}
-
-movement ReonekyRoom_Movement_FireWheel {
-    set_visible
-    lock_facing_direction
-    walk_fast_up
-    walk_fast_right
-    walk_fast_down
-    walk_fast_left
-    set_invisible
-    unlock_facing_direction
-}
 
 
