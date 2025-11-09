@@ -65,7 +65,13 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!{PAUSE_UNTIL_PRESS}"),
         },
-        [TRAINER_WAH_ADMIN_BLAX_MAIN] = 
+        [TRAINER_WAH_ADMIN_REONEKY_MAIN] =
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tocado...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Bien, toca entrar en materia.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Mi última baza.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_ADMIN_BLAX_MAIN] =
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo.{PAUSE_UNTIL_PRESS}"),
