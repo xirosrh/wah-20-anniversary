@@ -287,7 +287,8 @@
 #define MOVEMENT_ACTION_EMOTE_IDEA                      0xC3
 #define MOVEMENT_ACTION_EMOTE_XD                        0xC4
 #define MOVEMENT_ACTION_EMOTE_WINK                      0xC5
-#define MOVEMENT_ACTION_CRANE_START_BURNING                     0xC6
+#define MOVEMENT_ACTION_CRANE_START_BURNING             0xC6
+#define MOVEMENT_ACTION_FISHING                         0xC7
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -376,6 +377,10 @@
 #define ANIM_HOOKED_POKEMON_NORTH 9
 #define ANIM_HOOKED_POKEMON_WEST  10
 #define ANIM_HOOKED_POKEMON_EAST  11
+#define ANIM_EING_FISHING_SOUTH   12
+#define ANIM_EING_FISHING_NORTH   13
+#define ANIM_EING_FISHING_WEST    14
+#define ANIM_EING_FISHING_EAST    15
 
 // IDs for how NPCs that copy player movement should respond.
 // Most go unused.

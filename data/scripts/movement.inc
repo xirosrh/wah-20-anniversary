@@ -493,12 +493,16 @@ Common_Movement_Sleeping:
 	step_end
 
 Common_Movement_SmokeCigarette:
-	smoke_cigarette
-	step_end
+        smoke_cigarette
+        step_end
+
+Common_Movement_Fishing:
+        fishing
+        step_end
 
 Common_Movement_CraneStartBurning:
-	crane_start_burning
-	step_end
+        crane_start_burning
+        step_end
 
 Common_Movement_WalkLeftLockFacingDirection:
 	lock_facing_direction
