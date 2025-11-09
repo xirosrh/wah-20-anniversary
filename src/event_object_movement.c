@@ -334,7 +334,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
     [MOVEMENT_TYPE_SLEEPING] = MovementType_Sleeping,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop
+    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = MovementType_CraneBurningUp
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -465,7 +466,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
     [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH
+    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -514,6 +516,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
     {gObjectEventPal_Aguiar,                OBJ_EVENT_PAL_TAG_AGUIAR},
+    {gObjectEventPal_Crane,                 OBJ_EVENT_PAL_TAG_CRANE},
+    {gObjectEventPal_FlameWheelAttack,      OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -5716,6 +5720,28 @@ bool8 MovementType_SmokingLoop_Step1(struct ObjectEvent *objectEvent, struct Spr
     return FALSE;
 }
 
+movement_type_def(MovementType_CraneBurningUp, gMovementTypeFuncs_CraneBurningUp)
+
+bool8 MovementType_CraneBurningUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sDirection = DIR_SOUTH;
+    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_CRANE_BURNING_UP);
+    objectEvent->singleMovementActive = FALSE;
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_CraneBurningUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
+}
+
 movement_type_def(MovementType_JogInPlace, gMovementTypeFuncs_JogInPlace)
 
 bool8 MovementType_JogInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
@@ -8293,6 +8319,12 @@ bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, stru
 bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
+    return FALSE;
+}
+
+bool8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_CRANE_START_BURNING);
     return FALSE;
 }
 

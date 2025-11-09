@@ -16,6 +16,10 @@ Common_Movement_ExclamationMarkWithDelay48:
 	delay_16
 	step_end
 
+Common_Movement_DoubleExclamationMark:
+	emote_double_exclamation_mark
+	step_end
+
 Common_Movement_DoubleExclamationMarkWithDelay48:
 	emote_double_exclamation_mark
 	delay_16
@@ -290,6 +294,11 @@ Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
 
+Common_Movement_JumpInPlaceLeft2:
+	jump_in_place_left
+	jump_in_place_left
+	step_end
+
 Common_Movement_JumpInPlaceLeftRight:
 	jump_in_place_left_right
 	step_end
@@ -487,6 +496,10 @@ Common_Movement_SmokeCigarette:
 	smoke_cigarette
 	step_end
 
+Common_Movement_CraneStartBurning:
+	crane_start_burning
+	step_end
+
 Common_Movement_WalkLeftLockFacingDirection:
 	lock_facing_direction
 	walk_left
@@ -523,6 +536,11 @@ Common_Movement_JumpUpLockFacingDirection:
 	unlock_facing_direction
 	step_end
 	
+Common_Movement_JumpLeftLockFacingDirection:
+	lock_facing_direction
+	jump_left
+	unlock_facing_direction
+	step_end
 
 Common_Movement_JumpDownFaceLeft:
 	jump_down

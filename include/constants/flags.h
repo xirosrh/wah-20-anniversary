@@ -57,7 +57,7 @@
 #define FLAG_DEFEATED_ADMIN_REY_BOO    0x2B // Used WAH
 #define FLAG_DEFEATED_ADMIN_COSARARA    0x2C // Used WAH
 #define FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE    0x2D // Used WAH
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_DEFEATED_ADMIN_REONEKY    0x2E // Used WAH
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
@@ -66,9 +66,9 @@
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_REYBOOROOM_HIDE_BOO    0x35 // Used WAH
 #define FLAG_REYBOOROOM_HIDE_VIGOROTH    0x36 // Used WAH
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_REONEKYROOM_HIDE_TYPHLOSION    0x37 // Used WAH
+#define FLAG_REONEKYROOM_HIDE_FIRE    0x38 // Used WAH
+#define FLAG_REONEKYROOM_HIDE_HAUNTER    0x39 // Used WAH
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag

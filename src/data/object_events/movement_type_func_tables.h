@@ -455,6 +455,11 @@ u8 (*const gMovementTypeFuncs_SmokingLoop[])(struct ObjectEvent *, struct Sprite
     MovementType_SmokingLoop_Step1,
 };
 
+u8 (*const gMovementTypeFuncs_CraneBurningUp[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementType_CraneBurningUp_Step0,
+    MovementType_CraneBurningUp_Step1,
+};
+
 u8 (*const gMovementTypeFuncs_JogInPlace[])(struct ObjectEvent *, struct Sprite *) = {
     MovementType_JogInPlace_Step0,
     MovementType_MoveInPlace_Step1,
