@@ -359,6 +359,7 @@
 #define ANIM_STD_FALL_DOWN    (ANIM_STD_COUNT + 3)
 #define ANIM_CRANE_START_BURNING    (ANIM_STD_COUNT + 0)
 #define ANIM_CRANE_BURNING_UP       (ANIM_STD_COUNT + 1)
+#define ANIM_EING_FISHING_WEST      (ANIM_STD_COUNT + 0)
 
 #define ANIM_FIELD_MOVE 0
 
@@ -377,10 +378,6 @@
 #define ANIM_HOOKED_POKEMON_NORTH 9
 #define ANIM_HOOKED_POKEMON_WEST  10
 #define ANIM_HOOKED_POKEMON_EAST  11
-#define ANIM_EING_FISHING_SOUTH   12
-#define ANIM_EING_FISHING_NORTH   13
-#define ANIM_EING_FISHING_WEST    14
-#define ANIM_EING_FISHING_EAST    15
 
 // IDs for how NPCs that copy player movement should respond.
 // Most go unused.

@@ -703,17 +703,7 @@ static const u8 sFishingBiteDirectionAnimNums[] = {
     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_NORTH,
     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_NORTH,
 };
-static const u8 sEingFishingDirectionAnimNums[] = {
-    [DIR_NONE] = ANIM_EING_FISHING_SOUTH,
-    [DIR_SOUTH] = ANIM_EING_FISHING_SOUTH,
-    [DIR_NORTH] = ANIM_EING_FISHING_NORTH,
-    [DIR_WEST] = ANIM_EING_FISHING_WEST,
-    [DIR_EAST] = ANIM_EING_FISHING_EAST,
-    [DIR_SOUTHWEST] = ANIM_EING_FISHING_SOUTH,
-    [DIR_SOUTHEAST] = ANIM_EING_FISHING_SOUTH,
-    [DIR_NORTHWEST] = ANIM_EING_FISHING_NORTH,
-    [DIR_NORTHEAST] = ANIM_EING_FISHING_NORTH,
-};
+
 static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NONE] = ANIM_RUN_SOUTH,
     [DIR_SOUTH] = ANIM_RUN_SOUTH,
@@ -8333,25 +8323,10 @@ bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struc
     return FALSE;
 }
 
-bool8 MovementAction_Fishing_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_EingFishing_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    if (objectEvent->graphicsId == OBJ_EVENT_GFX_EING_FISHING)
-        StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, sEingFishingDirectionAnimNums[objectEvent->facingDirection]);
-    else
-        StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, GetFishingDirectionAnimNum(objectEvent->facingDirection));
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_EING_FISHING_WEST);
     return FALSE;
-}
-
-bool8 MovementAction_Fishing_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (objectEvent->graphicsId == OBJ_EVENT_GFX_EING_FISHING)
-    {
-        sprite->sActionFuncId = 3;
-        return TRUE;
-    }
-    StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, GetFishingBiteDirectionAnimNum(objectEvent->facingDirection));
-    sprite->sActionFuncId = 3;
-    return TRUE;
 }
 
 bool8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)

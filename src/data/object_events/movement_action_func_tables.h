@@ -163,8 +163,7 @@ u8 MovementAction_JumpInPlaceRightLeft_Step1(struct ObjectEvent *, struct Sprite
 u8 MovementAction_FaceOriginalDirection_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *, struct Sprite *);
-u8 MovementAction_Fishing_Step0(struct ObjectEvent *, struct Sprite *);
-u8 MovementAction_Fishing_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EingFishing_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *, struct Sprite *);
 
 u8 MovementAction_EnableJumpLandingGroundEffect_Step0(struct ObjectEvent *, struct Sprite *);
@@ -393,6 +392,8 @@ u8 (*const gMovementActionFuncs_JumpInPlaceRightLeft[])(struct ObjectEvent *, st
 u8 (*const gMovementActionFuncs_FaceOriginalDirection[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_NurseJoyBowDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SmokeCigarette[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EingFishing[])(struct ObjectEvent *, struct Sprite *);
+
 u8 (*const gMovementActionFuncs_CraneStartBurning[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EnableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_DisableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *);
@@ -594,7 +595,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_FACE_ORIGINAL_DIRECTION] = gMovementActionFuncs_FaceOriginalDirection,
     [MOVEMENT_ACTION_NURSE_JOY_BOW_DOWN] = gMovementActionFuncs_NurseJoyBowDown,
     [MOVEMENT_ACTION_SMOKE_CIGARETTE] = gMovementActionFuncs_SmokeCigarette,
-    [MOVEMENT_ACTION_FISHING] = gMovementActionFuncs_Fishing,
+    [MOVEMENT_ACTION_FISHING] = gMovementActionFuncs_EingFishing,
     [MOVEMENT_ACTION_CRANE_START_BURNING] = gMovementActionFuncs_CraneStartBurning,
     [MOVEMENT_ACTION_ENABLE_JUMP_LANDING_GROUND_EFFECT] = gMovementActionFuncs_EnableJumpLandingGroundEffect,
     [MOVEMENT_ACTION_DISABLE_JUMP_LANDING_GROUND_EFFECT] = gMovementActionFuncs_DisableJumpLandingGroundEffect,
@@ -1291,11 +1292,10 @@ u8 (*const gMovementActionFuncs_SmokeCigarette[])(struct ObjectEvent *, struct S
     MovementAction_PauseSpriteAnim,
 };
 
-u8 (*const gMovementActionFuncs_Fishing[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_Fishing_Step0,
+u8 (*const gMovementActionFuncs_EingFishing[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EingFishing_Step0,
     MovementAction_WaitSpriteAnim,
-    MovementAction_Fishing_Step2,
-    MovementAction_Finish,
+    MovementAction_PauseSpriteAnim,
 };
 
 u8 (*const gMovementActionFuncs_CraneStartBurning[])(struct ObjectEvent *, struct Sprite *) = {
