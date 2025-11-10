@@ -1,1 +1,9 @@
 mapscripts GallegoRoom_MapScripts {}
+
+script GallegoRoom_EventScript_Gallego {
+    lock
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(reveal_trainer))
+    msgbox("prueba", MSGBOX_AUTOCLOSE)
+    release
+    end
+}
