@@ -85,215 +85,223 @@ ReonekyRoom_OnFrame::
 # 47 "data/maps/ReonekyRoom/scripts.pory"
 	msgbox ReonekyRoom_OnFrame_Text_3
 # 48 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_4
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight
 # 49 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
+	msgbox ReonekyRoom_OnFrame_Text_4
 # 50 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_VersusWithDelay48
+	playse SE_PIN
 # 51 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_M_THUNDERBOLT2
+	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_VersusWithDelay48
 # 52 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_M_THUNDERBOLT2
+# 53 "data/maps/ReonekyRoom/scripts.pory"
 	applymovementandwait LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_OnFrame_Movement_2
-# 59 "data/maps/ReonekyRoom/scripts.pory"
+# 60 "data/maps/ReonekyRoom/scripts.pory"
 	applymovementandwait LOCALID_REOROOM_CRANE, ReonekyRoom_OnFrame_Movement_3
-# 66 "data/maps/ReonekyRoom/scripts.pory"
-	release
 # 67 "data/maps/ReonekyRoom/scripts.pory"
-	delay 30
+	release
 # 68 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_WalkLeftLockFacingDirection
+	delay 30
 # 69 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_WalkLeftLockFacingDirection
 # 70 "data/maps/ReonekyRoom/scripts.pory"
-	delay 20
+	msgbox ReonekyRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE
 # 71 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpLeftLockFacingDirection
+	delay 20
 # 72 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_M_FLAME_WHEEL
+	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpLeftLockFacingDirection
 # 73 "data/maps/ReonekyRoom/scripts.pory"
-	clearflag FLAG_REONEKYROOM_HIDE_FIRE
+	playse SE_M_FLAME_WHEEL
 # 74 "data/maps/ReonekyRoom/scripts.pory"
-	addobject LOCALID_REOROOM_FIREATTACK
+	clearflag FLAG_REONEKYROOM_HIDE_FIRE
 # 75 "data/maps/ReonekyRoom/scripts.pory"
-	showobjectat LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM
+	addobject LOCALID_REOROOM_FIREATTACK
 # 76 "data/maps/ReonekyRoom/scripts.pory"
-	setobjectsubpriority LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM, 0
+	showobjectat LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM
 # 77 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceRight2
+	setobjectsubpriority LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM, 0
 # 78 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_M_FIRE_PUNCH
+	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceRight2
 # 79 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_FIREATTACK, Common_Movement_WalkRight3
+	playse SE_M_FIRE_PUNCH
 # 80 "data/maps/ReonekyRoom/scripts.pory"
-	release
+	applymovementandwait LOCALID_REOROOM_FIREATTACK, Common_Movement_WalkRight3
 # 81 "data/maps/ReonekyRoom/scripts.pory"
-	delay 30
+	release
 # 82 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_CRANE, Common_Movement_CraneStartBurning
-# 83 "data/maps/ReonekyRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_REOROOM_CRANE, MOVEMENT_TYPE_CRANE_BURNING_UP
-# 84 "data/maps/ReonekyRoom/scripts.pory"
-	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
-# 85 "data/maps/ReonekyRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 86 "data/maps/ReonekyRoom/scripts.pory"
-	setflag FLAG_REONEKYROOM_HIDE_FIRE
-# 87 "data/maps/ReonekyRoom/scripts.pory"
-	removeobject LOCALID_REOROOM_FIREATTACK
-# 88 "data/maps/ReonekyRoom/scripts.pory"
-	turnobject LOCALID_REOROOM_CRANE, DIR_SOUTH
-# 89 "data/maps/ReonekyRoom/scripts.pory"
-	clearflag FLAG_REONEKYROOM_HIDE_HAUNTER
-# 90 "data/maps/ReonekyRoom/scripts.pory"
-	addobject LOCALID_REOROOM_HAUNTER
-# 91 "data/maps/ReonekyRoom/scripts.pory"
-	showobjectat LOCALID_REOROOM_HAUNTER, MAP_REONEKY_ROOM
-# 92 "data/maps/ReonekyRoom/scripts.pory"
 	delay 30
-# 93 "data/maps/ReonekyRoom/scripts.pory"
-	release
-# 94 "data/maps/ReonekyRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 95 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 96 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_HAUNTER, ReonekyRoom_OnFrame_Movement_4
-# 116 "data/maps/ReonekyRoom/scripts.pory"
-	setflag FLAG_REONEKYROOM_HIDE_HAUNTER
-# 117 "data/maps/ReonekyRoom/scripts.pory"
-	removeobject LOCALID_REOROOM_HAUNTER
-# 118 "data/maps/ReonekyRoom/scripts.pory"
-	applymovement LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight2
-# 119 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE
-# 120 "data/maps/ReonekyRoom/scripts.pory"
-	waitmovement 0
-# 121 "data/maps/ReonekyRoom/scripts.pory"
-	delay 20
-# 122 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_WalkInPlaceLeft
-# 123 "data/maps/ReonekyRoom/scripts.pory"
-	release
-# 124 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE
-# 125 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 126 "data/maps/ReonekyRoom/scripts.pory"
-	applymovement LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48
-# 127 "data/maps/ReonekyRoom/scripts.pory"
-	applymovement LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_OnFrame_Movement_5
-# 128 "data/maps/ReonekyRoom/scripts.pory"
-	waitmovement LOCALID_REOROOM_REONEKY
-# 129 "data/maps/ReonekyRoom/scripts.pory"
-	release
-# 130 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_8
-# 131 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 132 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48
-# 133 "data/maps/ReonekyRoom/scripts.pory"
-	delay 20
-# 134 "data/maps/ReonekyRoom/scripts.pory"
-	release
-# 135 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
-# 136 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceLeft2
-# 137 "data/maps/ReonekyRoom/scripts.pory"
+# 83 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_CRANE, Common_Movement_CraneStartBurning
+# 84 "data/maps/ReonekyRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_REOROOM_CRANE, MOVEMENT_TYPE_CRANE_BURNING_UP
+# 85 "data/maps/ReonekyRoom/scripts.pory"
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+# 86 "data/maps/ReonekyRoom/scripts.pory"
 	fadescreen FADE_TO_WHITE
-# 138 "data/maps/ReonekyRoom/scripts.pory"
-	setflag FLAG_REONEKYROOM_HIDE_TYPHLOSION
-# 139 "data/maps/ReonekyRoom/scripts.pory"
-	removeobject LOCALID_REOROOM_TYPHLOSION
-# 140 "data/maps/ReonekyRoom/scripts.pory"
+# 87 "data/maps/ReonekyRoom/scripts.pory"
+	setflag FLAG_REONEKYROOM_HIDE_FIRE
+# 88 "data/maps/ReonekyRoom/scripts.pory"
+	removeobject LOCALID_REOROOM_FIREATTACK
+# 89 "data/maps/ReonekyRoom/scripts.pory"
+	turnobject LOCALID_REOROOM_CRANE, DIR_SOUTH
+# 90 "data/maps/ReonekyRoom/scripts.pory"
+	clearflag FLAG_REONEKYROOM_HIDE_HAUNTER
+# 91 "data/maps/ReonekyRoom/scripts.pory"
+	addobject LOCALID_REOROOM_HAUNTER
+# 92 "data/maps/ReonekyRoom/scripts.pory"
+	showobjectat LOCALID_REOROOM_HAUNTER, MAP_REONEKY_ROOM
+# 93 "data/maps/ReonekyRoom/scripts.pory"
+	delay 30
+# 94 "data/maps/ReonekyRoom/scripts.pory"
+	release
+# 95 "data/maps/ReonekyRoom/scripts.pory"
 	fadescreen FADE_FROM_WHITE
+# 96 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 97 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_HAUNTER, ReonekyRoom_OnFrame_Movement_4
+# 117 "data/maps/ReonekyRoom/scripts.pory"
+	setflag FLAG_REONEKYROOM_HIDE_HAUNTER
+# 118 "data/maps/ReonekyRoom/scripts.pory"
+	removeobject LOCALID_REOROOM_HAUNTER
+# 119 "data/maps/ReonekyRoom/scripts.pory"
+	applymovement LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight2
+# 120 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE
+# 121 "data/maps/ReonekyRoom/scripts.pory"
+	waitmovement 0
+# 122 "data/maps/ReonekyRoom/scripts.pory"
+	delay 20
+# 123 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_WalkInPlaceLeft
+# 124 "data/maps/ReonekyRoom/scripts.pory"
+	release
+# 125 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE
+# 126 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 127 "data/maps/ReonekyRoom/scripts.pory"
+	applymovement LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48
+# 128 "data/maps/ReonekyRoom/scripts.pory"
+	applymovement LOCALID_REOROOM_TYPHLOSION, ReonekyRoom_OnFrame_Movement_5
+# 129 "data/maps/ReonekyRoom/scripts.pory"
+	waitmovement LOCALID_REOROOM_REONEKY
+# 130 "data/maps/ReonekyRoom/scripts.pory"
+	release
+# 131 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE
+# 132 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 133 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48
+# 134 "data/maps/ReonekyRoom/scripts.pory"
+	delay 20
+# 135 "data/maps/ReonekyRoom/scripts.pory"
+	release
+# 136 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
+# 137 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceLeft2
+# 138 "data/maps/ReonekyRoom/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 139 "data/maps/ReonekyRoom/scripts.pory"
+	setflag FLAG_REONEKYROOM_HIDE_TYPHLOSION
+# 140 "data/maps/ReonekyRoom/scripts.pory"
+	removeobject LOCALID_REOROOM_TYPHLOSION
 # 141 "data/maps/ReonekyRoom/scripts.pory"
-	setvar VAR_REONEKY_ROOM_STATE, 1
+	fadescreen FADE_FROM_WHITE
 # 142 "data/maps/ReonekyRoom/scripts.pory"
-	moveobjecttopos LOCALID_REOROOM_REONEKY, 6, 4, DIR_SOUTH
+	setvar VAR_REONEKY_ROOM_STATE, 1
 # 143 "data/maps/ReonekyRoom/scripts.pory"
-	waitmovement 0
+	moveobjecttopos LOCALID_REOROOM_REONEKY, 6, 4, DIR_SOUTH
 # 144 "data/maps/ReonekyRoom/scripts.pory"
-	directcameramovementtopos 6, 11
-# 145 "data/maps/ReonekyRoom/scripts.pory"
 	waitmovement 0
+# 145 "data/maps/ReonekyRoom/scripts.pory"
+	directcameramovementtopos 6, 11
 # 146 "data/maps/ReonekyRoom/scripts.pory"
-	setobjectxyperm LOCALID_REOROOM_REONEKY, 6, 4
+	waitmovement 0
 # 147 "data/maps/ReonekyRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_REOROOM_REONEKY, 6, 4
 # 148 "data/maps/ReonekyRoom/scripts.pory"
-	special RemoveCameraObject
+	setobjectmovementtype2 LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN
 # 149 "data/maps/ReonekyRoom/scripts.pory"
+	special RemoveCameraObject
+# 150 "data/maps/ReonekyRoom/scripts.pory"
 	release
 	end
 
 
 ReonekyRoom_EventScript_Reoneky::
-# 154 "data/maps/ReonekyRoom/scripts.pory"
+# 155 "data/maps/ReonekyRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_REONEKY, ReonekyRoom_EventScript_Reoneky_2
-# 167 "data/maps/ReonekyRoom/scripts.pory"
+# 165 "data/maps/ReonekyRoom/scripts.pory"
 	lock
-# 168 "data/maps/ReonekyRoom/scripts.pory"
+# 166 "data/maps/ReonekyRoom/scripts.pory"
 	release
-# 169 "data/maps/ReonekyRoom/scripts.pory"
+# 167 "data/maps/ReonekyRoom/scripts.pory"
 	faceplayer
+# 168 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_1, MSGBOX_AUTOCLOSE
+# 169 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
 # 170 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_2, MSGBOX_AUTOCLOSE
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_SmileWithDelay48
 # 171 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 172 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48
-# 173 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_3
-# 174 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 175 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_REONEKY, ReonekyRoom_EventScript_Reoneky_Movement_0
-# 181 "data/maps/ReonekyRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_EventScript_Reoneky_Text_4
-# 182 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_5, MSGBOX_AUTOCLOSE
-# 183 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
-# 184 "data/maps/ReonekyRoom/scripts.pory"
-	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48
-# 185 "data/maps/ReonekyRoom/scripts.pory"
-	delay 20
-# 186 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_6, MSGBOX_AUTOCLOSE
-# 187 "data/maps/ReonekyRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
-# 188 "data/maps/ReonekyRoom/scripts.pory"
 	delay 30
-# 189 "data/maps/ReonekyRoom/scripts.pory"
+# 172 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_2, MSGBOX_AUTOCLOSE
+# 173 "data/maps/ReonekyRoom/scripts.pory"
+	delay 20
+# 174 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_3, MSGBOX_AUTOCLOSE
+# 175 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 176 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48
+# 177 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_4, MSGBOX_AUTOCLOSE
+# 178 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 179 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_REONEKY, ReonekyRoom_EventScript_Reoneky_Movement_0
+# 185 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_5
+# 186 "data/maps/ReonekyRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_EventScript_Reoneky_Text_6
+# 187 "data/maps/ReonekyRoom/scripts.pory"
 	msgbox ReonekyRoom_EventScript_Reoneky_Text_7, MSGBOX_AUTOCLOSE
+# 188 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
+# 189 "data/maps/ReonekyRoom/scripts.pory"
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48
 # 190 "data/maps/ReonekyRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_REONEKY
+	delay 20
 # 191 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_0, MSGBOX_AUTOCLOSE
+# 192 "data/maps/ReonekyRoom/scripts.pory"
+	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+# 193 "data/maps/ReonekyRoom/scripts.pory"
+	delay 30
+# 194 "data/maps/ReonekyRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_REONEKY
+# 195 "data/maps/ReonekyRoom/scripts.pory"
 	release
 	end
 
 ReonekyRoom_EventScript_Reoneky_2:
-# 155 "data/maps/ReonekyRoom/scripts.pory"
-	lock
 # 156 "data/maps/ReonekyRoom/scripts.pory"
-	release
+	lock
 # 157 "data/maps/ReonekyRoom/scripts.pory"
-	faceplayer
+	release
 # 158 "data/maps/ReonekyRoom/scripts.pory"
-	playse SE_PIN
+	faceplayer
 # 159 "data/maps/ReonekyRoom/scripts.pory"
-	applymovement LOCALID_REOROOM_REONEKY, Common_Movement_QuestionMarkWithDelay48
-# 160 "data/maps/ReonekyRoom/scripts.pory"
 	msgbox ReonekyRoom_EventScript_Reoneky_Text_0, MSGBOX_AUTOCLOSE
+# 160 "data/maps/ReonekyRoom/scripts.pory"
+	playse SE_PIN
 # 161 "data/maps/ReonekyRoom/scripts.pory"
-	waitmovement 0
+	applymovementandwait LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48
 # 162 "data/maps/ReonekyRoom/scripts.pory"
-	delay 40
-# 163 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_1, MSGBOX_AUTOCLOSE
-# 164 "data/maps/ReonekyRoom/scripts.pory"
 	release
 	end
 
@@ -328,111 +336,111 @@ ReonekyRoom_OnFrame_Movement_1:
 	delay_16
 	step_end
 
-# 52 "data/maps/ReonekyRoom/scripts.pory"
-ReonekyRoom_OnFrame_Movement_2:
 # 53 "data/maps/ReonekyRoom/scripts.pory"
-	lock_facing_direction
+ReonekyRoom_OnFrame_Movement_2:
 # 54 "data/maps/ReonekyRoom/scripts.pory"
-	walk_fast_right
-# 55 "data/maps/ReonekyRoom/scripts.pory"
-	jump_in_place_right
-# 56 "data/maps/ReonekyRoom/scripts.pory"
-	walk_fast_left
-# 57 "data/maps/ReonekyRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
-# 59 "data/maps/ReonekyRoom/scripts.pory"
-ReonekyRoom_OnFrame_Movement_3:
-# 60 "data/maps/ReonekyRoom/scripts.pory"
-	emote_x
-# 61 "data/maps/ReonekyRoom/scripts.pory"
 	lock_facing_direction
-# 62 "data/maps/ReonekyRoom/scripts.pory"
-	walk_in_place_left
-# 63 "data/maps/ReonekyRoom/scripts.pory"
-	walk_right
-# 64 "data/maps/ReonekyRoom/scripts.pory"
-	delay_16
-# 65 "data/maps/ReonekyRoom/scripts.pory"
+# 55 "data/maps/ReonekyRoom/scripts.pory"
+	walk_fast_right
+# 56 "data/maps/ReonekyRoom/scripts.pory"
+	jump_in_place_right
+# 57 "data/maps/ReonekyRoom/scripts.pory"
+	walk_fast_left
+# 58 "data/maps/ReonekyRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 96 "data/maps/ReonekyRoom/scripts.pory"
-ReonekyRoom_OnFrame_Movement_4:
+# 60 "data/maps/ReonekyRoom/scripts.pory"
+ReonekyRoom_OnFrame_Movement_3:
+# 61 "data/maps/ReonekyRoom/scripts.pory"
+	emote_x
+# 62 "data/maps/ReonekyRoom/scripts.pory"
+	lock_facing_direction
+# 63 "data/maps/ReonekyRoom/scripts.pory"
+	walk_in_place_left
+# 64 "data/maps/ReonekyRoom/scripts.pory"
+	walk_right
+# 65 "data/maps/ReonekyRoom/scripts.pory"
+	delay_16
+# 66 "data/maps/ReonekyRoom/scripts.pory"
+	unlock_facing_direction
+	step_end
+
 # 97 "data/maps/ReonekyRoom/scripts.pory"
-	emote_cry
+ReonekyRoom_OnFrame_Movement_4:
 # 98 "data/maps/ReonekyRoom/scripts.pory"
+	emote_cry
+# 99 "data/maps/ReonekyRoom/scripts.pory"
 	walk_fast_right
-# 99 "data/maps/ReonekyRoom/scripts.pory"
-	walk_fast_down
-# 99 "data/maps/ReonekyRoom/scripts.pory"
+# 100 "data/maps/ReonekyRoom/scripts.pory"
 	walk_fast_down
 # 100 "data/maps/ReonekyRoom/scripts.pory"
-	walk_fast_left
-# 100 "data/maps/ReonekyRoom/scripts.pory"
+	walk_fast_down
+# 101 "data/maps/ReonekyRoom/scripts.pory"
 	walk_fast_left
 # 101 "data/maps/ReonekyRoom/scripts.pory"
-	delay_16
+	walk_fast_left
 # 102 "data/maps/ReonekyRoom/scripts.pory"
-	set_invisible
+	delay_16
 # 103 "data/maps/ReonekyRoom/scripts.pory"
-	delay_8
+	set_invisible
 # 104 "data/maps/ReonekyRoom/scripts.pory"
-	set_visible
+	delay_8
 # 105 "data/maps/ReonekyRoom/scripts.pory"
-	delay_8
+	set_visible
 # 106 "data/maps/ReonekyRoom/scripts.pory"
-	set_invisible
+	delay_8
 # 107 "data/maps/ReonekyRoom/scripts.pory"
-	delay_16
+	set_invisible
 # 108 "data/maps/ReonekyRoom/scripts.pory"
-	set_visible
-# 109 "data/maps/ReonekyRoom/scripts.pory"
-	delay_8
-# 110 "data/maps/ReonekyRoom/scripts.pory"
-	set_invisible
-# 111 "data/maps/ReonekyRoom/scripts.pory"
 	delay_16
-# 112 "data/maps/ReonekyRoom/scripts.pory"
+# 109 "data/maps/ReonekyRoom/scripts.pory"
 	set_visible
-# 113 "data/maps/ReonekyRoom/scripts.pory"
+# 110 "data/maps/ReonekyRoom/scripts.pory"
 	delay_8
+# 111 "data/maps/ReonekyRoom/scripts.pory"
+	set_invisible
+# 112 "data/maps/ReonekyRoom/scripts.pory"
+	delay_16
+# 113 "data/maps/ReonekyRoom/scripts.pory"
+	set_visible
 # 114 "data/maps/ReonekyRoom/scripts.pory"
+	delay_8
+# 115 "data/maps/ReonekyRoom/scripts.pory"
 	set_invisible
 	step_end
 
-# 127 "data/maps/ReonekyRoom/scripts.pory"
+# 128 "data/maps/ReonekyRoom/scripts.pory"
 ReonekyRoom_OnFrame_Movement_5:
-# 127 "data/maps/ReonekyRoom/scripts.pory"
+# 128 "data/maps/ReonekyRoom/scripts.pory"
 	emote_happy
-# 127 "data/maps/ReonekyRoom/scripts.pory"
+# 128 "data/maps/ReonekyRoom/scripts.pory"
 	walk_in_place_fast_left
-# 127 "data/maps/ReonekyRoom/scripts.pory"
+# 128 "data/maps/ReonekyRoom/scripts.pory"
 	walk_in_place_fast_left
-# 127 "data/maps/ReonekyRoom/scripts.pory"
+# 128 "data/maps/ReonekyRoom/scripts.pory"
 	walk_in_place_fast_left
 	step_end
 
-# 175 "data/maps/ReonekyRoom/scripts.pory"
-ReonekyRoom_EventScript_Reoneky_Movement_0:
-# 176 "data/maps/ReonekyRoom/scripts.pory"
-	emote_versus
-# 177 "data/maps/ReonekyRoom/scripts.pory"
-	lock_facing_direction
-# 178 "data/maps/ReonekyRoom/scripts.pory"
-	jump_in_place_down
-# 178 "data/maps/ReonekyRoom/scripts.pory"
-	jump_in_place_down
 # 179 "data/maps/ReonekyRoom/scripts.pory"
-	unlock_facing_direction
+ReonekyRoom_EventScript_Reoneky_Movement_0:
 # 180 "data/maps/ReonekyRoom/scripts.pory"
+	emote_versus
+# 181 "data/maps/ReonekyRoom/scripts.pory"
+	lock_facing_direction
+# 182 "data/maps/ReonekyRoom/scripts.pory"
+	jump_in_place_down
+# 182 "data/maps/ReonekyRoom/scripts.pory"
+	jump_in_place_down
+# 183 "data/maps/ReonekyRoom/scripts.pory"
+	unlock_facing_direction
+# 184 "data/maps/ReonekyRoom/scripts.pory"
 	face_player
 	step_end
 
 ReonekyRoom_OnFrame_Text_0:
 # 29 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Typhlosion, mantén la posición!$"
+	.string "¡Spitfire, mantén la distancia!$"
 
 ReonekyRoom_OnFrame_Text_1:
 # 34 "data/maps/ReonekyRoom/scripts.pory"
@@ -441,89 +449,89 @@ ReonekyRoom_OnFrame_Text_1:
 
 ReonekyRoom_OnFrame_Text_2:
 # 44 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡No te rías, espectro de la\n"
-	.string "ineficiencia!$"
+	.string "¿Te ríes, eh? Aficionado…$"
 
 ReonekyRoom_OnFrame_Text_3:
 # 47 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Fueron solo unos minutos, ¡no pienso\n"
-	.string "rendirme ante esta multa injusta!$"
+	.string "Estaba estacionado perfectamente, ¡no\n"
+	.string "voy a rendirme ante esta multa injusta!$"
 
 ReonekyRoom_OnFrame_Text_4:
-# 48 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Typhlosion, ataca!$"
+# 49 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Spitfire, cabezazo Zen!$"
 
 ReonekyRoom_OnFrame_Text_5:
-# 69 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Bien! ¡Ahora Rueda Fuego!$"
+# 70 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Bien, es la nuestra! ¡Rueda Fuego!$"
 
 ReonekyRoom_OnFrame_Text_6:
-# 119 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Sí!$"
+# 120 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Venga, a pastar!$"
 
 ReonekyRoom_OnFrame_Text_7:
-# 124 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Lo hemos logrado! ¡Por fin nos libramos\n"
-	.string "del fantasma de la multa!$"
+# 125 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Tú molas, tú mandas colega! ¡Nos\n"
+	.string "libramos del fantasma de la multa!$"
 
 ReonekyRoom_OnFrame_Text_8:
-# 130 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Y Keltill decía que nada malo podía\n"
-	.string "pasar con J15 al mando...$"
+# 131 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Menos mal que J15 decía que lo tenía\n"
+	.string "controlado, vaya tela…\p"
+	.string "Si es que le tenía que haber hecho caso\n"
+	.string "a Keltill… Va con el Miata tuneao y\l"
+	.string "nunca lo multan, solo lo paran para\l"
+	.string "echarse fotos…$"
 
 ReonekyRoom_OnFrame_Text_9:
-# 135 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Buen trabajo, regresa a tu Poké Ball.$"
+# 136 "data/maps/ReonekyRoom/scripts.pory"
+	.string "En fin… Lo has hecho genial colega,\n"
+	.string "¡hora de descansar!$"
 
 ReonekyRoom_EventScript_Reoneky_Text_0:
-# 160 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¿Otra vez por aquí?$"
+# 159 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Un golpe de suerte ocurre cuando\n"
+	.string "aprovechas una buena oportunidad!\p"
+	.string "No dejes que te detengan y sobre todo,\n"
+	.string "disfruta del momento.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_1:
-# 163 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Relájate, ya me ganaste… Sigue\n"
-	.string "adelante que todavía tienes más\l"
-	.string "enfrentamientos por delante.\p"
-	.string "Yo me quedaré contemplando cómo arde\n"
-	.string "la grúa, a veces los problemas se\l"
-	.string "consumen solos.$"
+# 168 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡Buenas! Vaya espectáculo has\n"
+	.string "presenciado, ¿eh?$"
 
 ReonekyRoom_EventScript_Reoneky_Text_2:
-# 170 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Hola tí{OA}. Supongo que a esta altura ya\n"
-	.string "sabrás qué hago aquí, así que me\l"
-	.string "ahorraré explicaciones…\p"
-	.string "Soy Reoneky, soy introspectivo y me\n"
-	.string "gusta hacer las cosas a mi manera, sin\l"
-	.string "que nadie me moleste.$"
+# 172 "data/maps/ReonekyRoom/scripts.pory"
+	.string "A estas alturas ya sabrás que hago\n"
+	.string "aquí, así que me presento.\p"
+	.string "Soy Reoneky, experto en llevar el\n"
+	.string "prefijo 'ex' tanto ámbito laboral como\l"
+	.string "profesional.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_3:
-# 173 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Hago lo que quiero, cuando quiero y como\n"
-	.string "quiero.\p"
-	.string "Ni tú, ni nadie me va a impedir disfrutar\n"
-	.string "esta celebración.\p"
-	.string "Prepárate para acordarte de mí, ¡te voy\n"
-	.string "a hacer morder el polvo!$"
+# 174 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Puede parecer que soy un emo, pero me\n"
+	.string "considero más instrospectivo que otra\l"
+	.string "cosa.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_4:
-# 181 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Vaya… al final resultó más interesante\n"
-	.string "de lo que esperaba.$"
+# 177 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Yo no era nadie… Sentía que no era\n"
+	.string "nadie… Y eso lo cambió el WAH.\p"
+	.string "Así que fuera sentimentalismos y\n"
+	.string "presentaciones, vamos al lío.\p"
+	.string "Mente fría, corazón caliente, así es\n"
+	.string "como se juega.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_5:
-# 182 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Así que este es el polvo que iba a\n"
-	.string "hacerte morder, ¿eh?\p"
-	.string "Bueno, supongo que hoy me tocó a mí.$"
+# 185 "data/maps/ReonekyRoom/scripts.pory"
+	.string "¡A darle caña!$"
 
 ReonekyRoom_EventScript_Reoneky_Text_6:
 # 186 "data/maps/ReonekyRoom/scripts.pory"
-	.string "No suelo reconocerlo, pero… me\n"
-	.string "sorprendiste. Tienes cabeza fría, eso\l"
-	.string "me gusta.$"
+	.string "Buen combate, he disfrutado como un\n"
+	.string "niño.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_7:
-# 189 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Las puertas ya están abiertas. No te\n"
-	.string "detengas ahora.$"
+# 187 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Apuntas maneras, el talento tiene\n"
+	.string "límites, el esfuerzo y la pasión, no.$"
