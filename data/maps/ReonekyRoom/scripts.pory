@@ -31,7 +31,7 @@ script ReonekyRoom_OnFrame {
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_DoubleExclamationMark)
     release
     delay(80)
-    msgbox(format("¡Esa grúa poseida encarna la injusticia administrativa!"))
+    msgbox(format("¡Esa grúa poseída encarna la injusticia administrativa!"))
     playse(SE_PIN)
     playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
     applymovementandwait(LOCALID_REOROOM_CRANE, moves(
@@ -41,10 +41,11 @@ script ReonekyRoom_OnFrame {
         jump_in_place_left))
     playse(SE_PIN)
     applymovement(LOCALID_REOROOM_REONEKY, moves(emote_angry, jump_in_place_right * 2, delay_16 * 3))
-    msgbox(format("¿Te ríes, eh? Aficionado..."), MSGBOX_AUTOCLOSE)
+    msgbox(format("¿Te ríes, eh? Aficionado…"), MSGBOX_AUTOCLOSE)
     waitmovement(0)
     delay(30)
     msgbox(format("Estaba estacionado perfectamente, ¡no voy a rendirme ante esta multa injusta!"))
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
     msgbox(format("¡Spitfire, cabezazo Zen!"))
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_VersusWithDelay48)
@@ -127,14 +128,12 @@ script ReonekyRoom_OnFrame {
     applymovement(LOCALID_REOROOM_TYPHLOSION, moves(emote_happy, walk_in_place_fast_left * 3))
     waitmovement(LOCALID_REOROOM_REONEKY)
     release
-    msgbox(format("Menos mal que J15 decía que lo tenía controlado, vaya tela..."))
-    msgbox(format("Si es que le tenía que haber hecho caso a Keltill..."))
-    msgbox(format("Va con el Miata tuneao y nunca lo multan, solo lo paran para echarse fotos..."))
+    msgbox(format("Menos mal que J15 decía que lo tenía controlado, vaya tela…\pSi es que le tenía que haber hecho caso a Keltill… Va con el Miata tuneao y nunca lo multan, solo lo paran para echarse fotos…"), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48)
     delay(20)
     release
-    msgbox(format("En fin... Lo has hecho genial colega, ¡hora de descansar!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("En fin… Lo has hecho genial colega, ¡hora de descansar!"), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceLeft2)
     fadescreen(FADE_TO_WHITE)
     setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
@@ -157,12 +156,9 @@ script ReonekyRoom_EventScript_Reoneky {
         lock
         release
         faceplayer
+        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE)
         playse(SE_PIN)
-        applymovement(LOCALID_REOROOM_REONEKY, Common_Movement_QuestionMarkWithDelay48)
-        msgbox(format("¿Otra vez por aquí?"), MSGBOX_AUTOCLOSE)
-        waitmovement(0)
-        delay(40)
-        msgbox(format("Relájate, ya me ganaste… Sigue adelante que todavía tienes más enfrentamientos por delante.\pYo me quedaré contemplando cómo arde la grúa, a veces los problemas se consumen solos."), MSGBOX_AUTOCLOSE)
+        applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
         release
         end
     }
@@ -170,14 +166,15 @@ script ReonekyRoom_EventScript_Reoneky {
     release
     faceplayer
     msgbox(format("¡Buenas! Vaya espectáculo has presenciado, ¿eh?"), MSGBOX_AUTOCLOSE)
-    msgbox(format("A estas alturas ya sabrás que hago aquí, así que me presento."))
-    msgbox("Soy Reoneky, experto en llevar el prefijo "ex" tanto ámbito laboral como profesional.")
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SmileWithDelay48)
+    delay(30)
+    msgbox(format("A estas alturas ya sabrás que hago aquí, así que me presento.\pSoy Reoneky, experto en llevar el prefijo 'ex' tanto ámbito laboral como profesional."), MSGBOX_AUTOCLOSE)
+    delay(20)
+    msgbox(format("Puede parecer que soy un emo, pero me considero más instrospectivo que otra cosa."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Puede parecer que soy un emo, pero me considero más instrospectivo que otra cosa."))
-    msgbox(format("Yo no era nadie... Sentía que no era nadie... Y eso lo cambió el WAH."))
-    msgbox(format("Así que fuera sentimentalismos y presentaciones, vamos al lío."))
-    msgbox(format("Mente fría, corazón caliente, así es como se juega. ¡A darle caña!"))
+    msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió el WAH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(
         emote_versus, 
@@ -185,12 +182,13 @@ script ReonekyRoom_EventScript_Reoneky {
         jump_in_place_down * 2
         unlock_facing_direction
         face_player))
+    msgbox(format("¡A darle caña!"))
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Buen combate, he disfrutado como un niño."))
     msgbox(format("Apuntas maneras, el talento tiene límites, el esfuerzo y la pasión, no."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad! No dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE)
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
     delay(30)
     setflag(FLAG_DEFEATED_ADMIN_REONEKY)
