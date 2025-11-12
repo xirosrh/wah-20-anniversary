@@ -43,6 +43,7 @@
 #include "constants/maps.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"
+#include "constants/move_relearner.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
@@ -62,6 +63,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/speaker_names.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -695,6 +697,7 @@ EventScript_SetBrineyLocation_Route109::
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
+	.include "data/scripts/move_relearner.inc"
 
 @ scripts/notices.inc? signs.inc? See comment about text/notices.inc
 Common_EventScript_ShowPokemartSign::
@@ -880,6 +883,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
+	.include "data/text/move_relearner.inc"
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -1158,3 +1162,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/scripts/battle_frontier.inc"

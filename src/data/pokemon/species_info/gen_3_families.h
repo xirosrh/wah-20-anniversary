@@ -10688,6 +10688,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sFroslassLevelUpLearnset,
         .teachableLearnset = sFroslassTeachableLearnset,
+        .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
+        .formChangeTable = sFroslassFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS

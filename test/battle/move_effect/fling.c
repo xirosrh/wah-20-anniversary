@@ -58,7 +58,7 @@ SINGLE_BATTLE_TEST("Fling fails if Pokémon is under the effects of Embargo or M
 
 SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability")
 {
-    u16 ability;
+    enum Ability ability;
 
     PARAMETRIZE {ability = ABILITY_KLUTZ; }
     PARAMETRIZE {ability = ABILITY_RUN_AWAY; }
@@ -150,6 +150,23 @@ SINGLE_BATTLE_TEST("Fling - Item is lost when target protects itself")
         MESSAGE("But it failed!");
     } THEN {
         EXPECT_EQ(player->item, ITEM_NONE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Fling - Item does not get blocked by Unnerve if it isn't a berry")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_TAUNT) == EFFECT_TAUNT);
+        PLAYER(SPECIES_CALYREX) { Item(ITEM_MENTAL_HERB); Ability(ABILITY_UNNERVE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_ORAN_BERRY); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TAUNT); MOVE(opponent, MOVE_SCRATCH); }
+        TURN { MOVE(player, MOVE_FLING); MOVE(opponent, MOVE_SCRATCH); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TAUNT, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_FLING, player);
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet's Taunt wore off!");
     }
 }
 
@@ -458,6 +475,27 @@ SINGLE_BATTLE_TEST("Fling deals damage based on items fling power")
         HP_BAR(opponent, captureDamage: &damage[1]);
     } THEN {
         EXPECT_EQ(damage[0], damage[1]);
+    }
+}
+
+SINGLE_BATTLE_TEST("Flinging a Mental Herb does not trigger the item if the target doesn't have anything that's cured by Mental Herb")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MENTAL_HERB); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_FLING); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_FLING, player);
+        NONE_OF {
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+            MESSAGE("The opposing Wobbuffet got over its infatuation!");
+            MESSAGE("The opposing Wobbuffet's Taunt wore off!");
+            MESSAGE("The opposing Wobbuffet ended its encore!");
+            MESSAGE("The opposing Wobbuffet is no longer tormented!");
+            MESSAGE("The opposing Wobbuffet's move is no longer disabled!");
+            MESSAGE("The opposing Wobbuffet is cured of its heal block!");
+        }
     }
 }
 

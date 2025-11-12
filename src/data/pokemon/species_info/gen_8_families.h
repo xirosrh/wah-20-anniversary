@@ -5241,6 +5241,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sFalinksLevelUpLearnset,
         .teachableLearnset = sFalinksTeachableLearnset,
+        .formSpeciesIdTable = sFalinksFormSpeciesIdTable,
+        .formChangeTable = sFalinksFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS

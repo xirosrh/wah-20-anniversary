@@ -210,6 +210,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sChesnaughtLevelUpLearnset,
         .teachableLearnset = sChesnaughtTeachableLearnset,
+        .formSpeciesIdTable = sChesnaughtFormSpeciesIdTable,
+        .formChangeTable = sChesnaughtFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -498,6 +500,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sDelphoxLevelUpLearnset,
         .teachableLearnset = sDelphoxTeachableLearnset,
+        .formSpeciesIdTable = sDelphoxFormSpeciesIdTable,
+        .formChangeTable = sDelphoxFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -777,6 +781,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sGreninjaLevelUpLearnset,
         .teachableLearnset = sGreninjaTeachableLearnset,
         .formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
+        .formChangeTable = sGreninjaFormChangeTable,
     },
 
     [SPECIES_GRENINJA_BATTLE_BOND] =
@@ -1899,6 +1904,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sPyroarLevelUpLearnset,
         .teachableLearnset = sPyroarTeachableLearnset,
+        .formSpeciesIdTable = sPyroarFormSpeciesIdTable,
+        .formChangeTable = sPyroarFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -3672,6 +3679,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sMalamarLevelUpLearnset,
         .teachableLearnset = sMalamarTeachableLearnset,
+        .formSpeciesIdTable = sMalamarFormSpeciesIdTable,
+        .formChangeTable = sMalamarFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -3889,7 +3898,84 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sBarbaracleLevelUpLearnset,
         .teachableLearnset = sBarbaracleTeachableLearnset,
+        .formSpeciesIdTable = sBarbaracleFormSpeciesIdTable,
+        .formChangeTable = sBarbaracleFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_BARBARACLE_MEGA] =
+    {
+        .baseHP        = 72,
+        .baseAttack    = 140,
+        .baseDefense   = 130,
+        .baseSpeed     = 88,
+        .baseSpAttack  = 64,
+        .baseSpDefense = 106,
+        .types = MON_TYPES(TYPE_ROCK, TYPE_FIGHTING),
+        .catchRate = 45,
+        .expYield = 175,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_3),
+        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_SNIPER, ABILITY_PICKPOCKET },
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = TRUE,
+        .speciesName = _("Barbaracle"),
+        .cryId = CRY_BARBARACLE, // CRY_BARBARACLE_MEGA,
+        .natDexNum = NATIONAL_DEX_BARBARACLE,
+        .categoryName = _("Collective"),
+        .height = 22,
+        .weight = 1000,
+        .description = COMPOUND_STRING(
+            "It uses its many arms to toy\n"
+            "with its opponents. This\n"
+            "keeps the head extremely busy."),
+        .frontPic = gMonFrontPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(QuestionMark)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+    #if OW_BATTLE_ONLY_FORMS
+        .overworldData = {
+            .tileTag = TAG_NONE,
+            .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
+            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+            .size = 512,
+            .width = 32,
+            .height = 32,
+            .paletteSlot = PALSLOT_NPC_1,
+            .shadowSize = SHADOW_SIZE_M,
+            .inanimate = FALSE,
+            .compressed = COMP,
+            .tracks = TRACKS_FOOT,
+            .oam = &gObjectEventBaseOam_32x32,
+            .subspriteTables = sOamTables_32x32,
+            .anims = sAnimTable_Following,
+            .images = sPicTable_Substitute,
+            .affineAnims = gDummySpriteAffineAnimTable,
+        },
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sBarbaracleLevelUpLearnset,
+        .teachableLearnset = sBarbaracleTeachableLearnset,
+        .formSpeciesIdTable = sBarbaracleFormSpeciesIdTable,
+        .formChangeTable = sBarbaracleFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_BINACLE
 
 #if P_FAMILY_SKRELP
@@ -4033,6 +4119,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sDragalgeLevelUpLearnset,
         .teachableLearnset = sDragalgeTeachableLearnset,
+        .formSpeciesIdTable = sDragalgeFormSpeciesIdTable,
+        .formChangeTable = sDragalgeFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -4751,6 +4839,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sHawluchaLevelUpLearnset,
         .teachableLearnset = sHawluchaTeachableLearnset,
         .eggMoveLearnset = sHawluchaEggMoveLearnset,
+        .formSpeciesIdTable = sHawluchaFormSpeciesIdTable,
+        .formChangeTable = sHawluchaFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -5045,8 +5135,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sGoomyLevelUpLearnset,
         .teachableLearnset = sGoomyTeachableLearnset,
         .eggMoveLearnset = sGoomyEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLIGGOO},
-                                {EVO_NONE, 0, SPECIES_SLIGGOO_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLIGGOO, CONDITIONS({IF_NOT_REGION, REGION_HISUI})},
+                                {EVO_LEVEL, 40, SPECIES_SLIGGOO_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}),
     },
 
     [SPECIES_SLIGGOO] =
@@ -6150,8 +6240,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sBergmiteLevelUpLearnset,
         .teachableLearnset = sBergmiteTeachableLearnset,
         .eggMoveLearnset = sBergmiteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG},
-                                {EVO_NONE, 0, SPECIES_AVALUGG_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG, CONDITIONS({IF_NOT_REGION, REGION_HISUI})},
+                                {EVO_LEVEL, 37, SPECIES_AVALUGG_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}),
     },
 
     [SPECIES_AVALUGG] =

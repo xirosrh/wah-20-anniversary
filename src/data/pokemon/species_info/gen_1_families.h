@@ -2949,8 +2949,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
         .formChangeTable = sPikachuFormChangeTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU},
-                                {EVO_NONE, 0, SPECIES_RAICHU_ALOLA}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU, CONDITIONS({IF_NOT_REGION, REGION_ALOLA})},
+                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA})}),
     },
 
 #if P_COSPLAY_PIKACHU_FORMS
@@ -5001,6 +5001,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sClefableLevelUpLearnset,
         .teachableLearnset = sClefableTeachableLearnset,
+        .formSpeciesIdTable = sClefableFormSpeciesIdTable,
+        .formChangeTable = sClefableFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -9209,6 +9211,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sVictreebelLevelUpLearnset,
         .teachableLearnset = sVictreebelTeachableLearnset,
+        .formSpeciesIdTable = sVictreebelFormSpeciesIdTable,
+        .formChangeTable = sVictreebelFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -13193,8 +13197,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sExeggcuteLevelUpLearnset,
         .teachableLearnset = sExeggcuteTeachableLearnset,
         .eggMoveLearnset = sExeggcuteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR},
-                                {EVO_NONE, 0, SPECIES_EXEGGUTOR_ALOLA}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR, CONDITIONS({IF_NOT_REGION, REGION_ALOLA})},
+                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA})}),
     },
 
 #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -13420,8 +13424,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sCuboneLevelUpLearnset,
         .teachableLearnset = sCuboneTeachableLearnset,
         .eggMoveLearnset = sCuboneEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MAROWAK},
-                                {EVO_NONE, 0, SPECIES_MAROWAK_ALOLA},
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MAROWAK, CONDITIONS({IF_NOT_REGION, REGION_ALOLA})},
+                                {EVO_LEVEL, 28, SPECIES_MAROWAK_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA}, {IF_TIME, TIME_NIGHT})},
                                 {EVO_NONE, 0, SPECIES_MAROWAK_ALOLA_TOTEM}),
     },
 
@@ -14153,8 +14157,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sKoffingLevelUpLearnset,
         .teachableLearnset = sKoffingTeachableLearnset,
         .eggMoveLearnset = sKoffingEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING},
-                                {EVO_NONE, 0, SPECIES_WEEZING_GALAR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING, CONDITIONS({IF_NOT_REGION, REGION_GALAR})},
+                                {EVO_LEVEL, 35, SPECIES_WEEZING_GALAR, CONDITIONS({IF_REGION, REGION_GALAR})}),
     },
 
     [SPECIES_WEEZING] =
@@ -15644,6 +15648,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sStarmieLevelUpLearnset,
         .teachableLearnset = sStarmieTeachableLearnset,
+        .formSpeciesIdTable = sStarmieFormSpeciesIdTable,
+        .formChangeTable = sStarmieFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -15803,8 +15809,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sMimeJrLevelUpLearnset,
         .teachableLearnset = sMimeJrTeachableLearnset,
         .eggMoveLearnset = sMimeJrEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MR_MIME, CONDITIONS({IF_KNOWS_MOVE, MOVE_MIMIC})},
-                                {EVO_NONE, 0, SPECIES_MR_MIME_GALAR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MR_MIME, CONDITIONS({IF_KNOWS_MOVE, MOVE_MIMIC}, {IF_NOT_REGION, REGION_GALAR})},
+                                {EVO_LEVEL, 0, SPECIES_MR_MIME_GALAR, CONDITIONS({IF_KNOWS_MOVE, MOVE_MIMIC}, {IF_REGION, REGION_GALAR})}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -20184,6 +20190,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sDragoniteLevelUpLearnset,
         .teachableLearnset = sDragoniteTeachableLearnset,
+        .formSpeciesIdTable = sDragoniteFormSpeciesIdTable,
+        .formChangeTable = sDragoniteFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
