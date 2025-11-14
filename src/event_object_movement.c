@@ -703,6 +703,7 @@ static const u8 sFishingBiteDirectionAnimNums[] = {
     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_NORTH,
     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_NORTH,
 };
+
 static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NONE] = ANIM_RUN_SOUTH,
     [DIR_SOUTH] = ANIM_RUN_SOUTH,
@@ -8319,6 +8320,12 @@ bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, stru
 bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
+    return FALSE;
+}
+
+bool8 MovementAction_EingFishing_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_EING_FISHING_WEST);
     return FALSE;
 }
 

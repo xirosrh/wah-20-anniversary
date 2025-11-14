@@ -4266,7 +4266,7 @@
       "name": "EingRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/EingRoom/border.bin",
       "blockdata_filepath": "data/layouts/EingRoom/map.bin"

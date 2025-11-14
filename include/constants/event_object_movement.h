@@ -287,7 +287,8 @@
 #define MOVEMENT_ACTION_EMOTE_IDEA                      0xC3
 #define MOVEMENT_ACTION_EMOTE_XD                        0xC4
 #define MOVEMENT_ACTION_EMOTE_WINK                      0xC5
-#define MOVEMENT_ACTION_CRANE_START_BURNING                     0xC6
+#define MOVEMENT_ACTION_CRANE_START_BURNING             0xC6
+#define MOVEMENT_ACTION_FISHING                         0xC7
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -358,6 +359,7 @@
 #define ANIM_STD_FALL_DOWN    (ANIM_STD_COUNT + 3)
 #define ANIM_CRANE_START_BURNING    (ANIM_STD_COUNT + 0)
 #define ANIM_CRANE_BURNING_UP       (ANIM_STD_COUNT + 1)
+#define ANIM_EING_FISHING_WEST      (ANIM_STD_COUNT + 0)
 
 #define ANIM_FIELD_MOVE 0
 

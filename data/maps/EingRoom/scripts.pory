@@ -1,1 +1,16 @@
-mapscripts EingRoom_MapScripts {}
+mapscripts EingRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_EING_ROOM_STATE, 0: EingRoom_OnFrame
+    ]
+}
+
+script EingRoom_OnFrame {
+    special(SpawnCameraObject)
+    directcameramovementtopos(5, 7)
+    waitmovement(0)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Fishing)
+    setvar(VAR_EING_ROOM_STATE, 1)
+    special(RemoveCameraObject)
+    release
+    end
+}
