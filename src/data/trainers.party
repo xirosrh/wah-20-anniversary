@@ -842,7 +842,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Bulk Up
 - Earthquake
 
-=== TRAINER_LEAH ===
+=== TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
 Name: LEAH
 Class: Hex Maniac
 Pic: Hex Maniac
@@ -855,7 +855,7 @@ Spoink
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DAISY ===
+=== TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
 Name: DAISY
 Class: Aroma Lady
 Pic: Aroma Lady
