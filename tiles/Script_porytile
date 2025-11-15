@@ -1,0 +1,10 @@
+PRIMARIO
+
+
+porytiles compile-primary -metatiles-primary-override=2048 -metatiles-total-override=2048 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/primary/room_general $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+porytiles compile-primary -metatiles-primary-override=176 -metatiles-total-override=176 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/primary/room_general $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+SECUNDARIO BOO
