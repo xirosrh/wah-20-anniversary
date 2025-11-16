@@ -364,19 +364,19 @@ $(OBJEVENTGFXDIR)/people/swimmer_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/swimmer_m.4bpp: %.4bpp: %.png
-        $(GFX) $< $@ -mwidth 2 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/trainer_in_water_1.4bpp: %.4bpp: %.png
-        $(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/trainer_in_water_2.4bpp: %.4bpp: %.png
-        $(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/trainer_in_water_3.4bpp: %.4bpp: %.png
-        $(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/teala.4bpp: %.4bpp: %.png
-        $(GFX) $< $@ -mwidth 2 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/tuber_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
