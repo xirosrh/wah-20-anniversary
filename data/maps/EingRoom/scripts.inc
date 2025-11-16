@@ -21,157 +21,174 @@ EingRoom_OnTransition_1:
 EingRoom_OnTransition_2:
 # 10 "data/maps/EingRoom/scripts.pory"
 	setflag FLAG_EINGROOM_HIDE_EING_FISHING
+# 11 "data/maps/EingRoom/scripts.pory"
+	setflag FLAG_EINGROOM_HIDE_TRAINER_IN_WATER
 	goto EingRoom_OnTransition_1
 
 
 EingRoom_OnFrame::
-# 16 "data/maps/EingRoom/scripts.pory"
-	getplayerxy VAR_TEMP_A, VAR_TEMP_B
 # 17 "data/maps/EingRoom/scripts.pory"
-	special SpawnCameraObject
+	release
 # 18 "data/maps/EingRoom/scripts.pory"
-	directcameramovementtopos 6, 6
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
 # 19 "data/maps/EingRoom/scripts.pory"
-	waitmovement 0
+	special SpawnCameraObject
 # 20 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
+	directcameramovementtopos 6, 6
 # 21 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE
-# 22 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 23 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_0
-# 24 "data/maps/EingRoom/scripts.pory"
-	delay 30
-# 25 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_1
-# 26 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 27 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_2
-# 28 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE
-# 29 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
-# 30 "data/maps/EingRoom/scripts.pory"
-	hideobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
-# 31 "data/maps/EingRoom/scripts.pory"
-	clearflag FLAG_EINGROOM_HIDE_EING_FISHING
-# 32 "data/maps/EingRoom/scripts.pory"
-	addobject LOCALID_EINGROOM_EING_FISHING
-# 33 "data/maps/EingRoom/scripts.pory"
-	showobjectat LOCALID_EINGROOM_EING_FISHING, MAP_EING_ROOM
-# 34 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING_FISHING, Common_Movement_Fishing
-# 35 "data/maps/EingRoom/scripts.pory"
-	setflag FLAG_EINGROOM_HIDE_EING_FISHING
-# 36 "data/maps/EingRoom/scripts.pory"
-	removeobject LOCALID_EINGROOM_EING_FISHING
-# 37 "data/maps/EingRoom/scripts.pory"
-	showobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
-# 38 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 39 "data/maps/EingRoom/scripts.pory"
-	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
-# 40 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE
-# 41 "data/maps/EingRoom/scripts.pory"
-	delay 30
-# 42 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_FaceRight
-# 43 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE
-# 44 "data/maps/EingRoom/scripts.pory"
-	turnobject LOCALID_EINGROOM_EING, DIR_WEST
-# 45 "data/maps/EingRoom/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
-# 46 "data/maps/EingRoom/scripts.pory"
 	waitmovement 0
+# 22 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
+# 23 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_0
+# 24 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 25 "data/maps/EingRoom/scripts.pory"
+	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_0
+# 26 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE
+# 27 "data/maps/EingRoom/scripts.pory"
+	waitmovement 0
+# 28 "data/maps/EingRoom/scripts.pory"
+	delay 30
+# 29 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_1
+# 30 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 31 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_2
+# 32 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE
+# 33 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
+# 34 "data/maps/EingRoom/scripts.pory"
+	hideobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
+# 35 "data/maps/EingRoom/scripts.pory"
+	clearflag FLAG_EINGROOM_HIDE_EING_FISHING
+# 36 "data/maps/EingRoom/scripts.pory"
+	addobject LOCALID_EINGROOM_EING_FISHING
+# 37 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_EING_FISHING, MAP_EING_ROOM
+# 38 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING_FISHING, Common_Movement_Fishing
+# 39 "data/maps/EingRoom/scripts.pory"
+	setflag FLAG_EINGROOM_HIDE_EING_FISHING
+# 40 "data/maps/EingRoom/scripts.pory"
+	removeobject LOCALID_EINGROOM_EING_FISHING
+# 41 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
+# 42 "data/maps/EingRoom/scripts.pory"
+	clearflag FLAG_EINGROOM_HIDE_TRAINER_IN_WATER
+# 43 "data/maps/EingRoom/scripts.pory"
+	addobject LOCALID_EINGROOM_TRAINER_IN_WATER
+# 44 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_TRAINER_IN_WATER, MAP_EING_ROOM
+# 45 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 46 "data/maps/EingRoom/scripts.pory"
+	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
 # 47 "data/maps/EingRoom/scripts.pory"
-	setvar VAR_EING_ROOM_STATE, 1
+	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE
 # 48 "data/maps/EingRoom/scripts.pory"
-	special RemoveCameraObject
+	delay 30
 # 49 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_FaceRight
+# 50 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE
+# 51 "data/maps/EingRoom/scripts.pory"
+	turnobject LOCALID_EINGROOM_EING, DIR_WEST
+# 52 "data/maps/EingRoom/scripts.pory"
+	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
+# 53 "data/maps/EingRoom/scripts.pory"
+	waitmovement 0
+# 54 "data/maps/EingRoom/scripts.pory"
+	setvar VAR_EING_ROOM_STATE, 1
+# 55 "data/maps/EingRoom/scripts.pory"
+	special RemoveCameraObject
+# 56 "data/maps/EingRoom/scripts.pory"
 	release
 	end
 
 
-# 23 "data/maps/EingRoom/scripts.pory"
+# 25 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_0:
-# 23 "data/maps/EingRoom/scripts.pory"
+# 25 "data/maps/EingRoom/scripts.pory"
 	emote_angry
-# 23 "data/maps/EingRoom/scripts.pory"
+# 25 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_down
-# 23 "data/maps/EingRoom/scripts.pory"
+# 25 "data/maps/EingRoom/scripts.pory"
 	delay_16
-# 23 "data/maps/EingRoom/scripts.pory"
+# 25 "data/maps/EingRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_1:
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 25 "data/maps/EingRoom/scripts.pory"
+# 29 "data/maps/EingRoom/scripts.pory"
 	walk_left
 	step_end
 
-# 27 "data/maps/EingRoom/scripts.pory"
+# 31 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_2:
-# 27 "data/maps/EingRoom/scripts.pory"
+# 31 "data/maps/EingRoom/scripts.pory"
 	emote_idea
-# 27 "data/maps/EingRoom/scripts.pory"
+# 31 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left
-# 27 "data/maps/EingRoom/scripts.pory"
+# 31 "data/maps/EingRoom/scripts.pory"
 	delay_16
-# 27 "data/maps/EingRoom/scripts.pory"
+# 31 "data/maps/EingRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 39 "data/maps/EingRoom/scripts.pory"
+# 46 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_3:
-# 39 "data/maps/EingRoom/scripts.pory"
+# 46 "data/maps/EingRoom/scripts.pory"
 	emote_angry
-# 39 "data/maps/EingRoom/scripts.pory"
+# 46 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left
-# 39 "data/maps/EingRoom/scripts.pory"
+# 46 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left
-# 39 "data/maps/EingRoom/scripts.pory"
+# 46 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left
 	step_end
 
 EingRoom_OnFrame_Text_0:
-# 21 "data/maps/EingRoom/scripts.pory"
+# 23 "data/maps/EingRoom/scripts.pory"
 	.string "Malditos Xiros y Serg!o, que se han\n"
 	.string "pirado dejándome a mí con el marrón de\l"
-	.string "administrar la página web y el foro… y\l"
-	.string "yo sin las malditas creedenciales.$"
+	.string "administrar la página web y el foro…$"
 
 EingRoom_OnFrame_Text_1:
-# 28 "data/maps/EingRoom/scripts.pory"
+# 26 "data/maps/EingRoom/scripts.pory"
+	.string "¡Y yo sin las malditas creedenciales!$"
+
+EingRoom_OnFrame_Text_2:
+# 32 "data/maps/EingRoom/scripts.pory"
 	.string "A ver si las han tirado al fondo del mar\n"
 	.string "como una prueba para desafiarme y ver\l"
 	.string "si soy digno de administrar WAH…\p"
 	.string "¡Voy a ver si las pesco!$"
 
-EingRoom_OnFrame_Text_2:
-# 40 "data/maps/EingRoom/scripts.pory"
+EingRoom_OnFrame_Text_3:
+# 47 "data/maps/EingRoom/scripts.pory"
 	.string "¡Maldita sea! ¿Otro entrenador?$"
 
-EingRoom_OnFrame_Text_3:
-# 43 "data/maps/EingRoom/scripts.pory"
+EingRoom_OnFrame_Text_4:
+# 50 "data/maps/EingRoom/scripts.pory"
 	.string "Esto se está pareciendo a mi rutina de\n"
 	.string "wildbattles dobles del Hoenn\l"
 	.string "Adventures…$"
