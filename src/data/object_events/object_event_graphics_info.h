@@ -763,6 +763,57 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater1 = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_NONE,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_TrainerInWater1,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater2 = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_NONE,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_TrainerInWater2,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater3 = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_NONE,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_TrainerInWater3,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
