@@ -883,7 +883,7 @@ AI: Check Bad Move
 
 Pelipper @ Damp Rock
 Ability: Drizzle
-Level: 70
+Level: 5
 EVs: 252 HP / 200 Def / 56 SpD
 Bold Nature
 IVs: 0 Atk
@@ -894,7 +894,7 @@ IVs: 0 Atk
 
 Ludicolo @ Assault Vest
 Ability: Swift Swim
-Level: 70
+Level: 5
 EVs: 132 HP / 124 SpA / 252 Spe
 Modest Nature
 - Giga Drain
@@ -904,7 +904,7 @@ Modest Nature
 
 Kingdra @ Life Orb
 Ability: Swift Swim
-Level: 70
+Level: 5
 EVs: 40 Atk / 252 SpA / 216 Spe
 Mild Nature
 - Hydro Pump
@@ -914,7 +914,7 @@ Mild Nature
 
 Swampert @ Swampertite
 Ability: Torrent
-Level: 70
+Level: 5
 EVs: 252 Atk / 4 Def / 252 Spe
 Adamant Nature
 - Waterfall
@@ -924,7 +924,7 @@ Adamant Nature
 
 Barraskewda @ Choice Band
 Ability: Swift Swim
-Level: 70
+Level: 5
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Liquidation
@@ -934,7 +934,7 @@ Jolly Nature
 
 Gamba (Clawitzer) @ Choice Specs
 Ability: Mega Launcher
-Level: 70
+Level: 5
 EVs: 120 HP / 252 SpA / 136 Spe
 Modest Nature
 IVs: 0 Atk
@@ -982,48 +982,6 @@ Jolly Nature
 - Knock Off
 - Aqua Jet
 - Close Combat
-
-=== TRAINER_ROSE_1 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_FELIX ===
-Name: FELIX
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Medicham
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
-
-Claydol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
-- Earthquake
 
 === TRAINER_VIOLET ===
 Name: VIOLET

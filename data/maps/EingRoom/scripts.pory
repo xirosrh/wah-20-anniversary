@@ -10,6 +10,9 @@ script EingRoom_OnTransition {
         setflag(FLAG_EINGROOM_HIDE_EING_FISHING)
         setflag(FLAG_EINGROOM_HIDE_TRAINER_IN_WATER)
     }
+    if(var(VAR_EING_ROOM_STATE) == 1){
+        setobjectmovementtype(LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT)
+    }
     end
 }
 
@@ -52,6 +55,7 @@ script EingRoom_OnFrame {
     directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
     waitmovement(0)
     setvar(VAR_EING_ROOM_STATE, 1)
+    setobjectmovementtype2(LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT)
     special(RemoveCameraObject)
     release
     end
@@ -61,59 +65,92 @@ script EingRoom_EventScript_Eing {
     lock
     faceplayer
     if(flag(FLAG_DEFEATED_ADMIN_EING)) {
-        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"))
+        applymovement(LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48)
+        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE)
+        waitmovement(0)
         release
         end
     }
     playse(SE_PIN)
-    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_DoubleExclamationMarkWithDelay48)
-    msgbox(format("¡Coño si tenemos visita! ¿Qué quieres? ¿No ves que estoy ocupado?"))
-    applymovementandwait(LOCALID_EINGROOM_EING, EingRoom_Movement_PointAtPlayer)
-    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tonto te baneo, ¿eh?"))
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(
+        emote_double_exclamation_mark, 
+        lock_facing_direction, 
+        jump_in_place_down * 2, 
+        unlock_facing_direction, 
+        face_player))
+    msgbox(format("¡Coño si tenemos visita! ¿Qué quieres? ¿No ves que estoy ocupado?"), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48)
-    msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"))
-    applymovementandwait(LOCALID_EINGROOM_EING, EingRoom_Movement_PreBattleHype)
-    msgbox(format("Está bien, prepárate porque iré con todo, ¡luego no me llores!"))
-    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
-    trainerbattle(TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT,
-        LOCALID_NONE,
-        TRAINER_WAH_ADMIN_EING_MAIN,
-        NULL,
-        format("¡Míralo, si parecía tonto al principio!"),
-        NULL,
-        LOCALID_NONE,
-        TRAINER_NONE,
-        NULL,
-        NULL,
-        NULL,
-        format("Ya te avisé, ahora no me llores."),
-        NULL,
-        FALSE,
-        TRUE,
-        FALSE,
-        FALSE)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
+    call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
+    delay(40)
+    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tonto te baneo, ¿eh?"), MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(LOCALID_EINGROOM_EING, moves(
+        lock_facing_direction, 
+        jump_in_place_down, 
+        unlock_facing_direction, 
+        face_player))
+    msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(
+        face_away_player
+        emote_thinking
+        delay_16 * 3
+    ))
+    delay(30)
+    call(EingRoom_EventScript_JumpToPlayerDirection)
+    msgbox(format("Está bien, prepárate porque iré con todo, ¡luego no me llores!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Versus)
+    call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
+    delay(30)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_MAIN, format("¡Míralo, si parecía tonto al principio!"))
     msgbox(format("Enhorabuena chaval, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado..."))
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
     setflag(FLAG_DEFEATED_ADMIN_EING)
     release
     end
 }
 
-movement EingRoom_Movement_PointAtPlayer {
-    lock_facing_direction
-    emote_question_mark
-    delay_16
-    jump_in_place_down
-    unlock_facing_direction
+script EingRoom_EventScript_WalkInPlaceEingFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
 }
 
-movement EingRoom_Movement_PreBattleHype {
-    lock_facing_direction
-    jump_in_place_down
-    delay_16
-    jump_in_place_down
-    emote_exclamation_mark
-    delay_16
-    unlock_facing_direction
+
+script EingRoom_EventScript_JumpToPlayerDirection {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_up_down))
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_down_up))
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_left_right))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_right_left))
+            break
+    }
+    return
 }
+
