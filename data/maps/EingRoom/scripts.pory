@@ -49,3 +49,64 @@ script EingRoom_OnFrame {
     release
     end
 }
+
+script EingRoom_EventScript_Eing {
+    lock
+    faceplayer
+    if(flag(FLAG_DEFEATED_ADMIN_EING)) {
+        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"))
+        release
+        end
+    }
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¡Coño si tenemos visita! ¿Qué quieres? ¿No ves que estoy ocupado?"))
+    applymovementandwait(LOCALID_EINGROOM_EING, EingRoom_Movement_PointAtPlayer)
+    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tonto te baneo, ¿eh?"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48)
+    msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"))
+    applymovementandwait(LOCALID_EINGROOM_EING, EingRoom_Movement_PreBattleHype)
+    msgbox(format("Está bien, prepárate porque iré con todo, ¡luego no me llores!"))
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
+    trainerbattle(TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT,
+        LOCALID_NONE,
+        TRAINER_WAH_ADMIN_EING_MAIN,
+        NULL,
+        format("¡Míralo, si parecía tonto al principio!"),
+        NULL,
+        LOCALID_NONE,
+        TRAINER_NONE,
+        NULL,
+        NULL,
+        NULL,
+        format("Ya te avisé, ahora no me llores."),
+        NULL,
+        FALSE,
+        TRUE,
+        FALSE,
+        FALSE)
+    msgbox(format("Enhorabuena chaval, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado..."))
+    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    setflag(FLAG_DEFEATED_ADMIN_EING)
+    release
+    end
+}
+
+movement EingRoom_Movement_PointAtPlayer {
+    lock_facing_direction
+    emote_question_mark
+    delay_16
+    jump_in_place_down
+    unlock_facing_direction
+}
+
+movement EingRoom_Movement_PreBattleHype {
+    lock_facing_direction
+    jump_in_place_down
+    delay_16
+    jump_in_place_down
+    emote_exclamation_mark
+    delay_16
+    unlock_facing_direction
+}
