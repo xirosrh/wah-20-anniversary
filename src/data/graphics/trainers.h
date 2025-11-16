@@ -352,6 +352,9 @@ const u16 gTrainerPalette_Boo[] = INCBIN_U16("graphics/trainers/palettes/admins/
 const u32 gTrainerFrontPic_Katherine[] = INCBIN_U32("graphics/trainers/front_pics/admins/katherine.4bpp.smol");
 const u16 gTrainerPalette_Katherine[] = INCBIN_U16("graphics/trainers/palettes/admins/katherine.gbapal");
 
+const u32 gTrainerFrontPic_Gallego[] = INCBIN_U32("graphics/trainers/front_pics/admins/gallego.4bpp.smol");
+const u16 gTrainerPalette_Gallego[] = INCBIN_U16("graphics/trainers/palettes/admins/gallego.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -497,6 +500,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_DRIVE, gTrainerFrontPic_Drive, gTrainerPalette_Drive),
     TRAINER_SPRITE(TRAINER_PIC_BOO, gTrainerFrontPic_Boo, gTrainerPalette_Boo),
     TRAINER_SPRITE(TRAINER_PIC_KATHERINE, gTrainerFrontPic_Katherine, gTrainerPalette_Katherine),
+    TRAINER_SPRITE(TRAINER_PIC_GALLEGO, gTrainerFrontPic_Gallego, gTrainerPalette_Gallego),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

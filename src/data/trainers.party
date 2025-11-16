@@ -842,12 +842,12 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Bulk Up
 - Earthquake
 
-=== TRAINER_LEAH ===
-Name: LEAH
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
-Music: Suspicious
+=== TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -855,12 +855,12 @@ Spoink
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DAISY ===
-Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+=== TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
