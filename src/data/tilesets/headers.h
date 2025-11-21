@@ -841,3 +841,14 @@ const struct Tileset gTileset_Room_cheve =
     .metatileAttributes = gMetatileAttributes_Room_cheve,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Room_Reoneky =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Reoneky,
+    .palettes = gTilesetPalettes_Room_Reoneky,
+    .metatiles = gMetatiles_Room_Reoneky,
+    .metatileAttributes = gMetatileAttributes_Room_Reoneky,
+    .callback = NULL,
+};
