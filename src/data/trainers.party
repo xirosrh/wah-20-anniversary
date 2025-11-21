@@ -872,47 +872,116 @@ Roselia
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ROSE_1 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+=== TRAINER_WAH_ADMIN_EING_MAIN ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pelipper @ Damp Rock
+Ability: Drizzle
+Level: 5
+EVs: 252 HP / 200 Def / 56 SpD
+Bold Nature
+IVs: 0 Atk
+- Scald
+- Hurricane
+- Roost
+- U-turn
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Assault Vest
+Ability: Swift Swim
+Level: 5
+EVs: 132 HP / 124 SpA / 252 Spe
+Modest Nature
+- Giga Drain
+- Ice Beam
+- Scald
+- Focus Blast
 
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Life Orb
+Ability: Swift Swim
+Level: 5
+EVs: 40 Atk / 252 SpA / 216 Spe
+Mild Nature
+- Hydro Pump
+- Draco Meteor
+- Hurricane
+- Flip Turn
 
-=== TRAINER_FELIX ===
-Name: FELIX
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Medicham
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
-
-Claydol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
+Swampert @ Swampertite
+Ability: Torrent
+Level: 5
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
 - Earthquake
+- Ice Punch
+- Protect
+
+Barraskewda @ Choice Band
+Ability: Swift Swim
+Level: 5
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Flip Turn
+
+Gamba (Clawitzer) @ Choice Specs
+Ability: Mega Launcher
+Level: 5
+EVs: 120 HP / 252 SpA / 136 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Dark Pulse
+- Water Pulse
+- Ice Beam
+
+=== TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Rotom (Rotom-Wash) @ Leftovers
+Ability: Levitate
+Level: 52
+EVs: 248 HP / 68 SpA / 192 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Thunderbolt
+- Volt Switch
+- Will-O-Wisp
+
+Azumarill @ Assault Vest
+Ability: Huge Power
+Level: 52
+EVs: 248 HP / 252 Atk / 8 Spe
+Adamant Nature
+- Play Rough
+- Aqua Jet
+- Liquidation
+- Knock Off
+
+Crawdaunt @ Life Orb
+Ability: Adaptability
+Level: 52
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Close Combat
 
 === TRAINER_VIOLET ===
 Name: VIOLET

@@ -42,6 +42,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaStill;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
@@ -140,6 +143,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EingFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HotSpringsOldWoman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSTidal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubmarineShadow;
@@ -393,6 +397,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LITTLE_BOY_3] =             &gObjectEventGraphicsInfo_RubySapphireLittleBoy,
     [OBJ_EVENT_GFX_BRENDAN_FISHING] =          &gObjectEventGraphicsInfo_BrendanFishing,
     [OBJ_EVENT_GFX_MAY_FISHING] =              &gObjectEventGraphicsInfo_MayFishing,
+    [OBJ_EVENT_GFX_EING_FISHING] =             &gObjectEventGraphicsInfo_EingFishing,
+    [OBJ_EVENT_GFX_TRAINER_IN_WATER_1] =       &gObjectEventGraphicsInfo_TrainerInWater1,
+    [OBJ_EVENT_GFX_TRAINER_IN_WATER_2] =       &gObjectEventGraphicsInfo_TrainerInWater2,
+    [OBJ_EVENT_GFX_TRAINER_IN_WATER_3] =       &gObjectEventGraphicsInfo_TrainerInWater3,
     [OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN] =    &gObjectEventGraphicsInfo_HotSpringsOldWoman,
     [OBJ_EVENT_GFX_SS_TIDAL] =                 &gObjectEventGraphicsInfo_SSTidal,
     [OBJ_EVENT_GFX_SUBMARINE_SHADOW] =         &gObjectEventGraphicsInfo_SubmarineShadow,
