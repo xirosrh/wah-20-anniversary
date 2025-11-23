@@ -59,35 +59,71 @@
       "y": 7,
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
-      "var_value": "0",
-      "script": "TokynWarRoom_EventScript_Trigger"
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
     },
     {
       "type": "trigger",
       "x": 7,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_Magikarp"
     },
     {
       "type": "trigger",
       "x": 6,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_Magikarp"
     },
     {
       "type": "trigger",
       "x": 5,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_Magikarp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
     }
   ],
   "bg_events": []

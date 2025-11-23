@@ -1,74 +1,76 @@
 mapscripts TokynWarRoom_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: TokynWarRoom_OnTransition
-}
-
-script TokynWarRoom_OnTransition {
-    if(var(VAR_TOKYN_WAR_ROOM_STATE) == 1) {
-        setflag(FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR)
-    }
-    end
-}
-
-script TokynWarRoom_EventScript_Trigger {
-    call(TokynWarRoom_EventScript_MainCutscene)
-    end
-}
-
-script TokynWarRoom_EventScript_Magikarp {
-    lock
-    load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 70, 55, VAR_TEMP_2)
-    load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 134, 55, VAR_TEMP_3)
-    delay(100)
-    destroy_field_pic(FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2)
-    destroy_field_pic(FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3)
-    release
-    end
 }
 
 script TokynWarRoom_EventScript_MainCutscene {
     lockall
+    moveobjecttopos(LOCALID_PLAYER, 6, 7, DIR_NORTH)
+    waitmovement(0)
+    playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("¡Vaya sorpresa! No esperaba ver una cara nueva por aquí."))
-    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceDown)
-    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(walk_down, face_left))
-    turnobject(LOCALID_PLAYER, DIR_EAST)
-    waitmovement(LOCALID_TOKYNWARROOM_WAR)
-    msgbox(format("Yo tampoco tengo idea de quién eres, pero eso no importa."))
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_JumpInPlaceDown2)
-    msgbox(format("¡Estamos aquí para verlo!"))
-    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_down, face_right))
-    msgbox(format("Es un placer poder participar de esta celebración contigo."))
-    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HappyWithDelay48)
-    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_right, face_left))
-    turnobject(LOCALID_TOKYNWARROOM_WAR, DIR_WEST)
-    msgbox(format("¿Qué te parece un combate de a dos, War?"))
-    msgbox(format("¿Unir fuerzas como en los viejos tiempos?"))
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("¡Hace años no hacemos eso! Pero me gusta. Una buena celebración merece algo especial."))
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkInPlaceLeft)
-    msgbox(format("Entonces está decidido."))
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_down * 2, face_right))
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("¡Vaya sorpresa! No esperaba ver una cara nueva por aquí."), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
-    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_left, face_down))
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(face_down))
-    msgbox(format("¡Vamos!"))
-    msgbox(format("¡Que gane el mejor!"))
-    applymovement(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_JumpInPlaceDown2)
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_JumpInPlaceDown2)
-    applymovement(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_VersusWithDelay48)
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_VersusWithDelay48)
-    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."), TRAINER_WAH_ADMIN_WAR_MAIN, format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."))
-    applymovement(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_XDWithDelay48)
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_XDWithDelay48)
-    msgbox(format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."))
-    msgbox(format("Gracias por compartir este momento con nosotros. Fue un encuentro digno para esta celebración.\pEs increíble cómo un solo combate puede traer de vuelta tantas memorias."))
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(walk_down * 2, face_left))
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    msgbox(format("Yo tampoco tengo idea de quién eres, pero eso no importa."))
+    playse(SE_PIN)
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_exclamation_mark, jump_in_place_left * 2, delay_16))
+    msgbox(format("¡Estamos aquí para verlo!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("Es un placer poder participar de esta celebración contigo."),MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HappyWithDelay48)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¿Qué te parece un combate de a dos, War?"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_JumpInPlaceLeft2)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    msgbox(format("¿Unir fuerzas como en los viejos tiempos?"), MSGBOX_AUTOCLOSE)
+    delay(30)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkRight)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("¡Hace años no hacemos eso! Pero me gusta. Una buena celebración merece algo especial."), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkInPlaceLeft)
+    delay(20)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("Entonces está decidido."), MSGBOX_AUTOCLOSE)
+    delay(30)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¡Vamos!"), MSGBOX_AUTOCLOSE)
+    delay(20)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkLeft)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    msgbox(format("¡Que gane el mejor!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_versus, jump_in_place_right * 2, delay_16))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_versus, jump_in_place_left * 2, delay_16))
+    applymovement(LOCALID_PLAYER, moves(face_left, delay_8, face_right, delay_8, face_left, delay_8, face_right, delay_8))
+    waitmovement(LOCALID_TOKYNWARROOM_WAR)
+    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, format("Qué bien se sintió este combate… hacía tiempo que no disfrutaba uno así."), TRAINER_WAH_ADMIN_WAR_MAIN, format("Bueno… ahora sí sé quién eres. Vaya forma de presentarte."))
+    playse(SE_PIN)
+    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_x, lock_facing_direction, jump_left, unlock_facing_direction, delay_16 * 2))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_x, lock_facing_direction, jump_right, unlock_facing_direction, delay_16 * 2))
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(emote_double_exclamation_mark, jump_in_place_left * 2, walk_left))
+    msgbox(format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."), MSGBOX_AUTOCLOSE)
+    delay(40)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkRight)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("Gracias por compartir este momento con nosotros. Fue un encuentro digno para esta celebración.\pEs increíble cómo un solo combate puede traer de vuelta tantas memorias."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48)
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
-    msgbox(format("Ya puedes seguir, pero recuerda: Nunca olvides seguir tus sueños."))
-    moveobjecttopos(LOCALID_TOKYNWARROOM_TOKYN, 5, 5, DIR_SOUTH)
-    moveobjecttopos(LOCALID_TOKYNWARROOM_WAR, 7, 5, DIR_SOUTH)
-    setobjectmovementtype2(LOCALID_TOKYNWARROOM_TOKYN, MOVEMENT_TYPE_FACE_DOWN)
-    setobjectmovementtype2(LOCALID_TOKYNWARROOM_WAR, MOVEMENT_TYPE_FACE_DOWN)
+    msgbox(format("Ya puedes seguir, pero recuerda: Nunca olvides seguir tus sueños."), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_up * 2, face_down))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(walk_up * 2, face_down))
+    waitmovement(0)
     setflag(FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR)
-    setvar(VAR_TOKYN_WAR_ROOM_STATE, 1)
+    setvar(VAR_TOKYN_WAR_ROOM_STATE, 2)
     releaseall
     return
 }
@@ -100,6 +102,19 @@ script TokynWarRoom_EventScript_Tokyn {
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48)
     msgbox(format("Gracias por hacerlo especial."))
+    release
+    end
+}
+
+
+script TokynWarRoom_EventScript_Magikarp {
+    lock
+    load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 70, 55, VAR_TEMP_2)
+    load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 134, 55, VAR_TEMP_3)
+    delay(100)
+    destroy_field_pic(FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2)
+    destroy_field_pic(FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3)
+    setvar(VAR_TOKYN_WAR_ROOM_STATE, 1)
     release
     end
 }
