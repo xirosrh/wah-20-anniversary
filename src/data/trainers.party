@@ -1023,10 +1023,27 @@ IVs: 0 Atk
 - Ice Beam
 - Trick
 
+=== TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
+Name: ROSE
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Shroomish
+Level: 26
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Roselia
+Level: 26
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
 === TRAINER_WAH_ADMIN_WAR_MAIN ===
 Name: War
 Class: WAH Admin
-Pic: Artist
+Pic: War
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1062,62 +1079,7 @@ Adamant Nature
 - Brave Bird
 - Swords Dance
 
-=== TRAINER_VIOLET ===
-Name: VIOLET
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Roselia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gloom
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ROSE_2 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Shroomish
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Roselia
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-=== TRAINER_ROSE_3 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Shroomish
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Gloom
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Roselia
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-=== TRAINER_ROSE_4 ===
+=== TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
