@@ -61,6 +61,33 @@
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_Magikarp"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_Magikarp"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_Magikarp"
     }
   ],
   "bg_events": []
