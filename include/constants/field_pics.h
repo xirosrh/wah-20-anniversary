@@ -3,5 +3,7 @@
 
 //Name indexes
 #define FP_CUT_ATTACK                   0
+#define FP_MAGIKARP_JUMPING_LEFT        1
+#define FP_MAGIKARP_JUMPING_RIGHT       2
 
 #endif //GUARD_CONSTANTS_FIELD_PICS_H

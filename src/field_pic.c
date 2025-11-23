@@ -33,14 +33,51 @@ static const union AnimCmd *const sAnimsCutAttack[] =
     sAnimCmdCutAttack
 };
 
+static const union AnimCmd sAnimCmdMagikarpJumpingRight[] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(64, 8),
+    ANIMCMD_FRAME(128, 8),
+    ANIMCMD_FRAME(192, 8),
+    ANIMCMD_FRAME(256, 8),
+    ANIMCMD_FRAME(328, 32),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimsMagikarpJumpingRight[] =
+{
+    sAnimCmdMagikarpJumpingRight
+};
+
+static const union AnimCmd sAnimCmdMagikarpJumpingLeft[] =
+{
+    ANIMCMD_FRAME(328, 32),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(64, 8),
+    ANIMCMD_FRAME(128, 8),
+    ANIMCMD_FRAME(192, 8),
+    ANIMCMD_FRAME(256, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimsMagikarpJumpingLeft[] =
+{
+    sAnimCmdMagikarpJumpingLeft
+};
 
 
 static const u32 sPicCutAttack[] = INCBIN_U32("graphics/field_pics/cut.4bpp.lz");
 static const u16 sCutAttackPal[] = INCBIN_U16("graphics/field_pics/cut.gbapal");
+static const u32 sPicMagikarpJumpingLeft[] = INCBIN_U32("graphics/field_pics/magikarp_jumping_left.4bpp.lz");
+static const u32 sPicMagikarpJumpingRight[] = INCBIN_U32("graphics/field_pics/magikarp_jumping_right.4bpp.lz");
+static const u16 sMagikarpJumpingPal[] = INCBIN_U16("graphics/field_pics/magikarp_jumping.gbapal");
+
 
 static const struct Pic sPics[] =
 {
     [FP_CUT_ATTACK] = {sPicCutAttack, sCutAttackPal, SPRITE_SHAPE(32x32), SPRITE_SIZE(32x32), sAnimsCutAttack},
+    [FP_MAGIKARP_JUMPING_LEFT] = {sPicMagikarpJumpingLeft, sMagikarpJumpingPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnimsMagikarpJumpingLeft},
+    [FP_MAGIKARP_JUMPING_RIGHT] = {sPicMagikarpJumpingRight, sMagikarpJumpingPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnimsMagikarpJumpingRight}
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
