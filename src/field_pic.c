@@ -35,12 +35,12 @@ static const union AnimCmd *const sAnimsCutAttack[] =
 
 static const union AnimCmd sAnimCmdMagikarpJumpingRight[] =
 {
-    ANIMCMD_FRAME(0, 8),
-    ANIMCMD_FRAME(64, 8),
-    ANIMCMD_FRAME(128, 8),
-    ANIMCMD_FRAME(192, 8),
-    ANIMCMD_FRAME(256, 8),
-    ANIMCMD_FRAME(328, 32),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(64, 4),
+    ANIMCMD_FRAME(128, 4),
+    ANIMCMD_FRAME(192, 4),
+    ANIMCMD_FRAME(256, 4),
+    ANIMCMD_FRAME(328, 20),
     ANIMCMD_END,
 };
 
@@ -51,12 +51,13 @@ static const union AnimCmd *const sAnimsMagikarpJumpingRight[] =
 
 static const union AnimCmd sAnimCmdMagikarpJumpingLeft[] =
 {
-    ANIMCMD_FRAME(328, 32),
-    ANIMCMD_FRAME(0, 8),
-    ANIMCMD_FRAME(64, 8),
-    ANIMCMD_FRAME(128, 8),
-    ANIMCMD_FRAME(192, 8),
-    ANIMCMD_FRAME(256, 8),
+    ANIMCMD_FRAME(328, 16),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(64, 4),
+    ANIMCMD_FRAME(128, 4),
+    ANIMCMD_FRAME(192, 4),
+    ANIMCMD_FRAME(256, 4),
+    ANIMCMD_FRAME(328, 4),
     ANIMCMD_END,
 };
 

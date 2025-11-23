@@ -107,13 +107,25 @@ script TokynWarRoom_EventScript_Tokyn {
 }
 
 
-script TokynWarRoom_EventScript_Magikarp {
+script TokynWarRoom_EventScript_MagikarpJumping {
     lock
-    load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 70, 55, VAR_TEMP_2)
-    load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 134, 55, VAR_TEMP_3)
-    delay(100)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    switch(var(VAR_TEMP_0)){
+        case 5:
+            load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 102, 60, VAR_TEMP_2)
+            load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 166, 60, VAR_TEMP_3)
+        case 6:
+            load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 86, 60, VAR_TEMP_2)
+            load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 150, 60, VAR_TEMP_3)
+        case 7:
+            load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 70, 60, VAR_TEMP_2)
+            load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 134, 60, VAR_TEMP_3)
+    }
+    delay(70)
     destroy_field_pic(FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2)
     destroy_field_pic(FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48)
     setvar(VAR_TOKYN_WAR_ROOM_STATE, 1)
     release
     end

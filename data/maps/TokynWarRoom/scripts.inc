@@ -200,24 +200,56 @@ TokynWarRoom_EventScript_Tokyn_2:
 	end
 
 
-TokynWarRoom_EventScript_Magikarp::
+TokynWarRoom_EventScript_MagikarpJumping::
 # 111 "data/maps/TokynWarRoom/scripts.pory"
 	lock
 # 112 "data/maps/TokynWarRoom/scripts.pory"
-	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 70, 55, VAR_TEMP_2
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 113 "data/maps/TokynWarRoom/scripts.pory"
-	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 134, 55, VAR_TEMP_3
+	switch VAR_TEMP_0
 # 114 "data/maps/TokynWarRoom/scripts.pory"
-	delay 100
-# 115 "data/maps/TokynWarRoom/scripts.pory"
-	destroy_field_pic FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2
-# 116 "data/maps/TokynWarRoom/scripts.pory"
-	destroy_field_pic FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3
+	case 5, TokynWarRoom_EventScript_MagikarpJumping_3
 # 117 "data/maps/TokynWarRoom/scripts.pory"
+	case 6, TokynWarRoom_EventScript_MagikarpJumping_4
+# 120 "data/maps/TokynWarRoom/scripts.pory"
+	case 7, TokynWarRoom_EventScript_MagikarpJumping_5
+TokynWarRoom_EventScript_MagikarpJumping_1:
+# 124 "data/maps/TokynWarRoom/scripts.pory"
+	delay 70
+# 125 "data/maps/TokynWarRoom/scripts.pory"
+	destroy_field_pic FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2
+# 126 "data/maps/TokynWarRoom/scripts.pory"
+	destroy_field_pic FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3
+# 127 "data/maps/TokynWarRoom/scripts.pory"
+	playse SE_PIN
+# 128 "data/maps/TokynWarRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
+# 129 "data/maps/TokynWarRoom/scripts.pory"
 	setvar VAR_TOKYN_WAR_ROOM_STATE, 1
-# 118 "data/maps/TokynWarRoom/scripts.pory"
+# 130 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end
+
+TokynWarRoom_EventScript_MagikarpJumping_3:
+# 115 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 102, 60, VAR_TEMP_2
+# 116 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 166, 60, VAR_TEMP_3
+	goto TokynWarRoom_EventScript_MagikarpJumping_1
+
+TokynWarRoom_EventScript_MagikarpJumping_4:
+# 118 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 86, 60, VAR_TEMP_2
+# 119 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 150, 60, VAR_TEMP_3
+	goto TokynWarRoom_EventScript_MagikarpJumping_1
+
+TokynWarRoom_EventScript_MagikarpJumping_5:
+# 121 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 70, 60, VAR_TEMP_2
+# 122 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 134, 60, VAR_TEMP_3
+	goto TokynWarRoom_EventScript_MagikarpJumping_1
 
 
 # 10 "data/maps/TokynWarRoom/scripts.pory"

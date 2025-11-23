@@ -69,7 +69,7 @@
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
-      "script": "TokynWarRoom_EventScript_Magikarp"
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
     {
       "type": "trigger",
@@ -78,7 +78,7 @@
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
-      "script": "TokynWarRoom_EventScript_Magikarp"
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
     {
       "type": "trigger",
@@ -87,7 +87,7 @@
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
-      "script": "TokynWarRoom_EventScript_Magikarp"
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
     {
       "type": "trigger",
