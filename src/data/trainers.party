@@ -983,6 +983,85 @@ Jolly Nature
 - Aqua Jet
 - Close Combat
 
+=== TRAINER_WAH_ADMIN_TOKYN_MAIN ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Artist
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Togekiss @ Leftovers
+Ability: Serene Grace
+Level: 55
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
+- Air Slash
+- Aura Sphere
+- Roost
+- Thunder Wave
+
+Smeargle @ Focus Sash
+Ability: Own Tempo
+Level: 55
+EVs: 252 HP / 4 Def / 252 Spe
+Jolly Nature
+- Spore
+- Parting Shot
+- Stealth Rock
+- Destiny Bond
+
+Porygon-Z @ Choice Specs
+Ability: Adaptability
+Level: 55
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Tri Attack
+- Dark Pulse
+- Ice Beam
+- Trick
+
+=== TRAINER_WAH_ADMIN_WAR_MAIN ===
+Name: War
+Class: WAH Admin
+Pic: Artist
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Gallade @ Life Orb
+Ability: Steadfast
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Close Combat
+- Psycho Cut
+- Swords Dance
+- Shadow Sneak
+
+Lucario @ Expert Belt
+Ability: Inner Focus
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Ice Punch
+
+Blaziken @ White Herb
+Ability: Blaze
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Sky Uppercut
+- Brave Bird
+- Swords Dance
+
 === TRAINER_VIOLET ===
 Name: VIOLET
 Class: Aroma Lady

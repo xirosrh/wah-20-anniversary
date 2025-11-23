@@ -60,7 +60,7 @@
 #define FLAG_DEFEATED_ADMIN_REONEKY    0x2E // Used WAH
 #define FLAG_DEFEATED_ADMIN_GALLEGO    0x2F // Used WAH
 #define FLAG_DEFEATED_ADMIN_EING    0x30 // Used WAH
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR    0x31 // Used WAH
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
