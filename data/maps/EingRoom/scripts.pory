@@ -1,1 +1,156 @@
-mapscripts EingRoom_MapScripts {}
+mapscripts EingRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_EING_ROOM_STATE, 0: EingRoom_OnFrame
+    ]
+    MAP_SCRIPT_ON_TRANSITION: EingRoom_OnTransition
+}
+
+script EingRoom_OnTransition {
+    if(var(VAR_EING_ROOM_STATE) == 0) {
+        setflag(FLAG_EINGROOM_HIDE_EING_FISHING)
+        setflag(FLAG_EINGROOM_HIDE_TRAINER_IN_WATER)
+    }
+    if(var(VAR_EING_ROOM_STATE) == 1){
+        setobjectmovementtype(LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT)
+    }
+    end
+}
+
+script EingRoom_OnFrame {
+    release
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    special(SpawnCameraObject)
+    directcameramovementtopos(6, 6)
+    waitmovement(0)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Malditos Xiros y Serg!o, que se han pirado dejándome a mí con el marrón de administrar la página web y el foro…"))
+    playse(SE_PIN)
+    applymovement(LOCALID_EINGROOM_EING, moves(emote_angry, jump_in_place_down, delay_16 * 2))
+    msgbox(format("¡Y yo sin las malditas creedenciales!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    delay(30)
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(walk_right * 2, walk_left * 2, walk_right * 2, walk_left * 2))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(emote_idea, jump_in_place_left, delay_16 * 2))
+    msgbox(format("A ver si las han tirado al fondo del mar como una prueba para desafiarme y ver si soy digno de administrar WAH…\p¡Voy a ver si las pesco!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
+    hideobjectat(LOCALID_EINGROOM_EING, MAP_EING_ROOM)
+    clearflag(FLAG_EINGROOM_HIDE_EING_FISHING)
+    addobject(LOCALID_EINGROOM_EING_FISHING)
+    showobjectat(LOCALID_EINGROOM_EING_FISHING, MAP_EING_ROOM)
+    applymovementandwait(LOCALID_EINGROOM_EING_FISHING, Common_Movement_Fishing)
+    setflag(FLAG_EINGROOM_HIDE_EING_FISHING)
+    removeobject(LOCALID_EINGROOM_EING_FISHING)
+    showobjectat(LOCALID_EINGROOM_EING, MAP_EING_ROOM)
+    clearflag(FLAG_EINGROOM_HIDE_TRAINER_IN_WATER)
+    addobject(LOCALID_EINGROOM_TRAINER_IN_WATER)
+    showobjectat(LOCALID_EINGROOM_TRAINER_IN_WATER, MAP_EING_ROOM)
+    playse(SE_PIN)
+    applymovement(LOCALID_EINGROOM_EING, moves(emote_angry, jump_in_place_left * 3))
+    msgbox(format("¡Maldita sea! ¿Otro entrenador?"), MSGBOX_AUTOCLOSE)
+    delay(30)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_FaceRight)
+    msgbox(format("Esto se está pareciendo a mi rutina de wildbattles dobles del Hoenn Adventures…"), MSGBOX_AUTOCLOSE)
+    turnobject(LOCALID_EINGROOM_EING, DIR_WEST)
+    directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
+    waitmovement(0)
+    setvar(VAR_EING_ROOM_STATE, 1)
+    setobjectmovementtype2(LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT)
+    special(RemoveCameraObject)
+    release
+    end
+}
+
+script EingRoom_EventScript_Eing {
+    lock
+    faceplayer
+    if(flag(FLAG_DEFEATED_ADMIN_EING)) {
+        applymovement(LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48)
+        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE)
+        waitmovement(0)
+        release
+        end
+    }
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(
+        emote_double_exclamation_mark, 
+        lock_facing_direction, 
+        jump_in_place_down * 2, 
+        unlock_facing_direction, 
+        face_player))
+    msgbox(format("¡Coño si tenemos visita! ¿Qué quieres? ¿No ves que estoy ocupado?"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
+    call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
+    delay(40)
+    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tonto te baneo, ¿eh?"), MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(LOCALID_EINGROOM_EING, moves(
+        lock_facing_direction, 
+        jump_in_place_down, 
+        unlock_facing_direction, 
+        face_player))
+    msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(
+        face_away_player
+        emote_thinking
+        delay_16 * 3
+    ))
+    delay(30)
+    call(EingRoom_EventScript_JumpToPlayerDirection)
+    msgbox(format("Está bien, prepárate porque iré con todo, ¡luego no me llores!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Versus)
+    call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
+    delay(30)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_MAIN, format("¡Míralo, si parecía tonto al principio!"))
+    msgbox(format("Enhorabuena chaval, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado..."))
+    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
+    setflag(FLAG_DEFEATED_ADMIN_EING)
+    release
+    end
+}
+
+script EingRoom_EventScript_WalkInPlaceEingFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
+
+script EingRoom_EventScript_JumpToPlayerDirection {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_up_down))
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_down_up))
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_left_right))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_right_left))
+            break
+    }
+    return
+}
+

@@ -88,9 +88,15 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
             [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Este es el límite… ¡y justo aquí es donde yo me crezco!{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¿Listo para ver mi verdadera fuerza?{PAUSE_UNTIL_PRESS}"),
         },
-        [TRAINER_WAH_ADMIN_COSARARA_MAIN] = 
+        [TRAINER_WAH_ADMIN_COSARARA_MAIN] =
         {
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tu una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_ADMIN_EING_MAIN] =
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Venga ya, qué chorra.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Toca sacar el as en la manga.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Todo depende de ti, compañero.{PAUSE_UNTIL_PRESS}"),
         }
     },
 };
