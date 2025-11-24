@@ -189,7 +189,7 @@ script ReonekyRoom_EventScript_Reoneky {
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
     delay(20)
     msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    call(WahRoomsShared_OpenDoor)
     delay(30)
     setflag(FLAG_DEFEATED_ADMIN_REONEKY)
     release

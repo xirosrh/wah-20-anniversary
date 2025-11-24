@@ -68,7 +68,7 @@ ReyBooRoom_EventScript_BooEncounter::
 # 59 "data/maps/ReyBooRoom/scripts.pory"
 	waitmovement 0
 # 60 "data/maps/ReyBooRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 61 "data/maps/ReyBooRoom/scripts.pory"
 	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_4
 # 62 "data/maps/ReyBooRoom/scripts.pory"
@@ -92,7 +92,7 @@ ReyBooRoom_EventScript_BooEncounter::
 # 71 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_6
 # 72 "data/maps/ReyBooRoom/scripts.pory"
-	call PokemonLeague_EliteFour_CloseRoomDoorMetatiles
+	call WahRoomsShared_CloseDoor
 # 73 "data/maps/ReyBooRoom/scripts.pory"
 	msgbox ReyBooRoom_EventScript_BooEncounter_Text_4, MSGBOX_AUTOCLOSE
 # 74 "data/maps/ReyBooRoom/scripts.pory"
@@ -202,7 +202,7 @@ ReyBooRoom_EventScript_BooEncounter::
 # 126 "data/maps/ReyBooRoom/scripts.pory"
 	msgbox ReyBooRoom_EventScript_BooEncounter_Text_15, MSGBOX_AUTOCLOSE
 # 127 "data/maps/ReyBooRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	call WahRoomsShared_OpenDoor
 # 128 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_12
 # 129 "data/maps/ReyBooRoom/scripts.pory"

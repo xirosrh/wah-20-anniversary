@@ -279,7 +279,7 @@ ReonekyRoom_EventScript_Reoneky::
 # 191 "data/maps/ReonekyRoom/scripts.pory"
 	msgbox ReonekyRoom_EventScript_Reoneky_Text_0, MSGBOX_AUTOCLOSE
 # 192 "data/maps/ReonekyRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 193 "data/maps/ReonekyRoom/scripts.pory"
 	delay 30
 # 194 "data/maps/ReonekyRoom/scripts.pory"

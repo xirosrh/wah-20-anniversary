@@ -109,7 +109,7 @@ CheveRoom_EventScript_CuttableTree::
 # 66 "data/maps/CheveRoom/scripts.pory"
 	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown
 # 67 "data/maps/CheveRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 68 "data/maps/CheveRoom/scripts.pory"
 	delay 20
 # 69 "data/maps/CheveRoom/scripts.pory"
@@ -123,7 +123,7 @@ CheveRoom_EventScript_CuttableTree::
 # 73 "data/maps/CheveRoom/scripts.pory"
 	delay 20
 # 74 "data/maps/CheveRoom/scripts.pory"
-	call PokemonLeague_EliteFour_CloseRoomDoorMetatiles
+	call WahRoomsShared_CloseDoor
 # 75 "data/maps/CheveRoom/scripts.pory"
 	msgbox CheveRoom_EventScript_CuttableTree_Text_2, MSGBOX_AUTOCLOSE
 # 76 "data/maps/CheveRoom/scripts.pory"
@@ -249,7 +249,7 @@ CheveRoom_EventScript_CuttableTree::
 # 141 "data/maps/CheveRoom/scripts.pory"
 	msgbox CheveRoom_EventScript_CuttableTree_Text_13
 # 142 "data/maps/CheveRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 143 "data/maps/CheveRoom/scripts.pory"
 	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown
 # 144 "data/maps/CheveRoom/scripts.pory"
