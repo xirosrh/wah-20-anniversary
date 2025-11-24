@@ -221,12 +221,14 @@ TokynWarRoom_EventScript_MagikarpJumping_1:
 # 126 "data/maps/TokynWarRoom/scripts.pory"
 	destroy_field_pic FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3
 # 127 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_PIN
+	turnobject LOCALID_PLAYER, DIR_WEST
 # 128 "data/maps/TokynWarRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
+	playse SE_PIN
 # 129 "data/maps/TokynWarRoom/scripts.pory"
-	setvar VAR_TOKYN_WAR_ROOM_STATE, 1
+	applymovementandwait LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
 # 130 "data/maps/TokynWarRoom/scripts.pory"
+	setvar VAR_TOKYN_WAR_ROOM_STATE, 1
+# 131 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end
 

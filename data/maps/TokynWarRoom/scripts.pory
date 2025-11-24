@@ -124,6 +124,7 @@ script TokynWarRoom_EventScript_MagikarpJumping {
     delay(70)
     destroy_field_pic(FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2)
     destroy_field_pic(FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48)
     setvar(VAR_TOKYN_WAR_ROOM_STATE, 1)
