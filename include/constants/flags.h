@@ -58,9 +58,9 @@
 #define FLAG_DEFEATED_ADMIN_COSARARA    0x2C // Used WAH
 #define FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE    0x2D // Used WAH
 #define FLAG_DEFEATED_ADMIN_REONEKY    0x2E // Used WAH
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_DEFEATED_ADMIN_GALLEGO    0x2F // Used WAH
+#define FLAG_DEFEATED_ADMIN_EING    0x30 // Used WAH
+#define FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR    0x31 // Used WAH
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
@@ -69,8 +69,8 @@
 #define FLAG_REONEKYROOM_HIDE_TYPHLOSION    0x37 // Used WAH
 #define FLAG_REONEKYROOM_HIDE_FIRE    0x38 // Used WAH
 #define FLAG_REONEKYROOM_HIDE_HAUNTER    0x39 // Used WAH
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_EINGROOM_HIDE_TRAINER_IN_WATER    0x3A // Used WAH
+#define FLAG_EINGROOM_HIDE_EING_FISHING    0x3B // Used WAH
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag

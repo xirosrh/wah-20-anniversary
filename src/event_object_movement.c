@@ -516,6 +516,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
     {gObjectEventPal_Aguiar,                OBJ_EVENT_PAL_TAG_AGUIAR},
+    {gObjectEventPal_TrainerInWater1,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1},
+    {gObjectEventPal_TrainerInWater2,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2},
+    {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
     {gObjectEventPal_Crane,                 OBJ_EVENT_PAL_TAG_CRANE},
     {gObjectEventPal_FlameWheelAttack,      OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK},
 #if OW_FOLLOWERS_POKEBALLS
@@ -703,6 +706,7 @@ static const u8 sFishingBiteDirectionAnimNums[] = {
     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_NORTH,
     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_NORTH,
 };
+
 static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NONE] = ANIM_RUN_SOUTH,
     [DIR_SOUTH] = ANIM_RUN_SOUTH,
@@ -8319,6 +8323,12 @@ bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, stru
 bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
+    return FALSE;
+}
+
+bool8 MovementAction_EingFishing_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_EING_FISHING_WEST);
     return FALSE;
 }
 
