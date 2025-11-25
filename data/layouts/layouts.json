@@ -4146,8 +4146,8 @@
       "name": "GoceRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Goce",
       "border_filepath": "data/layouts/GoceRoom/border.bin",
       "blockdata_filepath": "data/layouts/GoceRoom/map.bin"
     },
