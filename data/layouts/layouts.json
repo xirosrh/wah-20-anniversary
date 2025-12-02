@@ -4226,8 +4226,8 @@
       "name": "BaroRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Baro",
       "border_filepath": "data/layouts/BaroRoom/border.bin",
       "blockdata_filepath": "data/layouts/BaroRoom/map.bin"
     },
