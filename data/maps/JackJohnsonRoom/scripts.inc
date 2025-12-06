@@ -37,7 +37,7 @@ JackJohnsonRoom_OnFrame::
 # 22 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 23 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 24 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp
 # 25 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -55,7 +55,7 @@ JackJohnsonRoom_OnFrame::
 # 31 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
 # 32 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 33 "data/maps/JackJohnsonRoom/scripts.pory"
 	directcameramovementtopos 6, 7
 # 34 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -83,7 +83,7 @@ JackJohnsonRoom_OnFrame::
 # 45 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 46 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 47 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_FirstCombinationNpc1And3
 # 48 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -109,7 +109,7 @@ JackJohnsonRoom_OnFrame::
 # 58 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight
 # 59 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 60 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs
 # 61 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -143,13 +143,13 @@ JackJohnsonRoom_OnFrame::
 # 75 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_0
 # 80 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 81 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 82 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
 # 83 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 84 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock
 # 85 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -163,7 +163,7 @@ JackJohnsonRoom_OnFrame::
 # 89 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement LOCALID_JACKROOM_NPC2
 # 90 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 91 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1
 # 92 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -283,7 +283,7 @@ JackJohnsonRoom_OnFrame::
 # 167 "data/maps/JackJohnsonRoom/scripts.pory"
 	fadescreen FADE_FROM_WHITE
 # 168 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 169 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_11
 # 174 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -345,19 +345,19 @@ JackJohnsonRoom_OnFrame::
 # 220 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48
 # 221 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 222 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 223 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, Common_Movement_WalkUp5
+	applymovement LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6
 # 224 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkUp5
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp6
 # 225 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 226 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_WEST
 # 227 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 228 "data/maps/JackJohnsonRoom/scripts.pory"
 	playse SE_PIN
 # 229 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -367,7 +367,7 @@ JackJohnsonRoom_OnFrame::
 # 231 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_16
 # 236 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_10
+	msgbox JackJohnsonRoom_OnFrame_Text_10, speaker = SP_NAME_JACK_JOHNSON
 # 237 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_SOUTH
 # 238 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -385,7 +385,7 @@ JackJohnsonRoom_OnFrame::
 # 244 "data/maps/JackJohnsonRoom/scripts.pory"
 	special RemoveCameraObject
 # 245 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_12
+	msgbox JackJohnsonRoom_OnFrame_Text_12, speaker = SP_NAME_JACK_JOHNSON
 # 246 "data/maps/JackJohnsonRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_OnFrame_Text_13
 # 247 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -407,13 +407,13 @@ JackJohnsonRoom_OnFrame::
 # 255 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
 # 256 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 257 "data/maps/JackJohnsonRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	call WahRoomsShared_OpenDoor
 # 258 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkUp4
 # 259 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_15, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_OnFrame_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 260 "data/maps/JackJohnsonRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 # 261 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -685,7 +685,7 @@ JackJohnsonRoom_EventScript_Jack::
 # 363 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovement LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2
 # 364 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 365 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 366 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -693,7 +693,7 @@ JackJohnsonRoom_EventScript_Jack::
 # 367 "data/maps/JackJohnsonRoom/scripts.pory"
 	faceplayer
 # 368 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_EventScript_Jack_Text_1, MSGBOX_AUTOCLOSE
+	msgbox JackJohnsonRoom_EventScript_Jack_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 369 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_NORTH
 	end
@@ -950,7 +950,7 @@ JackJohnsonRoom_OnFrame_Movement_15:
 # 205 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock_facing_direction
 # 206 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_3_left
+	jump_2_left
 # 207 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
