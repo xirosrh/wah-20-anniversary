@@ -852,3 +852,36 @@ const struct Tileset gTileset_Room_Reoneky =
     .metatileAttributes = gMetatileAttributes_Room_Reoneky,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Room_Goce =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Goce,
+    .palettes = gTilesetPalettes_Room_Goce,
+    .metatiles = gMetatiles_Room_Goce,
+    .metatileAttributes = gMetatileAttributes_Room_Goce,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Baro =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Baro,
+    .palettes = gTilesetPalettes_Room_Baro,
+    .metatiles = gMetatiles_Room_Baro,
+    .metatileAttributes = gMetatileAttributes_Room_Baro,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Jack_Johnson =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Jack_Johnson,
+    .palettes = gTilesetPalettes_Room_Jack_Johnson,
+    .metatiles = gMetatiles_Room_Jack_Johnson,
+    .metatileAttributes = gMetatileAttributes_Room_Jack_Johnson,
+    .callback = NULL,
+};
