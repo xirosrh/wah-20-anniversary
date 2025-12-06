@@ -57,7 +57,7 @@ script ReyBooRoom_EventScript_BooEncounter {
         walk_faster_left * 2
         jump_in_place_up ))
     waitmovement(0)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    call(WahRoomsShared_OpenDoor)
     applymovement(LOCALID_REYBOOROOM_BOO, moves(walk_faster_up, set_invisible))
     applymovement(LOCALID_REYBOOROOM_VIGOROTH, moves(delay_16, jump_in_place_up, walk_faster_up * 2, set_invisible))
     waitmovement(LOCALID_REYBOOROOM_VIGOROTH)
@@ -69,7 +69,7 @@ script ReyBooRoom_EventScript_BooEncounter {
     waitmovement(0)
     delay(30)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(face_down, set_visible, walk_down, delay_8, face_up, delay_16))
-    call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
+    call(WahRoomsShared_CloseDoor)
     msgbox(format("Menos mal."), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_down, face_up, delay_16 * 2))
     msgbox(format("Madre mía, qué mala bestia…"), MSGBOX_AUTOCLOSE)
@@ -124,7 +124,7 @@ script ReyBooRoom_EventScript_BooEncounter {
     delay(20)
     turnobject(LOCALID_REYBOOROOM_BOO, DIR_SOUTH)
     msgbox(format("¡Volveré!"), MSGBOX_AUTOCLOSE)
-    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+    call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_up, set_invisible))
     playse(SE_CONTEST_CONDITION_LOSE)
     waitse

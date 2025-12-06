@@ -48,7 +48,14 @@
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_TOKYN_WAR_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JACK_JOHNSON_ROOM",
       "dest_warp_id": "0"
     }
   ],

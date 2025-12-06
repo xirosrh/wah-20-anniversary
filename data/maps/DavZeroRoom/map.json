@@ -90,7 +90,14 @@
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_DAV_ZERO_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JavsJavi4315Room",
       "dest_warp_id": "0"
     }
   ],
