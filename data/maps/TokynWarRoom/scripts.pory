@@ -3,8 +3,18 @@ mapscripts TokynWarRoom_MapScripts {
 
 script TokynWarRoom_EventScript_MainCutscene {
     lockall
-    moveobjecttopos(LOCALID_PLAYER, 6, 7, DIR_NORTH)
-    waitmovement(0)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    switch(var(VAR_TEMP_0)) {
+        case 4:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkRight2)
+        case 5:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkRight)
+        case 7:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkLeft)
+        case 8:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkLeft2)
+    }
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_SurpriseWithDelay48)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_down * 2, face_right))
