@@ -3,7 +3,62 @@ mapscripts JackJohnsonRoom_MapScripts {
 		VAR_JACK_JOHNSON_ROOM_STATE, 0: JackJohnsonRoom_OnFrame
 	]
     MAP_SCRIPT_ON_TRANSITION: JackJohnsonRoom_OnTransition
+    MAP_SCRIPT_ON_LOAD: JackJohnsonRoom_OnLoad
 }
+
+script JackJohnsonRoom_OnLoad {
+    if(var(VAR_JACK_JOHNSON_ROOM_STATE) == 0) {
+        //middle
+	    setmetatile(6, 5,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_1, 0)
+        setmetatile(6, 6,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_2, 0)
+        setmetatile(6, 7,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_3, 0)
+        setmetatile(6, 8,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_4, 0)
+        //left
+        setmetatile(5, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1, 0)
+        setmetatile(5, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2, 0)
+        setmetatile(5, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_3, 0)
+        setmetatile(5, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_4, 0)
+        setmetatile(4, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1, 0)
+        setmetatile(4, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2, 0)
+        setmetatile(4, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_3, 0)
+        setmetatile(4, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_4, 0)
+        setmetatile(3, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1, 0)
+        setmetatile(3, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2, 0)
+        setmetatile(3, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_3, 0)
+        setmetatile(3, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_4, 0)
+        setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1, 0)
+        setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2, 0)
+        setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_3, 0)
+        setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_4, 0)
+        setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1, 0)
+        setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2, 0)
+        setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_3, 0)
+        setmetatile(1, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_4, 0)
+
+        //right
+        setmetatile(7, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_1, 0)
+        setmetatile(7, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_2, 0)
+        setmetatile(7, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_3, 0)
+        setmetatile(7, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_4, 0)
+        setmetatile(8, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_1, 0)
+        setmetatile(8, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_2, 0)
+        setmetatile(8, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_3, 0)
+        setmetatile(8, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_4, 0)
+        setmetatile(9, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_1, 0)
+        setmetatile(9, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_2, 0)
+        setmetatile(9, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_3, 0)
+        setmetatile(9, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_4, 0)
+        setmetatile(10, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_1, 0)
+        setmetatile(10, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_2, 0)
+        setmetatile(10, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_3, 0)
+        setmetatile(10, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_4, 0)
+        setmetatile(11, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_1, 0)
+        setmetatile(11, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_2, 0)
+        setmetatile(11, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_3, 0)
+        setmetatile(11, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME1_4, 0)
+    }
+}
+
 
 script JackJohnsonRoom_OnTransition {
     setflag(FLAG_JACKROOM_HIDE_NPC1_BALL)
@@ -15,12 +70,223 @@ script JackJohnsonRoom_OnTransition {
     end
 }
 
+script JackJohnsonRoom_EventScript_OpenCurtain1 {
+    setmetatile(6, 5,  METATILE_Room_Jack_Johnson_CURTAIN_ROD, 0)
+    setmetatile(6, 6,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(6, 7,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(6, 8,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    //left
+    setmetatile(5, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_5, 0)
+    setmetatile(5, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_6, 0)
+    setmetatile(5, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_7, 0)
+    setmetatile(5, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_8, 0)
+    setmetatile(4, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_1, 0)
+    setmetatile(4, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_2, 0)
+    setmetatile(4, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_3, 0)
+    setmetatile(4, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_4, 0)
+    setmetatile(3, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_1, 0)
+    setmetatile(3, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_2, 0)
+    setmetatile(3, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_3, 0)
+    setmetatile(3, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_4, 0)
+    setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_1, 0)
+    setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_2, 0)
+    setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_3, 0)
+    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_4, 0)
+    setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_1, 0)
+    setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_2, 0)
+    setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_3, 0)
+    setmetatile(1, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME2_4, 0)
+
+    //right
+    setmetatile(7, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_5, 0)
+    setmetatile(7, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_6, 0)
+    setmetatile(7, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_7, 0)
+    setmetatile(7, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_8, 0)
+    setmetatile(8, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_1, 0)
+    setmetatile(8, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_2, 0)
+    setmetatile(8, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_3, 0)
+    setmetatile(8, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_4, 0)
+    setmetatile(9, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_1, 0)
+    setmetatile(9, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_2, 0)
+    setmetatile(9, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_3, 0)
+    setmetatile(9, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_4, 0)
+    setmetatile(10, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_1, 0)
+    setmetatile(10, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_2, 0)
+    setmetatile(10, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_3, 0)
+    setmetatile(10, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_4, 0)
+    setmetatile(11, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_1, 0)
+    setmetatile(11, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_2, 0)
+    setmetatile(11, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_3, 0)
+    setmetatile(11, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME2_4, 0)
+
+
+    return
+}
+
+script JackJohnsonRoom_EventScript_OpenCurtain2 {
+    //left
+    setmetatile(5, 5,  METATILE_Room_Jack_Johnson_CURTAIN_ROD, 0)
+    setmetatile(5, 6,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(5, 7,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(5, 8,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(4, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_5, 0)
+    setmetatile(4, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_6, 0)
+    setmetatile(4, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_7, 0)
+    setmetatile(4, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_8, 0)
+    setmetatile(3, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_1, 0)
+    setmetatile(3, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_2, 0)
+    setmetatile(3, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_3, 0)
+    setmetatile(3, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_4, 0)
+    setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_1, 0)
+    setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_2, 0)
+    setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_3, 0)
+    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_4, 0)
+    setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_1, 0)
+    setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_2, 0)
+    setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_3, 0)
+    setmetatile(1, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME3_4, 0)
+
+    //right
+    setmetatile(7, 5,  METATILE_Room_Jack_Johnson_CURTAIN_ROD, 0)
+    setmetatile(7, 6,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(7, 7,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(7, 8,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(8, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_5, 0)
+    setmetatile(8, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_6, 0)
+    setmetatile(8, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_7, 0)
+    setmetatile(8, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_8, 0)
+    setmetatile(9, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_1, 0)
+    setmetatile(9, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_2, 0)
+    setmetatile(9, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_3, 0)
+    setmetatile(9, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_4, 0)
+    setmetatile(10, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_1, 0)
+    setmetatile(10, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_2, 0)
+    setmetatile(10, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_3, 0)
+    setmetatile(10, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_4, 0)
+    setmetatile(11, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_1, 0)
+    setmetatile(11, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_2, 0)
+    setmetatile(11, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_3, 0)
+    setmetatile(11, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME3_4, 0)
+
+    return
+}
+
+script JackJohnsonRoom_EventScript_OpenCurtain3 {
+
+    //left
+    setmetatile(4, 5,  METATILE_Room_Jack_Johnson_CURTAIN_ROD, 0)
+    setmetatile(4, 6,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(4, 7,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(4, 8,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(3, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_5, 0)
+    setmetatile(3, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_6, 0)
+    setmetatile(3, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_7, 0)
+    setmetatile(3, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_8, 0)
+    setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_1, 0)
+    setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_2, 0)
+    setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_3, 0)
+    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME4_4, 0)
+
+    //right
+    setmetatile(8, 5,  METATILE_Room_Jack_Johnson_CURTAIN_ROD, 0)
+    setmetatile(8, 6,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(8, 7,  METATILE_Room_Jack_Johnson_FLOOR, 0)
+    setmetatile(8, 8,  METATILE_Room_Jack_Johnson_PAPER, 0)
+    setmetatile(9, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_5, 0)
+    setmetatile(9, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_6, 0)
+    setmetatile(9, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_7, 0)
+    setmetatile(9, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_8, 0)
+    setmetatile(10, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_1, 0)
+    setmetatile(10, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_2, 0)
+    setmetatile(10, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_3, 0)
+    setmetatile(10, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME4_4, 0)
+    return
+}
+
+script JackJohnsonRoom_EventScript_OpenCurtain4 {
+    //left
+    setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_5, 0)
+    setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_6, 0)
+    setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_7, 0)
+    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_8, 0)
+    setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_1, 0)
+    setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_2, 0)
+    setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_3, 0)
+    setmetatile(1, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_4, 0)
+
+    //right
+    setmetatile(10, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_5, 0)
+    setmetatile(10, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_6, 0)
+    setmetatile(10, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_7, 0)
+    setmetatile(10, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_8, 0)
+    setmetatile(11, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_1, 0)
+    setmetatile(11, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_2, 0)
+    setmetatile(11, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_3, 0)
+    setmetatile(11, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME5_4, 0)
+    return
+}
+
+script JackJohnsonRoom_EventScript_OpenCurtain5 {
+    //left
+    setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME6_1, 0)
+    setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME6_2, 0)
+    setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME6_3, 0)
+    setmetatile(1, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME6_4, 0)
+
+    //right
+    setmetatile(11, 5, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME6_1, 0)
+    setmetatile(11, 6, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME6_2, 0)
+    setmetatile(11, 7, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME6_3, 0)
+    setmetatile(11, 8, METATILE_Room_Jack_Johnson_CURTAIN_RIGHT_FRAME6_4, 0)
+    return
+}
+
+script JackJohnsonRoom_EventScript_OpenCurtain {
+    call(JackJohnsonRoom_EventScript_OpenCurtain1)
+    special(DrawWholeMapView)
+    delay(5)
+    call(JackJohnsonRoom_EventScript_OpenCurtain2)
+    special(DrawWholeMapView)
+    delay(5)
+    call(JackJohnsonRoom_EventScript_OpenCurtain3)
+    special(DrawWholeMapView)
+    delay(5)
+    call(JackJohnsonRoom_EventScript_OpenCurtain4)
+    special(DrawWholeMapView)
+    delay(5)
+    call(JackJohnsonRoom_EventScript_OpenCurtain5)
+    special(DrawWholeMapView)
+    delay(5)
+    return
+}
+
+script JackJohnsonRoom_EventScript_TurnOnLights {
+    setmetatile(3, 6, METATILE_Room_Jack_Johnson_LEFT_LIGHT_FIXTURE_ON, 0)
+    setmetatile(4, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0)
+    setmetatile(5, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0)
+    setmetatile(4, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0)
+    setmetatile(5, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0)
+    setmetatile(9, 6, METATILE_Room_Jack_Johnson_RIGHT_LIGHT_FIXTURE_ON, 0)
+    setmetatile(7, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0)
+    setmetatile(8, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0)
+    setmetatile(7, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0)
+    setmetatile(8, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0)
+    special(DrawWholeMapView)
+    return
+}
+
 script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     special(SpawnCameraObject)
     directcameramovementtopos(6,9)
     waitmovement(0)
+    msgbox(format("Es hora de comenzar el ensayo… ¡Cortinas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
+    directcameramovementtopos(6,7)
+    waitmovement(0)
+    call(JackJohnsonRoom_EventScript_OpenCurtain)
     msgbox(format("¡Desde el principio! ¡Quiero que cada movimiento sea perfecto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    //TODO Xiros:
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
     delay(30)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown)
@@ -29,9 +295,10 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
     delay(20)
+    msgbox(format("¡Luces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    call(JackJohnsonRoom_EventScript_TurnOnLights)
+    delay(20)
     msgbox(format("¡Empecemos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
-    directcameramovementtopos(6,7)
-    waitmovement(0)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection)
