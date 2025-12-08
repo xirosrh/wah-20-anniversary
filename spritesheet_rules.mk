@@ -154,10 +154,18 @@ $(OBJEVENTGFXDIR)/people/team_magma/magma_member_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/team_magma/maxie.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
+        $(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/admins/blax.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
+        $(GFX) $< $@ -mwidth 2 -mheight 4
+$(OBJEVENTGFXDIR)/people/admins/jackjohnson.4bpp: %.4bpp: %.png
+        $(GFX) $< $@ -mwidth 2 -mheight 4
+$(OBJEVENTGFXDIR)/people/admins/reyboo.4bpp: %.4bpp: %.png
+        $(GFX) $< $@ -mwidth 2 -mheight 4
+$(OBJEVENTGFXDIR)/people/admins/goce.4bpp: %.4bpp: %.png
+        $(GFX) $< $@ -mwidth 2 -mheight 4
+$(OBJEVENTGFXDIR)/people/admins/reoneky.4bpp: %.4bpp: %.png
+        $(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/admins/aguiar.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

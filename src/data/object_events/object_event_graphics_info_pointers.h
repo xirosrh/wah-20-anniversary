@@ -48,6 +48,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReyBoo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goce;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Reoneky;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crane;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlameWheelAttack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty;
@@ -507,6 +511,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
     [OBJ_EVENT_GFX_BLAX] =                     &gObjectEventGraphicsInfo_Blax,
+    [OBJ_EVENT_GFX_JACK_JOHNSON] =             &gObjectEventGraphicsInfo_JackJohnson,
+    [OBJ_EVENT_GFX_REY_BOO] =                  &gObjectEventGraphicsInfo_ReyBoo,
+    [OBJ_EVENT_GFX_GOCE] =                     &gObjectEventGraphicsInfo_Goce,
+    [OBJ_EVENT_GFX_REONEKY] =                  &gObjectEventGraphicsInfo_Reoneky,
     [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
