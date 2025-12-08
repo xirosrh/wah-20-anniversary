@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_REYBOOROOM_BOO",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_REY_BOO",
       "x": 6,
       "y": 5,
       "elevation": 0,
