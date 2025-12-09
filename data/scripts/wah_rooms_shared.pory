@@ -26,3 +26,8 @@ script WahRoomsShared_CloseDoor {
     special(DrawWholeMapView)
     return
 }
+
+script WahRoomsShared_SetDoorAsOpen {
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Open, FALSE)
+    return
+}

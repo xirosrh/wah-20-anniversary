@@ -45,3 +45,9 @@ WahRoomsShared_CloseDoor::
 	special DrawWholeMapView
 	return
 
+
+WahRoomsShared_SetDoorAsOpen::
+# 31 "data/scripts/wah_rooms_shared.pory"
+	setmetatile 6, 2, METATILE_RoomGeneral_Door_Open, FALSE
+	return
+
