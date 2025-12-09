@@ -4,10 +4,39 @@ mapscripts JackJohnsonRoom_MapScripts {
 	]
     MAP_SCRIPT_ON_TRANSITION: JackJohnsonRoom_OnTransition
     MAP_SCRIPT_ON_LOAD: JackJohnsonRoom_OnLoad
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_8, 0: JackJohnsonRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_RESUME: JackJohnsonRoom_OnResume
+}
+
+script JackJohnsonRoom_OnResume {
+    if(defeated(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN)) {
+        setobjectxy(LOCALID_JACKROOM_NPC2, 3, 6)
+        setobjectxy(LOCALID_JACKROOM_NPC4, 5, 6)
+        setobjectxy(LOCALID_JACKROOM_NPC3, 7, 6)
+        setobjectxy(LOCALID_JACKROOM_NPC1, 9, 6)
+        setobjectxyperm(LOCALID_JACKROOM_NPC2, 3, 6)
+        setobjectxyperm(LOCALID_JACKROOM_NPC4, 5, 6)
+        setobjectxyperm(LOCALID_JACKROOM_NPC3, 7, 6)
+        setobjectxyperm(LOCALID_JACKROOM_NPC1, 9, 6)
+        turnobject(LOCALID_JACKROOM_NPC2, DIR_SOUTH)
+        turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
+        turnobject(LOCALID_JACKROOM_NPC3, DIR_SOUTH)
+        turnobject(LOCALID_JACKROOM_NPC1, DIR_SOUTH)
+    }
+    end
+}
+
+script JackJohnsonRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
 }
 
 script JackJohnsonRoom_OnLoad {
-    if(var(VAR_JACK_JOHNSON_ROOM_STATE) == 0) {
+    if(flag(FLAG_DEFEATED_ADMIN_JACK_JOHNSON)) {
+        call(WahRoomsShared_SetDoorAsOpen)
+    } else {
         //middle
 	    setmetatile(6, 5,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_1, 0)
         setmetatile(6, 6,  METATILE_Room_Jack_Johnson_CURTAIN_MIDDLE_2, 0)
@@ -505,24 +534,18 @@ script JackJohnsonRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
     msgbox(format("¿Y tú? ¿Qué haces ahí parado?"), MSGBOX_AUTOCLOSE)
-    applymovement(LOCALID_CAMERA, moves(walk_down * 7))
-    applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 6, delay_16))
+    applymovement(LOCALID_CAMERA, moves(walk_down * 4))
+    applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 3, delay_16))
     waitmovement(0)
+    msgbox(format("¡Ven aquí inmediatamente!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(RemoveCameraObject)
     msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), speaker = SP_NAME_JACK_JOHNSON)
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, format("Has  tomado el mando, enhorabuena."))
-    setobjectxy(LOCALID_JACKROOM_NPC2, 3, 6)
-    setobjectxy(LOCALID_JACKROOM_NPC4, 5, 6)
-    setobjectxy(LOCALID_JACKROOM_NPC3, 7, 6)
-    setobjectxy(LOCALID_JACKROOM_NPC1, 9, 6)
-    setobjectxyperm(LOCALID_JACKROOM_NPC2, 3, 6)
-    setobjectxyperm(LOCALID_JACKROOM_NPC4, 5, 6)
-    setobjectxyperm(LOCALID_JACKROOM_NPC3, 7, 6)
-    setobjectxyperm(LOCALID_JACKROOM_NPC1, 9, 6)
     delay(20)
     msgbox(format("Magnífico… impecable. Cada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     call(WahRoomsShared_OpenDoor)
-    applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp4)
+    applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp)
     msgbox(format("Y ustedes… ¡a trabajar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     setobjectmovementtype2(LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
     setobjectmovementtype2(LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
