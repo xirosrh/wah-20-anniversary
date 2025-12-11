@@ -46,6 +46,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Drive;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PkPower;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Omega;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Klein;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson;
@@ -529,6 +533,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
     [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
+    [OBJ_EVENT_GFX_DRIVE] =                    &gObjectEventGraphicsInfo_Drive,
+    [OBJ_EVENT_GFX_PKPOWER] =                  &gObjectEventGraphicsInfo_PkPower,
+    [OBJ_EVENT_GFX_OMEGA] =                    &gObjectEventGraphicsInfo_Omega,
+    [OBJ_EVENT_GFX_KLEIN] =                    &gObjectEventGraphicsInfo_Klein,
     [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
