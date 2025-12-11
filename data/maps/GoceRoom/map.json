@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_GOCEROOM_GOCE",
-      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
+      "graphics_id": "OBJ_EVENT_GFX_GOCE",
       "x": 6,
       "y": 5,
       "elevation": 0,

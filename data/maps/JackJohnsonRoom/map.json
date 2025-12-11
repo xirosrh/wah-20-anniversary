@@ -16,9 +16,9 @@
   "object_events": [
     {
       "local_id": "LOCALID_JACKROOM_JACK",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_JACK_JOHNSON",
       "x": 6,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,

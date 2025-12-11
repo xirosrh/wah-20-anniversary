@@ -1,27 +1,58 @@
-mapscripts GoceRoom_MapScripts {}
+mapscripts GoceRoom_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_8, 0: GoceRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: GoceRoom_OnLoad
 
+}
+
+script GoceRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_GOCE)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script GoceRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
 
 script GoceRoom_EventScript_Goce {
     if(flag(FLAG_DEFEATED_ADMIN_GOCE)){
-        msgbox(format("Ya puedes avanzar al siguiente desafío.\pTodavía queda mucho por recorrer."), MSGBOX_NPC)
+        msgbox(format("Ya puedes avanzar al siguiente desafío.\pTodavía queda mucho por recorrer."), MSGBOX_NPC, speaker = SP_NAME_GOCE)
         release
         end
     }
     else {
           lock
         faceplayer
-        msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."))
+        msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."), speaker = SP_NAME_GOCE)
         trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, format("Increíble como han evolucionado en estos últimos 20 años..."))
         delay(10)
-        msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE) //TODO Xiros
+        msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
+        delay(20)
         playse(SE_PIN)
         applymovement(LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48)
         waitmovement(0)
         waitse
-        msgbox(format("Eh, ¿así que no sabes quién soy? Me conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\pIgual, lo que importa no es mi nombre, sino que lo que comenzó siga vivo.\pTú acabas de demostrarme que lo está, niñ{OA}.\pPuedes continuar."), MSGBOX_AUTOCLOSE)
-        call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles) //TODO Xiros
+        msgbox(format("Eh, ¿así que no sabes quién soy? Me conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\pIgual, lo que importa no es mi nombre, sino que lo que comenzó siga vivo.\pTú acabas de demostrarme que lo está, niñ{OA}.\pPuedes continuar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if(var(VAR_TEMP_0) == 5) {
+            applymovementandwait(LOCALID_GOCEROOM_GOCE, 
+            moves(lock_facing_direction, walk_right, unlock_facing_direction))
+            setobjectxy(LOCALID_GOCEROOM_GOCE, 7, 5)
+            setobjectxyperm(LOCALID_GOCEROOM_GOCE, 7, 5)
+        } else {
+            applymovementandwait(LOCALID_GOCEROOM_GOCE, 
+            moves(face_right, lock_facing_direction, walk_left, unlock_facing_direction))
+            setobjectxy(LOCALID_GOCEROOM_GOCE, 5, 5)
+            setobjectxyperm(LOCALID_GOCEROOM_GOCE, 5, 5)
+        }
+        call(WahRoomsShared_OpenDoor)
         setflag(FLAG_DEFEATED_ADMIN_GOCE)
         release
+        end
     }
-    end
+   
 }
