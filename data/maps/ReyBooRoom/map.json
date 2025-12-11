@@ -62,24 +62,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 2,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
       "x": 4,
       "y": 8,
       "elevation": 0,
@@ -117,24 +99,6 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
       "y": 8,
       "elevation": 0,
       "var": "VAR_REY_BOO_ROOM_STATE",

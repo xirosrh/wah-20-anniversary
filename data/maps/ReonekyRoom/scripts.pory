@@ -40,7 +40,7 @@ script ReonekyRoom_OnFrame {
     release
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
     special(SpawnCameraObject)
-    directcameramovementtopos(5, 7)
+    directcameramovementtopos(6, 7)
     waitmovement(0)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
     msgbox(format("¡Spitfire, mantén la distancia!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)

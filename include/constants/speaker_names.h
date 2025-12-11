@@ -8,7 +8,9 @@ enum SpeakerNames {
     SP_NAME_JACK_JOHNSON,
     SP_NAME_GOCE,
     SP_NAME_REONEKY,
-    SP_NAME_REYBOO,
+    SP_NAME_REY_BOO,
+    SP_NAME_CHEVE,
+    SP_NAME_UNKNOWN,
     SP_NAME_COUNT
 };
 

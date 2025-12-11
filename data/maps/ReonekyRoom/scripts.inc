@@ -76,7 +76,7 @@ ReonekyRoom_OnFrame::
 # 42 "data/maps/ReonekyRoom/scripts.pory"
 	special SpawnCameraObject
 # 43 "data/maps/ReonekyRoom/scripts.pory"
-	directcameramovementtopos 5, 7
+	directcameramovementtopos 6, 7
 # 44 "data/maps/ReonekyRoom/scripts.pory"
 	waitmovement 0
 # 45 "data/maps/ReonekyRoom/scripts.pory"
