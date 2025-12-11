@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_EINGROOM_EING",
-      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "graphics_id": "OBJ_EVENT_GFX_EING",
       "x": 6,
       "y": 6,
       "elevation": 0,
