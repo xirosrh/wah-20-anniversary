@@ -56,6 +56,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cosarara;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sergio;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crane;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlameWheelAttack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty;
@@ -523,6 +526,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OZUMAS] =                   &gObjectEventGraphicsInfo_Ozumas,
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
     [OBJ_EVENT_GFX_SCAREX] =                   &gObjectEventGraphicsInfo_Scarex,
+    [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
+    [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
+    [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
     [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,

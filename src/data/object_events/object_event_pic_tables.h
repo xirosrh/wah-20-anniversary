@@ -269,6 +269,18 @@ static const struct SpriteFrameImage sPicTable_Reoneky[] = {
     overworld_ascending_frames(gObjectEventPic_Reoneky, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Xiros[] = {
+    overworld_ascending_frames(gObjectEventPic_Xiros, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Eing[] = {
+    overworld_ascending_frames(gObjectEventPic_Eing, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Sergio[] = {
+    overworld_ascending_frames(gObjectEventPic_Sergio, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
     overworld_ascending_frames(gObjectEventPic_Beauty, 2, 4),
 };
