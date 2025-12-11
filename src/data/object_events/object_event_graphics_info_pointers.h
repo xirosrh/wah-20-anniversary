@@ -47,7 +47,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerInWater3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AguiarSmoking;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReyBoo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goce;
@@ -529,7 +529,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
     [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
-    [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
+    [OBJ_EVENT_GFX_AGUIAR_SMOKING] =                   &gObjectEventGraphicsInfo_AguiarSmoking,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
 };

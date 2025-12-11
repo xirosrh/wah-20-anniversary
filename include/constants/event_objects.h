@@ -247,7 +247,7 @@
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
 #define OBJ_EVENT_GFX_APRICORN_TREE              242
-#define OBJ_EVENT_GFX_AGUIAR                     243
+#define OBJ_EVENT_GFX_AGUIAR_SMOKING                     243
 #define OBJ_EVENT_GFX_CRANE                      244
 #define OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK         245
 #define OBJ_EVENT_GFX_EING_FISHING               246

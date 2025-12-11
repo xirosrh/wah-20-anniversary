@@ -15,8 +15,8 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_AGUIARROOM_AGUIAR",
-      "graphics_id": "OBJ_EVENT_GFX_AGUIAR",
+      "local_id": "LOCALID_AGUIARROOM_AGUIAR_SMOKING",
+      "graphics_id": "OBJ_EVENT_GFX_AGUIAR_SMOKING",
       "x": 6,
       "y": 5,
       "elevation": 0,
