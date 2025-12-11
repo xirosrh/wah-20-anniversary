@@ -516,4 +516,6 @@ bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
 u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
 
+u8 GetObjectEventApricornTreeId(u8 objectEventId);
+
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

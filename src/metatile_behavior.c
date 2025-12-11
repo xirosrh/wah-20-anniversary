@@ -252,14 +252,6 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_UNUSED_04)
-        return TRUE;
-    else
-        return FALSE;
-}
-
 bool8 MetatileBehavior_IsLadder(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_LADDER)
@@ -331,7 +323,7 @@ bool8 MetatileBehavior_IsSouthArrowWarp(u8 metatileBehavior)
 
 bool8 UNUSED Unref_MetatileBehavior_IsArrowWarp(u8 metatileBehavior)
 {
-    u8 isArrowWarp = FALSE;
+    bool32 isArrowWarp = FALSE;
 
     if (MetatileBehavior_IsEastArrowWarp(metatileBehavior)
      || MetatileBehavior_IsWestArrowWarp(metatileBehavior)
@@ -1547,6 +1539,14 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
 bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_CLIMB)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HEADBUTT)
         return TRUE;
     else
         return FALSE;
