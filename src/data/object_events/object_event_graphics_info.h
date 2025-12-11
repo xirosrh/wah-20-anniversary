@@ -996,7 +996,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Standard,
+    .anims = sAnimTable_StandardWithFall,
     .images = sPicTable_Scarex,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
