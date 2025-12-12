@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_DRIVEKATHERINEROOM_DRIVE",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_DRIVE",
       "x": 5,
       "y": 6,
       "elevation": 0,
