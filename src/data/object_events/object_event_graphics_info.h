@@ -916,7 +916,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AguiarSmoking = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_AGUIAR,
     .size = 256,
@@ -929,7 +929,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_StandardWithSleeping,
-    .images = sPicTable_Aguiar,
+    .images = sPicTable_AguiarSmoking,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
