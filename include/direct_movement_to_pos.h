@@ -1,0 +1,8 @@
+#ifndef GUARD_DIRECT_MOVEMENT_TO_POS_H
+#define GUARD_DIRECT_MOVEMENT_TO_POS_H
+
+#define MAX_DIRECT_MOVEMENTS_TO_POS 50
+
+void DirectMovementToPos(void);
+
+#endif // GUARD_DIRECT_MOVEMENT_TO_POS_H
