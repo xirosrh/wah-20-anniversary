@@ -828,7 +828,7 @@ const struct Tileset gTileset_RoomBoo =
     .palettes = gTilesetPalettes_RoomBoo,
     .metatiles = gMetatiles_RoomBoo,
     .metatileAttributes = gMetatileAttributes_RoomBoo,
-    .callback = NULL,
+    .callback = InitTilesetAnim_RoomBoo,
 };
 
 const struct Tileset gTileset_Room_cheve =
