@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JavsJavi4315Room_EventScript_Javs",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JavsJavi4315Room_EventScript_Javi4315",
       "flag": "0"
     }
   ],
@@ -59,6 +59,52 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    }
+  ],
   "bg_events": []
 }
