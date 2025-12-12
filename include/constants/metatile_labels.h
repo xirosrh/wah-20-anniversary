@@ -441,6 +441,18 @@
 #define METATILE_RoomGeneral_Door_Opening1  0x03F
 #define METATILE_RoomGeneral_Door_Opening2  0x047
 
+// gTileset_Room_Baro
+#define METATILE_Room_Baro_DOOR_CLOSED_DOWN     0x270
+#define METATILE_Room_Baro_DOOR_CLOSED_UP       0x268
+#define METATILE_Room_Baro_DOOR_OPENING_1_DOWN  0x271
+#define METATILE_Room_Baro_DOOR_OPENING_1_UP    0x269
+#define METATILE_Room_Baro_DOOR_OPENING_2_DOWN  0x272
+#define METATILE_Room_Baro_DOOR_OPENING_2_UP    0x26A
+#define METATILE_Room_Baro_DOOR_OPENING_3_DOWN  0x273
+#define METATILE_Room_Baro_DOOR_OPENING_3_UP    0x26B
+#define METATILE_Room_Baro_DOOR_OPEN_DOWN       0x274
+#define METATILE_Room_Baro_DOOR_OPEN_UP         0x26C
+
 // gTileset_Room_Jack_Johnson
 #define METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_1   0x238
 #define METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME1_2   0x240

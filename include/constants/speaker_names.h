@@ -10,6 +10,7 @@ enum SpeakerNames {
     SP_NAME_REONEKY,
     SP_NAME_REY_BOO,
     SP_NAME_CHEVE,
+    SP_NAME_BARO,
     SP_NAME_UNKNOWN,
     SP_NAME_COUNT
 };
