@@ -36,6 +36,9 @@ script JavsJavi4315Room_EventScript_MainTrigger {
         releaseall
         end
     }
+    directmovementtopos(LOCALID_PLAYER, 6, 7)
+    waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     special(SpawnCameraObject)
     directcameramovementtopos(4, 4)
@@ -71,9 +74,6 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     directcameramovementtoposwithvars(VAR_TEMP_0, VAR_TEMP_1)
     waitmovement(0)
     special(RemoveCameraObject)
-    //directmovementtopos(LOCALID_PLAYER, 6, 8)
-    //waitmovement(0)
-    turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315,moves(jump_in_place_down * 2))
     msgbox(format("Hombre… ¡hasta que alguien ha caído por aquí!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown)
@@ -109,7 +109,7 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(emote_versus, jump_in_place_down * 2, delay_16))
     applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(emote_versus, jump_in_place_down * 2, delay_16))
     waitmovement(0)
-    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, format("¿Acaso hemos perdido, Javs?") , TRAINER_WAH_ADMIN_JAVS_MAIN, format("¿Cómo puede ser? ¡Mi estrategia era infalible?"))
+    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, format("¿Acaso hemos perdido, Javs?") , TRAINER_WAH_ADMIN_JAVS_MAIN, format("¿Cómo puede ser? ¡Mi estrategia era infalible!"))
     call(JavsJavi4315Room_EventScript_PostBattle)
     releaseall
     end
