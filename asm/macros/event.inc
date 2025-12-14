@@ -1952,11 +1952,18 @@
 	.endm
 
 	.macro directcameramovementtoposwithvars x_var:req, y_var:req
-	copyvar VAR_0x8004, \x_var
-	copyvar VAR_0x8005, \y_var
-	special DirectCameraMovementsToPos
-	.endm
-	
+        copyvar VAR_0x8004, \x_var
+        copyvar VAR_0x8005, \y_var
+        special DirectCameraMovementsToPos
+        .endm
+
+        .macro directmovementtopos localId:req, x:req, y:req
+        setvar VAR_0x8008, \localId
+        setvar VAR_0x8004, \x
+        setvar VAR_0x8005, \y
+        special DirectMovementToPos
+        .endm
+
 @ Field pic macros
 	
 	@ Loads the desired pic on screen. Sprite id returned in VAR_RESULT and copied to the desired variable if given.

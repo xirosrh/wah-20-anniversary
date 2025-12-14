@@ -95,6 +95,7 @@
 #define FLDEFF_WINK_ICON           90
 #define FLDEFF_USE_HEADBUTT        91
 #define FLDEFF_ORAS_DOWSE          92
+#define FLDEFF_ANNOYED_ICON        93
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

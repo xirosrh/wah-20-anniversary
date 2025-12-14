@@ -272,7 +272,7 @@
 #define VAR_REONEKY_ROOM_STATE                                0x40FC // WAH
 #define VAR_EING_ROOM_STATE                                0x40FD // WAH
 #define VAR_TOKYN_WAR_ROOM_STATE                                0x40FE // WAH
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_JAVS_JAVI4315_ROOM_STATE                                0x40FF // WAH
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

@@ -1100,43 +1100,85 @@ Roselia
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_ROSE_5 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Breloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Gloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Roselia
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-=== TRAINER_DUSTY_1 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Youngster
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
-Level: 23
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Torkoal @ Heat Rock
+Ability: Drought
+Level: 55
+EVs: 252 HP / 252 SpA / 4 SpD
+Quiet Nature
+- Eruption
+- Solar Beam
+- Lava Plume
+- Stealth Rock
+
+Venusaur @ Life Orb
+Ability: Chlorophyll
+Level: 55
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Giga Drain
+- Sludge Bomb
+- Weather Ball
+- Growth
+
+Chandelure @ Choice Scarf
+Ability: Flash Fire
+Level: 55
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Trick
+
+=== TRAINER_WAH_ADMIN_JAVS_MAIN ===
+Name: Javs
+Class: WAH Admin
+Pic: Youngster
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Dusclops @ Eviolite
+Ability: Pressure
+Level: 55
+EVs: 252 HP / 4 Def / 252 SpD
+Careful Nature
+- Night Shade
+- Will-O-Wisp
+- Pain Split
+- Haze
+
+Suicune @ Leftovers
+Ability: Pressure
+Level: 55
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Scald
+- Calm Mind
+- Ice Beam
+- Protect
+
+Zapdos @ Heavy-Duty Boots
+Ability: Pressure
+Level: 55
+EVs: 248 HP / 44 Def / 216 Spe
+Timid Nature
+IVs: 0 Atk
+- Thunderbolt
+- Hurricane
+- Roost
+- Defog
 
 === TRAINER_CHIP ===
 Name: CHIP
