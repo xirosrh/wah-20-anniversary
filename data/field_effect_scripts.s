@@ -99,6 +99,7 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_WinkIcon                  @ FLDEFF_WINK_ICON
 	.4byte gFieldEffectScript_UseHeadbutt 				@ FLDEFF_USE_HEADBUTT
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
+	.4byte gFldEffScript_AnnoyedIcon               @ FLDEFF_ANNOYED_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -396,8 +397,12 @@ gFldEffScript_VersusIcon::
         field_eff_end
 
 gFldEffScript_HappyIcon::
-        field_eff_callnative FldEff_HappyIcon
-        field_eff_end
+	field_eff_callnative FldEff_HappyIcon
+	field_eff_end
+
+gFldEffScript_AnnoyedIcon::
+	field_eff_callnative FldEff_AnnoyedIcon
+	field_eff_end
 
 gFldEffScript_SleepingIcon::
         field_eff_callnative FldEff_SleepingIcon
