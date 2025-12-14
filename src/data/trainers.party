@@ -1103,7 +1103,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 === TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
 Name: Javi4315
 Class: WAH Admin
-Pic: Artist
+Pic: Youngster
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1143,7 +1143,7 @@ IVs: 0 Atk
 === TRAINER_WAH_ADMIN_JAVS_MAIN ===
 Name: Javs
 Class: WAH Admin
-Pic: Artist
+Pic: Youngster
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1179,44 +1179,6 @@ IVs: 0 Atk
 - Hurricane
 - Roost
 - Defog
-
-=== TRAINER_ROSE_5 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Breloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Gloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Roselia
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-=== TRAINER_DUSTY_1 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandslash
-Level: 23
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
 
 === TRAINER_CHIP ===
 Name: CHIP
