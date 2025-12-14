@@ -289,6 +289,7 @@
 #define MOVEMENT_ACTION_EMOTE_WINK                      0xC5
 #define MOVEMENT_ACTION_CRANE_START_BURNING             0xC6
 #define MOVEMENT_ACTION_FISHING                         0xC7
+#define MOVEMENT_ACTION_EMOTE_ANNOYED                   0xC8
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
