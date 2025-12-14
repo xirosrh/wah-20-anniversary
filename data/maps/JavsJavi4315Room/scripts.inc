@@ -83,7 +83,7 @@ JavsJavi4315Room_EventScript_MainTrigger::
 # 50 "data/maps/JavsJavi4315Room/scripts.pory"
 	playse SE_PIN
 # 51 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AnnoyedWithDelay48
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AngryWithDelay48
 # 52 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 30
 # 53 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -103,7 +103,7 @@ JavsJavi4315Room_EventScript_MainTrigger::
 # 60 "data/maps/JavsJavi4315Room/scripts.pory"
 	playse SE_PIN
 # 61 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_ThinkingWithDelay48
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AnnoyedWithDelay48
 # 62 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 50
 # 63 "data/maps/JavsJavi4315Room/scripts.pory"
