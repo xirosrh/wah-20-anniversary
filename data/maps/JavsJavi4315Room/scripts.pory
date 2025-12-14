@@ -48,7 +48,7 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST)
     msgbox(format("A que molan mucho, ¿verdad, Javier?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AngryWithDelay48)
+    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AnnoyedWithDelay48)
     delay(30)
     turnobject(LOCALID_JAVSJAVIROOM_JAVS, DIR_WEST)
     msgbox(format("Que no me llamo Javier…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS)
