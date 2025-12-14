@@ -361,15 +361,26 @@ Common_Movement_Happy:
 	step_end
 
 Common_Movement_HappyWithDelay48:
-	emote_happy
-	delay_16
-	delay_16
-	delay_16
-	step_end
+        emote_happy
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Annoyed:
+        emote_annoyed
+        step_end
+
+Common_Movement_AnnoyedWithDelay48:
+        emote_annoyed
+        delay_16
+        delay_16
+        delay_16
+        step_end
 
 Common_Movement_Wink:
-	emote_wink
-	step_end
+        emote_wink
+        step_end
 
 Common_Movement_WinkWithDelay48:
 	emote_wink

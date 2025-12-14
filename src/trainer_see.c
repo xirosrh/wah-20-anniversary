@@ -71,6 +71,7 @@ static const u8 sEmotion_SweatDropGfx[] = INCBIN_U8("graphics/field_effects/pics
 static const u8 sEmotion_ThinkingGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_thinking.4bpp");
 static const u8 sEmotion_VersusGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_versus.4bpp");
 static const u8 sEmotion_HappyGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_happy.4bpp");
+static const u8 sEmotion_AnnoyedGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_annoyed.4bpp");
 static const u8 sEmotion_WinkGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_wink.4bpp");
 static const u8 sEmotion_SadGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_sad.4bpp");
 static const u8 sEmotion_SleepingGfx[] = INCBIN_U8("graphics/field_effects/pics/emotion_sleeping.4bpp");
@@ -221,6 +222,10 @@ static const struct SpriteFrameImage sSpriteImageTable_ExclamationQuestionMark[]
     {
         .data = sEmotion_WinkGfx,
         .size = sizeof(sEmotion_WinkGfx)
+    },
+    {
+        .data = sEmotion_AnnoyedGfx,
+        .size = sizeof(sEmotion_AnnoyedGfx)
     }
 };
 
@@ -455,6 +460,12 @@ static const union AnimCmd sSpriteAnim_Icons18[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_Icons19[] =
+{
+    ANIMCMD_FRAME(18, 60),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteAnimTable_Icons[] =
 {
     sSpriteAnim_Icons1,
@@ -474,7 +485,8 @@ static const union AnimCmd *const sSpriteAnimTable_Icons[] =
     sSpriteAnim_Icons15,
     sSpriteAnim_Icons16,
     sSpriteAnim_Icons17,
-    sSpriteAnim_Icons18
+    sSpriteAnim_Icons18,
+    sSpriteAnim_Icons19
 };
 
 static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
@@ -1229,6 +1241,19 @@ u8 FldEff_HappyIcon(void)
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 7);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
+    return 0;
+}
+
+u8 FldEff_AnnoyedIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 18);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+    }
+
     return 0;
 }
 
