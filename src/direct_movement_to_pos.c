@@ -2,6 +2,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "fieldmap.h"
 #include "malloc.h"
 #include "script.h"
 #include "script_movement.h"
@@ -59,9 +60,8 @@ void DirectMovementToPos(void)
     if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objEventId))
         return;
 
-    s16 x_initial = gObjectEvents[objEventId].currentCoords.x;
-    s16 y_initial = gObjectEvents[objEventId].currentCoords.y;
-
+    s16 x_initial = gObjectEvents[objEventId].currentCoords.x - MAP_OFFSET;
+    s16 y_initial = gObjectEvents[objEventId].currentCoords.y - MAP_OFFSET;
     ScriptMovement_StartObjectMovementScript(localId, mapNum, mapGroup, GenerateDirectMovementsToPos(x_initial, y_initial, x_goal, y_goal));
     SetMovingNpcId(localId);
 }
