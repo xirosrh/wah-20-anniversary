@@ -1230,6 +1230,30 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_OMEGA_ROOM",
+      "name": "Sala 1"
+    },
+    {
+      "id": "MAPSEC_GOCE_ROOM",
+      "name": "Sala 2"
+    },
+    {
+      "id": "MAPSEC_TOKYN_WAR_ROOM",
+      "name": "Sala 3"
+    },
+    {
+      "id": "MAPSEC_JACK_JOHNSON_ROOM",
+      "name": "Sala 4"
+    },
+    {
+      "id": "MAPSEC_SCAREX_OZUMAS_ROOM",
+      "name": "Sala 5"
+    },
+    {
+      "id": "MAPSEC_COSARARA_ROOM",
+      "name": "Sala 6"
     }
   ]
 }
