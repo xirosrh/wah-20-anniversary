@@ -222,3 +222,6 @@ const u16 gMetatileAttributes_Room_Baro[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Room_Jack_Johnson[] = INCBIN_U16("data/tilesets/secondary/room_jack_johnson/metatiles.bin");
 const u16 gMetatileAttributes_Room_Jack_Johnson[] = INCBIN_U16("data/tilesets/secondary/room_jack_johnson/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Gallego[] = INCBIN_U16("data/tilesets/secondary/room_gallego/metatiles.bin");
+const u16 gMetatileAttributes_Room_Gallego[] = INCBIN_U16("data/tilesets/secondary/room_gallego/metatile_attributes.bin");
