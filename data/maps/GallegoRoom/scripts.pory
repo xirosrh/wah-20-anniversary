@@ -56,9 +56,9 @@ script GallegoRoom_EventScript_Gallego {
         delay_16 * 2,
         face_right,
         delay_16 * 2,
-        face_up,
-        delay_16 * 2,
         face_down,
+        delay_16,
+        face_up,
         delay_16 * 2
     ))
     msgbox(format("En fin, tendré que aceptarlo, supongo que no podía ocultarme para siempre."), MSGBOX_AUTOCLOSE_TOP)

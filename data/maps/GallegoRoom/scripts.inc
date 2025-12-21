@@ -268,13 +268,11 @@ GallegoRoom_EventScript_Gallego_Movement_3:
 # 58 "data/maps/GallegoRoom/scripts.pory"
 	delay_16
 # 59 "data/maps/GallegoRoom/scripts.pory"
-	face_up
-# 60 "data/maps/GallegoRoom/scripts.pory"
-	delay_16
+	face_down
 # 60 "data/maps/GallegoRoom/scripts.pory"
 	delay_16
 # 61 "data/maps/GallegoRoom/scripts.pory"
-	face_down
+	face_up
 # 62 "data/maps/GallegoRoom/scripts.pory"
 	delay_16
 # 62 "data/maps/GallegoRoom/scripts.pory"
