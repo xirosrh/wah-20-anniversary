@@ -4163,6 +4163,7 @@ static void Task_PrintBattleMoves(u8 taskId)
         }
         break;
     case 8:
+        SetInvisiblePropertyCaterogyIcon(FALSE);
         DestroyTask(taskId);
         return;
     }
@@ -4197,6 +4198,7 @@ static void PrintMoveNameAndPP(u8 moveIndex)
         {
             yPosition += moveIndex * 16;
             ShowCategoryIcon(moveIndex, GetBattleMoveCategory(move), 200, yPosition);
+            SetInvisiblePropertyCaterogyIcon(TRUE);
         }
     }
     else
@@ -4289,6 +4291,7 @@ static void Task_PrintContestMoves(u8 taskId)
         }
         break;
     case 7:
+        SetInvisiblePropertyCaterogyIcon(FALSE);
         DestroyTask(taskId);
         return;
     }
