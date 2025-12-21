@@ -241,6 +241,7 @@ const u32 gObjectEventPic_Crane[] = INCBIN_U32("graphics/object_events/pics/misc
 const u16 gObjectEventPal_Crane[] = INCBIN_U16("graphics/object_events/palettes/crane.gbapal");
 const u32 gObjectEventPic_FlameWheelAttack[] = INCBIN_U32("graphics/object_events/pics/misc/flame_wheel_attack.4bpp");
 const u16 gObjectEventPal_FlameWheelAttack[] = INCBIN_U16("graphics/object_events/palettes/flame_wheel_attack.gbapal");
+const u16 gObjectEventPal_CuttableTree[] = INCBIN_U16("graphics/object_events/palettes/cuttable_tree.gbapal");
 const u32 gObjectEventPic_SSTidal[] = INCBIN_U32("graphics/object_events/pics/misc/ss_tidal.4bpp");
 const u16 gObjectEventPal_SSTidal[] = INCBIN_U16("graphics/object_events/palettes/ss_tidal.gbapal");
 const u32 gFieldEffectObjectPic_Sparkle[] = INCBIN_U32("graphics/field_effects/pics/sparkle.4bpp");
