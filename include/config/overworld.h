@@ -100,7 +100,7 @@
 // DNS
 #define OW_SHADOW_INTENSITY             4               // Rangos desde 0 a 16, donde 0 es transparente y 16 es negro.
 #define OW_OBJECT_SUBPRIORITY           148             // Cuanto más alto sea el valor, más atrás estará en comparación con otros sprites. Las sombras deberían estar por debajo de los OWs.
-#define OW_ENABLE_DNS                   TRUE            // Si está habilitada, el OW se tintará según la hora del día.
+#define OW_ENABLE_DNS                   FALSE            // Si está habilitada, el OW se tintará según la hora del día.
 
 // Sombras de OWs
 #define OW_OBJECT_VANILLA_SHADOWS      FALSE            // En vanilla las sombras en el OW solo se muestran mientras se salta.

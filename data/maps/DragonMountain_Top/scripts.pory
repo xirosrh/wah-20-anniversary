@@ -1,0 +1,34 @@
+mapscripts DragonMountain_Top_MapScripts {}
+
+
+script DragonMountan_Top_EventScript_Sergio {
+    lock
+    faceplayer
+    msgbox(format("..............\n.............."), speaker = SP_NAME_UNKNOWN)
+    delay(30)
+    fadescreen(FADE_TO_BLACK)
+    closemessage
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("¡Ey! ¿Qué creías? ¿Qué me encontrarías en la cima de la montaña y combatiríamos sin siquiera hablar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
+    msgbox(format("Soy Serg!o... (ver que poner)"), MSGBOX_AUTOCLOSE,speaker = SP_NAME_SERGIO)
+    special(SpawnCameraObject)
+    directcameramovementtopos(15, 13)
+    waitmovement(0)
+    setfieldeffectargument(0, LOCALID_MOUNTAINTOP_SERGIO)
+	dofieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	hideobjectat(LOCALID_MOUNTAINTOP_SERGIO, MAP_DRAGON_MOUNTAIN_TOP)
+	waitfieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(30)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
+    delay(30)
+ 
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp4)
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement(LOCALID_CAMERA)
+    special(RemoveCameraObject)
+    end
+}
