@@ -533,6 +533,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
     [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
+    [OBJ_EVENT_GFX_SERGIO_DRAGONITE] =         &gObjectEventGraphicsInfo_SergioDragonite,
     [OBJ_EVENT_GFX_DRIVE] =                    &gObjectEventGraphicsInfo_Drive,
     [OBJ_EVENT_GFX_AGUIAR_SMOKING] =                   &gObjectEventGraphicsInfo_AguiarSmoking,
     [OBJ_EVENT_GFX_PKPOWER] =                  &gObjectEventGraphicsInfo_PkPower,
