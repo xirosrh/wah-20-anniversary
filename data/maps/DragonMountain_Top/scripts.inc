@@ -168,45 +168,49 @@ DragonMountan_Top_EventScript_Sergio::
 # 94 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, DragonMountan_Top_EventScript_Sergio_Movement_8
 # 95 "data/maps/DragonMountain_Top/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	warp MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME
 # 96 "data/maps/DragonMountain_Top/scripts.pory"
+	waitstate
+# 97 "data/maps/DragonMountain_Top/scripts.pory"
+	releaseall
+# 98 "data/maps/DragonMountain_Top/scripts.pory"
 	release
 	end
 
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer::
-# 102 "data/maps/DragonMountain_Top/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 103 "data/maps/DragonMountain_Top/scripts.pory"
-	switch VAR_RESULT
 # 104 "data/maps/DragonMountain_Top/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 105 "data/maps/DragonMountain_Top/scripts.pory"
+	switch VAR_RESULT
+# 106 "data/maps/DragonMountain_Top/scripts.pory"
 	case DIR_NORTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_3
-# 107 "data/maps/DragonMountain_Top/scripts.pory"
+# 109 "data/maps/DragonMountain_Top/scripts.pory"
 	case DIR_SOUTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_4
-# 110 "data/maps/DragonMountain_Top/scripts.pory"
+# 112 "data/maps/DragonMountain_Top/scripts.pory"
 	case DIR_WEST, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_5
-# 113 "data/maps/DragonMountain_Top/scripts.pory"
+# 115 "data/maps/DragonMountain_Top/scripts.pory"
 	case DIR_EAST, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_6
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1:
 	return
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_3:
-# 105 "data/maps/DragonMountain_Top/scripts.pory"
+# 107 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceDown
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_4:
-# 108 "data/maps/DragonMountain_Top/scripts.pory"
+# 110 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceUp
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_5:
-# 111 "data/maps/DragonMountain_Top/scripts.pory"
+# 113 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceRight
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_6:
-# 114 "data/maps/DragonMountain_Top/scripts.pory"
+# 116 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceLeft
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
@@ -348,7 +352,7 @@ DragonMountan_Top_EventScript_Sergio_Movement_7:
 # 94 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_8:
 # 94 "data/maps/DragonMountain_Top/scripts.pory"
-	walk_down
+	walk_fast_down
 # 94 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_in_place_down
 	step_end
