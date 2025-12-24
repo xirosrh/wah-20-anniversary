@@ -1183,6 +1183,16 @@ static const union AnimCmd sAnim_HoOhStayStill[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_DragoniteFlapWings[] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_JUMP(0),
+};
+
+
 static const union AnimCmd sAnim_CraneGoWest[] =
 {
     ANIMCMD_FRAME(7, 8),
@@ -1284,6 +1294,15 @@ static const union AnimCmd *const sAnimTable_StandardWithFall[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
     [ANIM_STD_FALL_DOWN] = sAnim_StandardFallDown,
 };
+
+static const union AnimCmd *const sAnimTable_SergioDragonite[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_SOUTH] = sAnim_DragoniteFlapWings,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_GoFastSouth,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_GoFasterSouth,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_GoFastestSouth,
+};
+
 
 const union AnimCmd *const sAnimTable_Following[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,

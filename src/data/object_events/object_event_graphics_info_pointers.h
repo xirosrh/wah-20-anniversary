@@ -63,6 +63,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sergio;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioDragonite;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crane;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlameWheelAttack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty;
