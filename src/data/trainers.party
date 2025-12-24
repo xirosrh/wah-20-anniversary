@@ -1180,40 +1180,20 @@ IVs: 0 Atk
 - Roost
 - Defog
 
-=== TRAINER_CHIP ===
-Name: CHIP
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_WAH_ADMIN_SERGIO_MAIN ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
+Dragonite
 Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Psybeam
-- Self Destruct
-- Sandstorm
-- Ancient Power
 
-Sandshrew
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
 
-Sandslash
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-=== TRAINER_FOSTER ===
+=== TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
 Name: FOSTER
 Class: Ruin Maniac
 Pic: Ruin Maniac

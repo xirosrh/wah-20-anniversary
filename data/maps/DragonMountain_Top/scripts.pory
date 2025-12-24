@@ -9,10 +9,26 @@ script DragonMountan_Top_EventScript_Sergio {
     fadescreen(FADE_TO_BLACK)
     closemessage
     fadescreen(FADE_FROM_BLACK)
-    msgbox(format("¡Ey! ¿Qué creías? ¿Qué me encontrarías en la cima de la montaña y combatiríamos sin siquiera hablar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
+    call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    msgbox(format("¡Ey ti{OA}! ¿qué tal? ¿de verdad pensabas que no ibamos a hablar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
-    msgbox(format("Soy Serg!o... (ver que poner)"), MSGBOX_AUTOCLOSE,speaker = SP_NAME_SERGIO)
+    msgbox(format("Soy Serg!o… ¡me alegra ver gente nueva por aquí!"),MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(lock_facing_direction, emote_smile, jump_in_place_down * 2, unlock_facing_direction, face_player))
+    delay(30)
+    msgbox(format("¿Qué? ¿No te esperabas encontrarme en este pico, a tres pasos de caerme?\pYo tampoco. Quién sabe… a lo mejor es que soy el mesías."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
+    delay(30)
+    msgbox(format("Dime ti{OA}, ¿qué buscas por aquí?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    fadescreen(FADE_TO_BLACK)
+    delay(20)
+    fadescreen(FADE_FROM_BLACK)
+    playse(SE_PIN)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¿Eh? ¿Así que quieres combatir ahora? Admiro que hayas llegado hasta aquí, se que a veces soy difícil de encontrar.\pPero todavía no estoy listo para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    waitmovement(0)
     special(SpawnCameraObject)
     directcameramovementtopos(15, 13)
     waitmovement(0)
@@ -22,13 +38,70 @@ script DragonMountan_Top_EventScript_Sergio {
 	hideobjectat(LOCALID_MOUNTAINTOP_SERGIO, MAP_DRAGON_MOUNTAIN_TOP)
 	waitfieldeffect(FLDEFF_NPCFLY_OUT)
 	delay(30)
+    applymovementandwait(LOCALID_PLAYER, moves(
+        face_down
+        delay_16
+        face_right
+        delay_16
+        face_left
+        delay_16
+        face_up
+    ))
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
-    delay(30)
- 
+    delay(50)
+    release
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp4)
-    applymovement(LOCALID_PLAYER, Common_Movement_WalkUp)
+    directmovementtopos(LOCALID_PLAYER, 15, 13)
     waitmovement(LOCALID_CAMERA)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, Common_Movement_WalkDown6)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
+    waitmovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE)
     special(RemoveCameraObject)
+    release
+    msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus, disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
+    release
+    delay(100)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, format("¡Wow! ¡Eso ha sido brutal!"))
+    playse(SE_FAILURE)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x, jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
+    release
+    delay(100)
+    fadescreen(FADE_TO_BLACK)
+    showobjectat(LOCALID_MOUNTAINTOP_SERGIO, MAP_DRAGON_MOUNTAIN_TOP)
+    setobjectxyperm(LOCALID_MOUNTAINTOP_SERGIO, 16, 13)
+    setobjectxy(LOCALID_MOUNTAINTOP_SERGIO, 16, 13)
+    turnobject(LOCALID_MOUNTAINTOP_SERGIO, DIR_WEST)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    hideobjectat(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, MAP_DRAGON_MOUNTAIN_TOP)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(jump_in_place_left * 2))
+    msgbox(format("¡Felicidades! ¡Has cumplido el sueño de WAH!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    waitmovement(0)
+    msgbox(format("Ahora por supuesto no te quedes dormido, ¡que hay un montón de cosas por hacer!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
+    release
     end
+}
+
+
+script DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
 }
