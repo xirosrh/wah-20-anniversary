@@ -82,6 +82,17 @@ script DragonMountan_Top_EventScript_Sergio {
     msgbox(format("Ahora por supuesto no te quedes dormido, ¡que hay un montón de cosas por hacer!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
+    msgbox(format("TODO Frase sergio"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO) //TODO Xiros
+    call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down * 20))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 20))
+    waitmovement(0)
+    delay(20)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_in_place_down, set_invisible))
+    applymovementandwait(LOCALID_PLAYER, moves(walk_down, walk_in_place_down))
+    fadescreen(FADE_TO_BLACK)
     release
     end
 }
