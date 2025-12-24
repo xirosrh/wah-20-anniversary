@@ -50,6 +50,7 @@
 #include "pokedex.h"
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
+#include "graphics.h"
 
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
@@ -98,6 +99,7 @@ static void ReloadMoveNames(u32 battler);
 static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef);
 static u32 CheckTargetTypeEffectiveness(u32 battler);
 static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler);
+static void ChangeColorSelectOption(u32 battler);
 
 static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
 {
@@ -329,9 +331,10 @@ static void HandleInputChooseAction(u32 battler)
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_RIGHT))
@@ -339,9 +342,10 @@ static void HandleInputChooseAction(u32 battler)
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_UP))
@@ -349,9 +353,10 @@ static void HandleInputChooseAction(u32 battler)
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -359,9 +364,10 @@ static void HandleInputChooseAction(u32 battler)
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -1781,17 +1787,17 @@ void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
     src[0] = baseTileNum + 1;
     src[1] = baseTileNum + 2;
 
-    CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
+    CopyToBgTilemapBufferRect_ChangePalette(0, src, 19*(cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0);
     CopyBgTilemapBufferToVram(0);
 }
 
 void MoveSelectionDestroyCursorAt(u8 cursorPosition)
 {
     u16 src[2];
-    src[0] = 0x1016;
-    src[1] = 0x1016;
+    src[0] = 0xA;
+    src[1] = 0xA;
 
-    CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
+    CopyToBgTilemapBufferRect_ChangePalette(0, src, 19 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0);
     CopyBgTilemapBufferToVram(0);
 }
 
@@ -1995,17 +2001,18 @@ static void HandleChooseActionAfterDma3(u32 battler)
 
 static void PlayerHandleChooseAction(u32 battler)
 {
-    s32 i;
+    // s32 i;
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    // BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
-    for (i = 0; i < 4; i++)
-        ActionSelectionDestroyCursorAt(i);
+    // for (i = 0; i < 4; i++)
+    //     ActionSelectionDestroyCursorAt(i);
 
     TryRestoreLastUsedBall();
-    ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+    // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+    ChangeColorSelectOption(battler);
     PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
 
@@ -2451,4 +2458,27 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
     }
 
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
+}
+
+static void ChangeColorSelectOption(u32 battler)
+{
+    u8 palette[][2] = {
+        {0x1, 0x2},
+        {0x5, 0x6},
+        {0x3, 0x4},
+        {0x7, 0x8}
+    };
+    u8 colorToChange [][2] = { 
+        {0x7, 0x8},
+        {0xB, 0xC},
+        {0x9, 0xA},
+        {0xD, 0xE}
+    };
+
+    LoadPalette(gBattleTextboxPalette, 0, 0x40);
+
+    LoadPalette(
+        &gBattleTextboxActionMenuPalette[palette[gActionSelectionCursor[battler]][0]], 
+        colorToChange[gActionSelectionCursor[battler]][0], 
+        4);
 }
