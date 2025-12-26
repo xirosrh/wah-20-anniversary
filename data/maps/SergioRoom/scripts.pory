@@ -1,1 +1,24 @@
 mapscripts SergioRoom_MapScripts {}
+
+
+script SergioRoom_EventScript_Abra {
+    lock
+    release
+    applymovementandwait(LOCALID_SERGIOROOM_ABRA, Common_Movement_FacePlayer)
+    release
+    playmoncry(SPECIES_ABRA, CRY_MODE_ENCOUNTER)
+    releaseall
+    delay(20)
+    msgbox(format("Parece que Abra quiere teletransportarte a otro lugar. ¿Deseas ir?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+		release
+		delay(50)
+		updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+		//updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_SHADOW_MEMBER_TELEPORTING_1)
+		warp(MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP)
+		waitstate
+    }
+	release
+    end
+}
