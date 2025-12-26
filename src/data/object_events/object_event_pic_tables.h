@@ -289,6 +289,14 @@ static const struct SpriteFrameImage sPicTable_Sergio[] = {
     overworld_ascending_frames(gObjectEventPic_Sergio, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_SergioTeleporting1[] = {
+    overworld_ascending_frames(gObjectEventPic_SergioTeleporting1, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SergioTeleporting2[] = {
+    overworld_ascending_frames(gObjectEventPic_SergioTeleporting2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_SergioDragonite[] = {
     overworld_ascending_frames(gObjectEventPic_SergioDragonite, 8, 8),
 };
