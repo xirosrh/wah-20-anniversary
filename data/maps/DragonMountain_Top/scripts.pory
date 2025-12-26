@@ -1,5 +1,45 @@
-mapscripts DragonMountain_Top_MapScripts {}
+mapscripts DragonMountain_Top_MapScripts {
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0: DragonMountain_Top_OnWarp
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: DragonMountain_Top_OnFrame
+    ]
+}
 
+
+script DragonMountain_Top_OnWarp {
+    hideobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
+    hideobjectat(LOCALID_PLAYER, MAP_DRAGON_MOUNTAIN_TOP)
+    end
+}
+
+script DragonMountain_Top_OnFrame {
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    showobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
+    showobjectat(LOCALID_PLAYER, MAP_DRAGON_MOUNTAIN_TOP)
+    turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_WEST)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
+    setvar(VAR_TEMP_1, 1)
+    release
+    end
+}
+
+
+script DragonMountain_Top_EventScript_Abra {
+    //TODO Xiros
+    end
+}
 
 script DragonMountan_Top_EventScript_Sergio {
     lock
@@ -86,16 +126,25 @@ script DragonMountan_Top_EventScript_Sergio {
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down * 20))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 20))
-    waitmovement(0)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down * 17, walk_fast_right, walk_fast_down, face_left))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 18, walk_fast_left, walk_fast_down, face_left))
+    waitmovement(LOCALID_PLAYER)
+    turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_EAST)
     delay(20)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_in_place_down, set_invisible))
-    applymovementandwait(LOCALID_PLAYER, moves(walk_fast_down, walk_in_place_down))
-    warp(MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
+    release
+    delay(20)
+    setflag(FLAG_DEFEATED_ADMIN_SERGIO)
+    warp(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
 	waitstate
 	releaseall
-    release
     end
 }
 

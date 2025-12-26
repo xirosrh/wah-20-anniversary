@@ -27,6 +27,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SergioRoom_EventScript_Abra",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SERGIOROOM_SERGIO",
+      "graphics_id": "OBJ_EVENT_GFX_SERGIO",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -35,6 +49,14 @@
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_CHEVE_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "warp_id": "WARP_ID_SERGIO_ROOM_ABRA",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SERGIO_ROOM",
       "dest_warp_id": "0"
     }
   ],

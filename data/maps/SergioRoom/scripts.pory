@@ -1,5 +1,64 @@
-mapscripts SergioRoom_MapScripts {}
+const FLAG_TEMP_1_HIDE_SERGIO = FLAG_TEMP_1
 
+mapscripts SergioRoom_MapScripts {
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0: SergioRoom_OnWarp
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 1: SergioRoom_OnFrame
+    ]
+}
+
+
+script SergioRoom_OnWarp {
+    if(!flag(FLAG_DEFEATED_ADMIN_SERGIO)) {
+        setflag(FLAG_TEMP_1_HIDE_SERGIO)
+        turnobject(LOCALID_PLAYER, DIR_NORTH)
+    } else {
+        hideobjectat(LOCALID_SERGIOROOM_ABRA, MAP_SERGIO_ROOM)
+        hideobjectat(LOCALID_PLAYER, MAP_SERGIO_ROOM)
+        hideobjectat(LOCALID_SERGIOROOM_SERGIO, MAP_SERGIO_ROOM)
+        setvar(VAR_TEMP_1, 1)
+    }
+    end
+}
+
+script SergioRoom_OnFrame {
+    updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
+    showobjectat(LOCALID_SERGIOROOM_ABRA, MAP_SERGIO_ROOM)
+    showobjectat(LOCALID_PLAYER, MAP_SERGIO_ROOM)
+    showobjectat(LOCALID_SERGIOROOM_SERGIO, MAP_SERGIO_ROOM)
+    turnobject(LOCALID_SERGIOROOM_ABRA, DIR_EAST)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    turnobject(LOCALID_SERGIOROOM_SERGIO, DIR_WEST)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
+    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO)
+    playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
+    release
+    delay(30)
+    applymovementandwait(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up, walk_fast_left * 2, face_down))
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    applymovementandwait(LOCALID_SERGIOROOM_SERGIO, Common_Movement_WalkInPlaceDown)
+    delay(10)
+    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up * 2, walk_fast_right, walk_fast_up * 3, set_invisible))
+    applymovement(LOCALID_PLAYER, moves(walk_in_place_fast_up, walk_fast_up * 2, walk_fast_right, walk_fast_up * 3, set_invisible))
+    waitmovement(LOCALID_PLAYER)
+    warp(MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME)
+    waitstate
+	releaseall
+    end
+
+}
 
 script SergioRoom_EventScript_Abra {
     lock
@@ -12,10 +71,13 @@ script SergioRoom_EventScript_Abra {
     msgbox(format("Parece que Abra quiere teletransportarte a otro lugar. ¿Deseas ir?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
 		release
-		delay(50)
+		delay(30)
 		updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-		//updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_SHADOW_MEMBER_TELEPORTING_1)
+		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+        release
+        delay(20)
 		warp(MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP)
 		waitstate
     }
