@@ -236,6 +236,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wingull;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KecleonBridgeShadow;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberMSwimming;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Azurill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkMay;
@@ -540,6 +542,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PKPOWER] =                  &gObjectEventGraphicsInfo_PkPower,
     [OBJ_EVENT_GFX_OMEGA] =                    &gObjectEventGraphicsInfo_Omega,
     [OBJ_EVENT_GFX_KLEIN] =                    &gObjectEventGraphicsInfo_Klein,
+    [OBJ_EVENT_GFX_ABRA_TELEPORTING_1] =       &gObjectEventGraphicsInfo_AbraTeleporting1,
+    [OBJ_EVENT_GFX_ABRA_TELEPORTING_2] =       &gObjectEventGraphicsInfo_AbraTeleporting2,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
 };
