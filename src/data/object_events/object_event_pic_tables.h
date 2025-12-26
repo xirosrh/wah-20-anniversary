@@ -1342,27 +1342,11 @@ static const struct SpriteFrameImage sPicTable_AzurillOld[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_AbraTeleporting1[] = {
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 2),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 2),
-    overworld_frame(gObjectEventPic_AbraTeleporting1, 4, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_AbraTeleporting1, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_AbraTeleporting2[] = {
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 2),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 0),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 1),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 2),
-    overworld_frame(gObjectEventPic_AbraTeleporting2, 4, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_AbraTeleporting2, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_KecleonOld[] = {
