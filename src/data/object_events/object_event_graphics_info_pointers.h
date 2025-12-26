@@ -65,6 +65,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sergio;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioDragonite;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crane;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlameWheelAttack;
@@ -548,6 +550,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ABRA_TELEPORTING_2] =       &gObjectEventGraphicsInfo_AbraTeleporting2,
     [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1] =    &gObjectEventGraphicsInfo_BrendanTeleporting1,
     [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2] =    &gObjectEventGraphicsInfo_BrendanTeleporting2,
+    [OBJ_EVENT_GFX_SERGIO_TELEPORTING_1] =     &gObjectEventGraphicsInfo_SergioTeleporting1,
+    [OBJ_EVENT_GFX_SERGIO_TELEPORTING_2] =     &gObjectEventGraphicsInfo_SergioTeleporting2,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
 };
