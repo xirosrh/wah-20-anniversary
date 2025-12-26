@@ -1,4 +1,6 @@
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
@@ -544,6 +546,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KLEIN] =                    &gObjectEventGraphicsInfo_Klein,
     [OBJ_EVENT_GFX_ABRA_TELEPORTING_1] =       &gObjectEventGraphicsInfo_AbraTeleporting1,
     [OBJ_EVENT_GFX_ABRA_TELEPORTING_2] =       &gObjectEventGraphicsInfo_AbraTeleporting2,
+    [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1] =    &gObjectEventGraphicsInfo_BrendanTeleporting1,
+    [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2] =    &gObjectEventGraphicsInfo_BrendanTeleporting2,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
 };
