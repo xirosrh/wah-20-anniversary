@@ -2,6 +2,14 @@ static const struct SpriteFrameImage sPicTable_BrendanNormal[] = {
     overworld_ascending_frames(gObjectEventPic_BrendanNormalRunning, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_BrendanTeleporting1[] = {
+    overworld_ascending_frames(gObjectEventPic_BrendanTeleporting1, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BrendanTeleporting2[] = {
+    overworld_ascending_frames(gObjectEventPic_BrendanTeleporting2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_BrendanMachBike[] = {
     overworld_ascending_frames(gObjectEventPic_BrendanMachBike, 4, 4),
 };
