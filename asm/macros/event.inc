@@ -2828,4 +2828,3 @@
     setvar VAR_0x8005, \graphicId
     special UpdateObjectEventSprite
     .endm
-	

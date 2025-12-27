@@ -37,7 +37,28 @@ script DragonMountain_Top_OnFrame {
 
 
 script DragonMountain_Top_EventScript_Abra {
-    //TODO Xiros
+    lock
+    release
+    applymovementandwait(LOCALID_MOUNTAINTOP_ABRA, Common_Movement_FacePlayer)
+    release
+    playmoncry(SPECIES_ABRA, CRY_MODE_ENCOUNTER)
+    releaseall
+    delay(20)
+    msgbox(format("¿Deseas volver a la sala de Sergio?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+		release
+		delay(30)
+		updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+        release
+        delay(20)
+        setvar(VAR_SERGIO_ROOM_STATE, 1)
+		warp(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
+		waitstate
+    }
+	release
     end
 }
 
@@ -127,7 +148,7 @@ script DragonMountan_Top_EventScript_Sergio {
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
     applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down * 17, walk_fast_right, walk_fast_down, face_left))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 18, walk_fast_left, walk_fast_down, face_left))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 18, walk_fast_left, walk_fast_down, face_right))
     waitmovement(LOCALID_PLAYER)
     turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_EAST)
     delay(20)
@@ -142,6 +163,7 @@ script DragonMountan_Top_EventScript_Sergio {
     release
     delay(20)
     setflag(FLAG_DEFEATED_ADMIN_SERGIO)
+    setvar(VAR_SERGIO_ROOM_STATE, 2)
     warp(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
 	waitstate
 	releaseall
