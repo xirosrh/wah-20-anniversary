@@ -1,3 +1,5 @@
+const FLAG_TEMP_1_HIDE_MOLTRES = FLAG_TEMP_1
+
 mapscripts DragonMountain_Top_MapScripts {
      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_TEMP_1, 0: DragonMountain_Top_OnWarp
@@ -5,12 +7,20 @@ mapscripts DragonMountain_Top_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0: DragonMountain_Top_OnFrame
     ]
+    MAP_SCRIPT_ON_TRANSITION: DragonMountain_Top_OnTransition
 }
 
 
 script DragonMountain_Top_OnWarp {
     hideobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
     hideobjectat(LOCALID_PLAYER, MAP_DRAGON_MOUNTAIN_TOP)
+    hideobjectat(LOCALID_MOUNTAINTOP_MOLTRES, MAP_DRAGON_MOUNTAIN_TOP)
+    end
+}
+
+
+script DragonMountain_Top_OnTransition {
+    setflag(FLAG_TEMP_1_HIDE_MOLTRES)
     end
 }
 
@@ -115,16 +125,17 @@ script DragonMountan_Top_EventScript_Sergio {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp4)
     directmovementtopos(LOCALID_PLAYER, 15, 13)
     waitmovement(LOCALID_CAMERA)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, Common_Movement_WalkDown6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
     waitmovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE)
     special(RemoveCameraObject)
     release
-    msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus, disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
     release
-    delay(100)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, format("¡Wow! ¡Eso ha sido brutal!"))
+    delay(60)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, format("¡Guau! ¡Eso ha sido brutal!"))
     playse(SE_FAILURE)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x, jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
     release
@@ -143,7 +154,39 @@ script DragonMountan_Top_EventScript_Sergio {
     msgbox(format("Ahora por supuesto no te quedes dormido, ¡que hay un montón de cosas por hacer!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
-    msgbox(format("TODO Frase sergio"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO) //TODO Xiros
+    
+    clearflag(FLAG_TEMP_1_HIDE_MOLTRES)
+    addobject(LOCALID_MOUNTAINTOP_MOLTRES)
+    showobjectat(LOCALID_MOUNTAINTOP_MOLTRES, MAP_DRAGON_MOUNTAIN_TOP)
+    applymovementandwait(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3)
+    turnobject(LOCALID_MOUNTAINTOP_SERGIO, DIR_NORTH)
+    playmoncry(SPECIES_MOLTRES, CRY_MODE_NORMAL)
+    playse(SE_PIN)
+    setspeaker(SP_NAME_SERGIO)
+    message(format("¡Guau! ¡Mira quien apareció aquí!"))
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_DoubleExclamationMarkWithDelay48)
+    applymovement(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3)
+    waitmovement(LOCALID_MOUNTAINTOP_MOLTRES)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48)
+    applymovement(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3)
+    waitmovement(LOCALID_MOUNTAINTOP_MOLTRES)
+    applymovementandwait(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft8)
+    closemessage
+    delay(50)
+    turnobject(LOCALID_MOUNTAINTOP_SERGIO, DIR_WEST)
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    msgbox(format("Moltres es un Pokémon que siempre nos ha acompañado, porque renacemos de nuestras cenizas como el ave fénix."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    delay(30)
+    msgbox(format("Que locura que ya llevemos 20 años entre todos construyendo esta comunidad.\pHa pasado mucho tiempo, pero me siento muy orgulloso de que entre todos hayamos colaborado y poniendo en común nuestro conocimiento, buscando mantener el espíritu divertido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO) //TODO Xiros
+    call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    delay(20)
+    msgbox(format("\p¡Mil gracias por haber formado parte de esta celebración!"), speaker = SP_NAME_SERGIO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HeartWithDelay48)
+    msgbox(format("Ahora ven, acompañame, es hora de dejar registro de tu hazaña en el hall de la fama."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
