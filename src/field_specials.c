@@ -4376,3 +4376,10 @@ void SetAbility(void)
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
 }
+
+void UpdateObjectEventSprite()
+{
+    struct ObjectEvent objectEvent = gObjectEvents[GetObjectEventIdByLocalId(gSpecialVar_0x8004)];
+    ObjectEventSetGraphicsId(&objectEvent, gSpecialVar_0x8005);
+    ObjectEventTurn(&objectEvent, objectEvent.movementDirection);
+}

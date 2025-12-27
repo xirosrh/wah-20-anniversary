@@ -488,6 +488,8 @@ enum NpcSpritePalettes
     PAL_NPC_4,
 };
 
+extern const u16 gOverworldPalette_Abra[];
+
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
     [PAL_NPC_1] =   {gObjectEventPal_Npc1,  OBJ_EVENT_PAL_TAG_NPC_1},
     [PAL_NPC_2] =   {gObjectEventPal_Npc2,  OBJ_EVENT_PAL_TAG_NPC_2},
@@ -512,6 +514,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_BirthIslandStone,      OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE},
     {gObjectEventPal_HoOh,                  OBJ_EVENT_PAL_TAG_HO_OH},
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
+    {gOverworldPalette_Abra,                OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
@@ -527,6 +530,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
     {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
     {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
+    {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
     {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
     {gObjectEventPal_PkPower,               OBJ_EVENT_PAL_TAG_PKPOWER},
     {gObjectEventPal_Omega,                 OBJ_EVENT_PAL_TAG_OMEGA},

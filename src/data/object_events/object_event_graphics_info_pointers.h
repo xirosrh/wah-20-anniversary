@@ -1,4 +1,6 @@
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
@@ -63,6 +65,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sergio;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioTeleporting2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioDragonite;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crane;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlameWheelAttack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty;
@@ -235,6 +240,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wingull;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KecleonBridgeShadow;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberMSwimming;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Azurill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkMay;
@@ -533,11 +540,18 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
     [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
+    [OBJ_EVENT_GFX_SERGIO_DRAGONITE] =         &gObjectEventGraphicsInfo_SergioDragonite,
     [OBJ_EVENT_GFX_DRIVE] =                    &gObjectEventGraphicsInfo_Drive,
     [OBJ_EVENT_GFX_AGUIAR_SMOKING] =                   &gObjectEventGraphicsInfo_AguiarSmoking,
     [OBJ_EVENT_GFX_PKPOWER] =                  &gObjectEventGraphicsInfo_PkPower,
     [OBJ_EVENT_GFX_OMEGA] =                    &gObjectEventGraphicsInfo_Omega,
     [OBJ_EVENT_GFX_KLEIN] =                    &gObjectEventGraphicsInfo_Klein,
+    [OBJ_EVENT_GFX_ABRA_TELEPORTING_1] =       &gObjectEventGraphicsInfo_AbraTeleporting1,
+    [OBJ_EVENT_GFX_ABRA_TELEPORTING_2] =       &gObjectEventGraphicsInfo_AbraTeleporting2,
+    [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1] =    &gObjectEventGraphicsInfo_BrendanTeleporting1,
+    [OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2] =    &gObjectEventGraphicsInfo_BrendanTeleporting2,
+    [OBJ_EVENT_GFX_SERGIO_TELEPORTING_1] =     &gObjectEventGraphicsInfo_SergioTeleporting1,
+    [OBJ_EVENT_GFX_SERGIO_TELEPORTING_2] =     &gObjectEventGraphicsInfo_SergioTeleporting2,
     [OBJ_EVENT_GFX_CRANE] =                    &gObjectEventGraphicsInfo_Crane,
     [OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK] =       &gObjectEventGraphicsInfo_FlameWheelAttack,
 };

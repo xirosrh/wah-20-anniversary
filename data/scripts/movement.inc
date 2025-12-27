@@ -247,6 +247,50 @@ Common_Movement_WalkLeft3:
 	walk_left
     step_end
 
+Common_Movement_WalkLeft4:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft5:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft6:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft7:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft8:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
 
 Common_Movement_WalkUpFast::
     walk_fast_up

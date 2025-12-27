@@ -14,6 +14,7 @@ enum SpeakerNames {
     SP_NAME_JAVI4315,
     SP_NAME_JAVS,
     SP_NAME_GALLEGO,
+    SP_NAME_SERGIO,
     SP_NAME_UNKNOWN,
     SP_NAME_COUNT
 };

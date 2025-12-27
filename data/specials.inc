@@ -566,13 +566,14 @@ gSpecials::
 	def_special SetHiddenNature
 	def_special SetAbility
 	def_special ObjectEventInteractionGetApricornTreeData
-        def_special ObjectEventInteractionPickApricornTree
-        def_special MoveObjectToPosWithVars
-        def_special DirectMovementToPos
-        def_special DirectCameraMovementsToPos
-        def_special SetObjectMovementType
-        def_special SetMsgboxTop
-        def_special SetMsgboxCenter
-        def_special SetMsgboxBottom
+	def_special ObjectEventInteractionPickApricornTree
+	def_special MoveObjectToPosWithVars
+	def_special DirectMovementToPos
+	def_special DirectCameraMovementsToPos
+	def_special SetObjectMovementType
+	def_special SetMsgboxTop
+	def_special SetMsgboxCenter
+	def_special SetMsgboxBottom
+	def_special UpdateObjectEventSprite
 
 

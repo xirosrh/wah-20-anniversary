@@ -10,6 +10,12 @@ $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/brendan/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/brendan/teleporting_1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/brendan/teleporting_2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/brendan/field_move.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -200,6 +206,15 @@ $(OBJEVENTGFXDIR)/people/admins/eing.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/admins/sergio.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/admins/sergio_teleporting_1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/admins/sergio_teleporting_2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/admins/sergio_dragonite.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
 
 $(OBJEVENTGFXDIR)/people/admins/drive.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
@@ -1054,6 +1069,12 @@ $(POKEMONGFXDIR)/poliwrath/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/abra/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/abra/overworld_teleporting_1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/abra/overworld_teleporting_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/kadabra/overworld.4bpp: %.4bpp: %.png
