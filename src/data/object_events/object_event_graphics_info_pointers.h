@@ -63,6 +63,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Baro;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sayer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cheve;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sergio;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SergioTeleporting1;
@@ -538,6 +541,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
     [OBJ_EVENT_GFX_SCAREX] =                   &gObjectEventGraphicsInfo_Scarex,
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
+    [OBJ_EVENT_GFX_BARO] =                     &gObjectEventGraphicsInfo_Baro,
+    [OBJ_EVENT_GFX_SAYER] =                    &gObjectEventGraphicsInfo_Sayer,
+    [OBJ_EVENT_GFX_CHEVE] =                    &gObjectEventGraphicsInfo_Cheve,
     [OBJ_EVENT_GFX_EING] =                     &gObjectEventGraphicsInfo_Eing,
     [OBJ_EVENT_GFX_SERGIO] =                   &gObjectEventGraphicsInfo_Sergio,
     [OBJ_EVENT_GFX_SERGIO_DRAGONITE] =         &gObjectEventGraphicsInfo_SergioDragonite,

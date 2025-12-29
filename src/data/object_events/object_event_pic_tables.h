@@ -281,6 +281,18 @@ static const struct SpriteFrameImage sPicTable_Xiros[] = {
     overworld_ascending_frames(gObjectEventPic_Xiros, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Baro[] = {
+    overworld_ascending_frames(gObjectEventPic_Baro, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Sayer[] = {
+    overworld_ascending_frames(gObjectEventPic_Sayer, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Cheve[] = {
+    overworld_ascending_frames(gObjectEventPic_Cheve, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Eing[] = {
     overworld_ascending_frames(gObjectEventPic_Eing, 2, 4),
 };
