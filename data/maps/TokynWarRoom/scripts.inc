@@ -29,7 +29,7 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 21 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
 # 22 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_0, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 23 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight
 # 24 "data/maps/TokynWarRoom/scripts.pory"
@@ -37,13 +37,13 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 25 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
 # 26 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_1
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_1, speaker = SP_NAME_WAR
 # 27 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 28 "data/maps/TokynWarRoom/scripts.pory"
 	applymovement LOCALID_TOKYNWARROOM_WAR, TokynWarRoom_EventScript_MainCutscene_Movement_2
 # 29 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_2, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 30 "data/maps/TokynWarRoom/scripts.pory"
 	waitmovement 0
 # 31 "data/maps/TokynWarRoom/scripts.pory"
@@ -51,7 +51,7 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 32 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
 # 33 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_3, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 34 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 35 "data/maps/TokynWarRoom/scripts.pory"
@@ -59,13 +59,13 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 36 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight
 # 37 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_4, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 38 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_WAR, Common_Movement_JumpInPlaceLeft2
 # 39 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
 # 40 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_5, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 41 "data/maps/TokynWarRoom/scripts.pory"
 	delay 30
 # 42 "data/maps/TokynWarRoom/scripts.pory"
@@ -75,7 +75,7 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 44 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_WAR, Common_Movement_ThinkingWithDelay48
 # 45 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_6, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 46 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkInPlaceLeft
 # 47 "data/maps/TokynWarRoom/scripts.pory"
@@ -85,13 +85,13 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 49 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
 # 50 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_7, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 51 "data/maps/TokynWarRoom/scripts.pory"
 	delay 30
 # 52 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight
 # 53 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_8, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 54 "data/maps/TokynWarRoom/scripts.pory"
 	delay 20
 # 55 "data/maps/TokynWarRoom/scripts.pory"
@@ -99,7 +99,7 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 56 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
 # 57 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_9, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 58 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 59 "data/maps/TokynWarRoom/scripts.pory"
@@ -125,7 +125,7 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 69 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_WAR, TokynWarRoom_EventScript_MainCutscene_Movement_8
 # 70 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_12, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 71 "data/maps/TokynWarRoom/scripts.pory"
 	delay 40
 # 72 "data/maps/TokynWarRoom/scripts.pory"
@@ -133,15 +133,15 @@ TokynWarRoom_EventScript_MainCutscene_1:
 # 73 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
 # 74 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_13, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 75 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 76 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48
 # 77 "data/maps/TokynWarRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 78 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_14, MSGBOX_AUTOCLOSE
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 79 "data/maps/TokynWarRoom/scripts.pory"
 	applymovement LOCALID_TOKYNWARROOM_TOKYN, TokynWarRoom_EventScript_MainCutscene_Movement_9
 # 80 "data/maps/TokynWarRoom/scripts.pory"
@@ -186,7 +186,7 @@ TokynWarRoom_EventScript_War::
 	compare VAR_TOKYN_WAR_ROOM_STATE, 0
 	goto_if_eq TokynWarRoom_EventScript_War_2
 # 96 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_War_Text_0
+	msgbox TokynWarRoom_EventScript_War_Text_0, speaker = SP_NAME_WAR
 # 97 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 98 "data/maps/TokynWarRoom/scripts.pory"
@@ -212,13 +212,13 @@ TokynWarRoom_EventScript_Tokyn::
 	compare VAR_TOKYN_WAR_ROOM_STATE, 0
 	goto_if_eq TokynWarRoom_EventScript_Tokyn_2
 # 111 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_Tokyn_Text_0
+	msgbox TokynWarRoom_EventScript_Tokyn_Text_0, speaker = SP_NAME_TOKYN
 # 112 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 113 "data/maps/TokynWarRoom/scripts.pory"
 	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48
 # 114 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_Tokyn_Text_1
+	msgbox TokynWarRoom_EventScript_Tokyn_Text_1, speaker = SP_NAME_TOKYN
 # 115 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end

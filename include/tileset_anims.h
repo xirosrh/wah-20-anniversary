@@ -34,5 +34,6 @@ void InitTilesetAnim_BattlePyramid(void);
 
 //Wah
 void InitTilesetAnim_RoomBoo(void);
+void InitTilesetAnim_TokynWarRoom(void);
 
 #endif // GUARD_TILESET_ANIMS_H

@@ -896,3 +896,14 @@ const struct Tileset gTileset_Room_Gallego =
     .metatileAttributes = gMetatileAttributes_Room_Gallego,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_room_tokynwar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_tokynwar,
+    .palettes = gTilesetPalettes_room_tokynwar,
+    .metatiles = gMetatiles_room_tokynwar,
+    .metatileAttributes = gMetatileAttributes_room_tokynwar,
+    .callback = InitTilesetAnim_TokynWarRoom,
+};

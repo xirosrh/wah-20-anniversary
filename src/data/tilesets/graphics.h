@@ -1728,3 +1728,22 @@ const u16 gTilesetPalettes_Room_Gallego[][16] =
 };
 
 const u32 gTilesetTiles_Room_Gallego[] = INCBIN_U32("data/tilesets/secondary/room_gallego/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_room_tokynwar[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_tokynwar/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_room_tokynwar[] = INCBIN_U32("data/tilesets/secondary/room_tokynwar/tiles.4bpp.lz");
