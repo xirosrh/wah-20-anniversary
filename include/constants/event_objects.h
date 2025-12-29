@@ -277,11 +277,14 @@
 #define OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2      270
 #define OBJ_EVENT_GFX_SERGIO_TELEPORTING_1       271
 #define OBJ_EVENT_GFX_SERGIO_TELEPORTING_2       272
+#define OBJ_EVENT_GFX_BARO                       273
+#define OBJ_EVENT_GFX_SAYER                      274
+#define OBJ_EVENT_GFX_CHEVE                      275
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        273
+#define NUM_OBJ_EVENT_GFX                        276
 
 
 // These are dynamic object gfx ids.
@@ -426,6 +429,9 @@
 #define OBJ_EVENT_PAL_TAG_TREE_DISGUISE          0x113C
 #define OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE        0x113D
 #define OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING        0x113E
+#define OBJ_EVENT_PAL_TAG_BARO                    0x113F
+#define OBJ_EVENT_PAL_TAG_SAYER                   0x1140
+#define OBJ_EVENT_PAL_TAG_CHEVE                   0x1141
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
