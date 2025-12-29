@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_SAYERBLAXROOM_SAYER",
-      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
+      "graphics_id": "OBJ_EVENT_GFX_SAYER",
       "x": 0,
       "y": 10,
       "elevation": 0,
