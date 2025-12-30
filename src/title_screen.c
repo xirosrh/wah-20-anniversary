@@ -63,6 +63,124 @@ static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_scre
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
 
+
+#define  MOLTRES_TAG 5400
+#define MOLTRES_TAIL_TAG 5401
+
+const u32 gMoltresBody_Sprite[] = INCBIN_U32("graphics/title_screen/moltresBody.4bpp.lz");
+const u32 gMoltresTail_Sprite[] = INCBIN_U32("graphics/title_screen/moltresTail.4bpp.lz");
+const u16 gMoltres_Pal[] = INCBIN_U16("graphics/title_screen/moltres.gbapal");
+
+
+static const struct OamData sMoltresBodyOamData =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(64x64),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(64x64),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct OamData sMoltresTailOamData =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(16x32),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x32),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_MoltresBody[] =
+{
+    {gMoltresBody_Sprite, 10420, MOLTRES_TAG},
+    {NULL},
+};
+
+static const struct SpritePalette sSpritePal_Moltres[] =
+{
+    {gMoltres_Pal, MOLTRES_TAG},
+    {NULL},
+};
+
+static const union AnimCmd sAnimMoltresBody[] =
+{
+    ANIMCMD_FRAME(0,   5),
+    ANIMCMD_FRAME(64,  5),
+    ANIMCMD_FRAME(128, 5),
+    ANIMCMD_FRAME(192, 5),
+    ANIMCMD_FRAME(256, 5),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sAnimsMoltresBody[] =
+{
+    sAnimMoltresBody,
+};
+
+static const struct SpriteTemplate sMoltresBodySpriteTemplate =
+
+{
+    .tileTag = MOLTRES_TAG,
+    .paletteTag = MOLTRES_TAG,
+    .oam = &sMoltresBodyOamData,
+    .anims = sAnimsMoltresBody,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+
+
+static const struct CompressedSpriteSheet sSpriteSheet_MoltresTail[] =
+{
+    {gMoltresTail_Sprite, 1280, MOLTRES_TAIL_TAG},
+    {NULL},
+};
+
+static const union AnimCmd sAnimMoltresTail[] =
+{
+    ANIMCMD_FRAME(0,  5),
+    ANIMCMD_FRAME(32,  5),
+    ANIMCMD_FRAME(64, 5),
+    ANIMCMD_FRAME(96, 5),
+    ANIMCMD_FRAME(128, 5),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sAnimsMoltresTail[] =
+{
+    sAnimMoltresTail,
+};
+
+static const struct SpriteTemplate sMoltresTailSpriteTemplate =
+
+{
+    .tileTag = MOLTRES_TAIL_TAG,
+    .paletteTag = MOLTRES_TAG,
+    .oam = &sMoltresTailOamData,
+    .anims = sAnimsMoltresTail,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
 // Also used by the intro to blend the Game Freak name/logo in and out as they appear and disappear
 const u16 gTitleScreenAlphaBlend[64] =
@@ -361,7 +479,7 @@ static const struct CompressedSpriteSheet sPokemonLogoShineSpriteSheet[] =
 #define tSkipToNext data[1]
 #define tPointless  data[2] // Incremented but never used to do anything.
 #define tBg2Y       data[3]
-#define tBg1Y       data[4]
+#define tBg1X       data[4]
 
 // Sprite data for sVersionBannerLeftSpriteTemplate / sVersionBannerRightSpriteTemplate
 #define sAlphaBlendIdx data[0]
@@ -561,7 +679,8 @@ static void VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    SetGpuReg(REG_OFFSET_BG1VOFS, gBattle_BG1_Y);
+    SetGpuReg(REG_OFFSET_BG1HOFS, gBattle_BG1_X);
+    SetGpuReg(REG_OFFSET_BG1VOFS, 12);
 }
 
 void CB2_InitTitleScreen(void)
@@ -612,6 +731,10 @@ void CB2_InitTitleScreen(void)
         LoadCompressedSpriteSheet(&sPokemonLogoShineSpriteSheet[0]);
         LoadPalette(gTitleScreenEmeraldVersionPal, OBJ_PLTT_ID(0), PLTT_SIZE_4BPP);
         LoadSpritePalette(&sSpritePalette_PressStart[0]);
+        //Moltres sprite
+        LoadCompressedSpriteSheet(sSpriteSheet_MoltresBody);
+        LoadCompressedSpriteSheet(sSpriteSheet_MoltresTail);
+        LoadSpritePalette(sSpritePal_Moltres);
         gMain.state = 2;
         break;
     case 2:
@@ -662,7 +785,7 @@ void CB2_InitTitleScreen(void)
         if (!UpdatePaletteFade())
         {
             StartPokemonLogoShine(SHINE_MODE_SINGLE_NO_BG_COLOR);
-            ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE); // Aquí es donde realmente se hace el efecto de scanline en forma de ola: las nubes van oscilando en movimientos diagonales.
+            // ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE); // Aquí es donde realmente se hace el efecto de scanline en forma de ola: las nubes van oscilando en movimientos diagonales.
                                                                                                     // Los parámetros con los que podemos jugar son la amplitud, la frecuencia, o la línea (de arriba a abajo) en la que comienza.
                                                                                                     // Recomiendo jugar con los números, o probar a comentar la función para ver lo que hace in-game.
             SetMainCallback2(MainCB2);
@@ -711,13 +834,13 @@ static void Task_TitleScreenPhase1(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDY, 0);
 
         // Create left side of version banner
-        spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X, VERSION_BANNER_Y, 0);
-        gSprites[spriteId].sAlphaBlendIdx = ARRAY_COUNT(gTitleScreenAlphaBlend);
-        gSprites[spriteId].sParentTaskId = taskId;
+        // spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X, VERSION_BANNER_Y, 0);
+        // gSprites[spriteId].sAlphaBlendIdx = ARRAY_COUNT(gTitleScreenAlphaBlend);
+        // gSprites[spriteId].sParentTaskId = taskId;
 
         // Create right side of version banner
-        spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
-        gSprites[spriteId].sParentTaskId = taskId;
+        // spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
+        // gSprites[spriteId].sParentTaskId = taskId;
 
         gTasks[taskId].tCounter = 144;
         gTasks[taskId].func = Task_TitleScreenPhase2;
@@ -755,9 +878,14 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 108);
-        CreateCopyrightBanner(START_BANNER_X, 148);
-        gTasks[taskId].tBg1Y = 0;
+        CreatePressStartBanner(START_BANNER_X, 146);
+        // CreateCopyrightBanner(START_BANNER_X, 148);
+
+        CreateSprite(&sMoltresBodySpriteTemplate, 120, 62, 0);
+        CreateSprite(&sMoltresTailSpriteTemplate, 160, 58, 0);
+
+
+        gTasks[taskId].tBg1X = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
 
@@ -807,11 +935,11 @@ static void Task_TitleScreenPhase3(u8 taskId)
         SetGpuReg(REG_OFFSET_BG2Y_H, 0);
         if (++gTasks[taskId].tCounter & 1)
         {
-            gTasks[taskId].tBg1Y++;
-            gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
-            gBattle_BG1_X = 0;
+            gTasks[taskId].tBg1X++;
+            gBattle_BG1_X = gTasks[taskId].tBg1X / 2;
+            gBattle_BG1_Y = 0;
         }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        // UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
