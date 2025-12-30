@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CHEVEROOM_CHEVE",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_CHEVE",
       "x": 6,
       "y": 1,
       "elevation": 0,

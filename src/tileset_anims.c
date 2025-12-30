@@ -1198,3 +1198,119 @@ void InitTilesetAnim_RoomBoo(void)
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_RoomBoo;
 }
+
+
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/02.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Statue[] = {
+    gTilesetAnims_TokynWarRoom_Statue_Frame2,
+    gTilesetAnims_TokynWarRoom_Statue_Frame1,
+    gTilesetAnims_TokynWarRoom_Statue_Frame0,
+    gTilesetAnims_TokynWarRoom_Statue_Frame1,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Statue(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Statue);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Statue[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/02.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_WaterMountain[] = {
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame0,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame1,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame2,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame1,
+};
+
+static void QueueAnimTiles_TokynWarRoom_WaterMountain(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_WaterMountain);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_WaterMountain[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 28 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water1[] = {
+    gTilesetAnims_TokynWarRoom_Water1_Frame0,
+    gTilesetAnims_TokynWarRoom_Water1_Frame1,
+    gTilesetAnims_TokynWarRoom_Water1_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water2[] = {
+    gTilesetAnims_TokynWarRoom_Water2_Frame0,
+    gTilesetAnims_TokynWarRoom_Water2_Frame1,
+    gTilesetAnims_TokynWarRoom_Water2_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 8)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water3[] = {
+    gTilesetAnims_TokynWarRoom_Water3_Frame0,
+    gTilesetAnims_TokynWarRoom_Water3_Frame1,
+    gTilesetAnims_TokynWarRoom_Water3_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water3(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water3);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water3[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_TokynWarRoom(u16 timer)
+{
+    if (timer % 32 == 0) {
+        QueueAnimTiles_TokynWarRoom_Statue(timer / 32);
+    }
+    if (timer % 32 == 1) {
+        QueueAnimTiles_TokynWarRoom_WaterMountain(timer / 32);
+    }
+    if (timer % 32 == 2) {
+        QueueAnimTiles_TokynWarRoom_Water1(timer / 32);
+    }
+    if (timer % 32 == 3) {
+        QueueAnimTiles_TokynWarRoom_Water2(timer / 32);
+    }
+    if (timer % 32 == 4) {
+        QueueAnimTiles_TokynWarRoom_Water3(timer / 32);
+    }
+}
+
+
+
+void InitTilesetAnim_TokynWarRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_TokynWarRoom;
+}

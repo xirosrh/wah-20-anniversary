@@ -72,7 +72,7 @@
     {
       "type": "trigger",
       "x": 7,
-      "y": 11,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
@@ -81,7 +81,7 @@
     {
       "type": "trigger",
       "x": 6,
-      "y": 11,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
@@ -90,7 +90,7 @@
     {
       "type": "trigger",
       "x": 5,
-      "y": 11,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",
       "var_value": "0",
@@ -126,6 +126,24 @@
     {
       "type": "trigger",
       "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
       "y": 7,
       "elevation": 0,
       "var": "VAR_TOKYN_WAR_ROOM_STATE",

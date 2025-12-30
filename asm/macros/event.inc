@@ -2822,3 +2822,9 @@
     setvar VAR_0x8006, \movementType
     special SetObjectMovementType
     .endm
+
+	.macro updateobjectsprite localId:req, graphicId:req
+    setvar VAR_0x8004, \localId
+    setvar VAR_0x8005, \graphicId
+    special UpdateObjectEventSprite
+    .endm

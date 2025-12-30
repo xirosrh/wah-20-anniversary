@@ -56,7 +56,9 @@
     "KleinPkPowerRoom",
     "EingRoom",
     "XirosRoom",
-    "SergioRoom"
+    "SergioRoom",
+    "DragonMountain_Top",
+    "HallOfFame"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
