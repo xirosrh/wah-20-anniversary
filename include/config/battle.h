@@ -133,6 +133,7 @@
 #define B_TIME_OF_DAY_HEALING_MOVES GEN_LATEST // In Gen2, Morning Sun, Moonlight, and Synthesis heal twice as much HP based off the time of day. Also changes how much they heal. Evening affects Moonlight.
                                                // If OW_TIMES_OF_DAY is set to Gen 3, then Morning Sun is boosted during the day.
 #define B_DREAM_EATER_LIQUID_OOZE   GEN_LATEST // In Gen5+, Dream Eater is affected by Liquid Ooze.
+#define B_DREAM_EATER_SUBSTITUTE    GEN_LATEST // In Gen5+, Dream Eater can successfully hit and drain from a Substitute.
 
 // Configuración de habilidades
 #define B_GALE_WINGS                GEN_LATEST // En Gen7+ requiere HP completo para activarse.
@@ -275,7 +276,7 @@
 
 // Configuración de Interfaz
 #define B_FAST_INTRO_PKMN_TEXT      TRUE  // Si se establece en TRUE, los textos de introducción de la batalla se imprimen al mismo tiempo que la animación de un Pokémon, en lugar de esperar a que termine la animación.
-#define B_FAST_INTRO_NO_SLIDE       FALSE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
+#define B_FAST_INTRO_NO_SLIDE       TRUE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
 #define B_FAST_HP_DRAIN             TRUE  // Si se establece en TRUE, las barras de HP se moverán más rápido.
 #define B_FAST_EXP_GROW             TRUE  // Si se establece en TRUE, las barras de EXP se moverán más rápido.
 #define B_SHOW_TARGETS              TRUE  // Si se establece en TRUE, se mostrarán todos los objetivos disponibles para los movimientos que golpean a 2 o 3 Pokémon antes de seleccionar un movimiento.

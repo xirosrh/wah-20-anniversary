@@ -13,8 +13,8 @@ script OmegaRoom_EventScript_StartChallenge {
     waitmovement(0)
     msgbox(format("Ostras, une nuevo desafiante."))
     subvar(VAR_TEMP_D, 1)
-    moveobjecttopos(LOCALID_PLAYER, 6, 9, DIR_NORTH)
-    waitmovement(0)
+    //moveobjecttopos(LOCALID_PLAYER, 6, 9, DIR_NORTH)
+    //waitmovement(0)
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(
         walk_down
         jump_2_down))
