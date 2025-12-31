@@ -1,3 +1,5 @@
+const VAR_TEMP_0_BIN = VAR_TEMP_0
+
 mapscripts GallegoRoom_MapScripts {
      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_TEMP_8, 0: GallegoRoom_OnWarp_PlayerTurnNorth
@@ -159,3 +161,56 @@ script GallegoRoom_EventScript_Gallego {
     end
 }
 
+script GallegoRoom_EventScript_TV {
+    msgbox(format("Parece que tiene a medias una partida del Castlevania original.\pCuriosa forma de liberar el estrés."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Monkfear {
+    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Agua/siniestro.\lEspecie: Acuaterror.\pLínea evolutiva: Monkfear no evoluciona.", MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Saturnape {
+    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Psíquico.\lEspecie: Mono alien.\pLínea evolutiva: Marskey (LV. 30) >\nSaturnape.", MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Gameboy1 {
+    msgbox(format("Es una Gameboy Color. Parece que tiene una partida en marcha en el interior de un bosque enorme.\pVale, voy a salir y… acaba de crashear. Vaya."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Gameboy2 {
+    msgbox(format("Es una Gameboy Color. La partida está guardada antes de la escena de selección de inicial en un juego que no conozco…\p¡Uy! Se acaba de reiniciar nada más entrar en combate. Vaya chasco."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Coffee {
+    msgbox(format("Un café con leche a medio beber. Parece como si alguien se lo hubiese dejado a medias por la prisa."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Drawings {
+    msgbox(format("Parecen diseños de varios fakémon y Pokémon de generaciones posteriores a la segunda en el estilo de la Gameboy Color.\pEstán entremezclados con apuntes muy viejos de la universidad.\pParece que nadie ha puesto orden aquí en una década."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_NES {
+    msgbox(format("Es una NES, un poco polvorienta, pero funciona perfectamente. ¡Qué retro!"), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Bin {
+    switch(var(VAR_TEMP_0_BIN)) {
+        case 0:
+            msgbox(format("Nada, aquí solo hay basura… creo."), MSGBOX_SIGN)
+            setvar(VAR_TEMP_0_BIN, 1)
+        case 1:
+            msgbox(format("Te he dicho que aquí solo hay basura. Deja de buscar."), MSGBOX_SIGN)
+            setvar(VAR_TEMP_0_BIN, 2)
+        case 2:
+            msgbox(format("Encuentras al fondo una imagen extraña. Es un diseño claramente de la segunda generación, pero estás seguro de que es Flamigo, un Pokémon reciente.\p¿Qué sentido tiene esto?"), MSGBOX_SIGN)
+    }
+    end
+}
