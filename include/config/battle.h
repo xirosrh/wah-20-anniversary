@@ -276,7 +276,7 @@
 
 // Configuración de Interfaz
 #define B_FAST_INTRO_PKMN_TEXT      TRUE  // Si se establece en TRUE, los textos de introducción de la batalla se imprimen al mismo tiempo que la animación de un Pokémon, en lugar de esperar a que termine la animación.
-#define B_FAST_INTRO_NO_SLIDE       FALSE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
+#define B_FAST_INTRO_NO_SLIDE       TRUE // Si se establece en TRUE, se saltará la animación de deslizamiento que se produce al entrar en combate.
 #define B_FAST_HP_DRAIN             TRUE  // Si se establece en TRUE, las barras de HP se moverán más rápido.
 #define B_FAST_EXP_GROW             TRUE  // Si se establece en TRUE, las barras de EXP se moverán más rápido.
 #define B_SHOW_TARGETS              TRUE  // Si se establece en TRUE, se mostrarán todos los objetivos disponibles para los movimientos que golpean a 2 o 3 Pokémon antes de seleccionar un movimiento.

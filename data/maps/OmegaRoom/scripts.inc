@@ -25,10 +25,6 @@ OmegaRoom_EventScript_StartChallenge::
 	msgbox OmegaRoom_EventScript_StartChallenge_Text_1
 # 15 "data/maps/OmegaRoom/scripts.pory"
 	subvar VAR_TEMP_D, 1
-# 16 "data/maps/OmegaRoom/scripts.pory"
-	moveobjecttopos LOCALID_PLAYER, 6, 9, DIR_NORTH
-# 17 "data/maps/OmegaRoom/scripts.pory"
-	waitmovement 0
 # 18 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, OmegaRoom_EventScript_StartChallenge_Movement_0
 # 21 "data/maps/OmegaRoom/scripts.pory"
