@@ -11,12 +11,6 @@ OmegaRoom_EventScript_StartChallenge::
 	getplayerxy VAR_TEMP_C, VAR_TEMP_D
 # 8 "data/maps/OmegaRoom/scripts.pory"
 	getobjectxy LOCALID_OMEGAROOM_OMEGA, CURRENT_POSITION, VAR_TEMP_A, VAR_TEMP_B
-# 9 "data/maps/OmegaRoom/scripts.pory"
-	special SpawnCameraObject
-# 10 "data/maps/OmegaRoom/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
-# 11 "data/maps/OmegaRoom/scripts.pory"
-	waitmovement 0
 # 12 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown
 # 13 "data/maps/OmegaRoom/scripts.pory"
@@ -27,17 +21,13 @@ OmegaRoom_EventScript_StartChallenge::
 	subvar VAR_TEMP_D, 1
 # 18 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, OmegaRoom_EventScript_StartChallenge_Movement_0
-# 21 "data/maps/OmegaRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkDown4
-# 22 "data/maps/OmegaRoom/scripts.pory"
-	waitmovement LOCALID_CAMERA
-# 23 "data/maps/OmegaRoom/scripts.pory"
-	special RemoveCameraObject
 # 24 "data/maps/OmegaRoom/scripts.pory"
 	msgbox OmegaRoom_EventScript_StartChallenge_Text_2
 # 25 "data/maps/OmegaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_3
 # 26 "data/maps/OmegaRoom/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 27 "data/maps/OmegaRoom/scripts.pory"
 	release
 	end
 

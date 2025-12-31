@@ -6,9 +6,9 @@ script OmegaRoom_EventScript_StartChallenge {
     msgbox("holi", MSGBOX_AUTOCLOSE)
     getplayerxy(VAR_TEMP_C, VAR_TEMP_D)
     getobjectxy(LOCALID_OMEGAROOM_OMEGA, CURRENT_POSITION, VAR_TEMP_A, VAR_TEMP_B)
-    special(SpawnCameraObject)
-    directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
-    waitmovement(0)
+    // special(SpawnCameraObject)
+    //directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
+    //waitmovement(0)
     applymovement(LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown)
     waitmovement(0)
     msgbox(format("Ostras, une nuevo desafiante."))
@@ -18,11 +18,12 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(
         walk_down
         jump_2_down))
-    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
-    waitmovement(LOCALID_CAMERA)
-    special(RemoveCameraObject)
+    // applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
+    // waitmovement(LOCALID_CAMERA)
+    // special(RemoveCameraObject)
     msgbox("XXX")
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_MAIN, "XX")
+    setvar(VAR_TEMP_0, 1)
     release
     end
 }
