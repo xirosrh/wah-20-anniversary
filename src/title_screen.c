@@ -120,11 +120,11 @@ static const struct SpritePalette sSpritePal_Moltres[] =
 
 static const union AnimCmd sAnimMoltresBody[] =
 {
-    ANIMCMD_FRAME(0,   5),
-    ANIMCMD_FRAME(64,  5),
-    ANIMCMD_FRAME(128, 5),
-    ANIMCMD_FRAME(192, 5),
-    ANIMCMD_FRAME(256, 5),
+    ANIMCMD_FRAME(0,   7),
+    ANIMCMD_FRAME(64,  7),
+    ANIMCMD_FRAME(128, 7),
+    ANIMCMD_FRAME(192, 7),
+    ANIMCMD_FRAME(256, 7),
     ANIMCMD_JUMP(0),
 };
 
@@ -155,11 +155,11 @@ static const struct CompressedSpriteSheet sSpriteSheet_MoltresTail[] =
 
 static const union AnimCmd sAnimMoltresTail[] =
 {
-    ANIMCMD_FRAME(0,  5),
-    ANIMCMD_FRAME(32,  5),
-    ANIMCMD_FRAME(64, 5),
-    ANIMCMD_FRAME(96, 5),
-    ANIMCMD_FRAME(128, 5),
+    ANIMCMD_FRAME(0,   7),
+    ANIMCMD_FRAME(8,   7),
+    ANIMCMD_FRAME(16,  7),
+    ANIMCMD_FRAME(24,  7),
+    ANIMCMD_FRAME(32,  7),
     ANIMCMD_JUMP(0),
 };
 
@@ -882,7 +882,7 @@ static void Task_TitleScreenPhase2(u8 taskId)
         // CreateCopyrightBanner(START_BANNER_X, 148);
 
         CreateSprite(&sMoltresBodySpriteTemplate, 120, 62, 0);
-        CreateSprite(&sMoltresTailSpriteTemplate, 160, 58, 0);
+        CreateSprite(&sMoltresTailSpriteTemplate, 160, 62, 0);
 
 
         gTasks[taskId].tBg1X = 0;
