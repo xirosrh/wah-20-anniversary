@@ -1316,6 +1316,23 @@ void InitTilesetAnim_TokynWarRoom(void)
 }
 
 
+const u16 gTilesetAnims_OmegaRoom_Empty_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/empty/00.4bpp");
+const u16 gTilesetAnims_OmegaRoom_Empty_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/empty/01.4bpp");
+const u16 gTilesetAnims_OmegaRoom_Empty_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/empty/02.4bpp");
+
+const u16 *const gTilesetAnims_OmegaRoom_Empty[] = {
+    gTilesetAnims_OmegaRoom_Empty_Frame0,
+    gTilesetAnims_OmegaRoom_Empty_Frame1,
+    gTilesetAnims_OmegaRoom_Empty_Frame2,
+    gTilesetAnims_OmegaRoom_Empty_Frame1
+};
+
+static void QueueAnimTiles_OmegaRoom_Empty(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_OmegaRoom_Empty);
+    AppendTilesetAnimToBuffer(gTilesetAnims_OmegaRoom_Empty[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 16 * TILE_SIZE_4BPP);
+}
+
 const u16 gTilesetAnims_OmegaRoom_Omega_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/omega/00.4bpp");
 const u16 gTilesetAnims_OmegaRoom_Omega_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/omega/01.4bpp");
 const u16 gTilesetAnims_OmegaRoom_Omega_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/omega/02.4bpp");
@@ -1331,13 +1348,16 @@ const u16 *const gTilesetAnims_OmegaRoom_Omega[] = {
 static void QueueAnimTiles_OmegaRoom_Omega(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_OmegaRoom_Omega);
-    AppendTilesetAnimToBuffer(gTilesetAnims_OmegaRoom_Omega[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 16 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_OmegaRoom_Omega[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 16 * TILE_SIZE_4BPP);
 }
 
 static void TilesetAnim_OmegaRoom(u16 timer)
 {
     if (timer % 16 == 0) {
         QueueAnimTiles_OmegaRoom_Omega(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_OmegaRoom_Empty(timer / 16);
     }
 }
 

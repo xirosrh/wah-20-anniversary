@@ -896,6 +896,28 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_room_omega
+#define METATILE_room_omega_EMPTY_1           0x280
+#define METATILE_room_omega_EMPTY_2           0x281
+#define METATILE_room_omega_EMPTY_3           0x282
+#define METATILE_room_omega_EMPTY_4           0x288
+#define METATILE_room_omega_EMPTY_5           0x289
+#define METATILE_room_omega_EMPTY_6           0x28A
+#define METATILE_room_omega_OMEGA_AWAKENS_1   0x263
+#define METATILE_room_omega_OMEGA_AWAKENS_2   0x264
+#define METATILE_room_omega_OMEGA_AWAKENS_3   0x265
+#define METATILE_room_omega_OMEGA_AWAKENS_4   0x26B
+#define METATILE_room_omega_OMEGA_AWAKENS_5   0x26C
+#define METATILE_room_omega_OMEGA_AWAKENS_6   0x26D
+#define METATILE_room_omega_OMEGA_AWAKENS_7   0x274
+#define METATILE_room_omega_OMEGA_SLEEPING_1  0x260
+#define METATILE_room_omega_OMEGA_SLEEPING_2  0x261
+#define METATILE_room_omega_OMEGA_SLEEPING_3  0x262
+#define METATILE_room_omega_OMEGA_SLEEPING_4  0x268
+#define METATILE_room_omega_OMEGA_SLEEPING_5  0x269
+#define METATILE_room_omega_OMEGA_SLEEPING_6  0x26A
+#define METATILE_room_omega_OMEGA_SLEEPING_7  0x271
+
 // Other
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
