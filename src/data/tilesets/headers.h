@@ -916,5 +916,5 @@ const struct Tileset gTileset_room_omega =
     .palettes = gTilesetPalettes_room_omega,
     .metatiles = gMetatiles_room_omega,
     .metatileAttributes = gMetatileAttributes_room_omega,
-    .callback = NULL,
+    .callback = InitTilesetAnim_OmegaRoom,
 };
