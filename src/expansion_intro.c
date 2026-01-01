@@ -6,8 +6,8 @@
 #include "task.h"
 #include "gpu_regs.h"
 #include "main.h"
-#include "intro.h"
 #include "expansion_intro.h"
+#include "title_screen.h"
 #include "constants/rgb.h"
 
 #if EXPANSION_INTRO == TRUE
@@ -142,14 +142,13 @@ void Task_HandleExpansionIntro(u8 taskId)
         break;
 
     case 4:
-        // Wait for fade out, then transition to intro
+        // Wait for fade out, then transition to title screen
         if (!gPaletteFade.active)
         {
             ResetSpriteData();
             FreeAllSpritePalettes();
             DestroyTask(taskId);
-            CreateTask(Task_Scene1_Load, 0);
-            SetMainCallback2(MainCB2_Intro);
+            SetMainCallback2(CB2_InitTitleScreen);
         }
         break;
     }
