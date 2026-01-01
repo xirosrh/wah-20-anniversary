@@ -5216,22 +5216,22 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "invigorated, allowing it to regain\n"
             "its youth. It manipulates the\n"
             "atmosphere to summon storms."),
-        //.frontPic = gMonFrontPic_CircledQuestionMark,
-        //.frontPicSize = MON_COORDS_SIZE(40, 40),
-        //.frontPicYOffset = 12,
-        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        //.backPic = gMonBackPic_CircledQuestionMark,
-        //.backPicSize = MON_COORDS_SIZE(40, 40),
-        //.backPicYOffset = 12,
-        //.backAnimId = BACK_ANIM_NONE,
-        //.palette = gMonPalette_CircledQuestionMark,
-        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        //.iconSprite = gMonIcon_QuestionMark,
-        //.iconPalIndex = 0,
+        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_DrampaMega
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_DrampaMega
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_DrampaMega
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_DrampaMega
+        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_DrampaMega
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Drampa)
-        //SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sDrampaLevelUpLearnset,
         .teachableLearnset = sDrampaTeachableLearnset,
