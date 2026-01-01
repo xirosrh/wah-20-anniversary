@@ -3,7 +3,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 {
 #endif
 
-[SPECIES_FAKEMON1] =
+[SPECIES_KAOSUNE] =
     {
         .baseHP        = 100,
         .baseAttack    = 150,
@@ -60,7 +60,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sGroudonTeachableLearnset,
     },
 
-    [SPECIES_FAKEMON2] =
+    [SPECIES_FREECH] =
     {
         .baseHP        = 95,
         .baseAttack    = 60,
@@ -114,7 +114,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sSkarmoryTeachableLearnset,
     },
 
-    [SPECIES_FAKEMON3] =
+    [SPECIES_PLUGOINK] =
     {
         .baseHP        = 70,
         .baseAttack    = 75,
@@ -164,7 +164,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sPlugoinkLevelUpLearnset,
     },
 
-    [SPECIES_FAKEMON4] =
+    [SPECIES_GRITESPEC] =
     {
         .baseHP        = 65,
         .baseAttack    = 50,
@@ -216,7 +216,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .eggMoveLearnset = sChimechoEggMoveLearnset,
     },
 
-    [SPECIES_FAKEMON5] =
+    [SPECIES_MAGIKEN] =
     {
         .baseHP        = 75,
         .baseAttack    = 100,
@@ -266,7 +266,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sMagikenLevelUpLearnset,
     },
 
-    [SPECIES_FAKEMON6] =
+    [SPECIES_AYEWIRAZ] =
     {
         .baseHP        = 70,
         .baseAttack    = 90,
@@ -317,7 +317,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sMightyenaTeachableLearnset,
     },
 
-    [SPECIES_FAKEMON7] =
+    [SPECIES_ELECTRODES] =
     {
         .baseHP        = 120,
         .baseAttack    = 90,
