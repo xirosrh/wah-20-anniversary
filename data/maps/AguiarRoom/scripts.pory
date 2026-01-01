@@ -27,7 +27,18 @@ script AguiarRoom_EventScript_Aguiar {
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
     msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
+    // Aguiar is admin index 5
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
+    } else {
+        setvar(VAR_0x8004, 5)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, format("¡Vaya combate! Me lo he pasado de\nlujo."))
+        }
+    }
     delay(10)
     msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)

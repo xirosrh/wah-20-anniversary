@@ -575,5 +575,5 @@ gSpecials::
 	def_special SetMsgboxCenter
 	def_special SetMsgboxBottom
 	def_special UpdateObjectEventSprite
-
-
+	def_special RandomizeWahAdminTeams
+	def_special ShouldUseAlternativeTeam

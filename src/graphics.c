@@ -1265,7 +1265,7 @@ const u16 gBattlePyramidFloor_Pal[][16] = INCBIN_U16("graphics/battle_frontier/p
 const u32 gMultiBattleIntroBg_Opponent_Tilemap[] = INCBIN_U32("graphics/battle_frontier/multi_battle_intro_bg_opponent.bin.smolTM");
 const u32 gMultiBattleIntroBg_Player_Tilemap[] = INCBIN_U32("graphics/battle_frontier/multi_battle_intro_bg_player.bin.smolTM");
 
-#include "data/graphics/intro_scene.h"
+// Intro scene graphics removed - see commit 5b5df4a283
 
 const u32 gBattleAnimSpriteGfx_FlyingDirt[] = INCBIN_U32("graphics/battle_anims/sprites/flying_dirt.4bpp.smol");
 const u16 gBattleAnimSpritePal_FlyingDirt[] = INCBIN_U16("graphics/battle_anims/sprites/flying_dirt.gbapal");
@@ -1750,9 +1750,14 @@ const u16 gSummaryScreen_MoveEffect_Battle_Tilemap[] = INCBIN_U16("graphics/summ
 const u16 gSummaryScreen_MoveEffect_Contest_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_contest.bin");
 const u16 gSummaryScreen_MoveEffect_Cancel_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_cancel.bin");
 
-const u16 gIntroCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
-const u32 gIntroCopyright_Gfx[] = INCBIN_U32("graphics/intro/copyright.4bpp.smol");
-const u32 gIntroCopyright_Tilemap[] = INCBIN_U32("graphics/intro/copyright.bin.smolTM");
+// Copyright graphics removed - see commit 5b5df4a283
+// Stubbed to maintain credits.c and intro_credits_graphics.c compatibility
+const u16 gIntroCopyright_Pal[16] = {0};
+const u32 gIntroBrendan_Gfx[1] = {0};
+const u32 gIntroMay_Gfx[1] = {0};
+const u32 gIntroFlygon_Gfx[1] = {0};
+const u16 gIntroPlayer_Pal[16] = {0};
+const u16 gIntroFlygon_Pal[16] = {0};
 
 const u16 gPokedexAreaScreenAreaUnknown_Pal[] = INCBIN_U16("graphics/pokedex/area_unknown.gbapal");
 const u32 gPokedexAreaScreenAreaUnknown_Gfx[] = INCBIN_U32("graphics/pokedex/area_unknown.4bpp.smol");

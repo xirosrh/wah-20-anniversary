@@ -63,7 +63,7 @@
 #define FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR    0x31 // Used WAH
 #define FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS    0x32 // Used WAH
 #define FLAG_DEFEATED_ADMIN_SERGIO    0x33 // Used WAH
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_WAH_CHALLENGE_COMPLETED    0x34 // Set when player beats entire WAH challenge
 #define FLAG_REYBOOROOM_HIDE_BOO    0x35 // Used WAH
 #define FLAG_REYBOOROOM_HIDE_VIGOROTH    0x36 // Used WAH
 #define FLAG_REONEKYROOM_HIDE_TYPHLOSION    0x37 // Used WAH

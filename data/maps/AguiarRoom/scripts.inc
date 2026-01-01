@@ -41,25 +41,35 @@ AguiarRoom_EventScript_Aguiar::
 	waitse
 # 29 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_5, MSGBOX_AUTOCLOSE
-# 30 "data/maps/AguiarRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_EventScript_Aguiar_Text_6
 # 31 "data/maps/AguiarRoom/scripts.pory"
-	delay 10
-# 32 "data/maps/AguiarRoom/scripts.pory"
-	msgbox AguiarRoom_EventScript_Aguiar_Text_7, MSGBOX_AUTOCLOSE
-# 33 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AguiarRoom_EventScript_Aguiar_5
 # 34 "data/maps/AguiarRoom/scripts.pory"
-	delay 20
+	setvar VAR_0x8004, 5
 # 35 "data/maps/AguiarRoom/scripts.pory"
-	msgbox AguiarRoom_EventScript_Aguiar_Text_8, MSGBOX_AUTOCLOSE
+	special ShouldUseAlternativeTeam
 # 36 "data/maps/AguiarRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-# 37 "data/maps/AguiarRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_AGUIAR
-# 38 "data/maps/AguiarRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP
+	compare VAR_RESULT, 0
+	goto_if_eq AguiarRoom_EventScript_Aguiar_8
 # 39 "data/maps/AguiarRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_EventScript_Aguiar_Text_6
+AguiarRoom_EventScript_Aguiar_4:
+# 42 "data/maps/AguiarRoom/scripts.pory"
+	delay 10
+# 43 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Aguiar_Text_7, MSGBOX_AUTOCLOSE
+# 44 "data/maps/AguiarRoom/scripts.pory"
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
+# 45 "data/maps/AguiarRoom/scripts.pory"
+	delay 20
+# 46 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Aguiar_Text_8, MSGBOX_AUTOCLOSE
+# 47 "data/maps/AguiarRoom/scripts.pory"
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+# 48 "data/maps/AguiarRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_AGUIAR
+# 49 "data/maps/AguiarRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP
+# 50 "data/maps/AguiarRoom/scripts.pory"
 	release
 	end
 
@@ -69,6 +79,16 @@ AguiarRoom_EventScript_Aguiar_2:
 # 7 "data/maps/AguiarRoom/scripts.pory"
 	release
 	end
+
+AguiarRoom_EventScript_Aguiar_5:
+# 32 "data/maps/AguiarRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_EventScript_Aguiar_Text_6
+	goto AguiarRoom_EventScript_Aguiar_4
+
+AguiarRoom_EventScript_Aguiar_8:
+# 37 "data/maps/AguiarRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_EventScript_Aguiar_Text_6
+	goto AguiarRoom_EventScript_Aguiar_4
 
 
 AguiarRoom_EventScript_Aguiar_Text_0:
@@ -117,16 +137,16 @@ AguiarRoom_EventScript_Aguiar_Text_5:
 	.string "¡Vamos allá!$"
 
 AguiarRoom_EventScript_Aguiar_Text_6:
-# 30 "data/maps/AguiarRoom/scripts.pory"
+# 32 "data/maps/AguiarRoom/scripts.pory"
 	.string "¡Vaya combate! Me lo he pasado de\n"
 	.string "lujo.$"
 
 AguiarRoom_EventScript_Aguiar_Text_7:
-# 32 "data/maps/AguiarRoom/scripts.pory"
+# 43 "data/maps/AguiarRoom/scripts.pory"
 	.string "¡Pues mira que me la has liado! Y yo\n"
 	.string "pensando que iba a ser otro paseo…$"
 
 AguiarRoom_EventScript_Aguiar_Text_8:
-# 35 "data/maps/AguiarRoom/scripts.pory"
+# 46 "data/maps/AguiarRoom/scripts.pory"
 	.string "No está mal, no está nada mal. Ya puedes\n"
 	.string "seguir avanzando.$"

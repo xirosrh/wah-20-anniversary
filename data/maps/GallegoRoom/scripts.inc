@@ -149,39 +149,49 @@ GallegoRoom_EventScript_Gallego_4:
 	applymovementandwait LOCALID_GALLEGOROOM_GALLEGO, GallegoRoom_EventScript_Gallego_Movement_8
 # 137 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Gallego_Text_14, speaker = SP_NAME_GALLEGO
-# 138 "data/maps/GallegoRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_EventScript_Gallego_Text_15
 # 139 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
-# 140 "data/maps/GallegoRoom/scripts.pory"
-	playse SE_PIN
-# 141 "data/maps/GallegoRoom/scripts.pory"
-	applymovementandwait LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GallegoRoom_EventScript_Gallego_9
 # 142 "data/maps/GallegoRoom/scripts.pory"
-	delay 60
+	setvar VAR_0x8004, 17
 # 143 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	special ShouldUseAlternativeTeam
 # 144 "data/maps/GallegoRoom/scripts.pory"
-	playse SE_PIN
-# 145 "data/maps/GallegoRoom/scripts.pory"
-	applymovementandwait LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48
-# 146 "data/maps/GallegoRoom/scripts.pory"
-	delay 30
+	compare VAR_RESULT, 0
+	goto_if_eq GallegoRoom_EventScript_Gallego_12
 # 147 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_18, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
-# 148 "data/maps/GallegoRoom/scripts.pory"
-	applymovement LOCALID_GALLEGOROOM_GALLEGO, GallegoRoom_EventScript_Gallego_Movement_9
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_EventScript_Gallego_Text_15
+GallegoRoom_EventScript_Gallego_8:
+# 150 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Gallego_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+# 151 "data/maps/GallegoRoom/scripts.pory"
+	playse SE_PIN
+# 152 "data/maps/GallegoRoom/scripts.pory"
+	applymovementandwait LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48
+# 153 "data/maps/GallegoRoom/scripts.pory"
+	delay 60
+# 154 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Gallego_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 155 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_19, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	playse SE_PIN
 # 156 "data/maps/GallegoRoom/scripts.pory"
-	waitmovement 0
+	applymovementandwait LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48
 # 157 "data/maps/GallegoRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	delay 30
 # 158 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_20, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_18, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 159 "data/maps/GallegoRoom/scripts.pory"
+	applymovement LOCALID_GALLEGOROOM_GALLEGO, GallegoRoom_EventScript_Gallego_Movement_9
+# 166 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Gallego_Text_19, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+# 167 "data/maps/GallegoRoom/scripts.pory"
+	waitmovement 0
+# 168 "data/maps/GallegoRoom/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 169 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Gallego_Text_20, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+# 170 "data/maps/GallegoRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_GALLEGO
-# 160 "data/maps/GallegoRoom/scripts.pory"
+# 171 "data/maps/GallegoRoom/scripts.pory"
 	release
 	end
 
@@ -212,83 +222,93 @@ GallegoRoom_EventScript_Gallego_7:
 	applymovementandwait LOCALID_PLAYER, GallegoRoom_EventScript_Gallego_Movement_1
 	goto GallegoRoom_EventScript_Gallego_4
 
+GallegoRoom_EventScript_Gallego_9:
+# 140 "data/maps/GallegoRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_EventScript_Gallego_Text_15
+	goto GallegoRoom_EventScript_Gallego_8
+
+GallegoRoom_EventScript_Gallego_12:
+# 145 "data/maps/GallegoRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_EventScript_Gallego_Text_15
+	goto GallegoRoom_EventScript_Gallego_8
+
 
 GallegoRoom_EventScript_TV::
-# 165 "data/maps/GallegoRoom/scripts.pory"
+# 176 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_TV_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Monkfear::
-# 170 "data/maps/GallegoRoom/scripts.pory"
+# 181 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Monkfear_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Saturnape::
-# 175 "data/maps/GallegoRoom/scripts.pory"
+# 186 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Saturnape_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Gameboy1::
-# 180 "data/maps/GallegoRoom/scripts.pory"
+# 191 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Gameboy1_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Gameboy2::
-# 185 "data/maps/GallegoRoom/scripts.pory"
+# 196 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Gameboy2_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Coffee::
-# 190 "data/maps/GallegoRoom/scripts.pory"
+# 201 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Coffee_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Drawings::
-# 195 "data/maps/GallegoRoom/scripts.pory"
+# 206 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Drawings_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_NES::
-# 200 "data/maps/GallegoRoom/scripts.pory"
+# 211 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_NES_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Bin::
-# 205 "data/maps/GallegoRoom/scripts.pory"
+# 216 "data/maps/GallegoRoom/scripts.pory"
 	switch VAR_TEMP_0
-# 206 "data/maps/GallegoRoom/scripts.pory"
+# 217 "data/maps/GallegoRoom/scripts.pory"
 	case 0, GallegoRoom_EventScript_Bin_3
-# 209 "data/maps/GallegoRoom/scripts.pory"
+# 220 "data/maps/GallegoRoom/scripts.pory"
 	case 1, GallegoRoom_EventScript_Bin_4
-# 212 "data/maps/GallegoRoom/scripts.pory"
+# 223 "data/maps/GallegoRoom/scripts.pory"
 	case 2, GallegoRoom_EventScript_Bin_5
 GallegoRoom_EventScript_Bin_1:
 	end
 
 GallegoRoom_EventScript_Bin_3:
-# 207 "data/maps/GallegoRoom/scripts.pory"
+# 218 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_0, MSGBOX_SIGN
-# 208 "data/maps/GallegoRoom/scripts.pory"
+# 219 "data/maps/GallegoRoom/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto GallegoRoom_EventScript_Bin_1
 
 GallegoRoom_EventScript_Bin_4:
-# 210 "data/maps/GallegoRoom/scripts.pory"
+# 221 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_1, MSGBOX_SIGN
-# 211 "data/maps/GallegoRoom/scripts.pory"
+# 222 "data/maps/GallegoRoom/scripts.pory"
 	setvar VAR_TEMP_0, 2
 	goto GallegoRoom_EventScript_Bin_1
 
 GallegoRoom_EventScript_Bin_5:
-# 213 "data/maps/GallegoRoom/scripts.pory"
+# 224 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_2, MSGBOX_SIGN
 	goto GallegoRoom_EventScript_Bin_1
 
@@ -431,17 +451,17 @@ GallegoRoom_EventScript_Gallego_Movement_8:
 	face_player
 	step_end
 
-# 148 "data/maps/GallegoRoom/scripts.pory"
+# 159 "data/maps/GallegoRoom/scripts.pory"
 GallegoRoom_EventScript_Gallego_Movement_9:
-# 149 "data/maps/GallegoRoom/scripts.pory"
+# 160 "data/maps/GallegoRoom/scripts.pory"
 	lock_facing_direction
-# 150 "data/maps/GallegoRoom/scripts.pory"
+# 161 "data/maps/GallegoRoom/scripts.pory"
 	jump_in_place_up
-# 151 "data/maps/GallegoRoom/scripts.pory"
+# 162 "data/maps/GallegoRoom/scripts.pory"
 	jump_in_place_up
-# 152 "data/maps/GallegoRoom/scripts.pory"
+# 163 "data/maps/GallegoRoom/scripts.pory"
 	unlock_facing_direction
-# 153 "data/maps/GallegoRoom/scripts.pory"
+# 164 "data/maps/GallegoRoom/scripts.pory"
 	face_player
 	step_end
 
@@ -553,12 +573,12 @@ GallegoRoom_EventScript_Gallego_Text_14:
 	.string "nueva generación!$"
 
 GallegoRoom_EventScript_Gallego_Text_15:
-# 138 "data/maps/GallegoRoom/scripts.pory"
+# 140 "data/maps/GallegoRoom/scripts.pory"
 	.string "Uff.. pues sí que me he quedado\n"
 	.string "anticuado.$"
 
 GallegoRoom_EventScript_Gallego_Text_16:
-# 139 "data/maps/GallegoRoom/scripts.pory"
+# 150 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parece que las nuevas generaciones de\n"
 	.string "entrenadores son mucho más duras de\l"
 	.string "roer.\p"
@@ -566,7 +586,7 @@ GallegoRoom_EventScript_Gallego_Text_16:
 	.string "chispa de antaño.$"
 
 GallegoRoom_EventScript_Gallego_Text_17:
-# 143 "data/maps/GallegoRoom/scripts.pory"
+# 154 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es curioso… abandoné justo antes de\n"
 	.string "que todo se volviera más fácil, y aun\l"
 	.string "así, sigo pensando en volver.\p"
@@ -574,38 +594,38 @@ GallegoRoom_EventScript_Gallego_Text_17:
 	.string "remedio…$"
 
 GallegoRoom_EventScript_Gallego_Text_18:
-# 147 "data/maps/GallegoRoom/scripts.pory"
+# 158 "data/maps/GallegoRoom/scripts.pory"
 	.string "Supongo que algunos sueños no se\n"
 	.string "apagan.$"
 
 GallegoRoom_EventScript_Gallego_Text_19:
-# 155 "data/maps/GallegoRoom/scripts.pory"
+# 166 "data/maps/GallegoRoom/scripts.pory"
 	.string "Ve, continúa, ¡busca tu sueño y\n"
 	.string "abrázalo con fuerza!$"
 
 GallegoRoom_EventScript_Gallego_Text_20:
-# 158 "data/maps/GallegoRoom/scripts.pory"
+# 169 "data/maps/GallegoRoom/scripts.pory"
 	.string "Yo me quedaré aquí un rato más…\n"
 	.string "recordando mis viejos intentos y\l"
 	.string "soñando con un nuevo y emocionante\l"
 	.string "comienzo.$"
 
 GallegoRoom_EventScript_TV_Text_0:
-# 165 "data/maps/GallegoRoom/scripts.pory"
+# 176 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parece que tiene a medias una partida\n"
 	.string "del Castlevania original.\p"
 	.string "Curiosa forma de liberar el estrés.$"
 
 GallegoRoom_EventScript_Monkfear_Text_0:
-# 170 "data/maps/GallegoRoom/scripts.pory"
+# 181 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Agua/siniestro.\lEspecie: Acuaterror.\pLínea evolutiva: Monkfear no evoluciona.$"
 
 GallegoRoom_EventScript_Saturnape_Text_0:
-# 175 "data/maps/GallegoRoom/scripts.pory"
+# 186 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Psíquico.\lEspecie: Mono alien.\pLínea evolutiva: Marskey (LV. 30) >\nSaturnape.$"
 
 GallegoRoom_EventScript_Gameboy1_Text_0:
-# 180 "data/maps/GallegoRoom/scripts.pory"
+# 191 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es una Gameboy Color. Parece que tiene\n"
 	.string "una partida en marcha en el interior de\l"
 	.string "un bosque enorme.\p"
@@ -613,7 +633,7 @@ GallegoRoom_EventScript_Gameboy1_Text_0:
 	.string "Vaya.$"
 
 GallegoRoom_EventScript_Gameboy2_Text_0:
-# 185 "data/maps/GallegoRoom/scripts.pory"
+# 196 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es una Gameboy Color. La partida está\n"
 	.string "guardada antes de la escena de\l"
 	.string "selección de inicial en un juego que no\l"
@@ -622,13 +642,13 @@ GallegoRoom_EventScript_Gameboy2_Text_0:
 	.string "entrar en combate. Vaya chasco.$"
 
 GallegoRoom_EventScript_Coffee_Text_0:
-# 190 "data/maps/GallegoRoom/scripts.pory"
+# 201 "data/maps/GallegoRoom/scripts.pory"
 	.string "Un café con leche a medio beber. Parece\n"
 	.string "como si alguien se lo hubiese dejado a\l"
 	.string "medias por la prisa.$"
 
 GallegoRoom_EventScript_Drawings_Text_0:
-# 195 "data/maps/GallegoRoom/scripts.pory"
+# 206 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parecen diseños de varios fakémon y\n"
 	.string "Pokémon de generaciones posteriores a\l"
 	.string "la segunda en el estilo de la Gameboy\l"
@@ -639,21 +659,21 @@ GallegoRoom_EventScript_Drawings_Text_0:
 	.string "en una década.$"
 
 GallegoRoom_EventScript_NES_Text_0:
-# 200 "data/maps/GallegoRoom/scripts.pory"
+# 211 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es una NES, un poco polvorienta, pero\n"
 	.string "funciona perfectamente. ¡Qué retro!$"
 
 GallegoRoom_EventScript_Bin_Text_0:
-# 207 "data/maps/GallegoRoom/scripts.pory"
+# 218 "data/maps/GallegoRoom/scripts.pory"
 	.string "Nada, aquí solo hay basura… creo.$"
 
 GallegoRoom_EventScript_Bin_Text_1:
-# 210 "data/maps/GallegoRoom/scripts.pory"
+# 221 "data/maps/GallegoRoom/scripts.pory"
 	.string "Te he dicho que aquí solo hay basura.\n"
 	.string "Deja de buscar.$"
 
 GallegoRoom_EventScript_Bin_Text_2:
-# 213 "data/maps/GallegoRoom/scripts.pory"
+# 224 "data/maps/GallegoRoom/scripts.pory"
 	.string "Encuentras al fondo una imagen\n"
 	.string "extraña. Es un diseño claramente de la\l"
 	.string "segunda generación, pero estás seguro\l"

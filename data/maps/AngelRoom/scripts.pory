@@ -58,8 +58,18 @@ script AngelRoom_EventScript_Angel {
     }
     waitse
     msgbox(format("¡Ven! ¡Atácame con todo lo que tengas!"))
-
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
+    // Angel is admin index 7
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
+    } else {
+        setvar(VAR_0x8004, 7)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, format("¿Así que este es el poder de la nueva generación?"))
+        }
+    }
     delay(20)
     playse(SE_PIN)
     applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_ExclamationMarkWithDelay48) //TODO Xiros Emote surprise

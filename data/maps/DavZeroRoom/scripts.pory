@@ -91,7 +91,18 @@ script DavZeroRoom_OnFrame {
     setobjectmovementtype2(LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN)   
     release
     msgbox(format("¡No te amedrentes ahora!"))
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
+    // DavZero is admin index 10
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
+    } else {
+        setvar(VAR_0x8004, 10)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
+        }
+    }
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_ZEROROOM_MILOTIC)
     fadescreen(FADE_FROM_WHITE)

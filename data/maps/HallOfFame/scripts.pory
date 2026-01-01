@@ -46,6 +46,7 @@ script HallOfFame_OnFrame {
 }
 
 script HallOfFame_EventScript_SetGameClearFlags {
-    //TOOD Xiros
+    setflag(FLAG_WAH_CHALLENGE_COMPLETED)
+    special(RandomizeWahAdminTeams)
     return
 }

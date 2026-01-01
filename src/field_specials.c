@@ -4384,3 +4384,27 @@ void UpdateObjectEventSprite()
     ObjectEventSetGraphicsId(&objectEvent, gSpecialVar_0x8005);
     ObjectEventTurn(&objectEvent, objectEvent.movementDirection);
 }
+
+// WAH Admin Rematch Team Selection
+// Randomizes which team (MAIN or ALTERNATIVE) each admin uses in rematches
+void RandomizeWahAdminTeams(void)
+{
+    VarSet(VAR_WAH_ADMIN_TEAMS_LO, Random());
+    VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
+}
+
+// Checks if admin at given index should use ALTERNATIVE team
+// Input: gSpecialVar_0x8004 = admin index (0-23)
+// Output: gSpecialVar_Result = 0 (MAIN) or 1 (ALTERNATIVE)
+void ShouldUseAlternativeTeam(void)
+{
+    u8 adminIndex = gSpecialVar_0x8004;
+    u16 teamBits;
+
+    if (adminIndex < 16)
+        teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_LO);
+    else
+        teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_HI);
+
+    gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
+}

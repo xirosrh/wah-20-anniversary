@@ -541,7 +541,18 @@ script JackJohnsonRoom_OnFrame {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(RemoveCameraObject)
     msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), speaker = SP_NAME_JACK_JOHNSON)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, format("Has  tomado el mando, enhorabuena."))
+    // JackJohnson is admin index 6
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, format("Has  tomado el mando, enhorabuena."))
+    } else {
+        setvar(VAR_0x8004, 6)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, format("Has  tomado el mando, enhorabuena."))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE, format("Has  tomado el mando, enhorabuena."))
+        }
+    }
     delay(20)
     msgbox(format("Magnífico… impecable. Cada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     call(WahRoomsShared_OpenDoor)
