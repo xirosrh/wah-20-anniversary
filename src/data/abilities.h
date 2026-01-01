@@ -2410,4 +2410,15 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_EXPLOSIVE_PULP] =
+    {
+        .name = _("Pulpa explosiva"),
+        .description = COMPOUND_STRING("Si PS 0% daña al rival."),
+        .aiRating = 6,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
+
 };

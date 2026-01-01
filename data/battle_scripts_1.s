@@ -6733,6 +6733,13 @@ BattleScript_DampPreventsAftermath::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_ExplosivePulpDmg::
+    printstring STRINGID_EXPLOSIVEPULP_DMG
+    waitmessage 1
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    end2
+
 BattleScript_MoveUsedIsAsleep::
 	printstring STRINGID_PKMNFASTASLEEP
 	waitmessage B_WAIT_TIME_LONG

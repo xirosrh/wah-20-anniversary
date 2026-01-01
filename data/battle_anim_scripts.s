@@ -32205,6 +32205,86 @@ gBattleAnimSpecial_CriticalCaptureBallThrow::
 	jumpreteq -1, BallThrowTrainerBlock
 	goto BallThrowEnd
 
+@@@@@@@@@@ FAKE MOVES @@@@@@@@@@
+gBattleAnimMove_JuicyExplosion::
+    loadspritegfx ANIM_TAG_EXPLOSION
+    createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 8, 9, RGB(26, 8, 8), 8, RGB_BLACK, 8
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 8, 0, 40, 1
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 8, 0, 40, 1
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 8, 0, 40, 1
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 8, 0, 40, 1
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATTACKER_FORCE, 8, 0, 40, 1
+    playsewithpan SE_M_EXPLOSION, SOUND_PAN_ATTACKER
+    createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 1
+    delay 6
+    createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 24, -24, 0, 1
+    delay 6
+    createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, -16, 16, 0, 1
+    delay 6
+    createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, -24, -12, 0, 1
+    delay 6
+    createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 16, 16, 0, 1
+    delay 6
+    waitforvisualfinish
+    createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 16, 16, RGB_WHITE
+    delay 50
+    createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 16, 0, RGB_WHITE
+    loadspritegfx ANIM_TAG_ENERGY_BALL
+    monbg ANIM_TARGET
+    setalpha 12, 8
+    createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 8, RGB_BLACK
+    waitforvisualfinish
+    delay 15
+    createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_MIST, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 5, 5, 0, 5
+    createsprite gEnergyBallSpriteTemplate, ANIM_TARGET, 2, 12, 4, 8
+    waitforvisualfinish
+    playsewithpan SE_M_SAND_ATTACK, SOUND_PAN_TARGET
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 8, 1
+    createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 8, 0, RGB_BLACK
+    waitforvisualfinish
+    clearmonbg ANIM_TARGET
+    blendoff
+    end
+
+gBattleAnimMove_AcidPulp::
+    loadspritegfx ANIM_TAG_POISON_BUBBLE
+    monbg ANIM_DEF_PARTNER
+    createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, 0, TRUE
+    playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
+    delay 5
+    createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 24, 0, TRUE
+    playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
+    delay 5
+    createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, -24, 0, TRUE
+    playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
+    delay 15
+    loadspritegfx ANIM_TAG_SEED
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    delay 5
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    delay 5
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    delay 5
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    delay 5
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    delay 5
+    createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 2, 0, 30, 1
+    createvisualtask AnimTask_ShakeMon2, 5, ANIM_DEF_PARTNER, 2, 0, 30, 1
+    createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -22, 0, 15, 55, TRUE
+    createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, -26, -24, 0, 15, 55, TRUE
+    createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 15, -27, 0, 15, 50, TRUE
+    createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, -15, -17, 0, 10, 45, TRUE
+    createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 27, -22, 0, 15, 50, TRUE
+    playsewithpan SE_M_BUBBLE, SOUND_PAN_TARGET
+    delay 10
+    waitforvisualfinish
+    clearmonbg ANIM_DEF_PARTNER
+    blendoff
+    end
+
+
 @@@@@@@@@@ Z MOVES @@@@@@@@@@
 gBattleAnimMove_BreakneckBlitz::
 	loadspritegfx ANIM_TAG_HOLLOW_ORB
