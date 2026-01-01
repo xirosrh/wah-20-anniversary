@@ -109,6 +109,8 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WAH_CHALLENGE,
+    DEBUG_FLAGVAR_MENU_ITEM_RANDOMIZE_WAH_TEAMS,
 };
 
 enum DebugBattleType
@@ -303,6 +305,8 @@ static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
+static void DebugAction_FlagsVars_ToggleWahChallenge(u8 taskId);
+static void DebugAction_FlagsVars_RandomizeWahTeams(u8 taskId);
 
 static void DebugAction_Give_Item(u8 taskId);
 static void DebugAction_Give_Item_SelectId(u8 taskId);
@@ -387,6 +391,7 @@ extern const u8 Debug_BerryPestsDisabled[];
 extern const u8 Debug_BerryWeedsDisabled[];
 
 extern const u8 Common_EventScript_MoveRelearner[];
+extern void RandomizeWahAdminTeams(void);
 
 #include "data/map_group_count.h"
 
@@ -661,6 +666,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = { COMPOUND_STRING("Toggle {STR_VAR_1}Trainer See OFF"), DebugAction_ToggleFlag, DebugAction_FlagsVars_TrainerSeeOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Catching OFF"),    DebugAction_ToggleFlag, DebugAction_FlagsVars_CatchingOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Bag Use OFF"),     DebugAction_ToggleFlag, DebugAction_FlagsVars_BagUseOnOff },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WAH_CHALLENGE] = { COMPOUND_STRING("Toggle {STR_VAR_1}WAH Challenge"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleWahChallenge },
+    [DEBUG_FLAGVAR_MENU_ITEM_RANDOMIZE_WAH_TEAMS]  = { COMPOUND_STRING("Randomize WAH Teams"),               DebugAction_FlagsVars_RandomizeWahTeams },
     { NULL }
 };
 
@@ -1075,6 +1082,9 @@ static u8 Debug_CheckToggleFlags(u8 id)
     #endif
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE:
             result = VarGet(B_VAR_NO_BAG_USE);
+            break;
+        case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_WAH_CHALLENGE:
+            result = FlagGet(FLAG_WAH_CHALLENGE_COMPLETED);
             break;
         default:
             result = 0xFF;
@@ -2076,6 +2086,23 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
         PlaySE(SE_PC_LOGIN);
     FlagToggle(B_FLAG_NO_CATCHING);
 #endif
+}
+
+static void DebugAction_FlagsVars_ToggleWahChallenge(u8 taskId)
+{
+    if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_WAH_CHALLENGE_COMPLETED);
+}
+
+static void DebugAction_FlagsVars_RandomizeWahTeams(u8 taskId)
+{
+    PlaySE(SE_SAVE);
+    RandomizeWahAdminTeams();
+    Debug_DestroyMenu_Full(taskId);
+    ScriptContext_Enable();
 }
 
 // *******************************

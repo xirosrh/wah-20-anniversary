@@ -35,11 +35,31 @@ OmegaRoom_EventScript_StartChallenge::
 	special RemoveCameraObject
 # 24 "data/maps/OmegaRoom/scripts.pory"
 	msgbox OmegaRoom_EventScript_StartChallenge_Text_2
-# 25 "data/maps/OmegaRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_3
 # 26 "data/maps/OmegaRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, OmegaRoom_EventScript_StartChallenge_2
+# 29 "data/maps/OmegaRoom/scripts.pory"
+	setvar VAR_0x8004, 1
+# 30 "data/maps/OmegaRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 31 "data/maps/OmegaRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OmegaRoom_EventScript_StartChallenge_5
+# 34 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_EventScript_StartChallenge_Text_3
+OmegaRoom_EventScript_StartChallenge_1:
+# 37 "data/maps/OmegaRoom/scripts.pory"
 	release
 	end
+
+OmegaRoom_EventScript_StartChallenge_2:
+# 27 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_3
+	goto OmegaRoom_EventScript_StartChallenge_1
+
+OmegaRoom_EventScript_StartChallenge_5:
+# 32 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_3
+	goto OmegaRoom_EventScript_StartChallenge_1
 
 
 # 18 "data/maps/OmegaRoom/scripts.pory"
@@ -63,5 +83,5 @@ OmegaRoom_EventScript_StartChallenge_Text_2:
 	.string "XXX$"
 
 OmegaRoom_EventScript_StartChallenge_Text_3:
-# 25 "data/maps/OmegaRoom/scripts.pory"
+# 27 "data/maps/OmegaRoom/scripts.pory"
 	.string "XX$"

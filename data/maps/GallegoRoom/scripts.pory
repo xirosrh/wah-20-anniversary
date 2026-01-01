@@ -135,7 +135,18 @@ script GallegoRoom_EventScript_Gallego {
         face_player
     ))
     msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"), speaker = SP_NAME_GALLEGO)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, format("Uff.. pues sí que me he quedado anticuado."))
+    // Gallego is admin index 17
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, format("Uff.. pues sí que me he quedado anticuado."))
+    } else {
+        setvar(VAR_0x8004, 17)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, format("Uff.. pues sí que me he quedado anticuado."))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, format("Uff.. pues sí que me he quedado anticuado."))
+        }
+    }
     msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48)

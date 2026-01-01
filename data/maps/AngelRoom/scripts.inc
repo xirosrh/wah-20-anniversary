@@ -64,26 +64,36 @@ AngelRoom_EventScript_Angel_10:
 # 60 "data/maps/AngelRoom/scripts.pory"
 	msgbox AngelRoom_EventScript_Angel_Text_4
 # 62 "data/maps/AngelRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_EventScript_Angel_Text_5
-# 63 "data/maps/AngelRoom/scripts.pory"
-	delay 20
-# 64 "data/maps/AngelRoom/scripts.pory"
-	playse SE_PIN
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AngelRoom_EventScript_Angel_17
 # 65 "data/maps/AngelRoom/scripts.pory"
-	applymovement LOCALID_ANGELROOM_ANGEL, Common_Movement_ExclamationMarkWithDelay48
+	setvar VAR_0x8004, 7
 # 66 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_6, MSGBOX_AUTOCLOSE
+	special ShouldUseAlternativeTeam
 # 67 "data/maps/AngelRoom/scripts.pory"
-	waitmovement 0
-# 68 "data/maps/AngelRoom/scripts.pory"
-	delay 20
-# 69 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_7, MSGBOX_AUTOCLOSE
+	compare VAR_RESULT, 0
+	goto_if_eq AngelRoom_EventScript_Angel_20
 # 70 "data/maps/AngelRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_EventScript_Angel_Text_5
+AngelRoom_EventScript_Angel_16:
+# 73 "data/maps/AngelRoom/scripts.pory"
+	delay 20
+# 74 "data/maps/AngelRoom/scripts.pory"
+	playse SE_PIN
+# 75 "data/maps/AngelRoom/scripts.pory"
+	applymovement LOCALID_ANGELROOM_ANGEL, Common_Movement_ExclamationMarkWithDelay48
+# 76 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_6, MSGBOX_AUTOCLOSE
+# 77 "data/maps/AngelRoom/scripts.pory"
+	waitmovement 0
+# 78 "data/maps/AngelRoom/scripts.pory"
+	delay 20
+# 79 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_7, MSGBOX_AUTOCLOSE
+# 80 "data/maps/AngelRoom/scripts.pory"
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-# 71 "data/maps/AngelRoom/scripts.pory"
+# 81 "data/maps/AngelRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_ANGEL
-# 72 "data/maps/AngelRoom/scripts.pory"
+# 82 "data/maps/AngelRoom/scripts.pory"
 	release
 	end
 
@@ -133,6 +143,16 @@ AngelRoom_EventScript_Angel_15:
 # 56 "data/maps/AngelRoom/scripts.pory"
 	applymovementandwait LOCALID_ANGELROOM_ANGEL, AngelRoom_EventScript_Angel_Movement_4
 	goto AngelRoom_EventScript_Angel_10
+
+AngelRoom_EventScript_Angel_17:
+# 63 "data/maps/AngelRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_EventScript_Angel_Text_5
+	goto AngelRoom_EventScript_Angel_16
+
+AngelRoom_EventScript_Angel_20:
+# 68 "data/maps/AngelRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_EventScript_Angel_Text_5
+	goto AngelRoom_EventScript_Angel_16
 
 
 # 13 "data/maps/AngelRoom/scripts.pory"
@@ -221,17 +241,17 @@ AngelRoom_EventScript_Angel_Text_4:
 	.string "¡Ven! ¡Atácame con todo lo que tengas!$"
 
 AngelRoom_EventScript_Angel_Text_5:
-# 62 "data/maps/AngelRoom/scripts.pory"
+# 63 "data/maps/AngelRoom/scripts.pory"
 	.string "¿Así que este es el poder de la nueva\n"
 	.string "generación?$"
 
 AngelRoom_EventScript_Angel_Text_6:
-# 66 "data/maps/AngelRoom/scripts.pory"
+# 76 "data/maps/AngelRoom/scripts.pory"
 	.string "¡Increíble! ¡El poder de la nueva\n"
 	.string "generación es asombroso!$"
 
 AngelRoom_EventScript_Angel_Text_7:
-# 69 "data/maps/AngelRoom/scripts.pory"
+# 79 "data/maps/AngelRoom/scripts.pory"
 	.string "No esperaba perder y aún así, no me\n"
 	.string "dejaste opciones.\p"
 	.string "Dejo en tus manos el legado de toda mi\n"

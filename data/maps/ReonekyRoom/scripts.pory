@@ -199,7 +199,18 @@ script ReonekyRoom_EventScript_Reoneky {
         unlock_facing_direction
         face_player))
     msgbox(format("¡A darle caña!"), speaker = SP_NAME_REONEKY)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Buen combate, he disfrutado como un niño."))
+    // Reoneky is admin index 16
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Buen combate, he disfrutado como un niño."))
+    } else {
+        setvar(VAR_0x8004, 16)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Buen combate, he disfrutado como un niño."))
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, format("Buen combate, he disfrutado como un niño."))
+        }
+    }
     msgbox(format("Apuntas maneras, el talento tiene límites, el esfuerzo y la pasión, no."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
