@@ -5084,12 +5084,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             else
                 {
                     gBattleScripting.battler = gBattlerTarget;
-                    gBattleStruct->moveDamage[gBattlerAttacker] =
-                        GetNonDynamaxMaxHP(gBattlerAttacker)/4; // 25% PS
-
-                    if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
-                        gBattleStruct->moveDamage[gBattlerAttacker] = 1;
-
+                
+                    u32 dmg = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+                    if (dmg == 0)
+                        dmg = 1;
+                    SetPassiveDamageAmount(gBattlerAttacker, dmg);               
                     gLastUsedAbility = ABILITY_EXPLOSIVE_PULP;
                     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptCall(BattleScript_ExplosivePulpDmg);
