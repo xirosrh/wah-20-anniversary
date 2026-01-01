@@ -201,3 +201,30 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_RoomGeneral[] = INCBIN_U16("data/tilesets/primary/room_general/metatiles.bin");
+const u16 gMetatileAttributes_RoomGeneral[] = INCBIN_U16("data/tilesets/primary/room_general/metatile_attributes.bin");
+
+const u16 gMetatiles_RoomBoo[] = INCBIN_U16("data/tilesets/secondary/room_boo/metatiles.bin");
+const u16 gMetatileAttributes_RoomBoo[] = INCBIN_U16("data/tilesets/secondary/room_boo/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_cheve[] = INCBIN_U16("data/tilesets/secondary/room_cheve/metatiles.bin");
+const u16 gMetatileAttributes_Room_cheve[] = INCBIN_U16("data/tilesets/secondary/room_cheve/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Reoneky[] = INCBIN_U16("data/tilesets/secondary/room_reoneky/metatiles.bin");
+const u16 gMetatileAttributes_Room_Reoneky[] = INCBIN_U16("data/tilesets/secondary/room_reoneky/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Goce[] = INCBIN_U16("data/tilesets/secondary/room_goce/metatiles.bin");
+const u16 gMetatileAttributes_Room_Goce[] = INCBIN_U16("data/tilesets/secondary/room_goce/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Baro[] = INCBIN_U16("data/tilesets/secondary/room_baro/metatiles.bin");
+const u16 gMetatileAttributes_Room_Baro[] = INCBIN_U16("data/tilesets/secondary/room_baro/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Jack_Johnson[] = INCBIN_U16("data/tilesets/secondary/room_jack_johnson/metatiles.bin");
+const u16 gMetatileAttributes_Room_Jack_Johnson[] = INCBIN_U16("data/tilesets/secondary/room_jack_johnson/metatile_attributes.bin");
+
+const u16 gMetatiles_Room_Gallego[] = INCBIN_U16("data/tilesets/secondary/room_gallego/metatiles.bin");
+const u16 gMetatileAttributes_Room_Gallego[] = INCBIN_U16("data/tilesets/secondary/room_gallego/metatile_attributes.bin");
+
+const u16 gMetatiles_room_tokynwar[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/metatiles.bin");
+const u16 gMetatileAttributes_room_tokynwar[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/metatile_attributes.bin");

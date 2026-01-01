@@ -19,6 +19,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
+#include "test_runner.h"
 #include "text_window.h"
 #include "trig.h"
 #include "window.h"
@@ -167,14 +168,14 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     },
     [B_WIN_ACTION_PROMPT] = {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 8,
         .tilemapTop = 35,
         .width = 14,
         .height = 4,
         .paletteNum = 0,
         .baseBlock = 448,
     },
-    [B_WIN_ACTION_MENU] = {
+    [B_WIN_ACTION_MENU] = { //No se usa
         .bg = 0,
         .tilemapLeft = 17,
         .tilemapTop = 35,
@@ -187,45 +188,45 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 55,
-        .width = 16,    //for z move names
+        .width = 8,    //16 for z move names
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 768,
     },
     [B_WIN_MOVE_NAME_2] = {
         .bg = 0,
-        .tilemapLeft = 11,
+        .tilemapLeft = 21,
         .tilemapTop = 55,
         .width = 8,
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 792,
     },
     [B_WIN_MOVE_NAME_3] = {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 57,
-        .width = 16,    //for z effect descriptions
+        .width = 8,    //16 for z effect descriptions
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 808,
     },
     [B_WIN_MOVE_NAME_4] = {
         .bg = 0,
-        .tilemapLeft = 11,
+        .tilemapLeft = 21,
         .tilemapTop = 57,
         .width = 8,
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 832,
     },
     [B_WIN_PP] = {
         .bg = 0,
-        .tilemapLeft = 21,
+        .tilemapLeft = 12,
         .tilemapTop = 55,
         .width = 4,
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 656,
     },
     [B_WIN_DUMMY] = {
@@ -239,27 +240,27 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     },
     [B_WIN_PP_REMAINING] = {
         .bg = 0,
-        .tilemapLeft = 25,
+        .tilemapLeft = 14,
         .tilemapTop = 55,
         .width = 4,
         .height = 2,
-        .paletteNum = 5,
+        .paletteNum = 0,
         .baseBlock = 664,
     },
     [B_WIN_MOVE_TYPE] = {
         .bg = 0,
-        .tilemapLeft = 21,
+        .tilemapLeft = 12,
         .tilemapTop = 57,
-        .width = 8,
+        .width = 6,
         .height = 2,
         .paletteNum = 6,
         .baseBlock = 672,
     },
     [B_WIN_SWITCH_PROMPT] = {
         .bg = 0,
-        .tilemapLeft = 21,
+        .tilemapLeft = 12,
         .tilemapTop = 55,
-        .width = 8,
+        .width = 4,
         .height = 4,
         .paletteNum = 5,
         .baseBlock = 688,
@@ -650,7 +651,13 @@ static u8 GetBattleEnvironmentOverride(void)
 {
     u8 battleScene = GetCurrentMapBattleScene();
 
-    if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
+    if (TestRunner_Battle_GetForcedEnvironment()
+     && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
+     && gBattleEnvironmentInfo[gBattleEnvironment].background.tileset)
+    {
+        return gBattleEnvironment;
+    }
+    else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
         return BATTLE_ENVIRONMENT_FRONTIER;
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
@@ -1023,7 +1030,13 @@ void DrawBattleEntryBackground(void)
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
     {
-        if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
+        if (TestRunner_Battle_GetForcedEnvironment()
+         && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
+         && gBattleEnvironmentInfo[gBattleEnvironment].background.tileset)
+        {
+            LoadBattleEnvironmentEntryGfx(gBattleEnvironment);
+        }
+        else if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
         {
             LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_BUILDING);
         }

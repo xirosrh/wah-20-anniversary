@@ -21,7 +21,7 @@
 
 // Estas definiciones generacionales solo hacen una distinción para Bayas y el OW_PC_MOVE_ORDER
 #define GEN_6_XY GEN_6
-#define GEN_6_ORAS GEN_LATEST + 1
+#define GEN_6_ORAS GEN_COUNT + 1
 
 // Configuración del PC
 #define OW_PC_PRESS_B               GEN_LATEST // En Gen4, presionar B mientras sostienes un Pokémon es equivalente a colocarlo. En Gen3, da el error "¡Estás sosteniendo un Pokémon!"
@@ -86,8 +86,8 @@
 #define OW_FLASH_FIRE               GEN_LATEST // En Gen8+, si un Pokémon con Absorbe Fuego está liderando el equipo, hay un 50% de probabilidad de encontrar un Pokémon de tipo Fuego.
 
 // Estas definiciones generacionales solo hacen una distinción para OW_ALTERED_TIME_RATIO
-#define GEN_8_PLA                       GEN_LATEST + 2
-#define TIME_DEBUG                      GEN_LATEST + 3
+#define GEN_8_PLA                       GEN_COUNT + 2
+#define TIME_DEBUG                      GEN_COUNT + 3
 
 // Tiempo
 #define OW_TIMES_OF_DAY                 GEN_LATEST      // Diferentes generaciones cambian los tiempos del día en diferentes momentos.
@@ -100,7 +100,7 @@
 // DNS
 #define OW_SHADOW_INTENSITY             4               // Rangos desde 0 a 16, donde 0 es transparente y 16 es negro.
 #define OW_OBJECT_SUBPRIORITY           148             // Cuanto más alto sea el valor, más atrás estará en comparación con otros sprites. Las sombras deberían estar por debajo de los OWs.
-#define OW_ENABLE_DNS                   TRUE            // Si está habilitada, el OW se tintará según la hora del día.
+#define OW_ENABLE_DNS                   FALSE            // Si está habilitada, el OW se tintará según la hora del día.
 
 // Sombras de OWs
 #define OW_OBJECT_VANILLA_SHADOWS      FALSE            // En vanilla las sombras en el OW solo se muestran mientras se salta.
@@ -133,6 +133,7 @@
 #define OW_POPUP_BW_COLOR          OW_POPUP_BW_COLOR_BLACK  // B2W2 usan diferentes colores para sus ventanas emergentes del mapa.
 #define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_NONE    // Determina qué tipo de hora se muestra.
 #define OW_POPUP_BW_ALPHA_BLEND    FALSE                    // Habilita el mezclado alfa/transparencia para las ventanas emergentes. Principalmente destinado a usarse con la opción de color negro.
+                                                            // It will also cause minor visual glitches of shadow and reflection sprites adjusting their transparency when the pop-up disappear
 
 // Centro Pokémon
 #define OW_IGNORE_EGGS_ON_HEAL           GEN_LATEST         // En Gen 4+, la enfermera en el Centro Pokémon no cura los Huevos en la máquina de curación.
@@ -141,5 +142,8 @@
 
 // Berry Blender
 #define BERRY_BLENDER_THROW_ALL_BERRIES_AT_ONCE TRUE        // Esto es una pequeña adición, que básicamente acelera la animación cuando se lanzan todas las bayas a la vez.
+
+// Trainer Rematches
+#define OW_REMATCH_BADGE_COUNT      5 // Number of badges necessary before the match call or vs seeker features allow rematches
 
 #endif // GUARD_CONFIG_OVERWORLD_H

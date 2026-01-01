@@ -63,9 +63,15 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba... ¡pero mira ésta!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba… ¡pero mira ésta!{PAUSE_UNTIL_PRESS}"),
         },
-        [TRAINER_WAH_ADMIN_BLAX_MAIN] = 
+        [TRAINER_WAH_ADMIN_REONEKY_MAIN] =
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tocado…{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Bien, toca entrar en materia.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Mi última baza.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_ADMIN_BLAX_MAIN] =
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo.{PAUSE_UNTIL_PRESS}"),
@@ -78,13 +84,19 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Parece que has hecho los deberes.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("La batalla apenas comienza. ¡Enséñame de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Me parece que alguien ha estudiado muy poco… ¿Tendré que suspenderte?{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ha llegado el momento... Aquí se decide todo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ha llegado el momento… Aquí se decide todo.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Este es el límite… ¡y justo aquí es donde yo me crezco!{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¿Listo para ver mi verdadera fuerza?{PAUSE_UNTIL_PRESS}"),
         },
-        [TRAINER_WAH_ADMIN_COSARARA_MAIN] = 
+        [TRAINER_WAH_ADMIN_COSARARA_MAIN] =
         {
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tu una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_ADMIN_EING_MAIN] =
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Venga ya, qué chorra.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Toca sacar el as en la manga.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Todo depende de ti, compañero.{PAUSE_UNTIL_PRESS}"),
         }
     },
 };
@@ -342,7 +354,7 @@ static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId)
     return FALSE;
 }
 
-void TryInitializeFirstSTABMoveTrainerSlide(u32 battlerDef, u32 battlerAtk, u32 moveType)
+void TryInitializeFirstSTABMoveTrainerSlide(u32 battlerDef, u32 battlerAtk, enum Type moveType)
 {
     enum TrainerSlideType slideId = TRAINER_SLIDE_PLAYER_LANDS_FIRST_STAB_MOVE;
 

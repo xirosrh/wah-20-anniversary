@@ -3,15 +3,15 @@
   "name": "TokynWarRoom",
   "layout": "LAYOUT_TOKYN_WAR_ROOM",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_TOKYN_WAR_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TokynWarRoom_EventScript_Tokyn",
       "flag": "0"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TokynWarRoom_EventScript_War",
       "flag": "0"
     }
   ],
@@ -48,10 +48,108 @@
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_TOKYN_WAR_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JACK_JOHNSON_ROOM",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "0",
+      "script": "TokynWarRoom_EventScript_MagikarpJumping"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var_value": "1",
+      "script": "TokynWarRoom_EventScript_MainCutscene"
+    }
+  ],
   "bg_events": []
 }

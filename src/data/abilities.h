@@ -1,4 +1,4 @@
-const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
+const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 {
     [ABILITY_NONE] =
     {
@@ -1251,6 +1251,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Velo flor"),
         .description = COMPOUND_STRING("Protege al tipo Planta."),
         .aiRating = 0,
+        .breakable = TRUE,
     },
 
     [ABILITY_CHEEK_POUCH] =
@@ -1414,6 +1415,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Rompeaura"),
         .description = COMPOUND_STRING("Invierte habilidades de aura."),
         .aiRating = 3,
+        .breakable = TRUE,
     },
 
     [ABILITY_PRIMORDIAL_SEA] =
@@ -1496,6 +1498,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Pompa"),
         .description = COMPOUND_STRING("Protege de Fuego y quemaduras."),
         .aiRating = 8,
+        .breakable = TRUE,
     },
 
     [ABILITY_STEELWORKER] =

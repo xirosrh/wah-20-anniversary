@@ -4,6 +4,7 @@
 #include "battle_pyramid.h"
 #include "event_data.h"
 #include "fieldmap.h"
+#include "fishing.h"
 #include "follower_npc.h"
 #include "random.h"
 #include "field_player_avatar.h"
@@ -46,15 +47,14 @@ extern const u8 EventScript_SprayWoreOff[];
 
 static u16 FeebasRandom(void);
 static void FeebasSeedRng(u16 seed);
-static void UpdateChainFishingStreak();
 static bool8 IsWildLevelAllowedByRepel(u8 level);
 static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
 static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16 species, enum WildPokemonArea area);
 #ifdef BUGFIX
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size);
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, enum Type type, enum Ability ability, u8 *monIndex, u32 size);
 #else
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex);
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, enum Type type, enum Ability ability, u8 *monIndex);
 #endif
 static bool8 IsAbilityAllowingEncounter(u8 level);
 
@@ -327,6 +327,33 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
+// Headbutt
+u32 ChooseWildMonIndex_Headbutt(void)
+{
+    u32 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_HEADBUTT_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_3)
+        wildMonIndex = 3;
+    else
+        wildMonIndex = 4;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
 static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
 {
     u8 min;
@@ -353,7 +380,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
         // check ability for max level mon
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
-            u16 ability = GetMonAbility(&gPlayerParty[0]);
+            enum Ability ability = GetMonAbility(&gPlayerParty[0]);
             if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
             {
                 if (Random() % 2 == 0)
@@ -415,36 +442,32 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
         return TIME_OF_DAY_DEFAULT;
 
     if (InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
-    {
         return OW_TIME_OF_DAY_FALLBACK;
-    }
-    else
+
+    switch (area)
     {
-        switch (area)
-        {
-        default:
-        case WILD_AREA_LAND:
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
-            break;
-        case WILD_AREA_WATER:
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
-            break;
-        case WILD_AREA_ROCKS:
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].rockSmashMonsInfo;
-            break;
-        case WILD_AREA_FISHING:
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
-            break;
-        case WILD_AREA_HIDDEN:
-            wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
-            break;
-        }
+    default:
+    case WILD_AREA_LAND:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+        break;
+    case WILD_AREA_WATER:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+        break;
+    case WILD_AREA_ROCKS:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].rockSmashMonsInfo;
+        break;
+    case WILD_AREA_FISHING:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
+        break;
+    case WILD_AREA_HIDDEN:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
+        break;
     }
 
     if (wildMonInfo == NULL && !OW_TIME_OF_DAY_DISABLE_FALLBACK)
         return OW_TIME_OF_DAY_FALLBACK;
     else
-        return timeOfDay;
+        return GenConfigTimeOfDay(timeOfDay);
 }
 
 u8 PickWildMonNature(void)
@@ -564,6 +587,9 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_Rocks();
         break;
+    case WILD_AREA_TREE:
+        wildMonIndex = ChooseWildMonIndex_Headbutt();
+        break;
     default:
     case WILD_AREA_FISHING:
     case WILD_AREA_HIDDEN:
@@ -637,7 +663,7 @@ static bool8 WildEncounterCheck(u32 encounterRate, bool8 ignoreAbility)
         encounterRate *= 2;
     if (!ignoreAbility && !GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
-        u32 ability = GetMonAbility(&gPlayerParty[0]);
+        enum Ability ability = GetMonAbility(&gPlayerParty[0]);
 
         if (ability == ABILITY_STENCH && gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
             encounterRate = encounterRate * 3 / 4;
@@ -967,22 +993,6 @@ bool8 DoesCurrentMapHaveFishingMons(void)
         return FALSE;
 }
 
-u32 CalculateChainFishingShinyRolls(void)
-{
-    return (2 * min(gChainFishingDexNavStreak, FISHING_CHAIN_SHINY_STREAK_MAX));
-}
-
-static void UpdateChainFishingStreak()
-{
-    if (!I_FISHING_CHAIN)
-        return;
-
-    if (gChainFishingDexNavStreak >= FISHING_CHAIN_LENGTH_MAX)
-        return;
-
-    gChainFishingDexNavStreak++;
-}
-
 void FishingWildEncounter(u8 rod)
 {
     u16 species;
@@ -1126,7 +1136,7 @@ static bool8 IsWildLevelAllowedByRepel(u8 wildLevel)
 
 static bool8 IsAbilityAllowingEncounter(u8 level)
 {
-    u16 ability;
+    enum Ability ability;
 
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return TRUE;
@@ -1142,7 +1152,7 @@ static bool8 IsAbilityAllowingEncounter(u8 level)
     return TRUE;
 }
 
-static bool8 TryGetRandomWildMonIndexByType(const struct WildPokemon *wildMon, u8 type, u8 numMon, u8 *monIndex)
+static bool8 TryGetRandomWildMonIndexByType(const struct WildPokemon *wildMon, enum Type type, u8 numMon, u8 *monIndex)
 {
     u8 validIndexes[numMon]; // variable length array, an interesting feature
     u8 i, validMonCount;
@@ -1196,9 +1206,9 @@ static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16
 }
 
 #ifdef BUGFIX
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size)
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, enum Type type, enum Ability ability, u8 *monIndex, u32 size)
 #else
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex)
+static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, enum Type type, enum Ability ability, u8 *monIndex)
 #endif
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
@@ -1275,4 +1285,37 @@ u32 ChooseHiddenMonIndex(void)
 bool32 MapHasNoEncounterData(void)
 {
     return (GetCurrentMapWildMonHeaderId() == HEADER_NONE);
+}
+
+bool8 DoesCurrentMapHaveHeadbuttMons(void)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_TREE);
+
+    if (headerId != HEADER_NONE && gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo != NULL)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void HeadbuttWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+    if (headerId != HEADER_NONE)
+    {
+        enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_TREE);
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+            gSpecialVar_Result = FALSE;
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE)
+              && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_TREE, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE))
+            gSpecialVar_Result = TRUE, BattleSetup_StartWildBattle();
+        else
+            gSpecialVar_Result = FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
 }

@@ -6,17 +6,17 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_REOROOM_REONEKY",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_REONEKY",
       "x": 3,
       "y": 7,
       "elevation": 0,
@@ -25,44 +25,44 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ReonekyRoom_EventScript_Reoneky",
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_REOROOM_TYPHOLOSION",
+      "local_id": "LOCALID_REOROOM_TYPHLOSION",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TYPHLOSION)",
       "x": 5,
       "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_REOROOM_CRANE",
-      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 7,
-      "y": 7,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_REONEKYROOM_HIDE_TYPHLOSION"
     },
     {
       "local_id": "LOCALID_REOROOM_FIREATTACK",
-      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
-      "x": 6,
-      "y": 8,
+      "graphics_id": "OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK",
+      "x": 5,
+      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_REONEKYROOM_HIDE_FIRE"
+    },
+    {
+      "local_id": "LOCALID_REOROOM_CRANE",
+      "graphics_id": "OBJ_EVENT_GFX_CRANE",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -73,8 +73,8 @@
     {
       "local_id": "LOCALID_REOROOM_HAUNTER",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAUNTER)",
-      "x": 7,
-      "y": 9,
+      "x": 11,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -82,13 +82,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_REONEKYROOM_HIDE_HAUNTER"
     }
   ],
   "warp_events": [
     {
       "x": 6,
-      "y": 13,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_REONEKY_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_CHEVE_ROOM",
       "dest_warp_id": "0"

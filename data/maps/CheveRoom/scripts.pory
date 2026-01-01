@@ -1,5 +1,22 @@
 mapscripts CheveRoom_MapScripts {
-        MAP_SCRIPT_ON_TRANSITION: CheveRoom_OnTransition
+    MAP_SCRIPT_ON_TRANSITION: CheveRoom_OnTransition
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_8, 0: CheveRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: CheveRoom_OnLoad
+
+}
+
+script CheveRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_CHEVE)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script CheveRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
 }
 
 script CheveRoom_OnTransition {
@@ -10,17 +27,17 @@ script CheveRoom_OnTransition {
 script CheveRoom_EventScript_Cheve {
     lock
     faceplayer
-    msgbox(format("¿Así que volviste? No me digas… ¿querés la revancha?"))
+    msgbox(format("¿Así que volviste? No me digas… ¿querés la revancha?"), speaker = SP_NAME_CHEVE)
     call(CheveRoom_EventScript_WalkInPlaceCheveFacingPlayer)
     delay(10)
-    msgbox(format("Ni lo sueñes. Estoy en pleno proceso creativo… o sea, procrastinando."))
+    msgbox(format("Ni lo sueñes. Estoy en pleno proceso creativo… o sea, procrastinando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48)
     delay(10)
-    msgbox(format("Igual te agradezco la visita. Es lindo cuando alguien vuelve a tu habitación, aunque sea para saludar al árbol que no era árbol."))
+    msgbox(format("Igual te agradezco la visita. Es lindo cuando alguien vuelve a tu habitación, aunque sea para saludar al árbol que no era árbol."), speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_HeartWithDelay48)
-    msgbox(format("¡Saludos!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Saludos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     release
     end
 }
@@ -46,9 +63,31 @@ script CheveRoom_EventScript_WalkInPlaceCheveFacingPlayer {
 
 script CheveRoom_EventScript_CuttableTree {
     lock
-    moveobjecttopos(LOCALID_PLAYER, 6, 5, DIR_NORTH)
-    waitmovement(0)
-    msgbox(format("¿Por qué me estás mirando así?"))
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)){
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_PLAYER, moves(
+                walk_left
+                walk_down * 2
+                walk_right
+                face_up
+            ))
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_PLAYER, moves(
+                walk_down
+                walk_left
+                face_up
+            ))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_PLAYER, moves(
+                walk_down
+                walk_right
+                face_up
+            ))
+    }
+    msgbox(format("¿Por qué me estás mirando así?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, moves(
         emote_double_exclamation_mark, 
@@ -57,22 +96,22 @@ script CheveRoom_EventScript_CuttableTree {
         jump_down, 
         unlock_facing_direction
         face_up))
-    msgbox(format("¿Quieres cortarme?\p¡No me lastimes, soy Cheve!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¿Quieres cortarme?\p¡No me lastimes, soy Cheve!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
     delay(20)
     special(SpawnCameraObject)
     applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkUp2)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    call(WahRoomsShared_OpenDoor)
     delay(20)
     showobjectat(LOCALID_CHEVEROOM_CHEVE, MAP_CHEVE_ROOM)
     setobjectmovementtype(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype2(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkDown)
     delay(20)
-    call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
-    msgbox(format("¡Ve, Plantita!"), MSGBOX_AUTOCLOSE)
+    call(WahRoomsShared_CloseDoor)
+    msgbox(format("¡Ve, Plantita!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     special(RemoveCameraObject)
     clearflag(FLAG_CHEVEROOM_HIDE_POKEBALL)
     addobject(LOCALID_CHEVEROOM_POKEBALL)
@@ -111,37 +150,37 @@ script CheveRoom_EventScript_CuttableTree {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
     waitmovement(LOCALID_CHEVEROOM_CHEVE)
     special(RemoveCameraObject)
-    msgbox(format("Caíste redondit{OA}. ¿En serio creíste que yo era un árbol?"))
+    msgbox(format("Caíste redondit{OA}. ¿En serio creíste que yo era un árbol?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48)
-    delay(10)
-    msgbox(format("Pero bueno… no esperaba que llegaras hasta mi habitación.\p¡Y menos después de derrotar a mi gran amigo Javi4315!"))
+    delay(30)
+    msgbox(format("Pero bueno… no esperaba que llegaras hasta mi habitación.\p¡Y menos después de derrotar a mi gran amigo Javi4315!"), speaker = SP_NAME_CHEVE)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown)
-    msgbox(format("A él lo respeto mucho, así que… digamos que ya me caes bien por eso."))
+    msgbox(format("A él lo respeto mucho, así que… digamos que ya me caes bien por eso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_SmileWithDelay48)
-    delay(10)
-    msgbox(format("Supongo que es mi turno de poner a prueba tu suerte."))
+    delay(20)
+    msgbox(format("Supongo que es mi turno de poner a prueba tu suerte."), speaker = SP_NAME_CHEVE)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown2)
-    msgbox(format("Aunque aviso… no soy muy fan de los combates largos.\pPrefiero procrastinar… ¡mi acción favorita!"))
+    msgbox(format("Aunque aviso… no soy muy fan de los combates largos.\pPrefiero procrastinar… ¡mi acción favorita!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48)
-    msgbox(format("¡Vamos!"))
+    msgbox(format("¡Vamos!"), speaker = SP_NAME_CHEVE)
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_MAIN, format("¡Muy buen combate! Me recordó a mis enfrentamientos con Xavi."))
-    msgbox(format("Uf… qué paliza."))
+    msgbox(format("Uf… qué paliza."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_SweatDropWithDelay48)
-    delay(10)
-    msgbox(format("Me dan ganas de postergar mi revancha hasta el próximo siglo.\pPero, eh, no me malinterpretes… ¡fue divertido!"))
+    delay(20)
+    msgbox(format("Me dan ganas de postergar mi revancha hasta el próximo siglo.\pPero, eh, no me malinterpretes… ¡fue divertido!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown2)
-    delay(10)
-    msgbox(format("Supongo que eso tiene este lugar: siempre alguien nuevo llega a tu habitación, y cuando se va, deja un pequeño cuadro más colgado en la pared.\pEl mío ya tiene bastantes, pero este combate merece uno nuevo."))
+    delay(30)
+    msgbox(format("Supongo que eso tiene este lugar: siempre alguien nuevo llega a tu habitación, y cuando se va, deja un pequeño cuadro más colgado en la pared.\pEl mío ya tiene bastantes, pero este combate merece uno nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_HeartWithDelay48)
-    msgbox(format("Vamos, sigue adelante. Seguro el próximo piso te tiene guardada otra sorpresa."))
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    msgbox(format("Vamos, sigue adelante. Seguro el próximo piso te tiene guardada otra sorpresa."), speaker = SP_NAME_CHEVE)
+    call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown)
-    msgbox(format("¡Saludos!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Saludos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     setflag(FLAG_DEFEATED_ADMIN_CHEVE)
     removeobject(LOCALID_CHEVEROOM_TREE)
     setflag(FLAG_CHEVEROOM_HIDE_TREE)

@@ -42,5 +42,6 @@ u8 FldEff_VIcon(void);
 u8 FldEff_IdeaIcon(void);
 u8 FldEff_XdIcon(void);
 u8 FldEff_WinkIcon(void);
+u8 FldEff_AnnoyedIcon(void);
 
 #endif // GUARD_TRAINER_SEE_H

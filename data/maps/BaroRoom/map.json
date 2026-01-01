@@ -6,19 +6,19 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_BAROROOM_BARO",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 12,
-      "y": 6,
+      "graphics_id": "OBJ_EVENT_GFX_BARO",
+      "x": 11,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -34,7 +34,14 @@
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_BARO_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KLEIN_PK_POWER_ROOM",
       "dest_warp_id": "0"
     }
   ],

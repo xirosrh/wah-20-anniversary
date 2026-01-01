@@ -163,6 +163,9 @@ u8 MovementAction_JumpInPlaceRightLeft_Step1(struct ObjectEvent *, struct Sprite
 u8 MovementAction_FaceOriginalDirection_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EingFishing_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *, struct Sprite *);
+
 u8 MovementAction_EnableJumpLandingGroundEffect_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_DisableJumpLandingGroundEffect_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_DisableAnimation_Step0(struct ObjectEvent *, struct Sprite *);
@@ -389,6 +392,9 @@ u8 (*const gMovementActionFuncs_JumpInPlaceRightLeft[])(struct ObjectEvent *, st
 u8 (*const gMovementActionFuncs_FaceOriginalDirection[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_NurseJoyBowDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SmokeCigarette[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EingFishing[])(struct ObjectEvent *, struct Sprite *);
+
+u8 (*const gMovementActionFuncs_CraneStartBurning[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EnableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_DisableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_DisableAnimation[])(struct ObjectEvent *, struct Sprite *);
@@ -475,6 +481,7 @@ u8 (*const gMovementActionFuncs_EmoteThinking[])(struct ObjectEvent *, struct Sp
 u8 (*const gMovementActionFuncs_EmoteVersus[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteWink[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSad[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSmile[])(struct ObjectEvent *, struct Sprite *);
@@ -589,6 +596,8 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_FACE_ORIGINAL_DIRECTION] = gMovementActionFuncs_FaceOriginalDirection,
     [MOVEMENT_ACTION_NURSE_JOY_BOW_DOWN] = gMovementActionFuncs_NurseJoyBowDown,
     [MOVEMENT_ACTION_SMOKE_CIGARETTE] = gMovementActionFuncs_SmokeCigarette,
+    [MOVEMENT_ACTION_FISHING] = gMovementActionFuncs_EingFishing,
+    [MOVEMENT_ACTION_CRANE_START_BURNING] = gMovementActionFuncs_CraneStartBurning,
     [MOVEMENT_ACTION_ENABLE_JUMP_LANDING_GROUND_EFFECT] = gMovementActionFuncs_EnableJumpLandingGroundEffect,
     [MOVEMENT_ACTION_DISABLE_JUMP_LANDING_GROUND_EFFECT] = gMovementActionFuncs_DisableJumpLandingGroundEffect,
     [MOVEMENT_ACTION_DISABLE_ANIMATION] = gMovementActionFuncs_DisableAnimation,
@@ -673,6 +682,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_THINKING] = gMovementActionFuncs_EmoteThinking,
     [MOVEMENT_ACTION_EMOTE_VERSUS] = gMovementActionFuncs_EmoteVersus,
     [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,
+    [MOVEMENT_ACTION_EMOTE_ANNOYED] = gMovementActionFuncs_EmoteAnnoyed,
     [MOVEMENT_ACTION_EMOTE_WINK] = gMovementActionFuncs_EmoteWink,
     [MOVEMENT_ACTION_EMOTE_SAD] = gMovementActionFuncs_EmoteSad,
     [MOVEMENT_ACTION_EMOTE_SLEEPING] = gMovementActionFuncs_EmoteSleeping,
@@ -1284,6 +1294,18 @@ u8 (*const gMovementActionFuncs_SmokeCigarette[])(struct ObjectEvent *, struct S
     MovementAction_PauseSpriteAnim,
 };
 
+u8 (*const gMovementActionFuncs_EingFishing[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EingFishing_Step0,
+    MovementAction_WaitSpriteAnim,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_CraneStartBurning[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_CraneStartBurning_Step0,
+    MovementAction_WaitSpriteAnim,
+    MovementAction_PauseSpriteAnim,
+};
+
 u8 (*const gMovementActionFuncs_EnableJumpLandingGroundEffect[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EnableJumpLandingGroundEffect_Step0,
     MovementAction_Finish,
@@ -1682,6 +1704,11 @@ u8 (*const gMovementActionFuncs_EmoteVersus[])(struct ObjectEvent *, struct Spri
 
 u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteHappy_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteAnnoyed_Step0,
     MovementAction_Finish,
 };
 

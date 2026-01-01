@@ -84,7 +84,7 @@ Double Battle: No
 === TRAINER_WAH_ADMIN_OMEGA_MAIN ===
 Name: Omega
 Class: WAH Admin
-Pic: Cheve
+Pic: Omega
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -280,7 +280,7 @@ AI: Check Bad Move
 
 BLAxTOISE (Blastoise) (M) @ Blastoisinite  
 Ability: Torrent
-Level: 35  
+Level: 100  
 Tera Type: Water  
 EVs: 176 HP / 252 Atk / 80 Spe  
 Adamant Nature  
@@ -291,7 +291,7 @@ Adamant Nature
 
 SiriusBLAx (Dragapult) @ Roseli Berry  
 Ability: Cursed Body
-Level: 35    
+Level: 100    
 Shiny: Yes  
 Tera Type: Dragon  
 EVs: 232 HP / 252 Atk / 24 Spe  
@@ -367,16 +367,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Swampert @Swampertite
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Metagross
-Level: 26
+Level: 100
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tyranitar
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
@@ -554,7 +554,7 @@ AI: Check Bad Move
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Brave Bird
@@ -564,7 +564,7 @@ Jolly Nature
 
 Samus (Charizard-Mega-X) (F) @ Charizardite X
 Ability: Tough Claws
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Dragon Dance
@@ -575,7 +575,7 @@ Jolly Nature
 0 (Milotic) (M) @ Leftovers
 Ability: Marvel Scale
 Shiny: Yes
-Level: 10
+Level: 100
 EVs: 252 HP / 4 Def / 252 SpD
 Calm Nature
 - Scald
@@ -585,7 +585,7 @@ Calm Nature
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Modest Nature
 - Geomancy
@@ -595,7 +595,7 @@ Modest Nature
 
 Hydreigon (F) @ Choice Specs
 Ability: Levitate
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
 - Draco Meteor
@@ -605,7 +605,7 @@ Timid Nature
 
 Kingambit (M) @ Leftovers
 Ability: Supreme Overlord
-Level: 10
+Level: 100
 EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Swords Dance
@@ -770,51 +770,84 @@ Mightyena
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_SHELLY_SEAFLOOR_CAVERN ===
-Name: SHELLY
-Class: Aqua Admin
-Pic: Aqua Admin F
-Gender: Female
-Music: Aqua
-Double Battle: No
-AI: Basic Trainer
-
-Sharpedo
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Mightyena
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-=== TRAINER_ARCHIE ===
-Name: ARCHIE
-Class: Aqua Leader
-Pic: Aqua Leader Archie
+=== TRAINER_WAH_ADMIN_REONEKY_MAIN ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
 Gender: Male
 Music: Aqua
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Mightyena
-Level: 41
+Typhlosion @ Charcoal
+Level: 35
+Ability: Blaze
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunder Punch
+- Flame Wheel
+- Smokescreen
+- Quick Attack
+
+Manectric @ Magnet
+Level: 34
+Ability: Static
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Thunderbolt
+- Bite
+- Thunder Wave
+- Howl
+
+Hariyama @ Black Belt
+Level: 34
+Ability: Guts
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Brick Break
+- Knock Off
+- Fake Out
+- Bulk Up
+
+=== TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Typhlosion @ Leftovers
+Level: 38
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Eruption
+- Thunder Punch
+- Flamethrower
+- Sunny Day
+
+Raichu @ Magnet
+Level: 37
+Ability: Static
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Thunderbolt
+- Encore
+- Brick Break
+- Double Team
 
-Crobat
-Level: 41
+Machamp @ Lum Berry
+Level: 37
+Ability: Guts
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Cross Chop
+- Rock Slide
+- Bulk Up
+- Earthquake
 
-Sharpedo
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_LEAH ===
-Name: LEAH
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
-Music: Suspicious
+=== TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
@@ -822,83 +855,175 @@ Spoink
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DAISY ===
-Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ROSE_1 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_FELIX ===
-Name: FELIX
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
 Gender: Male
-Music: Cool
-Items: Full Restore
+Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Medicham
-Level: 43
+Shroomish
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
 
-Claydol
-Level: 43
+Roselia
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
+
+=== TRAINER_WAH_ADMIN_EING_MAIN ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+Level: 5
+EVs: 252 HP / 200 Def / 56 SpD
+Bold Nature
+IVs: 0 Atk
+- Scald
+- Hurricane
+- Roost
+- U-turn
+
+Ludicolo @ Assault Vest
+Ability: Swift Swim
+Level: 5
+EVs: 132 HP / 124 SpA / 252 Spe
+Modest Nature
+- Giga Drain
+- Ice Beam
+- Scald
+- Focus Blast
+
+Kingdra @ Life Orb
+Ability: Swift Swim
+Level: 5
+EVs: 40 Atk / 252 SpA / 216 Spe
+Mild Nature
+- Hydro Pump
+- Draco Meteor
+- Hurricane
+- Flip Turn
+
+Swampert @ Swampertite
+Ability: Torrent
+Level: 5
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
 - Earthquake
+- Ice Punch
+- Protect
 
-=== TRAINER_VIOLET ===
-Name: VIOLET
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+Barraskewda @ Choice Band
+Ability: Swift Swim
+Level: 5
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Flip Turn
+
+Gamba (Clawitzer) @ Choice Specs
+Ability: Mega Launcher
+Level: 5
+EVs: 120 HP / 252 SpA / 136 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Dark Pulse
+- Water Pulse
+- Ice Beam
+
+=== TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rotom (Rotom-Wash) @ Leftovers
+Ability: Levitate
+Level: 52
+EVs: 248 HP / 68 SpA / 192 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Thunderbolt
+- Volt Switch
+- Will-O-Wisp
 
-Gloom
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Assault Vest
+Ability: Huge Power
+Level: 52
+EVs: 248 HP / 252 Atk / 8 Spe
+Adamant Nature
+- Play Rough
+- Aqua Jet
+- Liquidation
+- Knock Off
 
-=== TRAINER_ROSE_2 ===
+Crawdaunt @ Life Orb
+Ability: Adaptability
+Level: 52
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Close Combat
+
+=== TRAINER_WAH_ADMIN_TOKYN_MAIN ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Youngster
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Togekiss @ Leftovers
+Ability: Serene Grace
+Level: 55
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
+- Air Slash
+- Aura Sphere
+- Roost
+- Thunder Wave
+
+Smeargle @ Focus Sash
+Ability: Own Tempo
+Level: 55
+EVs: 252 HP / 4 Def / 252 Spe
+Jolly Nature
+- Spore
+- Parting Shot
+- Stealth Rock
+- Destiny Bond
+
+Porygon-Z @ Choice Specs
+Ability: Adaptability
+Level: 55
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Tri Attack
+- Dark Pulse
+- Ice Beam
+- Trick
+
+=== TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
@@ -915,7 +1040,46 @@ Roselia
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_ROSE_3 ===
+=== TRAINER_WAH_ADMIN_WAR_MAIN ===
+Name: War
+Class: WAH Admin
+Pic: War
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Gallade @ Life Orb
+Ability: Steadfast
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Close Combat
+- Psycho Cut
+- Swords Dance
+- Shadow Sneak
+
+Lucario @ Expert Belt
+Ability: Inner Focus
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Ice Punch
+
+Blaziken @ White Herb
+Ability: Blaze
+Level: 55
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Sky Uppercut
+- Brave Bird
+- Swords Dance
+
+=== TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
@@ -925,27 +1089,6 @@ Double Battle: No
 AI: Check Bad Move
 
 Shroomish
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Gloom
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Roselia
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-=== TRAINER_ROSE_4 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Shroomish
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -957,78 +1100,100 @@ Roselia
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_ROSE_5 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Breloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Gloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Roselia
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-=== TRAINER_DUSTY_1 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Youngster
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
-Level: 23
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Torkoal @ Heat Rock
+Ability: Drought
+Level: 55
+EVs: 252 HP / 252 SpA / 4 SpD
+Quiet Nature
+- Eruption
+- Solar Beam
+- Lava Plume
+- Stealth Rock
 
-=== TRAINER_CHIP ===
-Name: CHIP
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Venusaur @ Life Orb
+Ability: Chlorophyll
+Level: 55
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Giga Drain
+- Sludge Bomb
+- Weather Ball
+- Growth
+
+Chandelure @ Choice Scarf
+Ability: Flash Fire
+Level: 55
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Trick
+
+=== TRAINER_WAH_ADMIN_JAVS_MAIN ===
+Name: Javs
+Class: WAH Admin
+Pic: Youngster
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Psybeam
-- Self Destruct
-- Sandstorm
-- Ancient Power
+Dusclops @ Eviolite
+Ability: Pressure
+Level: 55
+EVs: 252 HP / 4 Def / 252 SpD
+Careful Nature
+- Night Shade
+- Will-O-Wisp
+- Pain Split
+- Haze
 
-Sandshrew
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Suicune @ Leftovers
+Ability: Pressure
+Level: 55
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Scald
+- Calm Mind
+- Ice Beam
+- Protect
 
-Sandslash
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Zapdos @ Heavy-Duty Boots
+Ability: Pressure
+Level: 55
+EVs: 248 HP / 44 Def / 216 Spe
+Timid Nature
+IVs: 0 Atk
+- Thunderbolt
+- Hurricane
+- Roost
+- Defog
 
-=== TRAINER_FOSTER ===
+=== TRAINER_WAH_ADMIN_SERGIO_MAIN ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Dragonite
+Level: 27
+
+
+=== TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
 Name: FOSTER
 Class: Ruin Maniac
 Pic: Ruin Maniac

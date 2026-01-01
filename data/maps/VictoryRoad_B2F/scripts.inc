@@ -22,7 +22,7 @@ VictoryRoad_B2F_EventScript_Julie::
 	end
 
 VictoryRoad_B2F_EventScript_Felix::
-	trainerbattle_single TRAINER_FELIX, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
+	trainerbattle_single TRAINER_WAH_ADMIN_EING_ALTERNATIVE, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
 	msgbox VictoryRoad_B2F_Text_FelixPostBattle, MSGBOX_AUTOCLOSE
 	end
 

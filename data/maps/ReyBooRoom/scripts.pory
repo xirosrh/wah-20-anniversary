@@ -1,30 +1,47 @@
 mapscripts ReyBooRoom_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_8, 0: ReyBooRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: ReyBooRoom_OnLoad
+
 }
 
+script ReyBooRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_REY_BOO)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script ReyBooRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
 
 script ReyBooRoom_EventScript_BooEncounter {
     lock
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     special(SpawnCameraObject)
     directcameramovementtopos(6, 5)
     waitmovement(0)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_IdeaWithDelay48)
-    msgbox(format("¡Esta es la mejor idea del mundo, con esto podré jubilarme, yupi!\p¡Vamos a ello!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Esta es la mejor idea del mundo, con esto podré jubilarme, yupi!\p¡Vamos a ello!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceRight2)
     delay(10)
-    msgbox(format("¡Adelante, usa Día de Pago!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Adelante, usa Día de Pago!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_ThinkingWithDelay48)
     delay(40)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceRight2)
-    msgbox(format("¡Vamos, saca tu energía cósmica, Día de Pago!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Vamos, saca tu energía cósmica, Día de Pago!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(30)
     applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_WalkRight)
     delay(30)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_angry, jump_in_place_right * 2, delay_16))
-    msgbox(format("Maldito mono…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Maldito mono…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, moves(emote_versus, walk_in_place_left, delay_16 * 2))
@@ -57,7 +74,7 @@ script ReyBooRoom_EventScript_BooEncounter {
         walk_faster_left * 2
         jump_in_place_up ))
     waitmovement(0)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    call(WahRoomsShared_OpenDoor)
     applymovement(LOCALID_REYBOOROOM_BOO, moves(walk_faster_up, set_invisible))
     applymovement(LOCALID_REYBOOROOM_VIGOROTH, moves(delay_16, jump_in_place_up, walk_faster_up * 2, set_invisible))
     waitmovement(LOCALID_REYBOOROOM_VIGOROTH)
@@ -65,31 +82,40 @@ script ReyBooRoom_EventScript_BooEncounter {
     delay(20)
     setflag(FLAG_REYBOOROOM_HIDE_VIGOROTH)
     removeobject(LOCALID_REYBOOROOM_VIGOROTH)
-    moveobjecttopos(LOCALID_PLAYER, 6, 8, DIR_NORTH)
-    waitmovement(0)
+    switch(var(VAR_TEMP_0)){
+        case 4:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkRight2)
+        case 5:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkRight)
+        case 7:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkLeft)
+        case 8:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkLeft2)
+    }
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
     delay(30)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(face_down, set_visible, walk_down, delay_8, face_up, delay_16))
-    call(PokemonLeague_EliteFour_CloseRoomDoorMetatiles)
-    msgbox(format("Menos mal."), MSGBOX_AUTOCLOSE)
+    call(WahRoomsShared_CloseDoor)
+    msgbox(format("Menos mal."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_down, face_up, delay_16 * 2))
-    msgbox(format("Madre mía, qué mala bestia…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Madre mía, qué mala bestia…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(40)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_FaceDown)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_ExclamationMarkWithDelay48)
-    msgbox(format("¡Ejem…!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Ejem…!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     applymovement(LOCALID_REYBOOROOM_BOO, moves(walk_down * 3))
     applymovement(LOCALID_CAMERA, moves(walk_down * 3))
     waitmovement(0)
     special(RemoveCameraObject)
-    msgbox(format("De modo que eres tú quien me ha invocado…"))
+    msgbox(format("De modo que eres tú quien me ha invocado…"), speaker = SP_NAME_REY_BOO)
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, format("¡Madre mía!"))
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_surprise, lock_facing_direction, jump_up, unlock_facing_direction, delay_16 * 2))
     delay(20)
-    msgbox(format("Muy bien, has pasado la prueba física… Ahora prepárate para la inesperada…"))
+    msgbox(format("Muy bien, has pasado la prueba física… Ahora prepárate para la inesperada…"), speaker = SP_NAME_REY_BOO)
     playbgm(MUS_WEATHER_GROUDON, FALSE)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("¡Mis fenomenales poderes!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Mis fenomenales poderes!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown2)
     fadescreen(FADE_TO_WHITE)
     fadescreen(FADE_FROM_WHITE)
@@ -108,23 +134,23 @@ script ReyBooRoom_EventScript_BooEncounter {
     msgbox(format("Batería baja {DOWN_ARROW}"), MSGBOX_AUTOCLOSE_TOP)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_XWithDelay48)
-    msgbox(format("¡Maldita sea!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Maldita sea!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(20)
     turnobject(LOCALID_REYBOOROOM_BOO, DIR_NORTH)
     delay(10)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Muy bien…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Muy bien…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     special(SpawnCameraObject)
     applymovement(LOCALID_REYBOOROOM_BOO, moves(walk_slow_up, delay_8, walk_slow_up, delay_8, face_down, delay_16))
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp3)
     waitmovement(0)
-    msgbox(format("Por esta vez has ganado."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Por esta vez has ganado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_slow_up))
     delay(20)
     turnobject(LOCALID_REYBOOROOM_BOO, DIR_SOUTH)
-    msgbox(format("¡Volveré!"), MSGBOX_AUTOCLOSE)
-    call(PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles)
+    msgbox(format("¡Volveré!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
+    call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(walk_up, set_invisible))
     playse(SE_CONTEST_CONDITION_LOSE)
     waitse

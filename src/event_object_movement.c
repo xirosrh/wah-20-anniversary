@@ -334,7 +334,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
     [MOVEMENT_TYPE_SLEEPING] = MovementType_Sleeping,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop
+    [MOVEMENT_TYPE_SMOKING_LOOP] = MovementType_SmokingLoop,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = MovementType_CraneBurningUp
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -465,7 +466,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
     [MOVEMENT_TYPE_SLEEPING] = DIR_SOUTH,
-    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH
+    [MOVEMENT_TYPE_SMOKING_LOOP] = DIR_SOUTH,
+    [MOVEMENT_TYPE_CRANE_BURNING_UP] = DIR_SOUTH
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -485,6 +487,8 @@ enum NpcSpritePalettes
     PAL_NPC_3,
     PAL_NPC_4,
 };
+
+extern const u16 gOverworldPalette_Abra[];
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
     [PAL_NPC_1] =   {gObjectEventPal_Npc1,  OBJ_EVENT_PAL_TAG_NPC_1},
@@ -510,10 +514,37 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_BirthIslandStone,      OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE},
     {gObjectEventPal_HoOh,                  OBJ_EVENT_PAL_TAG_HO_OH},
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
+    {gOverworldPalette_Abra,                OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
     {gObjectEventPal_Aguiar,                OBJ_EVENT_PAL_TAG_AGUIAR},
+    {gObjectEventPal_JackJohnson,           OBJ_EVENT_PAL_TAG_JACK_JOHNSON},
+    {gObjectEventPal_ReyBoo,                OBJ_EVENT_PAL_TAG_REY_BOO},
+    {gObjectEventPal_Goce,                  OBJ_EVENT_PAL_TAG_GOCE},
+    {gObjectEventPal_Reoneky,               OBJ_EVENT_PAL_TAG_REONEKY},
+    {gObjectEventPal_Cosarara,              OBJ_EVENT_PAL_TAG_COSARARA},
+    {gObjectEventPal_Ozumas,                OBJ_EVENT_PAL_TAG_OZUMAS},
+    {gObjectEventPal_Zero,                  OBJ_EVENT_PAL_TAG_ZERO},
+    {gObjectEventPal_Scarex,                OBJ_EVENT_PAL_TAG_SCAREX},
+    {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
+    {gObjectEventPal_Baro,                  OBJ_EVENT_PAL_TAG_BARO},
+    {gObjectEventPal_Sayer,                 OBJ_EVENT_PAL_TAG_SAYER},
+    {gObjectEventPal_Cheve,                 OBJ_EVENT_PAL_TAG_CHEVE},
+    {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
+    {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
+    {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
+    {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
+    {gObjectEventPal_PkPower,               OBJ_EVENT_PAL_TAG_PKPOWER},
+    {gObjectEventPal_Omega,                 OBJ_EVENT_PAL_TAG_OMEGA},
+    {gObjectEventPal_Klein,                 OBJ_EVENT_PAL_TAG_KLEIN},
+    {gObjectEventPal_TrainerInWater1,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1},
+    {gObjectEventPal_TrainerInWater2,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2},
+    {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
+    {gObjectEventPal_Crane,                 OBJ_EVENT_PAL_TAG_CRANE},
+    {gObjectEventPal_FlameWheelAttack,      OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK},
+    {gObjectEventPal_CuttableTree,         OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
+    {gFieldEffectPal_TreeDisguise,         OBJ_EVENT_PAL_TAG_TREE_DISGUISE},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -699,6 +730,7 @@ static const u8 sFishingBiteDirectionAnimNums[] = {
     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_NORTH,
     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_NORTH,
 };
+
 static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NONE] = ANIM_RUN_SOUTH,
     [DIR_SOUTH] = ANIM_RUN_SOUTH,
@@ -2418,37 +2450,29 @@ void UpdateLightSprite(struct Sprite *sprite)
         return;
     }
 
-    // Note: Don't set window registers during hardware fade!
-    switch (sprite->sLightType)
+    if (sprite->sLightType == LIGHT_TYPE_BALL)
     {
-    default:
-    case LIGHT_TYPE_BALL:
         if (gPaletteFade.active) // if palette fade is active, don't flicker since the timer won't be updated
         {
-            Weather_SetBlendCoeffs(7, BASE_SHADOW_INTENSITY);
             sprite->invisible = FALSE;
         }
         else if (gPlayerAvatar.tileTransitionState)
         {
-            Weather_SetBlendCoeffs(7, BASE_SHADOW_INTENSITY); // As long as the second coefficient stays 12, shadows will not change
             sprite->invisible = FALSE;
             if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT_2)
                 LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT)], sprite->oam.paletteNum);
         }
         else if ((sprite->invisible = gTimeUpdateCounter & 1))
         {
-            Weather_SetBlendCoeffs(7, BASE_SHADOW_INTENSITY);
             sprite->invisible = FALSE;
             if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT_2)
                 LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT)], sprite->oam.paletteNum);
         }
-        break;
-    case LIGHT_TYPE_PKMN_CENTER_SIGN:
-    case LIGHT_TYPE_POKE_MART_SIGN:
-        Weather_SetBlendCoeffs(12, BASE_SHADOW_INTENSITY);
+    } else {
         sprite->invisible = FALSE;
-        break;
     }
+    // Note: Don't set window registers during hardware fade!
+    Weather_SetBlendCoeffs(7, BASE_SHADOW_INTENSITY);
 }
 
 // Spawn a light at a map coordinate
@@ -5190,7 +5214,7 @@ static bool32 TryStartFollowerTransformEffect(struct ObjectEvent *objectEvent, s
 {
     u32 multi;
     struct Pokemon *mon;
-    u32 ability;
+    enum Ability ability;
     if (DoesSpeciesHaveFormChangeMethod(OW_SPECIES(objectEvent), FORM_CHANGE_OVERWORLD_WEATHER)
         && OW_SPECIES(objectEvent) != (multi = GetOverworldWeatherSpecies(OW_SPECIES(objectEvent))))
     {
@@ -5709,6 +5733,28 @@ bool8 MovementType_SmokingLoop_Step0(struct ObjectEvent *objectEvent, struct Spr
 bool8 MovementType_SmokingLoop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
      if (WaitForMovementDelay(sprite))
+    {
+        sprite->sTypeFuncId = 0;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+movement_type_def(MovementType_CraneBurningUp, gMovementTypeFuncs_CraneBurningUp)
+
+bool8 MovementType_CraneBurningUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sDirection = DIR_SOUTH;
+    StartSpriteAnimInDirection(objectEvent, sprite, sprite->sDirection, ANIM_CRANE_BURNING_UP);
+    objectEvent->singleMovementActive = FALSE;
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_CraneBurningUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (WaitForMovementDelay(sprite))
     {
         sprite->sTypeFuncId = 0;
         return TRUE;
@@ -8293,6 +8339,18 @@ bool8 MovementAction_NurseJoyBowDown_Step0(struct ObjectEvent *objectEvent, stru
 bool8 MovementAction_SmokeCigarette_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     StartSpriteAnimInDirection(objectEvent, sprite, objectEvent->facingDirection, ANIM_SMOKE_CIGARETTE);
+    return FALSE;
+}
+
+bool8 MovementAction_EingFishing_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_EING_FISHING_WEST);
+    return FALSE;
+}
+
+bool8 MovementAction_CraneStartBurning_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnimInDirection(objectEvent, sprite, DIR_WEST, ANIM_CRANE_START_BURNING);
     return FALSE;
 }
 
@@ -11055,6 +11113,14 @@ bool8 MovementAction_EmoteHappy_Step0(struct ObjectEvent *objectEvent, struct Sp
     return TRUE;
 }
 
+bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_ANNOYED_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
 bool8 MovementAction_EmoteWink_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
@@ -11461,6 +11527,11 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
         return TRUE;
     }
     return FALSE;
+}
+
+u8 GetObjectEventApricornTreeId(u8 objectEventId)
+{
+    return gObjectEvents[objectEventId].trainerRange_berryTreeId;
 }
 
 

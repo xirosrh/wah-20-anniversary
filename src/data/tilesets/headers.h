@@ -808,3 +808,102 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RoomGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_RoomGeneral,
+    .palettes = gTilesetPalettes_RoomGeneral,
+    .metatiles = gMetatiles_RoomGeneral,
+    .metatileAttributes = gMetatileAttributes_RoomGeneral,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RoomBoo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RoomBoo,
+    .palettes = gTilesetPalettes_RoomBoo,
+    .metatiles = gMetatiles_RoomBoo,
+    .metatileAttributes = gMetatileAttributes_RoomBoo,
+    .callback = InitTilesetAnim_RoomBoo,
+};
+
+const struct Tileset gTileset_Room_cheve =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_cheve,
+    .palettes = gTilesetPalettes_Room_cheve,
+    .metatiles = gMetatiles_Room_cheve,
+    .metatileAttributes = gMetatileAttributes_Room_cheve,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Reoneky =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Reoneky,
+    .palettes = gTilesetPalettes_Room_Reoneky,
+    .metatiles = gMetatiles_Room_Reoneky,
+    .metatileAttributes = gMetatileAttributes_Room_Reoneky,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Goce =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Goce,
+    .palettes = gTilesetPalettes_Room_Goce,
+    .metatiles = gMetatiles_Room_Goce,
+    .metatileAttributes = gMetatileAttributes_Room_Goce,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Baro =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Baro,
+    .palettes = gTilesetPalettes_Room_Baro,
+    .metatiles = gMetatiles_Room_Baro,
+    .metatileAttributes = gMetatileAttributes_Room_Baro,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Jack_Johnson =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Jack_Johnson,
+    .palettes = gTilesetPalettes_Room_Jack_Johnson,
+    .metatiles = gMetatiles_Room_Jack_Johnson,
+    .metatileAttributes = gMetatileAttributes_Room_Jack_Johnson,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Room_Gallego =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Gallego,
+    .palettes = gTilesetPalettes_Room_Gallego,
+    .metatiles = gMetatiles_Room_Gallego,
+    .metatileAttributes = gMetatileAttributes_Room_Gallego,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_tokynwar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_tokynwar,
+    .palettes = gTilesetPalettes_room_tokynwar,
+    .metatiles = gMetatiles_room_tokynwar,
+    .metatileAttributes = gMetatileAttributes_room_tokynwar,
+    .callback = InitTilesetAnim_TokynWarRoom,
+};

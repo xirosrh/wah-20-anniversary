@@ -6,17 +6,17 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_REYBOOROOM_BOO",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_REY_BOO",
       "x": 6,
       "y": 5,
       "elevation": 0,
@@ -46,31 +46,20 @@
   "warp_events": [
     {
       "x": 6,
-      "y": 13,
+      "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_REY_BOO_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_DAV_ZERO_ROOM",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
     {
       "type": "trigger",
       "x": 4,
@@ -110,24 +99,6 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
-      "var_value": "0",
-      "script": "ReyBooRoom_EventScript_BooEncounter"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
       "y": 8,
       "elevation": 0,
       "var": "VAR_REY_BOO_ROOM_STATE",

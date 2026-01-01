@@ -1,0 +1,29 @@
+PRIMARIO
+
+
+
+porytiles compile-primary -metatiles-primary-override=176 -metatiles-total-override=176 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/primary/room_general $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+SECUNDARIO BOO
+
+porytiles compile-secondary -metatiles-primary-override=176 -metatiles-total-override=416 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/secondary/room_boo $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/secondary/RoomBoo $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+SECUNDARIO ROOM CHEVE
+
+porytiles compile-secondary -metatiles-primary-override=176 -metatiles-total-override=416 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/secondary/room_cheve $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/secondary/Room_cheve $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+SECUNDARIO ROOM REONEKY
+
+porytiles compile-secondary -metatiles-primary-override=176 -metatiles-total-override=416 -Wall -o $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/data/tilesets/secondary/room_reoneky $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/secondary/Room_reoneky $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+SECUNDARIO ROOM BARO
+
+porytiles compile-secondary -metatiles-primary-override=176 -metatiles-total-override=416 -Wall -o $HOME/Documentos/hackrom//decomp/whaHack/wah-20-anniversary/data/tilesets/secondary/room_baro $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/secondary/Room_baro $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h
+
+
+SECUNDARIO ROOM GOCE
+
+porytiles compile-secondary -metatiles-primary-override=176 -metatiles-total-override=416 -Wall -o $HOME/Documentos/hackrom//decomp/whaHack/wah-20-anniversary/data/tilesets/secondary/room_goce $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/secondary/Room_Goce $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/porytiles/primary/RoomGeneral $HOME/Documentos/hackrom/decomp/whaHack/wah-20-anniversary/include/constants/metatile_behaviors.h

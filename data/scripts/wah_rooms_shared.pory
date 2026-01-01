@@ -1,0 +1,33 @@
+
+script WahRoomsShared_OpenDoor {
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)
+	playse(SE_DOOR)
+	setmetatile(6, 2, METATILE_RoomGeneral_Door_Opening1, FALSE)
+	special(DrawWholeMapView)
+	delay(5)
+	setmetatile(6, 2, METATILE_RoomGeneral_Door_Opening2, FALSE)
+    special(DrawWholeMapView)
+	delay(5)
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Open, FALSE)
+    special(DrawWholeMapView)
+	return
+}
+
+script WahRoomsShared_CloseDoor {
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)
+    playse(SE_DOOR)
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Opening2, FALSE)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Opening1, FALSE)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Closed, TRUE)
+    special(DrawWholeMapView)
+    return
+}
+
+script WahRoomsShared_SetDoorAsOpen {
+    setmetatile(6, 2, METATILE_RoomGeneral_Door_Open, FALSE)
+    return
+}

@@ -288,6 +288,7 @@ void MovementType_RunInPlace(struct Sprite *sprite);
 void MovementType_Invisible(struct Sprite *sprite);
 void MovementType_Sleeping(struct Sprite *);
 void MovementType_SmokingLoop(struct Sprite *sprite);
+void MovementType_CraneBurningUp(struct Sprite *sprite);
 void MovementType_WalkSlowlyInPlace(struct Sprite *sprite);
 void MovementType_FollowPlayer(struct Sprite *sprite);
 u8 GetSlideMovementAction(u32);
@@ -467,6 +468,8 @@ u8 MovementType_Sleeping_Step2(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_Sleeping_Step3(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_SmokingLoop_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_SmokingLoop_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_CraneBurningUp_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_CraneBurningUp_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_JogInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_RunInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -503,6 +506,7 @@ bool8 MovementAction_EmoteSleeping_Step1(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSmile_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteCry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *, struct Sprite *);
@@ -512,5 +516,7 @@ bool8 MovementAction_EmoteXD_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
 u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
+
+u8 GetObjectEventApricornTreeId(u8 objectEventId);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

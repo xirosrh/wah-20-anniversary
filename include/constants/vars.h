@@ -246,7 +246,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_SERGIO_ROOM_STATE                                0x40E5 // WAH
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -269,10 +269,10 @@
 #define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
 #define VAR_BARO_ROOM_STATE                                0x40FA //WAH
 #define VAR_REY_BOO_ROOM_STATE                             0x40FB //WAH
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_REONEKY_ROOM_STATE                                0x40FC // WAH
+#define VAR_EING_ROOM_STATE                                0x40FD // WAH
+#define VAR_TOKYN_WAR_ROOM_STATE                                0x40FE // WAH
+#define VAR_JAVS_JAVI4315_ROOM_STATE                                0x40FF // WAH
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

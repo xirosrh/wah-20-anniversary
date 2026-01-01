@@ -89,6 +89,7 @@
         create_movement_action face_original_direction, MOVEMENT_ACTION_FACE_ORIGINAL_DIRECTION
         create_movement_action nurse_joy_bow, MOVEMENT_ACTION_NURSE_JOY_BOW_DOWN
         create_movement_action smoke_cigarette, MOVEMENT_ACTION_SMOKE_CIGARETTE
+        create_movement_action fishing, MOVEMENT_ACTION_FISHING
         create_movement_action enable_jump_landing_ground_effect, MOVEMENT_ACTION_ENABLE_JUMP_LANDING_GROUND_EFFECT
 	create_movement_action disable_jump_landing_ground_effect, MOVEMENT_ACTION_DISABLE_JUMP_LANDING_GROUND_EFFECT
 	create_movement_action disable_anim, MOVEMENT_ACTION_DISABLE_ANIMATION
@@ -184,10 +185,12 @@
         create_movement_action emote_idea, MOVEMENT_ACTION_EMOTE_IDEA
         create_movement_action emote_xd, MOVEMENT_ACTION_EMOTE_XD
         create_movement_action emote_wink, MOVEMENT_ACTION_EMOTE_WINK
+        create_movement_action emote_annoyed, MOVEMENT_ACTION_EMOTE_ANNOYED
         create_movement_action walk_slow_stairs_down, MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN
         create_movement_action walk_slow_stairs_up, MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP
         create_movement_action walk_slow_stairs_left, MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT
         create_movement_action walk_slow_stairs_right, MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT
+		create_movement_action crane_start_burning, MOVEMENT_ACTION_CRANE_START_BURNING
 
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL
 	create_movement_action enter_pokeball, MOVEMENT_ACTION_ENTER_POKEBALL

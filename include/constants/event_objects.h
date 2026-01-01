@@ -246,13 +246,45 @@
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
-#define OBJ_EVENT_GFX_BLAX                       242
-#define OBJ_EVENT_GFX_AGUIAR                     243
+#define OBJ_EVENT_GFX_APRICORN_TREE              242
+#define OBJ_EVENT_GFX_AGUIAR_SMOKING                     243
+#define OBJ_EVENT_GFX_CRANE                      244
+#define OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK         245
+#define OBJ_EVENT_GFX_EING_FISHING               246
+#define OBJ_EVENT_GFX_TRAINER_IN_WATER_1         247
+#define OBJ_EVENT_GFX_TRAINER_IN_WATER_2         248
+#define OBJ_EVENT_GFX_TRAINER_IN_WATER_3         249
+#define OBJ_EVENT_GFX_BLAX                       250
+#define OBJ_EVENT_GFX_JACK_JOHNSON               251
+#define OBJ_EVENT_GFX_REY_BOO                    252
+#define OBJ_EVENT_GFX_GOCE                       253
+#define OBJ_EVENT_GFX_REONEKY                    254
+#define OBJ_EVENT_GFX_COSARARA                   255
+#define OBJ_EVENT_GFX_OZUMAS                     256
+#define OBJ_EVENT_GFX_ZERO                       257
+#define OBJ_EVENT_GFX_SCAREX                     258
+#define OBJ_EVENT_GFX_XIROS                      259
+#define OBJ_EVENT_GFX_EING                       260
+#define OBJ_EVENT_GFX_SERGIO                     261
+#define OBJ_EVENT_GFX_DRIVE                      262
+#define OBJ_EVENT_GFX_PKPOWER                    263
+#define OBJ_EVENT_GFX_OMEGA                      264
+#define OBJ_EVENT_GFX_KLEIN                      265
+#define OBJ_EVENT_GFX_SERGIO_DRAGONITE           266
+#define OBJ_EVENT_GFX_ABRA_TELEPORTING_1         267
+#define OBJ_EVENT_GFX_ABRA_TELEPORTING_2         268
+#define OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1      269
+#define OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2      270
+#define OBJ_EVENT_GFX_SERGIO_TELEPORTING_1       271
+#define OBJ_EVENT_GFX_SERGIO_TELEPORTING_2       272
+#define OBJ_EVENT_GFX_BARO                       273
+#define OBJ_EVENT_GFX_SAYER                      274
+#define OBJ_EVENT_GFX_CHEVE                      275
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        244
+#define NUM_OBJ_EVENT_GFX                        276
 
 
 // These are dynamic object gfx ids.
@@ -373,6 +405,33 @@
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 #define OBJ_EVENT_PAL_TAG_BLAX                    0x1125
 #define OBJ_EVENT_PAL_TAG_AGUIAR                  0x1126
+#define OBJ_EVENT_PAL_TAG_CRANE                   0x1127
+#define OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK      0x1128
+#define OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1      0x1129
+#define OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2      0x112A
+#define OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3      0x112B
+#define OBJ_EVENT_PAL_TAG_JACK_JOHNSON            0x112C
+#define OBJ_EVENT_PAL_TAG_REY_BOO                 0x112D
+#define OBJ_EVENT_PAL_TAG_GOCE                    0x112E
+#define OBJ_EVENT_PAL_TAG_REONEKY                 0x112F
+#define OBJ_EVENT_PAL_TAG_COSARARA                0x1130
+#define OBJ_EVENT_PAL_TAG_OZUMAS                  0x1131
+#define OBJ_EVENT_PAL_TAG_ZERO                    0x1132
+#define OBJ_EVENT_PAL_TAG_SCAREX                  0x1133
+#define OBJ_EVENT_PAL_TAG_XIROS                   0x1134
+#define OBJ_EVENT_PAL_TAG_EING                    0x1135
+#define OBJ_EVENT_PAL_TAG_SERGIO                  0x1136
+#define OBJ_EVENT_PAL_TAG_DRIVE                   0x1137
+#define OBJ_EVENT_PAL_TAG_PKPOWER                 0x1138
+#define OBJ_EVENT_PAL_TAG_OMEGA                   0x1139
+#define OBJ_EVENT_PAL_TAG_KLEIN                   0x113A
+#define OBJ_EVENT_PAL_TAG_CUTTABLE_TREE          0x113B
+#define OBJ_EVENT_PAL_TAG_TREE_DISGUISE          0x113C
+#define OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE        0x113D
+#define OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING        0x113E
+#define OBJ_EVENT_PAL_TAG_BARO                    0x113F
+#define OBJ_EVENT_PAL_TAG_SAYER                   0x1140
+#define OBJ_EVENT_PAL_TAG_CHEVE                   0x1141
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -16,6 +16,10 @@ Common_Movement_ExclamationMarkWithDelay48:
 	delay_16
 	step_end
 
+Common_Movement_DoubleExclamationMark:
+	emote_double_exclamation_mark
+	step_end
+
 Common_Movement_DoubleExclamationMarkWithDelay48:
 	emote_double_exclamation_mark
 	delay_16
@@ -243,6 +247,50 @@ Common_Movement_WalkLeft3:
 	walk_left
     step_end
 
+Common_Movement_WalkLeft4:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft5:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft6:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft7:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
+
+Common_Movement_WalkLeft8:
+    walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+    step_end
 
 Common_Movement_WalkUpFast::
     walk_fast_up
@@ -287,6 +335,11 @@ Common_Movement_JumpInPlaceDown2:
 	step_end
 
 Common_Movement_JumpInPlaceLeft:
+	jump_in_place_left
+	step_end
+
+Common_Movement_JumpInPlaceLeft2:
+	jump_in_place_left
 	jump_in_place_left
 	step_end
 
@@ -352,15 +405,26 @@ Common_Movement_Happy:
 	step_end
 
 Common_Movement_HappyWithDelay48:
-	emote_happy
-	delay_16
-	delay_16
-	delay_16
-	step_end
+        emote_happy
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
+Common_Movement_Annoyed:
+        emote_annoyed
+        step_end
+
+Common_Movement_AnnoyedWithDelay48:
+        emote_annoyed
+        delay_16
+        delay_16
+        delay_16
+        step_end
 
 Common_Movement_Wink:
-	emote_wink
-	step_end
+        emote_wink
+        step_end
 
 Common_Movement_WinkWithDelay48:
 	emote_wink
@@ -484,8 +548,16 @@ Common_Movement_Sleeping:
 	step_end
 
 Common_Movement_SmokeCigarette:
-	smoke_cigarette
-	step_end
+        smoke_cigarette
+        step_end
+
+Common_Movement_Fishing:
+        fishing
+        step_end
+
+Common_Movement_CraneStartBurning:
+        crane_start_burning
+        step_end
 
 Common_Movement_WalkLeftLockFacingDirection:
 	lock_facing_direction
@@ -523,6 +595,11 @@ Common_Movement_JumpUpLockFacingDirection:
 	unlock_facing_direction
 	step_end
 	
+Common_Movement_JumpLeftLockFacingDirection:
+	lock_facing_direction
+	jump_left
+	unlock_facing_direction
+	step_end
 
 Common_Movement_JumpDownFaceLeft:
 	jump_down

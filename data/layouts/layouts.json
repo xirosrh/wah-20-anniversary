@@ -4086,8 +4086,8 @@
       "name": "CheveRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_cheve",
       "border_filepath": "data/layouts/CheveRoom/border.bin",
       "blockdata_filepath": "data/layouts/CheveRoom/map.bin"
     },
@@ -4126,8 +4126,8 @@
       "name": "JackJohnsonRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Jack_Johnson",
       "border_filepath": "data/layouts/JackJohnsonRoom/border.bin",
       "blockdata_filepath": "data/layouts/JackJohnsonRoom/map.bin"
     },
@@ -4136,8 +4136,8 @@
       "name": "TokynWarRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_tokynwar",
       "border_filepath": "data/layouts/TokynWarRoom/border.bin",
       "blockdata_filepath": "data/layouts/TokynWarRoom/map.bin"
     },
@@ -4146,8 +4146,8 @@
       "name": "GoceRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Goce",
       "border_filepath": "data/layouts/GoceRoom/border.bin",
       "blockdata_filepath": "data/layouts/GoceRoom/map.bin"
     },
@@ -4186,8 +4186,8 @@
       "name": "ReyBooRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_RoomBoo",
       "border_filepath": "data/layouts/ReyBooRoom/border.bin",
       "blockdata_filepath": "data/layouts/ReyBooRoom/map.bin"
     },
@@ -4226,8 +4226,8 @@
       "name": "BaroRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Baro",
       "border_filepath": "data/layouts/BaroRoom/border.bin",
       "blockdata_filepath": "data/layouts/BaroRoom/map.bin"
     },
@@ -4236,8 +4236,8 @@
       "name": "GallegoRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Gallego",
       "border_filepath": "data/layouts/GallegoRoom/border.bin",
       "blockdata_filepath": "data/layouts/GallegoRoom/map.bin"
     },
@@ -4246,8 +4246,8 @@
       "name": "ReonekyRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Room_Reoneky",
       "border_filepath": "data/layouts/ReonekyRoom/border.bin",
       "blockdata_filepath": "data/layouts/ReonekyRoom/map.bin"
     },
@@ -4266,7 +4266,7 @@
       "name": "EingRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/EingRoom/border.bin",
       "blockdata_filepath": "data/layouts/EingRoom/map.bin"
@@ -4290,6 +4290,26 @@
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
       "blockdata_filepath": "data/layouts/SergioRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_DRAGON_MOUNTAIN_TOP",
+      "name": "DragonMountain_Top_Layout",
+      "width": 31,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DragonMountain_Top/border.bin",
+      "blockdata_filepath": "data/layouts/DragonMountain_Top/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_FAME",
+      "name": "HallOfFame_Layout",
+      "width": 15,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CableClub",
+      "border_filepath": "data/layouts/HallOfFame/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfFame/map.bin"
     }
   ]
 }

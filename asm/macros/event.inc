@@ -169,7 +169,10 @@
 	.endm
 
 	@ Copies the value of source into destination.
-	.macro copyvar destination:req, source:req
+	.macro copyvar destination:req, source:req, warn=TRUE
+	.if \warn && !((\source >= VARS_START && \source <= VARS_END) || (\source >= SPECIAL_VARS_START && \source <= SPECIAL_VARS_END))
+	.warning "copyvar with a value that is not a VAR_ constant; did you mean setvar instead?"
+	.endif
 	.byte SCR_OP_COPYVAR
 	.2byte \destination
 	.2byte \source
@@ -1949,11 +1952,18 @@
 	.endm
 
 	.macro directcameramovementtoposwithvars x_var:req, y_var:req
-	copyvar VAR_0x8004, \x_var
-	copyvar VAR_0x8005, \y_var
-	special DirectCameraMovementsToPos
-	.endm
-	
+        copyvar VAR_0x8004, \x_var
+        copyvar VAR_0x8005, \y_var
+        special DirectCameraMovementsToPos
+        .endm
+
+        .macro directmovementtopos localId:req, x:req, y:req
+        setvar VAR_0x8008, \localId
+        setvar VAR_0x8004, \x
+        setvar VAR_0x8005, \y
+        special DirectMovementToPos
+        .endm
+
 @ Field pic macros
 	
 	@ Loads the desired pic on screen. Sprite id returned in VAR_RESULT and copied to the desired variable if given.
@@ -2147,7 +2157,10 @@
 	NO  = 0
 
 	@ Buffers the given text and calls the relevant standard message script (see gStdScripts).
-	.macro msgbox text:req, type=MSGBOX_DEFAULT
+	.macro msgbox text:req, type=MSGBOX_DEFAULT, speaker
+	.ifnb \speaker
+		setspeaker \speaker
+	.endif
 	loadword 0, \text
 	callstd \type
 	.endm
@@ -2417,6 +2430,11 @@
 	@ can be used in conjunection with createmon to set up a wild battle with 2 player mons vs. 1 enemy mon
 	.macro setwilddoubleflag
 	callnative ScriptSetDoubleBattleFlag, requests_effects=1
+	.endm
+
+	@ Stop using the ORAS dowsing machine.
+	.macro stoporasdowsing
+	callnative EndORASDowsing
 	.endm
 
 	@ ============================ @
@@ -2761,6 +2779,38 @@
 	.2byte \battlePartner
 	.endm
 
+	@ Manually buffer a string as the speaker's name for namebox.
+	@ The next shown message/msgbox will include a namebox, if the provided string is not NULL.
+	@ An SP_NAME_* constant can also be used, it'll take the name from gSpeakerNamesTable instead.
+	.macro setspeaker name:req
+	callnative SetSpeaker
+	.4byte \name
+	.endm
+
+@ VS Seeker
+	.macro vsseeker_rematchid rematchId:req
+	callnative NativeVsSeekerRematchId, requests_effects=1
+	.2byte \rematchId
+	.endm
+
+	@ Sets the move relearner state
+	.macro setmoverelearnerstate state:req
+	callnative ScrCmd_setmoverelearnerstate, requests_effects=1
+	.2byte \state
+	.endm
+
+	@ Retrieves the move relearner state and stores it in the specified var
+	.macro getmoverelearnerstate varId:req
+	callnative ScrCmd_getmoverelearnerstate, requests_effects=1
+	.4byte \varId
+	.endm
+
+	@ Execute script if bag has TMs and/or HMs
+	.macro istmrelearneractive destination:req
+	callnative ScrCmd_istmrelearneractive, requests_effects=1
+	.4byte \destination
+	.endm
+
 
 	.macro applymovementandwait localId:req, movements:req, map
 	applymovement \localId, \movements, \map
@@ -2771,4 +2821,10 @@
     setvar VAR_0x8005, \localId
     setvar VAR_0x8006, \movementType
     special SetObjectMovementType
+    .endm
+
+	.macro updateobjectsprite localId:req, graphicId:req
+    setvar VAR_0x8004, \localId
+    setvar VAR_0x8005, \graphicId
+    special UpdateObjectEventSprite
     .endm

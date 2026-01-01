@@ -6,30 +6,16 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_JAVSJAVIROOM_JAVS",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 5,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_JAVSJAVIROOM_JAVI4315",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 7,
       "y": 5,
@@ -39,7 +25,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JavsJavi4315Room_EventScript_Javs",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_JAVSJAVIROOM_JAVI4315",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JavsJavi4315Room_EventScript_Javi4315",
       "flag": "0"
     }
   ],
@@ -48,10 +48,63 @@
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_CHEVE_ROOM",
+      "dest_map": "MAP_JavsJavi4315Room",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_GALLEGO_ROOM",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    }
+  ],
   "bg_events": []
 }

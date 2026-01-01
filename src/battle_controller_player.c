@@ -36,7 +36,6 @@
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_partner.h"
-#include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -49,6 +48,9 @@
 #include "type_icons.h"
 #include "config/pbh.h"
 #include "pokedex.h"
+#include "test/battle.h"
+#include "test/test_runner_battle.h"
+#include "graphics.h"
 
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
@@ -97,6 +99,7 @@ static void ReloadMoveNames(u32 battler);
 static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef);
 static u32 CheckTargetTypeEffectiveness(u32 battler);
 static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler);
+static void ChangeColorSelectOption(u32 battler);
 
 static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
 {
@@ -199,46 +202,36 @@ static void CompleteOnBattlerSpritePosX_0(u32 battler)
 
 static u16 GetPrevBall(u16 ballId)
 {
-    u16 ballPrev;
-    s32 i, j;
-    CompactItemsInBagPocket(POCKET_POKE_BALLS);
-    for (i = 0; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
+    s32 i;
+    s32 index = ItemIdToBallId(ballId);
+    u32 newBall = 0;
+     for (i = 0; i < POKEBALL_COUNT; i++)
     {
-        if (ballId == GetBagItemId(POCKET_POKE_BALLS, i))
-        {
-            if (i <= 0)
-            {
-                for (j = gBagPockets[POCKET_POKE_BALLS].capacity - 1; j >= 0; j--)
-                {
-                    ballPrev = GetBagItemId(POCKET_POKE_BALLS, j);
-                    if (ballPrev != ITEM_NONE)
-                        return ballPrev;
-                }
-            }
-            i--;
-            break;
-        }
+        index--;
+        if (index == -1)
+            index = POKEBALL_COUNT - 1;
+        newBall = gBallItemIds[index];
+        if (CheckBagHasItem(newBall, 1))
+            return newBall;
     }
-    return GetBagItemId(POCKET_POKE_BALLS, i);
+    return ballId;
 }
 
 static u32 GetNextBall(u32 ballId)
 {
-    u32 ballNext = ITEM_NONE;
     s32 i;
-    CompactItemsInBagPocket(POCKET_POKE_BALLS);
-    for (i = 1; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
+    s32 index = ItemIdToBallId(ballId);
+    u32 newBall = 0;
+    for (i = 0; i < POKEBALL_COUNT; i++)
     {
-        if (ballId == GetBagItemId(POCKET_POKE_BALLS, i-1))
-        {
-            ballNext = GetBagItemId(POCKET_POKE_BALLS, i);
-            break;
-        }
+        index++;
+        if (index == POKEBALL_COUNT)
+            index = 0;
+        newBall = gBallItemIds[index];
+        if (CheckBagHasItem(newBall, 1))
+            return newBall;
     }
-    if (ballNext == ITEM_NONE)
-        return GetBagItemId(POCKET_POKE_BALLS, 0); // Zeroth slot
-    else
-        return ballNext;
+    return ballId;
 }
 
 static void HandleInputChooseAction(u32 battler)
@@ -338,9 +331,10 @@ static void HandleInputChooseAction(u32 battler)
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_RIGHT))
@@ -348,9 +342,10 @@ static void HandleInputChooseAction(u32 battler)
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_UP))
@@ -358,9 +353,10 @@ static void HandleInputChooseAction(u32 battler)
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -368,9 +364,10 @@ static void HandleInputChooseAction(u32 battler)
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
             PlaySE(SE_SELECT);
-            ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+            // ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
-            ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+            ChangeColorSelectOption(battler);
+            // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -1206,8 +1203,7 @@ static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
         gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim = FALSE;
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim = FALSE;
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim = FALSE;
-        FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
-        FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
+        FreeShinyStars();
 
         HandleLowHpMusicChange(GetBattlerMon(battler), battler);
 
@@ -1656,7 +1652,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u32 type = GetMoveType(move);
+    enum Type type = GetMoveType(move);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
     if (effect == EFFECT_TERA_BLAST)
@@ -1791,17 +1787,17 @@ void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
     src[0] = baseTileNum + 1;
     src[1] = baseTileNum + 2;
 
-    CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
+    CopyToBgTilemapBufferRect_ChangePalette(0, src, 19*(cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0);
     CopyBgTilemapBufferToVram(0);
 }
 
 void MoveSelectionDestroyCursorAt(u8 cursorPosition)
 {
     u16 src[2];
-    src[0] = 0x1016;
-    src[1] = 0x1016;
+    src[0] = 0xA;
+    src[1] = 0xA;
 
-    CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
+    CopyToBgTilemapBufferRect_ChangePalette(0, src, 19 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0);
     CopyBgTilemapBufferToVram(0);
 }
 
@@ -1889,30 +1885,40 @@ static void PlayerHandleDrawTrainerPic(u32 battler)
     bool32 isFrontPic;
     s16 xPos, yPos;
     u32 trainerPicId;
-
-    trainerPicId = PlayerGetTrainerBackPicId();
-    if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+    if (IsMultibattleTest())
     {
-        if ((GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT) // Second mon, on the right.
-            xPos = 90;
-        else // First mon, on the left.
+        trainerPicId = TRAINER_BACK_PIC_BRENDAN;
+        if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
             xPos = 32;
-
-        if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gPartnerTrainerId < TRAINER_PARTNER(PARTNER_NONE))
-        {
-            xPos = 90;
-            yPos = 80;
-        }
         else
-        {
-            yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
-        }
-
+            xPos = 80;
+        yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
     }
     else
     {
-        xPos = 80;
-        yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
+        trainerPicId = PlayerGetTrainerBackPicId();
+        if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+        {
+            if ((GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT) // Second mon, on the right.
+                xPos = 90;
+            else // First mon, on the left.
+                xPos = 32;
+
+            if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gPartnerTrainerId < TRAINER_PARTNER(PARTNER_NONE))
+            {
+                xPos = 90;
+                yPos = 80;
+            }
+            else
+            {
+                yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
+            }
+        }
+        else
+        {
+            xPos = 80;
+            yPos = (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80;
+        }
     }
 
     // Use front pic table for any tag battles unless your partner is Steven or a custom partner.
@@ -1995,24 +2001,25 @@ static void HandleChooseActionAfterDma3(u32 battler)
 
 static void PlayerHandleChooseAction(u32 battler)
 {
-    s32 i;
+    // s32 i;
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    // BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
-    for (i = 0; i < 4; i++)
-        ActionSelectionDestroyCursorAt(i);
+    // for (i = 0; i < 4; i++)
+    //     ActionSelectionDestroyCursorAt(i);
 
     TryRestoreLastUsedBall();
-    ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+    // ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+    ChangeColorSelectOption(battler);
     PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
 
     if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(B_POSITION_PLAYER_RIGHT))
     {
         StringCopy(gStringVar1, COMPOUND_STRING("El compañero usará:\n"));
-        u32 move = gBattleMons[B_POSITION_PLAYER_RIGHT].moves[gBattleStruct->chosenMovePositions[B_POSITION_PLAYER_RIGHT]];
+        u32 move = GetChosenMoveFromPosition(B_POSITION_PLAYER_RIGHT);
         StringAppend(gStringVar1, GetMoveName(move));
         u32 moveTarget = GetBattlerMoveTargetType(B_POSITION_PLAYER_RIGHT, move);
         if (moveTarget == MOVE_TARGET_SELECTED)
@@ -2380,8 +2387,8 @@ static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef)
     ctx.updateFlags = FALSE;
     ctx.abilityAtk = GetBattlerAbility(battlerAtk);
     ctx.abilityDef = GetBattlerAbility(battlerDef);
-    ctx.holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
-    ctx.holdEffectDef = GetBattlerHoldEffect(battlerDef, TRUE);
+    ctx.holdEffectAtk = GetBattlerHoldEffect(battlerAtk);
+    ctx.holdEffectDef = GetBattlerHoldEffect(battlerDef);
 
     uq4_12_t modifier = CalcTypeEffectivenessMultiplier(&ctx);
 
@@ -2451,4 +2458,27 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
     }
 
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
+}
+
+static void ChangeColorSelectOption(u32 battler)
+{
+    u8 palette[][2] = {
+        {0x1, 0x2},
+        {0x5, 0x6},
+        {0x3, 0x4},
+        {0x7, 0x8}
+    };
+    u8 colorToChange [][2] = { 
+        {0x7, 0x8},
+        {0xB, 0xC},
+        {0x9, 0xA},
+        {0xD, 0xE}
+    };
+
+    LoadPalette(gBattleTextboxPalette, 0, 0x40);
+
+    LoadPalette(
+        &gBattleTextboxActionMenuPalette[palette[gActionSelectionCursor[battler]][0]], 
+        colorToChange[gActionSelectionCursor[battler]][0], 
+        4);
 }

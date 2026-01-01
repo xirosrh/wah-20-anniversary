@@ -1,1 +1,218 @@
-mapscripts ReonekyRoom_MapScripts {}
+mapscripts ReonekyRoom_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_REONEKY_ROOM_STATE, 0: ReonekyRoom_OnFrame
+    ]
+    MAP_SCRIPT_ON_TRANSITION: ReonekyRoom_OnTransition
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_8, 0: ReonekyRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: ReonekyRoom_OnLoad
+}
+
+script ReonekyRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_REONEKY)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script ReonekyRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+
+script ReonekyRoom_OnTransition {
+    if(var(VAR_REONEKY_ROOM_STATE) == 0) {
+        setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+        setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    }
+    if(var(VAR_REONEKY_ROOM_STATE) == 1) {
+        setobjectmovementtype2(LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectmovementtype(LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectxy(LOCALID_REOROOM_REONEKY, 6, 4)
+        setobjectxyperm(LOCALID_REOROOM_REONEKY, 6, 4)
+    }
+    end
+}
+
+script ReonekyRoom_OnFrame {
+    release
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
+    special(SpawnCameraObject)
+    directcameramovementtopos(6, 7)
+    waitmovement(0)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¡Spitfire, mantén la distancia!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_DoubleExclamationMark)
+    release
+    delay(80)
+    msgbox(format("¡Esa grúa poseída encarna la injusticia administrativa!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    applymovementandwait(LOCALID_REOROOM_CRANE, moves(
+        emote_xd
+        jump_in_place_left * 2
+        delay_16
+        jump_in_place_left))
+    playse(SE_PIN)
+    applymovement(LOCALID_REOROOM_REONEKY, moves(emote_angry, jump_in_place_right * 2, delay_16 * 3))
+    msgbox(format("¿Te ríes, eh? Aficionado…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Estaba estacionado perfectamente, ¡no voy a rendirme ante esta multa injusta!"), speaker = SP_NAME_REONEKY)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¡Spitfire, cabezazo Zen!"))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_VersusWithDelay48)
+    playse(SE_M_THUNDERBOLT2)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, moves(
+        lock_facing_direction
+        walk_fast_right
+        jump_in_place_right
+        walk_fast_left
+        unlock_facing_direction
+    ))
+    applymovementandwait(LOCALID_REOROOM_CRANE, moves(
+        emote_x
+        lock_facing_direction
+        walk_in_place_left
+        walk_right
+        delay_16
+        unlock_facing_direction))
+    release
+    delay(30)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkLeftLockFacingDirection)
+    msgbox(format("¡Bien, es la nuestra! ¡Rueda Fuego!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    delay(20)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpLeftLockFacingDirection)
+    playse(SE_M_FLAME_WHEEL)
+    clearflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    addobject(LOCALID_REOROOM_FIREATTACK)
+    showobjectat(LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM)
+	setobjectsubpriority(LOCALID_REOROOM_FIREATTACK, MAP_REONEKY_ROOM, 0)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceRight2)
+    playse(SE_M_FIRE_PUNCH)
+    applymovementandwait(LOCALID_REOROOM_FIREATTACK, Common_Movement_WalkRight3)
+    release
+    delay(30)
+    applymovementandwait(LOCALID_REOROOM_CRANE, Common_Movement_CraneStartBurning)
+    setobjectmovementtype2(LOCALID_REOROOM_CRANE, MOVEMENT_TYPE_CRANE_BURNING_UP)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    fadescreen(FADE_TO_WHITE)
+    setflag(FLAG_REONEKYROOM_HIDE_FIRE)
+    removeobject(LOCALID_REOROOM_FIREATTACK)
+    turnobject(LOCALID_REOROOM_CRANE, DIR_SOUTH)
+    clearflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    addobject(LOCALID_REOROOM_HAUNTER)
+    showobjectat(LOCALID_REOROOM_HAUNTER, MAP_REONEKY_ROOM)
+    delay(30)
+    release
+    fadescreen(FADE_FROM_WHITE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_HAUNTER, moves(
+        emote_cry
+        walk_in_place_fast_right
+        walk_fast_down
+        walk_fast_left * 5
+        delay_16
+        set_invisible
+        delay_8
+        set_visible
+        delay_8
+        set_invisible
+        delay_16
+        set_visible
+        delay_8
+        set_invisible
+        delay_16
+        set_visible
+        delay_8
+        set_invisible
+    ))
+    setflag(FLAG_REONEKYROOM_HIDE_HAUNTER)
+    removeobject(LOCALID_REOROOM_HAUNTER)
+    applymovement(LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight2)
+    msgbox(format("¡Venga, a pastar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    waitmovement(0)
+    delay(20)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_WalkInPlaceLeft)
+    release
+    msgbox(format("¡Tú molas, tú mandas colega! ¡Nos libramos del fantasma de la multa!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovement(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
+    applymovement(LOCALID_REOROOM_TYPHLOSION, moves(emote_happy, walk_in_place_fast_left * 3))
+    waitmovement(LOCALID_REOROOM_REONEKY)
+    release
+    msgbox(format("Menos mal que J15 decía que lo tenía controlado, vaya tela…\pSi es que le tenía que haber hecho caso a Keltill… Va con el Miata tuneao y nunca lo multan, solo lo paran para echarse fotos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SweatDropWithDelay48)
+    delay(20)
+    release
+    msgbox(format("En fin… Lo has hecho genial colega, ¡hora de descansar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_JumpInPlaceLeft2)
+    fadescreen(FADE_TO_WHITE)
+    setflag(FLAG_REONEKYROOM_HIDE_TYPHLOSION)
+    removeobject(LOCALID_REOROOM_TYPHLOSION)
+    fadescreen(FADE_FROM_WHITE)
+    setvar(VAR_REONEKY_ROOM_STATE, 1)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, moves(walk_right * 2, walk_up, walk_right * 2, walk_up * 2, face_down ))
+    directcameramovementtopos(6, 11)
+    waitmovement(0)
+    setobjectxyperm(LOCALID_REOROOM_REONEKY, 6, 4)
+    setobjectmovementtype2(LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN)
+    special(RemoveCameraObject)
+    release
+    end
+}
+
+script ReonekyRoom_EventScript_Reoneky {
+    if(flag(FLAG_DEFEATED_ADMIN_REONEKY)) {
+        lock
+        release
+        faceplayer
+        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
+        release
+        end
+    }
+    lock
+    release
+    faceplayer
+    msgbox(format("¡Buenas! Vaya espectáculo has presenciado, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_SmileWithDelay48)
+    delay(30)
+    msgbox(format("A estas alturas ya sabrás que hago aquí, así que me presento.\pSoy Reoneky, experto en llevar el prefijo 'ex' tanto ámbito laboral como profesional."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    delay(20)
+    msgbox(format("Puede parecer que soy un emo, pero me considero más instrospectivo que otra cosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió el WAH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, moves(
+        emote_versus, 
+        lock_facing_direction
+        jump_in_place_down * 2
+        unlock_facing_direction
+        face_player))
+    msgbox(format("¡A darle caña!"), speaker = SP_NAME_REONEKY)
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_MAIN, format("Buen combate, he disfrutado como un niño."))
+    msgbox(format("Apuntas maneras, el talento tiene límites, el esfuerzo y la pasión, no."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
+    delay(20)
+    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    call(WahRoomsShared_OpenDoor)
+    delay(30)
+    setflag(FLAG_DEFEATED_ADMIN_REONEKY)
+    release
+    end
+}
+
+
+
+
+

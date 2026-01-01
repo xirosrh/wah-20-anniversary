@@ -83,20 +83,23 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
-        .4byte gFldEffScript_SweatDropIcon             @ FLDEFF_SWEAT_DROP_ICON
-        .4byte gFldEffScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
-        .4byte gFldEffScript_VersusIcon                @ FLDEFF_VERSUS_ICON
-        .4byte gFldEffScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
-        .4byte gFldEffScript_SleepingIcon              @ FLDEFF_SLEEPING_ICON
-        .4byte gFldEffScript_SadIcon                   @ FLDEFF_SAD_ICON
-        .4byte gFldEffScript_SmileIcon                 @ FLDEFF_SMILE_ICON
-        .4byte gFldEffScript_CryIcon                   @ FLDEFF_CRY_ICON
-        .4byte gFldEffScript_AngryIcon                 @ FLDEFF_ANGRY_ICON
-        .4byte gFldEffScript_SurpriseIcon              @ FLDEFF_SURPRISE_ICON
-        .4byte gFldEffScript_VIcon                     @ FLDEFF_V_ICON
-        .4byte gFldEffScript_IdeaIcon                  @ FLDEFF_IDEA_ICON
-        .4byte gFldEffScript_XdIcon                    @ FLDEFF_XD_ICON
-        .4byte gFldEffScript_WinkIcon                  @ FLDEFF_WINK_ICON
+	.4byte gFldEffScript_SweatDropIcon             @ FLDEFF_SWEAT_DROP_ICON
+	.4byte gFldEffScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
+	.4byte gFldEffScript_VersusIcon                @ FLDEFF_VERSUS_ICON
+	.4byte gFldEffScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
+	.4byte gFldEffScript_SleepingIcon              @ FLDEFF_SLEEPING_ICON
+	.4byte gFldEffScript_SadIcon                   @ FLDEFF_SAD_ICON
+	.4byte gFldEffScript_SmileIcon                 @ FLDEFF_SMILE_ICON
+	.4byte gFldEffScript_CryIcon                   @ FLDEFF_CRY_ICON
+	.4byte gFldEffScript_AngryIcon                 @ FLDEFF_ANGRY_ICON
+	.4byte gFldEffScript_SurpriseIcon              @ FLDEFF_SURPRISE_ICON
+	.4byte gFldEffScript_VIcon                     @ FLDEFF_V_ICON
+	.4byte gFldEffScript_IdeaIcon                  @ FLDEFF_IDEA_ICON
+	.4byte gFldEffScript_XdIcon                    @ FLDEFF_XD_ICON
+	.4byte gFldEffScript_WinkIcon                  @ FLDEFF_WINK_ICON
+	.4byte gFieldEffectScript_UseHeadbutt 				@ FLDEFF_USE_HEADBUTT
+	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
+	.4byte gFldEffScript_AnnoyedIcon               @ FLDEFF_ANNOYED_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -394,8 +397,12 @@ gFldEffScript_VersusIcon::
         field_eff_end
 
 gFldEffScript_HappyIcon::
-        field_eff_callnative FldEff_HappyIcon
-        field_eff_end
+	field_eff_callnative FldEff_HappyIcon
+	field_eff_end
+
+gFldEffScript_AnnoyedIcon::
+	field_eff_callnative FldEff_AnnoyedIcon
+	field_eff_end
 
 gFldEffScript_SleepingIcon::
         field_eff_callnative FldEff_SleepingIcon
@@ -456,6 +463,7 @@ gFieldEffectScript_CaveDust::
 gFieldEffectScript_Defog::
     field_eff_callnative FldEff_Defog
     field_eff_end
+
 gFieldEffectScript_UseRockClimb:: @ 82DBC3F
 	field_eff_callnative FldEff_UseRockClimb
 	field_eff_end
@@ -464,3 +472,11 @@ gFieldEffectScript_RockClimbDust:: @ 82DBB28
 	field_eff_loadfadedpal_callnative gSpritePalette_BigDust, FldEff_RockClimbDust
 	field_eff_end
 
+gFieldEffectScript_UseHeadbutt::
+	field_eff_callnative FldEff_UseHeadbutt
+	field_eff_end
+	
+gFieldEffectScript_ORASDowse::
+	field_eff_callnative FldEff_ORASDowsing
+	field_eff_end
+    

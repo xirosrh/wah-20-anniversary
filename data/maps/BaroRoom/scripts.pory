@@ -2,11 +2,28 @@ mapscripts BaroRoom_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_BARO_ROOM_STATE, 0: BaroRoom_OnFrame
 	]
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_8, 0: BaroRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: BaroRoom_OnLoad
+}
+
+
+script BaroRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_BARO)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script BaroRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
 }
 
 script BaroRoom_OnFrame {
     applymovementandwait(LOCALID_PLAYER, moves(
-        walk_up * 7, 
+        walk_up * 5, 
         face_right
         delay_16
         face_left
@@ -18,7 +35,7 @@ script BaroRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
     special(SpawnCameraObject)
-    applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkRight3)
+    applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkRight2)
     waitmovement(0)
     call(BaroRoom_EventScript_OpenSideDoor)
     showobjectat(LOCALID_BAROROOM_BARO, MAP_BARO_ROOM)
@@ -29,44 +46,49 @@ script BaroRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_ExclamationMarkWithDelay48)
     delay(10)
-    msgbox(format("Erhm… Tú eres {PLAYER}, ¿no? Encantado, soy Baro."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Erhm… Tú eres {PLAYER}, ¿no? Encantado, soy Baro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft)
     call(BaroRoom_EventScript_CloseSideDoor)
-    applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft3)
-    applymovement(LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft3)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft2)
+    applymovement(LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft2)
     waitmovement(0)
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(walk_up, walk_left *2, face_down))
     applymovementandwait(LOCALID_PLAYER, Common_Movement_FaceUp)
     special(RemoveCameraObject)
-    msgbox(format("En fin… En qué jaleos se mete uno… "), MSGBOX_AUTOCLOSE)
+    msgbox(format("En fin… En qué jaleos se mete uno… "), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("¿Yo estaba en una comunidad? ¿En serio? ¿De Pokémon?"))
+    msgbox(format("¿Yo estaba en una comunidad? ¿En serio? ¿De Pokémon?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    delay(20)
+    setspeaker(SP_NAME_BARO)
     playse(SE_PIN)
     applymovement(LOCALID_BAROROOM_BARO, moves(delay_16, emote_surprise, delay_16 * 3))
     message(format("Wow."))
     waitmovement(0)
-    msgbox(format("Vaya tiempos… En fin."), MSGBOX_AUTOCLOSE)
+    closemessage
     delay(20)
-    msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"))
+    msgbox(format("Vaya tiempos… En fin."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    delay(20)
+    msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"), speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown)
     trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, format("En fin…"))
-    msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_HappyWithDelay48)
-    msgbox(format("Pues ya estaría. Ya he cumplido. Chao."), MSGBOX_AUTOCLOSE)
+    delay(20)
+    msgbox(format("Pues ya estaría. Ya he cumplido. Chao."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     special(SpawnCameraObject)
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(
         walk_right * 2, walk_down
     ))
-    applymovement(LOCALID_CAMERA, Common_Movement_WalkRight3)
-    applymovement(LOCALID_BAROROOM_BARO, Common_Movement_WalkRight3)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkRight2)
+    applymovement(LOCALID_BAROROOM_BARO, Common_Movement_WalkRight2)
     waitmovement(0)
     delay(20)
     applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
     applymovement(LOCALID_BAROROOM_BARO, Common_Movement_FaceLeft)
     waitmovement(0)
-    msgbox(format("Bueno, buena suerte y tal."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Bueno, buena suerte y tal."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     delay(20)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_FaceRight)
     call(BaroRoom_EventScript_OpenSideDoor)
@@ -74,11 +96,11 @@ script BaroRoom_OnFrame {
     removeobject(LOCALID_BAROROOM_BARO)
     setflag(FLAG_BAROROOM_HIDE_BARO)
     call(BaroRoom_EventScript_CloseSideDoor)
-    applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkLeft3)
+    applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkLeft2)
     special(RemoveCameraObject)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_FaceUp)
     delay(20)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
+    call(WahRoomsShared_OpenDoor)
     setvar(VAR_BARO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_BARO)
     release
@@ -86,16 +108,40 @@ script BaroRoom_OnFrame {
  }
 
 
-//TODO Xiros: Update this when real tiles are inserted
  script BaroRoom_EventScript_OpenSideDoor {
-    setmetatile(12, 6, METATILE_EliteFour_SideDoor_Open, FALSE)
-	special(DrawWholeMapView)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_1_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_2_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_3_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPEN_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPEN_DOWN, 0)
+    special(DrawWholeMapView)
     return
  }
 
-//TODO Xiros: Update this when real tiles are inserted
   script BaroRoom_EventScript_CloseSideDoor {
-    setmetatile(12, 6, METATILE_EliteFour_SideDoor_Closed, FALSE)
-	special(DrawWholeMapView)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_3_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_2_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_1_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0)
+    special(DrawWholeMapView)
+    delay(5)
+    setmetatile(11, 7,  METATILE_Room_Baro_DOOR_CLOSED_UP, 0)
+    setmetatile(11, 8,  METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0)
+    special(DrawWholeMapView)
     return
  }

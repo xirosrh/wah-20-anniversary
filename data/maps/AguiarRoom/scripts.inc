@@ -8,13 +8,13 @@ AguiarRoom_EventScript_Aguiar::
 # 10 "data/maps/AguiarRoom/scripts.pory"
 	lock
 # 11 "data/maps/AguiarRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_FACE_DOWN
 # 12 "data/maps/AguiarRoom/scripts.pory"
 	faceplayer
 # 13 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_1, MSGBOX_AUTOCLOSE
 # 14 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
 # 15 "data/maps/AguiarRoom/scripts.pory"
 	delay 20
 # 16 "data/maps/AguiarRoom/scripts.pory"
@@ -22,13 +22,13 @@ AguiarRoom_EventScript_Aguiar::
 # 17 "data/maps/AguiarRoom/scripts.pory"
 	playse SE_PIN
 # 18 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48
 # 19 "data/maps/AguiarRoom/scripts.pory"
 	waitse
 # 20 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_3, MSGBOX_AUTOCLOSE
 # 21 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
 # 22 "data/maps/AguiarRoom/scripts.pory"
 	delay 20
 # 23 "data/maps/AguiarRoom/scripts.pory"
@@ -36,7 +36,7 @@ AguiarRoom_EventScript_Aguiar::
 # 26 "data/maps/AguiarRoom/scripts.pory"
 	playse SE_PIN
 # 27 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48
 # 28 "data/maps/AguiarRoom/scripts.pory"
 	waitse
 # 29 "data/maps/AguiarRoom/scripts.pory"
@@ -48,7 +48,7 @@ AguiarRoom_EventScript_Aguiar::
 # 32 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_7, MSGBOX_AUTOCLOSE
 # 33 "data/maps/AguiarRoom/scripts.pory"
-	applymovementandwait LOCALID_AGUIARROOM_AGUIAR, Common_Movement_SmokeCigarette
+	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
 # 34 "data/maps/AguiarRoom/scripts.pory"
 	delay 20
 # 35 "data/maps/AguiarRoom/scripts.pory"
@@ -58,7 +58,7 @@ AguiarRoom_EventScript_Aguiar::
 # 37 "data/maps/AguiarRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_AGUIAR
 # 38 "data/maps/AguiarRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR, MOVEMENT_TYPE_SMOKING_LOOP
+	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP
 # 39 "data/maps/AguiarRoom/scripts.pory"
 	release
 	end

@@ -24,9 +24,6 @@
 #include "malloc.h"
 
 
-// Cantidad de movimientos básicos
-static const u32 MOVES_COUNT = 4;
-
 
 // --------------------------------------------------------------------
 //           IMPLEMENTACIÓN DE LAS ESTRUCTURAS DINÁMICAS
@@ -429,7 +426,7 @@ static int searchPath(struct ObjectEvent *objectEvent, s32 x, s32 y, s32 facing)
         if (node.cost < MAXPATH)
         {
             int i;
-            for (i = 0; i < (int)MOVES_COUNT; i++)
+            for (i = 0; i < 4; i++) //4 = moves_count
             {
                 // Evita retrocesos directos (opcional)
                 if (node.cost == 0 || !(i + node.path[node.cost - 1] == 1 || i + node.path[node.cost - 1] == 5))
@@ -456,7 +453,7 @@ static int searchPath(struct ObjectEvent *objectEvent, s32 x, s32 y, s32 facing)
                             if ((i + 1) != facing)
                             {
                                 // Añade la acción "face" al final
-                                child.path[child.cost] = facing - 1 + MOVES_COUNT;
+                                child.path[child.cost] = facing - 1 + 4; // 4 = moves_count
                                 child.cost++;
                             }
                         }
