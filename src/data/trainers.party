@@ -84,7 +84,7 @@ Double Battle: No
 === TRAINER_WAH_ADMIN_OMEGA_MAIN ===
 Name: Omega
 Class: WAH Admin
-Pic: Cheve
+Pic: Omega
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -280,7 +280,7 @@ AI: Check Bad Move
 
 BLAxTOISE (Blastoise) (M) @ Blastoisinite  
 Ability: Torrent
-Level: 35  
+Level: 100  
 Tera Type: Water  
 EVs: 176 HP / 252 Atk / 80 Spe  
 Adamant Nature  
@@ -291,7 +291,7 @@ Adamant Nature
 
 SiriusBLAx (Dragapult) @ Roseli Berry  
 Ability: Cursed Body
-Level: 35    
+Level: 100    
 Shiny: Yes  
 Tera Type: Dragon  
 EVs: 232 HP / 252 Atk / 24 Spe  
@@ -367,16 +367,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Swampert @Swampertite
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Metagross
-Level: 26
+Level: 100
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tyranitar
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
@@ -554,7 +554,7 @@ AI: Check Bad Move
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Brave Bird
@@ -564,7 +564,7 @@ Jolly Nature
 
 Samus (Charizard-Mega-X) (F) @ Charizardite X
 Ability: Tough Claws
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Dragon Dance
@@ -575,7 +575,7 @@ Jolly Nature
 0 (Milotic) (M) @ Leftovers
 Ability: Marvel Scale
 Shiny: Yes
-Level: 10
+Level: 100
 EVs: 252 HP / 4 Def / 252 SpD
 Calm Nature
 - Scald
@@ -585,7 +585,7 @@ Calm Nature
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Modest Nature
 - Geomancy
@@ -595,7 +595,7 @@ Modest Nature
 
 Hydreigon (F) @ Choice Specs
 Ability: Levitate
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
 - Draco Meteor
@@ -605,7 +605,7 @@ Timid Nature
 
 Kingambit (M) @ Leftovers
 Ability: Supreme Overlord
-Level: 10
+Level: 100
 EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Swords Dance
