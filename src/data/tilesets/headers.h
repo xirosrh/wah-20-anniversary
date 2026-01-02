@@ -907,3 +907,14 @@ const struct Tileset gTileset_room_tokynwar =
     .metatileAttributes = gMetatileAttributes_room_tokynwar,
     .callback = InitTilesetAnim_TokynWarRoom,
 };
+
+const struct Tileset gTileset_room_omega =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_omega,
+    .palettes = gTilesetPalettes_room_omega,
+    .metatiles = gMetatiles_room_omega,
+    .metatileAttributes = gMetatileAttributes_room_omega,
+    .callback = InitTilesetAnim_OmegaRoom,
+};
