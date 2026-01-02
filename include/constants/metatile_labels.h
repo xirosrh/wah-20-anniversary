@@ -897,6 +897,7 @@
 #define METATILE_Underwater_RockWall     0x21E
 
 // gTileset_room_omega
+#define METATILE_room_omega_BROKEN_GLASS      0x28B
 #define METATILE_room_omega_CAPSULE_BROKEN_1  0x278
 #define METATILE_room_omega_CAPSULE_BROKEN_2  0x279
 #define METATILE_room_omega_CAPSULE_BROKEN_3  0x27A

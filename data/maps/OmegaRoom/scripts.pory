@@ -124,6 +124,7 @@ script OmegaRoom_EventScript_BrokenCapsule {
     setmetatile(6, 5, METATILE_room_omega_CAPSULE_BROKEN_5, FALSE)
     setmetatile(7, 5, METATILE_room_omega_CAPSULE_BROKEN_6, FALSE)
     setmetatile(6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE)
+    setmetatile(6, 7, METATILE_room_omega_BROKEN_GLASS, FALSE)
     special(DrawWholeMapView)
     return
 }

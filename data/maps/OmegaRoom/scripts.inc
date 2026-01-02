@@ -231,6 +231,8 @@ OmegaRoom_EventScript_BrokenCapsule::
 # 126 "data/maps/OmegaRoom/scripts.pory"
 	setmetatile 6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE
 # 127 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 7, METATILE_room_omega_BROKEN_GLASS, FALSE
+# 128 "data/maps/OmegaRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
