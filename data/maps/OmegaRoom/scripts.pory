@@ -9,7 +9,7 @@ mapscripts OmegaRoom_MapScripts {
 
 script OmegaRoom_OnLoad {
     if(flag(FLAG_DEFEATED_ADMIN_OMEGA)){
-        call(OmegaRoom_EventScript_EmptyCapsule)
+        call(OmegaRoom_EventScript_BrokenCapsule)
         call(WahRoomsShared_SetDoorAsOpen)
     }
     end
@@ -32,18 +32,19 @@ script OmegaRoom_EventScript_StartChallenge {
     delay(10)
     fadescreen(FADE_TO_BLACK)
     delay(30)
-    call(OmegaRoom_EventScript_EmptyCapsule)
+    call(OmegaRoom_EventScript_BrokenCapsule)
     showobjectat(LOCALID_OMEGAROOM_OMEGA, MAP_OMEGA_ROOM)
     setobjectmovementtype(LOCALID_OMEGAROOM_OMEGA, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype2(LOCALID_OMEGAROOM_OMEGA, MOVEMENT_TYPE_FACE_DOWN)
     turnobject(LOCALID_OMEGAROOM_OMEGA, DIR_SOUTH)
     fadescreen(FADE_FROM_BLACK)
+    playse(SE_PIN)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_double_exclamation_mark, jump_in_place_down, delay_16 * 2))
+    msgbox(format("¡Ostras, un{A} nuev{OA} contrincante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)  
+    waitmovement(0)
     directcameramovementtopos(6, 9)
     waitmovement(0)
     special(RemoveCameraObject)
-    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown)
-    msgbox(format("Ostras, une nuevo desafiante."))
-    subvar(VAR_TEMP_D, 1)
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(
         jump_2_down))
     applymovement(LOCALID_PLAYER, moves(emote_question_mark, delay_8, lock_facing_direction, jump_down, unlock_facing_direction))
@@ -69,14 +70,14 @@ script OmegaRoom_EventScript_OmegaAwakens {
     return
 }
 
-script OmegaRoom_EventScript_EmptyCapsule {
-    setmetatile(5, 4, METATILE_room_omega_EMPTY_1, FALSE)
-    setmetatile(6, 4, METATILE_room_omega_EMPTY_2, FALSE)
-    setmetatile(7, 4, METATILE_room_omega_EMPTY_3, FALSE)
-    setmetatile(5, 5, METATILE_room_omega_EMPTY_4, FALSE)
-    setmetatile(6, 5, METATILE_room_omega_EMPTY_5, FALSE)
-    setmetatile(7, 5, METATILE_room_omega_EMPTY_6, FALSE)
-    setmetatile(6, 6, METATILE_room_omega_OMEGA_AWAKENS_7, TRUE)
+script OmegaRoom_EventScript_BrokenCapsule {
+    setmetatile(5, 4, METATILE_room_omega_CAPSULE_BROKEN_1, FALSE)
+    setmetatile(6, 4, METATILE_room_omega_CAPSULE_BROKEN_2, FALSE)
+    setmetatile(7, 4, METATILE_room_omega_CAPSULE_BROKEN_3, FALSE)
+    setmetatile(5, 5, METATILE_room_omega_CAPSULE_BROKEN_4, FALSE)
+    setmetatile(6, 5, METATILE_room_omega_CAPSULE_BROKEN_5, FALSE)
+    setmetatile(7, 5, METATILE_room_omega_CAPSULE_BROKEN_6, FALSE)
+    setmetatile(6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE)
     special(DrawWholeMapView)
     return
 }

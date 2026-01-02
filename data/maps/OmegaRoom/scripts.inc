@@ -19,7 +19,7 @@ OmegaRoom_OnLoad_1:
 
 OmegaRoom_OnLoad_2:
 # 12 "data/maps/OmegaRoom/scripts.pory"
-	call OmegaRoom_EventScript_EmptyCapsule
+	call OmegaRoom_EventScript_BrokenCapsule
 # 13 "data/maps/OmegaRoom/scripts.pory"
 	call WahRoomsShared_SetDoorAsOpen
 	goto OmegaRoom_OnLoad_1
@@ -57,7 +57,7 @@ OmegaRoom_EventScript_StartChallenge::
 # 34 "data/maps/OmegaRoom/scripts.pory"
 	delay 30
 # 35 "data/maps/OmegaRoom/scripts.pory"
-	call OmegaRoom_EventScript_EmptyCapsule
+	call OmegaRoom_EventScript_BrokenCapsule
 # 36 "data/maps/OmegaRoom/scripts.pory"
 	showobjectat LOCALID_OMEGAROOM_OMEGA, MAP_OMEGA_ROOM
 # 37 "data/maps/OmegaRoom/scripts.pory"
@@ -69,106 +69,120 @@ OmegaRoom_EventScript_StartChallenge::
 # 40 "data/maps/OmegaRoom/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 41 "data/maps/OmegaRoom/scripts.pory"
-	directcameramovementtopos 6, 9
+	playse SE_PIN
 # 42 "data/maps/OmegaRoom/scripts.pory"
-	waitmovement 0
-# 43 "data/maps/OmegaRoom/scripts.pory"
-	special RemoveCameraObject
-# 44 "data/maps/OmegaRoom/scripts.pory"
-	applymovementandwait LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown
-# 45 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_0
-# 46 "data/maps/OmegaRoom/scripts.pory"
-	subvar VAR_TEMP_D, 1
-# 47 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, OmegaRoom_EventScript_StartChallenge_Movement_0
-# 49 "data/maps/OmegaRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, OmegaRoom_EventScript_StartChallenge_Movement_1
-# 50 "data/maps/OmegaRoom/scripts.pory"
+# 43 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+# 44 "data/maps/OmegaRoom/scripts.pory"
 	waitmovement 0
+# 45 "data/maps/OmegaRoom/scripts.pory"
+	directcameramovementtopos 6, 9
+# 46 "data/maps/OmegaRoom/scripts.pory"
+	waitmovement 0
+# 47 "data/maps/OmegaRoom/scripts.pory"
+	special RemoveCameraObject
+# 48 "data/maps/OmegaRoom/scripts.pory"
+	applymovement LOCALID_OMEGAROOM_OMEGA, OmegaRoom_EventScript_StartChallenge_Movement_1
+# 50 "data/maps/OmegaRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, OmegaRoom_EventScript_StartChallenge_Movement_2
 # 51 "data/maps/OmegaRoom/scripts.pory"
-	delay 30
+	waitmovement 0
 # 52 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_1
+	delay 30
 # 53 "data/maps/OmegaRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_2
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_1
 # 54 "data/maps/OmegaRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_OMEGA
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_2
 # 55 "data/maps/OmegaRoom/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	setflag FLAG_DEFEATED_ADMIN_OMEGA
 # 56 "data/maps/OmegaRoom/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 57 "data/maps/OmegaRoom/scripts.pory"
 	release
 	end
 
 
 OmegaRoom_EventScript_OmegaAwakens::
-# 61 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 4, METATILE_room_omega_OMEGA_AWAKENS_1, FALSE
 # 62 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 4, METATILE_room_omega_OMEGA_AWAKENS_2, FALSE
+	setmetatile 5, 4, METATILE_room_omega_OMEGA_AWAKENS_1, FALSE
 # 63 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 4, METATILE_room_omega_OMEGA_AWAKENS_3, FALSE
+	setmetatile 6, 4, METATILE_room_omega_OMEGA_AWAKENS_2, FALSE
 # 64 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 5, METATILE_room_omega_OMEGA_AWAKENS_4, FALSE
+	setmetatile 7, 4, METATILE_room_omega_OMEGA_AWAKENS_3, FALSE
 # 65 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 5, METATILE_room_omega_OMEGA_AWAKENS_5, FALSE
+	setmetatile 5, 5, METATILE_room_omega_OMEGA_AWAKENS_4, FALSE
 # 66 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 5, METATILE_room_omega_OMEGA_AWAKENS_6, FALSE
+	setmetatile 6, 5, METATILE_room_omega_OMEGA_AWAKENS_5, FALSE
 # 67 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 6, METATILE_room_omega_OMEGA_AWAKENS_7, TRUE
+	setmetatile 7, 5, METATILE_room_omega_OMEGA_AWAKENS_6, FALSE
 # 68 "data/maps/OmegaRoom/scripts.pory"
-	special DrawWholeMapView
-	return
-
-
-OmegaRoom_EventScript_EmptyCapsule::
-# 73 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 4, METATILE_room_omega_EMPTY_1, FALSE
-# 74 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 4, METATILE_room_omega_EMPTY_2, FALSE
-# 75 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 4, METATILE_room_omega_EMPTY_3, FALSE
-# 76 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 5, METATILE_room_omega_EMPTY_4, FALSE
-# 77 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 5, METATILE_room_omega_EMPTY_5, FALSE
-# 78 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 5, METATILE_room_omega_EMPTY_6, FALSE
-# 79 "data/maps/OmegaRoom/scripts.pory"
 	setmetatile 6, 6, METATILE_room_omega_OMEGA_AWAKENS_7, TRUE
-# 80 "data/maps/OmegaRoom/scripts.pory"
+# 69 "data/maps/OmegaRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
-# 47 "data/maps/OmegaRoom/scripts.pory"
+OmegaRoom_EventScript_BrokenCapsule::
+# 74 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 5, 4, METATILE_room_omega_CAPSULE_BROKEN_1, FALSE
+# 75 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 4, METATILE_room_omega_CAPSULE_BROKEN_2, FALSE
+# 76 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 7, 4, METATILE_room_omega_CAPSULE_BROKEN_3, FALSE
+# 77 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 5, 5, METATILE_room_omega_CAPSULE_BROKEN_4, FALSE
+# 78 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 5, METATILE_room_omega_CAPSULE_BROKEN_5, FALSE
+# 79 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 7, 5, METATILE_room_omega_CAPSULE_BROKEN_6, FALSE
+# 80 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE
+# 81 "data/maps/OmegaRoom/scripts.pory"
+	special DrawWholeMapView
+	return
+
+
+# 42 "data/maps/OmegaRoom/scripts.pory"
 OmegaRoom_EventScript_StartChallenge_Movement_0:
+# 42 "data/maps/OmegaRoom/scripts.pory"
+	emote_double_exclamation_mark
+# 42 "data/maps/OmegaRoom/scripts.pory"
+	jump_in_place_down
+# 42 "data/maps/OmegaRoom/scripts.pory"
+	delay_16
+# 42 "data/maps/OmegaRoom/scripts.pory"
+	delay_16
+	step_end
+
 # 48 "data/maps/OmegaRoom/scripts.pory"
+OmegaRoom_EventScript_StartChallenge_Movement_1:
+# 49 "data/maps/OmegaRoom/scripts.pory"
 	jump_2_down
 	step_end
 
-# 49 "data/maps/OmegaRoom/scripts.pory"
-OmegaRoom_EventScript_StartChallenge_Movement_1:
-# 49 "data/maps/OmegaRoom/scripts.pory"
+# 50 "data/maps/OmegaRoom/scripts.pory"
+OmegaRoom_EventScript_StartChallenge_Movement_2:
+# 50 "data/maps/OmegaRoom/scripts.pory"
 	emote_question_mark
-# 49 "data/maps/OmegaRoom/scripts.pory"
+# 50 "data/maps/OmegaRoom/scripts.pory"
 	delay_8
-# 49 "data/maps/OmegaRoom/scripts.pory"
+# 50 "data/maps/OmegaRoom/scripts.pory"
 	lock_facing_direction
-# 49 "data/maps/OmegaRoom/scripts.pory"
+# 50 "data/maps/OmegaRoom/scripts.pory"
 	jump_down
-# 49 "data/maps/OmegaRoom/scripts.pory"
+# 50 "data/maps/OmegaRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
 OmegaRoom_EventScript_StartChallenge_Text_0:
-# 45 "data/maps/OmegaRoom/scripts.pory"
-	.string "Ostras, une nuevo desafiante.$"
+# 43 "data/maps/OmegaRoom/scripts.pory"
+	.string "¡Ostras, un{A} nuev{OA} contrincante!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_1:
-# 52 "data/maps/OmegaRoom/scripts.pory"
+# 53 "data/maps/OmegaRoom/scripts.pory"
 	.string "XXX$"
 
 OmegaRoom_EventScript_StartChallenge_Text_2:
-# 53 "data/maps/OmegaRoom/scripts.pory"
+# 54 "data/maps/OmegaRoom/scripts.pory"
 	.string "XX$"
