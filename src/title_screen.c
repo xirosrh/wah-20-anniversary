@@ -33,8 +33,10 @@ enum {
 #define VERSION_BANNER_LEFT_X 102
 #define VERSION_BANNER_RIGHT_X 166
 #define VERSION_BANNER_Y 4
-#define VERSION_BANNER_Y_GOAL 68
+#define VERSION_BANNER_Y_GOAL 42
 #define START_BANNER_X 128
+
+#define MON_LOGO_FINAL_Y 20
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
 #define RESET_RTC_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_LEFT)
@@ -609,12 +611,12 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite)
 
             // Flash the background green for 4 frames of movement.
             // Otherwise use the updating color.
-            if (sprite->x == DISPLAY_WIDTH / 2 + (3 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
-             || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
-                gPlttBufferFaded[0] = RGB(24, 31, 12);
-            else
+            // if (sprite->x == DISPLAY_WIDTH / 2 + (3 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
+            //  || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
+            //     gPlttBufferFaded[0] = RGB(24, 31, 12);
+            // else
                 gPlttBufferFaded[0] = backgroundColor;
         }
 
@@ -834,13 +836,13 @@ static void Task_TitleScreenPhase1(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDY, 0);
 
         // Create left side of version banner
-        // spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X, VERSION_BANNER_Y, 0);
-        // gSprites[spriteId].sAlphaBlendIdx = ARRAY_COUNT(gTitleScreenAlphaBlend);
-        // gSprites[spriteId].sParentTaskId = taskId;
+        spriteId = CreateSprite(&sVersionBannerLeftSpriteTemplate, VERSION_BANNER_LEFT_X, VERSION_BANNER_Y, 0);
+        gSprites[spriteId].sAlphaBlendIdx = ARRAY_COUNT(gTitleScreenAlphaBlend);
+        gSprites[spriteId].sParentTaskId = taskId;
 
         // Create right side of version banner
-        // spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
-        // gSprites[spriteId].sParentTaskId = taskId;
+        spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
+        gSprites[spriteId].sParentTaskId = taskId;
 
         gTasks[taskId].tCounter = 144;
         gTasks[taskId].func = Task_TitleScreenPhase2;
@@ -868,6 +870,13 @@ static void Task_TitleScreenPhase2(u8 taskId)
     }
     else
     {
+
+        // Poner el logo en la posición final
+        gTasks[taskId].tBg2Y = MON_LOGO_FINAL_Y;
+        yPos = gTasks[taskId].tBg2Y * 256;
+        SetGpuReg(REG_OFFSET_BG2Y_L, yPos);
+        SetGpuReg(REG_OFFSET_BG2Y_H, yPos / 0x10000);
+
         gTasks[taskId].tSkipToNext = TRUE;
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BD);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
@@ -881,8 +890,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
         CreatePressStartBanner(START_BANNER_X, 146);
         // CreateCopyrightBanner(START_BANNER_X, 148);
 
-        CreateSprite(&sMoltresBodySpriteTemplate, 120, 62, 0);
-        CreateSprite(&sMoltresTailSpriteTemplate, 160, 62, 0);
+        CreateSprite(&sMoltresBodySpriteTemplate, 120, 69, 0);
+        CreateSprite(&sMoltresTailSpriteTemplate, 160, 69, 0);
 
 
         gTasks[taskId].tBg1X = 0;
@@ -891,7 +900,7 @@ static void Task_TitleScreenPhase2(u8 taskId)
 
     if (!(gTasks[taskId].tCounter & 3) && gTasks[taskId].tPointless != 0)
         gTasks[taskId].tPointless++;
-    if (!(gTasks[taskId].tCounter & 1) && gTasks[taskId].tBg2Y != 0)
+    if (/*!(gTasks[taskId].tCounter & 1) &&*/ gTasks[taskId].tBg2Y != MON_LOGO_FINAL_Y)
         gTasks[taskId].tBg2Y++;
 
     // Slide Pokémon logo up
@@ -931,8 +940,8 @@ static void Task_TitleScreenPhase3(u8 taskId)
     }
     else
     {
-        SetGpuReg(REG_OFFSET_BG2Y_L, 0);
-        SetGpuReg(REG_OFFSET_BG2Y_H, 0);
+        // SetGpuReg(REG_OFFSET_BG2Y_L, 0);
+        // SetGpuReg(REG_OFFSET_BG2Y_H, 0);
         if (++gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].tBg1X++;
