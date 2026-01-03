@@ -918,3 +918,14 @@ const struct Tileset gTileset_room_omega =
     .metatileAttributes = gMetatileAttributes_room_omega,
     .callback = InitTilesetAnim_OmegaRoom,
 };
+
+const struct Tileset gTileset_room_scarexozumas =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_scarexozumas,
+    .palettes = gTilesetPalettes_room_scarexozumas,
+    .metatiles = gMetatiles_room_scarexozumas,
+    .metatileAttributes = gMetatileAttributes_room_scarexozumas,
+    .callback = NULL,
+};

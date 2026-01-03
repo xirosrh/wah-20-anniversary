@@ -4106,8 +4106,8 @@
       "name": "ScarexOzumasRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_scarexozumas",
       "border_filepath": "data/layouts/ScarexOzumasRoom/border.bin",
       "blockdata_filepath": "data/layouts/ScarexOzumasRoom/map.bin"
     },
