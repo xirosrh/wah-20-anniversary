@@ -122,11 +122,11 @@ static const struct SpritePalette sSpritePal_Moltres[] =
 
 static const union AnimCmd sAnimMoltresBody[] =
 {
-    ANIMCMD_FRAME(0,   7),
-    ANIMCMD_FRAME(64,  7),
-    ANIMCMD_FRAME(128, 7),
-    ANIMCMD_FRAME(192, 7),
-    ANIMCMD_FRAME(256, 7),
+    ANIMCMD_FRAME(0,   10),
+    ANIMCMD_FRAME(64,  10),
+    ANIMCMD_FRAME(128, 10),
+    ANIMCMD_FRAME(192, 10),
+    ANIMCMD_FRAME(256, 10),
     ANIMCMD_JUMP(0),
 };
 
@@ -157,11 +157,11 @@ static const struct CompressedSpriteSheet sSpriteSheet_MoltresTail[] =
 
 static const union AnimCmd sAnimMoltresTail[] =
 {
-    ANIMCMD_FRAME(0,   7),
-    ANIMCMD_FRAME(8,   7),
-    ANIMCMD_FRAME(16,  7),
-    ANIMCMD_FRAME(24,  7),
-    ANIMCMD_FRAME(32,  7),
+    ANIMCMD_FRAME(0,   10),
+    ANIMCMD_FRAME(8,   10),
+    ANIMCMD_FRAME(16,  10),
+    ANIMCMD_FRAME(24,  10),
+    ANIMCMD_FRAME(32,  10),
     ANIMCMD_JUMP(0),
 };
 
@@ -527,7 +527,7 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite)
     if (sprite->sAnimate == TRUE)
     {
         // Alternate between hidden and shown every 16th frame
-        if (++sprite->sTimer & 16)
+        if (++sprite->sTimer & 32)
             sprite->invisible = FALSE;
         else
             sprite->invisible = TRUE;
