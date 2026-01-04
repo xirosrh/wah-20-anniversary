@@ -231,3 +231,6 @@ const u16 gMetatileAttributes_room_tokynwar[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_room_omega[] = INCBIN_U16("data/tilesets/secondary/room_omega/metatiles.bin");
 const u16 gMetatileAttributes_room_omega[] = INCBIN_U16("data/tilesets/secondary/room_omega/metatile_attributes.bin");
+
+const u16 gMetatiles_room_scarexozumas[] = INCBIN_U16("data/tilesets/secondary/room_scarexozumas/metatiles.bin");
+const u16 gMetatileAttributes_room_scarexozumas[] = INCBIN_U16("data/tilesets/secondary/room_scarexozumas/metatile_attributes.bin");
