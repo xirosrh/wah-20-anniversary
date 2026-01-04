@@ -929,3 +929,14 @@ const struct Tileset gTileset_room_scarexozumas =
     .metatileAttributes = gMetatileAttributes_room_scarexozumas,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_room_angel =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_angel,
+    .palettes = gTilesetPalettes_room_angel,
+    .metatiles = gMetatiles_room_angel,
+    .metatileAttributes = gMetatileAttributes_room_angel,
+    .callback = NULL,
+};
