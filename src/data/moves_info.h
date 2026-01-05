@@ -440,7 +440,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #if B_UPDATED_MOVE_DATA == GEN_3
             .description = COMPOUND_STRING(
                 "A 2-turn move that strikes\n"
-                "the foe on the 2nd turn.");
+                "the foe on the 2nd turn."),
         #else
             .description = COMPOUND_STRING(
             "Ataque de 2 turnos con\n"
