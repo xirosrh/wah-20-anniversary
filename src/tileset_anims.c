@@ -6,6 +6,7 @@
 #include "task.h"
 #include "battle_transition.h"
 #include "fieldmap.h"
+#include "event_data.h"
 
 static EWRAM_DATA struct {
     const u16 *src;
@@ -1366,4 +1367,85 @@ void InitTilesetAnim_OmegaRoom(void)
     sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_OmegaRoom;
+}
+
+
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/00.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/01.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/02.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/03.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame4[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/04.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame5[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/05.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_Frame6[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/06.4bpp");
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_FirstPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame1,
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame2,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_FirstPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_FirstPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_FirstPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 70 * TILE_SIZE_4BPP);
+}
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_SecondPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame3,
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame4,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_SecondPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_SecondPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_SecondPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 70 * TILE_SIZE_4BPP);
+}
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_ThirdPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame5,
+    gTilesetAnims_AngelRoom_Trailer_Frame0,
+    gTilesetAnims_AngelRoom_Trailer_Frame6,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_ThirdPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_ThirdPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_ThirdPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 70 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_AngelRoom(u16 timer)
+{
+    int tilesIncrement;
+    if (timer % 64 == 0) {
+        tilesIncrement = VarGet(VAR_ANGEL_ROOM_TRAILER_FRAMES);
+        if(tilesIncrement < 4){
+            QueueAnimTiles_AngelRoom_Trailer_FirstPart(timer / 64);
+            tilesIncrement++;
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        } else if (tilesIncrement < 8) {
+            QueueAnimTiles_AngelRoom_Trailer_SecondPart(timer / 64);
+            tilesIncrement++;
+           
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+        if(tilesIncrement >= 8){
+            QueueAnimTiles_AngelRoom_Trailer_ThirdPart(timer / 64);
+            tilesIncrement++;
+            if(tilesIncrement >= 12){
+                tilesIncrement = 0;
+            }
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+    }
+}
+
+void InitTilesetAnim_AngelRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_AngelRoom;
 }
