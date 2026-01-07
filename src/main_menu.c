@@ -38,7 +38,7 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
-
+#include "intro_cope.h"
 /*
  * Main menu state machine
  * -----------------------
@@ -208,7 +208,7 @@ static void Task_NewGameBirchSpeech_SlidePlatformAway(u8);
 static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
-static void LoadMainMenuWindowFrameTiles(u8, u16);
+// static void LoadMainMenuWindowFrameTiles(u8, u16);
 static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
 static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
@@ -546,6 +546,12 @@ enum
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
 #define BIRCH_DLG_BASE_TILE_NUM 0xFC
+
+void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
+{
+    LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
+    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
+}
 
 static void CB2_MainMenu(void)
 {
@@ -1075,9 +1081,19 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
         {
             case ACTION_NEW_GAME:
             default:
-                gPlttBufferUnfaded[0] = RGB_BLACK;
-                gPlttBufferFaded[0] = RGB_BLACK;
-                gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+                // gPlttBufferUnfaded[0] = RGB_BLACK;
+                // gPlttBufferFaded[0] = RGB_BLACK;
+                // gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+                SetGpuReg(REG_OFFSET_DISPCNT, 0);
+                SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
+                SetGpuReg(REG_OFFSET_WIN0H, 0);
+                SetGpuReg(REG_OFFSET_WIN0V, 0);
+                SetGpuReg(REG_OFFSET_WININ, 0);
+                SetGpuReg(REG_OFFSET_WINOUT, 0);
+                SetGpuReg(REG_OFFSET_BLDCNT, 0);
+                SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+                SetGpuReg(REG_OFFSET_BLDY, 0);
+                SetMainCallback2(CB2_InitCopeSpeech);
                 break;
             case ACTION_CONTINUE:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -2229,12 +2245,6 @@ static void MainMenu_FormatSavegameBadges(void)
     AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
     ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
-}
-
-static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
-{
-    LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
-    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
 }
 
 static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)

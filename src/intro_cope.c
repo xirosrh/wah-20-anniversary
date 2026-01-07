@@ -1,0 +1,539 @@
+#include "global.h"
+#include "trainer_pokemon_sprites.h"
+#include "bg.h"
+#include "constants/rgb.h"
+#include "constants/songs.h"
+#include "constants/trainers.h"
+#include "decompress.h"
+#include "event_data.h"
+#include "field_effect.h"
+#include "gpu_regs.h"
+#include "graphics.h"
+#include "international_string_util.h"
+#include "link.h"
+#include "main.h"
+#include "main_menu.h"
+#include "menu.h"
+#include "list_menu.h"
+#include "mystery_event_menu.h"
+#include "naming_screen.h"
+#include "option_menu.h"
+#include "overworld.h"
+#include "palette.h"
+#include "pokeball.h"
+#include "pokedex.h"
+#include "pokemon.h"
+#include "random.h"
+#include "rtc.h"
+#include "save.h"
+#include "scanline_effect.h"
+#include "sound.h"
+#include "sprite.h"
+#include "strings.h"
+#include "string_util.h"
+#include "task.h"
+#include "text.h"
+#include "text_window.h"
+#include "title_screen.h"
+#include "window.h"
+#include "mystery_gift_menu.h"
+#include "menu_helpers.h"
+#include "main_menu.h"
+#include "constants/species.h"
+
+//BG
+static const u32 sBg1_Tiles[] = INCBIN_U32("graphics/cope_speech/bgs/bg1_tileset.4bpp.lz");
+static const u32 sBg1_Map[] = INCBIN_U32("graphics/cope_speech/bgs/bg1_tilemap.bin.lz");
+
+static const u16 sBg1Pal[] = INCBIN_U16("graphics/cope_speech/bgs/bg1.gbapal");
+
+#define TAG_COPE_SPRITE 100
+
+//------------------------------------------------------------------------------
+//BGS
+//------------------------------------------------------------------------------
+
+static const struct BgTemplate sBgTemplateCopeSpeech[2] =
+    {
+        {
+            .bg = 0,
+            .charBaseIndex = 0, // incrementos de 0x4000
+            .mapBaseIndex = 6,  // incrementos 0x800
+            .screenSize = 0,
+            .paletteMode = 0,
+            .priority = 0,
+            .baseTile = 0,
+        },
+
+        {
+            .bg = 1,
+            .charBaseIndex = 2, // incrementos de 0x4000
+            .mapBaseIndex = 30, // incrementos 0x800
+            .screenSize = 0,
+            .paletteMode = 0,
+            .priority = 3,
+            .baseTile = 0,
+        },
+
+        // {
+        //     .bg = 2,
+        //     .charBaseIndex = 2,
+        //     .mapBaseIndex = 14, //26
+        //     .screenSize = 2,
+        //     .paletteMode = 0,
+        //     .priority = 1,
+        //     .baseTile = 0,
+        // },
+
+        // {
+        //     .bg = 3,
+        //     .charBaseIndex = 3, //2,
+        //     .mapBaseIndex = 30, //fijo
+        //     .screenSize = 2,
+        //     .paletteMode = 0,
+        //     .priority = 2,
+        //     .baseTile = 0,
+        // },
+};
+
+
+
+static void LoadCopeSpeechBgs()
+{
+    InitBgsFromTemplates(0, sBgTemplateCopeSpeech, ARRAY_COUNT(sBgTemplateCopeSpeech));
+
+    LZ77UnCompVram(sBg1_Tiles, (void *)VRAM + 0x4000 * sBgTemplateCopeSpeech[1].charBaseIndex);
+    LZ77UnCompVram(sBg1_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[1].mapBaseIndex));
+
+    LoadPalette(sBg1Pal, 0x00, 0x20);
+
+    ResetAllBgsCoordinates();
+
+    HideBg(3);
+    HideBg(2);
+    ShowBg(1);
+    ShowBg(0);
+}
+
+
+//------------------------------------------------------------------------------
+//WINDOWS
+//------------------------------------------------------------------------------
+
+enum{
+    WINDOW_MSG_BOX
+};
+
+static const struct WindowTemplate sWindowTemplate_CopeSpeech[] =
+{
+    [WINDOW_MSG_BOX]{
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 15,
+        .width = 27,
+        .height = 4,
+        .paletteNum = 15,
+        .baseBlock = 1
+    },
+
+    DUMMY_WIN_TEMPLATE,
+};
+
+//------------------------------------------------------------------------------
+//SPRITES
+//------------------------------------------------------------------------------
+
+static const struct OamData gSpriteOamData64 =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(64x64),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(64x64),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+//Cope SPRITE
+static const u16 CopePal[] = INCBIN_U16("graphics/cope_speech/cope.gbapal");
+static const u8 CopeSprite[] = INCBIN_U8("graphics/cope_speech/copeSprite.4bpp");
+
+static const struct SpriteSheet spriteSheetCope =
+{
+            .data = CopeSprite, //GRÁFICO ----------
+            .size = 8192, //TAMAÑO DEL GRÁFICO
+            .tag = TAG_COPE_SPRITE, //LUGAR DONDE SE CARGA EL GRÁFICO ----------
+};
+
+static const struct SpritePalette spritePaletteCope =
+{
+        .data = CopePal,
+        .tag = TAG_COPE_SPRITE, //LUGAR DONDE SE CARGA LA PALETA ----------
+};
+
+enum{
+    COPE_BASE,
+    COPE_SHOW_BALL,
+    Cope_THROW_BALL,
+    COPE_LEGS
+};
+
+static const union AnimCmd sAnim_CopeBase[] =
+{
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CopeShowBall[] =
+{
+    ANIMCMD_FRAME(64, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CopeThrowBall[] =
+{
+    ANIMCMD_FRAME(64, 10),
+    ANIMCMD_FRAME(128, 24),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CopeLegs[] =
+{
+    ANIMCMD_FRAME(192, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_CopeSprite[] =
+{
+    [COPE_BASE] = sAnim_CopeBase,
+    [COPE_SHOW_BALL] = sAnim_CopeShowBall,
+    [Cope_THROW_BALL] = sAnim_CopeThrowBall,
+    [COPE_LEGS] = sAnim_CopeLegs
+};
+
+#define sMoveUp data[1]
+#define sTimer data[7]
+
+void SpriteCallbackCopeMovement(struct Sprite *sprite)
+{
+    if(++ sprite->sTimer == 15)
+    {
+         if(sprite->sMoveUp == TRUE){
+            sprite->y--;
+            sprite->sMoveUp = FALSE;
+        }else{
+            sprite->y++;
+            sprite->sMoveUp = TRUE;
+        }
+        sprite->sTimer = 0;
+    }
+}
+#undef sMoveUp
+#undef sTimer
+
+
+static const struct SpriteTemplate spriteTemplateCope =
+{
+    .tileTag = TAG_COPE_SPRITE, //LUGAR DONDE SE CARGA EL GRÁFICO ----------
+    .paletteTag = TAG_COPE_SPRITE, //LUGAR DONDE SE CARGA LA PALETA ----------
+    .oam = &gSpriteOamData64, //OAM DATA DEL ICONO ----------
+    .anims = sAnims_CopeSprite, //TABLA DE ANIMACIÓN DEL ICONO ----------
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy, //ANIMACIÓN DEL ICONO ----------
+};
+
+void LoadSpriteGraphicsAndPal()
+{
+    LoadSpriteSheet(&spriteSheetCope);
+    LoadSpritePalette(&spritePaletteCope);
+}
+
+u8 LoadCopeSprite(u8 y, s8 animNum){
+    u8 id;
+    id = CreateSprite(&spriteTemplateCope, 115,y, 0);
+    StartSpriteAnim(&gSprites[id], animNum);
+
+    return id;
+}
+
+//------------------------------------------------------------------------------
+//OTROS
+//------------------------------------------------------------------------------
+
+
+
+static void VBlanck_CB2_CopeSpeech()
+{
+    LoadOam();
+    ProcessSpriteCopyRequests();
+    TransferPlttBuffer();
+}
+
+static void CB2_CopeSpeech()
+{
+    RunTasks();
+    AnimateSprites();
+    BuildOamBuffer();
+    UpdatePaletteFade();
+}
+
+#define tSpriteCopeBodyId data[1]
+#define tSpriteCopeLegsId data[2]
+#define tBlendValue data[3]
+#define tMonSpriteId data[6]
+#define tTimer data[7]
+
+static void TaskInitCopeSpeechWaitForFade(u8 taskId);
+
+void CB2_InitCopeSpeech()
+{
+    u8 taskId;
+
+    switch (gMain.state)
+    {
+    case 0:
+        SetVBlankHBlankCallbacksToNull();
+        ScanlineEffect_Stop();
+        ResetTasks();
+        ResetSpriteData();
+        ResetPaletteFade();
+        FreeAllSpritePalettes();
+        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
+        gMain.state++;
+        break;
+
+    case 1:
+        LoadCopeSpeechBgs();
+        LoadSpriteGraphicsAndPal();
+        gMain.state++;
+        break;
+
+    case 2:
+        SetVBlankCallback(VBlanck_CB2_CopeSpeech);
+        SetMainCallback2(CB2_CopeSpeech);
+        PlayBGM(MUS_ROUTE101);
+
+        BeginNormalPaletteFade(PALETTES_ALL, 60, 16, 0, RGB_BLACK);
+        taskId = CreateTask(TaskInitCopeSpeechWaitForFade, 0);
+        gTasks[taskId].tSpriteCopeBodyId = LoadCopeSprite(40,COPE_BASE);
+        gTasks[taskId].tSpriteCopeLegsId = LoadCopeSprite(104,COPE_LEGS);
+        gSprites[gTasks[taskId].tSpriteCopeBodyId].oam.priority=1;
+        gSprites[gTasks[taskId].tSpriteCopeBodyId].callback = SpriteCallbackCopeMovement;
+        gSprites[gTasks[taskId].tSpriteCopeLegsId].oam.priority=1;
+        break;
+    }
+}
+
+static void TaskInitCopeSpeech(u8 taskId);
+static void TaskTimer(u8 taskId);
+
+static void TaskCopeSpeech_AnimationBall(u8 taskId);
+static void TaskCopeSpeech_ShowMon(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue1(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue2(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue3(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue4(u8 taskId);
+static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId);
+static void Task_NewGameCleanup(u8 taskId);
+static void TaskCopeSpeech_FadeOut(u8 taskId);
+
+
+static void TaskInitCopeSpeechWaitForFade(u8 taskId)
+{
+    if(!gPaletteFade.active)
+    {
+        gTasks[taskId].tTimer = 0;
+        gTasks[taskId].func= TaskTimer;
+    }
+
+}
+
+static void TaskTimer(u8 taskId)
+{
+    if(++gTasks[taskId].tTimer > 60){
+        gTasks[taskId].tTimer = 0;
+        gTasks[taskId].func = TaskInitCopeSpeech;
+    }
+}
+
+static void TaskInitCopeSpeech(u8 taskId)
+{
+        InitWindows(sWindowTemplate_CopeSpeech);
+        LoadMainMenuWindowFrameTiles(0, 0xF3);
+        LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+        NewGameBirchSpeech_ShowDialogueWindow(0, TRUE);
+        PutWindowTilemap(0);
+        CopyWindowToVram(0, COPYWIN_GFX);
+        NewGameBirchSpeech_ClearWindow(0);
+        StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = TaskCopeSpeech_AnimationBall;
+}
+
+
+static void TaskCopeSpeech_AnimationBall(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], Cope_THROW_BALL);
+        PlaySE(SE_BALL_THROW);
+        gTasks[taskId].func = TaskCopeSpeech_ShowMon;
+    }
+}
+
+static void TaskCopeSpeech_ShowMon(u8 taskId)
+{
+    if(++gTasks[taskId].tTimer > 34 && !IsSEPlaying())
+    {
+        PlaySE(SE_BALL_OPEN);
+        StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
+        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_MARILL,87,85,5);
+        StartSpriteAnim(&gSprites[gTasks[taskId].tMonSpriteId], 1);
+        StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
+        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue1;
+    }
+}
+
+static void TaskCopeSpeech_CopeDialogue1(u8 taskId)
+{
+    if(!RunTextPrintersAndIsPrinter0Active() && !IsSEPlaying() && JOY_NEW(A_BUTTON))
+    {
+        StopCryAndClearCrySongs();
+        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
+        StringExpandPlaceholders(gStringVar4, gText_ChoosePokemon);
+        AddTextPrinterForMessage(TRUE);
+        PlayCry_ByMode(SPECIES_MUK, 0, CRY_MODE_NORMAL);
+        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue2;
+    }
+}
+
+
+
+static void TaskCopeSpeech_CopeDialogue2(u8 taskId)
+{
+    if(IsCryFinished() && !RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    {
+        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
+        StringExpandPlaceholders(gStringVar4, gText_Birch_AndYouAre);
+        AddTextPrinterForMessage(TRUE);
+
+        // gTasks[taskId].tBlendValue = 0;
+        // gTasks[taskId].tTimer = 0;
+        // gSprites[gTasks[taskId].tSpriteCopeBodyId].oam.objMode = ST_OAM_OBJ_BLEND;
+        // gSprites[gTasks[taskId].tSpriteCopeLegsId].oam.objMode = ST_OAM_OBJ_BLEND;
+        // gSprites[gTasks[taskId].tMonSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+
+        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue3;
+    }
+}
+
+// static void TaskCopeSpeech_Blend(u8 taskId);
+
+// static void TaskCopeSpeech_Blend(u8 taskId)
+// {
+//     if (!RunTextPrintersAndIsPrinter0Active() && ++gTasks[taskId].tTimer % 2 == 0)
+//     {
+//         gTasks[taskId].tTimer = 0;
+//         //hacemos transparente el sprite de profesor
+//         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+//         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(15 - gTasks[taskId].tBlendValue , gTasks[taskId].tBlendValue));
+//         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
+
+//         if(gTasks[taskId].tBlendValue != 15)
+//         {
+//             gTasks[taskId].tBlendValue += 1;
+
+//         }else{
+//             DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeBodyId]);
+//             DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeLegsId]);
+//             FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
+
+//             gTasks[taskId].tBlendValue = 0;
+//             gTasks[taskId].func = TaskCopeSpeech_ShowPlayerSprite;
+//         }
+//     }
+// }
+
+static void TaskCopeSpeech_CopeDialogue3(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    {
+        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
+        StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsPlayer);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue4;
+    }
+}
+
+static void TaskCopeSpeech_CopeDialogue4(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    {
+        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
+        StringExpandPlaceholders(gStringVar4, gText_Birch_AreYouReady);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeech;
+    }
+}
+
+static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    {
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
+        gTasks[taskId].func = Task_NewGameCleanup;
+    }
+}
+
+static void Task_NewGameCleanup(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeBodyId]);
+        DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeLegsId]);
+        gTasks[taskId].func = TaskCopeSpeech_FadeOut;
+    }
+}
+
+static void Task_OpenCopeSpeechFadeIn(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        FreeAllWindowBuffers();
+        SetMainCallback2(CB2_InitCopeSpeech);
+    }
+}
+
+static void TaskCopeSpeech_FadeOut(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        SetMainCallback2(CB2_NewGame);
+        DestroyTask(taskId);
+        FreeAllWindowBuffers();
+    }
+}
+
+bool8 StartCopeSpeech_CB2()
+{
+    if (!gPaletteFade.active)
+    {
+        gMain.state = 0;
+        // CleanupOverworldWindowsAndTilemaps();
+        BeginNormalPaletteFade(0xFFFFFFFF, 10, 16, 0, RGB_BLACK);
+        CreateTask(Task_OpenCopeSpeechFadeIn, 0);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+
+
