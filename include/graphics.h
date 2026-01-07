@@ -1795,6 +1795,17 @@ extern const u16 gBagScreenFemale_Pal[];
 extern const u16 gBagScreenMale_Pal[];
 extern const u8 gBagMenuHMIcon_Gfx[];
 
+// New bag UI graphics
+extern const u32 gBagBg_Gfx[];
+extern const u32 gBagBg_Tilemap[];
+extern const u16 gBagBg_Pal[];
+extern const u32 gBagBox_Gfx[];
+extern const u32 gBagBox_Tilemap[];
+extern const u16 gBagBox_Pal[];
+extern const u32 gBagPocketIcons_Gfx[];
+extern const u16 gBagPocketIcons_Pal[];
+extern const u16 gBagPocketIconsSel_Pal[];
+
 // item menu icons graphics
 extern const u32 gBagMaleTiles[];
 extern const u32 gBagFemaleTiles[];

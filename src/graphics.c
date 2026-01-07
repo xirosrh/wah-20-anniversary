@@ -1640,6 +1640,19 @@ const u16 gBagScreenFemale_Pal[] = INCBIN_U16("graphics/bag/menu_female.gbapal")
 const u32 gBagScreen_Gfx[] = INCBIN_U32("graphics/bag/menu.4bpp.smol");
 const u32 gBagScreen_GfxTileMap[] = INCBIN_U32("graphics/bag/menu.bin.smolTM");
 
+// New bag UI graphics
+const u32 gBagBg_Gfx[] = INCBIN_U32("graphics/bag/bg_tileset.4bpp.lz");
+const u32 gBagBg_Tilemap[] = INCBIN_U32("graphics/bag/bg_tilemap.bin.lz");
+const u16 gBagBg_Pal[] = INCBIN_U16("graphics/bag/bg.gbapal");
+
+const u32 gBagBox_Gfx[] = INCBIN_U32("graphics/bag/box_tileset.4bpp.lz");
+const u32 gBagBox_Tilemap[] = INCBIN_U32("graphics/bag/box_tilemap.bin.lz");
+const u16 gBagBox_Pal[] = INCBIN_U16("graphics/bag/box.gbapal");
+
+const u32 gBagPocketIcons_Gfx[] = INCBIN_U32("graphics/bag/pocket_icons.4bpp.smol");
+const u16 gBagPocketIcons_Pal[] = INCBIN_U16("graphics/bag/pocket_icons.gbapal");
+const u16 gBagPocketIconsSel_Pal[] = INCBIN_U16("graphics/bag/pocket_icons_selected.gbapal");
+
 const u32 gBattlePyramidBag_Gfx[]          = INCBIN_U32("graphics/bag/bag_pyramid.4bpp.smol");
 const u16 gBattlePyramidBag_Pal[]          = INCBIN_U16("graphics/bag/bag_pyramid.gbapal"); // female palette is first and male is second.
 const u32 gBattlePyramidBagTilemap[]       = INCBIN_U32("graphics/bag/menu_pyramid.bin.smolTM");
