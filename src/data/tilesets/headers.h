@@ -949,5 +949,5 @@ const struct Tileset gTileset_room_drivekatherine =
     .palettes = gTilesetPalettes_room_drivekatherine,
     .metatiles = gMetatiles_room_drivekatherine,
     .metatileAttributes = gMetatileAttributes_room_drivekatherine,
-    .callback = NULL,
+    .callback = InitTilesetAnim_DriveKatherineRoom,
 };
