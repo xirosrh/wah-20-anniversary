@@ -1,0 +1,11 @@
+# Image to Tiles conversion info
+source: graphics/bag/box_tileset.png
+tile_size: 8
+image_tiles_x: 16
+image_tiles_y: 5
+unique_tiles: 72
+tileset_width: 16
+tileset_height: 5
+use_flips: True
+palette: 2
+base_offset: 0

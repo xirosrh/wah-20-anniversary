@@ -52,6 +52,15 @@ enum {
     ITEMMENUSPRITE_BALL,
     ITEMMENUSPRITE_ITEM,
     ITEMMENUSPRITE_ITEM_ALT, // Need two when selecting new item
+    ITEMMENUSPRITE_POCKET_ICON_ITEMS,
+    ITEMMENUSPRITE_POCKET_ICON_BALLS,
+    ITEMMENUSPRITE_POCKET_ICON_TMS,
+    ITEMMENUSPRITE_POCKET_ICON_BERRIES,
+    ITEMMENUSPRITE_POCKET_ICON_KEYITEMS,
+    ITEMMENUSPRITE_ARROW_LEFT,
+    ITEMMENUSPRITE_ARROW_RIGHT,
+    ITEMMENUSPRITE_SCROLL_ARROW_UP,
+    ITEMMENUSPRITE_SCROLL_ARROW_DOWN,
     ITEMMENUSPRITE_SWAP_LINE,
     ITEMMENUSPRITE_COUNT = ITEMMENUSPRITE_SWAP_LINE + ITEMMENU_SWAP_LINE_LENGTH,
 };
@@ -72,6 +81,7 @@ struct BagMenu
 {
     MainCallback newScreenCallback;
     u8 tilemapBuffer[BG_SCREEN_SIZE];
+    u8 tilemapBufferBg3[BG_SCREEN_SIZE];
     u8 spriteIds[ITEMMENUSPRITE_COUNT];
     u8 windowIds[ITEMWIN_COUNT];
     u8 toSwapPos;
@@ -79,6 +89,8 @@ struct BagMenu
     u8 itemIconSlot:2;
     u8 inhibitItemDescriptionPrint:1;
     u8 hideCloseBagText:1;
+    s16 parallaxScrollX;
+    s16 parallaxScrollY;
     u8 pocketScrollArrowsTask;
     u8 pocketSwitchArrowsTask;
     const u8 *contextMenuItemsPtr;
@@ -87,7 +99,7 @@ struct BagMenu
     u8 numItemStacks[POCKETS_COUNT];
     u8 numShownItems[POCKETS_COUNT];
     s16 graphicsLoadState;
-    u8 ALIGNED(4) pocketNameBuffer[32][32];
+    u8 ALIGNED(4) pocketNameBuffer[48][32];
 };
 
 extern struct BagMenu *gBagMenu;
