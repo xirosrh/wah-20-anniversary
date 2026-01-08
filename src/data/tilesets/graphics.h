@@ -1804,3 +1804,22 @@ const u16 gTilesetPalettes_room_angel[][16] =
 };
 
 const u32 gTilesetTiles_room_angel[] = INCBIN_U32("data/tilesets/secondary/room_angel/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_room_drivekatherine[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/room_drivekatherine/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_room_drivekatherine[] = INCBIN_U32("data/tilesets/secondary/room_drivekatherine/tiles.4bpp.lz");

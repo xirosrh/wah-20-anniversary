@@ -4116,8 +4116,8 @@
       "name": "DriveKatherineRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_drivekatherine",
       "border_filepath": "data/layouts/DriveKatherineRoom/border.bin",
       "blockdata_filepath": "data/layouts/DriveKatherineRoom/map.bin"
     },
