@@ -89,6 +89,7 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Pidgey
 Level: 21
@@ -110,6 +111,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Zubat
 Level: 32
@@ -123,6 +125,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Aerodactyl
 Level: 32
@@ -136,6 +139,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Poochyena
 Level: 36
@@ -149,6 +153,7 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Green
 
 Umbreon
 Level: 21
@@ -214,6 +219,7 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Green
 
 Dragonite @ Leftovers  
 Level: 21  
@@ -277,6 +283,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 BLAxTOISE (Blastoise) (M) @ Blastoisinite  
 Ability: Torrent
@@ -319,6 +326,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Rey BLAxtasar (Reuniclus) @ Twisted Spoon  
 Ability: Regenerator
@@ -365,6 +373,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Swampert @Swampertite
 Level: 100
@@ -387,6 +396,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Poochyena
 Level: 9
@@ -400,6 +410,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Manectric
 Level: 29
@@ -417,6 +428,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Pelipper
 Level: 30
@@ -434,6 +446,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Zangoose
 Level: 30
@@ -451,6 +464,7 @@ Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Carvanha
 Level: 36
@@ -464,6 +478,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Gyarados
 Level: 34
@@ -477,6 +492,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Poochyena
 Level: 11
@@ -490,6 +506,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Zubat
 Level: 27
@@ -507,6 +524,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Poochyena
 Level: 27
@@ -524,6 +542,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Green
 
 Magikarp
 Level: 1
@@ -538,6 +557,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Green
 
 Carvanha
 Level: 15
@@ -551,6 +571,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
@@ -621,6 +642,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Numel
 Level: 32
@@ -634,6 +656,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Zubat
 Level: 32
@@ -647,6 +670,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Carvanha
 Level: 32
@@ -660,6 +684,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Poochyena
 Level: 30
@@ -677,6 +702,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Carvanha
 Level: 28
@@ -690,6 +716,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Carvanha
 Level: 32
@@ -707,6 +734,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Zubat
 Level: 32
@@ -720,6 +748,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Makuhita
 Level: 30
@@ -735,6 +764,7 @@ Music: Aqua
 Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Mightyena
 Level: 34
@@ -748,6 +778,7 @@ Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Hariyama
 Level: 31
@@ -761,6 +792,7 @@ Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Carvanha
 Level: 28
@@ -778,6 +810,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Typhlosion @ Charcoal
 Level: 35
@@ -814,6 +847,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Typhlosion @ Leftovers
 Level: 38
@@ -850,6 +884,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Spoink
 Level: 31
@@ -863,6 +898,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Shroomish
 Level: 14
@@ -880,6 +916,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -951,6 +988,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Rotom (Rotom-Wash) @ Leftovers
 Ability: Levitate
@@ -991,6 +1029,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Togekiss @ Leftovers
 Ability: Serene Grace
@@ -1031,6 +1070,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Shroomish
 Level: 26
@@ -1048,6 +1088,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Gallade @ Life Orb
 Ability: Steadfast
@@ -1087,6 +1128,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Shroomish
 Level: 31
@@ -1221,11 +1263,56 @@ Pic: Sergio
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / Prediction / Ace Pokemon
 
-Dragonite
-Level: 27
+Lapras @ Leftovers
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
 
+Darkrai @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
+- Dark Pulse
+
+Celebi @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Giga drain
+- Psychic
+- Recover
+- Moonblast
+
+Dialga @ Adamant Orb
+EVs: 252 SpA / 252 SpD / 4 HP
+Modest Nature
+- Roar of Time
+- Flash Cannon
+- Earth Power
+- Aura Sphere
+
+Groudon @ Red Orb
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Fissure
+- Solar Blade
+- Heat Crash
+
+Dragonite @ Dragoninite
+Ability: No Guard
+EVs: 252 SpA / 252 Spe / 4 Atk
+Timid Nature
+- Extreme Speed
+- Dragon Pulse
+- Hurricane
+- Hydro pump
 
 === TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
 Name: FOSTER
@@ -1234,23 +1321,55 @@ Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer / Prediction
 
-Sandshrew
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Silvally /* @ Multi disk TODO Xiros */
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Multi Attack
+- Iron Head
+- Dragon Claw
+- X Scissor
 
-Sandslash
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Genesect  /* @ @ Multi Rom */
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Techno Blast
+- Flamethrower
+- Flash Cannon
+- Bug Buzz
+
+Eternatus @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dynamax Cannon
+- Recover
+- Sludge Wave
+- Eternabeam
+
+Necrozma Dusk Mane @ Ultranecrozium Z
+EVs: 252 Atk / 252 SpA / 4 HP
+Timid Nature
+- Sunsteel Strike
+- Photon Geyser
+- Prismatic Laser
+- Recover
+
+Arceus   /* @ Legend Plate //TODO Xiros */
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Judgment
+- Roar of Time
+- Photon Geyser
+/* Nihil Light //TODO Xiros */
+
+Zygarde @ Zygardite
+EVs: 252 SpA / 252 Atk / 4 HP
+Modest Nature
+- Thousand Arrows
+- Land's Wrath
+- Thousand Waves
+- Core Enforcer
 
 === TRAINER_DUSTY_4 ===
 Name: DUSTY
