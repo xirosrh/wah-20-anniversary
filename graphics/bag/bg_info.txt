@@ -1,0 +1,11 @@
+# Image to Tiles conversion info
+source: /Users/alex/Developer/decomp/wah-20-anniversary/.claude/skills/graphics-inserter/in/bag/bg.png
+tile_size: 8
+image_tiles_x: 30
+image_tiles_y: 20
+unique_tiles: 2
+tileset_width: 16
+tileset_height: 1
+use_flips: True
+palette: 0
+base_offset: 0

@@ -4096,8 +4096,8 @@
       "name": "OmegaRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_omega",
       "border_filepath": "data/layouts/OmegaRoom/border.bin",
       "blockdata_filepath": "data/layouts/OmegaRoom/map.bin"
     },
@@ -4106,8 +4106,8 @@
       "name": "ScarexOzumasRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_scarexozumas",
       "border_filepath": "data/layouts/ScarexOzumasRoom/border.bin",
       "blockdata_filepath": "data/layouts/ScarexOzumasRoom/map.bin"
     },
@@ -4116,8 +4116,8 @@
       "name": "DriveKatherineRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_drivekatherine",
       "border_filepath": "data/layouts/DriveKatherineRoom/border.bin",
       "blockdata_filepath": "data/layouts/DriveKatherineRoom/map.bin"
     },
@@ -4196,8 +4196,8 @@
       "name": "AngelRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_angel",
       "border_filepath": "data/layouts/AngelRoom/border.bin",
       "blockdata_filepath": "data/layouts/AngelRoom/map.bin"
     },

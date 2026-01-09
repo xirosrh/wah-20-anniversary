@@ -10,6 +10,7 @@
 #include "menu_helpers.h"
 #include "menu.h"
 #include "sprite.h"
+#include "trig.h"
 #include "window.h"
 #include "util.h"
 #include "constants/items.h"
@@ -19,9 +20,20 @@ enum {
     TAG_ROTATING_BALL_GFX,
     TAG_ITEM_ICON,
     TAG_ITEM_ICON_ALT,
+    TAG_POCKET_ICON_GFX,
+    TAG_POCKET_ICON_PAL_NORMAL,
+    TAG_POCKET_ICON_PAL_SELECTED,
+    TAG_POCKET_SWITCH_ARROW,
+    TAG_SCROLL_ARROW_UP,
+    // 109 is TAG_SWAP_LINE in menu_helpers.c - DO NOT USE
+    TAG_SCROLL_ARROW_DOWN = 110,
+    TAG_SCROLL_ARROW_PAL,
 };
 #define TAG_BERRY_CHECK_CIRCLE_GFX 10000
 #define TAG_BERRY_PIC_PAL 30020
+
+#define POCKET_ICON_SIZE (16 * 16 / 2)
+#define POCKET_ICON_TOTAL_SIZE (POCKET_ICON_SIZE * 5)
 
 struct TilesPal
 {
@@ -38,6 +50,13 @@ static void SpriteCB_SwitchPocketRotatingBallContinue(struct Sprite *sprite);
 // static const rom data
 static const u16 sRotatingBall_Pal[] = INCBIN_U16("graphics/bag/rotating_ball.gbapal");
 static const u8 sRotatingBall_Gfx[] = INCBIN_U8("graphics/bag/rotating_ball.4bpp");
+
+static const u16 sPocketSwitchArrow_Pal[] = INCBIN_U16("graphics/bag/arrow.gbapal");
+static const u8 sPocketSwitchArrow_Gfx[] = INCBIN_U8("graphics/bag/arrow.4bpp");
+
+static const u16 sScrollArrow_Pal[] = INCBIN_U16("graphics/bag/arrow_scroll.gbapal");
+static const u8 sScrollArrowUp_Gfx[] = INCBIN_U8("graphics/bag/arrow_up.4bpp");
+static const u8 sScrollArrowDown_Gfx[] = INCBIN_U8("graphics/bag/arrow_down.4bpp");
 
 static const struct OamData sBagOamData =
 {
@@ -141,6 +160,222 @@ const struct CompressedSpriteSheet gBagFemaleSpriteSheet =
 const struct SpritePalette gBagPaletteTable =
 {
     gBagPalette, TAG_BAG_GFX
+};
+
+const struct CompressedSpriteSheet gBagPocketIconsSpriteSheet =
+{
+    gBagPocketIcons_Gfx, POCKET_ICON_TOTAL_SIZE, TAG_POCKET_ICON_GFX
+};
+
+const struct SpritePalette gBagPocketIconsPaletteNormal =
+{
+    gBagPocketIcons_Pal, TAG_POCKET_ICON_PAL_NORMAL
+};
+
+const struct SpritePalette gBagPocketIconsPaletteSelected =
+{
+    gBagPocketIconsSel_Pal, TAG_POCKET_ICON_PAL_SELECTED
+};
+
+static const struct OamData sPocketIconOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_NORMAL,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x16),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0
+};
+
+static const union AffineAnimCmd sPocketIconAffineAnim_Normal[] =
+{
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_END
+};
+
+static const union AffineAnimCmd sPocketIconAffineAnim_Rock[] =
+{
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_FRAME(0, 0, 253, 6),
+    AFFINEANIMCMD_FRAME(0, 0, 3, 12),
+    AFFINEANIMCMD_FRAME(0, 0, 253, 6),
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_END
+};
+
+enum {
+    ANIM_POCKET_ICON_NORMAL,
+    ANIM_POCKET_ICON_ROCK,
+};
+
+static const union AffineAnimCmd *const sPocketIconAffineAnimTable[] =
+{
+    [ANIM_POCKET_ICON_NORMAL] = sPocketIconAffineAnim_Normal,
+    [ANIM_POCKET_ICON_ROCK]   = sPocketIconAffineAnim_Rock,
+};
+
+static const union AnimCmd sSpriteAnim_PocketIcon_Items[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PocketIcon_Balls[] =
+{
+    ANIMCMD_FRAME(4, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PocketIcon_TMs[] =
+{
+    ANIMCMD_FRAME(8, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PocketIcon_Berries[] =
+{
+    ANIMCMD_FRAME(12, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PocketIcon_KeyItems[] =
+{
+    ANIMCMD_FRAME(16, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sPocketIconAnimTable[] =
+{
+    [POCKET_ITEMS]      = sSpriteAnim_PocketIcon_Items,
+    [POCKET_POKE_BALLS] = sSpriteAnim_PocketIcon_Balls,
+    [POCKET_TM_HM]      = sSpriteAnim_PocketIcon_TMs,
+    [POCKET_BERRIES]    = sSpriteAnim_PocketIcon_Berries,
+    [POCKET_KEY_ITEMS]  = sSpriteAnim_PocketIcon_KeyItems,
+};
+
+static const struct SpriteTemplate sPocketIconSpriteTemplate =
+{
+    .tileTag = TAG_POCKET_ICON_GFX,
+    .paletteTag = TAG_POCKET_ICON_PAL_NORMAL,
+    .oam = &sPocketIconOamData,
+    .anims = sPocketIconAnimTable,
+    .images = NULL,
+    .affineAnims = sPocketIconAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static void SpriteCB_PocketSwitchArrowBounce(struct Sprite *sprite);
+
+static const struct OamData sPocketSwitchArrowOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0
+};
+
+static const union AnimCmd sSpriteAnim_PocketSwitchArrow[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sPocketSwitchArrowAnimTable[] =
+{
+    sSpriteAnim_PocketSwitchArrow,
+};
+
+static const struct SpriteSheet sPocketSwitchArrowSpriteSheet =
+{
+    sPocketSwitchArrow_Gfx, sizeof(sPocketSwitchArrow_Gfx), TAG_POCKET_SWITCH_ARROW
+};
+
+static const struct SpritePalette sPocketSwitchArrowPalette =
+{
+    sPocketSwitchArrow_Pal, TAG_POCKET_SWITCH_ARROW
+};
+
+static const struct SpriteTemplate sPocketSwitchArrowSpriteTemplate =
+{
+    .tileTag = TAG_POCKET_SWITCH_ARROW,
+    .paletteTag = TAG_POCKET_SWITCH_ARROW,
+    .oam = &sPocketSwitchArrowOamData,
+    .anims = sPocketSwitchArrowAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_PocketSwitchArrowBounce,
+};
+
+static void SpriteCB_ScrollArrowBounce(struct Sprite *sprite);
+
+static const struct OamData sScrollArrowOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0
+};
+
+static const struct SpriteSheet sScrollArrowUpSpriteSheet =
+{
+    sScrollArrowDown_Gfx, sizeof(sScrollArrowDown_Gfx), TAG_SCROLL_ARROW_UP
+};
+
+static const struct SpriteSheet sScrollArrowDownSpriteSheet =
+{
+    sScrollArrowUp_Gfx, sizeof(sScrollArrowUp_Gfx), TAG_SCROLL_ARROW_DOWN
+};
+
+static const struct SpritePalette sScrollArrowPalette =
+{
+    sScrollArrow_Pal, TAG_SCROLL_ARROW_PAL
+};
+
+static const struct SpriteTemplate sScrollArrowUpSpriteTemplate =
+{
+    .tileTag = TAG_SCROLL_ARROW_UP,
+    .paletteTag = TAG_SCROLL_ARROW_PAL,
+    .oam = &sScrollArrowOamData,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_ScrollArrowBounce,
+};
+
+static const struct SpriteTemplate sScrollArrowDownSpriteTemplate =
+{
+    .tileTag = TAG_SCROLL_ARROW_DOWN,
+    .paletteTag = TAG_SCROLL_ARROW_PAL,
+    .oam = &sScrollArrowOamData,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_ScrollArrowBounce,
 };
 
 static const struct SpriteTemplate sBagSpriteTemplate =
@@ -567,8 +802,8 @@ void AddBagItemIconSprite(u16 itemId, u8 id)
         if (iconSpriteId != MAX_SPRITES)
         {
             *spriteId = iconSpriteId;
-            gSprites[iconSpriteId].x2 = 24;
-            gSprites[iconSpriteId].y2 = 88;
+            gSprites[iconSpriteId].x2 = 55;
+            gSprites[iconSpriteId].y2 = 92;
         }
     }
 }
@@ -716,4 +951,239 @@ void FreeBerryIconSpritePalette(u32 berryId)
 u8 CreateBerryFlavorCircleSprite(s16 x)
 {
     return CreateSprite(&sBerryCheckCircleSpriteTemplate, x, 116, 0);
+}
+
+static const u8 sPocketIconXPositions[POCKETS_COUNT] = {
+    [POCKET_ITEMS]      = 25,
+    [POCKET_POKE_BALLS] = 50,
+    [POCKET_TM_HM]      = 73,
+    [POCKET_BERRIES]    = 41,
+    [POCKET_KEY_ITEMS]  = 64,
+};
+
+static const u8 sPocketIconYPositions[POCKETS_COUNT] = {
+    [POCKET_ITEMS]      = 38,
+    [POCKET_POKE_BALLS] = 38,
+    [POCKET_TM_HM]      = 38,
+    [POCKET_BERRIES]    = 56,
+    [POCKET_KEY_ITEMS]  = 56,
+};
+
+static const u8 sPocketIconSpriteIndices[POCKETS_COUNT] = {
+    [POCKET_ITEMS]      = ITEMMENUSPRITE_POCKET_ICON_ITEMS,
+    [POCKET_POKE_BALLS] = ITEMMENUSPRITE_POCKET_ICON_BALLS,
+    [POCKET_TM_HM]      = ITEMMENUSPRITE_POCKET_ICON_TMS,
+    [POCKET_BERRIES]    = ITEMMENUSPRITE_POCKET_ICON_BERRIES,
+    [POCKET_KEY_ITEMS]  = ITEMMENUSPRITE_POCKET_ICON_KEYITEMS,
+};
+
+void AddPocketIconSprites(u8 selectedPocket)
+{
+    u8 i;
+    u8 spriteId;
+    u8 normalPalNum = IndexOfSpritePaletteTag(TAG_POCKET_ICON_PAL_NORMAL);
+    u8 selectedPalNum = IndexOfSpritePaletteTag(TAG_POCKET_ICON_PAL_SELECTED);
+
+    for (i = 0; i < POCKETS_COUNT; i++)
+    {
+        spriteId = CreateSprite(&sPocketIconSpriteTemplate, sPocketIconXPositions[i], sPocketIconYPositions[i], 0);
+        if (spriteId != MAX_SPRITES)
+        {
+            gBagMenu->spriteIds[sPocketIconSpriteIndices[i]] = spriteId;
+            StartSpriteAnim(&gSprites[spriteId], i);
+            if (i == selectedPocket)
+                gSprites[spriteId].oam.paletteNum = selectedPalNum;
+            else
+                gSprites[spriteId].oam.paletteNum = normalPalNum;
+        }
+    }
+}
+
+void SetPocketIconSelected(u8 selectedPocket)
+{
+    u8 i;
+    u8 normalPalNum = IndexOfSpritePaletteTag(TAG_POCKET_ICON_PAL_NORMAL);
+    u8 selectedPalNum = IndexOfSpritePaletteTag(TAG_POCKET_ICON_PAL_SELECTED);
+
+    for (i = 0; i < POCKETS_COUNT; i++)
+    {
+        u8 spriteId = gBagMenu->spriteIds[sPocketIconSpriteIndices[i]];
+        if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+        {
+            if (i == selectedPocket)
+            {
+                gSprites[spriteId].oam.paletteNum = selectedPalNum;
+                StartSpriteAffineAnim(&gSprites[spriteId], ANIM_POCKET_ICON_ROCK);
+            }
+            else
+            {
+                gSprites[spriteId].oam.paletteNum = normalPalNum;
+                StartSpriteAffineAnim(&gSprites[spriteId], ANIM_POCKET_ICON_NORMAL);
+            }
+        }
+    }
+}
+
+void RemovePocketIconSprites(void)
+{
+    u8 i;
+    for (i = 0; i < POCKETS_COUNT; i++)
+    {
+        u8 spriteId = gBagMenu->spriteIds[sPocketIconSpriteIndices[i]];
+        if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+        {
+            DestroySprite(&gSprites[spriteId]);
+            gBagMenu->spriteIds[sPocketIconSpriteIndices[i]] = SPRITE_NONE;
+        }
+    }
+}
+
+#define POCKET_ARROW_LEFT_X   13
+#define POCKET_ARROW_RIGHT_X  83
+#define POCKET_ARROW_Y        13
+
+#define sArrowFrequency data[0]
+#define sArrowSinePos   data[1]
+
+static void SpriteCB_PocketSwitchArrowBounce(struct Sprite *sprite)
+{
+    sprite->x2 = (gSineTable[(u8)(sprite->sArrowSinePos)] * 2) / 256;
+    sprite->sArrowSinePos += sprite->sArrowFrequency;
+}
+
+#undef sArrowFrequency
+#undef sArrowSinePos
+
+void AddPocketSwitchArrowSprites(void)
+{
+    u8 spriteId;
+
+    if (GetSpriteTileStartByTag(TAG_POCKET_SWITCH_ARROW) == 0xFFFF)
+    {
+        LoadSpriteSheet(&sPocketSwitchArrowSpriteSheet);
+        LoadSpritePalette(&sPocketSwitchArrowPalette);
+    }
+
+    spriteId = CreateSprite(&sPocketSwitchArrowSpriteTemplate, POCKET_ARROW_LEFT_X, POCKET_ARROW_Y, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_LEFT] = spriteId;
+        gSprites[spriteId].data[0] = 8;
+        gSprites[spriteId].data[1] = 0;
+    }
+
+    spriteId = CreateSprite(&sPocketSwitchArrowSpriteTemplate, POCKET_ARROW_RIGHT_X, POCKET_ARROW_Y, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_RIGHT] = spriteId;
+        gSprites[spriteId].hFlip = TRUE;
+        gSprites[spriteId].data[0] = -8;
+        gSprites[spriteId].data[1] = 0;
+    }
+}
+
+void RemovePocketSwitchArrowSprites(void)
+{
+    u8 spriteId;
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_LEFT];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[spriteId]);
+        gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_LEFT] = SPRITE_NONE;
+    }
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_RIGHT];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[spriteId]);
+        gBagMenu->spriteIds[ITEMMENUSPRITE_ARROW_RIGHT] = SPRITE_NONE;
+    }
+}
+
+#define SCROLL_ARROW_X        172
+#define SCROLL_ARROW_UP_Y     14
+#define SCROLL_ARROW_DOWN_Y   150
+
+#define sScrollFrequency data[0]
+#define sScrollSinePos   data[1]
+
+static void SpriteCB_ScrollArrowBounce(struct Sprite *sprite)
+{
+    // Vertical bounce using y2
+    sprite->y2 = (gSineTable[(u8)(sprite->sScrollSinePos)] * 2) / 256;
+    sprite->sScrollSinePos += sprite->sScrollFrequency;
+}
+
+#undef sScrollFrequency
+#undef sScrollSinePos
+
+void AddScrollArrowSprites(void)
+{
+    u8 spriteId;
+
+    if (GetSpriteTileStartByTag(TAG_SCROLL_ARROW_UP) == 0xFFFF)
+    {
+        LoadSpriteSheet(&sScrollArrowUpSpriteSheet);
+        LoadSpriteSheet(&sScrollArrowDownSpriteSheet);
+        LoadSpritePalette(&sScrollArrowPalette);
+    }
+
+    spriteId = CreateSprite(&sScrollArrowUpSpriteTemplate, SCROLL_ARROW_X, SCROLL_ARROW_UP_Y, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_UP] = spriteId;
+        gSprites[spriteId].data[0] = -8;
+        gSprites[spriteId].data[1] = 0;
+        gSprites[spriteId].invisible = TRUE;
+    }
+
+    spriteId = CreateSprite(&sScrollArrowDownSpriteTemplate, SCROLL_ARROW_X, SCROLL_ARROW_DOWN_Y, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_DOWN] = spriteId;
+        gSprites[spriteId].data[0] = 8;
+        gSprites[spriteId].data[1] = 0;
+        gSprites[spriteId].invisible = TRUE;
+    }
+}
+
+void RemoveScrollArrowSprites(void)
+{
+    u8 spriteId;
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_UP];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[spriteId]);
+        gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_UP] = SPRITE_NONE;
+    }
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_DOWN];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[spriteId]);
+        gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_DOWN] = SPRITE_NONE;
+    }
+
+    FreeSpriteTilesByTag(TAG_SCROLL_ARROW_UP);
+    FreeSpriteTilesByTag(TAG_SCROLL_ARROW_DOWN);
+    FreeSpritePaletteByTag(TAG_SCROLL_ARROW_PAL);
+}
+
+void UpdateScrollArrowVisibility(void)
+{
+    u8 pocket = gBagPosition.pocket;
+    u16 scrollPos = gBagPosition.scrollPosition[pocket];
+    u8 numItems = gBagMenu->numItemStacks[pocket];
+    u8 numShown = gBagMenu->numShownItems[pocket];
+    u8 spriteId;
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_UP];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+        gSprites[spriteId].invisible = (scrollPos == 0);
+
+    spriteId = gBagMenu->spriteIds[ITEMMENUSPRITE_SCROLL_ARROW_DOWN];
+    if (spriteId != SPRITE_NONE && spriteId < MAX_SPRITES)
+        gSprites[spriteId].invisible = (scrollPos + numShown >= numItems);
 }
