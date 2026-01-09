@@ -71,18 +71,7 @@ script BaroRoom_OnFrame {
     delay(20)
     msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"), speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown)
-    // Baro is admin index 11
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, format("En fin…"))
-    } else {
-        setvar(VAR_0x8004, 11)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, format("En fin…"))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, format("En fin…"))
-        }
-    }
+    call(BaroRoom_EventScript_BaroBattle)
     msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_HappyWithDelay48)
@@ -155,4 +144,24 @@ script BaroRoom_OnFrame {
     setmetatile(11, 8,  METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0)
     special(DrawWholeMapView)
     return
+ }
+
+ script BaroRoom_EventScript_BaroBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_BARO)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+ }
+
+ text BaroRoom_Text_BaroDefeated {
+    format("En fin…")
  }

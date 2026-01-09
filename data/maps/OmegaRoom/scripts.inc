@@ -133,7 +133,7 @@ OmegaRoom_EventScript_StartChallenge::
 # 73 "data/maps/OmegaRoom/scripts.pory"
 	waitmovement 0
 # 74 "data/maps/OmegaRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_EventScript_StartChallenge_Text_4
+	call OmegaRoom_EventScript_OmegaBattle
 # 75 "data/maps/OmegaRoom/scripts.pory"
 	playse SE_PIN
 # 76 "data/maps/OmegaRoom/scripts.pory"
@@ -145,7 +145,7 @@ OmegaRoom_EventScript_StartChallenge::
 # 79 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, Common_Movement_SurpriseWithDelay48
 # 80 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 81 "data/maps/OmegaRoom/scripts.pory"
 	waitmovement 0
 # 82 "data/maps/OmegaRoom/scripts.pory"
@@ -153,25 +153,25 @@ OmegaRoom_EventScript_StartChallenge::
 # 83 "data/maps/OmegaRoom/scripts.pory"
 	applymovementandwait LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkDown
 # 84 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 85 "data/maps/OmegaRoom/scripts.pory"
 	playse SE_PIN
 # 86 "data/maps/OmegaRoom/scripts.pory"
 	applymovementandwait LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown
 # 87 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 88 "data/maps/OmegaRoom/scripts.pory"
 	applymovement LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown2
 # 89 "data/maps/OmegaRoom/scripts.pory"
 	delay 30
 # 90 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 91 "data/maps/OmegaRoom/scripts.pory"
 	waitmovement 0
 # 92 "data/maps/OmegaRoom/scripts.pory"
 	delay 30
 # 93 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 94 "data/maps/OmegaRoom/scripts.pory"
 	playse SE_PIN
 # 95 "data/maps/OmegaRoom/scripts.pory"
@@ -183,7 +183,7 @@ OmegaRoom_EventScript_StartChallenge::
 # 98 "data/maps/OmegaRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 # 99 "data/maps/OmegaRoom/scripts.pory"
-	msgbox OmegaRoom_EventScript_StartChallenge_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
+	msgbox OmegaRoom_EventScript_StartChallenge_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA
 # 100 "data/maps/OmegaRoom/scripts.pory"
 	applymovementandwait LOCALID_OMEGAROOM_OMEGA, OmegaRoom_EventScript_StartChallenge_Movement_5
 # 101 "data/maps/OmegaRoom/scripts.pory"
@@ -235,6 +235,34 @@ OmegaRoom_EventScript_BrokenCapsule::
 # 128 "data/maps/OmegaRoom/scripts.pory"
 	special DrawWholeMapView
 	return
+
+
+OmegaRoom_EventScript_OmegaBattle::
+# 133 "data/maps/OmegaRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, OmegaRoom_EventScript_OmegaBattle_2
+# 136 "data/maps/OmegaRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_OMEGA
+# 137 "data/maps/OmegaRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 138 "data/maps/OmegaRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq OmegaRoom_EventScript_OmegaBattle_5
+# 141 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated
+OmegaRoom_EventScript_OmegaBattle_1:
+# 144 "data/maps/OmegaRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+OmegaRoom_EventScript_OmegaBattle_2:
+# 134 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated
+	goto OmegaRoom_EventScript_OmegaBattle_1
+
+OmegaRoom_EventScript_OmegaBattle_5:
+# 139 "data/maps/OmegaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated
+	goto OmegaRoom_EventScript_OmegaBattle_1
 
 
 # 47 "data/maps/OmegaRoom/scripts.pory"
@@ -329,33 +357,28 @@ OmegaRoom_EventScript_StartChallenge_Text_3:
 	.string "Perfecto, ¡vamos!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_4:
-# 74 "data/maps/OmegaRoom/scripts.pory"
-	.string "¡Qué nivel has demostrado! No esperaba\n"
-	.string "un combate tan entretenido.$"
-
-OmegaRoom_EventScript_StartChallenge_Text_5:
 # 80 "data/maps/OmegaRoom/scripts.pory"
 	.string "¡Sí que sacaste los colmillos!$"
 
-OmegaRoom_EventScript_StartChallenge_Text_6:
+OmegaRoom_EventScript_StartChallenge_Text_5:
 # 84 "data/maps/OmegaRoom/scripts.pory"
 	.string "Ha sido un buen combate. Me quedo con\n"
 	.string "ganas de más, la verdad.\p"
 	.string "Tocará esperar a que completes el\n"
 	.string "desafío para tener una revancha.$"
 
-OmegaRoom_EventScript_StartChallenge_Text_7:
+OmegaRoom_EventScript_StartChallenge_Text_6:
 # 87 "data/maps/OmegaRoom/scripts.pory"
 	.string "De todas formas, esta fue solo la\n"
 	.string "primera sala; todavía tenés un largo\l"
 	.string "camino por delante.$"
 
-OmegaRoom_EventScript_StartChallenge_Text_8:
+OmegaRoom_EventScript_StartChallenge_Text_7:
 # 90 "data/maps/OmegaRoom/scripts.pory"
 	.string "Va a ser interesante ver qué tanto\n"
 	.string "puedes avanzar en este desafío.$"
 
-OmegaRoom_EventScript_StartChallenge_Text_9:
+OmegaRoom_EventScript_StartChallenge_Text_8:
 # 93 "data/maps/OmegaRoom/scripts.pory"
 	.string "Yo sigo activo por aquí, pero muchos de\n"
 	.string "tus próximos rivales ya se habían\l"
@@ -365,8 +388,13 @@ OmegaRoom_EventScript_StartChallenge_Text_9:
 	.string "guardia. Son tercos, y cuando se ponen\l"
 	.string "en serio, se nota.$"
 
-OmegaRoom_EventScript_StartChallenge_Text_10:
+OmegaRoom_EventScript_StartChallenge_Text_9:
 # 99 "data/maps/OmegaRoom/scripts.pory"
 	.string "Te he abierto la puerta. Ahora avanza, y\n"
 	.string "demuestra que estas aquí para lograr\l"
 	.string "grandes cosas.$"
+
+OmegaRoom_Text_OmegaDefeated::
+# 148 "data/maps/OmegaRoom/scripts.pory"
+	.string "¡Qué nivel has demostrado! No esperaba\n"
+	.string "un combate tan entretenido.$"

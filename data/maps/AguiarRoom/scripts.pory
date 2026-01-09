@@ -1,3 +1,4 @@
+
 mapscripts AguiarRoom_MapScripts {}
 
 
@@ -27,18 +28,7 @@ script AguiarRoom_EventScript_Aguiar {
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
     msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE)
-    // Aguiar is admin index 5
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
-    } else {
-        setvar(VAR_0x8004, 5)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, format("¡Vaya combate! Me lo he pasado de\nlujo."))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, format("¡Vaya combate! Me lo he pasado de\nlujo."))
-        }
-    }
+    call(AguiarRoom_EventScript_AguiarBattle)
     delay(10)
     msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
@@ -49,4 +39,24 @@ script AguiarRoom_EventScript_Aguiar {
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP)
     release
     end
+}
+
+script AguiarRoom_EventScript_AguiarBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_AGUIAR)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text AguiarRoom_Text_AguiarDefeated {
+    format("¡Vaya combate! Me lo he pasado de\nlujo.")
 }

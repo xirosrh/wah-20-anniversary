@@ -36,18 +36,7 @@ script CosararaRoom_EventScript_Cosarara {
             break
     }
     msgbox(format("¿Así que eres {PLAYER} y quieres combatir? Acepto el reto."))
-    // Cosarara is admin index 13
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_MAIN, format("Me ha hecho muy feliz esta batalla."))
-    } else {
-        setvar(VAR_0x8004, 13)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_MAIN, format("Me ha hecho muy feliz esta batalla."))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, format("Me ha hecho muy feliz esta batalla."))
-        }
-    }
+    call(CosararaRoom_EventScript_CosararaBattle)
     setflag(FLAG_DEFEATED_ADMIN_COSARARA)
     delay(20)
     msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, ya que me cuesta mucho saber quién es quien.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE)
@@ -58,3 +47,22 @@ script CosararaRoom_EventScript_Cosarara {
     end
 }
 
+script CosararaRoom_EventScript_CosararaBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_COSARARA)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, CosararaRoom_Text_CosararaDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text CosararaRoom_Text_CosararaDefeated {
+    format("Me ha hecho muy feliz esta batalla.")
+}

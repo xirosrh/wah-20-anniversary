@@ -109,18 +109,7 @@ script ReyBooRoom_EventScript_BooEncounter {
     waitmovement(0)
     special(RemoveCameraObject)
     msgbox(format("De modo que eres tú quien me ha invocado…"), speaker = SP_NAME_REY_BOO)
-    // ReyBoo is admin index 12
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, format("¡Madre mía!"))
-    } else {
-        setvar(VAR_0x8004, 12)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, format("¡Madre mía!"))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, format("¡Madre mía!"))
-        }
-    }
+    call(ReyBooRoom_EventScript_ReyBooBattle)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_surprise, lock_facing_direction, jump_up, unlock_facing_direction, delay_16 * 2))
     delay(20)
     msgbox(format("Muy bien, has pasado la prueba física… Ahora prepárate para la inesperada…"), speaker = SP_NAME_REY_BOO)
@@ -178,3 +167,22 @@ script ReyBooRoom_EventScript_BooEncounter {
     end
 }
 
+script ReyBooRoom_EventScript_ReyBooBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_REYBOO)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text ReyBooRoom_Text_ReyBooDefeated {
+    format("¡Madre mía!")
+}

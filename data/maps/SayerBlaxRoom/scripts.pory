@@ -56,30 +56,7 @@ script SayerBlaxRoom_OnFrame {
     applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_VersusWithDelay48)
     applymovement(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_VersusWithDelay48)
     waitmovement(0)
-    // Blax is admin index 3, Sayer is admin index 4
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_MAIN, "Pues si que la has liado.")
-    } else {
-        setvar(VAR_0x8004, 3)
-        special(ShouldUseAlternativeTeam)
-        copyvar(VAR_0x8005, VAR_RESULT)
-        setvar(VAR_0x8004, 4)
-        special(ShouldUseAlternativeTeam)
-        // VAR_0x8005 = Blax team, VAR_RESULT = Sayer team
-        if (var(VAR_0x8005) == 0) {
-            if (var(VAR_RESULT) == 0) {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_MAIN, "Pues si que la has liado.")
-            } else {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, "Pues si que la has liado.")
-            }
-        } else {
-            if (var(VAR_RESULT) == 0) {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_MAIN, "Pues si que la has liado.")
-            } else {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, "Pues si que la has liado.")
-            }
-        }
-    }
+    call(SayerBlaxRoom_EventScript_SayerBlaxBattle)
     applymovement(LOCALID_SAYERBLAXROOM_SAYER, moves(
         emote_x
         lock_facing_direction
@@ -125,4 +102,40 @@ script SayerBlaxRoom_EventScript_Blax {
 script SayerBlaxRoom_EventScript_Sayer {
     msgbox(format("No me puedo quejar la verdad, quedé bastante contento con la batalla.\pAvanza, fiera."), MSGBOX_AUTOCLOSE)
     end
+}
+
+script SayerBlaxRoom_EventScript_SayerBlaxBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_MAIN, "Pues si que la has liado.")
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_BLAX)
+        special(ShouldUseAlternativeTeam)
+        copyvar(VAR_0x8005, VAR_RESULT)
+        setvar(VAR_0x8004, TEAM_INDEX_SAYER)
+        special(ShouldUseAlternativeTeam)
+        // VAR_0x8005 = Blax team, VAR_RESULT = Sayer team
+        if (var(VAR_0x8005) == 0) {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated)
+            }
+        } else {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated)
+            }
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text SayerBlaxRoom_Text_BlaxDefeated {
+    format("Bueno, pues has ganado. ¡Enhorabuena!")
+}
+
+text SayerBlaxRoom_Text_SayerDefeated {
+    format("Pues si que la has liado.")
 }

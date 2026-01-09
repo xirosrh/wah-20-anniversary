@@ -28,18 +28,7 @@ script GoceRoom_EventScript_Goce {
           lock
         faceplayer
         msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."), speaker = SP_NAME_GOCE)
-        // Goce is admin index 2
-        if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, format("Increíble como han evolucionado en estos últimos 20 años..."))
-        } else {
-            setvar(VAR_0x8004, 2)
-            special(ShouldUseAlternativeTeam)
-            if (var(VAR_RESULT) == 0) {
-                trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, format("Increíble como han evolucionado en estos últimos 20 años..."))
-            } else {
-                trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, format("Increíble como han evolucionado en estos últimos 20 años..."))
-            }
-        }
+        call(GoceRoom_EventScript_GoceBattle)
         delay(10)
         msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
         delay(20)
@@ -67,3 +56,24 @@ script GoceRoom_EventScript_Goce {
     }
    
 }
+
+script GoceRoom_EventScript_GoceBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_GOCE)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text GoceRoom_Text_GoceDefeated {
+    format("Increíble como han evolucionado en estos últimos 20 años…")
+}
+

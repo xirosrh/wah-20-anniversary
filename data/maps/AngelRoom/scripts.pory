@@ -76,18 +76,7 @@ script AngelRoom_EventScript_Angel {
     }
     waitse
     msgbox(format("¡Ven! ¡Atácame con todo lo que tengas!"), speaker = SP_NAME_ANGEL)
-    // Angel is admin index 7
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
-    } else {
-        setvar(VAR_0x8004, 7)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, format("¿Así que este es el poder de la nueva generación?"))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, format("¿Así que este es el poder de la nueva generación?"))
-        }
-    }
+    call(AngelRoom_EventScript_AngelBattle)
     playse(SE_PIN)
     applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
     msgbox(format("¡Increíble! ¡El poder de la nueva generación es asombroso!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
@@ -129,6 +118,26 @@ script AngelRoom_EventScript_Angel {
     setflag(FLAG_DEFEATED_ADMIN_ANGEL)
     release
     end
+}
+
+script AngelRoom_EventScript_AngelBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_ANGEL)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text AngelRoom_Text_AngelDefeated {
+    format("¿Así que este es el poder de la nueva generación?")
 }
 
 script AngelRoom_EventScript_TurnOffScreen {

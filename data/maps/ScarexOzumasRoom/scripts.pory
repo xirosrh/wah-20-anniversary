@@ -158,18 +158,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     delay(20)
     msgbox(format("Vamos a ver qué historia sale de esta batalla."), speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
-    // Ozumas is admin index 8
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, "¡Eso ha estado muy guay!")
-    } else {
-        setvar(VAR_0x8004, 8)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, "¡Eso ha estado muy guay!")
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, "¡Eso ha estado muy guay!")
-        }
-    }
+    call(ScarexOzumasRoom_EventScript_OzumasBattle)
     msgbox(format("Has demostrado que tienes fuerza y convicción… ¡te felicito!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)  
     if(var(VAR_RESULT) == DIR_NORTH || var(VAR_RESULT) == DIR_SOUTH){
@@ -197,6 +186,26 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     setflag(FLAG_DEFEATED_ADMIN_OZUMAS)
     release
     end
+}
+
+script ScarexOzumasRoom_EventScript_OzumasBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, ScarexOzumasRoom_Text_OzumasDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_OZUMAS)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_MAIN, ScarexOzumasRoom_Text_OzumasDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, ScarexOzumasRoom_Text_OzumasDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text ScarexOzumasRoom_Text_OzumasDefeated {
+    format("¡Eso ha estado muy guay!")
 }
 
 script ScarexOzumasRoom_EventScript_Scarex {
@@ -281,18 +290,7 @@ script ScarexOzumasRoom_EventScript_Scarex {
             turnobject(LOCALID_PLAYER, DIR_WEST)
             break
     }
-    // Scarex is admin index 9
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_MAIN, "...")
-    } else {
-        setvar(VAR_0x8004, 9)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_MAIN, "...")
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, "...")
-        }
-    }
+    call(ScarexOzumasRoom_EventScript_ScarexBattle)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VWithDelay48)
     waitse
@@ -305,4 +303,24 @@ script ScarexOzumasRoom_EventScript_Scarex {
     setflag(FLAG_DEFEATED_ADMIN_SCAREX)
     release
     end
+}
+
+script ScarexOzumasRoom_EventScript_ScarexBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_MAIN, ScarexOzumasRoom_Text_ScarexDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_SCAREX)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_MAIN, ScarexOzumasRoom_Text_ScarexDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, ScarexOzumasRoom_Text_ScarexDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text ScarexOzumasRoom_Text_ScarexDefeated {
+    format("…")
 }

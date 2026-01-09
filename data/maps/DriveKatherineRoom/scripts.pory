@@ -139,30 +139,7 @@ script DriveKatherineRoom_EventScript_Drive {
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_versus, jump_in_place_down))
     applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(emote_versus, jump_in_place_down))
     waitmovement(0)
-    // Drive is admin index 14, Katherine is admin index 15
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, format("¡Eso sí que fue un festín!"), TRAINER_WAH_ADMIN_KATHERINE_MAIN, "Suave, armonioso… me ha encantado.")
-    } else {
-        setvar(VAR_0x8004, 14)
-        special(ShouldUseAlternativeTeam)
-        copyvar(VAR_0x8005, VAR_RESULT)
-        setvar(VAR_0x8004, 15)
-        special(ShouldUseAlternativeTeam)
-        // VAR_0x8005 = Drive team, VAR_RESULT = Katherine team
-        if (var(VAR_0x8005) == 0) {
-            if (var(VAR_RESULT) == 0) {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, format("¡Eso sí que fue un festín!"), TRAINER_WAH_ADMIN_KATHERINE_MAIN, "Suave, armonioso… me ha encantado.")
-            } else {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, format("¡Eso sí que fue un festín!"), TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, "Suave, armonioso… me ha encantado.")
-            }
-        } else {
-            if (var(VAR_RESULT) == 0) {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, format("¡Eso sí que fue un festín!"), TRAINER_WAH_ADMIN_KATHERINE_MAIN, "Suave, armonioso… me ha encantado.")
-            } else {
-                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, format("¡Eso sí que fue un festín!"), TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, "Suave, armonioso… me ha encantado.")
-            }
-        }
-    }
+    call(DriveKatherineRoom_EventScript_DriveKatherineBattle)
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattle)
     applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattle)
     waitmovement(0)
@@ -224,3 +201,38 @@ script DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer {
     return
 }
 
+script DriveKatherineRoom_EventScript_DriveKatherineBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_DRIVE)
+        special(ShouldUseAlternativeTeam)
+        copyvar(VAR_0x8005, VAR_RESULT)
+        setvar(VAR_0x8004, TEAM_INDEX_KATHERINE)
+        special(ShouldUseAlternativeTeam)
+        // VAR_0x8005 = Drive team, VAR_RESULT = Katherine team
+        if (var(VAR_0x8005) == 0) {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, DriveKatherineRoom_Text_KatherineDefeated)
+            }
+        } else {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, DriveKatherineRoom_Text_KatherineDefeated)
+            }
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text DriveKatherineRoom_Text_DriveDefeated {
+    format("¡Eso sí que fue un festín!")
+}
+
+text DriveKatherineRoom_Text_KatherineDefeated {
+    format("Suave, armonioso… me ha encantado.")
+}

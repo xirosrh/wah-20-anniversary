@@ -135,18 +135,7 @@ script DragonMountan_Top_EventScript_Sergio {
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus, disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
     release
     delay(60)
-    // Sergio is admin index 23
-    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, format("¡Guau! ¡Eso ha sido brutal!"))
-    } else {
-        setvar(VAR_0x8004, 23)
-        special(ShouldUseAlternativeTeam)
-        if (var(VAR_RESULT) == 0) {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, format("¡Guau! ¡Eso ha sido brutal!"))
-        } else {
-            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, format("¡Guau! ¡Eso ha sido brutal!"))
-        }
-    }
+    call(DragonMountan_Top_EventScript_SergioBattle)
     playse(SE_FAILURE)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x, jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
     release
@@ -222,6 +211,26 @@ script DragonMountan_Top_EventScript_Sergio {
 	waitstate
 	releaseall
     end
+}
+
+script DragonMountan_Top_EventScript_SergioBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_Text_SergioDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_SERGIO)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_Text_SergioDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_Text_SergioDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text DragonMountan_Top_Text_SergioDefeated {
+    format("¡Guau! ¡Eso ha sido brutal!")
 }
 
 

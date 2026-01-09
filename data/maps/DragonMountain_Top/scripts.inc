@@ -232,210 +232,218 @@ DragonMountan_Top_EventScript_Sergio::
 	release
 # 137 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 60
+# 138 "data/maps/DragonMountain_Top/scripts.pory"
+	call DragonMountan_Top_EventScript_SergioBattle
 # 139 "data/maps/DragonMountain_Top/scripts.pory"
-	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, DragonMountan_Top_EventScript_Sergio_2
-# 142 "data/maps/DragonMountain_Top/scripts.pory"
-	setvar VAR_0x8004, 23
-# 143 "data/maps/DragonMountain_Top/scripts.pory"
-	special ShouldUseAlternativeTeam
-# 144 "data/maps/DragonMountain_Top/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq DragonMountan_Top_EventScript_Sergio_5
-# 147 "data/maps/DragonMountain_Top/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_EventScript_Sergio_Text_7
-DragonMountan_Top_EventScript_Sergio_1:
-# 150 "data/maps/DragonMountain_Top/scripts.pory"
 	playse SE_FAILURE
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIODRAGONITE, DragonMountan_Top_EventScript_Sergio_Movement_3
-# 152 "data/maps/DragonMountain_Top/scripts.pory"
+# 141 "data/maps/DragonMountain_Top/scripts.pory"
 	release
-# 153 "data/maps/DragonMountain_Top/scripts.pory"
+# 142 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 100
-# 154 "data/maps/DragonMountain_Top/scripts.pory"
+# 143 "data/maps/DragonMountain_Top/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 155 "data/maps/DragonMountain_Top/scripts.pory"
+# 144 "data/maps/DragonMountain_Top/scripts.pory"
 	showobjectat LOCALID_MOUNTAINTOP_SERGIO, MAP_DRAGON_MOUNTAIN_TOP
-# 156 "data/maps/DragonMountain_Top/scripts.pory"
+# 145 "data/maps/DragonMountain_Top/scripts.pory"
 	setobjectxyperm LOCALID_MOUNTAINTOP_SERGIO, 16, 13
-# 157 "data/maps/DragonMountain_Top/scripts.pory"
+# 146 "data/maps/DragonMountain_Top/scripts.pory"
 	setobjectxy LOCALID_MOUNTAINTOP_SERGIO, 16, 13
-# 158 "data/maps/DragonMountain_Top/scripts.pory"
+# 147 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_MOUNTAINTOP_SERGIO, DIR_WEST
-# 159 "data/maps/DragonMountain_Top/scripts.pory"
+# 148 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
-# 160 "data/maps/DragonMountain_Top/scripts.pory"
+# 149 "data/maps/DragonMountain_Top/scripts.pory"
 	hideobjectat LOCALID_MOUNTAINTOP_SERGIODRAGONITE, MAP_DRAGON_MOUNTAIN_TOP
-# 161 "data/maps/DragonMountain_Top/scripts.pory"
+# 150 "data/maps/DragonMountain_Top/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 162 "data/maps/DragonMountain_Top/scripts.pory"
+# 151 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_MOUNTAINTOP_SERGIO, DragonMountan_Top_EventScript_Sergio_Movement_4
-# 163 "data/maps/DragonMountain_Top/scripts.pory"
-	msgbox DragonMountan_Top_EventScript_Sergio_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 164 "data/maps/DragonMountain_Top/scripts.pory"
+# 152 "data/maps/DragonMountain_Top/scripts.pory"
+	msgbox DragonMountan_Top_EventScript_Sergio_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 153 "data/maps/DragonMountain_Top/scripts.pory"
 	waitmovement 0
-# 165 "data/maps/DragonMountain_Top/scripts.pory"
-	msgbox DragonMountan_Top_EventScript_Sergio_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 166 "data/maps/DragonMountain_Top/scripts.pory"
+# 154 "data/maps/DragonMountain_Top/scripts.pory"
+	msgbox DragonMountan_Top_EventScript_Sergio_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 155 "data/maps/DragonMountain_Top/scripts.pory"
 	playse SE_PIN
-# 167 "data/maps/DragonMountain_Top/scripts.pory"
+# 156 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48
-# 169 "data/maps/DragonMountain_Top/scripts.pory"
+# 158 "data/maps/DragonMountain_Top/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 170 "data/maps/DragonMountain_Top/scripts.pory"
+# 159 "data/maps/DragonMountain_Top/scripts.pory"
 	addobject LOCALID_MOUNTAINTOP_MOLTRES
-# 171 "data/maps/DragonMountain_Top/scripts.pory"
+# 160 "data/maps/DragonMountain_Top/scripts.pory"
 	showobjectat LOCALID_MOUNTAINTOP_MOLTRES, MAP_DRAGON_MOUNTAIN_TOP
-# 172 "data/maps/DragonMountain_Top/scripts.pory"
+# 161 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3
-# 173 "data/maps/DragonMountain_Top/scripts.pory"
+# 162 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_MOUNTAINTOP_SERGIO, DIR_NORTH
-# 174 "data/maps/DragonMountain_Top/scripts.pory"
+# 163 "data/maps/DragonMountain_Top/scripts.pory"
 	playmoncry SPECIES_MOLTRES, CRY_MODE_NORMAL
-# 175 "data/maps/DragonMountain_Top/scripts.pory"
+# 164 "data/maps/DragonMountain_Top/scripts.pory"
 	playse SE_PIN
-# 176 "data/maps/DragonMountain_Top/scripts.pory"
+# 165 "data/maps/DragonMountain_Top/scripts.pory"
 	setspeaker SP_NAME_SERGIO
-# 177 "data/maps/DragonMountain_Top/scripts.pory"
-	message DragonMountan_Top_EventScript_Sergio_Text_10
-# 178 "data/maps/DragonMountain_Top/scripts.pory"
+# 166 "data/maps/DragonMountain_Top/scripts.pory"
+	message DragonMountan_Top_EventScript_Sergio_Text_9
+# 167 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_DoubleExclamationMarkWithDelay48
-# 179 "data/maps/DragonMountain_Top/scripts.pory"
+# 168 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3
-# 180 "data/maps/DragonMountain_Top/scripts.pory"
+# 169 "data/maps/DragonMountain_Top/scripts.pory"
 	waitmovement LOCALID_MOUNTAINTOP_MOLTRES
-# 181 "data/maps/DragonMountain_Top/scripts.pory"
+# 170 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 182 "data/maps/DragonMountain_Top/scripts.pory"
+# 171 "data/maps/DragonMountain_Top/scripts.pory"
 	playse SE_PIN
-# 183 "data/maps/DragonMountain_Top/scripts.pory"
+# 172 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
-# 184 "data/maps/DragonMountain_Top/scripts.pory"
+# 173 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3
-# 185 "data/maps/DragonMountain_Top/scripts.pory"
+# 174 "data/maps/DragonMountain_Top/scripts.pory"
 	waitmovement LOCALID_MOUNTAINTOP_MOLTRES
-# 186 "data/maps/DragonMountain_Top/scripts.pory"
+# 175 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft8
-# 187 "data/maps/DragonMountain_Top/scripts.pory"
+# 176 "data/maps/DragonMountain_Top/scripts.pory"
 	closemessage
-# 188 "data/maps/DragonMountain_Top/scripts.pory"
+# 177 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 50
-# 189 "data/maps/DragonMountain_Top/scripts.pory"
+# 178 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_MOUNTAINTOP_SERGIO, DIR_WEST
-# 190 "data/maps/DragonMountain_Top/scripts.pory"
+# 179 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
-# 191 "data/maps/DragonMountain_Top/scripts.pory"
+# 180 "data/maps/DragonMountain_Top/scripts.pory"
+	msgbox DragonMountan_Top_EventScript_Sergio_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 181 "data/maps/DragonMountain_Top/scripts.pory"
+	call DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer
+# 182 "data/maps/DragonMountain_Top/scripts.pory"
+	delay 30
+# 183 "data/maps/DragonMountain_Top/scripts.pory"
 	msgbox DragonMountan_Top_EventScript_Sergio_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 192 "data/maps/DragonMountain_Top/scripts.pory"
+# 184 "data/maps/DragonMountain_Top/scripts.pory"
 	call DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer
-# 193 "data/maps/DragonMountain_Top/scripts.pory"
-	delay 30
-# 194 "data/maps/DragonMountain_Top/scripts.pory"
-	msgbox DragonMountan_Top_EventScript_Sergio_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 195 "data/maps/DragonMountain_Top/scripts.pory"
-	call DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer
-# 196 "data/maps/DragonMountain_Top/scripts.pory"
+# 185 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 20
-# 197 "data/maps/DragonMountain_Top/scripts.pory"
-	msgbox DragonMountan_Top_EventScript_Sergio_Text_13, speaker = SP_NAME_SERGIO
-# 198 "data/maps/DragonMountain_Top/scripts.pory"
+# 186 "data/maps/DragonMountain_Top/scripts.pory"
+	msgbox DragonMountan_Top_EventScript_Sergio_Text_12, speaker = SP_NAME_SERGIO
+# 187 "data/maps/DragonMountain_Top/scripts.pory"
 	playse SE_PIN
-# 199 "data/maps/DragonMountain_Top/scripts.pory"
+# 188 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HeartWithDelay48
-# 200 "data/maps/DragonMountain_Top/scripts.pory"
-	msgbox DragonMountan_Top_EventScript_Sergio_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 201 "data/maps/DragonMountain_Top/scripts.pory"
+# 189 "data/maps/DragonMountain_Top/scripts.pory"
+	msgbox DragonMountan_Top_EventScript_Sergio_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 190 "data/maps/DragonMountain_Top/scripts.pory"
 	call DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer
-# 202 "data/maps/DragonMountain_Top/scripts.pory"
+# 191 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, DragonMountan_Top_EventScript_Sergio_Movement_5
-# 203 "data/maps/DragonMountain_Top/scripts.pory"
+# 192 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_SOUTH
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_MOUNTAINTOP_SERGIO, DragonMountan_Top_EventScript_Sergio_Movement_6
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovement LOCALID_PLAYER, DragonMountan_Top_EventScript_Sergio_Movement_7
-# 206 "data/maps/DragonMountain_Top/scripts.pory"
+# 195 "data/maps/DragonMountain_Top/scripts.pory"
 	waitmovement LOCALID_PLAYER
-# 207 "data/maps/DragonMountain_Top/scripts.pory"
+# 196 "data/maps/DragonMountain_Top/scripts.pory"
 	turnobject LOCALID_MOUNTAINTOP_ABRA, DIR_EAST
-# 208 "data/maps/DragonMountain_Top/scripts.pory"
+# 197 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 20
-# 209 "data/maps/DragonMountain_Top/scripts.pory"
+# 198 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2
-# 210 "data/maps/DragonMountain_Top/scripts.pory"
+# 199 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
-# 211 "data/maps/DragonMountain_Top/scripts.pory"
+# 200 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2
-# 212 "data/maps/DragonMountain_Top/scripts.pory"
+# 201 "data/maps/DragonMountain_Top/scripts.pory"
 	release
-# 213 "data/maps/DragonMountain_Top/scripts.pory"
+# 202 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 30
-# 214 "data/maps/DragonMountain_Top/scripts.pory"
+# 203 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1
-# 215 "data/maps/DragonMountain_Top/scripts.pory"
+# 204 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
-# 216 "data/maps/DragonMountain_Top/scripts.pory"
+# 205 "data/maps/DragonMountain_Top/scripts.pory"
 	updateobjectsprite LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1
-# 217 "data/maps/DragonMountain_Top/scripts.pory"
+# 206 "data/maps/DragonMountain_Top/scripts.pory"
 	release
-# 218 "data/maps/DragonMountain_Top/scripts.pory"
+# 207 "data/maps/DragonMountain_Top/scripts.pory"
 	delay 20
-# 219 "data/maps/DragonMountain_Top/scripts.pory"
+# 208 "data/maps/DragonMountain_Top/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_SERGIO
-# 220 "data/maps/DragonMountain_Top/scripts.pory"
+# 209 "data/maps/DragonMountain_Top/scripts.pory"
 	setvar VAR_SERGIO_ROOM_STATE, 2
-# 221 "data/maps/DragonMountain_Top/scripts.pory"
+# 210 "data/maps/DragonMountain_Top/scripts.pory"
 	warp MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA
-# 222 "data/maps/DragonMountain_Top/scripts.pory"
+# 211 "data/maps/DragonMountain_Top/scripts.pory"
 	waitstate
-# 223 "data/maps/DragonMountain_Top/scripts.pory"
+# 212 "data/maps/DragonMountain_Top/scripts.pory"
 	releaseall
 	end
 
-DragonMountan_Top_EventScript_Sergio_2:
-# 140 "data/maps/DragonMountain_Top/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_EventScript_Sergio_Text_7
-	goto DragonMountan_Top_EventScript_Sergio_1
 
-DragonMountan_Top_EventScript_Sergio_5:
-# 145 "data/maps/DragonMountain_Top/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_EventScript_Sergio_Text_7
-	goto DragonMountan_Top_EventScript_Sergio_1
+DragonMountan_Top_EventScript_SergioBattle::
+# 217 "data/maps/DragonMountain_Top/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, DragonMountan_Top_EventScript_SergioBattle_2
+# 220 "data/maps/DragonMountain_Top/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_SERGIO
+# 221 "data/maps/DragonMountain_Top/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 222 "data/maps/DragonMountain_Top/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq DragonMountan_Top_EventScript_SergioBattle_5
+# 225 "data/maps/DragonMountain_Top/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_Text_SergioDefeated
+DragonMountan_Top_EventScript_SergioBattle_1:
+# 228 "data/maps/DragonMountain_Top/scripts.pory"
+	special HealPlayerParty
+	return
+
+DragonMountan_Top_EventScript_SergioBattle_2:
+# 218 "data/maps/DragonMountain_Top/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_Text_SergioDefeated
+	goto DragonMountan_Top_EventScript_SergioBattle_1
+
+DragonMountan_Top_EventScript_SergioBattle_5:
+# 223 "data/maps/DragonMountain_Top/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_MAIN, DragonMountan_Top_Text_SergioDefeated
+	goto DragonMountan_Top_EventScript_SergioBattle_1
 
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer::
-# 229 "data/maps/DragonMountain_Top/scripts.pory"
+# 238 "data/maps/DragonMountain_Top/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 230 "data/maps/DragonMountain_Top/scripts.pory"
+# 239 "data/maps/DragonMountain_Top/scripts.pory"
 	switch VAR_RESULT
-# 231 "data/maps/DragonMountain_Top/scripts.pory"
-	case DIR_NORTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_3
-# 234 "data/maps/DragonMountain_Top/scripts.pory"
-	case DIR_SOUTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_4
-# 237 "data/maps/DragonMountain_Top/scripts.pory"
-	case DIR_WEST, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_5
 # 240 "data/maps/DragonMountain_Top/scripts.pory"
+	case DIR_NORTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_3
+# 243 "data/maps/DragonMountain_Top/scripts.pory"
+	case DIR_SOUTH, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_4
+# 246 "data/maps/DragonMountain_Top/scripts.pory"
+	case DIR_WEST, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_5
+# 249 "data/maps/DragonMountain_Top/scripts.pory"
 	case DIR_EAST, DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_6
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1:
 	return
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_3:
-# 232 "data/maps/DragonMountain_Top/scripts.pory"
+# 241 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceDown
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_4:
-# 235 "data/maps/DragonMountain_Top/scripts.pory"
+# 244 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceUp
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_5:
-# 238 "data/maps/DragonMountain_Top/scripts.pory"
+# 247 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceRight
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
 DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_6:
-# 241 "data/maps/DragonMountain_Top/scripts.pory"
+# 250 "data/maps/DragonMountain_Top/scripts.pory"
 	applymovementandwait LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_WalkInPlaceLeft
 	goto DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer_1
 
@@ -488,127 +496,127 @@ DragonMountan_Top_EventScript_Sergio_Movement_2:
 	enable_jump_landing_ground_effect
 	step_end
 
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_3:
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	disable_jump_landing_ground_effect
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	lock_facing_direction
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	emote_x
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	jump_up
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	unlock_facing_direction
-# 151 "data/maps/DragonMountain_Top/scripts.pory"
+# 140 "data/maps/DragonMountain_Top/scripts.pory"
 	enable_jump_landing_ground_effect
 	step_end
 
-# 162 "data/maps/DragonMountain_Top/scripts.pory"
+# 151 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_4:
-# 162 "data/maps/DragonMountain_Top/scripts.pory"
+# 151 "data/maps/DragonMountain_Top/scripts.pory"
 	jump_in_place_left
-# 162 "data/maps/DragonMountain_Top/scripts.pory"
+# 151 "data/maps/DragonMountain_Top/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 202 "data/maps/DragonMountain_Top/scripts.pory"
+# 191 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_5:
-# 202 "data/maps/DragonMountain_Top/scripts.pory"
+# 191 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_down
-# 202 "data/maps/DragonMountain_Top/scripts.pory"
+# 191 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_left
-# 202 "data/maps/DragonMountain_Top/scripts.pory"
+# 191 "data/maps/DragonMountain_Top/scripts.pory"
 	face_down
 	step_end
 
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_6:
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_right
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 204 "data/maps/DragonMountain_Top/scripts.pory"
+# 193 "data/maps/DragonMountain_Top/scripts.pory"
 	face_left
 	step_end
 
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 DragonMountan_Top_EventScript_Sergio_Movement_7:
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_left
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
-# 205 "data/maps/DragonMountain_Top/scripts.pory"
+# 194 "data/maps/DragonMountain_Top/scripts.pory"
 	face_right
 	step_end
 
@@ -659,32 +667,28 @@ DragonMountan_Top_EventScript_Sergio_Text_6:
 	.string "el campo de batalla!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_7:
-# 140 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Guau! ¡Eso ha sido brutal!$"
-
-DragonMountan_Top_EventScript_Sergio_Text_8:
-# 163 "data/maps/DragonMountain_Top/scripts.pory"
+# 152 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "¡Felicidades! ¡Has cumplido el sueño de\n"
 	.string "WAH!$"
 
-DragonMountan_Top_EventScript_Sergio_Text_9:
-# 165 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_8:
+# 154 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "Ahora por supuesto no te quedes\n"
 	.string "dormido, ¡que hay un montón de cosas\l"
 	.string "por hacer!$"
 
-DragonMountan_Top_EventScript_Sergio_Text_10:
-# 177 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_9:
+# 166 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "¡Guau! ¡Mira quien apareció aquí!$"
 
-DragonMountan_Top_EventScript_Sergio_Text_11:
-# 191 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_10:
+# 180 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "Moltres es un Pokémon que siempre nos\n"
 	.string "ha acompañado, porque renacemos de\l"
 	.string "nuestras cenizas como el ave fénix.$"
 
-DragonMountan_Top_EventScript_Sergio_Text_12:
-# 194 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_11:
+# 183 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "Que locura que ya llevemos 20 años\n"
 	.string "entre todos construyendo esta\l"
 	.string "comunidad.\p"
@@ -694,14 +698,18 @@ DragonMountan_Top_EventScript_Sergio_Text_12:
 	.string "nuestro conocimiento, buscando\l"
 	.string "mantener el espíritu divertido.$"
 
-DragonMountan_Top_EventScript_Sergio_Text_13:
-# 197 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_12:
+# 186 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "\p"
 	.string "¡Mil gracias por haber formado parte de\n"
 	.string "esta celebración!$"
 
-DragonMountan_Top_EventScript_Sergio_Text_14:
-# 200 "data/maps/DragonMountain_Top/scripts.pory"
+DragonMountan_Top_EventScript_Sergio_Text_13:
+# 189 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "Ahora ven, acompañame, es hora de dejar\n"
 	.string "registro de tu hazaña en el hall de la\l"
 	.string "fama.$"
+
+DragonMountan_Top_Text_SergioDefeated::
+# 232 "data/maps/DragonMountain_Top/scripts.pory"
+	.string "¡Guau! ¡Eso ha sido brutal!$"
