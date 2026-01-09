@@ -37,4 +37,5 @@ void InitTilesetAnim_RoomBoo(void);
 void InitTilesetAnim_TokynWarRoom(void);
 void InitTilesetAnim_OmegaRoom(void);
 void InitTilesetAnim_AngelRoom(void);
+void InitTilesetAnim_DriveKatherineRoom(void);
 #endif // GUARD_TILESET_ANIMS_H
