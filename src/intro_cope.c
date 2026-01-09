@@ -45,15 +45,18 @@
 static const u32 sBg1_Tiles[] = INCBIN_U32("graphics/cope_speech/bgs/bg1_tileset.4bpp.lz");
 static const u32 sBg1_Map[] = INCBIN_U32("graphics/cope_speech/bgs/bg1_tilemap.bin.lz");
 
+static const u32 sBg2_Tiles[] = INCBIN_U32("graphics/cope_speech/bgs/bg2_tileset.4bpp.lz");
+static const u32 sBg2_Map[] = INCBIN_U32("graphics/cope_speech/bgs/bg2_tilemap.bin.lz");
+
 static const u16 sBg1Pal[] = INCBIN_U16("graphics/cope_speech/bgs/bg1.gbapal");
 
 #define TAG_COPE_SPRITE 100
-
+#define CINTA_COPE_TAG  101
 //------------------------------------------------------------------------------
 //BGS
 //------------------------------------------------------------------------------
 
-static const struct BgTemplate sBgTemplateCopeSpeech[2] =
+static const struct BgTemplate sBgTemplateCopeSpeech[3] =
     {
         {
             .bg = 0,
@@ -67,23 +70,22 @@ static const struct BgTemplate sBgTemplateCopeSpeech[2] =
 
         {
             .bg = 1,
-            .charBaseIndex = 2, // incrementos de 0x4000
+            .charBaseIndex = 1, // incrementos de 0x4000
             .mapBaseIndex = 30, // incrementos 0x800
             .screenSize = 0,
             .paletteMode = 0,
-            .priority = 3,
+            .priority = 1,
             .baseTile = 0,
         },
-
-        // {
-        //     .bg = 2,
-        //     .charBaseIndex = 2,
-        //     .mapBaseIndex = 14, //26
-        //     .screenSize = 2,
-        //     .paletteMode = 0,
-        //     .priority = 1,
-        //     .baseTile = 0,
-        // },
+        {
+            .bg = 2,
+            .charBaseIndex = 2,
+            .mapBaseIndex = 26,
+            .screenSize = 2,
+            .paletteMode = 0,
+            .priority = 2,
+            .baseTile = 0,
+        },
 
         // {
         //     .bg = 3,
@@ -105,12 +107,15 @@ static void LoadCopeSpeechBgs()
     LZ77UnCompVram(sBg1_Tiles, (void *)VRAM + 0x4000 * sBgTemplateCopeSpeech[1].charBaseIndex);
     LZ77UnCompVram(sBg1_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[1].mapBaseIndex));
 
+    LZ77UnCompVram(sBg2_Tiles, (void *)VRAM + 0x4000 * sBgTemplateCopeSpeech[2].charBaseIndex);
+    LZ77UnCompVram(sBg2_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
+
     LoadPalette(sBg1Pal, 0x00, 0x20);
 
     ResetAllBgsCoordinates();
 
     HideBg(3);
-    HideBg(2);
+    ShowBg(2);
     ShowBg(1);
     ShowBg(0);
 }
@@ -160,9 +165,28 @@ static const struct OamData gSpriteOamData64 =
     .affineParam = 0,
 };
 
+static const struct OamData gSpriteOamData16x32 =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(32x32),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x32),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
 //Cope SPRITE
 static const u16 CopePal[] = INCBIN_U16("graphics/cope_speech/cope.gbapal");
 static const u8 CopeSprite[] = INCBIN_U8("graphics/cope_speech/copeSprite.4bpp");
+static const u8 CintaCopeSprite[] = INCBIN_U8("graphics/cope_speech/cintaSprite.4bpp");
+
 
 static const struct SpriteSheet spriteSheetCope =
 {
@@ -249,9 +273,42 @@ static const struct SpriteTemplate spriteTemplateCope =
     .callback = SpriteCallbackDummy, //ANIMACIÓN DEL ICONO ----------
 };
 
+
+static const struct SpriteSheet sSpriteSheet_CintaCope =
+{
+    .data = CintaCopeSprite, 
+    .size = 1024, 
+    .tag = CINTA_COPE_TAG,
+};
+
+static const union AnimCmd sAnimCintaCope[] =
+{
+    ANIMCMD_FRAME(0,   20),
+    ANIMCMD_FRAME(16,   20),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sAnimsCintaCope[] =
+{
+    sAnimCintaCope,
+};
+
+static const struct SpriteTemplate sCintaCopeSpriteTemplate =
+{
+    .tileTag = CINTA_COPE_TAG,
+    .paletteTag = TAG_COPE_SPRITE,
+    .oam = &gSpriteOamData16x32,
+    .anims = sAnimsCintaCope,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackCopeMovement,
+};
+
+
 void LoadSpriteGraphicsAndPal()
 {
     LoadSpriteSheet(&spriteSheetCope);
+    LoadSpriteSheet(&sSpriteSheet_CintaCope);
     LoadSpritePalette(&spritePaletteCope);
 }
 
@@ -286,7 +343,7 @@ static void CB2_CopeSpeech()
 
 #define tSpriteCopeBodyId data[1]
 #define tSpriteCopeLegsId data[2]
-#define tBlendValue data[3]
+#define tSpriteCopeCintaId data[3]
 #define tMonSpriteId data[6]
 #define tTimer data[7]
 
@@ -324,7 +381,9 @@ void CB2_InitCopeSpeech()
         taskId = CreateTask(TaskInitCopeSpeechWaitForFade, 0);
         gTasks[taskId].tSpriteCopeBodyId = LoadCopeSprite(40,COPE_BASE);
         gTasks[taskId].tSpriteCopeLegsId = LoadCopeSprite(104,COPE_LEGS);
+        gTasks[taskId].tSpriteCopeCintaId =  CreateSprite(&sCintaCopeSpriteTemplate, 130, 22, 0);
         gSprites[gTasks[taskId].tSpriteCopeBodyId].oam.priority=1;
+        gSprites[gTasks[taskId].tSpriteCopeCintaId].oam.priority=1;
         gSprites[gTasks[taskId].tSpriteCopeBodyId].callback = SpriteCallbackCopeMovement;
         gSprites[gTasks[taskId].tSpriteCopeLegsId].oam.priority=1;
         break;
@@ -336,10 +395,9 @@ static void TaskTimer(u8 taskId);
 
 static void TaskCopeSpeech_AnimationBall(u8 taskId);
 static void TaskCopeSpeech_ShowMon(u8 taskId);
+static void TaskCopeSpeech_WaitMonFinishAnim(u8 taskId);
 static void TaskCopeSpeech_CopeDialogue1(u8 taskId);
 static void TaskCopeSpeech_CopeDialogue2(u8 taskId);
-static void TaskCopeSpeech_CopeDialogue3(u8 taskId);
-static void TaskCopeSpeech_CopeDialogue4(u8 taskId);
 static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId);
 static void Task_NewGameCleanup(u8 taskId);
 static void TaskCopeSpeech_FadeOut(u8 taskId);
@@ -357,7 +415,8 @@ static void TaskInitCopeSpeechWaitForFade(u8 taskId)
 
 static void TaskTimer(u8 taskId)
 {
-    if(++gTasks[taskId].tTimer > 60){
+    if(++gTasks[taskId].tTimer > 60)
+    {
         gTasks[taskId].tTimer = 0;
         gTasks[taskId].func = TaskInitCopeSpeech;
     }
@@ -372,7 +431,7 @@ static void TaskInitCopeSpeech(u8 taskId)
         PutWindowTilemap(0);
         CopyWindowToVram(0, COPYWIN_GFX);
         NewGameBirchSpeech_ClearWindow(0);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
+        StringExpandPlaceholders(gStringVar4, gText_Cope_Welcome);
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = TaskCopeSpeech_AnimationBall;
 }
@@ -388,15 +447,26 @@ static void TaskCopeSpeech_AnimationBall(u8 taskId)
     }
 }
 
+#include "pokemon.h"
+
 static void TaskCopeSpeech_ShowMon(u8 taskId)
 {
     if(++gTasks[taskId].tTimer > 34 && !IsSEPlaying())
     {
         PlaySE(SE_BALL_OPEN);
         StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
-        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_MARILL,87,85,5);
-        StartSpriteAnim(&gSprites[gTasks[taskId].tMonSpriteId], 1);
+        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_KECLEON,87,85,5);
         StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
+        PokemonSummaryDoMonAnimation(&gSprites[gTasks[taskId].tMonSpriteId], SPECIES_KECLEON, FALSE);
+        gTasks[taskId].func = TaskCopeSpeech_WaitMonFinishAnim;
+    }
+}
+
+static void TaskCopeSpeech_WaitMonFinishAnim(u8 taskId)
+{
+    if(gSprites[gTasks[taskId].tMonSpriteId].animEnded)
+    {
+        StartSpriteAnim(&gSprites[gTasks[taskId].tMonSpriteId], 0);
         gTasks[taskId].func = TaskCopeSpeech_CopeDialogue1;
     }
 }
@@ -407,81 +477,51 @@ static void TaskCopeSpeech_CopeDialogue1(u8 taskId)
     {
         StopCryAndClearCrySongs();
         FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
-        StringExpandPlaceholders(gStringVar4, gText_ChoosePokemon);
+        StringExpandPlaceholders(gStringVar4, gText_Cope_Pokemon);
         AddTextPrinterForMessage(TRUE);
-        PlayCry_ByMode(SPECIES_MUK, 0, CRY_MODE_NORMAL);
+        // PlayCry_ByMode(SPECIES_KECLEON, 0, CRY_MODE_NORMAL);
         gTasks[taskId].func = TaskCopeSpeech_CopeDialogue2;
     }
 }
 
-
+static void TaskCopeSpeech_WaitPressA(u8 taskId);
+static void TaskCopeSpeech_OpenDoor(u8 taskId);
 
 static void TaskCopeSpeech_CopeDialogue2(u8 taskId)
 {
     if(IsCryFinished() && !RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
     {
         FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
-        StringExpandPlaceholders(gStringVar4, gText_Birch_AndYouAre);
+        StringExpandPlaceholders(gStringVar4, gText_Cope_ExplainChalenge);
         AddTextPrinterForMessage(TRUE);
-
-        // gTasks[taskId].tBlendValue = 0;
-        // gTasks[taskId].tTimer = 0;
-        // gSprites[gTasks[taskId].tSpriteCopeBodyId].oam.objMode = ST_OAM_OBJ_BLEND;
-        // gSprites[gTasks[taskId].tSpriteCopeLegsId].oam.objMode = ST_OAM_OBJ_BLEND;
-        // gSprites[gTasks[taskId].tMonSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-
-        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue3;
+        gTasks[taskId].func = TaskCopeSpeech_WaitPressA;
     }
 }
 
-// static void TaskCopeSpeech_Blend(u8 taskId);
-
-// static void TaskCopeSpeech_Blend(u8 taskId)
-// {
-//     if (!RunTextPrintersAndIsPrinter0Active() && ++gTasks[taskId].tTimer % 2 == 0)
-//     {
-//         gTasks[taskId].tTimer = 0;
-//         //hacemos transparente el sprite de profesor
-//         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
-//         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(15 - gTasks[taskId].tBlendValue , gTasks[taskId].tBlendValue));
-//         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
-
-//         if(gTasks[taskId].tBlendValue != 15)
-//         {
-//             gTasks[taskId].tBlendValue += 1;
-
-//         }else{
-//             DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeBodyId]);
-//             DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeLegsId]);
-//             FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
-
-//             gTasks[taskId].tBlendValue = 0;
-//             gTasks[taskId].func = TaskCopeSpeech_ShowPlayerSprite;
-//         }
-//     }
-// }
-
-static void TaskCopeSpeech_CopeDialogue3(u8 taskId)
+#define tSliceBg2 data[4]
+static void TaskCopeSpeech_WaitPressA(u8 taskId)
 {
-    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    if(!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
     {
-        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
-        StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsPlayer);
-        AddTextPrinterForMessage(TRUE);
-        gTasks[taskId].func = TaskCopeSpeech_CopeDialogue4;
+        gTasks[taskId].tTimer = 0;
+        gTasks[taskId].tSliceBg2 = 0;
+        gTasks[taskId].func = TaskCopeSpeech_OpenDoor;
     }
 }
 
-static void TaskCopeSpeech_CopeDialogue4(u8 taskId)
+
+static void TaskCopeSpeech_OpenDoor(u8 taskId)
 {
-    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    if(gTasks[taskId].tTimer % 4 == 0)
     {
-        FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
-        StringExpandPlaceholders(gStringVar4, gText_Birch_AreYouReady);
-        AddTextPrinterForMessage(TRUE);
-        gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeech;
+        gTasks[taskId].tSliceBg2+=1;
+        SetGpuReg(REG_OFFSET_BG2HOFS, gTasks[taskId].tSliceBg2);
+
+        if(gTasks[taskId].tSliceBg2 >= 33)
+            gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeech;
     }
 }
+
 
 static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId)
 {
@@ -499,6 +539,7 @@ static void Task_NewGameCleanup(u8 taskId)
         CleanupOverworldWindowsAndTilemaps();
         DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeBodyId]);
         DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeLegsId]);
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
         gTasks[taskId].func = TaskCopeSpeech_FadeOut;
     }
 }
