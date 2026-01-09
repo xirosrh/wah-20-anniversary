@@ -158,19 +158,19 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 111 "data/maps/ReyBooRoom/scripts.pory"
 	msgbox ReyBooRoom_EventScript_BooEncounter_Text_7, speaker = SP_NAME_REY_BOO
 # 112 "data/maps/ReyBooRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_EventScript_BooEncounter_Text_8
+	call ReyBooRoom_EventScript_ReyBooBattle
 # 113 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_9
 # 114 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
 # 115 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_9, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_8, speaker = SP_NAME_REY_BOO
 # 116 "data/maps/ReyBooRoom/scripts.pory"
 	playbgm MUS_WEATHER_GROUDON, FALSE
 # 117 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceDown
 # 118 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 119 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown2
 # 120 "data/maps/ReyBooRoom/scripts.pory"
@@ -202,13 +202,13 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 133 "data/maps/ReyBooRoom/scripts.pory"
 	playse SE_FAILURE
 # 134 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_11, MSGBOX_AUTOCLOSE_TOP
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_10, MSGBOX_AUTOCLOSE_TOP
 # 135 "data/maps/ReyBooRoom/scripts.pory"
 	playse SE_PIN
 # 136 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_XWithDelay48
 # 137 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 138 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
 # 139 "data/maps/ReyBooRoom/scripts.pory"
@@ -220,7 +220,7 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 142 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48
 # 143 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 144 "data/maps/ReyBooRoom/scripts.pory"
 	special SpawnCameraObject
 # 145 "data/maps/ReyBooRoom/scripts.pory"
@@ -230,7 +230,7 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 147 "data/maps/ReyBooRoom/scripts.pory"
 	waitmovement 0
 # 148 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 149 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_11
 # 150 "data/maps/ReyBooRoom/scripts.pory"
@@ -238,7 +238,7 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 151 "data/maps/ReyBooRoom/scripts.pory"
 	turnobject LOCALID_REYBOOROOM_BOO, DIR_SOUTH
 # 152 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 153 "data/maps/ReyBooRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 # 154 "data/maps/ReyBooRoom/scripts.pory"
@@ -288,6 +288,34 @@ ReyBooRoom_EventScript_BooEncounter_6:
 # 93 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkLeft2
 	goto ReyBooRoom_EventScript_BooEncounter_1
+
+
+ReyBooRoom_EventScript_ReyBooBattle::
+# 171 "data/maps/ReyBooRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReyBooRoom_EventScript_ReyBooBattle_2
+# 174 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_REYBOO
+# 175 "data/maps/ReyBooRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 176 "data/maps/ReyBooRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_5
+# 179 "data/maps/ReyBooRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated
+ReyBooRoom_EventScript_ReyBooBattle_1:
+# 182 "data/maps/ReyBooRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+ReyBooRoom_EventScript_ReyBooBattle_2:
+# 172 "data/maps/ReyBooRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
+	goto ReyBooRoom_EventScript_ReyBooBattle_1
+
+ReyBooRoom_EventScript_ReyBooBattle_5:
+# 177 "data/maps/ReyBooRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
+	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 
 # 43 "data/maps/ReyBooRoom/scripts.pory"
@@ -575,34 +603,34 @@ ReyBooRoom_EventScript_BooEncounter_Text_7:
 	.string "invocado…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_8:
-# 112 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Madre mía!$"
-
-ReyBooRoom_EventScript_BooEncounter_Text_9:
 # 115 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Muy bien, has pasado la prueba física…\n"
 	.string "Ahora prepárate para la inesperada…$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_10:
+ReyBooRoom_EventScript_BooEncounter_Text_9:
 # 118 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Mis fenomenales poderes!$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_11:
+ReyBooRoom_EventScript_BooEncounter_Text_10:
 # 134 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Batería baja {DOWN_ARROW}$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_12:
+ReyBooRoom_EventScript_BooEncounter_Text_11:
 # 137 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Maldita sea!$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_13:
+ReyBooRoom_EventScript_BooEncounter_Text_12:
 # 143 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Muy bien…$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_14:
+ReyBooRoom_EventScript_BooEncounter_Text_13:
 # 148 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Por esta vez has ganado.$"
 
-ReyBooRoom_EventScript_BooEncounter_Text_15:
+ReyBooRoom_EventScript_BooEncounter_Text_14:
 # 152 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Volveré!$"
+
+ReyBooRoom_Text_ReyBooDefeated::
+# 186 "data/maps/ReyBooRoom/scripts.pory"
+	.string "¡Madre mía!$"

@@ -66,6 +66,7 @@
 #include "constants/weather.h"
 #include "constants/field_pics.h"
 #include "constants/speaker_names.h"
+#include "constants/wah_team_indexes.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"

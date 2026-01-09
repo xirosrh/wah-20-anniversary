@@ -71,7 +71,7 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_versus, jump_in_place_down * 2, delay_16))
     msgbox(format("Perfecto, ¡vamos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     waitmovement(0)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_MAIN, format("¡Qué nivel has demostrado! No esperaba un combate tan entretenido."))
+    call(OmegaRoom_EventScript_OmegaBattle)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(emote_x, lock_facing_direction, jump_up, unlock_facing_direction, face_down, delay_16 * 2))
     delay(40)
@@ -127,4 +127,24 @@ script OmegaRoom_EventScript_BrokenCapsule {
     setmetatile(6, 7, METATILE_room_omega_BROKEN_GLASS, FALSE)
     special(DrawWholeMapView)
     return
+}
+
+script OmegaRoom_EventScript_OmegaBattle {
+     if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_OMEGA)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text OmegaRoom_Text_OmegaDefeated {
+    format("¡Qué nivel has demostrado! No esperaba un combate tan entretenido.")
 }

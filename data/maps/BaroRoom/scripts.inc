@@ -118,9 +118,9 @@ BaroRoom_OnFrame::
 # 73 "data/maps/BaroRoom/scripts.pory"
 	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown
 # 74 "data/maps/BaroRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_OnFrame_Text_6
+	call BaroRoom_EventScript_BaroBattle
 # 75 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+	msgbox BaroRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
 # 76 "data/maps/BaroRoom/scripts.pory"
 	playse SE_PIN
 # 77 "data/maps/BaroRoom/scripts.pory"
@@ -128,7 +128,7 @@ BaroRoom_OnFrame::
 # 78 "data/maps/BaroRoom/scripts.pory"
 	delay 20
 # 79 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+	msgbox BaroRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
 # 80 "data/maps/BaroRoom/scripts.pory"
 	special SpawnCameraObject
 # 81 "data/maps/BaroRoom/scripts.pory"
@@ -148,7 +148,7 @@ BaroRoom_OnFrame::
 # 90 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
 # 91 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+	msgbox BaroRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
 # 92 "data/maps/BaroRoom/scripts.pory"
 	delay 20
 # 93 "data/maps/BaroRoom/scripts.pory"
@@ -248,6 +248,34 @@ BaroRoom_EventScript_CloseSideDoor::
 # 145 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
+
+
+BaroRoom_EventScript_BaroBattle::
+# 150 "data/maps/BaroRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, BaroRoom_EventScript_BaroBattle_2
+# 153 "data/maps/BaroRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_BARO
+# 154 "data/maps/BaroRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 155 "data/maps/BaroRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq BaroRoom_EventScript_BaroBattle_5
+# 158 "data/maps/BaroRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated
+BaroRoom_EventScript_BaroBattle_1:
+# 161 "data/maps/BaroRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+BaroRoom_EventScript_BaroBattle_2:
+# 151 "data/maps/BaroRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
+	goto BaroRoom_EventScript_BaroBattle_1
+
+BaroRoom_EventScript_BaroBattle_5:
+# 156 "data/maps/BaroRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
+	goto BaroRoom_EventScript_BaroBattle_1
 
 
 # 25 "data/maps/BaroRoom/scripts.pory"
@@ -358,17 +386,17 @@ BaroRoom_OnFrame_Text_5:
 	.string "contigo. ¿Vamos?$"
 
 BaroRoom_OnFrame_Text_6:
-# 74 "data/maps/BaroRoom/scripts.pory"
-	.string "En fin…$"
-
-BaroRoom_OnFrame_Text_7:
 # 75 "data/maps/BaroRoom/scripts.pory"
 	.string "El Pikachu no te lo esperabas, ¿eh?$"
 
-BaroRoom_OnFrame_Text_8:
+BaroRoom_OnFrame_Text_7:
 # 79 "data/maps/BaroRoom/scripts.pory"
 	.string "Pues ya estaría. Ya he cumplido. Chao.$"
 
-BaroRoom_OnFrame_Text_9:
+BaroRoom_OnFrame_Text_8:
 # 91 "data/maps/BaroRoom/scripts.pory"
 	.string "Bueno, buena suerte y tal.$"
+
+BaroRoom_Text_BaroDefeated::
+# 165 "data/maps/BaroRoom/scripts.pory"
+	.string "En fin…$"
