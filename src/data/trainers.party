@@ -1140,10 +1140,27 @@ IVs: 0 Atk
 - Energy Ball
 - Trick
 
+=== TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Youngster
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Sandslash
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- Dig
+- Slash
+- Sand Attack
+- Poison Sting
+
 === TRAINER_WAH_ADMIN_JAVS_MAIN ===
 Name: Javs
 Class: WAH Admin
-Pic: Youngster
+Pic: Javs
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1180,6 +1197,23 @@ IVs: 0 Atk
 - Roost
 - Defog
 
+=== TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Sandslash
+Level: 30
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Dig
+- Slash
+- Sand Attack
+- Poison Sting
+
 === TRAINER_WAH_ADMIN_SERGIO_MAIN ===
 Name: Sergio
 Class: WAH Admin
@@ -1213,40 +1247,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Sandslash
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-=== TRAINER_DUSTY_2 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandslash
-Level: 27
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-=== TRAINER_DUSTY_3 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandslash
-Level: 30
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Dig
 - Slash
 - Sand Attack

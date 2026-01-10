@@ -292,9 +292,9 @@ ReonekyRoom_EventScript_Reoneky::
 # 201 "data/maps/ReonekyRoom/scripts.pory"
 	msgbox ReonekyRoom_EventScript_Reoneky_Text_5, speaker = SP_NAME_REONEKY
 # 202 "data/maps/ReonekyRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_EventScript_Reoneky_Text_6
+	call ReonekyRoom_EventScript_ReonekyBattle
 # 203 "data/maps/ReonekyRoom/scripts.pory"
-	msgbox ReonekyRoom_EventScript_Reoneky_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY
+	msgbox ReonekyRoom_EventScript_Reoneky_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY
 # 204 "data/maps/ReonekyRoom/scripts.pory"
 	playse SE_PIN
 # 205 "data/maps/ReonekyRoom/scripts.pory"
@@ -329,6 +329,34 @@ ReonekyRoom_EventScript_Reoneky_2:
 # 178 "data/maps/ReonekyRoom/scripts.pory"
 	release
 	end
+
+
+ReonekyRoom_EventScript_ReonekyBattle::
+# 216 "data/maps/ReonekyRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReonekyRoom_EventScript_ReonekyBattle_2
+# 219 "data/maps/ReonekyRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_REONEKY
+# 220 "data/maps/ReonekyRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 221 "data/maps/ReonekyRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ReonekyRoom_EventScript_ReonekyBattle_5
+# 224 "data/maps/ReonekyRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, ReonekyRoom_Text_ReonekyDefeated
+ReonekyRoom_EventScript_ReonekyBattle_1:
+# 227 "data/maps/ReonekyRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+ReonekyRoom_EventScript_ReonekyBattle_2:
+# 217 "data/maps/ReonekyRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_Text_ReonekyDefeated
+	goto ReonekyRoom_EventScript_ReonekyBattle_1
+
+ReonekyRoom_EventScript_ReonekyBattle_5:
+# 222 "data/maps/ReonekyRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_Text_ReonekyDefeated
+	goto ReonekyRoom_EventScript_ReonekyBattle_1
 
 
 # 54 "data/maps/ReonekyRoom/scripts.pory"
@@ -576,11 +604,11 @@ ReonekyRoom_EventScript_Reoneky_Text_5:
 	.string "¡A darle caña!$"
 
 ReonekyRoom_EventScript_Reoneky_Text_6:
-# 202 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Buen combate, he disfrutado como un\n"
-	.string "niño.$"
-
-ReonekyRoom_EventScript_Reoneky_Text_7:
 # 203 "data/maps/ReonekyRoom/scripts.pory"
 	.string "Apuntas maneras, el talento tiene\n"
 	.string "límites, el esfuerzo y la pasión, no.$"
+
+ReonekyRoom_Text_ReonekyDefeated::
+# 231 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Buen combate, he disfrutado como un\n"
+	.string "niño.$"

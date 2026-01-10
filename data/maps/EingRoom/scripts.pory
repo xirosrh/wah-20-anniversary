@@ -106,13 +106,33 @@ script EingRoom_EventScript_Eing {
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Versus)
     call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
     delay(30)
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_MAIN, format("¡Míralo, si parecía tonto al principio!"))
+    call(EingRoom_EventScript_EingBattle)
     msgbox(format("Enhorabuena chaval, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado..."))
     call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
     setflag(FLAG_DEFEATED_ADMIN_EING)
     release
     end
+}
+
+script EingRoom_EventScript_EingBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_EING)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_ALTERNATIVE, EingRoom_Text_EingDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text EingRoom_Text_EingDefeated {
+    format("¡Míralo, si parecía tonto al principio!")
 }
 
 script EingRoom_EventScript_WalkInPlaceEingFacingPlayer {
