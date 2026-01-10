@@ -1,5 +1,4 @@
 #include "global.h"
-#include "trainer_pokemon_sprites.h"
 #include "bg.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -10,20 +9,14 @@
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "international_string_util.h"
-#include "link.h"
 #include "main.h"
 #include "main_menu.h"
 #include "menu.h"
-#include "list_menu.h"
-#include "mystery_event_menu.h"
-#include "naming_screen.h"
 #include "option_menu.h"
 #include "overworld.h"
 #include "palette.h"
-#include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
-#include "random.h"
 #include "rtc.h"
 #include "save.h"
 #include "scanline_effect.h"
@@ -34,12 +27,27 @@
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
-#include "title_screen.h"
 #include "window.h"
-#include "mystery_gift_menu.h"
 #include "menu_helpers.h"
 #include "main_menu.h"
+#include "trainer_pokemon_sprites.h"
 #include "constants/species.h"
+#include "pokemon.h"
+
+static void TaskInitCopeSpeechWaitForFade(u8 taskId);
+static void TaskInitCopeSpeech(u8 taskId);
+static void TaskTimer(u8 taskId);
+static void TaskCopeSpeech_AnimationBall(u8 taskId);
+static void TaskCopeSpeech_ShowMon(u8 taskId);
+static void TaskCopeSpeech_WaitMonFinishAnim(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue1(u8 taskId);
+static void TaskCopeSpeech_WaitPressA(u8 taskId);
+static void TaskCopeSpeech_CopeDialogue2(u8 taskId);
+static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId);
+static void TaskCopeSpeech_OpenDoor(u8 taskId);
+static void TaskCopeSpeech_NewGameCleanup(u8 taskId);
+static void TaskCopeSpeech_FadeOut(u8 taskId);
+
 
 //BG
 static const u32 sBg1_Tiles[] = INCBIN_U32("graphics/cope_speech/bgs/bg1_tileset.4bpp.lz");
@@ -52,6 +60,8 @@ static const u16 sBg1Pal[] = INCBIN_U16("graphics/cope_speech/bgs/bg1.gbapal");
 
 #define TAG_COPE_SPRITE 100
 #define CINTA_COPE_TAG  101
+
+#define MAX_SLICE_BG_2 33
 //------------------------------------------------------------------------------
 //BGS
 //------------------------------------------------------------------------------
@@ -347,7 +357,6 @@ static void CB2_CopeSpeech()
 #define tMonSpriteId data[6]
 #define tTimer data[7]
 
-static void TaskInitCopeSpeechWaitForFade(u8 taskId);
 
 void CB2_InitCopeSpeech()
 {
@@ -390,19 +399,6 @@ void CB2_InitCopeSpeech()
     }
 }
 
-static void TaskInitCopeSpeech(u8 taskId);
-static void TaskTimer(u8 taskId);
-
-static void TaskCopeSpeech_AnimationBall(u8 taskId);
-static void TaskCopeSpeech_ShowMon(u8 taskId);
-static void TaskCopeSpeech_WaitMonFinishAnim(u8 taskId);
-static void TaskCopeSpeech_CopeDialogue1(u8 taskId);
-static void TaskCopeSpeech_CopeDialogue2(u8 taskId);
-static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId);
-static void Task_NewGameCleanup(u8 taskId);
-static void TaskCopeSpeech_FadeOut(u8 taskId);
-
-
 static void TaskInitCopeSpeechWaitForFade(u8 taskId)
 {
     if(!gPaletteFade.active)
@@ -410,7 +406,6 @@ static void TaskInitCopeSpeechWaitForFade(u8 taskId)
         gTasks[taskId].tTimer = 0;
         gTasks[taskId].func= TaskTimer;
     }
-
 }
 
 static void TaskTimer(u8 taskId)
@@ -424,16 +419,16 @@ static void TaskTimer(u8 taskId)
 
 static void TaskInitCopeSpeech(u8 taskId)
 {
-        InitWindows(sWindowTemplate_CopeSpeech);
-        LoadMainMenuWindowFrameTiles(0, 0xF3);
-        LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
-        NewGameBirchSpeech_ShowDialogueWindow(0, TRUE);
-        PutWindowTilemap(0);
-        CopyWindowToVram(0, COPYWIN_GFX);
-        NewGameBirchSpeech_ClearWindow(0);
-        StringExpandPlaceholders(gStringVar4, gText_Cope_Welcome);
-        AddTextPrinterForMessage(TRUE);
-        gTasks[taskId].func = TaskCopeSpeech_AnimationBall;
+    InitWindows(sWindowTemplate_CopeSpeech);
+    LoadMainMenuWindowFrameTiles(0, 0xF3);
+    LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+    NewGameBirchSpeech_ShowDialogueWindow(0, TRUE);
+    PutWindowTilemap(0);
+    CopyWindowToVram(0, COPYWIN_GFX);
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Cope_Welcome);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = TaskCopeSpeech_AnimationBall;
 }
 
 
@@ -447,7 +442,6 @@ static void TaskCopeSpeech_AnimationBall(u8 taskId)
     }
 }
 
-#include "pokemon.h"
 
 static void TaskCopeSpeech_ShowMon(u8 taskId)
 {
@@ -455,7 +449,7 @@ static void TaskCopeSpeech_ShowMon(u8 taskId)
     {
         PlaySE(SE_BALL_OPEN);
         StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
-        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_KECLEON,87,85,5);
+        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_KECLEON, 87, 85, 5);
         StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
         PokemonSummaryDoMonAnimation(&gSprites[gTasks[taskId].tMonSpriteId], SPECIES_KECLEON, FALSE);
         gTasks[taskId].func = TaskCopeSpeech_WaitMonFinishAnim;
@@ -479,13 +473,12 @@ static void TaskCopeSpeech_CopeDialogue1(u8 taskId)
         FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(1));
         StringExpandPlaceholders(gStringVar4, gText_Cope_Pokemon);
         AddTextPrinterForMessage(TRUE);
-        // PlayCry_ByMode(SPECIES_KECLEON, 0, CRY_MODE_NORMAL);
+        PlayCry_ByMode(SPECIES_KECLEON, 0, CRY_MODE_NORMAL);
         gTasks[taskId].func = TaskCopeSpeech_CopeDialogue2;
     }
 }
 
-static void TaskCopeSpeech_WaitPressA(u8 taskId);
-static void TaskCopeSpeech_OpenDoor(u8 taskId);
+
 
 static void TaskCopeSpeech_CopeDialogue2(u8 taskId)
 {
@@ -503,6 +496,10 @@ static void TaskCopeSpeech_WaitPressA(u8 taskId)
 {
     if(!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
     {
+        ClearDialogWindowAndFrameToTransparent(0, TRUE);
+        // ClearStdWindowAndFrameToTransparent(0, FALSE);
+        CopyWindowToVram(0, COPYWIN_GFX);
+        RemoveWindow(0);
         gTasks[taskId].tTimer = 0;
         gTasks[taskId].tSliceBg2 = 0;
         gTasks[taskId].func = TaskCopeSpeech_OpenDoor;
@@ -517,7 +514,7 @@ static void TaskCopeSpeech_OpenDoor(u8 taskId)
         gTasks[taskId].tSliceBg2+=1;
         SetGpuReg(REG_OFFSET_BG2HOFS, gTasks[taskId].tSliceBg2);
 
-        if(gTasks[taskId].tSliceBg2 >= 33)
+        if(gTasks[taskId].tSliceBg2 >= MAX_SLICE_BG_2)
             gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeech;
     }
 }
@@ -525,14 +522,14 @@ static void TaskCopeSpeech_OpenDoor(u8 taskId)
 
 static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId)
 {
-    if (!RunTextPrintersAndIsPrinter0Active() && JOY_NEW(A_BUTTON))
+    if (!RunTextPrintersAndIsPrinter0Active())
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
-        gTasks[taskId].func = Task_NewGameCleanup;
+        gTasks[taskId].func = TaskCopeSpeech_NewGameCleanup;
     }
 }
 
-static void Task_NewGameCleanup(u8 taskId)
+static void TaskCopeSpeech_NewGameCleanup(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
