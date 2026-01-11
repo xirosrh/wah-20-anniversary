@@ -1268,12 +1268,59 @@ Pic: Gallego
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Spoink
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nidoking @ Life Orb
+Ability: Sheer force
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Earth Power
+- Sludge Bomb
+- Flamethrower
+- Ice Beam
+
+Feraligatr @ Feraligite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Dragon Claw
+- Crunch
+
+Lugia @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Dragonite @ Weakness Policy
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Iron Head
+
+Lucario @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Shadow Ball
+
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Slide
+- Crunch
+- Drain Punch
+- Earthquake
+
 
 === TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
 Name: Gallego
@@ -1282,16 +1329,56 @@ Pic: Gallego
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Snorlax @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Body Slam
+- Heavy Slam
+- Drain Punch
+- Play Rough
 
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shedinja @ Focus Sash
+EVs: 252 HP / 252 Spe / 4 Atk
+Impish Nature
+- Destiny Bond
+- X Scissor
+- Leech Life
+- Shadow Claw
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Heat Wave
+- Roost
+- Air Slash
+
+Gyarados @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Iron Head
+
+Scizor @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bullet Punch
+- X Scissor
+- Aerial Ace
+- Brick Break
+
+Chandelure @ Chandelurite
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Burning Jealousy
+- Shadow Ball
+- Energy Ball
+- Calm Mind
 
 === TRAINER_WAH_ADMIN_EING_MAIN ===
 Name: Eing
