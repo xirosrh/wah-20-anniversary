@@ -463,21 +463,33 @@ Pic: Sayer
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-Swampert @Swampertite
-Level: 100
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swampert @ Swampertite
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Liquidation
+- Earthquake
+- Rock Slide
+- Aqua Jet
 
-Metagross
-Level: 100
+Metagross @ Assault Vest
 Shiny: Yes
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Drain Punch
+- Earthquake
 
-Tyranitar
-Level: 100
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tyranitar @ Choice Band
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Crunch
+- Stone Edge
+- Earthquake
+- Heavy slam
 
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
 Name: Sayer
@@ -486,12 +498,33 @@ Pic: Sayer
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-Poochyena
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Ice Beam
+- Focus Blast
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Seismic Toss
+- Dragon Claw
+- Fire Punch
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+- Hidden Power
 
 === TRAINER_WAH_ADMIN_AGUIAR_MAIN ===
 Name: Aguiar
