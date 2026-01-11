@@ -243,60 +243,48 @@ Pic: Cheve
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Green
 
 Umbreon
-Level: 21
-Ability: Synchronize
 Shiny: Yes
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Synchronize
 - Toxic
 - Heal Bell
 - Yawn
 - Moonlight
 
-Plantita (Meganium) @Leftovers
-Level: 21
-Ability: Leaf Guard
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leech Seed
-- Protect
-- Toxic
-- Synthesis
-
-Noctowl @Leftovers
-Level: 21
-Ability: Insomnia
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Wing Attack
-- Sky Attack
-- Shadow Ball
-- Hypnosis
-
-Weavile @Iron Ball
-Level: 21
+Weavile @ Iron Ball
 Ability: Pickpocket
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Fling
 - Ice Shard
 - Fake Out
 - Brick Break
 
-Swampert @Swampertite
-Level: 21
+Plantita (Meganium) @ Leftovers
+Ability: Leaf Guard
+- Leech Seed
+- Protect
+- Toxic
+- Synthesis
+
+Swampert-Mega @ Swampertite
 Ability: Swift Swim
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Waterfall
 - Earthquake
 - Ice Punch
 - Stealth Rock
 
-Gengar @Choice Scarf
-Level: 21
+Noctowl @ Leftovers
+Ability: Insomnia
+- Wing Attack
+- Sky Attack
+- Shadow Ball
+- Hypnosis
+
+Gengar @ Choice Scarf
 Ability: Cursed Body
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Will-o-Wisp
+- Will-O-Wisp
 - Hex
 - Substitute
 - Disable
@@ -307,64 +295,52 @@ Name: Cheve
 Class: WAH Admin
 Pic: Cheve
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Green
 
-Dragonite @ Leftovers  
-Level: 21  
-Ability: Multiscale  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Dragon Dance  
-- Roost  
-- Dragon Claw  
-- Fire Punch  
+Dragonite @Leftovers
+Ability: Multiscale
+- Roost
+- Dragon Claw
+- Fire Punch
+- Dragon Dance
 
-Charizard @ Leftovers  
-Level: 21  
-Ability: Blaze  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Flare Blitz  
-- Earthquake  
-- Thunder Punch  
-- Roost  
+Charizard @Leftovers
+Ability: Blaze
+- Flare Blitz
+- Earthquake
+- Thunder Punch
+- Roost
 
-Espeon @ Leftovers  
-Level: 21  
-Ability: Magic Bounce  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Calm Mind  
-- Baton Pass  
-- Stored Power  
-- Substitute  
+Espeon @Leftovers
+Ability: Magic Bounce
+- Calm Mind
+- Baton Pass
+- Stored Power
+- Substitute
 
-Cresselia @ Flame Orb  
-Level: 21  
-Ability: Levitate  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Psychic  
-- Psycho Shift  
-- Rest  
-- Sleep Talk  
+Cresselia @Flame Orb
+Ability: Levitate
+- Psychic
+- Psycho Shift
+- Rest
+- Sleep Talk
 
-Houndoom @ Houndoominite  
-Level: 21  
-Ability: Solar Power  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Nasty Plot  
-- Fire Blast  
-- Dark Pulse  
-- Solar Beam  
+Houndoom @Houndoominite
+Ability: Solar Power
+- Nasty Plot
+- Fire Blast
+- Dark Pulse
+- Solar Beam
 
-Suicune @ Leftovers  
-Level: 21  
-Ability: Pressure  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
-- Calm Mind  
-- Scald  
-- Rest  
-- Sleep Talk  
+Suicune @Leftovers
+Ability: Pressure
+- Calm Mind
+- Scald
+- Rest
+- Sleep Talk
 
 === TRAINER_WAH_ADMIN_BLAX_MAIN ===
 Name: Blax
