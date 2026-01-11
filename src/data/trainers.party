@@ -1162,12 +1162,33 @@ Pic: Katherine
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Pink
 
-Hariyama
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Leftovers
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
+
+Clefable @ Clefablite
+Ability: Magic Guard
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Moonblast
+- Softboiled
+- Flamethrower
+- Hyper Voice
+
+Lilligant @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Trop Kick
+- Drain Punch
+- Triple Axel
+- Play Rough
 
 === TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE ===
 Name: Katherine
@@ -1176,16 +1197,34 @@ Pic: Katherine
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 
-Carvanha
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Umbreon @ Leftovers
+Ability: Synchronize
+EVs: 252 HP / 252 SpA / 4 Def
+Calm Nature
+- Helping Hand
+- Moonlight
+- Calm Mind
+- Dark Pulse
 
-Mightyena
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Arcanine @ Choice Scarf
+Ability: Rock Head
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Ninetales @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Play Rough
+- Triple Axel
+- Aqua Tail
+- Iron Tail
 
 === TRAINER_WAH_ADMIN_REONEKY_MAIN ===
 Name: Reoneky
@@ -1428,70 +1467,40 @@ Pic: Eing
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Pelipper @ Damp Rock
-Ability: Drizzle
-Level: 5
-EVs: 252 HP / 200 Def / 56 SpD
-Bold Nature
-IVs: 0 Atk
-- Scald
-- Hurricane
-- Roost
-- U-turn
-
-Ludicolo @ Assault Vest
-Ability: Swift Swim
-Level: 5
-EVs: 132 HP / 124 SpA / 252 Spe
-Modest Nature
-- Giga Drain
-- Ice Beam
-- Scald
-- Focus Blast
-
-Kingdra @ Life Orb
-Ability: Swift Swim
-Level: 5
-EVs: 40 Atk / 252 SpA / 216 Spe
-Mild Nature
-- Hydro Pump
-- Draco Meteor
-- Hurricane
-- Flip Turn
-
-Swampert @ Swampertite
-Ability: Torrent
-Level: 5
-EVs: 252 Atk / 4 Def / 252 Spe
-Adamant Nature
-- Waterfall
-- Earthquake
-- Ice Punch
-- Protect
-
-Barraskewda @ Choice Band
-Ability: Swift Swim
-Level: 5
-EVs: 252 Atk / 4 SpD / 252 Spe
+Crobat @ Black Sludge
+EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Liquidation
-- Close Combat
-- Psychic Fangs
-- Flip Turn
 
-Gamba (Clawitzer) @ Choice Specs
-Ability: Mega Launcher
-Level: 5
-EVs: 120 HP / 252 SpA / 136 Spe
-Modest Nature
-IVs: 0 Atk
-- Aura Sphere
+Klefki @ Leftovers
+EVs: 252HP / 252 SpA / 4 Spe
+Calm Nature
+
+Jolteon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Thunderbolt
+- Calm Mind   /* //TODO Xiros - Levitate */
+- Hidden Power
+
+Darkrai @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
 - Dark Pulse
-- Water Pulse
-- Ice Beam
+
+Blaziken @ Blazikenite
+EVs: 252 Atk / 252 HP / 4 Spe
+Jolly Nature
+- Blaze Kick
+- Sky Uppercut
+- Brave Bird
+- Thunder Punch
 
 === TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
 Name: Eing
