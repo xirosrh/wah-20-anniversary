@@ -1559,39 +1559,133 @@ Modest Nature
 - Thousand Waves
 - Core Enforcer
 
-=== TRAINER_DUSTY_4 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_WAH_ADMIN_XIROS_MAIN ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 
-Sandslash
-Level: 33
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Venusaur @ Venusaurite
+Shiny: Yes
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Energy Ball
+- Sludge Bomb
+- Giga Drain
+- Earth Power
 
-=== TRAINER_DUSTY_5 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Torkoal @ Charcoal
+Shiny: Yes
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Scorching Sands
+- Burning Jealousy
+- Solar Beam
+- Earth Power
+
+Swampert @ Choice Scarf
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
+Scizor @ Assault Vest
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Leech Life
+- Aerial Ace
+- Knock Off
+
+Gardevoir @ Leftovers
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 SpD
+Timid Nature
+- Moonblast
+- Psychic
+- Aura Sphere
+- Shadow Ball
+
+Articuno @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 Def
+Timid Nature
+- Mind Reader
+- Sheer Cold
+- Hurricane
+- Blizzard
+
+
+=== TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 
-Sandslash
-Level: 36
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Arcanine @ Leftovers
+Ability: Rock Head
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Luxray @ Assault Vest
+Ability: Intimidate
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Crunch
+- Ice Fang
+- Fire Fang
+
+Poliwrath @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Belly Drum
+- Liquidation
+- Drain Punch
+- Ice Punch
+
+Torterra @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Seed Bomb
+- Earthquake
+- Rock Slide
+- Iron Head
+
+Malamar @ Malamarite
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Night Slash
+- Close Combat
+- Drill Peck
+
+Articuno Galar @ Leftovers
+Shiny: Yes
+EVs:  252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Freezing Glare
+- Hurricane
+- Recover
+- Calm Mind
 
 === TRAINER_GABBY_AND_TY_1 ===
 Name: GABBY & TY
