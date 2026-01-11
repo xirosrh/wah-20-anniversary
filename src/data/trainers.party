@@ -167,7 +167,7 @@ Adamant Nature
 - Drain Punch
 - Pluck
 
-Arcanine @ Choice Scarf
+Arcanine Hisui @ Choice Scarf
 Ability: Rock Head
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
@@ -1194,35 +1194,55 @@ Pic: Reoneky
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Purple
 
+Pidgeot @ Pidgeotite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Heat Wave
+- Mimic
+- Roost
+
+Swampert @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
 Typhlosion @ Charcoal
-Level: 35
-Ability: Blaze
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder Punch
-- Flame Wheel
-- Smokescreen
-- Quick Attack
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Burning Jealousy
 
-Manectric @ Magnet
-Level: 34
-Ability: Static
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-- Thunderbolt
-- Bite
-- Thunder Wave
-- Howl
+Metagross @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
 
-Hariyama @ Black Belt
-Level: 34
-Ability: Guts
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-- Brick Break
-- Knock Off
-- Fake Out
-- Bulk Up
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Dragon Dance
+- Earthquake
+- Crunch
+- Rock Slide
+
+Venusaur @ Black Sludge
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Leech Seed
+- Giga Drain
+- Sludge Bomb
+- Earth Power
 
 === TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
 Name: Reoneky
@@ -1231,35 +1251,56 @@ Pic: Reoneky
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Purple
 
-Typhlosion @ Leftovers
-Level: 38
-Ability: Blaze
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Eruption
-- Thunder Punch
-- Flamethrower
-- Sunny Day
+Absol @ Absolite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Zen Headbutt
+- Knock Off
+- Play Rough
 
-Raichu @ Magnet
-Level: 37
-Ability: Static
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Thunderbolt
-- Encore
-- Brick Break
-- Double Team
+Espeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Wish
 
-Machamp @ Lum Berry
-Level: 37
-Ability: Guts
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Cross Chop
-- Rock Slide
-- Bulk Up
+Noivern @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Air Slash
+- Hurricane
+- Boomburst
+
+Lucario @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 HP
+Impish Nature
+- Aura Sphere
+- Drain Punch
 - Earthquake
+- Flash Cannon
+
+Zoroark @ Assault Vest
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Foul Play
+- Night Daze
+- Burning Jealousy
+- Sludge Bomb
+
+Meloetta @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 HP
+Hasty Nature
+- Relic Song
+- Drain Punch
+- Psychic
+- Play Rough 
 
 === TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
 Name: Gallego
@@ -1931,7 +1972,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Arcanine @ Leftovers
+Arcanine Hisui @ Leftovers
 Ability: Rock Head
 Shiny: Yes
 EVs: 252 Atk / 252 Spe / 4 HP
