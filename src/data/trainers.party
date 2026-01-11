@@ -1899,6 +1899,121 @@ Timid Nature
 - Recover
 - Calm Mind
 
+=== TRAINER_WAH_ADMIN_PKPOWER_MAIN ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+
+Absol @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Psycho cut
+- Hone Claws
+- Play Rough
+
+Magearna @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Fleur Cannon
+- Flash Cannon
+- Earth Power
+- Moonblast
+
+Frosmoth @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Timid Nature
+- Ice Beam
+- Bug Buzz
+- Air Slash
+- Hidden Power
+
+Swanna @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Air Slash
+- Scald
+- Ice Beam
+- Roost
+
+Arctozolt @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Gardevoir @ Gardevoirite
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Moonblast
+- Psychic
+- Draining Kiss
+- Aura Sphere
+
+=== TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+
+Klinklang @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shift Gear
+- Gear Up
+- Gear Grind
+- Magnet Rise
+
+Golurk @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Earthquake
+- Shadow Punch
+- Drain Punch
+- Heavy Slam
+
+Porygon-Z @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Gallade @ Galladite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Drain Punch
+- Aqua Cutter
+- Leaf Blade
+
+Metagross @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
+- Earthquake
+
+Magmortar @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Flamethrower
+- Thunderbolt
+- Earth Power
+- Psychic
+
 === TRAINER_GABBY_AND_TY_1 ===
 Name: GABBY & TY
 Class: Interviewer
@@ -2026,32 +2141,6 @@ Azurill
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_AUSTINA ===
-Name: AUSTINA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GWEN ===
-Name: GWEN
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_LOLA_2 ===
 Name: LOLA
 Class: Tuber F
@@ -2137,7 +2226,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Tail Whip
 - Surf
 
-=== TRAINER_SIMON ===
+=== TRAINER_WAH_ADMIN_KLEIN_MAIN ===
 Name: SIMON
 Class: Tuber M
 Pic: Tuber M
@@ -2154,7 +2243,7 @@ Marill
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CHARLIE ===
+=== TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE ===
 Name: CHARLIE
 Class: Tuber M
 Pic: Tuber M
