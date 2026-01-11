@@ -1568,3 +1568,35 @@ void InitTilesetAnim_DriveKatherineRoom(void)
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_DriveKatherineRoom;
 }
+
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Capsule[] = {
+    gTilesetAnims_XirosRoom_Capsule_Frame0,
+    gTilesetAnims_XirosRoom_Capsule_Frame1,
+    gTilesetAnims_XirosRoom_Capsule_Frame2,
+    gTilesetAnims_XirosRoom_Capsule_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_Capsule(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Capsule);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Capsule[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_XirosRoom(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_XirosRoom_Capsule(timer / 16);
+    }
+}
+
+void InitTilesetAnim_XirosRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_XirosRoom;
+}

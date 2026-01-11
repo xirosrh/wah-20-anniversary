@@ -960,5 +960,5 @@ const struct Tileset gTileset_room_xiros =
     .palettes = gTilesetPalettes_room_xiros,
     .metatiles = gMetatiles_room_xiros,
     .metatileAttributes = gMetatileAttributes_room_xiros,
-    .callback = NULL,
+    .callback = InitTilesetAnim_XirosRoom,
 };
