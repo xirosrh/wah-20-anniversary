@@ -950,7 +950,7 @@ Pic: Zero
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
 Benji (Braviary) @ Choice Scarf
@@ -1015,12 +1015,62 @@ Pic: Zero
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Numel
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Zero (Zoroark) (M) @ Choice Scarf
+Ability: Illusion
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Dark Pulse
+- Flamethrower
+- Focus Blast
+- U-turn
+
+Lea (Volcarona) (F) @ Leftovers
+Ability: Flame Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+Darkus (Darkrai) @ Life Orb
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Nasty Plot
+- Dark Pulse
+- Hypnosis
+- Focus Blast
+
+Tyranitar-Mega (F) @ Tyranitarite
+Ability: Sand Stream
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Stone Edge
+- Earthquake
+
+Grimmsnarl @ Light Clay
+Ability: Prankster
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Light Screen
+- Reflect
+- Parting Shot
+- Taunt
+
+Tinkaton @ Heavy-Duty Boots
+Ability: Mold Breaker
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Stealth Rock
+- Knock Off
+- Gigaton Hammer
+- Play Rough
 
 === TRAINER_WAH_ADMIN_BARO_MAIN ===
 Name: Baro
