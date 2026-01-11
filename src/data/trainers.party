@@ -505,16 +505,58 @@ Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Zubat
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ceruledge @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Bitter Blade
+- Solar Blade
+- Night Slash
+- Shadow Claw
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sylveon @  Choice Specs
+Ability: Pixilate
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Hyper Voice
+- Boomburst
+- Moonblast
+- Mystical Fire
+
+Miraidon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Electro Drift
+- Dragon Pulse
+- Flash Cannon
+- Snarl
+
+Greninja @ Leftovers
+Ability: Protean
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Dark Pulse
+- Sludge Bomb
+
+Zacian @ Rusted Sword
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Behemoth Blade
+- Sacred Sword
+- Play Rough
+- Swords Dance
+
+Calyrex Shadow  @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
 
 === TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE ===
 Name: Ozumas
@@ -523,16 +565,57 @@ Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Typhlosion@ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
 
-Carvanha
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Recover
+- Moonblast
+- Ice Beam
+
+Rayquaza @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Extreme Speed
+- Dragon Claw
+- V create
+
+Kyogre @ Blue Orb
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Sheer Cold
+- Thunder
+
+Skarmory @ Rocky Helmet
+EVs: 252 Def / 252 Spe / 4 HP
+Naive Nature
+- Stealth Rock
+- Spikes
+- Tailwind
+- Roost
+
+Wobbuffet @ Leftovers
+EVs: 252 HP / 252 Def / 4 Atk
+Calm Nature
+- Mirror Coat
+- Counter
+- Destiny Bond
+- Amnesia 
+
 
 === TRAINER_WAH_ADMIN_SCAREX_MAIN ===
 Name: Scarex
