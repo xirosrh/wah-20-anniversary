@@ -1201,39 +1201,32 @@ Pic: Youngster
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Togekiss @ Leftovers
-Ability: Serene Grace
-Level: 55
-EVs: 252 HP / 4 SpA / 252 Spe
-Timid Nature
-- Air Slash
-- Aura Sphere
-- Roost
-- Thunder Wave
-
-Smeargle @ Focus Sash
-Ability: Own Tempo
-Level: 55
-EVs: 252 HP / 4 Def / 252 Spe
+Linoone @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Spore
-- Parting Shot
-- Stealth Rock
-- Destiny Bond
+- Belly Drum
+- Facade
+- Extreme Speed
+- Endeavor
 
-Porygon-Z @ Choice Specs
-Ability: Adaptability
-Level: 55
-EVs: 4 Def / 252 SpA / 252 Spe
+Sceptile @ Sceptilite
+EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
-IVs: 0 Atk
-- Tri Attack
-- Dark Pulse
-- Ice Beam
-- Trick
+- Energy Ball
+- Giga drain
+- Dragon Pulse
+- Solar Beam
+
+Swellow @ Choice Scarf
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Sky Attack
+- Aerial Ace
+- Steel Wing
+- Endeavor
 
 === TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
 Name: ROSE
@@ -1242,16 +1235,32 @@ Pic: Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Shroomish
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Infernape @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Fire Punch
+- Thunder Punch
+- Close Combat
 
-Roselia
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gengar @ Gengarite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Giga drain
+- Dark Pulse
+
+Weavile @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Fake Out
+- Ice Punch
+- Shadow Claw
 
 === TRAINER_WAH_ADMIN_WAR_MAIN ===
 Name: War
@@ -1260,38 +1269,32 @@ Pic: War
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Gallade @ Life Orb
-Ability: Steadfast
-Level: 55
-EVs: 4 HP / 252 Atk / 252 Spe
+Gliscor @ Toxic Orb    /* Ability: Antidote TODO Xiros */
+EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Close Combat
-- Psycho Cut
-- Swords Dance
-- Shadow Sneak
+- Earthquake
+- Aerial Ace
+- Fire Fang
+- Knock Off
 
-Lucario @ Expert Belt
-Ability: Inner Focus
-Level: 55
-EVs: 4 HP / 252 Atk / 252 Spe
+Blissey @ Leftovers
+EVs: 252 HP / 252 Def / 4 SpD
+Calm Nature
+- Softboiled
+- Counter
+- Helping Hand
+- Mirror Coat
+
+Scizor @ Scizorite
+EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Close Combat
+- Bullet Punch
+- Fury Cutter
 - Meteor Mash
-- Extreme Speed
-- Ice Punch
-
-Blaziken @ White Herb
-Ability: Blaze
-Level: 55
-EVs: 4 HP / 252 Atk / 252 Spe
-Adamant Nature
-- Flare Blitz
-- Sky Uppercut
-- Brave Bird
-- Swords Dance
+- X Scissor
 
 === TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
 Name: ROSE
@@ -1300,20 +1303,32 @@ Pic: Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Blue
 
-Shroomish
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ferrothorn @ Rocky Helmet
+EVs: 252 HP / 252 SpD / 4 Def
+Bold Nature
+- Leech Seed
+- Spikes
+- Stealth Rock
+- Body Press
 
-Gloom
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Garchomp @ Garchompite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Liquidation
 
-Roselia
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Umbreon @ Leftovers
+EVs: 252 Spe / 252 HP / 4 SpD
+Bold Nature
+- Helping Hand
+- Wish
+- Nasty Plot
+- Baton Pass
 
 === TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
 Name: Javi4315
