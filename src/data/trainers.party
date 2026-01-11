@@ -124,12 +124,57 @@ Pic: Goce
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-Aerodactyl
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aerodactyl @ Aerodactylite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Slide
+- Aerial Ace
+- Dragon Claw
+- Hone Claws
+
+Tyrantrum @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Smash
+- Dragon Claw
+- Earthquake
+- Fire Fang
+
+Cradily @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Giga drain
+- Energy Ball
+- Earth Power
+- Ancient Power
+
+Kabutops @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Leech Life
+- Metal Claw
+
+Arctozolt @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Arcanine @ Choice Scarf
+Ability: Rock Head
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
 
 === TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE ===
 Name: Goce
@@ -138,12 +183,58 @@ Pic: Goce
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-Poochyena
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Necrozma Dusk Mane @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+- Hidden Power 
+
+Lugia @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Moltres Galar @ Leftovers
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dark Pulse
+- Hurricane
+- Burning Jealousy
+- Fiery Wrath
 
 === TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 Name: Cheve
