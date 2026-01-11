@@ -568,12 +568,56 @@ Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Pink
 
-Gyarados
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Typhlosion @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
+
+Lucario @ Assault Vest
+EVs: 252 SpA / 252 Atk / 4 Spe
+Naive Nature
+- Aura Sphere
+- Drain Punch
+- Meteor Mash
+- Earth Power
+
+Darkrai @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Dark Void
+- Dream Eater
+- Nightmare
+- Dark Pulse
+
+Latios /* TODO Xiros @ Mystic Orb */
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Luster Purge
+- Psychic
+- Recover
+- Dragon Pulse
+
+Landorus Therian @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Sandsear Storm
+- Air Slash
+- U Turn
+- Knock Off
+
+Suicune @ Leftovers
+EVs: 252 SpA / 252 Spe /4 HP
+Timid Nature
+- Scald
+- Air Slash 
+- Ice Beam
+- Extreme Speed
 
 === TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE ===
 Name: Angel
@@ -582,12 +626,56 @@ Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Pink
 
-Poochyena
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Flare Blitz
+- Mega Punch
+
+Necrozma Dusk Mane @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Chien Pao @ Leftovers
+EVs: 252 Atk/ 252 HP / 4 SpA
+Jolly Nature
+- Ruination
+- Ice Shard
+- Sacred Sword
+- Recover
+
+Urshifu @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wicked Blow
+- Surging Strikes
+- Drain Punch
+- Iron Head
 
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
 Name: Ozumas
