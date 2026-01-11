@@ -955,7 +955,6 @@ Mugshot: Blue
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
-Level: 100
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Brave Bird
@@ -963,9 +962,8 @@ Jolly Nature
 - U-turn
 - Rock Slide
 
-Samus (Charizard-Mega-X) (F) @ Charizardite X
+Samus (Charizard) (F) @ Charizardite X
 Ability: Tough Claws
-Level: 100
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Dragon Dance
@@ -976,7 +974,6 @@ Jolly Nature
 0 (Milotic) (M) @ Leftovers
 Ability: Marvel Scale
 Shiny: Yes
-Level: 100
 EVs: 252 HP / 4 Def / 252 SpD
 Calm Nature
 - Scald
@@ -986,7 +983,6 @@ Calm Nature
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
-Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Modest Nature
 - Geomancy
@@ -996,7 +992,6 @@ Modest Nature
 
 Hydreigon (F) @ Choice Specs
 Ability: Levitate
-Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
 - Draco Meteor
@@ -1006,7 +1001,6 @@ Timid Nature
 
 Kingambit (M) @ Leftovers
 Ability: Supreme Overlord
-Level: 100
 EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Swords Dance
@@ -1063,16 +1057,52 @@ Pic: Boo
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Purple
 
-Poochyena
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+M. (Banette) (M) @ Banettite
+Ability: Cursed Body
+- Sucker Punch
+- Double Team
+- Shadow Claw
+- Destiny Bond
 
-Carvanha
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Helix (Omastar) @ White Herb
+Ability: Weak Armor
+- Shell Smash
+- Hydro Pump
+- Ice Beam
+- Endure
+
+Belong (Manaphy) @ Leftovers
+Ability: Hydration
+- Tail Glow
+- Surf
+- Ice Beam
+- Energy Ball
+
+Ratio (Alakazam) @ Focus Sash
+Ability: Magic Guard
+- Counter
+- Psychic
+- Focus Blast
+- Shadow Ball
+
+Jinhua (Espeon) @ Bright Powder
+Ability: Magic Bounce
+- Psychic
+- Dazzling Gleam
+- Calm Mind
+- Baton Pass
+
+Memento (Darkrai) @ Life Orb
+Ability: Bad Dreams
+Shiny: Yes
+- Hypnosis
+- Dark Pulse
+- Nasty Plot
+- Psychic
+
 
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Rey Boo
@@ -1081,12 +1111,51 @@ Pic: Boo
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Purple
 
-Carvanha
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+M. (Banette) (M) @ Focus Sash
+Ability: Cursed Body
+- Spite
+- Sucker Punch
+- Snatch
+- Destiny Bond
+
+Kaktum (Venomoth) @ Bright Powder
+Ability: Wonder Skin
+Shiny: Yes
+- Quiver Dance
+- Double Team
+- Bug Buzz
+- Baton Pass
+
+Radix (Venusaur-Mega) @ Venusaurite
+Ability: Chlorophyll
+- Petal Dance
+- Sleep Powder
+- Synthesis
+- Sludge Bomb
+
+Emouvoir (Gardevoir) @ Fairy Feather
+Ability: Synchronize
+- Hypnosis
+- Psyshock
+- Moonblast
+- Shadow Ball
+
+Yanhua (Registeel) @ Leftovers
+Ability: Clear Body
+- Toxic
+- Protect
+- Seismic Toss
+- Explosion
+
+Memoriam (Mewtwo) @ Life Orb
+Ability: Pressure
+- Psystrike
+- Ice Beam
+- Recover
+- Calm Mind
 
 === TRAINER_WAH_ADMIN_COSARARA_MAIN ===
 Name: Cosarara
