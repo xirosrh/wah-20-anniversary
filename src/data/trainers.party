@@ -541,12 +541,57 @@ Pic: Scarex
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Green
 
-Magikarp
-Level: 1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Porygon Z @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Zoroark Hisui @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Bitter Malice
+- Hyper Voice
+- Nasty Plot
+- Dark Pulse
+
+Beheeyem @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Calm Mind
+- Recover
+- Psychic
+- Stored Power
+
+Grimmsnarl @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Spirit Break
+- False Surrender
+- Drain Punch
+
+Yamask Galar @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
+
+Scolipede @ Scolipite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Poison Jab
+- Leech Life
+- Rock Slide
+- Aqua Tail
 
 
 === TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE ===
@@ -556,12 +601,57 @@ Pic: Scarex
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Green
 
-Carvanha
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Porygon Z @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Musharna @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Calm Mind
+- Moonblast
+- Psychic
+- Stored Power
+
+Walrein @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Ice Ball
+- Liquidation
+- Steel Roller
+- Rock Slide
+
+Rapidash Galar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Psycho Cut
+- Megahorn
+- Drill Run
+
+Maractus @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Giga drain
+- Spikes
+- Leech Seed
+- Energy Ball
+
+Buzzwole @ Assault Vest
+EVs: 252 Atk / 252 Def / 4 SpD
+Adamant Nature
+- Leech Life
+- Drain Punch
+- Thunder Punch
+- Ice Punch
 
 === TRAINER_WAH_ADMIN_DAVZERO_MAIN ===
 Name: Zero
