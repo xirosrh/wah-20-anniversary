@@ -373,40 +373,38 @@ Pic: Blax
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-BLAxTOISE (Blastoise) (M) @ Blastoisinite  
+BLAxTOISE (Blastoise) (M) @ Blastoisinite
 Ability: Torrent
-Level: 100  
-Tera Type: Water  
-EVs: 176 HP / 252 Atk / 80 Spe  
-Adamant Nature  
-- Shell Smash  
-- Flip Turn  
-- Earthquake  
-- Liquidation  
+Tera Type: Water
+EVs: 176 HP / 252 Atk / 80 Spe
+Adamant Nature
+- Shell Smash
+- Flip Turn
+- Earthquake
+- Liquidation
 
-SiriusBLAx (Dragapult) @ Roseli Berry  
+SiriusBLAx (Dragapult) @ Roseli Berry
 Ability: Cursed Body
-Level: 100    
-Shiny: Yes  
-Tera Type: Dragon  
-EVs: 232 HP / 252 Atk / 24 Spe  
-Adamant Nature  
-- Dragon Darts  
-- Phantom Force  
-- Outrage  
-- Acrobatics  
+Shiny: Yes
+Tera Type: Dragon
+EVs: 232 HP / 252 Atk / 24 Spe
+Adamant Nature
+- Dragon Darts
+- Phantom Force
+- Outrage
+- Acrobatics
 
-BLAxThePatcher (Aron) @ Shell Bell  
-Ability: Sturdy  
-Level: 10  
-Shiny: Yes  
-Tera Type: Steel  
-EVs: 236 Spe  
-Timid Nature  
-IVs: 0 Atk  
+BLAxThePatcher (Aron) @ Shell Bell
+Ability: Sturdy
+Level: 10
+Shiny: Yes
+Tera Type: Steel
+EVs: 236 Spe
+Timid Nature
+IVs: 0 Atk
 - Endeavor
 
 === TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE ===
@@ -416,44 +414,41 @@ Pic: Blax
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 Mugshot: Yellow
 
-Rey BLAxtasar (Reuniclus) @ Twisted Spoon  
+Rey BLAxtasar (Reuniclus) @ Twisted Spoon
 Ability: Regenerator
-Level: 35    
-Shiny: Yes  
-Tera Type: Psychic  
-EVs: 120 HP / 252 Def / 136 SpA  
-Modest Nature  
-IVs: 0 Atk  
-- Stored Power  
-- Calm Mind  
-- Light Screen  
-- Substitute  
+Shiny: Yes
+Tera Type: Psychic
+EVs: 120 HP / 252 Def / 136 SpA
+Modest Nature
+IVs: 0 Atk
+- Stored Power
+- Calm Mind
+- Light Screen
+- Substitute
 
-Toise D. BLAx (Iron Valiant) @ Booster Energy  
+Toise D. BLAx (Iron Valiant) @ Booster Energy
 Ability: Quark Drive
-Level: 35    
 Tera Type: Fairy
-EVs: 252 SpA / 124 SpD / 132 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Aura Sphere  
-- Dazzling Gleam  
-- Psychic  
-- Shadow Ball  
+EVs: 252 SpA / 124 SpD / 132 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Dazzling Gleam
+- Psychic
+- Shadow Ball
 
-BLAx-Atlas (Zacian) @ Rusted Sword  
+BLAx-Atlas (Zacian) @ Rusted Sword
 Ability: Intrepid Sword
-Level: 35  
-Shiny: Yes  
-Tera Type: Fairy  
-EVs: 4 HP / 252 Atk / 252 Spe  
-Adamant Nature  
-- Play Rough  
-- Iron Head  
-- Protect  
+Shiny: Yes
+Tera Type: Fairy
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Play Rough
+- Iron Head
+- Protect
 - Psychic Fangs
 
 === TRAINER_WAH_ADMIN_SAYER_MAIN ===
@@ -1132,12 +1127,33 @@ Pic: Drive
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 
-Makuhita
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Serperior (M) @ Rocky Helmet  
+Ability: Overgrow  
+Tera Type: Grass  
+- Leaf Storm  
+- Dragon Pulse  
+- Dragon Tail  
+- Synthesis  
+
+Milotic (F) @ Leftovers  
+Ability: Marvel Scale  
+Tera Type: Water  
+IVs: 0 Atk  
+- Haze  
+- Scald  
+- Recover  
+- Ice Beam  
+
+Zoroark (M) @ Focus Sash  
+Ability: Illusion  
+Tera Type: Dark  
+- Sucker Punch  
+- U-turn  
+- Focus Blast  
+- Taunt
 
 
 === TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
@@ -1146,14 +1162,35 @@ Class: WAH Admin
 Pic: Drive
 Gender: Male
 Music: Aqua
-Items: Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 
-Mightyena
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Luxray (M) @ Flame Orb  
+Ability: Guts  
+Shiny: Yes  
+Tera Type: Electric  
+- Wild Charge  
+- Facade  
+- Ice Fang  
+- Crunch  
+
+Manaphy @ Leftovers  
+Ability: Hydration  
+Tera Type: Water  
+IVs: 0 Atk  
+- Tail Glow  
+- Scald  
+- Ice Beam  
+- Energy Ball  
+
+Typhlosion (M) @ Choice Specs  
+Ability: Blaze  
+Tera Type: Fire  
+- Wild Charge  
+- Howl  
+- Flare Blitz  
+- Earthquake  
 
 === TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
 Name: Katherine
