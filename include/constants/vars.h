@@ -264,8 +264,8 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_SAYER_BLAX_ROOM_STATE                                0x40F7 // WAH
-#define VAR_JACK_JOHNSON_ROOM_STATE                                0x40F8 // WAH
+#define VAR_UNUSED_0x40F7                                0x40F7 // Unused
+#define VAR_UNUSED_0x40F8                                0x40F8 // Unused
 #define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
 #define VAR_BARO_ROOM_STATE                                0x40FA //WAH
 #define VAR_REY_BOO_ROOM_STATE                             0x40FB //WAH

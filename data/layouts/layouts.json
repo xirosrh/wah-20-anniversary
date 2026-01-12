@@ -4156,7 +4156,7 @@
       "name": "CosararaRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/CosararaRoom/border.bin",
       "blockdata_filepath": "data/layouts/CosararaRoom/map.bin"
@@ -4216,7 +4216,7 @@
       "name": "SayerBlaxRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
       "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
