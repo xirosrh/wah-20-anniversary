@@ -1665,7 +1665,23 @@
 #define SPECIES_DRAMPA_MEGA                             1548
 #define SPECIES_FALINKS_MEGA                            1549
 
-#define SPECIES_EGG                                     (SPECIES_FALINKS_MEGA + 1)
+//fakemons
+#define SPECIES_KAOSUNE                                 1550
+#define SPECIES_FREECH                                  1551
+#define SPECIES_PLUGOINK                                1552
+#define SPECIES_GRITESPEC                               1553
+#define SPECIES_MAGIKEN                                 1554
+#define SPECIES_AYEWIRAZ                                1555
+#define SPECIES_ELECTRODES                              1556
+
+//Placeholders
+#define SPECIES_FAKEMON8                                1557
+#define SPECIES_FAKEMON9                                1558
+#define SPECIES_FAKEMON10                               1559
+#define SPECIES_FAKEMON11                               1560
+#define SPECIES_FAKEMON12                               1561
+
+#define SPECIES_EGG                                     (SPECIES_FAKEMON12 + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

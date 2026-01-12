@@ -5071,6 +5071,31 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_EXPLOSIVE_PULP: //Erkey830
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+             && !IsBattlerAlive(gBattlerTarget)
+             && IsBattlerAlive(gBattlerAttacker))
+            {
+            if ((battler = IsAbilityOnField(ABILITY_DAMP)))
+                {
+                    gBattleScripting.battler = battler - 1;
+                    BattleScriptCall(BattleScript_DampPreventsAftermath);
+                }
+            else
+                {
+                    gBattleScripting.battler = gBattlerTarget;
+                
+                    u32 dmg = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+                    if (dmg == 0)
+                        dmg = 1;
+                    SetPassiveDamageAmount(gBattlerAttacker, dmg);               
+                    gLastUsedAbility = ABILITY_EXPLOSIVE_PULP;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                    BattleScriptCall(BattleScript_ExplosivePulpDmg);
+                }
+                effect++;
+            }
+            break;
         case ABILITY_INNARDS_OUT:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && !IsBattlerAlive(gBattlerTarget)

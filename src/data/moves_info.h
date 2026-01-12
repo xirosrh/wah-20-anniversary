@@ -21291,6 +21291,45 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Fakemoves by Erkey830
+    [MOVE_JUICY_EXPLOSION] =
+    {
+        .name = COMPOUND_STRING("Explosión jugosa"),
+        .description = COMPOUND_STRING(
+            "Una explosión de jugo, daña\n"
+            "mucho ¡sin salir herido!"),
+        .effect = EFFECT_HIT,
+        .power = 140,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_JuicyExplosion,
+    },
+
+    [MOVE_ACID_PULP] =
+    {
+        .name = COMPOUND_STRING("Pulpa ácida"),
+        .description = COMPOUND_STRING(
+            "Golpea fuerte al rival\n"
+            "bajandole la defensa."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TOXIC,
+            .chance = 50,
+        }),
+        .battleAnimScript = gBattleAnimMove_AcidPulp,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
