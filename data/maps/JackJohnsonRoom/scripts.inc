@@ -898,17 +898,17 @@ JackJohnsonRoom_OnFrame::
 # 543 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_OnFrame_Text_15, speaker = SP_NAME_JACK_JOHNSON
 # 544 "data/maps/JackJohnsonRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_OnFrame_Text_16
+	call JackJohnsonRoom_EventScript_JackBattle
 # 545 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
 # 546 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	msgbox JackJohnsonRoom_OnFrame_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 547 "data/maps/JackJohnsonRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 # 548 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkUp
 # 549 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_18, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	msgbox JackJohnsonRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 550 "data/maps/JackJohnsonRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 # 551 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1176,44 +1176,72 @@ JackJohnsonRoom_Movement_SecondCombinationNpcs:
 	jump_in_place_down
 	step_end
 
-JackJohnsonRoom_EventScript_Jack::
+JackJohnsonRoom_EventScript_JackBattle::
 # 653 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2
-# 654 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 655 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, JackJohnsonRoom_EventScript_JackBattle_2
 # 656 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 20
+	setvar VAR_0x8004, TEAM_INDEX_JACK_JOHNSON
 # 657 "data/maps/JackJohnsonRoom/scripts.pory"
-	faceplayer
+	special ShouldUseAlternativeTeam
 # 658 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_EventScript_Jack_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	compare VAR_RESULT, 0
+	goto_if_eq JackJohnsonRoom_EventScript_JackBattle_5
+# 661 "data/maps/JackJohnsonRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE, JackJohnsonRoom_Text_JackDefeated
+JackJohnsonRoom_EventScript_JackBattle_1:
+# 664 "data/maps/JackJohnsonRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+JackJohnsonRoom_EventScript_JackBattle_2:
+# 654 "data/maps/JackJohnsonRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_Text_JackDefeated
+	goto JackJohnsonRoom_EventScript_JackBattle_1
+
+JackJohnsonRoom_EventScript_JackBattle_5:
 # 659 "data/maps/JackJohnsonRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_Text_JackDefeated
+	goto JackJohnsonRoom_EventScript_JackBattle_1
+
+
+JackJohnsonRoom_EventScript_Jack::
+# 673 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2
+# 674 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 675 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 676 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay 20
+# 677 "data/maps/JackJohnsonRoom/scripts.pory"
+	faceplayer
+# 678 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Jack_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 679 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_NORTH
 	end
 
 
 JackJohnsonRoom_EventScript_NPC1::
-# 664 "data/maps/JackJohnsonRoom/scripts.pory"
+# 684 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC1_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC2::
-# 669 "data/maps/JackJohnsonRoom/scripts.pory"
+# 689 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC2_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC3::
-# 674 "data/maps/JackJohnsonRoom/scripts.pory"
+# 694 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC3_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC4::
-# 679 "data/maps/JackJohnsonRoom/scripts.pory"
+# 699 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC4_Text_0, MSGBOX_AUTOCLOSE
 	end
 
@@ -1556,10 +1584,6 @@ JackJohnsonRoom_OnFrame_Text_15:
 	.string "tener que retarte a un combate.$"
 
 JackJohnsonRoom_OnFrame_Text_16:
-# 544 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Has tomado el mando, enhorabuena.$"
-
-JackJohnsonRoom_OnFrame_Text_17:
 # 546 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Magnífico… impecable. Cada movimiento\n"
 	.string "ha caído en su sitio, es un placer ver\l"
@@ -1568,32 +1592,36 @@ JackJohnsonRoom_OnFrame_Text_17:
 	.string "esto ha sido arte puro.\p"
 	.string "Te abriré el camino.$"
 
-JackJohnsonRoom_OnFrame_Text_18:
+JackJohnsonRoom_OnFrame_Text_17:
 # 549 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Y ustedes… ¡a trabajar!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_0:
-# 654 "data/maps/JackJohnsonRoom/scripts.pory"
+# 674 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Eso es! ¡Más rápido!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_1:
-# 658 "data/maps/JackJohnsonRoom/scripts.pory"
+# 678 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¿Sigues ahí? Pues venga, no te quedes\n"
 	.string "mirando…\l"
 	.string "¡Súmate al ensayo!$"
 
 JackJohnsonRoom_EventScript_NPC1_Text_0:
-# 664 "data/maps/JackJohnsonRoom/scripts.pory"
+# 684 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Debemos ser los mejores!$"
 
 JackJohnsonRoom_EventScript_NPC2_Text_0:
-# 669 "data/maps/JackJohnsonRoom/scripts.pory"
+# 689 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡No puedo fallar de nuevo!$"
 
 JackJohnsonRoom_EventScript_NPC3_Text_0:
-# 674 "data/maps/JackJohnsonRoom/scripts.pory"
+# 694 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡No me distraigas!$"
 
 JackJohnsonRoom_EventScript_NPC4_Text_0:
-# 679 "data/maps/JackJohnsonRoom/scripts.pory"
+# 699 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Quiero ir a dormir!$"
+
+JackJohnsonRoom_Text_JackDefeated::
+# 668 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Has tomado el mando, enhorabuena.$"

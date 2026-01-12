@@ -6,26 +6,41 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_SIDNEY",
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SERGIO",
+      "local_id": "LOCALID_SERGIOROOM_ABRA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABRA)",
       "x": 6,
-      "y": 5,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SergioRoom_EventScript_Abra",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SERGIOROOM_SERGIO",
+      "graphics_id": "OBJ_EVENT_GFX_SERGIO",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -34,6 +49,14 @@
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_CHEVE_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "warp_id": "WARP_ID_SERGIO_ROOM_ABRA",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SERGIO_ROOM",
       "dest_warp_id": "0"
     }
   ],

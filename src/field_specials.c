@@ -2594,7 +2594,7 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
     FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
     ShowBattleFrontierTutorWindow(task->tScrollMultiId, 0);
-    sScrollableMultichoice_ListMenuItem = AllocZeroed(task->tNumItems * 8);
+    sScrollableMultichoice_ListMenuItem = AllocZeroed(task->tNumItems * sizeof(struct ListMenuItem));
     InitScrollableMultichoice();
 
     for (width = 0, i = 0; i < task->tNumItems; i++)
@@ -4352,6 +4352,7 @@ void UseBlankMessageToCancelPokemonPic(void)
 
 void EnterCode(void)
 {
+    StringCopy(gStringVar2, COMPOUND_STRING(""));
     DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
@@ -4375,4 +4376,35 @@ void SetAbility(void)
 {
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
+}
+
+void UpdateObjectEventSprite()
+{
+    struct ObjectEvent objectEvent = gObjectEvents[GetObjectEventIdByLocalId(gSpecialVar_0x8004)];
+    ObjectEventSetGraphicsId(&objectEvent, gSpecialVar_0x8005);
+    ObjectEventTurn(&objectEvent, objectEvent.movementDirection);
+}
+
+// WAH Admin Rematch Team Selection
+// Randomizes which team (MAIN or ALTERNATIVE) each admin uses in rematches
+void RandomizeWahAdminTeams(void)
+{
+    VarSet(VAR_WAH_ADMIN_TEAMS_LO, Random());
+    VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
+}
+
+// Checks if admin at given index should use ALTERNATIVE team
+// Input: gSpecialVar_0x8004 = admin index (0-23)
+// Output: gSpecialVar_Result = 0 (MAIN) or 1 (ALTERNATIVE)
+void ShouldUseAlternativeTeam(void)
+{
+    u8 adminIndex = gSpecialVar_0x8004;
+    u16 teamBits;
+
+    if (adminIndex < 16)
+        teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_LO);
+    else
+        teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_HI);
+
+    gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
 }

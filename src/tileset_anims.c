@@ -6,6 +6,7 @@
 #include "task.h"
 #include "battle_transition.h"
 #include "fieldmap.h"
+#include "event_data.h"
 
 static EWRAM_DATA struct {
     const u16 *src;
@@ -1197,4 +1198,507 @@ void InitTilesetAnim_RoomBoo(void)
     sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_RoomBoo;
+}
+
+
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Statue_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/statue/02.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Statue[] = {
+    gTilesetAnims_TokynWarRoom_Statue_Frame2,
+    gTilesetAnims_TokynWarRoom_Statue_Frame1,
+    gTilesetAnims_TokynWarRoom_Statue_Frame0,
+    gTilesetAnims_TokynWarRoom_Statue_Frame1,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Statue(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Statue);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Statue[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_WaterMountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_mountain/02.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_WaterMountain[] = {
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame0,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame1,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame2,
+    gTilesetAnims_TokynWarRoom_WaterMountain_Frame1,
+};
+
+static void QueueAnimTiles_TokynWarRoom_WaterMountain(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_WaterMountain);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_WaterMountain[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 28 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water1_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_1/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water1[] = {
+    gTilesetAnims_TokynWarRoom_Water1_Frame0,
+    gTilesetAnims_TokynWarRoom_Water1_Frame1,
+    gTilesetAnims_TokynWarRoom_Water1_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water2_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_2/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water2[] = {
+    gTilesetAnims_TokynWarRoom_Water2_Frame0,
+    gTilesetAnims_TokynWarRoom_Water2_Frame1,
+    gTilesetAnims_TokynWarRoom_Water2_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 8)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/00.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/01.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/02.4bpp");
+const u16 gTilesetAnims_TokynWarRoom_Water3_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/anim/water_3/03.4bpp");
+
+const u16 *const gTilesetAnims_TokynWarRoom_Water3[] = {
+    gTilesetAnims_TokynWarRoom_Water3_Frame0,
+    gTilesetAnims_TokynWarRoom_Water3_Frame1,
+    gTilesetAnims_TokynWarRoom_Water3_Frame2,
+};
+
+static void QueueAnimTiles_TokynWarRoom_Water3(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_TokynWarRoom_Water3);
+    AppendTilesetAnimToBuffer(gTilesetAnims_TokynWarRoom_Water3[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_TokynWarRoom(u16 timer)
+{
+    if (timer % 32 == 0) {
+        QueueAnimTiles_TokynWarRoom_Statue(timer / 32);
+    }
+    if (timer % 32 == 1) {
+        QueueAnimTiles_TokynWarRoom_WaterMountain(timer / 32);
+    }
+    if (timer % 32 == 2) {
+        QueueAnimTiles_TokynWarRoom_Water1(timer / 32);
+    }
+    if (timer % 32 == 3) {
+        QueueAnimTiles_TokynWarRoom_Water2(timer / 32);
+    }
+    if (timer % 32 == 4) {
+        QueueAnimTiles_TokynWarRoom_Water3(timer / 32);
+    }
+}
+
+
+
+void InitTilesetAnim_TokynWarRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_TokynWarRoom;
+}
+
+
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_awaken/00.4bpp");
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_awaken/01.4bpp");
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_awaken/02.4bpp");
+
+const u16 *const gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken[] = {
+    gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame0,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame1,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame2,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken_Frame1
+};
+
+static void QueueAnimTiles_OmegaRoom_CapsuleOmegaAwaken(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken);
+    AppendTilesetAnimToBuffer(gTilesetAnims_OmegaRoom_CapsuleOmegaAwaken[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 16 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_sleeping/00.4bpp");
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_sleeping/01.4bpp");
+const u16 gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_omega/anim/capsule_omega_sleeping/02.4bpp");
+
+
+const u16 *const gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping[] = {
+    gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame0,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame1,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame2,
+    gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping_Frame1,
+};
+
+static void QueueAnimTiles_OmegaRoom_CapsuleOmegaSleeping(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping);
+    AppendTilesetAnimToBuffer(gTilesetAnims_OmegaRoom_CapsuleOmegaSleeping[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 16 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_OmegaRoom(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_OmegaRoom_CapsuleOmegaAwaken(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_OmegaRoom_CapsuleOmegaSleeping(timer / 16);
+    }
+}
+
+void InitTilesetAnim_OmegaRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_OmegaRoom;
+}
+
+
+const u16 gTilesetAnims_AngelRoom_Screen_FrameOmega[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/00.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameAzulAgua[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/01.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameAnima[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/02.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameMitic[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/03.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameIslasDoradas[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/04.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameTrianguloOrigen[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/05.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/06.4bpp");
+
+const u16 *const gTilesetAnims_AngelRoom_Screen_FirstPart[] = {
+    gTilesetAnims_AngelRoom_Screen_FrameOmega,
+    gTilesetAnims_AngelRoom_Screen_FrameOmega,
+    gTilesetAnims_AngelRoom_Screen_FrameAnima,
+    gTilesetAnims_AngelRoom_Screen_FrameAnima,
+};
+
+const u16 *const gTilesetAnims_AngelRoom_Screen_SecondPart[] = {
+    gTilesetAnims_AngelRoom_Screen_FrameMitic,
+    gTilesetAnims_AngelRoom_Screen_FrameMitic,
+    gTilesetAnims_AngelRoom_Screen_FrameAzulAgua,
+    gTilesetAnims_AngelRoom_Screen_FrameAzulAgua,
+};
+
+const u16 *const gTilesetAnims_AngelRoom_Screen_ThirdPart[] = {
+    gTilesetAnims_AngelRoom_Screen_FrameIslasDoradas,
+    gTilesetAnims_AngelRoom_Screen_FrameIslasDoradas,
+    gTilesetAnims_AngelRoom_Screen_FrameTrianguloOrigen,
+    gTilesetAnims_AngelRoom_Screen_FrameTrianguloOrigen,
+};
+
+const u16 *const gTilesetAnims_AngelRoom_Screen_FourthPart[] = {
+    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
+    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
+    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
+    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
+};
+
+static void QueueAnimTiles_AngelRoom_Screen_FirstPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Screen_FirstPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_FirstPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_AngelRoom_Screen_SecondPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Screen_SecondPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_SecondPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_AngelRoom_Screen_ThirdPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Screen_ThirdPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_ThirdPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_AngelRoom_Screen_FourthPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Screen_FourthPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_FourthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameEmpty[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/00.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameOmega[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/01.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameAzulAgua[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/02.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameAnima[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/03.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameMitic[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/04.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameIslasDoradas[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/05.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameTrianguloOrigen[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/06.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameHoennAdventuresDelta[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/07.4bpp");
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_FirstPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameOmega,
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameAnima,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_FirstPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_FirstPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_FirstPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
+}
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_SecondPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameMitic,
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameAzulAgua,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_SecondPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_SecondPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_SecondPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
+}
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_ThirdPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameIslasDoradas,
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameTrianguloOrigen,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_ThirdPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_ThirdPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_ThirdPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
+}
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_FourthPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameHoennAdventuresDelta,
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty, 
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_FourthPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_FourthPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_FourthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_AngelRoom(u16 timer)
+{
+    int tilesIncrement;
+    if (timer % 64 == 0) 
+    {
+        tilesIncrement = VarGet(VAR_ANGEL_ROOM_TRAILER_FRAMES);
+        if(tilesIncrement < 4)
+        {
+            QueueAnimTiles_AngelRoom_Trailer_FirstPart(tilesIncrement);
+            QueueAnimTiles_AngelRoom_Screen_FirstPart(tilesIncrement);
+            tilesIncrement++;
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        } else if (tilesIncrement < 8) {
+            QueueAnimTiles_AngelRoom_Trailer_SecondPart(tilesIncrement - 4);
+            QueueAnimTiles_AngelRoom_Screen_SecondPart(tilesIncrement - 4);
+            tilesIncrement++;
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+        else if(tilesIncrement < 12)
+        {
+            QueueAnimTiles_AngelRoom_Trailer_ThirdPart(tilesIncrement - 8);
+            QueueAnimTiles_AngelRoom_Screen_ThirdPart(tilesIncrement - 8);
+            tilesIncrement++;
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+        else if(tilesIncrement < 14)
+        {
+            QueueAnimTiles_AngelRoom_Trailer_FourthPart(tilesIncrement - 12);
+            QueueAnimTiles_AngelRoom_Screen_FourthPart(tilesIncrement - 12);
+            tilesIncrement++;
+            if(tilesIncrement >= 14)
+            {
+                tilesIncrement = 0;
+            }
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+    }
+}
+
+void InitTilesetAnim_AngelRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_AngelRoom;
+}
+
+
+const u16 gTilesetAnims_DriveKatherineRoom_Candle_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/anim/candle/00.4bpp");
+const u16 gTilesetAnims_DriveKatherineRoom_Candle_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/anim/candle/01.4bpp");
+const u16 gTilesetAnims_DriveKatherineRoom_Candle_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/anim/candle/02.4bpp");
+
+
+const u16 *const gTilesetAnims_DriveKatherineRoom_Candle[] = {
+    gTilesetAnims_DriveKatherineRoom_Candle_Frame0,
+    gTilesetAnims_DriveKatherineRoom_Candle_Frame1,
+    gTilesetAnims_DriveKatherineRoom_Candle_Frame0,
+    gTilesetAnims_DriveKatherineRoom_Candle_Frame2,
+};
+
+static void QueueAnimTiles_DriveKatherineRoom_Candle(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_DriveKatherineRoom_Candle);
+    AppendTilesetAnimToBuffer(gTilesetAnims_DriveKatherineRoom_Candle[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 6 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_DriveKatherineRoom(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_DriveKatherineRoom_Candle(timer / 16);
+    }
+}
+
+void InitTilesetAnim_DriveKatherineRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_DriveKatherineRoom;
+}
+
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/02.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_BigServer[] = {
+    gTilesetAnims_XirosRoom_BigServer_Frame1,
+    gTilesetAnims_XirosRoom_BigServer_Frame0,
+    gTilesetAnims_XirosRoom_BigServer_Frame2,
+    gTilesetAnims_XirosRoom_BigServer_Frame0,
+};
+
+static void QueueAnimTiles_XirosRoom_BigServer(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_BigServer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_BigServer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Capsule[] = {
+    gTilesetAnims_XirosRoom_Capsule_Frame0,
+    gTilesetAnims_XirosRoom_Capsule_Frame1,
+    gTilesetAnims_XirosRoom_Capsule_Frame2,
+    gTilesetAnims_XirosRoom_Capsule_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_Capsule(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Capsule);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Capsule[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 8 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Cube_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Cube_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_Cube_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/02.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Cube[] = {
+    gTilesetAnims_XirosRoom_Cube_Frame0,
+    gTilesetAnims_XirosRoom_Cube_Frame1,
+    gTilesetAnims_XirosRoom_Cube_Frame2,
+    gTilesetAnims_XirosRoom_Cube_Frame1
+};
+
+static void QueueAnimTiles_XirosRoom_Cube(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Cube);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Cube[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 6 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_EnergyPillar[] = {
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame0,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame1,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame2,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_EnergyPillar(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_EnergyPillar);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_EnergyPillar[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 18)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Screen1_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/screen_1/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Screen1_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/screen_1/01.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Screen1[] = {
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame1,
+};
+
+static void QueueAnimTiles_XirosRoom_Screen1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Screen1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Screen1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 22)), 18 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_SmallServer[] = {
+    gTilesetAnims_XirosRoom_SmallServer_Frame0,
+    gTilesetAnims_XirosRoom_SmallServer_Frame1,
+    gTilesetAnims_XirosRoom_SmallServer_Frame2,
+    gTilesetAnims_XirosRoom_SmallServer_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_SmallServer(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_SmallServer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_SmallServer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 40)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_XirosRoom(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_XirosRoom_Capsule(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_XirosRoom_Cube(timer / 16);
+    }
+    if (timer % 16 == 2) {
+        QueueAnimTiles_XirosRoom_SmallServer(timer / 16);
+    }
+    if (timer % 16 == 3) {
+        QueueAnimTiles_XirosRoom_BigServer(timer / 16);
+    }
+    if (timer % 16 == 4) {
+        QueueAnimTiles_XirosRoom_EnergyPillar(timer / 16);
+    }
+    if(timer % 16 == 5) {
+        QueueAnimTiles_XirosRoom_Screen1(timer / 16);
+    }
+}
+
+void InitTilesetAnim_XirosRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_XirosRoom;
 }

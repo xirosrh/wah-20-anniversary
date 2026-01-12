@@ -21,7 +21,7 @@
 
 // Estas definiciones generacionales solo hacen una distinción para Bayas y el OW_PC_MOVE_ORDER
 #define GEN_6_XY GEN_6
-#define GEN_6_ORAS GEN_LATEST + 1
+#define GEN_6_ORAS GEN_COUNT + 1
 
 // Configuración del PC
 #define OW_PC_PRESS_B               GEN_LATEST // En Gen4, presionar B mientras sostienes un Pokémon es equivalente a colocarlo. En Gen3, da el error "¡Estás sosteniendo un Pokémon!"
@@ -86,8 +86,8 @@
 #define OW_FLASH_FIRE               GEN_LATEST // En Gen8+, si un Pokémon con Absorbe Fuego está liderando el equipo, hay un 50% de probabilidad de encontrar un Pokémon de tipo Fuego.
 
 // Estas definiciones generacionales solo hacen una distinción para OW_ALTERED_TIME_RATIO
-#define GEN_8_PLA                       GEN_LATEST + 2
-#define TIME_DEBUG                      GEN_LATEST + 3
+#define GEN_8_PLA                       GEN_COUNT + 2
+#define TIME_DEBUG                      GEN_COUNT + 3
 
 // Tiempo
 #define OW_TIMES_OF_DAY                 GEN_LATEST      // Diferentes generaciones cambian los tiempos del día en diferentes momentos.
@@ -100,7 +100,7 @@
 // DNS
 #define OW_SHADOW_INTENSITY             4               // Rangos desde 0 a 16, donde 0 es transparente y 16 es negro.
 #define OW_OBJECT_SUBPRIORITY           148             // Cuanto más alto sea el valor, más atrás estará en comparación con otros sprites. Las sombras deberían estar por debajo de los OWs.
-#define OW_ENABLE_DNS                   TRUE            // Si está habilitada, el OW se tintará según la hora del día.
+#define OW_ENABLE_DNS                   FALSE            // Si está habilitada, el OW se tintará según la hora del día.
 
 // Sombras de OWs
 #define OW_OBJECT_VANILLA_SHADOWS      FALSE            // En vanilla las sombras en el OW solo se muestran mientras se salta.

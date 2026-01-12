@@ -1,0 +1,52 @@
+mapscripts HallOfFame_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: HallOfFame_OnFrame
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_1, 0: HallOfFame_OnWarp
+    ]
+}
+
+script HallOfFame_OnWarp {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script HallOfFame_OnFrame {
+	lockall
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp6)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp6)
+	waitmovement(0)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	msgbox(format("TODO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp5)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp5)
+	waitmovement(0)
+	delay(20)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	msgbox(format("TODO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterUp)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement(0)
+	delay(20)
+	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
+	delay(40)
+	setvar(VAR_TEMP_1, 1)
+	call(HallOfFame_EventScript_SetGameClearFlags)
+	fadescreenspeed(FADE_TO_BLACK, 24)
+	special(GameClear)
+	waitstate
+	releaseall
+	end
+}
+
+script HallOfFame_EventScript_SetGameClearFlags {
+    setflag(FLAG_WAH_CHALLENGE_COMPLETED)
+    special(RandomizeWahAdminTeams)
+    return
+}

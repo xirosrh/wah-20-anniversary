@@ -7,11 +7,25 @@ extern const struct SpritePalette gBagPaletteTable;
 extern const struct CompressedSpriteSheet gBerryCheckCircleSpriteSheet;
 extern const struct SpritePalette gBerryCheckCirclePaletteTable;
 
+// Pocket icon sprites
+extern const struct CompressedSpriteSheet gBagPocketIconsSpriteSheet;
+extern const struct SpritePalette gBagPocketIconsPaletteNormal;
+extern const struct SpritePalette gBagPocketIconsPaletteSelected;
+
 void RemoveBagSprite(u8 id);
 void AddBagVisualSprite(u8 bagPocketId);
 void SetBagVisualPocketId(u8 bagPocketId, bool8 isSwitchingPockets);
 void ShakeBagSprite(void);
+
+void AddPocketIconSprites(u8 selectedPocket);
+void SetPocketIconSelected(u8 selectedPocket);
+void RemovePocketIconSprites(void);
 void AddSwitchPocketRotatingBallSprite(s16 rotationDirection);
+void AddPocketSwitchArrowSprites(void);
+void RemovePocketSwitchArrowSprites(void);
+void AddScrollArrowSprites(void);
+void RemoveScrollArrowSprites(void);
+void UpdateScrollArrowVisibility(void);
 void AddBagItemIconSprite(u16 itemId, u8 id);
 void RemoveBagItemIconSprite(u8 id);
 void CreateItemMenuSwapLine(void);

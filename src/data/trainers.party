@@ -84,7 +84,7 @@ Double Battle: No
 === TRAINER_WAH_ADMIN_OMEGA_MAIN ===
 Name: Omega
 Class: WAH Admin
-Pic: Cheve
+Pic: Omega
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -280,7 +280,7 @@ AI: Check Bad Move
 
 BLAxTOISE (Blastoise) (M) @ Blastoisinite  
 Ability: Torrent
-Level: 35  
+Level: 100  
 Tera Type: Water  
 EVs: 176 HP / 252 Atk / 80 Spe  
 Adamant Nature  
@@ -291,7 +291,7 @@ Adamant Nature
 
 SiriusBLAx (Dragapult) @ Roseli Berry  
 Ability: Cursed Body
-Level: 35    
+Level: 100    
 Shiny: Yes  
 Tera Type: Dragon  
 EVs: 232 HP / 252 Atk / 24 Spe  
@@ -367,16 +367,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Swampert @Swampertite
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Metagross
-Level: 26
+Level: 100
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tyranitar
-Level: 26
+Level: 100
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
@@ -554,7 +554,7 @@ AI: Check Bad Move
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Brave Bird
@@ -564,7 +564,7 @@ Jolly Nature
 
 Samus (Charizard-Mega-X) (F) @ Charizardite X
 Ability: Tough Claws
-Level: 10
+Level: 100
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Dragon Dance
@@ -575,7 +575,7 @@ Jolly Nature
 0 (Milotic) (M) @ Leftovers
 Ability: Marvel Scale
 Shiny: Yes
-Level: 10
+Level: 100
 EVs: 252 HP / 4 Def / 252 SpD
 Calm Nature
 - Scald
@@ -585,7 +585,7 @@ Calm Nature
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Modest Nature
 - Geomancy
@@ -595,7 +595,7 @@ Modest Nature
 
 Hydreigon (F) @ Choice Specs
 Ability: Levitate
-Level: 10
+Level: 100
 EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
 - Draco Meteor
@@ -605,7 +605,7 @@ Timid Nature
 
 Kingambit (M) @ Leftovers
 Ability: Supreme Overlord
-Level: 10
+Level: 100
 EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Swords Dance
@@ -1140,10 +1140,27 @@ IVs: 0 Atk
 - Energy Ball
 - Trick
 
+=== TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Youngster
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Sandslash
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- Dig
+- Slash
+- Sand Attack
+- Poison Sting
+
 === TRAINER_WAH_ADMIN_JAVS_MAIN ===
 Name: Javs
 Class: WAH Admin
-Pic: Youngster
+Pic: Javs
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1180,40 +1197,37 @@ IVs: 0 Atk
 - Roost
 - Defog
 
-=== TRAINER_CHIP ===
-Name: CHIP
-Class: Ruin Maniac
-Pic: Ruin Maniac
+=== TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Psybeam
-- Self Destruct
-- Sandstorm
-- Ancient Power
-
-Sandshrew
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
 Sandslash
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 30
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Dig
 - Slash
 - Sand Attack
 - Poison Sting
 
-=== TRAINER_FOSTER ===
+=== TRAINER_WAH_ADMIN_SERGIO_MAIN ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Dragonite
+Level: 27
+
+
+=== TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
 Name: FOSTER
 Class: Ruin Maniac
 Pic: Ruin Maniac
@@ -1233,40 +1247,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Sandslash
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-=== TRAINER_DUSTY_2 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandslash
-Level: 27
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-=== TRAINER_DUSTY_3 ===
-Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandslash
-Level: 30
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Dig
 - Slash
 - Sand Attack

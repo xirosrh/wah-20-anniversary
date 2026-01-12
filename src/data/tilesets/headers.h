@@ -885,3 +885,80 @@ const struct Tileset gTileset_Room_Jack_Johnson =
     .metatileAttributes = gMetatileAttributes_Room_Jack_Johnson,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Room_Gallego =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Room_Gallego,
+    .palettes = gTilesetPalettes_Room_Gallego,
+    .metatiles = gMetatiles_Room_Gallego,
+    .metatileAttributes = gMetatileAttributes_Room_Gallego,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_tokynwar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_tokynwar,
+    .palettes = gTilesetPalettes_room_tokynwar,
+    .metatiles = gMetatiles_room_tokynwar,
+    .metatileAttributes = gMetatileAttributes_room_tokynwar,
+    .callback = InitTilesetAnim_TokynWarRoom,
+};
+
+const struct Tileset gTileset_room_omega =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_omega,
+    .palettes = gTilesetPalettes_room_omega,
+    .metatiles = gMetatiles_room_omega,
+    .metatileAttributes = gMetatileAttributes_room_omega,
+    .callback = InitTilesetAnim_OmegaRoom,
+};
+
+const struct Tileset gTileset_room_scarexozumas =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_scarexozumas,
+    .palettes = gTilesetPalettes_room_scarexozumas,
+    .metatiles = gMetatiles_room_scarexozumas,
+    .metatileAttributes = gMetatileAttributes_room_scarexozumas,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_angel =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_angel,
+    .palettes = gTilesetPalettes_room_angel,
+    .metatiles = gMetatiles_room_angel,
+    .metatileAttributes = gMetatileAttributes_room_angel,
+    .callback = InitTilesetAnim_AngelRoom,
+};
+
+const struct Tileset gTileset_room_drivekatherine =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_drivekatherine,
+    .palettes = gTilesetPalettes_room_drivekatherine,
+    .metatiles = gMetatiles_room_drivekatherine,
+    .metatileAttributes = gMetatileAttributes_room_drivekatherine,
+    .callback = InitTilesetAnim_DriveKatherineRoom,
+};
+
+const struct Tileset gTileset_room_xiros =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_xiros,
+    .palettes = gTilesetPalettes_room_xiros,
+    .metatiles = gMetatiles_room_xiros,
+    .metatileAttributes = gMetatileAttributes_room_xiros,
+    .callback = InitTilesetAnim_XirosRoom,
+};

@@ -66,6 +66,7 @@
 #include "constants/weather.h"
 #include "constants/field_pics.h"
 #include "constants/speaker_names.h"
+#include "constants/wah_team_indexes.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -75,6 +76,7 @@
 	.set ALLOCATE_SCRIPT_CMD_TABLE, 1
 	.include "data/script_cmd_table.inc"
 
+.align 2
 gSpecialVars::
 	.4byte gSpecialVar_0x8000
 	.4byte gSpecialVar_0x8001
@@ -1168,3 +1170,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/XirosRoom/scripts.inc"
 
 	.include "data/maps/SergioRoom/scripts.inc"
+
+	.include "data/maps/DragonMountain_Top/scripts.inc"
+
+	.include "data/maps/HallOfFame/scripts.inc"

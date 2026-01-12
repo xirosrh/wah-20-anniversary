@@ -1,18 +1,54 @@
-mapscripts GallegoRoom_MapScripts {}
+const VAR_TEMP_0_BIN = VAR_TEMP_0
+
+mapscripts GallegoRoom_MapScripts {
+     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_8, 0: GallegoRoom_OnWarp_PlayerTurnNorth
+    ]
+    MAP_SCRIPT_ON_LOAD: GallegoRoom_OnLoad
+}
+
+script GallegoRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_GALLEGO)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script GallegoRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
 
 script GallegoRoom_EventScript_Gallego {
     if(flag(FLAG_DEFEATED_ADMIN_GALLEGO)) {
         lock
         faceplayer
-        msgbox(format("La chispa que ha vuelto a encender mi sueño ha prendido una llama que crece por momentos."), MSGBOX_AUTOCLOSE)
+        msgbox(format("La chispa que ha vuelto a encender mi sueño ha prendido una llama que crece por momentos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
         playse(SE_PIN)
         applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48)
-        msgbox(format("¡Continúa en busca del tuyo, y volveremos a encontrarnos en el camino!"), MSGBOX_AUTOCLOSE)
+        msgbox(format("¡Continúa en busca del tuyo, y volveremos a encontrarnos en el camino!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
         release
         end
     }
     lock
-    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(reveal_trainer))
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)){
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_PLAYER, moves(
+                walk_left
+                walk_down * 2
+                walk_right
+                face_up
+            ))
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_PLAYER, moves(
+                walk_down
+                walk_right
+                face_up
+            ))
+    }
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(reveal_trainer, walk_in_place_up))
     msgbox(format("Ay, no, creo que me ha visto… No puedo dejar que me encuentren todavía…\p¿Y si me quedo muy quieto? ¿Seré capaz de escabullirme?"), MSGBOX_AUTOCLOSE_TOP)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
@@ -22,9 +58,9 @@ script GallegoRoom_EventScript_Gallego {
         delay_16 * 2,
         face_right,
         delay_16 * 2,
-        face_up,
-        delay_16 * 2,
         face_down,
+        delay_16,
+        face_up,
         delay_16 * 2
     ))
     msgbox(format("En fin, tendré que aceptarlo, supongo que no podía ocultarme para siempre."), MSGBOX_AUTOCLOSE_TOP)
@@ -32,8 +68,8 @@ script GallegoRoom_EventScript_Gallego {
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     faceplayer
     delay(30)
-    call(GallegoRoom_EventScript_WalkInPlaceGallegoFacingPlayer)
-    msgbox(format("¡Hola! Soy Gallego13, y llevo años observando desde las sombras.\pCasi podría decir que en vez de irme, me escondí.\pDe vez en cuando echaba un ojo por nuestra querida comunidad, sin decir nada, viendo los avances y cómo evolucionaba…\pNunca quise que fuese tan largo, pero los estudios y después la vida me hicieron perder la noción del tiempo.\pAntes de que me diera cuenta, me acostumbré a ver este mundo desde la distancia."), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceDown)
+    msgbox(format("¡Hola! Soy Gallego13, y llevo años observando desde las sombras.\pCasi podría decir que en vez de irme, me escondí.\pDe vez en cuando echaba un ojo por nuestra querida comunidad, sin decir nada, viendo los avances y cómo evolucionaba…\pNunca quise que fuese tan largo, pero los estudios y después la vida me hicieron perder la noción del tiempo.\pAntes de que me diera cuenta, me acostumbré a ver este mundo desde la distancia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
     playse(SE_PIN)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
@@ -44,68 +80,51 @@ script GallegoRoom_EventScript_Gallego {
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     waitmovement(0)
     delay(40)
-    msgbox(format("El aniversario me ha pillado totalmente por sorpresa. ¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE)
+    msgbox(format("El aniversario me ha pillado totalmente por sorpresa. ¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HeartWithDelay48)
-    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese 'no sé qué' del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE)
-    call(GallegoRoom_EventScript_MoveAwayFromPlayer)
-    msgbox(format("Pero me iba a volver loco con todo aquello… demasiado difícil, los bugs aparecían como setas a cada cambio."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese 'no sé qué' del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
+    waitmovement(0)
+    msgbox(format("Pero me iba a volver loco con todo aquello… demasiado difícil, los bugs aparecían como setas a cada cambio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_FacePlayer)
-    msgbox(format("Y justo cuando lo dejé, cuando me rendí, aparecieron las herramientas modernas.\pEl disassembly, los motores… todo lo que habría necesitado entonces, apareció, casi como si fuese una burla a mi esfuerzo."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Y justo cuando lo dejé, cuando me rendí, aparecieron las herramientas modernas.\pEl disassembly, los motores… todo lo que habría necesitado entonces, apareció, casi como si fuese una burla a mi esfuerzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
-    call(GallegoRoom_EventScript_MoveTowardsPlayer)
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkDown2)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
+    waitmovement(0)
+    special(RemoveCameraObject)
     delay(50)
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)
-    switch(var(VAR_RESULT)) {
-        case DIR_NORTH:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(face_left, delay_16 * 2, face_right, delay_16 *2, face_down))
-        case DIR_SOUTH:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(face_left, delay_16 * 2, face_right, delay_16 *2, face_up))
-        case DIR_WEST:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(face_left, delay_16 *2, face_right))
-        case DIR_EAST:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(face_right, delay_16 *2, face_left))
-    }
-    msgbox(format("Como ves, aún conservo mis viejas Game Boy Color."), MSGBOX_AUTOCLOSE)
-    switch(var(VAR_RESULT)) {
-        case DIR_NORTH:
-            applymovementandwait(LOCALID_PLAYER, moves(
-                face_left,
-                delay_16 * 2,
-                face_right,
-                delay_16 * 2,
-                face_up,
-                delay_16))
-        case DIR_SOUTH:
-            applymovementandwait(LOCALID_PLAYER, moves(
-                face_left,
-                delay_16 * 2,
-                face_right,
-                delay_16 * 2,
-                face_down,
-                delay_16))
-        case DIR_WEST:
-            applymovementandwait(LOCALID_PLAYER, moves(
-                face_right,
-                delay_16 * 2,
-                face_left,
-                delay_16))
-
-        case DIR_EAST:
-            applymovementandwait(LOCALID_PLAYER, moves(
-                face_left,
-                delay_16 * 2,
-                face_right,
-                delay_16))
-    }    
-    msgbox(format("Algunas ni siquiera encienden, pero siguen ahí.\pA pesar de todo, después de tanto tiempo, mi sueño todavía vive…\pEl sueño no tiene fin: la maquinaria en mi cabeza todavía no se ha detenido…"), MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
+        walk_left
+        walk_down * 3
+        walk_right
+    ))
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    msgbox(format("Como ves, aún conservo mis viejas Game Boy Color."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    applymovementandwait(LOCALID_PLAYER, moves(walk_down, face_right))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
+    turnobject(LOCALID_GALLEGOROOM_GALLEGO, DIR_NORTH)
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    msgbox(format("Algunas ni siquiera encienden, pero siguen ahí.\pA pesar de todo, después de tanto tiempo, mi sueño todavía vive…\pEl sueño no tiene fin: la maquinaria en mi cabeza todavía no se ha detenido…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
-    call(GallegoRoom_EventScript_WalkInPlaceGallegoFacingPlayer)
-    msgbox(format("En fin, suficiente reflexión por ahora. Vamos a ver si no se me ha olvidado combatir en este tiempo."))
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceUp)
+    msgbox(format("En fin, suficiente reflexión por ahora."), MSGBOX_AUTOCLOSE, speaker= SP_NAME_GALLEGO)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
+        walk_left
+        walk_up * 3
+        walk_right
+        face_down
+    ))
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+    msgbox(format("Vamos a ver si no se me ha olvidado combatir en este tiempo."), speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         emote_versus,
@@ -115,17 +134,17 @@ script GallegoRoom_EventScript_Gallego {
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"))
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, format("Uff.. pues sí que me he quedado anticuado."))
-    msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"), speaker = SP_NAME_GALLEGO)
+    call(GallegoRoom_EventScript_GallegoBattle)
+    msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48)
     delay(60)
-    msgbox(format("Es curioso… abandoné justo antes de que todo se volviera más fácil, y aun así, sigo pensando en volver.\pNo puedo negar que soy un cabezota sin remedio…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Es curioso… abandoné justo antes de que todo se volviera más fácil, y aun así, sigo pensando en volver.\pNo puedo negar que soy un cabezota sin remedio…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     delay(30)
-    msgbox(format("Supongo que algunos sueños no se apagan."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Supongo que algunos sueños no se apagan."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
         jump_in_place_up,
@@ -133,88 +152,85 @@ script GallegoRoom_EventScript_Gallego {
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("Ve, continúa, ¡busca tu sueño y abrázalo con fuerza!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Ve, continúa, ¡busca tu sueño y abrázalo con fuerza!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     waitmovement(0)
-    call(PokemonLeague_EliteFour_OpenRoomDoorMetatiles)
-    msgbox(format("Yo me quedaré aquí un rato más… recordando mis viejos intentos y soñando con un nuevo y emocionante comienzo."), MSGBOX_AUTOCLOSE)
+    call(WahRoomsShared_OpenDoor)
+    msgbox(format("Yo me quedaré aquí un rato más… recordando mis viejos intentos y soñando con un nuevo y emocionante comienzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     setflag(FLAG_DEFEATED_ADMIN_GALLEGO)
     release
     end
 }
 
-script GallegoRoom_EventScript_WalkInPlaceGallegoFacingPlayer {
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)
-    switch(var(VAR_RESULT)) {
-        case DIR_NORTH:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceDown)
-            break
-        case DIR_SOUTH:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceUp)
-            break
-        case DIR_WEST:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceRight)
-            break
-        case DIR_EAST:
-            applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceLeft)
-            break
+script GallegoRoom_EventScript_TV {
+    msgbox(format("Parece que tiene a medias una partida del Castlevania original.\pCuriosa forma de liberar el estrés."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Monkfear {
+    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Agua/siniestro.\lEspecie: Acuaterror.\pLínea evolutiva: Monkfear no evoluciona.", MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Saturnape {
+    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Psíquico.\lEspecie: Mono alien.\pLínea evolutiva: Marskey (LV. 30) >\nSaturnape.", MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Gameboy1 {
+    msgbox(format("Es una Gameboy Color. Parece que tiene una partida en marcha en el interior de un bosque enorme.\pVale, voy a salir y… acaba de crashear. Vaya."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Gameboy2 {
+    msgbox(format("Es una Gameboy Color. La partida está guardada antes de la escena de selección de inicial en un juego que no conozco…\p¡Uy! Se acaba de reiniciar nada más entrar en combate. Vaya chasco."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Coffee {
+    msgbox(format("Un café con leche a medio beber. Parece como si alguien se lo hubiese dejado a medias por la prisa."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Drawings {
+    msgbox(format("Parecen diseños de varios fakémon y Pokémon de generaciones posteriores a la segunda en el estilo de la Gameboy Color.\pEstán entremezclados con apuntes muy viejos de la universidad.\pParece que nadie ha puesto orden aquí en una década."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_NES {
+    msgbox(format("Es una NES, un poco polvorienta, pero funciona perfectamente. ¡Qué retro!"), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Bin {
+    switch(var(VAR_TEMP_0_BIN)) {
+        case 0:
+            msgbox(format("Nada, aquí solo hay basura… creo."), MSGBOX_SIGN)
+            setvar(VAR_TEMP_0_BIN, 1)
+        case 1:
+            msgbox(format("Te he dicho que aquí solo hay basura. Deja de buscar."), MSGBOX_SIGN)
+            setvar(VAR_TEMP_0_BIN, 2)
+        case 2:
+            msgbox(format("Encuentras al fondo una imagen extraña. Es un diseño claramente de la segunda generación, pero estás seguro de que es Flamigo, un Pokémon reciente.\p¿Qué sentido tiene esto?"), MSGBOX_SIGN)
     }
+    end
+}
+
+script GallegoRoom_EventScript_GallegoBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_GALLEGO)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_Text_GallegoDefeated)
+        }
+    }
+    special(HealPlayerParty)
     return
 }
 
-script GallegoRoom_EventScript_MoveAwayFromPlayer {
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)
-    special(SpawnCameraObject)
-    switch(var(VAR_RESULT)) {
-        case DIR_NORTH:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
-            waitmovement(0)
-            break
-        case DIR_SOUTH:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkDown2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
-            waitmovement(0)
-            break
-        case DIR_WEST:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkLeft2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft2)
-            waitmovement(0)
-            break
-        case DIR_EAST:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkRight2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkRight2)
-            waitmovement(0)
-            break
-    }
-    special(RemoveCameraObject)
-    return
-}
-
-script GallegoRoom_EventScript_MoveTowardsPlayer {
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)
-    special(SpawnCameraObject)
-    switch(var(VAR_RESULT)) {
-        case DIR_NORTH:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkDown2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
-            waitmovement(0)
-            break
-        case DIR_SOUTH:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
-            waitmovement(0)
-            break
-        case DIR_WEST:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkRight2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkRight2)
-            waitmovement(0)
-            break
-        case DIR_EAST:
-            applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkLeft2)
-            applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft2)
-            waitmovement(0)
-            break
-    }
-    special(RemoveCameraObject)
-    return
+text GallegoRoom_Text_GallegoDefeated {
+    format("Uff… pues sí que me he quedado anticuado.")
 }
