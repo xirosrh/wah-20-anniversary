@@ -16,7 +16,7 @@ gText_Cope_Welcome::
 	.string "invisibles mal puestos... creo.\p"
 	.string "¿No es genial?\p"
 	.string "(...){PAUSE 0x24}(...){PAUSE 0x24}(...){PAUSE 0x24}\p"
-	.string "Y hablando de cosas geniales...\p"
+	.string "Y hablando de cosas geniales..."
 	.string "$"
 
 gText_Cope_Pokemon::
@@ -25,7 +25,7 @@ gText_Cope_Pokemon::
 	.string "que un sprite con su paleta.\p"
 	.string "Si hay armonía entre colores y sin\n"
 	.string "jaggies a la vista, no hay quien nos\l"
-	.string "pare.\p"
+	.string "pare."
 	.string "$"
 
 gText_Cope_ExplainChalenge::
