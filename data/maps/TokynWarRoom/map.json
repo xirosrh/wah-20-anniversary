@@ -65,7 +65,7 @@
       "x": 6,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -74,7 +74,7 @@
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
@@ -83,7 +83,7 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
@@ -92,7 +92,7 @@
       "x": 5,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "0",
       "script": "TokynWarRoom_EventScript_MagikarpJumping"
     },
@@ -101,7 +101,7 @@
       "x": 5,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -110,7 +110,7 @@
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -119,7 +119,7 @@
       "x": 7,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -128,7 +128,7 @@
       "x": 8,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -137,7 +137,7 @@
       "x": 9,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     },
@@ -146,7 +146,7 @@
       "x": 9,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_TOKYN_WAR_ROOM_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "TokynWarRoom_EventScript_MainCutscene"
     }
