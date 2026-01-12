@@ -1568,3 +1568,137 @@ void InitTilesetAnim_DriveKatherineRoom(void)
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_DriveKatherineRoom;
 }
+
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_BigServer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/big_server/02.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_BigServer[] = {
+    gTilesetAnims_XirosRoom_BigServer_Frame1,
+    gTilesetAnims_XirosRoom_BigServer_Frame0,
+    gTilesetAnims_XirosRoom_BigServer_Frame2,
+    gTilesetAnims_XirosRoom_BigServer_Frame0,
+};
+
+static void QueueAnimTiles_XirosRoom_BigServer(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_BigServer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_BigServer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_Capsule_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/capsule/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Capsule[] = {
+    gTilesetAnims_XirosRoom_Capsule_Frame0,
+    gTilesetAnims_XirosRoom_Capsule_Frame1,
+    gTilesetAnims_XirosRoom_Capsule_Frame2,
+    gTilesetAnims_XirosRoom_Capsule_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_Capsule(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Capsule);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Capsule[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 8 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Cube_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Cube_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_Cube_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/cube/02.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Cube[] = {
+    gTilesetAnims_XirosRoom_Cube_Frame0,
+    gTilesetAnims_XirosRoom_Cube_Frame1,
+    gTilesetAnims_XirosRoom_Cube_Frame2,
+    gTilesetAnims_XirosRoom_Cube_Frame1
+};
+
+static void QueueAnimTiles_XirosRoom_Cube(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Cube);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Cube[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 6 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_EnergyPillar_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/energy_pillar/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_EnergyPillar[] = {
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame0,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame1,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame2,
+    gTilesetAnims_XirosRoom_EnergyPillar_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_EnergyPillar(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_EnergyPillar);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_EnergyPillar[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 18)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_Screen1_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/screen_1/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_Screen1_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/screen_1/01.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_Screen1[] = {
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame0,
+    gTilesetAnims_XirosRoom_Screen1_Frame1,
+};
+
+static void QueueAnimTiles_XirosRoom_Screen1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_Screen1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_Screen1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 22)), 18 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/00.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/01.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/02.4bpp");
+const u16 gTilesetAnims_XirosRoom_SmallServer_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_xiros/anim/small_server/03.4bpp");
+
+const u16 *const gTilesetAnims_XirosRoom_SmallServer[] = {
+    gTilesetAnims_XirosRoom_SmallServer_Frame0,
+    gTilesetAnims_XirosRoom_SmallServer_Frame1,
+    gTilesetAnims_XirosRoom_SmallServer_Frame2,
+    gTilesetAnims_XirosRoom_SmallServer_Frame3,
+};
+
+static void QueueAnimTiles_XirosRoom_SmallServer(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_XirosRoom_SmallServer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_XirosRoom_SmallServer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 40)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_XirosRoom(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_XirosRoom_Capsule(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_XirosRoom_Cube(timer / 16);
+    }
+    if (timer % 16 == 2) {
+        QueueAnimTiles_XirosRoom_SmallServer(timer / 16);
+    }
+    if (timer % 16 == 3) {
+        QueueAnimTiles_XirosRoom_BigServer(timer / 16);
+    }
+    if (timer % 16 == 4) {
+        QueueAnimTiles_XirosRoom_EnergyPillar(timer / 16);
+    }
+    if(timer % 16 == 5) {
+        QueueAnimTiles_XirosRoom_Screen1(timer / 16);
+    }
+}
+
+void InitTilesetAnim_XirosRoom(void)
+{
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_XirosRoom;
+}
