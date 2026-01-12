@@ -228,3 +228,18 @@ const u16 gMetatileAttributes_Room_Gallego[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_room_tokynwar[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/metatiles.bin");
 const u16 gMetatileAttributes_room_tokynwar[] = INCBIN_U16("data/tilesets/secondary/room_tokynwar/metatile_attributes.bin");
+
+const u16 gMetatiles_room_omega[] = INCBIN_U16("data/tilesets/secondary/room_omega/metatiles.bin");
+const u16 gMetatileAttributes_room_omega[] = INCBIN_U16("data/tilesets/secondary/room_omega/metatile_attributes.bin");
+
+const u16 gMetatiles_room_scarexozumas[] = INCBIN_U16("data/tilesets/secondary/room_scarexozumas/metatiles.bin");
+const u16 gMetatileAttributes_room_scarexozumas[] = INCBIN_U16("data/tilesets/secondary/room_scarexozumas/metatile_attributes.bin");
+
+const u16 gMetatiles_room_angel[] = INCBIN_U16("data/tilesets/secondary/room_angel/metatiles.bin");
+const u16 gMetatileAttributes_room_angel[] = INCBIN_U16("data/tilesets/secondary/room_angel/metatile_attributes.bin");
+
+const u16 gMetatiles_room_drivekatherine[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/metatiles.bin");
+const u16 gMetatileAttributes_room_drivekatherine[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/metatile_attributes.bin");
+
+const u16 gMetatiles_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatiles.bin");
+const u16 gMetatileAttributes_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatile_attributes.bin");

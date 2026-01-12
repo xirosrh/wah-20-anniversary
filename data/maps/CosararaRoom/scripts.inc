@@ -47,13 +47,13 @@ CosararaRoom_EventScript_Cosarara_4:
 # 38 "data/maps/CosararaRoom/scripts.pory"
 	msgbox CosararaRoom_EventScript_Cosarara_Text_4
 # 39 "data/maps/CosararaRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_EventScript_Cosarara_Text_5
+	call CosararaRoom_EventScript_CosararaBattle
 # 40 "data/maps/CosararaRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_COSARARA
 # 41 "data/maps/CosararaRoom/scripts.pory"
 	delay 20
 # 42 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_6, MSGBOX_AUTOCLOSE
+	msgbox CosararaRoom_EventScript_Cosarara_Text_5, MSGBOX_AUTOCLOSE
 # 43 "data/maps/CosararaRoom/scripts.pory"
 	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
 # 44 "data/maps/CosararaRoom/scripts.pory"
@@ -91,6 +91,34 @@ CosararaRoom_EventScript_Cosarara_8:
 	goto CosararaRoom_EventScript_Cosarara_4
 
 
+CosararaRoom_EventScript_CosararaBattle::
+# 51 "data/maps/CosararaRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, CosararaRoom_EventScript_CosararaBattle_2
+# 54 "data/maps/CosararaRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_COSARARA
+# 55 "data/maps/CosararaRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 56 "data/maps/CosararaRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq CosararaRoom_EventScript_CosararaBattle_5
+# 59 "data/maps/CosararaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, CosararaRoom_Text_CosararaDefeated
+CosararaRoom_EventScript_CosararaBattle_1:
+# 62 "data/maps/CosararaRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+CosararaRoom_EventScript_CosararaBattle_2:
+# 52 "data/maps/CosararaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated
+	goto CosararaRoom_EventScript_CosararaBattle_1
+
+CosararaRoom_EventScript_CosararaBattle_5:
+# 57 "data/maps/CosararaRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated
+	goto CosararaRoom_EventScript_CosararaBattle_1
+
+
 CosararaRoom_EventScript_Cosarara_Text_0:
 # 8 "data/maps/CosararaRoom/scripts.pory"
 	.string "¿Y tú eres? Ahhh sí ya me acuerdo de ti,\n"
@@ -122,13 +150,13 @@ CosararaRoom_EventScript_Cosarara_Text_4:
 	.string "combatir? Acepto el reto.$"
 
 CosararaRoom_EventScript_Cosarara_Text_5:
-# 39 "data/maps/CosararaRoom/scripts.pory"
-	.string "Me ha hecho muy feliz esta batalla.$"
-
-CosararaRoom_EventScript_Cosarara_Text_6:
 # 42 "data/maps/CosararaRoom/scripts.pory"
 	.string "Ha sido una buena batalla, {PLAYER}.\n"
 	.string "Creo que te recordaré.\p"
 	.string "Recuerda no cambiar de nick, ya que me\n"
 	.string "cuesta mucho saber quién es quien.\p"
 	.string "Ya puedes avanzar.$"
+
+CosararaRoom_Text_CosararaDefeated::
+# 66 "data/maps/CosararaRoom/scripts.pory"
+	.string "Me ha hecho muy feliz esta batalla.$"

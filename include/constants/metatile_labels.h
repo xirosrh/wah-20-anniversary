@@ -896,6 +896,69 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_room_angel
+#define METATILE_room_angel_DOOR_CENTER                0x275
+#define METATILE_room_angel_DOOR_LEFT                  0x274
+#define METATILE_room_angel_DOOR_RIGHT                 0x276
+#define METATILE_room_angel_SCREEN_CLOSED_CENTER       0x206
+#define METATILE_room_angel_SCREEN_CLOSED_DOOR_CENTER  0x215
+#define METATILE_room_angel_SCREEN_CLOSED_DOOR_LEFT    0x217
+#define METATILE_room_angel_SCREEN_CLOSED_DOOR_RIGHT   0x21F
+#define METATILE_room_angel_SCREEN_CLOSED_LEFT         0x205
+#define METATILE_room_angel_SCREEN_CLOSED_RIGHT        0x207
+#define METATILE_room_angel_SCREEN_CLOSING_1_CENTER    0x256
+#define METATILE_room_angel_SCREEN_CLOSING_1_LEFT      0x255
+#define METATILE_room_angel_SCREEN_CLOSING_1_RIGHT     0x257
+#define METATILE_room_angel_SCREEN_CLOSING_2_CENTER    0x263
+#define METATILE_room_angel_SCREEN_CLOSING_2_DOOR_1    0x264
+#define METATILE_room_angel_SCREEN_CLOSING_2_DOOR_2    0x265
+#define METATILE_room_angel_SCREEN_CLOSING_2_DOOR_3    0x266
+#define METATILE_room_angel_SCREEN_CLOSING_2_LEFT      0x262
+#define METATILE_room_angel_SCREEN_CLOSING_2_RIGHT     0x267
+#define METATILE_room_angel_SCREEN_CLOSING_3_CENTER    0x26B
+#define METATILE_room_angel_SCREEN_CLOSING_3_DOOR_1    0x26C
+#define METATILE_room_angel_SCREEN_CLOSING_3_DOOR_2    0x26D
+#define METATILE_room_angel_SCREEN_CLOSING_3_DOOR_3    0x26E
+#define METATILE_room_angel_SCREEN_CLOSING_3_LEFT      0x26A
+#define METATILE_room_angel_SCREEN_CLOSING_3_RIGHT     0x26F
+#define METATILE_room_angel_SCREEN_FLOOR               0x23B
+#define METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER   0x236
+#define METATILE_room_angel_SCREEN_OFF_BOTTOM_LEFT     0x235
+#define METATILE_room_angel_SCREEN_OFF_BOTTOM_RIGHT    0x237
+#define METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER   0x22E
+#define METATILE_room_angel_SCREEN_OFF_MIDDLE_LEFT     0x22D
+#define METATILE_room_angel_SCREEN_OFF_MIDDLE_RIGHT    0x22F
+#define METATILE_room_angel_SCREEN_OFF_TOP_CENTER      0x226
+#define METATILE_room_angel_SCREEN_OFF_TOP_LEFT        0x225
+#define METATILE_room_angel_SCREEN_OFF_TOP_RIGHT       0x227
+#define METATILE_room_angel_WALL                       0x20E
+
+// gTileset_room_omega
+#define METATILE_room_omega_BROKEN_GLASS      0x28B
+#define METATILE_room_omega_CAPSULE_BROKEN_1  0x278
+#define METATILE_room_omega_CAPSULE_BROKEN_2  0x279
+#define METATILE_room_omega_CAPSULE_BROKEN_3  0x27A
+#define METATILE_room_omega_CAPSULE_BROKEN_4  0x280
+#define METATILE_room_omega_CAPSULE_BROKEN_5  0x281
+#define METATILE_room_omega_CAPSULE_BROKEN_6  0x282
+#define METATILE_room_omega_CAPSULE_BROKEN_7  0x289
+#define METATILE_room_omega_EMPTY_4           0x288
+#define METATILE_room_omega_EMPTY_6           0x28A
+#define METATILE_room_omega_OMEGA_AWAKENS_1   0x263
+#define METATILE_room_omega_OMEGA_AWAKENS_2   0x264
+#define METATILE_room_omega_OMEGA_AWAKENS_3   0x265
+#define METATILE_room_omega_OMEGA_AWAKENS_4   0x26B
+#define METATILE_room_omega_OMEGA_AWAKENS_5   0x26C
+#define METATILE_room_omega_OMEGA_AWAKENS_6   0x26D
+#define METATILE_room_omega_OMEGA_AWAKENS_7   0x274
+#define METATILE_room_omega_OMEGA_SLEEPING_1  0x260
+#define METATILE_room_omega_OMEGA_SLEEPING_2  0x261
+#define METATILE_room_omega_OMEGA_SLEEPING_3  0x262
+#define METATILE_room_omega_OMEGA_SLEEPING_4  0x268
+#define METATILE_room_omega_OMEGA_SLEEPING_5  0x269
+#define METATILE_room_omega_OMEGA_SLEEPING_6  0x26A
+#define METATILE_room_omega_OMEGA_SLEEPING_7  0x271
+
 // Other
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C

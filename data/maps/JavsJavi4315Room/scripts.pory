@@ -109,10 +109,46 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(emote_versus, jump_in_place_down * 2, delay_16))
     applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(emote_versus, jump_in_place_down * 2, delay_16))
     waitmovement(0)
-    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, format("¿Acaso hemos perdido, Javs?") , TRAINER_WAH_ADMIN_JAVS_MAIN, format("¿Cómo puede ser? ¡Mi estrategia era infalible!"))
+    call(JavsJavi4315Room_EventScript_JavsJavi4315Battle)
     call(JavsJavi4315Room_EventScript_PostBattle)
     releaseall
     end
+}
+
+script JavsJavi4315Room_EventScript_JavsJavi4315Battle {
+      if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated , TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_JAVI4315)
+        special(ShouldUseAlternativeTeam)
+        copyvar(VAR_0x8005, VAR_RESULT)
+        setvar(VAR_0x8004, TEAM_INDEX_JAVS)
+        special(ShouldUseAlternativeTeam)
+        // VAR_0x8005 = Javi4315 team, VAR_RESULT = Javs team
+        if (var(VAR_0x8005) == 0) {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated , TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated , TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated)
+            }
+        } else {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated , TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated , TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated)
+            }
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text JavsJavi4315Room_Text_Javi4315Defeated {
+    format("¿Acaso hemos perdido, Javs?")
+}
+
+text JavsJavi4315Room_Text_JavsDefeated {
+    format("¿Cómo puede ser? ¡Mi estrategia era infalible!")
 }
 
 script JavsJavi4315Room_EventScript_PostBattle {

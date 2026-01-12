@@ -68,7 +68,7 @@ script TokynWarRoom_EventScript_MainCutscene {
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_versus, jump_in_place_left * 2, delay_16))
     applymovement(LOCALID_PLAYER, moves(face_left, delay_8, face_right, delay_8, face_left, delay_8, face_right, delay_8))
     waitmovement(LOCALID_TOKYNWARROOM_WAR)
-    trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, format("Qué bien se sintió este combate… hacía tiempo que no disfrutaba uno así."), TRAINER_WAH_ADMIN_WAR_MAIN, format("Bueno… ahora sí sé quién eres. Vaya forma de presentarte."))
+    call(TokynWarRoom_EventScript_TokynWarBattle)
     playse(SE_PIN)
     applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_x, lock_facing_direction, jump_left, unlock_facing_direction, delay_16 * 2))
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_x, lock_facing_direction, jump_right, unlock_facing_direction, delay_16 * 2))
@@ -148,4 +148,40 @@ script TokynWarRoom_EventScript_MagikarpJumping {
     setvar(VAR_TOKYN_WAR_ROOM_STATE, 1)
     release
     end
+}
+
+script TokynWarRoom_EventScript_TokynWarBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_TOKYN)
+        special(ShouldUseAlternativeTeam)
+        copyvar(VAR_0x8005, VAR_RESULT)
+        setvar(VAR_0x8004, TEAM_INDEX_WAR)
+        special(ShouldUseAlternativeTeam)
+        // VAR_0x8005 = Tokyn team, VAR_RESULT = War team
+        if (var(VAR_0x8005) == 0) {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_ALTERNATIVE, TokynWarRoom_Text_WarDefeated)
+            }
+        } else {
+            if (var(VAR_RESULT) == 0) {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated)
+            } else {
+                trainerbattle_two_trainers(TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_ALTERNATIVE, TokynWarRoom_Text_WarDefeated)
+            }
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text TokynWarRoom_Text_TokynDefeated {
+    format("Qué bien se sintió este combate… hacía tiempo que no disfrutaba uno así.")
+}
+
+text TokynWarRoom_Text_WarDefeated {
+    format("Bueno… ahora sí sé quién eres. Vaya forma de presentarte.")
 }

@@ -1265,7 +1265,41 @@ const u16 gBattlePyramidFloor_Pal[][16] = INCBIN_U16("graphics/battle_frontier/p
 const u32 gMultiBattleIntroBg_Opponent_Tilemap[] = INCBIN_U32("graphics/battle_frontier/multi_battle_intro_bg_opponent.bin.smolTM");
 const u32 gMultiBattleIntroBg_Player_Tilemap[] = INCBIN_U32("graphics/battle_frontier/multi_battle_intro_bg_player.bin.smolTM");
 
-#include "data/graphics/intro_scene.h"
+// Intro scene graphics removed - stub data for compatibility
+const u16 gIntroGameFreakTextFade_Pal[] = {0};
+const u16 gIntroPlayer_Pal[] = {0};
+const u16 gIntro3Bg_Pal[16][16] = {{0}};
+const u16 gIntroVolbeat_Pal[] = {0};
+const u16 gIntroTorchic_Pal[] = {0};
+const u16 gIntroManectric_Pal[] = {0};
+const u16 gIntroFlygon_Pal[] = {0};
+const u32 gIntroVolbeat_Gfx[] = {0};
+const u32 gIntroTorchic_Gfx[] = {0};
+const u32 gIntroManectric_Gfx[] = {0};
+const u32 gIntroFlygon_Gfx[] = {0};
+const u32 gIntroBrendan_Gfx[] = {0};
+const u32 gIntroMay_Gfx[] = {0};
+const u32 gIntroGroudon_Gfx[] = {0};
+const u32 gIntroGroudon_Tilemap[] = {0};
+const u32 gIntroKyogre_Gfx[] = {0};
+const u32 gIntroKyogre_Tilemap[] = {0};
+const u32 gIntroLegendBg_Gfx[] = {0};
+const u32 gIntroGroudonBg_Tilemap[] = {0};
+const u32 gIntroKyogreBg_Tilemap[] = {0};
+const u32 gIntroClouds_Gfx[] = {0};
+const u32 gIntroCloudsLeft_Tilemap[] = {0};
+const u32 gIntroCloudsRight_Tilemap[] = {0};
+const u32 gIntroCloudsSun_Tilemap[] = {0};
+const u32 gIntroLightning_Gfx[] = {0};
+const u16 gIntroLightning_Pal[] = {0};
+const u32 gIntroRayquaza_Gfx[] = {0};
+const u32 gIntroRayquaza_Tilemap[] = {0};
+const u32 gIntroRayquazaClouds_Gfx[] = {0};
+const u32 gIntroRayquazaClouds_Tilemap[] = {0};
+const u32 gIntroBubbles_Gfx[] = {0};
+const u16 gIntroBubbles_Pal[] = {0};
+const u32 gIntroFlygonSilhouette_Gfx[] = {0};
+const u32 gIntroSparkle_Gfx[] = {0};
 
 const u32 gBattleAnimSpriteGfx_FlyingDirt[] = INCBIN_U32("graphics/battle_anims/sprites/flying_dirt.4bpp.smol");
 const u16 gBattleAnimSpritePal_FlyingDirt[] = INCBIN_U16("graphics/battle_anims/sprites/flying_dirt.gbapal");
@@ -1640,6 +1674,19 @@ const u16 gBagScreenFemale_Pal[] = INCBIN_U16("graphics/bag/menu_female.gbapal")
 const u32 gBagScreen_Gfx[] = INCBIN_U32("graphics/bag/menu.4bpp.smol");
 const u32 gBagScreen_GfxTileMap[] = INCBIN_U32("graphics/bag/menu.bin.smolTM");
 
+// New bag UI graphics
+const u32 gBagBg_Gfx[] = INCBIN_U32("graphics/bag/bg_tileset.4bpp.lz");
+const u32 gBagBg_Tilemap[] = INCBIN_U32("graphics/bag/bg_tilemap.bin.lz");
+const u16 gBagBg_Pal[] = INCBIN_U16("graphics/bag/bg.gbapal");
+
+const u32 gBagBox_Gfx[] = INCBIN_U32("graphics/bag/box_tileset.4bpp.lz");
+const u32 gBagBox_Tilemap[] = INCBIN_U32("graphics/bag/box_tilemap.bin.lz");
+const u16 gBagBox_Pal[] = INCBIN_U16("graphics/bag/box.gbapal");
+
+const u32 gBagPocketIcons_Gfx[] = INCBIN_U32("graphics/bag/pocket_icons.4bpp.smol");
+const u16 gBagPocketIcons_Pal[] = INCBIN_U16("graphics/bag/pocket_icons.gbapal");
+const u16 gBagPocketIconsSel_Pal[] = INCBIN_U16("graphics/bag/pocket_icons_selected.gbapal");
+
 const u32 gBattlePyramidBag_Gfx[]          = INCBIN_U32("graphics/bag/bag_pyramid.4bpp.smol");
 const u16 gBattlePyramidBag_Pal[]          = INCBIN_U16("graphics/bag/bag_pyramid.gbapal"); // female palette is first and male is second.
 const u32 gBattlePyramidBagTilemap[]       = INCBIN_U32("graphics/bag/menu_pyramid.bin.smolTM");
@@ -1750,9 +1797,10 @@ const u16 gSummaryScreen_MoveEffect_Battle_Tilemap[] = INCBIN_U16("graphics/summ
 const u16 gSummaryScreen_MoveEffect_Contest_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_contest.bin");
 const u16 gSummaryScreen_MoveEffect_Cancel_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_cancel.bin");
 
-const u16 gIntroCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
-const u32 gIntroCopyright_Gfx[] = INCBIN_U32("graphics/intro/copyright.4bpp.smol");
-const u32 gIntroCopyright_Tilemap[] = INCBIN_U32("graphics/intro/copyright.bin.smolTM");
+// Copyright graphics removed - stub data
+const u16 gIntroCopyright_Pal[16] = {0};
+const u32 gIntroCopyright_Gfx[] = {0};
+const u32 gIntroCopyright_Tilemap[] = {0};
 
 const u16 gPokedexAreaScreenAreaUnknown_Pal[] = INCBIN_U16("graphics/pokedex/area_unknown.gbapal");
 const u32 gPokedexAreaScreenAreaUnknown_Gfx[] = INCBIN_U32("graphics/pokedex/area_unknown.4bpp.smol");

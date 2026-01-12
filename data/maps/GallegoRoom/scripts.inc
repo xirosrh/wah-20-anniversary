@@ -150,9 +150,9 @@ GallegoRoom_EventScript_Gallego_4:
 # 137 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Gallego_Text_14, speaker = SP_NAME_GALLEGO
 # 138 "data/maps/GallegoRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_EventScript_Gallego_Text_15
+	call GallegoRoom_EventScript_GallegoBattle
 # 139 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 140 "data/maps/GallegoRoom/scripts.pory"
 	playse SE_PIN
 # 141 "data/maps/GallegoRoom/scripts.pory"
@@ -160,7 +160,7 @@ GallegoRoom_EventScript_Gallego_4:
 # 142 "data/maps/GallegoRoom/scripts.pory"
 	delay 60
 # 143 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 144 "data/maps/GallegoRoom/scripts.pory"
 	playse SE_PIN
 # 145 "data/maps/GallegoRoom/scripts.pory"
@@ -168,17 +168,17 @@ GallegoRoom_EventScript_Gallego_4:
 # 146 "data/maps/GallegoRoom/scripts.pory"
 	delay 30
 # 147 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_18, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 148 "data/maps/GallegoRoom/scripts.pory"
 	applymovement LOCALID_GALLEGOROOM_GALLEGO, GallegoRoom_EventScript_Gallego_Movement_9
 # 155 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_19, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_18, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 156 "data/maps/GallegoRoom/scripts.pory"
 	waitmovement 0
 # 157 "data/maps/GallegoRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 # 158 "data/maps/GallegoRoom/scripts.pory"
-	msgbox GallegoRoom_EventScript_Gallego_Text_20, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
+	msgbox GallegoRoom_EventScript_Gallego_Text_19, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO
 # 159 "data/maps/GallegoRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_GALLEGO
 # 160 "data/maps/GallegoRoom/scripts.pory"
@@ -291,6 +291,34 @@ GallegoRoom_EventScript_Bin_5:
 # 213 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_2, MSGBOX_SIGN
 	goto GallegoRoom_EventScript_Bin_1
+
+
+GallegoRoom_EventScript_GallegoBattle::
+# 219 "data/maps/GallegoRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GallegoRoom_EventScript_GallegoBattle_2
+# 222 "data/maps/GallegoRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_GALLEGO
+# 223 "data/maps/GallegoRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 224 "data/maps/GallegoRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq GallegoRoom_EventScript_GallegoBattle_5
+# 227 "data/maps/GallegoRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_Text_GallegoDefeated
+GallegoRoom_EventScript_GallegoBattle_1:
+# 230 "data/maps/GallegoRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+GallegoRoom_EventScript_GallegoBattle_2:
+# 220 "data/maps/GallegoRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated
+	goto GallegoRoom_EventScript_GallegoBattle_1
+
+GallegoRoom_EventScript_GallegoBattle_5:
+# 225 "data/maps/GallegoRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated
+	goto GallegoRoom_EventScript_GallegoBattle_1
 
 
 # 37 "data/maps/GallegoRoom/scripts.pory"
@@ -553,11 +581,6 @@ GallegoRoom_EventScript_Gallego_Text_14:
 	.string "nueva generación!$"
 
 GallegoRoom_EventScript_Gallego_Text_15:
-# 138 "data/maps/GallegoRoom/scripts.pory"
-	.string "Uff.. pues sí que me he quedado\n"
-	.string "anticuado.$"
-
-GallegoRoom_EventScript_Gallego_Text_16:
 # 139 "data/maps/GallegoRoom/scripts.pory"
 	.string "Parece que las nuevas generaciones de\n"
 	.string "entrenadores son mucho más duras de\l"
@@ -565,7 +588,7 @@ GallegoRoom_EventScript_Gallego_Text_16:
 	.string "Pero verte combatir me devuelve la\n"
 	.string "chispa de antaño.$"
 
-GallegoRoom_EventScript_Gallego_Text_17:
+GallegoRoom_EventScript_Gallego_Text_16:
 # 143 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es curioso… abandoné justo antes de\n"
 	.string "que todo se volviera más fácil, y aun\l"
@@ -573,17 +596,17 @@ GallegoRoom_EventScript_Gallego_Text_17:
 	.string "No puedo negar que soy un cabezota sin\n"
 	.string "remedio…$"
 
-GallegoRoom_EventScript_Gallego_Text_18:
+GallegoRoom_EventScript_Gallego_Text_17:
 # 147 "data/maps/GallegoRoom/scripts.pory"
 	.string "Supongo que algunos sueños no se\n"
 	.string "apagan.$"
 
-GallegoRoom_EventScript_Gallego_Text_19:
+GallegoRoom_EventScript_Gallego_Text_18:
 # 155 "data/maps/GallegoRoom/scripts.pory"
 	.string "Ve, continúa, ¡busca tu sueño y\n"
 	.string "abrázalo con fuerza!$"
 
-GallegoRoom_EventScript_Gallego_Text_20:
+GallegoRoom_EventScript_Gallego_Text_19:
 # 158 "data/maps/GallegoRoom/scripts.pory"
 	.string "Yo me quedaré aquí un rato más…\n"
 	.string "recordando mis viejos intentos y\l"
@@ -659,3 +682,8 @@ GallegoRoom_EventScript_Bin_Text_2:
 	.string "segunda generación, pero estás seguro\l"
 	.string "de que es Flamigo, un Pokémon reciente.\p"
 	.string "¿Qué sentido tiene esto?$"
+
+GallegoRoom_Text_GallegoDefeated::
+# 234 "data/maps/GallegoRoom/scripts.pory"
+	.string "Uff… pues sí que me he quedado\n"
+	.string "anticuado.$"

@@ -75,7 +75,7 @@ SayerBlaxRoom_OnFrame::
 # 58 "data/maps/SayerBlaxRoom/scripts.pory"
 	waitmovement 0
 # 59 "data/maps/SayerBlaxRoom/scripts.pory"
-	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_OnFrame_Text_6, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_OnFrame_Text_7
+	call SayerBlaxRoom_EventScript_SayerBlaxBattle
 # 60 "data/maps/SayerBlaxRoom/scripts.pory"
 	applymovement LOCALID_SAYERBLAXROOM_SAYER, SayerBlaxRoom_OnFrame_Movement_4
 # 66 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -89,13 +89,13 @@ SayerBlaxRoom_OnFrame::
 # 75 "data/maps/SayerBlaxRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 # 76 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_8, MSGBOX_DEFAULT
+	msgbox SayerBlaxRoom_OnFrame_Text_6, MSGBOX_DEFAULT
 # 77 "data/maps/SayerBlaxRoom/scripts.pory"
 	playse SE_PIN
 # 78 "data/maps/SayerBlaxRoom/scripts.pory"
 	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48
 # 79 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE
+	msgbox SayerBlaxRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE
 # 80 "data/maps/SayerBlaxRoom/scripts.pory"
 	applymovementandwait LOCALID_SAYERBLAXROOM_BLAX, SayerBlaxRoom_OnFrame_Movement_6
 # 85 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -105,7 +105,7 @@ SayerBlaxRoom_OnFrame::
 # 87 "data/maps/SayerBlaxRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
 # 88 "data/maps/SayerBlaxRoom/scripts.pory"
-	msgbox SayerBlaxRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE
+	msgbox SayerBlaxRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE
 # 89 "data/maps/SayerBlaxRoom/scripts.pory"
 	setvar VAR_SAYER_BLAX_ROOM_STATE, 1
 # 90 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -127,6 +127,56 @@ SayerBlaxRoom_EventScript_Sayer::
 # 103 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_EventScript_Sayer_Text_0, MSGBOX_AUTOCLOSE
 	end
+
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle::
+# 108 "data/maps/SayerBlaxRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, SayerBlaxRoom_EventScript_SayerBlaxBattle_2
+# 111 "data/maps/SayerBlaxRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_BLAX
+# 112 "data/maps/SayerBlaxRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 113 "data/maps/SayerBlaxRoom/scripts.pory"
+	copyvar VAR_0x8005, VAR_RESULT
+# 114 "data/maps/SayerBlaxRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_SAYER
+# 115 "data/maps/SayerBlaxRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 117 "data/maps/SayerBlaxRoom/scripts.pory"
+	compare VAR_0x8005, 0
+	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_5
+# 124 "data/maps/SayerBlaxRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_11
+# 127 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated
+SayerBlaxRoom_EventScript_SayerBlaxBattle_1:
+# 131 "data/maps/SayerBlaxRoom/scripts.pory"
+	special HealPlayerParty
+	return
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_2:
+# 109 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_0, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_1
+	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_5:
+# 118 "data/maps/SayerBlaxRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_8
+# 121 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated
+	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_8:
+# 119 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
+	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_11:
+# 125 "data/maps/SayerBlaxRoom/scripts.pory"
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
+	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
 
 # 20 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -258,20 +308,12 @@ SayerBlaxRoom_OnFrame_Text_5:
 	.string "Welcome to the jungle!$"
 
 SayerBlaxRoom_OnFrame_Text_6:
-# 59 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
-
-SayerBlaxRoom_OnFrame_Text_7:
-# 59 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Pues si que la has liado.$"
-
-SayerBlaxRoom_OnFrame_Text_8:
 # 76 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Ha sido un combate espectacular.\n"
 	.string "Confirmamos que estoy más oxidado de\l"
 	.string "lo que pensaba.$"
 
-SayerBlaxRoom_OnFrame_Text_9:
+SayerBlaxRoom_OnFrame_Text_7:
 # 79 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Todavía te quedan muchos combates por\n"
 	.string "delante, pero aprovecha cada uno de\l"
@@ -281,7 +323,7 @@ SayerBlaxRoom_OnFrame_Text_9:
 	.string "Dicho esto… Me vuelvo a dormir. ¡Mucha\n"
 	.string "suerte!$"
 
-SayerBlaxRoom_OnFrame_Text_10:
+SayerBlaxRoom_OnFrame_Text_8:
 # 88 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Y recuerda: No la líes y si puedes, pues\n"
 	.string "si.$"
@@ -296,3 +338,19 @@ SayerBlaxRoom_EventScript_Sayer_Text_0:
 	.string "No me puedo quejar la verdad, quedé\n"
 	.string "bastante contento con la batalla.\p"
 	.string "Avanza, fiera.$"
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_0:
+# 109 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
+
+SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_1:
+# 109 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "Pues si que la has liado.$"
+
+SayerBlaxRoom_Text_BlaxDefeated::
+# 135 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
+
+SayerBlaxRoom_Text_SayerDefeated::
+# 139 "data/maps/SayerBlaxRoom/scripts.pory"
+	.string "Pues si que la has liado.$"

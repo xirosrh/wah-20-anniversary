@@ -91,7 +91,7 @@ script DavZeroRoom_OnFrame {
     setobjectmovementtype2(LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN)   
     release
     msgbox(format("¡No te amedrentes ahora!"))
-    trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa."))
+    call(DavZeroRoom_EventScript_DavZeroBattle)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_ZEROROOM_MILOTIC)
     fadescreen(FADE_FROM_WHITE)
@@ -153,6 +153,25 @@ script DavZeroRoom_OnFrame {
     end
 }
 
+script DavZeroRoom_EventScript_DavZeroBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, DavZeroRoom_Text_DavZeroDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_DAVZERO)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_MAIN, DavZeroRoom_Text_DavZeroDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, DavZeroRoom_Text_DavZeroDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text DavZeroRoom_Text_DavZeroDefeated {
+    format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa.")
+}
 movement DavZeroRoom_Movement_GirlAndBoyLearning {
     emote_idea
     walk_in_place_up

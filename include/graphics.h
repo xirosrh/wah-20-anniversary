@@ -1850,50 +1850,31 @@ extern const u16 gBagScreenFemale_Pal[];
 extern const u16 gBagScreenMale_Pal[];
 extern const u8 gBagMenuHMIcon_Gfx[];
 
+// New bag UI graphics
+extern const u32 gBagBg_Gfx[];
+extern const u32 gBagBg_Tilemap[];
+extern const u16 gBagBg_Pal[];
+extern const u32 gBagBox_Gfx[];
+extern const u32 gBagBox_Tilemap[];
+extern const u16 gBagBox_Pal[];
+extern const u32 gBagPocketIcons_Gfx[];
+extern const u16 gBagPocketIcons_Pal[];
+extern const u16 gBagPocketIconsSel_Pal[];
+
 // item menu icons graphics
 extern const u32 gBagMaleTiles[];
 extern const u32 gBagFemaleTiles[];
 extern const u16 gBagPalette[];
 extern const u32 gBerryCheckCircle_Gfx[];
 
-//intro graphics
-extern const u32 gIntroSparkle_Gfx[];
-extern const u32 gIntroFlygonSilhouette_Gfx[];
-extern const u32 gIntroLightning_Gfx[];
-extern const u16 gIntroLightning_Pal[];
-extern const u32 gIntroCopyright_Gfx[];
-extern const u32 gIntroCopyright_Tilemap[];
+// Intro graphics removed - see commit 5b5df4a283
+// Stubs for credits.c and intro_credits_graphics.c compatibility
 extern const u16 gIntroCopyright_Pal[16];
-extern const u32 gIntroVolbeat_Gfx[];
-extern const u16 gIntroVolbeat_Pal[];
-extern const u32 gIntroTorchic_Gfx[];
-extern const u16 gIntroTorchic_Pal[];
-extern const u32 gIntroManectric_Gfx[];
-extern const u16 gIntroManectric_Pal[];
-extern const u32 gIntroBubbles_Gfx[];
-extern const u16 gIntroBubbles_Pal[];
-extern const u32 gIntroGroudon_Gfx[];
-extern const u32 gIntroGroudon_Tilemap[];
-extern const u32 gIntroLegendBg_Gfx[];
-extern const u32 gIntroGroudonBg_Tilemap[];
-extern const u16 gIntro3Bg_Pal[16][16];
-extern const u32 gIntroKyogre_Gfx[];
-extern const u32 gIntroKyogre_Tilemap[];
-extern const u32 gIntroKyogreBg_Tilemap[];
-extern const u32 gIntroClouds_Gfx[];
-extern const u32 gIntroCloudsLeft_Tilemap[];
-extern const u32 gIntroCloudsRight_Tilemap[];
-extern const u32 gIntroCloudsSun_Tilemap[];
-extern const u32 gIntroRayquaza_Tilemap[];
-extern const u32 gIntroRayquaza_Gfx[];
-extern const u32 gIntroRayquazaClouds_Gfx[];
-extern const u32 gIntroRayquazaClouds_Tilemap[];
-extern const u16 gIntroGameFreakTextFade_Pal[];
 extern const u32 gIntroBrendan_Gfx[];
 extern const u32 gIntroMay_Gfx[];
+extern const u32 gIntroFlygon_Gfx[];
 extern const u16 gIntroPlayer_Pal[];
 extern const u16 gIntroFlygon_Pal[];
-extern const u32 gIntroFlygon_Gfx[];
 
 // party menu graphics
 extern const u32 gPartyMenuBg_Gfx[];
