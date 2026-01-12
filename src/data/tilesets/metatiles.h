@@ -240,3 +240,6 @@ const u16 gMetatileAttributes_room_angel[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_room_drivekatherine[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/metatiles.bin");
 const u16 gMetatileAttributes_room_drivekatherine[] = INCBIN_U16("data/tilesets/secondary/room_drivekatherine/metatile_attributes.bin");
+
+const u16 gMetatiles_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatiles.bin");
+const u16 gMetatileAttributes_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatile_attributes.bin");

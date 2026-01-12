@@ -951,3 +951,14 @@ const struct Tileset gTileset_room_drivekatherine =
     .metatileAttributes = gMetatileAttributes_room_drivekatherine,
     .callback = InitTilesetAnim_DriveKatherineRoom,
 };
+
+const struct Tileset gTileset_room_xiros =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_xiros,
+    .palettes = gTilesetPalettes_room_xiros,
+    .metatiles = gMetatiles_room_xiros,
+    .metatileAttributes = gMetatileAttributes_room_xiros,
+    .callback = InitTilesetAnim_XirosRoom,
+};
