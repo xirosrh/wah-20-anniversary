@@ -44,6 +44,7 @@
 #include "pokemon.h"
 #include "script_pokemon_util.h"
 #include "event_data.h"
+#include "pokemon.h"
 
 //========== SECCIÓN: VARIABLES ==========//
 
@@ -571,6 +572,17 @@ static void UpdateSelectedMonIcon()
 
 }
 
+
+static void GetIVsByNature(const struct TeamSelectorMonData *mon, u8 *ivs)
+{
+    const struct NatureInfo natureMod = gNaturesInfo[mon->nature];
+
+    for (u8 i = 0; i < NUM_STATS; i++)
+    {
+        ivs[i] = (natureMod.statDown == i) ? 0 : 31;
+    }
+}
+
 static void GiveTeamPlayer()
 {
     const struct TeamSelectorMonData *mon;
@@ -582,7 +594,7 @@ static void GiveTeamPlayer()
     enum Type typeTera = TYPE_NONE;
 
     u8 evs[6];
-    u8 ivs[6] = {0,0,0,0,0,0};
+    u8 ivs[6];
 
     u16 tempMoves[4];
 
@@ -597,6 +609,7 @@ static void GiveTeamPlayer()
         mon = &gAllTeamMons[indexMon];
         memcpy(tempMoves, mon->moves, sizeof(tempMoves));
         memcpy(evs, mon->ev, sizeof(evs));
+        GetIVsByNature(mon, ivs);
 
         ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, MON_FEMALE, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
     }
