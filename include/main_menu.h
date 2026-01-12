@@ -6,5 +6,5 @@ void CreateYesNoMenuParameterized(u8 x, u8 y, u16 baseTileNum, u16 baseBlock, u8
 void NewGameBirchSpeech_SetDefaultPlayerName(u8);
 void NewGameBirchSpeech_ShowDialogueWindow(u8 windowId, bool8 copyToVram);
 void NewGameBirchSpeech_ClearWindow(u8);
-
+void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset);
 #endif // GUARD_MAIN_MENU_H
