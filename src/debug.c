@@ -77,6 +77,7 @@
 #include "rtc.h"
 #include "fake_rtc.h"
 #include "save.h"
+#include "team_selector.h"
 
 enum FollowerNPCCreateDebugMenu
 {
@@ -283,6 +284,7 @@ static void DebugAction_Party_HealParty(u8 taskId);
 static void DebugAction_Party_ClearParty(u8 taskId);
 static void DebugAction_Party_SetParty(u8 taskId);
 static void DebugAction_Party_BattleSingle(u8 taskId);
+static void DebugAction_Party_TeamSelector(u8 taskId);
 
 static void DebugAction_FlagsVars_Flags(u8 taskId);
 static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
@@ -594,6 +596,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Party[] =
     { COMPOUND_STRING("Clear Party"),        DebugAction_Party_ClearParty },
     { COMPOUND_STRING("Set Party"),          DebugAction_Party_SetParty },
     { COMPOUND_STRING("Start Debug Battle"), DebugAction_Party_BattleSingle },
+    { COMPOUND_STRING("Team Selector"),      DebugAction_Party_TeamSelector },
     { NULL }
 };
 
@@ -4113,6 +4116,12 @@ static void DebugAction_Party_HealParty(u8 taskId)
     HealPlayerParty();
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
+}
+
+static void DebugAction_Party_TeamSelector(u8 taskId)
+{
+    Debug_DestroyMenu_Full(taskId);
+    StartTeamSelector_CB2();
 }
 
 void DebugNative_GetAbilityNames(void)
