@@ -71,9 +71,9 @@
 #define FLAG_REONEKYROOM_HIDE_HAUNTER    0x39 // Used WAH
 #define FLAG_EINGROOM_HIDE_TRAINER_IN_WATER    0x3A // Used WAH
 #define FLAG_EINGROOM_HIDE_EING_FISHING    0x3B // Used WAH
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_DEFEATED_ADMIN_XIROS    0x3C //Used WAH
+#define FLAG_DEFEATED_ADMIN_KLEIN    0x3D //Used WAH
+#define FLAG_DEFEATED_ADMIN_PKPOWER    0x3E //Used WAH
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
