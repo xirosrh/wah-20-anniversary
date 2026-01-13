@@ -65,7 +65,7 @@
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "JavsJavi4315Room_EventScript_MainTrigger"
     },
@@ -74,7 +74,7 @@
       "x": 5,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "JavsJavi4315Room_EventScript_MainTrigger"
     },
@@ -83,7 +83,7 @@
       "x": 6,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "JavsJavi4315Room_EventScript_MainTrigger"
     },
@@ -92,7 +92,7 @@
       "x": 7,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "JavsJavi4315Room_EventScript_MainTrigger"
     },
@@ -101,7 +101,61 @@
       "x": 8,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_JAVS_JAVI4315_ROOM_STATE",
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "JavsJavi4315Room_EventScript_MainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "JavsJavi4315Room_EventScript_MainTrigger"
     }
