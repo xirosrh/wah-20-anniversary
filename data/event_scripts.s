@@ -1279,3 +1279,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DragonMountain_Top/scripts.inc"
 
 	.include "data/maps/HallOfFame/scripts.inc"
+
+	.include "data/maps/Lobby/scripts.inc"
