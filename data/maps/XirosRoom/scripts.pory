@@ -40,11 +40,12 @@ script XirosRoom_EventScript_Xiros {
         msgbox(format("Al final, el camino es largo, y la verdadera carrera es siempre con uno mismo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
-        applymovement(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, jump_in_place_down * 2))
+        applymovement(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
         msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         waitmovement(0)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
+        turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
         release
         end
     }
@@ -117,8 +118,7 @@ script XirosRoom_EventScript_Xiros {
     msgbox(format("Personalmente nunca creí que la época dorada fuera un momento que quedó atrás en el tiempo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown2)
     msgbox(format("Para mí, la época dorada es hoy, y también será mañana, mientras sigan existiendo personas con ganas de motivar, ayudar y empujar las cosas un poco más adelante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
-    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
-    turnobject(LOCALID_XIROSROOM_XIROS, DIR_WEST)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceLeft)
     turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_EAST)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_XIROSROOM_ELECTRODE)
@@ -133,7 +133,7 @@ script XirosRoom_EventScript_Xiros {
     call(XirosRoom_EventScript_XirosBattle)
     playse(SE_PIN)
     applymovement(LOCALID_XIROSROOM_XIROS, moves(emote_happy, jump_in_place_down * 2))
-    msgbox(format("¡Wow! ¡Que gran combate! Me encanta tu forma de combatir.\p¡Sobretodo la pasión que le pones a cada movimiento!."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("¡Wow! ¡Que gran combate! Me encanta tu forma de combatir.\p¡Sobretodo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     waitmovement(0)
     delay(20)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
