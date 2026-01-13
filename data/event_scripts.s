@@ -696,6 +696,7 @@ EventScript_ClearWahAdminFlags::
 	cleartrainerflag TRAINER_WAH_ADMIN_SERGIO_MAIN
 	cleartrainerflag TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE
 
+	setvar VAR_SERGIO_ROOM_STATE, 0
 	return
 
 EventScript_AfterWhiteOutHeal::

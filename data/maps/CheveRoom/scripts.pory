@@ -1,3 +1,7 @@
+const FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM = FLAG_TEMP_1
+const FLAG_TEMP_2_CHEVE_ROOM_HIDE_POKEBALL = FLAG_TEMP_2
+const FLAG_TEMP_3_CHEVE_ROOM_HIDE_TREE = FLAG_TEMP_3
+
 mapscripts CheveRoom_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: CheveRoom_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
@@ -20,8 +24,8 @@ script CheveRoom_OnWarp_PlayerTurnNorth {
 }
 
 script CheveRoom_OnTransition {
-    setflag(FLAG_CHEVEROOM_HIDE_MEGANIUM)
-    setflag(FLAG_CHEVEROOM_HIDE_POKEBALL)
+    setflag(FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM)
+    setflag(FLAG_TEMP_2_CHEVE_ROOM_HIDE_POKEBALL)
 }
 
 script CheveRoom_EventScript_Cheve {
@@ -113,14 +117,14 @@ script CheveRoom_EventScript_CuttableTree {
     call(WahRoomsShared_CloseDoor)
     msgbox(format("¡Ve, Plantita!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     special(RemoveCameraObject)
-    clearflag(FLAG_CHEVEROOM_HIDE_POKEBALL)
+    clearflag(FLAG_TEMP_2_CHEVE_ROOM_HIDE_POKEBALL)
     addobject(LOCALID_CHEVEROOM_POKEBALL)
     showobjectat(LOCALID_CHEVEROOM_POKEBALL, MAP_CHEVE_ROOM)
     applymovementandwait(LOCALID_CHEVEROOM_POKEBALL, Common_Movement_WalkDiagSouthEast)
 	playse(SE_BALL_OPEN)
 	fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_CHEVEROOM_POKEBALL)
-    clearflag(FLAG_CHEVEROOM_HIDE_MEGANIUM)
+    clearflag(FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM)
     addobject(LOCALID_CHEVEROOM_MEGANIUM)
     waitse
     fadescreen(FADE_FROM_WHITE)
@@ -142,7 +146,7 @@ script CheveRoom_EventScript_CuttableTree {
     playse(SE_BALL_OPEN)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_CHEVEROOM_MEGANIUM)
-    setflag(FLAG_CHEVEROOM_HIDE_MEGANIUM)
+    setflag(FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM)
     waitse
     fadescreen(FADE_FROM_WHITE)
     special(SpawnCameraObject)
@@ -183,7 +187,7 @@ script CheveRoom_EventScript_CuttableTree {
     msgbox(format("¡Saludos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     setflag(FLAG_DEFEATED_ADMIN_CHEVE)
     removeobject(LOCALID_CHEVEROOM_TREE)
-    setflag(FLAG_CHEVEROOM_HIDE_TREE)
+    setflag(FLAG_TEMP_3_CHEVE_ROOM_HIDE_TREE)
     setobjectxyperm(LOCALID_CHEVEROOM_CHEVE, 6, 5)
     setobjectmovementtype2(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
     release

@@ -1,5 +1,6 @@
 const FLAG_TEMP_1_REY_BOO_ROOM_HIDE_BOO = FLAG_TEMP_1
 const FLAG_TEMP_2_REY_BOO_ROOM_HIDE_VIGOROTH = FLAG_TEMP_2
+const VAR_TEMP_2_REY_BOO_ROOM_STATE = VAR_TEMP_2
 
 mapscripts ReyBooRoom_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
@@ -163,7 +164,7 @@ script ReyBooRoom_EventScript_BooEncounter {
     delay(50)
     applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkDown3)
     special(RemoveCameraObject)
-    setvar(VAR_REY_BOO_ROOM_STATE, 1)
+    setvar(VAR_TEMP_2_REY_BOO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_REY_BOO)
     fadedefaultbgm()
     release

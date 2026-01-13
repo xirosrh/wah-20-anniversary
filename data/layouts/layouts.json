@@ -4206,7 +4206,7 @@
       "name": "JavsJavi4315Room_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/JavsJavi4315Room/border.bin",
       "blockdata_filepath": "data/layouts/JavsJavi4315Room/map.bin"
@@ -4256,7 +4256,7 @@
       "name": "KleinPkPowerRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
       "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
@@ -4286,7 +4286,7 @@
       "name": "SergioRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
       "blockdata_filepath": "data/layouts/SergioRoom/map.bin"

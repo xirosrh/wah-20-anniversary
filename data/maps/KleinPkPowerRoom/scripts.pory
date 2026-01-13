@@ -1,1 +1,41 @@
-mapscripts KleinPkPowerRoom_MapScripts {}
+mapscripts KleinPkPowerRoom_MapScripts {
+    MAP_SCRIPT_ON_LOAD: KleinPkPowerRoom_OnLoad
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_8, 0: KleinPkPowerRoom_OnWarp_PlayerTurnNorth
+    ]
+}
+
+
+script KleinPkPowerRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_KLEIN) && flag(FLAG_DEFEATED_ADMIN_PKPOWER)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script KleinPkPowerRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Klein {
+    faceplayer
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_KLEIN_MAIN, "Pendiente")
+    setflag(FLAG_DEFEATED_ADMIN_KLEIN)
+    if(flag(FLAG_DEFEATED_ADMIN_PKPOWER)){
+        call(WahRoomsShared_OpenDoor)
+    }
+    release
+    end
+}
+
+script KleinPkPowerRoom_EventScript_PkPower {
+    faceplayer
+    trainerbattle_no_intro(TRAINER_WAH_ADMIN_PKPOWER_MAIN, "Pendiente")
+    setflag(FLAG_DEFEATED_ADMIN_PKPOWER)
+    if(flag(FLAG_DEFEATED_ADMIN_KLEIN)){
+        call(WahRoomsShared_OpenDoor)
+    }
+    release
+    end
+}
