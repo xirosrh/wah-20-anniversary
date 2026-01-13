@@ -479,4 +479,4 @@ gFieldEffectScript_UseHeadbutt::
 gFieldEffectScript_ORASDowse::
 	field_eff_callnative FldEff_ORASDowsing
 	field_eff_end
-    
+
