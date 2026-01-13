@@ -64,33 +64,33 @@
 #define FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS    0x32 // Used WAH
 #define FLAG_DEFEATED_ADMIN_SERGIO    0x33 // Used WAH
 #define FLAG_WAH_CHALLENGE_COMPLETED    0x34 // Set when player beats entire WAH challenge
-#define FLAG_REYBOOROOM_HIDE_BOO    0x35 // Used WAH
-#define FLAG_REYBOOROOM_HIDE_VIGOROTH    0x36 // Used WAH
-#define FLAG_REONEKYROOM_HIDE_TYPHLOSION    0x37 // Used WAH
-#define FLAG_REONEKYROOM_HIDE_FIRE    0x38 // Used WAH
-#define FLAG_REONEKYROOM_HIDE_HAUNTER    0x39 // Used WAH
-#define FLAG_EINGROOM_HIDE_TRAINER_IN_WATER    0x3A // Used WAH
-#define FLAG_EINGROOM_HIDE_EING_FISHING    0x3B // Used WAH
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_DEFEATED_ADMIN_XIROS    0x3C //Used WAH
+#define FLAG_DEFEATED_ADMIN_KLEIN    0x3D //Used WAH
+#define FLAG_DEFEATED_ADMIN_PKPOWER    0x3E //Used WAH
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_CHEVEROOM_HIDE_MEGANIUM    0x44 // Used WAH
-#define FLAG_CHEVEROOM_HIDE_POKEBALL    0x45 // Used WAH
-#define FLAG_CHEVEROOM_HIDE_TREE    0x46 // Used WAH
-#define FLAG_ZEROROOM_HIDE_MILOTIC    0x47 // Used WAH
-#define FLAG_ZEROROOM_HIDE_BALL    0x48 // Used WAH
-#define FLAG_JACKROOM_HIDE_ELECTRODE    0x49 // Used WAH
-#define FLAG_JACKROOM_HIDE_SPOINK_LEFT    0x4A // Used WAH
-#define FLAG_JACKROOM_HIDE_SPOINK_RIGHT    0x4B // Used WAH
-#define FLAG_JACKROOM_HIDE_NPC1_BALL    0x4C // Used WAH
-#define FLAG_JACKROOM_HIDE_NPC3_BALL    0x4D // Used WAH
-#define FLAG_JACKROOM_HIDE_NPC4_BALL    0x4E // Used WAH
-#define FLAG_BAROROOM_HIDE_BARO    0x4F // Used WAH
+#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_UNUSED_0x046    0x46 // Unused Flag
+#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_UNUSED_0x048    0x48 // Unused Flag
+#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
+#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50

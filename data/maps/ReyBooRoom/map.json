@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REYBOOROOM_HIDE_BOO"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "local_id": "LOCALID_REYBOOROOM_VIGOROTH",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REYBOOROOM_HIDE_VIGOROTH"
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [
@@ -65,7 +65,7 @@
       "x": 4,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -74,7 +74,7 @@
       "x": 5,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -83,7 +83,7 @@
       "x": 6,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -92,7 +92,7 @@
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -101,7 +101,7 @@
       "x": 8,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     }

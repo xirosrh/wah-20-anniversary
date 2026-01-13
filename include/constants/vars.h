@@ -264,15 +264,15 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_SAYER_BLAX_ROOM_STATE                                0x40F7 // WAH
-#define VAR_JACK_JOHNSON_ROOM_STATE                                0x40F8 // WAH
-#define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
-#define VAR_BARO_ROOM_STATE                                0x40FA //WAH
-#define VAR_REY_BOO_ROOM_STATE                             0x40FB //WAH
-#define VAR_REONEKY_ROOM_STATE                                0x40FC // WAH
-#define VAR_EING_ROOM_STATE                                0x40FD // WAH
-#define VAR_TOKYN_WAR_ROOM_STATE                                0x40FE // WAH
-#define VAR_JAVS_JAVI4315_ROOM_STATE                                0x40FF // WAH
+#define VAR_UNUSED_0x40F7                                0x40F7 // Unused
+#define VAR_UNUSED_0x40F8                                0x40F8 // Unused
+#define VAR_UNUSED_0x40F9                                0x40F9 // Unused
+#define VAR_UNUSED_0x40FA                                0x40FA // Unused
+#define VAR_UNUSED_0x40FB                                0x40FB // Unused
+#define VAR_UNUSED_0x40FC                                0x40FC // Unused
+#define VAR_UNUSED_0x40FD                                0x40FD // Unused
+#define VAR_UNUSED_0x40FE                                0x40FE // Unused
+#define VAR_UNUSED_0x40FF                                0x40FF // Unused
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

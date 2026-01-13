@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REONEKYROOM_HIDE_TYPHLOSION"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "local_id": "LOCALID_REOROOM_FIREATTACK",
@@ -54,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REONEKYROOM_HIDE_FIRE"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "local_id": "LOCALID_REOROOM_CRANE",
@@ -82,7 +82,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REONEKYROOM_HIDE_HAUNTER"
+      "flag": "FLAG_TEMP_3"
     }
   ],
   "warp_events": [

@@ -42,13 +42,6 @@ const u8 gUnownPokedexText[] = _(
     "investigación, es un misterio cuál surgió\n"
     "primero: los escritos o los Unown.");
 
-// Gen 3 families
-const u8 gDeoxysNormalPokedexText[] = _(
-    "Deoxys surgió de un virus que llegó\n"
-    "desde el espacio. Es altamente inteligente\n"
-    "y puede disparar láseres desde el órgano\n"
-    "cristalino en su pecho.");
-
 // Gen 4 families
 const u8 gMothimPokedexText[] = _(
     "No tiene un nido propio. Aunque le\n"

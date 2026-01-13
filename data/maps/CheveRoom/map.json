@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CheveRoom_EventScript_CuttableTree",
-      "flag": "FLAG_CHEVEROOM_HIDE_TREE"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "local_id": "LOCALID_CHEVEROOM_POKEBALL",
@@ -54,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_CHEVEROOM_HIDE_POKEBALL"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "local_id": "LOCALID_CHEVEROOM_MEGANIUM",
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_CHEVEROOM_HIDE_MEGANIUM"
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [

@@ -1,0 +1,23 @@
+mapscripts Lobby_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Lobby_OnTransition
+}
+
+script Lobby_OnTransition {
+    setrespawn(HEAL_LOCATION_LOBBY)
+    end
+}
+
+script Lobby_EventScript_StartChallenge {
+    lock
+    applymovementandwait(LOCALID_LOBBY_POLICE, Common_Movement_FacePlayer)
+    msgbox(format("Pendiente textos, ¿empezar desafío?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
+        waitstate
+    } else {
+        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+        turnobject(LOCALID_LOBBY_POLICE, DIR_SOUTH)
+    }
+    release
+    end
+}
