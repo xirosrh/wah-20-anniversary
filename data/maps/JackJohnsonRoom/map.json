@@ -96,7 +96,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_NPC4_BALL"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC1_BALL",
@@ -110,7 +110,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_NPC1_BALL"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC3_BALL",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_NPC3_BALL"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "local_id": "LOCALID_JACKROOM_SPOINK_RIGHT",
@@ -138,7 +138,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_SPOINK_RIGHT"
+      "flag": "FLAG_TEMP_5"
     },
     {
       "local_id": "LOCALID_JACKROOM_SPOINK_LEFT",
@@ -152,7 +152,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_SPOINK_LEFT"
+      "flag": "FLAG_TEMP_4"
     },
     {
       "local_id": "LOCALID_JACKROOM_ELECTRODE",
@@ -166,7 +166,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_JACKROOM_HIDE_ELECTRODE"
+      "flag": "FLAG_TEMP_6"
     }
   ],
   "warp_events": [

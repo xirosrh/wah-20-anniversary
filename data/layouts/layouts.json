@@ -4156,7 +4156,7 @@
       "name": "CosararaRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/CosararaRoom/border.bin",
       "blockdata_filepath": "data/layouts/CosararaRoom/map.bin"
@@ -4166,7 +4166,7 @@
       "name": "AguiarRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/AguiarRoom/border.bin",
       "blockdata_filepath": "data/layouts/AguiarRoom/map.bin"
@@ -4206,7 +4206,7 @@
       "name": "JavsJavi4315Room_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/JavsJavi4315Room/border.bin",
       "blockdata_filepath": "data/layouts/JavsJavi4315Room/map.bin"
@@ -4216,7 +4216,7 @@
       "name": "SayerBlaxRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
       "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
@@ -4256,7 +4256,7 @@
       "name": "KleinPkPowerRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
       "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
@@ -4286,7 +4286,7 @@
       "name": "SergioRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_EliteFour",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
       "blockdata_filepath": "data/layouts/SergioRoom/map.bin"
@@ -4310,6 +4310,16 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/HallOfFame/border.bin",
       "blockdata_filepath": "data/layouts/HallOfFame/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOBBY",
+      "name": "Lobby_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Lobby/border.bin",
+      "blockdata_filepath": "data/layouts/Lobby/map.bin"
     }
   ]
 }

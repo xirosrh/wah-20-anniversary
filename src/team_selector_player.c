@@ -22,6 +22,12 @@ enum
     MON_RAPIDASH,
     MON_FARIGIRAF,
     MON_SCOVILLAIN,
+    MON_FORRETRESS,
+    MON_VICTREEBEL,
+    MON_ARCANINE_HISUI,
+    MON_CONKELDURR,
+    MON_ALAKAZAM,
+    MON_WEAVILE,
     MON_ALOLAN_MAROWAK,
     MON_TYRANITAR,
     MON_LUCARIO,
@@ -97,57 +103,64 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                     {
                         MON_DIGGERSBY, MON_LOPUNNY, MON_MUDSDALE, MON_RAPIDASH, MON_FARIGIRAF, MON_SCOVILLAIN},
             },
-
         [TEAM_4] =
+            {
+                .teamSize = 6,
+                .team =
+                    {
+                        MON_FORRETRESS, MON_VICTREEBEL, MON_ARCANINE_HISUI, MON_CONKELDURR, MON_ALAKAZAM, MON_WEAVILE},
+            },
+
+        [TEAM_5] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_ALOLAN_MAROWAK, MON_TYRANITAR, MON_LUCARIO, MON_POLIWRATH, MON_WHIMSHICOTT, MON_TOXTRICITY},
             },
-        [TEAM_5] =
+        [TEAM_6] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_SLAKING, MON_ARCHALUDON, MON_ANNIHILAPE, MON_GALARIAN_RAPIDASH, MON_CROBAT, MON_RAMPARDOS},
             },
-        [TEAM_6] =
+        [TEAM_7] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_NIDOQUEEN, MON_KLEAVOR, MON_HISUIAN_SAMUROTT, MON_HISUIAN_DECIDUEYE, MON_HISUIAN_TYPHLOSION, MON_HISUIAN_GOODRA},
             },
-        [TEAM_7] =
+        [TEAM_8] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_DUSKNOIR, MON_PROBOPASS, MON_ROSERADE, MON_GALLADE, MON_URSALUNA, MON_BASCULEGION},
             },
-        [TEAM_8] =
+        [TEAM_9] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_ALOLAN_GOLEM, MON_ALOLAN_SANDSLASH, MON_ALOLAN_MUK, MON_ALOLAN_DUGTRIO, MON_HISUIAN_ELECTRODE, MON_SIRFECTHD},
             },
-        [TEAM_9] =
+        [TEAM_10] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_MR_RIME, MON_CURSOLA, MON_PERRSERKER, MON_ALOLAN_EXEGGUTOR, MON_RHYPERIOR, MON_OBSTAGOON},
             },
-        [TEAM_10] =
+        [TEAM_11] =
             {
                 .teamSize = 6,
                 .team =
                     {
                         MON_SNEASLER, MON_MAGNEZONE, MON_TANGROWTH, MON_LICKILICKY, MON_TOGEKISS, MON_FROSLASS},
             },
-        [TEAM_11] =
+        [TEAM_12] =
         {
             .teamSize = 6,
             .team =
@@ -327,6 +340,95 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
             .isShiny = FALSE,
             .moves = {MOVE_GIGA_DRAIN, MOVE_FLAMETHROWER, MOVE_ENERGY_BALL, MOVE_BURNING_JEALOUSY},
+        },
+        [MON_FORRETRESS] = {
+            .specie = SPECIES_FORRETRESS,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_ROCKY_HELMET,
+            .ev = TRAINER_PARTY_EVS(252, 0, 4, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_STEALTH_ROCK,
+                MOVE_SPIKES,
+                MOVE_TOXIC_SPIKES,
+                MOVE_RAPID_SPIN,
+            },
+        },
+
+        [MON_VICTREEBEL] = {
+            .specie = SPECIES_VICTREEBEL,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_VICTREEBELITE,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_LEECH_LIFE,
+                MOVE_POISON_JAB,
+                MOVE_LEAF_BLADE,
+                MOVE_KNOCK_OFF,
+            },
+        },
+
+        [MON_ARCANINE_HISUI] = {
+            .specie = SPECIES_ARCANINE_HISUI,
+            .ability = ABILITY_ROCK_HEAD,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_FLARE_BLITZ,
+                MOVE_WILD_CHARGE,
+                MOVE_HEAD_SMASH,
+                MOVE_EXTREME_SPEED,
+            },
+        },
+
+        [MON_CONKELDURR] = {
+            .specie = SPECIES_CONKELDURR,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_ADAMANT,
+            .itemId = ITEM_ASSAULT_VEST,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_MACH_PUNCH,
+                MOVE_BULLET_PUNCH,
+                MOVE_DRAIN_PUNCH,
+                MOVE_DYNAMIC_PUNCH,
+            },
+        },
+
+        [MON_ALAKAZAM] = {
+            .specie = SPECIES_ALAKAZAM,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_RECOVER,
+                MOVE_PSYCHIC,
+                MOVE_DAZZLING_GLEAM,
+                MOVE_SHADOW_BALL,
+            },
+        },
+
+        [MON_WEAVILE] = {
+            .specie = SPECIES_WEAVILE,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {
+                MOVE_FAKE_OUT,
+                MOVE_KNOCK_OFF,
+                MOVE_ICE_SHARD,
+                MOVE_METAL_CLAW,
+            },
         },
         [MON_ALOLAN_MAROWAK] = {
             .specie = SPECIES_MAROWAK_ALOLA,

@@ -86,8 +86,10 @@ HallOfFame_OnFrame::
 
 HallOfFame_EventScript_SetGameClearFlags::
 # 49 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_WAH_CHALLENGE_COMPLETED
+	call EventScript_ClearWahAdminFlags
 # 50 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_WAH_CHALLENGE_COMPLETED
+# 51 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 

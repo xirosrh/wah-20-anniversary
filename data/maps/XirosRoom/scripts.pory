@@ -1,1 +1,168 @@
-mapscripts XirosRoom_MapScripts {}
+const FLAG_TEMP_1_XIROSROOM_HIDE_POKEBALL = FLAG_TEMP_1
+const FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE = FLAG_TEMP_2
+
+mapscripts XirosRoom_MapScripts {
+    MAP_SCRIPT_ON_LOAD: XirosRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION: XirosRoom_OnTransition
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_8, 0: XirosRoom_OnWarp_PlayerTurnNorth
+    ]
+}
+
+script XirosRoom_OnLoad {
+    if(flag(FLAG_DEFEATED_ADMIN_XIROS)){
+        call(WahRoomsShared_SetDoorAsOpen)
+    }
+    end
+}
+
+script XirosRoom_OnWarp_PlayerTurnNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script XirosRoom_OnTransition {
+    setflag(FLAG_TEMP_1_XIROSROOM_HIDE_POKEBALL)
+    setflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
+    end
+}
+
+script XirosRoom_EventScript_Xiros {
+    if(flag(FLAG_DEFEATED_ADMIN_XIROS)) {
+        lock
+        faceplayer
+        msgbox(format("¿Aún sigues aquí? Ya que estás, aprovecho para decirte una cosa más."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
+        msgbox(format("No te obsesiones demasiado con compararte todo el tiempo, porque a veces vas a sentir que estás adelante, y otras veces que te quedaste atrás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(lock_facing_direction, jump_in_place_down, unlock_facing_direction, face_player))
+        msgbox(format("Al final, el camino es largo, y la verdadera carrera es siempre con uno mismo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
+        applymovement(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
+        msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        waitmovement(0)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
+        turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
+        release
+        end
+    }
+    lock
+    faceplayer
+    msgbox(format("Así que llegaste hasta acá, ¡a la sala número veinte!\pUn lugar al que no se llega por casualidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
+    msgbox(format("Voy a tratar de ser más breve que Zero en mi discurso, pero a mi también me gusta reflexionar, así que no prometo nada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_SweatDropWithDelay48)
+    fadescreen(FADE_TO_BLACK)
+    turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
+    directmovementtopos(LOCALID_PLAYER, 6, 6)
+    waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("En el camino te cruzaste con muchas personas, algunas conocidas, otras que quizá solo habías escuchado nombrar alguna vez, pero todas dejaron algo en este recorrido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
+    delay(20)
+    msgbox(format("Cada encuentro, cada charla y cada combate forma parte de una historia más grande, aunque a veces no lo notemos en el momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HeartWithDelay48)
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkUp2)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Es normal que en algún punto las cosas parezcan difíciles o incluso imposibles, porque nadie nace sabiendo, ni empieza un gran desafío o proyecto teniendo todas las respuestas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Lo importante no es saberlo todo, sino animarse a buscar, porque cuando uno busca de verdad, siempre aparece alguien dispuesto a ayudar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    applymovement(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown2)
+    applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
+    waitmovement(0)
+    msgbox(format("Es lo lindo de esta comunidad, ¿no crees?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(
+        lock_facing_direction
+        walk_up
+        unlock_facing_direction
+    ))
+    clearflag(FLAG_TEMP_1_XIROSROOM_HIDE_POKEBALL)
+    addobject(LOCALID_XIROSROOM_POKEBALL)
+    showobjectat(LOCALID_XIROSROOM_POKEBALL, MAP_XIROS_ROOM)
+    applymovementandwait(LOCALID_XIROSROOM_POKEBALL, Common_Movement_WalkDiagSouthEast)
+	playse(SE_BALL_OPEN)
+	fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_XIROSROOM_POKEBALL)
+    clearflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
+    addobject(LOCALID_XIROSROOM_ELECTRODE)
+    waitse
+    fadescreen(FADE_FROM_WHITE)
+    release
+    delay(30)
+    applymovement(LOCALID_XIROSROOM_ELECTRODE, moves(jump_in_place_down * 2))
+    playmoncry(SPECIES_ELECTRODE, CRY_MODE_NORMAL)
+    waitmovement(0)
+    waitmoncry
+    applymovementandwait(LOCALID_XIROSROOM_ELECTRODE, moves(walk_left, walk_up, walk_in_place_right))
+    release
+    turnobject(LOCALID_XIROSROOM_XIROS, DIR_WEST)
+    msgbox(format("Este es Electrode Sandía, un símbolo de una época que muchos recuerdan con cariño y nostalgia, cuando todo parecía más simple."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
+    turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
+    turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_SOUTH)
+    msgbox(format("Personalmente nunca creí que la época dorada fuera un momento que quedó atrás en el tiempo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown2)
+    msgbox(format("Para mí, la época dorada es hoy, y también será mañana, mientras sigan existiendo personas con ganas de motivar, ayudar y empujar las cosas un poco más adelante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceLeft)
+    turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_EAST)
+    fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_XIROSROOM_ELECTRODE)
+    setflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
+    delay(30)
+    fadescreen(FADE_FROM_WHITE)
+    delay(20)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown)
+    msgbox(format("Hagamos que este momento también cuente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(emote_versus, delay_16, walk_in_place_down, delay_16))
+    call(XirosRoom_EventScript_XirosBattle)
+    playse(SE_PIN)
+    applymovement(LOCALID_XIROSROOM_XIROS, moves(emote_happy, jump_in_place_down * 2))
+    msgbox(format("¡Wow! ¡Que gran combate! Me encanta tu forma de combatir.\p¡Sobretodo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    waitmovement(0)
+    delay(20)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
+    msgbox(format("Todavía te queda un último enfrentamiento, y si conocés un poco la historia de este lugar, seguramente ya te estés imaginando quién te espera.\pAprovecha la oportunidad, que no todos tienen la suerte de encontrarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    call(WahRoomsShared_OpenDoor)
+    msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
+    setflag(FLAG_DEFEATED_ADMIN_XIROS)
+    release
+    end
+}
+
+script XirosRoom_EventScript_XirosBattle {
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated)
+    } else {
+        setvar(VAR_0x8004, TEAM_INDEX_XIROS)
+        special(ShouldUseAlternativeTeam)
+        if (var(VAR_RESULT) == 0) {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated)
+        } else {
+            trainerbattle_no_intro(TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated)
+        }
+    }
+    special(HealPlayerParty)
+    return
+}
+
+text XirosRoom_Text_XirosDefeated {
+    format("¡Muy buen combate!")
+}

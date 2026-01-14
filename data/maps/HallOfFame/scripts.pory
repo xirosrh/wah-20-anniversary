@@ -46,7 +46,8 @@ script HallOfFame_OnFrame {
 }
 
 script HallOfFame_EventScript_SetGameClearFlags {
-    setflag(FLAG_WAH_CHALLENGE_COMPLETED)
-    special(RandomizeWahAdminTeams)
-    return
+	call(EventScript_ClearWahAdminFlags)
+	setflag(FLAG_WAH_CHALLENGE_COMPLETED)
+	special(RandomizeWahAdminTeams)
+	return
 }
