@@ -1,0 +1,9 @@
+
+[TEAM_1] =
+{
+    .teamSize = 6,
+    .team =
+    {
+        MON_WYRDEER, MON_HISUIAN_LILLIGANT, MON_OVERQWILL, MON_CLEFABLE, MON_SIMIPOUR, MON_BLAZIKEN
+    },
+},

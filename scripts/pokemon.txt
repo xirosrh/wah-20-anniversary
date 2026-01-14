@@ -1,0 +1,49 @@
+Wyrdeer @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Psyshield Bash
+Facade
+Megahorn
+Drill Run
+
+Hisuian Lilligant @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Tropical Kick
+Drain Punch
+Triple Axel
+Axe Kick
+
+Overqwill @ Black Sludge
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Barb Barrage
+Crunch
+Liquidation
+Scale Shot
+
+Clefable @ Leftovers
+Ability: Magic Guard
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Soft Boiled
+Moonblast
+Mystical Fire
+Metronome
+
+Simipour @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Scald
+Ice Beam
+Nasty Plot
+Focus Blast
+
+Blaziken @ Blazikenite
+Ability: Speed Boost
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Fire Kick
+Sky Uppercout
+Brave Bird
+Drain Punch
