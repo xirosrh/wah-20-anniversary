@@ -4,9 +4,20 @@ def parse_ev_line(ev_line):
     # EVs vienen como: "252 Atk / 252 Spe / 4 HP"
     evs = {"HP": 0, "Atk": 0, "Def": 0, "Spe": 0, "SpA": 0, "SpD": 0}
     parts = ev_line.replace("EVs:", "").split("/")
+
     for part in parts:
-        value, stat = part.strip().split()
-        evs[stat] = int(value)
+        part = part.strip()
+        if not part:
+            continue
+
+        tokens = part.split()
+        if len(tokens) < 2:
+            continue  # evita crasheos por líneas raras
+
+        value = int(tokens[0])
+        stat = tokens[1]
+        evs[stat] = value
+
     # Orden requerido: hp, atk, def, speed, spatk, spdef
     return (
         evs["HP"],

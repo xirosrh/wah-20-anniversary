@@ -1,49 +1,341 @@
-Wyrdeer @ Leftovers
-EVs: 252 Atk / 252 Spe / 4 HP
-Jolly Nature
-Psyshield Bash
-Facade
-Megahorn
-Drill Run
-
-Hisuian Lilligant @ Leftovers
-EVs: 252 Atk / 252 Spe / 4 HP
-Jolly Nature
-Tropical Kick
-Drain Punch
-Triple Axel
-Axe Kick
-
-Overqwill @ Black Sludge
-EVs: 252 Atk / 252 Spe / 4 HP
-Jolly Nature
-Barb Barrage
-Crunch
-Liquidation
-Scale Shot
-
-Clefable @ Leftovers
-Ability: Magic Guard
+Arboliva @ Leftovers
 EVs: 252 SpA / 252 HP / 4 Spe
 Modest Nature
-Soft Boiled
-Moonblast
-Mystical Fire
-Metronome
+Giga Drain
+Energy Ball
+Hyper Voice
+Earth Power
 
-Simipour @ Leftovers
-EVs: 252 SpA / 252 Spe / 4 HP
-Timid Nature
-Scald
-Ice Beam
-Nasty Plot
-Focus Blast
-
-Blaziken @ Blazikenite
-Ability: Speed Boost
+Simisear @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-Fire Kick
-Sky Uppercout
-Brave Bird
+Fake Out
+Fire Punch
 Drain Punch
+Thunder Punch
+
+Pelipper @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Air Slash
+Scald
+Ice Beam
+Roost
+
+Kevin (Durant) @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+X Scissor
+Iron Head
+Leech Life
+Earthquake
+
+Pangoro @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Drain Punch
+Night Slash
+Poison Jab
+Close Combat
+
+Gengar @ Gengarite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Shadow Ball
+Sludge Bomb
+Giga Drain
+Focus Blast
+
+Houndoom @ Life Orb
+Ability: Sheer Force
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Burning Jelaousy
+Dark Pulse
+Scorching Sands
+Sludge Bomb
+
+Snorlax @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Body Slam
+Drain Punch
+Earthquake
+Heat Crash
+
+Golurk @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Earthquake
+Phantom Force
+Drain Punch
+Heavy Slam
+
+Hisuian Avalugg @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Rock Slide
+Ice Shard
+Liquidation
+Heavy Slam
+
+Parasect @ Leftovers
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+Seed Bomb
+X Scissor
+Leech Life
+X Poison
+
+Slowbro @ Slowbronite
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Scald
+Psychic
+Flametrhower
+Slack Off
+
+Slowking @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Scald
+Psychic
+Ice Beam
+Slack Off
+
+Leavanny @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Leaf Blade
+Leech Life
+Triple Axel
+Quiver Dance
+
+Zangoose @ Toxic Orb
+Ability: Toxic Boost
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Facade
+Drain Punch
+X Scissor
+Swords Dance
+
+Seviper @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Sludge Bomb
+Flamethrower
+Giga Drain
+Dragon Pulse
+
+Aggron @ Assault Vest
+Ability: Rock Head
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+Head Smash
+Iron Head
+Earthquake
+Drain Punch
+
+Altaria @ Altarianite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Air Slash
+Dragon Pulse
+Boomburst
+Roost
+
+Hariyama @Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Drain Punch
+Belly Drum
+Dynamic Punch
+Meteor Mash
+
+Cradily @ Leftovers
+EVs: 252 SpA / 252 HP 4 Spe
+Modest Nature
+Giga Drain
+Meteor Beam
+Earth Power
+Energy Ball
+
+Milotic @ Leftovers
+Ability: Competitive
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+Scald
+Recover
+Moonblast
+Ice Beam
+
+Flygon @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Dragon Dance
+Dragon Claw
+Earthquake
+Roost
+
+Masquerain @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Aerial Ace
+Leech Life
+Liquidation
+Knock Off
+
+Metagross @ Metagrossite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Meteor Mash
+Zen Headbutt
+Drain Punch
+Earthquake
+
+Kecleon @ Leftovers
+Ability: Protean
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Sky Uppercout
+Dragon Claw
+Play Rough
+X Scissor
+
+Sableye @ Leftovers
+Ability: Prankster
+EVs: 252 HP / 252 Spe / 4 Def
+Calm Nature
+Toxic
+Thunder Wave
+Recover
+Will o Wisp
+
+Armaldo @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Rock Slide
+Leech Life
+X Poison
+Liquidation
+
+Alolan Raichu @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Thunderbolt
+Psychic
+Surf
+Energy Ball
+
+Glalie @ Galienite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Hyper Voice
+Boomburst
+Ice Beam
+Ice Shard
+
+Groudon @ Red Orb
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Precipice Blades
+Heat Crash
+Earthquake
+Heavy Slam
+
+Regieleki @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Thunder Cage
+Zap Cannon
+Charge Beam
+Thunder
+
+Regidrago @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Dragon Energy
+Dragon Pulse
+Draco Meteor
+Ancient Power
+
+Regice @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Calm Nature
+Ice Beam
+Zap Cannon
+Blizzard
+Ancient Power
+
+Regirock @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+Rock Slide
+Stone Edge
+Superpower
+Earthquake
+
+Registeel @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+Iron Head
+Drain Punch
+Earthquake
+Rock Slide
+
+Regigigas @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Body Press
+Heavy Slam
+Heat Crash
+Crush Grip
+
+Deoxys @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 Spe
+Rare Nature
+Recover
+Psycho Boost
+Extreme Speed
+Knock Off
+
+Darkrai @ Darkrainite / Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+Dark Void
+Nightmare
+Dream Eater
+Dark Pulse
+
+Shaymin @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Seed Flare
+Air Slash
+Earth Power
+Giga Drain
+
+Zygarde @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 HP
+Rare Nature
+Thousand Arrows
+Thousand Waves
+Land's Wrath
+Core Enforcer
+
+Kyogre @ Blue Orb
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Primal Pulse
+Water Spout
+Ice Beam
+Thunder
+
+Rayquaza @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Dragon Ascent
+Dragon Claw
+V-Create
+Extreme Speed
