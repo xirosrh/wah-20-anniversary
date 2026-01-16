@@ -35,7 +35,7 @@ CosararaRoom_EventScript_Cosarara::
 # 23 "data/maps/CosararaRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_COSARARA, CosararaRoom_EventScript_Cosarara_2
 # 30 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_1, MSGBOX_AUTOCLOSE
+	msgbox CosararaRoom_EventScript_Cosarara_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 31 "data/maps/CosararaRoom/scripts.pory"
 	playse SE_PIN
 # 32 "data/maps/CosararaRoom/scripts.pory"
@@ -43,7 +43,7 @@ CosararaRoom_EventScript_Cosarara::
 # 33 "data/maps/CosararaRoom/scripts.pory"
 	delay 20
 # 34 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_2, MSGBOX_AUTOCLOSE
+	msgbox CosararaRoom_EventScript_Cosarara_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 35 "data/maps/CosararaRoom/scripts.pory"
 	delay 20
 # 36 "data/maps/CosararaRoom/scripts.pory"
@@ -53,7 +53,7 @@ CosararaRoom_EventScript_Cosarara::
 # 38 "data/maps/CosararaRoom/scripts.pory"
 	applymovementandwait LOCALID_COSARARAROOM_COSARARA, Common_Movement_QuestionMarkWithDelay48
 # 39 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_3, MSGBOX_AUTOCLOSE
+	msgbox CosararaRoom_EventScript_Cosarara_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 40 "data/maps/CosararaRoom/scripts.pory"
 	playse SE_PIN
 # 41 "data/maps/CosararaRoom/scripts.pory"
@@ -72,7 +72,7 @@ CosararaRoom_EventScript_Cosarara::
 	case DIR_EAST, CosararaRoom_EventScript_Cosarara_8
 CosararaRoom_EventScript_Cosarara_4:
 # 55 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_4
+	msgbox CosararaRoom_EventScript_Cosarara_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 56 "data/maps/CosararaRoom/scripts.pory"
 	call CosararaRoom_EventScript_CosararaBattle
 # 57 "data/maps/CosararaRoom/scripts.pory"
@@ -80,7 +80,7 @@ CosararaRoom_EventScript_Cosarara_4:
 # 58 "data/maps/CosararaRoom/scripts.pory"
 	delay 20
 # 59 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_5, MSGBOX_AUTOCLOSE
+	msgbox CosararaRoom_EventScript_Cosarara_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 60 "data/maps/CosararaRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 # 61 "data/maps/CosararaRoom/scripts.pory"
@@ -95,7 +95,7 @@ CosararaRoom_EventScript_Cosarara_2:
 # 24 "data/maps/CosararaRoom/scripts.pory"
 	faceplayer
 # 25 "data/maps/CosararaRoom/scripts.pory"
-	msgbox CosararaRoom_EventScript_Cosarara_Text_0
+	msgbox CosararaRoom_EventScript_Cosarara_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA
 # 26 "data/maps/CosararaRoom/scripts.pory"
 	applymovementandwait LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp
 # 27 "data/maps/CosararaRoom/scripts.pory"

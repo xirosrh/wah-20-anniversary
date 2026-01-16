@@ -22,21 +22,21 @@ script CosararaRoom_EventScript_Cosarara {
     lock
     if(flag(FLAG_DEFEATED_ADMIN_COSARARA)) {
         faceplayer
-        msgbox(format("¿Y tú eres? Ahhh sí ya me acuerdo de ti, {PLAYER}.\p¡Deseo que te vaya bien!"))
+        msgbox(format("¿Y tú eres? Ahhh sí ya me acuerdo de ti, {PLAYER}.\p¡Deseo que te vaya bien!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
         applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
         release
         end
     }
-    msgbox(format("Lo he logrado."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Lo he logrado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("He completado una nueva extracción no autorizada de todos los registros de la comunidad.\pLa construimos entre todos, así que creo que tiene un valor que vale la pena preservar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("He completado una nueva extracción no autorizada de todos los registros de la comunidad.\pLa construimos entre todos, así que creo que tiene un valor que vale la pena preservar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     delay(20)
     faceplayer
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Y tú quién eras? ¿Has cambiado de nick recientemente?\pEs que me pierdo, ¡no me da la memoria!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¿Y tú quién eras? ¿Has cambiado de nick recientemente?\pEs que me pierdo, ¡no me da la memoria!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_SweatDropWithDelay48)
     delay(20)
@@ -52,11 +52,11 @@ script CosararaRoom_EventScript_Cosarara {
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
             break
     }
-    msgbox(format("¿Así que eres {PLAYER} y quieres combatir? Acepto el reto."))
+    msgbox(format("¿Así que eres {PLAYER} y quieres combatir? Acepto el reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     call(CosararaRoom_EventScript_CosararaBattle)
     setflag(FLAG_DEFEATED_ADMIN_COSARARA)
     delay(20)
-    msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, ya que me cuesta mucho saber quién es quien.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, ya que me cuesta mucho saber quién es quien.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     call(WahRoomsShared_OpenDoor)
     delay(20)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
