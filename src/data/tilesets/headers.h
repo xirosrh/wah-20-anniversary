@@ -971,5 +971,5 @@ const struct Tileset gTileset_room_cosarara =
     .palettes = gTilesetPalettes_room_cosarara,
     .metatiles = gMetatiles_room_cosarara,
     .metatileAttributes = gMetatileAttributes_room_cosarara,
-    .callback = NULL,
+    .callback = InitTilesetAnim_CosararaRoom,
 };

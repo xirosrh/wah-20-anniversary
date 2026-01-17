@@ -1702,3 +1702,47 @@ void InitTilesetAnim_XirosRoom(void)
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_XirosRoom;
 }
+
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/02.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_Computer[] = {
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+};
+
+static void QueueAnimTiles_CosararaRoom_Computer(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_Computer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Computer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 22 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_CosararaRoom(u16 timer) {
+    u16 tilesIncrement;
+    if (timer % 16 == 0) {
+        tilesIncrement = VarGet(VAR_COSARARA_ROOM_COMPUTER_FRAMES);
+        QueueAnimTiles_CosararaRoom_Computer(tilesIncrement);
+        if(tilesIncrement < 2){
+            VarSet(VAR_COSARARA_ROOM_COMPUTER_FRAMES, tilesIncrement + 1);
+        } else {
+
+            VarSet(VAR_COSARARA_ROOM_COMPUTER_FRAMES, 0);
+        }
+    }
+}
+
+void InitTilesetAnim_CosararaRoom(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_CosararaRoom;
+}
