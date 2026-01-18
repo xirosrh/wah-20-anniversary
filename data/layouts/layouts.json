@@ -4157,7 +4157,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_cosarara",
       "border_filepath": "data/layouts/CosararaRoom/border.bin",
       "blockdata_filepath": "data/layouts/CosararaRoom/map.bin"
     },

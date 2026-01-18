@@ -24,6 +24,7 @@ enum SpeakerNames {
     SP_NAME_KATHERINE,
     SP_NAME_DRIVE,
     SP_NAME_XIROS,
+    SP_NAME_COSARARA,
     SP_NAME_UNKNOWN,
     SP_NAME_COUNT
 };

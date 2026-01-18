@@ -933,6 +933,28 @@
 #define METATILE_room_angel_SCREEN_OFF_TOP_RIGHT       0x227
 #define METATILE_room_angel_WALL                       0x20E
 
+// gTileset_room_cosarara
+#define METATILE_room_cosarara_PC_LOCKED_1   0x26A
+#define METATILE_room_cosarara_PC_LOCKED_10  0x276
+#define METATILE_room_cosarara_PC_LOCKED_2   0x26B
+#define METATILE_room_cosarara_PC_LOCKED_3   0x26C
+#define METATILE_room_cosarara_PC_LOCKED_4   0x26D
+#define METATILE_room_cosarara_PC_LOCKED_5   0x26E
+#define METATILE_room_cosarara_PC_LOCKED_6   0x272
+#define METATILE_room_cosarara_PC_LOCKED_7   0x273
+#define METATILE_room_cosarara_PC_LOCKED_8   0x274
+#define METATILE_room_cosarara_PC_LOCKED_9   0x275
+#define METATILE_room_cosarara_PC_MATRIX_1   0x208
+#define METATILE_room_cosarara_PC_MATRIX_10  0x214
+#define METATILE_room_cosarara_PC_MATRIX_2   0x209
+#define METATILE_room_cosarara_PC_MATRIX_3   0x20A
+#define METATILE_room_cosarara_PC_MATRIX_4   0x20B
+#define METATILE_room_cosarara_PC_MATRIX_5   0x20C
+#define METATILE_room_cosarara_PC_MATRIX_6   0x210
+#define METATILE_room_cosarara_PC_MATRIX_7   0x211
+#define METATILE_room_cosarara_PC_MATRIX_8   0x212
+#define METATILE_room_cosarara_PC_MATRIX_9   0x213
+
 // gTileset_room_omega
 #define METATILE_room_omega_BROKEN_GLASS      0x28B
 #define METATILE_room_omega_CAPSULE_BROKEN_1  0x278
