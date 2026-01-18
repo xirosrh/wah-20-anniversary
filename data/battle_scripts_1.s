@@ -7083,7 +7083,7 @@ BattleScript_FlashFireBoost::
 	printfromtable gFlashFireStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
-
+	
 BattleScript_AbilityPreventsPhasingOut::
 	call BattleScript_AbilityPreventsPhasingOutRet
 	goto BattleScript_MoveEnd
