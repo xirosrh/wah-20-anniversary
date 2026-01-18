@@ -1673,9 +1673,9 @@
 #define SPECIES_MAGIKEN                                 1554
 #define SPECIES_AYEWIRAZ                                1555
 #define SPECIES_ELECTRODES                              1556
+#define SPECIES_EING                                    1557
 
 //Placeholders
-#define SPECIES_FAKEMON8                                1557
 #define SPECIES_FAKEMON9                                1558
 #define SPECIES_FAKEMON10                               1559
 #define SPECIES_FAKEMON11                               1560
