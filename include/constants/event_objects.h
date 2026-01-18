@@ -247,7 +247,7 @@
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
 #define OBJ_EVENT_GFX_APRICORN_TREE              242
-#define OBJ_EVENT_GFX_AGUIAR_SMOKING                     243
+#define OBJ_EVENT_GFX_AGUIAR_SMOKING             243
 #define OBJ_EVENT_GFX_CRANE                      244
 #define OBJ_EVENT_GFX_FLAME_WHEEL_ATTACK         245
 #define OBJ_EVENT_GFX_EING_FISHING               246
@@ -280,11 +280,14 @@
 #define OBJ_EVENT_GFX_BARO                       273
 #define OBJ_EVENT_GFX_SAYER                      274
 #define OBJ_EVENT_GFX_CHEVE                      275
+#define OBJ_EVENT_GFX_SEEG                       276
+#define OBJ_EVENT_GFX_SEVER                      277
+#define OBJ_EVENT_GFX_PLUGOINK                   278
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        276
+#define NUM_OBJ_EVENT_GFX                        279
 
 
 // These are dynamic object gfx ids.
@@ -483,4 +486,10 @@
 // '(C)ompressed (E)vent'
 #define COMP_OW_TILE_TAG_BASE 0xCE00
 
+#define OBJ_EVENT_GFX_SEEG 276
+#define OBJ_EVENT_PAL_TAG_SEEG 0x8005
+#define OBJ_EVENT_GFX_SEVER 277
+#define OBJ_EVENT_PAL_TAG_SEVER 0x8006
+#define OBJ_EVENT_GFX_PLUGOINK 278
+#define OBJ_EVENT_PAL_TAG_PLUGOINK 0x8007
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

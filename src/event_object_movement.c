@@ -543,8 +543,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
     {gObjectEventPal_Crane,                 OBJ_EVENT_PAL_TAG_CRANE},
     {gObjectEventPal_FlameWheelAttack,      OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK},
-    {gObjectEventPal_CuttableTree,         OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
-    {gFieldEffectPal_TreeDisguise,         OBJ_EVENT_PAL_TAG_TREE_DISGUISE},
+    {gObjectEventPal_CuttableTree,          OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
+    {gObjectEventPal_Seeg,                  OBJ_EVENT_PAL_TAG_SEEG},
+    {gObjectEventPal_Sever,                 OBJ_EVENT_PAL_TAG_SEVER},
+    {gObjectEventPal_PlugOink,              OBJ_EVENT_PAL_TAG_PLUGOINK},
+    {gFieldEffectPal_TreeDisguise,          OBJ_EVENT_PAL_TAG_TREE_DISGUISE},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
