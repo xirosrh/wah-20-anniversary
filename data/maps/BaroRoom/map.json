@@ -27,6 +27,47 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "LOCALID_BAROROOM_PLUGOINK",
+      "graphics_id": "OBJ_EVENT_GFX_PLUGOINK",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BaroRoom_EventScript_PlugOink",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_BAROROOM_SEVER",
+      "graphics_id": "OBJ_EVENT_GFX_SEVER",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BaroRoom_EventScript_Sever",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SEEG",
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BaroRoom_EventScript_Seeg",
+      "flag": "0"
     }
   ],
   "warp_events": [

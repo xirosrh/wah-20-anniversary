@@ -168,3 +168,21 @@ script BaroRoom_OnFrame {
  text BaroRoom_Text_BaroDefeated {
     format("En fin…")
  }
+
+ script BaroRoom_EventScript_PlugOink {
+    lock
+    applymovement(LOCALID_BAROROOM_PLUGOINK, moves(face_player, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
+    msgbox(format("Oink, oink, oink…"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    end
+ }	
+
+ script BaroRoom_EventScript_Sever {
+    msgbox(format("¡Sever!"), MSGBOX_NPC)
+    end
+ }
+
+ script BaroRoom_EventScript_Seeg {
+    msgbox(format("See, see."), MSGBOX_NPC)
+    end
+ }
