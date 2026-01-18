@@ -368,15 +368,15 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sElectrodeTeachableLearnset,
     },
 
-    [SPECIES_FAKEMON8] =
+    [SPECIES_EING] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 61,
-        .baseDefense   = 54,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 45,
-        .types = MON_TYPES(TYPE_GRASS),
+        .baseHP        = 120,
+        .baseAttack    = 10,
+        .baseDefense   = 135,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 135,
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_WATER),
         .catchRate = 45,
         .expYield = 62,
         .evYield_Speed = 1,
@@ -385,52 +385,37 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_PROTEAN },
+        .abilities = { ABILITY_WATER_ABSORB, ABILITY_COMPETITIVE, ABILITY_MULTISCALE },
         .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Kaomare"),
+        .speciesName = _("Gamba"),
         .cryId = CRY_SPRIGATITO,
         .natDexNum = NATIONAL_DEX_SPRIGATITO,
-        .categoryName = _("Gato Planta"),
+        .categoryName = _("Gamba"),
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "El dulce aroma que emana su cuerpo\n"
-            "hipnotiza a quien lo rodean. Este\n"
-            "aroma se intensifica cuando este\n"
-            "Pokémon está bajo el sol."),
+            " - "),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Sprigatito,
+        .frontPic = gMonFrontPic_Eing,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Sprigatito,
+        .backPic = gMonBackPic_Eing,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 7,
         //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_Sprigatito,
-        .shinyPalette = gMonShinyPalette_Sprigatito,
-        .iconSprite = gMonIcon_Sprigatito,
-        .iconPalIndex = 1,
+        .palette = gMonPalette_Eing,
+        .shinyPalette = gMonShinyPalette_Eing,
+        .iconSprite = gMonIcon_Eing,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 5, SHADOW_SIZE_S)
-        FOOTPRINT(Sprigatito)
-        OVERWORLD(
-            sPicTable_Sprigatito,
-            SIZE_32x32,
-            SHADOW_SIZE_S,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Sprigatito,
-            gShinyOverworldPalette_Sprigatito
-        )
-        .levelUpLearnset = sSprigatitoLevelUpLearnset,
-        .teachableLearnset = sSprigatitoTeachableLearnset,
-        .eggMoveLearnset = sSprigatitoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_FLORAGATO}),
+        FOOTPRINT(Escavalier)
+        .levelUpLearnset = sEingLevelUpLearnset,
     },
 
     [SPECIES_FAKEMON9] =
