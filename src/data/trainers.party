@@ -1768,16 +1768,24 @@ Pic: Eing
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 
 Crobat @ Black Sludge
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
+- U-turn
+- Cross Poison
+- Brave Bird
+- Tailwind
 
 Klefki @ Leftovers
 EVs: 252HP / 252 SpA / 4 Spe
 Calm Nature
+- Barrier
+- Light Screen
+- Draining Kiss
+- Dazzling Gleam
 
 Jolteon @ Leftovers
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -1803,6 +1811,14 @@ Jolly Nature
 - Brave Bird
 - Thunder Punch
 
+Eing @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
+
 === TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
 Name: Eing
 Class: WAH Admin
@@ -1810,11 +1826,56 @@ Pic: Eing
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 
-Magikarp
-Level: 1
+Vaporeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Scald
+- Ice Beam
+- Shadow Ball
+- Recover
+
+Mawile @ Mawilite
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Drain Punch
+- Crunch
+
+Tropius @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Timid Nature
+- Energy Ball
+- Sludge Bomb
+- Air Slash
+- Earth Power
+
+Drapion @ Black Sludge
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Cross Poison
+- X Scissor
+- Fire Fang
+- Brick Break
+
+Eelektross @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Signal Beam
+- Flamethrower
+- Recover
+
+Eing @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
 
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
