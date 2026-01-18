@@ -27219,6 +27219,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_ElectrodeS[] = INCBIN_U16("graphics/pokemon/electrodes/shiny.gbapal");
     const u8 gMonIcon_ElectrodeS[] = INCBIN_U8("graphics/pokemon/electrodes/icon.4bpp");
 
+    const u32 gMonFrontPic_Eing[] = INCBIN_U32("graphics/pokemon/eing/front.4bpp.smol");
+    const u16 gMonPalette_Eing[] = INCBIN_U16("graphics/pokemon/eing/normal.gbapal");
+    const u32 gMonBackPic_Eing[] = INCBIN_U32("graphics/pokemon/eing/back.4bpp.smol");
+    const u16 gMonShinyPalette_Eing[] = INCBIN_U16("graphics/pokemon/eing/shiny.gbapal");
+    const u8 gMonIcon_Eing[] = INCBIN_U8("graphics/pokemon/eing/icon.4bpp");
+
 
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.smol");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");

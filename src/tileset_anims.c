@@ -1702,3 +1702,128 @@ void InitTilesetAnim_XirosRoom(void)
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_XirosRoom;
 }
+
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Computer_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/computer/02.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_Computer[] = {
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+    gTilesetAnims_CosararaRoom_Computer_Frame0,
+    gTilesetAnims_CosararaRoom_Computer_Frame1,
+    gTilesetAnims_CosararaRoom_Computer_Frame2,
+};
+
+static void QueueAnimTiles_CosararaRoom_Computer(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_Computer);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Computer[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 22 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_CosararaRoom_Machine_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/machine/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Machine_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/machine/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Machine_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/machine/02.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Machine_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/machine/03.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_Machine[] = {
+    gTilesetAnims_CosararaRoom_Machine_Frame0,
+    gTilesetAnims_CosararaRoom_Machine_Frame2,
+    gTilesetAnims_CosararaRoom_Machine_Frame1,
+    gTilesetAnims_CosararaRoom_Machine_Frame3,
+};
+
+static void QueueAnimTiles_CosararaRoom_Machine(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_Machine);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Machine[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 22)), 6 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/02.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/03.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_Monitor[] = {
+    gTilesetAnims_CosararaRoom_Monitor_Frame0,
+    gTilesetAnims_CosararaRoom_Monitor_Frame1,
+    gTilesetAnims_CosararaRoom_Monitor_Frame2,
+    gTilesetAnims_CosararaRoom_Monitor_Frame3,
+};
+
+static void QueueAnimTiles_CosararaRoom_Monitor(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_Monitor);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Monitor[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 28)), 8 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/02.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/03.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_ServerBig[] = {
+    gTilesetAnims_CosararaRoom_ServerBig_Frame0,
+    gTilesetAnims_CosararaRoom_ServerBig_Frame1,
+    gTilesetAnims_CosararaRoom_ServerBig_Frame2,
+    gTilesetAnims_CosararaRoom_ServerBig_Frame3,
+};
+
+static void QueueAnimTiles_CosararaRoom_ServerBig(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_ServerBig);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerBig[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 36)), 7 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_CosararaRoom_ServerSmall_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_small/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerSmall_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_small/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerSmall_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_small/02.4bpp");
+const u16 gTilesetAnims_CosararaRoom_ServerSmall_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_small/03.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_ServerSmall[] = {
+    gTilesetAnims_CosararaRoom_ServerSmall_Frame0,
+    gTilesetAnims_CosararaRoom_ServerSmall_Frame1,
+    gTilesetAnims_CosararaRoom_ServerSmall_Frame2,
+    gTilesetAnims_CosararaRoom_ServerSmall_Frame3,
+};
+
+static void QueueAnimTiles_CosararaRoom_ServerSmall(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_ServerSmall);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerSmall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY +43)), 2 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_CosararaRoom(u16 timer) {
+    u16 tilesIncrement;
+    if (timer % 16 == 0) {
+        tilesIncrement = VarGet(VAR_COSARARA_ROOM_COMPUTER_FRAMES);
+        QueueAnimTiles_CosararaRoom_Computer(tilesIncrement);
+        if(tilesIncrement < 2){
+            VarSet(VAR_COSARARA_ROOM_COMPUTER_FRAMES, tilesIncrement + 1);
+        } else {
+
+            VarSet(VAR_COSARARA_ROOM_COMPUTER_FRAMES, 0);
+        }
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_CosararaRoom_Machine(timer / 16);
+    }
+    if (timer % 16 == 2) {
+        QueueAnimTiles_CosararaRoom_ServerBig(timer / 16);
+    }
+    if (timer % 16 == 3) {
+        QueueAnimTiles_CosararaRoom_ServerSmall(timer / 16);
+    }
+    if (timer % 16 == 4) {
+        QueueAnimTiles_CosararaRoom_Monitor(timer / 16);
+    }
+}
+
+void InitTilesetAnim_CosararaRoom(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_CosararaRoom;
+}
