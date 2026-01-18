@@ -1744,6 +1744,23 @@ static void QueueAnimTiles_CosararaRoom_Machine(u16 timer) {
     AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Machine[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 22)), 6 * TILE_SIZE_4BPP);
 }
 
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/00.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/01.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/02.4bpp");
+const u16 gTilesetAnims_CosararaRoom_Monitor_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/monitor/03.4bpp");
+
+const u16 *const gTilesetAnims_CosararaRoom_Monitor[] = {
+    gTilesetAnims_CosararaRoom_Monitor_Frame0,
+    gTilesetAnims_CosararaRoom_Monitor_Frame1,
+    gTilesetAnims_CosararaRoom_Monitor_Frame2,
+    gTilesetAnims_CosararaRoom_Monitor_Frame3,
+};
+
+static void QueueAnimTiles_CosararaRoom_Monitor(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_Monitor);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_Monitor[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 28)), 8 * TILE_SIZE_4BPP);
+}
+
 const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/00.4bpp");
 const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/01.4bpp");
 const u16 gTilesetAnims_CosararaRoom_ServerBig_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_big/02.4bpp");
@@ -1758,7 +1775,7 @@ const u16 *const gTilesetAnims_CosararaRoom_ServerBig[] = {
 
 static void QueueAnimTiles_CosararaRoom_ServerBig(u16 timer) {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_ServerBig);
-    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerBig[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 28)), 7 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerBig[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 36)), 7 * TILE_SIZE_4BPP);
 }
 
 const u16 gTilesetAnims_CosararaRoom_ServerSmall_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/anim/server_small/00.4bpp");
@@ -1775,7 +1792,7 @@ const u16 *const gTilesetAnims_CosararaRoom_ServerSmall[] = {
 
 static void QueueAnimTiles_CosararaRoom_ServerSmall(u16 timer) {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_CosararaRoom_ServerSmall);
-    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerSmall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY +35)), 2 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_CosararaRoom_ServerSmall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY +43)), 2 * TILE_SIZE_4BPP);
 }
 
 
@@ -1799,6 +1816,9 @@ static void TilesetAnim_CosararaRoom(u16 timer) {
     }
     if (timer % 16 == 3) {
         QueueAnimTiles_CosararaRoom_ServerSmall(timer / 16);
+    }
+    if (timer % 16 == 4) {
+        QueueAnimTiles_CosararaRoom_Monitor(timer / 16);
     }
 }
 
