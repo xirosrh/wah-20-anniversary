@@ -21,9 +21,15 @@ script CosararaRoom_OnWarp_PlayerTurnNorth {
 script CosararaRoom_EventScript_Cosarara {
     lock
     if(flag(FLAG_DEFEATED_ADMIN_COSARARA)) {
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COSARARAROOM_COSARARA, moves(face_player, emote_exclamation_mark, delay_16, face_up, delay_16 * 2))
+        call(CosararaRoom_EventScript_LockPC)
+        delay(20)
         faceplayer
         msgbox(format("¿Y tú eres? Ahhh sí ya me acuerdo de ti, {PLAYER}.\p¡Deseo que te vaya bien!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
         applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
+        delay(20)
+        call(CosararaRoom_EventScript_UnlockPC)
         release
         end
     }
@@ -35,7 +41,11 @@ script CosararaRoom_EventScript_Cosarara {
     delay(20)
     faceplayer
     playse(SE_PIN)
-    applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_QuestionMarkWithDelay48)
+    applymovementandwait(LOCALID_COSARARAROOM_COSARARA, moves(face_player, emote_question_mark, delay_16, face_up, delay_16 * 2))
+    msgbox(format("Voy a bloquear mi computadora…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    call(CosararaRoom_EventScript_LockPC)
+    delay(20)
+    faceplayer
     msgbox(format("¿Y tú quién eras? ¿Has cambiado de nick recientemente?\pEs que me pierdo, ¡no me da la memoria!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_SweatDropWithDelay48)
@@ -60,6 +70,8 @@ script CosararaRoom_EventScript_Cosarara {
     call(WahRoomsShared_OpenDoor)
     delay(20)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
+    delay(20)
+    call(CosararaRoom_EventScript_UnlockPC)
     release
     end
 }
@@ -82,4 +94,34 @@ script CosararaRoom_EventScript_CosararaBattle {
 
 text CosararaRoom_Text_CosararaDefeated {
     format("Me ha hecho muy feliz esta batalla.")
+}
+
+script CosararaRoom_EventScript_LockPC {
+    setmetatile(1, 1, METATILE_room_cosarara_PC_LOCKED_1, TRUE)
+    setmetatile(2, 1, METATILE_room_cosarara_PC_LOCKED_2, TRUE)
+    setmetatile(3, 1, METATILE_room_cosarara_PC_LOCKED_3, TRUE)
+    setmetatile(4, 1, METATILE_room_cosarara_PC_LOCKED_4, TRUE)
+    setmetatile(5, 1, METATILE_room_cosarara_PC_LOCKED_5, TRUE)
+    setmetatile(1, 2, METATILE_room_cosarara_PC_LOCKED_6, TRUE)
+    setmetatile(2, 2, METATILE_room_cosarara_PC_LOCKED_7, TRUE)
+    setmetatile(3, 2, METATILE_room_cosarara_PC_LOCKED_8, TRUE)
+    setmetatile(4, 2, METATILE_room_cosarara_PC_LOCKED_9, TRUE)
+    setmetatile(5, 2, METATILE_room_cosarara_PC_LOCKED_10, TRUE)
+    special(DrawWholeMapView)
+    return
+}
+
+script CosararaRoom_EventScript_UnlockPC {
+    setmetatile(1, 1, METATILE_room_cosarara_PC_MATRIX_1, TRUE)
+    setmetatile(2, 1, METATILE_room_cosarara_PC_MATRIX_2, TRUE)
+    setmetatile(3, 1, METATILE_room_cosarara_PC_MATRIX_3, TRUE)
+    setmetatile(4, 1, METATILE_room_cosarara_PC_MATRIX_4, TRUE)
+    setmetatile(5, 1, METATILE_room_cosarara_PC_MATRIX_5, TRUE)
+    setmetatile(1, 2, METATILE_room_cosarara_PC_MATRIX_6, TRUE)
+    setmetatile(2, 2, METATILE_room_cosarara_PC_MATRIX_7, TRUE)
+    setmetatile(3, 2, METATILE_room_cosarara_PC_MATRIX_8, TRUE)
+    setmetatile(4, 2, METATILE_room_cosarara_PC_MATRIX_9, TRUE)
+    setmetatile(5, 2, METATILE_room_cosarara_PC_MATRIX_10, TRUE)
+    special(DrawWholeMapView)
+    return
 }
