@@ -278,6 +278,30 @@ BaroRoom_EventScript_BaroBattle_5:
 	goto BaroRoom_EventScript_BaroBattle_1
 
 
+BaroRoom_EventScript_PlugOink::
+# 173 "data/maps/BaroRoom/scripts.pory"
+	lock
+# 174 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_Movement_0
+# 175 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_AUTOCLOSE
+# 176 "data/maps/BaroRoom/scripts.pory"
+	waitmovement 0
+	end
+
+
+BaroRoom_EventScript_Sever::
+# 181 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_NPC
+	end
+
+
+BaroRoom_EventScript_Seeg::
+# 186 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_NPC
+	end
+
+
 # 28 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_0:
 # 29 "data/maps/BaroRoom/scripts.pory"
@@ -354,6 +378,22 @@ BaroRoom_OnFrame_Movement_4:
 	set_invisible
 	step_end
 
+# 174 "data/maps/BaroRoom/scripts.pory"
+BaroRoom_EventScript_PlugOink_Movement_0:
+# 174 "data/maps/BaroRoom/scripts.pory"
+	face_player
+# 174 "data/maps/BaroRoom/scripts.pory"
+	lock_facing_direction
+# 174 "data/maps/BaroRoom/scripts.pory"
+	jump_in_place_down
+# 174 "data/maps/BaroRoom/scripts.pory"
+	jump_in_place_down
+# 174 "data/maps/BaroRoom/scripts.pory"
+	unlock_facing_direction
+# 174 "data/maps/BaroRoom/scripts.pory"
+	face_player
+	step_end
+
 BaroRoom_OnFrame_Text_0:
 # 52 "data/maps/BaroRoom/scripts.pory"
 	.string "Erhm… Tú eres {PLAYER}, ¿no?\n"
@@ -396,6 +436,18 @@ BaroRoom_OnFrame_Text_7:
 BaroRoom_OnFrame_Text_8:
 # 94 "data/maps/BaroRoom/scripts.pory"
 	.string "Bueno, buena suerte y tal.$"
+
+BaroRoom_EventScript_PlugOink_Text_0:
+# 175 "data/maps/BaroRoom/scripts.pory"
+	.string "Oink, oink, oink…$"
+
+BaroRoom_EventScript_Sever_Text_0:
+# 181 "data/maps/BaroRoom/scripts.pory"
+	.string "¡Sever!$"
+
+BaroRoom_EventScript_Seeg_Text_0:
+# 186 "data/maps/BaroRoom/scripts.pory"
+	.string "See, see.$"
 
 BaroRoom_Text_BaroDefeated::
 # 168 "data/maps/BaroRoom/scripts.pory"

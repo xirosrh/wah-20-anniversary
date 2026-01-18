@@ -488,3 +488,9 @@ const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
 
 const u32 gObjectEventPic_ApricornTree[] = INCBIN_U32("graphics/object_events/pics/misc/apricorn_tree.4bpp");
+const u32 gObjectEventPic_Seeg[] = INCBIN_U32("graphics/object_events/pics/people/Seeg.4bpp");
+const u16 gObjectEventPal_Seeg[] = INCBIN_U16("graphics/object_events/pics/people/Seeg.gbapal");
+const u32 gObjectEventPic_Sever[] = INCBIN_U32("graphics/object_events/pics/people/Sever.4bpp");
+const u16 gObjectEventPal_Sever[] = INCBIN_U16("graphics/object_events/pics/people/Sever.gbapal");
+const u32 gObjectEventPic_PlugOink[] = INCBIN_U32("graphics/object_events/pics/people/PlugOink.4bpp");
+const u16 gObjectEventPal_PlugOink[] = INCBIN_U16("graphics/object_events/pics/people/PlugOink.gbapal");

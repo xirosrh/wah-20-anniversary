@@ -1492,3 +1492,31 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
 };
+
+static const struct SpriteFrameImage sPicTable_Seeg[] = {    overworld_frame(gObjectEventPic_Seeg, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Seeg, 2, 4, 8),};
+static const struct SpriteFrameImage sPicTable_Sever[] = {    overworld_frame(gObjectEventPic_Sever, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Sever, 2, 4, 8),};
+static const struct SpriteFrameImage sPicTable_PlugOink[] = {    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 0),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 1),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 2),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 3),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 4),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 5),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 6),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 7),
+    overworld_frame(gObjectEventPic_PlugOink, 2, 4, 8),};
