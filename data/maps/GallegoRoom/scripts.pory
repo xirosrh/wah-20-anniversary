@@ -86,7 +86,7 @@ script GallegoRoom_EventScript_Gallego {
     msgbox(format("El aniversario me ha pillado totalmente por sorpresa. ¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HeartWithDelay48)
-    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese 'no sé qué' del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese “no sé qué” del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     special(SpawnCameraObject)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
@@ -193,6 +193,21 @@ script GallegoRoom_EventScript_Coffee {
 
 script GallegoRoom_EventScript_Drawings {
     msgbox(format("Parecen diseños de varios fakémon y Pokémon de generaciones posteriores a la segunda en el estilo de la Gameboy Color.\pEstán entremezclados con apuntes muy viejos de la universidad.\pParece que nadie ha puesto orden aquí en una década."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Shelf {
+    msgbox(format("Es una colección de libros y apuntes de la universidad mezclada con tomos de manga.\pNo parece muy organizada."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Library {
+    msgbox(format("Hay una fila enorme de tomos negros de tapa dura.\pEn el lomo se puede leer “Berserk” en letras rojas."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Drawer {
+    msgbox(format("Es un mueble lleno de consolas y videojuegos de distintas épocas, apilados en varios compartimentos.\pNo se ve el fondo."), MSGBOX_SIGN)
     end
 }
 
