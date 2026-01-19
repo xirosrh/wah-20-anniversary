@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_TOKYNWARROOM_WAR",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_WAR",
       "x": 7,
       "y": 5,
       "elevation": 0,
