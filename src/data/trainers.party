@@ -91,8 +91,54 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 
-Magikarp
-Level: 1
+Cookie (Kingler) @ Leftovers
+EVs: 252Atk / 252 Spe / 4 HP
+Adamant Nature
+- Crabhammer
+- Ice Hammer
+- Earthquake
+- Liquidation
+
+Cacturne @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Seed Bomb
+- Drain Punch
+- Night Slash
+- Thunder Punch
+
+Porygon Z @ Assault Vest
+Ability: Download
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Magmortar @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Flamethrower
+- Psychic
+- Thunderbolt
+- Earth Power
+
+Hawlucha @ Hawluchanite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+Articuno @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 Def
+Timid Nature
+- Mind Reader
+- Sheer Cold
+- Hurricane
+- Blizzard
 
 
 === TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
