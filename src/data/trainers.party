@@ -1117,11 +1117,56 @@ Pic: Baro
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
 
-Magikarp
-Level: 1
+PlugOink @ Eviolite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Charge Beam
+- Snarl
+- Thunderbolt
+
+Ayewiraz @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 Spe
+Jolly Nature
+- Play Rough
+- Crunch
+- Poison Tail
+- Psychic Fangs
+
+Gritespec @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Psychic
+- Moonblast
+- Shadow Ball
+- Energy Ball
+
+Freech @ Weakness Policy
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Dragon Pulse
+- Ice Beam
+- Ice Shard
+- Recover
+
+Magiken @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu @ Light Ball
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
 
 === TRAINER_WAH_ADMIN_BARO_ALTERNATIVE ===
 Name: Baro
@@ -1130,7 +1175,7 @@ Pic: Baro
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
 
 Magikarp
