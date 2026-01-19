@@ -66,6 +66,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_War;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gallego;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Katherine;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Baro;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sayer;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cheve;
@@ -566,6 +569,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SEEG] =                     &gObjectEventGraphicsInfo_Seeg,
     [OBJ_EVENT_GFX_SEVER] =                    &gObjectEventGraphicsInfo_Sever,
     [OBJ_EVENT_GFX_PLUGOINK] =                 &gObjectEventGraphicsInfo_PlugOink,
+    [OBJ_EVENT_GFX_WAR] =                      &gObjectEventGraphicsInfo_War,
+    [OBJ_EVENT_GFX_GALLEGO] =                  &gObjectEventGraphicsInfo_Gallego,
+    [OBJ_EVENT_GFX_KATHERINE] =                &gObjectEventGraphicsInfo_Katherine,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
