@@ -255,68 +255,86 @@ GallegoRoom_EventScript_Drawings::
 	end
 
 
-GallegoRoom_EventScript_NES::
+GallegoRoom_EventScript_Shelf::
 # 200 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Shelf_Text_0, MSGBOX_SIGN
+	end
+
+
+GallegoRoom_EventScript_Library::
+# 205 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Library_Text_0, MSGBOX_SIGN
+	end
+
+
+GallegoRoom_EventScript_Drawer::
+# 210 "data/maps/GallegoRoom/scripts.pory"
+	msgbox GallegoRoom_EventScript_Drawer_Text_0, MSGBOX_SIGN
+	end
+
+
+GallegoRoom_EventScript_NES::
+# 215 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_NES_Text_0, MSGBOX_SIGN
 	end
 
 
 GallegoRoom_EventScript_Bin::
-# 205 "data/maps/GallegoRoom/scripts.pory"
+# 220 "data/maps/GallegoRoom/scripts.pory"
 	switch VAR_TEMP_0
-# 206 "data/maps/GallegoRoom/scripts.pory"
+# 221 "data/maps/GallegoRoom/scripts.pory"
 	case 0, GallegoRoom_EventScript_Bin_3
-# 209 "data/maps/GallegoRoom/scripts.pory"
+# 224 "data/maps/GallegoRoom/scripts.pory"
 	case 1, GallegoRoom_EventScript_Bin_4
-# 212 "data/maps/GallegoRoom/scripts.pory"
+# 227 "data/maps/GallegoRoom/scripts.pory"
 	case 2, GallegoRoom_EventScript_Bin_5
 GallegoRoom_EventScript_Bin_1:
 	end
 
 GallegoRoom_EventScript_Bin_3:
-# 207 "data/maps/GallegoRoom/scripts.pory"
+# 222 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_0, MSGBOX_SIGN
-# 208 "data/maps/GallegoRoom/scripts.pory"
+# 223 "data/maps/GallegoRoom/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto GallegoRoom_EventScript_Bin_1
 
 GallegoRoom_EventScript_Bin_4:
-# 210 "data/maps/GallegoRoom/scripts.pory"
+# 225 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_1, MSGBOX_SIGN
-# 211 "data/maps/GallegoRoom/scripts.pory"
+# 226 "data/maps/GallegoRoom/scripts.pory"
 	setvar VAR_TEMP_0, 2
 	goto GallegoRoom_EventScript_Bin_1
 
 GallegoRoom_EventScript_Bin_5:
-# 213 "data/maps/GallegoRoom/scripts.pory"
+# 228 "data/maps/GallegoRoom/scripts.pory"
 	msgbox GallegoRoom_EventScript_Bin_Text_2, MSGBOX_SIGN
 	goto GallegoRoom_EventScript_Bin_1
 
 
 GallegoRoom_EventScript_GallegoBattle::
-# 219 "data/maps/GallegoRoom/scripts.pory"
+# 234 "data/maps/GallegoRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GallegoRoom_EventScript_GallegoBattle_2
-# 222 "data/maps/GallegoRoom/scripts.pory"
+# 237 "data/maps/GallegoRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_GALLEGO
-# 223 "data/maps/GallegoRoom/scripts.pory"
+# 238 "data/maps/GallegoRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 224 "data/maps/GallegoRoom/scripts.pory"
+# 239 "data/maps/GallegoRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GallegoRoom_EventScript_GallegoBattle_5
-# 227 "data/maps/GallegoRoom/scripts.pory"
+# 242 "data/maps/GallegoRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_Text_GallegoDefeated
 GallegoRoom_EventScript_GallegoBattle_1:
-# 230 "data/maps/GallegoRoom/scripts.pory"
+# 245 "data/maps/GallegoRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 GallegoRoom_EventScript_GallegoBattle_2:
-# 220 "data/maps/GallegoRoom/scripts.pory"
+# 235 "data/maps/GallegoRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated
 	goto GallegoRoom_EventScript_GallegoBattle_1
 
 GallegoRoom_EventScript_GallegoBattle_5:
-# 225 "data/maps/GallegoRoom/scripts.pory"
+# 240 "data/maps/GallegoRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_MAIN, GallegoRoom_Text_GallegoDefeated
 	goto GallegoRoom_EventScript_GallegoBattle_1
 
@@ -530,7 +548,7 @@ GallegoRoom_EventScript_Gallego_Text_7:
 	.string "Siempre tuve el sueño de crear un juego\n"
 	.string "que capturara el alma de la segunda\l"
 	.string "generación, con aquella estética y ese\l"
-	.string "'no sé qué' del que siempre he estado\l"
+	.string "“no sé qué” del que siempre he estado\l"
 	.string "enamorado.\p"
 	.string "Me pasé años picando piedra entre\n"
 	.string "bytes en hexadecimal y rutinas de ASM,\l"
@@ -661,22 +679,43 @@ GallegoRoom_EventScript_Drawings_Text_0:
 	.string "Parece que nadie ha puesto orden aquí\n"
 	.string "en una década.$"
 
-GallegoRoom_EventScript_NES_Text_0:
+GallegoRoom_EventScript_Shelf_Text_0:
 # 200 "data/maps/GallegoRoom/scripts.pory"
+	.string "Es una colección de libros y apuntes de\n"
+	.string "la universidad mezclada con tomos de\l"
+	.string "manga.\p"
+	.string "No parece muy organizada.$"
+
+GallegoRoom_EventScript_Library_Text_0:
+# 205 "data/maps/GallegoRoom/scripts.pory"
+	.string "Hay una fila enorme de tomos negros de\n"
+	.string "tapa dura.\p"
+	.string "En el lomo se puede leer “Berserk” en\n"
+	.string "letras rojas.$"
+
+GallegoRoom_EventScript_Drawer_Text_0:
+# 210 "data/maps/GallegoRoom/scripts.pory"
+	.string "Es un mueble lleno de consolas y\n"
+	.string "videojuegos de distintas épocas,\l"
+	.string "apilados en varios compartimentos.\p"
+	.string "No se ve el fondo.$"
+
+GallegoRoom_EventScript_NES_Text_0:
+# 215 "data/maps/GallegoRoom/scripts.pory"
 	.string "Es una NES, un poco polvorienta, pero\n"
 	.string "funciona perfectamente. ¡Qué retro!$"
 
 GallegoRoom_EventScript_Bin_Text_0:
-# 207 "data/maps/GallegoRoom/scripts.pory"
+# 222 "data/maps/GallegoRoom/scripts.pory"
 	.string "Nada, aquí solo hay basura… creo.$"
 
 GallegoRoom_EventScript_Bin_Text_1:
-# 210 "data/maps/GallegoRoom/scripts.pory"
+# 225 "data/maps/GallegoRoom/scripts.pory"
 	.string "Te he dicho que aquí solo hay basura.\n"
 	.string "Deja de buscar.$"
 
 GallegoRoom_EventScript_Bin_Text_2:
-# 213 "data/maps/GallegoRoom/scripts.pory"
+# 228 "data/maps/GallegoRoom/scripts.pory"
 	.string "Encuentras al fondo una imagen\n"
 	.string "extraña. Es un diseño claramente de la\l"
 	.string "segunda generación, pero estás seguro\l"
@@ -684,6 +723,6 @@ GallegoRoom_EventScript_Bin_Text_2:
 	.string "¿Qué sentido tiene esto?$"
 
 GallegoRoom_Text_GallegoDefeated::
-# 234 "data/maps/GallegoRoom/scripts.pory"
+# 249 "data/maps/GallegoRoom/scripts.pory"
 	.string "Uff… pues sí que me he quedado\n"
 	.string "anticuado.$"
