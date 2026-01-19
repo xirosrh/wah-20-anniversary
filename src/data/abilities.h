@@ -2424,4 +2424,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
+    [ABILITY_MELONSHIELD] =
+    {
+        .name = _("Cáscara"),
+        .description = COMPOUND_STRING("Absorbe mov. tipo Tierra."),
+        .aiRating = 6,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
 };
