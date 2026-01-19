@@ -151,8 +151,54 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 
-Magikarp
-Level: 1
+Hawlucha @ Hawluchanite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+Gyarados @ Leftovers
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Ice Fang
+
+Onix @ Eviolite
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Dragon Dance
+- Curse
+- Earthquake
+- Rock Slide
+
+Electivire @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Fire Punch
+- Drain Punch
+
+Mamoswine @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Ice Shard
+- Earthquake
+- Stone Edge
+- Iron Head
+
+Articuno Galar @ Leftovers
+EVs:  252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Freezing Glare
+- Hurricane
+- Recover
+- Calm Mind
 
 === TRAINER_WAH_ADMIN_GOCE_MAIN ===
 Name: Goce
