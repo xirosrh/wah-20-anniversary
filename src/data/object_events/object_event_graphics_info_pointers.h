@@ -251,6 +251,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberMSwimm
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Azurill;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AstronautVigoroth;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkMay;
@@ -572,6 +573,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WAR] =                      &gObjectEventGraphicsInfo_War,
     [OBJ_EVENT_GFX_GALLEGO] =                  &gObjectEventGraphicsInfo_Gallego,
     [OBJ_EVENT_GFX_KATHERINE] =                &gObjectEventGraphicsInfo_Katherine,
+    [OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH] =       &gObjectEventGraphicsInfo_AstronautVigoroth,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

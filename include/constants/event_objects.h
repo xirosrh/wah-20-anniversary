@@ -286,11 +286,12 @@
 #define OBJ_EVENT_GFX_WAR                        279
 #define OBJ_EVENT_GFX_GALLEGO                    280
 #define OBJ_EVENT_GFX_KATHERINE                  281
+#define OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH         282
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        282
+#define NUM_OBJ_EVENT_GFX                        283
 
 
 // These are dynamic object gfx ids.
@@ -441,6 +442,7 @@
 #define OBJ_EVENT_PAL_TAG_WAR                     0x1142
 #define OBJ_EVENT_PAL_TAG_GALLEGO                 0x1143
 #define OBJ_EVENT_PAL_TAG_KATHERINE               0x1144
+#define OBJ_EVENT_PAL_TAG_ASTRONAUT_VIGOROTH      0x1145
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
