@@ -45,6 +45,10 @@ const u16 gObjectEventPal_Ozumas[] = INCBIN_U16("graphics/object_events/palettes
 const u16 gObjectEventPal_Zero[] = INCBIN_U16("graphics/object_events/palettes/admins/zero.gbapal");
 const u16 gObjectEventPal_Scarex[] = INCBIN_U16("graphics/object_events/palettes/admins/scarex.gbapal");
 const u16 gObjectEventPal_Xiros[] = INCBIN_U16("graphics/object_events/palettes/admins/xiros.gbapal");
+const u16 gObjectEventPal_StagePerformer1[] = INCBIN_U16("graphics/object_events/palettes/stage_performer_1.gbapal");
+const u16 gObjectEventPal_StagePerformer2[] = INCBIN_U16("graphics/object_events/palettes/stage_performer_2.gbapal");
+const u16 gObjectEventPal_StagePerformer3[] = INCBIN_U16("graphics/object_events/palettes/stage_performer_3.gbapal");
+const u16 gObjectEventPal_StagePerformer4[] = INCBIN_U16("graphics/object_events/palettes/stage_performer_4.gbapal");
 const u16 gObjectEventPal_War[] = INCBIN_U16("graphics/object_events/palettes/admins/war.gbapal");
 const u16 gObjectEventPal_Gallego[] = INCBIN_U16("graphics/object_events/palettes/admins/gallego.gbapal");
 const u16 gObjectEventPal_Katherine[] = INCBIN_U16("graphics/object_events/palettes/admins/katherine.gbapal");
@@ -113,6 +117,10 @@ const u32 gObjectEventPic_Ozumas[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Zero[] = INCBIN_U32("graphics/object_events/pics/people/admins/zero.4bpp");
 const u32 gObjectEventPic_Scarex[] = INCBIN_U32("graphics/object_events/pics/people/admins/scarex.4bpp");
 const u32 gObjectEventPic_Xiros[] = INCBIN_U32("graphics/object_events/pics/people/admins/xiros.4bpp");
+const u32 gObjectEventPic_StagePerformer1[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_1.4bpp");
+const u32 gObjectEventPic_StagePerformer2[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_2.4bpp");
+const u32 gObjectEventPic_StagePerformer3[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_3.4bpp");
+const u32 gObjectEventPic_StagePerformer4[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_4.4bpp");
 const u32 gObjectEventPic_War[] = INCBIN_U32("graphics/object_events/pics/people/admins/war.4bpp");
 const u32 gObjectEventPic_Gallego[] = INCBIN_U32("graphics/object_events/pics/people/admins/gallego.4bpp");
 const u32 gObjectEventPic_Katherine[] = INCBIN_U32("graphics/object_events/pics/people/admins/katherine.4bpp");
@@ -406,11 +414,13 @@ const u32 gObjectEventPic_GroudonOld[] = INCBIN_U32("graphics/object_events/pics
 const u32 gObjectEventPic_KyogreOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/kyogre.4bpp");
 
 const u32 gObjectEventPic_VigorothMover[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/vigoroth_mover.4bpp");
+const u32 gObjectEventPic_AstronautVigoroth[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/astronaut_vigoroth.4bpp");
 const u32 gObjectEventPic_SudowoodoTree[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/sudowoodo_tree.4bpp");
 const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_cutscene.4bpp");
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
+const u16 gObjectEventPal_AstronautVigoroth[] = INCBIN_U16("graphics/object_events/palettes/astronaut_vigoroth.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");

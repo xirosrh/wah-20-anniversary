@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC1",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "graphics_id": "OBJ_EVENT_GFX_STAGE_PERFORMER_1",
       "x": 6,
       "y": 7,
       "elevation": 0,
@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC2",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "graphics_id": "OBJ_EVENT_GFX_STAGE_PERFORMER_2",
       "x": 6,
       "y": 6,
       "elevation": 0,
@@ -58,7 +58,7 @@
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC4",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_STAGE_PERFORMER_3",
       "x": 6,
       "y": 4,
       "elevation": 0,
@@ -72,7 +72,7 @@
     },
     {
       "local_id": "LOCALID_JACKROOM_NPC3",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
+      "graphics_id": "OBJ_EVENT_GFX_STAGE_PERFORMER_4",
       "x": 6,
       "y": 5,
       "elevation": 0,

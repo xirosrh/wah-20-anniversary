@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_REYBOOROOM_VIGOROTH",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VIGOROTH)",
+      "graphics_id": "OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH",
       "x": 7,
       "y": 5,
       "elevation": 0,

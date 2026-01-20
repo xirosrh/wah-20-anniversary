@@ -66,6 +66,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer4;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_War;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gallego;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Katherine;
@@ -251,6 +255,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberMSwimm
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Azurill;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbraTeleporting2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AstronautVigoroth;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkMay;
@@ -547,6 +552,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
     [OBJ_EVENT_GFX_SCAREX] =                   &gObjectEventGraphicsInfo_Scarex,
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
+    [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
+    [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,
+    [OBJ_EVENT_GFX_STAGE_PERFORMER_3] =        &gObjectEventGraphicsInfo_StagePerformer3,
+    [OBJ_EVENT_GFX_STAGE_PERFORMER_4] =        &gObjectEventGraphicsInfo_StagePerformer4,
     [OBJ_EVENT_GFX_BARO] =                     &gObjectEventGraphicsInfo_Baro,
     [OBJ_EVENT_GFX_SAYER] =                    &gObjectEventGraphicsInfo_Sayer,
     [OBJ_EVENT_GFX_CHEVE] =                    &gObjectEventGraphicsInfo_Cheve,
@@ -572,6 +581,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WAR] =                      &gObjectEventGraphicsInfo_War,
     [OBJ_EVENT_GFX_GALLEGO] =                  &gObjectEventGraphicsInfo_Gallego,
     [OBJ_EVENT_GFX_KATHERINE] =                &gObjectEventGraphicsInfo_Katherine,
+    [OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH] =       &gObjectEventGraphicsInfo_AstronautVigoroth,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
