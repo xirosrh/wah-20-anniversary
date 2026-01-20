@@ -55,514 +55,518 @@ ReyBooRoom_EventScript_BooEncounter::
 # 37 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
 # 38 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_PIN
+	turnobject LOCALID_REYBOOROOM_VIGOROTH, DIR_SOUTH
 # 39 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_ThinkingWithDelay48
+	playse SE_PIN
 # 40 "data/maps/ReyBooRoom/scripts.pory"
-	delay 40
+	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_ThinkingWithDelay48
 # 41 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceRight2
+	delay 40
 # 42 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceRight2
 # 43 "data/maps/ReyBooRoom/scripts.pory"
-	delay 30
+	turnobject LOCALID_REYBOOROOM_VIGOROTH, DIR_WEST
 # 44 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_WalkRight
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 45 "data/maps/ReyBooRoom/scripts.pory"
 	delay 30
 # 46 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_WalkRight
 # 47 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_0
+	delay 30
 # 48 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
-# 49 "data/maps/ReyBooRoom/scripts.pory"
-	delay 20
-# 50 "data/maps/ReyBooRoom/scripts.pory"
 	playse SE_PIN
+# 49 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_0
+# 50 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 51 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_1
-# 52 "data/maps/ReyBooRoom/scripts.pory"
-	playbgm MUS_HELP, FALSE
-# 53 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceRight
-# 54 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_JumpInPlaceLeft
-# 55 "data/maps/ReyBooRoom/scripts.pory"
-	waitmovement 0
-# 56 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_2
-# 69 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_3
-# 80 "data/maps/ReyBooRoom/scripts.pory"
-	waitmovement 0
-# 81 "data/maps/ReyBooRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
-# 82 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_4
-# 83 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_5
-# 84 "data/maps/ReyBooRoom/scripts.pory"
-	waitmovement LOCALID_REYBOOROOM_VIGOROTH
-# 85 "data/maps/ReyBooRoom/scripts.pory"
-	fadedefaultbgm
-# 86 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
+# 52 "data/maps/ReyBooRoom/scripts.pory"
+	playse SE_PIN
+# 53 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_1
+# 54 "data/maps/ReyBooRoom/scripts.pory"
+	playbgm MUS_HELP, FALSE
+# 55 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceRight
+# 56 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_JumpInPlaceLeft
+# 57 "data/maps/ReyBooRoom/scripts.pory"
+	waitmovement 0
+# 58 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_2
+# 71 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_3
+# 82 "data/maps/ReyBooRoom/scripts.pory"
+	waitmovement 0
+# 83 "data/maps/ReyBooRoom/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 84 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_4
+# 85 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_VIGOROTH, ReyBooRoom_EventScript_BooEncounter_Movement_5
+# 86 "data/maps/ReyBooRoom/scripts.pory"
+	waitmovement LOCALID_REYBOOROOM_VIGOROTH
 # 87 "data/maps/ReyBooRoom/scripts.pory"
-	setflag FLAG_TEMP_2
+	fadedefaultbgm
 # 88 "data/maps/ReyBooRoom/scripts.pory"
-	removeobject LOCALID_REYBOOROOM_VIGOROTH
+	delay 20
 # 89 "data/maps/ReyBooRoom/scripts.pory"
-	switch VAR_TEMP_0
+	setflag FLAG_TEMP_2
 # 90 "data/maps/ReyBooRoom/scripts.pory"
-	case 4, ReyBooRoom_EventScript_BooEncounter_3
+	removeobject LOCALID_REYBOOROOM_VIGOROTH
+# 91 "data/maps/ReyBooRoom/scripts.pory"
+	switch VAR_TEMP_0
 # 92 "data/maps/ReyBooRoom/scripts.pory"
-	case 5, ReyBooRoom_EventScript_BooEncounter_4
+	case 4, ReyBooRoom_EventScript_BooEncounter_3
 # 94 "data/maps/ReyBooRoom/scripts.pory"
-	case 7, ReyBooRoom_EventScript_BooEncounter_5
+	case 5, ReyBooRoom_EventScript_BooEncounter_4
 # 96 "data/maps/ReyBooRoom/scripts.pory"
+	case 7, ReyBooRoom_EventScript_BooEncounter_5
+# 98 "data/maps/ReyBooRoom/scripts.pory"
 	case 8, ReyBooRoom_EventScript_BooEncounter_6
 ReyBooRoom_EventScript_BooEncounter_1:
-# 99 "data/maps/ReyBooRoom/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
-# 100 "data/maps/ReyBooRoom/scripts.pory"
-	delay 30
 # 101 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_6
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 102 "data/maps/ReyBooRoom/scripts.pory"
-	call WahRoomsShared_CloseDoor
+	delay 30
 # 103 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_6
 # 104 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_7
+	call WahRoomsShared_CloseDoor
 # 105 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 106 "data/maps/ReyBooRoom/scripts.pory"
-	delay 40
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_7
 # 107 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_FaceDown
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 108 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_PIN
+	delay 40
 # 109 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_ExclamationMarkWithDelay48
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_FaceDown
 # 110 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	playse SE_PIN
 # 111 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_8
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_ExclamationMarkWithDelay48
 # 112 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, ReyBooRoom_EventScript_BooEncounter_Movement_8
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 113 "data/maps/ReyBooRoom/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_8
 # 114 "data/maps/ReyBooRoom/scripts.pory"
-	special RemoveCameraObject
+	applymovement LOCALID_CAMERA, ReyBooRoom_EventScript_BooEncounter_Movement_8
 # 115 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_7, speaker = SP_NAME_REY_BOO
+	waitmovement 0
 # 116 "data/maps/ReyBooRoom/scripts.pory"
-	call ReyBooRoom_EventScript_ReyBooBattle
+	special RemoveCameraObject
 # 117 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_9
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_7, speaker = SP_NAME_REY_BOO
 # 118 "data/maps/ReyBooRoom/scripts.pory"
-	delay 20
+	call ReyBooRoom_EventScript_ReyBooBattle
 # 119 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_8, speaker = SP_NAME_REY_BOO
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_9
 # 120 "data/maps/ReyBooRoom/scripts.pory"
-	playbgm MUS_WEATHER_GROUDON, FALSE
-# 121 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceDown
-# 122 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
-# 123 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown2
-# 124 "data/maps/ReyBooRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 125 "data/maps/ReyBooRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 126 "data/maps/ReyBooRoom/scripts.pory"
-	delay 10
-# 127 "data/maps/ReyBooRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 128 "data/maps/ReyBooRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 129 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8004, 1
-# 130 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8005, 1
-# 131 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8006, 6
-# 132 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8007, 5
-# 133 "data/maps/ReyBooRoom/scripts.pory"
-	special ShakeCamera
-# 134 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
+# 121 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_8, speaker = SP_NAME_REY_BOO
+# 122 "data/maps/ReyBooRoom/scripts.pory"
+	playbgm MUS_WEATHER_GROUDON, FALSE
+# 123 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceDown
+# 124 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+# 125 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown2
+# 126 "data/maps/ReyBooRoom/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 127 "data/maps/ReyBooRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 128 "data/maps/ReyBooRoom/scripts.pory"
+	delay 10
+# 129 "data/maps/ReyBooRoom/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 130 "data/maps/ReyBooRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 131 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8004, 1
+# 132 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8005, 1
+# 133 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8006, 6
+# 134 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8007, 5
 # 135 "data/maps/ReyBooRoom/scripts.pory"
-	fadeoutbgm 1
+	special ShakeCamera
 # 136 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
 # 137 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_FAILURE
+	fadeoutbgm 1
 # 138 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_10, MSGBOX_AUTOCLOSE_TOP
+	delay 20
 # 139 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_PIN
+	playse SE_FAILURE
 # 140 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_XWithDelay48
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_10, MSGBOX_AUTOCLOSE_TOP
 # 141 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
-# 142 "data/maps/ReyBooRoom/scripts.pory"
-	delay 20
-# 143 "data/maps/ReyBooRoom/scripts.pory"
-	turnobject LOCALID_REYBOOROOM_BOO, DIR_NORTH
-# 144 "data/maps/ReyBooRoom/scripts.pory"
-	delay 10
-# 145 "data/maps/ReyBooRoom/scripts.pory"
 	playse SE_PIN
-# 146 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48
-# 147 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
-# 148 "data/maps/ReyBooRoom/scripts.pory"
-	special SpawnCameraObject
-# 149 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_10
-# 150 "data/maps/ReyBooRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkUp3
-# 151 "data/maps/ReyBooRoom/scripts.pory"
-	waitmovement 0
-# 152 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
-# 153 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_11
-# 154 "data/maps/ReyBooRoom/scripts.pory"
+# 142 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_XWithDelay48
+# 143 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+# 144 "data/maps/ReyBooRoom/scripts.pory"
 	delay 20
+# 145 "data/maps/ReyBooRoom/scripts.pory"
+	turnobject LOCALID_REYBOOROOM_BOO, DIR_NORTH
+# 146 "data/maps/ReyBooRoom/scripts.pory"
+	delay 10
+# 147 "data/maps/ReyBooRoom/scripts.pory"
+	playse SE_PIN
+# 148 "data/maps/ReyBooRoom/scripts.pory"
+	applymovementandwait LOCALID_REYBOOROOM_BOO, Common_Movement_ThinkingWithDelay48
+# 149 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+# 150 "data/maps/ReyBooRoom/scripts.pory"
+	special SpawnCameraObject
+# 151 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_10
+# 152 "data/maps/ReyBooRoom/scripts.pory"
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp3
+# 153 "data/maps/ReyBooRoom/scripts.pory"
+	waitmovement 0
+# 154 "data/maps/ReyBooRoom/scripts.pory"
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 155 "data/maps/ReyBooRoom/scripts.pory"
-	turnobject LOCALID_REYBOOROOM_BOO, DIR_SOUTH
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_11
 # 156 "data/maps/ReyBooRoom/scripts.pory"
-	msgbox ReyBooRoom_EventScript_BooEncounter_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
+	delay 20
 # 157 "data/maps/ReyBooRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	turnobject LOCALID_REYBOOROOM_BOO, DIR_SOUTH
 # 158 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_12
+	msgbox ReyBooRoom_EventScript_BooEncounter_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO
 # 159 "data/maps/ReyBooRoom/scripts.pory"
-	playse SE_CONTEST_CONDITION_LOSE
+	call WahRoomsShared_OpenDoor
 # 160 "data/maps/ReyBooRoom/scripts.pory"
-	waitse
+	applymovementandwait LOCALID_REYBOOROOM_BOO, ReyBooRoom_EventScript_BooEncounter_Movement_12
 # 161 "data/maps/ReyBooRoom/scripts.pory"
-	playbgm MUS_CONTEST_RESULTS, FALSE
+	playse SE_CONTEST_CONDITION_LOSE
 # 162 "data/maps/ReyBooRoom/scripts.pory"
-	setflag FLAG_TEMP_1
+	waitse
 # 163 "data/maps/ReyBooRoom/scripts.pory"
-	removeobject LOCALID_REYBOOROOM_BOO
+	playbgm MUS_CONTEST_RESULTS, FALSE
 # 164 "data/maps/ReyBooRoom/scripts.pory"
-	delay 50
+	setflag FLAG_TEMP_1
 # 165 "data/maps/ReyBooRoom/scripts.pory"
-	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkDown3
+	removeobject LOCALID_REYBOOROOM_BOO
 # 166 "data/maps/ReyBooRoom/scripts.pory"
-	special RemoveCameraObject
+	delay 50
 # 167 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_TEMP_2, 1
+	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkDown3
 # 168 "data/maps/ReyBooRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_REY_BOO
+	special RemoveCameraObject
 # 169 "data/maps/ReyBooRoom/scripts.pory"
-	fadedefaultbgm
+	setvar VAR_TEMP_2, 1
 # 170 "data/maps/ReyBooRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_REY_BOO
+# 171 "data/maps/ReyBooRoom/scripts.pory"
+	fadedefaultbgm
+# 172 "data/maps/ReyBooRoom/scripts.pory"
 	release
 	end
 
 ReyBooRoom_EventScript_BooEncounter_3:
-# 91 "data/maps/ReyBooRoom/scripts.pory"
+# 93 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkRight2
 	goto ReyBooRoom_EventScript_BooEncounter_1
 
 ReyBooRoom_EventScript_BooEncounter_4:
-# 93 "data/maps/ReyBooRoom/scripts.pory"
+# 95 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkRight
 	goto ReyBooRoom_EventScript_BooEncounter_1
 
 ReyBooRoom_EventScript_BooEncounter_5:
-# 95 "data/maps/ReyBooRoom/scripts.pory"
+# 97 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkLeft
 	goto ReyBooRoom_EventScript_BooEncounter_1
 
 ReyBooRoom_EventScript_BooEncounter_6:
-# 97 "data/maps/ReyBooRoom/scripts.pory"
+# 99 "data/maps/ReyBooRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkLeft2
 	goto ReyBooRoom_EventScript_BooEncounter_1
 
 
 ReyBooRoom_EventScript_ReyBooBattle::
-# 175 "data/maps/ReyBooRoom/scripts.pory"
+# 177 "data/maps/ReyBooRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReyBooRoom_EventScript_ReyBooBattle_2
-# 178 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_REYBOO
-# 179 "data/maps/ReyBooRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 180 "data/maps/ReyBooRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_REYBOO
+# 181 "data/maps/ReyBooRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 182 "data/maps/ReyBooRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_5
-# 183 "data/maps/ReyBooRoom/scripts.pory"
+# 185 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated
 ReyBooRoom_EventScript_ReyBooBattle_1:
-# 186 "data/maps/ReyBooRoom/scripts.pory"
+# 188 "data/maps/ReyBooRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 ReyBooRoom_EventScript_ReyBooBattle_2:
-# 176 "data/maps/ReyBooRoom/scripts.pory"
+# 178 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 ReyBooRoom_EventScript_ReyBooBattle_5:
-# 181 "data/maps/ReyBooRoom/scripts.pory"
+# 183 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 
-# 47 "data/maps/ReyBooRoom/scripts.pory"
+# 49 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_0:
-# 47 "data/maps/ReyBooRoom/scripts.pory"
+# 49 "data/maps/ReyBooRoom/scripts.pory"
 	emote_angry
-# 47 "data/maps/ReyBooRoom/scripts.pory"
+# 49 "data/maps/ReyBooRoom/scripts.pory"
 	jump_in_place_right
-# 47 "data/maps/ReyBooRoom/scripts.pory"
+# 49 "data/maps/ReyBooRoom/scripts.pory"
 	jump_in_place_right
-# 47 "data/maps/ReyBooRoom/scripts.pory"
+# 49 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 51 "data/maps/ReyBooRoom/scripts.pory"
+# 53 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_1:
-# 51 "data/maps/ReyBooRoom/scripts.pory"
+# 53 "data/maps/ReyBooRoom/scripts.pory"
 	emote_versus
-# 51 "data/maps/ReyBooRoom/scripts.pory"
+# 53 "data/maps/ReyBooRoom/scripts.pory"
 	walk_in_place_left
-# 51 "data/maps/ReyBooRoom/scripts.pory"
+# 53 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
-# 51 "data/maps/ReyBooRoom/scripts.pory"
+# 53 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 56 "data/maps/ReyBooRoom/scripts.pory"
+# 58 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_2:
-# 57 "data/maps/ReyBooRoom/scripts.pory"
+# 59 "data/maps/ReyBooRoom/scripts.pory"
 	emote_surprise
-# 58 "data/maps/ReyBooRoom/scripts.pory"
+# 60 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_left
-# 58 "data/maps/ReyBooRoom/scripts.pory"
+# 60 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_left
-# 59 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_down
-# 59 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_down
-# 60 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 60 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 60 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 60 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
 # 61 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
+	walk_faster_down
 # 61 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 62 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 62 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 62 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 62 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 63 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_down
+# 62 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 62 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 62 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 62 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
 # 63 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 63 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 64 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 64 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 64 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 64 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 65 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_down
-# 64 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 64 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 64 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 64 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
 # 65 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 65 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 65 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
+	walk_faster_down
 # 66 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
+	walk_faster_right
 # 66 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
+	walk_faster_right
+# 66 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 66 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
 # 67 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_up
-	step_end
-
+# 67 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 67 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 68 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 68 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
 # 69 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+	step_end
+
+# 71 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_3:
-# 70 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 70 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 70 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 70 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 71 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_down
-# 71 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_down
 # 72 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
+	walk_faster_left
 # 72 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
+	walk_faster_left
 # 72 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
+	walk_faster_left
 # 72 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
+	walk_faster_left
 # 73 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
+	walk_faster_down
 # 73 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 74 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 74 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 74 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 74 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
-# 75 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_down
+# 74 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 74 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 74 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 74 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
 # 75 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 75 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 76 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 76 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 76 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 76 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 77 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_down
-# 76 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 76 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 76 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
-# 76 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_right
 # 77 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 77 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
-# 77 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_up
+	walk_faster_down
 # 78 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
+	walk_faster_right
 # 78 "data/maps/ReyBooRoom/scripts.pory"
-	walk_faster_left
+	walk_faster_right
+# 78 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
+# 78 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_right
 # 79 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 79 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 79 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_up
+# 80 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 80 "data/maps/ReyBooRoom/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/ReyBooRoom/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 82 "data/maps/ReyBooRoom/scripts.pory"
+# 84 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_4:
-# 82 "data/maps/ReyBooRoom/scripts.pory"
+# 84 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_up
-# 82 "data/maps/ReyBooRoom/scripts.pory"
+# 84 "data/maps/ReyBooRoom/scripts.pory"
 	set_invisible
 	step_end
 
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_5:
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 	jump_in_place_up
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_up
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 	walk_faster_up
-# 83 "data/maps/ReyBooRoom/scripts.pory"
+# 85 "data/maps/ReyBooRoom/scripts.pory"
 	set_invisible
 	step_end
 
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_6:
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	face_down
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	set_visible
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	walk_down
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	delay_8
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	face_up
-# 101 "data/maps/ReyBooRoom/scripts.pory"
+# 103 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 104 "data/maps/ReyBooRoom/scripts.pory"
+# 106 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_7:
-# 104 "data/maps/ReyBooRoom/scripts.pory"
+# 106 "data/maps/ReyBooRoom/scripts.pory"
 	walk_down
-# 104 "data/maps/ReyBooRoom/scripts.pory"
+# 106 "data/maps/ReyBooRoom/scripts.pory"
 	face_up
-# 104 "data/maps/ReyBooRoom/scripts.pory"
+# 106 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
-# 104 "data/maps/ReyBooRoom/scripts.pory"
+# 106 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 111 "data/maps/ReyBooRoom/scripts.pory"
+# 113 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_8:
-# 111 "data/maps/ReyBooRoom/scripts.pory"
+# 113 "data/maps/ReyBooRoom/scripts.pory"
 	walk_down
-# 111 "data/maps/ReyBooRoom/scripts.pory"
+# 113 "data/maps/ReyBooRoom/scripts.pory"
 	walk_down
-# 111 "data/maps/ReyBooRoom/scripts.pory"
+# 113 "data/maps/ReyBooRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_9:
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	emote_surprise
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	lock_facing_direction
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	jump_up
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	unlock_facing_direction
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
-# 117 "data/maps/ReyBooRoom/scripts.pory"
+# 119 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_10:
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	walk_slow_up
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	delay_8
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	walk_slow_up
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	delay_8
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	face_down
-# 149 "data/maps/ReyBooRoom/scripts.pory"
+# 151 "data/maps/ReyBooRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 153 "data/maps/ReyBooRoom/scripts.pory"
+# 155 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_11:
-# 153 "data/maps/ReyBooRoom/scripts.pory"
+# 155 "data/maps/ReyBooRoom/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 158 "data/maps/ReyBooRoom/scripts.pory"
+# 160 "data/maps/ReyBooRoom/scripts.pory"
 ReyBooRoom_EventScript_BooEncounter_Movement_12:
-# 158 "data/maps/ReyBooRoom/scripts.pory"
+# 160 "data/maps/ReyBooRoom/scripts.pory"
 	walk_up
-# 158 "data/maps/ReyBooRoom/scripts.pory"
+# 160 "data/maps/ReyBooRoom/scripts.pory"
 	set_invisible
 	step_end
 
@@ -577,60 +581,60 @@ ReyBooRoom_EventScript_BooEncounter_Text_1:
 	.string "¡Adelante, usa Día de Pago!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_2:
-# 42 "data/maps/ReyBooRoom/scripts.pory"
+# 44 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Vamos, saca tu energía cósmica, Día de\n"
 	.string "Pago!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_3:
-# 48 "data/maps/ReyBooRoom/scripts.pory"
+# 50 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Maldito mono…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_4:
-# 103 "data/maps/ReyBooRoom/scripts.pory"
+# 105 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Menos mal.$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_5:
-# 105 "data/maps/ReyBooRoom/scripts.pory"
+# 107 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Madre mía, qué mala bestia…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_6:
-# 110 "data/maps/ReyBooRoom/scripts.pory"
+# 112 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Ejem…!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_7:
-# 115 "data/maps/ReyBooRoom/scripts.pory"
+# 117 "data/maps/ReyBooRoom/scripts.pory"
 	.string "De modo que eres tú quien me ha\n"
 	.string "invocado…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_8:
-# 119 "data/maps/ReyBooRoom/scripts.pory"
+# 121 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Muy bien, has pasado la prueba física…\n"
 	.string "Ahora prepárate para la inesperada…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_9:
-# 122 "data/maps/ReyBooRoom/scripts.pory"
+# 124 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Mis fenomenales poderes!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_10:
-# 138 "data/maps/ReyBooRoom/scripts.pory"
+# 140 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Batería baja {DOWN_ARROW}$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_11:
-# 141 "data/maps/ReyBooRoom/scripts.pory"
+# 143 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Maldita sea!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_12:
-# 147 "data/maps/ReyBooRoom/scripts.pory"
+# 149 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Muy bien…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_13:
-# 152 "data/maps/ReyBooRoom/scripts.pory"
+# 154 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Por esta vez has ganado.$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_14:
-# 156 "data/maps/ReyBooRoom/scripts.pory"
+# 158 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Volveré!$"
 
 ReyBooRoom_Text_ReyBooDefeated::
-# 190 "data/maps/ReyBooRoom/scripts.pory"
+# 192 "data/maps/ReyBooRoom/scripts.pory"
 	.string "¡Madre mía!$"

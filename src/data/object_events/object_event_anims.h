@@ -424,6 +424,15 @@ static const union AnimCmd sAnim_GoFasterSouth[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_GoFasterSouth2F[] =
+{
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_ExitPokeballSouth[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -510,6 +519,15 @@ static const union AnimCmd sAnim_GoFasterNorth[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_GoFasterNorth2F[] =
+{
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(3, 2),
+    ANIMCMD_FRAME(3, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_EnterNorth[] =
 {
     ANIMCMD_FRAME(2, 8),
@@ -531,6 +549,15 @@ static const union AnimCmd sAnim_GoFasterWest[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_GoFasterWest2F[] =
+{
+    ANIMCMD_FRAME(4, 2),
+    ANIMCMD_FRAME(5, 2),
+    ANIMCMD_FRAME(5, 2),
+    ANIMCMD_FRAME(4, 2),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_EnterWest[] =
 {
     ANIMCMD_FRAME(4, 8),
@@ -549,6 +576,15 @@ static const union AnimCmd sAnim_GoFasterEast[] =
     ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
     ANIMCMD_FRAME(8, 2, .hFlip = TRUE),
     ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_GoFasterEast2F[] =
+{
+    ANIMCMD_FRAME(4, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(5, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(5, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(4, 2, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
@@ -1353,6 +1389,26 @@ static const union AnimCmd *const sAnimTable_SergioDragonite[] = {
 };
 
 
+const union AnimCmd *const sAnimTable_FollowingWithFaster[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth2F,
+    [ANIM_STD_FACE_WEST] = sAnim_FaceWest2F,
+    [ANIM_STD_FACE_EAST] = sAnim_FaceEast2F,
+    [ANIM_STD_GO_SOUTH] = sAnim_GoSouth2F,
+    [ANIM_STD_GO_NORTH] = sAnim_GoNorth2F,
+    [ANIM_STD_GO_WEST] = sAnim_GoWest2F,
+    [ANIM_STD_GO_EAST] = sAnim_GoEast2F,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_GoFastSouth2F,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_GoFastNorth2F,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_GoFastWest2F,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_GoFastEast2F,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_GoFasterSouth2F,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_GoFasterNorth2F,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_GoFasterWest2F,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_GoFasterEast2F,
+};
+
+
 const union AnimCmd *const sAnimTable_Following[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth2F,
@@ -1866,6 +1922,10 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
     {
         .anims = sAnimTable_BrendanNormal,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_FollowingWithFaster,
         .animPos = {1, 3, 0, 2},
     },
     {},

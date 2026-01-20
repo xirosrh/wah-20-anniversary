@@ -4311,7 +4311,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AstronautVigoroth 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Following,
+    .anims = sAnimTable_FollowingWithFaster,
     .images = sPicTable_AstronautVigoroth,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
