@@ -21,3 +21,13 @@ script Lobby_EventScript_StartChallenge {
     release
     end
 }
+
+
+script Lobby_EventScript_TeamSelector {
+    lock
+    msgbox(format("Prueba"))
+    special(OpenTeamSelector)
+    msgbox(format("Gracias!"))
+    release
+    end
+}

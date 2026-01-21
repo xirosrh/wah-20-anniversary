@@ -37,6 +37,28 @@ Lobby_EventScript_StartChallenge_2:
 	goto Lobby_EventScript_StartChallenge_1
 
 
+Lobby_EventScript_TeamSelector::
+# 27 "data/maps/Lobby/scripts.pory"
+	lock
+# 28 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_0
+# 29 "data/maps/Lobby/scripts.pory"
+	special OpenTeamSelector
+# 30 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_1
+# 31 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
 Lobby_EventScript_StartChallenge_Text_0:
 # 13 "data/maps/Lobby/scripts.pory"
 	.string "Pendiente textos, ¿empezar desafío?$"
+
+Lobby_EventScript_TeamSelector_Text_0:
+# 28 "data/maps/Lobby/scripts.pory"
+	.string "Prueba$"
+
+Lobby_EventScript_TeamSelector_Text_1:
+# 30 "data/maps/Lobby/scripts.pory"
+	.string "Gracias!$"
