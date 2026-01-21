@@ -1029,7 +1029,9 @@ bool8 StartTeamSelector_CB2(void)
 
 void StartTeamSelectorFromField_CB2(void)
 {
-    teamSelectorObj.allowExit = TRUE; // Desde special se puede salir con B
+    gMain.state = 0;
+    teamSelectorObj.allowExit = TRUE;
     CleanupOverworldWindowsAndTilemaps();
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetMainCallback2(CB2_InitTeamSelectorSetUp);
 }
