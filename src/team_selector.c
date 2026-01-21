@@ -71,7 +71,7 @@ struct TeamSelector
 
     u8 windowIdMsg;
     u8 optionSelectMsg;//1 SI, 0 NO
-    bool8 allowExit; 
+    bool8 fromField; 
 };
 
 static EWRAM_DATA struct TeamSelector teamSelectorObj = {0};
@@ -803,7 +803,7 @@ static void Task_HandleTeamSelector(u8 taskId)
         gTasks[taskId].func = Task_HandleWantThisTeam;
     }
 
-    if (JOY_NEW(B_BUTTON) && teamSelectorObj.allowExit)
+    if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
     {
         CreateExitConfirmWindow();
         gTasks[taskId].func = Task_HandleExitConfirm;
@@ -1016,7 +1016,7 @@ bool8 StartTeamSelector_CB2(void)
     if (!gPaletteFade.active)
     {
         gMain.state = 0;
-        teamSelectorObj.allowExit = FALSE; 
+        teamSelectorObj.fromField = FALSE; 
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(CB2_InitTeamSelectorSetUp);
@@ -1030,7 +1030,7 @@ bool8 StartTeamSelector_CB2(void)
 void StartTeamSelectorFromField_CB2(void)
 {
     gMain.state = 0;
-    teamSelectorObj.allowExit = TRUE;
+    teamSelectorObj.fromField = TRUE;
     CleanupOverworldWindowsAndTilemaps();
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetMainCallback2(CB2_InitTeamSelectorSetUp);

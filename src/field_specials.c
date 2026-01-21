@@ -4410,7 +4410,7 @@ void ShouldUseAlternativeTeam(void)
     gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
 }
 
-void OpenTeamSelector(void)
+void OpenTeamSelectorFromField(void)
 {
     StartTeamSelectorFromField_CB2();
 }

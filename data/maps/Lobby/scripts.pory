@@ -25,14 +25,25 @@ script Lobby_EventScript_StartChallenge {
 
 script Lobby_EventScript_TeamSelector {
     lock
-    msgbox(format("Prueba"))
-    special(OpenTeamSelector)
-    waitstate
-    if (var(VAR_RESULT) == TRUE) {
-        msgbox(format("¡Equipo seleccionado!"))
+    faceplayer
+    msgbox(format("¡Hola! Soy el encargado de la selección de equipos para el desafío.\pVeo que equipo actual es bueno, pero creo que puedes conseguir uno mejor.\p¿Quieres elegir otro equipo?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        special(OpenTeamSelectorFromField)
+        waitstate
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox( format("¡Excelente elección! Eso sí es un equipo ganador.\p¡Ve por la gloria!"), MSGBOX_AUTOCLOSE)
+        } else {
+            msgbox(Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE)
+        }
     } else {
-        msgbox(format("Cancelaste la selección."))
+        msgbox(Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE)
     }
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
     release
     end
+}
+
+
+text Lobby_Text_TeamSelector_TeamSelectionCancelled {
+    "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!"
 }

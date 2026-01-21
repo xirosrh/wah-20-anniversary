@@ -577,4 +577,4 @@ gSpecials::
 	def_special UpdateObjectEventSprite
 	def_special RandomizeWahAdminTeams
 	def_special ShouldUseAlternativeTeam
-	def_special OpenTeamSelector
+	def_special OpenTeamSelectorFromField
