@@ -399,6 +399,81 @@ void CB2_InitCopeSpeech()
     }
 }
 
+void CB2_InitCopeSpeech_FromNewMainMenu(void)
+{
+    u8 taskId;
+
+    ResetBgsAndClearDma3BusyFlags(0);
+    SetGpuReg(REG_OFFSET_DISPCNT, 0);
+    SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
+    InitBgsFromTemplates(0, sBgTemplateCopeSpeech, ARRAY_COUNT(sBgTemplateCopeSpeech));
+    SetVBlankCallback(NULL);
+    SetGpuReg(REG_OFFSET_BG2CNT, 0);
+    SetGpuReg(REG_OFFSET_BG1CNT, 0);
+    SetGpuReg(REG_OFFSET_BG0CNT, 0);
+    SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG2VOFS, 0);
+    SetGpuReg(REG_OFFSET_BG1HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG1VOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill32(3, 0, OAM, OAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    ResetPaletteFade();
+    
+    LZ77UnCompVram(sBg1_Tiles, (void *)VRAM + 0x4000 * sBgTemplateCopeSpeech[1].charBaseIndex);
+    LZ77UnCompVram(sBg1_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[1].mapBaseIndex));
+    LZ77UnCompVram(sBg2_Tiles, (void *)VRAM + 0x4000 * sBgTemplateCopeSpeech[2].charBaseIndex);
+    LZ77UnCompVram(sBg2_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
+    LoadPalette(sBg1Pal, 0x00, 0x20);
+    
+    ResetAllBgsCoordinates();
+    HideBg(3);
+    ShowBg(2);
+    ShowBg(1);
+    ShowBg(0);
+    
+    ResetTasks();
+    ScanlineEffect_Stop();
+    ResetSpriteData();
+    FreeAllSpritePalettes();
+    ResetAllPicSprites();
+
+    LoadSpriteSheet(&spriteSheetCope);
+    LoadSpriteSheet(&sSpriteSheet_CintaCope);
+    LoadSpritePalette(&spritePaletteCope);
+    
+    taskId = CreateTask(TaskInitCopeSpeechWaitForFade, 0);
+    gTasks[taskId].tSpriteCopeBodyId = LoadCopeSprite(40, COPE_BASE);
+    gTasks[taskId].tSpriteCopeLegsId = LoadCopeSprite(104, COPE_LEGS);
+    gTasks[taskId].tSpriteCopeCintaId = CreateSprite(&sCintaCopeSpriteTemplate, 130, 22, 0);
+    gSprites[gTasks[taskId].tSpriteCopeBodyId].oam.priority = 1;
+    gSprites[gTasks[taskId].tSpriteCopeCintaId].oam.priority = 1;
+    gSprites[gTasks[taskId].tSpriteCopeBodyId].callback = SpriteCallbackCopeMovement;
+    gSprites[gTasks[taskId].tSpriteCopeLegsId].oam.priority = 1;
+    gTasks[taskId].tTimer = 0;
+    
+    PlayBGM(MUS_ROUTE101);
+    BeginNormalPaletteFade(PALETTES_ALL, 60, 16, 0, RGB_BLACK);
+    
+    SetGpuReg(REG_OFFSET_WIN0H, 0);
+    SetGpuReg(REG_OFFSET_WIN0V, 0);
+    SetGpuReg(REG_OFFSET_WININ, 0);
+    SetGpuReg(REG_OFFSET_WINOUT, 0);
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+    SetGpuReg(REG_OFFSET_BLDY, 0);
+    
+    SetVBlankCallback(VBlanck_CB2_CopeSpeech);
+    SetMainCallback2(CB2_CopeSpeech);
+    InitWindows(sWindowTemplate_CopeSpeech);
+    LoadMainMenuWindowFrameTiles(0, 0xF3);
+    LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+    PutWindowTilemap(0);
+    CopyWindowToVram(0, COPYWIN_FULL);
+}
+
 static void TaskInitCopeSpeechWaitForFade(u8 taskId)
 {
     if(!gPaletteFade.active)
