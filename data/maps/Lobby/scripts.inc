@@ -45,10 +45,21 @@ Lobby_EventScript_TeamSelector::
 # 29 "data/maps/Lobby/scripts.pory"
 	special OpenTeamSelector
 # 30 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_TeamSelector_Text_1
+	waitstate
 # 31 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Lobby_EventScript_TeamSelector_2
+# 34 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_2
+Lobby_EventScript_TeamSelector_1:
+# 36 "data/maps/Lobby/scripts.pory"
 	release
 	end
+
+Lobby_EventScript_TeamSelector_2:
+# 32 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_1
+	goto Lobby_EventScript_TeamSelector_1
 
 
 Lobby_EventScript_StartChallenge_Text_0:
@@ -60,5 +71,9 @@ Lobby_EventScript_TeamSelector_Text_0:
 	.string "Prueba$"
 
 Lobby_EventScript_TeamSelector_Text_1:
-# 30 "data/maps/Lobby/scripts.pory"
-	.string "Gracias!$"
+# 32 "data/maps/Lobby/scripts.pory"
+	.string "¡Equipo seleccionado!$"
+
+Lobby_EventScript_TeamSelector_Text_2:
+# 34 "data/maps/Lobby/scripts.pory"
+	.string "Cancelaste la selección.$"

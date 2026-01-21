@@ -697,6 +697,7 @@ static void Task_ExitWithoutSelection(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        gSpecialVar_Result = FALSE;
         ClearMonSprites(FALSE, TRUE);
         RemoveExitConfirmWindow();
         FreeAllWindowBuffers();
@@ -828,15 +829,13 @@ static void Task_MovementBgs(u8 taskId)
 
 static void Task_FadeOut(u8 taskId)
 {
-    // u16 music = GetCurrLocationDefaultMusic();
-
     if (!gPaletteFade.active)
     {
+        gSpecialVar_Result = TRUE;
         ClearMonSprites(FALSE, TRUE);
         RemoveWindowMsgWantThisTeam();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
-        // FadeOutAndPlayNewMapMusic(music, 4);
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
         DestroyTask(taskId);
     }
 }

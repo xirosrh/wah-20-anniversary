@@ -27,7 +27,12 @@ script Lobby_EventScript_TeamSelector {
     lock
     msgbox(format("Prueba"))
     special(OpenTeamSelector)
-    msgbox(format("Gracias!"))
+    waitstate
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(format("¡Equipo seleccionado!"))
+    } else {
+        msgbox(format("Cancelaste la selección."))
+    }
     release
     end
 }
