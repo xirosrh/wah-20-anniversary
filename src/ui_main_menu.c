@@ -349,8 +349,6 @@ void Task_OpenMainMenu(u8 taskId)
         {                //  where the UI is initialized by swapping a task func with this one 
             case HAS_NO_SAVED_GAME:
             default:
-                FreeAllWindowBuffers();
-                CleanupOverworldWindowsAndTilemaps();
                 SetMainCallback2(CB2_InitCopeSpeech_FromNewMainMenu);
                 DestroyTask(taskId);
                 return;
