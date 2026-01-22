@@ -78,42 +78,44 @@ Lobby_EventScript_Shop::
 # 53 "data/maps/Lobby/scripts.pory"
 	lock
 # 54 "data/maps/Lobby/scripts.pory"
-	message Lobby_EventScript_Shop_Text_0
+	faceplayer
 # 55 "data/maps/Lobby/scripts.pory"
-	waitmessage
+	message Lobby_EventScript_Shop_Text_0
 # 56 "data/maps/Lobby/scripts.pory"
-	pokemart MyMartItems
+	waitmessage
 # 57 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Shop_Text_1
+	pokemart MyMartItems
 # 58 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Shop_Text_1, MSGBOX_AUTOCLOSE
+# 59 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 
 	.align 2
-# 62 "data/maps/Lobby/scripts.pory"
-MyMartItems:
 # 63 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_HYPER_POTION
+MyMartItems:
 # 64 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_POTION
+	.2byte ITEM_HYPER_POTION
 # 65 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_MAX_POTION
 # 66 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ETHER
+	.2byte ITEM_FULL_RESTORE
 # 67 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_ETHER
 # 68 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ELIXIR
+	.2byte ITEM_MAX_ETHER
 # 69 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_ELIXIR
+	.2byte ITEM_ELIXIR
 # 70 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_ELIXIR
 # 71 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_REVIVE
+	.2byte ITEM_REVIVE
 # 72 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_MAX_REVIVE
 # 73 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_REVIVAL_HERB
+# 74 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_VICTREEBELITE
 	.2byte ITEM_NONE
 
@@ -136,12 +138,13 @@ Lobby_EventScript_TeamSelector_Text_1:
 	.string "¡Ve por la gloria!$"
 
 Lobby_EventScript_Shop_Text_0:
-# 54 "data/maps/Lobby/scripts.pory"
+# 55 "data/maps/Lobby/scripts.pory"
 	.string "¡Hola! ¿En qué puedo ayudarte?$"
 
 Lobby_EventScript_Shop_Text_1:
-# 57 "data/maps/Lobby/scripts.pory"
-	.string "¡Gracias por tu visita! ¡Que tengas un buen día!$"
+# 58 "data/maps/Lobby/scripts.pory"
+	.string "Gracias por tu visita. ¡Que tengas un\n"
+	.string "buen día!$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"

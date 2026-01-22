@@ -51,10 +51,11 @@ text Lobby_Text_TeamSelector_TeamSelectionCancelled {
 
 script Lobby_EventScript_Shop {
 	lock
-	message("¡Hola! ¿En qué puedo ayudarte?")
+    faceplayer
+	message(format("¡Hola! ¿En qué puedo ayudarte?"))
 	waitmessage
 	pokemart(MyMartItems)
-	msgbox("¡Gracias por tu visita! ¡Que tengas un buen día!")
+	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
 	release
     end
 }
