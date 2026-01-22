@@ -87,4 +87,8 @@
 // Pantalla de Nombres
 #define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // A partir de GEN_6, después de ingresar el primer carácter en mayúsculas, el teclado cambia a letras minúsculas.
 
+
+// Config to toggle using the new shop menu.
+#define MUDSKIP_SHOP_UI
+
 #endif // GUARD_CONFIG_GENERAL_H

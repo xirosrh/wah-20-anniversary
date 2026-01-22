@@ -47,3 +47,47 @@ script Lobby_EventScript_TeamSelector {
 text Lobby_Text_TeamSelector_TeamSelectionCancelled {
     "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!"
 }
+
+
+script Lobby_EventScript_Shop {
+	lock
+    faceplayer
+	message(format("¡Hola! ¿En qué puedo ayudarte?"))
+	waitmessage
+	pokemart(MyMartItems)
+	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+	release
+    end
+}
+
+mart MyMartItems {
+	ITEM_HYPER_POTION
+	ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+	ITEM_ETHER
+    ITEM_MAX_ETHER
+    ITEM_ELIXIR
+    ITEM_MAX_ELIXIR
+    ITEM_REVIVE
+    ITEM_MAX_REVIVE
+    ITEM_REVIVAL_HERB
+     //TODO Xiros ITEM_BAXCALIBURITE
+    ITEM_DRAGALGITE
+    ITEM_TYRANITARITE
+    //TODO Xiros ITEM_DARKRAINITE
+    ITEM_ALAKAZITE
+    ITEM_LUCARIONITE
+     //TODO Xiros ITEM_LUCARIONITE_Z
+    ITEM_MEWTWONITE_X
+    ITEM_MEWTWONITE_Y
+    ITEM_CHARIZARDITE_X
+    ITEM_CHARIZARDITE_Y
+    ITEM_GALLADITE
+    ITEM_GLALITITE
+    ITEM_FROSLASSITE
+    ITEM_CLEFABLITE
+    ITEM_HOUNDOOMINITE
+    ITEM_AGGRONITE
+    ITEM_ZYGARDITE
+    ITEM_VICTREEBELITE
+}

@@ -2715,6 +2715,35 @@ void ClearEnemyPartyAfterChallenge()
     }
 }
 
+u16 GetBattlePoints(void)
+{
+    return gSaveBlock2Ptr->frontier.battlePoints;
+}
+
+bool8 IsEnoughBattlePoints(u16 cost)
+{
+    if (GetBattlePoints() >= cost)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void SetBattlePoints(u16 pointAmount)
+{
+    gSaveBlock2Ptr->frontier.battlePoints = pointAmount;
+}
+
+bool8 RemoveBattlePoints(u16 toSub)
+{
+    u16 ownedBp = GetBattlePoints();
+    if (ownedBp >= toSub)
+    {
+        SetBattlePoints(ownedBp - toSub);
+        return TRUE;
+    }
+    return FALSE;
+}
+
 #define tWindowId     data[0]
 #define tMenuTaskId   data[1]
 #define tArrowTaskId  data[2]
