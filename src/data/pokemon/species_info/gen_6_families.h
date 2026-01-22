@@ -2309,18 +2309,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "all the energy from Mega\n"
             "Evolution. The flower now attacks\n"
             "enemies on its own."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_FloetteMega
+        .frontPic = gMonFrontPic_FloetteMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_FloetteMega
+        .backPic = gMonBackPic_FloetteMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_FloetteMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_FloetteMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_FloetteMega
+        .palette = gMonPalette_FloetteMega,
+        .shinyPalette = gMonShinyPalette_FloetteMega,
+        .iconSprite = gMonIcon_FloetteMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Floette)
@@ -3831,26 +3831,26 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .speciesName = _("Barbaracle"),
         .cryId = CRY_BARBARACLE, // CRY_BARBARACLE_MEGA,
         .natDexNum = NATIONAL_DEX_BARBARACLE,
-        .categoryName = _("Collective"),
+        .categoryName = _("Combinación"),
         .height = 22,
         .weight = 1000,
         .description = COMPOUND_STRING(
             "It uses its many arms to toy\n"
             "with its opponents. This\n"
             "keeps the head extremely busy."),
-        //.frontPic = gMonFrontPic_CircledQuestionMark,
-        //.frontPicSize = MON_COORDS_SIZE(40, 40),
-        //.frontPicYOffset = 12,
-        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        //.backPic = gMonBackPic_CircledQuestionMark,
-        //.backPicSize = MON_COORDS_SIZE(40, 40),
-        //.backPicYOffset = 12,
-        //.backAnimId = BACK_ANIM_NONE,
-        //.palette = gMonPalette_CircledQuestionMark,
-        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        //.iconSprite = gMonIcon_QuestionMark,
-        //.iconPalIndex = 0,
+        .frontPic = gMonFrontPic_BarbaracleMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_BarbaracleMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_BarbaracleMega,
+        .shinyPalette = gMonShinyPalette_BarbaracleMega,
+        .iconSprite = gMonIcon_BarbaracleMega,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Barbaracle)
         //SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -4038,19 +4038,19 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "regenerative power of cells to run\n"
             "wild. The liquid is deadly poison\n"
             "to everything other than itself."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_DragalgeMega
+        .frontPic = gMonFrontPic_DragalgeMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_DragalgeMega
+        .backPic = gMonBackPic_DragalgeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_DragalgeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_DragalgeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_DragalgeMega
-        .iconPalIndex = 0,
+        .palette = gMonPalette_DragalgeMega, 
+        .shinyPalette = gMonShinyPalette_DragalgeMega,
+        .iconSprite = gMonIcon_DragalgeMega,
+        .iconPalIndex = 5,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Dragalge)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -6939,18 +6939,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "during an unprecedented crisis,\n"
             "Zygarde Mega Evolves and calms the\n"
             "situation with its unmatched power."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ZygardeMega
+        .frontPic = gMonFrontPic_ZygardeMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ZygardeMega
+        .backPic = gMonBackPic_ZygardeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_ZygardeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ZygardeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ZygardeMega
+        .palette = gMonPalette_ZygardeMega,
+        .shinyPalette = gMonShinyPalette_ZygardeMega,
+        .iconSprite = gMonIcon_ZygardeMega, 
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Zygarde)
