@@ -134,7 +134,7 @@ void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
     PrintMoneyAmount(windowId, CalculateMoneyTextHorizontalPosition(amount), 1, amount, speed);
 }
 
-static u32 CalculateLeadingSpacesForMoney(u32 numDigits)
+u32 CalculateLeadingSpacesForMoney(u32 numDigits)
 {
     u32 leadingSpaces = CountDigits(INT_MAX) - StringLength(gStringVar1);
     return (numDigits > 8) ? leadingSpaces : leadingSpaces - 2;
