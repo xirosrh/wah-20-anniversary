@@ -47,3 +47,28 @@ script Lobby_EventScript_TeamSelector {
 text Lobby_Text_TeamSelector_TeamSelectionCancelled {
     "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!"
 }
+
+
+script Lobby_EventScript_Shop {
+	lock
+	message("¡Hola! ¿En qué puedo ayudarte?")
+	waitmessage
+	pokemart(MyMartItems)
+	msgbox("¡Gracias por tu visita! ¡Que tengas un buen día!")
+	release
+    end
+}
+
+mart MyMartItems {
+	ITEM_HYPER_POTION
+	ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+	ITEM_ETHER
+    ITEM_MAX_ETHER
+    ITEM_ELIXIR
+    ITEM_MAX_ELIXIR
+    ITEM_REVIVE
+    ITEM_MAX_REVIVE
+    ITEM_REVIVAL_HERB
+    ITEM_VICTREEBELITE
+}

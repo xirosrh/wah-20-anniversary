@@ -74,6 +74,49 @@ Lobby_EventScript_TeamSelector_5:
 	goto Lobby_EventScript_TeamSelector_1
 
 
+Lobby_EventScript_Shop::
+# 53 "data/maps/Lobby/scripts.pory"
+	lock
+# 54 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_Shop_Text_0
+# 55 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 56 "data/maps/Lobby/scripts.pory"
+	pokemart MyMartItems
+# 57 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Shop_Text_1
+# 58 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
+	.align 2
+# 62 "data/maps/Lobby/scripts.pory"
+MyMartItems:
+# 63 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_HYPER_POTION
+# 64 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_POTION
+# 65 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_FULL_RESTORE
+# 66 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ETHER
+# 67 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_ETHER
+# 68 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ELIXIR
+# 69 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_ELIXIR
+# 70 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_REVIVE
+# 71 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_REVIVE
+# 72 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_REVIVAL_HERB
+# 73 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_VICTREEBELITE
+	.2byte ITEM_NONE
+
 Lobby_EventScript_StartChallenge_Text_0:
 # 13 "data/maps/Lobby/scripts.pory"
 	.string "Pendiente textos, ¿empezar desafío?$"
@@ -91,6 +134,14 @@ Lobby_EventScript_TeamSelector_Text_1:
 	.string "¡Excelente elección! Eso sí es un\n"
 	.string "equipo ganador.\p"
 	.string "¡Ve por la gloria!$"
+
+Lobby_EventScript_Shop_Text_0:
+# 54 "data/maps/Lobby/scripts.pory"
+	.string "¡Hola! ¿En qué puedo ayudarte?$"
+
+Lobby_EventScript_Shop_Text_1:
+# 57 "data/maps/Lobby/scripts.pory"
+	.string "¡Gracias por tu visita! ¡Que tengas un buen día!$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
