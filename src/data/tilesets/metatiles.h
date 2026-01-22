@@ -246,3 +246,6 @@ const u16 gMetatileAttributes_room_xiros[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_room_cosarara[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/metatiles.bin");
 const u16 gMetatileAttributes_room_cosarara[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/metatile_attributes.bin");
+
+const u16 gMetatiles_room_kleinpkpower[] = INCBIN_U16("data/tilesets/secondary/room_kleinpkpower/metatiles.bin");
+const u16 gMetatileAttributes_room_kleinpkpower[] = INCBIN_U16("data/tilesets/secondary/room_kleinpkpower/metatile_attributes.bin");

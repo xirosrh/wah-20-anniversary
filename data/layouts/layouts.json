@@ -4257,7 +4257,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_kleinpkpower",
       "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
       "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
     },
