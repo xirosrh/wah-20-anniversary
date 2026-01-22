@@ -115,7 +115,37 @@ MyMartItems:
 	.2byte ITEM_MAX_REVIVE
 # 73 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_REVIVAL_HERB
-# 74 "data/maps/Lobby/scripts.pory"
+# 75 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_DRAGALGITE
+# 76 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_TYRANITARITE
+# 78 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ALAKAZITE
+# 79 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_LUCARIONITE
+# 81 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MEWTWONITE_X
+# 82 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MEWTWONITE_Y
+# 83 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CHARIZARDITE_X
+# 84 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CHARIZARDITE_Y
+# 85 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_GALLADITE
+# 86 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_GLALITITE
+# 87 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_FROSLASSITE
+# 88 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CLEFABLITE
+# 89 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_HOUNDOOMINITE
+# 90 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_AGGRONITE
+# 91 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ZYGARDITE
+# 92 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_VICTREEBELITE
 	.2byte ITEM_NONE
 
