@@ -37,6 +37,61 @@ Lobby_EventScript_StartChallenge_2:
 	goto Lobby_EventScript_StartChallenge_1
 
 
+Lobby_EventScript_TeamSelector::
+# 27 "data/maps/Lobby/scripts.pory"
+	lock
+# 28 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 29 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_0, MSGBOX_YESNO
+# 30 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_TeamSelector_2
+# 39 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE
+Lobby_EventScript_TeamSelector_1:
+# 41 "data/maps/Lobby/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_SOUTH
+# 42 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_TeamSelector_2:
+# 31 "data/maps/Lobby/scripts.pory"
+	special OpenTeamSelectorFromField
+# 32 "data/maps/Lobby/scripts.pory"
+	waitstate
+# 33 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Lobby_EventScript_TeamSelector_5
+# 36 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE
+	goto Lobby_EventScript_TeamSelector_1
+
+Lobby_EventScript_TeamSelector_5:
+# 34 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TeamSelector_Text_1, MSGBOX_AUTOCLOSE
+	goto Lobby_EventScript_TeamSelector_1
+
+
 Lobby_EventScript_StartChallenge_Text_0:
 # 13 "data/maps/Lobby/scripts.pory"
 	.string "Pendiente textos, ¿empezar desafío?$"
+
+Lobby_EventScript_TeamSelector_Text_0:
+# 29 "data/maps/Lobby/scripts.pory"
+	.string "¡Hola! Soy el encargado de la selección\n"
+	.string "de equipos para el desafío.\p"
+	.string "Veo que equipo actual es bueno, pero\n"
+	.string "creo que puedes conseguir uno mejor.\p"
+	.string "¿Quieres elegir otro equipo?$"
+
+Lobby_EventScript_TeamSelector_Text_1:
+# 34 "data/maps/Lobby/scripts.pory"
+	.string "¡Excelente elección! Eso sí es un\n"
+	.string "equipo ganador.\p"
+	.string "¡Ve por la gloria!$"
+
+Lobby_Text_TeamSelector_TeamSelectionCancelled::
+# 47 "data/maps/Lobby/scripts.pory"
+	.string "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!$"
