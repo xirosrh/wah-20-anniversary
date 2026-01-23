@@ -218,10 +218,10 @@ static const u32 sIconBox_Gfx[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow.
 static const u16 sIconBox_PalFem[] = INCBIN_U16("graphics/ui_main_menu/icon_shadow_fem.gbapal");
 static const u32 sIconBox_GfxFem[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow_fem.4bpp.lz");
 
-static const u16 sBrendanMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/brendan_mugshot.gbapal");
-static const u32 sBrendanMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/brendan_mugshot.4bpp.lz");
-static const u16 sMayMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/may_mugshot.gbapal");
-static const u32 sMayMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/may_mugshot.4bpp.lz");
+static const u16 sBrendanMugshot_Pal[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
+static const u32 sBrendanMugshot_Gfx[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.smol");
+static const u16 sMayMugshot_Pal[] = INCBIN_U16("graphics/trainers/palettes/may.gbapal");
+static const u32 sMayMugshot_Gfx[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.smol");
 
 
 //
@@ -696,7 +696,7 @@ static void MainMenu_InitWindows(void) // Init Text Windows
 //
 static void CreateMugshot()
 {
-    sMainMenuDataPtr->mugshotSpriteId = CreateSprite(&sSpriteTemplate_Mugshot, 48, 56, 1);
+    sMainMenuDataPtr->mugshotSpriteId = CreateSprite(&sSpriteTemplate_Mugshot, 36, 56, 1);
     gSprites[sMainMenuDataPtr->mugshotSpriteId].invisible = FALSE;
     StartSpriteAnim(&gSprites[sMainMenuDataPtr->mugshotSpriteId], 0);
     gSprites[sMainMenuDataPtr->mugshotSpriteId].oam.priority = 0;
