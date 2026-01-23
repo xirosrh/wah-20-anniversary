@@ -2733,6 +2733,28 @@ bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setmetatileelevation(struct ScriptContext *ctx)
+{
+    u16 x = VarGet(ScriptReadHalfword(ctx));
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+    u16 elevation = VarGet(ScriptReadHalfword(ctx));
+    u16 metatileId;
+    u16 collision;
+    u16 block;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    x += MAP_OFFSET;
+    y += MAP_OFFSET;
+    metatileId = MapGridGetMetatileIdAt(x, y);
+    collision = MapGridGetCollisionAt(x, y);
+    block = (metatileId & MAPGRID_METATILE_ID_MASK)
+        | PACK_COLLISION(collision)
+        | PACK_ELEVATION(elevation);
+    MapGridSetMetatileEntryAt(x, y, block);
+    return FALSE;
+}
+
 bool8 ScrCmd_opendoor(struct ScriptContext *ctx)
 {
     u16 x = VarGet(ScriptReadHalfword(ctx));
@@ -3314,4 +3336,3 @@ bool8 ScrCmd_MoveObjectToPos_at(struct ScriptContext *ctx)
     // sMovingNpcId = localId;
     return FALSE;
 }
-
