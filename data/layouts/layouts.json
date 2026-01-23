@@ -4285,7 +4285,7 @@
       "id": "LAYOUT_SERGIO_ROOM",
       "name": "SergioRoom_Layout",
       "width": 13,
-      "height": 17,
+      "height": 18,
       "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_room_sergio",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
