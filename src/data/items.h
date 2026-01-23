@@ -14,6 +14,8 @@
 
 #define TREASURE_FACTOR ((I_SELL_VALUE_FRACTION >= GEN_9) ? 2 : 1)
 
+#define MEGA_STONE_PRICE 5000
+
 #define ITEM_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_LENGTH)
 #define ITEM_PLURAL_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_PLURAL_LENGTH)
 
@@ -646,7 +648,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Hiperpoción"),
         .pluralName = ITEM_PLURAL_NAME("Hiperpociones"),
-        .price = (I_PRICE >= GEN_2 && I_PRICE <= GEN_6) ? 1200 : 1500,
+        .price = 1000,
         .holdEffectParam = 120,
         .description = COMPOUND_STRING(
             "Restaura PS de\n"
@@ -670,7 +672,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Poción máxima"),
         .pluralName = ITEM_PLURAL_NAME("Pociones máximas"),
-        .price = 2500,
+        .price = 2000,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Restaura totalmente\n"
@@ -689,7 +691,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Restaurar todo"),
         .pluralName = ITEM_PLURAL_NAME("Restaurar todo"),
-        .price = 3000,
+        .price = 2500,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Restaura totalmente\n"
@@ -709,7 +711,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Revivir"),
         .pluralName = ITEM_PLURAL_NAME("Revivir"),
-        .price = (I_PRICE >= GEN_7) ? 2000 : 1500,
+        .price = 800,
         .description = COMPOUND_STRING(
             "Revive a un Pokémon\n"
             "derrotado con 50% de\n"
@@ -728,7 +730,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Revivir máximo"),
         .pluralName = ITEM_PLURAL_NAME("Revivir máximo"),
-        .price = 4000,
+        .price = 2000,
         .description = sMaxReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -902,7 +904,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Hierba revivir"),
         .pluralName = ITEM_PLURAL_NAME("Hierbas revivir"),
-        .price = 2800,
+        .price = 1700,
         .description = COMPOUND_STRING(
             "Hierba muy amarga\n"
             "que revive a un\n"
@@ -1047,7 +1049,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Éter"),
         .pluralName = ITEM_PLURAL_NAME("Éteres"),
-        .price = (I_PRICE >= GEN_2) ? 1200 : 1,
+        .price = 300,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
             "Restaura los PP de\n"
@@ -1066,7 +1068,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Éter máximo"),
         .pluralName = ITEM_PLURAL_NAME("Éteres máximos"),
-        .price = (I_PRICE >= GEN_2) ? 2000 : 1,
+        .price = 600,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Restaura al 100% los\n"
@@ -1085,7 +1087,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Elixir"),
         .pluralName = ITEM_PLURAL_NAME("Elixires"),
-        .price = (I_PRICE >= GEN_2) ? 3000 : 1,
+        .price = 900,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
             "Restaura los PP de\n"
@@ -1105,7 +1107,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Elixir máximo"),
         .pluralName = ITEM_PLURAL_NAME("Elixires máximos"),
-        .price = (I_PRICE >= GEN_2) ? 4500 : 1,
+        .price = 1500,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Restaura al 100% los\n"
@@ -1147,7 +1149,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Ceniza sagrada"),
         .pluralName = ITEM_PLURAL_NAME("Cenizas sagradas"),
-        .price = (I_PRICE >= GEN_7) ? 50000 : 200,
+        .price = 8000,
         .description = COMPOUND_STRING(
             "Revive y restaura\n"
             "completamente a\n"
@@ -5571,7 +5573,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Charizardita X"),
         .pluralName = ITEM_PLURAL_NAME("Charizarditas X"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sCharizarditeDesc,
         .pocket = POCKET_ITEMS,
@@ -5587,7 +5589,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Charizardita Y"),
         .pluralName = ITEM_PLURAL_NAME("Charizarditas Y"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sCharizarditeDesc,
         .pocket = POCKET_ITEMS,
@@ -5656,7 +5658,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ALAKAZITE] =
     {
         .name = ITEM_NAME("Alakazamita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -5783,7 +5785,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Mewtwonita X"),
         .pluralName = ITEM_PLURAL_NAME("Mewtwonitas X"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sMewtwoniteDesc,
         .pocket = POCKET_ITEMS,
@@ -5798,7 +5800,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MEWTWONITE_Y] =
     {
         .name = ITEM_NAME("Mewtwonita Y"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sMewtwoniteDesc,
         .pocket = POCKET_ITEMS,
@@ -5885,7 +5887,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HOUNDOOMINITE] =
     {
         .name = ITEM_NAME("Houndoomita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite a\n"
@@ -5903,7 +5905,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TYRANITARITE] =
     {
         .name = ITEM_NAME("Tyranitarita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6029,7 +6031,7 @@ const struct Item gItemsInfo[] =
     [ITEM_AGGRONITE] =
     {
         .name = ITEM_NAME("Aggronita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6173,7 +6175,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GLALITITE] =
     {
         .name = ITEM_NAME("Glalita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6299,7 +6301,7 @@ const struct Item gItemsInfo[] =
     [ITEM_LUCARIONITE] =
     {
         .name = ITEM_NAME("Lucarionita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6335,7 +6337,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GALLADITE] =
     {
         .name = ITEM_NAME("Galladita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6389,7 +6391,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CLEFABLITE] =
     {
         .name = ITEM_NAME("Clefablita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6407,7 +6409,7 @@ const struct Item gItemsInfo[] =
     [ITEM_VICTREEBELITE] =
     {
         .name = ITEM_NAME("Victreebelita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6515,7 +6517,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FROSLASSITE] =
     {
         .name = ITEM_NAME("Froslassita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6767,7 +6769,7 @@ const struct Item gItemsInfo[] =
     [ITEM_DRAGALGITE] =
     {
         .name = ITEM_NAME("Dragalgita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"
@@ -6803,7 +6805,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ZYGARDITE] =
     {
         .name = ITEM_NAME("Zygardita"),
-        .price = 0,
+        .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Esta piedra permite\n"

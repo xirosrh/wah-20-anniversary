@@ -53,4 +53,5 @@ extern const struct TeamSelectorMonData gAllTeamMons[];
 
 bool8 StartTeamSelector_CB2();
 void CB2_InitTeamSelectorSetUp();
+void StartTeamSelectorFromField_CB2(void);
 #endif // GUARD_TEAM_SELECTOR_H

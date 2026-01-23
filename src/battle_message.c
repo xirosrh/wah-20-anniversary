@@ -154,7 +154,7 @@ static const u8 sText_EnigmaBerry[] = _("Baya Enigma");
 static const u8 sText_BerrySuffix[] = _("Baya");
 const u8 gText_EmptyString3[] = _("");
 
-static const u8 sText_TwoInGameTrainersDefeated[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS} and {B_TRAINER2_NAME_WITH_CLASS}!\p");
+static const u8 sText_TwoInGameTrainersDefeated[] = _("Has vencido a {B_TRAINER1_NAME_WITH_CLASS} y {B_TRAINER2_NAME_WITH_CLASS}!\p");
 
 // New battle strings.
 const u8 gText_drastically[] = _(" muchísimo");

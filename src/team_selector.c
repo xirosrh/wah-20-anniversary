@@ -71,6 +71,7 @@ struct TeamSelector
 
     u8 windowIdMsg;
     u8 optionSelectMsg;//1 SI, 0 NO
+    bool8 fromField; 
 };
 
 static EWRAM_DATA struct TeamSelector teamSelectorObj = {0};
@@ -86,6 +87,10 @@ static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons);
 static void GenerateRandomTeam();
 static void Task_HandleTeamSelector(u8 taskId);
 static void Task_HandleWantThisTeam(u8 taskId);
+static void Task_HandleExitConfirm(u8 taskId);
+static void Task_ExitWithoutSelection(u8 taskId);
+static void CreateExitConfirmWindow(void);
+static void RemoveExitConfirmWindow(void);
 
 const u32 TeamSelectorBG23_Tileset[] = INCBIN_U32("graphics/team_selector/bg23_tileset.4bpp.lz");
 const u32 TeamSelectorBG2_Tilemap[] = INCBIN_U32("graphics/team_selector/bg2_tilemap.bin.lz");
@@ -352,6 +357,41 @@ static void CreateMsgWindow()
 }
 
 static void RemoveWindowMsgWantThisTeam()
+{
+    ClearDialogWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, TRUE);
+    ClearStdWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, FALSE);
+    CopyWindowToVram(teamSelectorObj.windowIdMsg, COPYWIN_GFX);
+    RemoveWindow(teamSelectorObj.windowIdMsg);
+}
+
+static void CreateExitConfirmWindow(void)
+{
+    u8 windowId;
+    u8 x;
+
+    const u8 gText_WantToExit[] = _("¿Quieres salir?");
+    const u8 gText_YesNo[] = _("Sí{CLEAR_TO 88}No");
+
+    windowId = AddWindow(&sMsgTeamSelector_WindowTemplate);
+    teamSelectorObj.windowIdMsg = windowId;
+
+    PutWindowTilemap(windowId);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, 1, BG_PLTT_ID(14));
+    DrawTextBorderOuter(windowId, 1, 14);
+
+    x = GetStringCenterAlignXOffset(FONT_SMALL, gText_WantToExit, sMsgTeamSelector_WindowTemplate.width*8);
+    AddTextPrinterParameterized(windowId, FONT_SMALL, gText_WantToExit, x, 0, 0, NULL);
+    
+    x = GetStringCenterAlignXOffset(FONT_SMALL, gText_YesNo, sMsgTeamSelector_WindowTemplate.width*8);
+    AddTextPrinterParameterized(windowId, FONT_SMALL, gText_YesNo, x, 16, 0, NULL);
+    
+    teamSelectorObj.optionSelectMsg = 1;
+    DrawMenuCursor(TRUE);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+}
+
+static void RemoveExitConfirmWindow(void)
 {
     ClearDialogWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, TRUE);
     ClearStdWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, FALSE);
@@ -653,6 +693,54 @@ static void Task_HandleWantThisTeam(u8 taskId)
     }
 }
 
+static void Task_ExitWithoutSelection(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        gSpecialVar_Result = FALSE;
+        ClearMonSprites(FALSE, TRUE);
+        RemoveExitConfirmWindow();
+        FreeAllWindowBuffers();
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        DestroyTask(taskId);
+    }
+}
+
+static void Task_HandleExitConfirm(u8 taskId)
+{
+    if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.optionSelectMsg != TRUE)
+    {
+        DrawMenuCursor(TRUE);
+        teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
+    }
+
+    if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.optionSelectMsg != FALSE)
+    {
+        DrawMenuCursor(FALSE);
+        teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        if(teamSelectorObj.optionSelectMsg == FALSE)
+        {
+            RemoveExitConfirmWindow();
+            gTasks[taskId].func = Task_HandleTeamSelector;
+        }
+        else
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, 10, 0, 16, RGB_BLACK);
+            gTasks[taskId].func = Task_ExitWithoutSelection;
+        }
+    }
+
+    if (JOY_NEW(B_BUTTON))
+    {
+        RemoveExitConfirmWindow();
+        gTasks[taskId].func = Task_HandleTeamSelector;
+    }
+}
+
 static void Task_HandleTeamSelector(u8 taskId)
 {
     if (gPaletteFade.active)
@@ -714,6 +802,12 @@ static void Task_HandleTeamSelector(u8 taskId)
         CreateMsgWindow();
         gTasks[taskId].func = Task_HandleWantThisTeam;
     }
+
+    if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
+    {
+        CreateExitConfirmWindow();
+        gTasks[taskId].func = Task_HandleExitConfirm;
+    }
 }
 
 #define tBG3HOFS data[4]
@@ -735,15 +829,13 @@ static void Task_MovementBgs(u8 taskId)
 
 static void Task_FadeOut(u8 taskId)
 {
-    // u16 music = GetCurrLocationDefaultMusic();
-
     if (!gPaletteFade.active)
     {
+        gSpecialVar_Result = TRUE;
         ClearMonSprites(FALSE, TRUE);
         RemoveWindowMsgWantThisTeam();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
-        // FadeOutAndPlayNewMapMusic(music, 4);
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
         DestroyTask(taskId);
     }
 }
@@ -924,6 +1016,7 @@ bool8 StartTeamSelector_CB2(void)
     if (!gPaletteFade.active)
     {
         gMain.state = 0;
+        teamSelectorObj.fromField = FALSE; 
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(CB2_InitTeamSelectorSetUp);
@@ -932,4 +1025,13 @@ bool8 StartTeamSelector_CB2(void)
     }
 
     return FALSE;
+}
+
+void StartTeamSelectorFromField_CB2(void)
+{
+    gMain.state = 0;
+    teamSelectorObj.fromField = TRUE;
+    CleanupOverworldWindowsAndTilemaps();
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    SetMainCallback2(CB2_InitTeamSelectorSetUp);
 }

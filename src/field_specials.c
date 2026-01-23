@@ -29,6 +29,7 @@
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
+#include "team_selector.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -4407,4 +4408,9 @@ void ShouldUseAlternativeTeam(void)
         teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_HI);
 
     gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
+}
+
+void OpenTeamSelectorFromField(void)
+{
+    StartTeamSelectorFromField_CB2();
 }
