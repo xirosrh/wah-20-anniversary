@@ -84,8 +84,13 @@ script SergioRoom_OnFrame_AfterSergioBattle {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovementandwait(LOCALID_SERGIOROOM_SERGIO, Common_Movement_WalkInPlaceDown)
     delay(10)
-    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up * 2, walk_fast_right, walk_fast_up * 3, set_invisible))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_up * 2, walk_fast_right, walk_fast_up * 4, set_invisible))
+    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up, walk_fast_right, walk_fast_up * 3))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_up, walk_fast_right, walk_fast_up * 3))
+    waitmovement(0)
+    applymovementandwait(LOCALID_SERGIOROOM_SERGIO, moves(walk_in_place_fast_up))
+    applymovementandwait(LOCALID_SERGIOROOM_SECURITYGUARD, moves(walk_fast_right, walk_fast_down, face_left))
+    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up * 3, set_invisible))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_up * 4, set_invisible))
     waitmovement(LOCALID_PLAYER)
     setvar(VAR_SERGIO_ROOM_STATE, 2)
     warp(MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME)
@@ -117,5 +122,15 @@ script SergioRoom_EventScript_Abra {
 		waitstate
     }
 	release
+    end
+}
+
+script SergioRoom_EventScript_SecurityGuardTrigger {
+    release
+    end
+}
+
+script SergioRoom_EventScript_SecurityGuard {
+    release
     end
 }
