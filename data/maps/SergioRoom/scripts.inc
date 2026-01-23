@@ -223,13 +223,54 @@ SergioRoom_EventScript_Abra_2:
 
 SergioRoom_EventScript_SecurityGuardTrigger::
 # 129 "data/maps/SergioRoom/scripts.pory"
+	lock
+# 130 "data/maps/SergioRoom/scripts.pory"
+	playse SE_PIN
+# 131 "data/maps/SergioRoom/scripts.pory"
+	applymovement LOCALID_SERGIOROOM_SECURITYGUARD, SergioRoom_EventScript_SecurityGuardTrigger_Movement_0
+# 132 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_Text_0, MSGBOX_AUTOCLOSE
+# 133 "data/maps/SergioRoom/scripts.pory"
+	waitmovement 0
+# 134 "data/maps/SergioRoom/scripts.pory"
+	getdirectiontoface VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD
+# 135 "data/maps/SergioRoom/scripts.pory"
+	switch VAR_TEMP_A
+# 136 "data/maps/SergioRoom/scripts.pory"
+	case DIR_EAST, SergioRoom_EventScript_SecurityGuardTrigger_3
+# 138 "data/maps/SergioRoom/scripts.pory"
+	case DIR_WEST, SergioRoom_EventScript_SecurityGuardTrigger_4
+SergioRoom_EventScript_SecurityGuardTrigger_1:
+# 141 "data/maps/SergioRoom/scripts.pory"
+	playse SE_PIN
+# 142 "data/maps/SergioRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48
+# 143 "data/maps/SergioRoom/scripts.pory"
+	waitmovement 0
+# 144 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_AUTOCLOSE
+# 145 "data/maps/SergioRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkDown
+# 146 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_SERGIOROOM_SECURITYGUARD, DIR_SOUTH
+# 147 "data/maps/SergioRoom/scripts.pory"
 	release
 	end
 
+SergioRoom_EventScript_SecurityGuardTrigger_3:
+# 137 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_EAST
+	goto SergioRoom_EventScript_SecurityGuardTrigger_1
+
+SergioRoom_EventScript_SecurityGuardTrigger_4:
+# 139 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+	goto SergioRoom_EventScript_SecurityGuardTrigger_1
+
 
 SergioRoom_EventScript_SecurityGuard::
-# 134 "data/maps/SergioRoom/scripts.pory"
-	release
+# 156 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_NPC
 	end
 
 
@@ -301,8 +342,32 @@ SergioRoom_OnFrame_AfterSergioBattle_Movement_5:
 	set_invisible
 	step_end
 
+# 131 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_EventScript_SecurityGuardTrigger_Movement_0:
+# 131 "data/maps/SergioRoom/scripts.pory"
+	emote_double_exclamation_mark
+# 131 "data/maps/SergioRoom/scripts.pory"
+	face_player
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
+	step_end
+
 SergioRoom_EventScript_Abra_Text_0:
 # 111 "data/maps/SergioRoom/scripts.pory"
 	.string "Parece que Abra quiere\n"
 	.string "teletransportarte a otro lugar.\l"
 	.string "¿Deseas ir?$"
+
+SergioRoom_EventScript_SecurityGuardTrigger_Text_0:
+# 132 "data/maps/SergioRoom/scripts.pory"
+	.string "¡Alto ahí!$"
+
+SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance::
+# 151 "data/maps/SergioRoom/scripts.pory"
+	.string "No puedes avanzar al hall de la fama\n"
+	.string "hasta no derrotar a Serg!o.\p"
+	.string "¿Dónde habrá ido?$"
