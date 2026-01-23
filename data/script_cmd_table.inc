@@ -254,6 +254,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS               ScrCmd_MoveObjectToPos,              requests_effects=1   @ 0xe6
 	script_cmd_table_entry SCR_OP_MOVEOBJECTTOPOS_AT            ScrCmd_MoveObjectToPos_at,           requests_effects=1   @ 0xe7
+	script_cmd_table_entry SCR_OP_SETMETATILEELEVATION          ScrCmd_setmetatileelevation,        requests_effects=1  @ 0xe8
 	
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

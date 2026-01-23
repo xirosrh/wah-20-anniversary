@@ -973,3 +973,14 @@ const struct Tileset gTileset_room_cosarara =
     .metatileAttributes = gMetatileAttributes_room_cosarara,
     .callback = InitTilesetAnim_CosararaRoom,
 };
+
+const struct Tileset gTileset_room_kleinpkpower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_kleinpkpower,
+    .palettes = gTilesetPalettes_room_kleinpkpower,
+    .metatiles = gMetatiles_room_kleinpkpower,
+    .metatileAttributes = gMetatileAttributes_room_kleinpkpower,
+    .callback = NULL,
+};
