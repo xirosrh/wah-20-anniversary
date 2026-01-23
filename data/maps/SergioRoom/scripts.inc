@@ -148,67 +148,130 @@ SergioRoom_OnFrame_AfterSergioBattle::
 # 87 "data/maps/SergioRoom/scripts.pory"
 	applymovement LOCALID_SERGIOROOM_SERGIO, SergioRoom_OnFrame_AfterSergioBattle_Movement_1
 # 88 "data/maps/SergioRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, SergioRoom_OnFrame_AfterSergioBattle_Movement_2
+	applymovement LOCALID_PLAYER, SergioRoom_OnFrame_AfterSergioBattle_Movement_1
 # 89 "data/maps/SergioRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	waitmovement 0
 # 90 "data/maps/SergioRoom/scripts.pory"
-	setvar VAR_SERGIO_ROOM_STATE, 2
+	applymovementandwait LOCALID_SERGIOROOM_SERGIO, SergioRoom_OnFrame_AfterSergioBattle_Movement_2
 # 91 "data/maps/SergioRoom/scripts.pory"
-	warp MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME
+	applymovementandwait LOCALID_SERGIOROOM_SECURITYGUARD, SergioRoom_OnFrame_AfterSergioBattle_Movement_3
 # 92 "data/maps/SergioRoom/scripts.pory"
-	waitstate
+	applymovement LOCALID_SERGIOROOM_SERGIO, SergioRoom_OnFrame_AfterSergioBattle_Movement_4
 # 93 "data/maps/SergioRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, SergioRoom_OnFrame_AfterSergioBattle_Movement_5
+# 94 "data/maps/SergioRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 95 "data/maps/SergioRoom/scripts.pory"
+	setvar VAR_SERGIO_ROOM_STATE, 2
+# 96 "data/maps/SergioRoom/scripts.pory"
+	warp MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME
+# 97 "data/maps/SergioRoom/scripts.pory"
+	waitstate
+# 98 "data/maps/SergioRoom/scripts.pory"
 	releaseall
 	end
 
 
 SergioRoom_EventScript_Abra::
-# 99 "data/maps/SergioRoom/scripts.pory"
-	lock
-# 100 "data/maps/SergioRoom/scripts.pory"
-	release
-# 101 "data/maps/SergioRoom/scripts.pory"
-	applymovementandwait LOCALID_SERGIOROOM_ABRA, Common_Movement_FacePlayer
-# 102 "data/maps/SergioRoom/scripts.pory"
-	release
-# 103 "data/maps/SergioRoom/scripts.pory"
-	playmoncry SPECIES_ABRA, CRY_MODE_ENCOUNTER
 # 104 "data/maps/SergioRoom/scripts.pory"
-	releaseall
+	lock
 # 105 "data/maps/SergioRoom/scripts.pory"
-	delay 20
+	release
 # 106 "data/maps/SergioRoom/scripts.pory"
-	msgbox SergioRoom_EventScript_Abra_Text_0, MSGBOX_YESNO
+	applymovementandwait LOCALID_SERGIOROOM_ABRA, Common_Movement_FacePlayer
 # 107 "data/maps/SergioRoom/scripts.pory"
+	release
+# 108 "data/maps/SergioRoom/scripts.pory"
+	playmoncry SPECIES_ABRA, CRY_MODE_ENCOUNTER
+# 109 "data/maps/SergioRoom/scripts.pory"
+	releaseall
+# 110 "data/maps/SergioRoom/scripts.pory"
+	delay 20
+# 111 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_Abra_Text_0, MSGBOX_YESNO
+# 112 "data/maps/SergioRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq SergioRoom_EventScript_Abra_2
 SergioRoom_EventScript_Abra_1:
-# 119 "data/maps/SergioRoom/scripts.pory"
+# 124 "data/maps/SergioRoom/scripts.pory"
 	release
 	end
 
 SergioRoom_EventScript_Abra_2:
-# 108 "data/maps/SergioRoom/scripts.pory"
-	updateobjectsprite LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2
-# 109 "data/maps/SergioRoom/scripts.pory"
-	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
-# 110 "data/maps/SergioRoom/scripts.pory"
-	release
-# 111 "data/maps/SergioRoom/scripts.pory"
-	delay 30
-# 112 "data/maps/SergioRoom/scripts.pory"
-	updateobjectsprite LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1
 # 113 "data/maps/SergioRoom/scripts.pory"
-	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
+	updateobjectsprite LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2
 # 114 "data/maps/SergioRoom/scripts.pory"
-	release
+	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
 # 115 "data/maps/SergioRoom/scripts.pory"
-	delay 20
+	release
 # 116 "data/maps/SergioRoom/scripts.pory"
-	warp MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP
+	delay 30
 # 117 "data/maps/SergioRoom/scripts.pory"
+	updateobjectsprite LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1
+# 118 "data/maps/SergioRoom/scripts.pory"
+	updateobjectsprite LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
+# 119 "data/maps/SergioRoom/scripts.pory"
+	release
+# 120 "data/maps/SergioRoom/scripts.pory"
+	delay 20
+# 121 "data/maps/SergioRoom/scripts.pory"
+	warp MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP
+# 122 "data/maps/SergioRoom/scripts.pory"
 	waitstate
 	goto SergioRoom_EventScript_Abra_1
+
+
+SergioRoom_EventScript_SecurityGuardTrigger::
+# 129 "data/maps/SergioRoom/scripts.pory"
+	lock
+# 130 "data/maps/SergioRoom/scripts.pory"
+	playse SE_PIN
+# 131 "data/maps/SergioRoom/scripts.pory"
+	applymovement LOCALID_SERGIOROOM_SECURITYGUARD, SergioRoom_EventScript_SecurityGuardTrigger_Movement_0
+# 132 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_Text_0, MSGBOX_AUTOCLOSE
+# 133 "data/maps/SergioRoom/scripts.pory"
+	waitmovement 0
+# 134 "data/maps/SergioRoom/scripts.pory"
+	getdirectiontoface VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD
+# 135 "data/maps/SergioRoom/scripts.pory"
+	switch VAR_TEMP_A
+# 136 "data/maps/SergioRoom/scripts.pory"
+	case DIR_EAST, SergioRoom_EventScript_SecurityGuardTrigger_3
+# 138 "data/maps/SergioRoom/scripts.pory"
+	case DIR_WEST, SergioRoom_EventScript_SecurityGuardTrigger_4
+SergioRoom_EventScript_SecurityGuardTrigger_1:
+# 141 "data/maps/SergioRoom/scripts.pory"
+	playse SE_PIN
+# 142 "data/maps/SergioRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48
+# 143 "data/maps/SergioRoom/scripts.pory"
+	waitmovement 0
+# 144 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_AUTOCLOSE
+# 145 "data/maps/SergioRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkDown
+# 146 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_SERGIOROOM_SECURITYGUARD, DIR_SOUTH
+# 147 "data/maps/SergioRoom/scripts.pory"
+	release
+	end
+
+SergioRoom_EventScript_SecurityGuardTrigger_3:
+# 137 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_EAST
+	goto SergioRoom_EventScript_SecurityGuardTrigger_1
+
+SergioRoom_EventScript_SecurityGuardTrigger_4:
+# 139 "data/maps/SergioRoom/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+	goto SergioRoom_EventScript_SecurityGuardTrigger_1
+
+
+SergioRoom_EventScript_SecurityGuard::
+# 156 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_NPC
+	end
 
 
 # 83 "data/maps/SergioRoom/scripts.pory"
@@ -228,8 +291,6 @@ SergioRoom_OnFrame_AfterSergioBattle_Movement_1:
 # 87 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
 # 87 "data/maps/SergioRoom/scripts.pory"
-	walk_fast_up
-# 87 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_right
 # 87 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
@@ -237,32 +298,76 @@ SergioRoom_OnFrame_AfterSergioBattle_Movement_1:
 	walk_fast_up
 # 87 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
-# 87 "data/maps/SergioRoom/scripts.pory"
+	step_end
+
+# 90 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_OnFrame_AfterSergioBattle_Movement_2:
+# 90 "data/maps/SergioRoom/scripts.pory"
+	walk_in_place_fast_up
+	step_end
+
+# 91 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_OnFrame_AfterSergioBattle_Movement_3:
+# 91 "data/maps/SergioRoom/scripts.pory"
+	walk_fast_right
+# 91 "data/maps/SergioRoom/scripts.pory"
+	walk_fast_down
+# 91 "data/maps/SergioRoom/scripts.pory"
+	face_left
+	step_end
+
+# 92 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_OnFrame_AfterSergioBattle_Movement_4:
+# 92 "data/maps/SergioRoom/scripts.pory"
+	walk_fast_up
+# 92 "data/maps/SergioRoom/scripts.pory"
+	walk_fast_up
+# 92 "data/maps/SergioRoom/scripts.pory"
+	walk_fast_up
+# 92 "data/maps/SergioRoom/scripts.pory"
 	set_invisible
 	step_end
 
-# 88 "data/maps/SergioRoom/scripts.pory"
-SergioRoom_OnFrame_AfterSergioBattle_Movement_2:
-# 88 "data/maps/SergioRoom/scripts.pory"
+# 93 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_OnFrame_AfterSergioBattle_Movement_5:
+# 93 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
+# 93 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
-	walk_fast_right
-# 88 "data/maps/SergioRoom/scripts.pory"
+# 93 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
+# 93 "data/maps/SergioRoom/scripts.pory"
 	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
-	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
-	walk_fast_up
-# 88 "data/maps/SergioRoom/scripts.pory"
+# 93 "data/maps/SergioRoom/scripts.pory"
 	set_invisible
+	step_end
+
+# 131 "data/maps/SergioRoom/scripts.pory"
+SergioRoom_EventScript_SecurityGuardTrigger_Movement_0:
+# 131 "data/maps/SergioRoom/scripts.pory"
+	emote_double_exclamation_mark
+# 131 "data/maps/SergioRoom/scripts.pory"
+	face_player
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
+# 131 "data/maps/SergioRoom/scripts.pory"
+	delay_16
 	step_end
 
 SergioRoom_EventScript_Abra_Text_0:
-# 106 "data/maps/SergioRoom/scripts.pory"
+# 111 "data/maps/SergioRoom/scripts.pory"
 	.string "Parece que Abra quiere\n"
 	.string "teletransportarte a otro lugar.\l"
 	.string "¿Deseas ir?$"
+
+SergioRoom_EventScript_SecurityGuardTrigger_Text_0:
+# 132 "data/maps/SergioRoom/scripts.pory"
+	.string "¡Alto ahí!$"
+
+SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance::
+# 151 "data/maps/SergioRoom/scripts.pory"
+	.string "No puedes avanzar al hall de la fama\n"
+	.string "hasta no derrotar a Serg!o.\p"
+	.string "¿Dónde habrá ido?$"
