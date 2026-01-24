@@ -35,7 +35,17 @@ script TokynWarRoom_EventScript_MainCutscene {
     turnobject(LOCALID_PLAYER, DIR_EAST)
     msgbox(format("Yo tampoco tengo idea de quién eres, pero eso no importa."), speaker = SP_NAME_WAR)
     playse(SE_PIN)
-    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_exclamation_mark, jump_in_place_left * 2, delay_16))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_exclamation_mark))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left, delay_16))
+    waitmovement(0)
+    waitse
     msgbox(format("¡Estamos aquí para verlo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     waitmovement(0)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
@@ -45,7 +55,14 @@ script TokynWarRoom_EventScript_MainCutscene {
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HappyWithDelay48)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
     msgbox(format("¿Qué te parece un combate de a dos, War?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_JumpInPlaceLeft2)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left))
+    waitmovement(0)
+    waitse
     turnobject(LOCALID_PLAYER, DIR_EAST)
     msgbox(format("¿Unir fuerzas como en los viejos tiempos?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     delay(30)
@@ -72,11 +89,24 @@ script TokynWarRoom_EventScript_MainCutscene {
     waitmovement(LOCALID_TOKYNWARROOM_WAR)
     call(TokynWarRoom_EventScript_TokynWarBattle)
     playse(SE_PIN)
-    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_x, lock_facing_direction, jump_left, unlock_facing_direction, delay_16 * 2))
-    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_x, lock_facing_direction, jump_right, unlock_facing_direction, delay_16 * 2))
+    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_x, lock_facing_direction))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_x, lock_facing_direction))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(jump_left, unlock_facing_direction, delay_16 * 2))
+    applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_right, unlock_facing_direction, delay_16 * 2))
+    waitmovement(0)
+    waitse
     playse(SE_PIN)
-    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(emote_double_exclamation_mark, jump_in_place_left * 2, walk_left))
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(emote_double_exclamation_mark))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left, walk_left))
+    waitse
     msgbox(format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     delay(40)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkRight)
@@ -130,6 +160,7 @@ script TokynWarRoom_EventScript_Tokyn {
 script TokynWarRoom_EventScript_MagikarpJumping {
     lock
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    playse(SE_BALLOON_RED)
     switch(var(VAR_TEMP_0)){
         case 5:
             load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 102, 60, VAR_TEMP_2)
@@ -141,9 +172,12 @@ script TokynWarRoom_EventScript_MagikarpJumping {
             load_field_pic(FP_MAGIKARP_JUMPING_LEFT, 70, 60, VAR_TEMP_2)
             load_field_pic(FP_MAGIKARP_JUMPING_RIGHT, 134, 60, VAR_TEMP_3)
     }
+    waitse
+    playse(SE_M_DIVE)
     delay(70)
     destroy_field_pic(FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2)
     destroy_field_pic(FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3)
+    waitse
     turnobject(LOCALID_PLAYER, DIR_WEST)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48)
