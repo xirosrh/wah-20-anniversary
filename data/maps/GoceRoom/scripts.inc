@@ -39,40 +39,48 @@ GoceRoom_EventScript_Goce::
 # 30 "data/maps/GoceRoom/scripts.pory"
 	msgbox GoceRoom_EventScript_Goce_Text_1, speaker = SP_NAME_GOCE
 # 31 "data/maps/GoceRoom/scripts.pory"
-	call GoceRoom_EventScript_GoceBattle
-# 32 "data/maps/GoceRoom/scripts.pory"
-	delay 10
-# 33 "data/maps/GoceRoom/scripts.pory"
-	msgbox GoceRoom_EventScript_Goce_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE
-# 34 "data/maps/GoceRoom/scripts.pory"
-	delay 20
-# 35 "data/maps/GoceRoom/scripts.pory"
 	playse SE_PIN
-# 36 "data/maps/GoceRoom/scripts.pory"
-	applymovement LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48
-# 37 "data/maps/GoceRoom/scripts.pory"
+# 32 "data/maps/GoceRoom/scripts.pory"
+	applymovement LOCALID_GOCEROOM_GOCE, GoceRoom_EventScript_Goce_Movement_0
+# 33 "data/maps/GoceRoom/scripts.pory"
 	waitmovement 0
-# 38 "data/maps/GoceRoom/scripts.pory"
+# 34 "data/maps/GoceRoom/scripts.pory"
 	waitse
+# 35 "data/maps/GoceRoom/scripts.pory"
+	call GoceRoom_EventScript_GoceBattle
+# 36 "data/maps/GoceRoom/scripts.pory"
+	delay 10
+# 37 "data/maps/GoceRoom/scripts.pory"
+	msgbox GoceRoom_EventScript_Goce_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE
+# 38 "data/maps/GoceRoom/scripts.pory"
+	delay 20
 # 39 "data/maps/GoceRoom/scripts.pory"
-	msgbox GoceRoom_EventScript_Goce_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE
+	playse SE_PIN
 # 40 "data/maps/GoceRoom/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	applymovement LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48
 # 41 "data/maps/GoceRoom/scripts.pory"
+	waitmovement 0
+# 42 "data/maps/GoceRoom/scripts.pory"
+	waitse
+# 43 "data/maps/GoceRoom/scripts.pory"
+	msgbox GoceRoom_EventScript_Goce_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE
+# 44 "data/maps/GoceRoom/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 45 "data/maps/GoceRoom/scripts.pory"
 	compare VAR_TEMP_0, 5
 	goto_if_eq GoceRoom_EventScript_Goce_5
-# 47 "data/maps/GoceRoom/scripts.pory"
-	applymovementandwait LOCALID_GOCEROOM_GOCE, GoceRoom_EventScript_Goce_Movement_1
-# 49 "data/maps/GoceRoom/scripts.pory"
+# 51 "data/maps/GoceRoom/scripts.pory"
+	applymovementandwait LOCALID_GOCEROOM_GOCE, GoceRoom_EventScript_Goce_Movement_2
+# 53 "data/maps/GoceRoom/scripts.pory"
 	setobjectxy LOCALID_GOCEROOM_GOCE, 5, 5
-# 50 "data/maps/GoceRoom/scripts.pory"
+# 54 "data/maps/GoceRoom/scripts.pory"
 	setobjectxyperm LOCALID_GOCEROOM_GOCE, 5, 5
 GoceRoom_EventScript_Goce_4:
-# 52 "data/maps/GoceRoom/scripts.pory"
+# 56 "data/maps/GoceRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
-# 53 "data/maps/GoceRoom/scripts.pory"
+# 57 "data/maps/GoceRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_GOCE
-# 54 "data/maps/GoceRoom/scripts.pory"
+# 58 "data/maps/GoceRoom/scripts.pory"
 	release
 	end
 
@@ -84,62 +92,68 @@ GoceRoom_EventScript_Goce_1:
 	end
 
 GoceRoom_EventScript_Goce_5:
-# 42 "data/maps/GoceRoom/scripts.pory"
-	applymovementandwait LOCALID_GOCEROOM_GOCE, GoceRoom_EventScript_Goce_Movement_0
-# 44 "data/maps/GoceRoom/scripts.pory"
+# 46 "data/maps/GoceRoom/scripts.pory"
+	applymovementandwait LOCALID_GOCEROOM_GOCE, GoceRoom_EventScript_Goce_Movement_1
+# 48 "data/maps/GoceRoom/scripts.pory"
 	setobjectxy LOCALID_GOCEROOM_GOCE, 7, 5
-# 45 "data/maps/GoceRoom/scripts.pory"
+# 49 "data/maps/GoceRoom/scripts.pory"
 	setobjectxyperm LOCALID_GOCEROOM_GOCE, 7, 5
 	goto GoceRoom_EventScript_Goce_4
 
 
 GoceRoom_EventScript_GoceBattle::
-# 61 "data/maps/GoceRoom/scripts.pory"
-	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GoceRoom_EventScript_GoceBattle_2
-# 64 "data/maps/GoceRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_GOCE
 # 65 "data/maps/GoceRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GoceRoom_EventScript_GoceBattle_2
+# 68 "data/maps/GoceRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_GOCE
+# 69 "data/maps/GoceRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 66 "data/maps/GoceRoom/scripts.pory"
+# 70 "data/maps/GoceRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GoceRoom_EventScript_GoceBattle_5
-# 69 "data/maps/GoceRoom/scripts.pory"
+# 73 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated
 GoceRoom_EventScript_GoceBattle_1:
-# 72 "data/maps/GoceRoom/scripts.pory"
+# 76 "data/maps/GoceRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 GoceRoom_EventScript_GoceBattle_2:
-# 62 "data/maps/GoceRoom/scripts.pory"
+# 66 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated
 	goto GoceRoom_EventScript_GoceBattle_1
 
 GoceRoom_EventScript_GoceBattle_5:
-# 67 "data/maps/GoceRoom/scripts.pory"
+# 71 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated
 	goto GoceRoom_EventScript_GoceBattle_1
 
 
-# 42 "data/maps/GoceRoom/scripts.pory"
+# 32 "data/maps/GoceRoom/scripts.pory"
 GoceRoom_EventScript_Goce_Movement_0:
-# 43 "data/maps/GoceRoom/scripts.pory"
+# 32 "data/maps/GoceRoom/scripts.pory"
+	emote_versus
+	step_end
+
+# 46 "data/maps/GoceRoom/scripts.pory"
+GoceRoom_EventScript_Goce_Movement_1:
+# 47 "data/maps/GoceRoom/scripts.pory"
 	lock_facing_direction
-# 43 "data/maps/GoceRoom/scripts.pory"
+# 47 "data/maps/GoceRoom/scripts.pory"
 	walk_right
-# 43 "data/maps/GoceRoom/scripts.pory"
+# 47 "data/maps/GoceRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 47 "data/maps/GoceRoom/scripts.pory"
-GoceRoom_EventScript_Goce_Movement_1:
-# 48 "data/maps/GoceRoom/scripts.pory"
+# 51 "data/maps/GoceRoom/scripts.pory"
+GoceRoom_EventScript_Goce_Movement_2:
+# 52 "data/maps/GoceRoom/scripts.pory"
 	face_right
-# 48 "data/maps/GoceRoom/scripts.pory"
+# 52 "data/maps/GoceRoom/scripts.pory"
 	lock_facing_direction
-# 48 "data/maps/GoceRoom/scripts.pory"
+# 52 "data/maps/GoceRoom/scripts.pory"
 	walk_left
-# 48 "data/maps/GoceRoom/scripts.pory"
+# 52 "data/maps/GoceRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
@@ -159,12 +173,12 @@ GoceRoom_EventScript_Goce_Text_1:
 	.string "esto, y hoy te toca enfrentarte a ella.$"
 
 GoceRoom_EventScript_Goce_Text_2:
-# 33 "data/maps/GoceRoom/scripts.pory"
+# 37 "data/maps/GoceRoom/scripts.pory"
 	.string "¡Gran batalla! Has podido derrotar al\n"
 	.string "gran fundador, seguro estarás orgullos{OA}.$"
 
 GoceRoom_EventScript_Goce_Text_3:
-# 39 "data/maps/GoceRoom/scripts.pory"
+# 43 "data/maps/GoceRoom/scripts.pory"
 	.string "Eh, ¿así que no sabes quién soy? Me\n"
 	.string "conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\p"
 	.string "Igual, lo que importa no es mi nombre,\n"
@@ -174,6 +188,6 @@ GoceRoom_EventScript_Goce_Text_3:
 	.string "Puedes continuar.$"
 
 GoceRoom_Text_GoceDefeated::
-# 76 "data/maps/GoceRoom/scripts.pory"
+# 80 "data/maps/GoceRoom/scripts.pory"
 	.string "Increíble como han evolucionado en\n"
 	.string "estos últimos 20 años…$"

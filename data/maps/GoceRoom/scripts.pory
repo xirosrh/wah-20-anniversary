@@ -28,6 +28,10 @@ script GoceRoom_EventScript_Goce {
           lock
         faceplayer
         msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."), speaker = SP_NAME_GOCE)
+        playse(SE_PIN)
+        applymovement(LOCALID_GOCEROOM_GOCE, moves(emote_versus))
+        waitmovement(0)
+        waitse
         call(GoceRoom_EventScript_GoceBattle)
         delay(10)
         msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
