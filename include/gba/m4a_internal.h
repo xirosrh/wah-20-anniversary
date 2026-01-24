@@ -367,6 +367,10 @@ struct Song
 extern const struct MusicPlayer gMPlayTable[];
 extern const struct Song gSongTable[];
 
+#define MUSIC_PLAYER_BGM    0
+#define MUSIC_PLAYER_SE1    1
+#define MUSIC_PLAYER_SE2    2
+#define MUSIC_PLAYER_SE3    3
 
 
 extern u8 gMPlayMemAccArea[];
