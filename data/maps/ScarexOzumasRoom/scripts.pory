@@ -86,41 +86,35 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
         jump_in_place_down_up
         delay_4
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_up_down
         delay_4
         walk_in_place_down * 2
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_right_left
         delay_4
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_left_right
         delay_4
         walk_in_place_right * 2
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_right_left
         delay_4
         walk_in_place_left * 2
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_down_up
         delay_4
         walk_in_place_up
     ))
-    //waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_up_down
