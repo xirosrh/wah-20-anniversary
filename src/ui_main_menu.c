@@ -34,6 +34,7 @@
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/vars.h"
 #include "pokemon_icon.h"
 #include "region_map.h"
 #include "pokedex.h"
@@ -827,17 +828,17 @@ static void DestroyMonIcons()
 
 
 //
-//  Print The Text For Dex Num, Badges, Name, Playtime, Location
+//  Print The Text For Badges, Name, Playtime
 //
-static const u8 sText_DexNum[] = _("Dex {STR_VAR_1}");
 static const u8 sText_Badges[] = _("Logros {STR_VAR_1}");
+static const u8 sText_Victories[] = _("Desafío {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 colors[3] = {0,  2,  3}; 
     u8 continueDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
-    u16 dexCount = 0; u8 badgeCount = 0;
+    u8 badgeCount = 0;
     u32 i = 0;
 
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -857,18 +858,6 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     ConvertIntToDecimalStringN(playTimePtr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NORMAL, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
-    // Print Dex Numbers if You Have It
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
-        if (IsNationalPokedexEnabled())
-            dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        else
-            dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-        ConvertIntToDecimalStringN(gStringVar1, dexCount, STR_CONV_MODE_RIGHT_ALIGN, 4);
-        StringExpandPlaceholders(gStringVar4, sText_DexNum);
-        AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8 + 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-    }
-
     // Print Badge Numbers if You Have Them
     for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
     {
@@ -877,10 +866,15 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     } 
     ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+
+    // Print Victories
+    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT), STR_CONV_MODE_LEADING_ZEROS, 1);
+    StringExpandPlaceholders(gStringVar4, sText_Victories);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
     // Print Player Name
-    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NORMAL, 16, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
+    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NORMAL, 8, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
 
     PutWindowTilemap(WINDOW_HEADER);
     CopyWindowToVram(WINDOW_HEADER, 3);

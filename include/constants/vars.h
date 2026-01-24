@@ -265,7 +265,7 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_COSARARA_ROOM_COMPUTER_FRAMES                 0x40F7 // WAH
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused
+#define VAR_WAH_CHALLENGE_COMPLETION_COUNT                0x40F8 // WAH
 #define VAR_UNUSED_0x40F9                                0x40F9 // Unused
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused
