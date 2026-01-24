@@ -5,10 +5,10 @@
 #define NUM_TRACKS_SE2 9
 #define NUM_TRACKS_SE3 1
 
-/*static */struct MusicPlayerTrack gMPlayTrack_BGM[NUM_TRACKS_BGM];
-/*static */struct MusicPlayerTrack gMPlayTrack_SE1[NUM_TRACKS_SE1];
-/*static */struct MusicPlayerTrack gMPlayTrack_SE2[NUM_TRACKS_SE2];
-/*static */struct MusicPlayerTrack gMPlayTrack_SE3[NUM_TRACKS_SE3];
+struct MusicPlayerTrack gMPlayTrack_BGM[NUM_TRACKS_BGM];
+struct MusicPlayerTrack gMPlayTrack_SE1[NUM_TRACKS_SE1];
+struct MusicPlayerTrack gMPlayTrack_SE2[NUM_TRACKS_SE2];
+struct MusicPlayerTrack gMPlayTrack_SE3[NUM_TRACKS_SE3];
 
 const struct MusicPlayer gMPlayTable[] = 
 {
