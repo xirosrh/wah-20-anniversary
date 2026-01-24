@@ -830,11 +830,12 @@ static void DestroyMonIcons()
 //  Print The Text For Dex Num, Badges, Name, Playtime, Location
 //
 static const u8 sText_DexNum[] = _("Dex {STR_VAR_1}");
-static const u8 sText_Badges[] = _("Badges {STR_VAR_1}");
+static const u8 sText_Badges[] = _("Logros {STR_VAR_1}");
+static const u8 sText_Continue[] = _("Continuar");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 colors[3] = {0,  2,  3}; 
-    u8 mapDisplayHeader[24];
+    u8 continueDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
     u16 dexCount = 0; u8 badgeCount = 0;
     u32 i = 0;
@@ -842,13 +843,13 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     FillWindowPixelBuffer(WINDOW_MIDDLE, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
-    // Print Map Name In Header
-    withoutPrefixPtr = &(mapDisplayHeader[3]);
-    GetMapName(withoutPrefixPtr, GetCurrentRegionMapSectionId(), 0);
-    mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
-    mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
-    mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 10 * 8), 1, 0, 0, colors, 0xFF, mapDisplayHeader);
+    // Print Continue in header
+    withoutPrefixPtr = &(continueDisplayHeader[3]);
+    StringCopy(withoutPrefixPtr, sText_Continue);
+    continueDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
+    continueDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
+    continueDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
+    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, 28, 1, 0, 0, colors, 0xFF, continueDisplayHeader);
 
     // Print Playtime In Header
     playTimePtr = ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
