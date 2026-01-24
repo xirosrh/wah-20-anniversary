@@ -795,7 +795,7 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .itemId = ITEM_LEFTOVERS,
             .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
             .isShiny = FALSE,
-            .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_FREEZE_DRY},
+            .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_FREEZE_DRY, MOVE_THUNDERBOLT},
         },
         [MON_CURSOLA] = {
             .specie = SPECIES_CURSOLA,
