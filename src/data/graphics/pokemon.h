@@ -1145,6 +1145,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_ALOLAN_FORMS
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_RaichuMegaX[] = INCBIN_U32("graphics/pokemon/raichu/mega_x/front.4bpp.smol");
+    const u16 gMonPalette_RaichuMegaX[] = INCBIN_U16("graphics/pokemon/raichu/mega_x/normal.gbapal");
+    const u32 gMonBackPic_RaichuMegaX[] = INCBIN_U32("graphics/pokemon/raichu/mega_x/back.4bpp.smol");
+    const u16 gMonShinyPalette_RaichuMegaX[] = INCBIN_U16("graphics/pokemon/raichu/mega_x/shiny.gbapal");
+    const u8 gMonIcon_RaichuMegaX[] = INCBIN_U8("graphics/pokemon/raichu/mega_x/icon.4bpp");
+
+    const u32 gMonFrontPic_RaichuMegaY[] = INCBIN_U32("graphics/pokemon/raichu/mega_y/front.4bpp.smol");
+    const u16 gMonPalette_RaichuMegaY[] = INCBIN_U16("graphics/pokemon/raichu/mega_y/normal.gbapal");
+    const u32 gMonBackPic_RaichuMegaY[] = INCBIN_U32("graphics/pokemon/raichu/mega_y/back.4bpp.smol");
+    const u16 gMonShinyPalette_RaichuMegaY[] = INCBIN_U16("graphics/pokemon/raichu/mega_y/shiny.gbapal");
+    const u8 gMonIcon_RaichuMegaY[] = INCBIN_U8("graphics/pokemon/raichu/mega_y/icon.4bpp");
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_PIKACHU
 
 #if P_FAMILY_SANDSHREW
@@ -13153,6 +13167,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Chingling[] = INCBIN_U16("graphics/pokemon/chingling/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/front.4bpp.smol");
+    const u16 gMonPalette_ChimechoMega[] = INCBIN_U16("graphics/pokemon/chimecho/mega/normal.gbapal");
+    const u32 gMonBackPic_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_ChimechoMega[] = INCBIN_U16("graphics/pokemon/chimecho/mega/shiny.gbapal");
+    const u8 gMonIcon_ChimechoMega[] = INCBIN_U8("graphics/pokemon/chimecho/mega/icon.4bpp");
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
 
 #if !P_GBA_STYLE_SPECIES_GFX
@@ -15761,6 +15782,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Heatran[] = INCBIN_U16("graphics/pokemon/heatran/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_HeatranMega[] = INCBIN_U32("graphics/pokemon/heatran/mega/front.4bpp.smol");
+    const u16 gMonPalette_HeatranMega[] = INCBIN_U16("graphics/pokemon/heatran/mega/normal.gbapal");
+    const u32 gMonBackPic_HeatranMega[] = INCBIN_U32("graphics/pokemon/heatran/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_HeatranMega[] = INCBIN_U16("graphics/pokemon/heatran/mega/shiny.gbapal");
+    const u8 gMonIcon_HeatranMega[] = INCBIN_U8("graphics/pokemon/heatran/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    //const u32 gObjectEventPic_ZygardeMega[] = INCBIN_COMP("graphics/pokemon/zygarde/mega/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    //const u16 gOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_normal.gbapal");
+    //const u16 gShinyOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_HEATRAN
 
 #if P_FAMILY_REGIGIGAS
@@ -15883,6 +15918,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Darkrai[] = INCBIN_U16("graphics/pokemon/darkrai/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_DarkraiMega[] = INCBIN_U32("graphics/pokemon/darkrai/mega/front.4bpp.smol");
+    const u16 gMonPalette_DarkraiMega[] = INCBIN_U16("graphics/pokemon/darkrai/mega/normal.gbapal");
+    const u32 gMonBackPic_DarkraiMega[] = INCBIN_U32("graphics/pokemon/darkrai/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_DarkraiMega[] = INCBIN_U16("graphics/pokemon/darkrai/mega/shiny.gbapal");
+    const u8 gMonIcon_DarkraiMega[] = INCBIN_U8("graphics/pokemon/darkrai/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    //const u32 gObjectEventPic_ZygardeMega[] = INCBIN_COMP("graphics/pokemon/zygarde/mega/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    //const u16 gOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_normal.gbapal");
+    //const u16 gShinyOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN
@@ -22953,6 +23002,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Zeraora[] = INCBIN_U16("graphics/pokemon/zeraora/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/front.4bpp.smol");
+    const u16 gMonPalette_ZeraoraMega[] = INCBIN_U16("graphics/pokemon/zeraora/mega/normal.gbapal");
+    const u32 gMonBackPic_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_ZeraoraMega[] = INCBIN_U16("graphics/pokemon/zeraora/mega/shiny.gbapal");
+    const u8 gMonIcon_ZeraoraMega[] = INCBIN_U8("graphics/pokemon/zeraora/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    //const u32 gObjectEventPic_ZygardeMega[] = INCBIN_COMP("graphics/pokemon/zygarde/mega/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    //const u16 gOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_normal.gbapal");
+    //const u16 gShinyOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ZERAORA
 
 #if P_FAMILY_MELTAN
@@ -25886,6 +25949,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Scovillain[] = INCBIN_U16("graphics/pokemon/scovillain/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/front.4bpp.smol");
+    const u16 gMonPalette_ScovillainMega[] = INCBIN_U16("graphics/pokemon/scovillain/mega/normal.gbapal");
+    const u32 gMonBackPic_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_ScovillainMega[] = INCBIN_U16("graphics/pokemon/scovillain/mega/shiny.gbapal");
+    const u8 gMonIcon_ScovillainMega[] = INCBIN_U8("graphics/pokemon/scovillain/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    //const u32 gObjectEventPic_ZygardeMega[] = INCBIN_COMP("graphics/pokemon/zygarde/mega/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    //const u16 gOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_normal.gbapal");
+    //const u16 gShinyOverworldPalette_ZygardeMega[] = INCBIN_U16("graphics/pokemon/zygarde/mega/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CAPSAKID
 
 #if P_FAMILY_RELLOR

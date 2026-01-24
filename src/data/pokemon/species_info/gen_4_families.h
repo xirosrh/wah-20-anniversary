@@ -6668,6 +6668,72 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sHeatranLevelUpLearnset,
         .teachableLearnset = sHeatranTeachableLearnset,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_HEATRAN_MEGA] =
+    {
+        .baseHP        = 91,
+        .baseAttack    = 120,
+        .baseDefense   = 106,
+        .baseSpeed     = 67,
+        .baseSpAttack  = 175,
+        .baseSpDefense = 141,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_STEEL),
+        .catchRate = 3,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 300,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 270,
+    #else
+        .expYield = 215,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = 100,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_FLAME_BODY },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Heatran"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_HEATRAN_MEGA,
+    #else
+        .cryId = CRY_HEATRAN,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_HEATRAN,
+        .categoryName = _("Domo Lava"),
+        .height = 28,
+        .weight = 5700,
+        .description = COMPOUND_STRING(
+            "It's said that if it goes all out, it\n"
+            "can heat its body up to temperatures\n"
+            "over 1.8 million degrees Fahrenheit.\n"
+            "This heat keeps enemies at bay."),
+        .frontPic = gMonFrontPic_HeatranMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_HeatranMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_HeatranMega,
+        .shinyPalette = gMonShinyPalette_HeatranMega,
+        .iconSprite = gMonIcon_HeatranMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Heatran)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sHeatranLevelUpLearnset,
+        .teachableLearnset = sHeatranTeachableLearnset,
+        .formSpeciesIdTable = sHeatranFormSpeciesIdTable,
+        .formChangeTable = sHeatranFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_HEATRAN
 
 #if P_FAMILY_REGIGIGAS
@@ -7216,6 +7282,75 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_DARKRAI_MEGA] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 120,
+        .baseDefense   = 130,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 165,
+        .baseSpDefense = 130,
+        .types = MON_TYPES(TYPE_DARK),
+        .catchRate = 3,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 300,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 270,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_Speed = 1,
+        .evYield_SpAttack = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_BAD_DREAMS, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Darkrai"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_DARKRAI_MEGA,
+    #else
+        .cryId = CRY_DARKRAI,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_DARKRAI,
+        .categoryName = _("Pitch-Black"),
+        .height = 30,
+        .weight = 2400,
+        .description = COMPOUND_STRING(
+            "Its dark power blocks out the sun,\n"
+            "plunging the surrounding area into\n"
+            "darkness. There is no escaping its\n"
+            "evil eye."),
+        .frontPic = gMonFrontPic_DarkraiMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_DarkraiMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_DarkraiMega,
+        .shinyPalette = gMonShinyPalette_DarkraiMega,
+        .iconSprite = gMonIcon_DarkraiMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Darkrai)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .isMythical = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sDarkraiLevelUpLearnset,
+        .teachableLearnset = sDarkraiTeachableLearnset,
+        .formSpeciesIdTable = sDarkraiFormSpeciesIdTable,
+        .formChangeTable = sDarkraiFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN

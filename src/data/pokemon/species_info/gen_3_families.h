@@ -10251,6 +10251,74 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sChimechoTeachableLearnset,
         .eggMoveLearnset = sChimechoEggMoveLearnset,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_CHIMECHO_MEGA] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 50,
+        .baseDefense   = 110,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 120,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_STEEL),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 159,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 149,
+    #else
+        .expYield = 147,
+    #endif
+        .evYield_SpAttack = 1,
+        .evYield_SpDefense = 1,
+        .itemRare = ITEM_CLEANSE_TAG,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Chimecho"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_CHIMECHO_MEGA,
+    #else
+        .cryId = CRY_CHIMECHO,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_CHIMECHO,
+        .categoryName = _("Wind Chime"),
+        .height = 12,
+        .weight = 80,
+        .description = COMPOUND_STRING(
+            "It vibrates its entire body to attack in\n"
+            "all directions using sound waves. Any who\n"
+            "hear the vibrations get so confused, they\n"
+            "forget who they are."),
+        .frontPic = gMonBackPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Chimecho)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sChimechoLevelUpLearnset,
+        .teachableLearnset = sChimechoTeachableLearnset,
+        .eggMoveLearnset = sChimechoEggMoveLearnset,
+        .formSpeciesIdTable = sChimechoFormSpeciesIdTable,
+        .formChangeTable = sChimechoFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CHIMECHO
 
 #if P_FAMILY_ABSOL

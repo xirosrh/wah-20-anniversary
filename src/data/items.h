@@ -138,6 +138,10 @@ static const u8 sGenericMulchDesc[]   = _("Fertilizante que\n"
                                           "no es adecuado para\n"
                                           "el suelo local.");
 
+static const u8 sRaichuniteDesc[]     = _("Esta piedra permite\n"
+                                          "a Raichu megaevolucionar\n"
+                                          "en batalla.");
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -6852,6 +6856,110 @@ const struct Item gItemsInfo[] =
         .flingPower = 80,
         .iconPic = gItemIcon_Falinksite,
         .iconPalette = gItemIconPalette_Falinksite,
+    },
+
+    [ITEM_SCOVILLAINITE] =
+    {
+        .name = ITEM_NAME("Scovillainita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Esta piedra permite\n"
+            "que Scovillain megaevolucione\n"
+            "en batalla."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Falinksite,
+        .iconPalette = gItemIconPalette_Falinksite,
+    },
+
+    [ITEM_HEATRANITE] =
+    {
+        .name = ITEM_NAME("Heatranita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Esta piedra permite\n"
+            "que Heatran megaevolucione\n"
+            "en batalla."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Falinksite,
+        .iconPalette = gItemIconPalette_Falinksite,
+    },
+
+    [ITEM_DARKRANITE] =
+    {
+        .name = ITEM_NAME("Darkranita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Esta piedra permite\n"
+            "que Darkrai megaevolucione\n"
+            "en batalla."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Falinksite,
+        .iconPalette = gItemIconPalette_Falinksite,
+    },
+
+        [ITEM_ZERAORITE] =
+    {
+        .name = ITEM_NAME("Zeraorita"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "Esta piedra permite\n"
+            "que Zeraora megaevolucione\n"
+            "en batalla."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Falinksite,
+        .iconPalette = gItemIconPalette_Falinksite,
+    },
+
+    [ITEM_RAICHUNITE_X] =
+    {
+        .name = ITEM_NAME("Raichunita X"),
+        .pluralName = ITEM_PLURAL_NAME("Raichunitas X"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sRaichuniteDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_CharizarditeX,
+        .iconPalette = gItemIconPalette_CharizarditeX,
+    },
+
+    [ITEM_RAICHUNITE_Y] =
+    {
+        .name = ITEM_NAME("Raichunita Y"),
+        .pluralName = ITEM_PLURAL_NAME("Raichunitas Y"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sRaichuniteDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_CharizarditeY,
+        .iconPalette = gItemIconPalette_CharizarditeY,
     },
 
 // Gems

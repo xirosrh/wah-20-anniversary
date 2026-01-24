@@ -6941,12 +6941,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "situation with its unmatched power."),
         .frontPic = gMonFrontPic_ZygardeMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_ZygardeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_ZygardeMega,
         .shinyPalette = gMonShinyPalette_ZygardeMega,
@@ -6954,7 +6955,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Zygarde)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(5, 13, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
         .teachableLearnset = sZygardeTeachableLearnset,

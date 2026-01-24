@@ -7456,6 +7456,68 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sZeraoraLevelUpLearnset,
         .teachableLearnset = sZeraoraTeachableLearnset,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_ZERAORA_MEGA] =
+    {
+        .baseHP        = 88,
+        .baseAttack    = 157,
+        .baseDefense   = 75,
+        .baseSpeed     = 153,
+        .baseSpAttack  = 147,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 3,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
+        .evYield_Speed = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_VOLT_ABSORB, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Zeraora"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_ZERAORA_MEGA,
+    #else
+        .cryId = CRY_ZERAORA,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_ZERAORA,
+        .categoryName = _("Thunderclap"),
+        .height = 15,
+        .weight = 445,
+        .description = COMPOUND_STRING(
+            "It stores up 10 lightning strikes' worth\n"
+            "of electricity. When it stops limiting\n"
+            "itself, it's in the strongest class of\n"
+            "electric Pokémon."),
+        .frontPic = gMonFrontPic_ZeraoraMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_ZeraoraMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ZeraoraMega,
+        .shinyPalette = gMonShinyPalette_ZeraoraMega,
+        .iconSprite = gMonIcon_ZeraoraMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Zeraora)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .isMythical = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sZeraoraLevelUpLearnset,
+        .teachableLearnset = sZeraoraTeachableLearnset,
+        .formSpeciesIdTable = sZeraoraFormSpeciesIdTable,
+        .formChangeTable = sZeraoraFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ZERAORA
 
 #if P_FAMILY_MELTAN
