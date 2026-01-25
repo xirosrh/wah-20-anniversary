@@ -93,13 +93,18 @@ script CheveRoom_EventScript_CuttableTree {
     }
     msgbox(format("¿Por qué me estás mirando así?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
     playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, moves(emote_double_exclamation_mark))
+    waitse
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_PLAYER, moves(
-        emote_double_exclamation_mark, 
         lock_facing_direction, 
-        jump_in_place_up, 
+        jump_in_place_up))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_PLAYER, moves(
         jump_down, 
         unlock_facing_direction
         face_up))
+    waitse
     msgbox(format("¿Quieres cortarme?\p¡No me lastimes, soy Cheve!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_UNKNOWN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
@@ -121,24 +126,28 @@ script CheveRoom_EventScript_CuttableTree {
     addobject(LOCALID_CHEVEROOM_POKEBALL)
     showobjectat(LOCALID_CHEVEROOM_POKEBALL, MAP_CHEVE_ROOM)
     applymovementandwait(LOCALID_CHEVEROOM_POKEBALL, Common_Movement_WalkDiagSouthEast)
-	playse(SE_BALL_OPEN)
-	fadescreen(FADE_TO_WHITE)
+    playse(SE_BALL_OPEN)
+    fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_CHEVEROOM_POKEBALL)
     clearflag(FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM)
     addobject(LOCALID_CHEVEROOM_MEGANIUM)
     waitse
     fadescreen(FADE_FROM_WHITE)
     release
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_CHEVEROOM_MEGANIUM, moves(
+        lock_facing_direction
+        jump_down
+    ))
+    playse(SE_LEDGE)
     applymovement(LOCALID_CHEVEROOM_MEGANIUM, moves(
-        jump_down,
-        lock_facing_direction,
         jump_up
         unlock_facing_direction
     ))
-    playse(SE_M_CUT)
     waitmovement(0)
     release
-	load_field_pic(FP_CUT_ATTACK, 121, 75, VAR_TEMP_2)
+    playse(SE_M_CUT)
+    load_field_pic(FP_CUT_ATTACK, 121, 75, VAR_TEMP_2)
     delay(60)
     destroy_field_pic(FP_CUT_ATTACK, VAR_TEMP_2)
     applymovementandwait(LOCALID_CHEVEROOM_TREE, Movement_CutTreeDown)
@@ -165,18 +174,30 @@ script CheveRoom_EventScript_CuttableTree {
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_SmileWithDelay48)
     delay(20)
     msgbox(format("Supongo que es mi turno de poner a prueba tu suerte."), speaker = SP_NAME_CHEVE)
-    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown2)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown)
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown)
+    waitse
     msgbox(format("Aunque aviso… no soy muy fan de los combates largos.\pPrefiero procrastinar… ¡mi acción favorita!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48)
     msgbox(format("¡Vamos!"), speaker = SP_NAME_CHEVE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, moves(emote_versus))
+    waitse
     call(CheveRoom_EventScript_CheveBattle)
     msgbox(format("Uf… qué paliza."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_SweatDropWithDelay48)
     delay(20)
     msgbox(format("Me dan ganas de postergar mi revancha hasta el próximo siglo.\pPero, eh, no me malinterpretes… ¡fue divertido!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
-    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown2)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown)
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown)
     delay(30)
     msgbox(format("Supongo que eso tiene este lugar: siempre alguien nuevo llega a tu habitación, y cuando se va, deja un pequeño cuadro más colgado en la pared.\pEl mío ya tiene bastantes, pero este combate merece uno nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE)
     playse(SE_PIN)
