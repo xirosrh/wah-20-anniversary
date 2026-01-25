@@ -134,6 +134,8 @@ script CheveRoom_EventScript_CuttableTree {
     waitse
     fadescreen(FADE_FROM_WHITE)
     release
+    playmoncry(SPECIES_MEGANIUM, CRY_MODE_NORMAL)
+    waitmoncry
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_CHEVEROOM_MEGANIUM, moves(
         lock_facing_direction

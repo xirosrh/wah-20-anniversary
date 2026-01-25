@@ -436,6 +436,7 @@ script JackJohnsonRoom_OnFrame {
     addobject(LOCALID_JACKROOM_SPOINK_LEFT)
     addobject(LOCALID_JACKROOM_SPOINK_RIGHT)
     fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_SPOINK, CRY_MODE_NORMAL)
     applymovement(LOCALID_JACKROOM_SPOINK_LEFT, JackJohnsonRoom_Movement_SpoinkHighJump)
     applymovement(LOCALID_JACKROOM_SPOINK_RIGHT, JackJohnsonRoom_Movement_SpoinkHighJump)
     waitmovement(0)
@@ -477,6 +478,8 @@ script JackJohnsonRoom_OnFrame {
     clearflag(FLAG_TEMP_6_JACK_JOHNSON_ROOM_HIDE_ELECTRODE)
     addobject(LOCALID_JACKROOM_ELECTRODE)
     fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_ELECTRODE, CRY_MODE_NORMAL)
+    waitmoncry
     msgbox(format("¡Preparados para la detonación elegante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, moves(
         lock_facing_direction

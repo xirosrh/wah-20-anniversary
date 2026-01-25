@@ -135,6 +135,8 @@ script DragonMountan_Top_EventScript_Sergio {
     directmovementtopos(LOCALID_PLAYER, 15, 13)
     waitmovement(LOCALID_CAMERA)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_NORMAL)
+    waitmoncry
     applymovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, Common_Movement_WalkDown6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
     waitmovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE)
@@ -142,12 +144,18 @@ script DragonMountan_Top_EventScript_Sergio {
     release
     msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus, disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus))
+    waitse
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_NORMAL)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
     release
     delay(60)
     call(DragonMountan_Top_EventScript_SergioBattle)
     playse(SE_FAILURE)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x, jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x))
+    waitse
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_WEAK)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
     release
     delay(100)
     fadescreen(FADE_TO_BLACK)
