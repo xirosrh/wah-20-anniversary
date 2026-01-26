@@ -2625,8 +2625,55 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Weezing @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Gunk Shot
+- Memento
+
+Electrode @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Wild Charge
+- Headbutt
+
+Lopunny @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Jolly Nature
+- Attract
+- Captivate
+- Tickle
+- Swagger
+
+Muk @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Adamant Nature
+- Explosion
+- Memento
+- Tickle
+- Attract
+
+Whimsicott @ Choice Scarf
+Ability: Prankster
+EVs: 252 HP / 252 Spe / 4 Def
+Bold Nature
+- Memento
+- Swagger
+- Thunder Wave
+- Tickle
+
+Golem Alola @ Choice Scarf
+Ability: Galvanize
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Slam
+- Rock Slide
 
 
 === TRAINER_GABBY_AND_TY_1 ===
