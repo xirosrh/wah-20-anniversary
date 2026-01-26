@@ -205,9 +205,6 @@ static const u32 sMainBgTiles[] = INCBIN_U32("graphics/ui_main_menu/main_tiles.4
 static const u32 sMainBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/main_tiles.bin.lz");
 static const u16 sMainBgPalette[] = INCBIN_U16("graphics/ui_main_menu/main_tiles.gbapal");
 
-static const u32 sMainBgTilesFem[] = INCBIN_U32("graphics/ui_main_menu/main_tiles_fem.4bpp.lz");
-static const u32 sMainBgTilemapFem[] = INCBIN_U32("graphics/ui_main_menu/main_tiles_fem.bin.lz");
-static const u16 sMainBgPaletteFem[] = INCBIN_U16("graphics/ui_main_menu/main_tiles_fem.gbapal");
 
 static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.4bpp.lz");
 static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.bin.lz");
@@ -215,9 +212,6 @@ static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_main_menu/scroll_t
 
 static const u16 sIconBox_Pal[] = INCBIN_U16("graphics/ui_main_menu/icon_shadow.gbapal");
 static const u32 sIconBox_Gfx[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow.4bpp.lz");
-
-static const u16 sIconBox_PalFem[] = INCBIN_U16("graphics/ui_main_menu/icon_shadow_fem.gbapal");
-static const u32 sIconBox_GfxFem[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow_fem.4bpp.lz");
 
 static const u16 sBrendanMugshot_Pal[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
 static const u32 sBrendanMugshot_Gfx[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.smol");
@@ -299,12 +293,6 @@ static const struct CompressedSpriteSheet sSpriteSheet_IconBox =
     .tag = TAG_ICON_BOX,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_IconBoxFem =
-{
-    .data = sIconBox_GfxFem,
-    .size = 32*32*1/2,
-    .tag = TAG_ICON_BOX,
-};
 
 static const struct SpritePalette sSpritePal_IconBox =
 {
@@ -312,11 +300,6 @@ static const struct SpritePalette sSpritePal_IconBox =
     .tag = TAG_ICON_BOX
 };
 
-static const struct SpritePalette sSpritePal_IconBoxFem =
-{
-    .data = sIconBox_PalFem,
-    .tag = TAG_ICON_BOX
-};
 
 static const union AnimCmd sSpriteAnim_IconBox0[] =
 {
@@ -609,27 +592,13 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
     {
     case 0:
         ResetTempTileDataBuffers();
-        if (gSaveBlock2Ptr->playerGender == MALE)
-        {
-            DecompressAndCopyTileDataToVram(1, sMainBgTiles, 0, 0, 0);
-        }
-        else
-        {
-            DecompressAndCopyTileDataToVram(1, sMainBgTilesFem, 0, 0, 0);
-        }
+        DecompressAndCopyTileDataToVram(1, sMainBgTiles, 0, 0, 0);
         sMainMenuDataPtr->gfxLoadState++;
         break;
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            if (gSaveBlock2Ptr->playerGender == MALE)
-            {
-                DecompressDataWithHeaderWram(sMainBgTilemap, sBg1TilemapBuffer);
-            }
-            else
-            {
-                DecompressDataWithHeaderWram(sMainBgTilemapFem, sBg1TilemapBuffer);
-            }
+            DecompressDataWithHeaderWram(sMainBgTilemap, sBg1TilemapBuffer);
             sMainMenuDataPtr->gfxLoadState++;
         }
         break;
@@ -647,22 +616,20 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         break;
     case 4:
     {
+        LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
+        LoadSpritePalette(&sSpritePal_IconBox);
         if(gSaveBlock2Ptr->playerGender == MALE)
         {
-            LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
-            LoadSpritePalette(&sSpritePal_IconBox);
+            
             LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
             LoadSpritePalette(&sSpritePal_BrendanMugshot);
-            LoadPalette(sMainBgPalette, 0, 32);
         }
         else
         {
-            LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
-            LoadSpritePalette(&sSpritePal_IconBoxFem);
             LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
             LoadSpritePalette(&sSpritePal_MayMugshot);
-            LoadPalette(sMainBgPaletteFem, 0, 32);
         }
+        LoadPalette(sMainBgPalette, 0, 32);
         LoadPalette(sScrollBgPalette, 16, 32);
     }
         sMainMenuDataPtr->gfxLoadState++;
@@ -831,7 +798,7 @@ static void DestroyMonIcons()
 //  Print The Text For Badges, Name, Playtime
 //
 static const u8 sText_Badges[] = _("Logros {STR_VAR_1}");
-static const u8 sText_Victories[] = _("Desafío {STR_VAR_1}");
+static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
@@ -858,6 +825,13 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     ConvertIntToDecimalStringN(playTimePtr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NORMAL, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
+
+    // Print Victories
+    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT), STR_CONV_MODE_LEADING_ZEROS, 2);
+    StringExpandPlaceholders(gStringVar4, sText_Victories);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+
+
     // Print Badge Numbers if You Have Them
     for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
     {
@@ -866,15 +840,11 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     } 
     ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
-    // Print Victories
-    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT), STR_CONV_MODE_LEADING_ZEROS, 1);
-    StringExpandPlaceholders(gStringVar4, sText_Victories);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
     // Print Player Name
-    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NORMAL, 8, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
+    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NARROW, 8, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
 
     PutWindowTilemap(WINDOW_HEADER);
     CopyWindowToVram(WINDOW_HEADER, 3);
