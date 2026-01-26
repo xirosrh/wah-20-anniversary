@@ -1554,29 +1554,35 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Serperior (M) @ Rocky Helmet  
-Ability: Overgrow  
-Tera Type: Grass  
-- Leaf Storm  
-- Dragon Pulse  
-- Dragon Tail  
-- Synthesis  
+Serperior (M) @ Rocky Helmet
+Ability: Overgrow    /* //TODO Xiros:   Contrary en mayor dif  */
+Tera Type: Grass
+EVs: 252 SpA / 252 HP / 4 Atk
+Modest Nature
+- Leaf Storm
+- Dragon Pulse
+- Dragon Tail  /* //TODO Xiros:  Energy Ball en modo dificil */
+- Synthesis  /* //TODO Xiros:  Giga Drain en modo dificil */
 
-Milotic (F) @ Leftovers  
-Ability: Marvel Scale  
-Tera Type: Water  
-IVs: 0 Atk  
-- Haze  
-- Scald  
-- Recover  
-- Ice Beam  
+Milotic (F) @ Leftovers
+Ability: Marvel Scale
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Haze
+- Scald
+- Recover
+- Ice Beam
 
-Zoroark (M) @ Focus Sash  
-Ability: Illusion  
-Tera Type: Dark  
-- Sucker Punch  
-- U-turn  
-- Focus Blast  
+Zoroark (M) @ Focus Sash
+Ability: Illusion
+Tera Type: Dark
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sucker Punch
+- U-turn
+- Focus Blast
 - Taunt
 
 
@@ -1590,31 +1596,37 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Luxray (M) @ Flame Orb  
-Ability: Guts  
-Shiny: Yes  
-Tera Type: Electric  
-- Wild Charge  
-- Facade  
-- Ice Fang  
-- Crunch  
+Luxray (M) @ Flame Orb
+Ability: Guts
+Shiny: Yes
+Tera Type: Electric
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Facade
+- Ice Fang
+- Crunch
 
-Manaphy @ Leftovers  
-Ability: Hydration  
-Tera Type: Water  
-IVs: 0 Atk  
-- Tail Glow  
-- Scald  
-- Ice Beam  
-- Energy Ball  
+Manaphy @ Leftovers
+Ability: Hydration
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tail Glow
+- Scald
+- Ice Beam
+- Energy Ball
 
-Typhlosion (M) @ Choice Specs  
-Ability: Blaze  
-Tera Type: Fire  
-- Wild Charge  
-- Howl  
-- Flare Blitz  
-- Earthquake  
+Typhlosion (M) @ Choice Band
+Ability: Blaze
+Tera Type: Fire
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Howl
+- Flare Blitz
+- Earthquake
 
 === TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
 Name: Katherine
