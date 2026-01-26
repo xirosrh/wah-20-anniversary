@@ -628,7 +628,6 @@ static void GiveTeamPlayer()
     const struct TeamSelectorMonData *mon;
     u8 i;
     u8 indexMon = 0;
-
     enum PokeBall  ball = BALL_POKE;
     enum ShinyMode shiny = SHINY_MODE_RANDOM;
     enum Type typeTera = TYPE_NONE;
@@ -653,6 +652,7 @@ static void GiveTeamPlayer()
 
         ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, MON_FEMALE, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
     }
+    gPlayerPartyCount = MAX_TEAM_SIZE;
 }
 
 //========== SECCIÓN: FUNCIONES ÚTILES ==========//
