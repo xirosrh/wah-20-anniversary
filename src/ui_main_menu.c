@@ -861,7 +861,7 @@ static void DestroyMonIcons()
 //
 //  Print The Text For Badges, Name, Playtime
 //
-static const u8 sText_Badges[] = _("Logros {STR_VAR_1}");
+static const u8 sText_Badges[] = _("Logros    {STR_VAR_1}");
 static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
 static const u8 sText_NewGame[] = _("Nueva partida");
@@ -907,7 +907,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
         if (FlagGet(i))
             badgeCount++;
     } 
-    ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
+    ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 2);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
     AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 32 + 2, 0, 0, middleColors, TEXT_SKIP_DRAW, gStringVar4);
 
