@@ -1251,6 +1251,9 @@ $(POKEMONGFXDIR)/voltorb/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/electrode/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(POKEMONGFXDIR)/electrodes/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(POKEMONGFXDIR)/exeggcute/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
