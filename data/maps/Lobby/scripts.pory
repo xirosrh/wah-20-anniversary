@@ -43,9 +43,85 @@ script Lobby_EventScript_TeamSelector {
     end
 }
 
+script Lobby_EventScript_SeenMonDetails {
+    lock
+    faceplayer
+    setvar(VAR_0x8000, 0)
+    getseenmon(SPECIES_ELECTRODES)
+    if(var(VAR_RESULT) == TRUE) {
+        dynmultipush(Lobby_Text_SeenMon_ElectrodesOption, 0)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_PLUGOINK)
+    if(var(VAR_RESULT) == TRUE) {
+        dynmultipush(Lobby_Text_SeenMon_PlugoinkOption, 1)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_GRITESPEC)
+    if(var(VAR_RESULT) == TRUE) {
+        dynmultipush(Lobby_Text_SeenMon_GritespecOption, 2)
+        addvar(VAR_0x8000, 1)
+    }
+    if(var(VAR_0x8000) == 0) {
+        msgbox(Lobby_Text_SeenMon_NoOptions, MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    dynmultistack(0, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch VAR_RESULT
+    case 0, Lobby_EventScript_SeenMon_Electrodes
+    case 1, Lobby_EventScript_SeenMon_Plugoink
+    case 2, Lobby_EventScript_SeenMon_Gritespec
+    release
+    end
+}
+
+script Lobby_EventScript_SeenMon_Electrodes {
+    msgbox(Lobby_Text_SeenMon_ElectrodesDetail, MSGBOX_AUTOCLOSE)
+    return
+}
+
+script Lobby_EventScript_SeenMon_Plugoink {
+    msgbox(Lobby_Text_SeenMon_PlugoinkDetail, MSGBOX_AUTOCLOSE)
+    return
+}
+
+script Lobby_EventScript_SeenMon_Gritespec {
+    msgbox(Lobby_Text_SeenMon_GritespecDetail, MSGBOX_AUTOCLOSE)
+    return
+}
+
 
 text Lobby_Text_TeamSelector_TeamSelectionCancelled {
     "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!"
+}
+
+text Lobby_Text_SeenMon_ElectrodesOption {
+    "Electrodes"
+}
+
+text Lobby_Text_SeenMon_PlugoinkOption {
+    "Plug-Oink"
+}
+
+text Lobby_Text_SeenMon_GritespecOption {
+    "Gritespec"
+}
+
+text Lobby_Text_SeenMon_NoOptions {
+    "Aún no has visto ninguno de estos Pokémon."
+}
+
+text Lobby_Text_SeenMon_ElectrodesDetail {
+    "Electrodes: un Pokémon eléctrico lleno de energía."
+}
+
+text Lobby_Text_SeenMon_PlugoinkDetail {
+    "Plug-Oink: carga electricidad mientras corre sin parar."
+}
+
+text Lobby_Text_SeenMon_GritespecDetail {
+    "Gritespec: te observa desde las sombras con curiosidad."
 }
 
 
