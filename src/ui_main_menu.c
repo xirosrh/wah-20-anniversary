@@ -802,7 +802,8 @@ static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
-    const u8 colors[3] = {0,  2,  3}; 
+    const u8 headerColors[3] = {0,  2,  3};
+    const u8 middleColors[3] = {0,  3,  6};
     u8 continueDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
     u8 badgeCount = 0;
@@ -817,19 +818,19 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     continueDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     continueDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     continueDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, 28, 1, 0, 0, colors, 0xFF, continueDisplayHeader);
+    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, 28, 1, 0, 0, headerColors, 0xFF, continueDisplayHeader);
 
     // Print Playtime In Header
     playTimePtr = ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *playTimePtr = 0xF0;
     ConvertIntToDecimalStringN(playTimePtr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NORMAL, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NORMAL, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, headerColors, TEXT_SKIP_DRAW, gStringVar4);
 
 
     // Print Victories
     ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT), STR_CONV_MODE_LEADING_ZEROS, 2);
     StringExpandPlaceholders(gStringVar4, sText_Victories);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 16 + 2, 0, 0, middleColors, TEXT_SKIP_DRAW, gStringVar4);
 
 
     // Print Badge Numbers if You Have Them
@@ -840,11 +841,11 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     } 
     ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 32 + 2, 0, 0, middleColors, TEXT_SKIP_DRAW, gStringVar4);
 
 
     // Print Player Name
-    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NARROW, 8, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
+    AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NARROW, 8, 2, middleColors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
 
     PutWindowTilemap(WINDOW_HEADER);
     CopyWindowToVram(WINDOW_HEADER, 3);
