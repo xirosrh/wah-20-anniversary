@@ -65,6 +65,10 @@ enum WindowIds
 {
     WINDOW_HEADER,
     WINDOW_MIDDLE,
+    WINDOW_NEW_GAME,
+    WINDOW_OPTIONS,
+    WINDOW_MYSTERY_GIFT,
+    WINDOW_MYSTERY_EVENT,
 };
 
 enum {
@@ -171,6 +175,50 @@ static const struct WindowTemplate sMainMenuWindowTemplates[] =
         .height = 7,               // height (per 8 pixels)
         .paletteNum = 0,           // palette index to use for text
         .baseBlock = 1 + (18 * 2), // tile start in VRAM
+    },
+
+    [WINDOW_NEW_GAME] = // New Game button
+    {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 13,
+        .width = 13,
+        .height = 2,
+        .paletteNum = 0,
+        .baseBlock = 1 + (18 * 2) + (18 * 7), // 163
+    },
+
+    [WINDOW_OPTIONS] = // Options button
+    {
+        .bg = 0,
+        .tilemapLeft = 16,
+        .tilemapTop = 13,
+        .width = 13,
+        .height = 2,
+        .paletteNum = 0,
+        .baseBlock = 1 + (18 * 2) + (18 * 7) + (13 * 2), // 189
+    },
+
+    [WINDOW_MYSTERY_GIFT] = // Mystery Gift button
+    {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 17,
+        .width = 13,
+        .height = 2,
+        .paletteNum = 0,
+        .baseBlock = 1 + (18 * 2) + (18 * 7) + (13 * 2) + (13 * 2), // 215
+    },
+
+    [WINDOW_MYSTERY_EVENT] = // Mystery Event button
+    {
+        .bg = 0,
+        .tilemapLeft = 16,
+        .tilemapTop = 17,
+        .width = 13,
+        .height = 2,
+        .paletteNum = 0,
+        .baseBlock = 1 + (18 * 2) + (18 * 7) + (13 * 2) + (13 * 2) + (13 * 2), // 241
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -654,6 +702,22 @@ static void MainMenu_InitWindows(void) // Init Text Windows
     FillWindowPixelBuffer(WINDOW_MIDDLE, 0);
     PutWindowTilemap(WINDOW_MIDDLE);
     CopyWindowToVram(WINDOW_MIDDLE, 3);
+
+    FillWindowPixelBuffer(WINDOW_NEW_GAME, 0);
+    PutWindowTilemap(WINDOW_NEW_GAME);
+    CopyWindowToVram(WINDOW_NEW_GAME, 3);
+
+    FillWindowPixelBuffer(WINDOW_OPTIONS, 0);
+    PutWindowTilemap(WINDOW_OPTIONS);
+    CopyWindowToVram(WINDOW_OPTIONS, 3);
+
+    FillWindowPixelBuffer(WINDOW_MYSTERY_GIFT, 0);
+    PutWindowTilemap(WINDOW_MYSTERY_GIFT);
+    CopyWindowToVram(WINDOW_MYSTERY_GIFT, 3);
+
+    FillWindowPixelBuffer(WINDOW_MYSTERY_EVENT, 0);
+    PutWindowTilemap(WINDOW_MYSTERY_EVENT);
+    CopyWindowToVram(WINDOW_MYSTERY_EVENT, 3);
 }
 
 
@@ -800,6 +864,10 @@ static void DestroyMonIcons()
 static const u8 sText_Badges[] = _("Logros {STR_VAR_1}");
 static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
+static const u8 sText_NewGame[] = _("Nueva partida");
+static const u8 sText_Options[] = _("Opciones");
+static const u8 sText_MysteryGift[] = _("Regalo mist.");
+static const u8 sText_MysteryEvent[] = _("Evento mist.");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 headerColors[3] = {0,  2,  3};
@@ -847,10 +915,46 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     // Print Player Name
     AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NARROW, 8, 2, middleColors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
 
+    // Print Button Texts
+    FillWindowPixelBuffer(WINDOW_NEW_GAME, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    FillWindowPixelBuffer(WINDOW_OPTIONS, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    FillWindowPixelBuffer(WINDOW_MYSTERY_GIFT, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    FillWindowPixelBuffer(WINDOW_MYSTERY_EVENT, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    // Print New Game (centered)
+    AddTextPrinterParameterized4(WINDOW_NEW_GAME, FONT_NARROW, 
+        GetStringCenterAlignXOffset(FONT_NARROW, sText_NewGame, 13 * 8), 
+        0, 0, 0, middleColors, TEXT_SKIP_DRAW, sText_NewGame);
+
+    // Print Options (centered)
+    AddTextPrinterParameterized4(WINDOW_OPTIONS, FONT_NARROW, 
+        GetStringCenterAlignXOffset(FONT_NARROW, sText_Options, 13 * 8), 
+    0, 0, 0, middleColors, TEXT_SKIP_DRAW, sText_Options);
+
+    // Print Mystery Gift (centered, only if available)
+    if (menuType >= HAS_MYSTERY_GIFT)
+        AddTextPrinterParameterized4(WINDOW_MYSTERY_GIFT, FONT_NARROW, 
+            GetStringCenterAlignXOffset(FONT_NARROW, sText_MysteryGift, 13 * 8), 
+            0, 0, 0, middleColors, TEXT_SKIP_DRAW, sText_MysteryGift);
+
+    // Print Mystery Event (centered, only if available)
+    if (menuType >= HAS_MYSTERY_EVENTS)
+        AddTextPrinterParameterized4(WINDOW_MYSTERY_EVENT, FONT_NARROW, 
+            GetStringCenterAlignXOffset(FONT_NARROW, sText_MysteryEvent, 13 * 8), 
+            0, 0, 0, middleColors, TEXT_SKIP_DRAW, sText_MysteryEvent);
+
     PutWindowTilemap(WINDOW_HEADER);
     CopyWindowToVram(WINDOW_HEADER, 3);
     PutWindowTilemap(WINDOW_MIDDLE);
     CopyWindowToVram(WINDOW_MIDDLE, 3);
+    PutWindowTilemap(WINDOW_NEW_GAME);
+    CopyWindowToVram(WINDOW_NEW_GAME, 3);
+    PutWindowTilemap(WINDOW_OPTIONS);
+    CopyWindowToVram(WINDOW_OPTIONS, 3);
+    PutWindowTilemap(WINDOW_MYSTERY_GIFT);
+    CopyWindowToVram(WINDOW_MYSTERY_GIFT, 3);
+    PutWindowTilemap(WINDOW_MYSTERY_EVENT);
+    CopyWindowToVram(WINDOW_MYSTERY_EVENT, 3);
 }
 
 
