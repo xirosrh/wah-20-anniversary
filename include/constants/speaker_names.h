@@ -26,6 +26,8 @@ enum SpeakerNames {
     SP_NAME_XIROS,
     SP_NAME_COSARARA,
     SP_NAME_UNKNOWN,
+    SP_NAME_PKPOWER,
+    SP_NAME_KLEIN,
     SP_NAME_COUNT
 };
 
