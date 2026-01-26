@@ -11,8 +11,8 @@ mapscripts KleinPkPowerRoom_MapScripts {
 
 script KleinPkPowerRoom_OnLoad {
     if(flag(FLAG_DEFEATED_ADMIN_KLEIN) && flag(FLAG_DEFEATED_ADMIN_PKPOWER)){
-        setmetatile(7, 5, 0x270, 1)
-        setmetatile(9, 5, 0x25B, 0)
+        setmetatile(7, 5, METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN, 1)
+        setmetatile(9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0)
         setmetatileelevation(9, 6, 0)
         setobjectxyperm(LOCALID_KLEINROOM_PKPOWER, 2, 4)
         setobjectmovementtype(LOCALID_KLEINROOM_PKPOWER, MOVEMENT_TYPE_FACE_UP)
@@ -191,15 +191,12 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
             waitse
             delay(30)
             playse(SE_SUCCESS)
-            setmetatile(7, 5, 0x270, 1)
+            setmetatile(7, 5, METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN, 1)
             special(DrawWholeMapView)
             waitse
             delay(30)
             playse(SE_UNLOCK)
-            setmetatile(9, 5, 0x25B, 0)
-            special(DrawWholeMapView)
-            waitse
-            setmetatileelevation(9, 6, 0)
+            call(KleinPkPowerRoom_EventScript_OpenJail)
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(LOCALID_KLEINROOM_KLEIN, moves(walk_left walk_down))
             waitmovement(LOCALID_KLEINROOM_KLEIN)
@@ -267,6 +264,23 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
     }
     release
     end
+}
+
+script KleinPkPowerRoom_EventScript_OpenJail {
+    setmetatile(9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1, 0)
+    special(DrawWholeMapView)
+    delay(10)
+    setmetatile(9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2, 0)
+    special(DrawWholeMapView)
+    delay(10)
+    setmetatile(9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3, 0)
+    special(DrawWholeMapView)
+    delay(10)
+    setmetatile(9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0)
+    special(DrawWholeMapView)
+    waitse
+    setmetatileelevation(9, 6, 0)
+    return
 }
 
 script KleinPkPowerRoom_EventScript_KleinBattle {
