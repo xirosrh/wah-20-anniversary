@@ -1808,7 +1808,10 @@ static void Task_HandleInput(u8 taskId)
         {
             sMonSummaryScreen->callback = CB2_InitLearnMove;
             gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
-            gRelearnMode = sMonSummaryScreen->currPageIndex;
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES)
+                gRelearnMode = RELEARN_MODE_PSS_PAGE_BATTLE_MOVES;
+            else
+                gRelearnMode = sMonSummaryScreen->currPageIndex;
             StopPokemonAnimations();
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
