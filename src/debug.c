@@ -78,6 +78,7 @@
 #include "fake_rtc.h"
 #include "save.h"
 #include "team_selector.h"
+#include "wah_credits.h"
 
 enum FollowerNPCCreateDebugMenu
 {
@@ -261,6 +262,7 @@ static void DebugAction_Util_Warp_SelectWarp(u8 taskId);
 static void DebugAction_Util_Weather(u8 taskId);
 static void DebugAction_Util_Weather_SelectId(u8 taskId);
 static void DebugAction_Util_WatchCredits(u8 taskId);
+static void DebugAction_Util_WahCredits(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 
 static void DebugAction_TimeMenu_ChangeTimeOfDay(u8 taskId);
@@ -552,6 +554,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Font Test…"),        DebugAction_ExecuteScript, Debug_EventScript_FontTest },
     { COMPOUND_STRING("Time Functions…"),   DebugAction_OpenSubMenu, sDebugMenu_Actions_TimeMenu, },
     { COMPOUND_STRING("Watch credits…"),    DebugAction_Util_WatchCredits },
+    { COMPOUND_STRING("WAH credits…"),      DebugAction_Util_WahCredits },
     { COMPOUND_STRING("Cheat start"),       DebugAction_Util_CheatStart },
     { COMPOUND_STRING("Berry Functions…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
@@ -1577,6 +1580,12 @@ static void DebugAction_Util_WatchCredits(u8 taskId)
 {
     Debug_DestroyMenu_Full(taskId);
     SetMainCallback2(CB2_StartCreditsSequence);
+}
+
+static void DebugAction_Util_WahCredits(u8 taskId)
+{
+    Debug_DestroyMenu_Full(taskId);
+    SetMainCallback2(CB2_InitCreditsSetUp);
 }
 
 static void DebugAction_Player_Name(u8 taskId)
