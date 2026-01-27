@@ -27295,6 +27295,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_ElectrodeS[] = INCBIN_U32("graphics/pokemon/electrodes/back.4bpp.smol");
     const u16 gMonShinyPalette_ElectrodeS[] = INCBIN_U16("graphics/pokemon/electrodes/shiny.gbapal");
     const u8 gMonIcon_ElectrodeS[] = INCBIN_U8("graphics/pokemon/electrodes/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ElectrodeS[] = INCBIN_COMP("graphics/pokemon/electrodes/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ElectrodeS[] = INCBIN_U16("graphics/pokemon/electrodes/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_ElectrodeS[] = INCBIN_U16("graphics/pokemon/electrodes/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Eing[] = INCBIN_U32("graphics/pokemon/eing/front.4bpp.smol");
     const u16 gMonPalette_Eing[] = INCBIN_U16("graphics/pokemon/eing/normal.gbapal");

@@ -854,6 +854,10 @@ static const struct SpriteFrameImage sPicTable_ElectrodeHisui[] = {
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_VOLTORB
 
+static const struct SpriteFrameImage sPicTable_ElectrodeS[] = {
+    overworld_ascending_frames(gObjectEventPic_ElectrodeS, 4, 4),
+};
+
 #if P_FAMILY_EXEGGCUTE
 static const struct SpriteFrameImage sPicTable_Exeggcute[] = {
     overworld_ascending_frames(gObjectEventPic_Exeggcute, 4, 4),

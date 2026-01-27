@@ -1690,7 +1690,7 @@ Jolly Nature
 - Ice Punch
 - Rock Slide
 
-Typhlosion @ Charcoal
+Spitfire (Typhlosion) @ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Eruption
@@ -2321,7 +2321,7 @@ Pic: Xiros
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 
 Venusaur @ Venusaurite
@@ -2369,13 +2369,14 @@ Timid Nature
 - Aura Sphere
 - Shadow Ball
 
-Articuno @ Leftovers
-EVs: 252 SpA / 252 SpD / 4 Def
+ElectrodeS @ Leftovers
+Ability: Explosive Pulp
+EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
-- Mind Reader
-- Sheer Cold
-- Hurricane
-- Blizzard
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
 
 
 === TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
@@ -2385,7 +2386,7 @@ Pic: Xiros
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 
 Arcanine Hisui @ Leftovers
@@ -2435,14 +2436,14 @@ Jolly Nature
 - Close Combat
 - Drill Peck
 
-Articuno Galar @ Leftovers
-Shiny: Yes
-EVs:  252 SpA / 252 Spe / 4 HP
+ElectrodeS @ Leftovers
+Ability: Explosive Pulp
+EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
-- Freezing Glare
-- Hurricane
-- Recover
-- Calm Mind
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
 
 === TRAINER_WAH_ADMIN_PKPOWER_MAIN ===
 Name: PkPower
@@ -18508,7 +18509,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-Groudon
+Venusaur @ Venusaurite
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

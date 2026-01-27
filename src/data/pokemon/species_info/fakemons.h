@@ -364,6 +364,15 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 5, SHADOW_SIZE_M)
         FOOTPRINT(Electrode)
+        OVERWORLD(
+            sPicTable_ElectrodeS,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SPOT,
+            sAnimTable_Following,
+            gOverworldPalette_ElectrodeS,
+            gShinyOverworldPalette_ElectrodeS
+        )
         .levelUpLearnset = sElectrodeSLevelUpLearnset,
         .teachableLearnset = sElectrodeTeachableLearnset,
     },

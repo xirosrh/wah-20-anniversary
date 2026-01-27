@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_XIROSROOM_ELECTRODE",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRODE_HISUI)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRODES)",
       "x": 6,
       "y": 5,
       "elevation": 0,

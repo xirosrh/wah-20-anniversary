@@ -4257,7 +4257,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_kleinpkpower",
       "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
       "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
     },
@@ -4285,9 +4285,9 @@
       "id": "LAYOUT_SERGIO_ROOM",
       "name": "SergioRoom_Layout",
       "width": 13,
-      "height": 14,
+      "height": 18,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_sergio",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
       "blockdata_filepath": "data/layouts/SergioRoom/map.bin"
     },

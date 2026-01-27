@@ -90,6 +90,8 @@ HallOfFame_EventScript_SetGameClearFlags::
 # 50 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_COMPLETED
 # 51 "data/maps/HallOfFame/scripts.pory"
+	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
+# 52 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 

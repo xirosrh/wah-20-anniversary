@@ -955,6 +955,14 @@
 #define METATILE_room_cosarara_PC_MATRIX_8   0x212
 #define METATILE_room_cosarara_PC_MATRIX_9   0x213
 
+// gTileset_room_kleinpkpower
+#define METATILE_room_kleinpkpower_JAIL_DOOR_CLOSED     0x272
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1  0x25E
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2  0x25D
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3  0x25C
+#define METATILE_room_kleinpkpower_JAIL_FLOOR           0x25B
+#define METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN     0x270
+
 // gTileset_room_omega
 #define METATILE_room_omega_BROKEN_GLASS      0x28B
 #define METATILE_room_omega_CAPSULE_BROKEN_1  0x278

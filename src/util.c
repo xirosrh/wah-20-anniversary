@@ -3,6 +3,7 @@
 #include "sprite.h"
 #include "palette.h"
 #include "constants/rgb.h"
+#include "config/pbh.h"
 
 static const struct SpriteTemplate sInvisibleSpriteTemplate =
 {
@@ -243,12 +244,18 @@ void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u32 blendColor)
     }
 }
 
-#define LIMITADOR_VARIACION_PALETAS 40  // Rango total en grados en HSL (que van desde 0 a 360º). 40 = ± 20
+#define GRADOS_CIRCULO 360
 
 static s32 CalcularDesplazamientoDesdePersonalidad(u32 personalidad)
 {
-    u32 semilla = personalidad & 0xFF; // Solo 8 bits
-    return ((semilla * LIMITADOR_VARIACION_PALETAS) / 255) - (LIMITADOR_VARIACION_PALETAS / 2);
+    u32 rango = (PBH_INTENSIDAD_VARIACION_PALETAS * GRADOS_CIRCULO) / 10;
+
+    if (rango == 0)
+        return 0;
+
+    u32 semilla = personalidad & 0xFF;
+
+    return ((semilla * rango) / 255) - (rango / 2);
 }
 
 static void DesplazaTonoPaletaBase(const u16 *src, u16 *dst, s32 desplazamiento)
@@ -308,9 +315,22 @@ static void DesplazaTonoPaletaBase(const u16 *src, u16 *dst, s32 desplazamiento)
     }
 }
 
-void DesplazaTonoPaleta(u32 offsetPaleta, u32 personalidad)
+void DesplazaTonoPaleta(u32 posicionPaleta, u32 personalidad)
 {
     s32 desplazamiento = CalcularDesplazamientoDesdePersonalidad(personalidad);
-    DesplazaTonoPaletaBase(&gPlttBufferUnfaded[offsetPaleta], &gPlttBufferFaded[offsetPaleta], desplazamiento);
-    CpuSmartCopy32(&gPlttBufferFaded[offsetPaleta], &gPlttBufferUnfaded[offsetPaleta], PLTT_SIZE_4BPP);
+
+    if (desplazamiento == 0)
+        return;
+
+    DesplazaTonoPaletaBase(
+        &gPlttBufferUnfaded[posicionPaleta],
+        &gPlttBufferFaded[posicionPaleta],
+        desplazamiento
+    );
+
+    CpuSmartCopy32(
+        &gPlttBufferFaded[posicionPaleta],
+        &gPlttBufferUnfaded[posicionPaleta],
+        PLTT_SIZE_4BPP
+    );
 }

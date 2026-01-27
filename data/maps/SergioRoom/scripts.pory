@@ -84,8 +84,13 @@ script SergioRoom_OnFrame_AfterSergioBattle {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovementandwait(LOCALID_SERGIOROOM_SERGIO, Common_Movement_WalkInPlaceDown)
     delay(10)
-    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up * 2, walk_fast_right, walk_fast_up * 3, set_invisible))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_up * 2, walk_fast_right, walk_fast_up * 4, set_invisible))
+    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up, walk_fast_right, walk_fast_up * 3))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_up, walk_fast_right, walk_fast_up * 3))
+    waitmovement(0)
+    applymovementandwait(LOCALID_SERGIOROOM_SERGIO, moves(walk_in_place_fast_up))
+    applymovementandwait(LOCALID_SERGIOROOM_SECURITYGUARD, moves(walk_fast_right, walk_fast_down, face_left))
+    applymovement(LOCALID_SERGIOROOM_SERGIO, moves(walk_fast_up * 3, set_invisible))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_up * 4, set_invisible))
     waitmovement(LOCALID_PLAYER)
     setvar(VAR_SERGIO_ROOM_STATE, 2)
     warp(MAP_HALL_OF_FAME, WARP_ID_HALL_OF_FAME)
@@ -117,5 +122,37 @@ script SergioRoom_EventScript_Abra {
 		waitstate
     }
 	release
+    end
+}
+
+script SergioRoom_EventScript_SecurityGuardTrigger {
+    lock
+    playse(SE_PIN)
+    applymovement(LOCALID_SERGIOROOM_SECURITYGUARD, moves(emote_double_exclamation_mark, face_player, delay_16 * 3))
+    msgbox(format("¡Alto ahí!"), MSGBOX_AUTOCLOSE)
+    waitmovement(0)
+    getdirectiontoface(VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD)
+    switch(var(VAR_TEMP_A)){
+        case DIR_EAST:
+            turnobject(LOCALID_PLAYER, DIR_EAST)
+        case DIR_WEST:
+            turnobject(LOCALID_PLAYER, DIR_WEST)
+    }
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
+    waitmovement(0)
+    msgbox(SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_AUTOCLOSE)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+    turnobject(LOCALID_SERGIOROOM_SECURITYGUARD, DIR_SOUTH)
+    release
+    end
+}
+
+text SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance {
+    format("No puedes avanzar al hall de la fama hasta no derrotar a Serg!o.\p¿Dónde habrá ido?")
+}
+
+script SergioRoom_EventScript_SecurityGuard {
+    msgbox(SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_NPC)
     end
 }

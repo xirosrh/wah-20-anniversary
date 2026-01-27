@@ -18,7 +18,7 @@
       "local_id": "LOCALID_SERGIOROOM_ABRA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABRA)",
       "x": 6,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -32,7 +32,7 @@
       "local_id": "LOCALID_SERGIOROOM_SERGIO",
       "graphics_id": "OBJ_EVENT_GFX_SERGIO",
       "x": 7,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -41,12 +41,26 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "LOCALID_SERGIOROOM_SECURITYGUARD",
+      "graphics_id": "OBJ_EVENT_GFX_POLICE",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SergioRoom_EventScript_SecurityGuard",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 6,
-      "y": 13,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_CHEVE_ROOM",
       "dest_warp_id": "0"
@@ -54,12 +68,31 @@
     {
       "warp_id": "WARP_ID_SERGIO_ROOM_ABRA",
       "x": 5,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_SERGIO_ROOM",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SergioRoom_EventScript_SecurityGuardTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SergioRoom_EventScript_SecurityGuardTrigger"
+    }
+  ],
   "bg_events": []
 }
