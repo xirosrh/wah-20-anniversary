@@ -30,6 +30,7 @@
 #include "string_util.h"
 #include "overworld.h"
 #include "field_weather.h"
+#include "field_specials.h"
 #include "battle_tower.h"
 #include "gym_leader_rematch.h"
 #include "battle_pike.h"
@@ -1040,6 +1041,12 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     case TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC:
         SetMapVarsToTrainerA();
         return EventScript_TryDoDoubleTrainerBattle;
+    case TRAINER_BATTLE_SINGLE_CHOOSE_MON:
+        if (gApproachingTrainerId == 0)
+        {
+            SetMapVarsToTrainerA();
+        }
+        return EventScript_TryDoSingleTrainerBattleChooseMon;
 #if FREE_MATCH_CALL == FALSE
     case TRAINER_BATTLE_REMATCH_DOUBLE:
         SetMapVarsToTrainerA();
@@ -1291,6 +1298,7 @@ static void HandleBattleVariantEndParty(void)
 
 static void CB2_EndTrainerBattle(void)
 {
+    RestoreSingleMonTrainerBattleParty();
     HandleBattleVariantEndParty();
 
     gIsDebugBattle = FALSE;

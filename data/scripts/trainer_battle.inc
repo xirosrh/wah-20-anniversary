@@ -20,6 +20,19 @@ EventScript_TryDoNormalTrainerBattle::
 	special SetTrainerFacingDirection
 	goto EventScript_ShowTrainerIntroMsg
 
+EventScript_TryDoSingleTrainerBattleChooseMon::
+	lock
+	faceplayer
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
+	waitmovement 0
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	specialvar VAR_RESULT, GetTrainerFlag
+	goto_if_ne VAR_RESULT, FALSE, EventScript_NoNormalTrainerBattle
+	special PlayTrainerEncounterMusic
+	special SetTrainerFacingDirection
+	goto EventScript_ShowTrainerIntroMsgChooseMon
+
 EventScript_NoNormalTrainerBattle::
 	gotopostbattlescript
 
@@ -113,6 +126,19 @@ EventScript_ShowTrainerIntroMsg::
 	waitbuttonpress
 	special TryPrepareSecondApproachingTrainer
 	goto_if_eq VAR_RESULT, TRUE, EventScript_TrainerApproach
+	goto EventScript_DoTrainerBattle
+
+EventScript_ShowTrainerIntroMsgChooseMon::
+	special ShowTrainerIntroSpeech
+	waitmessage
+	waitbuttonpress
+	goto EventScript_ChooseSingleBattleMon
+
+EventScript_ChooseSingleBattleMon::
+	special ChoosePartyMon
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, EventScript_ChooseSingleBattleMon
+	special PrepareSingleMonTrainerBattle
 	goto EventScript_DoTrainerBattle
 
 EventScript_DoTrainerBattle::

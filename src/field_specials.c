@@ -98,6 +98,8 @@ static EWRAM_DATA u8 sBattlePointsWindowId = 0;
 static EWRAM_DATA u8 sFrontierExchangeCorner_ItemIconWindowId = 0;
 static EWRAM_DATA u8 sPCBoxToSendMon = 0;
 static EWRAM_DATA u32 sBattleTowerMultiBattleTypeFlags = 0;
+static EWRAM_DATA bool8 sSingleMonBattleRestore = FALSE;
+static EWRAM_DATA u8 sSingleMonBattlePartyIndex = 0;
 
 COMMON_DATA struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate = {0};
 EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
@@ -170,6 +172,35 @@ void Special_ViewWallClock(void)
     gMain.savedCallback = CB2_ReturnToField;
     SetMainCallback2(CB2_ViewWallClock);
     LockPlayerFieldControls();
+}
+
+void PrepareSingleMonTrainerBattle(void)
+{
+    u8 selectedMon = gSpecialVar_0x8004;
+    struct Pokemon chosenMon;
+
+    if (selectedMon >= PARTY_SIZE)
+        return;
+
+    SavePlayerParty();
+    sSingleMonBattleRestore = TRUE;
+    sSingleMonBattlePartyIndex = selectedMon;
+
+    chosenMon = gPlayerParty[selectedMon];
+    ZeroPlayerPartyMons();
+    gPlayerParty[0] = chosenMon;
+    gPlayerPartyCount = 1;
+}
+
+bool8 RestoreSingleMonTrainerBattleParty(void)
+{
+    if (!sSingleMonBattleRestore)
+        return FALSE;
+
+    SavePlayerPartyMon(sSingleMonBattlePartyIndex, &gPlayerParty[0]);
+    LoadPlayerParty();
+    sSingleMonBattleRestore = FALSE;
+    return TRUE;
 }
 
 void ResetCyclingRoadChallengeData(void)
