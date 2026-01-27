@@ -30,7 +30,7 @@ Información de https://bulbapedia.bulbagarden.net/wiki/Stats_judge.
 #define P_FLAG_SUMMARY_SCREEN_IV_EV_INFO 0      // Si esta flag está seteada, permitirá al jugador rotar Estadísticas, IVs, y EVs en la página de habilidades en la pantalla de sumario. Nota: si P_SUMMARY_SCREEN_IV_EV_INFO es TRUE, esta flag no hace nada.
 
 // Move Relearner settings
-#define P_ENABLE_MOVE_RELEARNERS         FALSE   // If TRUE, it enables move relearners for egg, TM and tutor. (see below for specific configs /flags)
+#define P_ENABLE_MOVE_RELEARNERS         TRUE    // If TRUE, it enables move relearners for egg, TM and tutor. (see below for specific configs /flags)
 #define P_SORT_MOVES                     FALSE   // If TRUE, sorts all moves alphabetically in the relearner's list.
 
 // Level up Relearner
@@ -39,7 +39,7 @@ Información de https://bulbapedia.bulbagarden.net/wiki/Stats_judge.
 
 // TM Relearner
 #define P_TM_MOVES_RELEARNER             TRUE    // If TRUE, enables machine move relearner.
-#define P_ENABLE_ALL_TM_MOVES            FALSE   // If TRUE, it enables the Pokémon to learn all TMs its compatible with, regardless of it being in the bag.
+#define P_ENABLE_ALL_TM_MOVES            TRUE    // If TRUE, it enables the Pokémon to learn all TMs its compatible with, regardless of it being in the bag.
 
 // Relearner flags - Redundant if P_ENABLE_MOVE_RELEARNERS is TRUE, but still added here incase you don't want all relearners unlocked at the same time.
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
@@ -48,7 +48,7 @@ Información de https://bulbapedia.bulbagarden.net/wiki/Stats_judge.
 #define P_FLAG_TUTOR_MOVES               0       // If this flag is set, enables tutor move relearner.
 
 // Move Relearner summary screen
-#define P_SUMMARY_SCREEN_MOVE_RELEARNER  TRUE   // Si está habilitado, mostrará una opción para recordar movimientos en la pantalla de sumario.
+#define P_SUMMARY_SCREEN_MOVE_RELEARNER  FALSE   // Si está habilitado, mostrará una opción para recordar movimientos en la pantalla de sumario.
 #define P_SUMMARY_MOVE_RELEARNER_FULL_PP TRUE   // Si está habilitado, el recordador de movimientos de la pantalla de sumario recuperará los PP de los ataques al máximo.
 
 // Move Relearner party menu

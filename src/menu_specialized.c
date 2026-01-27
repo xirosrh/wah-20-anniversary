@@ -845,7 +845,6 @@ static void MoveRelearnerCursorCallback(s32 itemIndex, bool8 onInit, struct List
     if (onInit != TRUE)
         PlaySE(SE_SELECT);
     MoveRelearnerLoadBattleMoveDescription(itemIndex);
-    MoveRelearnerMenuLoadContestMoveDescription(itemIndex);
 }
 
 void MoveRelearnerPrintMessage(u8 *str)

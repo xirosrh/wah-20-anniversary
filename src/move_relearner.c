@@ -405,11 +405,11 @@ void CB2_InitLearnMove(void)
     SetVBlankCallback(VBlankCB_MoveRelearner);
 
     InitMoveRelearnerBackgroundLayers();
-    InitMoveRelearnerWindows(gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES);
+    InitMoveRelearnerWindows(FALSE);
 
     sMoveRelearnerMenuState.listOffset = 0;
     sMoveRelearnerMenuState.listRow = 0;
-    sMoveRelearnerMenuState.showContestInfo = gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES;
+    sMoveRelearnerMenuState.showContestInfo = FALSE;
 
     switch (gMoveRelearnerState)
     {
@@ -514,17 +514,12 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_FADE_TO_BLACK:
         sMoveRelearnerStruct->state++;
         HideHeartSpritesAndShowTeachMoveText(FALSE);
-        if (gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES)
-            MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         break;
     case MENU_STATE_WAIT_FOR_FADE:
         if (!gPaletteFade.active)
         {
-            if (gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES)
-                sMoveRelearnerStruct->state = MENU_STATE_IDLE_CONTEST_MODE;
-            else
-                sMoveRelearnerStruct->state = MENU_STATE_IDLE_BATTLE_MODE;
+            sMoveRelearnerStruct->state = MENU_STATE_IDLE_BATTLE_MODE;
         }
         break;
     case MENU_STATE_UNREACHABLE:
@@ -539,12 +534,12 @@ static void DoMoveRelearnerMain(void)
         HandleInput(FALSE);
         break;
     case MENU_STATE_SETUP_CONTEST_MODE:
-        ShowTeachMoveText(FALSE);
-        sMoveRelearnerStruct->state++;
+        HideHeartSpritesAndShowTeachMoveText(FALSE);
+        sMoveRelearnerStruct->state = MENU_STATE_IDLE_BATTLE_MODE;
         AddScrollArrows();
         break;
     case MENU_STATE_IDLE_CONTEST_MODE:
-        HandleInput(TRUE);
+        HandleInput(FALSE);
         break;
     case MENU_STATE_PRINT_TEACH_MOVE_PROMPT:
         if (!MoveRelearnerRunTextPrinters())
@@ -572,14 +567,7 @@ static void DoMoveRelearnerMain(void)
             }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
-                if (sMoveRelearnerMenuState.showContestInfo == FALSE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                }
-                else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                }
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
             }
         }
         break;
@@ -601,14 +589,7 @@ static void DoMoveRelearnerMain(void)
             }
             else if (selection == MENU_B_PRESSED || selection == 1)
             {
-                if (sMoveRelearnerMenuState.showContestInfo == FALSE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                }
-                else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
-                {
-                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                }
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
             }
         }
         break;
@@ -640,14 +621,7 @@ static void DoMoveRelearnerMain(void)
                 }
                 else
                 {
-                    if (sMoveRelearnerMenuState.showContestInfo == FALSE)
-                    {
-                        sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-                    }
-                    else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
-                    {
-                        sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-                    }
+                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
                 }
             }
         }
@@ -691,14 +665,7 @@ static void DoMoveRelearnerMain(void)
         if (!MoveRelearnerRunTextPrinters())
         {
             FillWindowPixelBuffer(RELEARNERWIN_MSG, 0x11);
-            if (sMoveRelearnerMenuState.showContestInfo == FALSE)
-            {
-                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-            }
-            else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
-            {
-                sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-            }
+            sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
         }
         break;
     case MENU_STATE_PRINT_WHICH_MOVE_PROMPT:
@@ -743,7 +710,7 @@ static void DoMoveRelearnerMain(void)
                     ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_BATTLE, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
                     break;
                 case RELEARN_MODE_PSS_PAGE_CONTEST_MOVES:
-                    ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_CONTEST, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
+                    ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_BATTLE, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
                     break;
                 default:
                     ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, gInitialSummaryScreenCallback);
@@ -762,14 +729,7 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_FADE_FROM_SUMMARY_SCREEN:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         sMoveRelearnerStruct->state++;
-        if (sMoveRelearnerMenuState.showContestInfo == FALSE)
-        {
-            HideHeartSpritesAndShowTeachMoveText(TRUE);
-        }
-        else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
-        {
-            ShowTeachMoveText(TRUE);
-        }
+        HideHeartSpritesAndShowTeachMoveText(TRUE);
         RemoveScrollArrows();
         CopyWindowToVram(RELEARNERWIN_MSG, COPYWIN_GFX);
         break;
@@ -866,29 +826,6 @@ static void HandleInput(bool8 showContest)
     switch (itemId)
     {
     case LIST_NOTHING_CHOSEN:
-        if (!(JOY_NEW(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressed())
-            break;
-
-        PlaySE(SE_SELECT);
-
-        if (showContest == FALSE)
-        {
-            PutWindowTilemap(RELEARNERWIN_DESC_CONTEST);
-            sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
-            sMoveRelearnerMenuState.showContestInfo = TRUE;
-        }
-        else
-        {
-            PutWindowTilemap(RELEARNERWIN_DESC_BATTLE);
-            sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
-            sMoveRelearnerMenuState.showContestInfo = FALSE;
-        }
-
-        ScheduleBgCopyTilemapToVram(1);
-        MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
-        if (B_SHOW_CATEGORY_ICON == TRUE)
-            MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
-
         break;
     case LIST_CANCEL:
         PlaySE(SE_SELECT);
@@ -959,9 +896,6 @@ static void CreateUISprites(void)
 
 static void AddScrollArrows(void)
 {
-    if (sMoveRelearnerStruct->moveDisplayArrowTask == TASK_NONE)
-        sMoveRelearnerStruct->moveDisplayArrowTask = AddScrollIndicatorArrowPair(&sDisplayModeArrowsTemplate, &sMoveRelearnerStruct->scrollOffset);
-
     if (sMoveRelearnerStruct->moveListScrollArrowTask == TASK_NONE)
     {
         gTempScrollArrowTemplate = sMoveListScrollArrowsTemplate;
