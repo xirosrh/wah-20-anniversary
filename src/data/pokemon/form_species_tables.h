@@ -1084,6 +1084,16 @@ static const u16 sDeoxysFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_DEOXYS
 
+#if P_FAMILY_STARLY
+static const u16 sStaraptorFormSpeciesIdTable[] = {
+    SPECIES_STARAPTOR,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_STARAPTOR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_STARLY
+
 #if P_FAMILY_BURMY
 static const u16 sBurmyFormSpeciesIdTable[] = {
     SPECIES_BURMY_PLANT,
@@ -1145,6 +1155,9 @@ static const u16 sGarchompFormSpeciesIdTable[] = {
 #if P_MEGA_EVOLUTIONS
     SPECIES_GARCHOMP_MEGA,
 #endif
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_GARCHOMP_MEGA_Z,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GIBLE
@@ -1154,6 +1167,9 @@ static const u16 sLucarioFormSpeciesIdTable[] = {
     SPECIES_LUCARIO,
 #if P_MEGA_EVOLUTIONS
     SPECIES_LUCARIO_MEGA,
+#endif
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_LUCARIO_MEGA_Z,
 #endif
     FORM_SPECIES_END,
 };
@@ -1438,6 +1454,16 @@ static const u16 sChandelureFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_LITWICK
 
+#if P_FAMILY_GOLETT
+static const u16 sGolurkFormSpeciesIdTable[] = {
+    SPECIES_GOLURK,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_GOLURK_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_GOLETT
+
 #if P_FAMILY_STUNFISK
 static const u16 sStunfiskFormSpeciesIdTable[] = {
     SPECIES_STUNFISK,
@@ -1687,6 +1713,10 @@ static const u16 sFurfrouFormSpeciesIdTable[] = {
 static const u16 sMeowsticFormSpeciesIdTable[] = {
     SPECIES_MEOWSTIC_M,
     SPECIES_MEOWSTIC_F,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_MEOWSTIC_M_MEGA,
+    SPECIES_MEOWSTIC_F_MEGA,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_ESPURR
@@ -1851,6 +1881,16 @@ static const u16 sVikavoltFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_GRUBBIN
 
+#if P_FAMILY_CRABRAWLER
+static const u16 sCrabominableFormSpeciesIdTable[] = {
+    SPECIES_CRABOMINABLE,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_CRABOMINABLE_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_CRABRAWLER
+
 #if P_FAMILY_ORICORIO
 static const u16 sOricorioFormSpeciesIdTable[] = {
     SPECIES_ORICORIO_BAILE,
@@ -1907,6 +1947,16 @@ static const u16 sLurantisFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_FOMANTIS
+
+#if P_FAMILY_WIMPOD
+static const u16 sGolisopodFormSpeciesIdTable[] = {
+    SPECIES_GOLISOPOD,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_GOLISOPOD_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_WIMPOD
 
 #if P_FAMILY_SALANDIT
 static const u16 sSalazzleFormSpeciesIdTable[] = {
@@ -2436,14 +2486,39 @@ static const u16 sPalafinFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_FINIZEN
 
+#if P_FAMILY_GLIMMET
+static const u16 sGlimmoraFormSpeciesIdTable[] = {
+    SPECIES_GLIMMORA,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_GLIMMORA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_GLIMMET
+
 #if P_FAMILY_TATSUGIRI
 static const u16 sTatsugiriFormSpeciesIdTable[] = {
     SPECIES_TATSUGIRI_CURLY,
     SPECIES_TATSUGIRI_DROOPY,
     SPECIES_TATSUGIRI_STRETCHY,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_TATSUGIRI_CURLY_MEGA,
+    SPECIES_TATSUGIRI_DROOPY_MEGA,
+    SPECIES_TATSUGIRI_STRETCHY_MEGA,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TATSUGIRI
+
+#if P_FAMILY_FRIGIBAX
+static const u16 sBaxcaliburFormSpeciesIdTable[] = {
+    SPECIES_BAXCALIBUR,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_BAXCALIBUR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_FRIGIBAX
 
 #if P_FAMILY_GIMMIGHOUL
 static const u16 sGimmighoulFormSpeciesIdTable[] = {
