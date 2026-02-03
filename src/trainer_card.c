@@ -34,10 +34,19 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 
+// External OAM data for badge sprites
+extern const struct OamData gOamData_AffineOff_ObjNormal_16x16;
+
 enum {
     WIN_MSG,
     WIN_CARD_TEXT,
     WIN_TRAINER_PIC,
+};
+
+// Sprite tags for badge sprites
+enum {
+    TAG_BADGE_SPRITES = 30000,
+    TAG_BADGE_PALETTE,
 };
 
 struct TrainerCardData
@@ -90,6 +99,7 @@ struct TrainerCardData
     u16 bgTilemapBuffer[0x1000];
     u16 cardTop;
     u8 language;
+    u8 badgeSpriteIds[NUM_BADGES];  // Sprite IDs for badge sprites (SPRITE_NONE if not created)
 };
 
 // EWRAM
@@ -108,6 +118,8 @@ static void CreateTrainerCardTrainerPic(void);
 static void DrawCardScreenBackground(u16 *);
 static void DrawCardFrontOrBack(u16 *);
 static void DrawStarsAndBadgesOnCard(void);
+static void HideBadgeSprites(void);
+static void ShowBadgeSprites(void);
 static void PrintTimeOnCard(void);
 static void FlipTrainerCard(void);
 static bool8 IsCardFlipTaskActive(void);
@@ -168,6 +180,7 @@ static bool8 Task_AnimateCardFlipUp(struct Task *task);
 static bool8 Task_EndCardFlip(struct Task *task);
 static void UpdateCardFlipRegs(u16);
 static void LoadMonIconGfx(void);
+static void RearrangeBadgeTilesForSprites(void);
 
 static const u32 sTrainerCardStickers_Gfx[]      = INCBIN_U32("graphics/trainer_card/frlg/stickers.4bpp.smol");
 static const u16 sUnused_Pal[]                   = INCBIN_U16("graphics/trainer_card/unused.gbapal");
@@ -190,6 +203,27 @@ static const u16 sTrainerCardSticker3_Pal[]      = INCBIN_U16("graphics/trainer_
 static const u16 sTrainerCardSticker4_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers4.gbapal");
 static const u32 sHoennTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/badges.4bpp.smol");
 static const u32 sKantoTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/frlg/badges.4bpp.smol");
+
+// Badge sprite callback - maintains correct tile number
+// data[0] = badge index (0-7)
+static void SpriteCB_Badge(struct Sprite *sprite)
+{
+    // Set the correct tile for this badge every frame
+    // This ensures the animation system doesn't override it
+    s16 tileStart = GetSpriteTileStartByTag(TAG_BADGE_SPRITES);
+    sprite->oam.tileNum = tileStart + (sprite->data[0] * 4);
+}
+
+// Badge sprite template
+static const struct SpriteTemplate sBadgeSpriteTemplate = {
+    .tileTag = TAG_BADGE_SPRITES,
+    .paletteTag = TAG_BADGE_PALETTE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_Badge,
+};
 
 static const struct BgTemplate sTrainerCardBgTemplates[4] =
 {
@@ -294,8 +328,8 @@ static const u8 sTrainerPicOffset[2][GENDER_COUNT][2] =
     },
     // Hoenn
     {
-        [MALE]   = {1, 0},
-        [FEMALE] = {1, 0}
+        [MALE]   = {1, 6},
+        [FEMALE] = {1, 6}
     },
 };
 
@@ -360,6 +394,20 @@ static void CB2_TrainerCard(void)
 
 static void CloseTrainerCard(u8 taskId)
 {
+    u8 i;
+
+    // Hide and clean up badge sprites immediately
+    for (i = 0; i < NUM_BADGES; i++)
+    {
+        if (sData->badgeSpriteIds[i] != SPRITE_NONE)
+        {
+            gSprites[sData->badgeSpriteIds[i]].invisible = TRUE;
+            DestroySprite(&gSprites[sData->badgeSpriteIds[i]]);
+        }
+    }
+    FreeSpriteTilesByTag(TAG_BADGE_SPRITES);
+    FreeSpritePaletteByTag(TAG_BADGE_PALETTE);
+
     SetMainCallback2(sData->callback2);
     FreeAllWindowBuffers();
     FREE_AND_SET_NULL(sData);
@@ -458,6 +506,7 @@ static void Task_TrainerCard(u8 taskId)
             }
             else
             {
+                // Badges will fade out naturally with the palette fade
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, sData->blendColor);
                 sData->mainState = STATE_CLOSE_CARD;
             }
@@ -567,6 +616,8 @@ static bool8 LoadCardGfx(void)
             DecompressDataWithHeaderWram(sHoennTrainerCardBadges_Gfx, sData->badgeTiles);
         else
             DecompressDataWithHeaderWram(sKantoTrainerCardBadges_Gfx, sData->badgeTiles);
+        // Rearrange badge tiles from tileset format (16 tiles wide) to sprite format (4 sequential per badge)
+        RearrangeBadgeTilesForSprites();
         break;
     case 4:
         if (sData->cardType != CARD_TYPE_FRLG)
@@ -584,6 +635,45 @@ static bool8 LoadCardGfx(void)
     }
     sData->gfxLoadState++;
     return FALSE;
+}
+
+// Rearrange badge tiles from tileset format (16 tiles wide) to sprite format (4 sequential tiles per badge)
+// Original tileset layout (128x16 PNG = 16 tiles wide × 2 tall):
+//   Tiles 0-15: top row - B0-TL, B0-TR, B1-TL, B1-TR, ... B7-TL, B7-TR
+//   Tiles 16-31: bottom row - B0-BL, B0-BR, B1-BL, B1-BR, ... B7-BL, B7-BR
+// Sprite format needed (4 sequential tiles per badge):
+//   Badge 0: TL, TR, BL, BR (tiles 0-3 in VRAM)
+//   Badge 1: TL, TR, BL, BR (tiles 4-7 in VRAM)
+//   etc.
+static void RearrangeBadgeTilesForSprites(void)
+{
+    u8 tempBuffer[0x80 * NUM_BADGES];  // Temporary buffer for rearrangement
+    u8 i;
+    u16 j;
+    const u32 TILE_SIZE = 0x20;  // 8x8 tile at 4bpp = 32 bytes
+
+    // Copy original data to temp buffer (byte by byte)
+    for (j = 0; j < sizeof(tempBuffer); j++)
+        tempBuffer[j] = sData->badgeTiles[j];
+
+    // Rearrange tiles for each badge
+    for (i = 0; i < NUM_BADGES; i++)
+    {
+        u8 *destBadge = &sData->badgeTiles[i * 4 * TILE_SIZE];  // Destination: badge i starts at tile i*4
+        const u8 *srcTL = &tempBuffer[(i * 2) * TILE_SIZE];           // Top-left: tile i*2
+        const u8 *srcTR = &tempBuffer[(i * 2 + 1) * TILE_SIZE];       // Top-right: tile i*2+1
+        const u8 *srcBL = &tempBuffer[(16 + i * 2) * TILE_SIZE];      // Bottom-left: tile 16+i*2
+        const u8 *srcBR = &tempBuffer[(16 + i * 2 + 1) * TILE_SIZE];  // Bottom-right: tile 16+i*2+1
+
+        // Copy each tile (32 bytes each)
+        for (j = 0; j < TILE_SIZE; j++)
+        {
+            destBadge[0 * TILE_SIZE + j] = srcTL[j];
+            destBadge[1 * TILE_SIZE + j] = srcTR[j];
+            destBadge[2 * TILE_SIZE + j] = srcBL[j];
+            destBadge[3 * TILE_SIZE + j] = srcBR[j];
+        }
+    }
 }
 
 static void CB2_InitTrainerCard(void)
@@ -954,31 +1044,18 @@ static bool8 PrintAllOnCardBack(void)
     switch (sData->printState)
     {
     case 0:
-        PrintNameOnCardBack();
-        break;
-    case 1:
-        PrintHofDebutTimeOnCard();
-        break;
-    case 2:
-        PrintLinkBattleResultsOnCard();
-        break;
-    case 3:
-        PrintTradesStringOnCard();
-        break;
-    case 4:
-        PrintBerryCrushStringOnCard();
-        PrintPokeblockStringOnCard();
-        break;
-    case 5:
-        PrintUnionStringOnCard();
-        PrintContestStringOnCard();
-        break;
-    case 6:
-        PrintPokemonIconsOnCard();
-        PrintBattleFacilityStringOnCard();
-        break;
-    case 7:
-        PrintStickersOnCard();
+        // Back side labels disabled for custom card design
+        // PrintNameOnCardBack();
+        // PrintHofDebutTimeOnCard();
+        // PrintLinkBattleResultsOnCard();
+        // PrintTradesStringOnCard();
+        // PrintBerryCrushStringOnCard();
+        // PrintPokeblockStringOnCard();
+        // PrintUnionStringOnCard();
+        // PrintContestStringOnCard();
+        // PrintPokemonIconsOnCard();
+        // PrintBattleFacilityStringOnCard();
+        // PrintStickersOnCard();
         break;
     default:
         sData->printState = 0;
@@ -1011,7 +1088,7 @@ static void PrintNameOnCardFront(void)
     if (sData->cardType == CARD_TYPE_FRLG)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 28, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 33, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 33, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
 }
 
 static void PrintIdOnCard(void)
@@ -1029,7 +1106,7 @@ static void PrintIdOnCard(void)
     }
     else
     {
-        xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 96) + 120;
+        xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 96) + 135;
         top = 9;
     }
 
@@ -1044,7 +1121,7 @@ static void PrintMoneyOnCard(void)
     if (!sData->isHoenn)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 57, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 57, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
 
     ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
@@ -1055,7 +1132,7 @@ static void PrintMoneyOnCard(void)
     }
     else
     {
-        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 128);
+        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 124);
         top = 57;
     }
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
@@ -1078,7 +1155,7 @@ static void PrintPokedexOnCard(void)
         if (!sData->isHoenn)
             AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 72, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
         else
-            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 73, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 80, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
         StringCopy(ConvertIntToDecimalStringN(gStringVar4, sData->trainerCard.caughtMonsCount, STR_CONV_MODE_LEFT_ALIGN, 4), gText_EmptyString6);
         if (!sData->isHoenn)
         {
@@ -1087,8 +1164,8 @@ static void PrintPokedexOnCard(void)
         }
         else
         {
-            xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 128);
-            top = 73;
+            xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 124);
+            top = 80;
         }
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
     }
@@ -1106,7 +1183,7 @@ static void PrintTimeOnCard(void)
     if (!sData->isHoenn)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 89, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 96, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
 
     if (sData->isLink)
     {
@@ -1132,8 +1209,8 @@ static void PrintTimeOnCard(void)
     }
     else
     {
-        x = 128;
-        y = 89;
+        x = 124;
+        y = 96;
     }
     totalWidth = width + 30;
     x -= totalWidth;
@@ -1424,7 +1501,15 @@ static u8 SetCardBgsAndPals(void)
     switch (sData->bgPalLoadState)
     {
     case 0:
-        LoadBgTiles(3, sData->badgeTiles, ARRAY_COUNT(sData->badgeTiles), 0);
+        // Load badge graphics as sprite sheet instead of BG tiles
+        {
+            struct SpriteSheet badgeSpriteSheet = {
+                .data = sData->badgeTiles,
+                .size = 0x80 * NUM_BADGES,  // 8 badges * 128 bytes each
+                .tag = TAG_BADGE_SPRITES
+            };
+            LoadSpriteSheet(&badgeSpriteSheet);
+        }
         break;
     case 1:
         LoadBgTiles(0, sData->cardTiles, 0x1800, 0);
@@ -1432,15 +1517,19 @@ static u8 SetCardBgsAndPals(void)
     case 2:
         if (sData->cardType != CARD_TYPE_FRLG)
         {
-            LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
-            LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+            // Always use custom palette (index 0) regardless of stars
+            LoadPalette(sHoennTrainerCardPals[0], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+            // Load badge palette to OBJ palette for sprites
+            LoadSpritePalette(&(struct SpritePalette){sHoennTrainerCardBadges_Pal, TAG_BADGE_PALETTE});
             if (sData->trainerCard.gender != MALE)
                 LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         }
         else
         {
-            LoadPalette(sKantoTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
-            LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+            // Always use custom palette (index 0) regardless of stars
+            LoadPalette(sKantoTrainerCardPals[0], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+            // Load badge palette to OBJ palette for sprites
+            LoadSpritePalette(&(struct SpritePalette){sKantoTrainerCardBadges_Pal, TAG_BADGE_PALETTE});
             if (sData->trainerCard.gender != MALE)
                 LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         }
@@ -1497,26 +1586,90 @@ static void DrawCardFrontOrBack(u16 *ptr)
     CopyBgTilemapBufferToVram(0);
 }
 
+// Badge X positions in pixels (pixel-precise control)
+// Badge 0-7: adjust these values to position badges exactly where you want
+static const u16 sBadgeXPositions[NUM_BADGES] = {
+    35,   // Badge 0 (Stone Badge)
+    59,   // Badge 1 (Knuckle Badge)
+    83,   // Badge 2 (Dynamo Badge)
+    107,  // Badge 3 (Heat Badge)
+    131,  // Badge 4 (Balance Badge)
+    155,  // Badge 5 (Feather Badge)
+    179,  // Badge 6 (Mind Badge)
+    203,  // Badge 7 (Rain Badge)
+};
+
+// Badge Y position in pixels (shared by all badges)
+// Adjust this value for vertical positioning
+#define BADGE_Y_POSITION 140
+
+// Helper function to hide all badge sprites (used when flipping to back)
+static void HideBadgeSprites(void)
+{
+    u8 i;
+    for (i = 0; i < NUM_BADGES; i++)
+    {
+        if (sData->badgeSpriteIds[i] != SPRITE_NONE)
+            gSprites[sData->badgeSpriteIds[i]].invisible = TRUE;
+    }
+}
+
+// Helper function to show all badge sprites (used when flipping to front)
+static void ShowBadgeSprites(void)
+{
+    u8 i;
+    for (i = 0; i < NUM_BADGES; i++)
+    {
+        if (sData->badgeSpriteIds[i] != SPRITE_NONE)
+            gSprites[sData->badgeSpriteIds[i]].invisible = FALSE;
+    }
+}
+
 static void DrawStarsAndBadgesOnCard(void)
 {
-    static const u8 yOffsets[] = {7, 7};
+    s16 i;
+    u8 spriteId;
+    bool8 spritesAlreadyExist = FALSE;
 
-    s16 i, x;
-    u16 tileNum = 192;
-    u8 palNum = 3;
+    // Stars disabled for custom card design
+    // FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
 
-    FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
     if (!sData->isLink)
     {
-        x = 4;
-        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        // Check if any badge sprites already exist
+        for (i = 0; i < NUM_BADGES; i++)
         {
-            if (sData->badgeCount[i])
+            if (sData->badgeSpriteIds[i] != SPRITE_NONE)
             {
-                FillBgTilemapBufferRect(3, tileNum, x, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+                spritesAlreadyExist = TRUE;
+                break;
+            }
+        }
+
+        if (spritesAlreadyExist)
+        {
+            // Sprites already exist, just show them
+            ShowBadgeSprites();
+        }
+        else
+        {
+            // Create badge sprites for the first time
+            for (i = 0; i < NUM_BADGES; i++)
+            {
+                if (sData->badgeCount[i])
+                {
+                    // Create a badge sprite
+                    spriteId = CreateSprite(&sBadgeSpriteTemplate,
+                                            sBadgeXPositions[i],
+                                            BADGE_Y_POSITION,
+                                            0);  // subpriority
+                    if (spriteId != SPRITE_NONE)
+                    {
+                        // Store badge index in data[0] - the callback uses this to set correct tile
+                        gSprites[spriteId].data[0] = i;
+                        sData->badgeSpriteIds[i] = spriteId;
+                    }
+                }
             }
         }
     }
@@ -1587,6 +1740,10 @@ u8 GetTrainerCardStars(u8 cardId)
 
 static void FlipTrainerCard(void)
 {
+    // Hide badges immediately when flipping from front to back
+    if (!sData->onBack)
+        HideBadgeSprites();
+
     u8 taskId = CreateTask(Task_DoCardFlipTask, 0);
     Task_DoCardFlipTask(taskId);
     SetHBlankCallback(HblankCb_TrainerCard);
@@ -1681,6 +1838,9 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
         case 0:
             FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
             FillBgTilemapBufferRect_Palette0(3, 0, 0, 0, 0x20, 0x20);
+            // Hide badge sprites when flipping to back
+            if (!sData->onBack)
+                HideBadgeSprites();
             break;
         case 1:
             if (!sData->onBack)
@@ -1733,6 +1893,8 @@ static bool8 Task_SetCardFlipped(struct Task *task)
         DrawCardScreenBackground(sData->bgTilemap);
         DrawCardFrontOrBack(sData->frontTilemap);
         DrawStarsAndBadgesOnCard();
+        // Keep badges hidden until animation completes (shown in Task_EndCardFlip)
+        HideBadgeSprites();
     }
     DrawTrainerCardWindow(WIN_CARD_TEXT);
     sData->onBack ^= 1;
@@ -1791,6 +1953,9 @@ static bool8 Task_EndCardFlip(struct Task *task)
 {
     ShowBg(1);
     ShowBg(3);
+    // Show badges now that flip animation is complete (if on front side)
+    if (!sData->onBack)
+        ShowBadgeSprites();
     SetHBlankCallback(NULL);
     DestroyTask(FindTaskIdByFunc(Task_DoCardFlipTask));
     return FALSE;
@@ -1837,6 +2002,10 @@ static void InitTrainerCardData(void)
     sData->cardType = GetSetCardType();
     for (i = 0; i < TRAINER_CARD_PROFILE_LENGTH; i++)
         CopyEasyChatWord(sData->easyChatProfile[i], sData->trainerCard.easyChatProfile[i]);
+
+    // Initialize badge sprite IDs to SPRITE_NONE
+    for (i = 0; i < NUM_BADGES; i++)
+        sData->badgeSpriteIds[i] = SPRITE_NONE;
 }
 
 static u8 GetSetCardType(void)
