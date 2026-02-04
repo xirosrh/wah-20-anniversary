@@ -794,6 +794,27 @@ static u32 GetHPEggCyclePercent(u32 partyIndex) // Random HP function from psf's
         return ((GetMonData(mon, MON_DATA_FRIENDSHIP)) * 100 / (gSpeciesInfo[GetMonData(mon,MON_DATA_SPECIES)].eggCycles));
 }
 
+
+static SpriteCallback GetMonIconCallback()
+{
+    return (sSelectedOption == HW_WIN_CONTINUE) ? SpriteCB_MonIcon : SpriteCallbackDummy;
+}
+
+static void UpdateCallbackMonIcon()
+{
+    u8 id;
+    
+    for (size_t i = 0; i < ARRAY_COUNT(sMainMenuDataPtr->iconMonSpriteIds); i++)
+    {
+        id = sMainMenuDataPtr->iconMonSpriteIds[i];
+
+        if(id ==  SPRITE_NONE)
+            continue;
+
+        gSprites[id].callback = GetMonIconCallback();
+    }
+}
+
 static void CreatePartyMonIcons()
 {
     u8 i = 0;
@@ -832,9 +853,9 @@ static void CreatePartyMonIcons()
         }
 
 #ifdef RHH_EXPANSION
-            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY));
+            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), GetMonIconCallback(), x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY));
 #else
-            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY), TRUE);
+            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), GetMonIconCallback(), x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY), TRUE);
 #endif
 
         gSprites[sMainMenuDataPtr->iconMonSpriteIds[i]].oam.priority = 0;
@@ -1036,6 +1057,7 @@ static void Task_MainMenuMain(u8 taskId)
                 break;
         }
         MoveHWindowsWithInput();
+        UpdateCallbackMonIcon();
     }
 
     if(JOY_NEW(DPAD_UP))
@@ -1070,6 +1092,7 @@ static void Task_MainMenuMain(u8 taskId)
                 break;
         }
         MoveHWindowsWithInput();
+        UpdateCallbackMonIcon();
     }
 
     if(JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
@@ -1101,5 +1124,6 @@ static void Task_MainMenuMain(u8 taskId)
                 break;
         }
         MoveHWindowsWithInput();
+        UpdateCallbackMonIcon();
     }
 }

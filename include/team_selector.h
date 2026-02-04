@@ -41,6 +41,7 @@ enum{
     TEAM_17,
     TEAM_18,
     TEAM_19,
+    TEAM_20,
     TEAM_RANDOM,
     TEAM_COUNT
 };

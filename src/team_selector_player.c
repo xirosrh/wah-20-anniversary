@@ -118,6 +118,12 @@ enum
     MON_ZYGARDE,
     MON_KYOGRE,
     MON_RAYQUAZA,
+    MON_CHARIZARD,
+    MON_CROBAT_2,
+    MON_GARCHOMP,
+    MON_PIDGEOT,
+    MON_MELMETAL,
+    MON_WATERMELON_ELECTRODE,
 };
 
 const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
@@ -258,6 +264,14 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                     {
                         MON_DEOXYS, MON_DARKRAI, MON_SHAYMIN, MON_ZYGARDE, MON_KYOGRE, MON_RAYQUAZA},
             },
+        [TEAM_20] =
+            {
+                .teamSize = 6,
+                .team =
+                    {
+                        MON_CHARIZARD, MON_CROBAT_2, MON_GARCHOMP, MON_PIDGEOT, MON_MELMETAL, MON_WATERMELON_ELECTRODE},
+            },
+
 };
 
 const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
@@ -1335,4 +1349,74 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .isShiny = FALSE,
             .moves = {MOVE_DRAGON_ASCENT, MOVE_DRAGON_CLAW, MOVE_V_CREATE, MOVE_EXTREME_SPEED},
         },
+        [MON_CHARIZARD] = {
+            .specie = SPECIES_CHARIZARD,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = TRUE,
+            .moves = {
+                MOVE_THUNDERBOLT,
+                MOVE_ICE_BEAM,
+                MOVE_SCALD,
+                MOVE_FLAMETHROWER
+            },
+        },
+        [MON_CROBAT_2] = {
+            .specie = SPECIES_CROBAT,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_BLACK_SLUDGE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = TRUE,
+            .moves = {
+                MOVE_ROCK_SLIDE,
+                MOVE_THUNDER_FANG,
+                MOVE_ICE_FANG,
+                MOVE_CROSS_POISON
+            },
+        },
+        [MON_GARCHOMP] = {
+            .specie = SPECIES_GARCHOMP,
+            .ability = ABILITY_ROUGH_SKIN,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_ROCKY_HELMET,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_PLAY_ROUGH, MOVE_LIQUIDATION},
+        },
+        [MON_PIDGEOT] = {
+            .specie = SPECIES_PIDGEOT,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_PIDGEOTITE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = TRUE,
+            .moves = {
+                MOVE_HURRICANE,
+                MOVE_BLIZZARD,
+                MOVE_THUNDER,
+                MOVE_FOCUS_BLAST
+            },
+        },
+        [MON_MELMETAL] = {
+            .specie = SPECIES_MELMETAL,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_ADAMANT,
+            .itemId = ITEM_ASSAULT_VEST,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH},
+        },
+        [MON_WATERMELON_ELECTRODE] = {
+            .specie = SPECIES_ELECTRODES,
+            .ability = ABILITY_MELONSHIELD,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_JUICY_EXPLOSION, MOVE_ACID_PULP, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN},
+        },
+
 };
