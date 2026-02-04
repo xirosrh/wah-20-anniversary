@@ -244,11 +244,12 @@ void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u32 blendColor)
     }
 }
 
-#define GRADOS_CIRCULO 360
+#define GRADOS_CIRCULO                              360
+#define BASE_CALCULO_INTENSIDAD_VARIACION_PALETAS   100
 
 static s32 CalcularDesplazamientoDesdePersonalidad(u32 personalidad)
 {
-    u32 rango = (PBH_INTENSIDAD_VARIACION_PALETAS * GRADOS_CIRCULO) / 10;
+    u32 rango = (PBH_INTENSIDAD_VARIACION_PALETAS * GRADOS_CIRCULO) / BASE_CALCULO_INTENSIDAD_VARIACION_PALETAS;
 
     if (rango == 0)
         return 0;
@@ -282,11 +283,11 @@ static void DesplazaTonoPaletaBase(const u16 *src, u16 *dst, s32 desplazamiento)
             tono = 60 * (r - g) / delta + 240;
 
         if (tono < 0)
-            tono += 360;
+            tono += GRADOS_CIRCULO;
 
-        tono = (tono + desplazamiento) % 360;
+        tono = (tono + desplazamiento) % GRADOS_CIRCULO;
         if (tono < 0)
-            tono += 360;
+            tono += GRADOS_CIRCULO;
 
         s32 sat = (max == 0) ? 0 : ((delta * 255) / max);
         s32 val = max;
@@ -322,15 +323,6 @@ void DesplazaTonoPaleta(u32 posicionPaleta, u32 personalidad)
     if (desplazamiento == 0)
         return;
 
-    DesplazaTonoPaletaBase(
-        &gPlttBufferUnfaded[posicionPaleta],
-        &gPlttBufferFaded[posicionPaleta],
-        desplazamiento
-    );
-
-    CpuSmartCopy32(
-        &gPlttBufferFaded[posicionPaleta],
-        &gPlttBufferUnfaded[posicionPaleta],
-        PLTT_SIZE_4BPP
-    );
+    DesplazaTonoPaletaBase(&gPlttBufferUnfaded[posicionPaleta], &gPlttBufferFaded[posicionPaleta], desplazamiento);
+    CpuSmartCopy32(&gPlttBufferFaded[posicionPaleta], &gPlttBufferUnfaded[posicionPaleta], PLTT_SIZE_4BPP);
 }
