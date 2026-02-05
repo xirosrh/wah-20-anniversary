@@ -467,594 +467,576 @@ JackJohnsonRoom_EventScript_OpenCurtain5::
 
 JackJohnsonRoom_EventScript_OpenCurtain::
 # 284 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain1
+	playse SE_TRUCK_UNLOAD
 # 285 "data/maps/JackJohnsonRoom/scripts.pory"
-	special DrawWholeMapView
+	call JackJohnsonRoom_EventScript_OpenCurtain1
 # 286 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 5
+	special DrawWholeMapView
 # 287 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain2
+	delay 5
 # 288 "data/maps/JackJohnsonRoom/scripts.pory"
-	special DrawWholeMapView
+	call JackJohnsonRoom_EventScript_OpenCurtain2
 # 289 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 5
+	special DrawWholeMapView
 # 290 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain3
+	delay 5
 # 291 "data/maps/JackJohnsonRoom/scripts.pory"
-	special DrawWholeMapView
+	call JackJohnsonRoom_EventScript_OpenCurtain3
 # 292 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 5
+	special DrawWholeMapView
 # 293 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain4
-# 294 "data/maps/JackJohnsonRoom/scripts.pory"
-	special DrawWholeMapView
-# 295 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 5
-# 296 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain5
-# 297 "data/maps/JackJohnsonRoom/scripts.pory"
+# 294 "data/maps/JackJohnsonRoom/scripts.pory"
+	call JackJohnsonRoom_EventScript_OpenCurtain4
+# 295 "data/maps/JackJohnsonRoom/scripts.pory"
 	special DrawWholeMapView
+# 296 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay 5
+# 297 "data/maps/JackJohnsonRoom/scripts.pory"
+	call JackJohnsonRoom_EventScript_OpenCurtain5
 # 298 "data/maps/JackJohnsonRoom/scripts.pory"
+	special DrawWholeMapView
+# 299 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 5
 	return
 
 
 JackJohnsonRoom_EventScript_TurnOnLights::
-# 303 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 3, 6, METATILE_Room_Jack_Johnson_LEFT_LIGHT_FIXTURE_ON, 0
 # 304 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 4, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0
+	setmetatile 3, 6, METATILE_Room_Jack_Johnson_LEFT_LIGHT_FIXTURE_ON, 0
 # 305 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 5, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0
+	setmetatile 4, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0
 # 306 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 4, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0
+	setmetatile 5, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0
 # 307 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 5, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0
+	setmetatile 4, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0
 # 308 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 9, 6, METATILE_Room_Jack_Johnson_RIGHT_LIGHT_FIXTURE_ON, 0
+	setmetatile 5, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0
 # 309 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 7, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0
+	setmetatile 9, 6, METATILE_Room_Jack_Johnson_RIGHT_LIGHT_FIXTURE_ON, 0
 # 310 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 8, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0
+	setmetatile 7, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_1, 0
 # 311 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 7, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0
+	setmetatile 8, 6, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_2, 0
 # 312 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 8, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0
+	setmetatile 7, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0
 # 313 "data/maps/JackJohnsonRoom/scripts.pory"
+	setmetatile 8, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0
+# 314 "data/maps/JackJohnsonRoom/scripts.pory"
 	special DrawWholeMapView
+# 315 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_M_ENCORE
 	return
 
 
 JackJohnsonRoom_OnFrame::
-# 318 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
-# 319 "data/maps/JackJohnsonRoom/scripts.pory"
-	special SpawnCameraObject
 # 320 "data/maps/JackJohnsonRoom/scripts.pory"
-	directcameramovementtopos 6, 9
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 321 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
+	special SpawnCameraObject
 # 322 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	directcameramovementtopos 6, 9
 # 323 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp
+	waitmovement 0
 # 324 "data/maps/JackJohnsonRoom/scripts.pory"
-	directcameramovementtopos 6, 7
+	msgbox JackJohnsonRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 325 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 326 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_OpenCurtain
-# 327 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 329 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp
-# 330 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 30
+# 326 "data/maps/JackJohnsonRoom/scripts.pory"
+	directcameramovementtopos 6, 7
+# 327 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 328 "data/maps/JackJohnsonRoom/scripts.pory"
+	call JackJohnsonRoom_EventScript_OpenCurtain
+# 329 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 331 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown
+	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp
 # 332 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkInPlaceDown
+	delay 30
 # 333 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown
 # 334 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkInPlaceDown
 # 335 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkInPlaceDown
 # 336 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 20
+	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkInPlaceDown
 # 337 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	waitmovement 0
 # 338 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_TurnOnLights
+	delay 20
 # 339 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 20
+	msgbox JackJohnsonRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 340 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	call JackJohnsonRoom_EventScript_TurnOnLights
 # 341 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection
-# 342 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection
-# 343 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection
-# 344 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkRightLockFacingDirection
-# 345 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 346 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 10
-# 347 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkDownLockFacingDirection
-# 348 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkDownLockFacingDirection
-# 349 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkUpLockFacingDirection
-# 350 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkUpLockFacingDirection
-# 351 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 352 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 353 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_FirstCombinationNpc1And3
-# 354 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_FirstCombinationNpc1And3
-# 355 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_FirstCombinationNpc2And4
-# 356 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_FirstCombinationNpc2And4
-# 357 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 358 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_JumpDownLockFacingDirection
-# 359 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_JumpUpLockFacingDirection
-# 360 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_JumpInPlaceLeft
-# 361 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_JumpInPlaceRight
-# 362 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement LOCALID_JACKROOM_NPC3
-# 363 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_JumpDownFaceLeft
-# 364 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight
-# 365 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 366 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs
-# 367 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_SecondCombinationNpcs
-# 368 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_SecondCombinationNpcs
-# 369 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_SecondCombinationNpcs
-# 370 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 371 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 372 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 373 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 374 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 375 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
-# 376 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
-# 377 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
-# 378 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
-# 379 "data/maps/JackJohnsonRoom/scripts.pory"
-	release
-# 380 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_PIN
-# 381 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_0
-# 386 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 387 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 388 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
-# 389 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 390 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock
-# 391 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_FaceLeft
+# 342 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 343 "data/maps/JackJohnsonRoom/scripts.pory"
+	playbgm MUS_CONTEST_LOBBY, FALSE
+# 344 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection
+# 345 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection
+# 346 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection
+# 347 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkRightLockFacingDirection
+# 348 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 349 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay 10
+# 350 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_WalkDownLockFacingDirection
+# 351 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_WalkDownLockFacingDirection
+# 352 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_WalkUpLockFacingDirection
+# 353 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkUpLockFacingDirection
+# 354 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 355 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 356 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_FirstCombinationNpc1And3
+# 357 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_FirstCombinationNpc1And3
+# 358 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_FirstCombinationNpc2And4
+# 359 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_FirstCombinationNpc2And4
+# 360 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 361 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_JumpDownLockFacingDirection
+# 362 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_JumpUpLockFacingDirection
+# 363 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_JumpInPlaceLeft
+# 364 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, Common_Movement_JumpInPlaceRight
+# 365 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement LOCALID_JACKROOM_NPC3
+# 366 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_JumpDownFaceLeft
+# 367 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight
+# 368 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 369 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs
+# 370 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_SecondCombinationNpcs
+# 371 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_SecondCombinationNpcs
+# 372 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_SecondCombinationNpcs
+# 373 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 374 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 375 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 376 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 377 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 378 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
+# 379 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
+# 380 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
+# 381 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
+# 382 "data/maps/JackJohnsonRoom/scripts.pory"
+	release
+# 383 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_PIN
+# 384 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_0
+# 385 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 386 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitse
+# 387 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_LEDGE
+# 388 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_1
 # 392 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkDown
+	msgbox JackJohnsonRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_1
+	waitmovement 0
 # 394 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_2
+	delay 20
 # 395 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement LOCALID_JACKROOM_NPC2
+	msgbox JackJohnsonRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 396 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	lock
 # 397 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1
+	applymovement LOCALID_JACKROOM_NPC1, Common_Movement_FaceLeft
 # 398 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_JumpRoundNpc3
+	applymovement LOCALID_JACKROOM_NPC3, Common_Movement_WalkDown
 # 399 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_JumpRoundNpc4
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_2
 # 400 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_JumpRoundNpc2
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_3
 # 401 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement LOCALID_JACKROOM_NPC2
 # 402 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_3
+	msgbox JackJohnsonRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_4
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1
 # 404 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_5
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_JumpRoundNpc3
 # 405 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_6
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_JumpRoundNpc4
 # 406 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement LOCALID_JACKROOM_NPC1
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_JumpRoundNpc2
 # 407 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_FACE_DOWN
+	waitmovement LOCALID_JACKROOM_NPC2
 # 408 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_FACE_DOWN
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_4
 # 409 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_FACE_DOWN
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_5
 # 410 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_FACE_DOWN
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_6
 # 411 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_7
 # 412 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
+	waitmovement LOCALID_JACKROOM_NPC1
 # 413 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_FACE_DOWN
 # 414 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_FACE_DOWN
 # 415 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_2
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_FACE_DOWN
 # 416 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_3
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_FACE_DOWN
 # 417 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_NPC3_BALL
+	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
 # 418 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_NPC4_BALL
+	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
 # 419 "data/maps/JackJohnsonRoom/scripts.pory"
-	showobjectat LOCALID_JACKROOM_NPC3_BALL, MAP_JACK_JOHNSON_ROOM
+	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
 # 420 "data/maps/JackJohnsonRoom/scripts.pory"
-	showobjectat LOCALID_JACKROOM_NPC4_BALL, MAP_JACK_JOHNSON_ROOM
+	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
 # 421 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3_BALL, Common_Movement_WalkDiagSouthEast
+	clearflag FLAG_TEMP_2
 # 422 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4_BALL, Common_Movement_WalkDiagSouthEast
+	clearflag FLAG_TEMP_3
 # 423 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_JACKROOM_NPC3_BALL
 # 424 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_BALL_OPEN
+	addobject LOCALID_JACKROOM_NPC4_BALL
 # 425 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	showobjectat LOCALID_JACKROOM_NPC3_BALL, MAP_JACK_JOHNSON_ROOM
 # 426 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_NPC3_BALL
+	showobjectat LOCALID_JACKROOM_NPC4_BALL, MAP_JACK_JOHNSON_ROOM
 # 427 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_NPC4_BALL
+	applymovement LOCALID_JACKROOM_NPC3_BALL, Common_Movement_WalkDiagSouthEast
 # 428 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_4
+	applymovement LOCALID_JACKROOM_NPC4_BALL, Common_Movement_WalkDiagSouthEast
 # 429 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_5
+	waitmovement 0
 # 430 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_SPOINK_LEFT
-# 431 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_SPOINK_RIGHT
-# 432 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 433 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_SPOINK_LEFT, JackJohnsonRoom_Movement_SpoinkHighJump
-# 434 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_SPOINK_RIGHT, JackJohnsonRoom_Movement_SpoinkHighJump
-# 435 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 436 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 437 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_SPOINK_LEFT
-# 438 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_SPOINK_RIGHT
-# 439 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 440 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_7
-# 444 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_8
-# 450 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_9
-# 456 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_10
-# 462 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement LOCALID_JACKROOM_NPC4
-# 463 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_1
-# 464 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_NPC1_BALL
-# 465 "data/maps/JackJohnsonRoom/scripts.pory"
-	showobjectat LOCALID_JACKROOM_NPC1_BALL, MAP_JACK_JOHNSON_ROOM
-# 466 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1_BALL, Common_Movement_WalkDiagSouthEast
-# 467 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 468 "data/maps/JackJohnsonRoom/scripts.pory"
 	playse SE_BALL_OPEN
+# 431 "data/maps/JackJohnsonRoom/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 432 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_NPC3_BALL
+# 433 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_NPC4_BALL
+# 434 "data/maps/JackJohnsonRoom/scripts.pory"
+	clearflag FLAG_TEMP_4
+# 435 "data/maps/JackJohnsonRoom/scripts.pory"
+	clearflag FLAG_TEMP_5
+# 436 "data/maps/JackJohnsonRoom/scripts.pory"
+	addobject LOCALID_JACKROOM_SPOINK_LEFT
+# 437 "data/maps/JackJohnsonRoom/scripts.pory"
+	addobject LOCALID_JACKROOM_SPOINK_RIGHT
+# 438 "data/maps/JackJohnsonRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 439 "data/maps/JackJohnsonRoom/scripts.pory"
+	playmoncry SPECIES_SPOINK, CRY_MODE_NORMAL
+# 440 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_SPOINK_LEFT, JackJohnsonRoom_Movement_SpoinkHighJump
+# 441 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_SPOINK_RIGHT, JackJohnsonRoom_Movement_SpoinkHighJump
+# 442 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 443 "data/maps/JackJohnsonRoom/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 444 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_SPOINK_LEFT
+# 445 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_SPOINK_RIGHT
+# 446 "data/maps/JackJohnsonRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 447 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_8
+# 451 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_9
+# 457 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_10
+# 463 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_11
 # 469 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	waitmovement LOCALID_JACKROOM_NPC4
 # 470 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_NPC1_BALL
+	clearflag FLAG_TEMP_1
 # 471 "data/maps/JackJohnsonRoom/scripts.pory"
-	clearflag FLAG_TEMP_6
+	addobject LOCALID_JACKROOM_NPC1_BALL
 # 472 "data/maps/JackJohnsonRoom/scripts.pory"
-	addobject LOCALID_JACKROOM_ELECTRODE
+	showobjectat LOCALID_JACKROOM_NPC1_BALL, MAP_JACK_JOHNSON_ROOM
 # 473 "data/maps/JackJohnsonRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	applymovement LOCALID_JACKROOM_NPC1_BALL, Common_Movement_WalkDiagSouthEast
 # 474 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	waitmovement 0
 # 475 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_11
-# 480 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_12
-# 485 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_13
-# 490 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_14
-# 495 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 497 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 20
-# 498 "data/maps/JackJohnsonRoom/scripts.pory"
-	setweather WEATHER_NONE
-# 499 "data/maps/JackJohnsonRoom/scripts.pory"
-	doweather
-# 500 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_RESULT, 2
-# 501 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_ORB
-# 502 "data/maps/JackJohnsonRoom/scripts.pory"
-	special DoOrbEffect
-# 503 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_0x8004, 1
-# 504 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_0x8005, 1
-# 505 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_0x8006, 8
-# 506 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_0x8007, 5
-# 507 "data/maps/JackJohnsonRoom/scripts.pory"
-	special ShakeCamera
-# 508 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitstate
-# 509 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_15
-# 515 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 516 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 30
-# 517 "data/maps/JackJohnsonRoom/scripts.pory"
-	special FadeOutOrbEffect
-# 518 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_BALL_OPEN
+# 476 "data/maps/JackJohnsonRoom/scripts.pory"
 	fadescreen FADE_TO_WHITE
-# 519 "data/maps/JackJohnsonRoom/scripts.pory"
-	removeobject LOCALID_JACKROOM_ELECTRODE
-# 520 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitstate
-# 521 "data/maps/JackJohnsonRoom/scripts.pory"
+# 477 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_NPC1_BALL
+# 478 "data/maps/JackJohnsonRoom/scripts.pory"
+	clearflag FLAG_TEMP_6
+# 479 "data/maps/JackJohnsonRoom/scripts.pory"
+	addobject LOCALID_JACKROOM_ELECTRODE
+# 480 "data/maps/JackJohnsonRoom/scripts.pory"
 	fadescreen FADE_FROM_WHITE
-# 522 "data/maps/JackJohnsonRoom/scripts.pory"
-	getobjectxy LOCALID_JACKROOM_JACK, CURRENT_POSITION, VAR_TEMP_C, VAR_TEMP_D
-# 523 "data/maps/JackJohnsonRoom/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_C, VAR_TEMP_D
+# 481 "data/maps/JackJohnsonRoom/scripts.pory"
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
+# 482 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmoncry
+# 483 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 484 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC1, JackJohnsonRoom_OnFrame_Movement_12
+# 489 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC4, JackJohnsonRoom_OnFrame_Movement_13
+# 494 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC3, JackJohnsonRoom_OnFrame_Movement_14
+# 499 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_15
+# 504 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 506 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay 20
+# 507 "data/maps/JackJohnsonRoom/scripts.pory"
+	setweather WEATHER_NONE
+# 508 "data/maps/JackJohnsonRoom/scripts.pory"
+	doweather
+# 509 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_RESULT, 2
+# 510 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_ORB
+# 511 "data/maps/JackJohnsonRoom/scripts.pory"
+	special DoOrbEffect
+# 512 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_0x8004, 1
+# 513 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_0x8005, 1
+# 514 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_0x8006, 8
+# 515 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_0x8007, 5
+# 516 "data/maps/JackJohnsonRoom/scripts.pory"
+	special ShakeCamera
+# 517 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitstate
+# 518 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_NPC2, JackJohnsonRoom_OnFrame_Movement_16
 # 524 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
 # 525 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_PIN
+	delay 30
 # 526 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48
+	special FadeOutOrbEffect
 # 527 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	fadescreen FADE_TO_WHITE
 # 528 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 529 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6
-# 530 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkUp6
-# 531 "data/maps/JackJohnsonRoom/scripts.pory"
-	waitmovement 0
-# 532 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_JACK, DIR_WEST
-# 533 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 534 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_PIN
-# 535 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_JACKROOM_NPC2, Common_Movement_SadWithDelay48
-# 536 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitse
-# 537 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_16
-# 542 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_12, speaker = SP_NAME_JACK_JOHNSON
-# 543 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_JACK, DIR_SOUTH
-# 544 "data/maps/JackJohnsonRoom/scripts.pory"
-	playse SE_PIN
-# 545 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_ExclamationMarkWithDelay48
-# 546 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_13, MSGBOX_AUTOCLOSE
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, JackJohnsonRoom_OnFrame_Movement_17
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_18
-# 549 "data/maps/JackJohnsonRoom/scripts.pory"
+# 529 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_M_EXPLOSION
+# 530 "data/maps/JackJohnsonRoom/scripts.pory"
+	removeobject LOCALID_JACKROOM_ELECTRODE
+# 531 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitstate
+# 532 "data/maps/JackJohnsonRoom/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 533 "data/maps/JackJohnsonRoom/scripts.pory"
+	getobjectxy LOCALID_JACKROOM_JACK, CURRENT_POSITION, VAR_TEMP_C, VAR_TEMP_D
+# 534 "data/maps/JackJohnsonRoom/scripts.pory"
+	directcameramovementtoposwithvars VAR_TEMP_C, VAR_TEMP_D
+# 535 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
-# 550 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 551 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkUp3
-# 552 "data/maps/JackJohnsonRoom/scripts.pory"
-	special RemoveCameraObject
-# 553 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_15, speaker = SP_NAME_JACK_JOHNSON
+# 536 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_PIN
+# 537 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48
+# 538 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 539 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 540 "data/maps/JackJohnsonRoom/scripts.pory"
+	playbgm MUS_DUMMY, FALSE
+# 541 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6
+# 542 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp6
+# 543 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 544 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_JACK, DIR_WEST
+# 545 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 546 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_PIN
+# 547 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovementandwait LOCALID_JACKROOM_NPC2, Common_Movement_SadWithDelay48
+# 548 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitse
+# 549 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovementandwait LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_17
 # 554 "data/maps/JackJohnsonRoom/scripts.pory"
-	call JackJohnsonRoom_EventScript_JackBattle
+	msgbox JackJohnsonRoom_OnFrame_Text_12, speaker = SP_NAME_JACK_JOHNSON
 # 555 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay 20
+	turnobject LOCALID_JACKROOM_JACK, DIR_SOUTH
 # 556 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	playse SE_PIN
 # 557 "data/maps/JackJohnsonRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_ExclamationMarkWithDelay48
 # 558 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkUp
+	msgbox JackJohnsonRoom_OnFrame_Text_13, MSGBOX_AUTOCLOSE
 # 559 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+	applymovement LOCALID_CAMERA, JackJohnsonRoom_OnFrame_Movement_18
 # 560 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_19
 # 561 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	waitmovement 0
 # 562 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	msgbox JackJohnsonRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 563 "data/maps/JackJohnsonRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkUp3
 # 564 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
+	special RemoveCameraObject
 # 565 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
+	msgbox JackJohnsonRoom_OnFrame_Text_15, speaker = SP_NAME_JACK_JOHNSON
 # 566 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
+	playse SE_PIN
 # 567 "data/maps/JackJohnsonRoom/scripts.pory"
-	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
+	applymovementandwait LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_20
 # 568 "data/maps/JackJohnsonRoom/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	waitmovement 0
 # 569 "data/maps/JackJohnsonRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_JACK_JOHNSON
+	waitse
 # 570 "data/maps/JackJohnsonRoom/scripts.pory"
+	call JackJohnsonRoom_EventScript_JackBattle
+# 571 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay 20
+# 572 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 573 "data/maps/JackJohnsonRoom/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 574 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovementandwait LOCALID_JACKROOM_JACK, Common_Movement_WalkUp
+# 575 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 576 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 577 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 578 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 579 "data/maps/JackJohnsonRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_JACKROOM_NPC4, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 580 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC1, DIR_SOUTH
+# 581 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC2, DIR_SOUTH
+# 582 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC3, DIR_SOUTH
+# 583 "data/maps/JackJohnsonRoom/scripts.pory"
+	turnobject LOCALID_JACKROOM_NPC4, DIR_SOUTH
+# 584 "data/maps/JackJohnsonRoom/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 585 "data/maps/JackJohnsonRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_JACK_JOHNSON
+# 586 "data/maps/JackJohnsonRoom/scripts.pory"
 	release
 	end
 
 
-# 574 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_SpoinkHighJump:
-# 575 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_down
-# 576 "data/maps/JackJohnsonRoom/scripts.pory"
-	fly_up
-# 577 "data/maps/JackJohnsonRoom/scripts.pory"
-	fly_down
-# 578 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_down
-	step_end
-
-# 581 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_JumpRoundNpc1:
-# 582 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 582 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 582 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 583 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_in_place_left
-# 584 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 584 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 584 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 585 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 585 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 586 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 586 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 586 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 587 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_right
-	step_end
-
 # 590 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_JumpRoundNpc3:
+JackJohnsonRoom_Movement_SpoinkHighJump:
 # 591 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+	jump_down
 # 592 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
+	fly_up
 # 593 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_in_place_left
+	fly_down
 # 594 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 594 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 594 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 594 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 595 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 595 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 595 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 596 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_left
+	jump_down
+	step_end
+
 # 597 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 597 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_Movement_JumpRoundNpc1:
+# 598 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_left
 # 598 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+	walk_fast_left
+# 598 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
 # 599 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 599 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
+	jump_in_place_left
 # 600 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 600 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 600 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 601 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 601 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 602 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
+# 602 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
+# 602 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
+# 603 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_right
 	step_end
 
-# 603 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_JumpRoundNpc4:
-# 604 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 605 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
 # 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 606 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+JackJohnsonRoom_Movement_JumpRoundNpc3:
 # 607 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
+	delay_16
 # 608 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_down
+# 609 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_in_place_left
-# 609 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 609 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 609 "data/maps/JackJohnsonRoom/scripts.pory"
+# 610 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
 # 610 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
+	delay_16
 # 610 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 610 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 611 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_left
 # 611 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_left
+	walk_fast_left
+# 611 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
 # 612 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+	jump_left
 # 613 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_left
 # 613 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1063,14 +1045,14 @@ JackJohnsonRoom_Movement_JumpRoundNpc4:
 	delay_16
 # 615 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_up
+# 615 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
 # 616 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_right
 	step_end
 
 # 619 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_JumpRoundNpc2:
-# 620 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+JackJohnsonRoom_Movement_JumpRoundNpc4:
 # 620 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
 # 621 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1089,18 +1071,6 @@ JackJohnsonRoom_Movement_JumpRoundNpc2:
 	delay_16
 # 622 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
-# 622 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 622 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 622 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 622 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 622 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 623 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
 # 623 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_down
 # 624 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1109,485 +1079,577 @@ JackJohnsonRoom_Movement_JumpRoundNpc2:
 	delay_16
 # 625 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
+# 625 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 626 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
 # 626 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_left
 # 627 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_3_left
+	jump_2_left
 # 628 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
+# 629 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
 # 629 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_left
 # 630 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
 # 631 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_in_place_up
+	walk_fast_up
 # 632 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_right
 	step_end
 
+# 635 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_Movement_JumpRoundNpc2:
 # 636 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_FirstCombinationNpc1And3:
+	delay_16
+# 636 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
 # 637 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_in_place_right
+	walk_fast_down
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 638 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
 # 638 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
 # 639 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+	walk_fast_down
+# 639 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_down
 # 640 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_right
+	walk_in_place_left
 # 641 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_right
+	delay_16
+# 641 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
 # 642 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_left
-	step_end
-
+	walk_fast_left
+# 643 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_3_left
+# 644 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
 # 645 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_Movement_FirstCombinationNpc2And4:
+	walk_fast_left
 # 646 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_in_place_left
+	delay_16
 # 647 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
+	walk_in_place_up
 # 648 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 649 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_left
-# 650 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_left
-# 651 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_right
 	step_end
 
+# 652 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_Movement_FirstCombinationNpc1And3:
+# 653 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_in_place_right
 # 654 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 655 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 656 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_2_right
+# 657 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_2_right
+# 658 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_left
+	step_end
+
+# 661 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_Movement_FirstCombinationNpc2And4:
+# 662 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_in_place_left
+# 663 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 664 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 665 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_2_left
+# 666 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_2_left
+# 667 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_right
+	step_end
+
+# 670 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_Movement_SecondCombinationNpcs:
-# 655 "data/maps/JackJohnsonRoom/scripts.pory"
+# 671 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_up_down
-# 655 "data/maps/JackJohnsonRoom/scripts.pory"
+# 671 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_up_down
-# 656 "data/maps/JackJohnsonRoom/scripts.pory"
+# 672 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_left_right
-# 656 "data/maps/JackJohnsonRoom/scripts.pory"
+# 672 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_left_right
-# 657 "data/maps/JackJohnsonRoom/scripts.pory"
+# 673 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_down_up
-# 657 "data/maps/JackJohnsonRoom/scripts.pory"
+# 673 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_down_up
-# 658 "data/maps/JackJohnsonRoom/scripts.pory"
+# 674 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_right_left
-# 658 "data/maps/JackJohnsonRoom/scripts.pory"
+# 674 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_right_left
-# 659 "data/maps/JackJohnsonRoom/scripts.pory"
+# 675 "data/maps/JackJohnsonRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
 JackJohnsonRoom_EventScript_JackBattle::
-# 663 "data/maps/JackJohnsonRoom/scripts.pory"
+# 679 "data/maps/JackJohnsonRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, JackJohnsonRoom_EventScript_JackBattle_2
-# 666 "data/maps/JackJohnsonRoom/scripts.pory"
+# 682 "data/maps/JackJohnsonRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_JACK_JOHNSON
-# 667 "data/maps/JackJohnsonRoom/scripts.pory"
+# 683 "data/maps/JackJohnsonRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 668 "data/maps/JackJohnsonRoom/scripts.pory"
+# 684 "data/maps/JackJohnsonRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq JackJohnsonRoom_EventScript_JackBattle_5
-# 671 "data/maps/JackJohnsonRoom/scripts.pory"
+# 687 "data/maps/JackJohnsonRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE, JackJohnsonRoom_Text_JackDefeated
 JackJohnsonRoom_EventScript_JackBattle_1:
-# 674 "data/maps/JackJohnsonRoom/scripts.pory"
+# 690 "data/maps/JackJohnsonRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 JackJohnsonRoom_EventScript_JackBattle_2:
-# 664 "data/maps/JackJohnsonRoom/scripts.pory"
+# 680 "data/maps/JackJohnsonRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_Text_JackDefeated
 	goto JackJohnsonRoom_EventScript_JackBattle_1
 
 JackJohnsonRoom_EventScript_JackBattle_5:
-# 669 "data/maps/JackJohnsonRoom/scripts.pory"
+# 685 "data/maps/JackJohnsonRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN, JackJohnsonRoom_Text_JackDefeated
 	goto JackJohnsonRoom_EventScript_JackBattle_1
 
 
 JackJohnsonRoom_EventScript_Jack::
-# 683 "data/maps/JackJohnsonRoom/scripts.pory"
-	applymovement LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2
-# 684 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 685 "data/maps/JackJohnsonRoom/scripts.pory"
+# 699 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_LEDGE
+# 700 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_EventScript_Jack_Movement_0
+# 701 "data/maps/JackJohnsonRoom/scripts.pory"
 	waitmovement 0
-# 686 "data/maps/JackJohnsonRoom/scripts.pory"
+# 702 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitse
+# 703 "data/maps/JackJohnsonRoom/scripts.pory"
+	playse SE_LEDGE
+# 704 "data/maps/JackJohnsonRoom/scripts.pory"
+	applymovement LOCALID_JACKROOM_JACK, JackJohnsonRoom_EventScript_Jack_Movement_0
+# 705 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitmovement 0
+# 706 "data/maps/JackJohnsonRoom/scripts.pory"
+	waitse
+# 707 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Jack_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
+# 708 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay 20
-# 687 "data/maps/JackJohnsonRoom/scripts.pory"
+# 709 "data/maps/JackJohnsonRoom/scripts.pory"
 	faceplayer
-# 688 "data/maps/JackJohnsonRoom/scripts.pory"
+# 710 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_Jack_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
-# 689 "data/maps/JackJohnsonRoom/scripts.pory"
+# 711 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_NORTH
 	end
 
 
 JackJohnsonRoom_EventScript_NPC1::
-# 694 "data/maps/JackJohnsonRoom/scripts.pory"
+# 716 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC1_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC2::
-# 699 "data/maps/JackJohnsonRoom/scripts.pory"
+# 721 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC2_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC3::
-# 704 "data/maps/JackJohnsonRoom/scripts.pory"
+# 726 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC3_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 JackJohnsonRoom_EventScript_NPC4::
-# 709 "data/maps/JackJohnsonRoom/scripts.pory"
+# 731 "data/maps/JackJohnsonRoom/scripts.pory"
 	msgbox JackJohnsonRoom_EventScript_NPC4_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
-# 381 "data/maps/JackJohnsonRoom/scripts.pory"
+# 384 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_0:
-# 382 "data/maps/JackJohnsonRoom/scripts.pory"
+# 384 "data/maps/JackJohnsonRoom/scripts.pory"
 	emote_happy
-# 383 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_in_place_up
-# 384 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
-# 384 "data/maps/JackJohnsonRoom/scripts.pory"
-	delay_16
 	step_end
 
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
+# 388 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_1:
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 393 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_down
+# 389 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_in_place_up
+# 390 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
+# 390 "data/maps/JackJohnsonRoom/scripts.pory"
+	delay_16
 	step_end
 
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_2:
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_up
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_up
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_up
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 394 "data/maps/JackJohnsonRoom/scripts.pory"
+# 399 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_down
 	step_end
 
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_3:
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_up
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_up
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_up
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 402 "data/maps/JackJohnsonRoom/scripts.pory"
+# 400 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_down
+	step_end
+
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_4:
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 408 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_4:
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 403 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_down
-	step_end
-
-# 404 "data/maps/JackJohnsonRoom/scripts.pory"
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_5:
-# 404 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 404 "data/maps/JackJohnsonRoom/scripts.pory"
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 404 "data/maps/JackJohnsonRoom/scripts.pory"
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_right
-# 404 "data/maps/JackJohnsonRoom/scripts.pory"
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 409 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_down
 	step_end
 
-# 405 "data/maps/JackJohnsonRoom/scripts.pory"
+# 410 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_6:
-# 405 "data/maps/JackJohnsonRoom/scripts.pory"
+# 410 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_up
-# 405 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_up
-# 405 "data/maps/JackJohnsonRoom/scripts.pory"
+# 410 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 410 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 410 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_down
 	step_end
 
-# 440 "data/maps/JackJohnsonRoom/scripts.pory"
+# 411 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_7:
-# 441 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock_facing_direction
-# 442 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 442 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 442 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 443 "data/maps/JackJohnsonRoom/scripts.pory"
-	unlock_facing_direction
+# 411 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
+# 411 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_up
+# 411 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_down
 	step_end
 
-# 444 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_8:
-# 445 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock_facing_direction
-# 446 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_left
 # 447 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
+JackJohnsonRoom_OnFrame_Movement_8:
 # 448 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 449 "data/maps/JackJohnsonRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
-# 450 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_9:
-# 451 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
-# 451 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_down
-# 452 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_left
-# 453 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock_facing_direction
-# 454 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 454 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_right
-# 455 "data/maps/JackJohnsonRoom/scripts.pory"
+# 449 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 449 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 449 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 456 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_10:
-# 457 "data/maps/JackJohnsonRoom/scripts.pory"
+# 451 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_9:
+# 452 "data/maps/JackJohnsonRoom/scripts.pory"
+	lock_facing_direction
+# 453 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_left
+# 454 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_down
+# 455 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 456 "data/maps/JackJohnsonRoom/scripts.pory"
+	unlock_facing_direction
+	step_end
+
 # 457 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_10:
+# 458 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_fast_down
 # 458 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_right
+	walk_fast_down
 # 459 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_left
+# 460 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock_facing_direction
-# 460 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
-# 460 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_fast_left
 # 461 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 461 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_right
+# 462 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 475 "data/maps/JackJohnsonRoom/scripts.pory"
+# 463 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_11:
-# 476 "data/maps/JackJohnsonRoom/scripts.pory"
+# 464 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_down
+# 464 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_down
+# 465 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_right
+# 466 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock_facing_direction
-# 477 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_up
-# 477 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_up
-# 478 "data/maps/JackJohnsonRoom/scripts.pory"
+# 467 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 467 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_fast_left
+# 468 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 480 "data/maps/JackJohnsonRoom/scripts.pory"
+# 484 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_12:
-# 481 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock_facing_direction
-# 482 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_left
-# 482 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_left
-# 483 "data/maps/JackJohnsonRoom/scripts.pory"
-	unlock_facing_direction
-	step_end
-
 # 485 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_13:
+	lock_facing_direction
 # 486 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock_facing_direction
+	walk_up
+# 486 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_up
 # 487 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_right
-# 487 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_right
-# 488 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
+# 489 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_13:
 # 490 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_14:
+	lock_facing_direction
 # 491 "data/maps/JackJohnsonRoom/scripts.pory"
-	lock_facing_direction
+	walk_left
+# 491 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_left
 # 492 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_down
-# 492 "data/maps/JackJohnsonRoom/scripts.pory"
-	walk_down
-# 493 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 509 "data/maps/JackJohnsonRoom/scripts.pory"
+# 494 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_14:
+# 495 "data/maps/JackJohnsonRoom/scripts.pory"
+	lock_facing_direction
+# 496 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_right
+# 496 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_right
+# 497 "data/maps/JackJohnsonRoom/scripts.pory"
+	unlock_facing_direction
+	step_end
+
+# 499 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_15:
-# 510 "data/maps/JackJohnsonRoom/scripts.pory"
-	face_right
-# 511 "data/maps/JackJohnsonRoom/scripts.pory"
+# 500 "data/maps/JackJohnsonRoom/scripts.pory"
 	lock_facing_direction
-# 512 "data/maps/JackJohnsonRoom/scripts.pory"
-	jump_2_left
-# 513 "data/maps/JackJohnsonRoom/scripts.pory"
+# 501 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_down
+# 501 "data/maps/JackJohnsonRoom/scripts.pory"
+	walk_down
+# 502 "data/maps/JackJohnsonRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 537 "data/maps/JackJohnsonRoom/scripts.pory"
+# 518 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_16:
-# 538 "data/maps/JackJohnsonRoom/scripts.pory"
+# 519 "data/maps/JackJohnsonRoom/scripts.pory"
+	face_right
+# 520 "data/maps/JackJohnsonRoom/scripts.pory"
+	lock_facing_direction
+# 521 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_2_left
+# 522 "data/maps/JackJohnsonRoom/scripts.pory"
+	unlock_facing_direction
+	step_end
+
+# 549 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_17:
+# 550 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_up
-# 539 "data/maps/JackJohnsonRoom/scripts.pory"
+# 551 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
-# 540 "data/maps/JackJohnsonRoom/scripts.pory"
+# 552 "data/maps/JackJohnsonRoom/scripts.pory"
 	face_right
 	step_end
 
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_17:
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
+# 559 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_18:
+# 559 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
+# 559 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
+# 559 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 547 "data/maps/JackJohnsonRoom/scripts.pory"
+# 559 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
-JackJohnsonRoom_OnFrame_Movement_18:
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
+# 560 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_19:
+# 560 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
+# 560 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
+# 560 "data/maps/JackJohnsonRoom/scripts.pory"
 	walk_down
-# 548 "data/maps/JackJohnsonRoom/scripts.pory"
+# 560 "data/maps/JackJohnsonRoom/scripts.pory"
 	delay_16
+	step_end
+
+# 567 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_OnFrame_Movement_20:
+# 567 "data/maps/JackJohnsonRoom/scripts.pory"
+	emote_versus
+	step_end
+
+# 700 "data/maps/JackJohnsonRoom/scripts.pory"
+JackJohnsonRoom_EventScript_Jack_Movement_0:
+# 700 "data/maps/JackJohnsonRoom/scripts.pory"
+	jump_in_place_up
 	step_end
 
 JackJohnsonRoom_OnFrame_Text_0:
-# 322 "data/maps/JackJohnsonRoom/scripts.pory"
+# 324 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Es hora de comenzar el ensayo…\n"
 	.string "¡Cortinas!$"
 
 JackJohnsonRoom_OnFrame_Text_1:
-# 327 "data/maps/JackJohnsonRoom/scripts.pory"
+# 329 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Desde el principio! ¡Quiero que cada\n"
 	.string "movimiento sea perfecto!$"
 
 JackJohnsonRoom_OnFrame_Text_2:
-# 337 "data/maps/JackJohnsonRoom/scripts.pory"
+# 339 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Luces!$"
 
 JackJohnsonRoom_OnFrame_Text_3:
-# 340 "data/maps/JackJohnsonRoom/scripts.pory"
+# 342 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Empecemos!$"
 
 JackJohnsonRoom_OnFrame_Text_4:
-# 352 "data/maps/JackJohnsonRoom/scripts.pory"
+# 355 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Uno, dos… salto ya!$"
 
 JackJohnsonRoom_OnFrame_Text_5:
-# 365 "data/maps/JackJohnsonRoom/scripts.pory"
+# 368 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Giro! ¡Más energía, que parezca un\n"
 	.string "huracán!$"
 
 JackJohnsonRoom_OnFrame_Text_6:
-# 386 "data/maps/JackJohnsonRoom/scripts.pory"
+# 392 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Perfecto! ¡Lo hemos clavado!$"
 
 JackJohnsonRoom_OnFrame_Text_7:
-# 389 "data/maps/JackJohnsonRoom/scripts.pory"
+# 395 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Formación!$"
 
 JackJohnsonRoom_OnFrame_Text_8:
-# 396 "data/maps/JackJohnsonRoom/scripts.pory"
+# 402 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Ahora!$"
 
 JackJohnsonRoom_OnFrame_Text_9:
-# 474 "data/maps/JackJohnsonRoom/scripts.pory"
+# 483 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Preparados para la detonación\n"
 	.string "elegante!$"
 
 JackJohnsonRoom_OnFrame_Text_10:
-# 527 "data/maps/JackJohnsonRoom/scripts.pory"
+# 538 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Alto!$"
 
 JackJohnsonRoom_OnFrame_Text_11:
-# 533 "data/maps/JackJohnsonRoom/scripts.pory"
+# 545 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¿Qué estabas haciendo? Ya viste como\n"
 	.string "es esto: una distracción y a volar.$"
 
 JackJohnsonRoom_OnFrame_Text_12:
-# 542 "data/maps/JackJohnsonRoom/scripts.pory"
+# 554 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Estuvo cerca… muy cerca, pero hasta\n"
 	.string "que salga impecable, no descansaremos.$"
 
 JackJohnsonRoom_OnFrame_Text_13:
-# 546 "data/maps/JackJohnsonRoom/scripts.pory"
+# 558 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¿Y tú? ¿Qué haces ahí parado?$"
 
 JackJohnsonRoom_OnFrame_Text_14:
-# 550 "data/maps/JackJohnsonRoom/scripts.pory"
+# 562 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Ven aquí inmediatamente!$"
 
 JackJohnsonRoom_OnFrame_Text_15:
-# 553 "data/maps/JackJohnsonRoom/scripts.pory"
+# 565 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Si no vas a unirte al ensayo… voy a\n"
 	.string "tener que retarte a un combate.$"
 
 JackJohnsonRoom_OnFrame_Text_16:
-# 556 "data/maps/JackJohnsonRoom/scripts.pory"
+# 572 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Magnífico… impecable. Cada movimiento\n"
 	.string "ha caído en su sitio, es un placer ver\l"
 	.string "algo tan bien ejecutado…\p"
@@ -1596,35 +1658,35 @@ JackJohnsonRoom_OnFrame_Text_16:
 	.string "Te abriré el camino.$"
 
 JackJohnsonRoom_OnFrame_Text_17:
-# 559 "data/maps/JackJohnsonRoom/scripts.pory"
+# 575 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Y ustedes… ¡a trabajar!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_0:
-# 684 "data/maps/JackJohnsonRoom/scripts.pory"
+# 707 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Eso es! ¡Más rápido!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_1:
-# 688 "data/maps/JackJohnsonRoom/scripts.pory"
+# 710 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¿Sigues ahí? Pues venga, no te quedes\n"
 	.string "mirando…\l"
 	.string "¡Súmate al ensayo!$"
 
 JackJohnsonRoom_EventScript_NPC1_Text_0:
-# 694 "data/maps/JackJohnsonRoom/scripts.pory"
+# 716 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Debemos ser los mejores!$"
 
 JackJohnsonRoom_EventScript_NPC2_Text_0:
-# 699 "data/maps/JackJohnsonRoom/scripts.pory"
+# 721 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡No puedo fallar de nuevo!$"
 
 JackJohnsonRoom_EventScript_NPC3_Text_0:
-# 704 "data/maps/JackJohnsonRoom/scripts.pory"
+# 726 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡No me distraigas!$"
 
 JackJohnsonRoom_EventScript_NPC4_Text_0:
-# 709 "data/maps/JackJohnsonRoom/scripts.pory"
+# 731 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Quiero ir a dormir!$"
 
 JackJohnsonRoom_Text_JackDefeated::
-# 678 "data/maps/JackJohnsonRoom/scripts.pory"
+# 694 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "Has tomado el mando, enhorabuena.$"

@@ -72,11 +72,19 @@ script GallegoRoom_EventScript_Gallego {
     msgbox(format("¡Hola! Soy Gallego13, y llevo años observando desde las sombras.\pCasi podría decir que en vez de irme, me escondí.\pDe vez en cuando echaba un ojo por nuestra querida comunidad, sin decir nada, viendo los avances y cómo evolucionaba…\pNunca quise que fuese tan largo, pero los estudios y después la vida me hicieron perder la noción del tiempo.\pAntes de que me diera cuenta, me acostumbré a ver este mundo desde la distancia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
     playse(SE_PIN)
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_double_exclamation_mark))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
-        delay_16
-        emote_double_exclamation_mark,
         lock_facing_direction,
-        jump_in_place_up * 2,
+        jump_in_place_up
+    ))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
+        jump_in_place_up,
         unlock_facing_direction,
         face_player
     ))
@@ -125,16 +133,19 @@ script GallegoRoom_EventScript_Gallego {
     ))
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
     msgbox(format("Vamos a ver si no se me ha olvidado combatir en este tiempo."), speaker = SP_NAME_GALLEGO)
-    playse(SE_PIN)
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
-        emote_versus,
         lock_facing_direction,
         jump_in_place_up,
         delay_16,
         unlock_facing_direction,
         face_player
     ))
+    waitse
     msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"), speaker = SP_NAME_GALLEGO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_versus))
+    waitse
     call(GallegoRoom_EventScript_GallegoBattle)
     msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
@@ -145,9 +156,15 @@ script GallegoRoom_EventScript_Gallego {
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     delay(30)
     msgbox(format("Supongo que algunos sueños no se apagan."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    playse(SE_LEDGE)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
-        jump_in_place_up,
+        jump_in_place_up
+    ))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
         jump_in_place_up,
         unlock_facing_direction,
         face_player
