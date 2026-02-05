@@ -37,6 +37,7 @@ script SergioRoom_OnWarp_AfterSergioBattle {
 }
 
 script SergioRoom_OnFrame_AbraReturns {
+    playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
     showobjectat(LOCALID_SERGIOROOM_ABRA, MAP_SERGIO_ROOM)
@@ -58,6 +59,7 @@ script SergioRoom_OnFrame_AbraReturns {
 }
 
 script SergioRoom_OnFrame_AfterSergioBattle {
+    playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
     updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
@@ -110,6 +112,7 @@ script SergioRoom_EventScript_Abra {
     delay(20)
     msgbox(format("Parece que Abra quiere teletransportarte a otro lugar. ¿Deseas ir?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
+        playse(SE_WARP_IN)
         updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
 		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
 		release
@@ -118,7 +121,7 @@ script SergioRoom_EventScript_Abra {
 		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
         release
         delay(20)
-		warp(MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP)
+		warpsilent(MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP)
 		waitstate
     }
 	release

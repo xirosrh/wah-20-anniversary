@@ -28,8 +28,10 @@ script AngelRoom_EventScript_Angel {
     delay(20)
     faceplayer
     playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_double_exclamation_mark))
+    waitse
+    playse(SE_LEDGE)
     applymovement(LOCALID_ANGELROOM_ANGEL, moves(
-        emote_double_exclamation_mark
         lock_facing_direction
         jump_in_place_down
         unlock_facing_direction
@@ -59,23 +61,26 @@ script AngelRoom_EventScript_Angel {
             break
     }
     msgbox(format("Veamos tu potencial."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
-    playse(SE_PIN)
+    playse(SE_LEDGE)
     switch(var(VAR_TEMP_0)) {
     case DIR_NORTH:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_down, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_down, delay_16 * 2))
         break
     case DIR_SOUTH:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL,moves(emote_versus, jump_2_up, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL,moves(jump_2_up, delay_16 * 2))
         break
     case DIR_WEST:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_right, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_right, delay_16 * 2))
         break
     case DIR_EAST:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_left, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_left, delay_16 * 2))
         break
     }
     waitse
     msgbox(format("¡Ven! ¡Atácame con todo lo que tengas!"), speaker = SP_NAME_ANGEL)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus))
+    waitse
     call(AngelRoom_EventScript_AngelBattle)
     playse(SE_PIN)
     applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
@@ -173,6 +178,7 @@ script AngelRoom_EventScript_TurnOffScreen {
 }
 
 script AngelRoom_EventScript_CloseScreen {
+    playse(SE_WARP_OUT)
     setmetatile(2, 2, METATILE_room_angel_SCREEN_CLOSING_1_LEFT, TRUE)
     setmetatile(3, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE)
     setmetatile(4, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE)
