@@ -45,8 +45,8 @@ LavaridgeTown_Gym_SetGymTrainers::
 	return
 
 PetalburgCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_WAH_COLLABORATOR_ROXAS
-	settrainerflag TRAINER_PARKER
+	settrainerflag TRAINER_WAH_ADMIN_ROXAS
+	settrainerflag TRAINER_WAH_COLLABORATOR_KAKTUS
 	settrainerflag TRAINER_GEORGE
 	settrainerflag TRAINER_BERKE
 	settrainerflag TRAINER_MARY

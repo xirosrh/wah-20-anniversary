@@ -2628,7 +2628,7 @@ AI: Smart Trainer
 Magikarp
 Level: 1
 
-=== TRAINER_WAH_COLLABORATOR_ROXAS ===
+=== TRAINER_WAH_ADMIN_ROXAS ===
 Name: Roxas
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2921,22 +2921,71 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Tail Whip
 - Surf
 
-=== TRAINER_PARKER ===
-Name: PARKER
+=== TRAINER_WAH_COLLABORATOR_KAKTUS ===
+Name: Kaktus
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Spinda
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Dizzy Punch
-- Focus Punch
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 248 HP / 252 Def / 8 SpD
+Bold Nature
+IVs: 0 Atk
+- Scald
+- U-turn
+- Roost
+- Defog
+
+Ludicolo @ Life Orb
+Ability: Swift Swim
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Focus Blast
+
+Swampert @ Swampertite
+Ability: Swift Swim
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Superpower
+
+Dragonite @ Lum Berry
+Ability: Multiscale
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Earthquake
+
+Metagross @ Assault Vest
+Ability: Clear Body
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Meteor Mash
+- Earthquake
+- Ice Punch
+- Bullet Punch
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+EVs: 252 HP / 252 Def / 4 SpD
+Relaxed Nature
+IVs: 0 Spe
+- Stealth Rock
+- Spikes
+- Power Whip
+- Knock Off
 
 === TRAINER_GEORGE ===
 Name: GEORGE

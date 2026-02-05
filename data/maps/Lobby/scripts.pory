@@ -54,10 +54,42 @@ script Lobby_EventScript_Shop {
     faceplayer
 	message(format("¡Hola! ¿En qué puedo ayudarte?"))
 	waitmessage
-	pokemart(MyMartItems)
+	pokemart(Lobby_MartItems)
 	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
 	release
     end
+}
+
+mart Lobby_MartItems {
+	ITEM_HYPER_POTION
+	ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+	ITEM_ETHER
+    ITEM_MAX_ETHER
+    ITEM_ELIXIR
+    ITEM_MAX_ELIXIR
+    ITEM_REVIVE
+    ITEM_MAX_REVIVE
+    ITEM_REVIVAL_HERB
+     //TODO Xiros ITEM_BAXCALIBURITE
+    ITEM_DRAGALGITE
+    ITEM_TYRANITARITE
+    //TODO Xiros ITEM_DARKRAINITE
+    ITEM_ALAKAZITE
+    ITEM_LUCARIONITE
+     //TODO Xiros ITEM_LUCARIONITE_Z
+    ITEM_MEWTWONITE_X
+    ITEM_MEWTWONITE_Y
+    ITEM_CHARIZARDITE_X
+    ITEM_CHARIZARDITE_Y
+    ITEM_GALLADITE
+    ITEM_GLALITITE
+    ITEM_FROSLASSITE
+    ITEM_CLEFABLITE
+    ITEM_HOUNDOOMINITE
+    ITEM_AGGRONITE
+    ITEM_ZYGARDITE
+    ITEM_VICTREEBELITE
 }
 
 script Lobby_EventScript_Roxas_IntroFirstBattle {
@@ -127,9 +159,11 @@ script Lobby_EventScript_Roxas {
         special(ReducePlayerPartyToSelectedMons)
         msgbox(format("¡A ver si te la bancas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ROXAS, format("¡Nooooo!"))
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_ROXAS, format("¡Nooooo!"))
+        clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
         special(LoadPlayerParty)
+        special(HealPlayerParty)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_X)
@@ -147,7 +181,6 @@ script Lobby_EventScript_Roxas {
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
-        clearflag(B_FLAG_NO_WHITEOUT)
         releaseall
         end
     } else {
@@ -200,35 +233,93 @@ script Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer {
     return
 }
 
+script Lobby_EventScript_Kaktus_IntroFirstBattle {
+    msgbox("Vaya, vaya…\n¿Así que completaste el desafío?", MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+    msgbox(format("Entonces ya no eres un{A} novat{OA}. Veamos si sabes aplicar lo aprendido.\pUn combate, sin atajos, sin trucos. ¿List{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceDown)
+        case DIR_WEST:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+        case DIR_EAST:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
+    }
+    return
+}
 
-mart MyMartItems {
-	ITEM_HYPER_POTION
-	ITEM_MAX_POTION
-    ITEM_FULL_RESTORE
-	ITEM_ETHER
-    ITEM_MAX_ETHER
-    ITEM_ELIXIR
-    ITEM_MAX_ELIXIR
-    ITEM_REVIVE
-    ITEM_MAX_REVIVE
-    ITEM_REVIVAL_HERB
-     //TODO Xiros ITEM_BAXCALIBURITE
-    ITEM_DRAGALGITE
-    ITEM_TYRANITARITE
-    //TODO Xiros ITEM_DARKRAINITE
-    ITEM_ALAKAZITE
-    ITEM_LUCARIONITE
-     //TODO Xiros ITEM_LUCARIONITE_Z
-    ITEM_MEWTWONITE_X
-    ITEM_MEWTWONITE_Y
-    ITEM_CHARIZARDITE_X
-    ITEM_CHARIZARDITE_Y
-    ITEM_GALLADITE
-    ITEM_GLALITITE
-    ITEM_FROSLASSITE
-    ITEM_CLEFABLITE
-    ITEM_HOUNDOOMINITE
-    ITEM_AGGRONITE
-    ITEM_ZYGARDITE
-    ITEM_VICTREEBELITE
+script Lobby_EventScript_Kaktus_IntroRematch {
+    msgbox(format("Ey, ¿qué tal? Mi Ludicolo sigue con ganas de bailar.\p¿Otro asalto?"), MSGBOX_YESNO, speaker = SP_NAME_INMORTAL_KAKTUS)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("¡Vamos!"), speaker = SP_NAME_INMORTAL_KAKTUS)
+        return
+    } else {
+        msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+        release
+        end
+    }
+
+}
+
+script Lobby_EventScript_Kaktus {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
+         if(flag(FLAG_DEFEATED_LOBBY_KAKTUS)) {
+            call(Lobby_EventScript_Kaktus_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Kaktus_IntroFirstBattle)
+        }
+        
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("¿Acaso perdí?"))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
+            msgbox(format("Ja… perdí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+            call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Pero esto es lo bonito de esta comunidad.\pSiempre hay alguien nuevo que te sorprende."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+            call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Enhorabuena, crack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            setflag(FLAG_DEFEATED_LOBBY_KAKTUS)
+        } else {
+            msgbox(format("Eres buen{OA}, pero aún te falta entrenar para poder vencerme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            playse(SE_LEDGE)
+            applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+            playse(SE_LEDGE)
+            applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
+            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            waitmovement(0)
+        }
+
+        release
+        end
+    } else {
+        msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+        delay(20)
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta verguenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    }
+    release
+    end
 }
