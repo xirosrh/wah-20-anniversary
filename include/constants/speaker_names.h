@@ -29,6 +29,7 @@ enum SpeakerNames {
     SP_NAME_PKPOWER,
     SP_NAME_KLEIN,
     SP_NAME_ROXAS,
+    SP_NAME_INMORTAL_KAKTUS,
     SP_NAME_COUNT
 };
 

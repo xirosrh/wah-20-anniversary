@@ -66,7 +66,7 @@
 #define FLAG_WAH_CHALLENGE_COMPLETED    0x34 // Set when player beats entire WAH challenge
 #define FLAG_NO_WHITEOUT    0x35 // Set when player has no whiteout
 #define FLAG_DEFEATED_LOBBY_ROXAS    0x36 // Used WAH
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_DEFEATED_LOBBY_KAKTUS    0x37 // Used WAH
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
