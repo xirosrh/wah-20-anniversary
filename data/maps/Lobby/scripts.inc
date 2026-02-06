@@ -741,6 +741,217 @@ Lobby_EventScript_Gameboycl_14:
 	goto Lobby_EventScript_Gameboycl_13
 
 
+Lobby_EventScript_FakemonDexMenu::
+# 415 "data/maps/Lobby/scripts.pory"
+	lock
+# 416 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 417 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8000, 0
+# 418 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_KAOSUNE
+# 419 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_2
+Lobby_EventScript_FakemonDexMenu_1:
+# 424 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_FREECH
+# 425 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_5
+Lobby_EventScript_FakemonDexMenu_4:
+# 430 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_PLUGOINK
+# 431 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_8
+Lobby_EventScript_FakemonDexMenu_7:
+# 436 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_GRITESPEC
+# 437 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_11
+Lobby_EventScript_FakemonDexMenu_10:
+# 442 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_MAGIKEN
+# 443 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_14
+Lobby_EventScript_FakemonDexMenu_13:
+# 448 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_AYEWIRAZ
+# 449 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_17
+Lobby_EventScript_FakemonDexMenu_16:
+# 454 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_ELECTRODES
+# 455 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_20
+Lobby_EventScript_FakemonDexMenu_19:
+# 460 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_EING
+# 461 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_23
+Lobby_EventScript_FakemonDexMenu_22:
+# 466 "data/maps/Lobby/scripts.pory"
+	compare VAR_0x8000, 0
+	goto_if_eq Lobby_EventScript_FakemonDexMenu_26
+# 471 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 472 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 7
+	goto_if_gt Lobby_EventScript_FakemonDexMenu_29
+# 476 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 477 "data/maps/Lobby/scripts.pory"
+	case 0, Lobby_EventScript_FakemonDexMenu_33
+# 479 "data/maps/Lobby/scripts.pory"
+	case 1, Lobby_EventScript_FakemonDexMenu_34
+# 481 "data/maps/Lobby/scripts.pory"
+	case 2, Lobby_EventScript_FakemonDexMenu_35
+# 483 "data/maps/Lobby/scripts.pory"
+	case 3, Lobby_EventScript_FakemonDexMenu_36
+# 485 "data/maps/Lobby/scripts.pory"
+	case 4, Lobby_EventScript_FakemonDexMenu_37
+# 487 "data/maps/Lobby/scripts.pory"
+	case 5, Lobby_EventScript_FakemonDexMenu_38
+# 489 "data/maps/Lobby/scripts.pory"
+	case 6, Lobby_EventScript_FakemonDexMenu_39
+# 491 "data/maps/Lobby/scripts.pory"
+	case 7, Lobby_EventScript_FakemonDexMenu_40
+Lobby_EventScript_FakemonDexMenu_31:
+# 494 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_FakemonDexMenu_2:
+# 420 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_KAOSUNE
+# 421 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 0
+# 422 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_1
+
+Lobby_EventScript_FakemonDexMenu_5:
+# 426 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_FREECH
+# 427 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 1
+# 428 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_4
+
+Lobby_EventScript_FakemonDexMenu_8:
+# 432 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_PLUGOINK
+# 433 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 2
+# 434 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_7
+
+Lobby_EventScript_FakemonDexMenu_11:
+# 438 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_GRITESPEC
+# 439 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 3
+# 440 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_10
+
+Lobby_EventScript_FakemonDexMenu_14:
+# 444 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_MAGIKEN
+# 445 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 4
+# 446 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_13
+
+Lobby_EventScript_FakemonDexMenu_17:
+# 450 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_AYEWIRAZ
+# 451 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 5
+# 452 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_16
+
+Lobby_EventScript_FakemonDexMenu_20:
+# 456 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_ELECTRODES
+# 457 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 6
+# 458 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_19
+
+Lobby_EventScript_FakemonDexMenu_23:
+# 462 "data/maps/Lobby/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_EING
+# 463 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 7
+# 464 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_22
+
+Lobby_EventScript_FakemonDexMenu_26:
+# 467 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FakemonDex_NoneSeen
+# 468 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_FakemonDexMenu_29:
+# 473 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_FakemonDexMenu_33:
+# 478 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Kaosune
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_34:
+# 480 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Freech
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_35:
+# 482 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Plugoink
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_36:
+# 484 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Gritespec
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_37:
+# 486 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Magiken
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_38:
+# 488 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Ayewiraz
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_39:
+# 490 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Electrodes
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+Lobby_EventScript_FakemonDexMenu_40:
+# 492 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Fakemon_Eing
+	goto Lobby_EventScript_FakemonDexMenu_31
+
+
 # 103 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 103 "data/maps/Lobby/scripts.pory"
@@ -1043,3 +1254,39 @@ Lobby_Text_Roxas_PlayerCancelled::
 Lobby_Text_Gameboycl_OnDefeat::
 # 410 "data/maps/Lobby/scripts.pory"
 	.string "Evolucionar también es mirar atrás.$"
+
+Lobby_Text_FakemonDex_NoneSeen::
+# 498 "data/maps/Lobby/scripts.pory"
+	.string "Aún no has visto ningún fakemon en tu Pokédex.$"
+
+Lobby_Text_Fakemon_Kaosune::
+# 502 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Kaosune (placeholder).$"
+
+Lobby_Text_Fakemon_Freech::
+# 506 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Freech (placeholder).$"
+
+Lobby_Text_Fakemon_Plugoink::
+# 510 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Plugoink (placeholder).$"
+
+Lobby_Text_Fakemon_Gritespec::
+# 514 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Gritespec (placeholder).$"
+
+Lobby_Text_Fakemon_Magiken::
+# 518 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Magiken (placeholder).$"
+
+Lobby_Text_Fakemon_Ayewiraz::
+# 522 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Ayewiraz (placeholder).$"
+
+Lobby_Text_Fakemon_Electrodes::
+# 526 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Electrodes (placeholder).$"
+
+Lobby_Text_Fakemon_Eing::
+# 530 "data/maps/Lobby/scripts.pory"
+	.string "Información sobre Eing (placeholder).$"

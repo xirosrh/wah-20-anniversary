@@ -410,3 +410,123 @@ script Lobby_EventScript_Gameboycl {
 text Lobby_Text_Gameboycl_OnDefeat {
     format("Evolucionar también es mirar atrás.")
 }
+
+script Lobby_EventScript_FakemonDexMenu {
+    lock
+    faceplayer
+    setvar(VAR_0x8000, 0)
+    getseenmon(SPECIES_KAOSUNE)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_KAOSUNE)
+        dynmultipush(gStringVar1, 0)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_FREECH)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_FREECH)
+        dynmultipush(gStringVar1, 1)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_PLUGOINK)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_PLUGOINK)
+        dynmultipush(gStringVar1, 2)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_GRITESPEC)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_GRITESPEC)
+        dynmultipush(gStringVar1, 3)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MAGIKEN)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MAGIKEN)
+        dynmultipush(gStringVar1, 4)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_AYEWIRAZ)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_AYEWIRAZ)
+        dynmultipush(gStringVar1, 5)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_ELECTRODES)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_EING)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_EING)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    if(var(VAR_0x8000) == 0) {
+        msgbox(Lobby_Text_FakemonDex_NoneSeen)
+        release
+        end
+    }
+    dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    if(var(VAR_RESULT) > 7) {
+        release
+        end
+    }
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(Lobby_Text_Fakemon_Kaosune)
+        case 1:
+            msgbox(Lobby_Text_Fakemon_Freech)
+        case 2:
+            msgbox(Lobby_Text_Fakemon_Plugoink)
+        case 3:
+            msgbox(Lobby_Text_Fakemon_Gritespec)
+        case 4:
+            msgbox(Lobby_Text_Fakemon_Magiken)
+        case 5:
+            msgbox(Lobby_Text_Fakemon_Ayewiraz)
+        case 6:
+            msgbox(Lobby_Text_Fakemon_Electrodes)
+        case 7:
+            msgbox(Lobby_Text_Fakemon_Eing)
+    }
+    release
+    end
+}
+
+text Lobby_Text_FakemonDex_NoneSeen {
+    "Aún no has visto ningún fakemon en tu Pokédex."
+}
+
+text Lobby_Text_Fakemon_Kaosune {
+    "Información sobre Kaosune (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Freech {
+    "Información sobre Freech (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Plugoink {
+    "Información sobre Plugoink (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Gritespec {
+    "Información sobre Gritespec (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Magiken {
+    "Información sobre Magiken (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Ayewiraz {
+    "Información sobre Ayewiraz (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Electrodes {
+    "Información sobre Electrodes (placeholder)."
+}
+
+text Lobby_Text_Fakemon_Eing {
+    "Información sobre Eing (placeholder)."
+}
