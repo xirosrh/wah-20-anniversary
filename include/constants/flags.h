@@ -67,7 +67,7 @@
 #define FLAG_NO_WHITEOUT    0x35 // Set when player has no whiteout
 #define FLAG_DEFEATED_LOBBY_ROXAS    0x36 // Used WAH
 #define FLAG_DEFEATED_LOBBY_KAKTUS    0x37 // Used WAH
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_DEFEATED_LOBBY_GAMEBOYCL    0x38 // Used WAH
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

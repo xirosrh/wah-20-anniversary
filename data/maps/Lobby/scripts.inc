@@ -472,8 +472,8 @@ Lobby_EventScript_Kaktus_IntroRematch::
 # 263 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Kaktus_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
 # 264 "data/maps/Lobby/scripts.pory"
-	release
-	end
+	goto Lobby_EventScript_Kaktus_OnFinishEvent
+	return
 
 Lobby_EventScript_Kaktus_IntroRematch_1:
 # 260 "data/maps/Lobby/scripts.pory"
@@ -481,108 +481,264 @@ Lobby_EventScript_Kaktus_IntroRematch_1:
 	return
 
 
-Lobby_EventScript_Kaktus::
-# 271 "data/maps/Lobby/scripts.pory"
-	lock
-# 272 "data/maps/Lobby/scripts.pory"
-	faceplayer
-# 273 "data/maps/Lobby/scripts.pory"
-	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Kaktus_2
-# 315 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 316 "data/maps/Lobby/scripts.pory"
-	delay 20
-# 317 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 318 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 319 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 320 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
-# 321 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Kaktus_OnFinishEvent::
+# 270 "data/maps/Lobby/scripts.pory"
 	turnobject VAR_LAST_TALKED, DIR_SOUTH
-# 323 "data/maps/Lobby/scripts.pory"
+# 271 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
-Lobby_EventScript_Kaktus_2:
-# 274 "data/maps/Lobby/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LOBBY_KAKTUS, Lobby_EventScript_Kaktus_6
+
+Lobby_EventScript_Kaktus::
+# 276 "data/maps/Lobby/scripts.pory"
+	lock
 # 277 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 278 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Kaktus_1
+# 319 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 320 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 321 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 322 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 323 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 324 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 325 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Kaktus_OnFinishEvent
+	return
+
+Lobby_EventScript_Kaktus_1:
+# 279 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_DEFEATED_LOBBY_KAKTUS, Lobby_EventScript_Kaktus_5
+# 282 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_Kaktus_IntroFirstBattle
+Lobby_EventScript_Kaktus_4:
+# 285 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 286 "data/maps/Lobby/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 287 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 288 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 289 "data/maps/Lobby/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 290 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_KAKTUS, Lobby_EventScript_Kaktus_Text_0
+# 291 "data/maps/Lobby/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 292 "data/maps/Lobby/scripts.pory"
+	special GetBattleOutcome
+# 293 "data/maps/Lobby/scripts.pory"
+	special HealPlayerParty
+# 294 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lobby_EventScript_Kaktus_9
+# 308 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 309 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 310 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
+# 311 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 312 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Lobby_EventScript_Kaktus_Movement_0
+# 313 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 314 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+Lobby_EventScript_Kaktus_8:
+# 316 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Kaktus_OnFinishEvent
+	return
+
 Lobby_EventScript_Kaktus_5:
 # 280 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 281 "data/maps/Lobby/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
-# 282 "data/maps/Lobby/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
-# 283 "data/maps/Lobby/scripts.pory"
-	waitmovement 0
-# 284 "data/maps/Lobby/scripts.pory"
-	setflag B_FLAG_NO_WHITEOUT
-# 285 "data/maps/Lobby/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_KAKTUS, Lobby_EventScript_Kaktus_Text_0
-# 286 "data/maps/Lobby/scripts.pory"
-	clearflag B_FLAG_NO_WHITEOUT
-# 287 "data/maps/Lobby/scripts.pory"
-	special GetBattleOutcome
-# 288 "data/maps/Lobby/scripts.pory"
-	special HealPlayerParty
-# 289 "data/maps/Lobby/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Lobby_EventScript_Kaktus_10
-# 303 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 304 "data/maps/Lobby/scripts.pory"
-	playse SE_LEDGE
-# 305 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
-# 306 "data/maps/Lobby/scripts.pory"
-	playse SE_LEDGE
-# 307 "data/maps/Lobby/scripts.pory"
-	applymovement VAR_LAST_TALKED, Lobby_EventScript_Kaktus_Movement_0
-# 308 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 309 "data/maps/Lobby/scripts.pory"
-	waitmovement 0
+	call Lobby_EventScript_Kaktus_IntroRematch
+	goto Lobby_EventScript_Kaktus_4
+
 Lobby_EventScript_Kaktus_9:
-# 312 "data/maps/Lobby/scripts.pory"
+# 295 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 296 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_XWithDelay48
+# 297 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 298 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 299 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 300 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 301 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 302 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 303 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
+# 304 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 305 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Kaktus_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 306 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_DEFEATED_LOBBY_KAKTUS
+	goto Lobby_EventScript_Kaktus_8
+
+
+Lobby_EventScript_Gameboycl_IntroFirstBattle::
+# 331 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 332 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 333 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 334 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 335 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 336 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 337 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 338 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+	return
+
+
+Lobby_EventScript_Gameboycl_IntroRematch::
+# 343 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_GAMEBOY_CL
+# 344 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 345 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 346 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_Gameboycl_IntroRematch_1
+# 350 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 351 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Gameboycl_OnFinishEvent
+	return
+
+Lobby_EventScript_Gameboycl_IntroRematch_1:
+# 347 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	return
+
+
+Lobby_EventScript_Gameboycl_OnFinishEvent::
+# 356 "data/maps/Lobby/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_EAST
+# 357 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
-Lobby_EventScript_Kaktus_6:
-# 275 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_Kaktus_IntroRematch
-	goto Lobby_EventScript_Kaktus_5
 
-Lobby_EventScript_Kaktus_10:
-# 290 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 291 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_XWithDelay48
-# 292 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 293 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 294 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
-# 295 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Gameboycl::
+# 363 "data/maps/Lobby/scripts.pory"
+	lock
+# 364 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 365 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Gameboycl_1
+# 400 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 401 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 296 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 297 "data/maps/Lobby/scripts.pory"
+# 402 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 403 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 298 "data/maps/Lobby/scripts.pory"
+# 404 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
-# 299 "data/maps/Lobby/scripts.pory"
+# 405 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 406 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Gameboycl_OnFinishEvent
+	return
+
+Lobby_EventScript_Gameboycl_1:
+# 366 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_DEFEATED_LOBBY_GAMEBOYCL, Lobby_EventScript_Gameboycl_5
+# 369 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Gameboycl_IntroFirstBattle
+Lobby_EventScript_Gameboycl_4:
+# 371 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 372 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 373 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 374 "data/maps/Lobby/scripts.pory"
+	random 3
+# 375 "data/maps/Lobby/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 376 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 377 "data/maps/Lobby/scripts.pory"
+	case 0, Lobby_EventScript_Gameboycl_10
+# 379 "data/maps/Lobby/scripts.pory"
+	case 1, Lobby_EventScript_Gameboycl_11
+# 381 "data/maps/Lobby/scripts.pory"
+	case 2, Lobby_EventScript_Gameboycl_12
+Lobby_EventScript_Gameboycl_8:
+# 384 "data/maps/Lobby/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 385 "data/maps/Lobby/scripts.pory"
+	special GetBattleOutcome
+# 386 "data/maps/Lobby/scripts.pory"
+	special HealPlayerParty
+# 387 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lobby_EventScript_Gameboycl_14
+# 395 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+Lobby_EventScript_Gameboycl_13:
+# 397 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Gameboycl_OnFinishEvent
+	return
+
+Lobby_EventScript_Gameboycl_5:
+# 367 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Gameboycl_IntroRematch
+	goto Lobby_EventScript_Gameboycl_4
+
+Lobby_EventScript_Gameboycl_10:
+# 378 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1, Lobby_Text_Gameboycl_OnDefeat
+	goto Lobby_EventScript_Gameboycl_8
+
+Lobby_EventScript_Gameboycl_11:
+# 380 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2, Lobby_Text_Gameboycl_OnDefeat
+	goto Lobby_EventScript_Gameboycl_8
+
+Lobby_EventScript_Gameboycl_12:
+# 382 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3, Lobby_Text_Gameboycl_OnDefeat
+	goto Lobby_EventScript_Gameboycl_8
+
+Lobby_EventScript_Gameboycl_14:
+# 388 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 389 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 390 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Gameboycl_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 391 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 392 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 300 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Kaktus_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 301 "data/maps/Lobby/scripts.pory"
-	setflag FLAG_DEFEATED_LOBBY_KAKTUS
-	goto Lobby_EventScript_Kaktus_9
+# 393 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_DEFEATED_LOBBY_GAMEBOYCL
+	goto Lobby_EventScript_Gameboycl_13
 
 
 # 103 "data/maps/Lobby/scripts.pory"
@@ -607,13 +763,13 @@ Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1:
 	delay_16
 	step_end
 
-# 307 "data/maps/Lobby/scripts.pory"
+# 312 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Kaktus_Movement_0:
-# 307 "data/maps/Lobby/scripts.pory"
+# 312 "data/maps/Lobby/scripts.pory"
 	jump_in_place_down
-# 307 "data/maps/Lobby/scripts.pory"
+# 312 "data/maps/Lobby/scripts.pory"
 	unlock_facing_direction
-# 307 "data/maps/Lobby/scripts.pory"
+# 312 "data/maps/Lobby/scripts.pory"
 	face_player
 	step_end
 
@@ -796,43 +952,83 @@ Lobby_EventScript_Kaktus_IntroRematch_Text_2:
 	.string "¡Será en otra oportunidad entonces!$"
 
 Lobby_EventScript_Kaktus_Text_0:
-# 285 "data/maps/Lobby/scripts.pory"
+# 290 "data/maps/Lobby/scripts.pory"
 	.string "¿Acaso perdí?$"
 
 Lobby_EventScript_Kaktus_Text_1:
-# 292 "data/maps/Lobby/scripts.pory"
+# 297 "data/maps/Lobby/scripts.pory"
 	.string "Ja… perdí.$"
 
 Lobby_EventScript_Kaktus_Text_2:
-# 296 "data/maps/Lobby/scripts.pory"
+# 301 "data/maps/Lobby/scripts.pory"
 	.string "Pero esto es lo bonito de esta\n"
 	.string "comunidad.\p"
 	.string "Siempre hay alguien nuevo que te\n"
 	.string "sorprende.$"
 
 Lobby_EventScript_Kaktus_Text_3:
-# 300 "data/maps/Lobby/scripts.pory"
+# 305 "data/maps/Lobby/scripts.pory"
 	.string "Enhorabuena, crack.$"
 
 Lobby_EventScript_Kaktus_Text_4:
-# 303 "data/maps/Lobby/scripts.pory"
+# 308 "data/maps/Lobby/scripts.pory"
 	.string "Eres buen{OA}, pero aún te falta entrenar\n"
 	.string "para poder vencerme.$"
 
 Lobby_EventScript_Kaktus_Text_5:
-# 308 "data/maps/Lobby/scripts.pory"
+# 313 "data/maps/Lobby/scripts.pory"
 	.string "¡Espero la revancha pronto!$"
 
 Lobby_EventScript_Kaktus_Text_6:
-# 315 "data/maps/Lobby/scripts.pory"
+# 319 "data/maps/Lobby/scripts.pory"
 	.string "¿Sabes? Mucha gente en la comunidad\n"
 	.string "empezó viendo tutoriales míos.$"
 
 Lobby_EventScript_Kaktus_Text_7:
-# 318 "data/maps/Lobby/scripts.pory"
+# 322 "data/maps/Lobby/scripts.pory"
 	.string "Aunque si te soy sincero… el primero que\n"
 	.string "hice me dio tanta verguenza que lo\l"
 	.string "borré.$"
+
+Lobby_EventScript_Gameboycl_IntroFirstBattle_Text_0:
+# 334 "data/maps/Lobby/scripts.pory"
+	.string "No soy competitivo ni ambicioso. Soy\n"
+	.string "más bien una persona mediocre.$"
+
+Lobby_EventScript_Gameboycl_IntroFirstBattle_Text_1:
+# 338 "data/maps/Lobby/scripts.pory"
+	.string "Eso puede jugarme en contra.$"
+
+Lobby_EventScript_Gameboycl_IntroRematch_Text_0:
+# 343 "data/maps/Lobby/scripts.pory"
+	.string "Kanto y Johto se unen en el mismo azul,\n"
+	.string "el agua no recuerda fronteras.\p"
+	.string "¿Quieres luchar contra uno de mis 3\n"
+	.string "equipos?$"
+
+Lobby_EventScript_Gameboycl_IntroRematch_Text_1:
+# 350 "data/maps/Lobby/scripts.pory"
+	.string "Lo mejor de la vida no es competir, sino\n"
+	.string "compartir.$"
+
+Lobby_EventScript_Gameboycl_Text_0:
+# 390 "data/maps/Lobby/scripts.pory"
+	.string "Definitivamente prefiero compartir por\n"
+	.string "sobre competir.$"
+
+Lobby_EventScript_Gameboycl_Text_1:
+# 395 "data/maps/Lobby/scripts.pory"
+	.string "PENDIENTE GAMEBOY$"
+
+Lobby_EventScript_Gameboycl_Text_2:
+# 400 "data/maps/Lobby/scripts.pory"
+	.string "Un hack rom es como la arquitectura, se\n"
+	.string "construye sobre lo existente.$"
+
+Lobby_EventScript_Gameboycl_Text_3:
+# 402 "data/maps/Lobby/scripts.pory"
+	.string "El arte aquí no es lo que se cambia, sino\n"
+	.string "lo que se quiere transmitir$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
@@ -843,3 +1039,7 @@ Lobby_Text_Roxas_PlayerCancelled::
 	.string "¿Así que le tenés miedo a mi bicho\n"
 	.string "legendario? ¡Y aún así ganaste las\l"
 	.string "salas!$"
+
+Lobby_Text_Gameboycl_OnDefeat::
+# 410 "data/maps/Lobby/scripts.pory"
+	.string "Evolucionar también es mirar atrás.$"
