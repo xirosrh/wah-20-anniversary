@@ -115,14 +115,20 @@ Lobby_MartItems:
 	.2byte ITEM_MAX_REVIVE
 # 73 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_REVIVAL_HERB
+# 74 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_BAXCALIBURITE
 # 75 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_DRAGALGITE
 # 76 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_TYRANITARITE
+# 77 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_DARKRANITE
 # 78 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_ALAKAZITE
 # 79 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_LUCARIONITE
+# 80 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_LUCARIONITE_Z
 # 81 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_MEWTWONITE_X
 # 82 "data/maps/Lobby/scripts.pory"
