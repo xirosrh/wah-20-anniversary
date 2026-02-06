@@ -3,7 +3,7 @@
   "name": "XirosRoom",
   "layout": "LAYOUT_XIROS_ROOM",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_XIROS_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

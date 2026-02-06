@@ -1028,7 +1028,7 @@ Lobby_EventScript_Gameboycl_Text_2:
 Lobby_EventScript_Gameboycl_Text_3:
 # 402 "data/maps/Lobby/scripts.pory"
 	.string "El arte aquí no es lo que se cambia, sino\n"
-	.string "lo que se quiere transmitir$"
+	.string "lo que se quiere transmitir.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
