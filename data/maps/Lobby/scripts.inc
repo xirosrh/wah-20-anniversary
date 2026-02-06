@@ -92,62 +92,341 @@ Lobby_EventScript_Shop::
 	end
 
 
-	.align 2
-# 63 "data/maps/Lobby/scripts.pory"
-MyMartItems:
+Lobby_EventScript_Roxas_IntroFirstBattle::
 # 64 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_HYPER_POTION
+	checkplayergender
 # 65 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_POTION
-# 66 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_FULL_RESTORE
-# 67 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ETHER
+	compare VAR_RESULT, MALE
+	goto_if_eq Lobby_EventScript_Roxas_IntroFirstBattle_2
 # 68 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_ETHER
-# 69 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ELIXIR
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+Lobby_EventScript_Roxas_IntroFirstBattle_1:
 # 70 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_ELIXIR
+	playse SE_LEDGE
 # 71 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_REVIVE
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
 # 72 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MAX_REVIVE
+	playse SE_LEDGE
 # 73 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_REVIVAL_HERB
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1
+# 74 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 75 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_DRAGALGITE
+	playse SE_PIN
 # 76 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_TYRANITARITE
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 77 "data/maps/Lobby/scripts.pory"
+	delay 20
 # 78 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ALAKAZITE
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 79 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_LUCARIONITE
+	playse SE_PIN
+# 80 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
 # 81 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MEWTWONITE_X
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 82 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_MEWTWONITE_Y
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
 # 83 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_CHARIZARDITE_X
+	delay 20
 # 84 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_CHARIZARDITE_Y
-# 85 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_GALLADITE
-# 86 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_GLALITITE
-# 87 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_FROSLASSITE
-# 88 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_CLEFABLITE
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	return
+
+Lobby_EventScript_Roxas_IntroFirstBattle_2:
+# 66 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	goto Lobby_EventScript_Roxas_IntroFirstBattle_1
+
+
+Lobby_EventScript_Roxas_IntroRematch::
 # 89 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_HOUNDOOMINITE
+	msgbox Lobby_EventScript_Roxas_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_ROXAS
 # 90 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_AGGRONITE
+	closemessage
 # 91 "data/maps/Lobby/scripts.pory"
-	.2byte ITEM_ZYGARDITE
+	delay 20
 # 92 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_Roxas_IntroRematch_1
+# 96 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 97 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+Lobby_EventScript_Roxas_IntroRematch_1:
+# 93 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_IntroRematch_Text_1, speaker = SP_NAME_ROXAS
+	return
+
+
+Lobby_EventScript_Roxas::
+# 103 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Roxas_1
+# 154 "data/maps/Lobby/scripts.pory"
+	lockall
+# 155 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 156 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 157 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 158 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48
+# 159 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 160 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 161 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 162 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 163 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_Angry
+# 164 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 165 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
+# 166 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 167 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1
+# 168 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 169 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 170 "data/maps/Lobby/scripts.pory"
+	lockall
+# 171 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 172 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 173 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 174 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 175 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+Lobby_EventScript_Roxas_1:
+# 104 "data/maps/Lobby/scripts.pory"
+	lockall
+# 105 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 106 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 107 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48
+# 108 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_DEFEATED_LOBBY_ROXAS, Lobby_EventScript_Roxas_5
+# 111 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Roxas_IntroFirstBattle
+Lobby_EventScript_Roxas_4:
+# 113 "data/maps/Lobby/scripts.pory"
+	special SavePlayerParty
+# 114 "data/maps/Lobby/scripts.pory"
+	setvar VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER
+# 115 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 1
+# 116 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, FRONTIER_LVL_OPEN
+# 117 "data/maps/Lobby/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 118 "data/maps/Lobby/scripts.pory"
+	special ChoosePartyForBattleFrontier
+# 119 "data/maps/Lobby/scripts.pory"
+	waitstate
+# 120 "data/maps/Lobby/scripts.pory"
+	lockall
+# 121 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Lobby_EventScript_Roxas_9
+# 127 "data/maps/Lobby/scripts.pory"
+	special ReducePlayerPartyToSelectedMons
+# 128 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 129 "data/maps/Lobby/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 130 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_ROXAS, Lobby_EventScript_Roxas_Text_1
+# 131 "data/maps/Lobby/scripts.pory"
+	special GetBattleOutcome
+# 132 "data/maps/Lobby/scripts.pory"
+	special LoadPlayerParty
+# 133 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lobby_EventScript_Roxas_12
+# 140 "data/maps/Lobby/scripts.pory"
+	checkplayergender
+# 141 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq Lobby_EventScript_Roxas_16
+# 144 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+Lobby_EventScript_Roxas_15:
+# 146 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 147 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 148 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+Lobby_EventScript_Roxas_11:
+# 150 "data/maps/Lobby/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 151 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+Lobby_EventScript_Roxas_5:
+# 109 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Roxas_IntroRematch
+	goto Lobby_EventScript_Roxas_4
+
+Lobby_EventScript_Roxas_9:
+# 122 "data/maps/Lobby/scripts.pory"
+	special LoadPlayerParty
+# 123 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+# 124 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+Lobby_EventScript_Roxas_12:
+# 134 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 135 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_X
+# 136 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_2, MSGBOX_DEFAULT
+# 137 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 138 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_DEFEATED_LOBBY_ROXAS
+	goto Lobby_EventScript_Roxas_11
+
+Lobby_EventScript_Roxas_16:
+# 142 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Roxas_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	goto Lobby_EventScript_Roxas_15
+
+
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer::
+# 185 "data/maps/Lobby/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 186 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 187 "data/maps/Lobby/scripts.pory"
+	case DIR_NORTH, Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_3
+# 190 "data/maps/Lobby/scripts.pory"
+	case DIR_SOUTH, Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_4
+# 193 "data/maps/Lobby/scripts.pory"
+	case DIR_WEST, Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_5
+# 196 "data/maps/Lobby/scripts.pory"
+	case DIR_EAST, Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_6
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_1:
+	return
+
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_3:
+# 188 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceDown
+	goto Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_4:
+# 191 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceUp
+	goto Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_5:
+# 194 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceRight
+	goto Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_6:
+# 197 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft
+	goto Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+
+	.align 2
+# 204 "data/maps/Lobby/scripts.pory"
+MyMartItems:
+# 205 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_HYPER_POTION
+# 206 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_POTION
+# 207 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_FULL_RESTORE
+# 208 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ETHER
+# 209 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_ETHER
+# 210 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ELIXIR
+# 211 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_ELIXIR
+# 212 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_REVIVE
+# 213 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MAX_REVIVE
+# 214 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_REVIVAL_HERB
+# 216 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_DRAGALGITE
+# 217 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_TYRANITARITE
+# 219 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ALAKAZITE
+# 220 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_LUCARIONITE
+# 222 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MEWTWONITE_X
+# 223 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_MEWTWONITE_Y
+# 224 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CHARIZARDITE_X
+# 225 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CHARIZARDITE_Y
+# 226 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_GALLADITE
+# 227 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_GLALITITE
+# 228 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_FROSLASSITE
+# 229 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_CLEFABLITE
+# 230 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_HOUNDOOMINITE
+# 231 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_AGGRONITE
+# 232 "data/maps/Lobby/scripts.pory"
+	.2byte ITEM_ZYGARDITE
+# 233 "data/maps/Lobby/scripts.pory"
 	.2byte ITEM_VICTREEBELITE
 	.2byte ITEM_NONE
+
+# 71 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
+# 71 "data/maps/Lobby/scripts.pory"
+	lock_facing_direction
+# 71 "data/maps/Lobby/scripts.pory"
+	jump_in_place_down
+	step_end
+
+# 73 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1:
+# 73 "data/maps/Lobby/scripts.pory"
+	jump_in_place_down
+# 73 "data/maps/Lobby/scripts.pory"
+	unlock_facing_direction
+# 73 "data/maps/Lobby/scripts.pory"
+	face_player
+# 73 "data/maps/Lobby/scripts.pory"
+	delay_16
+# 73 "data/maps/Lobby/scripts.pory"
+	delay_16
+	step_end
 
 Lobby_EventScript_StartChallenge_Text_0:
 # 13 "data/maps/Lobby/scripts.pory"
@@ -176,6 +455,137 @@ Lobby_EventScript_Shop_Text_1:
 	.string "Gracias por tu visita. ¡Que tengas un\n"
 	.string "buen día!$"
 
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_0:
+# 66 "data/maps/Lobby/scripts.pory"
+	.string "¡Apa, mira vos! ¡El nuevo campeón!\n"
+	.string "¡Felicidades loco!$"
+
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_1:
+# 68 "data/maps/Lobby/scripts.pory"
+	.string "¡Apa, mira vos! ¡La nueva campeona!\n"
+	.string "¡Felicidades loca!$"
+
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_2:
+# 74 "data/maps/Lobby/scripts.pory"
+	.string "Veo que se la diste a esos traidores de\n"
+	.string "las salas… Me alegra que alguien les\l"
+	.string "bajara los humos.$"
+
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_3:
+# 78 "data/maps/Lobby/scripts.pory"
+	.string "¿Te acordas de lo que te conté la ultima\n"
+	.string "vez?$"
+
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_4:
+# 81 "data/maps/Lobby/scripts.pory"
+	.string "Terminé mi investigación en el\n"
+	.string "Archipiélago Suzuka… es una historia\l"
+	.string "larga, tendrías que haberlo visto…\p"
+	.string "No sabes lo que fue… Pero logré dar con\n"
+	.string "el rastro de esa fuerza que estaba\l"
+	.string "causando tantos males y estoy listo\l"
+	.string "para probar si realmente este bicho es\l"
+	.string "tan legendario como dicen las crónicas\l"
+	.string "del archipiélago.$"
+
+Lobby_EventScript_Roxas_IntroFirstBattle_Text_5:
+# 84 "data/maps/Lobby/scripts.pory"
+	.string "Vamos a hacerlo más interesante: un\n"
+	.string "mano a mano.\p"
+	.string "Elige a tu mejor bicho y prepárate.$"
+
+Lobby_EventScript_Roxas_IntroRematch_Text_0:
+# 89 "data/maps/Lobby/scripts.pory"
+	.string "¡Apa, tu de nuevo! ¿Quieres volver a\n"
+	.string "combatir contra mi legendario?$"
+
+Lobby_EventScript_Roxas_IntroRematch_Text_1:
+# 93 "data/maps/Lobby/scripts.pory"
+	.string "¡Vamos de nuevo! Elige a tu mejor bicho y prepárate.$"
+
+Lobby_EventScript_Roxas_Text_0:
+# 128 "data/maps/Lobby/scripts.pory"
+	.string "¡A ver si te la bancas!$"
+
+Lobby_EventScript_Roxas_Text_1:
+# 130 "data/maps/Lobby/scripts.pory"
+	.string "¡Nooooo!$"
+
+Lobby_EventScript_Roxas_Text_2:
+# 136 "data/maps/Lobby/scripts.pory"
+	.string "¡Nooo, me estás cargando! Ni con la\n"
+	.string "fuerza de este Pokémon oscuro te pude\l"
+	.string "ganar.\p"
+	.string "Ahora me cierra por qué a vos te dejaron\n"
+	.string "pasar a las salas y a mí me sacaron de\l"
+	.string "un voleo.\p"
+	.string "Tenés algo distinto, pasta de campeón,\n"
+	.string "no es solo fuerza bruta.\p"
+	.string "La verdad, me cerraste la boca. Bien\n"
+	.string "ganado.$"
+
+Lobby_EventScript_Roxas_Text_3:
+# 142 "data/maps/Lobby/scripts.pory"
+	.string "Mamita lo que me imaginaba… El poder de\n"
+	.string "este bicho es de otro planeta, ni vos\l"
+	.string "que sos el campeón te la bancaste.$"
+
+Lobby_EventScript_Roxas_Text_4:
+# 144 "data/maps/Lobby/scripts.pory"
+	.string "Mamita lo que me imaginaba… El poder de\n"
+	.string "este bicho es de otro planeta, ni vos\l"
+	.string "que sos la campeona te la bancaste.$"
+
+Lobby_EventScript_Roxas_Text_5:
+# 148 "data/maps/Lobby/scripts.pory"
+	.string "Si algún día te das una vuelta por el\n"
+	.string "Archipiélago Suzuka, anda con cuidado\l"
+	.string "maquina, porque allá este no te perdona\l"
+	.string "ni media.\p"
+	.string "Suerte la próxima.$"
+
+Lobby_EventScript_Roxas_Text_6:
+# 156 "data/maps/Lobby/scripts.pory"
+	.string "No te molestes en preguntar… A mí\n"
+	.string "tampoco me dejan pasar estos…$"
+
+Lobby_EventScript_Roxas_Text_7:
+# 160 "data/maps/Lobby/scripts.pory"
+	.string "Dicen que haber sido Líder de WAH en el\n"
+	.string "Archipiélago Suzuka durante solo dos\l"
+	.string "semanas no es “trayectoria suficiente”\l"
+	.string "para participar.$"
+
+Lobby_EventScript_Roxas_Text_8:
+# 168 "data/maps/Lobby/scripts.pory"
+	.string "¡Unos caraduras loco!$"
+
+Lobby_EventScript_Roxas_Text_9:
+# 172 "data/maps/Lobby/scripts.pory"
+	.string "Pero bueno, tampoco me voy a quedar acá\n"
+	.string "llorando.\p"
+	.string "Estoy tras un barco que desapareció al\n"
+	.string "oeste de las Islas Naranja, el\l"
+	.string "archipiélago Suzuka.\p"
+	.string "El Team Rocket anda haciendo de las\n"
+	.string "suyas y dicen que hay un bicho oscuro\l"
+	.string "con ojos rojos que es un peligro…\l"
+	.string "Aterrador…\p"
+	.string "Habrá que investigar y ver que onda…$"
+
+Lobby_EventScript_Roxas_Text_10:
+# 174 "data/maps/Lobby/scripts.pory"
+	.string "Che, discúlpame, mejor me voy a seguir\n"
+	.string "con mis investigaciones.\p"
+	.string "¡Suerte, espero que a vos sí te den\n"
+	.string "bola!$"
+
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
 	.string "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!$"
+
+Lobby_Text_Roxas_PlayerCancelled::
+# 180 "data/maps/Lobby/scripts.pory"
+	.string "¿Así que le tenés miedo a mi bicho\n"
+	.string "legendario? ¡Y aún así ganaste las\l"
+	.string "salas!$"

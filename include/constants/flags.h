@@ -64,8 +64,8 @@
 #define FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS    0x32 // Used WAH
 #define FLAG_DEFEATED_ADMIN_SERGIO    0x33 // Used WAH
 #define FLAG_WAH_CHALLENGE_COMPLETED    0x34 // Set when player beats entire WAH challenge
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_NO_WHITEOUT    0x35 // Set when player has no whiteout
+#define FLAG_DEFEATED_LOBBY_ROXAS    0x36 // Used WAH
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag

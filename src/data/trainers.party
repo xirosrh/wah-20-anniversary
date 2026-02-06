@@ -2628,6 +2628,18 @@ AI: Smart Trainer
 Magikarp
 Level: 1
 
+=== TRAINER_WAH_COLLABORATOR_ROXAS ===
+Name: Roxas
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+
+Lugia
+Level: 100
+
 
 === TRAINER_GABBY_AND_TY_1 ===
 Name: GABBY & TY
@@ -2908,23 +2920,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Pin Missile
 - Tail Whip
 - Surf
-
-=== TRAINER_RANDALL ===
-Name: RANDALL
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Swellow
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Quick Attack
-- Agility
-- Wing Attack
 
 === TRAINER_PARKER ===
 Name: PARKER

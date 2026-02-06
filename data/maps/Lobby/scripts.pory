@@ -60,6 +60,147 @@ script Lobby_EventScript_Shop {
     end
 }
 
+script Lobby_EventScript_Roxas_IntroFirstBattle {
+    checkplayergender
+    if(var(VAR_RESULT) == MALE) {
+        msgbox(format("¡Apa, mira vos!  ¡El nuevo campeón! ¡Felicidades loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    } else {
+        msgbox(format("¡Apa, mira vos! ¡La nueva campeona! ¡Felicidades loca!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    }
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
+    msgbox(format("Veo que se la diste a esos traidores de las salas… Me alegra que alguien les bajara los humos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    delay(20)
+    msgbox(format("¿Te acordas de lo que te conté la ultima vez?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("Terminé mi investigación en el Archipiélago Suzuka… es una historia larga, tendrías que haberlo visto…\pNo sabes lo que fue… Pero logré dar con el rastro de esa fuerza que estaba causando tantos males y estoy listo para probar si realmente este bicho es tan legendario como dicen las crónicas del archipiélago."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    return
+}
+
+script Lobby_EventScript_Roxas_IntroRematch {
+    msgbox(format("¡Apa, tu de nuevo! ¿Quieres volver a combatir contra mi legendario?"), MSGBOX_YESNO, speaker = SP_NAME_ROXAS)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("¡Vamos de nuevo! Elige a tu mejor bicho y prepárate."), speaker = SP_NAME_ROXAS)
+        return
+    } else {
+        msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        releaseall
+        end
+    }
+}
+
+script Lobby_EventScript_Roxas {
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
+        lockall
+        faceplayer
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
+        if(flag(FLAG_DEFEATED_LOBBY_ROXAS)) {
+            call(Lobby_EventScript_Roxas_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Roxas_IntroFirstBattle)
+        }
+        special(SavePlayerParty)
+        setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
+        setvar(VAR_0x8005, 1)
+        setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+        fadescreen(FADE_TO_BLACK)
+        special(ChoosePartyForBattleFrontier)
+        waitstate
+        lockall
+        if (var(VAR_RESULT) == 0) {
+            special(LoadPlayerParty)
+            msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            releaseall
+            end
+        }
+        special(ReducePlayerPartyToSelectedMons)
+        msgbox(format("¡A ver si te la bancas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ROXAS, format("¡Nooooo!"))
+        special(GetBattleOutcome)
+        special(LoadPlayerParty)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovement(VAR_LAST_TALKED, Common_Movement_X)
+            msgbox(format("¡Nooo, me estás cargando! Ni con la fuerza de este Pokémon oscuro te pude ganar.\pAhora me cierra por qué a vos te dejaron pasar a las salas y a mí me sacaron de un voleo.\pTenés algo distinto, pasta de campeón, no es solo fuerza bruta.\pLa verdad, me cerraste la boca. Bien ganado."), MSGBOX_DEFAULT)
+            waitmovement(0)
+            setflag(FLAG_DEFEATED_LOBBY_ROXAS)
+        } else {
+            checkplayergender
+            if(var(VAR_RESULT) == MALE) {
+                msgbox(format("Mamita lo que me imaginaba… El poder de este bicho es de otro planeta, ni vos que sos el campeón te la bancaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            } else {
+                msgbox(format("Mamita lo que me imaginaba… El poder de este bicho es de otro planeta, ni vos que sos la campeona te la bancaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            }
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        }
+        clearflag(B_FLAG_NO_WHITEOUT)
+        releaseall
+        end
+    } else {
+        lockall
+        faceplayer
+        msgbox(format("No te molestes en preguntar… A mí tampoco me dejan pasar estos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        delay(20)
+        msgbox(format("Dicen que haber sido Líder de WAH en el Archipiélago Suzuka durante solo dos semanas no es “trayectoria suficiente” para participar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        delay(20)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Angry)
+        playse(SE_LEDGE)
+        applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+        playse(SE_LEDGE)
+        applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
+        msgbox(format("¡Unos caraduras loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        waitmovement(0)
+        lockall
+        delay(20)
+        msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… Aterrador…\pHabrá que investigar y ver que onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Che, discúlpame, mejor me voy a seguir con mis investigaciones.\p¡Suerte, espero que a vos sí te den bola!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        releaseall
+        end
+    }
+}
+
+text Lobby_Text_Roxas_PlayerCancelled {
+    format("¿Así que le tenés miedo a mi bicho legendario? ¡Y aún así ganaste las salas!")
+}
+
+script Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(VAR_LAST_TALKED,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
+
 mart MyMartItems {
 	ITEM_HYPER_POTION
 	ITEM_MAX_POTION
