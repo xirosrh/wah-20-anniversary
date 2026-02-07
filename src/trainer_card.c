@@ -100,6 +100,7 @@ struct TrainerCardData
     u16 cardTop;
     u8 language;
     u8 badgeSpriteIds[NUM_BADGES];  // Sprite IDs for badge sprites (SPRITE_NONE if not created)
+    u8 optionTaskSelected;
 };
 
 // EWRAM
@@ -182,6 +183,8 @@ static void UpdateCardFlipRegs(u16);
 static void LoadMonIconGfx(void);
 static void RearrangeBadgeTilesForSprites(void);
 
+static void PrintTaskOnCardBack();
+
 static const u32 sTrainerCardStickers_Gfx[]      = INCBIN_U32("graphics/trainer_card/frlg/stickers.4bpp.smol");
 static const u16 sUnused_Pal[]                   = INCBIN_U16("graphics/trainer_card/unused.gbapal");
 static const u16 sHoennTrainerCardBronze_Pal[]   = INCBIN_U16("graphics/trainer_card/bronze.gbapal");
@@ -203,6 +206,51 @@ static const u16 sTrainerCardSticker3_Pal[]      = INCBIN_U16("graphics/trainer_
 static const u16 sTrainerCardSticker4_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers4.gbapal");
 static const u32 sHoennTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/badges.4bpp.smol");
 static const u32 sKantoTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/frlg/badges.4bpp.smol");
+
+
+struct TaskCompletesWahChallenge
+{
+    const u8 *title;
+    const u8 *description;
+    u8 target;
+    bool8 (*check_void)(void);
+};
+
+static bool8 CheckDummyChallenge();
+static bool8 CheckWinWahChallenge();
+
+static struct TaskCompletesWahChallenge ListTaskWah[3] =
+{
+    {
+        .title = COMPOUND_STRING("Fulmina a los admins"),
+        .description = COMPOUND_STRING("Supera una vez el desafio"),
+        .target = 1,
+        .check_void = CheckWinWahChallenge,
+    },
+    {
+        .title = COMPOUND_STRING("Basea la existencia de los admins"),
+        .description = COMPOUND_STRING("Supera el desafio 5 veces"),
+        .target = 5,
+        .check_void = CheckWinWahChallenge,
+    },
+    {
+        .title = COMPOUND_STRING("Humillate hasta el fondo"),
+        .description = COMPOUND_STRING("Pierde el desafio 50 veces"),
+        .target = 0,
+        .check_void = CheckDummyChallenge,
+    }
+};
+
+static bool8 CheckDummyChallenge()
+{
+    return TRUE;
+}
+
+
+static bool8 CheckWinWahChallenge()
+{
+    return VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT) >= ListTaskWah[sData->optionTaskSelected].target;
+}
 
 // Badge sprite callback - maintains correct tile number
 // data[0] = badge index (0-7)
@@ -317,6 +365,7 @@ static const u16 *const sKantoTrainerCardPals[] =
 
 static const u8 sTrainerCardTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 static const u8 sTrainerCardStatColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_RED};
+static const u8 sTrainerCardSGreenColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_GREEN, TEXT_COLOR_LIGHT_GREEN};
 static const u8 sTimeColonInvisibleTextColors[6] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT};
 
 static const u8 sTrainerPicOffset[2][GENDER_COUNT][2] =
@@ -549,6 +598,20 @@ static void Task_TrainerCard(u8 taskId)
                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, sData->blendColor);
                sData->mainState = STATE_CLOSE_CARD;
            }
+        }
+        else if(JOY_NEW(DPAD_RIGHT) && sData->optionTaskSelected < ARRAY_COUNT(ListTaskWah)-1 ) //aqui
+        {   
+            sData->optionTaskSelected += 1;
+            FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
+            PrintTaskOnCardBack();
+            CopyWindowToVram(WIN_CARD_TEXT, 3);
+        }
+        else if(JOY_NEW(DPAD_LEFT) && sData->optionTaskSelected > 0)
+        {   
+            sData->optionTaskSelected -= 1;
+            FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
+            PrintTaskOnCardBack();
+            CopyWindowToVram(WIN_CARD_TEXT, 3);
         }
         break;
     case STATE_WAIT_LINK_PARTNER:
@@ -914,6 +977,7 @@ static void SetDataFromTrainerCard(void)
     sData->unused_E = FALSE;
     sData->unused_F = FALSE;
     sData->hasTrades = FALSE;
+    sData->optionTaskSelected = 0;
     memset(sData->badgeCount, 0, sizeof(sData->badgeCount));
     if (sData->trainerCard.hasPokedex)
         sData->hasPokedex++;
@@ -1039,6 +1103,32 @@ static bool8 PrintAllOnCardFront(void)
     return FALSE;
 }
 
+static void PrintTaskOnCardBack()
+{
+    const u8 gText_LeftArrowTrainerCard[] = _("{LEFT_ARROW}");
+    const u8 gText_RightArrowTrainerCard[] = _("{RIGHT_ARROW}");
+
+    const u8 gText_CompletedTaskTrainerCard[] = _("Completada");
+    const u8 gText_InProgressTakTrainerCard[] = _("Pendiente");
+
+    bool8 statusTask = ListTaskWah[sData->optionTaskSelected].check_void();
+
+    if(sData->optionTaskSelected > 0)
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 8, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_LeftArrowTrainerCard);
+
+    if(sData->optionTaskSelected < ARRAY_COUNT(ListTaskWah) -1 )
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 210, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_RightArrowTrainerCard);
+
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, ListTaskWah[sData->optionTaskSelected].title, 192) + 16, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, ListTaskWah[sData->optionTaskSelected].title);
+
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 64, sTrainerCardTextColors, TEXT_SKIP_DRAW, ListTaskWah[sData->optionTaskSelected].description);
+
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 142, 105, 
+        (statusTask) ? sTrainerCardSGreenColors: sTrainerCardStatColors, 
+        TEXT_SKIP_DRAW, 
+        (statusTask) ? gText_CompletedTaskTrainerCard : gText_InProgressTakTrainerCard);
+}
+
 static bool8 PrintAllOnCardBack(void)
 {
     switch (sData->printState)
@@ -1056,6 +1146,8 @@ static bool8 PrintAllOnCardBack(void)
         // PrintPokemonIconsOnCard();
         // PrintBattleFacilityStringOnCard();
         // PrintStickersOnCard();
+
+        PrintTaskOnCardBack();
         break;
     default:
         sData->printState = 0;
