@@ -68,7 +68,7 @@
 #define FLAG_DEFEATED_LOBBY_ROXAS    0x36 // Used WAH
 #define FLAG_DEFEATED_LOBBY_KAKTUS    0x37 // Used WAH
 #define FLAG_DEFEATED_LOBBY_GAMEBOYCL    0x38 // Used WAH
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_DEFEATED_LOBBY_ERKEY    0x39 // Used WAH
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_DEFEATED_ADMIN_XIROS    0x3C //Used WAH
@@ -90,7 +90,7 @@
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_INVERSE_BATTLE    0x4F // Used WAH
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50

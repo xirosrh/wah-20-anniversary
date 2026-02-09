@@ -410,3 +410,86 @@ script Lobby_EventScript_Gameboycl {
 text Lobby_Text_Gameboycl_OnDefeat {
     format("Evolucionar también es mirar atrás.")
 }
+
+script Lobby_EventScript_Erkey_IntroFirstBattle {
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Lo fuerte será débil. Lo débil será decisivo.\p¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    waitmovement(0)
+    call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    return
+}
+
+script Lobby_EventScript_Erkey_IntroRematch {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("¿Otra vez?\nLas reglas siguen al revés… por si acaso."), MSGBOX_YESNO, speaker = SP_NAME_ERKEY)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        playse(SE_PIN)
+        applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
+        msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+        waitmovement(0)
+        delay(30)
+        return
+    } else {
+        msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+        goto(Lobby_EventScript_Erkey_OnFinishEvent)
+    }
+}
+
+script Lobby_EventScript_Erkey_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    release
+    end
+}
+
+script Lobby_EventScript_Erkey {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_LOBBY_ERKEY)) {
+            call(Lobby_EventScript_Erkey_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Erkey_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        setflag(FLAG_INVERSE_BATTLE)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ERKEY, format("Lo has sabido manejar a la perfección."))
+        clearflag(FLAG_INVERSE_BATTLE)
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
+            msgbox(format("Bien jugado. Cuando las reglas cambian, tú te adaptaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            delay(20)
+            msgbox(format("Eso es el espíritu de Whack a Hack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+            setflag(FLAG_DEFEATED_LOBBY_ERKEY)
+        } else {
+            msgbox(format("La costumbre pesa más de lo que parece.\nAquí se paga caro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        }
+        goto(Lobby_EventScript_Erkey_OnFinishEvent)
+    } else {
+        msgbox(format("Aquí cada combate enseña algo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+        msgbox(format("Si prestas atención."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+        goto(Lobby_EventScript_Erkey_OnFinishEvent)
+    }
+}
