@@ -952,6 +952,158 @@ Lobby_EventScript_FakemonDexMenu_40:
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 
+Lobby_EventScript_Erkey_IntroFirstBattle::
+# 535 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 536 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 537 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 538 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 539 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	return
+
+
+Lobby_EventScript_Erkey_IntroRematch::
+# 544 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 545 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
+# 546 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_ERKEY
+# 547 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 548 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 549 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_Erkey_IntroRematch_1
+# 557 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 558 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 559 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 560 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Erkey_OnFinishEvent
+	return
+
+Lobby_EventScript_Erkey_IntroRematch_1:
+# 550 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 551 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_SmileWithDelay48
+# 552 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 553 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 554 "data/maps/Lobby/scripts.pory"
+	delay 30
+	return
+
+
+Lobby_EventScript_Erkey_OnFinishEvent::
+# 565 "data/maps/Lobby/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_WEST
+# 566 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
+Lobby_EventScript_Erkey::
+# 571 "data/maps/Lobby/scripts.pory"
+	lock
+# 572 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 573 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Erkey_1
+# 607 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 608 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 609 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 610 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 611 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 612 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 613 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Erkey_OnFinishEvent
+	return
+
+Lobby_EventScript_Erkey_1:
+# 574 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_DEFEATED_LOBBY_ERKEY, Lobby_EventScript_Erkey_5
+# 577 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Erkey_IntroFirstBattle
+Lobby_EventScript_Erkey_4:
+# 579 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 580 "data/maps/Lobby/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 581 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 582 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 583 "data/maps/Lobby/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 584 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_INVERSE_BATTLE
+# 585 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_ERKEY, Lobby_EventScript_Erkey_Text_0
+# 586 "data/maps/Lobby/scripts.pory"
+	clearflag FLAG_INVERSE_BATTLE
+# 587 "data/maps/Lobby/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 588 "data/maps/Lobby/scripts.pory"
+	special GetBattleOutcome
+# 589 "data/maps/Lobby/scripts.pory"
+	special HealPlayerParty
+# 590 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lobby_EventScript_Erkey_9
+# 601 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 602 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 603 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+Lobby_EventScript_Erkey_8:
+# 605 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Erkey_OnFinishEvent
+	return
+
+Lobby_EventScript_Erkey_5:
+# 575 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Erkey_IntroRematch
+	goto Lobby_EventScript_Erkey_4
+
+Lobby_EventScript_Erkey_9:
+# 591 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 592 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SmileWithDelay48
+# 593 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 594 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 595 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 596 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 597 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 598 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
+# 599 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_DEFEATED_LOBBY_ERKEY
+	goto Lobby_EventScript_Erkey_8
+
+
 # 103 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 103 "data/maps/Lobby/scripts.pory"
@@ -1240,6 +1392,54 @@ Lobby_EventScript_Gameboycl_Text_3:
 # 402 "data/maps/Lobby/scripts.pory"
 	.string "El arte aquí no es lo que se cambia, sino\n"
 	.string "lo que se quiere transmitir.$"
+
+Lobby_EventScript_Erkey_IntroFirstBattle_Text_0:
+# 537 "data/maps/Lobby/scripts.pory"
+	.string "Lo fuerte será débil. Lo débil será\n"
+	.string "decisivo.\p"
+	.string "¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!$"
+
+Lobby_EventScript_Erkey_IntroRematch_Text_0:
+# 546 "data/maps/Lobby/scripts.pory"
+	.string "¿Otra vez?\n"
+	.string "Las reglas siguen al revés… por si\l"
+	.string "acaso.$"
+
+Lobby_EventScript_Erkey_IntroRematch_Text_1:
+# 552 "data/maps/Lobby/scripts.pory"
+	.string "Perfecto. Veamos si esta vez lo\n"
+	.string "dominas.$"
+
+Lobby_EventScript_Erkey_IntroRematch_Text_2:
+# 557 "data/maps/Lobby/scripts.pory"
+	.string "Vuelve cuando quieras.\n"
+	.string "Aquí nada vuelve a la normalidad.$"
+
+Lobby_EventScript_Erkey_Text_0:
+# 585 "data/maps/Lobby/scripts.pory"
+	.string "Lo has sabido manejar a la perfección.$"
+
+Lobby_EventScript_Erkey_Text_1:
+# 593 "data/maps/Lobby/scripts.pory"
+	.string "Bien jugado. Cuando las reglas cambian,\n"
+	.string "tú te adaptaste.$"
+
+Lobby_EventScript_Erkey_Text_2:
+# 596 "data/maps/Lobby/scripts.pory"
+	.string "Eso es el espíritu de Whack a Hack.$"
+
+Lobby_EventScript_Erkey_Text_3:
+# 601 "data/maps/Lobby/scripts.pory"
+	.string "La costumbre pesa más de lo que parece.\n"
+	.string "Aquí se paga caro.$"
+
+Lobby_EventScript_Erkey_Text_4:
+# 607 "data/maps/Lobby/scripts.pory"
+	.string "Aquí cada combate enseña algo.$"
+
+Lobby_EventScript_Erkey_Text_5:
+# 610 "data/maps/Lobby/scripts.pory"
+	.string "Si prestas atención.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
