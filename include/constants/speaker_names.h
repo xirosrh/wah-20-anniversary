@@ -31,6 +31,7 @@ enum SpeakerNames {
     SP_NAME_AGUIAR,
     SP_NAME_ROXAS,
     SP_NAME_INMORTAL_KAKTUS,
+    SP_NAME_GAMEBOY_CL,
     SP_NAME_COUNT
 };
 

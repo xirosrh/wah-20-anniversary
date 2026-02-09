@@ -261,10 +261,15 @@ script Lobby_EventScript_Kaktus_IntroRematch {
         return
     } else {
         msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
-        release
-        end
+        goto(Lobby_EventScript_Kaktus_OnFinishEvent)
     }
 
+}
+
+script Lobby_EventScript_Kaktus_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
 }
 
 script Lobby_EventScript_Kaktus {
@@ -308,9 +313,8 @@ script Lobby_EventScript_Kaktus {
             msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             waitmovement(0)
         }
-
-        release
-        end
+        goto(Lobby_EventScript_Kaktus_OnFinishEvent)
+        
     } else {
         msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         delay(20)
@@ -318,8 +322,91 @@ script Lobby_EventScript_Kaktus {
         msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta verguenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-        turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+        goto(Lobby_EventScript_Kaktus_OnFinishEvent)
+
     }
+}
+
+script Lobby_EventScript_Gameboycl_IntroFirstBattle {
+    delay(20)
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("No soy competitivo ni ambicioso. Soy más bien una persona mediocre."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    waitmovement(0)
+    delay(20)
+    call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Eso puede jugarme en contra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    return
+}
+
+script Lobby_EventScript_Gameboycl_IntroRematch {
+    msgbox(format("Kanto y Johto se unen en el mismo azul, el agua no recuerda fronteras.\p¿Quieres luchar contra uno de mis 3 equipos?"), MSGBOX_YESNO, speaker = SP_NAME_GAMEBOY_CL)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        return
+    } else {
+        msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+        goto(Lobby_EventScript_Gameboycl_OnFinishEvent)
+    }
+}
+
+script Lobby_EventScript_Gameboycl_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
+}
+
+
+script Lobby_EventScript_Gameboycl {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
+        if(flag(FLAG_DEFEATED_LOBBY_GAMEBOYCL)) {
+            call(Lobby_EventScript_Gameboycl_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Gameboycl_IntroFirstBattle)
+        }
+        delay(20)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        random(3)
+        setflag(B_FLAG_NO_WHITEOUT)
+        switch(var(VAR_RESULT)) {
+            case 0:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1, Lobby_Text_Gameboycl_OnDefeat)
+            case 1:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2, Lobby_Text_Gameboycl_OnDefeat)
+            case 2:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3, Lobby_Text_Gameboycl_OnDefeat)
+        }
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovement(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+            waitmovement(0)
+            call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            setflag(FLAG_DEFEATED_LOBBY_GAMEBOYCL)
+        } else {
+            msgbox(format("PENDIENTE GAMEBOY"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL) //TODO Xiros
+        }
+        goto(Lobby_EventScript_Gameboycl_OnFinishEvent)
+    }
+    else {
+        msgbox(format("Un hack rom es como la arquitectura, se construye sobre lo existente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("El arte aquí no es lo que se cambia, sino lo que se quiere transmitir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+        delay(20)
+        goto(Lobby_EventScript_Gameboycl_OnFinishEvent)
+    }
+}
+
+text Lobby_Text_Gameboycl_OnDefeat {
+    format("Evolucionar también es mirar atrás.")
 }

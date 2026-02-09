@@ -1254,6 +1254,78 @@
     {
       "id": "MAPSEC_COSARARA_ROOM",
       "name": "Sala 6"
+    },
+    {
+      "id": "MAPSEC_DRIVE_KATHERINE_ROOM",
+      "name": "Sala 7"
+    },
+    {
+      "id": "MAPSEC_AGUIAR_ROOM",
+      "name": "Sala 8"
+    },
+    {
+      "id": "MAPSEC_ANGEL_ROOM",
+      "name": "Sala 9"
+    },
+    {
+      "id": "MAPSEC_SAYER_BLAX_ROOM",
+      "name": "Sala 10"
+    },
+    {
+      "id": "MAPSEC_REY_BOO_ROOM",
+      "name": "Sala 11"
+    },
+    {
+      "id": "MAPSEC_DAV_ZERO_ROOM",
+      "name": "Sala 12"
+    },
+    {
+      "id": "MAPSEC_JAVS_JAVI4315_ROOM",
+      "name": "Sala 13"
+    },
+    {
+      "id": "MAPSEC_GALLEGO_ROOM",
+      "name": "Sala 14"
+    },
+    {
+      "id": "MAPSEC_REONEKY_ROOM",
+      "name": "Sala 15"
+    },
+    {
+      "id": "MAPSEC_CHEVE_ROOM",
+      "name": "Sala 16"
+    },
+    {
+      "id": "MAPSEC_BARO_ROOM",
+      "name": "Sala 17"
+    },
+    {
+      "id": "MAPSEC_KLEIN_PK_POWER_ROOM",
+      "name": "Sala 18"
+    },
+    {
+      "id": "MAPSEC_EING_ROOM",
+      "name": "Sala 19"
+    },
+    {
+      "id": "MAPSEC_XIROS_ROOM",
+      "name": "Sala 20"
+    },
+    {
+      "id": "MAPSEC_SERGIO_ROOM",
+      "name": "Sala 21"
+    },
+    {
+      "id": "MAPSEC_DRAGON_MOUNTAIN_TOP",
+      "name": "Montaña Dragón"
+    },
+    {
+      "id": "MAPSEC_HALL_OF_FAME",
+      "name": "Salón de la Fama"
+    },
+    {
+      "id": "MAPSEC_LOBBY",
+      "name": "Lobby"
     }
   ]
 }

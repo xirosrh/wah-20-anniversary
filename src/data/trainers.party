@@ -3069,7 +3069,7 @@ IVs: 0 Spe
 - Power Whip
 - Knock Off
 
-=== TRAINER_GEORGE ===
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
 Name: GEORGE
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3086,7 +3086,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Counter
 - Shadow Ball
 
-=== TRAINER_BERKE ===
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
 Name: BERKE
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3102,7 +3102,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Energy
 - Slash
 
-=== TRAINER_BRAXTON ===
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
 Name: BRAXTON
 Class: Cooltrainer
 Pic: Cooltrainer M

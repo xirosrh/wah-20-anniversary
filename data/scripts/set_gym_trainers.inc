@@ -47,8 +47,8 @@ LavaridgeTown_Gym_SetGymTrainers::
 PetalburgCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_WAH_ADMIN_ROXAS
 	settrainerflag TRAINER_WAH_COLLABORATOR_KAKTUS
-	settrainerflag TRAINER_GEORGE
-	settrainerflag TRAINER_BERKE
+	settrainerflag TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1
+	settrainerflag TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2
 	settrainerflag TRAINER_MARY
 	settrainerflag TRAINER_ALEXIA
 	settrainerflag TRAINER_JODY

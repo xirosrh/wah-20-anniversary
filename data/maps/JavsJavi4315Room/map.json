@@ -3,7 +3,7 @@
   "name": "JavsJavi4315Room",
   "layout": "LAYOUT_JavsJavi4315Room",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_JAVS_JAVI4315_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
