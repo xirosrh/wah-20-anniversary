@@ -57,6 +57,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PkPower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Omega;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Klein;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blax;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AguiarSmoking;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReyBoo;
@@ -545,6 +546,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
     [OBJ_EVENT_GFX_BLAX] =                     &gObjectEventGraphicsInfo_Blax,
+    [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
     [OBJ_EVENT_GFX_JACK_JOHNSON] =             &gObjectEventGraphicsInfo_JackJohnson,
     [OBJ_EVENT_GFX_REY_BOO] =                  &gObjectEventGraphicsInfo_ReyBoo,
     [OBJ_EVENT_GFX_GOCE] =                     &gObjectEventGraphicsInfo_Goce,
