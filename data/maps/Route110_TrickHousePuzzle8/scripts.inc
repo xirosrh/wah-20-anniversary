@@ -13,7 +13,7 @@ Route110_TrickHousePuzzle8_EventScript_FoundScroll::
 	end
 
 Route110_TrickHousePuzzle8_EventScript_Vincent::
-	trainerbattle_single TRAINER_VINCENT, Route110_TrickHousePuzzle8_Text_VincentIntro, Route110_TrickHousePuzzle8_Text_VincentDefeat
+	trainerbattle_single TRAINER_WAH_COLLABORATOR_ERKEY, Route110_TrickHousePuzzle8_Text_VincentIntro, Route110_TrickHousePuzzle8_Text_VincentDefeat
 	msgbox Route110_TrickHousePuzzle8_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
 	end
 

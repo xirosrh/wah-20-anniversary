@@ -211,7 +211,7 @@
 #define B_FLAG_BADGE_BOOST_SPDEF    FLAG_BADGE07_GET // Si esta flag está activada y B_BADGE_BOOST == GEN_3, se multiplicará la Defensa Especial del Pokémon por 1,1.
 
 // Otras flags de batalla
-#define B_FLAG_INVERSE_BATTLE       0     // Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
+#define B_FLAG_INVERSE_BATTLE       FLAG_INVERSE_BATTLE     // Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
 #define B_FLAG_FORCE_DOUBLE_WILD    0     // Si esta flag está activada, todas las batallas salvajes en tierra y en surf serán batallas dobles.
 #define B_SMART_WILD_AI_FLAG        0     // Si no es 0, puedes configurar esta flag en un script para habilitar la IA inteligente de Pokémon salvajes.
 #define B_FLAG_NO_BAG_USE           0     // Si esta flag está activada, la capacidad de usar la bolsa en batalla está desactivada.
