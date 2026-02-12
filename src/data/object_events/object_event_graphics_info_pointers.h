@@ -67,6 +67,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Javs;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
@@ -555,6 +556,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
     [OBJ_EVENT_GFX_SCAREX] =                   &gObjectEventGraphicsInfo_Scarex,
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
+    [OBJ_EVENT_GFX_JAVS] =                     &gObjectEventGraphicsInfo_Javs,
     [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,
