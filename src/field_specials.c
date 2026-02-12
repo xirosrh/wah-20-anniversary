@@ -72,8 +72,12 @@
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
 #include "palette.h"
+#include "battle_main.h"
+#include "battle_message.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "constants/characters.h"
+#include "constants/pokemon.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4413,4 +4417,101 @@ void ShouldUseAlternativeTeam(void)
 void OpenTeamSelectorFromField(void)
 {
     StartTeamSelectorFromField_CB2();
+}
+
+void BufferSpeciesDexDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *desc = GetSpeciesPokedexDescription(species);
+    if (desc != NULL)
+        StringCopy(gStringVar1, desc);
+    else
+        gStringVar1[0] = EOS;
+}
+
+
+
+#define ABILITY_LINE_MAX (0x100 - 2)
+
+void BufferSpeciesAbilityNameAndDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 slot = (u8)gSpecialVar_0x8005;
+    u8 *dest = gStringVar1;
+    enum Ability ability = GetSpeciesAbility(species, slot);
+    const u8 *name;
+    const u8 *desc;
+    u32 nameLen, descMax;
+
+    gSpecialVar_Result = 0;
+    gStringVar1[0] = EOS;
+    if (ability == ABILITY_NONE)
+        return;
+    name = gAbilitiesInfo[ability].name;
+    desc = gAbilitiesInfo[ability].description;
+    if (desc == NULL)
+        return;
+    dest = StringCopy(dest, name);
+    *dest++ = CHAR_COLON;
+    *dest++ = CHAR_NEWLINE;
+    *dest = EOS;
+    nameLen = (u32)(dest - gStringVar1);
+    descMax = (nameLen < ABILITY_LINE_MAX) ? (ABILITY_LINE_MAX - nameLen) : 0;
+    if (descMax != 0)
+        dest = StringCopyN(dest, desc, (u8)descMax);
+    *dest = EOS;
+    gSpecialVar_Result = 1;
+}
+
+
+void BufferSpeciesTypeNames(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    enum Type type1 = GetSpeciesType(species, 0);
+    enum Type type2 = GetSpeciesType(species, 1);
+    StringCopy(gStringVar2, gTypesInfo[type1].name);
+    if (type2 != TYPE_NONE && type2 != type1)
+        StringCopy(gStringVar3, gTypesInfo[type2].name);
+    else
+        gStringVar3[0] = EOS;
+}
+
+
+void BufferSpeciesStats(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 *dest = gStringVar1;
+    u32 stats[6];
+    u32 i;
+    static const enum Stat statOrder[] = { STAT_HP, STAT_ATK, STAT_DEF, STAT_SPEED, STAT_SPATK, STAT_SPDEF };
+
+    stats[0] = GetSpeciesBaseHP(species);
+    stats[1] = GetSpeciesBaseAttack(species);
+    stats[2] = GetSpeciesBaseDefense(species);
+    stats[3] = GetSpeciesBaseSpeed(species);
+    stats[4] = GetSpeciesBaseSpAttack(species);
+    stats[5] = GetSpeciesBaseSpDefense(species);
+
+    dest[0] = EOS;
+    for (i = 0; i < 6; i++)
+    {
+        if (i == 2)
+        {
+            *dest++ = CHAR_NEWLINE;
+        } else if (i == 4)
+        {
+            *dest++ = CHAR_PROMPT_SCROLL;
+        }
+        else if (i == 1 || i == 3 || i == 5)
+        {
+            *dest++ = CHAR_SPACE;
+            *dest++ = CHAR_HYPHEN;
+            *dest++ = CHAR_SPACE;
+        }
+        dest = StringCopy(dest, gStatNamesTable[statOrder[i]]);
+        *dest++ = CHAR_COLON;
+        *dest++ = CHAR_SPACE;
+        dest = ConvertIntToDecimalStringN(dest, stats[i], STR_CONV_MODE_LEFT_ALIGN, 3);
+        *dest = EOS;
+    }
 }

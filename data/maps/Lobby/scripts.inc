@@ -747,359 +747,454 @@ Lobby_EventScript_FakemonDexMenu::
 # 416 "data/maps/Lobby/scripts.pory"
 	faceplayer
 # 417 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8000, 0
+	msgbox Lobby_EventScript_FakemonDexMenu_Text_0
 # 418 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_KAOSUNE
+	setvar VAR_0x8000, 0
 # 419 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_KAOSUNE
+# 420 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_2
 Lobby_EventScript_FakemonDexMenu_1:
-# 424 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_FREECH
 # 425 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_FREECH
+# 426 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_5
 Lobby_EventScript_FakemonDexMenu_4:
-# 430 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_PLUGOINK
 # 431 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_PLUGOINK
+# 432 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_8
 Lobby_EventScript_FakemonDexMenu_7:
-# 436 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_GRITESPEC
 # 437 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_GRITESPEC
+# 438 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_11
 Lobby_EventScript_FakemonDexMenu_10:
-# 442 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_MAGIKEN
 # 443 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_MAGIKEN
+# 444 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_14
 Lobby_EventScript_FakemonDexMenu_13:
-# 448 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_AYEWIRAZ
 # 449 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_AYEWIRAZ
+# 450 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_17
 Lobby_EventScript_FakemonDexMenu_16:
-# 454 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_ELECTRODES
 # 455 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_ELECTRODES
+# 456 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_20
 Lobby_EventScript_FakemonDexMenu_19:
-# 460 "data/maps/Lobby/scripts.pory"
-	getseenmon SPECIES_EING
 # 461 "data/maps/Lobby/scripts.pory"
+	getseenmon SPECIES_EING
+# 462 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_23
 Lobby_EventScript_FakemonDexMenu_22:
-# 466 "data/maps/Lobby/scripts.pory"
+# 467 "data/maps/Lobby/scripts.pory"
 	compare VAR_0x8000, 0
 	goto_if_eq Lobby_EventScript_FakemonDexMenu_26
-# 471 "data/maps/Lobby/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
 # 472 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_FakemonDexMenu_Text_1
+# 473 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 474 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 7
 	goto_if_gt Lobby_EventScript_FakemonDexMenu_29
-# 476 "data/maps/Lobby/scripts.pory"
+# 478 "data/maps/Lobby/scripts.pory"
 	switch VAR_RESULT
-# 477 "data/maps/Lobby/scripts.pory"
-	case 0, Lobby_EventScript_FakemonDexMenu_33
 # 479 "data/maps/Lobby/scripts.pory"
-	case 1, Lobby_EventScript_FakemonDexMenu_34
-# 481 "data/maps/Lobby/scripts.pory"
-	case 2, Lobby_EventScript_FakemonDexMenu_35
+	case 0, Lobby_EventScript_FakemonDexMenu_33
 # 483 "data/maps/Lobby/scripts.pory"
-	case 3, Lobby_EventScript_FakemonDexMenu_36
-# 485 "data/maps/Lobby/scripts.pory"
-	case 4, Lobby_EventScript_FakemonDexMenu_37
+	case 1, Lobby_EventScript_FakemonDexMenu_34
 # 487 "data/maps/Lobby/scripts.pory"
-	case 5, Lobby_EventScript_FakemonDexMenu_38
-# 489 "data/maps/Lobby/scripts.pory"
-	case 6, Lobby_EventScript_FakemonDexMenu_39
+	case 2, Lobby_EventScript_FakemonDexMenu_35
 # 491 "data/maps/Lobby/scripts.pory"
+	case 3, Lobby_EventScript_FakemonDexMenu_36
+# 495 "data/maps/Lobby/scripts.pory"
+	case 4, Lobby_EventScript_FakemonDexMenu_37
+# 499 "data/maps/Lobby/scripts.pory"
+	case 5, Lobby_EventScript_FakemonDexMenu_38
+# 503 "data/maps/Lobby/scripts.pory"
+	case 6, Lobby_EventScript_FakemonDexMenu_39
+# 507 "data/maps/Lobby/scripts.pory"
 	case 7, Lobby_EventScript_FakemonDexMenu_40
 Lobby_EventScript_FakemonDexMenu_31:
-# 494 "data/maps/Lobby/scripts.pory"
+# 512 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 Lobby_EventScript_FakemonDexMenu_2:
-# 420 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_KAOSUNE
 # 421 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 0
+	bufferspeciesname STR_VAR_1, SPECIES_KAOSUNE
 # 422 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 0
+# 423 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_1
 
 Lobby_EventScript_FakemonDexMenu_5:
-# 426 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_FREECH
 # 427 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 1
+	bufferspeciesname STR_VAR_1, SPECIES_FREECH
 # 428 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 1
+# 429 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_4
 
 Lobby_EventScript_FakemonDexMenu_8:
-# 432 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_PLUGOINK
 # 433 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 2
+	bufferspeciesname STR_VAR_1, SPECIES_PLUGOINK
 # 434 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 2
+# 435 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_7
 
 Lobby_EventScript_FakemonDexMenu_11:
-# 438 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_GRITESPEC
 # 439 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 3
+	bufferspeciesname STR_VAR_1, SPECIES_GRITESPEC
 # 440 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 3
+# 441 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_10
 
 Lobby_EventScript_FakemonDexMenu_14:
-# 444 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_MAGIKEN
 # 445 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 4
+	bufferspeciesname STR_VAR_1, SPECIES_MAGIKEN
 # 446 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 4
+# 447 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_13
 
 Lobby_EventScript_FakemonDexMenu_17:
-# 450 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_AYEWIRAZ
 # 451 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 5
+	bufferspeciesname STR_VAR_1, SPECIES_AYEWIRAZ
 # 452 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 5
+# 453 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_16
 
 Lobby_EventScript_FakemonDexMenu_20:
-# 456 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_ELECTRODES
 # 457 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 6
+	bufferspeciesname STR_VAR_1, SPECIES_ELECTRODES
 # 458 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 6
+# 459 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_19
 
 Lobby_EventScript_FakemonDexMenu_23:
-# 462 "data/maps/Lobby/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_EING
 # 463 "data/maps/Lobby/scripts.pory"
-	dynmultipush gStringVar1, 7
+	bufferspeciesname STR_VAR_1, SPECIES_EING
 # 464 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 7
+# 465 "data/maps/Lobby/scripts.pory"
 	addvar VAR_0x8000, 1
 	goto Lobby_EventScript_FakemonDexMenu_22
 
 Lobby_EventScript_FakemonDexMenu_26:
-# 467 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_FakemonDex_NoneSeen
 # 468 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FakemonDex_NoneSeen
+# 469 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 Lobby_EventScript_FakemonDexMenu_29:
-# 473 "data/maps/Lobby/scripts.pory"
+# 475 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 Lobby_EventScript_FakemonDexMenu_33:
-# 478 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Kaosune
+# 480 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_KAOSUNE, 10, 3
+# 481 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_KAOSUNE
+# 482 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_34:
-# 480 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Freech
+# 484 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_FREECH, 10, 3
+# 485 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_FREECH
+# 486 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_35:
-# 482 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Plugoink
+# 488 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_PLUGOINK, 10, 3
+# 489 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_PLUGOINK
+# 490 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_36:
-# 484 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Gritespec
+# 492 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_GRITESPEC, 10, 3
+# 493 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_GRITESPEC
+# 494 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_37:
-# 486 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Magiken
+# 496 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_MAGIKEN, 10, 3
+# 497 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_MAGIKEN
+# 498 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_38:
-# 488 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Ayewiraz
+# 500 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_AYEWIRAZ, 10, 3
+# 501 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_AYEWIRAZ
+# 502 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_39:
-# 490 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Electrodes
+# 504 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_ELECTRODES, 10, 3
+# 505 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_ELECTRODES
+# 506 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 Lobby_EventScript_FakemonDexMenu_40:
-# 492 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_Fakemon_Eing
+# 508 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_EING, 10, 3
+# 509 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_EING
+# 510 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
 	goto Lobby_EventScript_FakemonDexMenu_31
 
 
-Lobby_EventScript_Erkey_IntroFirstBattle::
+Lobby_EventScript_ShowFakemonDexInfo::
+# 517 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesDexDescription
+# 519 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_0
+# 520 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesTypeNames
+# 521 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_1
+# 522 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_2
+# 523 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 0
+# 524 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesAbilityNameAndDescription
+# 525 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_2
+Lobby_EventScript_ShowFakemonDexInfo_1:
+# 528 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 1
+# 529 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesAbilityNameAndDescription
+# 530 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_5
+Lobby_EventScript_ShowFakemonDexInfo_4:
+# 533 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 2
+# 534 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesAbilityNameAndDescription
 # 535 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 536 "data/maps/Lobby/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
-# 537 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Erkey_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_8
+Lobby_EventScript_ShowFakemonDexInfo_7:
 # 538 "data/maps/Lobby/scripts.pory"
-	waitmovement 0
+	special BufferSpeciesStats
 # 539 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_4
+# 540 "data/maps/Lobby/scripts.pory"
+	hidemonpic
+	return
+
+Lobby_EventScript_ShowFakemonDexInfo_2:
+# 526 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_3
+	goto Lobby_EventScript_ShowFakemonDexInfo_1
+
+Lobby_EventScript_ShowFakemonDexInfo_5:
+# 531 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_3
+	goto Lobby_EventScript_ShowFakemonDexInfo_4
+
+Lobby_EventScript_ShowFakemonDexInfo_8:
+# 536 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_3
+	goto Lobby_EventScript_ShowFakemonDexInfo_7
+
+
+Lobby_EventScript_Erkey_IntroFirstBattle::
+# 549 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 550 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 551 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 552 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 553 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
 	return
 
 
 Lobby_EventScript_Erkey_IntroRematch::
-# 544 "data/maps/Lobby/scripts.pory"
-	playse SE_PIN
-# 545 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
-# 546 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_ERKEY
-# 547 "data/maps/Lobby/scripts.pory"
-	closemessage
-# 548 "data/maps/Lobby/scripts.pory"
-	delay 20
-# 549 "data/maps/Lobby/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Lobby_EventScript_Erkey_IntroRematch_1
-# 557 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
 # 558 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
 # 559 "data/maps/Lobby/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
 # 560 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_ERKEY
+# 561 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 562 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 563 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_Erkey_IntroRematch_1
+# 571 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 572 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 573 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 574 "data/maps/Lobby/scripts.pory"
 	goto Lobby_EventScript_Erkey_OnFinishEvent
 	return
 
 Lobby_EventScript_Erkey_IntroRematch_1:
-# 550 "data/maps/Lobby/scripts.pory"
+# 564 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 551 "data/maps/Lobby/scripts.pory"
+# 565 "data/maps/Lobby/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_SmileWithDelay48
-# 552 "data/maps/Lobby/scripts.pory"
+# 566 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 553 "data/maps/Lobby/scripts.pory"
+# 567 "data/maps/Lobby/scripts.pory"
 	waitmovement 0
-# 554 "data/maps/Lobby/scripts.pory"
+# 568 "data/maps/Lobby/scripts.pory"
 	delay 30
 	return
 
 
 Lobby_EventScript_Erkey_OnFinishEvent::
-# 565 "data/maps/Lobby/scripts.pory"
+# 579 "data/maps/Lobby/scripts.pory"
 	turnobject VAR_LAST_TALKED, DIR_WEST
-# 566 "data/maps/Lobby/scripts.pory"
+# 580 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 
 Lobby_EventScript_Erkey::
-# 571 "data/maps/Lobby/scripts.pory"
+# 585 "data/maps/Lobby/scripts.pory"
 	lock
-# 572 "data/maps/Lobby/scripts.pory"
+# 586 "data/maps/Lobby/scripts.pory"
 	faceplayer
-# 573 "data/maps/Lobby/scripts.pory"
+# 587 "data/maps/Lobby/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Erkey_1
-# 607 "data/maps/Lobby/scripts.pory"
+# 621 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 608 "data/maps/Lobby/scripts.pory"
+# 622 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 609 "data/maps/Lobby/scripts.pory"
+# 623 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
-# 610 "data/maps/Lobby/scripts.pory"
+# 624 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 611 "data/maps/Lobby/scripts.pory"
+# 625 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 612 "data/maps/Lobby/scripts.pory"
+# 626 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
-# 613 "data/maps/Lobby/scripts.pory"
+# 627 "data/maps/Lobby/scripts.pory"
 	goto Lobby_EventScript_Erkey_OnFinishEvent
 	return
 
 Lobby_EventScript_Erkey_1:
-# 574 "data/maps/Lobby/scripts.pory"
+# 588 "data/maps/Lobby/scripts.pory"
 	goto_if_set FLAG_DEFEATED_LOBBY_ERKEY, Lobby_EventScript_Erkey_5
-# 577 "data/maps/Lobby/scripts.pory"
+# 591 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_Erkey_IntroFirstBattle
 Lobby_EventScript_Erkey_4:
-# 579 "data/maps/Lobby/scripts.pory"
+# 593 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 580 "data/maps/Lobby/scripts.pory"
+# 594 "data/maps/Lobby/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
-# 581 "data/maps/Lobby/scripts.pory"
+# 595 "data/maps/Lobby/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
-# 582 "data/maps/Lobby/scripts.pory"
+# 596 "data/maps/Lobby/scripts.pory"
 	waitmovement 0
-# 583 "data/maps/Lobby/scripts.pory"
+# 597 "data/maps/Lobby/scripts.pory"
 	setflag B_FLAG_NO_WHITEOUT
-# 584 "data/maps/Lobby/scripts.pory"
+# 598 "data/maps/Lobby/scripts.pory"
 	setflag FLAG_INVERSE_BATTLE
-# 585 "data/maps/Lobby/scripts.pory"
+# 599 "data/maps/Lobby/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_ERKEY, Lobby_EventScript_Erkey_Text_0
-# 586 "data/maps/Lobby/scripts.pory"
+# 600 "data/maps/Lobby/scripts.pory"
 	clearflag FLAG_INVERSE_BATTLE
-# 587 "data/maps/Lobby/scripts.pory"
+# 601 "data/maps/Lobby/scripts.pory"
 	clearflag B_FLAG_NO_WHITEOUT
-# 588 "data/maps/Lobby/scripts.pory"
+# 602 "data/maps/Lobby/scripts.pory"
 	special GetBattleOutcome
-# 589 "data/maps/Lobby/scripts.pory"
+# 603 "data/maps/Lobby/scripts.pory"
 	special HealPlayerParty
-# 590 "data/maps/Lobby/scripts.pory"
+# 604 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Lobby_EventScript_Erkey_9
-# 601 "data/maps/Lobby/scripts.pory"
+# 615 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 602 "data/maps/Lobby/scripts.pory"
+# 616 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 603 "data/maps/Lobby/scripts.pory"
+# 617 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
 Lobby_EventScript_Erkey_8:
-# 605 "data/maps/Lobby/scripts.pory"
+# 619 "data/maps/Lobby/scripts.pory"
 	goto Lobby_EventScript_Erkey_OnFinishEvent
 	return
 
 Lobby_EventScript_Erkey_5:
-# 575 "data/maps/Lobby/scripts.pory"
+# 589 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_Erkey_IntroRematch
 	goto Lobby_EventScript_Erkey_4
 
 Lobby_EventScript_Erkey_9:
-# 591 "data/maps/Lobby/scripts.pory"
+# 605 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 592 "data/maps/Lobby/scripts.pory"
+# 606 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SmileWithDelay48
-# 593 "data/maps/Lobby/scripts.pory"
+# 607 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 594 "data/maps/Lobby/scripts.pory"
+# 608 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 595 "data/maps/Lobby/scripts.pory"
+# 609 "data/maps/Lobby/scripts.pory"
 	delay 20
-# 596 "data/maps/Lobby/scripts.pory"
+# 610 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Erkey_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 597 "data/maps/Lobby/scripts.pory"
+# 611 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 598 "data/maps/Lobby/scripts.pory"
+# 612 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
-# 599 "data/maps/Lobby/scripts.pory"
+# 613 "data/maps/Lobby/scripts.pory"
 	setflag FLAG_DEFEATED_LOBBY_ERKEY
 	goto Lobby_EventScript_Erkey_8
 
@@ -1393,52 +1488,89 @@ Lobby_EventScript_Gameboycl_Text_3:
 	.string "El arte aquí no es lo que se cambia, sino\n"
 	.string "lo que se quiere transmitir.$"
 
+Lobby_EventScript_FakemonDexMenu_Text_0:
+# 417 "data/maps/Lobby/scripts.pory"
+	.string "Soy el experto en especies que\n"
+	.string "probablemente no conozcas.\p"
+	.string "Te contaré sobre ellas; para no arruinar\n"
+	.string "el factor sorpresa, solo te hablaré de\l"
+	.string "las que ya hayas visto.$"
+
+Lobby_EventScript_FakemonDexMenu_Text_1:
+# 472 "data/maps/Lobby/scripts.pory"
+	.string "¿De cuál especie te gustaría conocer más?$"
+
+Lobby_EventScript_ShowFakemonDexInfo_Text_0:
+# 519 "data/maps/Lobby/scripts.pory"
+	.string "Ya que no tienes una Pokedex, su\n"
+	.string "descripción es:\p"
+	.string "{STR_VAR_1}$"
+
+Lobby_EventScript_ShowFakemonDexInfo_Text_1:
+# 521 "data/maps/Lobby/scripts.pory"
+	.string "Sus tipos son: {STR_VAR_2} y {STR_VAR_3}$"
+
+Lobby_EventScript_ShowFakemonDexInfo_Text_2:
+# 522 "data/maps/Lobby/scripts.pory"
+	.string "¡Y esto te va a sorprender! Sus\n"
+	.string "habilidades son:$"
+
+Lobby_EventScript_ShowFakemonDexInfo_Text_3:
+# 526 "data/maps/Lobby/scripts.pory"
+	.string "{STR_VAR_1}$"
+
+Lobby_EventScript_ShowFakemonDexInfo_Text_4:
+# 539 "data/maps/Lobby/scripts.pory"
+	.string "¡Último dato! ¿Qué tan buenos son sus\n"
+	.string "stats base?\p"
+	.string "{STR_VAR_1}$"
+
 Lobby_EventScript_Erkey_IntroFirstBattle_Text_0:
-# 537 "data/maps/Lobby/scripts.pory"
+# 551 "data/maps/Lobby/scripts.pory"
 	.string "Lo fuerte será débil. Lo débil será\n"
 	.string "decisivo.\p"
 	.string "¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!$"
 
 Lobby_EventScript_Erkey_IntroRematch_Text_0:
-# 546 "data/maps/Lobby/scripts.pory"
+# 560 "data/maps/Lobby/scripts.pory"
 	.string "¿Otra vez?\n"
 	.string "Las reglas siguen al revés… por si\l"
 	.string "acaso.$"
 
 Lobby_EventScript_Erkey_IntroRematch_Text_1:
-# 552 "data/maps/Lobby/scripts.pory"
+# 566 "data/maps/Lobby/scripts.pory"
 	.string "Perfecto. Veamos si esta vez lo\n"
 	.string "dominas.$"
 
 Lobby_EventScript_Erkey_IntroRematch_Text_2:
-# 557 "data/maps/Lobby/scripts.pory"
+# 571 "data/maps/Lobby/scripts.pory"
 	.string "Vuelve cuando quieras.\n"
 	.string "Aquí nada vuelve a la normalidad.$"
 
 Lobby_EventScript_Erkey_Text_0:
-# 585 "data/maps/Lobby/scripts.pory"
+# 599 "data/maps/Lobby/scripts.pory"
 	.string "Lo has sabido manejar a la perfección.$"
 
 Lobby_EventScript_Erkey_Text_1:
-# 593 "data/maps/Lobby/scripts.pory"
+# 607 "data/maps/Lobby/scripts.pory"
 	.string "Bien jugado. Cuando las reglas cambian,\n"
 	.string "tú te adaptaste.$"
 
 Lobby_EventScript_Erkey_Text_2:
-# 596 "data/maps/Lobby/scripts.pory"
+# 610 "data/maps/Lobby/scripts.pory"
 	.string "Eso es el espíritu de Whack a Hack.$"
 
 Lobby_EventScript_Erkey_Text_3:
-# 601 "data/maps/Lobby/scripts.pory"
+# 615 "data/maps/Lobby/scripts.pory"
 	.string "La costumbre pesa más de lo que parece.\n"
 	.string "Aquí se paga caro.$"
 
 Lobby_EventScript_Erkey_Text_4:
-# 607 "data/maps/Lobby/scripts.pory"
+# 621 "data/maps/Lobby/scripts.pory"
 	.string "Aquí cada combate enseña algo.$"
 
 Lobby_EventScript_Erkey_Text_5:
-# 610 "data/maps/Lobby/scripts.pory"
+# 624 "data/maps/Lobby/scripts.pory"
 	.string "Si prestas atención.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
@@ -1456,37 +1588,5 @@ Lobby_Text_Gameboycl_OnDefeat::
 	.string "Evolucionar también es mirar atrás.$"
 
 Lobby_Text_FakemonDex_NoneSeen::
-# 498 "data/maps/Lobby/scripts.pory"
+# 544 "data/maps/Lobby/scripts.pory"
 	.string "Aún no has visto ningún fakemon en tu Pokédex.$"
-
-Lobby_Text_Fakemon_Kaosune::
-# 502 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Kaosune (placeholder).$"
-
-Lobby_Text_Fakemon_Freech::
-# 506 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Freech (placeholder).$"
-
-Lobby_Text_Fakemon_Plugoink::
-# 510 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Plugoink (placeholder).$"
-
-Lobby_Text_Fakemon_Gritespec::
-# 514 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Gritespec (placeholder).$"
-
-Lobby_Text_Fakemon_Magiken::
-# 518 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Magiken (placeholder).$"
-
-Lobby_Text_Fakemon_Ayewiraz::
-# 522 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Ayewiraz (placeholder).$"
-
-Lobby_Text_Fakemon_Electrodes::
-# 526 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Electrodes (placeholder).$"
-
-Lobby_Text_Fakemon_Eing::
-# 530 "data/maps/Lobby/scripts.pory"
-	.string "Información sobre Eing (placeholder).$"

@@ -414,6 +414,7 @@ text Lobby_Text_Gameboycl_OnDefeat {
 script Lobby_EventScript_FakemonDexMenu {
     lock
     faceplayer
+    msgbox(format("Soy el experto en especies que probablemente no conozcas.\pTe contaré sobre ellas; para no arruinar el factor sorpresa, solo te hablaré de las que ya hayas visto."))
     setvar(VAR_0x8000, 0)
     getseenmon(SPECIES_KAOSUNE)
     if(var(VAR_RESULT) != 0) {
@@ -468,6 +469,7 @@ script Lobby_EventScript_FakemonDexMenu {
         release
         end
     }
+    msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
     if(var(VAR_RESULT) > 7) {
         release
@@ -475,60 +477,72 @@ script Lobby_EventScript_FakemonDexMenu {
     }
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(Lobby_Text_Fakemon_Kaosune)
+            showmonpic(SPECIES_KAOSUNE, 10, 3)
+            setvar(VAR_0x8004, SPECIES_KAOSUNE)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 1:
-            msgbox(Lobby_Text_Fakemon_Freech)
+            showmonpic(SPECIES_FREECH, 10, 3)
+            setvar(VAR_0x8004, SPECIES_FREECH)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 2:
-            msgbox(Lobby_Text_Fakemon_Plugoink)
+            showmonpic(SPECIES_PLUGOINK, 10, 3)
+            setvar(VAR_0x8004, SPECIES_PLUGOINK)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 3:
-            msgbox(Lobby_Text_Fakemon_Gritespec)
+            showmonpic(SPECIES_GRITESPEC, 10, 3)
+            setvar(VAR_0x8004, SPECIES_GRITESPEC)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 4:
-            msgbox(Lobby_Text_Fakemon_Magiken)
+            showmonpic(SPECIES_MAGIKEN, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MAGIKEN)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 5:
-            msgbox(Lobby_Text_Fakemon_Ayewiraz)
+            showmonpic(SPECIES_AYEWIRAZ, 10, 3)
+            setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 6:
-            msgbox(Lobby_Text_Fakemon_Electrodes)
+            showmonpic(SPECIES_ELECTRODES, 10, 3)
+            setvar(VAR_0x8004, SPECIES_ELECTRODES)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
         case 7:
-            msgbox(Lobby_Text_Fakemon_Eing)
+            showmonpic(SPECIES_EING, 10, 3)
+            setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
     }
     release
     end
 }
 
+script Lobby_EventScript_ShowFakemonDexInfo {
+    special(BufferSpeciesDexDescription)
+
+    msgbox(format("Ya que no tienes una Pokedex, su descripción es:\p{STR_VAR_1}"))
+    special(BufferSpeciesTypeNames)
+    msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}")
+    msgbox(format("¡Y esto te va a sorprender! Sus habilidades son:"))
+    setvar(VAR_0x8005, 0)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}"))
+    }
+    setvar(VAR_0x8005, 1)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}"))
+    }
+    setvar(VAR_0x8005, 2)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}"))
+    }
+    special(BufferSpeciesStats)
+    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{STR_VAR_1}"))
+    hidemonpic()
+    return
+}
+
 text Lobby_Text_FakemonDex_NoneSeen {
     "Aún no has visto ningún fakemon en tu Pokédex."
-}
-
-text Lobby_Text_Fakemon_Kaosune {
-    "Información sobre Kaosune (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Freech {
-    "Información sobre Freech (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Plugoink {
-    "Información sobre Plugoink (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Gritespec {
-    "Información sobre Gritespec (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Magiken {
-    "Información sobre Magiken (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Ayewiraz {
-    "Información sobre Ayewiraz (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Electrodes {
-    "Información sobre Electrodes (placeholder)."
-}
-
-text Lobby_Text_Fakemon_Eing {
-    "Información sobre Eing (placeholder)."
 }
 
 script Lobby_EventScript_Erkey_IntroFirstBattle {
