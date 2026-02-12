@@ -279,7 +279,11 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   350
+#define START_MUS                   346
+#define MUS_BW_ACCUMULA_TOWN        346 // mus_bw_accumula_town
+#define MUS_BW_GYM                  347 // MUS_BW_GYM
+#define MUS_BW_THE_DREAMYARD        348 // mus_bw_the_dreamyard
+#define MUS_BW_VS_GYM_LEADER        349 // MUS_BW_VS_GYM_LEADER
 #define MUS_LITTLEROOT_TEST         350 // MUS_TETSUJI          // Unused, likely a test track.
 #define MUS_GSC_ROUTE38             351 // MUS_FIELD13          // Unused, likely a test track.
 #define MUS_CAUGHT                  352 // MUS_KACHI22

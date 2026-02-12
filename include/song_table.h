@@ -279,6 +279,10 @@ extern const struct SongHeader se_pike_curtain_close;
 extern const struct SongHeader se_pike_curtain_open;
 extern const struct SongHeader se_sudowoodo_shake;
 
+extern const struct SongHeader mus_bw_accumula_town;
+extern const struct SongHeader mus_bw_gym;
+extern const struct SongHeader mus_bw_the_dreamyard;
+extern const struct SongHeader mus_bw_vs_gym_leader;
 extern const struct SongHeader mus_littleroot_test;
 extern const struct SongHeader mus_gsc_route38;
 extern const struct SongHeader mus_caught;

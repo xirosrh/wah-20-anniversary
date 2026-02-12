@@ -3488,6 +3488,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_BW_ACCUMULA_TOWN)         \
+    X(MUS_BW_GYM)                   \
+    X(MUS_BW_THE_DREAMYARD)         \
+    X(MUS_BW_VS_GYM_LEADER)         \
     X(MUS_LITTLEROOT_TEST)          \
     X(MUS_GSC_ROUTE38)              \
     X(MUS_CAUGHT)                   \

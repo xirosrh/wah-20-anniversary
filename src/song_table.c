@@ -277,6 +277,10 @@ const struct Song gSongTable[] =
 
     [(END_SE+1)...(START_MUS-1)]  = SONG(dummy_song_header, MUSIC_PLAYER_BGM),
 
+    [MUS_BW_ACCUMULA_TOWN]        = SONG(mus_bw_accumula_town, MUSIC_PLAYER_BGM),
+    [MUS_BW_GYM]                  = SONG(mus_bw_gym, MUSIC_PLAYER_BGM),
+    [MUS_BW_THE_DREAMYARD]        = SONG(mus_bw_the_dreamyard, MUSIC_PLAYER_BGM),
+    [MUS_BW_VS_GYM_LEADER]        = SONG(mus_bw_vs_gym_leader, MUSIC_PLAYER_BGM),
     [MUS_LITTLEROOT_TEST]         = SONG(mus_littleroot_test, MUSIC_PLAYER_BGM),
     [MUS_GSC_ROUTE38]             = SONG(mus_gsc_route38, MUSIC_PLAYER_BGM),
     [MUS_CAUGHT]                  = SONG(mus_caught, MUSIC_PLAYER_BGM),
