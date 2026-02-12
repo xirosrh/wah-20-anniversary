@@ -521,8 +521,7 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
 }
 
 script Lobby_EventScript_ShowFakemonDexInfo {
-    special(BufferSpeciesDexDescription)
-
+    special(BufferSpeciesDexDescriptionForTextbox)
     msgbox(format("Ya que no tienes una Pokedex, su descripción es:\p{STR_VAR_1}"))
     special(BufferSpeciesTypeNames)
     msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")

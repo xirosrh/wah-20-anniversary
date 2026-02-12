@@ -4429,7 +4429,46 @@ void BufferSpeciesDexDescription(void)
         gStringVar1[0] = EOS;
 }
 
+void BufferSpeciesDexDescriptionForTextbox(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *src = GetSpeciesPokedexDescription(species);
+    u8 *dest = gStringVar1;
+    bool8 prevWasNewline = FALSE;
+    bool8 hasOutputFirstNewline = FALSE;
 
+    if (src == NULL)
+    {
+        dest[0] = EOS;
+        return;
+    }
+    while (*src != EOS)
+    {
+        u8 c = *src++;
+        if (c == CHAR_NEWLINE || c == '\n')
+        {
+            if (!prevWasNewline)
+            {
+                if (!hasOutputFirstNewline)
+                {
+                    *dest++ = CHAR_NEWLINE;  /* first \n */
+                    hasOutputFirstNewline = TRUE;
+                }
+                else
+                {
+                    *dest++ = CHAR_PROMPT_SCROLL;  /* rest as \l (scroll) */
+                }
+                prevWasNewline = TRUE;
+            }
+        }
+        else
+        {
+            *dest++ = c;
+            prevWasNewline = FALSE;
+        }
+    }
+    *dest = EOS;
+}
 
 #define ABILITY_LINE_MAX (0x100 - 2)
 
