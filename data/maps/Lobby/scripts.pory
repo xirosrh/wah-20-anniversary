@@ -411,6 +411,150 @@ text Lobby_Text_Gameboycl_OnDefeat {
     format("Evolucionar también es mirar atrás.")
 }
 
+script Lobby_EventScript_FakemonDexMenu {
+    lock
+    faceplayer
+    msgbox(format("Soy el experto en las especies exclusivas de Whack a Hack.\pTe revelaré todo sobre ellas, pero solo de las que hayas visto.\p¡No quiero arruinar el factor sorpresa!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
+    setvar(VAR_0x8000, 0)
+    getseenmon(SPECIES_KAOSUNE)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_KAOSUNE)
+        dynmultipush(gStringVar1, 0)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_FREECH)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_FREECH)
+        dynmultipush(gStringVar1, 1)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_PLUGOINK)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_PLUGOINK)
+        dynmultipush(gStringVar1, 2)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_GRITESPEC)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_GRITESPEC)
+        dynmultipush(gStringVar1, 3)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MAGIKEN)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MAGIKEN)
+        dynmultipush(gStringVar1, 4)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_AYEWIRAZ)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_AYEWIRAZ)
+        dynmultipush(gStringVar1, 5)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_ELECTRODES)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_EING)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_EING)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    if(var(VAR_0x8000) == 0) {
+        msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
+        release
+        end
+    }
+    dynmultipush("Salir", 8)
+    msgbox(format("¿De cuál especie te gustaría conocer más?"))
+    dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    if(var(VAR_RESULT) > 7) {
+        msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    switch(var(VAR_RESULT)) {
+        case 0:
+            showmonpic(SPECIES_KAOSUNE, 10, 3)
+            setvar(VAR_0x8004, SPECIES_KAOSUNE)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 1:
+            showmonpic(SPECIES_FREECH, 10, 3)
+            setvar(VAR_0x8004, SPECIES_FREECH)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 2:
+            showmonpic(SPECIES_PLUGOINK, 10, 3)
+            setvar(VAR_0x8004, SPECIES_PLUGOINK)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 3:
+            showmonpic(SPECIES_GRITESPEC, 10, 3)
+            setvar(VAR_0x8004, SPECIES_GRITESPEC)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 4:
+            showmonpic(SPECIES_MAGIKEN, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MAGIKEN)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 5:
+            showmonpic(SPECIES_AYEWIRAZ, 10, 3)
+            setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 6:
+            showmonpic(SPECIES_ELECTRODES, 10, 3)
+            setvar(VAR_0x8004, SPECIES_ELECTRODES)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 7:
+            showmonpic(SPECIES_EING, 10, 3)
+            setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+    }
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_ShowFakemonDexInfo {
+    special(BufferSpeciesDexDescriptionForTextbox)
+    msgbox(format("Ya que no tienes una Pokedex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
+    special(BufferSpeciesTypeNames)
+    if(var(VAR_RESULT) == 1) {
+        msgbox("Su tipo es: {STR_VAR_2}.")
+    } else {
+        msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    }
+    msgbox("¡Y esto seguramente no lo sabías!\nSus habilidades son:")
+    setvar(VAR_0x8005, 0)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 1)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 2)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    special(BufferSpeciesStats)
+    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{FONT_SMALL}{STR_VAR_1}"))
+    hidemonpic()
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    msgbox("Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.")
+    return
+}
+
+
+
 script Lobby_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
     applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
@@ -493,3 +637,4 @@ script Lobby_EventScript_Erkey {
         goto(Lobby_EventScript_Erkey_OnFinishEvent)
     }
 }
+

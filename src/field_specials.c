@@ -72,8 +72,12 @@
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
 #include "palette.h"
+#include "battle_main.h"
+#include "battle_message.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "constants/characters.h"
+#include "constants/pokemon.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4413,4 +4417,150 @@ void ShouldUseAlternativeTeam(void)
 void OpenTeamSelectorFromField(void)
 {
     StartTeamSelectorFromField_CB2();
+}
+
+void BufferSpeciesDexDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *desc = GetSpeciesPokedexDescription(species);
+    if (desc != NULL)
+        StringCopy(gStringVar1, desc);
+    else
+        gStringVar1[0] = EOS;
+}
+
+void BufferSpeciesDexDescriptionForTextbox(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *src = GetSpeciesPokedexDescription(species);
+    u8 *dest = gStringVar1;
+    bool8 prevWasNewline = FALSE;
+    bool8 hasOutputFirstNewline = FALSE;
+
+    if (src == NULL)
+    {
+        dest[0] = EOS;
+        return;
+    }
+    while (*src != EOS)
+    {
+        u8 c = *src++;
+        if (c == CHAR_NEWLINE || c == '\n')
+        {
+            if (!prevWasNewline)
+            {
+                if (!hasOutputFirstNewline)
+                {
+                    *dest++ = CHAR_NEWLINE;  /* first \n */
+                    hasOutputFirstNewline = TRUE;
+                }
+                else
+                {
+                    *dest++ = CHAR_PROMPT_SCROLL;  /* rest as \l (scroll) */
+                }
+                prevWasNewline = TRUE;
+            }
+        }
+        else
+        {
+            *dest++ = c;
+            prevWasNewline = FALSE;
+        }
+    }
+    *dest = EOS;
+}
+
+void BufferSpeciesAbilityNameAndDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 slot = (u8)gSpecialVar_0x8005;
+    enum Ability ability = GetSpeciesAbility(species, slot);
+    const u8 *name;
+    const u8 *desc;
+
+    gSpecialVar_Result = 0;
+    gStringVar1[0] = EOS;
+    gStringVar2[0] = EOS;
+    if (ability == ABILITY_NONE)
+        return;
+    name = gAbilitiesInfo[ability].name;
+    desc = gAbilitiesInfo[ability].description;
+    if (desc == NULL)
+        return;
+    StringCopy(gStringVar1, name);
+    StringCopy(gStringVar2, desc);
+    gSpecialVar_Result = 1;
+}
+
+
+void BufferSpeciesTypeNames(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    enum Type type1 = GetSpeciesType(species, 0);
+    enum Type type2 = GetSpeciesType(species, 1);
+    StringCopy(gStringVar2, gTypesInfo[type1].name);
+    if (type2 != TYPE_NONE && type2 != type1)
+    {
+        StringCopy(gStringVar3, gTypesInfo[type2].name);
+        gSpecialVar_Result = 2;
+    }
+    else
+    {
+        gStringVar3[0] = EOS;
+        gSpecialVar_Result = 1;
+    }
+}
+
+
+static u8 *BufferSpeciesStats_AppendStat(u8 *dest, enum Stat stat, u32 value)
+{
+    dest = StringCopy(dest, gStatNamesTable[stat]);
+    *dest++ = CHAR_COLON;
+    *dest++ = CHAR_SPACE;
+    dest = ConvertIntToDecimalStringN(dest, value, STR_CONV_MODE_LEFT_ALIGN, 3);
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendSep(u8 *dest)
+{
+    *dest++ = CHAR_SPACE;
+    *dest++ = CHAR_HYPHEN;
+    *dest++ = CHAR_SPACE;
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendNewline(u8 *dest)
+{
+    *dest++ = CHAR_NEWLINE;
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendScroll(u8 *dest)
+{
+    *dest++ = CHAR_PROMPT_SCROLL;
+    return dest;
+}
+
+void BufferSpeciesStats(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 *dest = gStringVar1;
+
+    dest[0] = EOS;
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_HP, GetSpeciesBaseHP(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_ATK, GetSpeciesBaseAttack(species));
+    dest = BufferSpeciesStats_AppendNewline(dest);
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_DEF, GetSpeciesBaseDefense(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPEED, GetSpeciesBaseSpeed(species));
+    dest = BufferSpeciesStats_AppendScroll(dest);
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPATK, GetSpeciesBaseSpAttack(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPDEF, GetSpeciesBaseSpDefense(species));
+
+    *dest = EOS;
 }
