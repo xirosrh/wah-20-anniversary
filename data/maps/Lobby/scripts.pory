@@ -478,7 +478,7 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
     dynmultipush("Salir", 8)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) == 8) {
+    if(var(VAR_RESULT) > 7) {
         msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
@@ -522,27 +522,31 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
 
 script Lobby_EventScript_ShowFakemonDexInfo {
     special(BufferSpeciesDexDescriptionForTextbox)
-    msgbox(format("Ya que no tienes una Pokedex, su descripción es:\p{STR_VAR_1}"))
+    msgbox(format("Ya que no tienes una Pokedex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
     special(BufferSpeciesTypeNames)
-    msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    if(var(VAR_RESULT) == 1) {
+        msgbox("Su tipo es: {STR_VAR_2}.")
+    } else {
+        msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    }
     msgbox("¡Y esto seguramente no lo sabías!\nSus habilidades son:")
     setvar(VAR_0x8005, 0)
     special(BufferSpeciesAbilityNameAndDescription)
     if(var(VAR_RESULT) != 0) {
-        msgbox(format("{STR_VAR_1}"))
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
     }
     setvar(VAR_0x8005, 1)
     special(BufferSpeciesAbilityNameAndDescription)
     if(var(VAR_RESULT) != 0) {
-        msgbox(format("{STR_VAR_1}"))
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
     }
     setvar(VAR_0x8005, 2)
     special(BufferSpeciesAbilityNameAndDescription)
     if(var(VAR_RESULT) != 0) {
-        msgbox(format("{STR_VAR_1}"))
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
     }
     special(BufferSpeciesStats)
-    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{STR_VAR_1}"))
+    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{FONT_SMALL}{STR_VAR_1}"))
     hidemonpic()
     bufferspeciesname(STR_VAR_1, VAR_0x8004)
     msgbox("Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.")
