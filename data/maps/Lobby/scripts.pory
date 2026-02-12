@@ -414,7 +414,13 @@ text Lobby_Text_Gameboycl_OnDefeat {
 script Lobby_EventScript_FakemonDexMenu {
     lock
     faceplayer
-    msgbox(format("Soy el experto en especies que probablemente no conozcas.\pTe contaré sobre ellas; para no arruinar el factor sorpresa, solo te hablaré de las que ya hayas visto."))
+    msgbox(format("Soy el experto en las especies exclusivas de Whack a Hack.\pTe revelaré todo sobre ellas, pero solo de las que hayas visto.\p¡No quiero arruinar el factor sorpresa!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
     setvar(VAR_0x8000, 0)
     getseenmon(SPECIES_KAOSUNE)
     if(var(VAR_RESULT) != 0) {
@@ -465,13 +471,15 @@ script Lobby_EventScript_FakemonDexMenu {
         addvar(VAR_0x8000, 1)
     }
     if(var(VAR_0x8000) == 0) {
-        msgbox(Lobby_Text_FakemonDex_NoneSeen)
+        msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
         release
         end
     }
+    dynmultipush("Salir", 8)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) > 7) {
+    if(var(VAR_RESULT) == 8) {
+        msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
     }
@@ -509,8 +517,7 @@ script Lobby_EventScript_FakemonDexMenu {
             setvar(VAR_0x8004, SPECIES_EING)
             call(Lobby_EventScript_ShowFakemonDexInfo)
     }
-    release
-    end
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
 }
 
 script Lobby_EventScript_ShowFakemonDexInfo {
@@ -518,8 +525,8 @@ script Lobby_EventScript_ShowFakemonDexInfo {
 
     msgbox(format("Ya que no tienes una Pokedex, su descripción es:\p{STR_VAR_1}"))
     special(BufferSpeciesTypeNames)
-    msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}")
-    msgbox(format("¡Y esto te va a sorprender! Sus habilidades son:"))
+    msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    msgbox("¡Y esto seguramente no lo sabías!\nSus habilidades son:")
     setvar(VAR_0x8005, 0)
     special(BufferSpeciesAbilityNameAndDescription)
     if(var(VAR_RESULT) != 0) {
@@ -538,12 +545,12 @@ script Lobby_EventScript_ShowFakemonDexInfo {
     special(BufferSpeciesStats)
     msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{STR_VAR_1}"))
     hidemonpic()
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    msgbox("Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.")
     return
 }
 
-text Lobby_Text_FakemonDex_NoneSeen {
-    "Aún no has visto ningún fakemon en tu Pokédex."
-}
+
 
 script Lobby_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
