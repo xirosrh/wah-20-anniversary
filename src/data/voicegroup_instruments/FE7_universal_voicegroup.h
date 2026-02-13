@@ -603,7 +603,7 @@ const u8 KeySplitTable35[] =
 //--------------------------------------------------------------
 
 // KeySplitTable6
-const struct Instrument Intrument_FE7_AcousticGrandPiano[] =
+const struct Instrument Instrument_FE7_AcousticGrandPiano[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_37, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_40, 255, 254, 0, 235),
@@ -632,7 +632,7 @@ const struct Instrument Intrument_FE7_AcousticGrandPiano[] =
 };
 
 // KeySplitTable6
-const struct Instrument Intrument_FE7_BrightAcousticPiano[] =
+const struct Instrument Instrument_FE7_BrightAcousticPiano[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_37, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_37, 255, 254, 0, 235),
@@ -661,7 +661,7 @@ const struct Instrument Intrument_FE7_BrightAcousticPiano[] =
 };
 
 // KeySplitTable6
-const struct Instrument Intrument_FE7_ElectricGrandPiano[] =
+const struct Instrument Instrument_FE7_ElectricGrandPiano[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_37, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7000_piano_37, 255, 254, 0, 235),
@@ -690,7 +690,7 @@ const struct Instrument Intrument_FE7_ElectricGrandPiano[] =
 };
 
 // KeySplitTable7
-const struct Instrument Intrument_FE7_HonkyTonkPiano[] =
+const struct Instrument Instrument_FE7_HonkyTonkPiano[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_003_honky_tonk_piano_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_003_honky_tonk_piano_0, 255, 254, 0, 235),
@@ -710,7 +710,7 @@ const struct Instrument Intrument_FE7_HonkyTonkPiano[] =
 };
 
 // KeySplitTable8
-const struct Instrument Intrument_FE7_ElectricPiano1[] =
+const struct Instrument Instrument_FE7_ElectricPiano1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_004_electric_piano_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_004_electric_piano_1, 255, 254, 0, 235),
@@ -725,7 +725,7 @@ const struct Instrument Intrument_FE7_ElectricPiano1[] =
 };
 
 // KeySplitTable9
-const struct Instrument Intrument_FE7_ElectricPiano2[] =
+const struct Instrument Instrument_FE7_ElectricPiano2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_005_electric_piano_0, 255, 246, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_005_electric_piano_0, 255, 246, 0, 235),
@@ -748,7 +748,7 @@ const struct Instrument Intrument_FE7_ElectricPiano2[] =
 };
 
 // KeySplitTable10
-const struct Instrument Intrument_FE7_Harpsichord[] =
+const struct Instrument Instrument_FE7_Harpsichord[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_006_harpsichord_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_006_harpsichord_0, 255, 254, 0, 235),
@@ -761,7 +761,7 @@ const struct Instrument Intrument_FE7_Harpsichord[] =
 };
 
 // KeySplitTable7
-const struct Instrument Intrument_FE7_Clavinet[] =
+const struct Instrument Instrument_FE7_Clavinet[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_007_clavinet_0, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_007_clavinet_1, 255, 249, 0, 235),
@@ -781,7 +781,7 @@ const struct Instrument Intrument_FE7_Clavinet[] =
 };
 
 // KeySplitTable11
-const struct Instrument Intrument_FE7_Celesta[] =
+const struct Instrument Instrument_FE7_Celesta[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_008_celesta_0, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_008_celesta_0, 255, 249, 0, 235),
@@ -792,7 +792,7 @@ const struct Instrument Intrument_FE7_Celesta[] =
 };
 
 // KeySplitTable12
-const struct Instrument Intrument_FE7_Glockenspiel[] =
+const struct Instrument Instrument_FE7_Glockenspiel[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_009_glockenspiel_0, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_009_glockenspiel_0, 255, 249, 0, 235),
@@ -802,7 +802,7 @@ const struct Instrument Intrument_FE7_Glockenspiel[] =
 };
 
 // KeySplitTable11
-const struct Instrument Intrument_FE7_MusicBox[] =
+const struct Instrument Instrument_FE7_MusicBox[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_010_music_box, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_010_music_box, 255, 249, 0, 235),
@@ -813,7 +813,7 @@ const struct Instrument Intrument_FE7_MusicBox[] =
 };
 
 // KeySplitTable13
-const struct Instrument Intrument_FE7_Vibraphone[] =
+const struct Instrument Instrument_FE7_Vibraphone[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_011_vibraphone_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_011_vibraphone_0, 255, 254, 0, 235),
@@ -833,7 +833,7 @@ const struct Instrument Intrument_FE7_Vibraphone[] =
 };
 
 // KeySplitTable14
-const struct Instrument Intrument_FE7_Marimba[] =
+const struct Instrument Instrument_FE7_Marimba[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_012_marimba_0, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_012_marimba_1, 255, 249, 0, 235),
@@ -846,7 +846,7 @@ const struct Instrument Intrument_FE7_Marimba[] =
 };
 
 // KeySplitTable15
-const struct Instrument Intrument_FE7_Xylophone[] =
+const struct Instrument Instrument_FE7_Xylophone[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_013_xylophone_0, 255, 235, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_013_xylophone_0, 255, 235, 0, 235),
@@ -856,7 +856,7 @@ const struct Instrument Intrument_FE7_Xylophone[] =
 };
 
 // KeySplitTable16
-const struct Instrument Intrument_FE7_Dulcimer[] =
+const struct Instrument Instrument_FE7_Dulcimer[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_015_dulcimer_santur, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_015_dulcimer_santur, 255, 249, 0, 235),
@@ -866,7 +866,7 @@ const struct Instrument Intrument_FE7_Dulcimer[] =
 };
 
 // KeySplitTable17
-const struct Instrument Intrument_FE7_DrawbarOrgan[] =
+const struct Instrument Instrument_FE7_DrawbarOrgan[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_016_drawbar_organ_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_016_drawbar_organ_0, 255, 0, 255, 235),
@@ -879,7 +879,7 @@ const struct Instrument Intrument_FE7_DrawbarOrgan[] =
 };
 
 // KeySplitTable17
-const struct Instrument Intrument_FE7_PercussiveOrgan[] =
+const struct Instrument Instrument_FE7_PercussiveOrgan[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_017_percussive_organ_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_017_percussive_organ_0, 255, 0, 255, 235),
@@ -892,7 +892,7 @@ const struct Instrument Intrument_FE7_PercussiveOrgan[] =
 };
 
 // KeySplitTable17
-const struct Instrument Intrument_FE7_RockOrgan[] =
+const struct Instrument Instrument_FE7_RockOrgan[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_018_rock_organ_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_018_rock_organ_1, 255, 0, 255, 235),
@@ -905,7 +905,7 @@ const struct Instrument Intrument_FE7_RockOrgan[] =
 };
 
 // KeySplitTable13
-const struct Instrument Intrument_FE7_ChurchOrgan[] =
+const struct Instrument Instrument_FE7_ChurchOrgan[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_019_church_organ_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_019_church_organ_0, 255, 0, 255, 235),
@@ -925,7 +925,7 @@ const struct Instrument Intrument_FE7_ChurchOrgan[] =
 };
 
 // KeySplitTable17
-const struct Instrument Intrument_FE7_ReedOrgan[] =
+const struct Instrument Instrument_FE7_ReedOrgan[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_020_reed_organ_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_020_reed_organ_0, 255, 0, 255, 235),
@@ -938,7 +938,7 @@ const struct Instrument Intrument_FE7_ReedOrgan[] =
 };
 
 // KeySplitTable18
-const struct Instrument Intrument_FE7_Accordion[] =
+const struct Instrument Instrument_FE7_Accordion[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_021_accordion_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_021_accordion_0, 255, 0, 255, 235),
@@ -950,7 +950,7 @@ const struct Instrument Intrument_FE7_Accordion[] =
 };
 
 // KeySplitTable19
-const struct Instrument Intrument_FE7_Harmonica[] =
+const struct Instrument Instrument_FE7_Harmonica[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_022_harmonica_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_022_harmonica_0, 255, 0, 255, 235),
@@ -979,7 +979,7 @@ const struct Instrument Intrument_FE7_Harmonica[] =
 };
 
 // KeySplitTable10
-const struct Instrument Intrument_FE7_TangoAccordion[] =
+const struct Instrument Instrument_FE7_TangoAccordion[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_023_tango_accordion_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_023_tango_accordion_0, 255, 0, 255, 235),
@@ -992,7 +992,7 @@ const struct Instrument Intrument_FE7_TangoAccordion[] =
 };
 
 // KeySplitTable9
-const struct Instrument Intrument_FE7_AcousticGuitarNylon[] =
+const struct Instrument Instrument_FE7_AcousticGuitarNylon[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_0, 255, 253, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_1, 255, 253, 0, 235),
@@ -1015,7 +1015,7 @@ const struct Instrument Intrument_FE7_AcousticGuitarNylon[] =
 };
 
 // KeySplitTable19
-const struct Instrument Intrument_FE7_AcousticGuitarSteel[] =
+const struct Instrument Instrument_FE7_AcousticGuitarSteel[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_0, 255, 253, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_0, 255, 253, 0, 235),
@@ -1044,7 +1044,7 @@ const struct Instrument Intrument_FE7_AcousticGuitarSteel[] =
 };
 
 // KeySplitTable9
-const struct Instrument Intrument_FE7_ElectricGuitarJazz[] =
+const struct Instrument Instrument_FE7_ElectricGuitarJazz[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_026_electric_guitar_jazz_0, 255, 242, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_026_electric_guitar_jazz_0, 255, 242, 0, 235),
@@ -1067,7 +1067,7 @@ const struct Instrument Intrument_FE7_ElectricGuitarJazz[] =
 };
 
 // KeySplitTable19
-const struct Instrument Intrument_FE7_ElectricGuitarClean[] =
+const struct Instrument Instrument_FE7_ElectricGuitarClean[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_027_electric_guitar_clean_0, 255, 245, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_027_electric_guitar_clean_0, 255, 245, 0, 235),
@@ -1096,7 +1096,7 @@ const struct Instrument Intrument_FE7_ElectricGuitarClean[] =
 };
 
 // KeySplitTable20
-const struct Instrument Intrument_FE7_ElectricGuitarMuted[] =
+const struct Instrument Instrument_FE7_ElectricGuitarMuted[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_028_electric_guitar_muted_0, 255, 249, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_028_electric_guitar_muted_0, 255, 249, 0, 235),
@@ -1117,7 +1117,7 @@ const struct Instrument Intrument_FE7_ElectricGuitarMuted[] =
 };
 
 // KeySplitTable21
-const struct Instrument Intrument_FE7_OverdrivenGuitar[] =
+const struct Instrument Instrument_FE7_OverdrivenGuitar[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_029_overdriven_guitar_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_029_overdriven_guitar_0, 255, 0, 255, 235),
@@ -1142,7 +1142,7 @@ const struct Instrument Intrument_FE7_OverdrivenGuitar[] =
 };
 
 // KeySplitTable22
-const struct Instrument Intrument_FE7_DistortionGuitar[] =
+const struct Instrument Instrument_FE7_DistortionGuitar[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_030_distortion_guitar_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_030_distortion_guitar_1, 255, 0, 255, 235),
@@ -1169,7 +1169,7 @@ const struct Instrument Intrument_FE7_DistortionGuitar[] =
 };
 
 // KeySplitTable16
-const struct Instrument Intrument_FE7_GuitarHarmonics[] =
+const struct Instrument Instrument_FE7_GuitarHarmonics[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_031_guitar_harmonics_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_031_guitar_harmonics_1, 255, 254, 0, 235),
@@ -1179,7 +1179,7 @@ const struct Instrument Intrument_FE7_GuitarHarmonics[] =
 };
 
 // KeySplitTable13
-const struct Instrument Intrument_FE7_AcousticBass[] =
+const struct Instrument Instrument_FE7_AcousticBass[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_032_acoustic_bass_0, 255, 254, 51, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_032_acoustic_bass_1, 255, 254, 51, 235),
@@ -1199,7 +1199,7 @@ const struct Instrument Intrument_FE7_AcousticBass[] =
 };
 
 // KeySplitTable10
-const struct Instrument Intrument_FE7_ElectricBassFinger[] =
+const struct Instrument Instrument_FE7_ElectricBassFinger[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_033_electric_bass_finger_0, 255, 242, 103, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_033_electric_bass_finger_1, 255, 242, 103, 235),
@@ -1212,7 +1212,7 @@ const struct Instrument Intrument_FE7_ElectricBassFinger[] =
 };
 
 // KeySplitTable20
-const struct Instrument Intrument_FE7_ElectricBassPick[] =
+const struct Instrument Instrument_FE7_ElectricBassPick[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_034_electric_bass_pick_0, 255, 242, 103, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_034_electric_bass_pick_1, 255, 242, 103, 235),
@@ -1233,7 +1233,7 @@ const struct Instrument Intrument_FE7_ElectricBassPick[] =
 };
 
 // KeySplitTable20
-const struct Instrument Intrument_FE7_FretlessBass[] =
+const struct Instrument Instrument_FE7_FretlessBass[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_035_fretless_bass_0, 255, 254, 25, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_035_fretless_bass_0, 255, 254, 25, 235),
@@ -1254,7 +1254,7 @@ const struct Instrument Intrument_FE7_FretlessBass[] =
 };
 
 // KeySplitTable23
-const struct Instrument Intrument_FE7_SlapBass1[] =
+const struct Instrument Instrument_FE7_SlapBass1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_036_slap_bass_31, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_036_slap_bass_31, 255, 0, 255, 235),
@@ -1267,7 +1267,7 @@ const struct Instrument Intrument_FE7_SlapBass1[] =
 };
 
 // KeySplitTable23
-const struct Instrument Intrument_FE7_SlapBass2[] =
+const struct Instrument Instrument_FE7_SlapBass2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_037_slap_bass, 255, 252, 51, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_037_slap_bass, 255, 252, 51, 235),
@@ -1280,7 +1280,7 @@ const struct Instrument Intrument_FE7_SlapBass2[] =
 };
 
 // KeySplitTable23
-const struct Instrument Intrument_FE7_SynthBass1[] =
+const struct Instrument Instrument_FE7_SynthBass1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_038_synth_bass1_0, 255, 249, 25, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_038_synth_bass1_0, 255, 249, 25, 235),
@@ -1293,7 +1293,7 @@ const struct Instrument Intrument_FE7_SynthBass1[] =
 };
 
 // KeySplitTable24
-const struct Instrument Intrument_FE7_SynthBass2[] =
+const struct Instrument Instrument_FE7_SynthBass2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_039_synth_bass2_0, 255, 254, 51, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_039_synth_bass2_1, 255, 254, 51, 235),
@@ -1308,7 +1308,7 @@ const struct Instrument Intrument_FE7_SynthBass2[] =
 };
 
 // KeySplitTable22
-const struct Instrument Intrument_FE7_Violin[] =
+const struct Instrument Instrument_FE7_Violin[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
@@ -1335,7 +1335,7 @@ const struct Instrument Intrument_FE7_Violin[] =
 };
 
 // KeySplitTable22
-const struct Instrument Intrument_FE7_Viola[] =
+const struct Instrument Instrument_FE7_Viola[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
@@ -1362,7 +1362,7 @@ const struct Instrument Intrument_FE7_Viola[] =
 };
 
 // KeySplitTable25
-const struct Instrument Intrument_FE7_Cello[] =
+const struct Instrument Instrument_FE7_Cello[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_042_cello_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_042_cello_1, 255, 0, 255, 235),
@@ -1392,7 +1392,7 @@ const struct Instrument Intrument_FE7_Cello[] =
 };
 
 // KeySplitTable25
-const struct Instrument Intrument_FE7_Contrabass[] =
+const struct Instrument Instrument_FE7_Contrabass[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_043_contrabass_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_043_contrabass_0, 255, 0, 255, 235),
@@ -1422,7 +1422,7 @@ const struct Instrument Intrument_FE7_Contrabass[] =
 };
 
 // KeySplitTable12
-const struct Instrument Intrument_FE7_TremoloStrings[] =
+const struct Instrument Instrument_FE7_TremoloStrings[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_1, 255, 0, 255, 235),
@@ -1432,7 +1432,7 @@ const struct Instrument Intrument_FE7_TremoloStrings[] =
 };
 
 // KeySplitTable16
-const struct Instrument Intrument_FE7_PizzicatoStrings[] =
+const struct Instrument Instrument_FE7_PizzicatoStrings[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_045_pizzicato_strings_0, 255, 242, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_045_pizzicato_strings_0, 255, 242, 0, 235),
@@ -1442,7 +1442,7 @@ const struct Instrument Intrument_FE7_PizzicatoStrings[] =
 };
 
 // KeySplitTable24
-const struct Instrument Intrument_FE7_OrchestralHarp[] =
+const struct Instrument Instrument_FE7_OrchestralHarp[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_046_orchestral_harp_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_046_orchestral_harp_0, 255, 254, 0, 235),
@@ -1457,7 +1457,7 @@ const struct Instrument Intrument_FE7_OrchestralHarp[] =
 };
 
 // KeySplitTable12
-const struct Instrument Intrument_FE7_StringEnsemble1[] =
+const struct Instrument Instrument_FE7_StringEnsemble1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_0, 128, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_1, 128, 0, 255, 235),
@@ -1467,7 +1467,7 @@ const struct Instrument Intrument_FE7_StringEnsemble1[] =
 };
 
 // KeySplitTable12
-const struct Instrument Intrument_FE7_StringEnsemble2[] =
+const struct Instrument Instrument_FE7_StringEnsemble2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_0, 9, 0, 255, 249),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_044_tremolo_strings_1, 9, 0, 255, 249),
@@ -1477,7 +1477,7 @@ const struct Instrument Intrument_FE7_StringEnsemble2[] =
 };
 
 // KeySplitTable18
-const struct Instrument Intrument_FE7_SynthStrings1[] =
+const struct Instrument Instrument_FE7_SynthStrings1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_0, 128, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_0, 128, 0, 255, 235),
@@ -1489,7 +1489,7 @@ const struct Instrument Intrument_FE7_SynthStrings1[] =
 };
 
 // KeySplitTable18
-const struct Instrument Intrument_FE7_SynthStrings2[] =
+const struct Instrument Instrument_FE7_SynthStrings2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_0, 128, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_1, 128, 0, 255, 235),
@@ -1501,7 +1501,7 @@ const struct Instrument Intrument_FE7_SynthStrings2[] =
 };
 
 // KeySplitTable16
-const struct Instrument Intrument_FE7_ChoirAahs[] =
+const struct Instrument Instrument_FE7_ChoirAahs[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
@@ -1511,7 +1511,7 @@ const struct Instrument Intrument_FE7_ChoirAahs[] =
 };
 
 // KeySplitTable24
-const struct Instrument Intrument_FE7_VoiceOohs[] =
+const struct Instrument Instrument_FE7_VoiceOohs[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_053_voice_oohs_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_053_voice_oohs_0, 255, 0, 255, 235),
@@ -1526,7 +1526,7 @@ const struct Instrument Intrument_FE7_VoiceOohs[] =
 };
 
 // KeySplitTable11
-const struct Instrument Intrument_FE7_SynthVoice[] =
+const struct Instrument Instrument_FE7_SynthVoice[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_054_synth_voice_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_054_synth_voice_0, 255, 0, 255, 235),
@@ -1537,7 +1537,7 @@ const struct Instrument Intrument_FE7_SynthVoice[] =
 };
 
 // KeySplitTable21
-const struct Instrument Intrument_FE7_Trumpet[] =
+const struct Instrument Instrument_FE7_Trumpet[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_056_trumpet_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_056_trumpet_1, 255, 0, 255, 235),
@@ -1562,7 +1562,7 @@ const struct Instrument Intrument_FE7_Trumpet[] =
 };
 
 // KeySplitTable21
-const struct Instrument Intrument_FE7_Trombone[] =
+const struct Instrument Instrument_FE7_Trombone[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_056_trumpet_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_056_trumpet_1, 255, 0, 255, 235),
@@ -1587,7 +1587,7 @@ const struct Instrument Intrument_FE7_Trombone[] =
 };
 
 // KeySplitTable26
-const struct Instrument Intrument_FE7_Tuba[] =
+const struct Instrument Instrument_FE7_Tuba[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_058_tuba_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_058_tuba_1, 255, 0, 255, 235),
@@ -1609,7 +1609,7 @@ const struct Instrument Intrument_FE7_Tuba[] =
 };
 
 // KeySplitTable27
-const struct Instrument Intrument_FE7_MutedTrumpet[] =
+const struct Instrument Instrument_FE7_MutedTrumpet[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_059_muted_trumpet_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_059_muted_trumpet_0, 255, 0, 255, 235),
@@ -1637,7 +1637,7 @@ const struct Instrument Intrument_FE7_MutedTrumpet[] =
 };
 
 // KeySplitTable28
-const struct Instrument Intrument_FE7_FrenchHorn[] =
+const struct Instrument Instrument_FE7_FrenchHorn[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_060_french_horn_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_060_french_horn_1, 255, 0, 255, 235),
@@ -1649,7 +1649,7 @@ const struct Instrument Intrument_FE7_FrenchHorn[] =
 };
 
 // KeySplitTable28
-const struct Instrument Intrument_FE7_BrassSection[] =
+const struct Instrument Instrument_FE7_BrassSection[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_061_brass_section_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_061_brass_section_0, 255, 0, 255, 235),
@@ -1661,7 +1661,7 @@ const struct Instrument Intrument_FE7_BrassSection[] =
 };
 
 // KeySplitTable19
-const struct Instrument Intrument_FE7_SynthBrass1[] =
+const struct Instrument Instrument_FE7_SynthBrass1[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_062_synth_brass1_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_062_synth_brass1_0, 255, 0, 255, 235),
@@ -1690,7 +1690,7 @@ const struct Instrument Intrument_FE7_SynthBrass1[] =
 };
 
 // KeySplitTable29
-const struct Instrument Intrument_FE7_SynthBrass2[] =
+const struct Instrument Instrument_FE7_SynthBrass2[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_063_synth_brass2_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_063_synth_brass2_1, 255, 0, 255, 235),
@@ -1705,7 +1705,7 @@ const struct Instrument Intrument_FE7_SynthBrass2[] =
 };
 
 // KeySplitTable27
-const struct Instrument Intrument_FE7_SopranoSax[] =
+const struct Instrument Instrument_FE7_SopranoSax[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_064_soprano_sax_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_064_soprano_sax_0, 255, 0, 255, 235),
@@ -1733,7 +1733,7 @@ const struct Instrument Intrument_FE7_SopranoSax[] =
 };
 
 // KeySplitTable25
-const struct Instrument Intrument_FE7_AltoSax[] =
+const struct Instrument Instrument_FE7_AltoSax[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_065_alto_sax_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_065_alto_sax_0, 255, 0, 255, 235),
@@ -1763,7 +1763,7 @@ const struct Instrument Intrument_FE7_AltoSax[] =
 };
 
 // KeySplitTable26
-const struct Instrument Intrument_FE7_TenorSax[] =
+const struct Instrument Instrument_FE7_TenorSax[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_066_tenor_sax_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_066_tenor_sax_0, 255, 0, 255, 235),
@@ -1785,7 +1785,7 @@ const struct Instrument Intrument_FE7_TenorSax[] =
 };
 
 // KeySplitTable19
-const struct Instrument Intrument_FE7_BaritoneSax[] =
+const struct Instrument Instrument_FE7_BaritoneSax[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_067_baritone_sax_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_067_baritone_sax_1, 255, 0, 255, 235),
@@ -1814,7 +1814,7 @@ const struct Instrument Intrument_FE7_BaritoneSax[] =
 };
 
 // KeySplitTable20
-const struct Instrument Intrument_FE7_Oboe[] =
+const struct Instrument Instrument_FE7_Oboe[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_068_oboe_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_068_oboe_0, 255, 0, 255, 235),
@@ -1835,7 +1835,7 @@ const struct Instrument Intrument_FE7_Oboe[] =
 };
 
 // KeySplitTable27
-const struct Instrument Intrument_FE7_EnglishHorn[] =
+const struct Instrument Instrument_FE7_EnglishHorn[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_069_english_horn_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_069_english_horn_1, 255, 0, 255, 235),
@@ -1863,7 +1863,7 @@ const struct Instrument Intrument_FE7_EnglishHorn[] =
 };
 
 // KeySplitTable29
-const struct Instrument Intrument_FE7_Bassoon[] =
+const struct Instrument Instrument_FE7_Bassoon[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_070_bassoon_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_070_bassoon_0, 255, 0, 255, 235),
@@ -1878,7 +1878,7 @@ const struct Instrument Intrument_FE7_Bassoon[] =
 };
 
 // KeySplitTable30
-const struct Instrument Intrument_FE7_Clarinet[] =
+const struct Instrument Instrument_FE7_Clarinet[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_071_clarinet_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_071_clarinet_0, 255, 0, 255, 235),
@@ -1900,7 +1900,7 @@ const struct Instrument Intrument_FE7_Clarinet[] =
 };
 
 // KeySplitTable11
-const struct Instrument Intrument_FE7_Piccolo[] =
+const struct Instrument Instrument_FE7_Piccolo[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_072_piccolo_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_072_piccolo_1, 255, 0, 255, 235),
@@ -1911,7 +1911,7 @@ const struct Instrument Intrument_FE7_Piccolo[] =
 };
 
 // KeySplitTable27
-const struct Instrument Intrument_FE7_Flute[] =
+const struct Instrument Instrument_FE7_Flute[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_073_flute_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_073_flute_0, 255, 0, 255, 235),
@@ -1939,7 +1939,7 @@ const struct Instrument Intrument_FE7_Flute[] =
 };
 
 // KeySplitTable30
-const struct Instrument Intrument_FE7_Recorder[] =
+const struct Instrument Instrument_FE7_Recorder[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_074_recorder_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_074_recorder_0, 255, 0, 255, 235),
@@ -1961,7 +1961,7 @@ const struct Instrument Intrument_FE7_Recorder[] =
 };
 
 // KeySplitTable31
-const struct Instrument Intrument_FE7_PanFlute[] =
+const struct Instrument Instrument_FE7_PanFlute[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_075_pan_flute, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_075_pan_flute, 255, 0, 255, 235),
@@ -1972,7 +1972,7 @@ const struct Instrument Intrument_FE7_PanFlute[] =
 };
 
 // KeySplitTable31
-const struct Instrument Intrument_FE7_BlownBottle[] =
+const struct Instrument Instrument_FE7_BlownBottle[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_076_blown_bottle_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_076_blown_bottle_0, 255, 0, 255, 235),
@@ -1983,7 +1983,7 @@ const struct Instrument Intrument_FE7_BlownBottle[] =
 };
 
 // KeySplitTable13
-const struct Instrument Intrument_FE7_Shakuhachi[] =
+const struct Instrument Instrument_FE7_Shakuhachi[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_077_shakuhachi_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_077_shakuhachi_0, 255, 0, 255, 235),
@@ -2003,7 +2003,7 @@ const struct Instrument Intrument_FE7_Shakuhachi[] =
 };
 
 // KeySplitTable7
-const struct Instrument Intrument_FE7_Whistle[] =
+const struct Instrument Instrument_FE7_Whistle[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_078_whistle_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_078_whistle_0, 255, 0, 255, 235),
@@ -2023,7 +2023,7 @@ const struct Instrument Intrument_FE7_Whistle[] =
 };
 
 // KeySplitTable14
-const struct Instrument Intrument_FE7_Ocarina[] =
+const struct Instrument Instrument_FE7_Ocarina[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_079_ocarina_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_079_ocarina_0, 255, 0, 255, 235),
@@ -2036,7 +2036,7 @@ const struct Instrument Intrument_FE7_Ocarina[] =
 };
 
 // KeySplitTable30
-const struct Instrument Intrument_FE7_Lead1_Square[] =
+const struct Instrument Instrument_FE7_Lead1_Square[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_080_lead1_square_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_080_lead1_square_1, 255, 0, 255, 235),
@@ -2058,7 +2058,7 @@ const struct Instrument Intrument_FE7_Lead1_Square[] =
 };
 
 // KeySplitTable7
-const struct Instrument Intrument_FE7_Lead2_Sawtooth[] =
+const struct Instrument Instrument_FE7_Lead2_Sawtooth[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_081_lead2_sawtooth_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_081_lead2_sawtooth_0, 255, 0, 255, 235),
@@ -2078,7 +2078,7 @@ const struct Instrument Intrument_FE7_Lead2_Sawtooth[] =
 };
 
 // KeySplitTable14
-const struct Instrument Intrument_FE7_Lead3_Calliope[] =
+const struct Instrument Instrument_FE7_Lead3_Calliope[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_082_lead3_calliope_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_082_lead3_calliope_0, 255, 0, 255, 235),
@@ -2091,7 +2091,7 @@ const struct Instrument Intrument_FE7_Lead3_Calliope[] =
 };
 
 // KeySplitTable32
-const struct Instrument Intrument_FE7_Lead4_Chiff[] =
+const struct Instrument Instrument_FE7_Lead4_Chiff[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_083_lead4_chiff_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_083_lead4_chiff_1, 255, 0, 255, 235),
@@ -2102,7 +2102,7 @@ const struct Instrument Intrument_FE7_Lead4_Chiff[] =
 };
 
 // KeySplitTable15
-const struct Instrument Intrument_FE7_Lead5_Charang[] =
+const struct Instrument Instrument_FE7_Lead5_Charang[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_084_lead5_charang_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_084_lead5_charang_1, 255, 0, 255, 235),
@@ -2112,7 +2112,7 @@ const struct Instrument Intrument_FE7_Lead5_Charang[] =
 };
 
 // KeySplitTable33
-const struct Instrument Intrument_FE7_Lead6_Voice[] =
+const struct Instrument Instrument_FE7_Lead6_Voice[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_085_lead6_voice, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_091_pad_4_choir, 255, 0, 255, 235),
@@ -2122,7 +2122,7 @@ const struct Instrument Intrument_FE7_Lead6_Voice[] =
 };
 
 // KeySplitTable34
-const struct Instrument Intrument_FE7_Lead7_Fifths[] =
+const struct Instrument Instrument_FE7_Lead7_Fifths[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_086_lead7_fifths_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_086_lead7_fifths_0, 255, 0, 255, 235),
@@ -2132,7 +2132,7 @@ const struct Instrument Intrument_FE7_Lead7_Fifths[] =
 };
 
 // KeySplitTable14
-const struct Instrument Intrument_FE7_Lead8_Bass_Lead[] =
+const struct Instrument Instrument_FE7_Lead8_Bass_Lead[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_087_lead8_bass_lead_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_087_lead8_bass_lead_0, 255, 0, 255, 235),
@@ -2145,7 +2145,7 @@ const struct Instrument Intrument_FE7_Lead8_Bass_Lead[] =
 };
 
 // KeySplitTable28
-const struct Instrument Intrument_FE7_Pad1_NewAge[] =
+const struct Instrument Instrument_FE7_Pad1_NewAge[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_088_pad1_new_age_0, 255, 0, 255, 238),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_088_pad1_new_age_0, 255, 0, 255, 238),
@@ -2157,7 +2157,7 @@ const struct Instrument Intrument_FE7_Pad1_NewAge[] =
 };
 
 // KeySplitTable33
-const struct Instrument Intrument_FE7_Pad2_Warm[] =
+const struct Instrument Instrument_FE7_Pad2_Warm[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_089_pad2_warm_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_089_pad2_warm_0, 255, 0, 255, 235),
@@ -2167,7 +2167,7 @@ const struct Instrument Intrument_FE7_Pad2_Warm[] =
 };
 
 // KeySplitTable8
-const struct Instrument Intrument_FE7_Pad3_Polysynth[] =
+const struct Instrument Instrument_FE7_Pad3_Polysynth[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_090_pad3_polysynth_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_090_pad3_polysynth_0, 255, 0, 255, 235),
@@ -2182,7 +2182,7 @@ const struct Instrument Intrument_FE7_Pad3_Polysynth[] =
 };
 
 // KeySplitTable8
-const struct Instrument Intrument_FE7_Pad5_Bowed[] =
+const struct Instrument Instrument_FE7_Pad5_Bowed[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_004_electric_piano_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_004_electric_piano_1, 255, 0, 255, 235),
@@ -2197,7 +2197,7 @@ const struct Instrument Intrument_FE7_Pad5_Bowed[] =
 };
 
 // KeySplitTable7
-const struct Instrument Intrument_FE7_Pad6_Metallic[] =
+const struct Instrument Instrument_FE7_Pad6_Metallic[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_003_honky_tonk_piano_0, 255, 254, 25, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_003_honky_tonk_piano_0, 255, 254, 25, 235),
@@ -2217,7 +2217,7 @@ const struct Instrument Intrument_FE7_Pad6_Metallic[] =
 };
 
 // KeySplitTable15
-const struct Instrument Intrument_FE7_Pad7_Halo[] =
+const struct Instrument Instrument_FE7_Pad7_Halo[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
@@ -2227,7 +2227,7 @@ const struct Instrument Intrument_FE7_Pad7_Halo[] =
 };
 
 // KeySplitTable18
-const struct Instrument Intrument_FE7_Pad8_Sweep[] =
+const struct Instrument Instrument_FE7_Pad8_Sweep[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_050_synth_strings_1, 255, 0, 255, 235),
@@ -2239,7 +2239,7 @@ const struct Instrument Intrument_FE7_Pad8_Sweep[] =
 };
 
 // KeySplitTable31
-const struct Instrument Intrument_FE7_FX1_Rain[] =
+const struct Instrument Instrument_FE7_FX1_Rain[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_096_fx1_rain, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_096_fx1_rain, 255, 254, 0, 235),
@@ -2250,7 +2250,7 @@ const struct Instrument Intrument_FE7_FX1_Rain[] =
 };
 
 // KeySplitTable33
-const struct Instrument Intrument_FE7_FX2_Soundtrack[] =
+const struct Instrument Instrument_FE7_FX2_Soundtrack[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_097_fx2_soundtrack_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_097_fx2_soundtrack_0, 255, 0, 255, 235),
@@ -2260,7 +2260,7 @@ const struct Instrument Intrument_FE7_FX2_Soundtrack[] =
 };
 
 // KeySplitTable33
-const struct Instrument Intrument_FE7_FX3_Crystal[] =
+const struct Instrument Instrument_FE7_FX3_Crystal[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_098_fx3_crystal, 255, 252, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_098_fx3_crystal, 255, 252, 0, 235),
@@ -2270,7 +2270,7 @@ const struct Instrument Intrument_FE7_FX3_Crystal[] =
 };
 
 // KeySplitTable34
-const struct Instrument Intrument_FE7_FX4_Atmosphere[] =
+const struct Instrument Instrument_FE7_FX4_Atmosphere[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_099_fx4_atmosphere_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_099_fx4_atmosphere_1, 255, 0, 255, 235),
@@ -2280,7 +2280,7 @@ const struct Instrument Intrument_FE7_FX4_Atmosphere[] =
 };
 
 // KeySplitTable34
-const struct Instrument Intrument_FE7_FX5_Brightness[] =
+const struct Instrument Instrument_FE7_FX5_Brightness[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_085_lead6_voice, 255, 254, 25, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_085_lead6_voice, 255, 254, 25, 235),
@@ -2290,7 +2290,7 @@ const struct Instrument Intrument_FE7_FX5_Brightness[] =
 };
 
 // KeySplitTable15
-const struct Instrument Intrument_FE7_FX7_Echoes[] =
+const struct Instrument Instrument_FE7_FX7_Echoes[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_052_choir_aahs, 255, 0, 255, 235),
@@ -2300,7 +2300,7 @@ const struct Instrument Intrument_FE7_FX7_Echoes[] =
 };
 
 // KeySplitTable32
-const struct Instrument Intrument_FE7_FX8_Sci_Fi[] =
+const struct Instrument Instrument_FE7_FX8_Sci_Fi[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_103_fx8_sci_fi_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_103_fx8_sci_fi_0, 255, 0, 255, 235),
@@ -2311,7 +2311,7 @@ const struct Instrument Intrument_FE7_FX8_Sci_Fi[] =
 };
 
 // KeySplitTable31
-const struct Instrument Intrument_FE7_Sitar[] =
+const struct Instrument Instrument_FE7_Sitar[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_104_sistar_0, 255, 254, 25, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_104_sistar_1, 255, 254, 25, 235),
@@ -2322,7 +2322,7 @@ const struct Instrument Intrument_FE7_Sitar[] =
 };
 
 // KeySplitTable35
-const struct Instrument Intrument_FE7_Banjo[] =
+const struct Instrument Instrument_FE7_Banjo[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_105_banjo_0, 255, 254, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_105_banjo_0, 255, 254, 0, 235),
@@ -2337,7 +2337,7 @@ const struct Instrument Intrument_FE7_Banjo[] =
 };
 
 // KeySplitTable35
-const struct Instrument Intrument_FE7_Shamisen[] =
+const struct Instrument Instrument_FE7_Shamisen[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_106_shamisen_0, 255, 252, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_106_shamisen_1, 255, 252, 0, 235),
@@ -2352,7 +2352,7 @@ const struct Instrument Intrument_FE7_Shamisen[] =
 };
 
 // KeySplitTable29
-const struct Instrument Intrument_FE7_Koto[] =
+const struct Instrument Instrument_FE7_Koto[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_107_koto_0, 255, 252, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_107_koto_0, 255, 252, 0, 235),
@@ -2367,7 +2367,7 @@ const struct Instrument Intrument_FE7_Koto[] =
 };
 
 // KeySplitTable31
-const struct Instrument Intrument_FE7_Kalimba[] =
+const struct Instrument Instrument_FE7_Kalimba[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_108_kalimba, 255, 242, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_108_kalimba, 255, 242, 0, 235),
@@ -2378,7 +2378,7 @@ const struct Instrument Intrument_FE7_Kalimba[] =
 };
 
 // KeySplitTable30
-const struct Instrument Intrument_FE7_Bagpipe[] =
+const struct Instrument Instrument_FE7_Bagpipe[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_109_bagpipe_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_109_bagpipe_0, 255, 0, 255, 235),
@@ -2400,7 +2400,7 @@ const struct Instrument Intrument_FE7_Bagpipe[] =
 };
 
 // KeySplitTable25
-const struct Instrument Intrument_FE7_Fiddle[] =
+const struct Instrument Instrument_FE7_Fiddle[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_040_violin_0, 255, 0, 255, 235),
@@ -2430,7 +2430,7 @@ const struct Instrument Intrument_FE7_Fiddle[] =
 };
 
 // KeySplitTable35
-const struct Instrument Intrument_FE7_Shanai[] =
+const struct Instrument Instrument_FE7_Shanai[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_109_bagpipe_1, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_109_bagpipe_2, 255, 0, 255, 235),
@@ -2445,7 +2445,7 @@ const struct Instrument Intrument_FE7_Shanai[] =
 };
 
 // KeySplitTable34
-const struct Instrument Intrument_FE7_SteelDrums[] =
+const struct Instrument Instrument_FE7_SteelDrums[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_114_steel_drums, 255, 252, 0, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_114_steel_drums, 255, 252, 0, 235),
@@ -2455,7 +2455,7 @@ const struct Instrument Intrument_FE7_SteelDrums[] =
 };
 
 // KeySplitTable32
-const struct Instrument Intrument_FE7_BreathNoise[] =
+const struct Instrument Instrument_FE7_BreathNoise[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_121_breath_noise_0, 255, 0, 255, 235),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_121_breath_noise_0, 255, 0, 255, 235),
@@ -2466,7 +2466,7 @@ const struct Instrument Intrument_FE7_BreathNoise[] =
 };
 
 // KeySplitTable35
-const struct Instrument Intrument_FE7_Applause[] =
+const struct Instrument Instrument_FE7_Applause[] =
 {
     [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_126_applause_0, 255, 0, 255, 165),
     [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_126_applause_1, 255, 0, 255, 165),
@@ -2481,7 +2481,7 @@ const struct Instrument Intrument_FE7_Applause[] =
 };
 
 // FE7 Drumkit ?
-const struct Instrument Intrument_FE7_Gunshot[] =
+const struct Instrument Instrument_FE7_Gunshot[] =
 {
     [NOTE_CN ... NOTE_D1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_127_gunshot, 255, 0, 255, 127),
     [HIGH_Q_GM2]          = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_FE7_127_gunshot, 255, 0, 255, 127),

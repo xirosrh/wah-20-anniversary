@@ -277,6 +277,7 @@ const struct Song gSongTable[] =
 
     [(END_SE+1)...(START_MUS-1)]  = SONG(dummy_song_header, MUSIC_PLAYER_BGM),
 
+    [MUS_INSTRUMENT_TEST]         = SONG(mus_instrument_test, MUSIC_PLAYER_BGM),
     [MUS_BW_ACCUMULA_TOWN]        = SONG(mus_bw_accumula_town, MUSIC_PLAYER_BGM),
     [MUS_BW_GYM]                  = SONG(mus_bw_gym, MUSIC_PLAYER_BGM),
     [MUS_BW_THE_DREAMYARD]        = SONG(mus_bw_the_dreamyard, MUSIC_PLAYER_BGM),

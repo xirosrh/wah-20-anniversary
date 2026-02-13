@@ -3488,6 +3488,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_INSTRUMENT_TEST)          \
     X(MUS_BW_ACCUMULA_TOWN)         \
     X(MUS_BW_GYM)                   \
     X(MUS_BW_THE_DREAMYARD)         \

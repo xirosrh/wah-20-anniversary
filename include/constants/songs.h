@@ -279,7 +279,8 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   346
+#define START_MUS                   345
+#define MUS_INSTRUMENT_TEST         345 // mus_instrument_test (currently: 11 vibraphone)
 #define MUS_BW_ACCUMULA_TOWN        346 // mus_bw_accumula_town
 #define MUS_BW_GYM                  347 // MUS_BW_GYM
 #define MUS_BW_THE_DREAMYARD        348 // mus_bw_the_dreamyard

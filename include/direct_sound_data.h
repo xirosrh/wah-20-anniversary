@@ -524,5 +524,247 @@ extern const s8 gDirectSoundWaveData_FE7_unk_111a804[];
 extern const s8 gDirectSoundWaveData_FE7_unk_111cd78[];
 extern const s8 gDirectSoundWaveData_FE7_unk_111f0cc[];
 
+//--------------------------------------------------------------
+//  Acimut's Universal Voicegroup - Instrument samples
+//--------------------------------------------------------------
+
+// PIANO
+
+//extern const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_51[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_60[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_74[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_87[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_92[];
+
+// CHROMATIC PERCUSION
+
+//extern const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_60[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_72[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_84[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_96[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_48[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_96[];
+
+// ORGAN
+
+// GUITAR
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_40[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_50[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_59[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_69[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_76[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_40[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_47[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_53[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_67[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_74[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_83[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_42[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_48[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_54[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_66[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_78[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_90[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_96[];
+
+// BASS
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_28[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_39[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_33[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_38[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_43[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_56[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_62[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_35[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_45[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_32[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_35[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_44[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_28[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_42[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_54[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_59[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_36[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_48[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_96[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_24[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_36[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_48[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_84[];
+
+// STRINGS
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_28[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_37[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_48[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_73[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_85[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_96[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_047_Timpani_44[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_047_Timpani_49[];
+
+// ENSEMBLE
+
+//extern const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_41[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_60[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_72[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80[];
+
+// BRASS
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_57[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_63[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_69[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_75[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_81[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_87[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_44[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_53[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_59[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_65[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_71[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_29[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_40[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_47[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_52[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_64[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_74[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_66[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_71[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_77[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_39[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_51[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_63[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_75[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_063_Synth_Brass_2_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_063_Synth_Brass_2_72[];
+
+// REED
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_66[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_78[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_52[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_55[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_58[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_61[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_64[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_67[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_70[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_73[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_75[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_78[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_45[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_52[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_57[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_65[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_76[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_81[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_37[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_41[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_49[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_53[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_59[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_66[];
+
+// PIPE
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_61[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_67[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_76[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_85[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_94[];
+
+// SYNTH LEAD
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_081_Lead_2_Sawtooth_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_082_Lead_3_Calliope_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_087_Lead_8_Bass_Lead_60[];
+
+// SYNTH PAD
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_091_Pad_4_Choir_67[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_092_Pad_5_Bowed_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_094_Pad_7_Halo_84[];
+
+// SYNTH EFFECTS
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_096_Fx_1_Rain_72[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_097_Fx_2_Soundtrack_84[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_099_Fx_4_Atmosphere_84[];
+
+// ETHNIC
+
+// PERCUSIVE
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_113_Agogo_78[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_114_Steel_Drums_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_115_Woodblock_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[];
+
+// SOUND EFFECTS
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_120_Guitar_Fret_Noise_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_121_Breath_Noise_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_122_Seashore_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_123_Bird_Tweet_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_124_Telephone_Ring_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_124_Telephone_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_125_Helicopter_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_126_Applause_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_127_Gunshot_71[];
 
 #endif // GUARD_DIRECT_SOUND_DATA_H
