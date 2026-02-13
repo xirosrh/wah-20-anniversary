@@ -33,6 +33,7 @@
 #include "constants/rgb.h"
 #include "constants/trainers.h"
 #include "constants/union_room.h"
+#include "achievements.h"
 
 // External OAM data for badge sprites
 extern const struct OamData gOamData_AffineOff_ObjNormal_16x16;
@@ -206,51 +207,6 @@ static const u16 sTrainerCardSticker3_Pal[]      = INCBIN_U16("graphics/trainer_
 static const u16 sTrainerCardSticker4_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers4.gbapal");
 static const u32 sHoennTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/badges.4bpp.smol");
 static const u32 sKantoTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/frlg/badges.4bpp.smol");
-
-
-struct TaskCompletesWahChallenge
-{
-    const u8 *title;
-    const u8 *description;
-    u8 target;
-    bool8 (*check_void)(void);
-};
-
-static bool8 CheckDummyChallenge();
-static bool8 CheckWinWahChallenge();
-
-static struct TaskCompletesWahChallenge ListTaskWah[3] =
-{
-    {
-        .title = COMPOUND_STRING("Fulmina a los admins"),
-        .description = COMPOUND_STRING("Supera una vez el desafio"),
-        .target = 1,
-        .check_void = CheckWinWahChallenge,
-    },
-    {
-        .title = COMPOUND_STRING("Basea la existencia de los admins"),
-        .description = COMPOUND_STRING("Supera el desafio 5 veces"),
-        .target = 5,
-        .check_void = CheckWinWahChallenge,
-    },
-    {
-        .title = COMPOUND_STRING("Humillate hasta el fondo"),
-        .description = COMPOUND_STRING("Pierde el desafio 50 veces"),
-        .target = 0,
-        .check_void = CheckDummyChallenge,
-    }
-};
-
-static bool8 CheckDummyChallenge()
-{
-    return TRUE;
-}
-
-
-static bool8 CheckWinWahChallenge()
-{
-    return VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT) >= ListTaskWah[sData->optionTaskSelected].target;
-}
 
 // Badge sprite callback - maintains correct tile number
 // data[0] = badge index (0-7)
@@ -599,7 +555,7 @@ static void Task_TrainerCard(u8 taskId)
                sData->mainState = STATE_CLOSE_CARD;
            }
         }
-        else if(JOY_NEW(DPAD_RIGHT) && sData->optionTaskSelected < ARRAY_COUNT(ListTaskWah)-1 ) //aqui
+        else if(JOY_NEW(DPAD_RIGHT) && sData->optionTaskSelected < Achievement_GetCount() - 1)
         {   
             sData->optionTaskSelected += 1;
             FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
@@ -1111,17 +1067,17 @@ static void PrintTaskOnCardBack()
     const u8 gText_CompletedTaskTrainerCard[] = _("Completada");
     const u8 gText_InProgressTakTrainerCard[] = _("Pendiente");
 
-    bool8 statusTask = ListTaskWah[sData->optionTaskSelected].check_void();
+    bool8 statusTask = Achievement_IsComplete(sData->optionTaskSelected);
 
     if(sData->optionTaskSelected > 0)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 8, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_LeftArrowTrainerCard);
 
-    if(sData->optionTaskSelected < ARRAY_COUNT(ListTaskWah) -1 )
+    if(sData->optionTaskSelected < Achievement_GetCount() - 1)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 210, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_RightArrowTrainerCard);
 
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, ListTaskWah[sData->optionTaskSelected].title, 192) + 16, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, ListTaskWah[sData->optionTaskSelected].title);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, Achievement_GetTitle(sData->optionTaskSelected), 192) + 16, 36, sTrainerCardTextColors, TEXT_SKIP_DRAW, Achievement_GetTitle(sData->optionTaskSelected));
 
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 64, sTrainerCardTextColors, TEXT_SKIP_DRAW, ListTaskWah[sData->optionTaskSelected].description);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 64, sTrainerCardTextColors, TEXT_SKIP_DRAW, Achievement_GetDescription(sData->optionTaskSelected));
 
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 142, 105, 
         (statusTask) ? sTrainerCardSGreenColors: sTrainerCardStatColors, 
