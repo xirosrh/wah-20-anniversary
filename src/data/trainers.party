@@ -3186,23 +3186,69 @@ Charizard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Level: 100
 
-=== TRAINER_LEROY ===
-Name: LEROY
+=== TRAINER_WAH_COLLABORATOR_MICOLO ===
+Name: Micolo
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
+Party Size: 1
+Pool Rules: Basic
 
-Mawile
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Greninja @ Greninjite
+Ability: Protean
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Flamethrower
+- Dark Pulse
 
-Starmie
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Chesnaught @ Chesnaughtite
+Ability: Bulletproof
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Rock Slide
+- Play Rough
+
+Raichu @ Raichunite X
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Earthquake
+
+Rayquaza @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Recover
+- Earthquake
+
+Darkrai @ Darkranite
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Dream Eater
+- Moonblast
+
+Zygarde @ Zygardite
+EVs: 252 Atk / 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Quirky Nature
+- Thousand Arrows
+- Thousand Waves
+- Land's Wrath
+/* Nihil Light //TODO Xiros */
 
 === TRAINER_WILTON_1 ===
 Name: WILTON
