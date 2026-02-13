@@ -1226,6 +1226,236 @@ Lobby_EventScript_Erkey_9:
 	goto Lobby_EventScript_Erkey_8
 
 
+Lobby_EventScript_Micolo_IntroFirstBattle::
+# 642 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 643 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark
+# 644 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 645 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Lobby_EventScript_Micolo_IntroFirstBattle_Movement_0
+# 646 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 647 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 648 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 649 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+	return
+
+
+Lobby_EventScript_Micolo_IntroRematch::
+# 654 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 655 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
+# 656 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_MICOLO
+# 657 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 658 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 659 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_Micolo_IntroRematch_1
+# 663 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 664 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Micolo_OnFinishEvent
+	return
+
+Lobby_EventScript_Micolo_IntroRematch_1:
+# 660 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+	return
+
+
+Lobby_EventScript_Micolo_OnFinishEvent::
+# 673 "data/maps/Lobby/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_EAST
+# 674 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+
+Lobby_EventScript_Micolo::
+# 679 "data/maps/Lobby/scripts.pory"
+	lock
+# 680 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 681 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Micolo_1
+# 732 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 734 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 735 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 736 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 737 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 738 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 739 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 740 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 741 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 742 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48
+# 743 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 744 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 745 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_XD
+# 746 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 747 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
+# 748 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 749 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Lobby_EventScript_Micolo_Movement_0
+# 750 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 751 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 752 "data/maps/Lobby/scripts.pory"
+	delay 30
+# 753 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Micolo_OnFinishEvent
+	return
+
+Lobby_EventScript_Micolo_1:
+# 682 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_DEFEATED_LOBBY_MICOLO, Lobby_EventScript_Micolo_5
+# 685 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Micolo_IntroFirstBattle
+Lobby_EventScript_Micolo_4:
+# 687 "data/maps/Lobby/scripts.pory"
+	special SavePlayerParty
+# 688 "data/maps/Lobby/scripts.pory"
+	setvar VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER
+# 689 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 1
+# 690 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, FRONTIER_LVL_OPEN
+# 691 "data/maps/Lobby/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 692 "data/maps/Lobby/scripts.pory"
+	special ChoosePartyForBattleFrontier
+# 693 "data/maps/Lobby/scripts.pory"
+	waitstate
+# 694 "data/maps/Lobby/scripts.pory"
+	lockall
+# 695 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Lobby_EventScript_Micolo_9
+# 703 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 704 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 705 "data/maps/Lobby/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 706 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+# 707 "data/maps/Lobby/scripts.pory"
+	special ReducePlayerPartyToSelectedMons
+# 708 "data/maps/Lobby/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 709 "data/maps/Lobby/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_MICOLO, Lobby_EventScript_Micolo_Text_1
+# 710 "data/maps/Lobby/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 711 "data/maps/Lobby/scripts.pory"
+	special GetBattleOutcome
+# 712 "data/maps/Lobby/scripts.pory"
+	special LoadPlayerParty
+# 713 "data/maps/Lobby/scripts.pory"
+	special HealPlayerParty
+# 714 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Lobby_EventScript_Micolo_12
+# 721 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 722 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 723 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 724 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0
+# 725 "data/maps/Lobby/scripts.pory"
+	playse SE_LEDGE
+# 726 "data/maps/Lobby/scripts.pory"
+	applymovement VAR_LAST_TALKED, Lobby_EventScript_Kaktus_Movement_0
+# 727 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 728 "data/maps/Lobby/scripts.pory"
+	waitmovement 0
+Lobby_EventScript_Micolo_11:
+# 730 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Micolo_OnFinishEvent
+	return
+
+Lobby_EventScript_Micolo_5:
+# 683 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_Micolo_IntroRematch
+	goto Lobby_EventScript_Micolo_4
+
+Lobby_EventScript_Micolo_9:
+# 696 "data/maps/Lobby/scripts.pory"
+	special LoadPlayerParty
+# 697 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 698 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 699 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 700 "data/maps/Lobby/scripts.pory"
+	releaseall
+	end
+
+Lobby_EventScript_Micolo_12:
+# 715 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 716 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48
+# 717 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Micolo_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 718 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 719 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_DEFEATED_LOBBY_MICOLO
+	goto Lobby_EventScript_Micolo_11
+
+
+Lobby_EventScript_Lillipup::
+# 758 "data/maps/Lobby/scripts.pory"
+	lock
+# 759 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 760 "data/maps/Lobby/scripts.pory"
+	playmoncry SPECIES_LILLIPUP, CRY_MODE_NORMAL
+# 761 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Lillipup_Text_0, MSGBOX_AUTOCLOSE
+# 762 "data/maps/Lobby/scripts.pory"
+	waitmoncry
+# 763 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 764 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
+# 765 "data/maps/Lobby/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_EAST
+# 766 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
 # 103 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 103 "data/maps/Lobby/scripts.pory"
@@ -1256,6 +1486,30 @@ Lobby_EventScript_Kaktus_Movement_0:
 	unlock_facing_direction
 # 312 "data/maps/Lobby/scripts.pory"
 	face_player
+	step_end
+
+# 645 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Micolo_IntroFirstBattle_Movement_0:
+# 645 "data/maps/Lobby/scripts.pory"
+	lock_facing_direction
+# 645 "data/maps/Lobby/scripts.pory"
+	jump_in_place_down
+# 645 "data/maps/Lobby/scripts.pory"
+	unlock_facing_direction
+# 645 "data/maps/Lobby/scripts.pory"
+	face_player
+	step_end
+
+# 749 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Micolo_Movement_0:
+# 749 "data/maps/Lobby/scripts.pory"
+	jump_in_place_down
+# 749 "data/maps/Lobby/scripts.pory"
+	unlock_facing_direction
+# 749 "data/maps/Lobby/scripts.pory"
+	face_player
+# 749 "data/maps/Lobby/scripts.pory"
+	delay_16
 	step_end
 
 Lobby_EventScript_StartChallenge_Text_0:
@@ -1624,6 +1878,87 @@ Lobby_EventScript_Erkey_Text_5:
 # 634 "data/maps/Lobby/scripts.pory"
 	.string "Si prestas atención.$"
 
+Lobby_EventScript_Micolo_IntroFirstBattle_Text_0:
+# 647 "data/maps/Lobby/scripts.pory"
+	.string "Vaya, has superado el desafío de las\n"
+	.string "salas.\p"
+	.string "Comprobemos pues si eres bueno con los\n"
+	.string "Pokémon que he criado y entrenado.$"
+
+Lobby_EventScript_Micolo_IntroRematch_Text_0:
+# 656 "data/maps/Lobby/scripts.pory"
+	.string "¿Otra batalla? Elegiré de nuevo un\n"
+	.string "Pokémon de mi equipo al azar. ¿Te\l"
+	.string "atreves?$"
+
+Lobby_EventScript_Micolo_IntroRematch_Text_1:
+# 663 "data/maps/Lobby/scripts.pory"
+	.string "Cuando quieras… Mis ejemplares no se\n"
+	.string "van a poner peor por esperar.$"
+
+Lobby_EventScript_Micolo_Text_0:
+# 699 "data/maps/Lobby/scripts.pory"
+	.string "¿Te da miedo enfrentarte a uno de mis\n"
+	.string "ejemplares? Con lo que te costó pasar\l"
+	.string "las salas…$"
+
+Lobby_EventScript_Micolo_Text_1:
+# 709 "data/maps/Lobby/scripts.pory"
+	.string "Vaya, me has ganado.$"
+
+Lobby_EventScript_Micolo_Text_2:
+# 717 "data/maps/Lobby/scripts.pory"
+	.string "Admito que eres bueno, si contara con mi\n"
+	.string "pequeñín seguro que te hubiera ganado,\l"
+	.string "enhorabuena.$"
+
+Lobby_EventScript_Micolo_Text_3:
+# 727 "data/maps/Lobby/scripts.pory"
+	.string "No lo haces mal, pero tendrás que\n"
+	.string "hacerlo muchísimo mejor si quieres\l"
+	.string "ganarme.$"
+
+Lobby_EventScript_Micolo_Text_4:
+# 734 "data/maps/Lobby/scripts.pory"
+	.string "A la mayoría de los de las salas no los\n"
+	.string "conozco, solo a tres.\p"
+	.string "Al resto hasta que no les entregué los\n"
+	.string "Pokémon, no sabía quienes eran.$"
+
+Lobby_EventScript_Micolo_Text_5:
+# 737 "data/maps/Lobby/scripts.pory"
+	.string "Sí, la mayoría de los Pokémon en este\n"
+	.string "edificio los crié yo, incluídos todos los\l"
+	.string "que puedes llegar a usar.\p"
+	.string "Todos entrenados por mí y listos para\n"
+	.string "luchar.$"
+
+Lobby_EventScript_Micolo_Text_6:
+# 740 "data/maps/Lobby/scripts.pory"
+	.string "También ayudé al arquitecto del\n"
+	.string "edificio a tener al Pokémon de sus\l"
+	.string "sueños.\p"
+	.string "No veas lo cansino que era hablando de\n"
+	.string "la ilusión que le daría tenerlo e incluso\l"
+	.string "presumirá de él en su sala como un\l"
+	.string "hipócrita mientras se limpia las babas.$"
+
+Lobby_EventScript_Micolo_Text_7:
+# 743 "data/maps/Lobby/scripts.pory"
+	.string "Lo que no sabe es que le di un ejemplar\n"
+	.string "casi perfecto, el perfecto lo tengo\l"
+	.string "guardado y listo para ayudarte cuando\l"
+	.string "elijas su equipo.$"
+
+Lobby_EventScript_Micolo_Text_8:
+# 751 "data/maps/Lobby/scripts.pory"
+	.string "El resto fueron la mano de obra para\n"
+	.string "construir este sitio.$"
+
+Lobby_EventScript_Lillipup_Text_0:
+# 761 "data/maps/Lobby/scripts.pory"
+	.string "Pup, pup, pup.$"
+
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 47 "data/maps/Lobby/scripts.pory"
 	.string "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!$"
@@ -1637,3 +1972,9 @@ Lobby_Text_Roxas_PlayerCancelled::
 Lobby_Text_Gameboycl_OnDefeat::
 # 410 "data/maps/Lobby/scripts.pory"
 	.string "Evolucionar también es mirar atrás.$"
+
+Lobby_Text_Micolo_ChoosePokemon::
+# 668 "data/maps/Lobby/scripts.pory"
+	.string "Luchemos con un Pokémon cada uno.\n"
+	.string "Selecciona el tuyo, ¡yo elegiré uno de mi\l"
+	.string "equipo al azar!$"

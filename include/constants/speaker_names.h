@@ -33,6 +33,7 @@ enum SpeakerNames {
     SP_NAME_INMORTAL_KAKTUS,
     SP_NAME_GAMEBOY_CL,
     SP_NAME_ERKEY,
+    SP_NAME_MICOLO,
     SP_NAME_COUNT
 };
 
