@@ -718,10 +718,10 @@ ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_94[] = INCBIN_S8("s
 
 // SYNTH LEAD
 
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM080_L1_Square_60_JP8_SQU.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM080_L1_Square_60.bin");//AGM080_L1_Square_60_JP8_SQU
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_081_Lead_2_Sawtooth_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM081_L2_Saw_60.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_082_Lead_3_Calliope_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM082_L3_Calliop_84.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM083_L4_Chiff_84.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM083_L4_Chiff_84.bin");
 
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_087_Lead_8_Bass_Lead_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM087_L8BassLead_60.bin");
 

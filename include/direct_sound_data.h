@@ -727,7 +727,7 @@ extern const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_94[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_081_Lead_2_Sawtooth_60[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_082_Lead_3_Calliope_84[];
-extern const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[];
+//extern const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[];
 
 extern const s8 gDirectSoundWaveData_Acimut_GM_087_Lead_8_Bass_Lead_60[];
 
