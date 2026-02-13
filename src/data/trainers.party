@@ -332,6 +332,8 @@ Mugshot: Green
 Umbreon
 Shiny: Yes
 Ability: Synchronize
+EVs: 252 HP / 252 Spe / 4 Def
+Bold Nature
 - Toxic
 - Heal Bell
 - Yawn
@@ -339,6 +341,8 @@ Ability: Synchronize
 
 Weavile @ Iron Ball
 Ability: Pickpocket
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Fling
 - Ice Shard
 - Fake Out
@@ -346,6 +350,8 @@ Ability: Pickpocket
 
 Plantita (Meganium) @ Leftovers
 Ability: Leaf Guard
+EVs: 252 HP / 252 SpD / 4 Def
+Bold Nature
 - Leech Seed
 - Protect
 - Toxic
@@ -353,6 +359,8 @@ Ability: Leaf Guard
 
 Swampert-Mega @ Swampertite
 Ability: Swift Swim
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Waterfall
 - Earthquake
 - Ice Punch
@@ -360,6 +368,7 @@ Ability: Swift Swim
 
 Noctowl @ Leftovers
 Ability: Insomnia
+EVs: 252 Atk / 252 Spe / 4 SpA
 - Wing Attack
 - Sky Attack
 - Shadow Ball
@@ -367,6 +376,8 @@ Ability: Insomnia
 
 Gengar @ Choice Scarf
 Ability: Cursed Body
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Will-O-Wisp
 - Hex
 - Substitute
@@ -385,6 +396,8 @@ Mugshot: Green
 
 Dragonite @Leftovers
 Ability: Multiscale
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Roost
 - Dragon Claw
 - Fire Punch
@@ -392,6 +405,8 @@ Ability: Multiscale
 
 Charizard @Leftovers
 Ability: Blaze
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Flare Blitz
 - Earthquake
 - Thunder Punch
@@ -399,6 +414,8 @@ Ability: Blaze
 
 Espeon @Leftovers
 Ability: Magic Bounce
+EVs: 252 HP / 252 Spe / 4 SpA
+Calm Nature
 - Calm Mind
 - Baton Pass
 - Stored Power
@@ -406,6 +423,8 @@ Ability: Magic Bounce
 
 Cresselia @Flame Orb
 Ability: Levitate
+EVs: 252 SpA / 252 HP / 4 Spe
+Calm Nature
 - Psychic
 - Psycho Shift
 - Rest
@@ -413,6 +432,8 @@ Ability: Levitate
 
 Houndoom @Houndoominite
 Ability: Solar Power
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Nasty Plot
 - Fire Blast
 - Dark Pulse
@@ -420,6 +441,8 @@ Ability: Solar Power
 
 Suicune @Leftovers
 Ability: Pressure
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
 - Calm Mind
 - Scald
 - Rest
@@ -1531,29 +1554,35 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Serperior (M) @ Rocky Helmet  
-Ability: Overgrow  
-Tera Type: Grass  
-- Leaf Storm  
-- Dragon Pulse  
-- Dragon Tail  
-- Synthesis  
+Serperior (M) @ Rocky Helmet
+Ability: Overgrow    /* //TODO Xiros:   Contrary en mayor dif  */
+Tera Type: Grass
+EVs: 252 SpA / 252 HP / 4 Atk
+Modest Nature
+- Leaf Storm
+- Dragon Pulse
+- Dragon Tail  /* //TODO Xiros:  Energy Ball en modo dificil */
+- Synthesis  /* //TODO Xiros:  Giga Drain en modo dificil */
 
-Milotic (F) @ Leftovers  
-Ability: Marvel Scale  
-Tera Type: Water  
-IVs: 0 Atk  
-- Haze  
-- Scald  
-- Recover  
-- Ice Beam  
+Milotic (F) @ Leftovers
+Ability: Marvel Scale
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Haze
+- Scald
+- Recover
+- Ice Beam
 
-Zoroark (M) @ Focus Sash  
-Ability: Illusion  
-Tera Type: Dark  
-- Sucker Punch  
-- U-turn  
-- Focus Blast  
+Zoroark (M) @ Focus Sash
+Ability: Illusion
+Tera Type: Dark
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sucker Punch
+- U-turn
+- Focus Blast
 - Taunt
 
 
@@ -1567,31 +1596,37 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Luxray (M) @ Flame Orb  
-Ability: Guts  
-Shiny: Yes  
-Tera Type: Electric  
-- Wild Charge  
-- Facade  
-- Ice Fang  
-- Crunch  
+Luxray (M) @ Flame Orb
+Ability: Guts
+Shiny: Yes
+Tera Type: Electric
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Facade
+- Ice Fang
+- Crunch
 
-Manaphy @ Leftovers  
-Ability: Hydration  
-Tera Type: Water  
-IVs: 0 Atk  
-- Tail Glow  
-- Scald  
-- Ice Beam  
-- Energy Ball  
+Manaphy @ Leftovers
+Ability: Hydration
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tail Glow
+- Scald
+- Ice Beam
+- Energy Ball
 
-Typhlosion (M) @ Choice Specs  
-Ability: Blaze  
-Tera Type: Fire  
-- Wild Charge  
-- Howl  
-- Flare Blitz  
-- Earthquake  
+Typhlosion (M) @ Choice Band
+Ability: Blaze
+Tera Type: Fire
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Howl
+- Flare Blitz
+- Earthquake
 
 === TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
 Name: Katherine
@@ -2625,8 +2660,67 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Weezing @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Gunk Shot
+- Memento
+
+Electrode @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Wild Charge
+- Headbutt
+
+Lopunny @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Jolly Nature
+- Attract
+- Captivate
+- Tickle
+- Swagger
+
+Muk @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Adamant Nature
+- Explosion
+- Memento
+- Tickle
+- Attract
+
+Whimsicott @ Choice Scarf
+Ability: Prankster
+EVs: 252 HP / 252 Spe / 4 Def
+Bold Nature
+- Memento
+- Swagger
+- Thunder Wave
+- Tickle
+
+Golem Alola @ Choice Scarf
+Ability: Galvanize
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Slam
+- Rock Slide
+
+=== TRAINER_WAH_ADMIN_ROXAS ===
+Name: Roxas
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+
+Lugia
+Level: 100
 
 
 === TRAINER_GABBY_AND_TY_1 ===
@@ -2909,41 +3003,73 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Tail Whip
 - Surf
 
-=== TRAINER_RANDALL ===
-Name: RANDALL
+=== TRAINER_WAH_COLLABORATOR_KAKTUS ===
+Name: Kaktus
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Swellow
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Quick Attack
-- Agility
-- Wing Attack
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 248 HP / 252 Def / 8 SpD
+Bold Nature
+IVs: 0 Atk
+- Scald
+- U-turn
+- Roost
+- Defog
 
-=== TRAINER_PARKER ===
-Name: PARKER
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
-Double Battle: No
-AI: Basic Trainer
+Ludicolo @ Life Orb
+Ability: Swift Swim
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Focus Blast
 
-Spinda
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Dizzy Punch
-- Focus Punch
+Swampert @ Swampertite
+Ability: Swift Swim
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Superpower
 
-=== TRAINER_GEORGE ===
+Dragonite @ Lum Berry
+Ability: Multiscale
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Earthquake
+
+Metagross @ Assault Vest
+Ability: Clear Body
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Meteor Mash
+- Earthquake
+- Ice Punch
+- Bullet Punch
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+EVs: 252 HP / 252 Def / 4 SpD
+Relaxed Nature
+IVs: 0 Spe
+- Stealth Rock
+- Spikes
+- Power Whip
+- Knock Off
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
 Name: GEORGE
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2960,7 +3086,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Counter
 - Shadow Ball
 
-=== TRAINER_BERKE ===
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
 Name: BERKE
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2976,7 +3102,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Energy
 - Slash
 
-=== TRAINER_BRAXTON ===
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
 Name: BRAXTON
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3026,8 +3152,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Double Team
 - Swagger
 
-=== TRAINER_VINCENT ===
-Name: VINCENT
+=== TRAINER_WAH_COLLABORATOR_ERKEY ===
+Name: Erkey
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -3036,35 +3162,93 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
-Level: 44
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mewtwo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
 
-Medicham
-Level: 44
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Charizard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
 
-Sharpedo
-Level: 44
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Charizard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
 
-=== TRAINER_LEROY ===
-Name: LEROY
+Charizard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+
+Charizard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+
+Charizard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+
+=== TRAINER_WAH_COLLABORATOR_MICOLO ===
+Name: Micolo
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
+Party Size: 1
+Pool Rules: Basic
 
-Mawile
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Greninja @ Greninjite
+Ability: Protean
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Flamethrower
+- Dark Pulse
 
-Starmie
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Chesnaught @ Chesnaughtite
+Ability: Bulletproof
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Rock Slide
+- Play Rough
+
+Raichu @ Raichunite X
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Earthquake
+
+Rayquaza @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Recover
+- Earthquake
+
+Darkrai @ Darkranite
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Dream Eater
+- Moonblast
+
+Zygarde @ Zygardite
+EVs: 252 Atk / 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Quirky Nature
+- Thousand Arrows
+- Thousand Waves
+- Land's Wrath
+/* Nihil Light //TODO Xiros */
 
 === TRAINER_WILTON_1 ===
 Name: WILTON

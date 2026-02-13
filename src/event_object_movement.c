@@ -529,6 +529,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Zero,                  OBJ_EVENT_PAL_TAG_ZERO},
     {gObjectEventPal_Scarex,                OBJ_EVENT_PAL_TAG_SCAREX},
     {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
+    {gObjectEventPal_Javs,                  OBJ_EVENT_PAL_TAG_JAVS},
     {gObjectEventPal_War,                   OBJ_EVENT_PAL_TAG_WAR},
     {gObjectEventPal_Gallego,               OBJ_EVENT_PAL_TAG_GALLEGO},
     {gObjectEventPal_Katherine,             OBJ_EVENT_PAL_TAG_KATHERINE},
@@ -1805,7 +1806,11 @@ struct Pokemon *GetFirstLiveMon(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
-        if ((OW_FOLLOWERS_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
+        u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        if (species == SPECIES_NONE)
+            continue;
+
+        if ((OW_FOLLOWERS_ALLOWED_SPECIES && species != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
          || (OW_FOLLOWERS_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LVL))
          || (OW_FOLLOWERS_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LOC)))
             continue;

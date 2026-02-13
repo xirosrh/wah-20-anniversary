@@ -896,6 +896,12 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_room_aguiar
+#define METATILE_room_aguiar_TV_OFF_LEFT   0x205
+#define METATILE_room_aguiar_TV_OFF_RIGHT  0x206
+#define METATILE_room_aguiar_TV_ON_LEFT    0x215
+#define METATILE_room_aguiar_TV_ON_RIGHT   0x216
+
 // gTileset_room_angel
 #define METATILE_room_angel_DOOR_CENTER                0x275
 #define METATILE_room_angel_DOOR_LEFT                  0x274

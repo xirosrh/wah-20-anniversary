@@ -281,6 +281,7 @@ script JackJohnsonRoom_EventScript_OpenCurtain5 {
 }
 
 script JackJohnsonRoom_EventScript_OpenCurtain {
+    playse(SE_TRUCK_UNLOAD)
     call(JackJohnsonRoom_EventScript_OpenCurtain1)
     special(DrawWholeMapView)
     delay(5)
@@ -311,6 +312,7 @@ script JackJohnsonRoom_EventScript_TurnOnLights {
     setmetatile(7, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_3, 0)
     setmetatile(8, 7, METATILE_Room_Jack_Johnson_FLOOR_LIGHT_4, 0)
     special(DrawWholeMapView)
+    playse(SE_M_ENCORE)
     return
 }
 
@@ -338,6 +340,7 @@ script JackJohnsonRoom_OnFrame {
     call(JackJohnsonRoom_EventScript_TurnOnLights)
     delay(20)
     msgbox(format("¡Empecemos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    playbgm(MUS_CONTEST_LOBBY, FALSE)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection)
@@ -378,8 +381,11 @@ script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
     release
     playse(SE_PIN)
+    applymovement(LOCALID_JACKROOM_JACK, moves(emote_happy))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
     applymovement(LOCALID_JACKROOM_JACK, moves(
-        emote_happy
         jump_in_place_up
         delay_16 * 2
     ))
@@ -430,6 +436,7 @@ script JackJohnsonRoom_OnFrame {
     addobject(LOCALID_JACKROOM_SPOINK_LEFT)
     addobject(LOCALID_JACKROOM_SPOINK_RIGHT)
     fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_SPOINK, CRY_MODE_NORMAL)
     applymovement(LOCALID_JACKROOM_SPOINK_LEFT, JackJohnsonRoom_Movement_SpoinkHighJump)
     applymovement(LOCALID_JACKROOM_SPOINK_RIGHT, JackJohnsonRoom_Movement_SpoinkHighJump)
     waitmovement(0)
@@ -471,6 +478,8 @@ script JackJohnsonRoom_OnFrame {
     clearflag(FLAG_TEMP_6_JACK_JOHNSON_ROOM_HIDE_ELECTRODE)
     addobject(LOCALID_JACKROOM_ELECTRODE)
     fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_ELECTRODE, CRY_MODE_NORMAL)
+    waitmoncry
     msgbox(format("¡Preparados para la detonación elegante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, moves(
         lock_facing_direction
@@ -516,6 +525,8 @@ script JackJohnsonRoom_OnFrame {
     delay(30)
     special(FadeOutOrbEffect)
     fadescreen(FADE_TO_WHITE)
+    waitse
+    playse(SE_M_EXPLOSION)
     removeobject(LOCALID_JACKROOM_ELECTRODE)
     waitstate
     fadescreen(FADE_FROM_WHITE)
@@ -526,6 +537,7 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48)
     msgbox(format("¡Alto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     waitmovement(0)
+    playbgm(MUS_DUMMY, FALSE)
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp6)
     waitmovement(0)
@@ -551,6 +563,10 @@ script JackJohnsonRoom_OnFrame {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(RemoveCameraObject)
     msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), speaker = SP_NAME_JACK_JOHNSON)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_JACKROOM_JACK, moves(emote_versus))
+    waitmovement(0)
+    waitse
     call(JackJohnsonRoom_EventScript_JackBattle)
     delay(20)
     msgbox(format("Magnífico… impecable. Cada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
@@ -680,9 +696,15 @@ text JackJohnsonRoom_Text_JackDefeated {
 }
 
 script JackJohnsonRoom_EventScript_Jack {
-    applymovement(LOCALID_JACKROOM_JACK, Common_Movement_JumpInPlaceUp2)
-    msgbox(format("¡Eso es! ¡Más rápido!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_JACKROOM_JACK, moves(jump_in_place_up))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_JACKROOM_JACK, moves(jump_in_place_up))
+    waitmovement(0)
+    waitse
+    msgbox(format("¡Eso es! ¡Más rápido!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     delay(20)
     faceplayer
     msgbox(format("¿Sigues ahí? Pues venga, no te quedes mirando…\l¡Súmate al ensayo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)

@@ -2309,18 +2309,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "all the energy from Mega\n"
             "Evolution. The flower now attacks\n"
             "enemies on its own."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_FloetteMega
+        .frontPic = gMonFrontPic_FloetteMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_FloetteMega
+        .backPic = gMonBackPic_FloetteMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_FloetteMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_FloetteMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_FloetteMega
+        .palette = gMonPalette_FloetteMega,
+        .shinyPalette = gMonShinyPalette_FloetteMega,
+        .iconSprite = gMonIcon_FloetteMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Floette)
@@ -2894,6 +2894,122 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sMeowsticFTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_MEOWSTIC_M_MEGA] =
+    {
+        .baseHP        = 74,
+        .baseAttack    = 48,
+        .baseDefense   = 76,
+        .baseSpeed     = 124,
+        .baseSpAttack  = 143,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 75,
+        .expYield = 163,
+        .evYield_Speed = 2,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_PRANKSTER },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Meowstic"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_MEOWSTIC_MEGA,
+    #else
+        .cryId = CRY_MEOWSTIC,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_MEOWSTIC,
+        .categoryName = _("Constraint"),
+        .height = 8,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Mega Meowstic can use its psychic power\n"
+            "to compress or expand anything. It\n"
+            "overwhelms foes by contorting space\n"
+            "itself."),
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Meowstic)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMeowsticMLevelUpLearnset,
+        .teachableLearnset = sMeowsticMTeachableLearnset,
+        .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticMFormChangeTable,
+    },
+    
+    [SPECIES_MEOWSTIC_F_MEGA] =
+    {
+        .baseHP        = 74,
+        .baseAttack    = 48,
+        .baseDefense   = 76,
+        .baseSpeed     = 124,
+        .baseSpAttack  = 143,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 75,
+        .expYield = 163,
+        .evYield_Speed = 2,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_COMPETITIVE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Meowstic"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_MEOWSTIC_MEGA,
+    #else
+        .cryId = CRY_MEOWSTIC,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_MEOWSTIC,
+        .categoryName = _("Constraint"),
+        .height = 8,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Mega Meowstic can use its psychic power\n"
+            "to compress or expand anything. It\n"
+            "overwhelms foes by contorting space\n"
+            "itself."),
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Meowstic)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMeowsticFLevelUpLearnset,
+        .teachableLearnset = sMeowsticFTeachableLearnset,
+        .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticFFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ESPURR
 
 #if P_FAMILY_HONEDGE
@@ -3831,26 +3947,26 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .speciesName = _("Barbaracle"),
         .cryId = CRY_BARBARACLE, // CRY_BARBARACLE_MEGA,
         .natDexNum = NATIONAL_DEX_BARBARACLE,
-        .categoryName = _("Collective"),
+        .categoryName = _("Combinación"),
         .height = 22,
         .weight = 1000,
         .description = COMPOUND_STRING(
             "It uses its many arms to toy\n"
             "with its opponents. This\n"
             "keeps the head extremely busy."),
-        //.frontPic = gMonFrontPic_CircledQuestionMark,
-        //.frontPicSize = MON_COORDS_SIZE(40, 40),
-        //.frontPicYOffset = 12,
-        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        //.backPic = gMonBackPic_CircledQuestionMark,
-        //.backPicSize = MON_COORDS_SIZE(40, 40),
-        //.backPicYOffset = 12,
-        //.backAnimId = BACK_ANIM_NONE,
-        //.palette = gMonPalette_CircledQuestionMark,
-        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        //.iconSprite = gMonIcon_QuestionMark,
-        //.iconPalIndex = 0,
+        .frontPic = gMonFrontPic_BarbaracleMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_BarbaracleMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_BarbaracleMega,
+        .shinyPalette = gMonShinyPalette_BarbaracleMega,
+        .iconSprite = gMonIcon_BarbaracleMega,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Barbaracle)
         //SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -4038,19 +4154,19 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "regenerative power of cells to run\n"
             "wild. The liquid is deadly poison\n"
             "to everything other than itself."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_DragalgeMega
+        .frontPic = gMonFrontPic_DragalgeMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_DragalgeMega
+        .backPic = gMonBackPic_DragalgeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_DragalgeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_DragalgeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_DragalgeMega
-        .iconPalIndex = 0,
+        .palette = gMonPalette_DragalgeMega, 
+        .shinyPalette = gMonShinyPalette_DragalgeMega,
+        .iconSprite = gMonIcon_DragalgeMega,
+        .iconPalIndex = 5,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Dragalge)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -6939,22 +7055,23 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "during an unprecedented crisis,\n"
             "Zygarde Mega Evolves and calms the\n"
             "situation with its unmatched power."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ZygardeMega
+        .frontPic = gMonFrontPic_ZygardeMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ZygardeMega
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_ZygardeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_ZygardeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ZygardeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ZygardeMega
+        .palette = gMonPalette_ZygardeMega,
+        .shinyPalette = gMonShinyPalette_ZygardeMega,
+        .iconSprite = gMonIcon_ZygardeMega, 
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Zygarde)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(5, 13, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
         .teachableLearnset = sZygardeTeachableLearnset,
