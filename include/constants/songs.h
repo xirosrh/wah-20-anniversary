@@ -279,20 +279,25 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   331
-#define MUS_INSTRUMENT_TEST         331 // mus_instrument_test (currently: 11 vibraphone)
-#define MUS_HGSS_LYRA               332 // mus_hgss_lyra
-#define MUS_HGSS_KANTO_VS_TRAINER   333 // mus_hgss_kanto_vs_trainer
-#define MUS_BW_ACCUMULA_TOWN        334 // mus_bw_accumula_town
-#define MUS_BW_FOLLOW_ME            335 // mus_bw_follow_me
-#define MUS_BW_GYM                  336 // MUS_BW_GYM
-#define MUS_BW_NUVEMA_TOWN          337 // mus_bw_nuvema_town
-#define MUS_BW_ROUTE_2              338 // mus_bw_route_2
-#define MUS_BW_THE_DREAMYARD        339 // mus_bw_the_dreamyard
-#define MUS_BW_VS_GYM_LEADER        340 // MUS_BW_VS_GYM_LEADER
-#define MUS_BW_VS_RIVAL             341 // mus_bw_vs_rival
-#define MUS_BW_VS_TRAINER_7F        342 // mus_bw_vs_trainer_7F
-#define MUS_BW_VS_TRAINER_80        343 // mus_bw_vs_trainer_80
+#define START_MUS                   326
+#define MUS_INSTRUMENT_TEST         326 // mus_instrument_test (currently: 11 vibraphone)
+#define MUS_HGSS_LYRA               327 // mus_hgss_lyra
+#define MUS_HGSS_KANTO_VS_TRAINER   328 // mus_hgss_kanto_vs_trainer
+#define MUS_HGSS_POKEMON_CENTER     329 // mus_hgss_pokemon_center
+#define MUS_HGSS_VS_CHAMPION        330 // mus_hgss_vs_champion
+#define MUS_BW_ACCUMULA_TOWN        331 // mus_bw_accumula_town
+#define MUS_BW_DRIFTVEIL_CITY       332 // mus_bw_driftveil_city
+#define MUS_BW_FOLLOW_ME            333 // mus_bw_follow_me
+#define MUS_BW_GYM                  334 // MUS_BW_GYM
+#define MUS_BW_HIUN_CITY            335 // mus_bw_hiun_city
+#define MUS_BW_NUVEMA_TOWN          336 // mus_bw_nuvema_town
+#define MUS_BW_ROUTE_2              337 // mus_bw_route_2
+#define MUS_BW_THE_DREAMYARD        338 // mus_bw_the_dreamyard
+#define MUS_BW_VS_GYM_LEADER        339 // MUS_BW_VS_GYM_LEADER
+#define MUS_BW_VS_RIVAL             340 // mus_bw_vs_rival
+#define MUS_BW_VS_TRAINER_7F        341 // mus_bw_vs_trainer_7F
+#define MUS_BW_VS_TRAINER_80        342 // mus_bw_vs_trainer_80
+#define MUS_VICTORY_LIES_BEFORE_YOU 343 // mus_bw_victory_lies_before_you
 #define MUS_BW_WILD_BATTLE          344 // mus_bw_wild_battle
 #define MUS_PETALBURG_TEST          345 // mus_petalburg_test
 #define MUS_POKE_MART_TEST          346 // mus_poke_mart_test
