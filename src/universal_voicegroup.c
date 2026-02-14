@@ -869,7 +869,7 @@ const union VoiceGroup voicegroup_agm_standard[] =
     [CHOIR_AAHS]            = INSTRUMENT_SPLIT(Instrument_FE7_ChoirAahs, KeySplitTable16),
     [VOICE_OOHS]            = INSTRUMENT_SPLIT(Instrument_FE7_VoiceOohs, KeySplitTable24),
     [SYNTH_VOICE]           = INSTRUMENT_SPLIT(Instrument_FE7_SynthVoice, KeySplitTable11),
-    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 220, 0, 250, 250),
+    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
 
     [TRUMPET]               = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),
     [TROMBONE]              = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),
@@ -1018,7 +1018,7 @@ const union VoiceGroup voicegroup_agm_room[] =
     [CHOIR_AAHS]            = INSTRUMENT_SPLIT(Instrument_FE7_ChoirAahs, KeySplitTable16),
     [VOICE_OOHS]            = INSTRUMENT_SPLIT(Instrument_FE7_VoiceOohs, KeySplitTable24),
     [SYNTH_VOICE]           = INSTRUMENT_SPLIT(Instrument_FE7_SynthVoice, KeySplitTable11),
-    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 220, 0, 250, 250),
+    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
 
     [TRUMPET]               = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),
     [TROMBONE]              = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),
@@ -1166,7 +1166,7 @@ const union VoiceGroup voicegroup_agm_power[] =
     [CHOIR_AAHS]            = INSTRUMENT_SPLIT(Instrument_FE7_ChoirAahs, KeySplitTable16),
     [VOICE_OOHS]            = INSTRUMENT_SPLIT(Instrument_FE7_VoiceOohs, KeySplitTable24),
     [SYNTH_VOICE]           = INSTRUMENT_SPLIT(Instrument_FE7_SynthVoice, KeySplitTable11),
-    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 220, 0, 250, 250),
+    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
 
     [TRUMPET]               = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),
     [TROMBONE]              = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),
@@ -1314,7 +1314,7 @@ const union VoiceGroup voicegroup_agm_cm64[] =
     [CHOIR_AAHS]            = INSTRUMENT_SPLIT(Instrument_FE7_ChoirAahs, KeySplitTable16),
     [VOICE_OOHS]            = INSTRUMENT_SPLIT(Instrument_FE7_VoiceOohs, KeySplitTable24),
     [SYNTH_VOICE]           = INSTRUMENT_SPLIT(Instrument_FE7_SynthVoice, KeySplitTable11),
-    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 220, 0, 250, 250),
+    [ORCHESTRA_HIT]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
 
     [TRUMPET]               = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),
     [TROMBONE]              = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),
