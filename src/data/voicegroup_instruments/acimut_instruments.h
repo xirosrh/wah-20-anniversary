@@ -37,20 +37,20 @@ const struct Instrument FE7_AcousticGrandPiano[] =
 
 const struct Instrument Instrument_AGM_Celesta[] =
 {
-    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 220, 0, 255, 192),
-    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 220, 0, 255, 192),
-    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72, 220, 0, 255, 192),
-    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84, 220, 0, 255, 192),
-    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96, 220, 0, 255, 192),
+    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 220, 0, 235, 192),
+    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 220, 0, 235, 192),
+    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72, 220, 0, 235, 192),
+    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84, 220, 0, 235, 192),
+    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96, 220, 0, 235, 192),
 };
 
 const struct Instrument Instrument_AGM_Vibraphone[] =
 {
-    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 255, 0, 255, 192),
-    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 255, 0, 255, 192),
-    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72, 255, 0, 255, 192),
-    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84, 255, 0, 255, 192),
-    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96, 255, 0, 255, 192),
+    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 255, 0, 255, 235),
+    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60, 255, 0, 255, 235),
+    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72, 255, 0, 255, 235),
+    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84, 255, 0, 255, 235),
+    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96, 255, 0, 255, 235),
 };
 
 const struct Instrument Instrument_AGM_Marimba[] =
