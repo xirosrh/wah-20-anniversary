@@ -279,6 +279,18 @@ const struct Song gSongTable[] =
 
     [MUS_INSTRUMENT_TEST]           = SONG(mus_instrument_test, MUSIC_PLAYER_BGM),
 
+    [MUS_PUEBLO_ORIGEN]             = SONG(mus_pueblo_origen, MUSIC_PLAYER_BGM),
+    [MUS_WI_TRAINER_BATTLE]         = SONG(mus_wi_trainer_battle, MUSIC_PLAYER_BGM),
+    [MUS_WI_VS_GYM_LEADER]          = SONG(mus_wi_vs_gym_leader, MUSIC_PLAYER_BGM),
+    [MUS_MASTERED_BATTLE_4]         = SONG(mus_mastered_battle_4, MUSIC_PLAYER_BGM),
+    [MUS_GYM_ESPUMA_HEROES]         = SONG(mus_GymEspumaHeroes, MUSIC_PLAYER_BGM),
+    [MUS_LUCHA_INTERNA_TO]          = SONG(mus_LuchaInternaTO, MUSIC_PLAYER_BGM),
+    [MUS_TEAM_ORIGEN_TO]            = SONG(mus_TeamOrigenTO, MUSIC_PLAYER_BGM),
+    [MUS_CAZA_LEGENDARIOS_TO]       = SONG(mus_BatallacazalegendariosTO, MUSIC_PLAYER_BGM),
+    [MUS_VOLCANO_INFERNO]           = SONG(mus_volcano_inferno, MUSIC_PLAYER_BGM),
+    [MUS_THE_GRAND_FINALE]          = SONG(mus_the_grand_finale, MUSIC_PLAYER_BGM),
+    [MUS_TOUHOU11_4]                = SONG(mus_touhou11_4, MUSIC_PLAYER_BGM),
+    [MUS_TOUHOU11_11]               = SONG(mus_touhou11_11, MUSIC_PLAYER_BGM),
     [MUS_HGSS_LYRA]                 = SONG(mus_hgss_lyra, MUSIC_PLAYER_BGM),
     [MUS_HGSS_KANTO_VS_TRAINER]     = SONG(mus_hgss_kanto_vs_trainer, MUSIC_PLAYER_BGM),
     [MUS_HGSS_POKEMON_CENTER]       = SONG(mus_hgss_pokemon_center, MUSIC_PLAYER_BGM),

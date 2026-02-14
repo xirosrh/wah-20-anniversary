@@ -280,6 +280,19 @@ extern const struct SongHeader se_pike_curtain_open;
 extern const struct SongHeader se_sudowoodo_shake;
 
 extern const struct SongHeader mus_instrument_test;
+
+extern const struct SongHeader mus_pueblo_origen;
+extern const struct SongHeader mus_wi_trainer_battle;
+extern const struct SongHeader mus_wi_vs_gym_leader;
+extern const struct SongHeader mus_mastered_battle_4;
+extern const struct SongHeader mus_GymEspumaHeroes;
+extern const struct SongHeader mus_LuchaInternaTO;
+extern const struct SongHeader mus_TeamOrigenTO;
+extern const struct SongHeader mus_BatallacazalegendariosTO;
+extern const struct SongHeader mus_volcano_inferno;
+extern const struct SongHeader mus_the_grand_finale;
+extern const struct SongHeader mus_touhou11_4;
+extern const struct SongHeader mus_touhou11_11;
 extern const struct SongHeader mus_hgss_lyra;
 extern const struct SongHeader mus_hgss_kanto_vs_trainer;
 extern const struct SongHeader mus_hgss_pokemon_center;

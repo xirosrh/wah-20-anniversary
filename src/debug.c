@@ -3489,6 +3489,18 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 #define SOUND_LIST_BGM              \
     X(MUS_INSTRUMENT_TEST)          \
+    X(MUS_PUEBLO_ORIGEN)            \
+    X(MUS_WI_TRAINER_BATTLE)        \
+    X(MUS_WI_VS_GYM_LEADER)         \
+    X(MUS_MASTERED_BATTLE_4)        \
+    X(MUS_GYM_ESPUMA_HEROES)        \
+    X(MUS_LUCHA_INTERNA_TO)         \
+    X(MUS_TEAM_ORIGEN_TO)           \
+    X(MUS_CAZA_LEGENDARIOS_TO)      \
+    X(MUS_VOLCANO_INFERNO)          \
+    X(MUS_THE_GRAND_FINALE)         \
+    X(MUS_TOUHOU11_4)               \
+    X(MUS_TOUHOU11_11)              \
     X(MUS_HGSS_LYRA)                \
     X(MUS_HGSS_KANTO_VS_TRAINER)    \
     X(MUS_HGSS_POKEMON_CENTER)      \

@@ -279,8 +279,21 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   326
-#define MUS_INSTRUMENT_TEST         326 // mus_instrument_test (currently: 11 vibraphone)
+#define START_MUS                   314
+#define MUS_INSTRUMENT_TEST         314 // mus_instrument_test (currently: 11 vibraphone)
+
+#define MUS_PUEBLO_ORIGEN           315 // [Jack Johnson] mus_pueblo_origen
+#define MUS_WI_TRAINER_BATTLE       316 // [Jack Johnson] mus_wi_trainer_battle
+#define MUS_WI_VS_GYM_LEADER        317 // [Jack Johnson] mus_wi_vs_gym_leader
+#define MUS_MASTERED_BATTLE_4       318 // [Cheve] mus_mastered_battle_4
+#define MUS_GYM_ESPUMA_HEROES       319 // [ReoNeky] mus_GymEspumaHeroes
+#define MUS_LUCHA_INTERNA_TO        320 // [ReoNeky] mus_LuchaInternaTO
+#define MUS_TEAM_ORIGEN_TO          321 // [ReoNeky] mus_TeamOrigenTO
+#define MUS_CAZA_LEGENDARIOS_TO     322 // [ReoNeky] mus_BatallacazalegendariosTO
+#define MUS_VOLCANO_INFERNO         323 // [Zero] mus_volcano_inferno
+#define MUS_THE_GRAND_FINALE        324 // [Zero] mus_the_grand_finale
+#define MUS_TOUHOU11_4              325 // [Acimut] mus_touhou11_4 - The Bridge People No Longer Cross
+#define MUS_TOUHOU11_11             326 // [Acimut] mus_touhou11_11 - Corpse Voyage ~ Be of good cheer!
 #define MUS_HGSS_LYRA               327 // mus_hgss_lyra
 #define MUS_HGSS_KANTO_VS_TRAINER   328 // mus_hgss_kanto_vs_trainer
 #define MUS_HGSS_POKEMON_CENTER     329 // mus_hgss_pokemon_center
