@@ -411,6 +411,150 @@ text Lobby_Text_Gameboycl_OnDefeat {
     format("Evolucionar también es mirar atrás.")
 }
 
+script Lobby_EventScript_FakemonDexMenu {
+    lock
+    faceplayer
+    msgbox(format("Soy el experto en las especies exclusivas de Whack a Hack.\pTe revelaré todo sobre ellas, pero solo de las que hayas visto.\p¡No quiero arruinar el factor sorpresa!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
+    setvar(VAR_0x8000, 0)
+    getseenmon(SPECIES_KAOSUNE)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_KAOSUNE)
+        dynmultipush(gStringVar1, 0)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_FREECH)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_FREECH)
+        dynmultipush(gStringVar1, 1)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_PLUGOINK)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_PLUGOINK)
+        dynmultipush(gStringVar1, 2)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_GRITESPEC)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_GRITESPEC)
+        dynmultipush(gStringVar1, 3)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MAGIKEN)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MAGIKEN)
+        dynmultipush(gStringVar1, 4)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_AYEWIRAZ)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_AYEWIRAZ)
+        dynmultipush(gStringVar1, 5)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_ELECTRODES)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_EING)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_EING)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    if(var(VAR_0x8000) == 0) {
+        msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
+        release
+        end
+    }
+    dynmultipush("Salir", 8)
+    msgbox(format("¿De cuál especie te gustaría conocer más?"))
+    dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    if(var(VAR_RESULT) > 7) {
+        msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    switch(var(VAR_RESULT)) {
+        case 0:
+            showmonpic(SPECIES_KAOSUNE, 10, 3)
+            setvar(VAR_0x8004, SPECIES_KAOSUNE)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 1:
+            showmonpic(SPECIES_FREECH, 10, 3)
+            setvar(VAR_0x8004, SPECIES_FREECH)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 2:
+            showmonpic(SPECIES_PLUGOINK, 10, 3)
+            setvar(VAR_0x8004, SPECIES_PLUGOINK)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 3:
+            showmonpic(SPECIES_GRITESPEC, 10, 3)
+            setvar(VAR_0x8004, SPECIES_GRITESPEC)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 4:
+            showmonpic(SPECIES_MAGIKEN, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MAGIKEN)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 5:
+            showmonpic(SPECIES_AYEWIRAZ, 10, 3)
+            setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 6:
+            showmonpic(SPECIES_ELECTRODES, 10, 3)
+            setvar(VAR_0x8004, SPECIES_ELECTRODES)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 7:
+            showmonpic(SPECIES_EING, 10, 3)
+            setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+    }
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_ShowFakemonDexInfo {
+    special(BufferSpeciesDexDescriptionForTextbox)
+    msgbox(format("Ya que no tienes una Pokedex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
+    special(BufferSpeciesTypeNames)
+    if(var(VAR_RESULT) == 1) {
+        msgbox("Su tipo es: {STR_VAR_2}.")
+    } else {
+        msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    }
+    msgbox("¡Y esto seguramente no lo sabías!\nSus habilidades son:")
+    setvar(VAR_0x8005, 0)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 1)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 2)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    special(BufferSpeciesStats)
+    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{FONT_SMALL}{STR_VAR_1}"))
+    hidemonpic()
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    msgbox("Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.")
+    return
+}
+
+
+
 script Lobby_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
     applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
@@ -492,4 +636,133 @@ script Lobby_EventScript_Erkey {
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
         goto(Lobby_EventScript_Erkey_OnFinishEvent)
     }
+}
+
+script Lobby_EventScript_Micolo_IntroFirstBattle {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    playse(SE_LEDGE)
+    applymovement(VAR_LAST_TALKED, moves(lock_facing_direction,jump_in_place_down, unlock_facing_direction, face_player))
+    waitmovement(0)
+    msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres bueno con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(Lobby_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    return
+}
+
+script Lobby_EventScript_Micolo_IntroRematch {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("¿Otra batalla? Elegiré de nuevo un Pokémon de mi equipo al azar. ¿Te atreves?"), MSGBOX_YESNO, speaker = SP_NAME_MICOLO)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(Lobby_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        return
+    } else {
+        msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        goto(Lobby_EventScript_Micolo_OnFinishEvent)
+    }
+}
+
+text Lobby_Text_Micolo_ChoosePokemon {
+    format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!")
+}
+
+script Lobby_EventScript_Micolo_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    releaseall
+    end
+}
+
+script Lobby_EventScript_Micolo {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_LOBBY_MICOLO)) {
+            call(Lobby_EventScript_Micolo_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Micolo_IntroFirstBattle)
+        }
+        special(SavePlayerParty)
+        setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
+        setvar(VAR_0x8005, 1)
+        setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+        fadescreen(FADE_TO_BLACK)
+        special(ChoosePartyForBattleFrontier)
+        waitstate
+        lockall
+        if(var(VAR_RESULT) == 0) {
+            special(LoadPlayerParty)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            msgbox(format("¿Te da miedo enfrentarte a uno de mis ejemplares? Con lo que te costó pasar las salas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            releaseall
+            end
+        }
+        playse(SE_PIN)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        special(ReducePlayerPartyToSelectedMons)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_MICOLO, format("Vaya, me has ganado."))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(LoadPlayerParty)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+            msgbox(format("Admito que eres bueno, si contara con mi pequeñín seguro que te hubiera ganado, enhorabuena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            setflag(FLAG_DEFEATED_LOBBY_MICOLO)
+        } else {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            playse(SE_LEDGE)
+            applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+            playse(SE_LEDGE)
+            applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
+            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            waitmovement(0)
+        }
+        goto(Lobby_EventScript_Micolo_OnFinishEvent)
+    } else {
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+
+        msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quienes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluídos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+        msgbox(format("También ayudé al arquitecto del edificio a tener al Pokémon de sus sueños.\pNo veas lo cansino que era hablando de la ilusión que le daría tenerlo e incluso presumirá de él en su sala como un hipócrita mientras se limpia las babas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        msgbox(format("Lo que no sabe es que le di un ejemplar casi perfecto, el perfecto lo tengo guardado y listo para ayudarte cuando elijas su equipo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_XD)
+        playse(SE_LEDGE)
+        applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+        playse(SE_LEDGE)
+        applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+        waitmovement(0)
+        msgbox(format("El resto fueron la mano de obra para construir este sitio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+        delay(30)
+        goto(Lobby_EventScript_Micolo_OnFinishEvent)
+    }
+}
+
+script Lobby_EventScript_Lillipup {
+    lock
+    faceplayer
+    playmoncry(SPECIES_LILLIPUP, CRY_MODE_NORMAL)
+    msgbox(format("Pup, pup, pup."), MSGBOX_AUTOCLOSE)
+    waitmoncry
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    release
+    end
 }

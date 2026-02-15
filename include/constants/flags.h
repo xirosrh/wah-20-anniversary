@@ -69,7 +69,7 @@
 #define FLAG_DEFEATED_LOBBY_KAKTUS    0x37 // Used WAH
 #define FLAG_DEFEATED_LOBBY_GAMEBOYCL    0x38 // Used WAH
 #define FLAG_DEFEATED_LOBBY_ERKEY    0x39 // Used WAH
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_DEFEATED_LOBBY_MICOLO    0x3A // Used WAH
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_DEFEATED_ADMIN_XIROS    0x3C //Used WAH
 #define FLAG_DEFEATED_ADMIN_KLEIN    0x3D //Used WAH
