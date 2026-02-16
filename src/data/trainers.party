@@ -679,8 +679,53 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Magikarp
-Level: 1
+Torkoal @Charcoal
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Eruption
+- Overheat
+- Solar Beam
+- Slack Off
+
+Weezing Galar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Moonblast
+- Flamethrower
+/*- Strange Stream /TODO Xiros */
+
+Barbaracle @ Barbaracite
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Drain Punch
+- Earthquake
+
+Hydreigon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Dark Pulse
+- Flash Cannon
+- Earth Power
+
+Forretress @ Leftovers
+EVs: 252 Spe / 252 HP / 4 SpD
+Jolly Nature
+- Stealth Rock
+- Spikes
+- Toxic Spikes
+- Rapid Spin
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga Drain
+- Dark Pulse
 
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
 Name: Jack
@@ -693,36 +738,48 @@ AI: Smart Trainer
 Mugshot: Purple
 
 Venusaur @ Shell Bell
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
 - Toxic
 - Leech Seed
 - Sleep Powder
 - Frenzy Plant
 
 Magnezone @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Thunderbolt
 - Thunder Wave
 - Rain Dance
 - Thunder
 
-Tyranitar
+Tyranitar @ Choice Band
+EVs: 252 Atk / 252 HP / 4 SpA
+Careful Nature
 - Crunch
 - Ancient Power
 - Brick Break
 - Curse
 
 Crobat @ Bright Powder
+EVs: 22 Atk / 252 Spe / 4 SpA
+Jolly Nature
 - Poison Fang
 - Shadow Ball
 - Facade
 - Aerial Ace
 
 Gyarados @ King's Rock
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Frustration
 - Dragon Dance
 - Earthquake
 - Double-Edge
 
 Arcanine @ Quick Claw
+EVs: 252 Spe / 252 SpA / 4 Atk
+Naive Nature
 - Flamethrower
 - Sunny Day
 - Extreme Speed
@@ -739,8 +796,53 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 
-Magikarp
-Level: 1
+Electivire @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Drain Punch
+- Earthquake
+
+Ludicolo @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Giga Drain
+- Scald
+- Ice Beam
+- Sludge Bomb
+
+Mightyena @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Crunch
+- Play Rough
+- Ice Fang
+- Psychic Fangs
+
+Groudon @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Eruption
+- Earthquake
+- Drain Punch
+
+Kyogre @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Ice Beam
+- Thunder
+
+Rayquaza @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Dragon Dance
+- Earthquake
+- Extreme Speed
 
 === TRAINER_WAH_ADMIN_ANGEL_MAIN ===
 Name: Angel
