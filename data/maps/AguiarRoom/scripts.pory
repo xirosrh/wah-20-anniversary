@@ -96,6 +96,9 @@ script AguiarRoom_EventScript_Aguiar {
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
     msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, moves(emote_versus))
+    waitse
     call(AguiarRoom_EventScript_AguiarBattle)
     delay(10)
     msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
