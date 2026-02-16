@@ -635,7 +635,7 @@ static void GiveTeamPlayer()
     u8 i;
     u8 indexMon = 0;
     enum PokeBall  ball = BALL_POKE;
-    enum ShinyMode shiny = SHINY_MODE_RANDOM;
+    enum ShinyMode shiny;
     enum Type typeTera = TYPE_NONE;
 
     u8 gender;
@@ -653,6 +653,7 @@ static void GiveTeamPlayer()
             indexMon = gTeamSelectorPlayer[teamSelectorObj.monTeamNum].team[i];
 
         mon = &gAllTeamMons[indexMon];
+        shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
         memcpy(tempMoves, mon->moves, sizeof(tempMoves));
         memcpy(evs, mon->ev, sizeof(evs));
         GetIVsByNature(mon, ivs);
