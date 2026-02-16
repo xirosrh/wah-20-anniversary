@@ -21,6 +21,7 @@ enum SpeakerNames {
     SP_NAME_OZUMAS,
     SP_NAME_SCAREX,
     SP_NAME_ANGEL,
+    SP_NAME_EING,
     SP_NAME_KATHERINE,
     SP_NAME_DRIVE,
     SP_NAME_XIROS,

@@ -1006,3 +1006,14 @@ const struct Tileset gTileset_room_aguiar =
     .metatileAttributes = gMetatileAttributes_room_aguiar,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_room_eing =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_eing,
+    .palettes = gTilesetPalettes_room_eing,
+    .metatiles = gMetatiles_room_eing,
+    .metatileAttributes = gMetatileAttributes_room_eing,
+    .callback = NULL,
+};
