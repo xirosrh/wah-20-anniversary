@@ -629,13 +629,25 @@ static void GetIVsByNature(const struct TeamSelectorMonData *mon, u8 *ivs)
     }
 }
 
+static u8 GetAbilitySlotForSpecies(u16 species, u16 abilityId)
+{
+    if (abilityId == ABILITY_NONE)
+        return NUM_ABILITY_SLOTS;
+    for (u8 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        if (GetAbilityBySpecies(species, slot) == (enum Ability)abilityId)
+            return slot;
+    }
+    return NUM_ABILITY_SLOTS;
+}
+
 static void GiveTeamPlayer()
 {
     const struct TeamSelectorMonData *mon;
     u8 i;
     u8 indexMon = 0;
     enum PokeBall  ball = BALL_POKE;
-    enum ShinyMode shiny = SHINY_MODE_RANDOM;
+    enum ShinyMode shiny;
     enum Type typeTera = TYPE_NONE;
 
     u8 gender;
@@ -653,12 +665,13 @@ static void GiveTeamPlayer()
             indexMon = gTeamSelectorPlayer[teamSelectorObj.monTeamNum].team[i];
 
         mon = &gAllTeamMons[indexMon];
+        shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
         memcpy(tempMoves, mon->moves, sizeof(tempMoves));
         memcpy(evs, mon->ev, sizeof(evs));
         GetIVsByNature(mon, ivs);
 
         gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
-        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
     }
     gPlayerPartyCount = MAX_TEAM_SIZE;
 }
