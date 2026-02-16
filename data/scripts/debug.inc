@@ -158,6 +158,7 @@ trainerbattle_single TRAINER_BRENDAN_PLACEHOLDER, BrendanIntroText, BrendanLoseT
 	end
 
 Debug_EventScript_Script_2::
+	updateobjectsprite LOCALID_PLAYER OBJ_EVENT_GFX_MRNIGHTOLOGY
 	release
 	end
 

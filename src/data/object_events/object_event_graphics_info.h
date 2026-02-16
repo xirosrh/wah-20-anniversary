@@ -1173,7 +1173,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Angel = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrNightology = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MR_NIGHTOLOGY,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MRNIGHTOLOGY,
     .size = 256,
     .width = 16,
     .height = 32,

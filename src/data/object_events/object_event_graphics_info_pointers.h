@@ -560,7 +560,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_JAVS] =                     &gObjectEventGraphicsInfo_Javs,
     [OBJ_EVENT_GFX_ANGEL] =                    &gObjectEventGraphicsInfo_Angel,
-    [OBJ_EVENT_GFX_MR_NIGHTOLOGY] =            &gObjectEventGraphicsInfo_MrNightology,
+    [OBJ_EVENT_GFX_MRNIGHTOLOGY] =            &gObjectEventGraphicsInfo_MrNightology,
     [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,
