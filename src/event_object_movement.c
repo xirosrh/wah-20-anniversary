@@ -529,6 +529,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Zero,                  OBJ_EVENT_PAL_TAG_ZERO},
     {gObjectEventPal_Scarex,                OBJ_EVENT_PAL_TAG_SCAREX},
     {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
+    {gObjectEventPal_Cope,                  OBJ_EVENT_PAL_TAG_COPE},
     {gObjectEventPal_Javs,                  OBJ_EVENT_PAL_TAG_JAVS},
     {gObjectEventPal_Angel,                 OBJ_EVENT_PAL_TAG_ANGEL},
     {gObjectEventPal_MrNightology,           OBJ_EVENT_PAL_TAG_MRNIGHTOLOGY},
