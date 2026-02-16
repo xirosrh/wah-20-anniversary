@@ -629,6 +629,18 @@ static void GetIVsByNature(const struct TeamSelectorMonData *mon, u8 *ivs)
     }
 }
 
+static u8 GetAbilitySlotForSpecies(u16 species, u16 abilityId)
+{
+    if (abilityId == ABILITY_NONE)
+        return NUM_ABILITY_SLOTS;
+    for (u8 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        if (GetAbilityBySpecies(species, slot) == (enum Ability)abilityId)
+            return slot;
+    }
+    return NUM_ABILITY_SLOTS;
+}
+
 static void GiveTeamPlayer()
 {
     const struct TeamSelectorMonData *mon;
@@ -659,7 +671,7 @@ static void GiveTeamPlayer()
         GetIVsByNature(mon, ivs);
 
         gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
-        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
     }
     gPlayerPartyCount = MAX_TEAM_SIZE;
 }
