@@ -2,7 +2,7 @@
   "id": "MAP_GALLEGO_ROOM",
   "name": "GallegoRoom",
   "layout": "LAYOUT_GALLEGO_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_GALLEGO_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
