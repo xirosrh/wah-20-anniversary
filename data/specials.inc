@@ -583,3 +583,5 @@ gSpecials::
 	def_special BufferSpeciesAbilityNameAndDescription
 	def_special BufferSpeciesTypeNames
 	def_special BufferSpeciesStats
+	def_special Special_CheckAndCompleteAchievement
+	def_special Special_BufferAchievementTitle

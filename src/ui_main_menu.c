@@ -45,6 +45,7 @@
 #include "mystery_event_menu.h"
 #include "mystery_gift_menu.h"
 #include "link.h"
+#include "achievements.h"
 
 /*
  * 
@@ -882,7 +883,7 @@ static void DestroyMonIcons()
 //
 //  Print The Text For Badges, Name, Playtime
 //
-static const u8 sText_Badges[] = _("Logros    {STR_VAR_1}");
+static const u8 sText_Achievements[] = _("Logros    {STR_VAR_1}");
 static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
 static const u8 sText_Continue[] = _("Continuar");
 static const u8 sText_NewGame[] = _("Nueva partida");
@@ -895,7 +896,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     const u8 middleColors[3] = {0,  3,  6};
     u8 continueDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
-    u8 badgeCount = 0;
+    u8 achievementsCount = 0;
     u32 i = 0;
 
     FillWindowPixelBuffer(WINDOW_HEADER, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -922,14 +923,14 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 16 + 2, 0, 0, middleColors, TEXT_SKIP_DRAW, gStringVar4);
 
 
-    // Print Badge Numbers if You Have Them
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    // Print Achievements Count (completed from saveblock)
+    for (i = 0; i < Achievement_GetCount(); i++)
     {
-        if (FlagGet(i))
-            badgeCount++;
-    } 
-    ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 2);
-    StringExpandPlaceholders(gStringVar4, sText_Badges);
+        if (Achievement_IsComplete(i))
+            achievementsCount++;
+    }
+    ConvertIntToDecimalStringN(gStringVar1, achievementsCount, STR_CONV_MODE_LEADING_ZEROS, 2);
+    StringExpandPlaceholders(gStringVar4, sText_Achievements);
     AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NARROW, 8, 32 + 2, 0, 0, middleColors, TEXT_SKIP_DRAW, gStringVar4);
 
 

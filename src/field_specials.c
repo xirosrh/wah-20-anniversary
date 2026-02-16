@@ -76,8 +76,11 @@
 #include "battle_message.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "achievements.h"
+#include "constants/achievements.h"
 #include "constants/characters.h"
 #include "constants/pokemon.h"
+#include "constants/vars.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -1433,6 +1436,30 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
         return TRUE;
 
     return FALSE;
+}
+
+u16 Special_CheckAndCompleteAchievement(void)
+{
+    u8 index = (u8)VarGet(VAR_0x8004);
+    if (index >= Achievement_GetCount())
+        return 0;
+    return (u16)Achievement_CheckAndMarkComplete(index);
+}
+
+void Special_BufferAchievementTitle(void)
+{
+    u8 id = (u8)VarGet(VAR_0x8004);
+    const u8 *title;
+    if (id >= Achievement_GetCount())
+    {
+        gStringVar1[0] = EOS;
+        return;
+    }
+    title = Achievement_GetTitle(id);
+    if (title != NULL)
+        StringCopy(gStringVar1, title);
+    else
+        gStringVar1[0] = EOS;
 }
 
 u8 TryUpdateRusturfTunnelState(void)
