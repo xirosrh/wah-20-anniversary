@@ -789,6 +789,12 @@ Lobby_EventScript_ShowFakemonDexInfo_12:
 	goto Lobby_EventScript_ShowFakemonDexInfo_11
 
 
+Lobby_EventScript_TrainerCardGirl::
+# 401 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_TrainerCardGirl_Text_0, MSGBOX_NPC
+	end
+
+
 # 124 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 124 "data/maps/Lobby/scripts.pory"
@@ -1043,6 +1049,14 @@ Lobby_EventScript_ShowFakemonDexInfo_Text_5:
 Lobby_EventScript_ShowFakemonDexInfo_Text_6:
 # 396 "data/maps/Lobby/scripts.pory"
 	.string "Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.$"
+
+Lobby_EventScript_TrainerCardGirl_Text_0:
+# 401 "data/maps/Lobby/scripts.pory"
+	.string "¿Sabías que en la parte de atrás de tu\n"
+	.string "tarjeta de entrenador puedes ver tus\l"
+	.string "logros?\p"
+	.string "¡También puedes ver los requerimientos\n"
+	.string "para obtener cada uno!$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 68 "data/maps/Lobby/scripts.pory"

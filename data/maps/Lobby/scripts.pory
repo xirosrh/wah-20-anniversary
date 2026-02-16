@@ -397,3 +397,7 @@ script Lobby_EventScript_ShowFakemonDexInfo {
     return
 }
 
+script Lobby_EventScript_TrainerCardGirl {
+    msgbox(format("¿Sabías que en la parte de atrás de tu tarjeta de entrenador puedes ver tus logros?\p¡También puedes ver los requerimientos para obtener cada uno!"), MSGBOX_NPC)
+    end
+}
