@@ -3488,6 +3488,42 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_INSTRUMENT_TEST)          \
+    X(MUS_PUEBLO_ORIGEN)            \
+    X(MUS_WI_TRAINER_BATTLE)        \
+    X(MUS_WI_VS_GYM_LEADER)         \
+    X(MUS_MASTERED_BATTLE_4)        \
+    X(MUS_GYM_ESPUMA_HEROES)        \
+    X(MUS_LUCHA_INTERNA_TO)         \
+    X(MUS_TEAM_ORIGEN_TO)           \
+    X(MUS_CAZA_LEGENDARIOS_TO)      \
+    X(MUS_VOLCANO_INFERNO)          \
+    X(MUS_THE_GRAND_FINALE)         \
+    X(MUS_TOUHOU11_4)               \
+    X(MUS_TOUHOU11_11)              \
+    X(MUS_HGSS_LYRA)                \
+    X(MUS_HGSS_KANTO_VS_TRAINER)    \
+    X(MUS_HGSS_POKEMON_CENTER)      \
+    X(MUS_HGSS_VS_CHAMPION)         \
+    X(MUS_BW_ACCUMULA_TOWN)         \
+    X(MUS_BW_DRIFTVEIL_CITY)        \
+    X(MUS_BW_FOLLOW_ME)             \
+    X(MUS_BW_GYM)                   \
+    X(MUS_BW_HIUN_CITY)             \
+    X(MUS_BW_NUVEMA_TOWN)           \
+    X(MUS_BW_ROUTE_2)               \
+    X(MUS_BW_THE_DREAMYARD)         \
+    X(MUS_BW_VS_GYM_LEADER)         \
+    X(MUS_BW_VS_RIVAL)              \
+    X(MUS_BW_VS_TRAINER_7F)         \
+    X(MUS_BW_VS_TRAINER_80)         \
+    X(MUS_VICTORY_LIES_BEFORE_YOU)  \
+    X(MUS_BW_WILD_BATTLE)           \
+    X(MUS_PETALBURG_TEST)           \
+    X(MUS_POKE_MART_TEST)           \
+    X(MUS_ROUTE110_TEST)            \
+    X(MUS_ROUTE120_TEST)            \
+    X(MUS_ROUTE122_TEST)            \
     X(MUS_LITTLEROOT_TEST)          \
     X(MUS_GSC_ROUTE38)              \
     X(MUS_CAUGHT)                   \

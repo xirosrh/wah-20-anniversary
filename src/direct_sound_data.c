@@ -1,0 +1,762 @@
+#include "global.h"
+
+// ACIMUT'S DRUMKIT b14r 21024Hz
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_28_slap_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_28_Korg-N1R-Slap.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_29_scratch_push_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_29_Korg-NS5R-Power-Kick.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_30_Korg-M3R-Kick.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_31_sticks_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_31_Korg-N1R-Sticks.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_32_square_click_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_32_Korg-N1R-Square-Click.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_33_metronome_click_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_33_Yamaha-RM50-Typewriter.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_34_metronome_bell_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_34_Roland-SC-88-Metronome-Bell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_35_bass_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_35_Yamaha-RM50-Studio-Kick-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_36_bass_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_36_Yamaha-RM50-Studio-Kick-1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_37_side_stick[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_37_Yamaha-RM50-Side-Stick-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_38_snare_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_38_Yamaha-TG100-Snare-Drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_39_Yamaha-RM50-Clap.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_40_snare_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_40_Yamaha-TG100-Snare-Drum-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_41_low_tom_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_41_Roland-SC-88-Low-Tom.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_42_closed_hi_hat[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_42_Yamaha-RM50-Closed-Hi-Hat-1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_43_low_tom_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_43_Roland-SC-88-Low-Tom-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_44_pedal_hi_hat[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_44_Yamaha-RM50-Pedal-Hi-Hat-1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_45_mid_tom_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_45_Roland-SC-88-Mid-Tom.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_46_open_hi_hat[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_46_Yamaha-RM50-Open-Hi-Hat-1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_47_mid_tom_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_47_Roland-SC-88-Mid-Tom-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_48_high_tom_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_48_Roland-SC-88-High-Tom.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_49_crash_cymbal_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_49_Yamaha-TG100-Crash-Cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_50_high_tom_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_50_Roland-SC-88-High-Tom-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_51_ride_cymbal_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_51_Yamaha-TG100-Ride-Cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_52_chinese_cymbal[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_52_Korg-N1R-Chinese-Cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_53_ride_bell[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_53_Yamaha-TG100-Ride-Bell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_54_tambourine[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_54_Korg-N1R-Tambourine.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_55_splash_cymbal[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_55_Yamaha-TG100-Splash-Cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_56_cowbell[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_56_Roland-SC-88-Cowbell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_57_crash_cymbal_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_57_Yamaha-TG100-Crash-Cymbal-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_58_vibra_slap[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_58_Roland-R-8-Vibraslap.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_59_ride_cymbal_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_59_Yamaha-TG100-Ride-Cymbal-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_60_high_bongo[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_60_Korg-N1R-High-Bongo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_61_low_bongo[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_61_Korg-N1R-Low-Bongo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_62_mute_high_conga[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_62_Conga_Hi_slapop.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_63_open_high_conga[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_63_Conga_Hi.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_64_low_conga[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_64_Conga_Lo_Op.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_65_high_timbale[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_65_Yamaha-RM50-High-Timbale.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_66_low_timbale[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_66_Yamaha-RM50-Low-Timbale.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_67_high_agogo[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_67_Yamaha-TG100-High-Agogo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_68_low_agogo[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_68_Yamaha-TG100-Agogo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_69_cabasa[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_69_Korg-N1R-Cabasa.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_70_maracas[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_70_Korg-N1R-Maracas.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_71_short_whistle[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_71_Korg-N1R-Short-Whistle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_72_long_whistle[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_72_Korg-N1R-Long-Whistle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_73_short_guiro[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_73_Korg-N1R-Short-Guiro.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_74_logn_guiro[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_74_Korg-N1R-Long-Guiro.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_75_claves[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_75_Korg-N1R-Claves.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_76_high_wood_block[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_76_Korg-N1R-High-Wood-Block.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_77_low_wood_block[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_77_Korg-N1R-Low-Wood-Block.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_78_mute_cuica[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_78_Roland-SC-88-Mute-Cuica.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_79_open_cuica[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_79_Roland-SC-88-Open-Cuica.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_80_mute_triangle[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_80_Kawai-K11-Mute-Triangle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_81_open_triangle[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_81_Kawai-K11-Open-Triangle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_82_shaker_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_82_Korg-N1R-Shaker.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_83_jingle_bell_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_83_Korg-N1R-Jingle-Bell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_84_belltree_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_84_Kawai-K11-Bell-Tree.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_85_castanets_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_85_Korg-N1R-Castanets.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_86_mute_surdo_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_86_Roland-SC-88-Mute-Surdo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_87_open_surdo_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_87_Roland-SC-88-Open-Surdo.bin");
+
+
+//--------------------------------------------------------------
+//  Universal Voicegroup FE7
+//--------------------------------------------------------------
+
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_37[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_35.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_40[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_47[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_47.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_55[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_55.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_63[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_63.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_72[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_77[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_77.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_83[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_83.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_91[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_91.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7000_piano_102[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_000_piano_102.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_003_honky_tonk_piano_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_003_honky_tonk_piano_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_003_honky_tonk_piano_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_003_honky_tonk_piano_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_003_honky_tonk_piano_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_003_honky_tonk_piano_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_003_honky_tonk_piano_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_003_honky_tonk_piano_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_003_honky_tonk_piano_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_003_honky_tonk_piano_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_004_electric_piano_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_004_electric_piano_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_004_electric_piano_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_004_electric_piano_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_004_electric_piano_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_004_electric_piano_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_004_electric_piano_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_004_electric_piano_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_004_electric_piano_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_004_electric_piano_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_005_electric_piano_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_005_electric_piano_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_006_harpsichord_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_006_harpsichord_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_006_harpsichord_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_006_harpsichord_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_006_harpsichord_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_006_harpsichord_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_006_harpsichord_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_006_harpsichord_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_007_clavinet_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_007_clavinet_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_007_clavinet_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_007_clavinet_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_007_clavinet_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_007_clavinet_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_007_clavinet_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_007_clavinet_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_007_clavinet_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_007_clavinet_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_008_celesta_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_008_celesta_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_008_celesta_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_008_celesta_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_008_celesta_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_008_celesta_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_009_glockenspiel_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_009_glockenspiel_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_009_glockenspiel_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_009_glockenspiel_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_009_glockenspiel_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_009_glockenspiel_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_010_music_box[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_010_music_box.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_011_vibraphone_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_011_vibraphone_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_011_vibraphone_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_011_vibraphone_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_011_vibraphone_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_011_vibraphone_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_011_vibraphone_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_011_vibraphone_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_011_vibraphone_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_011_vibraphone_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_012_marimba_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_012_marimba_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_012_marimba_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_012_marimba_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_013_xylophone_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_013_xylophone_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_013_xylophone_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_013_xylophone_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_014_tubular_bells[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_014_tubular_bells.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_015_dulcimer_santur[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_015_dulcimer_santur.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_016_drawbar_organ_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_016_drawbar_organ_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_016_drawbar_organ_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_016_drawbar_organ_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_016_drawbar_organ_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_016_drawbar_organ_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_017_percussive_organ_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_017_percussive_organ_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_017_percussive_organ_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_017_percussive_organ_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_017_percussive_organ_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_017_percussive_organ_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_018_rock_organ_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_018_rock_organ_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_018_rock_organ_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_018_rock_organ_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_018_rock_organ_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_018_rock_organ_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_019_church_organ_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_019_church_organ_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_019_church_organ_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_019_church_organ_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_019_church_organ_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_019_church_organ_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_019_church_organ_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_019_church_organ_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_019_church_organ_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_019_church_organ_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_020_reed_organ_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_020_reed_organ_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_020_reed_organ_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_020_reed_organ_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_020_reed_organ_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_020_reed_organ_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_021_accordion_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_021_accordion_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_021_accordion_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_021_accordion_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_021_accordion_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_021_accordion_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_022_harmonica_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_022_harmonica_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_023_tango_accordion_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_023_tango_accordion_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_023_tango_accordion_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_023_tango_accordion_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_024_acoustic_guitar_nylon_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_024_acoustic_guitar_nylon_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_025_acoustic_guitar_steel_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_025_acoustic_guitar_steel_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_026_electric_guitar_jazz_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_026_electric_guitar_jazz_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_027_electric_guitar_clean_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_027_electric_guitar_clean_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_027_electric_guitar_clean_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_027_electric_guitar_clean_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_027_electric_guitar_clean_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_027_electric_guitar_clean_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_027_electric_guitar_clean_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_027_electric_guitar_clean_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_027_electric_guitar_clean_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_027_electric_guitar_clean_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_028_electric_guitar_muted_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_028_electric_guitar_muted_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_028_electric_guitar_muted_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_028_electric_guitar_muted_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_028_electric_guitar_muted_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_028_electric_guitar_muted_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_8[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_8.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_029_overdriven_guitar_9[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_029_overdriven_guitar_9.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_030_distortion_guitar_8[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_030_distortion_guitar_8.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_031_guitar_harmonics_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_031_guitar_harmonics_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_031_guitar_harmonics_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_031_guitar_harmonics_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_032_acoustic_bass_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_032_acoustic_bass_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_032_acoustic_bass_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_032_acoustic_bass_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_032_acoustic_bass_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_032_acoustic_bass_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_032_acoustic_bass_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_032_acoustic_bass_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_032_acoustic_bass_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_032_acoustic_bass_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_033_electric_bass_finger_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_033_electric_bass_finger_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_033_electric_bass_finger_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_033_electric_bass_finger_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_033_electric_bass_finger_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_033_electric_bass_finger_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_034_electric_bass_pick_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_034_electric_bass_pick_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_034_electric_bass_pick_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_034_electric_bass_pick_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_034_electric_bass_pick_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_034_electric_bass_pick_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_035_fretless_bass_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_035_fretless_bass_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_035_fretless_bass_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_035_fretless_bass_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_035_fretless_bass_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_035_fretless_bass_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_036_slap_bass_31[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_036_slap_bass_31.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_036_slap_bass_43[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_036_slap_bass_43.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_036_slap_bass_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_036_slap_bass_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_037_slap_bass[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_037_slap_bass.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_038_synth_bass1_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_038_synth_bass1_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_038_synth_bass1_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_038_synth_bass1_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_038_synth_bass1_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_038_synth_bass1_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_038_synth_bass1_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_038_synth_bass1_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_039_synth_bass2_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_039_synth_bass2_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_039_synth_bass2_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_039_synth_bass2_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_039_synth_bass2_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_039_synth_bass2_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_040_violin_8[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_040_violin_8.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_042_cello_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_042_cello_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_042_cello_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_042_cello_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_042_cello_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_042_cello_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_042_cello_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_042_cello_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_042_cello_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_042_cello_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_043_contrabass_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_043_contrabass_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_043_contrabass_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_043_contrabass_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_043_contrabass_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_043_contrabass_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_044_tremolo_strings_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_044_tremolo_strings_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_044_tremolo_strings_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_044_tremolo_strings_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_044_tremolo_strings_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_044_tremolo_strings_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_045_pizzicato_strings_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_045_pizzicato_strings_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_045_pizzicato_strings_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_045_pizzicato_strings_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_046_orchestral_harp_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_046_orchestral_harp_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_046_orchestral_harp_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_046_orchestral_harp_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_047_timpani[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_047_timpani.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_050_synth_strings_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_050_synth_strings_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_050_synth_strings_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_050_synth_strings_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_050_synth_strings_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_050_synth_strings_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_052_choir_aahs[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_052_choir_aahs.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_053_voice_oohs_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_053_voice_oohs_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_053_voice_oohs_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_053_voice_oohs_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_053_voice_oohs_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_053_voice_oohs_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_053_voice_oohs_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_053_voice_oohs_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_054_synth_voice_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_054_synth_voice_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_054_synth_voice_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_054_synth_voice_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_055_orchestra_hit[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_055_orchestra_hit.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_056_trumpet_8[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_056_trumpet_8.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_057_trombone_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_057_trombone_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_057_trombone_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_057_trombone_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_057_trombone_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_057_trombone_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_057_trombone_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_057_trombone_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_057_trombone_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_057_trombone_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_058_tuba_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_058_tuba_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_058_tuba_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_058_tuba_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_059_muted_trumpet_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_059_muted_trumpet_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_059_muted_trumpet_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_059_muted_trumpet_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_059_muted_trumpet_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_059_muted_trumpet_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_059_muted_trumpet_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_059_muted_trumpet_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_060_french_horn_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_060_french_horn_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_060_french_horn_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_060_french_horn_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_061_brass_section_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_061_brass_section_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_061_brass_section_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_061_brass_section_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_061_brass_section_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_061_brass_section_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_062_synth_brass1_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_062_synth_brass1_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_062_synth_brass1_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_062_synth_brass1_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_062_synth_brass1_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_062_synth_brass1_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_062_synth_brass1_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_062_synth_brass1_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_062_synth_brass1_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_062_synth_brass1_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_063_synth_brass2_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_063_synth_brass2_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_063_synth_brass2_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_063_synth_brass2_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_063_synth_brass2_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_063_synth_brass2_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_064_soprano_sax_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_064_soprano_sax_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_065_alto_sax_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_065_alto_sax_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_6[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_6.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_066_tenor_sax_7[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_066_tenor_sax_7.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_067_baritone_sax_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_067_baritone_sax_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_067_baritone_sax_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_067_baritone_sax_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_067_baritone_sax_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_067_baritone_sax_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_067_baritone_sax_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_067_baritone_sax_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_067_baritone_sax_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_067_baritone_sax_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_068_oboe_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_068_oboe_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_069_english_horn_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_069_english_horn_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_069_english_horn_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_069_english_horn_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_069_english_horn_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_069_english_horn_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_069_english_horn_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_069_english_horn_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_070_bassoon_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_070_bassoon_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_070_bassoon_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_070_bassoon_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_071_clarinet_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_071_clarinet_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_071_clarinet_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_071_clarinet_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_071_clarinet_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_071_clarinet_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_071_clarinet_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_071_clarinet_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_071_clarinet_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_071_clarinet_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_072_piccolo_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_072_piccolo_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_072_piccolo_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_072_piccolo_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_072_piccolo_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_072_piccolo_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_073_flute_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_073_flute_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_074_recorder_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_074_recorder_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_074_recorder_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_074_recorder_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_074_recorder_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_074_recorder_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_074_recorder_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_074_recorder_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_074_recorder_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_074_recorder_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_075_pan_flute[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_075_pan_flute.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_076_blown_bottle_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_076_blown_bottle_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_076_blown_bottle_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_076_blown_bottle_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_077_shakuhachi_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_077_shakuhachi_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_077_shakuhachi_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_077_shakuhachi_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_077_shakuhachi_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_077_shakuhachi_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_078_whistle_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_078_whistle_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_078_whistle_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_078_whistle_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_078_whistle_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_078_whistle_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_079_ocarina_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_079_ocarina_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_079_ocarina_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_079_ocarina_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_080_lead1_square_5[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_080_lead1_square_5.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_081_lead2_sawtooth_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_081_lead2_sawtooth_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_081_lead2_sawtooth_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_081_lead2_sawtooth_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_081_lead2_sawtooth_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_081_lead2_sawtooth_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_082_lead3_calliope_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_082_lead3_calliope_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_082_lead3_calliope_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_082_lead3_calliope_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_083_lead4_chiff_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_083_lead4_chiff_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_083_lead4_chiff_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_083_lead4_chiff_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_084_lead5_charang_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_084_lead5_charang_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_084_lead5_charang_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_084_lead5_charang_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_085_lead6_voice[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_085_lead6_voice.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_086_lead7_fifths_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_086_lead7_fifths_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_086_lead7_fifths_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_086_lead7_fifths_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_087_lead8_bass_lead_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_087_lead8_bass_lead_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_087_lead8_bass_lead_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_087_lead8_bass_lead_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_087_lead8_bass_lead_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_087_lead8_bass_lead_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_088_pad1_new_age_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_088_pad1_new_age_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_088_pad1_new_age_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_088_pad1_new_age_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_089_pad2_warm_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_089_pad2_warm_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_089_pad2_warm_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_089_pad2_warm_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_090_pad3_polysynth_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_090_pad3_polysynth_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_090_pad3_polysynth_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_090_pad3_polysynth_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_090_pad3_polysynth_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_090_pad3_polysynth_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_090_pad3_polysynth_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_090_pad3_polysynth_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_090_pad3_polysynth_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_090_pad3_polysynth_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_091_pad_4_choir[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_091_pad_4_choir.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_096_fx1_rain[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_096_fx1_rain.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_097_fx2_soundtrack_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_097_fx2_soundtrack_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_097_fx2_soundtrack_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_097_fx2_soundtrack_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_098_fx3_crystal[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_098_fx3_crystal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_099_fx4_atmosphere_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_099_fx4_atmosphere_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_099_fx4_atmosphere_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_099_fx4_atmosphere_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_101_fx_6_goblins[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_101_fx_6_goblins.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_103_fx8_sci_fi_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_103_fx8_sci_fi_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_103_fx8_sci_fi_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_103_fx8_sci_fi_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_104_sistar_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_104_sistar_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_104_sistar_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_104_sistar_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_104_sistar_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_104_sistar_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_105_banjo_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_105_banjo_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_105_banjo_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_105_banjo_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_105_banjo_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_105_banjo_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_106_shamisen_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_106_shamisen_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_106_shamisen_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_106_shamisen_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_106_shamisen_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_106_shamisen_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_106_shamisen_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_106_shamisen_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_107_koto_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_107_koto_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_107_koto_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_107_koto_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_108_kalimba[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_108_kalimba.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_109_bagpipe_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_109_bagpipe_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_109_bagpipe_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_109_bagpipe_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_109_bagpipe_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_109_bagpipe_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_109_bagpipe_3[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_109_bagpipe_3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_109_bagpipe_4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_109_bagpipe_4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_112_tinkle_bell[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_112_tinkle_bell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_113_agogo[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_113_agogo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_114_steel_drums[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_114_steel_drums.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_115_woodblock[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_115_woodblock.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_116_taiko_drum[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_116_taiko_drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_117_melodic_tom[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_117_melodic_tom.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_118_synth_drum[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_118_synth_drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_119_reverse_cymbal[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_119_reverse_cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_120_guitar_fret_noise[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_120_guitar_fret_noise.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_121_breath_noise_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_121_breath_noise_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_121_breath_noise_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_121_breath_noise_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_121_breath_noise_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_121_breath_noise_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_122_seashore[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_122_seashore.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_123_bird_tweet[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_123_bird_tweet.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_124_telephone_ring[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_124_telephone_ring.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_125_helicopter[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_125_helicopter.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_126_applause_0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_126_applause_0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_126_applause_1[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_126_applause_1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_126_applause_2[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_126_applause_2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_127_gunshot[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_127_gunshot.bin");
+
+//--------------------------------------------------------------
+//  Universal Voicegroup FE7 - Drumkit samples
+//--------------------------------------------------------------
+
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_30[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_30.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_31[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_31.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_32[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_32.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_34[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_34.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_35[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_35.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_36[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_36.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_37[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_37.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_38[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_38.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_39[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_39.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_40[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_41[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_41.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_42[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_42.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_43[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_43.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_44[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_44.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_45[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_45.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_46[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_46.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_47[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_47.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_48[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_49[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_49.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_50[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_50_high_tom1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_51[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_51_ride_cymbal.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_52[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_52.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_53[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_53.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_54[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_54.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_55[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_55.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_56[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_56.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_57[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_57.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_58[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_58_vibraslap.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_59[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_60[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_60_hi_bongo[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_60_hi_bongo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_61[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_61_low_bongo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_62_muted_hi_conga[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_62_muted_hi_conga.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_62[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_62.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_63[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_63.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_64[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_64_low_conga.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_66[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_66_low_timbale.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_68[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_68_low_agogo.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_69_cabasa[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_69_cabasa.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_69[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_69.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_70[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_70_maracas.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_71[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_71_short_whistle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_72[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_72_long_whistle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_73[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_73_short_guiro.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_74[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_74_long_guiro.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_75[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_75.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_76[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_76_hi_woodblock.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_77[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_77_lo_woodblock.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_78[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_78_mute_cuica.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_79[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_79_open_cuica.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_80[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_80.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_81[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_81_open_triangle.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_82[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_82_shaker.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_83[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_83_jingle_bell.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_drumkit_84[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_drumkit_84_belltree.bin");
+
+
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111451c[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111451c.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_11152f4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_11152f4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_11158f4[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_11158f4.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111602c[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111602c.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1116654[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1116654.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_11166a8[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_11166a8.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1116b6c[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1116b6c.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1116eec[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1116eec.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1117308[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1117308.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1118d84[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1118d84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_1119710[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_1119710.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111a2b0[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111a2b0.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111a804[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111a804.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111cd78[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111cd78.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_FE7_unk_111f0cc[] = INCBIN_S8("sound/direct_sound_samples/FE7_universal_voicegroup/FE7_unk_111f0cc.bin");
+
+//--------------------------------------------------------------
+//  Acimut's Universal Voicegroup - Instrument samples
+//--------------------------------------------------------------
+
+// PIANO
+
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_51[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM003_HT_Piano_51.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM003_HT_Piano_60.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_74[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM003_HT_Piano_74.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_87[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM003_HT_Piano_87.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_003_Honky_Tonk_Piano_92[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM003_HT_Piano_92.bin");
+
+// CHROMATIC PERCUSION
+
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM008_Celesta_60.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM008_Celesta_72.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM008_Celesta_84.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_008_Celesta_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM008_Celesta_96.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM011_Vibraphone_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM011_Vibraphone_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM011_Vibraphone_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_011_Vibraphone_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM011_Vibraphone_96.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM012_Marinba_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM012_Marinba_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM012_Marinba_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM012_Marinba_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_012_Marimba_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM012_Marinba_96.bin");
+
+// ORGAN
+
+// GUITAR
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_50.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_69.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_76.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM024_Guit_Nylon_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_40[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_50[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_50.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_69[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_69.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_76[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_76.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_025_Acoustic_Guitar_Steel_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM025_Guit_Steel_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_40[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_47[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_47.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_53[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_53.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_67[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_67.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_74[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_74.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_026_Electric_Guitar_Jazz_83[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM026_Guit_Jazz_83.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_42[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_42.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_54[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_54.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_66[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_66.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_78[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_78.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_90[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_90.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_029_Overdriven_Guitar_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM029_Overdriven_96.bin");
+
+// BASS
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_28[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM032_Acous_Bass_28.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_39[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM032_Acous_Bass_39.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_032_Acoustic_Bass_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM032_Acous_Bass_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_33[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM033_BassFinger_33.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_38[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM033_BassFinger_38.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_43[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM033_BassFinger_43.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_56[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM033_BassFinger_56.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_033_Electric_Bass_Finger_62[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM033_BassFinger_62.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_35[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM034_E_BassPick_35.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_45[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM034_E_BassPick_45.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_034_Electric_Bass_Pick_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM034_E_BassPick_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_32[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_32.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_35[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_35.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_44[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_44.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_28[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_28.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_42[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_42.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_54[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_54.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_59.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_36[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_36.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_96.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_24[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_24.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_36[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_36.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_039_Synth_Bass_2_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM039_SynthBass2_84.bin");
+
+// STRINGS
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_28[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_28.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_37[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_37.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_48.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_73[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_73.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_85[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_85.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_045_Pizzicato_Strings_96[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM045_Pizzicato_96.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_047_Timpani_44[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM047_Timpani_44.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_047_Timpani_49[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM047_Timpani_49.bin");
+
+// ENSEMBLE
+
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_41[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM048_String_E1_41.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM048_String_E1_60.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM048_String_E1_72.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_048_String_Ensemble_1_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM048_String_E1_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM055_Orch_Hit_80.bin");
+
+// BRASS
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_57[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_57.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_63[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_63.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_69[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_69.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_75[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_75.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_81[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_81.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_056_Trumpet_87[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM056_Trumpet_87.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_44[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM057_Trombone_44.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_53[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM057_Trombone_53.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM057_Trombone_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_65[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM057_Trombone_65.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_057_Trombone_71[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM057_Trombone_71.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_29[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_29.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_40[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_40.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_47[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_47.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_52[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_52.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_64[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_64.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_058_Tuba_74[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM058_Tuba_74.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM059_M_Trumpet_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_66[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM059_M_Trumpet_66.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_71[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM059_M_Trumpet_71.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_059_Muted_Trumpet_77[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM059_M_Trumpet_77.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_39[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM060_FrenchHorn_39.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_51[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM060_FrenchHorn_51.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_63[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM060_FrenchHorn_63.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_060_French_Horn_75[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM060_FrenchHorn_75.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM061_Brass_Sect_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM061_Brass_Sect_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_061_Brass_Section_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM061_Brass_Sect_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM062_SynthBras1_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM062_SynthBras1_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_062_Synth_Brass_1_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM062_SynthBras1_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_063_Synth_Brass_2_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM063_SynthBras2_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_063_Synth_Brass_2_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM063_SynthBras2_72.bin");
+
+// REED
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM064_SopranoSax_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_66[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM064_SopranoSax_66.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM064_SopranoSax_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_78[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM064_SopranoSax_78.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_064_Soprano_Sax_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM064_SopranoSax_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_52[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_52.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_55[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_55.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_58[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_58.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_61[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_61.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_64[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_64.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_67[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_67.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_70[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_70.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_73[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_73.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_75[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_75.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_78[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_78.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_065_Alto_Sax_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM065_Alto_Sax_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_45[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_45.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_52[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_52.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_57[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_57.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_65[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_65.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_76[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_76.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_066_Tenor_Sax_81[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM066_Tenor_Sax_81.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_37[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_37.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_41[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_41.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_49[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_49.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_53[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_53.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_59.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_067_Baritone_Sax_66[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM067_Barit_Sax_66.bin");
+
+// PIPE
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_61[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM073_Flute_61.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_67[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM073_Flute_67.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_76[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM073_Flute_76.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_85[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM073_Flute_85.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_073_Flute_94[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM073_Flute_94.bin");
+
+// SYNTH LEAD
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM080_L1_Square_60.bin");//AGM080_L1_Square_60_JP8_SQU
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_081_Lead_2_Sawtooth_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM081_L2_Saw_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_082_Lead_3_Calliope_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM082_L3_Calliop_84.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_083_Lead_4_Chiff_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM083_L4_Chiff_84.bin");
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_087_Lead_8_Bass_Lead_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM087_L8BassLead_60.bin");
+
+// SYNTH PAD
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_091_Pad_4_Choir_67[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM091_P4_Choir_67.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_092_Pad_5_Bowed_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM092_P5_Bowed_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_094_Pad_7_Halo_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM094_P7_Halo_84.bin");
+
+// SYNTH EFFECTS
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_096_Fx_1_Rain_72[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM096_FX1_Rain_72.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_097_Fx_2_Soundtrack_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM097_Soundtrack_84.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_099_Fx_4_Atmosphere_84[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM099_Atmosphere_84.bin");
+
+// ETHNIC
+
+// PERCUSIVE
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_113_Agogo_78[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM113_Agogo_78.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_114_Steel_Drums_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM114_SteelDrums_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_115_Woodblock_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM115_Woodblock_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM116_Taiko_Drum_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM117_MelodicTom_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM118_Synth_Drum_60.bin");
+//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM119_ReverseCym_60.bin");
+
+// SOUND EFFECTS
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_120_Guitar_Fret_Noise_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM120_GFretNoise_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_121_Breath_Noise_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM121_BreathNois_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_122_Seashore_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM122_Seashore_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_123_Bird_Tweet_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM123_Bird_Tweet_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_124_Telephone_Ring_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM124_Telephone_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_125_Helicopter_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM125_Helicopter_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_126_Applause_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM126_Applause_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_127_Gunshot_71[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM127_Gunshot_71.bin");
+
