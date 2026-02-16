@@ -34,6 +34,7 @@ enum SpeakerNames {
     SP_NAME_GAMEBOY_CL,
     SP_NAME_ERKEY,
     SP_NAME_MICOLO,
+    SP_NAME_COPE,
     SP_NAME_COUNT
 };
 
