@@ -62,10 +62,10 @@ static bool8 CheckWinWahChallengeXTimes(u8 taskIndex)
 
 static bool8 CheckDefeatAllCollaborators(u8 taskIndex)
 {
-    return FlagGet(FLAG_DEFEATED_LOBBY_KAKTUS) &&
-           FlagGet(FLAG_DEFEATED_LOBBY_ERKEY) &&
-           FlagGet(FLAG_DEFEATED_LOBBY_MICOLO) &&
-           FlagGet(FLAG_DEFEATED_LOBBY_GAMEBOYCL) == sAchievements[taskIndex].target;
+    return FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_KAKTUS) &&
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ERKEY) &&
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_MICOLO) &&
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL) == sAchievements[taskIndex].target;
 }
 
 u8 Achievement_GetCount(void)
