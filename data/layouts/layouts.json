@@ -4320,6 +4320,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Lobby/border.bin",
       "blockdata_filepath": "data/layouts/Lobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_COLLABORATORS_ROOM",
+      "name": "CollaboratorsRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_omega",
+      "border_filepath": "data/layouts/CollaboratorsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/CollaboratorsRoom/map.bin"
     }
   ]
 }

@@ -15,12 +15,12 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_LOBBY_POLICE",
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "local_id": "LOCALID_LOBBY_COPE",
+      "graphics_id": "OBJ_EVENT_GFX_COPE",
       "x": 5,
       "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -81,45 +81,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
-      "x": 9,
-      "y": 9,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Lobby_EventScript_Kaktus",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 8,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Lobby_EventScript_Gameboycl",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 10,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Lobby_EventScript_Erkey",
-      "flag": "0"
-    },
-    {
       "local_id": "LOCALID_LOBBY_FAKEMON_SAGE",
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
       "x": 11,
@@ -132,32 +93,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Lobby_EventScript_FakemonDexMenu",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
-      "x": 8,
-      "y": 11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Lobby_EventScript_Micolo",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(LILLIPUP)",
-      "x": 8,
-      "y": 12,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Lobby_EventScript_Lillipup",
-      "flag": "0"
     }
   ],
   "warp_events": [
@@ -168,6 +103,20 @@
       "elevation": 0,
       "dest_map": "MAP_LOBBY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_COLLABORATORS_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_COLLABORATORS_ROOM",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

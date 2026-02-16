@@ -1282,3 +1282,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/HallOfFame/scripts.inc"
 
 	.include "data/maps/Lobby/scripts.inc"
+
+	.include "data/maps/CollaboratorsRoom/scripts.inc"
