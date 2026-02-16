@@ -6,5 +6,6 @@ u8 Achievement_GetCount(void);
 const u8 *Achievement_GetTitle(u8 index);
 const u8 *Achievement_GetDescription(u8 index);
 bool8 Achievement_IsComplete(u8 index);
+bool8 Achievement_CheckAndMarkComplete(u8 id);
 
 #endif // GUARD_ACHIEVEMENTS_H

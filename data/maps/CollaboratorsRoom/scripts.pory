@@ -36,6 +36,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -122,6 +123,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_EAST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -211,6 +213,7 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Erkey_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_WEST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -295,6 +298,7 @@ text CollaboratorsRoom_Text_Micolo_ChoosePokemon {
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_EAST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     releaseall
     end
 }

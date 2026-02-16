@@ -74,24 +74,26 @@ HallOfFame_OnFrame::
 # 40 "data/maps/HallOfFame/scripts.pory"
 	call HallOfFame_EventScript_SetGameClearFlags
 # 41 "data/maps/HallOfFame/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 24
+	call Achievements_EventScript_Eval_WinWahChallenge
 # 42 "data/maps/HallOfFame/scripts.pory"
-	special GameClear
+	fadescreenspeed FADE_TO_BLACK, 24
 # 43 "data/maps/HallOfFame/scripts.pory"
-	waitstate
+	special GameClear
 # 44 "data/maps/HallOfFame/scripts.pory"
+	waitstate
+# 45 "data/maps/HallOfFame/scripts.pory"
 	releaseall
 	end
 
 
 HallOfFame_EventScript_SetGameClearFlags::
-# 49 "data/maps/HallOfFame/scripts.pory"
-	call EventScript_ClearWahAdminFlags
 # 50 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_WAH_CHALLENGE_COMPLETED
+	call EventScript_ClearWahAdminFlags
 # 51 "data/maps/HallOfFame/scripts.pory"
-	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
+	setflag FLAG_WAH_CHALLENGE_COMPLETED
 # 52 "data/maps/HallOfFame/scripts.pory"
+	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
+# 53 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 
