@@ -9,14 +9,35 @@ script Lobby_OnTransition {
 
 script Lobby_EventScript_StartChallenge {
     lock
-    applymovementandwait(LOCALID_LOBBY_POLICE, Common_Movement_FacePlayer)
-    msgbox(format("Pendiente textos, ¿empezar desafío?"), MSGBOX_YESNO)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_FacePlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¡Hola {PLAYER}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    delay(20)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¿Así que ya estás list{OA} para intentar el desafío?"), MSGBOX_YESNO, speaker = SP_NAME_COPE)
+    waitmovement(0)
+    closemessage
+    delay(10)
     if(var(VAR_RESULT) == YES) {
+        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+        msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        turnobject(LOCALID_PLAYER, DIR_NORTH)
+        call(WahRoomsShared_OpenDoor)
+        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+        hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
         warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
         waitstate
     } else {
+        playse(SE_PIN)
+        applymovement(LOCALID_LOBBY_COPE, Common_Movement_SurpriseWithDelay48)
+        msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        waitmovement(0)
+        delay(20)
+        msgbox(format("Recuerda que las personas del Lobby pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
         applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
-        turnobject(LOCALID_LOBBY_POLICE, DIR_SOUTH)
+        turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
     }
     release
     end
