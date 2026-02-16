@@ -357,7 +357,7 @@ Bold Nature
 - Toxic
 - Synthesis
 
-Swampert-Mega @ Swampertite
+Swampert @ Swampertite
 Ability: Swift Swim
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
@@ -902,7 +902,7 @@ Timid Nature
 - Dark Pulse
 - Sludge Bomb
 
-Zacian @ Rusted Sword
+Zacian @ Choice Scarf
 EVs: 252 Atk / 252 Spe / 4 HP
 Adamant Nature
 - Behemoth Blade
@@ -2195,8 +2195,31 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Torkoal @ Heat Rock
+Ability: Drought
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
+
+Infernape @ Leftovers
+Ability: Iron Fist
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fire Punch
+- Mach Punch
+- Thunder Punch
+- Protect
+
+Groudon @ Red Orb
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Lava Plume
+- Rock Slide
+- Heat Crash
 
 === TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
 Name: Javi4315
@@ -2207,8 +2230,30 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Hydro pump
+- Scald
+- Roost
+
+Wailord @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Water Spout
+- Scald
+- Aqua Ring
+- Rain Dance
+
+Kyogre @ Blue Orb
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Thunder
+- Ice Beam
 
 === TRAINER_WAH_ADMIN_JAVS_MAIN ===
 Name: Javs
@@ -2219,8 +2264,31 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Shiftry @ Life Orb
+Ability: Chlorophyll
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Solar Blade
+- Leaf Blade
+- Fake Out
+- Knock Off
+
+Exeggutor @ Leftovers
+Ability: Chlorophyll
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Solar Beam
+- Energy Ball
+- Psychic
+- Sludge Bomb
+
+Venusaur @ Venusaurite
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Solar Beam
+- Leech Seed
+- Synthesis
+- Giga Drain
 
 === TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE ===
 Name: Javs
@@ -2231,8 +2299,31 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 
-Magikarp
-Level: 1
+Toxicroak @ Black Sludge
+Ability: Dry Skin
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Poison Jab
+- Thunder Punch
+- Sucker Punch
+
+Kingdra @ Choice Specs
+Ability: Swift Swim
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Scald
+- Dragon Pulse
+- Sludge Bomb
+- Ice Beam
+
+Swampert @ Swampertite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Drain Punch
 
 === TRAINER_WAH_ADMIN_SERGIO_MAIN ===
 Name: Sergio
@@ -2605,7 +2696,6 @@ Double Battle: No
 AI: Smart Trainer
 
 Ludicolo @ Assault Vest
-Level: 50
 Ability: Swift Swim
 EVs: 4 HP / 252 SpA / 252 Spe
 Modest Nature
