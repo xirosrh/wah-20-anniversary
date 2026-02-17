@@ -731,3 +731,8 @@ script JackJohnsonRoom_EventScript_NPC4 {
     msgbox(format("¡Quiero ir a dormir!"), MSGBOX_AUTOCLOSE)
     end
 }
+
+script JackJohnsonRoom_EventScript_BrockPoster {
+    msgbox(format("Es un poster con una foto de Oscar Brock.\p¿Realmente tiene esos músculos o será Photoshop?"), MSGBOX_SIGN)
+    end
+}
