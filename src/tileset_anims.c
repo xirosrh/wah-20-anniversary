@@ -1852,12 +1852,31 @@ const u16 *const gTilesetAnims_EingRoom_Water[] = {
 
 static void QueueAnimTiles_EingRoom_Water(u16 timer) {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_EingRoom_Water);
-    AppendTilesetAnimToBuffer(gTilesetAnims_EingRoom_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 14 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_EingRoom_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 52)), 14 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_EingRoom_Rocks_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/rocks/00.4bpp");
+const u16 gTilesetAnims_EingRoom_Rocks_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/rocks/01.4bpp");
+const u16 gTilesetAnims_EingRoom_Rocks_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/rocks/02.4bpp");
+
+const u16 *const gTilesetAnims_EingRoom_Rocks[] = {
+    gTilesetAnims_EingRoom_Rocks_Frame0,
+    gTilesetAnims_EingRoom_Rocks_Frame1,
+    gTilesetAnims_EingRoom_Rocks_Frame0,
+    gTilesetAnims_EingRoom_Rocks_Frame2,
+};
+
+static void QueueAnimTiles_EingRoom_Rocks(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_EingRoom_Rocks);
+    AppendTilesetAnimToBuffer(gTilesetAnims_EingRoom_Rocks[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 52 * TILE_SIZE_4BPP);
 }
 
 static void TilesetAnim_EingRoom(u16 timer) {
     if (timer % 16 == 0) {
         QueueAnimTiles_EingRoom_Water(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_EingRoom_Rocks(timer / 16);
     }
 }
 
