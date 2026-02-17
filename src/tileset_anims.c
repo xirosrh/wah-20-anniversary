@@ -1827,3 +1827,42 @@ void InitTilesetAnim_CosararaRoom(void) {
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_CosararaRoom;
 }
+
+const u16 gTilesetAnims_EingRoom_Water_Frame0[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/00.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame1[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/01.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame2[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/02.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame3[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/03.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame4[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/04.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame5[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/05.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame6[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/06.4bpp");
+const u16 gTilesetAnims_EingRoom_Water_Frame7[] = INCBIN_U16("data/tilesets/secondary/room_eing/anim/water/07.4bpp");
+
+
+
+const u16 *const gTilesetAnims_EingRoom_Water[] = {
+    gTilesetAnims_EingRoom_Water_Frame0,
+    gTilesetAnims_EingRoom_Water_Frame1,
+    gTilesetAnims_EingRoom_Water_Frame2,
+    gTilesetAnims_EingRoom_Water_Frame3,
+    gTilesetAnims_EingRoom_Water_Frame4,
+    gTilesetAnims_EingRoom_Water_Frame5,
+    gTilesetAnims_EingRoom_Water_Frame6,
+    gTilesetAnims_EingRoom_Water_Frame7,
+};
+
+static void QueueAnimTiles_EingRoom_Water(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_EingRoom_Water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_EingRoom_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 14 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_EingRoom(u16 timer) {
+    if (timer % 16 == 0) {
+        QueueAnimTiles_EingRoom_Water(timer / 16);
+    }
+}
+
+void InitTilesetAnim_EingRoom(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_EingRoom;
+}

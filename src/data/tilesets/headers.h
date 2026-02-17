@@ -1015,5 +1015,5 @@ const struct Tileset gTileset_room_eing =
     .palettes = gTilesetPalettes_room_eing,
     .metatiles = gMetatiles_room_eing,
     .metatileAttributes = gMetatileAttributes_room_eing,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EingRoom,
 };
