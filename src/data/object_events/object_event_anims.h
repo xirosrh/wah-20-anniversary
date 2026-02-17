@@ -1191,18 +1191,18 @@ static const union AnimCmd sAnim_EingFishingWest[] =
     ANIMCMD_FRAME(3, 4),
     ANIMCMD_FRAME(4, 52),
     //hooked
-    ANIMCMD_FRAME(3, 6),
     ANIMCMD_FRAME(4, 6),
-    ANIMCMD_FRAME(3, 6),
-    ANIMCMD_FRAME(4, 6),
-    ANIMCMD_FRAME(3, 4),
-    ANIMCMD_FRAME(4, 4),
-    //trainer appears
     ANIMCMD_FRAME(5, 6),
+    ANIMCMD_FRAME(4, 6),
+    ANIMCMD_FRAME(5, 6),
+    ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(5, 4),
+    //trainer appears
     ANIMCMD_FRAME(6, 6),
     ANIMCMD_FRAME(7, 6),
     ANIMCMD_FRAME(8, 6),
-    ANIMCMD_FRAME(9, 8),
+    ANIMCMD_FRAME(9, 6),
+    ANIMCMD_FRAME(10, 8),
     ANIMCMD_END,
 };
 

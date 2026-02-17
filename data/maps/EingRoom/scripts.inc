@@ -76,13 +76,13 @@ EingRoom_OnFrame::
 # 45 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
 # 46 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_0
+	msgbox EingRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 47 "data/maps/EingRoom/scripts.pory"
 	playse SE_PIN
 # 48 "data/maps/EingRoom/scripts.pory"
 	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_0
 # 49 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 50 "data/maps/EingRoom/scripts.pory"
 	waitmovement 0
 # 51 "data/maps/EingRoom/scripts.pory"
@@ -94,9 +94,9 @@ EingRoom_OnFrame::
 # 54 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_2
 # 55 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 56 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
 # 57 "data/maps/EingRoom/scripts.pory"
 	hideobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
 # 58 "data/maps/EingRoom/scripts.pory"
@@ -122,15 +122,15 @@ EingRoom_OnFrame::
 # 68 "data/maps/EingRoom/scripts.pory"
 	playse SE_PIN
 # 69 "data/maps/EingRoom/scripts.pory"
-	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
+	applymovement LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_4
 # 70 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 71 "data/maps/EingRoom/scripts.pory"
 	delay 30
 # 72 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_FaceRight
 # 73 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 74 "data/maps/EingRoom/scripts.pory"
 	turnobject LOCALID_EINGROOM_EING, DIR_WEST
 # 75 "data/maps/EingRoom/scripts.pory"
@@ -160,7 +160,7 @@ EingRoom_EventScript_Eing::
 # 95 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_0
 # 101 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_1, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_EventScript_Eing_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 102 "data/maps/EingRoom/scripts.pory"
 	playse SE_PIN
 # 103 "data/maps/EingRoom/scripts.pory"
@@ -170,7 +170,7 @@ EingRoom_EventScript_Eing::
 # 105 "data/maps/EingRoom/scripts.pory"
 	delay 40
 # 106 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_2, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_EventScript_Eing_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 107 "data/maps/EingRoom/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 108 "data/maps/EingRoom/scripts.pory"
@@ -180,7 +180,7 @@ EingRoom_EventScript_Eing::
 # 110 "data/maps/EingRoom/scripts.pory"
 	applymovement LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_1
 # 115 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_3, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_EventScript_Eing_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 116 "data/maps/EingRoom/scripts.pory"
 	waitmovement 0
 # 117 "data/maps/EingRoom/scripts.pory"
@@ -192,7 +192,7 @@ EingRoom_EventScript_Eing::
 # 124 "data/maps/EingRoom/scripts.pory"
 	call EingRoom_EventScript_JumpToPlayerDirection
 # 125 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_4, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_EventScript_Eing_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 126 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Versus
 # 127 "data/maps/EingRoom/scripts.pory"
@@ -202,9 +202,9 @@ EingRoom_EventScript_Eing::
 # 129 "data/maps/EingRoom/scripts.pory"
 	call EingRoom_EventScript_EingBattle
 # 130 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_5
+	msgbox EingRoom_EventScript_Eing_Text_5, speaker = SP_NAME_EING
 # 131 "data/maps/EingRoom/scripts.pory"
-	call PokemonLeague_EliteFour_OpenRoomDoorMetatiles
+	call WahRoomsShared_OpenDoor
 # 132 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
 # 133 "data/maps/EingRoom/scripts.pory"
@@ -217,7 +217,7 @@ EingRoom_EventScript_Eing_2:
 # 88 "data/maps/EingRoom/scripts.pory"
 	applymovement LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48
 # 89 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_0, MSGBOX_AUTOCLOSE
+	msgbox EingRoom_EventScript_Eing_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 90 "data/maps/EingRoom/scripts.pory"
 	waitmovement 0
 # 91 "data/maps/EingRoom/scripts.pory"
@@ -371,8 +371,16 @@ EingRoom_OnFrame_Movement_2:
 	delay_16
 	step_end
 
-# 69 "data/maps/EingRoom/scripts.pory"
+# 56 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_3:
+# 56 "data/maps/EingRoom/scripts.pory"
+	walk_left
+# 56 "data/maps/EingRoom/scripts.pory"
+	walk_in_place_left
+	step_end
+
+# 69 "data/maps/EingRoom/scripts.pory"
+EingRoom_OnFrame_Movement_4:
 # 69 "data/maps/EingRoom/scripts.pory"
 	emote_angry
 # 69 "data/maps/EingRoom/scripts.pory"

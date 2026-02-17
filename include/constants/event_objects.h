@@ -465,6 +465,7 @@
 #define OBJ_EVENT_PAL_TAG_ANGEL                  0x114E
 #define OBJ_EVENT_PAL_TAG_MRNIGHTOLOGY          0x114F
 #define OBJ_EVENT_PAL_TAG_COPE                  0x1170
+#define OBJ_EVENT_PAL_TAG_EING_FISHING          0x1171
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
