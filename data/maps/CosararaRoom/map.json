@@ -2,7 +2,7 @@
   "id": "MAP_COSARARA_ROOM",
   "name": "CosararaRoom",
   "layout": "LAYOUT_COSARARA_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_FACTORY",
   "region_map_section": "MAPSEC_COSARARA_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
