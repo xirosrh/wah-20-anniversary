@@ -1,3 +1,39 @@
+gText_GirlOrBoy::
+	.string "¿Eres chica o chico?$"
+
+gText_SoItsPlayer::
+	.string "¿Así que eres {PLAYER}?$"
+
+gText_Cope_YesNo::
+	.string "▶Sí\n{CLEAR_TO 8}No$"
+
+gText_Cope_NoYes::
+	.string "{CLEAR_TO 8}Sí\n▶No$"
+
+gText_Choose_Difficulty::
+	.string "Selecciona la Dificultad$"
+
+gText_Cope_Easy::
+	.string "Fácil$"
+
+gText_Cope_Normal::
+	.string "Normal$"
+
+gText_Cope_Hard::
+	.string "Difícil$"
+
+gText_Easy_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Fácil$"
+
+gText_Normal_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Normal$"
+
+gText_Hard_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Difícil$"
+
 gText_Cope_Welcome::
 	.string "Ah... genial.\n"
 	.string "Otro entrenador con ganas de ser\l"
@@ -48,6 +84,10 @@ gText_Cope_ExplainChalenge::
 	.string "desde el más allá.\p"
 	.string "Si no... bueno, siempre puedes culpar\n"
 	.string "al RNG.\p"
+	.string "¡Primero que nada elige tu equipo\n"
+	.string "Pokémon!$"
+
+gText_Cope_Farewell::
 	.string "¡Venga, que la torre no se va a\n"
 	.string "subir sola!$"
 
