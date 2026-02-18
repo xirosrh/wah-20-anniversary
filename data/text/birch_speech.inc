@@ -77,6 +77,13 @@ gText_Cope_ExplainChalenge::
 	.string "Si lo consigues, la puerta hacia la\n"
 	.string "siguiente sala se abrirá.\l"
 	.string "Prometido.\p"
+	.string "Ahora que ya sabes de qué trata...\n"
+	.string "¡Elige a tu equipo Pokémon!{PAUSE_UNTIL_PRESS}$"
+
+	
+
+gText_Cope_Farewell::
+	.string "¡Buena elección!\n"
 	.string "Solo puedo desearte mucha suerte.\p"
 	.string "Espero que nos des un buen espectáculo\n"
 	.string "y llegues a la cima; ten en cuenta que\l"
@@ -84,10 +91,6 @@ gText_Cope_ExplainChalenge::
 	.string "desde el más allá.\p"
 	.string "Si no... bueno, siempre puedes culpar\n"
 	.string "al RNG.\p"
-	.string "¡Primero que nada elige tu equipo\n"
-	.string "Pokémon!$"
-
-gText_Cope_Farewell::
 	.string "¡Venga, que la torre no se va a\n"
 	.string "subir sola!$"
 
