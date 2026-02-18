@@ -748,6 +748,328 @@ CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer_6:
 	goto CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
 
 
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle::
+# 414 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 415 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 416 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Movement_0
+# 417 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 418 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 419 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 420 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Movement_1
+# 421 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 422 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+	return
+
+
+CollaboratorsRoom_EventScript_MrNightology_IntroRematch::
+# 427 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_MRNIGHTOLOGY
+# 428 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 429 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne CollaboratorsRoom_EventScript_MrNightology_IntroRematch_1
+# 434 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 435 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_MrNightology_IntroRematch_1:
+# 430 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_1, speaker = SP_NAME_MRNIGHTOLOGY
+	return
+
+
+CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent::
+# 440 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_SOUTH
+# 441 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+	end
+
+
+CollaboratorsRoom_EventScript_MrNightology::
+# 446 "data/maps/CollaboratorsRoom/scripts.pory"
+	lock
+# 447 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_MrNightology_1
+# 555 "data/maps/CollaboratorsRoom/scripts.pory"
+	faceplayer
+# 556 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 557 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 558 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_9
+# 559 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 560 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 561 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 562 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_10
+# 563 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 564 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 565 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_MrNightology_1:
+# 448 "data/maps/CollaboratorsRoom/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 449 "data/maps/CollaboratorsRoom/scripts.pory"
+	switch VAR_RESULT
+# 450 "data/maps/CollaboratorsRoom/scripts.pory"
+	case DIR_WEST, CollaboratorsRoom_EventScript_MrNightology_6
+# 455 "data/maps/CollaboratorsRoom/scripts.pory"
+	case DIR_EAST, CollaboratorsRoom_EventScript_MrNightology_7
+CollaboratorsRoom_EventScript_MrNightology_4:
+# 462 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY, CollaboratorsRoom_EventScript_MrNightology_9
+# 466 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle
+CollaboratorsRoom_EventScript_MrNightology_8:
+# 469 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 470 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_2
+# 471 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_POKENAV_ON
+# 472 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 473 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_3
+# 474 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 475 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_POKENAV_HANG_UP
+# 476 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 477 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 478 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_WARP_OUT
+# 479 "data/maps/CollaboratorsRoom/scripts.pory"
+	setobjectxy LOCALID_COLLABORATORS_ROOM_REONEKY, 9, 3
+# 480 "data/maps/CollaboratorsRoom/scripts.pory"
+	setobjectxy LOCALID_COLLABORATORS_ROOM_ABRA, 10, 3
+# 481 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
+# 482 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1
+# 483 "data/maps/CollaboratorsRoom/scripts.pory"
+	showobjectat LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM
+# 484 "data/maps/CollaboratorsRoom/scripts.pory"
+	showobjectat LOCALID_COLLABORATORS_ROOM_ABRA, MAP_COLLABORATORS_ROOM
+# 485 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH
+# 486 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject LOCALID_COLLABORATORS_ROOM_ABRA, DIR_SOUTH
+# 487 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+# 488 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 489 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
+# 490 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2
+# 491 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+# 492 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 493 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY
+# 494 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_SPECIES ( ABRA )
+# 495 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+# 496 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY
+# 497 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_EventScript_MrNightology_Movement_4
+# 498 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY
+# 499 "data/maps/CollaboratorsRoom/scripts.pory"
+	playmoncry SPECIES_ABRA, CRY_MODE_NORMAL
+# 500 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmoncry
+# 501 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_WARP_IN
+# 502 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2
+# 503 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+# 504 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 505 "data/maps/CollaboratorsRoom/scripts.pory"
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1
+# 506 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+# 507 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 508 "data/maps/CollaboratorsRoom/scripts.pory"
+	setobjectxy LOCALID_COLLABORATORS_ROOM_ABRA, 10, -3
+# 509 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 510 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_EventScript_MrNightology_Movement_5
+# 511 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_4, MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY
+# 512 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 513 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 514 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement LOCALID_COLLABORATORS_ROOM_REONEKY, Common_Movement_VersusWithDelay48
+# 515 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 516 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmovement 0
+# 517 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 518 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 519 "data/maps/CollaboratorsRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_KAKTUS, CollaboratorsRoom_EventScript_MrNightology_Text_5
+# 520 "data/maps/CollaboratorsRoom/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 521 "data/maps/CollaboratorsRoom/scripts.pory"
+	special GetBattleOutcome
+# 522 "data/maps/CollaboratorsRoom/scripts.pory"
+	special HealPlayerParty
+# 523 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq CollaboratorsRoom_EventScript_MrNightology_13
+# 544 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 545 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 546 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 547 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 548 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 549 "data/maps/CollaboratorsRoom/scripts.pory"
+	setobjectxy LOCALID_COLLABORATORS_ROOM_REONEKY, 9, -3
+# 550 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+CollaboratorsRoom_EventScript_MrNightology_12:
+# 552 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_MrNightology_6:
+# 451 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 452 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, CollaboratorsRoom_EventScript_MrNightology_Movement_0
+# 453 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	goto CollaboratorsRoom_EventScript_MrNightology_4
+
+CollaboratorsRoom_EventScript_MrNightology_7:
+# 456 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 457 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, CollaboratorsRoom_EventScript_MrNightology_Movement_1
+# 458 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	goto CollaboratorsRoom_EventScript_MrNightology_4
+
+CollaboratorsRoom_EventScript_MrNightology_9:
+# 463 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_MrNightology_IntroRematch
+	goto CollaboratorsRoom_EventScript_MrNightology_8
+
+CollaboratorsRoom_EventScript_MrNightology_13:
+# 524 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_M_EXPLOSION
+# 525 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, CollaboratorsRoom_Movement_MrNightology_Despegue
+# 526 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_Movement_MrNightology_Despegue
+# 527 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmovement 0
+# 528 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 529 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_6, MSGBOX_AUTOCLOSE_TOP
+# 530 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_FALL
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_6
+# 532 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 533 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 534 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_7, MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY
+# 535 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 536 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 537 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_7
+# 538 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_8
+# 540 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 541 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY
+	goto CollaboratorsRoom_EventScript_MrNightology_12
+
+
+# 569 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_Movement_MrNightology_Despegue:
+# 570 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_left
+# 571 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_4
+# 572 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_down
+# 573 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_4
+# 574 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_right
+# 575 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_4
+# 576 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_up
+# 578 "data/maps/CollaboratorsRoom/scripts.pory"
+	step_end
+
 # 78 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_Kaktus_Movement_0:
 # 78 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -788,6 +1110,116 @@ CollaboratorsRoom_EventScript_Micolo_Movement_0:
 	face_player
 # 373 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay_16
+	step_end
+
+# 416 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Movement_0:
+# 416 "data/maps/CollaboratorsRoom/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 420 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Movement_1:
+# 420 "data/maps/CollaboratorsRoom/scripts.pory"
+	emote_sweat_drop
+	step_end
+
+# 452 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_0:
+# 452 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_down
+# 452 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_left
+# 452 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_up
+	step_end
+
+# 457 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_1:
+# 457 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_down
+# 457 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_right
+# 457 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_up
+	step_end
+
+# 470 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_2:
+# 470 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_up
+	step_end
+
+# 473 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_3:
+# 473 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_up
+	step_end
+
+# 497 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_4:
+# 497 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_right
+	step_end
+
+# 510 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_5:
+# 510 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_6:
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	face_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+# 531 "data/maps/CollaboratorsRoom/scripts.pory"
+	slide_down
+	step_end
+
+# 537 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_7:
+# 537 "data/maps/CollaboratorsRoom/scripts.pory"
+	emote_question_mark
+	step_end
+
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_8:
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_right
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_16
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_left
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_16
+# 539 "data/maps/CollaboratorsRoom/scripts.pory"
+	walk_in_place_down
+	step_end
+
+# 558 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_9:
+# 558 "data/maps/CollaboratorsRoom/scripts.pory"
+	emote_sad
+	step_end
+
+# 562 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_MrNightology_Movement_10:
+# 562 "data/maps/CollaboratorsRoom/scripts.pory"
+	emote_annoyed
 	step_end
 
 CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle_Text_0:
@@ -1022,6 +1454,109 @@ CollaboratorsRoom_EventScript_Micolo_Text_8:
 CollaboratorsRoom_EventScript_Lillipup_Text_0:
 # 385 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Pup, pup, pup.$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_0:
+# 414 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Buscas problemas?\n"
+	.string "¡Pues escucha nuestro lema!$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_1:
+# 418 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Uy, me he equivocado!$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_2:
+# 422 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Perdona, es la costumbre jeje...\p"
+	.string "Bueno, por lo que veo has completado el\n"
+	.string "desafío. ¡Enhorabuena!\p"
+	.string "Pero... ¡será por poco tiempo!\n"
+	.string "¡Ha llegado el momento de ponerte a\l"
+	.string "prueba una vez más!$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_0:
+# 427 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Tú otra vez! ¿Te has quedado con ganas\n"
+	.string "de más?$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_1:
+# 430 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Já! Si ya me lo imaginaba...$"
+
+CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_2:
+# 434 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿No?\n"
+	.string "Bueno... Ya volverás.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_0:
+# 469 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Tengo un plan genial para derrotarte y\n"
+	.string "para eso lucharé con un amigo.\p"
+	.string "Así que...\n"
+	.string "¡Que aparezca el invitado especial!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_1:
+# 474 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Estás con Abra?\n"
+	.string "¿Sí? Genial.\p"
+	.string "¡Vente p'acá!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_2:
+# 496 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Aquí estoy!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_3:
+# 498 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Ya te puedes ir, Abra.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_4:
+# 511 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Prepárate para luchar!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_5:
+# 519 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Qué? ¡Pero si era un plan genial!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_6:
+# 529 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡El Team Rocket despega de\n"
+	.string "nuevooooo...!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_7:
+# 534 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Vaya aterrizaje!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_8:
+# 540 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Y ReoNeky?\n"
+	.string "Espero que haya aterrizado en su sala.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_9:
+# 544 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Has hecho todo lo que has podido, pero\n"
+	.string "no es suficiente.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_10:
+# 547 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Dale una vuelta a tu estrategia y...\p"
+	.string "¡No nos hagas esperar mucho para la\n"
+	.string "revancha!$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_11:
+# 556 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Ay, si te contase...\p"
+	.string "La Beta 1 de mi hack la publiqué en 2010\n"
+	.string "y 15 años después, conseguí acabarlo.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_12:
+# 560 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Una larga travesía para que al final, la\n"
+	.string "gente te pregunte cuál es el cheat de\l"
+	.string "los caramelos infinitos.$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_13:
+# 564 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Te parece normal?\n"
+	.string "En fin... La vida del romhacker.$"
 
 CollaboratorsRoom_Text_Gameboycl_OnDefeat::
 # 178 "data/maps/CollaboratorsRoom/scripts.pory"
