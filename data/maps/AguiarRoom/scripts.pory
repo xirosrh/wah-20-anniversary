@@ -80,14 +80,18 @@ script AguiarRoom_EventScript_Aguiar {
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_FACE_DOWN)
     faceplayer
     msgbox(format("¡Pero mírate! Al final has llegado hasta aquí.\pY yo que pensaba que iba a pasarme el día tirado, con el cigarro y poco más…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
-    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    playse(SE_REPEL)
+    waitmovement(0)
     delay(20)
     msgbox(format("No esperaba visitas, pero oye, me viene de lujo: así me entretengo un rato."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
     msgbox(format("Aquí todos se lo toman tan en serio, como si esto fuese cuestión de vida o muerte.\pYo prefiero reírme, dar un par de caladas, y ver qué trae el que se planta delante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
-    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    playse(SE_REPEL)
+    waitmovement(0)
     delay(20)
     msgbox(format("No te voy a dar discursos épicos ni consejos de abuelo, que para eso hay otros.\p
                 Si quieres pelear, perfecto. Si pierdo, pues nada, me enciendo otro.\p
@@ -102,7 +106,9 @@ script AguiarRoom_EventScript_Aguiar {
     call(AguiarRoom_EventScript_AguiarBattle)
     delay(10)
     msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
-    applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
+    playse(SE_REPEL)
+    waitmovement(0)
     delay(20)
     msgbox(format("No está mal, no está nada mal. Ya puedes seguir avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     call(WahRoomsShared_OpenDoor)
