@@ -1,3 +1,39 @@
+gText_GirlOrBoy::
+	.string "¿Eres chica o chico?$"
+
+gText_SoItsPlayer::
+	.string "¿Así que eres {PLAYER}?$"
+
+gText_Cope_YesNo::
+	.string "▶Sí\n{CLEAR_TO 8}No$"
+
+gText_Cope_NoYes::
+	.string "{CLEAR_TO 8}Sí\n▶No$"
+
+gText_Choose_Difficulty::
+	.string "Selecciona la Dificultad$"
+
+gText_Cope_Easy::
+	.string "Fácil$"
+
+gText_Cope_Normal::
+	.string "Normal$"
+
+gText_Cope_Hard::
+	.string "Difícil$"
+
+gText_Easy_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Fácil$"
+
+gText_Normal_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Normal$"
+
+gText_Hard_Description::
+	.string "Descripción de dificultad :\n"
+	.string "Difícil$"
+
 gText_Cope_Welcome::
 	.string "Ah... genial.\n"
 	.string "Otro entrenador con ganas de ser\l"
@@ -41,6 +77,13 @@ gText_Cope_ExplainChalenge::
 	.string "Si lo consigues, la puerta hacia la\n"
 	.string "siguiente sala se abrirá.\l"
 	.string "Prometido.\p"
+	.string "Ahora que ya sabes de qué trata...\n"
+	.string "¡Elige a tu equipo Pokémon!{PAUSE_UNTIL_PRESS}$"
+
+	
+
+gText_Cope_Farewell::
+	.string "¡Buena elección!\n"
 	.string "Solo puedo desearte mucha suerte.\p"
 	.string "Espero que nos des un buen espectáculo\n"
 	.string "y llegues a la cima; ten en cuenta que\l"

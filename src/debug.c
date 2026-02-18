@@ -4112,6 +4112,7 @@ static void DebugAction_Party_HealParty(u8 taskId)
 static void DebugAction_Party_TeamSelector(u8 taskId)
 {
     Debug_DestroyMenu_Full(taskId);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
     StartTeamSelector_CB2();
 }
 
