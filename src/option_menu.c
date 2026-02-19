@@ -73,9 +73,10 @@ static void DrawBgWindowFrames(void);
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 
 static const u8 gText_Option[]             = _("Opciones");
-static const u8 gText_TextSpeedSlow[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}  I  ");
-static const u8 gText_TextSpeedMid[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}  II  ");
-static const u8 gText_TextSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN} III ");
+static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Lento");
+static const u8 gText_TextSpeedMid[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Medio");
+static const u8 gText_TextSpeedFast[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Rápido");
+static const u8 gText_TextSpeedInstant[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Instantáneo");
 static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Sí");
 static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}No");
 static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Cambiar");
@@ -245,6 +246,8 @@ void CB2_InitOptionMenu(void)
 
         gTasks[taskId].tMenuSelection = 0;
         gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+        if (gTasks[taskId].tTextSpeed > OPTIONS_TEXT_SPEED_INSTANT)
+            gTasks[taskId].tTextSpeed = OPTIONS_TEXT_SPEED_FAST;
         gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
         gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
@@ -395,7 +398,7 @@ static void HighlightOptionMenuItem(u8 index)
 
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
 {
-    u8 dst[16];
+    u8 dst[32];
     u16 i;
 
     for (i = 0; *text != EOS && i < ARRAY_COUNT(dst) - 1; i++)
@@ -415,7 +418,7 @@ static u8 TextSpeed_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
-        if (selection <= 1)
+        if (selection < OPTIONS_TEXT_SPEED_INSTANT)
             selection++;
         else
             selection = 0;
@@ -427,34 +430,31 @@ static u8 TextSpeed_ProcessInput(u8 selection)
         if (selection != 0)
             selection--;
         else
-            selection = 2;
+            selection = OPTIONS_TEXT_SPEED_INSTANT;
 
         sArrowPressed = TRUE;
     }
     return selection;
 }
 
+static const u8 *const sTextSpeedOptionNames[] = {
+    [OPTIONS_TEXT_SPEED_SLOW]    = gText_TextSpeedSlow,
+    [OPTIONS_TEXT_SPEED_MID]     = gText_TextSpeedMid,
+    [OPTIONS_TEXT_SPEED_FAST]    = gText_TextSpeedFast,
+    [OPTIONS_TEXT_SPEED_INSTANT] = gText_TextSpeedInstant,
+};
+
+#define TEXTSPEED_CHOICE_LEFT_PX  88
+#define TEXTSPEED_ROW_HEIGHT_PX   16
+// WIN_OPTIONS width is 26 tiles = 208 px; clear from choice start to end of row
+#define TEXTSPEED_CLEAR_WIDTH_PX (26 * 8 - TEXTSPEED_CHOICE_LEFT_PX)
+
 static void TextSpeed_DrawChoices(u8 selection)
 {
-    u8 styles[3];
-    s32 widthSlow, widthMid, widthFast, xMid;
-
-    styles[0] = 0;
-    styles[1] = 0;
-    styles[2] = 0;
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(gText_TextSpeedSlow, 88, YPOS_TEXTSPEED, styles[0]);
-
-    widthSlow = GetStringWidth(FONT_NORMAL, gText_TextSpeedSlow, 0);
-    widthMid = GetStringWidth(FONT_NORMAL, gText_TextSpeedMid, 0);
-    widthFast = GetStringWidth(FONT_NORMAL, gText_TextSpeedFast, 0);
-
-    widthMid -= 110;
-    xMid = (widthSlow - widthMid - widthFast) / 2 + 88;
-    DrawOptionMenuChoice(gText_TextSpeedMid, xMid, YPOS_TEXTSPEED, styles[1]);
-
-    DrawOptionMenuChoice(gText_TextSpeedFast, GetStringRightAlignXOffset(FONT_NORMAL, gText_TextSpeedFast, 198), YPOS_TEXTSPEED, styles[2]);
+    if (selection > OPTIONS_TEXT_SPEED_INSTANT)
+        selection = OPTIONS_TEXT_SPEED_FAST;
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), TEXTSPEED_CHOICE_LEFT_PX, YPOS_TEXTSPEED, TEXTSPEED_CLEAR_WIDTH_PX, TEXTSPEED_ROW_HEIGHT_PX);
+    DrawOptionMenuChoice(sTextSpeedOptionNames[selection], TEXTSPEED_CHOICE_LEFT_PX, YPOS_TEXTSPEED, 1);
 }
 
 static u8 BattleScene_ProcessInput(u8 selection)
