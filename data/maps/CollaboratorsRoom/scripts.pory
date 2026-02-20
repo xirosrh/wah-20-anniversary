@@ -471,44 +471,33 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_POKENAV_ON)
         waitse
         applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
-        msgbox(format("¿Estás con Abra?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_POKENAV_HANG_UP)
         waitse
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         playse(SE_WARP_OUT)
         setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, 3)
-        setobjectxy(LOCALID_COLLABORATORS_ROOM_ABRA, 10, 3)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
         showobjectat(LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM)
-        showobjectat(LOCALID_COLLABORATORS_ROOM_ABRA, MAP_COLLABORATORS_ROOM)
         turnobject(LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH)
-        turnobject(LOCALID_COLLABORATORS_ROOM_ABRA, DIR_SOUTH)
         release
         delay(30)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
         release
         delay(30)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
         release
-        msgbox(format("¡Aquí estoy!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
-        applymovementandwait(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_right))
-        msgbox(format("Ya te puedes ir, Abra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
-        playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
-        waitmoncry
-        playse(SE_WARP_IN)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-		release
-		delay(30)
-		updateobjectsprite(LOCALID_COLLABORATORS_ROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-        release
-        delay(20)
-        setobjectxy(LOCALID_COLLABORATORS_ROOM_ABRA, 10, -3)
-        delay(30)
-        applymovementandwait(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_down))
-        msgbox(format("¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(emote_exclamation_mark, walk_in_place_right))
+        waitse
+        msgbox(format("¡Ostras!\n¿Cómo lo has hecho?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_left))
+        msgbox(format("¡Coño! Transmisión instantánea, bro.\n¡No me he pasado entrenando en el planeta Yardrat todo este tiempo pa ná!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        msgbox(format("¡Ah, mira qué bien! ¡Eso me viene genial para que la próxima vez no acabe reventao con tantas horas de bus!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        applymovement(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
+        applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_down))
+        waitmovement(0)
+        msgbox(format("Sorprendido, ¿no?\nPues ha llegado la hora...\p¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
         closemessage
         playse(SE_PIN)
         applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, Common_Movement_VersusWithDelay48)
