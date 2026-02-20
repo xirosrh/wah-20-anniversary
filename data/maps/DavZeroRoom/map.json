@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_ZEROROOM_DAVZERO",
       "graphics_id": "OBJ_EVENT_GFX_ZERO",
-      "x": 16,
-      "y": 5,
+      "x": 10,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_ZEROROOM_SCHOOLGIRL",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_F",
-      "x": 15,
-      "y": 7,
+      "x": 9,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -45,8 +45,8 @@
     {
       "local_id": "LOCALID_ZEROROOM_SCHOOLBOY",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 17,
-      "y": 7,
+      "x": 11,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -59,8 +59,8 @@
     {
       "local_id": "LOCALID_ZEROROOM_POKEBALL",
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 8,
-      "y": 8,
+      "x": 5,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -73,8 +73,8 @@
     {
       "local_id": "LOCALID_ZEROROOM_MILOTIC",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(MILOTIC)",
-      "x": 9,
-      "y": 9,
+      "x": 6,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -87,15 +87,15 @@
   ],
   "warp_events": [
     {
-      "x": 9,
-      "y": 19,
+      "x": 6,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_DAV_ZERO_ROOM",
       "dest_warp_id": "0"
     },
     {
-      "x": 9,
-      "y": 2,
+      "x": 3,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_JavsJavi4315Room",
       "dest_warp_id": "0"
