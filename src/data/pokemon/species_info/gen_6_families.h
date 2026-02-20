@@ -1908,7 +1908,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_PyroarMega,
         .shinyPalette = gMonShinyPalette_PyroarMega,
         .iconSprite = gMonIcon_PyroarMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Pyroar)
         SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
@@ -2311,12 +2311,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "enemies on its own."),
         .frontPic = gMonFrontPic_FloetteMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 7,
         .backPic = gMonBackPic_FloetteMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_FloetteMega,
         .shinyPalette = gMonShinyPalette_FloetteMega,
@@ -2324,7 +2325,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Floette)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 17, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sFloetteEternalLevelUpLearnset,
         .teachableLearnset = sFloetteEternalTeachableLearnset,
@@ -2932,12 +2933,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "itself."),
         .frontPic = gMonFrontPic_MeowsticMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_MeowsticMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_MeowsticMega,
         .shinyPalette = gMonShinyPalette_MeowsticMega,
@@ -2945,7 +2947,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Meowstic)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 14, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sMeowsticMLevelUpLearnset,
         .teachableLearnset = sMeowsticMTeachableLearnset,
@@ -2989,12 +2991,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "itself."),
         .frontPic = gMonFrontPic_MeowsticMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_MeowsticMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_MeowsticMega,
         .shinyPalette = gMonShinyPalette_MeowsticMega,
@@ -3002,7 +3005,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Meowstic)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 14, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sMeowsticFLevelUpLearnset,
         .teachableLearnset = sMeowsticFTeachableLearnset,
@@ -3769,7 +3772,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_MalamarMega,
         .shinyPalette = gMonShinyPalette_MalamarMega,
         .iconSprite = gMonIcon_MalamarMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Malamar)
         SHADOW(1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
@@ -3956,12 +3959,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "keeps the head extremely busy."),
         .frontPic = gMonFrontPic_BarbaracleMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_BarbaracleMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_BarbaracleMega,
         .shinyPalette = gMonShinyPalette_BarbaracleMega,
@@ -3969,7 +3973,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Barbaracle)
-        //SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sBarbaracleLevelUpLearnset,
         .teachableLearnset = sBarbaracleTeachableLearnset,
@@ -4156,20 +4160,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "to everything other than itself."),
         .frontPic = gMonFrontPic_DragalgeMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_DragalgeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_DragalgeMega, 
         .shinyPalette = gMonShinyPalette_DragalgeMega,
         .iconSprite = gMonIcon_DragalgeMega,
-        .iconPalIndex = 5,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Dragalge)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sDragalgeLevelUpLearnset,
         .teachableLearnset = sDragalgeTeachableLearnset,

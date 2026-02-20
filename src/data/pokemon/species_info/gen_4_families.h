@@ -956,12 +956,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "880 lbs."),
         .frontPic = gMonFrontPic_StaraptorMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 7,
         .backPic = gMonBackPic_StaraptorMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 5,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_StaraptorMega,
         .shinyPalette = gMonShinyPalette_StaraptorMega,
@@ -969,7 +970,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Staraptor)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 17, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sStaraptorLevelUpLearnset,
         .teachableLearnset = sStaraptorTeachableLearnset,
@@ -4503,12 +4504,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "wing claws."),
         .frontPic = gMonFrontPic_GarchompMegaZ,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_GarchompMegaZ,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_GarchompMegaZ,
         .shinyPalette = gMonShinyPalette_GarchompMegaZ,
@@ -4516,7 +4517,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Garchomp)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(3, 13, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sGarchompLevelUpLearnset,
         .teachableLearnset = sGarchompTeachableLearnset,
@@ -4773,12 +4774,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "dancing."),
         .frontPic = gMonFrontPic_LucarioMegaZ,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_LucarioMegaZ,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_LucarioMegaZ,
         .shinyPalette = gMonShinyPalette_LucarioMegaZ,
@@ -4786,7 +4787,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Lucario)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-6, 14, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sLucarioLevelUpLearnset,
         .teachableLearnset = sLucarioTeachableLearnset,
@@ -6904,12 +6905,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "This heat keeps enemies at bay."),
         .frontPic = gMonFrontPic_HeatranMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_HeatranMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_HeatranMega,
         .shinyPalette = gMonShinyPalette_HeatranMega,
@@ -6917,7 +6918,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Heatran)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 5, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sHeatranLevelUpLearnset,
@@ -7519,12 +7520,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "evil eye."),
         .frontPic = gMonFrontPic_DarkraiMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
         .backPic = gMonBackPic_DarkraiMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_DarkraiMega,
         .shinyPalette = gMonShinyPalette_DarkraiMega,
@@ -7532,7 +7534,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Darkrai)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 17, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .isMythical = TRUE,
         .isFrontierBanned = TRUE,

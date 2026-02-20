@@ -1494,20 +1494,21 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "which is covered in a thick layer of ice."),
         .frontPic = gMonFrontPic_CrabominableMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_CrabominableMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_CrabominableMega,
         .shinyPalette = gMonShinyPalette_CrabominableMega,
         .iconSprite = gMonIcon_CrabominableMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Crabominable)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sCrabominableLevelUpLearnset,
         .teachableLearnset = sCrabominableTeachableLearnset,
@@ -4171,12 +4172,12 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "off with the arms it kept hidden."),
         .frontPic = gMonFrontPic_GolisopodMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_GolisopodMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_GolisopodMega,
         .shinyPalette = gMonShinyPalette_GolisopodMega,
@@ -4184,7 +4185,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Golisopod)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(1, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sGolisopodLevelUpLearnset,
         .teachableLearnset = sGolisopodTeachableLearnset,
@@ -5337,12 +5338,12 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "atmosphere to summon storms."),
         .frontPic = gMonFrontPic_DrampaMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_DrampaMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_DrampaMega,
         .shinyPalette = gMonShinyPalette_DrampaMega, 
@@ -5350,7 +5351,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Drampa)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 10, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sDrampaLevelUpLearnset,
         .teachableLearnset = sDrampaTeachableLearnset,
@@ -7203,12 +7204,13 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "self is its Soul-Heart, an artificial soul."),
         .frontPic = gMonFrontPic_MagearnaMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_MagearnaMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_MagearnaMega,
         .shinyPalette = gMonShinyPalette_MagearnaMega,
@@ -7216,7 +7218,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Magearna)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .isMythical = TRUE,
         .isFrontierBanned = TRUE,
@@ -7263,12 +7265,12 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "is triggered by a Mega Stone."),
         .frontPic = gMonFrontPic_MagearnaOriginalMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_MagearnaOriginalMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_MagearnaOriginalMega,
         .shinyPalette = gMonShinyPalette_MagearnaOriginalMega,
@@ -7276,7 +7278,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Magearna)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .isMythical = TRUE,
         .isFrontierBanned = TRUE,
@@ -7734,12 +7736,13 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             "electric Pokémon."),
         .frontPic = gMonFrontPic_ZeraoraMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_ZeraoraMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_ZeraoraMega,
         .shinyPalette = gMonShinyPalette_ZeraoraMega,
@@ -7747,7 +7750,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Zeraora)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .isMythical = TRUE,
         .isFrontierBanned = TRUE,
