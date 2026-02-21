@@ -21331,6 +21331,56 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_AcidPulp,
     },
 
+    [MOVE_xQ4Zc0E] =
+    {
+        .name = COMPOUND_STRING("xQ4Zc0E"),
+        .description = COMPOUND_STRING(
+            "Crea espejismos para \n"
+            "mejorar la evasión."),
+        .effect = EFFECT_EVASION_UP,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 15,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .snatchAffected = TRUE,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS : CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = COMBO_STARTER_DOUBLE_TEAM,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DoubleTeam,
+        .validApprenticeMove = TRUE,
+    },
+
+    
+    [MOVE_VOODOO] =
+    {
+        .name = COMPOUND_STRING("Vudú"),
+        .description = COMPOUND_STRING(
+            "Te usa cual títere.\n"
+            "Puede debilitar en 1 golpe."),
+        .effect = EFFECT_OHKO,
+        .power = 1,
+        .type = TYPE_NORMAL,
+        .accuracy = 30,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = FALSE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_VICE_GRIP},
+        .battleAnimScript = gBattleAnimMove_Curse,
+        .validApprenticeMove = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
