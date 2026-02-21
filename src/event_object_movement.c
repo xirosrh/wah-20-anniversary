@@ -9675,6 +9675,9 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
     if (mapElevation == 0 || mapElevation == 15)
         return FALSE;
 
+    if ((elevation == 5 && mapElevation == 6) || (elevation == 6 && mapElevation == 5))
+        return FALSE;
+
     if (mapElevation != elevation)
         return TRUE;
 
@@ -9743,7 +9746,35 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
     objEvent->currentElevation = curElevation;
 
     if (curElevation != 0 && curElevation != 15)
-        objEvent->previousElevation = curElevation;
+    {
+        bool8 is5to6 = (curElevation == 5 && prevElevation == 6) || (curElevation == 6 && prevElevation == 5);
+        bool8 hasStopped = (objEvent->currentCoords.x == objEvent->previousCoords.x
+                         && objEvent->currentCoords.y == objEvent->previousCoords.y);
+
+        if (!is5to6)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (hasStopped)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (sprite != NULL)
+        {
+            s16 spriteMapX, spriteMapY;
+            s16 midX, midY;
+            s16 dx = objEvent->currentCoords.x - objEvent->previousCoords.x;
+            s16 dy = objEvent->currentCoords.y - objEvent->previousCoords.y;
+
+            GetMapCoordsFromSpritePos(sprite->x, sprite->y, &spriteMapX, &spriteMapY);
+            midX = (objEvent->previousCoords.x + objEvent->currentCoords.x) * 8;
+            midY = (objEvent->previousCoords.y + objEvent->currentCoords.y) * 8;
+
+            if ((dx > 0 && spriteMapX >= midX) || (dx < 0 && spriteMapX <= midX)
+             || (dy > 0 && spriteMapY >= midY) || (dy < 0 && spriteMapY <= midY))
+                objEvent->previousElevation = curElevation;
+        }
+    }
 }
 
 void SetObjectSubpriorityByElevation(u8 elevation, struct Sprite *sprite, u8 subpriority)
