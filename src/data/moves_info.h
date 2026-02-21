@@ -21366,7 +21366,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puede debilitar en 1 golpe."),
         .effect = EFFECT_OHKO,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_DARK,
         .accuracy = 30,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
