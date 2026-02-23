@@ -258,3 +258,6 @@ const u16 gMetatileAttributes_room_aguiar[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_room_eing[] = INCBIN_U16("data/tilesets/secondary/room_eing/metatiles.bin");
 const u16 gMetatileAttributes_room_eing[] = INCBIN_U16("data/tilesets/secondary/room_eing/metatile_attributes.bin");
+
+const u16 gMetatiles_room_zero[] = INCBIN_U16("data/tilesets/secondary/room_zero/metatiles.bin");
+const u16 gMetatileAttributes_room_zero[] = INCBIN_U16("data/tilesets/secondary/room_zero/metatile_attributes.bin");

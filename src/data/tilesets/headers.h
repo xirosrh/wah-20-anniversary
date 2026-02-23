@@ -1017,3 +1017,14 @@ const struct Tileset gTileset_room_eing =
     .metatileAttributes = gMetatileAttributes_room_eing,
     .callback = InitTilesetAnim_EingRoom,
 };
+
+const struct Tileset gTileset_room_zero =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_zero,
+    .palettes = gTilesetPalettes_room_zero,
+    .metatiles = gMetatiles_room_zero,
+    .metatileAttributes = gMetatileAttributes_room_zero,
+    .callback = NULL,
+};

@@ -4174,10 +4174,10 @@
     {
       "id": "LAYOUT_DAV_ZERO_ROOM",
       "name": "DavZeroRoom_Layout",
-      "width": 19,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_zero",
       "border_filepath": "data/layouts/DavZeroRoom/border.bin",
       "blockdata_filepath": "data/layouts/DavZeroRoom/map.bin"
     },
