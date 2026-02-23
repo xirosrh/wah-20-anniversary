@@ -238,6 +238,42 @@ script DavZeroRoom_EventScript_SchoolBoy {
 }
 
 script DavZeroRoom_EventScript_Zero {
-    msgbox(format("Pendiente"), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format("Si quieres otra frase profunda, trae ticket.\pMi trabajo aquí acabó."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_XDWithDelay48)
+    turnobject(LOCALID_ZEROROOM_DAVZERO, DIR_SOUTH)
+    release
+    end
+}
+
+script DavZeroRoom_EventScript_Dumbbells {
+    msgbox(format("Las mancuernas pesan lo suficiente como para no ser decorativas."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_PC {
+    msgbox(format("Es un portátil encendido con un fondo de pantalla del Valencia CF.\pHay más pestañas abiertas que multicuentas del Team NoHack."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Library1 {
+    msgbox(format("Parece una recopilación de libros de poesía.\pUno destaca entre los demás: “Un lustro de soliloquio”.\pEl autor figura como Zero."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Library2 {
+    msgbox(format("Esta estantería contiene una serie de fascículos.\pTodos tienen el mismo título: “Historia de Whack a Hack: Desde 2005”.\pEchando una ojeada rápida a algunos, se leen nombres como Deryko, Inmortal Kaktus, Franco Kuchiki, C!ro, Lon, Frax, Acspower o Kalawus."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Library3 {
+    msgbox(format("Hay material educativo, guías pedagógicas, educación emocional y psicología.\pMuchos apartados sobre resolución de conflictos están subrayados.\pParece que alguien esperaba que sirvieran para algo… Y que también intentó aplicarlos fuera de clase."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Tredmill {
+    msgbox(format("Es una cinta de correr con pantalla incorporada.\pEstá puesto un capítulo de One Piece."), MSGBOX_SIGN)
     end
 }

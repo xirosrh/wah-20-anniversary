@@ -442,7 +442,55 @@ DavZeroRoom_EventScript_SchoolBoy_2:
 
 DavZeroRoom_EventScript_Zero::
 # 241 "data/maps/DavZeroRoom/scripts.pory"
-	msgbox DavZeroRoom_EventScript_Zero_Text_0, MSGBOX_NPC
+	lock
+# 242 "data/maps/DavZeroRoom/scripts.pory"
+	faceplayer
+# 243 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Zero_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO
+# 244 "data/maps/DavZeroRoom/scripts.pory"
+	playse SE_PIN
+# 245 "data/maps/DavZeroRoom/scripts.pory"
+	applymovementandwait LOCALID_ZEROROOM_DAVZERO, Common_Movement_XDWithDelay48
+# 246 "data/maps/DavZeroRoom/scripts.pory"
+	turnobject LOCALID_ZEROROOM_DAVZERO, DIR_SOUTH
+# 247 "data/maps/DavZeroRoom/scripts.pory"
+	release
+	end
+
+
+DavZeroRoom_EventScript_Dumbbells::
+# 252 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Dumbbells_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_PC::
+# 257 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_PC_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Library1::
+# 262 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Library1_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Library2::
+# 267 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Library2_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Library3::
+# 272 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Library3_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Tredmill::
+# 277 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Tredmill_Text_0, MSGBOX_SIGN
 	end
 
 
@@ -859,8 +907,58 @@ DavZeroRoom_EventScript_SchoolBoy_Text_1:
 	.string "ritmo de La Macarena.$"
 
 DavZeroRoom_EventScript_Zero_Text_0:
-# 241 "data/maps/DavZeroRoom/scripts.pory"
-	.string "Pendiente$"
+# 243 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Si quieres otra frase profunda, trae\n"
+	.string "ticket.\p"
+	.string "Mi trabajo aquí acabó.$"
+
+DavZeroRoom_EventScript_Dumbbells_Text_0:
+# 252 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Las mancuernas pesan lo suficiente\n"
+	.string "como para no ser decorativas.$"
+
+DavZeroRoom_EventScript_PC_Text_0:
+# 257 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Es un portátil encendido con un fondo\n"
+	.string "de pantalla del Valencia CF.\p"
+	.string "Hay más pestañas abiertas que\n"
+	.string "multicuentas del Team NoHack.$"
+
+DavZeroRoom_EventScript_Library1_Text_0:
+# 262 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Parece una recopilación de libros de\n"
+	.string "poesía.\p"
+	.string "Uno destaca entre los demás: “Un\n"
+	.string "lustro de soliloquio”.\p"
+	.string "El autor figura como Zero.$"
+
+DavZeroRoom_EventScript_Library2_Text_0:
+# 267 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Esta estantería contiene una serie de\n"
+	.string "fascículos.\p"
+	.string "Todos tienen el mismo título: “Historia\n"
+	.string "de Whack a Hack: Desde 2005”.\p"
+	.string "Echando una ojeada rápida a algunos, se\n"
+	.string "leen nombres como Deryko, Inmortal\l"
+	.string "Kaktus, Franco Kuchiki, C!ro, Lon, Frax,\l"
+	.string "Acspower o Kalawus.$"
+
+DavZeroRoom_EventScript_Library3_Text_0:
+# 272 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Hay material educativo, guías\n"
+	.string "pedagógicas, educación emocional y\l"
+	.string "psicología.\p"
+	.string "Muchos apartados sobre resolución de\n"
+	.string "conflictos están subrayados.\p"
+	.string "Parece que alguien esperaba que\n"
+	.string "sirvieran para algo… Y que también\l"
+	.string "intentó aplicarlos fuera de clase.$"
+
+DavZeroRoom_EventScript_Tredmill_Text_0:
+# 277 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Es una cinta de correr con pantalla\n"
+	.string "incorporada.\p"
+	.string "Está puesto un capítulo de One Piece.$"
 
 DavZeroRoom_Text_DavZeroDefeated::
 # 199 "data/maps/DavZeroRoom/scripts.pory"
