@@ -494,6 +494,30 @@ DavZeroRoom_EventScript_Tredmill::
 	end
 
 
+DavZeroRoom_EventScript_TrashCan::
+# 282 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_TrashCan_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Box1::
+# 287 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Box1_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_Box2::
+# 292 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_Box2_Text_0, MSGBOX_SIGN
+	end
+
+
+DavZeroRoom_EventScript_StackedPlates::
+# 297 "data/maps/DavZeroRoom/scripts.pory"
+	msgbox DavZeroRoom_EventScript_StackedPlates_Text_0, MSGBOX_SIGN
+	end
+
+
 # 37 "data/maps/DavZeroRoom/scripts.pory"
 DavZeroRoom_OnFrame_Movement_0:
 # 37 "data/maps/DavZeroRoom/scripts.pory"
@@ -959,6 +983,35 @@ DavZeroRoom_EventScript_Tredmill_Text_0:
 	.string "Es una cinta de correr con pantalla\n"
 	.string "incorporada.\p"
 	.string "Está puesto un capítulo de One Piece.$"
+
+DavZeroRoom_EventScript_TrashCan_Text_0:
+# 282 "data/maps/DavZeroRoom/scripts.pory"
+	.string "¡Has encontrado el sentido de la vida!\n"
+	.string "Ah no, son botellas abolladas,\l"
+	.string "borradores que no sobrevivieron a la\l"
+	.string "autocrítica y… ¿tarjetas de Fortnite\l"
+	.string "usadas?$"
+
+DavZeroRoom_EventScript_Box1_Text_0:
+# 287 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Dentro de esta caja hay consolas. Se\n"
+	.string "llega a ver una SNES y una Nintendo 64\l"
+	.string "junto a Zelda Majora's Mask.\p"
+	.string "También hay un cartucho de Super Mario\n"
+	.string "World 2: Yoshi's Island.$"
+
+DavZeroRoom_EventScript_Box2_Text_0:
+# 292 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Dentro de esta caja hay videojuegos y\n"
+	.string "figuras. Sobresalen dos cuyos títulos\l"
+	.string "son “Mother 3” y “Phoenix Wright: Ace\l"
+	.string "Attorney”.$"
+
+DavZeroRoom_EventScript_StackedPlates_Text_0:
+# 297 "data/maps/DavZeroRoom/scripts.pory"
+	.string "Parecen discos de peso… o donuts\n"
+	.string "gigantes para un Snorlax con una dieta\l"
+	.string "muy estricta.$"
 
 DavZeroRoom_Text_DavZeroDefeated::
 # 199 "data/maps/DavZeroRoom/scripts.pory"

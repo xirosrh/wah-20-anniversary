@@ -277,3 +277,23 @@ script DavZeroRoom_EventScript_Tredmill {
     msgbox(format("Es una cinta de correr con pantalla incorporada.\pEstá puesto un capítulo de One Piece."), MSGBOX_SIGN)
     end
 }
+
+script DavZeroRoom_EventScript_TrashCan {
+    msgbox(format("¡Has encontrado el sentido de la vida! Ah no, son botellas abolladas, borradores que no sobrevivieron a la autocrítica y… ¿tarjetas de Fortnite usadas?"), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Box1 {
+    msgbox(format("Dentro de esta caja hay consolas. Se llega a ver una SNES y una Nintendo 64 junto a Zelda Majora's Mask.\pTambién hay un cartucho de Super Mario World 2: Yoshi's Island."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_Box2 {
+    msgbox(format("Dentro de esta caja hay videojuegos y figuras. Sobresalen dos cuyos títulos son “Mother 3” y “Phoenix Wright: Ace Attorney”."), MSGBOX_SIGN)
+    end
+}
+
+script DavZeroRoom_EventScript_StackedPlates {
+    msgbox(format("Parecen discos de peso… o donuts gigantes para un Snorlax con una dieta muy estricta."), MSGBOX_SIGN)
+    end
+}
