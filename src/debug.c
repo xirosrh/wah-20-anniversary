@@ -3489,6 +3489,16 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 #define SOUND_LIST_BGM              \
     X(MUS_INSTRUMENT_TEST)          \
+    X(MUS_DP_GALACTIC_HQ_BASEMENT)  \
+    X(MUS_DP_GYM)                   \
+    X(MUS_DP_INSIDE_POKEMON_LEAGUE) \
+    X(MUS_HG_B_TOWER_RECEPTION)     \
+    X(MUS_HG_LIGHTHOUSE)            \
+    X(MUS_HG_POKEATHLON_FINALS)     \
+    X(MUS_HG_POKEATHLON_LOBBY)      \
+    X(MUS_HG_SPROUT_TOWER)          \
+    X(MUS_PL_B_CASTLE)              \
+    X(MUS_PL_WIFI_PARADE)           \
     X(MUS_PUEBLO_ORIGEN)            \
     X(MUS_WI_TRAINER_BATTLE)        \
     X(MUS_WI_VS_GYM_LEADER)         \

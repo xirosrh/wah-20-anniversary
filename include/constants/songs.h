@@ -279,9 +279,19 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   314
-#define MUS_INSTRUMENT_TEST         314 // mus_instrument_test (currently: 11 vibraphone)
+#define START_MUS                   304
+#define MUS_INSTRUMENT_TEST         304 // mus_instrument_test (currently: 11 vibraphone)
 
+#define MUS_DP_GALACTIC_HQ_BASEMENT 305 // mus_dp_galactic_hq_basement
+#define MUS_DP_GYM                  306 // mus_dp_gym
+#define MUS_DP_INSIDE_POKEMON_LEAGUE 307 // mus_dp_inside_pokemon_league
+#define MUS_HG_B_TOWER_RECEPTION    308 // mus_hg_b_tower_reception
+#define MUS_HG_LIGHTHOUSE           309 // mus_hg_lighthouse
+#define MUS_HG_POKEATHLON_FINALS    310 // mus_hg_pokeathlon_finals
+#define MUS_HG_POKEATHLON_LOBBY     311 // mus_hg_pokeathlon_lobby
+#define MUS_HG_SPROUT_TOWER         312 // mus_hg_sprout_tower
+#define MUS_PL_B_CASTLE             313 // mus_pl_b_castle
+#define MUS_PL_WIFI_PARADE          314 // mus_pl_wifi_parade
 #define MUS_PUEBLO_ORIGEN           315 // [Jack Johnson] mus_pueblo_origen
 #define MUS_WI_TRAINER_BATTLE       316 // [Jack Johnson] mus_wi_trainer_battle
 #define MUS_WI_VS_GYM_LEADER        317 // [Jack Johnson] mus_wi_vs_gym_leader

@@ -281,6 +281,16 @@ extern const struct SongHeader se_sudowoodo_shake;
 
 extern const struct SongHeader mus_instrument_test;
 
+extern const struct SongHeader mus_dp_galactic_hq_basement;
+extern const struct SongHeader mus_dp_gym;
+extern const struct SongHeader mus_dp_inside_pokemon_league;
+extern const struct SongHeader mus_hg_b_tower_reception;
+extern const struct SongHeader mus_hg_lighthouse;
+extern const struct SongHeader mus_hg_pokeathlon_finals;
+extern const struct SongHeader mus_hg_pokeathlon_lobby;
+extern const struct SongHeader mus_hg_sprout_tower;
+extern const struct SongHeader mus_pl_b_castle;
+extern const struct SongHeader mus_pl_wifi_parade;
 extern const struct SongHeader mus_pueblo_origen;
 extern const struct SongHeader mus_wi_trainer_battle;
 extern const struct SongHeader mus_wi_vs_gym_leader;

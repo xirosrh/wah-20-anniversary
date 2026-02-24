@@ -279,6 +279,16 @@ const struct Song gSongTable[] =
 
     [MUS_INSTRUMENT_TEST]           = SONG(mus_instrument_test, MUSIC_PLAYER_BGM),
 
+    [MUS_DP_GALACTIC_HQ_BASEMENT]   = SONG(mus_dp_galactic_hq_basement, MUSIC_PLAYER_BGM),
+    [MUS_DP_GYM]                    = SONG(mus_dp_gym, MUSIC_PLAYER_BGM),
+    [MUS_DP_INSIDE_POKEMON_LEAGUE]  = SONG(mus_dp_inside_pokemon_league, MUSIC_PLAYER_BGM),
+    [MUS_HG_B_TOWER_RECEPTION]      = SONG(mus_hg_b_tower_reception, MUSIC_PLAYER_BGM),
+    [MUS_HG_LIGHTHOUSE]             = SONG(mus_hg_lighthouse, MUSIC_PLAYER_BGM),
+    [MUS_HG_POKEATHLON_FINALS]      = SONG(mus_hg_pokeathlon_finals, MUSIC_PLAYER_BGM),
+    [MUS_HG_POKEATHLON_LOBBY]       = SONG(mus_hg_pokeathlon_lobby, MUSIC_PLAYER_BGM),
+    [MUS_HG_SPROUT_TOWER]           = SONG(mus_hg_sprout_tower, MUSIC_PLAYER_BGM),
+    [MUS_PL_B_CASTLE]               = SONG(mus_pl_b_castle, MUSIC_PLAYER_BGM),
+    [MUS_PL_WIFI_PARADE]            = SONG(mus_pl_wifi_parade, MUSIC_PLAYER_BGM),
     [MUS_PUEBLO_ORIGEN]             = SONG(mus_pueblo_origen, MUSIC_PLAYER_BGM),
     [MUS_WI_TRAINER_BATTLE]         = SONG(mus_wi_trainer_battle, MUSIC_PLAYER_BGM),
     [MUS_WI_VS_GYM_LEADER]          = SONG(mus_wi_vs_gym_leader, MUSIC_PLAYER_BGM),
