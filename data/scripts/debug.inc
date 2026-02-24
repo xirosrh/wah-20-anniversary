@@ -145,15 +145,20 @@ Debug_EventScript_Text_OffensiveIVs:
 Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
+BrendanIntroText:
+    .string "Vamos a palmar.$"
+
+BrendanLoseText:
+    .string "Efectivamente, palmamos.$"
+
 Debug_EventScript_Script_1::
-	setwildbattle SPECIES_GOLEM, 100, ITEM_NONE, SPECIES_CHARIZARD, 100, ITEM_NONE
+trainerbattle_single TRAINER_BRENDAN_PLACEHOLDER, BrendanIntroText, BrendanLoseText
 	dowildbattle
 	release
 	end
 
 Debug_EventScript_Script_2::
-	setwildbattle SPECIES_DITTO, 100, ITEM_NONE
-	dowildbattle
+	updateobjectsprite LOCALID_PLAYER OBJ_EVENT_GFX_MRNIGHTOLOGY
 	release
 	end
 

@@ -171,7 +171,7 @@ ALIGNED(4) const u8 gFontSmallNarrowLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -345,7 +345,7 @@ ALIGNED(4) const u8 gFontSmallLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -519,7 +519,7 @@ ALIGNED(4) const u8 gFontNarrowLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -693,7 +693,7 @@ ALIGNED(4) const u8 gFontShortLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -867,7 +867,7 @@ ALIGNED(4) const u8 gFontNormalLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -1041,7 +1041,7 @@ ALIGNED(4) const u8 gFontNarrowerLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -1215,7 +1215,7 @@ ALIGNED(4) const u8 gFontSmallNarrowerLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 
@@ -1389,7 +1389,7 @@ ALIGNED(4) const u8 gFontShortNarrowLatinGlyphWidths[] = {
 	[PLACEHOLDER_BEGIN] = 3,
 	[CHAR_NEWLINE] = 3,
 	[EOS] = 3,
-	[CHAR_NBSP] = 7,
+	[CHAR_NBSP] = 3,
 	[CHAR_V_D_ARROW] = 7,
 };
 

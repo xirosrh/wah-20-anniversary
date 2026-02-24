@@ -25,6 +25,7 @@ script DragonMountain_Top_OnTransition {
 }
 
 script DragonMountain_Top_OnFrame {
+    playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
     showobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
@@ -56,6 +57,7 @@ script DragonMountain_Top_EventScript_Abra {
     delay(20)
     msgbox(format("¿Deseas volver a la sala de Sergio?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
+        playse(SE_WARP_IN)
         updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
 		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
 		release
@@ -65,7 +67,7 @@ script DragonMountain_Top_EventScript_Abra {
         release
         delay(20)
         setvar(VAR_SERGIO_ROOM_STATE, 1)
-		warp(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
+		warpsilent(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
 		waitstate
     }
 	release
@@ -85,7 +87,14 @@ script DragonMountan_Top_EventScript_Sergio {
     playse(SE_PIN)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HappyWithDelay48)
     msgbox(format("Soy Serg!o… ¡me alegra ver gente nueva por aquí!"),MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(lock_facing_direction, emote_smile, jump_in_place_down * 2, unlock_facing_direction, face_player))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(emote_smile))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(lock_facing_direction, jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(jump_in_place_down, unlock_facing_direction, face_player))
     delay(30)
     msgbox(format("¿Qué? ¿No te esperabas encontrarme en este pico, a tres pasos de caerme?\pYo tampoco. Quién sabe… a lo mejor es que soy el mesías."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
@@ -126,18 +135,27 @@ script DragonMountan_Top_EventScript_Sergio {
     directmovementtopos(LOCALID_PLAYER, 15, 13)
     waitmovement(LOCALID_CAMERA)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_NORMAL)
+    waitmoncry
     applymovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, Common_Movement_WalkDown6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown4)
     waitmovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE)
     special(RemoveCameraObject)
     release
     msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus, disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus))
+    waitse
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_NORMAL)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, jump_in_place_down * 2, enable_jump_landing_ground_effect))
     release
     delay(60)
     call(DragonMountan_Top_EventScript_SergioBattle)
     playse(SE_FAILURE)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x, jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, lock_facing_direction, emote_x))
+    waitse
+    playmoncry(SPECIES_DRAGONITE, CRY_MODE_WEAK)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(jump_up, unlock_facing_direction, enable_jump_landing_ground_effect))
     release
     delay(100)
     fadescreen(FADE_TO_BLACK)
@@ -148,7 +166,11 @@ script DragonMountan_Top_EventScript_Sergio {
     turnobject(LOCALID_PLAYER, DIR_EAST)
     hideobjectat(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, MAP_DRAGON_MOUNTAIN_TOP)
     fadescreen(FADE_FROM_BLACK)
-    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(jump_in_place_left * 2))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(jump_in_place_left))
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(jump_in_place_left))
     msgbox(format("¡Felicidades! ¡Has cumplido el sueño de WAH!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     waitmovement(0)
     msgbox(format("Ahora por supuesto no te quedes dormido, ¡que hay un montón de cosas por hacer!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
@@ -158,6 +180,7 @@ script DragonMountan_Top_EventScript_Sergio {
     clearflag(FLAG_TEMP_1_HIDE_MOLTRES)
     addobject(LOCALID_MOUNTAINTOP_MOLTRES)
     showobjectat(LOCALID_MOUNTAINTOP_MOLTRES, MAP_DRAGON_MOUNTAIN_TOP)
+    playse(SE_M_WING_ATTACK)
     applymovementandwait(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3)
     turnobject(LOCALID_MOUNTAINTOP_SERGIO, DIR_NORTH)
     playmoncry(SPECIES_MOLTRES, CRY_MODE_NORMAL)
@@ -172,6 +195,7 @@ script DragonMountan_Top_EventScript_Sergio {
     applymovement(LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48)
     applymovement(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft3)
     waitmovement(LOCALID_MOUNTAINTOP_MOLTRES)
+    playse(SE_M_WING_ATTACK)
     applymovementandwait(LOCALID_MOUNTAINTOP_MOLTRES, Common_Movement_WalkLeft8)
     closemessage
     delay(50)
@@ -195,6 +219,7 @@ script DragonMountan_Top_EventScript_Sergio {
     waitmovement(LOCALID_PLAYER)
     turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_EAST)
     delay(20)
+    playse(SE_WARP_IN)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
     updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
@@ -207,7 +232,7 @@ script DragonMountan_Top_EventScript_Sergio {
     delay(20)
     setflag(FLAG_DEFEATED_ADMIN_SERGIO)
     setvar(VAR_SERGIO_ROOM_STATE, 2)
-    warp(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
+    warpsilent(MAP_SERGIO_ROOM, WARP_ID_SERGIO_ROOM_ABRA)
 	waitstate
 	releaseall
     end

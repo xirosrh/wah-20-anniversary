@@ -31,7 +31,12 @@ script ReyBooRoom_EventScript_BooEncounter {
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_IdeaWithDelay48)
     msgbox(format("¡Esta es la mejor idea del mundo, con esto podré jubilarme, yupi!\p¡Vamos a ello!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
-    applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceRight2)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_right))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_right))
+    waitse
     delay(10)
     msgbox(format("¡Adelante, usa Día de Pago!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(20)
@@ -44,15 +49,25 @@ script ReyBooRoom_EventScript_BooEncounter {
     applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_WalkRight)
     delay(30)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_angry, jump_in_place_right * 2, delay_16))
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_angry))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_right))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_right, delay_16))
+    waitse
     msgbox(format("Maldito mono…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REYBOOROOM_VIGOROTH, moves(emote_versus, walk_in_place_left, delay_16 * 2))
     playbgm(MUS_HELP, FALSE)
+    playse(SE_LEDGE)
     applymovement(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceRight)
     applymovement(LOCALID_REYBOOROOM_VIGOROTH, Common_Movement_JumpInPlaceLeft)
     waitmovement(0)
+    waitse
+    playse(SE_PIN)
     applymovement(LOCALID_REYBOOROOM_BOO, moves(
         emote_surprise,
         walk_faster_left * 2, 
@@ -113,19 +128,33 @@ script ReyBooRoom_EventScript_BooEncounter {
     waitmovement(0)
     special(RemoveCameraObject)
     msgbox(format("De modo que eres tú quien me ha invocado…"), speaker = SP_NAME_REY_BOO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_versus))
+    waitse
     call(ReyBooRoom_EventScript_ReyBooBattle)
-    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_surprise, lock_facing_direction, jump_up, unlock_facing_direction, delay_16 * 2))
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(emote_surprise))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(lock_facing_direction, jump_up, unlock_facing_direction, delay_16 * 2))
     delay(20)
     msgbox(format("Muy bien, has pasado la prueba física… Ahora prepárate para la inesperada…"), speaker = SP_NAME_REY_BOO)
     playbgm(MUS_WEATHER_GROUDON, FALSE)
     applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_WalkInPlaceDown)
     msgbox(format("¡Mis fenomenales poderes!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REY_BOO)
-    applymovementandwait(LOCALID_REYBOOROOM_BOO, Common_Movement_JumpInPlaceDown2)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_REYBOOROOM_BOO, moves(jump_in_place_down))
+    waitse
+    playse(SE_RG_CARD_FLIPPING)
     fadescreen(FADE_TO_WHITE)
     fadescreen(FADE_FROM_WHITE)
     delay(10)
+    playse(SE_RG_CARD_FLIPPING)
     fadescreen(FADE_TO_WHITE)
     fadescreen(FADE_FROM_WHITE)
+    waitse
     setvar(VAR_0x8004, 1)  // vertical pan
     setvar(VAR_0x8005, 1)  // horizontal pan
     setvar(VAR_0x8006, 6)  // num shakes

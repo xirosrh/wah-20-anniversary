@@ -896,6 +896,12 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_room_aguiar
+#define METATILE_room_aguiar_TV_OFF_LEFT   0x205
+#define METATILE_room_aguiar_TV_OFF_RIGHT  0x206
+#define METATILE_room_aguiar_TV_ON_LEFT    0x215
+#define METATILE_room_aguiar_TV_ON_RIGHT   0x216
+
 // gTileset_room_angel
 #define METATILE_room_angel_DOOR_CENTER                0x275
 #define METATILE_room_angel_DOOR_LEFT                  0x274
@@ -954,6 +960,14 @@
 #define METATILE_room_cosarara_PC_MATRIX_7   0x211
 #define METATILE_room_cosarara_PC_MATRIX_8   0x212
 #define METATILE_room_cosarara_PC_MATRIX_9   0x213
+
+// gTileset_room_kleinpkpower
+#define METATILE_room_kleinpkpower_JAIL_DOOR_CLOSED     0x272
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1  0x25E
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2  0x25D
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3  0x25C
+#define METATILE_room_kleinpkpower_JAIL_FLOOR           0x25B
+#define METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN     0x270
 
 // gTileset_room_omega
 #define METATILE_room_omega_BROKEN_GLASS      0x28B

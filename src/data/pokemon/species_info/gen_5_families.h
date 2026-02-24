@@ -541,18 +541,18 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             "shaped like a serpentine spear,\n"
             "it rushes in to save its\n"
             "imperiled allies."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_EmboarMega
+        .frontPic = gMonFrontPic_EmboarMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_EmboarMega
+        .backPic = gMonBackPic_EmboarMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_EmboarMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_EmboarMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_Emboar
+        .palette = gMonPalette_EmboarMega,
+        .shinyPalette = gMonShinyPalette_EmboarMega,
+        .iconSprite = gMonIcon_Emboar,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Emboar)
@@ -2825,18 +2825,18 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             "head together to form a streamlined\n"
             "shape and spins at high speeds,\n"
             "it can destroy anything."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ExcadrillMega
+        .frontPic = gMonFrontPic_ExcadrillMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ExcadrillMega
+        .backPic = gMonBackPic_ExcadrillMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ExcadrillMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ExcadrillMega
+        .palette = gMonShinyPalette_ExcadrillMega,
+        .shinyPalette = gMonShinyPalette_ExcadrillMega,
+        .iconSprite = gMonIcon_ExcadrillMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Excadrill)
@@ -4034,19 +4034,19 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             "Its deadly venom gives off a faint\n"
             "glow. The venom affects Scolipede's\n"
             "mind, honing its viciousness."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ScolipedeMega
+        .frontPic = gMonFrontPic_ScolipedeMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ScolipedeMega
+        .backPic = gMonBackPic_ScolipedeMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_ScolipedeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ScolipedeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ScolipedeMega
-        .iconPalIndex = 0,
+        .palette = gMonPalette_ScolipedeMega,
+        .shinyPalette = gMonShinyPalette_ScolipedeMega,
+        .iconSprite = gMonIcon_ScolipedeMega,
+        .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Scolipede)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -9708,18 +9708,18 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             "electricity it did before Mega\n"
             "Evolving. It discharges this energy\n"
             "from its false Eelektrik made of mucus."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_EelektrossMega
+        .frontPic = gMonFrontPic_EelektrossMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_EelektrossMega
+        .backPic = gMonBackPic_EelektrossMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_EelektrossMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_EelektrossMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_EelektrossMega
+        .palette = gMonPalette_EelektrossMega, 
+        .shinyPalette = gMonShinyPalette_EelektrossMega,
+        .iconSprite = gMonIcon_EelektrossMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Eelektross)
@@ -10126,19 +10126,19 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             "our world with the afterlife.\n"
             "This Pokémon draws in hatred and\n"
             "converts it into power."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ChandelureMega
+        .frontPic = gMonFrontPic_ChandelureMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ChandelureMega
+        .backPic = gMonBackPic_ChandelureMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
         .backPicYOffset = 12,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_ChandelureMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ChandelureMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ChandelureMega
-        .iconPalIndex = 0,
+        .palette = gMonPalette_ChandelureMega,
+        .shinyPalette =gMonShinyPalette_ChandelureMega,
+        .iconSprite = gMonIcon_ChandelureMega,
+        .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Chandelure)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -11198,6 +11198,66 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sGolurkLevelUpLearnset,
         .teachableLearnset = sGolurkTeachableLearnset,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_GOLURK_MEGA] =
+    {
+        .baseHP        = 89,
+        .baseAttack    = 159,
+        .baseDefense   = 105,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 105,
+        .types = MON_TYPES(TYPE_GROUND, TYPE_GHOST),
+        .catchRate = 90,
+        .expYield = 169,
+        .evYield_Attack = 2,
+        .itemRare = ITEM_LIGHT_CLAY,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .noFlip = TRUE,
+        .speciesName = _("Golurk"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_GOLURK_MEGA,
+    #else
+        .cryId = CRY_GOLURK,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_GOLURK,
+        .categoryName = _("Automaton"),
+        .height = 40,
+        .weight = 3300,
+        .description = COMPOUND_STRING(
+            "The energy within Golurk has been\n"
+            "stimulated by Mega Evolution.\n"
+            "The Pokémon could explode at any moment."),
+        .frontPic = gMonFrontPic_GolurkMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_GolurkMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GolurkMega,
+        .shinyPalette = gMonShinyPalette_GolurkMega,
+        .iconSprite = gMonIcon_GolurkMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Golurk)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sGolurkLevelUpLearnset,
+        .teachableLearnset = sGolurkTeachableLearnset,
+        .formSpeciesIdTable = sGolurkFormSpeciesIdTable,
+        .formChangeTable = sGolurkFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_GOLETT
 
 #if P_FAMILY_PAWNIARD

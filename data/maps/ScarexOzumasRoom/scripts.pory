@@ -64,34 +64,64 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
     applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMarkWithDelay48)
     msgbox(format("¿Y Scarex? Se supone ya debería estar aquí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     waitmovement(0)
+    waitse
+    playse(SE_FALL)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         fly_up
         set_visible
         fall_down
-        emote_x
     ))
+    waitse
+    playse(SE_WALL_HIT)
+    waitse
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(emote_x))
+    waitse
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_FaceLeft)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         delay_16 * 3
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_down_up
         delay_4
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_up_down
         delay_4
         walk_in_place_down * 2
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_right_left
         delay_4
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_left_right
         delay_4
         walk_in_place_right * 2
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_right_left
         delay_4
         walk_in_place_left * 2
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_down_up
         delay_4
         walk_in_place_up
+    ))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
         jump_in_place_up_down
         walk_in_place_down * 2
     ))
+    waitse
+    playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_SweatDropWithDelay48)
     delay(20)
     setobjectmovementtype(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)
@@ -142,7 +172,10 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     lock
     faceplayer
     msgbox(format("Bueno, parece que ha llegado el momento que teníamos pendiente.\pSoy Ozumas, de la sangre de la legendaria dinastía Mendrax.\pHace mucho, fuimos muy conocidos, sobretodo por nunca escapar a un reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
-    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction, jump_in_place_down, unlock_facing_direction, face_player))
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down, unlock_facing_direction, face_player))
+    waitse
     delay(20)
     msgbox(format("¿Así que no me conoces? Pues no te preocupes, han pasado muchos años ya."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     playse(SE_PIN)
@@ -158,13 +191,17 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     delay(20)
     msgbox(format("Vamos a ver qué historia sale de esta batalla."), speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(emote_versus))
+    waitse
     call(ScarexOzumasRoom_EventScript_OzumasBattle)
     msgbox(format("Has demostrado que tienes fuerza y convicción… ¡te felicito!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
-    specialvar(VAR_RESULT, GetPlayerFacingDirection)  
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    playse(SE_PIN)
     if(var(VAR_RESULT) == DIR_NORTH || var(VAR_RESULT) == DIR_SOUTH){
-        applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(walk_left,emote_thinking, walk_left, walk_right * 3, walk_left, face_player))
+        applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(emote_thinking, walk_left * 2, walk_right * 3, walk_left, face_player))
     } else {
-        applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(walk_up,emote_thinking, walk_up, walk_down * 3, walk_up, face_player))
+        applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(emote_thinking, walk_up * 2, walk_down * 3, walk_up, face_player))
     }
     msgbox(format("Pero si quieres ganar, aún queda un largo camino por delante…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
@@ -177,9 +214,15 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     delay(20)
     msgbox(format("Más adelante, aguarda una batalla contra alguien muy cercano a mí.\pEs un gran amigo y rival. Quizá lo conozcas, se llama Xiros.\pSerá esa prueba la que determine si realmente puedes ganar el desafío."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
     delay(20)
-    applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_JumpInPlaceDown2)
-    msgbox(format("Estoy seguro de que lo harás genial. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
+    msgbox(format("Estoy seguro de que lo harás genial. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
         call(WahRoomsShared_OpenDoor)
     }
@@ -250,31 +293,45 @@ script ScarexOzumasRoom_EventScript_Scarex {
     waitmovement(0)
     waitse
     delay(10)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(lock_facing_direction))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-        lock_facing_direction
-        jump_in_place_down * 2
+        jump_in_place_down
         unlock_facing_direction
     ))
+    waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_HappyWithDelay48)
     waitse
     delay(30)
+    playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
     waitse
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_VersusWithDelay48)
+    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, moves(lock_facing_direction))
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+    waitmovement(0)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_SCAREXOZUROOM_SCAREX, moves(jump_in_place_down))
+    applymovement(LOCALID_PLAYER, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
     applymovement(LOCALID_SCAREXOZUROOM_SCAREX, moves(
-        lock_facing_direction
-        jump_in_place_down * 2
+        jump_in_place_down
         unlock_facing_direction
     ))
     applymovement(LOCALID_PLAYER, moves(
-        lock_facing_direction
-        jump_in_place_down * 2
+        jump_in_place_down
         unlock_facing_direction
     ))
     waitmovement(0)
+    waitse
     getdirectiontoface(VAR_RESULT,  LOCALID_PLAYER, LOCALID_SCAREXOZUROOM_SCAREX)
     switch(var(VAR_RESULT)){
         case DIR_NORTH:

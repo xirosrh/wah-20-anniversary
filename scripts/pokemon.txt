@@ -300,7 +300,7 @@ Psycho Boost
 Extreme Speed
 Knock Off
 
-Darkrai @ Darkrainite / Leftovers
+Darkrai @ Darkranite / Leftovers
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
 Dark Void

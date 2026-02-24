@@ -973,3 +973,58 @@ const struct Tileset gTileset_room_cosarara =
     .metatileAttributes = gMetatileAttributes_room_cosarara,
     .callback = InitTilesetAnim_CosararaRoom,
 };
+
+const struct Tileset gTileset_room_kleinpkpower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_kleinpkpower,
+    .palettes = gTilesetPalettes_room_kleinpkpower,
+    .metatiles = gMetatiles_room_kleinpkpower,
+    .metatileAttributes = gMetatileAttributes_room_kleinpkpower,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_sergio =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_sergio,
+    .palettes = gTilesetPalettes_room_sergio,
+    .metatiles = gMetatiles_room_sergio,
+    .metatileAttributes = gMetatileAttributes_room_sergio,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_aguiar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_aguiar,
+    .palettes = gTilesetPalettes_room_aguiar,
+    .metatiles = gMetatiles_room_aguiar,
+    .metatileAttributes = gMetatileAttributes_room_aguiar,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_eing =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_eing,
+    .palettes = gTilesetPalettes_room_eing,
+    .metatiles = gMetatiles_room_eing,
+    .metatileAttributes = gMetatileAttributes_room_eing,
+    .callback = InitTilesetAnim_EingRoom,
+};
+
+const struct Tileset gTileset_room_zero =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_zero,
+    .palettes = gTilesetPalettes_room_zero,
+    .metatiles = gMetatiles_room_zero,
+    .metatileAttributes = gMetatileAttributes_room_zero,
+    .callback = NULL,
+};

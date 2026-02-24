@@ -578,3 +578,10 @@ gSpecials::
 	def_special RandomizeWahAdminTeams
 	def_special ShouldUseAlternativeTeam
 	def_special OpenTeamSelectorFromField
+	def_special BufferSpeciesDexDescription
+	def_special BufferSpeciesDexDescriptionForTextbox
+	def_special BufferSpeciesAbilityNameAndDescription
+	def_special BufferSpeciesTypeNames
+	def_special BufferSpeciesStats
+	def_special Special_CheckAndCompleteAchievement
+	def_special Special_BufferAchievementTitle
