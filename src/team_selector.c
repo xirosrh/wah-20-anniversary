@@ -57,6 +57,12 @@
 #define ITEM_SPRITE_POS_X 80
 #define ITEM_SPRITE_POS_Y 101
 
+#define NUM_MAX_CHARACTHERS 7
+
+static const u8 sSpecialWordList[][NUM_MAX_CHARACTHERS] = {
+    { CHAR_X, CHAR_I, CHAR_R, CHAR_O, CHAR_S, EOS, EOS },
+};
+
 struct TeamSelector
 {
     u8 monTeamNum;//indice del equipo selecionado
@@ -623,16 +629,28 @@ static void GetIVsByNature(const struct TeamSelectorMonData *mon, u8 *ivs)
     }
 }
 
+static u8 GetAbilitySlotForSpecies(u16 species, u16 abilityId)
+{
+    if (abilityId == ABILITY_NONE)
+        return NUM_ABILITY_SLOTS;
+    for (u8 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        if (GetAbilityBySpecies(species, slot) == (enum Ability)abilityId)
+            return slot;
+    }
+    return NUM_ABILITY_SLOTS;
+}
+
 static void GiveTeamPlayer()
 {
     const struct TeamSelectorMonData *mon;
     u8 i;
     u8 indexMon = 0;
-
     enum PokeBall  ball = BALL_POKE;
-    enum ShinyMode shiny = SHINY_MODE_RANDOM;
+    enum ShinyMode shiny;
     enum Type typeTera = TYPE_NONE;
 
+    u8 gender;
     u8 evs[6];
     u8 ivs[6];
 
@@ -647,12 +665,15 @@ static void GiveTeamPlayer()
             indexMon = gTeamSelectorPlayer[teamSelectorObj.monTeamNum].team[i];
 
         mon = &gAllTeamMons[indexMon];
+        shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
         memcpy(tempMoves, mon->moves, sizeof(tempMoves));
         memcpy(evs, mon->ev, sizeof(evs));
         GetIVsByNature(mon, ivs);
 
-        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, MON_FEMALE, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+        gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
+        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
     }
+    gPlayerPartyCount = MAX_TEAM_SIZE;
 }
 
 //========== SECCIÓN: FUNCIONES ÚTILES ==========//
@@ -835,7 +856,7 @@ static void Task_FadeOut(u8 taskId)
         ClearMonSprites(FALSE, TRUE);
         RemoveWindowMsgWantThisTeam();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        SetMainCallback2(gMain.savedCallback);
         DestroyTask(taskId);
     }
 }
@@ -916,6 +937,88 @@ static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons)
     }
 }
 
+static void ConvertNameToUpper(u8 *name)
+{
+    s8 i;
+
+    for (i = 0; i < NUM_MAX_CHARACTHERS; i++)
+    {
+        if (name[i] == EOS)
+            break;
+
+        if (name[i] >= CHAR_a && name[i] <= CHAR_z)
+            name[i] -= 26;
+    }
+}
+
+static bool8 CheckPlayerName(void)
+{
+    s8 i, z;
+    u8 playerNameUpper[NUM_MAX_CHARACTHERS];
+
+    memset(playerNameUpper, EOS, sizeof(playerNameUpper));
+    StringCopy(playerNameUpper, gSaveBlock2Ptr->playerName);
+    ConvertNameToUpper(playerNameUpper);
+
+    for (z = 0; z < ARRAY_COUNT(sSpecialWordList); z++)
+    {
+        bool8 match = TRUE;
+
+        for (i = 0; i < NUM_MAX_CHARACTHERS; i++)
+        {
+            if (playerNameUpper[i] == EOS && sSpecialWordList[z][i] == EOS)
+                break;
+
+            if (playerNameUpper[i] != sSpecialWordList[z][i])
+            {
+                match = FALSE;
+                break;
+            }
+        }
+
+        if (match)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void AddSpecialMonToRandomTeamByPlayerName()
+{
+    u8 i;
+    u8 indexToReplace = 0xFF;
+    u8 indexSpecialMon = 119; //indice de electrode sandia
+    const struct TeamSelectorMonData *mon1;
+    const struct TeamSelectorMonData *mon2;
+
+    if(!CheckPlayerName())
+        return;
+
+    for (i = 0; i < ARRAY_COUNT(teamSelectorObj.monIndexRandomTeam); i++)
+    {
+        mon1 = &gAllTeamMons[teamSelectorObj.monIndexRandomTeam[i]];
+        mon2 = &gAllTeamMons[teamSelectorObj.monIndexRandomTeam[i]];
+        
+        if(mon1->specie == mon2->specie) {
+            indexToReplace = 0xFF;
+            break;
+        }
+
+        if( gSpeciesInfo[mon1->specie].types[0] == gSpeciesInfo[mon2->specie].types[0] || 
+            gSpeciesInfo[mon1->specie].types[0] == gSpeciesInfo[mon2->specie].types[1] ||
+            gSpeciesInfo[mon1->specie].types[1] == gSpeciesInfo[mon2->specie].types[0] || 
+            gSpeciesInfo[mon1->specie].types[1] == gSpeciesInfo[mon2->specie].types[1]
+        ){
+            indexToReplace = i;
+            break;
+        }
+    }
+
+    if(indexToReplace != 0xFF)
+        teamSelectorObj.monIndexRandomTeam[indexToReplace] = indexSpecialMon;
+    else
+        teamSelectorObj.monIndexRandomTeam[Random() % 6] = indexSpecialMon;
+}
 
 static void GenerateRandomTeam()
 {
@@ -943,6 +1046,8 @@ static void GenerateRandomTeam()
         teamSelectorObj.monIndexRandomTeam[i] = idx;
         teamSelectorObj.teamAbilities[TEAM_RANDOM][i] = ABILITY_NONE;
     }
+
+    AddSpecialMonToRandomTeamByPlayerName();
 }
 
 
@@ -1011,7 +1116,7 @@ void CB2_InitTeamSelectorSetUp(void)
     }
 }
 
-bool8 StartTeamSelector_CB2(void)
+void StartTeamSelector_CB2(void)
 {
     if (!gPaletteFade.active)
     {
@@ -1020,11 +1125,7 @@ bool8 StartTeamSelector_CB2(void)
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(CB2_InitTeamSelectorSetUp);
-
-        return TRUE;
     }
-
-    return FALSE;
 }
 
 void StartTeamSelectorFromField_CB2(void)
@@ -1033,5 +1134,6 @@ void StartTeamSelectorFromField_CB2(void)
     teamSelectorObj.fromField = TRUE;
     CleanupOverworldWindowsAndTilemaps();
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
     SetMainCallback2(CB2_InitTeamSelectorSetUp);
 }

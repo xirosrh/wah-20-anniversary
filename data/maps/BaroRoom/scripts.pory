@@ -74,6 +74,9 @@ script BaroRoom_OnFrame {
     delay(20)
     msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"), speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_BAROROOM_BARO, moves(emote_versus))
+    waitse
     call(BaroRoom_EventScript_BaroBattle)
     msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
@@ -112,6 +115,7 @@ script BaroRoom_OnFrame {
 
 
  script BaroRoom_EventScript_OpenSideDoor {
+    playse(SE_RG_DOOR)
     setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_1_UP, 0)
     setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0)
     special(DrawWholeMapView)
@@ -131,6 +135,7 @@ script BaroRoom_OnFrame {
  }
 
   script BaroRoom_EventScript_CloseSideDoor {
+    playse(SE_FU_ZAKU)
     setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_3_UP, 0)
     setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0)
     special(DrawWholeMapView)

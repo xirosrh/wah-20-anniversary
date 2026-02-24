@@ -80,8 +80,16 @@ script DriveKatherineRoom_EventScript_Drive {
     playse(SE_PIN)
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
         emote_double_exclamation_mark, 
-        lock_facing_direction, 
-        jump_in_place_down * 2,
+        lock_facing_direction))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
+        jump_in_place_down,
         unlock_facing_direction))
     msgbox(format("¡Ah, por fin un comensal con hambre de fiesta!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     waitmovement(0)
@@ -108,14 +116,20 @@ script DriveKatherineRoom_EventScript_Drive {
     }
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     delay(40)
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_JumpDown)
+    waitse
     msgbox(format("Bienvenid{OA} al gran restaurante de la celebración.\pAquí servimos emociones recién hechas y recuerdos al fuego lento.\pMi nombre es Drive, y hoy seré tu chef y maître del banquete.\pHoy, ¡el plato principal eres tú!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
     delay(30)
     msgbox(format("Cada plato cuenta una historia, y cada batalla… ¡una receta para el alma!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_smile, jump_in_place_down))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_smile))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
     msgbox(format("Empezaremos con un entrante de entusiasmo, un toque de curiosidad y una pizca de locura."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_SurpriseWithDelay48)
     msgbox(format("Después, el plato principal: un duelo doble delicioso."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
@@ -136,12 +150,19 @@ script DriveKatherineRoom_EventScript_Drive {
     msgbox(format("¡Entonces, que empiece el banquete!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
     msgbox(format("Dos chefs, un banquete, un nuevo desafío.\p¡A tus hornallas, entrenador{A}!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    playse(SE_LEDGE)
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_versus, jump_in_place_down))
     applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(emote_versus, jump_in_place_down))
     waitmovement(0)
+    waitse
     call(DriveKatherineRoom_EventScript_DriveKatherineBattle)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattle)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattle)
+    playse(SE_PIN)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattleEmote)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattleEmote)
+    waitmovement(0)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattleJump)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattleJump)
     waitmovement(0)
     delay(20)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkDown)
@@ -157,7 +178,12 @@ script DriveKatherineRoom_EventScript_Drive {
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
     delay(30)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down * 2))
+    playse(SE_LEDGE)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
     msgbox(format("¡Brindo por eso!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     waitmovement(0)
     delay(30)
@@ -174,9 +200,12 @@ script DriveKatherineRoom_EventScript_Drive {
     end
 }
 
-movement DriveKatherineRoom_Movement_SurpriseAfterBattle {
+movement DriveKatherineRoom_Movement_SurpriseAfterBattleEmote {
     emote_surprise
-	lock_facing_direction
+}
+
+movement DriveKatherineRoom_Movement_SurpriseAfterBattleJump {
+    lock_facing_direction
 	jump_up
 	unlock_facing_direction
     delay_16 * 3

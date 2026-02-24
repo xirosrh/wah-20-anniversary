@@ -42,6 +42,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maniac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaStill;
@@ -66,6 +67,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cope;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Javs;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Angel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrNightology;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer3;
@@ -552,6 +559,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
     [OBJ_EVENT_GFX_SCAREX] =                   &gObjectEventGraphicsInfo_Scarex,
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
+    [OBJ_EVENT_GFX_COPE] =                     &gObjectEventGraphicsInfo_Cope,
+    [OBJ_EVENT_GFX_JAVS] =                     &gObjectEventGraphicsInfo_Javs,
+    [OBJ_EVENT_GFX_ANGEL] =                    &gObjectEventGraphicsInfo_Angel,
+    [OBJ_EVENT_GFX_MRNIGHTOLOGY] =            &gObjectEventGraphicsInfo_MrNightology,
+    [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_3] =        &gObjectEventGraphicsInfo_StagePerformer3,
@@ -582,6 +594,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GALLEGO] =                  &gObjectEventGraphicsInfo_Gallego,
     [OBJ_EVENT_GFX_KATHERINE] =                &gObjectEventGraphicsInfo_Katherine,
     [OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH] =       &gObjectEventGraphicsInfo_AstronautVigoroth,
+    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

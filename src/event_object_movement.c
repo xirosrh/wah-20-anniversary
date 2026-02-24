@@ -529,6 +529,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Zero,                  OBJ_EVENT_PAL_TAG_ZERO},
     {gObjectEventPal_Scarex,                OBJ_EVENT_PAL_TAG_SCAREX},
     {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
+    {gObjectEventPal_Cope,                  OBJ_EVENT_PAL_TAG_COPE},
+    {gObjectEventPal_Javs,                  OBJ_EVENT_PAL_TAG_JAVS},
+    {gObjectEventPal_Angel,                 OBJ_EVENT_PAL_TAG_ANGEL},
+    {gObjectEventPal_MrNightology,           OBJ_EVENT_PAL_TAG_MRNIGHTOLOGY},
     {gObjectEventPal_War,                   OBJ_EVENT_PAL_TAG_WAR},
     {gObjectEventPal_Gallego,               OBJ_EVENT_PAL_TAG_GALLEGO},
     {gObjectEventPal_Katherine,             OBJ_EVENT_PAL_TAG_KATHERINE},
@@ -536,6 +540,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Sayer,                 OBJ_EVENT_PAL_TAG_SAYER},
     {gObjectEventPal_Cheve,                 OBJ_EVENT_PAL_TAG_CHEVE},
     {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
+    {gObjectEventPal_EingFishing,           OBJ_EVENT_PAL_TAG_EING_FISHING},
     {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
     {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
     {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
@@ -556,6 +561,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_StagePerformer2,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_2},
     {gObjectEventPal_StagePerformer3,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_3},
     {gObjectEventPal_StagePerformer4,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_4},
+    {gObjectEventPal_Police,                 OBJ_EVENT_PAL_TAG_POLICE},
+    {gObjectEventPal_SchoolKidM,             OBJ_EVENT_PAL_TAG_SCHOOL_KID_M},
+    {gObjectEventPal_SchoolKidF,             OBJ_EVENT_PAL_TAG_SCHOOL_KID_F},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -1802,7 +1810,11 @@ struct Pokemon *GetFirstLiveMon(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
-        if ((OW_FOLLOWERS_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
+        u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        if (species == SPECIES_NONE)
+            continue;
+
+        if ((OW_FOLLOWERS_ALLOWED_SPECIES && species != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
          || (OW_FOLLOWERS_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LVL))
          || (OW_FOLLOWERS_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LOC)))
             continue;
@@ -9663,6 +9675,9 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
     if (mapElevation == 0 || mapElevation == 15)
         return FALSE;
 
+    if ((elevation == 5 && mapElevation == 6) || (elevation == 6 && mapElevation == 5))
+        return FALSE;
+
     if (mapElevation != elevation)
         return TRUE;
 
@@ -9731,7 +9746,35 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
     objEvent->currentElevation = curElevation;
 
     if (curElevation != 0 && curElevation != 15)
-        objEvent->previousElevation = curElevation;
+    {
+        bool8 is5to6 = (curElevation == 5 && prevElevation == 6) || (curElevation == 6 && prevElevation == 5);
+        bool8 hasStopped = (objEvent->currentCoords.x == objEvent->previousCoords.x
+                         && objEvent->currentCoords.y == objEvent->previousCoords.y);
+
+        if (!is5to6)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (hasStopped)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (sprite != NULL)
+        {
+            s16 spriteMapX, spriteMapY;
+            s16 midX, midY;
+            s16 dx = objEvent->currentCoords.x - objEvent->previousCoords.x;
+            s16 dy = objEvent->currentCoords.y - objEvent->previousCoords.y;
+
+            GetMapCoordsFromSpritePos(sprite->x, sprite->y, &spriteMapX, &spriteMapY);
+            midX = (objEvent->previousCoords.x + objEvent->currentCoords.x) * 8;
+            midY = (objEvent->previousCoords.y + objEvent->currentCoords.y) * 8;
+
+            if ((dx > 0 && spriteMapX >= midX) || (dx < 0 && spriteMapX <= midX)
+             || (dy > 0 && spriteMapY >= midY) || (dy < 0 && spriteMapY <= midY))
+                objEvent->previousElevation = curElevation;
+        }
+    }
 }
 
 void SetObjectSubpriorityByElevation(u8 elevation, struct Sprite *sprite, u8 subpriority)

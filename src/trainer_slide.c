@@ -97,7 +97,19 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Venga ya, qué chorra.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Toca sacar el as en la manga.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Todo depende de ti, compañero.{PAUSE_UNTIL_PRESS}"),
-        }
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1] =	
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
     },
 };
 

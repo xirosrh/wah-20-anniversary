@@ -35,12 +35,16 @@ script XirosRoom_EventScript_Xiros {
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
         msgbox(format("No te obsesiones demasiado con compararte todo el tiempo, porque a veces vas a sentir que estás adelante, y otras veces que te quedaste atrás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
-        
+        playse(SE_LEDGE)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(lock_facing_direction, jump_in_place_down, unlock_facing_direction, face_player))
         msgbox(format("Al final, el camino es largo, y la verdadera carrera es siempre con uno mismo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
-        applymovement(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
+        playse(SE_LEDGE)
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, lock_facing_direction, jump_in_place_down))
+        waitse
+        playse(SE_LEDGE)
+        applymovement(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down, unlock_facing_direction, face_player))
         msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         waitmovement(0)
         playse(SE_PIN)
@@ -103,9 +107,12 @@ script XirosRoom_EventScript_Xiros {
     fadescreen(FADE_FROM_WHITE)
     release
     delay(30)
-    applymovement(LOCALID_XIROSROOM_ELECTRODE, moves(jump_in_place_down * 2))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_XIROSROOM_ELECTRODE, moves(jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_XIROSROOM_ELECTRODE, moves(jump_in_place_down))
+    waitse
     playmoncry(SPECIES_ELECTRODE, CRY_MODE_NORMAL)
-    waitmovement(0)
     waitmoncry
     applymovementandwait(LOCALID_XIROSROOM_ELECTRODE, moves(walk_left, walk_up, walk_in_place_right))
     release
@@ -116,10 +123,15 @@ script XirosRoom_EventScript_Xiros {
     turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
     turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_SOUTH)
     msgbox(format("Personalmente nunca creí que la época dorada fuera un momento que quedó atrás en el tiempo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
-    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown2)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown)
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown)
     msgbox(format("Para mí, la época dorada es hoy, y también será mañana, mientras sigan existiendo personas con ganas de motivar, ayudar y empujar las cosas un poco más adelante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceLeft)
     turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_EAST)
+    playse(SE_BALL_OPEN)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_XIROSROOM_ELECTRODE)
     setflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
@@ -132,7 +144,13 @@ script XirosRoom_EventScript_Xiros {
     applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(emote_versus, delay_16, walk_in_place_down, delay_16))
     call(XirosRoom_EventScript_XirosBattle)
     playse(SE_PIN)
-    applymovement(LOCALID_XIROSROOM_XIROS, moves(emote_happy, jump_in_place_down * 2))
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(emote_happy))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
     msgbox(format("¡Wow! ¡Que gran combate! Me encanta tu forma de combatir.\p¡Sobretodo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     waitmovement(0)
     delay(20)

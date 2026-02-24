@@ -1296,7 +1296,7 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     // When applying script movements to follower, it may have frozen animation that must be cleared
-    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) 
+    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen)
             || ((objEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)]) && IS_OW_MON_OBJ(objEvent)))
     {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
@@ -1510,8 +1510,8 @@ bool8 ScrCmd_resetobjectsubpriority(struct ScriptContext *ctx)
 bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-    if (PlayerHasFollowerNPC() 
-     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE 
+    if (PlayerHasFollowerNPC()
+     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE
      && gSelectedObjectEvent == GetFollowerNPCObjectId())
     {
         struct ObjectEvent *npcFollower = &gObjectEvents[GetFollowerNPCObjectId()];
@@ -2733,6 +2733,28 @@ bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setmetatileelevation(struct ScriptContext *ctx)
+{
+    u16 x = VarGet(ScriptReadHalfword(ctx));
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+    u16 elevation = VarGet(ScriptReadHalfword(ctx));
+    u16 metatileId;
+    u16 collision;
+    u16 block;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    x += MAP_OFFSET;
+    y += MAP_OFFSET;
+    metatileId = MapGridGetMetatileIdAt(x, y);
+    collision = MapGridGetCollisionAt(x, y);
+    block = (metatileId & MAPGRID_METATILE_ID_MASK)
+        | PACK_COLLISION(collision)
+        | PACK_ELEVATION(elevation);
+    MapGridSetMetatileEntryAt(x, y, block);
+    return FALSE;
+}
+
 bool8 ScrCmd_opendoor(struct ScriptContext *ctx)
 {
     u16 x = VarGet(ScriptReadHalfword(ctx));
@@ -3314,4 +3336,3 @@ bool8 ScrCmd_MoveObjectToPos_at(struct ScriptContext *ctx)
     // sMovingNpcId = localId;
     return FALSE;
 }
-

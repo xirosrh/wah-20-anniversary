@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_DIFFICULTY                                   0x408B
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -265,7 +265,7 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_COSARARA_ROOM_COMPUTER_FRAMES                 0x40F7 // WAH
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused
+#define VAR_WAH_CHALLENGE_COMPLETION_COUNT                0x40F8 // WAH
 #define VAR_UNUSED_0x40F9                                0x40F9 // Unused
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused

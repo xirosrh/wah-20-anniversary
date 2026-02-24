@@ -42,6 +42,7 @@
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "config/pbh.h"
 
 extern const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT];
 extern const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow;
@@ -1847,7 +1848,7 @@ static void HandleInput_PokemonSpriteVisualizer(u8 taskId)
             SetArrowInvisibility(data);
             PrintInstructionsOnWindow(data);
             UpdateMonAnimNames(taskId);
-            
+
             if (data->followerspriteId != 0)
                 gSprites[data->followerspriteId].invisible = FALSE;
         }
@@ -1971,7 +1972,8 @@ static void ReloadPokemonSprites(struct PokemonSpriteVisualizer *data)
     front_y = GetBattlerSpriteFinal_YCustom(species, 0, 0);
     data->frontspriteId = CreateSprite(&gMultiuseSpriteTemplate, front_x, front_y, 0);
     gSprites[data->frontspriteId].oam.paletteNum = 1;
-    DesplazaTonoPaleta(OBJ_PLTT_ID(1), personality);
+    if (PBH_PALETAS_UNICAS)
+        DesplazaTonoPaleta(OBJ_PLTT_ID(1), personality);
     gSprites[data->frontspriteId].callback = SpriteCallbackDummy;
     gSprites[data->frontspriteId].oam.priority = 0;
     //Front Shadow
@@ -1984,7 +1986,8 @@ static void ReloadPokemonSprites(struct PokemonSpriteVisualizer *data)
     offset_y = gSpeciesInfo[species].backPicYOffset;
     data->backspriteId = CreateSprite(&gMultiuseSpriteTemplate, VISUALIZER_MON_BACK_X, VISUALIZER_MON_BACK_Y + offset_y, 0);
     gSprites[data->backspriteId].oam.paletteNum = 5;
-    DesplazaTonoPaleta(OBJ_PLTT_ID(5), personality);
+    if (PBH_PALETAS_UNICAS)
+        DesplazaTonoPaleta(OBJ_PLTT_ID(5), personality);
     gSprites[data->backspriteId].callback = SpriteCallbackDummy;
     gSprites[data->backspriteId].oam.priority = 0;
 

@@ -4167,17 +4167,17 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_aguiar",
       "border_filepath": "data/layouts/AguiarRoom/border.bin",
       "blockdata_filepath": "data/layouts/AguiarRoom/map.bin"
     },
     {
       "id": "LAYOUT_DAV_ZERO_ROOM",
       "name": "DavZeroRoom_Layout",
-      "width": 19,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_zero",
       "border_filepath": "data/layouts/DavZeroRoom/border.bin",
       "blockdata_filepath": "data/layouts/DavZeroRoom/map.bin"
     },
@@ -4257,7 +4257,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_kleinpkpower",
       "border_filepath": "data/layouts/KleinPkPowerRoom/border.bin",
       "blockdata_filepath": "data/layouts/KleinPkPowerRoom/map.bin"
     },
@@ -4266,8 +4266,8 @@
       "name": "EingRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_eing",
       "border_filepath": "data/layouts/EingRoom/border.bin",
       "blockdata_filepath": "data/layouts/EingRoom/map.bin"
     },
@@ -4285,9 +4285,9 @@
       "id": "LAYOUT_SERGIO_ROOM",
       "name": "SergioRoom_Layout",
       "width": 13,
-      "height": 14,
+      "height": 18,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_sergio",
       "border_filepath": "data/layouts/SergioRoom/border.bin",
       "blockdata_filepath": "data/layouts/SergioRoom/map.bin"
     },
@@ -4320,6 +4320,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Lobby/border.bin",
       "blockdata_filepath": "data/layouts/Lobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_COLLABORATORS_ROOM",
+      "name": "CollaboratorsRoom_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_omega",
+      "border_filepath": "data/layouts/CollaboratorsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/CollaboratorsRoom/map.bin"
     }
   ]
 }
