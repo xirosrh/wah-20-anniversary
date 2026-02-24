@@ -1295,6 +1295,12 @@ JackJohnsonRoom_EventScript_NPC4::
 	end
 
 
+JackJohnsonRoom_EventScript_BrockPoster::
+# 736 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_BrockPoster_Text_0, MSGBOX_SIGN
+	end
+
+
 # 384 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_0:
 # 384 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1686,6 +1692,13 @@ JackJohnsonRoom_EventScript_NPC3_Text_0:
 JackJohnsonRoom_EventScript_NPC4_Text_0:
 # 731 "data/maps/JackJohnsonRoom/scripts.pory"
 	.string "¡Quiero ir a dormir!$"
+
+JackJohnsonRoom_EventScript_BrockPoster_Text_0:
+# 736 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Es un poster con una foto de Oscar\n"
+	.string "Brock.\p"
+	.string "¿Realmente tiene esos músculos o será\n"
+	.string "Photoshop?$"
 
 JackJohnsonRoom_Text_JackDefeated::
 # 694 "data/maps/JackJohnsonRoom/scripts.pory"

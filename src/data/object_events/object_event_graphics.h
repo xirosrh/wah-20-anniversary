@@ -63,6 +63,7 @@ const u16 gObjectEventPal_Baro[] = INCBIN_U16("graphics/object_events/palettes/a
 const u16 gObjectEventPal_Sayer[] = INCBIN_U16("graphics/object_events/palettes/admins/sayer.gbapal");
 const u16 gObjectEventPal_Cheve[] = INCBIN_U16("graphics/object_events/palettes/admins/cheve.gbapal");
 const u16 gObjectEventPal_Eing[] = INCBIN_U16("graphics/object_events/palettes/admins/eing.gbapal");
+const u16 gObjectEventPal_EingFishing[] = INCBIN_U16("graphics/object_events/palettes/admins/eing_fishing.gbapal");
 const u16 gObjectEventPal_Sergio[] = INCBIN_U16("graphics/object_events/palettes/admins/sergio.gbapal");
 const u16 gObjectEventPal_SergioDragonite[] = INCBIN_U16("graphics/object_events/palettes/admins/sergio_dragonite.gbapal");
 const u16 gObjectEventPal_Drive[] = INCBIN_U16("graphics/object_events/palettes/admins/drive.gbapal");

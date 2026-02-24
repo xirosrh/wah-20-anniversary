@@ -36,6 +36,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -122,6 +123,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_EAST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -211,6 +213,7 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Erkey_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_WEST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     release
     end
 }
@@ -295,6 +298,7 @@ text CollaboratorsRoom_Text_Micolo_ChoosePokemon {
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
     turnobject(VAR_LAST_TALKED, DIR_EAST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     releaseall
     end
 }
@@ -419,7 +423,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_sweat_drop))
     waitse
-    msgbox(format("Perdona, es la costumbre jeje...\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero... ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Perdona, es la costumbre jeje…\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     return
 }
 
@@ -427,11 +431,11 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
     msgbox(format("¡Tú otra vez! ¿Te has quedado con ganas de más?"), MSGBOX_YESNO, speaker = SP_NAME_MRNIGHTOLOGY)
     closemessage
     if(var(VAR_RESULT)) {
-        msgbox(format("¡Já! Si ya me lo imaginaba..."), speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¡Já! Si ya me lo imaginaba…"), speaker = SP_NAME_MRNIGHTOLOGY)
         return
     }
     else {
-        msgbox(format("¿No?\nBueno... Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
 }
@@ -466,7 +470,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
             call(CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle)
         }
 
-        msgbox(format("Tengo un plan genial para derrotarte y para eso lucharé con un amigo.\pAsí que...\n¡Que aparezca el invitado especial!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Tengo un plan genial para derrotarte y para eso lucharé con un amigo.\pAsí que…\n¡Que aparezca el invitado especial!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         applymovementandwait(VAR_LAST_TALKED, moves(face_up))
         playse(SE_POKENAV_ON)
         waitse
@@ -497,7 +501,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         applymovement(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_down))
         waitmovement(0)
-        msgbox(format("Sorprendido, ¿no?\nPues ha llegado la hora...\p¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Sorprendido, ¿no?\nPues ha llegado la hora…\p¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
         closemessage
         playse(SE_PIN)
         applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, Common_Movement_VersusWithDelay48)
@@ -515,7 +519,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
             applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_Movement_MrNightology_Despegue)
             waitmovement(0)
             waitse
-            msgbox(format("¡El Team Rocket despega de nuevooooo...!"), MSGBOX_AUTOCLOSE_TOP)
+            msgbox(format("¡El Team Rocket despega de nuevooooo…!"), MSGBOX_AUTOCLOSE_TOP)
             playse(SE_FALL)
             applymovementandwait(VAR_LAST_TALKED, moves(face_down, slide_down * 8))
             playse(SE_NOT_EFFECTIVE)
@@ -533,7 +537,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
             msgbox(format("Has hecho todo lo que has podido, pero no es suficiente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             delay(20)
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Dale una vuelta a tu estrategia y...\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("Dale una vuelta a tu estrategia y…\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             fadescreen(FADE_TO_BLACK)
             setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, -3)
             fadescreen(FADE_FROM_BLACK)
@@ -542,7 +546,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
     }
     else {
         faceplayer
-        msgbox(format("Ay, si te contase...\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Ay, si te contase…\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, moves(emote_sad))
         waitse
@@ -550,7 +554,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, moves(emote_annoyed))
         waitse
-        msgbox(format("¿Te parece normal?\nEn fin... La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿Te parece normal?\nEn fin… La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
 }

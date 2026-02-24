@@ -188,7 +188,7 @@ script Lobby_EventScript_Roxas {
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_X)
-            msgbox(format("¡Nooo, me estás cargando! Ni con la fuerza de este Pokémon oscuro te pude ganar.\pAhora me cierra por qué a vos te dejaron pasar a las salas y a mí me sacaron de un voleo.\pTenés algo distinto, pasta de campeón, no es solo fuerza bruta.\pLa verdad, me cerraste la boca. Bien ganado."), MSGBOX_DEFAULT)
+            msgbox(format("¡Nooo, me estás cargando! Ni con la fuerza de este Pokémon oscuro te pude ganar.\pAhora me cierra por qué a vos te dejaron pasar a las salas y a mí me sacaron de un voleo.\pTenés algo distinto, pasta de campeón, no es solo fuerza bruta.\pLa verdad, me cerraste la boca. Bien ganado."), MSGBOX_AUTOCLOSE)
             waitmovement(0)
             setflag(FLAG_DEFEATED_LOBBY_ROXAS)
         } else {
@@ -202,6 +202,7 @@ script Lobby_EventScript_Roxas {
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
+        call(Achievements_EventScript_Eval_AllAdminsDefeated)
         releaseall
         end
     } else {
@@ -397,3 +398,7 @@ script Lobby_EventScript_ShowFakemonDexInfo {
     return
 }
 
+script Lobby_EventScript_TrainerCardGirl {
+    msgbox(format("¿Sabías que en la parte de atrás de tu tarjeta de entrenador puedes ver tus logros?\p¡También puedes ver los requerimientos para obtener cada uno!"), MSGBOX_NPC)
+    end
+}

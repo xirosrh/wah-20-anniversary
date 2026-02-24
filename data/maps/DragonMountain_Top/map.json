@@ -2,7 +2,7 @@
   "id": "MAP_DRAGON_MOUNTAIN_TOP",
   "name": "DragonMountain_Top",
   "layout": "LAYOUT_DRAGON_MOUNTAIN_TOP",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_PYRAMID_TOP",
   "region_map_section": "MAPSEC_DRAGON_MOUNTAIN_TOP",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY_CLOUDS",
