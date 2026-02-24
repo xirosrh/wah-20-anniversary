@@ -37,6 +37,7 @@ enum SpeakerNames {
     SP_NAME_ERKEY,
     SP_NAME_MICOLO,
     SP_NAME_COPE,
+    SP_NAME_MRNIGHTOLOGY,
     SP_NAME_COUNT
 };
 
