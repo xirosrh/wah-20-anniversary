@@ -5,6 +5,7 @@
 
 //  VANILLA ROM
 extern const s8 DirectSoundWaveData_ethnic_flavours_kotsuzumi[];
+extern const s8 DirectSoundWaveData_ethnic_flavours_hyoushigi[];
 
 // ACIMUT'S DRUMKIT b12r 21024Hz
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_28_slap_gm2[];

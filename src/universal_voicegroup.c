@@ -1398,3 +1398,162 @@ const union VoiceGroup voicegroup_agm_cm64[] =
     [DRUMKIT_CM_64_32L]     = DRUM_SET(Acimut_Drumkit_Standard_b14r),
 };
 
+//--------------------------------------------------------------
+//  Aichiya's dppt & hgss voicegroup
+//  https://github.com/aichiya/pokeemerald-expansion/tree/pokeemerald-expansion-dppt-hgss-music-plus-bw-sequences
+//  
+//  Este voicegroup es una adaptación hecha por Acimut,
+//  usando el orden de instrumentos de las versiones dppt & hgss de Aichiya
+//  que se encuentra en el archivo sound/voicegroups/hgss_main.inc
+//  usando samples de FE7 y samples HQ en 21024Hz por Acimut.
+//  Advertencia: Este voicegroup no usa el orden de instrumentos de General MIDI,
+//  usar unicamente con archivos MIDI que coincidan en el orden de instrumentos.
+//--------------------------------------------------------------
+
+const union VoiceGroup voicegroup_hgss_main[] =
+{
+    [ACOUSTIC_GRAND_PIANO]  = INSTRUMENT_SPLIT(FE7_AcousticGrandPiano, KeySplit_FE7_Piano),
+    [BRIGHT_ACOUSTIC_PIANO] = INSTRUMENT_SPLIT(Instrument_FE7_BrightAcousticPiano, KeySplitTable6),
+    [ELECTRIC_GRAND_PIANO]  = INSTRUMENT_SPLIT(Instrument_FE7_ElectricGrandPiano, KeySplitTable6),
+    [HONKY_TONK_PIANO]      = INSTRUMENT_SPLIT(Instrument_AGM_Celesta, KeySplit_Octaves),
+    [ELECTRIC_PIANO_1]      = INSTRUMENT_SPLIT(Instrument_FE7_ElectricPiano1, KeySplitTable8),//HGSS Rhodes 2
+    [ELECTRIC_PIANO_2]      = INSTRUMENT_SPLIT(Instrument_AGM_Vibraphone, KeySplit_Octaves),
+    [HARPSICHORD]           = INSTRUMENT_SPLIT(Instrument_AGM_Marimba, KeySplit_Octaves),
+    [CLAVINET]              = INSTRUMENT_SPLIT(Instrument_FE7_Xylophone, KeySplitTable15),
+
+    [CELESTA]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_014_tubular_bells, 255, 249, 0, 235),
+    [GLOCKENSPIEL]          = INSTRUMENT_SPLIT(Instrument_FE7_Glockenspiel, KeySplitTable12),
+    [MUSIC_BOX]             = INSTRUMENT_SPLIT(Instrument_FE7_MusicBox, KeySplitTable11),
+    [VIBRAPHONE]            = INSTRUMENT_SPLIT(Instrument_FE7_DrawbarOrgan, KeySplitTable17),
+    [MARIMBA]               = INSTRUMENT_SPLIT(Instrument_FE7_DrawbarOrgan, KeySplitTable17),//HGSS Jazz Organ
+    [XYLOPHONE]             = INSTRUMENT_SPLIT(Instrument_FE7_Accordion, KeySplitTable18),
+    [TUBULAR_BELLS]         = INSTRUMENT_SPLIT(Instrument_AGM_Acoustic_Guitar_Nylon, KeySplit_AGM_Guitar),
+    [DULCIMER]              = INSTRUMENT_SPLIT(Instrument_AGM_Acoustic_Guitar_Steel, KeySplit_AGM_Guitar),
+
+    [DRAWBAR_ORGAN]         = INSTRUMENT_SPLIT(Instrument_AGM_OverdrivenGuitar, KeySplit_AGM_OverdrivenGuitar),
+    [PERCUSSIVE_ORGAN]      = INSTRUMENT_SPLIT(Instrument_AGM_OverdrivenGuitar, KeySplit_AGM_OverdrivenGuitar),
+    [ROCK_ORGAN]            = INSTRUMENT_SPLIT(Instrument_FE7_ElectricGuitarClean, KeySplitTable19),
+    [CHURCH_ORGAN]          = INSTRUMENT_SPLIT(Instrument_AGM_Acoustic_Bass, KeySplit_AGM_Bass),//HGSS Upright Bass
+    [REED_ORGAN]            = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
+    [ACCORDION]             = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [HARMONICA]             = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
+    [TANGO_ACCORDION]       = INSTRUMENT_SPLIT(Instrument_FE7_StringEnsemble1, KeySplitTable12),
+
+    [ACOUSTIC_GUITAR_NYLON] = INSTRUMENT_SPLIT(Instrument_FE7_Violin, KeySplitTable22),
+    [ACOUSTIC_GUITAR_STEEL] = INSTRUMENT_SPLIT(Instrument_FE7_Cello, KeySplitTable25),
+    [ELECTRIC_GUITAR_JAZZ]  = INSTRUMENT_SPLIT(Instrument_AGM_Pizzicato_Strings, KeySplit_AGM_Pizzicato_Strings),
+    [ELECTRIC_GUITAR_CLEAN] = INSTRUMENT_SPLIT(Instrument_FE7_OrchestralHarp, KeySplitTable24),
+    [ELECTRIC_GUITAR_MUTED] = INSTRUMENT_SPLIT(Instrument_AGM_Timpani, KeySplit_AGM_Timpani),
+    [OVERDRIVEN_GUITAR]     = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),
+    [DISTORTION_GUITAR]     = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),
+    [GUITAR_HARMONICS]      = INSTRUMENT_SPLIT(Instrument_AGM_FrenchHorn, KeySplit_AGM_FrenchHorn),
+
+    [ACOUSTIC_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_FrenchHorn, KeySplit_AGM_FrenchHorn),
+    [ELECTRIC_BASS_FINGER]  = INSTRUMENT_SPLIT(Instrument_FE7_Oboe, KeySplitTable20),
+    [ELECTRIC_BASS_PICK]    = INSTRUMENT_SPLIT(Instrument_FE7_Clarinet, KeySplitTable30),
+    [FRETLESS_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_Flute, KeySplit_AGM_Flute),
+    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_Bassoon, KeySplitTable29),
+    [SLAP_BASS_2]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
+    [SYNTH_BASS_1]          = DEFAULT_INSTRUMENT,//Sampled Square Wave
+    [SYNTH_BASS_2]          = DRUM_SET(Acimut_Drumkit_Standard_b14r),//[modificar drumset] |----------------
+
+    [VIOLIN]                = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60, 255, 0, 255, 165),
+    [VIOLA]                 = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
+    [CELLO]                 = INSTRUMENT_SPLIT(Instrument_FE7_Koto, KeySplitTable29),
+    [CONTRABASS]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 255, 242, 40, 211),//Square Wave 50%
+    [TREMOLO_STRINGS]       = INSTRUMENT_SPLIT(Instrument_FE7_Shakuhachi, KeySplitTable13),//HGSS Wind Effect |----------------
+    [PIZZICATO_STRINGS]     = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_127_Gunshot_71, 255, 235, 0, 165),//HGSS Explosion Effect |----------------
+    [ORCHESTRAL_HARP]       = DEFAULT_INSTRUMENT,//Sampled Square Wave
+    [TIMPANI]               = INSTRUMENT_SPLIT(Instrument_AGM_Timpani, KeySplit_AGM_Timpani),//HGSS Bubble Effect |----------------
+
+    [STRING_ENSEMBLE_1]     = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 255, 242, 25, 0),//Square Wave 50%
+    [STRING_ENSEMBLE_2]     = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 255, 252, 0, 96),//Square Wave 50%
+    [SYNTH_STRINGS_1]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 255, 250, 0, 220),//Square Wave 50%
+    [SYNTH_STRINGS_2]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 224, 242, 101, 220),//Square Wave 50%
+    [CHOIR_AAHS]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 224, 242, 101, 192),//Square Wave 50%
+    [VOICE_OOHS]            = DEFAULT_INSTRUMENT,//Sampled Noise 1 |----------------
+    [SYNTH_VOICE]           = DEFAULT_INSTRUMENT,//Sampled Noise 2 |----------------
+    [ORCHESTRA_HIT]         = INSTRUMENT_SPLIT(Instrument_FE7_Whistle, KeySplitTable7),
+
+    [TRUMPET]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
+    [TROMBONE]              = INSTRUMENT_SPLIT(Instrument_FE7_ChurchOrgan, KeySplitTable13),
+    [TUBA]                  = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 80, 234, 191, 220),//Sampled Square Wave 37.5%
+    [MUTED_TRUMPET]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 80, 234, 191, 220),//Sampled Square Wave 12.5%
+    [FRENCH_HORN]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Major
+    [BRASS_SECTION]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Minor
+    [SYNTH_BRASS_1]         = DRUM_SET(Acimut_Drumkit_Standard_b14r),//[modificar drumset] |----------------
+    [SYNTH_BRASS_2]         = INSTRUMENT_SPLIT(Instrument_AGM_Timpani, KeySplit_AGM_Timpani),
+
+    [SOPRANO_SAX]           = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
+    [ALTO_SAX]              = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_2, KeySplit_AGM_Synth_Bass),
+    [TENOR_SAX]             = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_081_Lead_2_Sawtooth_60, 255, 0, 255, 165),
+    [BARITONE_SAX]          = INSTRUMENT_SPLIT(Instrument_FE7_Shamisen, KeySplitTable35),
+    [OBOE]                  = INSTRUMENT(NOTE_C4, 0, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 250),//HGSS Hyoshigi
+    [ENGLISH_HORN]          = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_77_low_wood_block, 255, 0, 255, 250),//HGSS Kodaiko
+    [BASSOON]               = INSTRUMENT(NOTE_E4, 0, DirectSoundWaveData_ethnic_flavours_kotsuzumi, 255, 0, 255, 250),//HGSS Tsuzumi
+    [CLARINET]              = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_83_jingle_bell_gm2, 255, 0, 255, 250),
+
+    [PICCOLO]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap, 255, 0, 255, 250),
+    [FLUTE]                 = INSTRUMENT_SPLIT(Instrument_FE7_VoiceOohs, KeySplitTable24),
+    [RECORDER]              = INSTRUMENT_SPLIT(Instrument_FE7_ChoirAahs, KeySplitTable16),
+    [PAN_FLUTE]             = INSTRUMENT_SPLIT(Instrument_FE7_Lead6_Voice, KeySplitTable33),
+    [BLOWN_BOTTLE]          = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
+    [SHAKUHACHI]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_121_Breath_Noise_60, 255, 0, 255, 165),
+    [WHISTLE]               = INSTRUMENT_SPLIT(Instrument_AGM_Alto_Sax, KeySplit_AGM_Alto_Sax),
+    [OCARINA]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60, 255, 0, 255, 165),//
+
+    [LEAD_1_SQUARE]         = INSTRUMENT_SPLIT(Instrument_FE7_HonkyTonkPiano, KeySplitTable7),//HGSS Piano 4
+    [LEAD_2_SAWTOOTH]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60, 255, 0, 255, 165),//DP Tom
+    [LEAD_3_CALLIOPE]       = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),//DP Trumpet (Arceus)
+    [LEAD_4_CHIFF]          = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),//DP Trombone (Arceus)
+    [LEAD_5_CHARANG]        = INSTRUMENT_SPLIT(Instrument_FE7_Lead5_Charang, KeySplitTable15),
+    [LEAD_6_VOICE]          = INSTRUMENT_SPLIT(Instrument_FE7_Lead6_Voice, KeySplitTable33),
+    [LEAD_7_FIFTHS]         = INSTRUMENT_SPLIT(Instrument_FE7_Lead7_Fifths, KeySplitTable34),
+    [LEAD_8_BASS_LEAD]      = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_087_Lead_8_Bass_Lead_60, 255, 0, 255, 165),
+
+    [PAD_1_NEW_AGE]         = INSTRUMENT_SPLIT(Instrument_FE7_Pad1_NewAge, KeySplitTable28),
+    [PAD_2_WARM]            = INSTRUMENT_SPLIT(Instrument_FE7_Pad2_Warm, KeySplitTable33),
+    [PAD_3_POLYSYNTH]       = INSTRUMENT_SPLIT(Instrument_FE7_Pad3_Polysynth, KeySplitTable8),
+    [PAD_4_CHOIR]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_091_Pad_4_Choir_67, 255, 0, 255, 235),
+    [PAD_5_BOWED]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_092_Pad_5_Bowed_84, 255, 0, 255, 235),
+    [PAD_6_METALLIC]        = INSTRUMENT_SPLIT(Instrument_FE7_Pad6_Metallic, KeySplitTable7),
+    [PAD_7_HALO]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_094_Pad_7_Halo_84, 255, 0, 255, 235),
+    [PAD_8_SWEEP]           = INSTRUMENT_SPLIT(Instrument_FE7_Pad8_Sweep, KeySplitTable18),
+
+    [FX_1_RAIN]             = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_096_Fx_1_Rain_72, 255, 0, 255, 235),
+    [FX_2_SOUNDTRACK]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_097_Fx_2_Soundtrack_84, 255, 0, 255, 235),
+    [FX_3_CRYSTAL]          = INSTRUMENT_SPLIT(Instrument_FE7_FX3_Crystal, KeySplitTable33),
+    [FX_4_ATMOSPHERE]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_099_Fx_4_Atmosphere_84, 255, 0, 255, 235),
+    [FX_5_BRIGHTNESS]       = INSTRUMENT_SPLIT(Instrument_FE7_FX5_Brightness, KeySplitTable34),
+    [FX_6_GOBLINS]          = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_101_fx_6_goblins, 255, 0, 255, 235),
+    [FX_7_ECHOES]           = INSTRUMENT_SPLIT(Instrument_FE7_FX7_Echoes, KeySplitTable15),
+    [FX_8_SCI_FI]           = INSTRUMENT_SPLIT(Instrument_FE7_FX8_Sci_Fi, KeySplitTable32),
+
+    [SITAR]                 = INSTRUMENT_SPLIT(Instrument_FE7_Sitar, KeySplitTable31),
+    [BANJO]                 = INSTRUMENT_SPLIT(Instrument_FE7_Banjo, KeySplitTable35),
+    [SHAMISEN]              = INSTRUMENT_SPLIT(Instrument_FE7_Shamisen, KeySplitTable35),
+    [KOTO]                  = INSTRUMENT_SPLIT(Instrument_FE7_Koto, KeySplitTable29),
+    [KALIMBA]               = INSTRUMENT_SPLIT(Instrument_FE7_Kalimba, KeySplitTable31),
+    [BAG_PIPE]              = INSTRUMENT_SPLIT(Instrument_FE7_Bagpipe, KeySplitTable30),
+    [FIDDLE]                = INSTRUMENT_SPLIT(Instrument_FE7_Fiddle, KeySplitTable25),
+    [SHANAI]                = INSTRUMENT_SPLIT(Instrument_FE7_Shanai, KeySplitTable35),
+
+    [TINKLE_BELL]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_112_tinkle_bell, 255, 252, 0, 235),
+    [AGOGO]                 = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_113_Agogo_78, 255, 242, 0, 235),
+    [STEEL_DRUMS]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_114_Steel_Drums_60, 255, 0, 255, 165),
+    [WOODBLOCK]             = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_115_Woodblock_60, 255, 0, 255, 165),
+    [TAIKO_DRUM]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60, 255, 0, 255, 165),
+    [MELODIC_TOM]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60, 255, 0, 255, 165),
+    [SYNTH_DRUM]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60, 255, 0, 255, 165),
+    [REVERSE_CYMBAL]        = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
+
+    [GUITAR_FRET_NOISE]     = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_120_Guitar_Fret_Noise_60, 255, 0, 255, 165),
+    [BREATH_NOISE]          = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_121_Breath_Noise_60, 255, 0, 255, 165),
+    [SEASHORE]              = INSTRUMENT_NO_RESAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_122_Seashore_60, 255, 0, 255, 165),
+    [BIRD_TWEET]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_123_Bird_Tweet_60, 255, 0, 255, 165),
+    [TELEPHONE_RING]        = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_124_Telephone_Ring_60, 255, 0, 255, 165),
+    [HELICOPTER]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_125_Helicopter_60, 255, 0, 255, 165),
+    [APPLAUSE]              = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_126_Applause_60, 255, 0, 255, 165),
+    [GUNSHOT]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_127_Gunshot_71, 255, 235, 0, 165),
+};
+
