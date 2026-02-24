@@ -3488,6 +3488,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_HG_DRAGONS_DEN)           \
     X(MUS_INSTRUMENT_TEST)          \
     X(MUS_DP_GALACTIC_HQ_BASEMENT)  \
     X(MUS_DP_GYM)                   \
