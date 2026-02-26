@@ -2154,7 +2154,7 @@ Timid Nature
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
 Class: WAH Admin
-Pic: Youngster
+Pic: Tokyn
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -2186,11 +2186,11 @@ Jolly Nature
 - Endeavor
 
 === TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+Name: Tokyn
+Class: WAH Admin
+Pic: Tokyn
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -3347,36 +3347,72 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Erkey
 Gender: Male
-Music: Cool
-Items: Full Restore
+Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Mewtwo
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Feraligatr @ Feraligite
+Ability: Strong Jaw
+Tera Type: Water
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Dragon Claw
+- Crunch
 
-Charizard
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Weavile @ Focus Sash
+Ability: Pressure
+Tera Type: Dark
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Icicle Crash
+- Knock Off
+- Ice Shard
+- Low Kick
 
-Charizard
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Tyranitar @ Leftovers
+Ability: Sand Stream
+Tera Type: Rock
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Adamant Nature
+- Dragon Dance
+- Stone Edge
+- Crunch
+- Fire Punch
 
-Charizard
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Drapion @ Assault Vest
+Ability: Sniper
+Tera Type: Poison
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Careful Nature
+- Knock Off
+- Poison Jab
+- Earthquake
+- Ice Fang
 
-Charizard
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Scizor @ Life Orb
+Ability: Technician
+Tera Type: Bug
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Adamant Nature
+- Bullet Punch
+- Swords Dance
+- Knock Off
+- U-turn
 
-Charizard
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Level: 100
+Gengar @ Life Orb
+Ability: Levitate
+Tera Type: Ghost
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+IVs: 0 Atk
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Taunt
 
 === TRAINER_WAH_COLLABORATOR_MICOLO ===
 Name: Micolo
