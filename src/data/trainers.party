@@ -2154,7 +2154,7 @@ Timid Nature
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
 Class: WAH Admin
-Pic: Youngster
+Pic: Tokyn
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -3347,7 +3347,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Erkey
 Gender: Male
 Music: Cool
 Items: Full Restore
