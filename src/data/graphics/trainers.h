@@ -340,6 +340,9 @@ const u16 gTrainerPalette_War[] = INCBIN_U16("graphics/trainers/palettes/admins/
 const u32 gTrainerFrontPic_Tokyn[] = INCBIN_U32("graphics/trainers/front_pics/admins/tokyn.4bpp.smol");
 const u16 gTrainerPalette_Tokyn[] = INCBIN_U16("graphics/trainers/palettes/admins/tokyn.gbapal");
 
+const u32 gTrainerFrontPic_Javi4315[] = INCBIN_U32("graphics/trainers/front_pics/admins/javi4315.4bpp.smol");
+const u16 gTrainerPalette_Javi4315[] = INCBIN_U16("graphics/trainers/palettes/admins/javi4315.gbapal");
+
 const u32 gTrainerFrontPic_Erkey[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/erkey.4bpp.smol");
 const u16 gTrainerPalette_Erkey[] = INCBIN_U16("graphics/trainers/palettes/collaborators/erkey.gbapal");
 
@@ -505,6 +508,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_WAR, gTrainerFrontPic_War, gTrainerPalette_War),
     TRAINER_SPRITE(TRAINER_PIC_TOKYN, gTrainerFrontPic_Tokyn, gTrainerPalette_Tokyn),
     TRAINER_SPRITE(TRAINER_PIC_ERKEY, gTrainerFrontPic_Erkey, gTrainerPalette_Erkey),
+    TRAINER_SPRITE(TRAINER_PIC_JAVI4315, gTrainerFrontPic_Javi4315, gTrainerPalette_Javi4315),
     TRAINER_SPRITE(TRAINER_PIC_SERGIO, gTrainerFrontPic_Sergio, gTrainerPalette_Sergio),
     TRAINER_SPRITE(TRAINER_PIC_OMEGA, gTrainerFrontPic_Omega, gTrainerPalette_Omega),
     TRAINER_SPRITE(TRAINER_PIC_DRIVE, gTrainerFrontPic_Drive, gTrainerPalette_Drive),
