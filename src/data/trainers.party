@@ -2296,6 +2296,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Torkoal @ Heat Rock
 Ability: Drought
@@ -2331,6 +2332,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -2365,6 +2367,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Shiftry @ Life Orb
 Ability: Chlorophyll
@@ -2400,6 +2403,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 
 Toxicroak @ Black Sludge
 Ability: Dry Skin
@@ -2435,6 +2439,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Prediction / Ace Pokemon
+Mugshot: Green
 
 Lapras @ Leftovers
 EVs: 252 HP / 252 SpA / 4 Spe
@@ -2493,6 +2498,7 @@ Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Smart Trainer / Prediction
+Mugshot: Green
 
 Silvally /* @ Multi disk TODO Xiros */
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -3203,6 +3209,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -3270,6 +3277,7 @@ Music: Cool
 Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Slakoth @ Sitrus Berry
 Level: 26
@@ -3287,6 +3295,7 @@ Music: Cool
 Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Vigoroth
 Level: 26
@@ -3303,6 +3312,7 @@ Music: Cool
 Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Swellow
 Level: 28
@@ -3352,6 +3362,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Pink
 
 Feraligatr @ Feraligite
 Ability: Strong Jaw
@@ -3424,6 +3435,7 @@ Double Battle: No
 AI: Basic Trainer
 Party Size: 1
 Pool Rules: Basic
+Mugshot: Green
 
 Greninja @ Greninjite
 Ability: Protean
