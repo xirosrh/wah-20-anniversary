@@ -2433,4 +2433,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_SHADOW_AURA] =
+    {
+        .name = _("Aura Oscura"),
+        .description = COMPOUND_STRING("Potencia mov. siniestros"),
+        .aiRating = 6,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
 };

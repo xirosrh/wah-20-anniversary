@@ -27435,6 +27435,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Tyradino[] = INCBIN_U16("graphics/pokemon/tyradino/shiny.gbapal");
     const u8 gMonIcon_Tyradino[] = INCBIN_U8("graphics/pokemon/tyradino/icon.4bpp");
 
+    const u32 gMonFrontPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/lugia/dark/front.4bpp.smol");
+    const u16 gMonPalette_ShadowLugia[] = INCBIN_U16("graphics/pokemon/lugia/dark/normal.gbapal");
+    const u32 gMonBackPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/lugia/dark/back.4bpp.smol");
+    const u16 gMonShinyPalette_ShadowLugia[] = INCBIN_U16("graphics/pokemon/lugia/dark/shiny.gbapal");
+    const u8 gMonIcon_ShadowLugia[] = INCBIN_U8("graphics/pokemon/lugia/dark/icon.4bpp");
+
     // BOO
     const u32 gMonFrontPic_Molikai[] = INCBIN_U32("graphics/pokemon/molikai/front.4bpp.smol");
     const u16 gMonPalette_Molikai[] = INCBIN_U16("graphics/pokemon/molikai/normal.gbapal");

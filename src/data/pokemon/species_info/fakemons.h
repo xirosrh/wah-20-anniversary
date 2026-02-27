@@ -793,6 +793,70 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sDiraeiLevelUpLearnset,
     },
 
+    [SPECIES_LUGIA_SHADOW] =
+    {
+        .baseHP        = 120,
+        .baseAttack    = 140,
+        .baseDefense   = 95,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 170,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_DARK),
+        .catchRate = 3,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 340,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 306,
+    #else
+        .expYield = 220,
+    #endif
+        .evYield_SpDefense = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SHADOW_AURA, ABILITY_SHADOW_AURA, ABILITY_SHADOW_AURA },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Shadow Lugia"),
+        .cryId = CRY_LUGIA,
+        .natDexNum = NATIONAL_DEX_LUGIA,
+        .categoryName = _("XD001"),
+        .height = 52,
+        .weight = 2160,
+        .description = COMPOUND_STRING(
+            "Creado mediante la corrupción extrema\n"
+            "del legendario guardián de los mares,\n"
+            "su aura oscura provoca tormentas\n"
+            "capaces de arrasar océanos enteros."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 721,
+        .trainerOffset = 19,
+        .frontPic = gMonFrontPic_ShadowLugia,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+//        .frontAnimId = ANIM_GROW_IN_STAGES,
+        .frontAnimDelay = 20,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_ShadowLugia,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 2,
+//        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_ShadowLugia,
+        .shinyPalette = gMonShinyPalette_ShadowLugia,
+        .iconSprite = gMonIcon_ShadowLugia,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 19, SHADOW_SIZE_L)
+        FOOTPRINT(Lugia)
+        .isLegendary = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sShadowLugiaLevelUpLearnset,
+        .teachableLearnset = sLugiaTeachableLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

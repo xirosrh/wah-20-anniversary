@@ -21381,6 +21381,137 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_SHADOW_BLAST] =
+    {
+        .name = COMPOUND_STRING("Ráfaga umbría"),
+        .description = COMPOUND_STRING(
+            "Explosión concentrada\n"
+            "de energía oscura."),
+        .effect = EFFECT_HIT,
+        .power = 95,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .pulseMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DarkPulse,
+    },
+
+    [MOVE_SHADOW_WING] =
+    {
+        .name = COMPOUND_STRING("Ala sombría"),
+        .description = COMPOUND_STRING(
+            "Golpea con alas envueltas\n"
+            "en aura oscura."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .slicingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AirSlash,
+    },
+
+    [MOVE_CORRUPTED_STORM] =
+    {
+        .name = COMPOUND_STRING("Torm. corrupta"),
+        .description = COMPOUND_STRING(
+            "Tormenta antinatural creada\n"
+            "por su energía shadow."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = B_EXTRAPOLATED_MOVE_FLAGS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
+            .self = TRUE,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_BEAUTY : CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_OminousWind,
+    },
+
+    [MOVE_SHADOW_PRESSURE] =
+    {
+        .name = COMPOUND_STRING("Presión oscura"),
+        .description = COMPOUND_STRING(
+            "Distorsiona el entorno \n"
+            "y aplasta al rival."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = B_UPDATED_MOVE_DATA < GEN_4,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
+            .self = TRUE,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Psychic
+    },
+
+    [MOVE_THUNDER_JUICE] =
+    {
+        .name = COMPOUND_STRING("Zumo Trueno"),
+        .description = COMPOUND_STRING(
+            "Puede golpear en el aire\n"
+            "y golpea la defensa rival."),
+        .effect = EFFECT_HIT,
+        .power = 150,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .damagesAirborne = TRUE,
+        .ignoreTypeIfFlyingAndUngrounded = TRUE,
+        .metronomeBanned = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_BEAUTIFUL,
+        .contestComboStarterId = COMBO_STARTER_THOUSAND_ARROWS,
+        .contestComboMoves = {COMBO_STARTER_THOUSAND_WAVES},
+        .battleAnimScript = gBattleAnimMove_ThousandArrows,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
