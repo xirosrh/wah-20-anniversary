@@ -1325,7 +1325,7 @@ void StartDifficultySelectorFromField_CB2(void)
     gMain.state = 0;
     sDifficultySelectorFromField = TRUE;
     CleanupOverworldWindowsAndTilemaps();
-    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     SetMainCallback2(CB2_InitDifficultySelectorFromField);
 }
 
@@ -1401,6 +1401,8 @@ static void CB2_InitDifficultySelectorFromField(void)
 
         UpdateDifficultySelected();
 
+        if (sDifficultySelectorFromField)
+            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetupWindowBlendRegisters();
         SetVBlankCallback(VBlank_CB2_CopeSpeech);

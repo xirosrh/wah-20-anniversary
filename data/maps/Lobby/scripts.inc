@@ -895,16 +895,15 @@ Lobby_EventScript_TeamSelector_Text_1:
 
 Lobby_EventScript_DifficultySelector_Text_0:
 # 76 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! Soy el encargado de la\n"
-	.string "configuración de dificultad del\l"
-	.string "desafío.\p"
-	.string "¿Quieres cambiar la dificultad?$"
+	.string "¡Hola! Soy la encargado de la selección\n"
+	.string "de dificultad del desafío.\p"
+	.string "No parece que la dificultad actual sea\n"
+	.string "la adecuada para ti.\p"
+	.string "¿Quieres cambiar el nivel de dificultad?$"
 
 Lobby_EventScript_DifficultySelector_Text_1:
 # 81 "data/maps/Lobby/scripts.pory"
-	.string "¡Listo! La dificultad ha sido\n"
-	.string "actualizada.\p"
-	.string "¡Buena suerte con el desafío!$"
+	.string "¡Listo! La dificultad ha sido actualizada.\n¡Buena suerte con el desafío!$"
 
 Lobby_EventScript_Shop_Text_0:
 # 101 "data/maps/Lobby/scripts.pory"
@@ -1116,7 +1115,8 @@ Lobby_Text_TeamSelector_TeamSelectionCancelled::
 
 Lobby_Text_DifficultySelector_Cancelled::
 # 93 "data/maps/Lobby/scripts.pory"
-	.string "¡Entendido! Si cambias de opinión,\nestaré por aquí.$"
+	.string "¡Entendido! Si cambias de opinión,\n"
+	.string "estaré por aquí.$"
 
 Lobby_Text_Roxas_PlayerCancelled::
 # 260 "data/maps/Lobby/scripts.pory"
