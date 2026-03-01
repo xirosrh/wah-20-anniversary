@@ -895,7 +895,7 @@ Lobby_EventScript_TeamSelector_Text_1:
 
 Lobby_EventScript_DifficultySelector_Text_0:
 # 76 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! Soy la encargado de la selección\n"
+	.string "¡Hola! Soy la encargada de la selección\n"
 	.string "de dificultad del desafío.\p"
 	.string "No parece que la dificultad actual sea\n"
 	.string "la adecuada para ti.\p"
