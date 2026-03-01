@@ -588,11 +588,11 @@ DriveKatherineRoom_EventScript_Katherine_Text_0:
 
 DriveKatherineRoom_EventScript_Katherine_Text_1:
 # 27 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Miau revoir.$"
+	.string "¡Miau revoir!$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_2:
 # 33 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Oh, hola. Bienvenid{OA} a esta sala, aquí\n"
+	.string "Oh, holis. Bienvenid{OA} a esta sala, aquí\n"
 	.string "todo está preparado para celebrar.$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_3:
@@ -601,14 +601,14 @@ DriveKatherineRoom_EventScript_Katherine_Text_3:
 
 DriveKatherineRoom_EventScript_Katherine_Text_4:
 # 39 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Perfecto, estaré encantada de\n"
-	.string "ayudarte.$"
+	.string "Perfecto. Estaré encantada de echarte\n"
+	.string "una pata… quiero decir, una mano.$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_5:
 # 42 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Pero antes, debes hablar con Drive.\n"
-	.string "Tiene su discurso preparado… y está\l"
-	.string "muy entusiasmado.$"
+	.string "Pero antes, deberías hablar con Drive.\n"
+	.string "Tiene su discurso preparado… y créeme,\l"
+	.string "está deseando soltarlo.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_0:
 # 71 "data/maps/DriveKatherineRoom/scripts.pory"
@@ -665,7 +665,8 @@ DriveKatherineRoom_EventScript_Drive_Text_9:
 DriveKatherineRoom_EventScript_Drive_Text_10:
 # 147 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Pero recuerda: no todo se trata de\n"
-	.string "ganar, sino de disfrutar el proceso.\p"
+	.string "ganar. Lo importante es moverse con\l"
+	.string "gracia… y caer siempre de pie.\p"
 	.string "Vamos a darle la bienvenida como se\n"
 	.string "merece.$"
 
@@ -692,7 +693,9 @@ DriveKatherineRoom_EventScript_Drive_Text_14:
 DriveKatherineRoom_EventScript_Drive_Text_15:
 # 177 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Fue una danza perfecta. En cada paso\n"
-	.string "se sentía la alegría de este día.\p"
+	.string "se sentía la alegría de este día, casi\l"
+	.string "como si la sala estuviera ronroneando\l"
+	.string "de emoción.\p"
 	.string "Gracias por compartirlo con nosotros.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_16:

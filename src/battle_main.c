@@ -345,6 +345,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_COOLTRAINER_2] = { _("ENTRE. GUAY"), 5, BALL_ULTRA },
     [TRAINER_CLASS_MAGMA_ADMIN] = { _("ADMIN. MAGMA"), 10 },
     [TRAINER_CLASS_WAH_ADMIN] = { _("WAH ADMIN"), 10 },
+    [TRAINER_CLASS_COLLABORATOR] = { _("COLABORADOR"), 10 },
     [TRAINER_CLASS_RIVAL] = { _("ENTRENADOR"), 15 },
     [TRAINER_CLASS_BUG_CATCHER] = { _("CAZABICHOS"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("POKéGUARDA"), 12 },
@@ -5388,6 +5389,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_WAH_ADMIN:
+        case TRAINER_CLASS_COLLABORATOR:
         case TRAINER_CLASS_MAGMA_LEADER:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;

@@ -2910,12 +2910,13 @@ Adamant Nature
 
 === TRAINER_WAH_ADMIN_ROXAS ===
 Name: Roxas
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: WAH Admin
+Pic: Roxas
 Gender: Male
-Music: Cool
+Music: Aqua
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Green
 
 Lugia
 Level: 100
@@ -3203,8 +3204,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_WAH_COLLABORATOR_KAKTUS ===
 Name: Kaktus
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Collaborator
+Pic: Kaktus
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -3270,7 +3271,7 @@ IVs: 0 Spe
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
 Name: GEORGE
-Class: Cooltrainer
+Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
@@ -3288,7 +3289,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
 Name: BERKE
-Class: Cooltrainer
+Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
@@ -3305,7 +3306,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
 Name: BRAXTON
-Class: Cooltrainer
+Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
@@ -3356,7 +3357,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
-Class: Cooltrainer
+Class: Collaborator
 Pic: Erkey
 Gender: Male
 Music: Aqua
@@ -3427,7 +3428,7 @@ IVs: 0 Atk
 
 === TRAINER_WAH_COLLABORATOR_MICOLO ===
 Name: Micolo
-Class: Cooltrainer
+Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool

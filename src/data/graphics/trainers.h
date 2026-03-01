@@ -346,6 +346,9 @@ const u16 gTrainerPalette_Javi4315[] = INCBIN_U16("graphics/trainers/palettes/ad
 const u32 gTrainerFrontPic_Erkey[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/erkey.4bpp.smol");
 const u16 gTrainerPalette_Erkey[] = INCBIN_U16("graphics/trainers/palettes/collaborators/erkey.gbapal");
 
+const u32 gTrainerFrontPic_Kaktus[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/kaktus.4bpp.smol");
+const u16 gTrainerPalette_Kaktus[] = INCBIN_U16("graphics/trainers/palettes/collaborators/kaktus.gbapal");
+
 const u32 gTrainerFrontPic_Sergio[] = INCBIN_U32("graphics/trainers/front_pics/admins/sergio.4bpp.smol");
 const u16 gTrainerPalette_Sergio[] = INCBIN_U16("graphics/trainers/palettes/admins/sergio.gbapal");
 
@@ -363,6 +366,9 @@ const u16 gTrainerPalette_Katherine[] = INCBIN_U16("graphics/trainers/palettes/a
 
 const u32 gTrainerFrontPic_Gallego[] = INCBIN_U32("graphics/trainers/front_pics/admins/gallego.4bpp.smol");
 const u16 gTrainerPalette_Gallego[] = INCBIN_U16("graphics/trainers/palettes/admins/gallego.gbapal");
+
+const u32 gTrainerFrontPic_Roxas[] = INCBIN_U32("graphics/trainers/front_pics/admins/roxas.4bpp.smol");
+const u16 gTrainerPalette_Roxas[] = INCBIN_U16("graphics/trainers/palettes/admins/roxas.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -515,6 +521,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_BOO, gTrainerFrontPic_Boo, gTrainerPalette_Boo),
     TRAINER_SPRITE(TRAINER_PIC_KATHERINE, gTrainerFrontPic_Katherine, gTrainerPalette_Katherine),
     TRAINER_SPRITE(TRAINER_PIC_GALLEGO, gTrainerFrontPic_Gallego, gTrainerPalette_Gallego),
+    TRAINER_SPRITE(TRAINER_PIC_ROXAS, gTrainerFrontPic_Roxas, gTrainerPalette_Roxas),
+    TRAINER_SPRITE(TRAINER_PIC_KAKTUS, gTrainerFrontPic_Kaktus, gTrainerPalette_Kaktus),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
