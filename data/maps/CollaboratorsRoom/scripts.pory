@@ -570,3 +570,95 @@ movement CollaboratorsRoom_Movement_MrNightology_Despegue{
     slide_up * 8
     step_end
 }
+
+script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+    msgbox(format("¡Oh! Pues parece que has superado el desafío de las salas.\p¿Qué te parece si te ponemos a prueba y vemos de lo que eres capaz?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¿Hacemos esto un poco más divertido?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_FaceAwayPlayer)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    delay(20)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
+    msgbox(format("O mejor dicho, ¿¡qué te parece si lo hacemos el doble de divertido!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    msgbox(format("Muy bien, entra al mundo de las tinieblas conmigo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("¿Otro combate? ¿Estás seguro de estar listo para entrar al mundo de las tinieblas?"), MSGBOX_YESNO, speaker = SP_NAME_GOSUTO)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("Ok, veamos si esta vez logras superar tus miedos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        return
+    } else {
+        msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Gosuto {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO)) {
+            call(CollaboratorsRoom_EventScript_Gosuto_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GOSUTO, format("Creo que ya superaste tus miedos y superaste las sombras."))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Vaya, parece que encontraste una chispa de suerte.\pAprovecha esa luz mientras puedas, porque las sombras son pacientes y las tinieblas siempre terminan ganando al final."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO)
+        } else {
+            msgbox(format("No te sientas mal; no cualquiera sobrevive a mis tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+        }
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    } else {
+        msgbox(format("Quizás me conoces, quizás no, pero no te culpo; paso como una sombra entre las tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Pero a pesar de permanecer entre las tinieblas, he aportado a grandes proyectos dando un pequeño grano de arena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("¡Que no se diga más y a seguir procesando píxeles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    }
+}

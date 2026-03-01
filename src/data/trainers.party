@@ -3491,21 +3491,24 @@ Quirky Nature
 - Land's Wrath
 /* Nihil Light //TODO Xiros */
 
-=== TRAINER_WILTON_1 ===
-Name: WILTON
-Class: Cooltrainer
+=== TRAINER_WAH_COLLABORATOR_GOSUTO ===
+Name: Gosuto
+Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Super Potion
-Double Battle: No
-AI: Basic Trainer
+Double Battle: Yes
+AI: Smart Trainer
 
 Electrike
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Wailmer
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Makuhita
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 

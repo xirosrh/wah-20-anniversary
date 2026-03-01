@@ -1056,6 +1056,176 @@ CollaboratorsRoom_Movement_MrNightology_Despegue:
 # 571 "data/maps/CollaboratorsRoom/scripts.pory"
 	step_end
 
+CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle::
+# 575 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 576 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 578 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 579 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 580 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_FaceAwayPlayer
+# 581 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 582 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 583 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 584 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_FacePlayer
+# 585 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 586 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 587 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 588 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_LEDGE
+# 589 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Kaktus_Movement_0
+# 590 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_LEDGE
+# 591 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Micolo_Movement_0
+# 592 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+	return
+
+
+CollaboratorsRoom_EventScript_Gosuto_IntroRematch::
+# 597 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 598 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48
+# 599 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_GOSUTO
+# 600 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 601 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 602 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq CollaboratorsRoom_EventScript_Gosuto_IntroRematch_1
+# 606 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 607 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Gosuto_IntroRematch_1:
+# 603 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+	return
+
+
+CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent::
+# 612 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_WEST
+# 613 "data/maps/CollaboratorsRoom/scripts.pory"
+	call Achievements_EventScript_Eval_DefeatAllCollaborators
+# 614 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+	end
+
+
+CollaboratorsRoom_EventScript_Gosuto::
+# 619 "data/maps/CollaboratorsRoom/scripts.pory"
+	lock
+# 620 "data/maps/CollaboratorsRoom/scripts.pory"
+	faceplayer
+# 621 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_Gosuto_1
+# 651 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 652 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 653 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 654 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 655 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 656 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 657 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
+# 658 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 659 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 660 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 661 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 662 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Gosuto_1:
+# 622 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO, CollaboratorsRoom_EventScript_Gosuto_5
+# 625 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle
+CollaboratorsRoom_EventScript_Gosuto_4:
+# 627 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 628 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 629 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 630 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmovement 0
+# 631 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 632 "data/maps/CollaboratorsRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_GOSUTO, CollaboratorsRoom_EventScript_Gosuto_Text_0
+# 633 "data/maps/CollaboratorsRoom/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 634 "data/maps/CollaboratorsRoom/scripts.pory"
+	special GetBattleOutcome
+# 635 "data/maps/CollaboratorsRoom/scripts.pory"
+	special HealPlayerParty
+# 636 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq CollaboratorsRoom_EventScript_Gosuto_9
+# 645 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 646 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 647 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+CollaboratorsRoom_EventScript_Gosuto_8:
+# 649 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Gosuto_5:
+# 623 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_Gosuto_IntroRematch
+	goto CollaboratorsRoom_EventScript_Gosuto_4
+
+CollaboratorsRoom_EventScript_Gosuto_9:
+# 637 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 638 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
+# 639 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 640 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 641 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 642 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 643 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO
+	goto CollaboratorsRoom_EventScript_Gosuto_8
+
+
 # 79 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_Kaktus_Movement_0:
 # 79 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1561,6 +1731,80 @@ CollaboratorsRoom_EventScript_MrNightology_Text_14:
 # 557 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¿Te parece normal?\n"
 	.string "En fin… La vida del romhacker.$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_0:
+# 577 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Oh! Pues parece que has superado el\n"
+	.string "desafío de las salas.\p"
+	.string "¿Qué te parece si te ponemos a prueba y\n"
+	.string "vemos de lo que eres capaz?$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_1:
+# 579 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Hacemos esto un poco más divertido?$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_2:
+# 585 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "O mejor dicho, ¿¡qué te parece si lo\n"
+	.string "hacemos el doble de divertido!?$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_3:
+# 592 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Muy bien, entra al mundo de las\n"
+	.string "tinieblas conmigo…$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_0:
+# 599 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Otro combate? ¿Estás seguro de estar\n"
+	.string "listo para entrar al mundo de las\l"
+	.string "tinieblas?$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_1:
+# 603 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Ok, veamos si esta vez logras superar\n"
+	.string "tus miedos.$"
+
+CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_2:
+# 606 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Bien pensado; aunque puedes volver\n"
+	.string "cuando quieras.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_0:
+# 632 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Creo que ya superaste tus miedos y\n"
+	.string "superaste las sombras.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_1:
+# 640 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Vaya, parece que encontraste una\n"
+	.string "chispa de suerte.\p"
+	.string "Aprovecha esa luz mientras puedas,\n"
+	.string "porque las sombras son pacientes y las\l"
+	.string "tinieblas siempre terminan ganando al\l"
+	.string "final.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_2:
+# 645 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "No te sientas mal; no cualquiera\n"
+	.string "sobrevive a mis tinieblas.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_3:
+# 651 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Quizás me conoces, quizás no, pero no te\n"
+	.string "culpo; paso como una sombra entre las\l"
+	.string "tinieblas.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_4:
+# 655 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Pero a pesar de permanecer entre las\n"
+	.string "tinieblas, he aportado a grandes\l"
+	.string "proyectos dando un pequeño grano de\l"
+	.string "arena.$"
+
+CollaboratorsRoom_EventScript_Gosuto_Text_5:
+# 659 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Que no se diga más y a seguir\n"
+	.string "procesando píxeles!$"
 
 CollaboratorsRoom_Text_Gameboycl_OnDefeat::
 # 180 "data/maps/CollaboratorsRoom/scripts.pory"
