@@ -4217,7 +4217,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_sayerblax",
       "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
       "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
     },
