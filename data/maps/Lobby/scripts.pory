@@ -70,6 +70,31 @@ text Lobby_Text_TeamSelector_TeamSelectionCancelled {
 }
 
 
+script Lobby_EventScript_DifficultySelector {
+    lock
+    faceplayer
+    msgbox(format("¡Hola! Soy la encargada de la selección de dificultad del desafío.\pNo parece que la dificultad actual sea la adecuada para ti.\p¿Quieres cambiar el nivel de dificultad?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        special(OpenDifficultySelectorFromField)
+        waitstate
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox("¡Listo! La dificultad ha sido actualizada.\n¡Buena suerte con el desafío!", MSGBOX_AUTOCLOSE)
+        } else {
+            msgbox(Lobby_Text_DifficultySelector_Cancelled, MSGBOX_AUTOCLOSE)
+        }
+    } else {
+        msgbox(Lobby_Text_DifficultySelector_Cancelled, MSGBOX_AUTOCLOSE)
+    }
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+text Lobby_Text_DifficultySelector_Cancelled {
+    format("¡Entendido! Si cambias de opinión, estaré por aquí.")
+}
+
+
 script Lobby_EventScript_Shop {
 	lock
     faceplayer

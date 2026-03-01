@@ -233,7 +233,7 @@
 #define B_VAR_WILD_AI_FLAGS                 0       // Si no es 0, puedes usar esta variable para añadir a los flags de IA salvaje predeterminados. NO usable con las flags anteriores (1 << 15)
                                                     // Esta var no debería permanecer como un valor distinto de cero el tiempo suficiente para que el jugador guarde.
                                                     // Para controlar mejor la IA de los Pokémon salvajes, edita GetWildAiFlags() en src/battle_ai_main.c
-#define B_VAR_DIFFICULTY                    0       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
+#define B_VAR_DIFFICULTY                    VAR_DIFFICULTY       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
 
 // No bag settings
 #define NO_BAG_RESTRICTION       0
