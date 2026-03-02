@@ -279,7 +279,55 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   350
+#define START_MUS                   303
+#define MUS_INSTRUMENT_TEST         303 // mus_instrument_test (currently: 11 vibraphone)
+
+#define MUS_HG_DRAGONS_DEN          304 // [Sergio      - Sala]     mus_hg_dragons_den
+#define MUS_DP_GALACTIC_HQ_BASEMENT 305 // [Xiros       - Sala]     mus_dp_galactic_hq_basement
+#define MUS_DP_GYM                  306 // [TokynWar    - Sala]     mus_dp_gym
+#define MUS_DP_INSIDE_POKEMON_LEAGUE 307 // [Goce       - Sala]     mus_dp_inside_pokemon_league
+#define MUS_HG_B_TOWER_RECEPTION    308 // [DriveKather - Sala]     mus_hg_b_tower_reception
+#define MUS_HG_LIGHTHOUSE           309 // [ReyBoo      - Sala]     mus_hg_lighthouse
+#define MUS_HG_POKEATHLON_FINALS    310 // [Omega       - Sala]     mus_hg_pokeathlon_finals
+#define MUS_HG_POKEATHLON_LOBBY     311 // [Lobby]                  mus_hg_pokeathlon_lobby
+#define MUS_HG_SPROUT_TOWER         312 // [ScarexOzumas- Sala]     mus_hg_sprout_tower
+#define MUS_PL_B_CASTLE             313 // [Angel       - Sala]     mus_pl_b_castle
+#define MUS_PL_WIFI_PARADE          314 // mus_pl_wifi_parade
+#define MUS_PUEBLO_ORIGEN           315 // [Jack Johnson] mus_pueblo_origen
+#define MUS_WI_TRAINER_BATTLE       316 // [Jack Johnson] mus_wi_trainer_battle
+#define MUS_WI_VS_GYM_LEADER        317 // [Jack Johnson] mus_wi_vs_gym_leader
+#define MUS_MASTERED_BATTLE_4       318 // [Cheve       - Batalla]  mus_mastered_battle_4
+#define MUS_GYM_ESPUMA_HEROES       319 // [ReoNeky     - Sala]     mus_GymEspumaHeroes
+#define MUS_LUCHA_INTERNA_TO        320 // [ReoNeky     - Encuentro]mus_LuchaInternaTO
+#define MUS_TEAM_ORIGEN_TO          321 // [ReoNeky     - Encuentro]mus_TeamOrigenTO
+#define MUS_CAZA_LEGENDARIOS_TO     322 // [ReoNeky     - Batalla]  mus_BatallacazalegendariosTO
+#define MUS_VOLCANO_INFERNO         323 // [Zero        - Sala]     mus_volcano_inferno
+#define MUS_THE_GRAND_FINALE        324 // [Zero        - Batalla]  mus_the_grand_finale
+#define MUS_TOUHOU11_4              325 // [Acimut      - Sala]     mus_touhou11_4 - The Bridge People No Longer Cross
+#define MUS_TOUHOU11_11             326 // [Acimut      - Batalla]  mus_touhou11_11 - Corpse Voyage ~ Be of good cheer!
+#define MUS_HGSS_LYRA               327 // mus_hgss_lyra
+#define MUS_HGSS_KANTO_VS_TRAINER   328 // mus_hgss_kanto_vs_trainer
+#define MUS_HGSS_POKEMON_CENTER     329 // mus_hgss_pokemon_center
+#define MUS_HGSS_VS_CHAMPION        330 // mus_hgss_vs_champion
+#define MUS_BW_ACCUMULA_TOWN        331 // mus_bw_accumula_town
+#define MUS_BW_DRIFTVEIL_CITY       332 // mus_bw_driftveil_city
+#define MUS_BW_FOLLOW_ME            333 // mus_bw_follow_me
+#define MUS_BW_GYM                  334 // MUS_BW_GYM
+#define MUS_BW_HIUN_CITY            335 // mus_bw_hiun_city
+#define MUS_BW_NUVEMA_TOWN          336 // mus_bw_nuvema_town
+#define MUS_BW_ROUTE_2              337 // mus_bw_route_2
+#define MUS_BW_THE_DREAMYARD        338 // mus_bw_the_dreamyard
+#define MUS_BW_VS_GYM_LEADER        339 // MUS_BW_VS_GYM_LEADER
+#define MUS_BW_VS_RIVAL             340 // mus_bw_vs_rival
+#define MUS_BW_VS_TRAINER_7F        341 // mus_bw_vs_trainer_7F
+#define MUS_BW_VS_TRAINER_80        342 // mus_bw_vs_trainer_80
+#define MUS_VICTORY_LIES_BEFORE_YOU 343 // mus_bw_victory_lies_before_you
+#define MUS_BW_WILD_BATTLE          344 // mus_bw_wild_battle
+#define MUS_PETALBURG_TEST          345 // mus_petalburg_test
+#define MUS_POKE_MART_TEST          346 // mus_poke_mart_test
+#define MUS_ROUTE110_TEST           347 // mus_route110_test
+#define MUS_ROUTE120_TEST           348 // mus_route120_test
+#define MUS_ROUTE122_TEST           349 // mus_route122_test
 #define MUS_LITTLEROOT_TEST         350 // MUS_TETSUJI          // Unused, likely a test track.
 #define MUS_GSC_ROUTE38             351 // MUS_FIELD13          // Unused, likely a test track.
 #define MUS_CAUGHT                  352 // MUS_KACHI22
@@ -360,7 +408,7 @@
 #define MUS_DEWFORD                 427 // MUS_HIGHTOWN         // Also used in Route 109's Seashore house.
 #define MUS_SAFARI_ZONE             428 // MUS_SAFARI
 #define MUS_VICTORY_ROAD            429 // MUS_C_ROAD           // Also used in Pokémon League's E4/Champion rooms and halls.
-#define MUS_AQUA_MAGMA_HIDEOUT      430 // MUS_AJITO
+#define MUS_AQUA_MAGMA_HIDEOUT      430 // [KleinPkPower - Sala] MUS_AJITO
 #define MUS_SAILING                 431 // MUS_M_BOAT
 #define MUS_MT_PYRE                 432 // MUS_M_DUNGON         // Also used in New Mauville and Shoal Cave.
 #define MUS_SLATEPORT               433 // MUS_FINECITY         // Also used in Cycling Road's entrances.
@@ -391,15 +439,15 @@
 #define MUS_B_ARENA                 458 // MUS_B_ARENA
 #define MUS_OBTAIN_B_POINTS         459 // MUS_ME_POINTGET
 #define MUS_REGISTER_MATCH_CALL     460 // MUS_ME_TORE_EYE
-#define MUS_B_PYRAMID               461 // MUS_PYRAMID
-#define MUS_B_PYRAMID_TOP           462 // MUS_PYRAMID_TOP
+#define MUS_B_PYRAMID               461 // [CHEVE - SALA] MUS_PYRAMID
+#define MUS_B_PYRAMID_TOP           462 // [DragonMountain - Sala] MUS_PYRAMID_TOP
 #define MUS_B_PALACE                463 // MUS_B_PALACE
 #define MUS_RAYQUAZA_APPEARS        464 // MUS_REKKUU_KOURIN
 #define MUS_B_TOWER                 465 // MUS_SATTOWER
 #define MUS_OBTAIN_SYMBOL           466 // MUS_ME_SYMBOLGET
-#define MUS_B_DOME                  467 // MUS_B_DOME
+#define MUS_B_DOME                  467 // [BARO - SALA] MUS_B_DOME
 #define MUS_B_PIKE                  468 // MUS_B_TUBE
-#define MUS_B_FACTORY               469 // MUS_B_FACTORY
+#define MUS_B_FACTORY               469 // [Corsara - Sala] MUS_B_FACTORY
 #define MUS_VS_RAYQUAZA             470 // MUS_VS_REKKU         // Identical to MUS_VS_KYOGRE_GROUDON.
 #define MUS_VS_FRONTIER_BRAIN       471 // MUS_VS_FRONT
 #define MUS_VS_MEW                  472 // MUS_VS_MEW
