@@ -584,7 +584,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
     msgbox(format("O mejor dicho, ¿¡qué te parece si lo hacemos el doble de divertido!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
     playse(SE_LEDGE)

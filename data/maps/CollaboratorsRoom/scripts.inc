@@ -1082,7 +1082,7 @@ CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle::
 # 586 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
 # 587 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_Happy
 # 588 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_LEDGE
 # 589 "data/maps/CollaboratorsRoom/scripts.pory"
