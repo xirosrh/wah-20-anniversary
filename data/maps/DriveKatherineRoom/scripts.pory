@@ -90,7 +90,8 @@ script DriveKatherineRoom_EventScript_Drive {
     playse(SE_LEDGE)
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
         jump_in_place_down,
-        unlock_facing_direction))
+        unlock_facing_direction
+        face_player))
     msgbox(format("¡Ah, por fin un comensal con hambre de fiesta!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     waitmovement(0)
     delay(30)

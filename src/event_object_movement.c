@@ -77,6 +77,7 @@ enum {
     MOVE_SPEED_FAST_2, // water current / acro bike
     MOVE_SPEED_FASTER, // mach bike's max speed
     MOVE_SPEED_FASTEST,
+    MOVE_SPEED_MAX, // same pixel speed as FASTEST but with walk animation
 };
 
 enum {
@@ -858,6 +859,13 @@ const u8 gWalkFasterMovementActions[] = {
     [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTER_UP,
     [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
     [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
+};
+const u8 gWalkMaxMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_MAX_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_MAX_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_MAX_RIGHT,
 };
 const u8 gSlideMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_SLIDE_DOWN,
@@ -6548,6 +6556,7 @@ dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
 dirn_to_anim(GetWalkFastMovementAction, gWalkFastMovementActions);
 dirn_to_anim(GetRideWaterCurrentMovementAction, gRideWaterCurrentMovementActions);
 dirn_to_anim(GetWalkFasterMovementAction, gWalkFasterMovementActions);
+dirn_to_anim(GetWalkMaxMovementAction, gWalkMaxMovementActions);
 dirn_to_anim(GetSlideMovementAction, gSlideMovementActions);
 dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
 dirn_to_anim(GetJump2MovementAction, gJump2MovementActions);
@@ -7859,6 +7868,76 @@ bool8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *objectEvent, stru
 }
 
 bool8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxLeft_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateMovementNormal(objectEvent, sprite))
     {
@@ -10369,12 +10448,19 @@ static const SpriteStepFunc sStep8Funcs[] = {
     Step8,
 };
 
+static const SpriteStepFunc sStep844Funcs[] = {
+    Step8,
+    Step4,
+    Step4,
+};
+
 static const SpriteStepFunc *const sNpcStepFuncTables[] = {
     [MOVE_SPEED_NORMAL] = sStep1Funcs,
     [MOVE_SPEED_FAST_1] = sStep2Funcs,
     [MOVE_SPEED_FAST_2] = sStep3Funcs,
     [MOVE_SPEED_FASTER] = sStep4Funcs,
     [MOVE_SPEED_FASTEST] = sStep8Funcs,
+    [MOVE_SPEED_MAX] = sStep844Funcs,
 };
 
 static const s16 sStepTimes[] = {
@@ -10383,6 +10469,7 @@ static const s16 sStepTimes[] = {
     [MOVE_SPEED_FAST_2] = ARRAY_COUNT(sStep3Funcs),
     [MOVE_SPEED_FASTER] = ARRAY_COUNT(sStep4Funcs),
     [MOVE_SPEED_FASTEST] = ARRAY_COUNT(sStep8Funcs),
+    [MOVE_SPEED_MAX] = ARRAY_COUNT(sStep844Funcs),
 };
 
 static bool8 NpcTakeStep(struct Sprite *sprite)

@@ -869,7 +869,23 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerWalkSlowStairs(direction);
         else
-            PlayerWalkNormal(direction);
+        {
+            switch (gSaveBlock2Ptr->optionsWalkSpeed)
+            {
+            case OPTIONS_WALK_SPEED_FAST:
+                PlayerWalkFast(direction);
+                break;
+            case OPTIONS_WALK_SPEED_FASTER:
+                PlayerWalkFaster(direction);
+                break;
+            case OPTIONS_WALK_SPEED_MAX:
+                PlayerWalkMax(direction);
+                break;
+            default:
+                PlayerWalkNormal(direction);
+                break;
+            }
+        }
     }
 }
 
@@ -1220,6 +1236,11 @@ void PlayerRideWaterCurrent(u8 direction)
 void PlayerWalkFaster(u8 direction)
 {
     PlayerSetAnimId(GetWalkFasterMovementAction(direction), COPY_MOVE_WALK);
+}
+
+void PlayerWalkMax(u8 direction)
+{
+    PlayerSetAnimId(GetWalkMaxMovementAction(direction), COPY_MOVE_WALK);
 }
 
 static void PlayerRun(u8 direction)
