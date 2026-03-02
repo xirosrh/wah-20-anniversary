@@ -174,6 +174,7 @@ u8 GetWalkNormalMovementAction(u32);
 u8 GetWalkFastMovementAction(u32);
 u8 GetRideWaterCurrentMovementAction(u32);
 u8 GetWalkFasterMovementAction(u32);
+u8 GetWalkMaxMovementAction(u32);
 u8 GetPlayerRunMovementAction(u32);
 u8 GetJumpInPlaceMovementAction(u32);
 u8 GetAcroWheelieFaceDirectionMovementAction(u32);
