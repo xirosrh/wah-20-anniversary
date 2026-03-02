@@ -413,3 +413,252 @@ script CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer {
     }
     return
 }
+
+script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
+    msgbox(format("¿Buscas problemas?\n¡Pues escucha nuestro lema!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    waitse
+    msgbox(format("¡Uy, me he equivocado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, moves(emote_sweat_drop))
+    waitse
+    msgbox(format("Perdona, es la costumbre jeje…\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    return
+}
+
+script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
+    msgbox(format("¡Tú otra vez! ¿Te has quedado con ganas de más?"), MSGBOX_YESNO, speaker = SP_NAME_MRNIGHTOLOGY)
+    closemessage
+    if(var(VAR_RESULT)) {
+        msgbox(format("¡Já! Si ya me lo imaginaba…"), speaker = SP_NAME_MRNIGHTOLOGY)
+        return
+    }
+    else {
+        msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_MrNightology {
+    lock
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        specialvar(VAR_RESULT, GetPlayerFacingDirection)
+        switch(var(VAR_RESULT)){
+            case DIR_WEST:
+                fadescreen(FADE_TO_BLACK)
+                applymovementandwait(LOCALID_PLAYER, moves(walk_down, walk_left, face_up))
+                fadescreen(FADE_FROM_BLACK)
+                break
+            case DIR_EAST:
+                fadescreen(FADE_TO_BLACK)
+                applymovementandwait(LOCALID_PLAYER, moves(walk_down, walk_right, face_up))
+                fadescreen(FADE_FROM_BLACK)
+                break
+        }
+
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY)) {
+            call(CollaboratorsRoom_EventScript_MrNightology_IntroRematch)
+        }
+        else {
+            call(CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle)
+        }
+
+        msgbox(format("Tengo un plan genial para derrotarte y para eso lucharé con un amigo.\pAsí que…\n¡Que aparezca el invitado especial!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        applymovementandwait(VAR_LAST_TALKED, moves(face_up))
+        playse(SE_POKENAV_ON)
+        waitse
+        applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
+        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        playse(SE_POKENAV_HANG_UP)
+        waitse
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
+        playse(SE_WARP_OUT)
+        setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, 3)
+        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+        showobjectat(LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM)
+        turnobject(LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH)
+        release
+        delay(30)
+        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+        release
+        delay(30)
+        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY)
+        release
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(emote_exclamation_mark, walk_in_place_right))
+        waitse
+        msgbox(format("¡Ostras!\n¿Cómo lo has hecho?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_left))
+        msgbox(format("¡Coño! Transmisión instantánea, bro.\n¡No me he pasado entrenando en el planeta Yardrat todo este tiempo pa ná!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        msgbox(format("¡Ah, mira qué bien! ¡Eso me viene genial para que la próxima vez no acabe reventao con tantas horas de bus!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        applymovement(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
+        applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_down))
+        waitmovement(0)
+        msgbox(format("Sorprendido, ¿no?\nPues ha llegado la hora…\p¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+        closemessage
+        playse(SE_PIN)
+        applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        waitse
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("¿Qué? ¡Pero si era un plan genial!"))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_M_EXPLOSION)
+            applymovement(VAR_LAST_TALKED, CollaboratorsRoom_Movement_MrNightology_Despegue)
+            applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_Movement_MrNightology_Despegue)
+            waitmovement(0)
+            waitse
+            msgbox(format("¡El Team Rocket despega de nuevooooo…!"), MSGBOX_AUTOCLOSE_TOP)
+            playse(SE_FALL)
+            applymovementandwait(VAR_LAST_TALKED, moves(face_down, slide_down * 8))
+            playse(SE_NOT_EFFECTIVE)
+            waitse
+            msgbox(format("¡Vaya aterrizaje!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+            closemessage
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, moves(emote_question_mark))
+            waitse
+            applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_right, delay_16, walk_in_place_left, delay_16, walk_in_place_down))
+            msgbox(format("¿Y ReoNeky?\nEspero que haya aterrizado en su sala."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY)
+        }
+        else {
+            msgbox(format("Has hecho todo lo que has podido, pero no es suficiente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            delay(20)
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Dale una vuelta a tu estrategia y…\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            fadescreen(FADE_TO_BLACK)
+            setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, -3)
+            fadescreen(FADE_FROM_BLACK)
+        }
+        goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+    }
+    else {
+        faceplayer
+        msgbox(format("Ay, si te contase…\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, moves(emote_sad))
+        waitse
+        msgbox(format("Una larga travesía para que al final, la gente te pregunte cuál es el cheat de los caramelos infinitos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, moves(emote_annoyed))
+        waitse
+        msgbox(format("¿Te parece normal?\nEn fin… La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+    }
+}
+
+movement CollaboratorsRoom_Movement_MrNightology_Despegue{
+    face_left
+    delay_4
+    face_down
+    delay_4
+    face_right
+    delay_4
+    face_up
+    slide_up * 8
+    step_end
+}
+
+script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+    msgbox(format("¡Oh! Pues parece que has superado el desafío de las salas.\p¿Qué te parece si te ponemos a prueba y vemos de lo que eres capaz?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¿Hacemos esto un poco más divertido?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_FaceAwayPlayer)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    delay(20)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
+    msgbox(format("O mejor dicho, ¿¡qué te parece si lo hacemos el doble de divertido!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    msgbox(format("Muy bien, entra al mundo de las tinieblas conmigo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("¿Otro combate? ¿Estás seguro de estar listo para entrar al mundo de las tinieblas?"), MSGBOX_YESNO, speaker = SP_NAME_GOSUTO)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("Ok, veamos si esta vez logras superar tus miedos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        return
+    } else {
+        msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Gosuto {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO)) {
+            call(CollaboratorsRoom_EventScript_Gosuto_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GOSUTO, format("Creo que ya superaste tus miedos y superaste las sombras."))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Vaya, parece que encontraste una chispa de suerte.\pAprovecha esa luz mientras puedas, porque las sombras son pacientes y las tinieblas siempre terminan ganando al final."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO)
+        } else {
+            msgbox(format("No te sientas mal; no cualquiera sobrevive a mis tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+        }
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    } else {
+        msgbox(format("Quizás me conoces, quizás no, pero no te culpo; paso como una sombra entre las tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Pero a pesar de permanecer entre las tinieblas, he aportado a grandes proyectos dando un pequeño grano de arena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("¡Que no se diga más y a seguir procesando píxeles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    }
+}

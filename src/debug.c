@@ -2482,10 +2482,11 @@ static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId)
     }
 }
 
-static void Debug_Display_Ability(enum Ability abilityId, u32 digit, u8 windowId)//(u32 natureId, u32 digit, u8 windowId)
+static void Debug_Display_Ability(u32 abilityNum, u32 digit, u8 windowId)//(u32 natureId, u32 digit, u8 windowId)
 {
+    enum Ability abilityId = GetAbilityBySpecies(sDebugMonData->species, abilityNum);
     StringCopy(gStringVar2, gText_DigitIndicator[digit]);
-    ConvertIntToDecimalStringN(gStringVar3, abilityId, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar3, abilityNum, STR_CONV_MODE_LEFT_ALIGN, 2);
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     u8 *end = StringCopy(gStringVar1, gAbilitiesInfo[abilityId].name);
     WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
@@ -2521,8 +2522,7 @@ static void DebugAction_Give_Pokemon_SelectNature(u8 taskId)
         gTasks[taskId].tInput = 0;
         gTasks[taskId].tDigit = 0;
 
-        enum Ability abilityId = GetAbilityBySpecies(sDebugMonData->species, 0);
-        Debug_Display_Ability(abilityId, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+        Debug_Display_Ability(0, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
 
         gTasks[taskId].func = DebugAction_Give_Pokemon_SelectAbility;
     }
@@ -2546,8 +2546,7 @@ static void Debug_Display_TeraType(u32 typeId, u32 digit, u8 windowId)
 
 static void DebugAction_Give_Pokemon_SelectAbility(u8 taskId)
 {
-    u8 abilityCount = NUM_ABILITY_SLOTS - 1; //-1 for proper iteration
-    u8 i = 0;
+    s32 abilityNum = -1;
 
     if (JOY_NEW(DPAD_ANY))
     {
@@ -2555,28 +2554,31 @@ static void DebugAction_Give_Pokemon_SelectAbility(u8 taskId)
 
         if (JOY_NEW(DPAD_UP))
         {
-            gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
-            if (gTasks[taskId].tInput > abilityCount)
-                gTasks[taskId].tInput = abilityCount;
+            abilityNum = gTasks[taskId].tInput + 1;
+            while (GetSpeciesAbility(sDebugMonData->species, abilityNum) == ABILITY_NONE && abilityNum < NUM_ABILITY_SLOTS)
+            {
+                abilityNum++;
+            }
         }
         if (JOY_NEW(DPAD_DOWN))
         {
-            gTasks[taskId].tInput -= sPowersOfTen[gTasks[taskId].tDigit];
-            if (gTasks[taskId].tInput < 0)
-                gTasks[taskId].tInput = 0;
+            abilityNum = gTasks[taskId].tInput - 1;
+            while (GetSpeciesAbility(sDebugMonData->species, abilityNum) == ABILITY_NONE && abilityNum >= 0)
+            {
+                abilityNum--;
+            }
         }
 
-        while (GetAbilityBySpecies(sDebugMonData->species, gTasks[taskId].tInput - i) == ABILITY_NONE && gTasks[taskId].tInput - i < NUM_ABILITY_SLOTS)
+        if (abilityNum >= 0 && abilityNum < NUM_ABILITY_SLOTS)
         {
-            i++;
+            gTasks[taskId].tInput = abilityNum;
+            Debug_Display_Ability(abilityNum, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
         }
-        enum Ability abilityId = GetAbilityBySpecies(sDebugMonData->species, gTasks[taskId].tInput - i);
-        Debug_Display_Ability(abilityId, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
     }
 
     if (JOY_NEW(A_BUTTON))
     {
-        sDebugMonData->abilityNum = gTasks[taskId].tInput - i;
+        sDebugMonData->abilityNum = gTasks[taskId].tInput;
         gTasks[taskId].tInput = 0;
         gTasks[taskId].tDigit = 0;
 
@@ -3488,6 +3490,53 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_HG_DRAGONS_DEN)           \
+    X(MUS_INSTRUMENT_TEST)          \
+    X(MUS_DP_GALACTIC_HQ_BASEMENT)  \
+    X(MUS_DP_GYM)                   \
+    X(MUS_DP_INSIDE_POKEMON_LEAGUE) \
+    X(MUS_HG_B_TOWER_RECEPTION)     \
+    X(MUS_HG_LIGHTHOUSE)            \
+    X(MUS_HG_POKEATHLON_FINALS)     \
+    X(MUS_HG_POKEATHLON_LOBBY)      \
+    X(MUS_HG_SPROUT_TOWER)          \
+    X(MUS_PL_B_CASTLE)              \
+    X(MUS_PL_WIFI_PARADE)           \
+    X(MUS_PUEBLO_ORIGEN)            \
+    X(MUS_WI_TRAINER_BATTLE)        \
+    X(MUS_WI_VS_GYM_LEADER)         \
+    X(MUS_MASTERED_BATTLE_4)        \
+    X(MUS_GYM_ESPUMA_HEROES)        \
+    X(MUS_LUCHA_INTERNA_TO)         \
+    X(MUS_TEAM_ORIGEN_TO)           \
+    X(MUS_CAZA_LEGENDARIOS_TO)      \
+    X(MUS_VOLCANO_INFERNO)          \
+    X(MUS_THE_GRAND_FINALE)         \
+    X(MUS_TOUHOU11_4)               \
+    X(MUS_TOUHOU11_11)              \
+    X(MUS_HGSS_LYRA)                \
+    X(MUS_HGSS_KANTO_VS_TRAINER)    \
+    X(MUS_HGSS_POKEMON_CENTER)      \
+    X(MUS_HGSS_VS_CHAMPION)         \
+    X(MUS_BW_ACCUMULA_TOWN)         \
+    X(MUS_BW_DRIFTVEIL_CITY)        \
+    X(MUS_BW_FOLLOW_ME)             \
+    X(MUS_BW_GYM)                   \
+    X(MUS_BW_HIUN_CITY)             \
+    X(MUS_BW_NUVEMA_TOWN)           \
+    X(MUS_BW_ROUTE_2)               \
+    X(MUS_BW_THE_DREAMYARD)         \
+    X(MUS_BW_VS_GYM_LEADER)         \
+    X(MUS_BW_VS_RIVAL)              \
+    X(MUS_BW_VS_TRAINER_7F)         \
+    X(MUS_BW_VS_TRAINER_80)         \
+    X(MUS_VICTORY_LIES_BEFORE_YOU)  \
+    X(MUS_BW_WILD_BATTLE)           \
+    X(MUS_PETALBURG_TEST)           \
+    X(MUS_POKE_MART_TEST)           \
+    X(MUS_ROUTE110_TEST)            \
+    X(MUS_ROUTE120_TEST)            \
+    X(MUS_ROUTE122_TEST)            \
     X(MUS_LITTLEROOT_TEST)          \
     X(MUS_GSC_ROUTE38)              \
     X(MUS_CAUGHT)                   \

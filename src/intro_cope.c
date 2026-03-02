@@ -27,6 +27,7 @@
 #include "strings.h"
 #include "task.h"
 #include "team_selector.h"
+#include "difficulty.h"
 #include "text.h"
 #include "text_window.h"
 #include "trainer_pokemon_sprites.h"
@@ -55,6 +56,9 @@ static void TaskCopeSpeech_Cleanup(u8 taskId);
 static void TaskCopeSpeech_FadeOut(u8 taskId);
 static void SpriteCallbackCopeMovement(struct Sprite *sprite);
 static void CB2_ReturnFromNamingScreen(void);
+static void CB2_InitDifficultySelectorFromField(void);
+static void Task_InitDifficultyFromField(u8 taskId);
+static void Task_ExitDifficultySelectorToField(u8 taskId);
 
 // ============================================================================
 // CONSTANTS & CONFIGURATION
@@ -86,13 +90,6 @@ enum {
     SCENE_AFTER_NAMING_SCREEN,
     SCENE_CHOOSE_DIFFICULTY,
     SCENE_COPE_SPEECH_END,
-};
-
-// Difficulty levels
-enum {
-    DIFFICULTY_EASY,
-    DIFFICULTY_NORMAL,
-    DIFFICULTY_HARD,
 };
 
 // Window IDs
@@ -134,6 +131,7 @@ enum {
 // EWRAM VARIABLES
 // ============================================================================
 static EWRAM_DATA u8 sTaskId;  // Global task ID for functions without taskId parameter
+static EWRAM_DATA bool8 sDifficultySelectorFromField;
 
 // ============================================================================
 // GRAPHICS DATA - GENDER SELECTION
@@ -703,6 +701,8 @@ void CB2_InitCopeSpeech_FromNewMainMenu(void)
 {
     u8 x;
 
+    NewGameInitData();
+
     ResetBgsAndClearDma3BusyFlags(0);
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
@@ -736,7 +736,7 @@ void CB2_InitCopeSpeech_FromNewMainMenu(void)
     UpdateGenderSprites(sTaskId);
     LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     
-    // PlayBGM(MUS_ROUTE101);
+    PlayBGM(MUS_ROUTE101);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     
     SetupWindowBlendRegisters();
@@ -979,6 +979,8 @@ static void TaskSelectDifficulty(u8 taskId)
     
     if (!gPaletteFade.active)
     {
+        SetVBlankCallback(NULL);
+
         DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteId]);
         FreeAndDestroyMonPicSprite(gTasks[taskId].tSpriteId);
 
@@ -1003,9 +1005,6 @@ static void TaskSelectDifficulty(u8 taskId)
         PutWindowTilemap(WINDOW_NORMAL_BOX);
         PutWindowTilemap(WINDOW_HARD_BOX);
         PutWindowTilemap(WINDOW_DIFFICULTY_BOX);
-        
-        gTasks[taskId].func = TaskChooseOptions;
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
 
         x = (240 - GetStringWidth(FONT_NORMAL, gText_Choose_Difficulty, 0)) / 2;
         AddTextPrinterParameterized3(WINDOW_TITLE_BOX, FONT_NORMAL, x, 0, sTextWhite, TEXT_SKIP_DRAW, gText_Choose_Difficulty);
@@ -1022,6 +1021,10 @@ static void TaskSelectDifficulty(u8 taskId)
         CopyWindowToVram(WINDOW_NORMAL_BOX, COPYWIN_FULL);
         CopyWindowToVram(WINDOW_HARD_BOX, COPYWIN_FULL);
         CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
+
+        gTasks[taskId].func = TaskChooseOptions;
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        SetVBlankCallback(VBlank_CB2_CopeSpeech);
     }
 }
 
@@ -1142,6 +1145,14 @@ static void TaskChooseOptions(u8 taskId)
     // --- SCENE: CHOOSE DIFFICULTY ---
     if (gTasks[taskId].tScene == SCENE_CHOOSE_DIFFICULTY)
     {
+        if (sDifficultySelectorFromField && JOY_NEW(B_BUTTON))
+        {
+            gSpecialVar_Result = FALSE;
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gTasks[taskId].func = Task_ExitDifficultySelectorToField;
+            return;
+        }
+
         if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tDifficulty > DIFFICULTY_EASY)
         {
              gTasks[taskId].tDifficulty--;
@@ -1154,10 +1165,20 @@ static void TaskChooseOptions(u8 taskId)
         }
         else if (JOY_NEW(A_BUTTON))
         {
-            VarSet(VAR_DIFFICULTY, gTasks[taskId].tDifficulty);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            gTasks[taskId].tState = 0;
-            gTasks[taskId].func = TaskInitCopeSpeech;
+            if (sDifficultySelectorFromField)
+            {
+                SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
+                gSpecialVar_Result = TRUE;
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                gTasks[taskId].func = Task_ExitDifficultySelectorToField;
+            }
+            else
+            {
+                SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                gTasks[taskId].tState = 0;
+                gTasks[taskId].func = TaskInitCopeSpeech;
+            }
         }
     }
 }
@@ -1286,13 +1307,124 @@ static void TaskCopeSpeech_FadeOut(u8 taskId)
             SetMainCallback2(CB2_NewGame);
         else
         {
-            NewGameInitData();
             FlagSet(FLAG_SYS_POKEMON_GET);
             gMain.savedCallback = CB2_ReturnFromTeamSelector;
             SetMainCallback2(StartTeamSelector_CB2);
         }
         DestroyTask(taskId);
         FreeAllWindowBuffers();
+    }
+}
+
+// ============================================================================
+// DIFFICULTY SELECTOR FROM FIELD
+// ============================================================================
+
+void StartDifficultySelectorFromField_CB2(void)
+{
+    gMain.state = 0;
+    sDifficultySelectorFromField = TRUE;
+    CleanupOverworldWindowsAndTilemaps();
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    SetMainCallback2(CB2_InitDifficultySelectorFromField);
+}
+
+static void CB2_InitDifficultySelectorFromField(void)
+{
+    u8 x;
+
+    switch (gMain.state)
+    {
+    case 0:
+        SetVBlankHBlankCallbacksToNull();
+        ScanlineEffect_Stop();
+        ResetTasks();
+        ResetSpriteData();
+        ResetPaletteFade();
+        FreeAllSpritePalettes();
+        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
+        gMain.state++;
+        break;
+    case 1:
+        ResetBgsAndClearDma3BusyFlags(0);
+        SetGpuReg(REG_OFFSET_DISPCNT, 0);
+        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
+        InitBgsFromTemplates(0, sBgTemplateCopeSpeech, ARRAY_COUNT(sBgTemplateCopeSpeech));
+        InitWindows(sWindowTemplate_Gender);
+        ResetAllBgsCoordinates();
+        ChangeBgX(2, 8 << 8, BG_COORD_ADD);
+        ShowBg(0);
+        ShowBg(1);
+        ShowBg(2);
+        ShowBg(3);
+        LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        gMain.state++;
+        break;
+    case 2:
+        sTaskId = CreateTask(Task_InitDifficultyFromField, 0);
+        gTasks[sTaskId].tDifficulty = GetCurrentDifficultyLevel();
+        gTasks[sTaskId].tScene = SCENE_CHOOSE_DIFFICULTY;
+        gTasks[sTaskId].tOptionChoose = TRUE;
+        gTasks[sTaskId].tConfirmSelection = FALSE;
+
+        LoadPalette(sDifficulty_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        LZ77UnCompVram(sDifficulty_Tiles, (void *)VRAM + BG_CHAR_SIZE * sBgTemplateCopeSpeech[1].charBaseIndex);
+        LZ77UnCompVram(sDifficultyInterface_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
+        LZ77UnCompVram(sDifficultyBg_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[3].mapBaseIndex));
+
+        FillWindowPixelBuffer(WINDOW_TITLE_BOX, PIXEL_FILL(10));
+        FillWindowPixelBuffer(WINDOW_YESNO_BOX, PIXEL_FILL(0));
+        FillWindowPixelBuffer(WINDOW_EASY_BOX, PIXEL_FILL(0));
+        FillWindowPixelBuffer(WINDOW_NORMAL_BOX, PIXEL_FILL(0));
+        FillWindowPixelBuffer(WINDOW_HARD_BOX, PIXEL_FILL(0));
+        FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
+        PutWindowTilemap(WINDOW_EASY_BOX);
+        PutWindowTilemap(WINDOW_NORMAL_BOX);
+        PutWindowTilemap(WINDOW_HARD_BOX);
+        PutWindowTilemap(WINDOW_DIFFICULTY_BOX);
+
+        x = (240 - GetStringWidth(FONT_NORMAL, gText_Choose_Difficulty, 0)) / 2;
+        AddTextPrinterParameterized3(WINDOW_TITLE_BOX, FONT_NORMAL, x, 0, sTextWhite, TEXT_SKIP_DRAW, gText_Choose_Difficulty);
+        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Easy, 0)) / 2;
+        AddTextPrinterParameterized3(WINDOW_EASY_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Easy);
+        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Normal, 0)) / 2;
+        AddTextPrinterParameterized3(WINDOW_NORMAL_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Normal);
+        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Hard, 0)) / 2;
+        AddTextPrinterParameterized3(WINDOW_HARD_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Hard);
+
+        CopyWindowToVram(WINDOW_TITLE_BOX, COPYWIN_FULL);
+        CopyWindowToVram(WINDOW_YESNO_BOX, COPYWIN_FULL);
+        CopyWindowToVram(WINDOW_EASY_BOX, COPYWIN_FULL);
+        CopyWindowToVram(WINDOW_NORMAL_BOX, COPYWIN_FULL);
+        CopyWindowToVram(WINDOW_HARD_BOX, COPYWIN_FULL);
+        CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
+
+        UpdateDifficultySelected();
+
+        if (sDifficultySelectorFromField)
+            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        SetupWindowBlendRegisters();
+        SetVBlankCallback(VBlank_CB2_CopeSpeech);
+        SetMainCallback2(CB2_CopeSpeech);
+        break;
+    }
+}
+
+static void Task_InitDifficultyFromField(u8 taskId)
+{
+    if (!gPaletteFade.active)
+        gTasks[taskId].func = TaskChooseOptions;
+}
+
+static void Task_ExitDifficultySelectorToField(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        sDifficultySelectorFromField = FALSE;
+        FreeAllWindowBuffers();
+        SetMainCallback2(gMain.savedCallback);
+        DestroyTask(taskId);
     }
 }
 

@@ -5279,12 +5279,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             "and brass have the strongest of bonds."),
         .frontPic = gMonFrontPic_FalinksMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_FalinksMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_FalinksMega, 
         .shinyPalette = gMonShinyPalette_FalinksMega,
@@ -5292,7 +5292,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Falinks)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 12, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sFalinksLevelUpLearnset,
         .teachableLearnset = sFalinksTeachableLearnset,

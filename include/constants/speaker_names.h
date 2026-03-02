@@ -22,6 +22,7 @@ enum SpeakerNames {
     SP_NAME_SCAREX,
     SP_NAME_ANGEL,
     SP_NAME_EING,
+    SP_NAME_DAVZERO,
     SP_NAME_KATHERINE,
     SP_NAME_DRIVE,
     SP_NAME_XIROS,
@@ -29,6 +30,8 @@ enum SpeakerNames {
     SP_NAME_UNKNOWN,
     SP_NAME_PKPOWER,
     SP_NAME_KLEIN,
+    SP_NAME_SAYER,
+    SP_NAME_BLAX,
     SP_NAME_AGUIAR,
     SP_NAME_ROXAS,
     SP_NAME_INMORTAL_KAKTUS,
@@ -36,6 +39,8 @@ enum SpeakerNames {
     SP_NAME_ERKEY,
     SP_NAME_MICOLO,
     SP_NAME_COPE,
+    SP_NAME_MRNIGHTOLOGY,
+    SP_NAME_GOSUTO,
     SP_NAME_COUNT
 };
 

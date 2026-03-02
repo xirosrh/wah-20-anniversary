@@ -541,6 +541,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Cheve,                 OBJ_EVENT_PAL_TAG_CHEVE},
     {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
     {gObjectEventPal_EingFishing,           OBJ_EVENT_PAL_TAG_EING_FISHING},
+    {gObjectEventPal_Erkey,                 OBJ_EVENT_PAL_TAG_ERKEY},
+    {gObjectEventPal_Gosuto,                OBJ_EVENT_PAL_TAG_GOSUTO},
     {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
     {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
     {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
@@ -3144,7 +3146,7 @@ u8 GetObjectEventIdByPosition(u16 x, u16 y, u8 elevation)
 
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *objectEvent, u8 elevation)
 {
-    if (objectEvent->currentElevation != 0 && elevation != 0 && objectEvent->currentElevation != elevation)
+    if (objectEvent->currentElevation != ELEVATION_TRANSITION && elevation != ELEVATION_TRANSITION && objectEvent->currentElevation != elevation)
         return FALSE;
 
     return TRUE;
@@ -9667,12 +9669,15 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
 {
     u8 mapElevation;
 
-    if (elevation == 0)
+    if (elevation == ELEVATION_TRANSITION)
         return FALSE;
 
     mapElevation = MapGridGetElevationAt(x, y);
 
-    if (mapElevation == 0 || mapElevation == 15)
+    if (mapElevation == ELEVATION_TRANSITION || mapElevation == ELEVATION_MULTI_LEVEL)
+        return FALSE;
+
+    if ((elevation == 5 && mapElevation == 6) || (elevation == 6 && mapElevation == 5))
         return FALSE;
 
     if (mapElevation != elevation)
@@ -9731,7 +9736,7 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
     u8 curElevation = MapGridGetElevationAt(objEvent->currentCoords.x, objEvent->currentCoords.y);
     u8 prevElevation = MapGridGetElevationAt(objEvent->previousCoords.x, objEvent->previousCoords.y);
 
-    if (curElevation == 15 || prevElevation == 15)
+    if (curElevation == ELEVATION_MULTI_LEVEL || prevElevation == ELEVATION_MULTI_LEVEL)
     {
         // Ignore subsprite priorities under bridges
         // so all subsprites will display below it
@@ -9742,8 +9747,36 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
 
     objEvent->currentElevation = curElevation;
 
-    if (curElevation != 0 && curElevation != 15)
-        objEvent->previousElevation = curElevation;
+    if (curElevation != ELEVATION_TRANSITION && curElevation != ELEVATION_MULTI_LEVEL)
+    {
+        bool8 is5to6 = (curElevation == 5 && prevElevation == 6) || (curElevation == 6 && prevElevation == 5);
+        bool8 hasStopped = (objEvent->currentCoords.x == objEvent->previousCoords.x
+                         && objEvent->currentCoords.y == objEvent->previousCoords.y);
+
+        if (!is5to6)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (hasStopped)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (sprite != NULL)
+        {
+            s16 spriteMapX, spriteMapY;
+            s16 midX, midY;
+            s16 dx = objEvent->currentCoords.x - objEvent->previousCoords.x;
+            s16 dy = objEvent->currentCoords.y - objEvent->previousCoords.y;
+
+            GetMapCoordsFromSpritePos(sprite->x, sprite->y, &spriteMapX, &spriteMapY);
+            midX = (objEvent->previousCoords.x + objEvent->currentCoords.x) * 8;
+            midY = (objEvent->previousCoords.y + objEvent->currentCoords.y) * 8;
+
+            if ((dx > 0 && spriteMapX >= midX) || (dx < 0 && spriteMapX <= midX)
+             || (dy > 0 && spriteMapY >= midY) || (dy < 0 && spriteMapY <= midY))
+                objEvent->previousElevation = curElevation;
+        }
+    }
 }
 
 void SetObjectSubpriorityByElevation(u8 elevation, struct Sprite *sprite, u8 subpriority)
@@ -9770,7 +9803,7 @@ static void ObjectEventUpdateSubpriority(struct ObjectEvent *objEvent, struct Sp
 
 static bool8 AreElevationsCompatible(u8 a, u8 b)
 {
-    if (a == 0 || b == 0)
+    if (a == ELEVATION_TRANSITION || b == ELEVATION_TRANSITION)
         return TRUE;
 
     if (a != b)

@@ -133,7 +133,13 @@
 #define TRAINER_PIC_KATHERINE             115
 #define TRAINER_PIC_JAVS                  116
 #define TRAINER_PIC_GALLEGO               117
-#define TRAINER_PIC_COUNT                 118
+#define TRAINER_PIC_TOKYN                 118
+#define TRAINER_PIC_ERKEY                 119
+#define TRAINER_PIC_JAVI4315              120
+#define TRAINER_PIC_ROXAS                 121
+#define TRAINER_PIC_KAKTUS                122
+#define TRAINER_PIC_GOSUTO                123
+#define TRAINER_PIC_COUNT                 124
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -363,6 +369,7 @@ enum TrainerClassID
     TRAINER_CLASS_COOLTRAINER_2, // Used for only one trainer.
     TRAINER_CLASS_MAGMA_ADMIN,
     TRAINER_CLASS_WAH_ADMIN,
+    TRAINER_CLASS_COLLABORATOR,
     TRAINER_CLASS_RIVAL,
     TRAINER_CLASS_BUG_CATCHER,
     TRAINER_CLASS_PKMN_RANGER,
