@@ -290,6 +290,10 @@
 #define MOVEMENT_ACTION_CRANE_START_BURNING             0xC6
 #define MOVEMENT_ACTION_FISHING                         0xC7
 #define MOVEMENT_ACTION_EMOTE_ANNOYED                   0xC8
+#define MOVEMENT_ACTION_WALK_MAX_DOWN                   0xC9
+#define MOVEMENT_ACTION_WALK_MAX_UP                     0xCA
+#define MOVEMENT_ACTION_WALK_MAX_LEFT                   0xCB
+#define MOVEMENT_ACTION_WALK_MAX_RIGHT                  0xCC
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF

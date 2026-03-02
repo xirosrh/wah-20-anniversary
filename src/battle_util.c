@@ -7575,6 +7575,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
+    case ABILITY_SHADOW_AURA:
+    if (moveType == TYPE_DARK)
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     default:
         break;
     }
