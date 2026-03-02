@@ -40,6 +40,7 @@ enum SpeakerNames {
     SP_NAME_MICOLO,
     SP_NAME_COPE,
     SP_NAME_MRNIGHTOLOGY,
+    SP_NAME_GOSUTO,
     SP_NAME_COUNT
 };
 

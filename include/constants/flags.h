@@ -74,7 +74,7 @@
 #define FLAG_DEFEATED_ADMIN_XIROS    0x3C //Used WAH
 #define FLAG_DEFEATED_ADMIN_KLEIN    0x3D //Used WAH
 #define FLAG_DEFEATED_ADMIN_PKPOWER    0x3E //Used WAH
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO    0x3F // Used WAH
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
