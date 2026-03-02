@@ -2,7 +2,7 @@
   "id": "MAP_GOCE_ROOM",
   "name": "GoceRoom",
   "layout": "LAYOUT_GOCE_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_INSIDE_POKEMON_LEAGUE",
   "region_map_section": "MAPSEC_GOCE_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

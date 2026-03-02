@@ -2,7 +2,7 @@
   "id": "MAP_DAV_ZERO_ROOM",
   "name": "DavZeroRoom",
   "layout": "LAYOUT_DAV_ZERO_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_VOLCANO_INFERNO",
   "region_map_section": "MAPSEC_DAV_ZERO_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_JACK_JOHNSON_ROOM",
   "name": "JackJohnsonRoom",
   "layout": "LAYOUT_JACK_JOHNSON_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PUEBLO_ORIGEN",
   "region_map_section": "MAPSEC_JACK_JOHNSON_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

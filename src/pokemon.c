@@ -718,6 +718,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/object_events/object_event_pic_tables_followers.h"
 
 #include "data/pokemon/species_info.h"
+#include "constants/opponents.h"
 
 #define PP_UP_SHIFTS(val)           val,        (val) << 2,        (val) << 4,        (val) << 6
 #define PP_UP_SHIFTS_INV(val) (u8)~(val), (u8)~((val) << 2), (u8)~((val) << 4), (u8)~((val) << 6)
@@ -6121,8 +6122,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
-        case TRAINER_CLASS_WAH_ADMIN:
-        case TRAINER_CLASS_COLLABORATOR:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
@@ -6144,6 +6143,25 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_WAH_ADMIN:
+        case TRAINER_CLASS_COLLABORATOR:
+            switch (TRAINER_BATTLE_PARAM.opponentA)
+            {
+            case TRAINER_WAH_ADMIN_REONEKY_MAIN:
+            case TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE:
+                return MUS_CAZA_LEGENDARIOS_TO;
+            case TRAINER_WAH_ADMIN_DAVZERO_MAIN:
+            case TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE:
+                return MUS_THE_GRAND_FINALE;
+            case TRAINER_WAH_ADMIN_CHEVE_MAIN:
+            case TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE:
+                return MUS_MASTERED_BATTLE_4;
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
+                return MUS_WI_VS_GYM_LEADER;
+            default:
+                return MUS_VS_AQUA_MAGMA;
+            }
         default:
             return MUS_VS_TRAINER;
         }

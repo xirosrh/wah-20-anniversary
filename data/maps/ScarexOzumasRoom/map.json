@@ -2,7 +2,7 @@
   "id": "MAP_SCAREX_OZUMAS_ROOM",
   "name": "ScarexOzumasRoom",
   "layout": "LAYOUT_SCAREX_OZUMAS_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_SPROUT_TOWER",
   "region_map_section": "MAPSEC_SCAREX_OZUMAS_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

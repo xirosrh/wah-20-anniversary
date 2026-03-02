@@ -2,7 +2,7 @@
   "id": "MAP_REONEKY_ROOM",
   "name": "ReonekyRoom",
   "layout": "LAYOUT_REONEKY_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_GYM_ESPUMA_HEROES",
   "region_map_section": "MAPSEC_REONEKY_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
