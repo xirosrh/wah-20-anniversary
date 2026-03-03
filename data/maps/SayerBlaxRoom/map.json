@@ -2,7 +2,7 @@
   "id": "MAP_SAYER_BLAX_ROOM",
   "name": "SayerBlaxRoom",
   "layout": "LAYOUT_SAYER_BLAX_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_ROUTE_2",
   "region_map_section": "MAPSEC_SAYER_BLAX_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

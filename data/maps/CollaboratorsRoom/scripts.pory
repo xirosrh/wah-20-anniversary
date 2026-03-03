@@ -268,6 +268,7 @@ script CollaboratorsRoom_EventScript_Erkey {
 script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    waitse
     playse(SE_LEDGE)
     applymovement(VAR_LAST_TALKED, moves(lock_facing_direction,jump_in_place_down, unlock_facing_direction, face_player))
     waitmovement(0)
@@ -585,8 +586,10 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
     msgbox(format("O mejor dicho, ¿¡qué te parece si lo hacemos el doble de divertido!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
+    waitse
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    waitse
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
     msgbox(format("Muy bien, entra al mundo de las tinieblas conmigo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)

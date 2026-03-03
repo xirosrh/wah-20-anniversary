@@ -42,6 +42,7 @@ script ReonekyRoom_OnTransition {
 }
 
 script ReonekyRoom_OnFrame {
+    playbgm(MUS_TEAM_ORIGEN_TO, FALSE)
     release
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
     special(SpawnCameraObject)
@@ -70,12 +71,12 @@ script ReonekyRoom_OnFrame {
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(jump_in_place_right))
     playse(SE_LEDGE)
     applymovement(LOCALID_REOROOM_REONEKY, moves(jump_in_place_right, delay_16 * 3))
-    msgbox(format("¿Te ríes, eh? Aficionado…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("¿Te ríes, eh? Aficionada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     waitmovement(0)
     delay(30)
     msgbox(format("Estaba estacionado perfectamente, ¡no voy a rendirme ante esta multa injusta!"), speaker = SP_NAME_REONEKY)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
-    msgbox(format("¡Spitfire, cabezazo Zen!"))
+    msgbox(format("¡Spitfire, Cabezazo Zen!"))
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_Versus)
     waitse
@@ -160,6 +161,7 @@ script ReonekyRoom_OnFrame {
     waitse
     setflag(FLAG_TEMP_3_REONEKYROOM_HIDE_HAUNTER)
     removeobject(LOCALID_REOROOM_HAUNTER)
+    fadedefaultbgm
     playse(SE_LEDGE)
     applymovement(LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight)
     waitmovement(0)

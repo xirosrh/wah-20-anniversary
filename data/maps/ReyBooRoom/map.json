@@ -2,7 +2,7 @@
   "id": "MAP_REY_BOO_ROOM",
   "name": "ReyBooRoom",
   "layout": "LAYOUT_REY_BOO_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_LIGHTHOUSE",
   "region_map_section": "MAPSEC_REY_BOO_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
