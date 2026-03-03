@@ -14334,8 +14334,8 @@ void BattleCreateYesNoCursorAt(u8 cursorPosition)
 void BattleDestroyYesNoCursorAt(u8 cursorPosition)
 {
     u16 src[2];
-    src[0] = 0x1016;
-    src[1] = 0x1016;
+    src[0] = 92;
+    src[1] = 92;
 
     CopyToBgTilemapBufferRect_ChangePalette(0, src, 0x18, 9 + (2 * cursorPosition), 1, 2, 0x11);
     CopyBgTilemapBufferToVram(0);
