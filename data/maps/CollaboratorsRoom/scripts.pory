@@ -665,3 +665,46 @@ script CollaboratorsRoom_EventScript_Gosuto {
         goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
 }
+
+
+script CollaboratorsRoom_EventScript_Alexmad {
+    lock
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Sm1, sm2… o sm3."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    waitmovement(0)
+    delay(30)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(face_player, lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    waitmovement(0)
+    msgbox(format("20 años… ¿te das cuenta?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Aquí crecimos entre bugs, tiles mal alineados y scripts que se colgaban en el último mapa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_IdeaWithDelay48)
+    msgbox(format("¡Ah! Si ves a Baro por ahí… no intentes ser su amigo.\pCréeme, no termina bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Y si te topas con Serg!o… salúdalo con respeto.\pEs leyenda."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(10)
+    msgbox(format("Todos le tenemos un cariño especial…\nY no, no homo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    msgbox(format("Me encanta la playa, hacer mapas bien locos y meter bosques dentro de cuevas.\pEso dice muchas cosas de mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Los hacks dicen muchas cosas de nosotros.\pIncluso en la vida real… nos hicieron mejores personas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(10)
+    msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pDime… ¿lo quieres hacer?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+    closemessage
+    release
+    end
+}
