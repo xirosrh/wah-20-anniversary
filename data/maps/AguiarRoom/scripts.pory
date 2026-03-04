@@ -72,13 +72,35 @@ script AguiarRoom_EventScript_TurnOnTV {
 
 script AguiarRoom_EventScript_Aguiar {
     if(flag(FLAG_DEFEATED_ADMIN_AGUIAR)){
-        msgbox(format("Aquí sigo, como siempre: tranquilo, fumando y esperando a ver quién aparece."), MSGBOX_NPC, speaker = SP_NAME_AGUIAR)
+        lock
+        specialvar(VAR_RESULT, GetPlayerFacingDirection)
+        if(var(VAR_RESULT) != DIR_NORTH){
+            updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR)
+        }
+        faceplayer
+        msgbox(format("Aquí sigo, como siempre: tranquilo, fumando y esperando a ver quién aparece."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+        if(var(VAR_RESULT) != DIR_NORTH){
+            turnobject(LOCALID_AGUIARROOM_AGUIAR_SMOKING, DIR_SOUTH)
+            updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR_SMOKING)
+        }
         release
         end
     }
     lock
-    setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_FACE_DOWN)
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    if(var(VAR_RESULT) != DIR_NORTH){
+        updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR)
+        faceplayer
+        fadescreen(FADE_TO_BLACK)
+        directmovementtopos(LOCALID_PLAYER, 6, 6)
+        waitmovement(0)
+        turnobject(LOCALID_PLAYER, DIR_NORTH)
+        turnobject(LOCALID_AGUIARROOM_AGUIAR_SMOKING, DIR_SOUTH)
+        updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR_SMOKING)
+        fadescreen(FADE_FROM_BLACK)
+    }
     faceplayer
+    setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_FACE_DOWN)
     msgbox(format("¡Pero mírate! Al final has llegado hasta aquí.\pY yo que pensaba que iba a pasarme el día tirado, con el cigarro y poco más…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
     playse(SE_REPEL)
