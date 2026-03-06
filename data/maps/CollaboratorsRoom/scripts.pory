@@ -705,6 +705,26 @@ script CollaboratorsRoom_EventScript_Alexmad {
     delay(10)
     msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pDime… ¿lo quieres hacer?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
     closemessage
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("Escanea el QR con tu móvil y nos vemos en el otro mundo."), speaker = SP_NAME_ALEXMAD)
+        load_field_pic(FP_MAD_QR, 120, 80)
+        waitbuttonpress
+        closemessage
+        destroy_field_pic(FP_MAD_QR)
+        msgbox(format("¿Lo viste?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+        closemessage
+        if(var(VAR_RESULT) == YES) {
+            msgbox(format("Entonces escribe la palabra que viste en el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            special(EnterCode)
+            waitstate
+            special(GetCodeFeedback)
+            if (var(VAR_RESULT) == 1) {
+                msgbox(format("¡Correcto! Esa era la palabra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            } else {
+                msgbox(format("Esa no era la palabra. Vuelve a ver el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            }
+        }
+    }
     release
     end
 }

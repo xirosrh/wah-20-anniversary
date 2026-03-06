@@ -1308,8 +1308,53 @@ CollaboratorsRoom_EventScript_Alexmad::
 # 707 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 708 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_2
+CollaboratorsRoom_EventScript_Alexmad_1:
+# 728 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
+
+CollaboratorsRoom_EventScript_Alexmad_2:
+# 709 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_9, speaker = SP_NAME_ALEXMAD
+# 710 "data/maps/CollaboratorsRoom/scripts.pory"
+	load_field_pic FP_MAD_QR, 120, 80
+# 711 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitbuttonpress
+# 712 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 713 "data/maps/CollaboratorsRoom/scripts.pory"
+	destroy_field_pic FP_MAD_QR
+# 714 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_10, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
+# 715 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 716 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_4
+	goto CollaboratorsRoom_EventScript_Alexmad_1
+
+CollaboratorsRoom_EventScript_Alexmad_4:
+# 717 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 718 "data/maps/CollaboratorsRoom/scripts.pory"
+	special EnterCode
+# 719 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitstate
+# 720 "data/maps/CollaboratorsRoom/scripts.pory"
+	special GetCodeFeedback
+# 721 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_6
+# 724 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	goto CollaboratorsRoom_EventScript_Alexmad_1
+
+CollaboratorsRoom_EventScript_Alexmad_6:
+# 722 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	goto CollaboratorsRoom_EventScript_Alexmad_1
 
 
 # 79 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1952,6 +1997,29 @@ CollaboratorsRoom_EventScript_Alexmad_Text_8:
 	.string "Tengo para ti un evento al puro estilo\n"
 	.string "del Mitic.\p"
 	.string "Dime… ¿lo quieres hacer?$"
+
+CollaboratorsRoom_EventScript_Alexmad_Text_9:
+# 709 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Escanea el QR con tu móvil y nos vemos\n"
+	.string "en el otro mundo.$"
+
+CollaboratorsRoom_EventScript_Alexmad_Text_10:
+# 714 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Lo viste?$"
+
+CollaboratorsRoom_EventScript_Alexmad_Text_11:
+# 717 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Entonces escribe la palabra que viste\n"
+	.string "en el video.$"
+
+CollaboratorsRoom_EventScript_Alexmad_Text_12:
+# 722 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Correcto! Esa era la palabra.$"
+
+CollaboratorsRoom_EventScript_Alexmad_Text_13:
+# 724 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Esa no era la palabra. Vuelve a ver el\n"
+	.string "video.$"
 
 CollaboratorsRoom_Text_Gameboycl_OnDefeat::
 # 180 "data/maps/CollaboratorsRoom/scripts.pory"
