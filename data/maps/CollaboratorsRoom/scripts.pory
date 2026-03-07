@@ -723,7 +723,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
                 setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
                 clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
                 setvar(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0)
-                setvar(VAR_ALEXMAD_PUZZLE_STEPS, 0)
+                getplayerxy(VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y)
                 release
                 end
             } else {

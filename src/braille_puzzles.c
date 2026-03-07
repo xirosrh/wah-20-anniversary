@@ -342,20 +342,23 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 #define ALEXMAD_PUZZLE_RESULT_NONE    0
 #define ALEXMAD_PUZZLE_RESULT_SUCCESS 1
 #define ALEXMAD_PUZZLE_RESULT_FAIL    2
-#define ALEXMAD_PUZZLE_MAX_STEPS      30
 
-static const u8 sAlexmadCornerCoords[][2] =
+static const s8 sAlexmadStepOffsets[][2] =
 {
-    {11,  3},
-    { 1, 12},
-    {11, 12},
-    { 1,  3},
+    { 0,  1},
+    { 0,  2},
+    {-1,  2},
+    { 0,  2},
+    { 1,  2},
+    { 2,  2},
+    { 2,  1},
+    { 2,  0},
 };
 
 u8 ShouldDoAlexmadCornerPuzzle(void)
 {
-    u16 steps, checkpoint;
-    u8 i;
+    u16 checkpoint;
+    s16 expectedX, expectedY;
 
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_COLLABORATORS_ROOM)
      || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_COLLABORATORS_ROOM))
@@ -367,43 +370,26 @@ u8 ShouldDoAlexmadCornerPuzzle(void)
     if (FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED))
         return ALEXMAD_PUZZLE_RESULT_NONE;
 
-    steps = VarGet(VAR_ALEXMAD_PUZZLE_STEPS) + 1;
-    VarSet(VAR_ALEXMAD_PUZZLE_STEPS, steps);
-
-    if (steps > ALEXMAD_PUZZLE_MAX_STEPS)
-    {
-        FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
-        FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
-        return ALEXMAD_PUZZLE_RESULT_FAIL;
-    }
-
     checkpoint = VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT);
+    if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
 
-    for (i = 0; i < ARRAY_COUNT(sAlexmadCornerCoords); i++)
+    expectedX = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_X) + sAlexmadStepOffsets[checkpoint][0];
+    expectedY = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_Y) + sAlexmadStepOffsets[checkpoint][1];
+
+    if (gSaveBlock1Ptr->pos.x == expectedX && gSaveBlock1Ptr->pos.y == expectedY)
     {
-        if (gSaveBlock1Ptr->pos.x == sAlexmadCornerCoords[i][0]
-         && gSaveBlock1Ptr->pos.y == sAlexmadCornerCoords[i][1])
+        checkpoint++;
+        VarSet(VAR_ALEXMAD_PUZZLE_CHECKPOINT, checkpoint);
+        if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
         {
-            if (i == checkpoint)
-            {
-                checkpoint++;
-                VarSet(VAR_ALEXMAD_PUZZLE_CHECKPOINT, checkpoint);
-                VarSet(VAR_ALEXMAD_PUZZLE_STEPS, 0);
-                if (checkpoint >= ARRAY_COUNT(sAlexmadCornerCoords))
-                {
-                    FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
-                    return ALEXMAD_PUZZLE_RESULT_SUCCESS;
-                }
-                return ALEXMAD_PUZZLE_RESULT_NONE;
-            }
-            else
-            {
-                FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
-                FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
-                return ALEXMAD_PUZZLE_RESULT_FAIL;
-            }
+            FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+            return ALEXMAD_PUZZLE_RESULT_SUCCESS;
         }
+        return ALEXMAD_PUZZLE_RESULT_NONE;
     }
 
-    return ALEXMAD_PUZZLE_RESULT_NONE;
+    FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+    FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+    return ALEXMAD_PUZZLE_RESULT_FAIL;
 }

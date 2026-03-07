@@ -1369,7 +1369,7 @@ CollaboratorsRoom_EventScript_Alexmad_6:
 # 725 "data/maps/CollaboratorsRoom/scripts.pory"
 	setvar VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0
 # 726 "data/maps/CollaboratorsRoom/scripts.pory"
-	setvar VAR_ALEXMAD_PUZZLE_STEPS, 0
+	getplayerxy VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y
 # 727 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
