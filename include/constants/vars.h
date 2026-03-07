@@ -266,8 +266,8 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_COSARARA_ROOM_COMPUTER_FRAMES                 0x40F7 // WAH
 #define VAR_WAH_CHALLENGE_COMPLETION_COUNT                0x40F8 // WAH
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused
+#define VAR_ALEXMAD_PUZZLE_CHECKPOINT                     0x40F9 // WAH: next corner index (0-3)
+#define VAR_ALEXMAD_PUZZLE_STEPS                         0x40FA // WAH: steps since last corner
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused

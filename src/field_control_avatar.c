@@ -18,6 +18,7 @@
 #include "field_poison.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
+#include "braille_puzzles.h"
 #include "fldeff_misc.h"
 #include "follower_npc.h"
 #include "item_menu.h"
@@ -704,6 +705,19 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
         {
             ScriptContext_SetupScript(IslandCave_EventScript_OpenRegiEntrance);
             return TRUE;
+        }
+        {
+            u8 alexmadResult = ShouldDoAlexmadCornerPuzzle();
+            if (alexmadResult == 1)
+            {
+                ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleComplete);
+                return TRUE;
+            }
+            else if (alexmadResult == 2)
+            {
+                ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleFailed);
+                return TRUE;
+            }
         }
         if (ShouldDoWallyCall() == TRUE)
         {

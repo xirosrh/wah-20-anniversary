@@ -719,12 +719,51 @@ script CollaboratorsRoom_EventScript_Alexmad {
             waitstate
             special(GetCodeFeedback)
             if (var(VAR_RESULT) == 1) {
-                msgbox(format("¡Correcto! Esa era la palabra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("Perfecto… Veo que sí lo viste.\pEntonces sabes lo que tienes que hacer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
+                clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
+                setvar(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0)
+                setvar(VAR_ALEXMAD_PUZZLE_STEPS, 0)
+                release
+                end
             } else {
-                msgbox(format("Esa no era la palabra. Vuelve a ver el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("No… Esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                playse(SE_PIN)
+                applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+                msgbox(format("Vuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                turnobject(VAR_LAST_TALKED, DIR_NORTH)
             }
         }
     }
     release
+    end
+}
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
+    lockall
+    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_WEST)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_left))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_left, delay_16))
+
+    playse(SE_SUCCESS)
+    msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_WalkLeft2)
+    msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    //TODO Xiros
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(walk_right *2, face_up))
+    releaseall
+    end
+}
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
+    lockall
+    playse(SE_FAILURE)
+    msgbox(format("No, no… así no es.\pVuelve a hablarme si quieres intentarlo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    releaseall
     end
 }

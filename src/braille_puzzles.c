@@ -338,3 +338,72 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 
     return FALSE;
 }
+
+#define ALEXMAD_PUZZLE_RESULT_NONE    0
+#define ALEXMAD_PUZZLE_RESULT_SUCCESS 1
+#define ALEXMAD_PUZZLE_RESULT_FAIL    2
+#define ALEXMAD_PUZZLE_MAX_STEPS      30
+
+static const u8 sAlexmadCornerCoords[][2] =
+{
+    {11,  3},
+    { 1, 12},
+    {11, 12},
+    { 1,  3},
+};
+
+u8 ShouldDoAlexmadCornerPuzzle(void)
+{
+    u16 steps, checkpoint;
+    u8 i;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_COLLABORATORS_ROOM)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_COLLABORATORS_ROOM))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (!FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    steps = VarGet(VAR_ALEXMAD_PUZZLE_STEPS) + 1;
+    VarSet(VAR_ALEXMAD_PUZZLE_STEPS, steps);
+
+    if (steps > ALEXMAD_PUZZLE_MAX_STEPS)
+    {
+        FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+        FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+        return ALEXMAD_PUZZLE_RESULT_FAIL;
+    }
+
+    checkpoint = VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT);
+
+    for (i = 0; i < ARRAY_COUNT(sAlexmadCornerCoords); i++)
+    {
+        if (gSaveBlock1Ptr->pos.x == sAlexmadCornerCoords[i][0]
+         && gSaveBlock1Ptr->pos.y == sAlexmadCornerCoords[i][1])
+        {
+            if (i == checkpoint)
+            {
+                checkpoint++;
+                VarSet(VAR_ALEXMAD_PUZZLE_CHECKPOINT, checkpoint);
+                VarSet(VAR_ALEXMAD_PUZZLE_STEPS, 0);
+                if (checkpoint >= ARRAY_COUNT(sAlexmadCornerCoords))
+                {
+                    FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+                    return ALEXMAD_PUZZLE_RESULT_SUCCESS;
+                }
+                return ALEXMAD_PUZZLE_RESULT_NONE;
+            }
+            else
+            {
+                FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+                FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+                return ALEXMAD_PUZZLE_RESULT_FAIL;
+            }
+        }
+    }
+
+    return ALEXMAD_PUZZLE_RESULT_NONE;
+}
