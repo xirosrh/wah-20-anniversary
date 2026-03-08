@@ -355,6 +355,17 @@ static const s8 sAlexmadStepOffsets[][2] =
     { 2,  0},
 };
 
+static bool8 HasSwappedAlexmadPuzzlePartyLeadAndSixth(void)
+{
+    u32 expectedLeadPersonality = VarGet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO) | (VarGet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI) << 16);
+    u32 expectedSixthPersonality = VarGet(VAR_ALEXMAD_PUZZLE_LEAD_PID_LO) | (VarGet(VAR_ALEXMAD_PUZZLE_LEAD_PID_HI) << 16);
+    u32 currentLeadPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+    u32 currentSixthPersonality = GetMonData(&gPlayerParty[5], MON_DATA_PERSONALITY);
+
+    return currentLeadPersonality == expectedLeadPersonality
+        && currentSixthPersonality == expectedSixthPersonality;
+}
+
 u8 ShouldDoAlexmadCornerPuzzle(void)
 {
     u16 checkpoint;
@@ -373,6 +384,13 @@ u8 ShouldDoAlexmadCornerPuzzle(void)
     checkpoint = VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT);
     if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
         return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (checkpoint == 0 && !HasSwappedAlexmadPuzzlePartyLeadAndSixth())
+    {
+        FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+        FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+        return ALEXMAD_PUZZLE_RESULT_FAIL;
+    }
 
     expectedX = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_X) + sAlexmadStepOffsets[checkpoint][0];
     expectedY = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_Y) + sAlexmadStepOffsets[checkpoint][1];

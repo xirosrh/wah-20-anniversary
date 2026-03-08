@@ -1371,6 +1371,8 @@ CollaboratorsRoom_EventScript_Alexmad_6:
 # 726 "data/maps/CollaboratorsRoom/scripts.pory"
 	getplayerxy VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y
 # 727 "data/maps/CollaboratorsRoom/scripts.pory"
+	special InitAlexmadPuzzlePartyOrderCheck
+# 728 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
 
@@ -2103,7 +2105,8 @@ CollaboratorsRoom_EventScript_Alexmad_Text_11:
 CollaboratorsRoom_EventScript_Alexmad_Text_12:
 # 722 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Perfecto… Veo que sí lo viste.\p"
-	.string "Entonces sabes lo que tienes que hacer.$"
+	.string "Antes del primer paso, cambia el primer\n"
+	.string "Pokémon de tu equipo por el sexto.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_13:
 # 730 "data/maps/CollaboratorsRoom/scripts.pory"

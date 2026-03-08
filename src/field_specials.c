@@ -4398,6 +4398,17 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
+void InitAlexmadPuzzlePartyOrderCheck(void)
+{
+    u32 leadPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+    u32 sixthPersonality = GetMonData(&gPlayerParty[5], MON_DATA_PERSONALITY);
+
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_LO, leadPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_HI, leadPersonality >> 16);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO, sixthPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI, sixthPersonality >> 16);
+}
+
 void SetHiddenNature(void)
 {
     u32 hiddenNature = gSpecialVar_Result;

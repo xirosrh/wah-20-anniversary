@@ -269,10 +269,10 @@
 #define VAR_ALEXMAD_PUZZLE_CHECKPOINT                     0x40F9 // WAH: next step index (0-7)
 #define VAR_ALEXMAD_PUZZLE_START_X                       0x40FA // WAH: player X when puzzle started
 #define VAR_ALEXMAD_PUZZLE_START_Y                       0x40FB // WAH: player Y when puzzle started
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_LO                   0x40FC // WAH: low 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_HI                   0x40FD // WAH: high 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO                  0x40FE // WAH: low 16 bits of slot 6 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI                  0x40FF // WAH: high 16 bits of slot 6 personality at challenge start
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
