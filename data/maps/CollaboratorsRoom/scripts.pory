@@ -719,7 +719,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
             waitstate
             special(GetCodeFeedback)
             if (var(VAR_RESULT) == 1) {
-                msgbox(format("Perfecto… Veo que sí lo viste.\pAntes del primer paso, cambia el primer Pokémon de tu equipo por el sexto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("Perfecto… Veo que sí lo viste.\pEntonces sabes lo que tienes que hacer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
                 clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
                 setvar(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0)
