@@ -72,6 +72,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Javs;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Angel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrNightology;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erkey;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alexmad;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gosuto;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
@@ -566,6 +567,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ANGEL] =                    &gObjectEventGraphicsInfo_Angel,
     [OBJ_EVENT_GFX_MRNIGHTOLOGY] =            &gObjectEventGraphicsInfo_MrNightology,
     [OBJ_EVENT_GFX_ERKEY] =                    &gObjectEventGraphicsInfo_Erkey,
+    [OBJ_EVENT_GFX_ALEXMAD] =                   &gObjectEventGraphicsInfo_Alexmad,
     [OBJ_EVENT_GFX_GOSUTO] =                    &gObjectEventGraphicsInfo_Gosuto,
     [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
