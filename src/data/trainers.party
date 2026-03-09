@@ -3517,13 +3517,12 @@ Makuhita
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_EDGAR ===
-Name: EDGAR
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_COLLABORATOR_ALEXMAD ===
+Name: Alexmad
+Class: Collaborator
+Pic: Alexmad
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 

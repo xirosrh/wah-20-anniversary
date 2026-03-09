@@ -86,6 +86,7 @@ script XirosRoom_EventScript_Xiros {
     applymovement(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown2)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
     waitmovement(0)
+    special(RemoveCameraObject)
     msgbox(format("Es lo lindo de esta comunidad, ¿no crees?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
@@ -101,6 +102,7 @@ script XirosRoom_EventScript_Xiros {
 	playse(SE_BALL_OPEN)
 	fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_XIROSROOM_POKEBALL)
+    setflag(FLAG_TEMP_1_XIROSROOM_HIDE_POKEBALL)
     clearflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
     addobject(LOCALID_XIROSROOM_ELECTRODE)
     waitse
