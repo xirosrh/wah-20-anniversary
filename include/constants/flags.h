@@ -75,9 +75,9 @@
 #define FLAG_DEFEATED_ADMIN_KLEIN    0x3D //Used WAH
 #define FLAG_DEFEATED_ADMIN_PKPOWER    0x3E //Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO    0x3F // Used WAH
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_MET_ALEXMAD    0x40 // Used WAH: player has talked to Alexmad at least once
+#define FLAG_ALEXMAD_EVENT_COMPLETED    0x41 // Used WAH: player completed Alexmad QR/puzzle event
+#define FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD    0x42 // Used WAH
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
