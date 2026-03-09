@@ -305,6 +305,10 @@ static const struct SpriteFrameImage sPicTable_Erkey[] = {
     overworld_ascending_frames(gObjectEventPic_Erkey, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Alexmad[] = {
+    overworld_ascending_frames(gObjectEventPic_Alexmad, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Gosuto[] = {
     overworld_ascending_frames(gObjectEventPic_Gosuto, 2, 4),
 };

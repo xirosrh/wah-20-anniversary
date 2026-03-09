@@ -35,8 +35,8 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
-    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
     release
     end
 }
@@ -122,8 +122,8 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
-    turnobject(VAR_LAST_TALKED, DIR_EAST)
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
 }
@@ -212,8 +212,8 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Erkey_OnFinishEvent {
-    turnobject(VAR_LAST_TALKED, DIR_WEST)
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -298,8 +298,8 @@ text CollaboratorsRoom_Text_Micolo_ChoosePokemon {
 }
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
-    turnobject(VAR_LAST_TALKED, DIR_EAST)
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
     releaseall
     end
 }
@@ -612,8 +612,8 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
-    turnobject(VAR_LAST_TALKED, DIR_WEST)
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -664,4 +664,245 @@ script CollaboratorsRoom_EventScript_Gosuto {
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
         goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
+}
+
+
+script CollaboratorsRoom_EventScript_Alexmad_LongIntro {
+    msgbox(format("20 años… ¿te das cuenta?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Aquí crecimos entre bugs, tiles mal alineados y scripts que se colgaban en el último mapa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_IdeaWithDelay48)
+    msgbox(format("¡Ah! Si ves a Baro por ahí… no intentes ser su amigo.\pCréeme, no termina bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Y si te topas con Serg!o… salúdalo con respeto.\pEs leyenda."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(10)
+    msgbox(format("Todos le tenemos un cariño especial…\nY no, no homo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
+    msgbox(format("Me encanta la playa, hacer mapas bien locos y meter bosques dentro de cuevas.\pEso dice muchas cosas de mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Los hacks dicen muchas cosas de nosotros.\pIncluso en nuestra vida personal… nos hicieron mejores personas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(10)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
+    msgbox(format("Escanea el QR con tu móvil y nos vemos en el otro mundo."), speaker = SP_NAME_ALEXMAD)
+    load_field_pic(FP_MAD_QR, 120, 80)
+    waitbuttonpress
+    closemessage
+    destroy_field_pic(FP_MAD_QR)
+    msgbox(format("¿Lo viste?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+    closemessage
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("Entonces escribe la palabra que viste en el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        special(EnterCode)
+        waitstate
+        special(GetCodeFeedback)
+        if (var(VAR_RESULT) == 1) {
+            msgbox(format("Perfecto… Veo que sí lo viste.\pEntonces sabes lo que tienes que hacer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
+            clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
+            setvar(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0)
+            getplayerxy(VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y)
+            special(InitAlexmadPuzzlePartyOrderCheck)
+            release
+            end
+        } else {
+            msgbox(format("No… Esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            playse(SE_PIN)
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_AnnoyedWithDelay48)
+            msgbox(format("Vuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        }
+    } else {
+        msgbox(format("Vuelve cuando estés listo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    }
+    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+}
+
+script CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle {
+    msgbox(format("Cada hack tiene su propia esencia. La personalidad de su creador vive dentro de él.\pEste lleva lo mejor de grandes nombres de la comunidad.\pMás de dos décadas evolucionando.\nNunca se rindieron… nunca dejaron de crear.\pVeamos si tú tampoco te rindes."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
+    msgbox(format("Regresaste…\nEso ya dice algo.\pEn WAH aprendimos que rendirse no es una opción.\pCada error es una versión nueva… cada derrota es un parche.\pY cada parche nos hizo mejores.\n¿Otro combate?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        return
+    } else {
+        msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+    applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_VersusWithDelay48)
+    waitmovement(0)
+    setflag(B_FLAG_NO_WHITEOUT)
+    trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ALEXMAD, CollaboratorsRoom_Text_Alexmad_OnDefeat)
+    clearflag(B_FLAG_NO_WHITEOUT)
+    special(GetBattleOutcome)
+    special(HealPlayerParty)
+    if(var(VAR_RESULT) == B_OUTCOME_WON) {
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48)
+        msgbox(format("Excelente…\nEres digno de estar aquí.\pMe alegra ver que la comunidad nunca dejó de ser la mejor."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
+        msgbox(format("Hoy perdí yo…\nPero quizás mañana podría ganar Samee.\pNos veremos pronto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD)
+    } else {
+        msgbox(format("Veo que no siempre tener el mejor equipo es suficiente.\pLa estrategia pesa más que pulsar A a lo loco."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Vuelve cuando estés listo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    }
+    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+}
+
+script CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent {
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
+    release
+    end
+}
+
+text CollaboratorsRoom_Text_Alexmad_OnDefeat {
+    format("20 años de comunidad y aún me sorprenden.")
+}
+
+script CollaboratorsRoom_EventScript_Alexmad {
+    lock
+    playse(SE_PIN)
+    if(flag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)) {
+        msgbox(format("Ya sabes lo que tienes que hacer, ¿no?"), MSGBOX_NPC, speaker = SP_NAME_ALEXMAD)
+        end
+    }
+    applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    if(!flag(FLAG_ALEXMAD_EVENT_COMPLETED)) {
+        msgbox(format("Sm1, sm2 o…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    }
+    waitmovement(0)
+    delay(30)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(emote_exclamation_mark))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(face_player, lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    waitmovement(0)
+    setvar(VAR_TEMP_C, 0)
+    if(!flag(FLAG_MET_ALEXMAD)) {
+        setvar(VAR_TEMP_C, 1)
+        call(CollaboratorsRoom_EventScript_Alexmad_LongIntro)
+        setflag(FLAG_MET_ALEXMAD)
+    }
+
+    if(flag(FLAG_ALEXMAD_EVENT_COMPLETED)) {
+        if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+            if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD)) {
+                call(CollaboratorsRoom_EventScript_Alexmad_IntroRematch)
+            } else {
+                call(CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle)
+            }
+            goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
+        } else {
+            msgbox(format("Ya lo lograste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            playse(SE_PIN)
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
+            msgbox(format("Me recuerdas a KODER.\pSiempre fue bueno con los acertijos.\nSigue adelante, seguro que te irá bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+        }
+    } else {
+        if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+            if(var(VAR_TEMP_C) == 1) {
+                msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pPero también podemos ir directo a la batalla.\n¿Qué prefieres?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            } else {
+                msgbox(format("¡Tu de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                playse(SE_PIN)
+                applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMarkWithDelay48)
+                msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                waitmovement(0)
+            }
+            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
+            switch(var(VAR_RESULT)) {
+                case 0:
+                    goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
+                case 1:
+                    if(!flag(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD)) {
+                        call(CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle)
+                    } else {
+                        playse(SE_PIN)
+                        applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HappyWithDelay48)
+                        msgbox(format("Veamos qué versión eres ahora."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                    }
+                    goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
+                default:
+                    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+            }
+        } else {
+            if(var(VAR_TEMP_C) == 1) {
+                msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pDime… ¿lo quieres hacer?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+            } else {
+                msgbox(format("Has vuelto, ¿quieres seguir con el evento?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+            }
+            closemessage
+            if(var(VAR_RESULT) == YES) {
+                goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
+            } else {
+                msgbox(format("Vuelve cuando estés listo.\nEl Mitic no espera… pero tampoco se repite."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+            }
+        }
+    }
+}
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
+    lockall
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceRight)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_right))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_right, delay_16))
+
+    playse(SE_SUCCESS)
+    msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    directmovementtopos(LOCALID_PLAYER, 4, 4)
+    waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    setflag(FLAG_ALEXMAD_EVENT_COMPLETED)
+    msgbox(format("PENDIENTE PREMIO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
+    releaseall
+    end
+}
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
+    lockall
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer)
+    playse(SE_FAILURE)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48)
+    msgbox(format("No, no… así no es.\pVuelve a hablarme si quieres intentarlo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
+    releaseall
+    end
 }
