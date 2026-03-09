@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_TOKYNWARROOM_TOKYN",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_TOKYN",
       "x": 5,
       "y": 5,
       "elevation": 0,
