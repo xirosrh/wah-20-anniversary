@@ -801,8 +801,10 @@ script CollaboratorsRoom_EventScript_Alexmad {
     delay(30)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(emote_exclamation_mark))
+    waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(face_player, lock_facing_direction, jump_in_place_down))
+    waitse
     playse(SE_LEDGE)
     applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
     waitmovement(0)
@@ -877,11 +879,13 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceRight)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark)
+    waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_right))
+    waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_right, delay_16))
-
+    waitse
     playse(SE_SUCCESS)
     msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
