@@ -836,6 +836,41 @@ Lobby_EventScript_TrainerCardGirl::
 	end
 
 
+Lobby_EventScript_Cope::
+# 433 "data/maps/Lobby/scripts.pory"
+	lock
+# 434 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 435 "data/maps/Lobby/scripts.pory"
+	checkitem ITEM_DEVON_SCOPE
+# 436 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_Cope_2
+# 442 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Cope_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
+# 443 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 444 "data/maps/Lobby/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Lobby_EventScript_Cope_Movement_0
+# 445 "data/maps/Lobby/scripts.pory"
+	waitse
+# 446 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Cope_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
+# 447 "data/maps/Lobby/scripts.pory"
+	giveitem ITEM_DEVON_SCOPE
+# 448 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Cope_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
+Lobby_EventScript_Cope_1:
+# 450 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_Cope_2:
+# 438 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Cope_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
+	goto Lobby_EventScript_Cope_1
+
+
 # 150 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 150 "data/maps/Lobby/scripts.pory"
@@ -856,6 +891,12 @@ Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1:
 	delay_16
 # 152 "data/maps/Lobby/scripts.pory"
 	delay_16
+	step_end
+
+# 444 "data/maps/Lobby/scripts.pory"
+Lobby_EventScript_Cope_Movement_0:
+# 444 "data/maps/Lobby/scripts.pory"
+	emote_question_mark
 	step_end
 
 Lobby_EventScript_StartChallenge_Text_0:
@@ -1110,6 +1151,30 @@ Lobby_EventScript_TrainerCardGirl_Text_0:
 	.string "logros?\p"
 	.string "¡También puedes ver los requerimientos\n"
 	.string "para obtener cada uno!$"
+
+Lobby_EventScript_Cope_Text_0:
+# 438 "data/maps/Lobby/scripts.pory"
+	.string "¡Hola {PLAYER}!\p"
+	.string "¿Estás list{OA} para intentar el desafío?$"
+
+Lobby_EventScript_Cope_Text_1:
+# 442 "data/maps/Lobby/scripts.pory"
+	.string "¡Hola {PLAYER}!\p"
+	.string "¿Has visto a Tile?$"
+
+Lobby_EventScript_Cope_Text_2:
+# 446 "data/maps/Lobby/scripts.pory"
+	.string "¿Cómo? ¿No sabes quién es?\n"
+	.string "Es mi famoso Kecleon.\p"
+	.string "Lo he perdido de vista y no sé por dónde\n"
+	.string "se ha metido...\p"
+	.string "Hazme un favor y búscale por mí.\n"
+	.string "Toma, llévate esto.$"
+
+Lobby_EventScript_Cope_Text_3:
+# 448 "data/maps/Lobby/scripts.pory"
+	.string "Con el Detector Devon podrás ver dónde\n"
+	.string "se esconde Tile.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 69 "data/maps/Lobby/scripts.pory"
