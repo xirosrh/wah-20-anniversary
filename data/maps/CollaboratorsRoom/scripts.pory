@@ -667,6 +667,76 @@ script CollaboratorsRoom_EventScript_Gosuto {
 }
 
 
+script CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_NoteWithDelay48)
+    msgbox(format("¡Espera! ¿Escuchas eso? ¡Es el sonido de la batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("La música son matemáticas y puro sentimiento ¡como los combates Pokémon!\p¿List{O} para la revancha?"), MSGBOX_YESNO, speaker = SP_NAME_ACIMUT)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        return
+    } else {
+        msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para entrenar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+        goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Acimut_OnFinishEvent {
+    fadedefaultbgm()
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Acimut {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        playbgm(MUS_VS_TRAINER, FALSE)
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT)) {
+            call(CollaboratorsRoom_EventScript_Acimut_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ACIMUT, format("Ese último movimiento no lo vi venir…"))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+            msgbox(format("Ese último movimiento no lo vi venir…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT)
+        } else {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+            msgbox(format("La armonía de tus Pokémon lo es todo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+        }
+        goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+    } else {
+        msgbox(format("Un día empecé a descompilar Pokémon FireRed en español para obtener la ROM original compilando pokefirered."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Tuvieron que pasar dos años para encontrar motivación en el desafío 30 días dentro del foro de WaH.\pDurante ese tiempo logré hacer coincidencia al 100 %; fue el mejor día de mi vida en el mundo del rom hacking, superando un reto personal muy significativo para mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_NoteWithDelay48)
+        msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+        goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+    }
+}
+
 script CollaboratorsRoom_EventScript_Alexmad_LongIntro {
     msgbox(format("20 años… ¿te das cuenta?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
