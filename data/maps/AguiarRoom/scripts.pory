@@ -10,6 +10,7 @@ mapscripts AguiarRoom_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_0_AGUIAR_ROOM_STATE, 0: AguiarRoom_OnFrame
     ]
+    MAP_SCRIPT_ON_TRANSITION : AguiarRoom_OnTransition
 }
 
 
@@ -53,6 +54,11 @@ script AguiarRoom_OnLoad {
 
 script AguiarRoom_OnWarp_PlayerTurnNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script AguiarRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Aguiar)
     end
 }
 

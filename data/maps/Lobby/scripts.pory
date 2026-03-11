@@ -25,6 +25,7 @@ script Lobby_EventScript_StartChallenge {
         msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
         turnobject(LOCALID_PLAYER, DIR_NORTH)
         call(WahRoomsShared_OpenDoor)
+        call(WahRoomsShared_Kecleon_ResetFlags)
         applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
         hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
         warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)

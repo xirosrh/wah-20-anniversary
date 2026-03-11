@@ -16,6 +16,7 @@ script JavsJavi4315Room_OnLoad {
 }
 
 script JavsJavi4315Room_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_JavsJavi)
     if(!flag(FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS)) {
         setobjectxy(LOCALID_JAVSJAVIROOM_JAVI4315, 3, 3)
         setobjectxy(LOCALID_JAVSJAVIROOM_JAVS, 4, 3)

@@ -24,8 +24,10 @@ script CheveRoom_OnWarp_PlayerTurnNorth {
 }
 
 script CheveRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Cheve)
     setflag(FLAG_TEMP_1_CHEVE_ROOM_HIDE_MEGANIUM)
     setflag(FLAG_TEMP_2_CHEVE_ROOM_HIDE_POKEBALL)
+    end
 }
 
 script CheveRoom_EventScript_Cheve {

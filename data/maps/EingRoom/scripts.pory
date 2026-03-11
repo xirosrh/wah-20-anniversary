@@ -26,6 +26,7 @@ script EingRoom_OnWarp_PlayerTurnNorth {
 }
 
 script EingRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Eing)
     if(var(VAR_TEMP_0_EING_ROOM_STATE) == 0) {
         setflag(FLAG_TEMP_1_EING_ROOM_HIDE_EING_FISHING)
         setflag(FLAG_TEMP_2_EING_ROOM_HIDE_TRAINER_IN_WATER)

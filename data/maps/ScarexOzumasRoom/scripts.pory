@@ -21,6 +21,7 @@ script ScarexOzumasRoom_OnWarp_PlayerTurnNorth {
     end
 }
 script ScarexOzumasRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_ScarexOzumas)
     if(var(VAR_TEMP_0_ADMINS_IN_ROOM) == 1) {
         setobjectmovementtype(LOCALID_SCAREXOZUROOM_OZUMAS, MOVEMENT_TYPE_FACE_DOWN)
         setobjectmovementtype(LOCALID_SCAREXOZUROOM_SCAREX, MOVEMENT_TYPE_FACE_DOWN)

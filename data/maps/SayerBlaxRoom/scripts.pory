@@ -13,6 +13,7 @@ mapscripts SayerBlaxRoom_MapScripts {
 
 
 script SayerBlaxRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_SayerBlax)
     if(var(VAR_TEMP_0_SAYER_BLAX_ROOM_STATE) == 1) {
         setobjectmovementtype(LOCALID_SAYERBLAXROOM_SAYER, MOVEMENT_TYPE_FACE_RIGHT)
         setobjectxy(LOCALID_SAYERBLAXROOM_SAYER, 5, 10)

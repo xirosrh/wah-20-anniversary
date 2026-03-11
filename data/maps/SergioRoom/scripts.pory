@@ -10,10 +10,14 @@ mapscripts SergioRoom_MapScripts {
         VAR_SERGIO_ROOM_STATE, 1: SergioRoom_OnFrame_AbraReturns
         VAR_SERGIO_ROOM_STATE, 2: SergioRoom_OnFrame_AfterSergioBattle
     ]
+    MAP_SCRIPT_ON_TRANSITION : SergioRoom_OnTransition
 }
 
 
-
+script SergioRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Sergio)
+    end
+}
 
 script SergioRoom_OnWarp_Initial {
     setflag(FLAG_TEMP_1_HIDE_SERGIO)

@@ -22,6 +22,7 @@ script XirosRoom_OnWarp_PlayerTurnNorth {
 }
 
 script XirosRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Xiros)
     setflag(FLAG_TEMP_1_XIROSROOM_HIDE_POKEBALL)
     setflag(FLAG_TEMP_2_XIROSROOM_HIDE_ELECTRODE)
     end
