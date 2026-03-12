@@ -699,22 +699,19 @@ static void Speedup_DrawChoices(u8 selection, u8 y)
     }
     else
     {
-        u8 displayNum = selection + 1;  // 1->2x, 2->3x, ..., 10->11x
-        for (i = 0; gText_SpeedupX[i] != EOS && i < 4; i++)
+        u8 displayNum = selection;  // 1->x1, 2->x2, ..., 10->x10
+        for (i = 0; i < 6; i++)
             text[i] = gText_SpeedupX[i];
-        text[i] = CHAR_SPACER;
-        i++;
+        text[i++] = CHAR_x;
+        text[i++] = CHAR_SPACER;
         if (displayNum >= 10)
         {
-            text[i] = (displayNum / 10) + CHAR_0;
-            i++;
-            text[i] = (displayNum % 10) + CHAR_0;
-            i++;
+            text[i++] = (displayNum / 10) + CHAR_0;
+            text[i++] = (displayNum % 10) + CHAR_0;
         }
         else
         {
-            text[i] = displayNum + CHAR_0;
-            i++;
+            text[i++] = displayNum + CHAR_0;
         }
         text[i] = EOS;
         DrawOptionMenuChoice(text, 88, y, 1);
