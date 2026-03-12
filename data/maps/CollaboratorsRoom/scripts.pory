@@ -20,18 +20,35 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle {
     return
 }
 
+script CollaboratorsRoom_EventScript_Kaktus_TalkOnly {
+    msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    delay(20)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta verguenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
-    msgbox(format("Ey, ¿qué tal? Mi Ludicolo sigue con ganas de bailar.\p¿Otro asalto?"), MSGBOX_YESNO, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Ey, ¿qué tal? Mi Ludicolo sigue con ganas de bailar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    delay(20)
+    setspeaker(SP_NAME_INMORTAL_KAKTUS)
+    message(format("¿Otro asalto?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        msgbox(format("¡Vamos!"), speaker = SP_NAME_INMORTAL_KAKTUS)
-        return
-    } else {
-        msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
-        goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("¡Vamos!"), speaker = SP_NAME_INMORTAL_KAKTUS)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
+        case 2:
+            msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     }
-
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
@@ -83,41 +100,51 @@ script CollaboratorsRoom_EventScript_Kaktus {
             waitmovement(0)
         }
         goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
-        
     } else {
-        msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
-        delay(20)
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta verguenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-        goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
-
+        goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
     }
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_IntroFirstBattle {
     delay(20)
+    msgbox(format("No soy competitivo ni ambicioso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("No soy competitivo ni ambicioso. Soy más bien una persona mediocre."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
-    waitmovement(0)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Soy más bien una persona mediocre."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     delay(20)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     msgbox(format("Eso puede jugarme en contra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     return
 }
 
+script CollaboratorsRoom_EventScript_Gameboycl_TalkOnly {
+    msgbox("Un hack rom es como la arquitectura,\nse construye sobre lo existente.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox("El arte aquí no es lo que se cambia,\nsino lo que se quiere transmitir.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    delay(20)
+    goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
-    msgbox(format("Kanto y Johto se unen en el mismo azul, el agua no recuerda fronteras.\p¿Quieres luchar contra uno de mis 3 equipos?"), MSGBOX_YESNO, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox(format("Kanto y Johto se unen en el mismo azul, el agua no recuerda fronteras."),MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    delay(20)
+    setspeaker(SP_NAME_GAMEBOY_CL)
+    message(format("¿Quieres luchar contra uno de mis 3 equipos?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        return
-    } else {
-        msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
-        goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
+        case 2:
+            msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+            goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     }
 }
 
@@ -140,7 +167,9 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         }
         delay(20)
         playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
         random(3)
         setflag(B_FLAG_NO_WHITEOUT)
         switch(var(VAR_RESULT)) {
@@ -165,15 +194,8 @@ script CollaboratorsRoom_EventScript_Gameboycl {
             msgbox(format("PENDIENTE GAMEBOY"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL) //TODO Xiros
         }
         goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
-    }
-    else {
-        msgbox(format("Un hack rom es como la arquitectura, se construye sobre lo existente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("El arte aquí no es lo que se cambia, sino lo que se quiere transmitir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
-        delay(20)
-        goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
+    } else {
+        goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
     }
 }
 
@@ -190,24 +212,42 @@ script CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle {
     return
 }
 
+script CollaboratorsRoom_EventScript_Erkey_TalkOnly {
+    msgbox(format("Aquí cada combate enseña algo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Si prestas atención."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+    goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Otra vez?\nLas reglas siguen al revés… por si acaso."), MSGBOX_YESNO, speaker = SP_NAME_ERKEY)
+    msgbox(format("¿Otra vez?\nLas reglas siguen al revés… por si acaso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    delay(20)
+    setspeaker(SP_NAME_ERKEY)
+    message(format("¿Quieres volver a luchar?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        playse(SE_PIN)
-        applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
-        msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-        waitmovement(0)
-        delay(30)
-        return
-    } else {
-        msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
-        goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            playse(SE_PIN)
+            applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
+            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            waitmovement(0)
+            delay(30)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
+        case 2:
+            msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+            goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
     }
 }
 
@@ -255,13 +295,7 @@ script CollaboratorsRoom_EventScript_Erkey {
         }
         goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
     } else {
-        msgbox(format("Aquí cada combate enseña algo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-        msgbox(format("Si prestas atención."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
-        goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
+        goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
     }
 }
 
@@ -272,24 +306,56 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
     playse(SE_LEDGE)
     applymovement(VAR_LAST_TALKED, moves(lock_facing_direction,jump_in_place_down, unlock_facing_direction, face_player))
     waitmovement(0)
-    msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres bueno con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres buen{OA} con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     return
 }
 
+script CollaboratorsRoom_EventScript_Micolo_TalkOnly {
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quienes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluídos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    msgbox(format("También ayudé al arquitecto del edificio a tener al Pokémon de sus sueños.\pNo veas lo cansino que era hablando de la ilusión que le daría tenerlo e incluso presumirá de él en su sala como un hipócrita mientras se limpia las babas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+    msgbox(format("Lo que no sabe es que le di un ejemplar casi perfecto, el perfecto lo tengo guardado y listo para ayudarte cuando elijas su equipo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_XD)
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    waitmovement(0)
+    msgbox(format("El resto fueron la mano de obra para construir este sitio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    delay(30)
+    goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Otra batalla? Elegiré de nuevo un Pokémon de mi equipo al azar.\p¿Te atreves?"), MSGBOX_YESNO, speaker = SP_NAME_MICOLO)
+    msgbox(format("¿Otra batalla? Elegiré de nuevo un Pokémon de mi equipo al azar."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_MICOLO)
+    delay(20)
+    setspeaker(SP_NAME_MICOLO)
+    message(format("¿Te atreves?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        return
-    } else {
-        msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
+        case 2:
+            msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     }
 }
 
@@ -343,7 +409,7 @@ script CollaboratorsRoom_EventScript_Micolo {
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-            msgbox(format("Admito que eres bueno, si contara con mi pequeñín seguro que te hubiera ganado, enhorabuena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Admito que eres buen{OA}, si contara con mi pequeñín seguro que te hubiera ganado, enhorabuena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_MICOLO)
         } else {
@@ -358,28 +424,7 @@ script CollaboratorsRoom_EventScript_Micolo {
         }
         goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     } else {
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-
-        msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quienes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-        msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluídos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-        msgbox(format("También ayudé al arquitecto del edificio a tener al Pokémon de sus sueños.\pNo veas lo cansino que era hablando de la ilusión que le daría tenerlo e incluso presumirá de él en su sala como un hipócrita mientras se limpia las babas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
-        msgbox(format("Lo que no sabe es que le di un ejemplar casi perfecto, el perfecto lo tengo guardado y listo para ayudarte cuando elijas su equipo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_XD)
-        playse(SE_LEDGE)
-        applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
-        playse(SE_LEDGE)
-        applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
-        waitmovement(0)
-        msgbox(format("El resto fueron la mano de obra para construir este sitio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-        delay(30)
-        goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
+        goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
     }
 }
 
@@ -428,16 +473,37 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
     return
 }
 
+script CollaboratorsRoom_EventScript_MrNightology_TalkOnly {
+    faceplayer
+    msgbox(format("Ay, si te contase…\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, moves(emote_sad))
+    waitse
+    msgbox(format("Una larga travesía para que al final, la gente te pregunte cuál es el cheat de los caramelos infinitos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, moves(emote_annoyed))
+    waitse
+    msgbox(format("¿Te parece normal?\nEn fin… La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
-    msgbox(format("¡Tú otra vez! ¿Te has quedado con ganas de más?"), MSGBOX_YESNO, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("¡Tú otra vez!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    delay(20)
+    setspeaker(SP_NAME_MRNIGHTOLOGY)
+    message(format("¿Te has quedado con ganas de más?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
-    if(var(VAR_RESULT)) {
-        msgbox(format("¡Já! Si ya me lo imaginaba…"), speaker = SP_NAME_MRNIGHTOLOGY)
-        return
-    }
-    else {
-        msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
-        goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("¡Já! Si ya me lo imaginaba…"), speaker = SP_NAME_MRNIGHTOLOGY)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
+        case 2:
+            msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
 }
 
@@ -544,19 +610,8 @@ script CollaboratorsRoom_EventScript_MrNightology {
             fadescreen(FADE_FROM_BLACK)
         }
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
-    }
-    else {
-        faceplayer
-        msgbox(format("Ay, si te contase…\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, moves(emote_sad))
-        waitse
-        msgbox(format("Una larga travesía para que al final, la gente te pregunte cuál es el cheat de los caramelos infinitos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, moves(emote_annoyed))
-        waitse
-        msgbox(format("¿Te parece normal?\nEn fin… La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
-        goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
+    } else {
+        goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
     }
 }
 
@@ -596,18 +651,39 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
     return
 }
 
+script CollaboratorsRoom_EventScript_Gosuto_TalkOnly {
+    msgbox(format("Quizás me conoces, quizás no, pero no te culpo; paso como una sombra entre las tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Pero a pesar de permanecer entre las tinieblas, he aportado a grandes proyectos dando un pequeño grano de arena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¡Que no se diga más y a seguir procesando píxeles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Otro combate? ¿Estás seguro de estar listo para entrar al mundo de las tinieblas?"), MSGBOX_YESNO, speaker = SP_NAME_GOSUTO)
+    setspeaker(SP_NAME_GOSUTO)
+    message(format("¿Otro combate? ¿Estás segur{OA} de estar list{OA} para entrar al mundo de las tinieblas?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        msgbox(format("Ok, veamos si esta vez logras superar tus miedos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
-        return
-    } else {
-        msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
-        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("Ok, veamos si esta vez logras superar tus miedos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
+        case 2:
+            msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
 }
 
@@ -651,18 +727,7 @@ script CollaboratorsRoom_EventScript_Gosuto {
         }
         goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     } else {
-        msgbox(format("Quizás me conoces, quizás no, pero no te culpo; paso como una sombra entre las tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Pero a pesar de permanecer entre las tinieblas, he aportado a grandes proyectos dando un pequeño grano de arena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("¡Que no se diga más y a seguir procesando píxeles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-        goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
+        goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
     }
 }
 
@@ -678,20 +743,64 @@ script CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle {
     return
 }
 
+script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
+    msgbox(format("Un día empecé a descompilar Pokémon FireRed en español para obtener la ROM original compilando pokefirered."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Tuvieron que pasar dos años para encontrar motivación en el desafío 30 días dentro del foro de WaH.\pDurante ese tiempo logré hacer coincidencia al 100%."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
+    waitse
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    msgbox(format("Fue el mejor día de mi vida en el mundo del rom hacking, superando un reto personal muy significativo para mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    waitse
+    delay(30)
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
+    msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    waitmovement(0)
+    waitse
+    goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+}
+
+text CollaboratorsRoom_RematchMultichoice_Rematch {
+    format("¡Luchemos de nuevo!")
+}
+
+text CollaboratorsRoom_RematchMultichoice_TalkOnly {
+    format("Prefiero simplemente hablar.")
+}
+
+text CollaboratorsRoom_RematchMultichoice_Exit {
+    format("No, gracias.")
+}
+
 script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
     msgbox(format("La música son matemáticas y puro sentimiento ¡como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
-    msgbox(format("¿List{OA} para la revancha?"), MSGBOX_YESNO, speaker = SP_NAME_ACIMUT)
+    setspeaker(SP_NAME_ACIMUT)
+    message(format("¿List{OA} para la revancha?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        return
-    } else {
-        fadedefaultbgm()
-        msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-        goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            return
+        case 1:
+            fadedefaultbgm()
+            goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
+        case 2:
+            fadedefaultbgm()
+            msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
     }
 }
 
@@ -739,28 +848,7 @@ script CollaboratorsRoom_EventScript_Acimut {
         }
         goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
     } else {
-        msgbox(format("Un día empecé a descompilar Pokémon FireRed en español para obtener la ROM original compilando pokefirered."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Tuvieron que pasar dos años para encontrar motivación en el desafío 30 días dentro del foro de WaH.\pDurante ese tiempo logré hacer coincidencia al 100%."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-        playse(SE_LEDGE)
-        applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
-        waitse
-        playse(SE_LEDGE)
-        applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
-        waitse
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-        msgbox(format("Fue el mejor día de mi vida en el mundo del rom hacking, superando un reto personal muy significativo para mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
-        waitse
-        delay(30)
-        playse(SE_PIN)
-        applymovement(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
-        msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-        waitmovement(0)
-        waitse
-        goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
+        goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
     }
 }
 
@@ -819,7 +907,7 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
             msgbox(format("Vuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         }
     } else {
-        msgbox(format("Vuelve cuando estés listo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
@@ -867,7 +955,7 @@ script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
         call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Vuelve cuando estés listo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
@@ -962,7 +1050,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
             if(var(VAR_RESULT) == YES) {
                 goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
             } else {
-                msgbox(format("Vuelve cuando estés listo.\nEl Mitic no espera… pero tampoco se repite."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("Vuelve cuando estés list{OA}.\nEl Mitic no espera… pero tampoco se repite."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
             }
         }
