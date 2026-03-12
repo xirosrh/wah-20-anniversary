@@ -78,7 +78,7 @@
 #define FLAG_MET_ALEXMAD    0x40 // Used WAH: player has talked to Alexmad at least once
 #define FLAG_ALEXMAD_EVENT_COMPLETED    0x41 // Used WAH: player completed Alexmad QR/puzzle event
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD    0x42 // Used WAH
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT    0x43 // Used WAH
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag

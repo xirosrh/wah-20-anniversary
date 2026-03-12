@@ -75,7 +75,8 @@ static bool8 CheckDefeatAllCollaborators(u8 id)
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO) &&
-           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD);
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD) &&
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT);
 }
 
 static bool8 CheckDefeatAllAdmins(u8 id)

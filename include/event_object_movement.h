@@ -512,6 +512,7 @@ bool8 MovementAction_EmoteSmile_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteCry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteMusicNote_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *, struct Sprite *);

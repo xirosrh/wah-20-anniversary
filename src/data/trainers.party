@@ -3534,23 +3534,30 @@ Pelipper
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_ALBERT ===
-Name: ALBERT
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_COLLABORATOR_ACIMUT ===
+Name: Acimut
+Class: Collaborator
+Pic: Youngster
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Magneton
+Exploud
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Hyper Voice
+- Flamethrower
+- Ice Beam
+- Shadow Ball
 
-Muk
+Noivern
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Slash
+- Dragon Pulse
+- Boomburst
+- Roost
 
 === TRAINER_SAMUEL ===
 Name: SAMUEL

@@ -294,6 +294,7 @@
 #define MOVEMENT_ACTION_WALK_MAX_UP                     0xCA
 #define MOVEMENT_ACTION_WALK_MAX_LEFT                   0xCB
 #define MOVEMENT_ACTION_WALK_MAX_RIGHT                  0xCC
+#define MOVEMENT_ACTION_EMOTE_MUSIC_NOTE               0xCD
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
