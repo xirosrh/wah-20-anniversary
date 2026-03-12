@@ -1232,444 +1232,624 @@ CollaboratorsRoom_EventScript_Gosuto_9:
 	goto CollaboratorsRoom_EventScript_Gosuto_8
 
 
-CollaboratorsRoom_EventScript_Alexmad_LongIntro::
+CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle::
 # 671 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	playse SE_PIN
 # 672 "data/maps/CollaboratorsRoom/scripts.pory"
-	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	applymovement VAR_LAST_TALKED, Common_Movement_MusicNote
 # 673 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
 # 674 "data/maps/CollaboratorsRoom/scripts.pory"
-	delay 20
+	waitmovement 0
 # 675 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
+	waitse
 # 676 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_IdeaWithDelay48
+	delay 40
 # 677 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 678 "data/maps/CollaboratorsRoom/scripts.pory"
-	delay 20
-# 679 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
-# 680 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
-# 681 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+	return
+
+
+CollaboratorsRoom_EventScript_Acimut_IntroRematch::
 # 682 "data/maps/CollaboratorsRoom/scripts.pory"
-	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
 # 683 "data/maps/CollaboratorsRoom/scripts.pory"
-	delay 10
+	playse SE_PIN
 # 684 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48
 # 685 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_1, MSGBOX_YESNO, speaker = SP_NAME_ACIMUT
 # 686 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48
+	closemessage
 # 687 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	delay 20
 # 688 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
-# 689 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
-# 690 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 691 "data/maps/CollaboratorsRoom/scripts.pory"
-	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	compare VAR_RESULT, YES
+	goto_if_eq CollaboratorsRoom_EventScript_Acimut_IntroRematch_1
 # 692 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadedefaultbgm
+# 693 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 694 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Acimut_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Acimut_IntroRematch_1:
+# 689 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+	return
+
+
+CollaboratorsRoom_EventScript_Acimut_OnFinishEvent::
+# 699 "data/maps/CollaboratorsRoom/scripts.pory"
+	call Achievements_EventScript_Eval_DefeatAllCollaborators
+# 700 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject VAR_LAST_TALKED, DIR_NORTH
+# 701 "data/maps/CollaboratorsRoom/scripts.pory"
+	release
+	end
+
+
+CollaboratorsRoom_EventScript_Acimut::
+# 706 "data/maps/CollaboratorsRoom/scripts.pory"
+	lock
+# 707 "data/maps/CollaboratorsRoom/scripts.pory"
+	faceplayer
+# 708 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_Acimut_1
+# 742 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 743 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 744 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 745 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_LEDGE
+# 746 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Kaktus_Movement_0
+# 747 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 748 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_LEDGE
+# 749 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Micolo_Movement_0
+# 750 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 751 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 752 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 753 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 754 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 755 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
+# 756 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 757 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 758 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48
+# 760 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 761 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmovement 0
+# 762 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitse
+# 763 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Acimut_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Acimut_1:
+# 709 "data/maps/CollaboratorsRoom/scripts.pory"
+	playbgm MUS_ENCOUNTER_COOL, FALSE
+# 710 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto_if_set FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT, CollaboratorsRoom_EventScript_Acimut_5
+# 713 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle
+CollaboratorsRoom_EventScript_Acimut_4:
+# 715 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 716 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 717 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 718 "data/maps/CollaboratorsRoom/scripts.pory"
+	waitmovement 0
+# 719 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 30
+# 720 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 721 "data/maps/CollaboratorsRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_ACIMUT, CollaboratorsRoom_EventScript_Acimut_Text_0
+# 722 "data/maps/CollaboratorsRoom/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 723 "data/maps/CollaboratorsRoom/scripts.pory"
+	special GetBattleOutcome
+# 724 "data/maps/CollaboratorsRoom/scripts.pory"
+	special HealPlayerParty
+# 725 "data/maps/CollaboratorsRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq CollaboratorsRoom_EventScript_Acimut_9
+# 734 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 735 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 736 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 737 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 738 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+CollaboratorsRoom_EventScript_Acimut_8:
+# 740 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Acimut_OnFinishEvent
+	return
+
+CollaboratorsRoom_EventScript_Acimut_5:
+# 711 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_Acimut_IntroRematch
+	goto CollaboratorsRoom_EventScript_Acimut_4
+
+CollaboratorsRoom_EventScript_Acimut_9:
+# 726 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 727 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_XWithDelay48
+# 728 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 729 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 730 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
+# 731 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 732 "data/maps/CollaboratorsRoom/scripts.pory"
+	setflag FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT
+	goto CollaboratorsRoom_EventScript_Acimut_8
+
+
+CollaboratorsRoom_EventScript_Alexmad_LongIntro::
+# 768 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 769 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 770 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 771 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 772 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 773 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_IdeaWithDelay48
+# 774 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 775 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 20
+# 776 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 777 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
+# 778 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 779 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 780 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay 10
+# 781 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 782 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 783 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48
+# 784 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 785 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 786 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
+# 787 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 788 "data/maps/CollaboratorsRoom/scripts.pory"
+	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 789 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 10
 	return
 
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow::
-# 697 "data/maps/CollaboratorsRoom/scripts.pory"
+# 794 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_0, speaker = SP_NAME_ALEXMAD
-# 698 "data/maps/CollaboratorsRoom/scripts.pory"
+# 795 "data/maps/CollaboratorsRoom/scripts.pory"
 	load_field_pic FP_MAD_QR, 120, 80
-# 699 "data/maps/CollaboratorsRoom/scripts.pory"
+# 796 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitbuttonpress
-# 700 "data/maps/CollaboratorsRoom/scripts.pory"
+# 797 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
-# 701 "data/maps/CollaboratorsRoom/scripts.pory"
+# 798 "data/maps/CollaboratorsRoom/scripts.pory"
 	destroy_field_pic FP_MAD_QR
-# 702 "data/maps/CollaboratorsRoom/scripts.pory"
+# 799 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_1, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
-# 703 "data/maps/CollaboratorsRoom/scripts.pory"
+# 800 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
-# 704 "data/maps/CollaboratorsRoom/scripts.pory"
+# 801 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_QRFlow_2
-# 725 "data/maps/CollaboratorsRoom/scripts.pory"
+# 822 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_1:
-# 727 "data/maps/CollaboratorsRoom/scripts.pory"
+# 824 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_2:
-# 705 "data/maps/CollaboratorsRoom/scripts.pory"
+# 802 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 706 "data/maps/CollaboratorsRoom/scripts.pory"
+# 803 "data/maps/CollaboratorsRoom/scripts.pory"
 	special EnterCode
-# 707 "data/maps/CollaboratorsRoom/scripts.pory"
+# 804 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitstate
-# 708 "data/maps/CollaboratorsRoom/scripts.pory"
+# 805 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetCodeFeedback
-# 709 "data/maps/CollaboratorsRoom/scripts.pory"
+# 806 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_QRFlow_5
-# 719 "data/maps/CollaboratorsRoom/scripts.pory"
+# 816 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 720 "data/maps/CollaboratorsRoom/scripts.pory"
+# 817 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 721 "data/maps/CollaboratorsRoom/scripts.pory"
+# 818 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_AnnoyedWithDelay48
-# 722 "data/maps/CollaboratorsRoom/scripts.pory"
+# 819 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_QRFlow_1
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_5:
-# 710 "data/maps/CollaboratorsRoom/scripts.pory"
+# 807 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 711 "data/maps/CollaboratorsRoom/scripts.pory"
+# 808 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag FLAG_TEMP_ALEXMAD_PUZZLE_STARTED
-# 712 "data/maps/CollaboratorsRoom/scripts.pory"
+# 809 "data/maps/CollaboratorsRoom/scripts.pory"
 	clearflag FLAG_TEMP_ALEXMAD_PUZZLE_FAILED
-# 713 "data/maps/CollaboratorsRoom/scripts.pory"
+# 810 "data/maps/CollaboratorsRoom/scripts.pory"
 	setvar VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0
-# 714 "data/maps/CollaboratorsRoom/scripts.pory"
+# 811 "data/maps/CollaboratorsRoom/scripts.pory"
 	getplayerxy VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y
-# 715 "data/maps/CollaboratorsRoom/scripts.pory"
+# 812 "data/maps/CollaboratorsRoom/scripts.pory"
 	special InitAlexmadPuzzlePartyOrderCheck
-# 716 "data/maps/CollaboratorsRoom/scripts.pory"
+# 813 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
 
 
 CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle::
-# 731 "data/maps/CollaboratorsRoom/scripts.pory"
+# 828 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 732 "data/maps/CollaboratorsRoom/scripts.pory"
+# 829 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
 	return
 
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch::
-# 737 "data/maps/CollaboratorsRoom/scripts.pory"
+# 834 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_0, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
-# 738 "data/maps/CollaboratorsRoom/scripts.pory"
+# 835 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
-# 739 "data/maps/CollaboratorsRoom/scripts.pory"
+# 836 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 20
-# 740 "data/maps/CollaboratorsRoom/scripts.pory"
+# 837 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_IntroRematch_1
-# 744 "data/maps/CollaboratorsRoom/scripts.pory"
+# 841 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 745 "data/maps/CollaboratorsRoom/scripts.pory"
+# 842 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_1:
-# 741 "data/maps/CollaboratorsRoom/scripts.pory"
+# 838 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
 	return
 
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle::
-# 750 "data/maps/CollaboratorsRoom/scripts.pory"
+# 847 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 751 "data/maps/CollaboratorsRoom/scripts.pory"
+# 848 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
-# 752 "data/maps/CollaboratorsRoom/scripts.pory"
+# 849 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovement LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_VersusWithDelay48
-# 753 "data/maps/CollaboratorsRoom/scripts.pory"
+# 850 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmovement 0
-# 754 "data/maps/CollaboratorsRoom/scripts.pory"
+# 851 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag B_FLAG_NO_WHITEOUT
-# 755 "data/maps/CollaboratorsRoom/scripts.pory"
+# 852 "data/maps/CollaboratorsRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_ALEXMAD, CollaboratorsRoom_Text_Alexmad_OnDefeat
-# 756 "data/maps/CollaboratorsRoom/scripts.pory"
+# 853 "data/maps/CollaboratorsRoom/scripts.pory"
 	clearflag B_FLAG_NO_WHITEOUT
-# 757 "data/maps/CollaboratorsRoom/scripts.pory"
+# 854 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
-# 758 "data/maps/CollaboratorsRoom/scripts.pory"
+# 855 "data/maps/CollaboratorsRoom/scripts.pory"
 	special HealPlayerParty
-# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+# 856 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_DoBattle_2
-# 769 "data/maps/CollaboratorsRoom/scripts.pory"
+# 866 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 770 "data/maps/CollaboratorsRoom/scripts.pory"
+# 867 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 771 "data/maps/CollaboratorsRoom/scripts.pory"
+# 868 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
-# 772 "data/maps/CollaboratorsRoom/scripts.pory"
+# 869 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 773 "data/maps/CollaboratorsRoom/scripts.pory"
+# 870 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_1:
-# 775 "data/maps/CollaboratorsRoom/scripts.pory"
+# 872 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_2:
-# 760 "data/maps/CollaboratorsRoom/scripts.pory"
+# 857 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 761 "data/maps/CollaboratorsRoom/scripts.pory"
+# 858 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48
-# 762 "data/maps/CollaboratorsRoom/scripts.pory"
+# 859 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 763 "data/maps/CollaboratorsRoom/scripts.pory"
+# 860 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 764 "data/maps/CollaboratorsRoom/scripts.pory"
+# 861 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48
-# 765 "data/maps/CollaboratorsRoom/scripts.pory"
+# 862 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 766 "data/maps/CollaboratorsRoom/scripts.pory"
+# 863 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 767 "data/maps/CollaboratorsRoom/scripts.pory"
+# 864 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_DoBattle_1
 
 
 CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent::
-# 779 "data/maps/CollaboratorsRoom/scripts.pory"
+# 876 "data/maps/CollaboratorsRoom/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllCollaborators
-# 780 "data/maps/CollaboratorsRoom/scripts.pory"
+# 877 "data/maps/CollaboratorsRoom/scripts.pory"
 	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
-# 781 "data/maps/CollaboratorsRoom/scripts.pory"
+# 878 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
 
 
 CollaboratorsRoom_EventScript_Alexmad::
-# 790 "data/maps/CollaboratorsRoom/scripts.pory"
+# 887 "data/maps/CollaboratorsRoom/scripts.pory"
 	lock
-# 791 "data/maps/CollaboratorsRoom/scripts.pory"
+# 888 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 792 "data/maps/CollaboratorsRoom/scripts.pory"
+# 889 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_TEMP_ALEXMAD_PUZZLE_STARTED, CollaboratorsRoom_EventScript_Alexmad_2
-# 796 "data/maps/CollaboratorsRoom/scripts.pory"
+# 893 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovement LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48
-# 797 "data/maps/CollaboratorsRoom/scripts.pory"
+# 894 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_unset FLAG_ALEXMAD_EVENT_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_5
 CollaboratorsRoom_EventScript_Alexmad_4:
-# 800 "data/maps/CollaboratorsRoom/scripts.pory"
+# 897 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmovement 0
-# 801 "data/maps/CollaboratorsRoom/scripts.pory"
+# 898 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 30
-# 802 "data/maps/CollaboratorsRoom/scripts.pory"
+# 899 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 803 "data/maps/CollaboratorsRoom/scripts.pory"
+# 900 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Movement_0
-# 804 "data/maps/CollaboratorsRoom/scripts.pory"
+# 901 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_LEDGE
-# 805 "data/maps/CollaboratorsRoom/scripts.pory"
+# 902 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_Alexmad_Movement_0
-# 806 "data/maps/CollaboratorsRoom/scripts.pory"
+# 903 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_LEDGE
-# 807 "data/maps/CollaboratorsRoom/scripts.pory"
+# 904 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovement LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_Micolo_Movement_0
-# 808 "data/maps/CollaboratorsRoom/scripts.pory"
+# 905 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmovement 0
-# 809 "data/maps/CollaboratorsRoom/scripts.pory"
+# 906 "data/maps/CollaboratorsRoom/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 810 "data/maps/CollaboratorsRoom/scripts.pory"
+# 907 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_unset FLAG_MET_ALEXMAD, CollaboratorsRoom_EventScript_Alexmad_8
 CollaboratorsRoom_EventScript_Alexmad_7:
-# 816 "data/maps/CollaboratorsRoom/scripts.pory"
+# 913 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_ALEXMAD_EVENT_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_10
-# 832 "data/maps/CollaboratorsRoom/scripts.pory"
+# 929 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_16
-# 859 "data/maps/CollaboratorsRoom/scripts.pory"
+# 956 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_TEMP_C, 1
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_28
-# 862 "data/maps/CollaboratorsRoom/scripts.pory"
+# 959 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_12, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
 CollaboratorsRoom_EventScript_Alexmad_27:
-# 864 "data/maps/CollaboratorsRoom/scripts.pory"
+# 961 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
-# 865 "data/maps/CollaboratorsRoom/scripts.pory"
+# 962 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_35
-# 868 "data/maps/CollaboratorsRoom/scripts.pory"
+# 965 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 869 "data/maps/CollaboratorsRoom/scripts.pory"
+# 966 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_2:
-# 793 "data/maps/CollaboratorsRoom/scripts.pory"
+# 890 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_0, MSGBOX_NPC, speaker = SP_NAME_ALEXMAD
 	end
 
 CollaboratorsRoom_EventScript_Alexmad_5:
-# 798 "data/maps/CollaboratorsRoom/scripts.pory"
+# 895 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_4
 
 CollaboratorsRoom_EventScript_Alexmad_8:
-# 811 "data/maps/CollaboratorsRoom/scripts.pory"
+# 908 "data/maps/CollaboratorsRoom/scripts.pory"
 	setvar VAR_TEMP_C, 1
-# 812 "data/maps/CollaboratorsRoom/scripts.pory"
+# 909 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_LongIntro
-# 813 "data/maps/CollaboratorsRoom/scripts.pory"
+# 910 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag FLAG_MET_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_7
 
 CollaboratorsRoom_EventScript_Alexmad_10:
-# 817 "data/maps/CollaboratorsRoom/scripts.pory"
+# 914 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_13
-# 825 "data/maps/CollaboratorsRoom/scripts.pory"
+# 922 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 826 "data/maps/CollaboratorsRoom/scripts.pory"
+# 923 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 827 "data/maps/CollaboratorsRoom/scripts.pory"
+# 924 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48
-# 828 "data/maps/CollaboratorsRoom/scripts.pory"
+# 925 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 829 "data/maps/CollaboratorsRoom/scripts.pory"
+# 926 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_13:
-# 818 "data/maps/CollaboratorsRoom/scripts.pory"
+# 915 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_Alexmad_20
-# 821 "data/maps/CollaboratorsRoom/scripts.pory"
+# 918 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle
 CollaboratorsRoom_EventScript_Alexmad_19:
-# 823 "data/maps/CollaboratorsRoom/scripts.pory"
+# 920 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_DoBattle
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_16:
-# 833 "data/maps/CollaboratorsRoom/scripts.pory"
+# 930 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_TEMP_C, 1
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_24
-# 836 "data/maps/CollaboratorsRoom/scripts.pory"
+# 933 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 837 "data/maps/CollaboratorsRoom/scripts.pory"
+# 934 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 838 "data/maps/CollaboratorsRoom/scripts.pory"
+# 935 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovement LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMarkWithDelay48
-# 839 "data/maps/CollaboratorsRoom/scripts.pory"
+# 936 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 840 "data/maps/CollaboratorsRoom/scripts.pory"
+# 937 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmovement 0
 CollaboratorsRoom_EventScript_Alexmad_23:
-# 842 "data/maps/CollaboratorsRoom/scripts.pory"
+# 939 "data/maps/CollaboratorsRoom/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_EventScript_Alexmad_Text_7, CollaboratorsRoom_EventScript_Alexmad_Text_8, CollaboratorsRoom_EventScript_Alexmad_Text_9
-# 843 "data/maps/CollaboratorsRoom/scripts.pory"
+# 940 "data/maps/CollaboratorsRoom/scripts.pory"
 	switch VAR_RESULT
-# 844 "data/maps/CollaboratorsRoom/scripts.pory"
+# 941 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 0, CollaboratorsRoom_EventScript_Alexmad_32
-# 846 "data/maps/CollaboratorsRoom/scripts.pory"
+# 943 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Alexmad_33
-# 856 "data/maps/CollaboratorsRoom/scripts.pory"
+# 953 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_20:
-# 819 "data/maps/CollaboratorsRoom/scripts.pory"
+# 916 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_IntroRematch
 	goto CollaboratorsRoom_EventScript_Alexmad_19
 
 CollaboratorsRoom_EventScript_Alexmad_24:
-# 834 "data/maps/CollaboratorsRoom/scripts.pory"
+# 931 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_23
 
 CollaboratorsRoom_EventScript_Alexmad_28:
-# 860 "data/maps/CollaboratorsRoom/scripts.pory"
+# 957 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_11, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_27
 
 CollaboratorsRoom_EventScript_Alexmad_32:
-# 845 "data/maps/CollaboratorsRoom/scripts.pory"
+# 942 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_QRFlow
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_33:
-# 847 "data/maps/CollaboratorsRoom/scripts.pory"
+# 944 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_Alexmad_39
-# 850 "data/maps/CollaboratorsRoom/scripts.pory"
+# 947 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 851 "data/maps/CollaboratorsRoom/scripts.pory"
+# 948 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HappyWithDelay48
-# 852 "data/maps/CollaboratorsRoom/scripts.pory"
+# 949 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 CollaboratorsRoom_EventScript_Alexmad_38:
-# 854 "data/maps/CollaboratorsRoom/scripts.pory"
+# 951 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_DoBattle
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_35:
-# 866 "data/maps/CollaboratorsRoom/scripts.pory"
+# 963 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_QRFlow
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_39:
-# 848 "data/maps/CollaboratorsRoom/scripts.pory"
+# 945 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle
 	goto CollaboratorsRoom_EventScript_Alexmad_38
 
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete::
-# 876 "data/maps/CollaboratorsRoom/scripts.pory"
+# 973 "data/maps/CollaboratorsRoom/scripts.pory"
 	lockall
-# 877 "data/maps/CollaboratorsRoom/scripts.pory"
+# 974 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceRight
-# 878 "data/maps/CollaboratorsRoom/scripts.pory"
+# 975 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 879 "data/maps/CollaboratorsRoom/scripts.pory"
+# 976 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark
-# 880 "data/maps/CollaboratorsRoom/scripts.pory"
+# 977 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
-# 881 "data/maps/CollaboratorsRoom/scripts.pory"
+# 978 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_0
-# 882 "data/maps/CollaboratorsRoom/scripts.pory"
+# 979 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_LEDGE
-# 883 "data/maps/CollaboratorsRoom/scripts.pory"
+# 980 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_1
-# 885 "data/maps/CollaboratorsRoom/scripts.pory"
+# 982 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_SUCCESS
-# 886 "data/maps/CollaboratorsRoom/scripts.pory"
+# 983 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 887 "data/maps/CollaboratorsRoom/scripts.pory"
+# 984 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 20
-# 888 "data/maps/CollaboratorsRoom/scripts.pory"
+# 985 "data/maps/CollaboratorsRoom/scripts.pory"
 	directmovementtopos LOCALID_PLAYER, 4, 4
-# 889 "data/maps/CollaboratorsRoom/scripts.pory"
+# 986 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmovement 0
-# 890 "data/maps/CollaboratorsRoom/scripts.pory"
+# 987 "data/maps/CollaboratorsRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
-# 891 "data/maps/CollaboratorsRoom/scripts.pory"
+# 988 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 892 "data/maps/CollaboratorsRoom/scripts.pory"
+# 989 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag FLAG_ALEXMAD_EVENT_COMPLETED
-# 893 "data/maps/CollaboratorsRoom/scripts.pory"
+# 990 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 894 "data/maps/CollaboratorsRoom/scripts.pory"
+# 991 "data/maps/CollaboratorsRoom/scripts.pory"
 	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
-# 895 "data/maps/CollaboratorsRoom/scripts.pory"
+# 992 "data/maps/CollaboratorsRoom/scripts.pory"
 	releaseall
 	end
 
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed::
-# 900 "data/maps/CollaboratorsRoom/scripts.pory"
+# 997 "data/maps/CollaboratorsRoom/scripts.pory"
 	lockall
-# 901 "data/maps/CollaboratorsRoom/scripts.pory"
+# 998 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer
-# 902 "data/maps/CollaboratorsRoom/scripts.pory"
+# 999 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_FAILURE
-# 903 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1000 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48
-# 904 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1001 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 905 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1002 "data/maps/CollaboratorsRoom/scripts.pory"
 	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
-# 906 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1003 "data/maps/CollaboratorsRoom/scripts.pory"
 	releaseall
 	end
 
@@ -1834,27 +2014,27 @@ CollaboratorsRoom_EventScript_MrNightology_Movement_11:
 	emote_annoyed
 	step_end
 
-# 805 "data/maps/CollaboratorsRoom/scripts.pory"
+# 902 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_Alexmad_Movement_0:
-# 805 "data/maps/CollaboratorsRoom/scripts.pory"
+# 902 "data/maps/CollaboratorsRoom/scripts.pory"
 	face_player
-# 805 "data/maps/CollaboratorsRoom/scripts.pory"
+# 902 "data/maps/CollaboratorsRoom/scripts.pory"
 	lock_facing_direction
-# 805 "data/maps/CollaboratorsRoom/scripts.pory"
+# 902 "data/maps/CollaboratorsRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 881 "data/maps/CollaboratorsRoom/scripts.pory"
+# 978 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_0:
-# 881 "data/maps/CollaboratorsRoom/scripts.pory"
+# 978 "data/maps/CollaboratorsRoom/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 883 "data/maps/CollaboratorsRoom/scripts.pory"
+# 980 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_1:
-# 883 "data/maps/CollaboratorsRoom/scripts.pory"
+# 980 "data/maps/CollaboratorsRoom/scripts.pory"
 	jump_in_place_right
-# 883 "data/maps/CollaboratorsRoom/scripts.pory"
+# 980 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay_16
 	step_end
 
@@ -2278,81 +2458,151 @@ CollaboratorsRoom_EventScript_Gosuto_Text_5:
 	.string "¡Que no se diga más y a seguir\n"
 	.string "procesando píxeles!$"
 
+CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_0:
+# 673 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Espera! ¿Escuchas eso?$"
+
+CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_1:
+# 677 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¡Es el sonido de la batalla!$"
+
+CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_0:
+# 682 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "La música son matemáticas y puro\n"
+	.string "sentimiento ¡como los combates\l"
+	.string "Pokémon!$"
+
+CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_1:
+# 685 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿List{OA} para la revancha?$"
+
+CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_2:
+# 693 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Vuelve cuando quieras. Aquí siempre hay\n"
+	.string "buena música para combatir.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_0:
+# 721 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿Qué ha pasado aquí?$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_1:
+# 728 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Ese último movimiento no lo vi venir…$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_2:
+# 731 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Espero podamos volver a enfrentarnos\n"
+	.string "en un futuro.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_3:
+# 734 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "La armonía de tus Pokémon lo es todo…$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_4:
+# 738 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Si quieres volver a intentarlo, aquí\n"
+	.string "estaré.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_5:
+# 742 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Un día empecé a descompilar Pokémon\n"
+	.string "FireRed en español para obtener la ROM\l"
+	.string "original compilando pokefirered.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_6:
+# 744 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Tuvieron que pasar dos años para\n"
+	.string "encontrar motivación en el desafío 30\l"
+	.string "días dentro del foro de WaH.\p"
+	.string "Durante ese tiempo logré hacer\n"
+	.string "coincidencia al 100%.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_7:
+# 753 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Fue el mejor día de mi vida en el mundo\n"
+	.string "del rom hacking, superando un reto\l"
+	.string "personal muy significativo para mí.$"
+
+CollaboratorsRoom_EventScript_Acimut_Text_8:
+# 760 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Por cierto, aquí la música se escucha\n"
+	.string "mejor en estéreo.$"
+
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_0:
-# 671 "data/maps/CollaboratorsRoom/scripts.pory"
+# 768 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "20 años… ¿te das cuenta?$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_1:
-# 673 "data/maps/CollaboratorsRoom/scripts.pory"
+# 770 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Aquí crecimos entre bugs, tiles mal\n"
 	.string "alineados y scripts que se colgaban en\l"
 	.string "el último mapa.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_2:
-# 677 "data/maps/CollaboratorsRoom/scripts.pory"
+# 774 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡Ah! Si ves a Baro por ahí… no intentes\n"
 	.string "ser su amigo.\p"
 	.string "Créeme, no termina bien.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_3:
-# 681 "data/maps/CollaboratorsRoom/scripts.pory"
+# 778 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Y si te topas con Serg!o… salúdalo con\n"
 	.string "respeto.\p"
 	.string "Es leyenda.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_4:
-# 684 "data/maps/CollaboratorsRoom/scripts.pory"
+# 781 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Todos le tenemos un cariño especial…\n"
 	.string "Y no, no homo.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_5:
-# 687 "data/maps/CollaboratorsRoom/scripts.pory"
+# 784 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Me encanta la playa, hacer mapas bien\n"
 	.string "locos y meter bosques dentro de\l"
 	.string "cuevas.\p"
 	.string "Eso dice muchas cosas de mí.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_6:
-# 690 "data/maps/CollaboratorsRoom/scripts.pory"
+# 787 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Los hacks dicen muchas cosas de\n"
 	.string "nosotros.\p"
 	.string "Incluso en nuestra vida personal… nos\n"
 	.string "hicieron mejores personas.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_0:
-# 697 "data/maps/CollaboratorsRoom/scripts.pory"
+# 794 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Escanea el QR con tu móvil y nos vemos\n"
 	.string "en el otro mundo.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_1:
-# 702 "data/maps/CollaboratorsRoom/scripts.pory"
+# 799 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¿Lo viste?$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_2:
-# 705 "data/maps/CollaboratorsRoom/scripts.pory"
+# 802 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Entonces escribe la palabra que viste\n"
 	.string "en el video.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_3:
-# 710 "data/maps/CollaboratorsRoom/scripts.pory"
+# 807 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Perfecto… Veo que sí lo viste.\p"
 	.string "Entonces sabes lo que tienes que hacer.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_4:
-# 719 "data/maps/CollaboratorsRoom/scripts.pory"
+# 816 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "No… Esa no es.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_5:
-# 722 "data/maps/CollaboratorsRoom/scripts.pory"
+# 819 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Vuelve cuando tengas la respuesta\n"
 	.string "correcta.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_6:
-# 725 "data/maps/CollaboratorsRoom/scripts.pory"
+# 822 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Vuelve cuando estés listo.$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle_Text_0:
-# 731 "data/maps/CollaboratorsRoom/scripts.pory"
+# 828 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Cada hack tiene su propia esencia. La\n"
 	.string "personalidad de su creador vive dentro\l"
 	.string "de él.\p"
@@ -2364,7 +2614,7 @@ CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle_Text_0:
 	.string "Veamos si tú tampoco te rindes.$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_0:
-# 737 "data/maps/CollaboratorsRoom/scripts.pory"
+# 834 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Regresaste…\n"
 	.string "Eso ya dice algo.\p"
 	.string "En WAH aprendimos que rendirse no es\n"
@@ -2375,49 +2625,49 @@ CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_0:
 	.string "¿Otro combate?$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_1:
-# 744 "data/maps/CollaboratorsRoom/scripts.pory"
+# 841 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Cuando quieras volver, aquí estaré.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_0:
-# 762 "data/maps/CollaboratorsRoom/scripts.pory"
+# 859 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Excelente…\n"
 	.string "Eres digno de estar aquí.\p"
 	.string "Me alegra ver que la comunidad nunca\n"
 	.string "dejó de ser la mejor.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_1:
-# 765 "data/maps/CollaboratorsRoom/scripts.pory"
+# 862 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Hoy perdí yo…\n"
 	.string "Pero quizás mañana podría ganar Samee.\p"
 	.string "Nos veremos pronto.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_2:
-# 769 "data/maps/CollaboratorsRoom/scripts.pory"
+# 866 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Veo que no siempre tener el mejor\n"
 	.string "equipo es suficiente.\p"
 	.string "La estrategia pesa más que pulsar A a lo\n"
 	.string "loco.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_0:
-# 793 "data/maps/CollaboratorsRoom/scripts.pory"
+# 890 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Ya sabes lo que tienes que hacer, ¿no?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_1:
-# 798 "data/maps/CollaboratorsRoom/scripts.pory"
+# 895 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Sm1, sm2 o…$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_2:
-# 825 "data/maps/CollaboratorsRoom/scripts.pory"
+# 922 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Ya lo lograste.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_3:
-# 828 "data/maps/CollaboratorsRoom/scripts.pory"
+# 925 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Me recuerdas a KODER.\p"
 	.string "Siempre fue bueno con los acertijos.\n"
 	.string "Sigue adelante, seguro que te irá bien.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_4:
-# 834 "data/maps/CollaboratorsRoom/scripts.pory"
+# 931 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Tengo para ti un evento al puro estilo\n"
 	.string "del Mitic.\p"
 	.string "Pero también podemos ir directo a la\n"
@@ -2425,63 +2675,63 @@ CollaboratorsRoom_EventScript_Alexmad_Text_4:
 	.string "¿Qué prefieres?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_5:
-# 836 "data/maps/CollaboratorsRoom/scripts.pory"
+# 933 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡Tu de nuevo! Tengo dos propuestas\n"
 	.string "para ti.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_6:
-# 839 "data/maps/CollaboratorsRoom/scripts.pory"
+# 936 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¿Qué quieres hacer?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_7:
-# 842 "data/maps/CollaboratorsRoom/scripts.pory"
+# 939 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Evento$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_8:
-# 842 "data/maps/CollaboratorsRoom/scripts.pory"
+# 939 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Batalla$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_9:
-# 842 "data/maps/CollaboratorsRoom/scripts.pory"
+# 939 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Salir$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_10:
-# 852 "data/maps/CollaboratorsRoom/scripts.pory"
+# 949 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Veamos qué versión eres ahora.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_11:
-# 860 "data/maps/CollaboratorsRoom/scripts.pory"
+# 957 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Tengo para ti un evento al puro estilo\n"
 	.string "del Mitic.\p"
 	.string "Dime… ¿lo quieres hacer?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_12:
-# 862 "data/maps/CollaboratorsRoom/scripts.pory"
+# 959 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Has vuelto, ¿quieres seguir con el\n"
 	.string "evento?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_13:
-# 868 "data/maps/CollaboratorsRoom/scripts.pory"
+# 965 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Vuelve cuando estés listo.\n"
 	.string "El Mitic no espera… pero tampoco se\l"
 	.string "repite.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0:
-# 886 "data/maps/CollaboratorsRoom/scripts.pory"
+# 983 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡Lo has logrado! Veo que eres buen{OA}.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1:
-# 891 "data/maps/CollaboratorsRoom/scripts.pory"
+# 988 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Me recuerdas a KODER. Siempre fue bueno\n"
 	.string "con los acertijos.\p"
 	.string "Quizás pueda ayudarte en tu camino.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2:
-# 893 "data/maps/CollaboratorsRoom/scripts.pory"
+# 990 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "PENDIENTE PREMIO$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0:
-# 904 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1001 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "No, no… así no es.\p"
 	.string "Vuelve a hablarme si quieres intentarlo\n"
 	.string "de nuevo.$"
@@ -2497,6 +2747,6 @@ CollaboratorsRoom_Text_Micolo_ChoosePokemon::
 	.string "equipo al azar!$"
 
 CollaboratorsRoom_Text_Alexmad_OnDefeat::
-# 785 "data/maps/CollaboratorsRoom/scripts.pory"
+# 882 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "20 años de comunidad y aún me\n"
 	.string "sorprenden.$"

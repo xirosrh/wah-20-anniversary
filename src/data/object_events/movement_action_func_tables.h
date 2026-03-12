@@ -494,6 +494,7 @@ u8 (*const gMovementActionFuncs_EmoteVersus[])(struct ObjectEvent *, struct Spri
 u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteMusicNote[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteWink[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSad[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSmile[])(struct ObjectEvent *, struct Sprite *);
@@ -695,6 +696,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_VERSUS] = gMovementActionFuncs_EmoteVersus,
     [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,
     [MOVEMENT_ACTION_EMOTE_ANNOYED] = gMovementActionFuncs_EmoteAnnoyed,
+    [MOVEMENT_ACTION_EMOTE_MUSIC_NOTE] = gMovementActionFuncs_EmoteMusicNote,
     [MOVEMENT_ACTION_EMOTE_WINK] = gMovementActionFuncs_EmoteWink,
     [MOVEMENT_ACTION_EMOTE_SAD] = gMovementActionFuncs_EmoteSad,
     [MOVEMENT_ACTION_EMOTE_SLEEPING] = gMovementActionFuncs_EmoteSleeping,
@@ -1749,6 +1751,11 @@ u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprit
 
 u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteAnnoyed_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteMusicNote[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteMusicNote_Step0,
     MovementAction_Finish,
 };
 
