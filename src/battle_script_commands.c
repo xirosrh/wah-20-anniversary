@@ -4648,6 +4648,8 @@ static u32 GetMonHoldEffect(struct Pokemon *mon)
     return holdEffect;
 }
 
+EWRAM_DATA static u8 sLastMon = 0;
+
 static void Cmd_getexp(void)
 {
     CMD_ARGS(u8 battler);
@@ -4774,6 +4776,35 @@ static void Cmd_getexp(void)
                 gBattleStruct->battlerExpReward = 0;
                 if (B_MAX_LEVEL_EV_GAINS >= GEN_5)
                     MonGainEVs(&gPlayerParty[*expMonId], gBattleMons[gBattlerFainted].species);
+
+                // Cambiar la música durante la batalla estilo BW cuando solo quede 1 pokémon rival:
+                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER 
+                    && gEnemyPartyCount >= 5
+                    && gBattleResults.opponentFaintCounter == (gEnemyPartyCount-1))
+                {
+                    if (!sLastMon)
+                    {
+                        sLastMon = TRUE;
+                        switch ((u32)GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
+                        {
+                        case TRAINER_CLASS_WAH_ADMIN:
+                        case TRAINER_CLASS_COLLABORATOR:
+                            //switch (TRAINER_BATTLE_PARAM.opponentA)
+                            //    {
+                            //    case TRAINER_WAH_ADMIN_XIROS_MAIN:
+                            //    case TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE:
+                            //        PlayBGM(MUS_VICTORY_LIES_BEFORE_YOU);
+                            //        break;
+                            //    }
+                            PlayBGM(MUS_VICTORY_LIES_BEFORE_YOU);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    sLastMon = FALSE;
+                }
             }
             else
             {
