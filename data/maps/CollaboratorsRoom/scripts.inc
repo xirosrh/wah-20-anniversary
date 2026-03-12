@@ -2373,7 +2373,8 @@ CollaboratorsRoom_EventScript_Gameboycl_Text_0:
 
 CollaboratorsRoom_EventScript_Gameboycl_Text_1:
 # 194 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "PENDIENTE GAMEBOY$"
+	.string "Cuando te sientas preparad{OA}, vuelve y\n"
+	.string "probamos nuestros equipos en un duelo.$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle_Text_0:
 # 209 "data/maps/CollaboratorsRoom/scripts.pory"

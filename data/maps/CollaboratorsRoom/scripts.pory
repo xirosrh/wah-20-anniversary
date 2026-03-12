@@ -191,7 +191,7 @@ script CollaboratorsRoom_EventScript_Gameboycl {
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL)
         } else {
-            msgbox(format("PENDIENTE GAMEBOY"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL) //TODO Xiros
+            msgbox(format("Cuando te sientas preparad{OA}, vuelve y probamos nuestros equipos en un duelo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
         }
         goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     } else {
