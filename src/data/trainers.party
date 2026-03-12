@@ -1002,16 +1002,45 @@ Pic: Sayer
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Yellow
+Difficulty: Easy
+
+Metagross
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Drain Punch
+- Earthquake
+
+Tyranitar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Crunch
+- Stone Edge
+- Earthquake
+- Heavy slam
 
 Swampert @ Swampertite
-EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Adamant Nature
 - Liquidation
 - Earthquake
 - Rock Slide
 - Aqua Jet
+
+=== TRAINER_WAH_ADMIN_SAYER_MAIN ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Normal
 
 Metagross @ Assault Vest
 Shiny: Yes
@@ -1030,6 +1059,48 @@ Adamant Nature
 - Earthquake
 - Heavy slam
 
+Swampert @ Swampertite
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Liquidation
+- Earthquake
+- Rock Slide
+- Aqua Jet
+
+=== TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Easy
+
+Gengar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Ice Beam
+- Focus Blast
+
+Charizard @ Charizardite X
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Seismic Toss
+- Dragon Claw
+- Fire Punch
+
+Zapdos
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
 Name: Sayer
 Class: WAH Admin
@@ -1039,6 +1110,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
+Difficulty: Normal
 
 Gengar @ Black Sludge
 EVs: 252 SpA / 252 Spe / 4 HP
