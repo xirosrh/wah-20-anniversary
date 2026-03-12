@@ -1393,8 +1393,68 @@ Pic: Jack Johnson
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Venusaur
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Toxic
+- Leech Seed
+- Sleep Powder
+- Frenzy Plant
+
+Magnezone
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Thunderbolt
+- Thunder Wave
+- Rain Dance
+- Thunder
+
+Tyranitar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Careful Nature
+- Crunch
+- Ancient Power
+- Brick Break
+- Curse
+
+Crobat
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Poison Fang
+- Shadow Ball
+- Facade
+- Aerial Ace
+
+Gyarados
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Frustration
+- Dragon Dance
+- Earthquake
+- Double-Edge
+
+Arcanine
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Naive Nature
+- Flamethrower
+- Sunny Day
+- Extreme Speed
+- Facade
+
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
+Name: Jack
+Class: WAH Admin
+Pic: Jack Johnson
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Venusaur @ Shell Bell
 EVs: 252 SpA / 252 HP / 4 Spe
@@ -1444,6 +1504,64 @@ Naive Nature
 - Extreme Speed
 - Facade
 
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE ===
+Name: Jack
+Class: WAH Admin
+Pic: Jack Johnson
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Electivire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Drain Punch
+- Earthquake
+
+Ludicolo
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Giga Drain
+- Scald
+- Ice Beam
+- Sludge Bomb
+
+Mightyena
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Crunch
+- Play Rough
+- Ice Fang
+- Psychic Fangs
+
+Groudon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Precipice Blades
+- Eruption
+- Earthquake
+- Drain Punch
+
+Kyogre
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Ice Beam
+- Thunder
+
+Rayquaza
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Ascent
+- Dragon Dance
+- Earthquake
+- Extreme Speed
 
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE ===
 Name: Jack
@@ -1454,6 +1572,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Electivire @ Assault Vest
 EVs: 252 Atk / 252 Spe / 4 HP
