@@ -1629,8 +1629,68 @@ Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Typhlosion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
+
+Lucario
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Naive Nature
+- Aura Sphere
+- Drain Punch
+- Meteor Mash
+- Earth Power
+
+Darkrai
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Dark Void
+- Dream Eater
+- Nightmare
+- Dark Pulse
+
+Latios
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Luster Purge
+- Psychic
+- Recover
+- Dragon Pulse
+
+Landorus Therian
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Sandsear Storm
+- Air Slash
+- U Turn
+- Knock Off
+
+Suicune
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Scald
+- Air Slash 
+- Ice Beam
+- Extreme Speed
+
+=== TRAINER_WAH_ADMIN_ANGEL_MAIN ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Typhlosion @ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -1687,16 +1747,68 @@ Pic: Angel
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Pink
+Difficulty: Easy
+
+Necrozma Dusk Mane
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Chien Pao
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Ruination
+- Ice Shard
+- Sacred Sword
+- Recover
+
+Urshifu
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wicked Blow
+- Surging Strikes
+- Drain Punch
+- Iron Head
 
 Charizard @ Charizardite X
-EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Dragon Dance
 - Dragon Claw
 - Flare Blitz
 - Mega Punch
+
+=== TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Normal
 
 Necrozma Dusk Mane @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -1737,6 +1849,14 @@ Jolly Nature
 - Surging Strikes
 - Drain Punch
 - Iron Head
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Flare Blitz
+- Mega Punch
 
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
 Name: Ozumas
