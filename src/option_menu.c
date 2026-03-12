@@ -112,7 +112,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_SOUND]       = COMPOUND_STRING("Sonido"),
     [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("Controles"),
     [MENUITEM_WALKSPEED]   = COMPOUND_STRING("Vel. caminar"),
-    [MENUITEM_SPEEDUP]     = COMPOUND_STRING("Speedup"),
+    [MENUITEM_SPEEDUP]     = COMPOUND_STRING("Turbo batalla"),
     [MENUITEM_CANCEL]      = COMPOUND_STRING("Salir"),
 };
 
