@@ -566,10 +566,77 @@ Name: Cheve
 Class: WAH Admin
 Pic: Cheve
 Gender: Male
-Music: Hiker
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Umbreon
+Shiny: Yes
+Ability: Synchronize
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Toxic
+- Heal Bell
+- Yawn
+- Moonlight
+
+Weavile
+Ability: Pickpocket
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Fling
+- Ice Shard
+- Fake Out
+- Brick Break
+
+Plantita (Meganium)
+Ability: Leaf Guard
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Leech Seed
+- Protect
+- Toxic
+- Synthesis
+
+Swampert @ Swampertite
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Stealth Rock
+
+Noctowl
+Ability: Insomnia
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Wing Attack
+- Sky Attack
+- Shadow Ball
+- Hypnosis
+
+Gengar
+Ability: Cursed Body
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Will-O-Wisp
+- Hex
+- Substitute
+- Disable
+
+
+=== TRAINER_WAH_ADMIN_CHEVE_MAIN ===
+Name: Cheve
+Class: WAH Admin
+Pic: Cheve
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
+Difficulty: Normal
 
 Umbreon
 Shiny: Yes
@@ -625,6 +692,71 @@ Modest Nature
 - Substitute
 - Disable
 
+=== TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE ===
+Name: Cheve
+Class: WAH Admin
+Pic: Cheve
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Dragonite
+Ability: Multiscale
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Roost
+- Dragon Claw
+- Fire Punch
+- Dragon Dance
+
+Charizard
+Ability: Blaze
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Earthquake
+- Thunder Punch
+- Roost
+
+Espeon
+Ability: Magic Bounce
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Calm Mind
+- Baton Pass
+- Stored Power
+- Substitute
+
+Cresselia
+Ability: Levitate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Psychic
+- Psycho Shift
+- Rest
+- Sleep Talk
+
+Houndoom @Houndoominite
+Ability: Solar Power
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Nasty Plot
+- Fire Blast
+- Dark Pulse
+- Solar Beam
+
+Suicune
+Ability: Pressure
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Calm Mind
+- Scald
+- Rest
+- Sleep Talk
+
 
 === TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE ===
 Name: Cheve
@@ -635,6 +767,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
+Difficulty: Normal
 
 Dragonite @Leftovers
 Ability: Multiscale
