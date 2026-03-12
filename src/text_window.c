@@ -49,6 +49,10 @@ static const u16 sTextWindowFrame18_Pal[] = INCBIN_U16("graphics/text_window/18.
 static const u16 sTextWindowFrame19_Pal[] = INCBIN_U16("graphics/text_window/19.gbapal");
 static const u16 sTextWindowFrame20_Pal[] = INCBIN_U16("graphics/text_window/20.gbapal");
 
+//textborder battle
+static const u8 gTextWindowBattleBorder_Gfx[] = INCBIN_U8("graphics/text_window/textborder_battle.4bpp");
+static const u16 gTextWindowBattleBorder_Pal[] = INCBIN_U16("graphics/text_window/text_border_battle_pal.gbapal");
+
 static const u16 sTextWindowPalettes[][16] =
 {
     INCBIN_U16("graphics/text_window/message_box.gbapal"),
@@ -120,6 +124,12 @@ void LoadWindowGfx(u8 windowId, u8 frameId, u16 destOffset, u8 palOffset)
 void LoadUserWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
 {
     LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, destOffset, palOffset);
+}
+
+void LoadBattleWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), gTextWindowBattleBorder_Gfx, 0x120, destOffset);
+    LoadPalette(gTextWindowBattleBorder_Pal, palOffset, PLTT_SIZE_4BPP);
 }
 
 void DrawTextBorderOuter(u8 windowId, u16 tileNum, u8 palNum)

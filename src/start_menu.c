@@ -269,16 +269,16 @@ static const struct SpritePalette sSpritePal_IconsStartMenu =
 
 const struct SpriteFrameImage gIconsImage_StartMenu[] =
 {
-    { sIcons_StartMenu,                 sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE,     sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 2, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 3, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 4, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 5, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 6, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 7, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 8, sizeof(sIcons_StartMenu) },
-    { sIcons_StartMenu + ICON_SIZE * 9, sizeof(sIcons_StartMenu) },
+    { sIcons_StartMenu,                 ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE,     ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 2, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 3, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 4, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 5, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 6, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 7, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 8, ICON_SIZE },
+    { sIcons_StartMenu + ICON_SIZE * 9, ICON_SIZE },
 };
 
 enum

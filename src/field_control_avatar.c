@@ -18,6 +18,7 @@
 #include "field_poison.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
+#include "braille_puzzles.h"
 #include "fldeff_misc.h"
 #include "follower_npc.h"
 #include "item_menu.h"
@@ -267,10 +268,10 @@ static void GetInFrontOfPlayerPosition(struct MapPosition *position)
 
     GetXYCoordsOneStepInFrontOfPlayer(&position->x, &position->y);
     PlayerGetDestCoords(&x, &y);
-    if (MapGridGetElevationAt(x, y) != 0)
+    if (MapGridGetElevationAt(x, y) != ELEVATION_TRANSITION)
         position->elevation = PlayerGetElevation();
     else
-        position->elevation = 0;
+        position->elevation = ELEVATION_TRANSITION;
 }
 
 static u16 GetPlayerCurMetatileBehavior(int runningState)
@@ -705,6 +706,19 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
             ScriptContext_SetupScript(IslandCave_EventScript_OpenRegiEntrance);
             return TRUE;
         }
+        {
+            u8 alexmadResult = ShouldDoAlexmadCornerPuzzle();
+            if (alexmadResult == 1)
+            {
+                ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleComplete);
+                return TRUE;
+            }
+            else if (alexmadResult == 2)
+            {
+                ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleFailed);
+                return TRUE;
+            }
+        }
         if (ShouldDoWallyCall() == TRUE)
         {
             ScriptContext_SetupScript(MauvilleCity_EventScript_RegisterWallyCall);
@@ -1038,7 +1052,7 @@ static s8 GetWarpEventAtPosition(struct MapHeader *mapHeader, u16 x, u16 y, u8 e
     {
         if ((u16)warpEvent->x == x && (u16)warpEvent->y == y)
         {
-            if (warpEvent->elevation == elevation || warpEvent->elevation == 0)
+            if (warpEvent->elevation == elevation || warpEvent->elevation == ELEVATION_TRANSITION)
                 return i;
         }
     }
@@ -1085,7 +1099,7 @@ static const u8 *GetCoordEventScriptAtPosition(struct MapHeader *mapHeader, u16 
     {
         if ((u16)coordEvents[i].x == x && (u16)coordEvents[i].y == y)
         {
-            if (coordEvents[i].elevation == elevation || coordEvents[i].elevation == 0)
+            if (coordEvents[i].elevation == elevation || coordEvents[i].elevation == ELEVATION_TRANSITION)
             {
                 const u8 *script = TryRunCoordEventScript(&coordEvents[i]);
                 if (script != NULL)
@@ -1111,7 +1125,7 @@ static const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapH
     {
         if ((u16)bgEvents[i].x == x && (u16)bgEvents[i].y == y)
         {
-            if (bgEvents[i].elevation == elevation || bgEvents[i].elevation == 0)
+            if (bgEvents[i].elevation == elevation || bgEvents[i].elevation == ELEVATION_TRANSITION)
                 return &bgEvents[i];
         }
     }

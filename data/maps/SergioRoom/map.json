@@ -2,7 +2,7 @@
   "id": "MAP_SERGIO_ROOM",
   "name": "SergioRoom",
   "layout": "LAYOUT_SERGIO_ROOM",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_DRAGONS_DEN",
   "region_map_section": "MAPSEC_SERGIO_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

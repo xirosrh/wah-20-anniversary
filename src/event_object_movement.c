@@ -77,6 +77,7 @@ enum {
     MOVE_SPEED_FAST_2, // water current / acro bike
     MOVE_SPEED_FASTER, // mach bike's max speed
     MOVE_SPEED_FASTEST,
+    MOVE_SPEED_MAX, // same pixel speed as FASTEST but with walk animation
 };
 
 enum {
@@ -540,12 +541,19 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Sayer,                 OBJ_EVENT_PAL_TAG_SAYER},
     {gObjectEventPal_Cheve,                 OBJ_EVENT_PAL_TAG_CHEVE},
     {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
+    {gObjectEventPal_EingFishing,           OBJ_EVENT_PAL_TAG_EING_FISHING},
+    {gObjectEventPal_Erkey,                 OBJ_EVENT_PAL_TAG_ERKEY},
+    {gObjectEventPal_Alexmad,                OBJ_EVENT_PAL_TAG_ALEXMAD},
+    {gObjectEventPal_Gosuto,                OBJ_EVENT_PAL_TAG_GOSUTO},
     {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
     {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
     {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
     {gObjectEventPal_PkPower,               OBJ_EVENT_PAL_TAG_PKPOWER},
     {gObjectEventPal_Omega,                 OBJ_EVENT_PAL_TAG_OMEGA},
     {gObjectEventPal_Klein,                 OBJ_EVENT_PAL_TAG_KLEIN},
+    {gObjectEventPal_Tokyn,                 OBJ_EVENT_PAL_TAG_TOKYN},
+    {gObjectEventPal_Roxas,                 OBJ_EVENT_PAL_TAG_ROXAS},
+    {gObjectEventPal_Micolo,                OBJ_EVENT_PAL_TAG_MICOLO},
     {gObjectEventPal_TrainerInWater1,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1},
     {gObjectEventPal_TrainerInWater2,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2},
     {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
@@ -855,6 +863,13 @@ const u8 gWalkFasterMovementActions[] = {
     [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTER_UP,
     [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
     [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
+};
+const u8 gWalkMaxMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_MAX_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_MAX_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_MAX_RIGHT,
 };
 const u8 gSlideMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_SLIDE_DOWN,
@@ -3143,7 +3158,7 @@ u8 GetObjectEventIdByPosition(u16 x, u16 y, u8 elevation)
 
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *objectEvent, u8 elevation)
 {
-    if (objectEvent->currentElevation != 0 && elevation != 0 && objectEvent->currentElevation != elevation)
+    if (objectEvent->currentElevation != ELEVATION_TRANSITION && elevation != ELEVATION_TRANSITION && objectEvent->currentElevation != elevation)
         return FALSE;
 
     return TRUE;
@@ -6545,6 +6560,7 @@ dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
 dirn_to_anim(GetWalkFastMovementAction, gWalkFastMovementActions);
 dirn_to_anim(GetRideWaterCurrentMovementAction, gRideWaterCurrentMovementActions);
 dirn_to_anim(GetWalkFasterMovementAction, gWalkFasterMovementActions);
+dirn_to_anim(GetWalkMaxMovementAction, gWalkMaxMovementActions);
 dirn_to_anim(GetSlideMovementAction, gSlideMovementActions);
 dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
 dirn_to_anim(GetJump2MovementAction, gJump2MovementActions);
@@ -7856,6 +7872,76 @@ bool8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *objectEvent, stru
 }
 
 bool8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxLeft_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateMovementNormal(objectEvent, sprite))
     {
@@ -9666,12 +9752,15 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
 {
     u8 mapElevation;
 
-    if (elevation == 0)
+    if (elevation == ELEVATION_TRANSITION)
         return FALSE;
 
     mapElevation = MapGridGetElevationAt(x, y);
 
-    if (mapElevation == 0 || mapElevation == 15)
+    if (mapElevation == ELEVATION_TRANSITION || mapElevation == ELEVATION_MULTI_LEVEL)
+        return FALSE;
+
+    if ((elevation == 5 && mapElevation == 6) || (elevation == 6 && mapElevation == 5))
         return FALSE;
 
     if (mapElevation != elevation)
@@ -9730,7 +9819,7 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
     u8 curElevation = MapGridGetElevationAt(objEvent->currentCoords.x, objEvent->currentCoords.y);
     u8 prevElevation = MapGridGetElevationAt(objEvent->previousCoords.x, objEvent->previousCoords.y);
 
-    if (curElevation == 15 || prevElevation == 15)
+    if (curElevation == ELEVATION_MULTI_LEVEL || prevElevation == ELEVATION_MULTI_LEVEL)
     {
         // Ignore subsprite priorities under bridges
         // so all subsprites will display below it
@@ -9741,8 +9830,36 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
 
     objEvent->currentElevation = curElevation;
 
-    if (curElevation != 0 && curElevation != 15)
-        objEvent->previousElevation = curElevation;
+    if (curElevation != ELEVATION_TRANSITION && curElevation != ELEVATION_MULTI_LEVEL)
+    {
+        bool8 is5to6 = (curElevation == 5 && prevElevation == 6) || (curElevation == 6 && prevElevation == 5);
+        bool8 hasStopped = (objEvent->currentCoords.x == objEvent->previousCoords.x
+                         && objEvent->currentCoords.y == objEvent->previousCoords.y);
+
+        if (!is5to6)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (hasStopped)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (sprite != NULL)
+        {
+            s16 spriteMapX, spriteMapY;
+            s16 midX, midY;
+            s16 dx = objEvent->currentCoords.x - objEvent->previousCoords.x;
+            s16 dy = objEvent->currentCoords.y - objEvent->previousCoords.y;
+
+            GetMapCoordsFromSpritePos(sprite->x, sprite->y, &spriteMapX, &spriteMapY);
+            midX = (objEvent->previousCoords.x + objEvent->currentCoords.x) * 8;
+            midY = (objEvent->previousCoords.y + objEvent->currentCoords.y) * 8;
+
+            if ((dx > 0 && spriteMapX >= midX) || (dx < 0 && spriteMapX <= midX)
+             || (dy > 0 && spriteMapY >= midY) || (dy < 0 && spriteMapY <= midY))
+                objEvent->previousElevation = curElevation;
+        }
+    }
 }
 
 void SetObjectSubpriorityByElevation(u8 elevation, struct Sprite *sprite, u8 subpriority)
@@ -9769,7 +9886,7 @@ static void ObjectEventUpdateSubpriority(struct ObjectEvent *objEvent, struct Sp
 
 static bool8 AreElevationsCompatible(u8 a, u8 b)
 {
-    if (a == 0 || b == 0)
+    if (a == ELEVATION_TRANSITION || b == ELEVATION_TRANSITION)
         return TRUE;
 
     if (a != b)
@@ -10335,12 +10452,19 @@ static const SpriteStepFunc sStep8Funcs[] = {
     Step8,
 };
 
+static const SpriteStepFunc sStep844Funcs[] = {
+    Step8,
+    Step4,
+    Step4,
+};
+
 static const SpriteStepFunc *const sNpcStepFuncTables[] = {
     [MOVE_SPEED_NORMAL] = sStep1Funcs,
     [MOVE_SPEED_FAST_1] = sStep2Funcs,
     [MOVE_SPEED_FAST_2] = sStep3Funcs,
     [MOVE_SPEED_FASTER] = sStep4Funcs,
     [MOVE_SPEED_FASTEST] = sStep8Funcs,
+    [MOVE_SPEED_MAX] = sStep844Funcs,
 };
 
 static const s16 sStepTimes[] = {
@@ -10349,6 +10473,7 @@ static const s16 sStepTimes[] = {
     [MOVE_SPEED_FAST_2] = ARRAY_COUNT(sStep3Funcs),
     [MOVE_SPEED_FASTER] = ARRAY_COUNT(sStep4Funcs),
     [MOVE_SPEED_FASTEST] = ARRAY_COUNT(sStep8Funcs),
+    [MOVE_SPEED_MAX] = ARRAY_COUNT(sStep844Funcs),
 };
 
 static bool8 NpcTakeStep(struct Sprite *sprite)
@@ -11139,6 +11264,14 @@ bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *objectEvent, struct 
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
     FieldEffectStart(FLDEFF_ANNOYED_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteMusicNote_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_MUSIC_NOTE_ICON);
     sprite->sActionFuncId = 1;
     return TRUE;
 }

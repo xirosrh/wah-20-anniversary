@@ -718,6 +718,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/object_events/object_event_pic_tables_followers.h"
 
 #include "data/pokemon/species_info.h"
+#include "constants/opponents.h"
 
 #define PP_UP_SHIFTS(val)           val,        (val) << 2,        (val) << 4,        (val) << 6
 #define PP_UP_SHIFTS_INV(val) (u8)~(val), (u8)~((val) << 2), (u8)~((val) << 4), (u8)~((val) << 6)
@@ -3724,6 +3725,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
+    u8 levelBefore;
+    bool8 didLevelUp = FALSE;
+    bool8 isLevelUpItem;
 
     // Determine the EV cap to use
     u32 maxAllowedEVs = !B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap();
@@ -3745,6 +3749,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
     // Get item effect
     itemEffect = GetItemEffect(item);
+    isLevelUpItem = (itemEffect[3] & ITEM3_LEVEL_UP) != 0;
+    levelBefore = GetMonData(mon, MON_DATA_LEVEL, NULL);
 
     // Do item effect
     for (i = 0; i < ITEM_EFFECT_ARG_START; i++)
@@ -3799,6 +3805,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 {
                     SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
                     CalculateMonStats(mon);
+                    if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
+                        didLevelUp = TRUE;
                     retVal = FALSE;
                 }
             }
@@ -3917,6 +3925,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     {
                         u32 currentHP = GetMonData(mon, MON_DATA_HP, NULL);
                         u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+                        if (isLevelUpItem && !didLevelUp && (effectFlags & (ITEM4_REVIVE >> 2)))
+                        {
+                            itemEffectParam++;
+                            break;
+                        }
                         // Check use validity.
                         if ((effectFlags & (ITEM4_REVIVE >> 2) && currentHP != 0)
                               || (!(effectFlags & (ITEM4_REVIVE >> 2)) && currentHP == 0))
@@ -6109,7 +6122,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
-        case TRAINER_CLASS_WAH_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
@@ -6131,6 +6143,25 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_WAH_ADMIN:
+        case TRAINER_CLASS_COLLABORATOR:
+            switch (TRAINER_BATTLE_PARAM.opponentA)
+            {
+            case TRAINER_WAH_ADMIN_REONEKY_MAIN:
+            case TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE:
+                return MUS_CAZA_LEGENDARIOS_TO;
+            case TRAINER_WAH_ADMIN_DAVZERO_MAIN:
+            case TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE:
+                return MUS_THE_GRAND_FINALE;
+            case TRAINER_WAH_ADMIN_CHEVE_MAIN:
+            case TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE:
+                return MUS_MASTERED_BATTLE_4;
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
+                return MUS_WI_VS_GYM_LEADER;
+            default:
+                return MUS_VS_AQUA_MAGMA;
+            }
         default:
             return MUS_VS_TRAINER;
         }
@@ -6864,6 +6895,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
                 case FORM_CHANGE_DEPOSIT:
                 case FORM_CHANGE_FAINT:
                 case FORM_CHANGE_DAYS_PASSED:
+                case FORM_CHANGE_BEGIN_WILD_ENCOUNTER:
                     targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_STATUS:

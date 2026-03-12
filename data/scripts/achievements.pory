@@ -1,0 +1,31 @@
+
+
+script Achievements_EventScript_Eval_AllAdminsDefeated {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_ADMINS)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_DefeatAllCollaborators {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_Common {
+    delay(30)
+    specialvar(VAR_RESULT, Special_CheckAndCompleteAchievement)
+    if(var(VAR_RESULT) == TRUE) {
+        //playse(SE_VICTORY) //TODO Xiros
+        special(Special_BufferAchievementTitle)
+        msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
+        //waitse
+    }
+    return
+}

@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_DIFFICULTY                                   0x408B
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -266,13 +266,13 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_COSARARA_ROOM_COMPUTER_FRAMES                 0x40F7 // WAH
 #define VAR_WAH_CHALLENGE_COMPLETION_COUNT                0x40F8 // WAH
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused
+#define VAR_ALEXMAD_PUZZLE_CHECKPOINT                     0x40F9 // WAH: next step index (0-7)
+#define VAR_ALEXMAD_PUZZLE_START_X                       0x40FA // WAH: player X when puzzle started
+#define VAR_ALEXMAD_PUZZLE_START_Y                       0x40FB // WAH: player Y when puzzle started
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_LO                   0x40FC // WAH: low 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_HI                   0x40FD // WAH: high 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO                  0x40FE // WAH: low 16 bits of slot 6 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI                  0x40FF // WAH: high 16 bits of slot 6 personality at challenge start
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

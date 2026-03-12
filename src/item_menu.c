@@ -478,7 +478,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .width = 8,
         .height = 3,
         .paletteNum = 1,
-        .baseBlock = 0x1A1,
+        .baseBlock = 0x16B,
     },
     [WIN_TMHM_INFO_ICONS] = {
         .bg = 0,
@@ -487,7 +487,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .width = 5,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x16B,
+        .baseBlock = 0x183,
     },
     [WIN_TMHM_INFO] = {
         .bg = 0,
@@ -496,7 +496,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .width = 4,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x189,
+        .baseBlock = 0x1A1,
     },
     [WIN_MESSAGE] = {
         .bg = 1,
@@ -555,7 +555,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B9,
+        .baseBlock = 0x279,
     },
     [ITEMWIN_YESNO_LOW] = { // Yes/No tucked in corner, for toss confirm
         .bg = 1,
@@ -564,7 +564,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x225,
+        .baseBlock = 0x2E5,
     },
     [ITEMWIN_YESNO_HIGH] = { // Yes/No higher up, positioned above a lower message box
         .bg = 1,
@@ -573,7 +573,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x225,
+        .baseBlock = 0x2E5,
     },
     [ITEMWIN_QUANTITY] = { // Used for quantity of items to Toss/Deposit
         .bg = 1,
@@ -582,7 +582,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x225,
+        .baseBlock = 0x2E5,
     },
     [ITEMWIN_QUANTITY_WIDE] = { // Used for quantity and price of items to Sell
         .bg = 1,
@@ -591,7 +591,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x245,
+        .baseBlock = 0x2F9,
     },
     [ITEMWIN_MONEY] = {
         .bg = 1,
@@ -600,7 +600,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x231,
+        .baseBlock = 0x30D,
     },
 };
 
