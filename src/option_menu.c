@@ -242,6 +242,8 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 7:
+        sMenuCursor = 0;
+        sScrollOffset = 0;
         gMain.state++;
         break;
     case 8:
