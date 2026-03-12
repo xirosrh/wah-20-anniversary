@@ -1144,8 +1144,74 @@ Pic: Aguiar
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Swampert
+Ability: Torrent
+Nature: Lonely
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Earthquake
+- Surf
+- Ice Punch
+- Protect
+
+Skarmory
+Ability: Sturdy
+Nature: Bold
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Spikes
+- Stealth Rock
+- Drill Peck
+- Roar
+
+Gengar
+Ability: Levitate
+Nature: Modest
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shadow Ball
+- Thunderbolt
+- Hypnosis
+- Protect
+
+Tyranitar
+Ability: Sand Stream
+Nature: Jolly
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Earthquake
+- Flamethrower
+- Dragon Claw
+- Protect
+
+Blissey
+Ability: Natural Cure
+Nature: Calm
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Protect
+- Wish
+- Ice Beam
+- Toxic
+
+Salamence
+Ability: Intimidate
+Nature: Adamant
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Dragon Claw
+- Earthquake
+- Flamethrower
+- Protect
+
+=== TRAINER_WAH_ADMIN_AGUIAR_MAIN ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Swampert @ Leftovers
 Ability: Torrent
@@ -1201,6 +1267,64 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Flamethrower
 - Protect
 
+=== TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Torkoal
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Eruption
+- Overheat
+- Solar Beam
+- Slack Off
+
+Weezing Galar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sludge Bomb
+- Moonblast
+- Flamethrower
+- Strange Steam
+
+Barbaracle @ Barbaracite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Drain Punch
+- Earthquake
+
+Hydreigon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dragon Pulse
+- Dark Pulse
+- Flash Cannon
+- Earth Power
+
+Forretress
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Stealth Rock
+- Spikes
+- Toxic Spikes
+- Rapid Spin
+
+Gengar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga Drain
+- Dark Pulse
 
 
 === TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE ===
@@ -1212,6 +1336,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Torkoal @Charcoal
 EVs: 252 SpA / 252 HP / 4 Spe
@@ -1227,7 +1352,7 @@ Timid Nature
 - Sludge Bomb
 - Moonblast
 - Flamethrower
-/*- Strange Stream /TODO Xiros */
+- Strange Steam
 
 Barbaracle @ Barbaracite
 EVs: 252 Atk / 252 HP / 4 Spe
