@@ -16,14 +16,15 @@
 #include "list_menu.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
+#include "speedup.h"
 
 #define tTextSpeed data[1]
 #define tBattleSceneOff data[2]
 #define tBattleStyle data[3]
 #define tSound data[4]
 #define tButtonMode data[5]
-#define tWindowFrameType data[6]
-#define tWalkSpeed data[7]
+#define tWalkSpeed data[6]
+#define tSpeedup data[7]
 
 enum
 {
@@ -32,8 +33,8 @@ enum
     MENUITEM_BATTLESTYLE,
     MENUITEM_SOUND,
     MENUITEM_BUTTONMODE,
-    MENUITEM_FRAMETYPE,
     MENUITEM_WALKSPEED,
+    MENUITEM_SPEEDUP,
     MENUITEM_CANCEL,
     MENUITEM_COUNT,
 };
@@ -60,12 +61,12 @@ static u8 BattleStyle_ProcessInput(u8 selection);
 static void BattleStyle_DrawChoices(u8 selection, u8 y);
 static u8 Sound_ProcessInput(u8 selection);
 static void Sound_DrawChoices(u8 selection, u8 y);
-static u8 FrameType_ProcessInput(u8 selection);
-static void FrameType_DrawChoices(u8 selection, u8 y);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection, u8 y);
 static u8 WalkSpeed_ProcessInput(u8 selection);
 static void WalkSpeed_DrawChoices(u8 selection, u8 y);
+static u8 Speedup_ProcessInput(u8 selection);
+static void Speedup_DrawChoices(u8 selection, u8 y);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -89,8 +90,6 @@ static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mantener");
 static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mono");
 static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Estéreo");
-static const u8 gText_FrameType[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Tipo");
-static const u8 gText_FrameTypeNumber[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
 static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
 static const u8 gText_ButtonTypeLR[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
@@ -98,6 +97,8 @@ static const u8 gText_WalkSpeedNormal[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_WalkSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Rápido");
 static const u8 gText_WalkSpeedFaster[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Muy rápido");
 static const u8 gText_WalkSpeedMax[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Máximo");
+static const u8 gText_SpeedupOff[]         = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Apagado");
+static const u8 gText_SpeedupX[]           = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}x");
 
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text.gbapal");
 // note: this is only used in the Japanese release
@@ -110,8 +111,8 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_BATTLESTYLE] = COMPOUND_STRING("Tipo combate"),
     [MENUITEM_SOUND]       = COMPOUND_STRING("Sonido"),
     [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("Controles"),
-    [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("Marco"),
     [MENUITEM_WALKSPEED]   = COMPOUND_STRING("Vel. caminar"),
+    [MENUITEM_SPEEDUP]     = COMPOUND_STRING("Speedup"),
     [MENUITEM_CANCEL]      = COMPOUND_STRING("Salir"),
 };
 
@@ -223,12 +224,12 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 3:
-        LoadBgTiles(1, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, 0x1A2);
+        LoadBgTiles(1, GetWindowFrameTilesPal(0)->tiles, 0x120, 0x1A2);
         gMain.state++;
         break;
     case 4:
         LoadPalette(sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
-        LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        LoadPalette(GetWindowFrameTilesPal(0)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         gMain.state++;
         break;
     case 5:
@@ -265,8 +266,8 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
-        gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
         gTasks[taskId].tWalkSpeed = gSaveBlock2Ptr->optionsWalkSpeed;
+        gTasks[taskId].tSpeedup = gSaveBlock2Ptr->optionsSpeedup;
 
         for (i = 0; i < OPTIONS_ON_SCREEN && i < MENUITEM_COUNT; i++)
             DrawItemChoices(taskId, i, i * Y_DIFF);
@@ -395,17 +396,17 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tButtonMode)
                 ButtonMode_DrawChoices(gTasks[taskId].tButtonMode, y);
             break;
-        case MENUITEM_FRAMETYPE:
-            previousOption = gTasks[taskId].tWindowFrameType;
-            gTasks[taskId].tWindowFrameType = FrameType_ProcessInput(gTasks[taskId].tWindowFrameType);
-            if (previousOption != gTasks[taskId].tWindowFrameType)
-                FrameType_DrawChoices(gTasks[taskId].tWindowFrameType, y);
-            break;
         case MENUITEM_WALKSPEED:
             previousOption = gTasks[taskId].tWalkSpeed;
             gTasks[taskId].tWalkSpeed = WalkSpeed_ProcessInput(gTasks[taskId].tWalkSpeed);
             if (previousOption != gTasks[taskId].tWalkSpeed)
                 WalkSpeed_DrawChoices(gTasks[taskId].tWalkSpeed, y);
+            break;
+        case MENUITEM_SPEEDUP:
+            previousOption = gTasks[taskId].tSpeedup;
+            gTasks[taskId].tSpeedup = Speedup_ProcessInput(gTasks[taskId].tSpeedup);
+            if (previousOption != gTasks[taskId].tSpeedup)
+                Speedup_DrawChoices(gTasks[taskId].tSpeedup, y);
             break;
         default:
             return;
@@ -426,8 +427,8 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsBattleStyle = gTasks[taskId].tBattleStyle;
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
-    gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsWalkSpeed = gTasks[taskId].tWalkSpeed;
+    gSaveBlock2Ptr->optionsSpeedup = gTasks[taskId].tSpeedup;
 
     if (sScrollArrowsTaskId != TASK_NONE)
     {
@@ -580,66 +581,6 @@ static void Sound_DrawChoices(u8 selection, u8 y)
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1]);
 }
 
-static u8 FrameType_ProcessInput(u8 selection)
-{
-    if (JOY_NEW(DPAD_RIGHT))
-    {
-        if (selection < WINDOW_FRAMES_COUNT - 1)
-            selection++;
-        else
-            selection = 0;
-
-        LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
-        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
-        sArrowPressed = TRUE;
-    }
-    if (JOY_NEW(DPAD_LEFT))
-    {
-        if (selection != 0)
-            selection--;
-        else
-            selection = WINDOW_FRAMES_COUNT - 1;
-
-        LoadBgTiles(1, GetWindowFrameTilesPal(selection)->tiles, 0x120, 0x1A2);
-        LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
-        sArrowPressed = TRUE;
-    }
-    return selection;
-}
-
-static void FrameType_DrawChoices(u8 selection, u8 y)
-{
-    u8 text[16] = {EOS};
-    u8 n = selection + 1;
-    u16 i;
-    u32 width;
-
-    for (i = 0; gText_FrameTypeNumber[i] != EOS && i <= 5; i++)
-        text[i] = gText_FrameTypeNumber[i];
-
-    // Convert a number to decimal string
-    if (n / 10 != 0)
-    {
-        text[i] = n / 10 + CHAR_0;
-        i++;
-        text[i] = n % 10 + CHAR_0;
-        i++;
-    }
-    else
-    {
-        text[i] = n % 10 + CHAR_0;
-        i++;
-        text[i] = CHAR_SPACER;
-        i++;
-    }
-
-    text[i] = EOS;
-
-    width = GetStringWidth(1, gText_FrameType, 0);
-    DrawOptionMenuChoice(gText_FrameType, 88, y, 0);
-    DrawOptionMenuChoice(text, width + 91, y, 1);
-}
-
 static u8 ButtonMode_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
@@ -722,6 +663,64 @@ static void WalkSpeed_DrawChoices(u8 selection, u8 y)
     DrawOptionMenuChoice(sWalkSpeedStrings[selection], 88, y, 1);
 }
 
+static u8 Speedup_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (selection < MAX_SPEEDUP)
+            selection++;
+        else
+            selection = 0;
+
+        sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection > 0)
+            selection--;
+        else
+            selection = MAX_SPEEDUP;
+
+        sArrowPressed = TRUE;
+    }
+    return selection;
+}
+
+static void Speedup_DrawChoices(u8 selection, u8 y)
+{
+    u8 text[16] = {EOS};
+    u16 i;
+
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 88, y, 110, Y_DIFF);
+
+    if (selection == 0)
+    {
+        DrawOptionMenuChoice(gText_SpeedupOff, 88, y, 1);
+    }
+    else
+    {
+        u8 displayNum = selection + 1;  // 1->2x, 2->3x, ..., 10->11x
+        for (i = 0; gText_SpeedupX[i] != EOS && i < 4; i++)
+            text[i] = gText_SpeedupX[i];
+        text[i] = CHAR_SPACER;
+        i++;
+        if (displayNum >= 10)
+        {
+            text[i] = (displayNum / 10) + CHAR_0;
+            i++;
+            text[i] = (displayNum % 10) + CHAR_0;
+            i++;
+        }
+        else
+        {
+            text[i] = displayNum + CHAR_0;
+            i++;
+        }
+        text[i] = EOS;
+        DrawOptionMenuChoice(text, 88, y, 1);
+    }
+}
+
 static void DrawItemLabel(u8 menuItem, u8 y)
 {
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[menuItem], 8, y + 1, TEXT_SKIP_DRAW, NULL);
@@ -746,11 +745,11 @@ static void DrawItemChoices(u8 taskId, u8 menuItem, u8 y)
     case MENUITEM_BUTTONMODE:
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode, y);
         break;
-    case MENUITEM_FRAMETYPE:
-        FrameType_DrawChoices(gTasks[taskId].tWindowFrameType, y);
-        break;
     case MENUITEM_WALKSPEED:
         WalkSpeed_DrawChoices(gTasks[taskId].tWalkSpeed, y);
+        break;
+    case MENUITEM_SPEEDUP:
+        Speedup_DrawChoices(gTasks[taskId].tSpeedup, y);
         break;
     }
 }

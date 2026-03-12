@@ -71,6 +71,7 @@
 #include "follower_npc.h"
 #include "load_save.h"
 #include "test/test_runner_battle.h"
+#include "speedup.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -4386,6 +4387,9 @@ static void Cmd_tryfaintmon(void)
         if (!(gAbsentBattlerFlags & (1u << battler))
          && !IsBattlerAlive(battler))
         {
+            if (battler == 1)
+                StopSpeedup();
+
             gBattlerFainted = battler;
             gHitMarker |= HITMARKER_FAINTED(battler);
             BattleScriptPush(cmd->nextInstr);
@@ -5096,9 +5100,15 @@ static void Cmd_checkteamslost(void)
         return;
 
     if (NoAliveMonsForPlayer())
+    {
+        StopSpeedup();
         gBattleOutcome |= B_OUTCOME_LOST;
+    }
     if (NoAliveMonsForOpponent())
+    {
+        StopSpeedup();
         gBattleOutcome |= B_OUTCOME_WON;
+    }
 
     // Fair switching - everyone has to switch in most at the same time, without knowing which pokemon the other trainer selected.
     // In vanilla Emerald this was only used for link battles, in expansion it's also used for regular trainer battles.
