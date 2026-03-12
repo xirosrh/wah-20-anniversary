@@ -88,8 +88,69 @@ Pic: Omega
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Cookie (Kingler)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Crabhammer
+- Ice Hammer
+- Earthquake
+- Liquidation
+
+Cacturne
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Seed Bomb
+- Drain Punch
+- Night Slash
+- Thunder Punch
+
+Porygon Z
+Ability: Download
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Magmortar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Flamethrower
+- Psychic
+- Thunderbolt
+- Earth Power
+
+Articuno
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Mind Reader
+- Sheer Cold
+- Hurricane
+- Blizzard
+
+Hawlucha @ Hawluchanite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+=== TRAINER_WAH_ADMIN_OMEGA_MAIN ===
+Name: Omega
+Class: WAH Admin
+Pic: Omega
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Cookie (Kingler) @ Leftovers
 EVs: 252Atk / 252 Spe / 4 HP
@@ -124,14 +185,6 @@ Modest Nature
 - Thunderbolt
 - Earth Power
 
-Hawlucha @ Hawluchanite
-EVs: 252 Atk / 252 Spe / 4 HP
-Jolly Nature
-- Hone Claws
-- Roost
-- Drain Punch
-- Flying Press
-
 Articuno @ Leftovers
 EVs: 252 SpA / 252 SpD / 4 Def
 Timid Nature
@@ -140,6 +193,73 @@ Timid Nature
 - Hurricane
 - Blizzard
 
+Hawlucha @ Hawluchanite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+=== TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
+Name: Omega
+Class: WAH Admin
+Pic: Omega
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Hawlucha @ Hawluchanite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+Gyarados
+Ability: Intimidate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Ice Fang
+
+Onix @ Eviolite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Dragon Dance
+- Curse
+- Earthquake
+- Rock Slide
+
+Electivire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Fire Punch
+- Drain Punch
+
+Mamoswine
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Ice Shard
+- Earthquake
+- Stone Edge
+- Iron Head
+
+Articuno Galar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Freezing Glare
+- Hurricane
+- Recover
+- Calm Mind
 
 === TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
 Name: Omega
@@ -150,6 +270,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Hawlucha @ Hawluchanite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -207,8 +328,69 @@ Pic: Goce
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Yellow
+Difficulty: Easy
+
+Tyrantrum
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Rock Smash
+- Dragon Claw
+- Earthquake
+- Fire Fang
+
+Cradily
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Giga drain
+- Energy Ball
+- Earth Power
+- Ancient Power
+
+Kabutops
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Leech Life
+- Metal Claw
+
+Arctozolt
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Arcanine Hisui
+Ability: Rock Head
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Aerodactyl @ Aerodactylite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Rock Slide
+- Aerial Ace
+- Dragon Claw
+- Hone Claws
+
+=== TRAINER_WAH_ADMIN_GOCE_MAIN ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Yellow
+Difficulty: Normal
 
 Aerodactyl @ Aerodactylite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -266,8 +448,68 @@ Pic: Goce
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Easy
+
+Necrozma Dusk Mane
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Zapdos
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+
+Lugia
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Moltres Galar
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dark Pulse
+- Hurricane
+- Burning Jealousy
+- Fiery Wrath
+
+=== TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
+Difficulty: Normal
 
 Necrozma Dusk Mane @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
