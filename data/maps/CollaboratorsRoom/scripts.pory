@@ -919,15 +919,24 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle {
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
-    msgbox(format("Regresaste…\nEso ya dice algo.\pEn WAH aprendimos que rendirse no es una opción.\pCada error es una versión nueva… cada derrota es un parche.\pY cada parche nos hizo mejores.\n¿Otro combate?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Regresaste…\nEso ya dice algo.\pEn WAH aprendimos que rendirse no es una opción.\pCada error es una versión nueva… cada derrota es un parche.\pY cada parche nos hizo mejores."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    setspeaker(SP_NAME_ALEXMAD)
+    message(format("¿Otro combate?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
-    if(var(VAR_RESULT) == YES) {
-        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        return
-    } else {
-        msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-        goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            return
+        case 1:
+            call(CollaboratorsRoom_EventScript_Alexmad_LongIntro)
+            goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+        case 2:
+            msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
     }
 }
 
