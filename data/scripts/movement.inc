@@ -422,6 +422,17 @@ Common_Movement_AnnoyedWithDelay48:
         delay_16
         step_end
 
+Common_Movement_MusicNote:
+        emote_music_note
+        step_end
+
+Common_Movement_MusicNoteWithDelay48:
+        emote_music_note
+        delay_16
+        delay_16
+        delay_16
+        step_end
+
 Common_Movement_Wink:
         emote_wink
         step_end

@@ -722,7 +722,7 @@ static void Task_ExitWithoutSelection(u8 taskId)
         ClearMonSprites(FALSE, TRUE);
         RemoveExitConfirmWindow();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        SetMainCallback2(gMain.savedCallback);
         DestroyTask(taskId);
     }
 }
@@ -856,7 +856,7 @@ static void Task_FadeOut(u8 taskId)
         ClearMonSprites(FALSE, TRUE);
         RemoveWindowMsgWantThisTeam();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        SetMainCallback2(gMain.savedCallback);
         DestroyTask(taskId);
     }
 }
@@ -1082,7 +1082,8 @@ void CB2_InitTeamSelectorSetUp(void)
         LoadBgs();
         InitWindowTeamSelector();
         // LoadMessageBoxAndBorderGfx();
-        FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4); 
+        if (teamSelectorObj.fromField)
+            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
         gMain.state++;
         break;
     case 3:
@@ -1116,7 +1117,7 @@ void CB2_InitTeamSelectorSetUp(void)
     }
 }
 
-bool8 StartTeamSelector_CB2(void)
+void StartTeamSelector_CB2(void)
 {
     if (!gPaletteFade.active)
     {
@@ -1125,11 +1126,7 @@ bool8 StartTeamSelector_CB2(void)
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(CB2_InitTeamSelectorSetUp);
-
-        return TRUE;
     }
-
-    return FALSE;
 }
 
 void StartTeamSelectorFromField_CB2(void)
@@ -1138,5 +1135,6 @@ void StartTeamSelectorFromField_CB2(void)
     teamSelectorObj.fromField = TRUE;
     CleanupOverworldWindowsAndTilemaps();
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     SetMainCallback2(CB2_InitTeamSelectorSetUp);
 }

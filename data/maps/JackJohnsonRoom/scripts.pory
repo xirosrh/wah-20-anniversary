@@ -340,7 +340,6 @@ script JackJohnsonRoom_OnFrame {
     call(JackJohnsonRoom_EventScript_TurnOnLights)
     delay(20)
     msgbox(format("¡Empecemos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
-    playbgm(MUS_CONTEST_LOBBY, FALSE)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection)
@@ -537,7 +536,6 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48)
     msgbox(format("¡Alto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     waitmovement(0)
-    playbgm(MUS_DUMMY, FALSE)
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp6)
     waitmovement(0)
@@ -555,6 +553,8 @@ script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_JACKROOM_JACK, DIR_SOUTH)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
+    waitse
+    playbgm(MUS_WI_TRAINER_BATTLE, FALSE)
     msgbox(format("¿Y tú? ¿Qué haces ahí parado?"), MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_CAMERA, moves(walk_down * 4))
     applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 3, delay_16))
@@ -562,7 +562,7 @@ script JackJohnsonRoom_OnFrame {
     msgbox(format("¡Ven aquí inmediatamente!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(RemoveCameraObject)
-    msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK, moves(emote_versus))
     waitmovement(0)
@@ -729,5 +729,10 @@ script JackJohnsonRoom_EventScript_NPC3 {
 
 script JackJohnsonRoom_EventScript_NPC4 {
     msgbox(format("¡Quiero ir a dormir!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script JackJohnsonRoom_EventScript_BrockPoster {
+    msgbox(format("Es un poster con una foto de Oscar Brock.\p¿Realmente tiene esos músculos o será Photoshop?"), MSGBOX_SIGN)
     end
 }

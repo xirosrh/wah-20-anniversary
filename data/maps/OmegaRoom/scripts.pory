@@ -184,3 +184,8 @@ script OmegaRoom_EventScript_OmegaBattle {
 text OmegaRoom_Text_OmegaDefeated {
     format("¡Qué nivel has demostrado! No esperaba un combate tan entretenido.")
 }
+
+script OmegaRoom_EventScript_Omega {
+    msgbox(format("¿Qué estás esperando? Ve a demostrar a esos viejos que no me has ganado por casualidad."), MSGBOX_NPC, speaker = SP_NAME_OMEGA)
+    end
+}

@@ -30,6 +30,7 @@
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
 #include "team_selector.h"
+#include "intro_cope.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -76,8 +77,11 @@
 #include "battle_message.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "achievements.h"
+#include "constants/achievements.h"
 #include "constants/characters.h"
 #include "constants/pokemon.h"
+#include "constants/vars.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -1295,7 +1299,7 @@ void SpawnCameraObject(void)
                                                   LOCALID_CAMERA,
                                                   gSaveBlock1Ptr->pos.x + MAP_OFFSET,
                                                   gSaveBlock1Ptr->pos.y + MAP_OFFSET,
-                                                  3); // elevation
+                                                  ELEVATION_DEFAULT);
     gObjectEvents[obj].invisible = TRUE;
     CameraObjectSetFollowedSpriteId(gObjectEvents[obj].spriteId);
 }
@@ -1433,6 +1437,30 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
         return TRUE;
 
     return FALSE;
+}
+
+u16 Special_CheckAndCompleteAchievement(void)
+{
+    u8 index = (u8)VarGet(VAR_0x8004);
+    if (index >= Achievement_GetCount())
+        return 0;
+    return (u16)Achievement_CheckAndMarkComplete(index);
+}
+
+void Special_BufferAchievementTitle(void)
+{
+    u8 id = (u8)VarGet(VAR_0x8004);
+    const u8 *title;
+    if (id >= Achievement_GetCount())
+    {
+        gStringVar1[0] = EOS;
+        return;
+    }
+    title = Achievement_GetTitle(id);
+    if (title != NULL)
+        StringCopy(gStringVar1, title);
+    else
+        gStringVar1[0] = EOS;
 }
 
 u8 TryUpdateRusturfTunnelState(void)
@@ -4363,11 +4391,22 @@ void EnterCode(void)
 
 void GetCodeFeedback(void)
 {
-    static const u8 sText_SampleCode[] = _("SampleCode");
+    static const u8 sText_SampleCode[] = _("Sm3");
     if (!StringCompare(gStringVar2, sText_SampleCode))
         gSpecialVar_Result = 1;
     else
         gSpecialVar_Result = 0;
+}
+
+void InitAlexmadPuzzlePartyOrderCheck(void)
+{
+    u32 leadPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+    u32 sixthPersonality = GetMonData(&gPlayerParty[5], MON_DATA_PERSONALITY);
+
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_LO, leadPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_HI, leadPersonality >> 16);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO, sixthPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI, sixthPersonality >> 16);
 }
 
 void SetHiddenNature(void)
@@ -4417,6 +4456,11 @@ void ShouldUseAlternativeTeam(void)
 void OpenTeamSelectorFromField(void)
 {
     StartTeamSelectorFromField_CB2();
+}
+
+void OpenDifficultySelectorFromField(void)
+{
+    StartDifficultySelectorFromField_CB2();
 }
 
 void BufferSpeciesDexDescription(void)

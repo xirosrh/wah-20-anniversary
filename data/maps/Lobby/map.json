@@ -2,7 +2,7 @@
   "id": "MAP_LOBBY",
   "name": "Lobby",
   "layout": "LAYOUT_LOBBY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_POKEATHLON_LOBBY",
   "region_map_section": "MAPSEC_LOBBY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -68,7 +68,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "graphics_id": "OBJ_EVENT_GFX_ROXAS",
       "x": 3,
       "y": 9,
       "elevation": 0,
@@ -92,6 +92,32 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Lobby_EventScript_FakemonDexMenu",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Lobby_EventScript_TrainerCardGirl",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Lobby_EventScript_DifficultySelector",
       "flag": "0"
     }
   ],

@@ -4174,10 +4174,10 @@
     {
       "id": "LAYOUT_DAV_ZERO_ROOM",
       "name": "DavZeroRoom_Layout",
-      "width": 19,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_zero",
       "border_filepath": "data/layouts/DavZeroRoom/border.bin",
       "blockdata_filepath": "data/layouts/DavZeroRoom/map.bin"
     },
@@ -4217,7 +4217,7 @@
       "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_EliteFour",
+      "secondary_tileset": "gTileset_room_sayerblax",
       "border_filepath": "data/layouts/SayerBlaxRoom/border.bin",
       "blockdata_filepath": "data/layouts/SayerBlaxRoom/map.bin"
     },
@@ -4266,8 +4266,8 @@
       "name": "EingRoom_Layout",
       "width": 13,
       "height": 14,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_EliteFour",
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_room_eing",
       "border_filepath": "data/layouts/EingRoom/border.bin",
       "blockdata_filepath": "data/layouts/EingRoom/map.bin"
     },
@@ -4325,7 +4325,7 @@
       "id": "LAYOUT_COLLABORATORS_ROOM",
       "name": "CollaboratorsRoom_Layout",
       "width": 13,
-      "height": 14,
+      "height": 16,
       "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_room_omega",
       "border_filepath": "data/layouts/CollaboratorsRoom/border.bin",

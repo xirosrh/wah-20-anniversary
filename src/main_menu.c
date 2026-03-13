@@ -547,7 +547,7 @@ enum
 };
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
-#define BIRCH_DLG_BASE_TILE_NUM 0xFC
+#define BIRCH_DLG_BASE_TILE_NUM 696
 
 void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
 {

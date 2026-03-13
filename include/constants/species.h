@@ -1697,14 +1697,17 @@
 #define SPECIES_AYEWIRAZ                                1578
 #define SPECIES_ELECTRODES                              1579
 #define SPECIES_EING                                    1580
+#define SPECIES_DESCOMUNE                               1581
+#define SPECIES_JARDINO                                 1582
+#define SPECIES_OCEADINO                                1583
+#define SPECIES_TYRADINO                                1584
 
-//Placeholders
-#define SPECIES_FAKEMON9                                1581
-#define SPECIES_FAKEMON10                               1582
-#define SPECIES_FAKEMON11                               1583
-#define SPECIES_FAKEMON12                               1584
+// BOO
+#define SPECIES_MOLIKAI                                 1585
+#define SPECIES_MICAEL                                  1586
+#define SPECIES_DIRAEI                                  1587
 
-#define SPECIES_EGG                                     (SPECIES_FAKEMON12 + 1)
+#define SPECIES_EGG                                     (SPECIES_DIRAEI + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

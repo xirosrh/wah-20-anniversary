@@ -8,6 +8,17 @@ mapscripts SayerBlaxRoom_MapScripts {
         VAR_TEMP_8, 0: SayerBlaxRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: SayerBlaxRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION: SayerBlaxRoom_OnTransition
+}
+
+
+script SayerBlaxRoom_OnTransition {
+    if(var(VAR_TEMP_0_SAYER_BLAX_ROOM_STATE) == 1) {
+        setobjectmovementtype(LOCALID_SAYERBLAXROOM_SAYER, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectxy(LOCALID_SAYERBLAXROOM_SAYER, 5, 10)
+        setobjectxyperm(LOCALID_SAYERBLAXROOM_SAYER, 5, 10)
+    }
+    end
 }
 
 script SayerBlaxRoom_OnLoad {
@@ -27,14 +38,16 @@ script SayerBlaxRoom_OnFrame {
     special(SpawnCameraObject)
     directcameramovementtopos(6,5)
     waitmovement(0)
-    delay(200)
+    delay(50)
+    playse(SE_M_SNORE)
+    delay(150)
     setobjectmovementtype2(LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_FACE_DOWN)
     turnobject(LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH)
     delay(30)
-    msgbox(format("Fuaaah, ¡qué cansancio! Con lo que me hacía falta descansar…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Fuaaah, ¡qué cansancio! Con lo que me hacía falta descansar…"), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkLeft)
     waitmovement(0)
-    msgbox(format("¿Ya es el día del aniversario?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¿Ya es el día del aniversario?"), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         walk_left
         walk_down
@@ -42,16 +55,22 @@ script SayerBlaxRoom_OnFrame {
         face_down
         delay_16))
     playse(SE_PIN)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(emote_question_mark))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
-        emote_question_mark
-        jump_in_place_down * 2
+        jump_in_place_down
         delay_16
     ))
-    msgbox(format("¿Tú quién eres?"), MSGBOX_AUTOCLOSE)
-    applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown4)
+    msgbox(format("¿Tú quién eres?"), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
+    applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown3)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown5)
     waitmovement(LOCALID_CAMERA)
-    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE)
+    special(RemoveCameraObject)
+    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     delay(20)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         face_up
@@ -61,50 +80,64 @@ script SayerBlaxRoom_OnFrame {
         face_left
         delay_16
     ))
-    msgbox(format("¿Y ahora dónde se ha metido Sayer…? Se supone nos tocaba combatir a los dos."), MSGBOX_AUTOCLOSE)
-    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(
-        jump_2_right * 2
-        jump_right
-    ))
+    msgbox(format("¿Y ahora dónde se ha metido Sayer…? Se supone nos tocaba combatir a los dos."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_JumpDown)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(jump_2_left))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(jump_2_down))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(jump_right))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_JumpDown)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(jump_right))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, moves(jump_2_right))
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Welcome to the jungle!"))
-    special(RemoveCameraObject)
+    msgbox(format("Welcome to the jungle!"), MSGBOX_DEFAULT, speaker = SP_NAME_SAYER)
     turnobject(LOCALID_SAYERBLAXROOM_BLAX, DIR_SOUTH)
     playse(SE_PIN)
     applymovement(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_VersusWithDelay48)
     applymovement(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_VersusWithDelay48)
     waitmovement(0)
     call(SayerBlaxRoom_EventScript_SayerBlaxBattle)
+    playse(SE_LEDGE)
     applymovement(LOCALID_SAYERBLAXROOM_SAYER, moves(
-        emote_x
         lock_facing_direction
         jump_2_left
         unlock_facing_direction
     ))
     applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(
-        emote_x
         lock_facing_direction
         jump_2_up
         unlock_facing_direction
     ))
     waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_SAYERBLAXROOM_SAYER, moves(emote_x))
+    applymovement(LOCALID_SAYERBLAXROOM_BLAX, moves(emote_x))
+    waitmovement(0)
     delay(20)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_WalkDown2)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
-    msgbox(format("Ha sido un combate espectacular. Confirmamos que estoy más oxidado de lo que pensaba."), MSGBOX_DEFAULT)
+    msgbox(format("Ha sido un combate espectacular. Confirmamos que estoy más oxidado de lo que pensaba."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("Todavía te quedan muchos combates por delante, pero aprovecha cada uno de ellos para celebrar estos 20 años del mejor foro de ROM Hacking y fangaming de Pokémon del mundo.\pDicho esto… Me vuelvo a dormir. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Todavía te quedan muchos combates por delante, pero aprovecha cada uno de ellos para celebrar estos 20 años del mejor foro de ROM Hacking y fangaming de Pokémon del mundo.\pDicho esto… Me vuelvo a dormir. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
-        walk_up * 5
+        walk_up * 4
         walk_right * 3
         face_down
     ))
     setobjectmovementtype2(LOCALID_SAYERBLAXROOM_BLAX, MOVEMENT_TYPE_SLEEPING)
     applymovementandwait(LOCALID_SAYERBLAXROOM_SAYER, Common_Movement_WalkRight2)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Y recuerda: No la líes y si puedes, pues si."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Y recuerda: No la líes y si puedes, pues si."), MSGBOX_AUTOCLOSE, SP_NAME_SAYER)
     setvar(VAR_TEMP_0_SAYER_BLAX_ROOM_STATE, 1)
+    setobjectxyperm(LOCALID_SAYERBLAXROOM_SAYER, 5, 10)
+    setobjectmovementtype2(LOCALID_SAYERBLAXROOM_SAYER, MOVEMENT_TYPE_FACE_RIGHT)
     call(WahRoomsShared_OpenDoor)
     setflag(FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX)
     release
@@ -113,12 +146,12 @@ script SayerBlaxRoom_OnFrame {
 }
 
 script SayerBlaxRoom_EventScript_Blax {
-    msgbox(format("Zzz… ¡Ve, BLAxTOISE!\pZzz…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Zzz… ¡Ve, BLAxTOISE!\pZzz…"), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     end
 }
 
 script SayerBlaxRoom_EventScript_Sayer {
-    msgbox(format("No me puedo quejar la verdad, quedé bastante contento con la batalla.\pAvanza, fiera."), MSGBOX_AUTOCLOSE)
+    msgbox(format("No me puedo quejar la verdad, quedé bastante contento con la batalla.\pAvanza, fiera."), MSGBOX_NPC, SP_NAME_SAYER)
     end
 }
 

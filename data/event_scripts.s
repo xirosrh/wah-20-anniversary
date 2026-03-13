@@ -68,6 +68,7 @@
 #include "constants/new_shop.h"
 #include "constants/speaker_names.h"
 #include "constants/wah_team_indexes.h"
+#include "constants/achievements.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1233,6 +1234,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wah_rooms_shared.inc"
+	.include "data/scripts/achievements.inc"
 
 
 	.include "data/maps/CheveRoom/scripts.inc"

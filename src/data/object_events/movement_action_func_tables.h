@@ -106,6 +106,14 @@ u8 MovementAction_WalkFasterLeft_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterLeft_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxDown_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxDown_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxUp_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxUp_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxLeft_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxLeft_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxRight_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_WalkMaxRight_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideDown_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideUp_Step0(struct ObjectEvent *, struct Sprite *);
@@ -360,6 +368,10 @@ u8 (*const gMovementActionFuncs_WalkFasterDown[])(struct ObjectEvent *, struct S
 u8 (*const gMovementActionFuncs_WalkFasterUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFasterLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFasterRight[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_WalkMaxDown[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_WalkMaxUp[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_WalkMaxLeft[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_WalkMaxRight[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SlideDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SlideUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SlideLeft[])(struct ObjectEvent *, struct Sprite *);
@@ -482,6 +494,7 @@ u8 (*const gMovementActionFuncs_EmoteVersus[])(struct ObjectEvent *, struct Spri
 u8 (*const gMovementActionFuncs_EmoteSleeping[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteMusicNote[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteWink[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSad[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteSmile[])(struct ObjectEvent *, struct Sprite *);
@@ -683,6 +696,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_VERSUS] = gMovementActionFuncs_EmoteVersus,
     [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,
     [MOVEMENT_ACTION_EMOTE_ANNOYED] = gMovementActionFuncs_EmoteAnnoyed,
+    [MOVEMENT_ACTION_EMOTE_MUSIC_NOTE] = gMovementActionFuncs_EmoteMusicNote,
     [MOVEMENT_ACTION_EMOTE_WINK] = gMovementActionFuncs_EmoteWink,
     [MOVEMENT_ACTION_EMOTE_SAD] = gMovementActionFuncs_EmoteSad,
     [MOVEMENT_ACTION_EMOTE_SLEEPING] = gMovementActionFuncs_EmoteSleeping,
@@ -713,7 +727,10 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT] = gMovementActionFuncs_WalkFastDiagonalDownLeft,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT] = gMovementActionFuncs_WalkFastDiagonalDownRight,
-
+    [MOVEMENT_ACTION_WALK_MAX_DOWN] = gMovementActionFuncs_WalkMaxDown,
+    [MOVEMENT_ACTION_WALK_MAX_UP] = gMovementActionFuncs_WalkMaxUp,
+    [MOVEMENT_ACTION_WALK_MAX_LEFT] = gMovementActionFuncs_WalkMaxLeft,
+    [MOVEMENT_ACTION_WALK_MAX_RIGHT] = gMovementActionFuncs_WalkMaxRight,
 };
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *) = {
@@ -742,6 +759,7 @@ static u8 (*const sDirectionAnimFuncsBySpeed[])(u8) = {
     [MOVE_SPEED_FAST_2] = GetMoveDirectionFastAnimNum,
     [MOVE_SPEED_FASTER] = GetMoveDirectionFasterAnimNum,
     [MOVE_SPEED_FASTEST] = GetMoveDirectionFastestAnimNum,
+    [MOVE_SPEED_MAX] = GetMoveDirectionFastestAnimNum,
 };
 
 u8 (*const gMovementActionFuncs_WalkSlowDiagonalUpLeft[])(struct ObjectEvent *, struct Sprite *) = {
@@ -1104,6 +1122,30 @@ u8 (*const gMovementActionFuncs_WalkFasterLeft[])(struct ObjectEvent *, struct S
 u8 (*const gMovementActionFuncs_WalkFasterRight[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_WalkFasterRight_Step0,
     MovementAction_WalkFasterRight_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_WalkMaxDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_WalkMaxDown_Step0,
+    MovementAction_WalkMaxDown_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_WalkMaxUp[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_WalkMaxUp_Step0,
+    MovementAction_WalkMaxUp_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_WalkMaxLeft[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_WalkMaxLeft_Step0,
+    MovementAction_WalkMaxLeft_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_WalkMaxRight[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_WalkMaxRight_Step0,
+    MovementAction_WalkMaxRight_Step1,
     MovementAction_PauseSpriteAnim,
 };
 
@@ -1709,6 +1751,11 @@ u8 (*const gMovementActionFuncs_EmoteHappy[])(struct ObjectEvent *, struct Sprit
 
 u8 (*const gMovementActionFuncs_EmoteAnnoyed[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_EmoteAnnoyed_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteMusicNote[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteMusicNote_Step0,
     MovementAction_Finish,
 };
 

@@ -337,6 +337,12 @@ OmegaRoom_EventScript_OmegaBattle_5:
 	goto OmegaRoom_EventScript_OmegaBattle_1
 
 
+OmegaRoom_EventScript_Omega::
+# 189 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_Omega_Text_0, MSGBOX_NPC, speaker = SP_NAME_OMEGA
+	end
+
+
 # 47 "data/maps/OmegaRoom/scripts.pory"
 OmegaRoom_EventScript_StartChallenge_Movement_0:
 # 47 "data/maps/OmegaRoom/scripts.pory"
@@ -485,6 +491,12 @@ OmegaRoom_EventScript_StartChallenge_Text_10:
 # 131 "data/maps/OmegaRoom/scripts.pory"
 	.string "Ahora avanza, y demuestra que estas\n"
 	.string "aquí para lograr grandes cosas.$"
+
+OmegaRoom_EventScript_Omega_Text_0:
+# 189 "data/maps/OmegaRoom/scripts.pory"
+	.string "¿Qué estás esperando? Ve a demostrar a\n"
+	.string "esos viejos que no me has ganado por\l"
+	.string "casualidad.$"
 
 OmegaRoom_Text_OmegaDefeated::
 # 184 "data/maps/OmegaRoom/scripts.pory"

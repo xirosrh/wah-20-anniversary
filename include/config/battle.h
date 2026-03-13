@@ -98,6 +98,7 @@
 #define B_CRASH_IF_TARGET_IMMUNE    GEN_LATEST // En Gen4+, el usuario de Patada salto y Patada salto alta "seguirá adelante y chocará" si ataca a un objetivo que es inmune al movimiento.
 #define B_MEMENTO_FAIL              GEN_LATEST // En Gen4+, Memento falla si no hay objetivo o si el objetivo está protegido o detrás de un sustituto. Pero no si el Atk/Sp. Atk están en -6.
 #define B_PARTING_SHOT_SWITCH       GEN_LATEST // En Gen7+, el usuario no se retirar� si Desarme (Parting Shot) falla al bajar las estad�sticas del objetivo.
+#define B_BATON_PASS_TRAPPING       GEN_LATEST // In Gen5+, Baton Pass does not keep trapping effects on other battlers when the user switches out.
 #define B_GLARE_GHOST               GEN_LATEST // En Gen4+, Deslumbrar puede golpear a Pokémon de tipo Fantasma normalmente.
 #define B_SKILL_SWAP                GEN_LATEST // En Gen4+, Skill Swap activa las habilidades de entrada después de su uso.
 #define B_BRICK_BREAK               GEN_LATEST // En Gen4+, puedes destruir las pantallas de tu propio lado. En Gen 5+, las pantallas no se eliminan si el objetivo es inmune.
@@ -119,11 +120,16 @@
 #define B_TRANSFORM_FORM_CHANGES    GEN_LATEST // En Gen5+, los Pokémon transformados no pueden cambiar de forma.
 #define B_WIDE_GUARD                GEN_LATEST // Solo en Gen5, Vastaguardia tiene una posibilidad de fallar si se usa consecutivamente.
 #define B_QUICK_GUARD               GEN_LATEST // Solo en Gen5, Quick Guard tiene una posibilidad de fallar si se usa consecutivamente.
+#define B_TRANSFORM_SEMI_INV_FAIL   GEN_LATEST // In Gen2+, Transform fails if the target is semi-invulnerable.
+#define B_TRANSFORM_TARGET_FAIL     GEN_LATEST // In Gen2+, Transform fails if the target is already transformed.
+#define B_TRANSFORM_USER_FAIL       GEN_LATEST // In Gen5+, Transform fails if the user is already transformed.
+#define B_TRANSFORM_SUBSTITUTE_FAIL GEN_LATEST // In Gen5+, Transform fails if the target is behind a Substitute.
 #define B_IMPRISON                  GEN_LATEST // En Gen5+, Imprison no falla si los Pokémon opuestos no tienen ningún movimiento que el usuario conozca.
 #define B_ALLY_SWITCH_FAIL_CHANCE   GEN_LATEST // En Gen9, usar Ally Switch consecutivamente disminuye la probabilidad de éxito de cada uso consecutivo.
 #define B_SKETCH_BANS               GEN_LATEST // En Gen9+, Esquema no puede copiar más movimientos que en generaciones anteriores.
 #define B_KNOCK_OFF_REMOVAL         GEN_LATEST // En Gen5+, Desarme elimina el objeto del oponente en lugar de hacerlo inutilizable.
 #define B_HEAL_BELL_SOUNDPROOF      GEN_LATEST // En Gen5, Heal Bell afecta a todos los Pokémon con Soundproof. En Gen6-8 afecta a Pokémon inactivos, pero no a los que están en batalla. En Gen9 siempre afecta al usuario.
+#define B_TAUNT_ME_FIRST            GEN_LATEST // In Gen5+, Taunt does not block Me First.
 #define B_CHARGE                    GEN_LATEST // En Gen8-, estado Cargado se pierde sea cuál sea el tipo del siguiente movimiento.
 #define B_POWDER_RAIN               GEN_LATEST // En Gen7+, Polvo explosivo no daña al atacante si está lloviendo.
 #define B_AFTER_YOU_TURN_ORDER      GEN_LATEST // En Gen8+, Cede paso no falla si el orden del turno no cambiaría después de usarse.
@@ -233,7 +239,7 @@
 #define B_VAR_WILD_AI_FLAGS                 0       // Si no es 0, puedes usar esta variable para añadir a los flags de IA salvaje predeterminados. NO usable con las flags anteriores (1 << 15)
                                                     // Esta var no debería permanecer como un valor distinto de cero el tiempo suficiente para que el jugador guarde.
                                                     // Para controlar mejor la IA de los Pokémon salvajes, edita GetWildAiFlags() en src/battle_ai_main.c
-#define B_VAR_DIFFICULTY                    0       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
+#define B_VAR_DIFFICULTY                    VAR_DIFFICULTY       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
 
 // No bag settings
 #define NO_BAG_RESTRICTION       0
