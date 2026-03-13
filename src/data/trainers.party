@@ -2347,8 +2347,75 @@ Pic: Zero
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Benji (Braviary)
+Ability: Keen Eye
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Brave Bird
+- Close Combat
+- U-turn
+- Rock Slide
+
+Samus (Charizard) (F) @ Charizardite X
+Ability: Tough Claws
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Flare Blitz
+- Dragon Claw
+- Earthquake
+
+0 (Milotic) (M)
+Ability: Marvel Scale
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
+Iris (Xerneas)
+Ability: Fairy Aura
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Geomancy
+- Moonblast
+- Thunderbolt
+- Focus Blast
+
+Hydreigon (F)
+Ability: Levitate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Draco Meteor
+- Dark Pulse
+- Flamethrower
+- Earth Power
+
+Kingambit (M)
+Ability: Supreme Overlord
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Swords Dance
+- Iron Head
+- Kowtow Cleave
+- Sucker Punch
+
+=== TRAINER_WAH_ADMIN_DAVZERO_MAIN ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
@@ -2412,8 +2479,74 @@ Pic: Zero
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Zero (Zoroark) (M)
+Ability: Illusion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dark Pulse
+- Flamethrower
+- Focus Blast
+- U-turn
+
+Lea (Volcarona) (F)
+Ability: Flame Body
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+Darkus (Darkrai)
+Ability: Bad Dreams
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Nasty Plot
+- Dark Pulse
+- Hypnosis
+- Focus Blast
+
+Tyranitar (F) @ Tyranitarite
+Ability: Sand Stream
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Stone Edge
+- Earthquake
+
+Grimmsnarl
+Ability: Prankster
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Impish Nature
+- Light Screen
+- Reflect
+- Parting Shot
+- Taunt
+
+Tinkaton
+Ability: Mold Breaker
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Stealth Rock
+- Knock Off
+- Gigaton Hammer
+- Play Rough
+
+=== TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Zero (Zoroark) (M) @ Choice Scarf
 Ability: Illusion
@@ -2442,7 +2575,7 @@ Timid Nature
 - Hypnosis
 - Focus Blast
 
-Tyranitar-Mega (F) @ Tyranitarite
+Tyranitar (F) @ Tyranitarite
 Ability: Sand Stream
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
