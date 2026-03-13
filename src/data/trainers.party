@@ -2609,8 +2609,68 @@ Pic: Baro
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Pink
+Difficulty: Easy
+
+PlugOink
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Flamethrower
+- Charge Beam
+- Snarl
+- Thunderbolt
+
+Ayewiraz
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Play Rough
+- Crunch
+- Poison Tail
+- Psychic Fangs
+
+Gritespec
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Psychic
+- Moonblast
+- Shadow Ball
+- Energy Ball
+
+Freech
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Dragon Pulse
+- Ice Beam
+- Ice Shard
+- Recover
+
+Magiken
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
+
+=== TRAINER_WAH_ADMIN_BARO_MAIN ===
+Name: Baro
+Class: WAH Admin
+Pic: Baro
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
+Difficulty: Normal
 
 PlugOink @ Eviolite
 EVs: 252 SpA / 252 Spe / 4 HP
