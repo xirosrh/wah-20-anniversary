@@ -2859,6 +2859,74 @@ Modest Nature
 - Nasty Plot
 - Psychic
 
+=== TRAINER_WAH_ADMIN_REYBOO_MAIN ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Micael @ Lax Incense
+Ability: Prankster
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Voodoo
+- Astral Barrage
+- Double Team
+- Destiny Bond
+
+Illusion (Jirachi) @ Leftovers
+Ability: Serene Grace
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wish
+- Iron Head
+- Play Rough
+- U-Turn
+
+Nerium (Kyogre) @ Blue Orb
+Ability: Drizzle
+Shiny: Yes
+EVs: 252 SpA /252 HP / 4 Spe
+Modest Nature
+- Water Spout
+- Calm Mind
+- Origin Pulse
+- Ice Beam
+
+Ratio (Alakazam) @ Alakazite 
+Ability: Magic Guard
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Recover
+- Psychic
+- Focus Blast
+- Shadow Ball
+
+Memento (Darkrai) @ Life Orb
+Shiny: Yes
+Ability: Bad Dreams
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Nasty Plot
+- Psychic
+
+Diraei @ Chesto Berry
+Ability: Contrary
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psycho Boost
+- Rest
+- Draco Meteor
+- Hypnosis
+
 
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Rey Boo
@@ -2985,6 +3053,71 @@ Modest Nature
 - Ice Beam
 - Recover
 - Calm Mind
+
+
+=== TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Micael @ Lax Incense
+Ability: Prankster
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Voodoo
+- Astral Barrage
+- Double Team
+- Destiny Bond
+
+Kaktum (Venomoth) @ Bright Powder
+Shiny: Yes
+Ability: Wonder Skin
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Quiver Dance
+- Double Team
+- Bug Buzz
+- Baton Pass
+
+Radix (Venusaur) @ Venusaurite 
+Ability: Chlorophyll
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Giga Drain
+- Sleep Powder
+- Synthesis
+- Sludge Bomb
+
+Yanhua (Registeel) @ Leftovers
+Ability: Clear Body
+EVs: 252 HP / 252 Def / 4 SpD
+- Toxic
+- Protect
+- Seismic Toss
+- Explosion
+
+Memoriam (Mewtwo) /* //TODO Xiros @ Expert Bell */
+Ability: Pressure 
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psystrike
+- Ice Beam
+- Recover
+- Calm Mind
+
+Molikai @ Life Orb  /* //TODO Xiros  Ability: Acid Rain */ 
+EVs: 252 Atk / 252 Spe / 4 SpA
+Careful Nature
+- xQ4Zc0E
+- Teeter Dance
+- Cross Poison
+- Knock Off
 
 === TRAINER_WAH_ADMIN_COSARARA_MAIN ===
 Name: Cosarara
