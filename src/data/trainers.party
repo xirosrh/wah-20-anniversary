@@ -2806,6 +2806,8 @@ Difficulty: Normal
 
 Helix (Omastar) @ White Herb
 Ability: Weak Armor
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
 - Shell Smash
 - Hydro Pump
 - Ice Beam
@@ -2813,6 +2815,8 @@ Ability: Weak Armor
 
 Belong (Manaphy) @ Leftovers
 Ability: Hydration
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Tail Glow
 - Surf
 - Ice Beam
@@ -2820,6 +2824,8 @@ Ability: Hydration
 
 Ratio (Alakazam) @ Focus Sash
 Ability: Magic Guard
+EVs: 252 SpA / 252 HP / 4 Spe
+Calm Nature
 - Counter
 - Psychic
 - Focus Blast
@@ -2827,6 +2833,8 @@ Ability: Magic Guard
 
 Jinhua (Espeon) @ Bright Powder
 Ability: Magic Bounce
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
 - Psychic
 - Dazzling Gleam
 - Calm Mind
@@ -2834,6 +2842,8 @@ Ability: Magic Bounce
 
 M. (Banette) (M) @ Banettite
 Ability: Cursed Body
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
 - Sucker Punch
 - Double Team
 - Shadow Claw
@@ -2842,10 +2852,13 @@ Ability: Cursed Body
 Memento (Darkrai) @ Life Orb
 Ability: Bad Dreams
 Shiny: Yes
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
 - Hypnosis
 - Dark Pulse
 - Nasty Plot
 - Psychic
+
 
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Rey Boo
@@ -2920,6 +2933,8 @@ Difficulty: Normal
 
 M. (Banette) (M) @ Focus Sash
 Ability: Cursed Body
+EVs: 252 Spe / 252 HP / 4 Atk
+Jolly Nature
 - Spite
 - Sucker Punch
 - Snatch
@@ -2928,6 +2943,8 @@ Ability: Cursed Body
 Kaktum (Venomoth) @ Bright Powder
 Ability: Wonder Skin
 Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Quiver Dance
 - Double Team
 - Bug Buzz
@@ -2935,6 +2952,8 @@ Shiny: Yes
 
 Radix (Venusaur) @ Venusaurite
 Ability: Chlorophyll
+EVs: 252 SpA / 252 HP / 4 SpD
+Calm Nature
 - Petal Dance
 - Sleep Powder
 - Synthesis
@@ -2942,6 +2961,8 @@ Ability: Chlorophyll
 
 Emouvoir (Gardevoir) @ Fairy Feather
 Ability: Synchronize
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
 - Hypnosis
 - Psyshock
 - Moonblast
@@ -2949,6 +2970,8 @@ Ability: Synchronize
 
 Yanhua (Registeel) @ Leftovers
 Ability: Clear Body
+EVs: 252 HP / 252 Def / 4 SpD
+Brave Nature
 - Toxic
 - Protect
 - Seismic Toss
@@ -2956,6 +2979,8 @@ Ability: Clear Body
 
 Memoriam (Mewtwo) @ Life Orb
 Ability: Pressure
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
 - Psystrike
 - Ice Beam
 - Recover
