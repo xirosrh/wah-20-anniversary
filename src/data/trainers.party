@@ -2968,8 +2968,80 @@ Pic: Cosarara
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Easy
+
+Handy (Hariyama)
+Ability: Guts
+Tera Type: Fighting
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Fake Out
+- Low Kick
+- Dynamic Punch
+- Close Combat
+
+Brenda (Breloom) (F)
+Ability: Effect Spore
+Tera Type: Grass
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Body Slam
+- Drain Punch
+- Seed Bomb
+- Low Kick
+
+Galleta (Gallade) (M)
+Ability: Sharpness
+Tera Type: Psychic
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Sacred Sword
+- Drain Punch
+- Psycho Cut
+- Agility
+
+Lucas (Lucario) (M)
+Ability: Inner Focus
+Tera Type: Fighting
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hasty Nature
+- Bone Rush
+- Close Combat
+- Flash Cannon
+- Steel Beam
+
+Goshima (Poliwrath) (F)
+Ability: Water Absorb
+Tera Type: Water
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Brave Nature
+- Liquidation
+- Surf
+- Close Combat
+- Seismic Toss
+
+Nugget (Combusken) (M)
+Ability: Speed Boost
+Tera Type: Fire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mild Nature
+- Flamethrower
+- Overheat
+- Focus Blast
+- Fire Punch
+
+=== TRAINER_WAH_ADMIN_COSARARA_MAIN ===
+Name: Cosarara
+Class: WAH Admin
+Pic: Cosarara
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
+Difficulty: Normal
 
 Handy (Hariyama) @ Life Orb
 Ability: Guts
@@ -3038,18 +3110,80 @@ Pic: Cosarara
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Yellow
+Difficulty: Easy
 
-Medichamp (Medicham-Mega) (F) @ Medichamite
+Brenda (Breloom) (F)
+Ability: Technician
+Tera Type: Grass
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Spore
+- Mach Punch
+- Bullet Seed
+- Close Combat
+
+Medichamp (Medicham) (F) @ Medichamite
 Ability: Pure Power
 Tera Type: Fighting
-EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Fake Out
 - Close Combat
 - Zen Headbutt
 - Ice Punch
+
+Fairy King (Iron Valiant)
+Ability: Quark Drive
+Tera Type: Fairy
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Calm Mind
+- Moonblast
+- Aura Sphere
+- Psychic
+
+Lucas (Lucario) (M) @ Fightinium Z
+Ability: Justified
+Tera Type: Fighting
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Close Combat
+- Swords Dance
+- Extreme Speed
+- Meteor Mash
+
+Goshima (Poliwrath) (F)
+Ability: Water Absorb
+Tera Type: Water
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Close Combat
+- Liquidation
+- Earthquake
+- Knock Off
+
+Alitas (Blaziken) (M)
+Ability: Speed Boost
+Tera Type: Fire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Swords Dance
+- Close Combat
+- Blaze Kick
+- Earthquake
+
+=== TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE ===
+Name: Cosarara
+Class: WAH Admin
+Pic: Cosarara
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Normal
 
 Brenda (Breloom) (F) @ Loaded Dice
 Ability: Technician
@@ -3060,6 +3194,16 @@ Adamant Nature
 - Mach Punch
 - Bullet Seed
 - Close Combat
+
+Medichamp (Medicham) (F) @ Medichamite
+Ability: Pure Power
+Tera Type: Fighting
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Fake Out
+- Close Combat
+- Zen Headbutt
+- Ice Punch
 
 Fairy King (Iron Valiant) @ Booster Energy
 Ability: Quark Drive
