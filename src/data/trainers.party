@@ -3411,18 +3411,60 @@ Pic: Drive
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Serperior (M)
+Ability: Overgrow   
+Tera Type: Grass
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Leaf Storm
+- Dragon Pulse
+- Dragon Tail 
+- Synthesis 
+
+Milotic (F)
+Ability: Marvel Scale
+Tera Type: Water
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Haze
+- Scald
+- Recover
+- Ice Beam
+
+Zoroark (M)
+Ability: Illusion
+Tera Type: Dark
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sucker Punch
+- U-turn
+- Focus Blast
+- Taunt
+
+=== TRAINER_WAH_ADMIN_DRIVE_MAIN ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Serperior (M) @ Rocky Helmet
-Ability: Overgrow    /* //TODO Xiros:   Contrary en mayor dif  */
+Ability: Overgrow  
 Tera Type: Grass
 EVs: 252 SpA / 252 HP / 4 Atk
 Modest Nature
 - Leaf Storm
 - Dragon Pulse
-- Dragon Tail  /* //TODO Xiros:  Energy Ball en modo dificil */
-- Synthesis  /* //TODO Xiros:  Giga Drain en modo dificil */
+- Dragon Tail
+- Synthesis 
 
 Milotic (F) @ Leftovers
 Ability: Marvel Scale
@@ -3446,6 +3488,91 @@ Timid Nature
 - Taunt
 
 
+=== TRAINER_WAH_ADMIN_DRIVE_MAIN ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
+
+Serperior (M) @ Rocky Helmet
+Ability: Contrary
+Tera Type: Grass
+EVs: 252 SpA / 252 HP / 4 Atk
+Modest Nature
+- Leaf Storm
+- Dragon Pulse
+- Energy Ball
+- Giga Drain
+
+Milotic (F) @ Leftovers
+Ability: Marvel Scale
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Haze
+- Scald
+- Recover
+- Ice Beam
+
+Zoroark (M) @ Focus Sash
+Ability: Illusion
+Tera Type: Dark
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sucker Punch
+- U-turn
+- Focus Blast
+- Taunt
+
+=== TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Luxray (M) 
+Ability: Guts
+Shiny: Yes
+Tera Type: Electric
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wild Charge
+- Facade
+- Ice Fang
+- Crunch
+
+Manaphy
+Ability: Hydration
+Tera Type: Water
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Tail Glow
+- Scald
+- Ice Beam
+- Energy Ball
+
+Typhlosion (M)
+Ability: Blaze
+Tera Type: Fire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wild Charge
+- Howl
+- Flare Blitz
+- Earthquake
+
+
 === TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
 Name: Drive
 Class: WAH Admin
@@ -3455,6 +3582,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Luxray (M) @ Flame Orb
 Ability: Guts
