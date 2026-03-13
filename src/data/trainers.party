@@ -2100,6 +2100,65 @@ Calm Nature
 - Destiny Bond
 - Amnesia 
 
+=== TRAINER_WAH_ADMIN_SCAREX_MAIN ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Porygon Z
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Zoroark Hisui
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Bitter Malice
+- Hyper Voice
+- Nasty Plot
+- Dark Pulse
+
+Beheeyem
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Calm Mind
+- Recover
+- Psychic
+- Stored Power
+
+Grimmsnarl
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Play Rough
+- Spirit Break
+- False Surrender
+- Drain Punch
+
+Yamask Galar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
+
+Scolipede @ Scolipite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Poison Jab
+- Leech Life
+- Rock Slide
+- Aqua Tail
 
 === TRAINER_WAH_ADMIN_SCAREX_MAIN ===
 Name: Scarex
@@ -2110,6 +2169,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
+Difficulty: Normal
 
 Porygon Z @ Choice Scarf
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -2160,6 +2220,65 @@ Jolly Nature
 - Rock Slide
 - Aqua Tail
 
+=== TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Porygon Z
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Musharna
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Calm Mind
+- Moonblast
+- Psychic
+- Stored Power
+
+Walrein
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Ice Ball
+- Liquidation
+- Steel Roller
+- Rock Slide
+
+Rapidash Galar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Play Rough
+- Psycho Cut
+- Megahorn
+- Drill Run
+
+Maractus
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Giga drain
+- Spikes
+- Leech Seed
+- Energy Ball
+
+Buzzwole
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Leech Life
+- Drain Punch
+- Thunder Punch
+- Ice Punch
 
 === TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE ===
 Name: Scarex
@@ -2170,6 +2289,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
+Difficulty: Normal
 
 Porygon Z @ Choice Scarf
 EVs: 252 SpA / 252 Spe / 4 HP
