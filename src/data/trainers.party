@@ -2740,15 +2740,69 @@ Pic: Boo
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Purple
+Difficulty: Easy
+
+Helix (Omastar)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Weak Armor
+- Shell Smash
+- Hydro Pump
+- Ice Beam
+- Endure
+
+Belong (Manaphy)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Hydration
+- Tail Glow
+- Surf
+- Ice Beam
+- Energy Ball
+
+Ratio (Alakazam)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Magic Guard
+- Counter
+- Psychic
+- Focus Blast
+- Shadow Ball
+
+Jinhua (Espeon)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Magic Bounce
+- Psychic
+- Dazzling Gleam
+- Calm Mind
+- Baton Pass
 
 M. (Banette) (M) @ Banettite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Cursed Body
 - Sucker Punch
 - Double Team
 - Shadow Claw
 - Destiny Bond
+
+Memento (Darkrai)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Bad Dreams
+Shiny: Yes
+- Hypnosis
+- Dark Pulse
+- Nasty Plot
+- Psychic
+
+=== TRAINER_WAH_ADMIN_REYBOO_MAIN ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Normal
 
 Helix (Omastar) @ White Herb
 Ability: Weak Armor
@@ -2778,6 +2832,13 @@ Ability: Magic Bounce
 - Calm Mind
 - Baton Pass
 
+M. (Banette) (M) @ Banettite
+Ability: Cursed Body
+- Sucker Punch
+- Double Team
+- Shadow Claw
+- Destiny Bond
+
 Memento (Darkrai) @ Life Orb
 Ability: Bad Dreams
 Shiny: Yes
@@ -2786,6 +2847,65 @@ Shiny: Yes
 - Nasty Plot
 - Psychic
 
+=== TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
+Name: Rey Boo
+Class: WAH Admin
+Pic: Boo
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+M. (Banette) (M)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Cursed Body
+- Spite
+- Sucker Punch
+- Snatch
+- Destiny Bond
+
+Kaktum (Venomoth)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Wonder Skin
+Shiny: Yes
+- Quiver Dance
+- Double Team
+- Bug Buzz
+- Baton Pass
+
+Radix (Venusaur) @ Venusaurite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Chlorophyll
+- Petal Dance
+- Sleep Powder
+- Synthesis
+- Sludge Bomb
+
+Emouvoir (Gardevoir)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Synchronize
+- Hypnosis
+- Psyshock
+- Moonblast
+- Shadow Ball
+
+Yanhua (Registeel)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Clear Body
+- Toxic
+- Protect
+- Seismic Toss
+- Explosion
+
+Memoriam (Mewtwo)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Pressure
+- Psystrike
+- Ice Beam
+- Recover
+- Calm Mind
 
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Rey Boo
@@ -2796,6 +2916,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 M. (Banette) (M) @ Focus Sash
 Ability: Cursed Body
@@ -2812,7 +2933,7 @@ Shiny: Yes
 - Bug Buzz
 - Baton Pass
 
-Radix (Venusaur-Mega) @ Venusaurite
+Radix (Venusaur) @ Venusaurite
 Ability: Chlorophyll
 - Petal Dance
 - Sleep Powder
