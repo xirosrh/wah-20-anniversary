@@ -1266,20 +1266,20 @@ static void CreateCancelConfirmPokeballSprites(void)
         // The showcase has no Cancel/Confirm buttons
         FillBgTilemapBufferRect(1, 14, 23, 17, 7, 2, 1);
     }
-    // else
-    // {
-    //     if (sPartyMenuInternal->chooseHalf)
-    //     {
-    //         sPartyMenuInternal->spriteIdConfirmPokeball = CreateSmallPokeballButtonSprite(0xBF, 0x88);
-    //         DrawCancelConfirmButtons();
-    //         sPartyMenuInternal->spriteIdCancelPokeball = CreateSmallPokeballButtonSprite(0xBF, 0x98);
-    //     }
+    else
+    {
+        if (sPartyMenuInternal->chooseHalf)
+        {
+            // sPartyMenuInternal->spriteIdConfirmPokeball = CreateSmallPokeballButtonSprite(0xBF, 0x88);
+            DrawCancelConfirmButtons();
+            // sPartyMenuInternal->spriteIdCancelPokeball = CreateSmallPokeballButtonSprite(0xBF, 0x98);
+        }
     //     else
     //     {
     //         sPartyMenuInternal->spriteIdCancelPokeball = CreatePokeballButtonSprite(198, 148);
     //     }
     //     AnimatePartySlot(gPartyMenu.slotId, 1);
-    // }
+    }
 }
 
 void AnimatePartySlot(u8 slot, u8 animNum)
