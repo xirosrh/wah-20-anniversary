@@ -1167,7 +1167,9 @@ Lobby_EventScript_Cope_Text_2:
 	.string "¿Cómo? ¿No sabes quién es?\n"
 	.string "Es mi famoso Kecleon.\p"
 	.string "Lo he perdido de vista y no sé por dónde\n"
-	.string "se ha metido...\p"
+	.string "se ha metido... Además, ¡me ha robado el\l"
+	.string "kit de objetos que le doy a los\l"
+	.string "entrenadores del desafío!\p"
 	.string "Hazme un favor y búscale por mí.\n"
 	.string "Toma, llévate esto.$"
 

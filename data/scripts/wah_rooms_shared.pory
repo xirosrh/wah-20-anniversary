@@ -70,71 +70,116 @@ script WahRoomsShared_Kecleon {
 
 
 script WahRoomsShared_Kecleon_ResetFlags {
+    setflag(FLAG_HIDE_KECLEON_ROOM_OMEGA)
+    setflag(FLAG_HIDE_KECLEON_ROOM_GOCE)
+    setflag(FLAG_HIDE_KECLEON_ROOM_TOKYNWAR)
+    setflag(FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON)
+    setflag(FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS)
+    setflag(FLAG_HIDE_KECLEON_ROOM_COSARARA)
+    setflag(FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE)
+    setflag(FLAG_HIDE_KECLEON_ROOM_AGUIAR)
+    setflag(FLAG_HIDE_KECLEON_ROOM_ANGEL)
+    setflag(FLAG_HIDE_KECLEON_ROOM_SAYERBLAX)
+    setflag(FLAG_HIDE_KECLEON_ROOM_REYBOO)
+    setflag(FLAG_HIDE_KECLEON_ROOM_DAVZERO)
+    setflag(FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315)
+    setflag(FLAG_HIDE_KECLEON_ROOM_GALLEGO)
+    setflag(FLAG_HIDE_KECLEON_ROOM_REONEKY)
+    setflag(FLAG_HIDE_KECLEON_ROOM_CHEVE)
+    setflag(FLAG_HIDE_KECLEON_ROOM_BARO)
+    setflag(FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER)
+    setflag(FLAG_HIDE_KECLEON_ROOM_EING)
+    setflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
+
     checkitem(ITEM_DEVON_SCOPE)
     if(var(VAR_RESULT))
     {
-        clearflag(FLAG_HIDE_KECLEON_ROOM_OMEGA)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_GOCE)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_TOKYNWAR)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_COSARARA)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_AGUIAR)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_ANGEL)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_SAYERBLAX)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_REYBOO)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_DAVZERO)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_GALLEGO)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_REONEKY)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_CHEVE)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_BARO)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_EING)
-        clearflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
-    }
-    else
-    {
-        setflag(FLAG_HIDE_KECLEON_ROOM_OMEGA)
-        setflag(FLAG_HIDE_KECLEON_ROOM_GOCE)
-        setflag(FLAG_HIDE_KECLEON_ROOM_TOKYNWAR)
-        setflag(FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON)
-        setflag(FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS)
-        setflag(FLAG_HIDE_KECLEON_ROOM_COSARARA)
-        setflag(FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE)
-        setflag(FLAG_HIDE_KECLEON_ROOM_AGUIAR)
-        setflag(FLAG_HIDE_KECLEON_ROOM_ANGEL)
-        setflag(FLAG_HIDE_KECLEON_ROOM_SAYERBLAX)
-        setflag(FLAG_HIDE_KECLEON_ROOM_REYBOO)
-        setflag(FLAG_HIDE_KECLEON_ROOM_DAVZERO)
-        setflag(FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315)
-        setflag(FLAG_HIDE_KECLEON_ROOM_GALLEGO)
-        setflag(FLAG_HIDE_KECLEON_ROOM_REONEKY)
-        setflag(FLAG_HIDE_KECLEON_ROOM_CHEVE)
-        setflag(FLAG_HIDE_KECLEON_ROOM_BARO)
-        setflag(FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER)
-        setflag(FLAG_HIDE_KECLEON_ROOM_EING)
-        setflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
+        random(4)
+        copyvar(VAR_KECLEON_POSITION, VAR_RESULT)
+        random(20)
+        switch(var(VAR_RESULT))
+        {
+            case 0:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_OMEGA)
+                break
+            case 1:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_GOCE)
+                break
+            case 2:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_TOKYNWAR)
+                break
+            case 3:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON)
+                break
+            case 4:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS)
+                break
+            case 5:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_COSARARA)
+                break
+            case 6:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE)
+                break
+            case 7:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_AGUIAR)
+                break
+            case 8:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_ANGEL)
+                break
+            case 9:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_SAYERBLAX)
+                break
+            case 10:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_REYBOO)
+                break
+            case 11:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_DAVZERO)
+                break
+            case 12:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315)
+                break
+            case 13:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_GALLEGO)
+                break
+            case 14:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_REONEKY)
+                break
+            case 15:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_CHEVE)
+                break
+            case 16:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_BARO)
+                break
+            case 17:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER)
+                break
+            case 18:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_EING)
+                break
+            case 19:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
+                break
+            default:
+                break
+        }
     }
     return
 }
 
 script WahRoomsShared_Kecleon_SetSala_Omega {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 2, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 11, 6)
             break
         case 2:
-            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 11, 10)
             break
         case 3:
-            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_OMEGAROOM_KECLEON, 3, 8)
             break
         default: 
             break
@@ -143,20 +188,19 @@ script WahRoomsShared_Kecleon_SetSala_Omega {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Goce {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 7, 3)
             break
         case 1:
-            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 8, 6)
             break
         case 2:
-            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 4, 8)
             break
         case 3:
-            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GOCEROOM_KECLEON, 9, 10)
             break
         default: 
             break
@@ -165,20 +209,19 @@ script WahRoomsShared_Kecleon_SetSala_Goce {
 }
 
 script WahRoomsShared_Kecleon_SetSala_TokynWar {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 5, 3)
             break
         case 1:
-            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 4, 4)
             break
         case 2:
-            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 8, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_TOKYNWARROOM_KECLEON, 9, 6)
             break
         default: 
             break
@@ -187,20 +230,19 @@ script WahRoomsShared_Kecleon_SetSala_TokynWar {
 }
 
 script WahRoomsShared_Kecleon_SetSala_JackJohnson {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 4, 3)
             break
         case 1:
-            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 1, 7)
             break
         case 2:
-            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 3, 11)
             break
         case 3:
-            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JACKROOM_KECLEON, 10, 4)
             break
         default: 
             break
@@ -209,20 +251,19 @@ script WahRoomsShared_Kecleon_SetSala_JackJohnson {
 }
 
 script WahRoomsShared_Kecleon_SetSala_ScarexOzumas {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 2, 3)
             break
         case 1:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 5, 4)
             break
         case 2:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 10, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 8, 8)
             break
         default: 
             break
@@ -231,20 +272,19 @@ script WahRoomsShared_Kecleon_SetSala_ScarexOzumas {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Cosarara {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 9, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 3, 8)
             break
         case 2:
-            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 1, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_COSARARAROOM_KECLEON, 9, 9)
             break
         default: 
             break
@@ -253,20 +293,19 @@ script WahRoomsShared_Kecleon_SetSala_Cosarara {
 }
 
 script WahRoomsShared_Kecleon_SetSala_DriveKatherine {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 1, 6)
             break
         case 1:
-            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 1, 9)
             break
         case 2:
-            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 11, 6)
             break
         case 3:
-            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_DRIVEKATHERINEROOM_KECLEON, 11, 9)
             break
         default: 
             break
@@ -275,20 +314,19 @@ script WahRoomsShared_Kecleon_SetSala_DriveKatherine {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Aguiar {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 1, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 2, 7)
             break
         case 2:
-            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 10, 4)
             break
         case 3:
-            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_AGUIARROOM_KECLEON, 9, 9)
             break
         default: 
             break
@@ -297,20 +335,19 @@ script WahRoomsShared_Kecleon_SetSala_Aguiar {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Angel {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 3, 7)
             break
         case 1:
-            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 2, 11)
             break
         case 2:
-            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 9, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ANGELROOM_KECLEON, 11, 9)
             break
         default: 
             break
@@ -319,20 +356,19 @@ script WahRoomsShared_Kecleon_SetSala_Angel {
 }
 
 script WahRoomsShared_Kecleon_SetSala_SayerBlax {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 4, 5)
             break
         case 1:
-            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 8, 9)
             break
         case 2:
-            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 3, 11)
             break
         case 3:
-            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SAYERBLAXROOM_KECLEON, 9, 11)
             break
         default: 
             break
@@ -341,20 +377,19 @@ script WahRoomsShared_Kecleon_SetSala_SayerBlax {
 }
 
 script WahRoomsShared_Kecleon_SetSala_ReyBoo {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 4, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 5, 4)
             break
         case 2:
-            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 4, 8)
             break
         case 3:
-            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REYBOOROOM_KECLEON, 8, 8)
             break
         default: 
             break
@@ -363,20 +398,19 @@ script WahRoomsShared_Kecleon_SetSala_ReyBoo {
 }
 
 script WahRoomsShared_Kecleon_SetSala_DavZero {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 2, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 3, 7)
             break
         case 2:
-            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 2, 11)
             break
         case 3:
-            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_ZEROROOM_KECLEON, 9, 9)
             break
         default: 
             break
@@ -385,8 +419,7 @@ script WahRoomsShared_Kecleon_SetSala_DavZero {
 }
 
 script WahRoomsShared_Kecleon_SetSala_JavsJavi {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
             setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0)
@@ -407,20 +440,19 @@ script WahRoomsShared_Kecleon_SetSala_JavsJavi {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Gallego {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 3, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 2, 8)
             break
         case 2:
-            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 11, 6)
             break
         case 3:
-            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_GALLEGOROOM_KECLEON, 9, 13)
             break
         default: 
             break
@@ -429,20 +461,19 @@ script WahRoomsShared_Kecleon_SetSala_Gallego {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Reoneky {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_REOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REOROOM_KECLEON, 2, 5)
             break
         case 1:
-            setobjectxyperm(LOCALID_REOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REOROOM_KECLEON, 2, 11)
             break
         case 2:
-            setobjectxyperm(LOCALID_REOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REOROOM_KECLEON, 8, 4)
             break
         case 3:
-            setobjectxyperm(LOCALID_REOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_REOROOM_KECLEON, 9, 10)
             break
         default: 
             break
@@ -451,20 +482,19 @@ script WahRoomsShared_Kecleon_SetSala_Reoneky {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Cheve {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 2, 8)
             break
         case 1:
-            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 10, 9)
             break
         case 2:
-            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 11, 7)
             break
         case 3:
-            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_CHEVEROOM_KECLEON, 3, 11)
             break
         default: 
             break
@@ -473,20 +503,19 @@ script WahRoomsShared_Kecleon_SetSala_Cheve {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Baro {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 4, 3)
             break
         case 1:
-            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 11, 5)
             break
         case 2:
-            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 1, 12)
             break
         case 3:
-            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_BAROROOM_KECLEON, 3, 6)
             break
         default: 
             break
@@ -495,20 +524,19 @@ script WahRoomsShared_Kecleon_SetSala_Baro {
 }
 
 script WahRoomsShared_Kecleon_SetSala_KelinPkPower {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 2, 10)
             break
         case 1:
-            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 11, 10)
             break
         case 2:
-            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 11, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_KLEINROOM_KECLEON, 1, 7)
             break
         default: 
             break
@@ -517,20 +545,19 @@ script WahRoomsShared_Kecleon_SetSala_KelinPkPower {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Eing {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 5, 5)
             break
         case 1:
-            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 4, 8)
             break
         case 2:
-            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 8, 8)
             break
         case 3:
-            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_EINGROOM_KECLEON, 8, 5)
             break
         default: 
             break
@@ -539,20 +566,19 @@ script WahRoomsShared_Kecleon_SetSala_Eing {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Xiros {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 2, 5)
             break
         case 1:
-            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 2, 7)
             break
         case 2:
-            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 9, 7)
             break
         case 3:
-            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_XIROSROOM_KECLEON, 10, 3)
             break
         default: 
             break
@@ -561,20 +587,19 @@ script WahRoomsShared_Kecleon_SetSala_Xiros {
 }
 
 script WahRoomsShared_Kecleon_SetSala_Sergio {
-    random(4)
-    switch(var(VAR_RESULT))
+    switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 10, 9)
             break
         case 1:
-            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 4, 10)
             break
         case 2:
-            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 2, 11)
             break
         case 3:
-            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_SERGIOROOM_KECLEON, 9, 13)
             break
         default: 
             break
