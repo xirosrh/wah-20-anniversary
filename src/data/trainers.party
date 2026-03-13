@@ -1865,8 +1865,71 @@ Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Ceruledge
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bitter Blade
+- Solar Blade
+- Night Slash
+- Shadow Claw
+
+Sylveon
+Ability: Pixilate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hyper Voice
+- Boomburst
+- Moonblast
+- Mystical Fire
+
+Miraidon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Electro Drift
+- Dragon Pulse
+- Flash Cannon
+- Snarl
+
+Greninja
+Ability: Protean
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Dark Pulse
+- Sludge Bomb
+
+Zacian
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Behemoth Blade
+- Sacred Sword
+- Play Rough
+- Swords Dance
+
+Calyrex Shadow
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+
+=== TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Ceruledge @ Assault Vest
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -1925,8 +1988,69 @@ Pic: Ozumas
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Typhlosion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
+
+Milotic
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Recover
+- Moonblast
+- Ice Beam
+
+Rayquaza
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Ascent
+- Extreme Speed
+- Dragon Claw
+- V create
+
+Kyogre
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Sheer Cold
+- Thunder
+
+Skarmory
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Naive Nature
+- Stealth Rock
+- Spikes
+- Tailwind
+- Roost
+
+Wobbuffet
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Mirror Coat
+- Counter
+- Destiny Bond
+- Amnesia 
+
+
+=== TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Typhlosion@ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
