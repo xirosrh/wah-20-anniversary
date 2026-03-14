@@ -3623,8 +3623,45 @@ Pic: Katherine
 Gender: Female
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Lapras
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
+
+Clefable @ Clefablite
+Ability: Magic Guard
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Moonblast
+- Softboiled
+- Flamethrower
+- Hyper Voice
+
+Lilligant
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Trop Kick
+- Drain Punch
+- Triple Axel
+- Play Rough
+
+=== TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
+Gender: Female
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Lapras @ Leftovers
 EVs: 252 HP / 252 SpA / 4 Spe
@@ -3658,8 +3695,46 @@ Pic: Katherine
 Gender: Female
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Umbreon
+Ability: Synchronize
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Helping Hand
+- Moonlight
+- Calm Mind
+- Dark Pulse
+
+Arcanine
+Ability: Rock Head
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Ninetales
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Play Rough
+- Triple Axel
+- Aqua Tail
+- Iron Tail
+
+=== TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
+Gender: Female
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
+Difficulty: Normal
 
 Umbreon @ Leftovers
 Ability: Synchronize
