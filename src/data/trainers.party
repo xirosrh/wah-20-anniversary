@@ -3996,7 +3996,69 @@ Hasty Nature
 - Relic Song
 - Drain Punch
 - Psychic
-- Play Rough 
+- Play Rough
+
+=== TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Nidoking
+Ability: Sheer force
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Earth Power
+- Sludge Bomb
+- Flamethrower
+- Ice Beam
+
+Feraligatr @ Feraligite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Dragon Claw
+- Crunch
+
+Lugia
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Dragonite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Iron Head
+
+Lucario
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Shadow Ball
+
+Tyranitar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Rock Slide
+- Crunch
+- Drain Punch
+- Earthquake
+
 
 === TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
 Name: Gallego
@@ -4007,6 +4069,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Nidoking @ Life Orb
 Ability: Sheer force
@@ -4058,6 +4121,65 @@ Jolly Nature
 - Drain Punch
 - Earthquake
 
+=== TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Snorlax
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Body Slam
+- Heavy Slam
+- Drain Punch
+- Play Rough
+
+Shedinja
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Impish Nature
+- Destiny Bond
+- X Scissor
+- Leech Life
+- Shadow Claw
+
+Zapdos
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Heat Wave
+- Roost
+- Air Slash
+
+Gyarados
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Iron Head
+
+Scizor
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bullet Punch
+- X Scissor
+- Aerial Ace
+- Brick Break
+
+Chandelure @ Chandelurite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Burning Jealousy
+- Shadow Ball
+- Energy Ball
+- Calm Mind
+
 
 === TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
 Name: Gallego
@@ -4068,6 +4190,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Snorlax @ Assault Vest
 EVs: 252 Atk / 252 HP / 4 Def
