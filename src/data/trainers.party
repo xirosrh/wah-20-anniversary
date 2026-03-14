@@ -3769,8 +3769,68 @@ Pic: Reoneky
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Pidgeot @ Pidgeotite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Hurricane
+- Heat Wave
+- Mimic
+- Roost
+
+Swampert
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
+Spitfire (Typhlosion)
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Burning Jealousy
+
+Metagross
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
+
+Tyranitar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Dragon Dance
+- Earthquake
+- Crunch
+- Rock Slide
+
+Venusaur
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Leech Seed
+- Giga Drain
+- Sludge Bomb
+- Earth Power
+
+
+=== TRAINER_WAH_ADMIN_REONEKY_MAIN ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Pidgeot @ Pidgeotite
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -3826,8 +3886,69 @@ Pic: Reoneky
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Absol @ Absolite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Night Slash
+- Zen Headbutt
+- Knock Off
+- Play Rough
+
+Espeon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Wish
+
+Noivern
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dragon Pulse
+- Air Slash
+- Hurricane
+- Boomburst
+
+Lucario
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Impish Nature
+- Aura Sphere
+- Drain Punch
+- Earthquake
+- Flash Cannon
+
+Zoroark
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Foul Play
+- Night Daze
+- Burning Jealousy
+- Sludge Bomb
+
+Meloetta
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hasty Nature
+- Relic Song
+- Drain Punch
+- Psychic
+- Play Rough 
+
+
+=== TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Absol @ Absolite
 EVs: 252 Atk / 252 Spe / 4 HP
