@@ -4271,7 +4271,8 @@ EVs: 252 SpA / 252 Spe / 4 HP
 IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
 Timid Nature
 - Thunderbolt
-- Calm Mind   /* //TODO Xiros - Levitate */
+- Calm Mind
+- Magnet Rise
 - Hidden Power
 
 Darkrai @ Leftovers
@@ -4743,7 +4744,7 @@ Modest Nature
 - Judgment
 - Roar of Time
 - Photon Geyser
-/* Nihil Light //TODO Xiros */
+- Light of ruin
 
 Zygarde @ Zygardite
 EVs: 252 SpA / 252 Atk / 4 HP
@@ -5694,7 +5695,7 @@ Quirky Nature
 - Thousand Arrows
 - Thousand Waves
 - Land's Wrath
-/* Nihil Light //TODO Xiros */
+- Light of ruin
 
 === TRAINER_WAH_COLLABORATOR_GOSUTO ===
 Name: Gosuto
