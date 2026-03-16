@@ -4915,8 +4915,46 @@ Pic: Javs
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Shiftry
+Ability: Chlorophyll
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Solar Blade
+- Leaf Blade
+- Fake Out
+- Knock Off
+
+Exeggutor
+Ability: Chlorophyll
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Solar Beam
+- Energy Ball
+- Psychic
+- Sludge Bomb
+
+Venusaur @ Venusaurite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Solar Beam
+- Leech Seed
+- Synthesis
+- Giga Drain
+
+=== TRAINER_WAH_ADMIN_JAVS_MAIN ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Shiftry @ Life Orb
 Ability: Chlorophyll
@@ -4951,8 +4989,46 @@ Pic: Javs
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Toxicroak
+Ability: Dry Skin
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Drain Punch
+- Poison Jab
+- Thunder Punch
+- Sucker Punch
+
+Kingdra
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Dragon Pulse
+- Sludge Bomb
+- Ice Beam
+
+Swampert @ Swampertite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Drain Punch
+
+=== TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Toxicroak @ Black Sludge
 Ability: Dry Skin
