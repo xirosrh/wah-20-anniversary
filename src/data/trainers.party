@@ -4251,6 +4251,66 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
+Difficulty: Easy
+
+Crobat
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- U-turn
+- Cross Poison
+- Brave Bird
+- Tailwind
+
+Klefki
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Barrier
+- Light Screen
+- Draining Kiss
+- Dazzling Gleam
+
+Jolteon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Calm Mind
+- Magnet Rise
+
+Darkrai
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
+- Dark Pulse
+
+Blaziken @ Blazikenite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Blaze Kick
+- Sky Uppercut
+- Brave Bird
+- Thunder Punch
+
+Eing
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
+
+
+=== TRAINER_WAH_ADMIN_EING_MAIN ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Normal
 
 Crobat @ Black Sludge
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4310,6 +4370,66 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
+Difficulty: Easy
+
+Vaporeon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Scald
+- Ice Beam
+- Shadow Ball
+- Recover
+
+Mawile @ Mawilite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Drain Punch
+- Crunch
+
+Tropius
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Energy Ball
+- Sludge Bomb
+- Air Slash
+- Earth Power
+
+Drapion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Cross Poison
+- X Scissor
+- Fire Fang
+- Brick Break
+
+Eelektross
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Signal Beam
+- Flamethrower
+- Recover
+
+Eing
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
+
+=== TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Normal
 
 Vaporeon @ Leftovers
 EVs: 252 SpA / 252 Spe / 4 HP
