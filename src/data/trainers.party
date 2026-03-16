@@ -4249,7 +4249,7 @@ Pic: Eing
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Easy
 
@@ -4368,7 +4368,7 @@ Pic: Eing
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Easy
 
@@ -4486,7 +4486,7 @@ Pic: Tokyn
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Blue
 Difficulty: Easy
 
@@ -4557,7 +4557,7 @@ Pic: Tokyn
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Blue
 Difficulty: Easy
 
@@ -4627,8 +4627,45 @@ Pic: War
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Gliscor
+Ability: Poison Heal
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Aerial Ace
+- Fire Fang
+- Knock Off
+
+Blissey
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Softboiled
+- Counter
+- Helping Hand
+- Mirror Coat
+
+Scizor @ Scizorite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Meteor Mash
+- X Scissor
+
+=== TRAINER_WAH_ADMIN_WAR_MAIN ===
+Name: War
+Class: WAH Admin
+Pic: War
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Gliscor @ Toxic Orb    
 Ability: Poison Heal
@@ -4662,8 +4699,44 @@ Pic: War
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Ferrothorn
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Leech Seed
+- Spikes
+- Stealth Rock
+- Body Press
+
+Garchomp @ Garchompite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Liquidation
+
+Umbreon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Helping Hand
+- Wish
+- Nasty Plot
+- Baton Pass
+
+=== TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
+Name: War
+Class: WAH Admin
+Pic: War
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Normal
 
 Ferrothorn @ Rocky Helmet
 EVs: 252 HP / 252 SpD / 4 Def
