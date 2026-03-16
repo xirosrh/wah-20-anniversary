@@ -4022,7 +4022,7 @@ Modest Nature
 Feraligatr @ Feraligite
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
-- Dragon Dance
+- Ice Punch
 - Liquidation
 - Dragon Claw
 - Crunch
@@ -4037,6 +4037,7 @@ Modest Nature
 
 Dragonite
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Inner Focus
 Jolly Nature
 - Dragon Dance
 - Dragon Claw
@@ -4099,6 +4100,7 @@ Modest Nature
 
 Dragonite @ Weakness Policy
 EVs: 252 Atk / 252 Spe / 4 HP
+Ability: Multiscale
 Jolly Nature
 - Dragon Dance
 - Dragon Claw
