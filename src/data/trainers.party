@@ -4769,8 +4769,46 @@ Pic: Javi4315
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Torkoal
+Ability: Drought
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
+
+Infernape
+Ability: Iron Fist
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Fire Punch
+- Mach Punch
+- Thunder Punch
+- Protect
+
+Groudon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Precipice Blades
+- Lava Plume
+- Rock Slide
+- Heat Crash
+
+=== TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Javi4315
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Torkoal @ Heat Rock
 Ability: Drought
@@ -4805,8 +4843,45 @@ Pic: Javi4315
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Pelipper
+Ability: Drizzle
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Hurricane
+- Hydro pump
+- Scald
+- Roost
+
+Wailord
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Water Spout
+- Scald
+- Aqua Ring
+- Rain Dance
+
+Kyogre
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Thunder
+- Ice Beam
+
+=== TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Javi4315
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
 Pelipper @ Damp Rock
 Ability: Drizzle
