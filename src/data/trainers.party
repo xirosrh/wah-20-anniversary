@@ -4488,6 +4488,43 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Easy
+
+Linoone
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Belly Drum
+- Facade
+- Extreme Speed
+- Endeavor
+
+Sceptile @ Sceptilite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Energy Ball
+- Giga drain
+- Dragon Pulse
+- Solar Beam
+
+Swellow
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Sky Attack
+- Aerial Ace
+- Steel Wing
+- Endeavor
+
+
+=== TRAINER_WAH_ADMIN_TOKYN_MAIN ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Tokyn
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Normal
 
 Linoone @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4522,6 +4559,42 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
+Difficulty: Easy
+
+Infernape
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Drain Punch
+- Fire Punch
+- Thunder Punch
+- Close Combat
+
+Gengar @ Gengarite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Giga drain
+- Dark Pulse
+
+Weavile
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Night Slash
+- Fake Out
+- Ice Punch
+- Shadow Claw
+
+=== TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Tokyn
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Normal
 
 Infernape @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
