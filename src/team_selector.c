@@ -348,7 +348,7 @@ static void CreateMsgWindow()
 
     PutWindowTilemap(windowId);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, 1, BG_PLTT_ID(14));
+    LoadWindowGfx(windowId, 0, 1, BG_PLTT_ID(14));
     DrawTextBorderOuter(windowId, 1, 14);
 
     x = GetStringCenterAlignXOffset(FONT_SMALL, gText_WantThisTeam, sMsgTeamSelector_WindowTemplate.width*8);
@@ -383,7 +383,7 @@ static void CreateExitConfirmWindow(void)
 
     PutWindowTilemap(windowId);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, 1, BG_PLTT_ID(14));
+    LoadWindowGfx(windowId, 0, 1, BG_PLTT_ID(14));
     DrawTextBorderOuter(windowId, 1, 14);
 
     x = GetStringCenterAlignXOffset(FONT_SMALL, gText_WantToExit, sMsgTeamSelector_WindowTemplate.width*8);

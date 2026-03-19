@@ -51,6 +51,7 @@
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
 #include "graphics.h"
+#include "speedup.h"
 
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
@@ -677,6 +678,8 @@ void HandleInputChooseMove(u32 battler)
     {
         TryToHideMoveInfoWindow();
         PlaySE(SE_SELECT);
+
+        StartSpeedup();
 
         moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[gMoveSelectionCursor[battler]]);
 
@@ -1885,8 +1888,12 @@ static u32 PlayerGetTrainerBackPicId(void)
 static void PlayerHandleDrawTrainerPic(u32 battler)
 {
     bool32 isFrontPic;
+
     s16 xPos, yPos;
     u32 trainerPicId;
+
+    StartSpeedup();
+
     if (IsMultibattleTest())
     {
         trainerPicId = TRAINER_BACK_PIC_BRENDAN;
@@ -2004,6 +2011,8 @@ static void HandleChooseActionAfterDma3(u32 battler)
 static void PlayerHandleChooseAction(u32 battler)
 {
     // s32 i;
+
+    StopSpeedup();
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
@@ -2151,6 +2160,8 @@ static void PlayerHandleChooseItem(u32 battler)
 static void PlayerHandleChoosePokemon(u32 battler)
 {
     s32 i;
+
+    StopSpeedup();
 
     for (i = 0; i < ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
         gBattlePartyCurrentOrder[i] = gBattleResources->bufferA[battler][4 + i];

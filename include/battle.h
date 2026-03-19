@@ -768,7 +768,7 @@ struct BattleStruct
     u16 flingItem;
     u8 incrementEchoedVoice:1;
     u8 echoedVoiceCounter:3;
-    u8 padding3:4;
+    u8 currentSpeedup:4;
 };
 
 struct AiBattleData
