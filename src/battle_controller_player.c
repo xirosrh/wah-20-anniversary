@@ -448,6 +448,11 @@ void HandleInputChooseTarget(u32 battler)
         EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
         TryHideLastUsedBall();
         HideGimmickTriggerSprite();
+        if (!gBattleResources->bufferA[battler][1]
+            || (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+            || (GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT
+            || (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler))))))
+            StartSpeedup();
         BtlController_Complete(battler);
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -613,6 +618,11 @@ void HandleInputShowEntireFieldTargets(u32 battler)
         else
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | (gMultiUsePlayerCursor << 8));
         HideGimmickTriggerSprite();
+        if (!gBattleResources->bufferA[battler][1]
+            || (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+            || (GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT
+            || (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler))))))
+            StartSpeedup();
         BtlController_Complete(battler);
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -642,6 +652,11 @@ void HandleInputShowTargets(u32 battler)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | (gMultiUsePlayerCursor << 8));
         HideGimmickTriggerSprite();
         TryHideLastUsedBall();
+        if (!gBattleResources->bufferA[battler][1]
+            || (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+            || (GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT
+            || (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler))))))
+            StartSpeedup();
         BtlController_Complete(battler);
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -678,8 +693,6 @@ void HandleInputChooseMove(u32 battler)
     {
         TryToHideMoveInfoWindow();
         PlaySE(SE_SELECT);
-
-        StartSpeedup();
 
         moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[gMoveSelectionCursor[battler]]);
 
@@ -748,6 +761,11 @@ void HandleInputChooseMove(u32 battler)
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | (gMultiUsePlayerCursor << 8));
             HideGimmickTriggerSprite();
             TryHideLastUsedBall();
+            if (!gBattleResources->bufferA[battler][1]
+                || (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+                || (GetBattlerPosition(battler) & BIT_FLANK) != B_FLANK_LEFT
+                || (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler))))))
+                StartSpeedup();
             BtlController_Complete(battler);
             break;
         case 1:
