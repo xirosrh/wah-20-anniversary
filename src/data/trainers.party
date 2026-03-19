@@ -5568,7 +5568,66 @@ Pic: PkPower
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Difficulty: Easy
+
+Absol
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Night Slash
+- Psycho cut
+- Hone Claws
+- Play Rough
+
+Magearna
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Fleur Cannon
+- Flash Cannon
+- Earth Power
+- Moonblast
+
+Frosmoth
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Ice Beam
+- Bug Buzz
+- Air Slash
+
+Swanna
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Air Slash
+- Scald
+- Ice Beam
+- Roost
+
+Arctozolt
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Gardevoir @ Gardevoirite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Moonblast
+- Psychic
+- Draining Kiss
+- Aura Sphere
+
+
+=== TRAINER_WAH_ADMIN_PKPOWER_MAIN ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
+Difficulty: Normal
 
 Absol @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -5626,7 +5685,66 @@ Pic: PkPower
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Difficulty: Easy
+
+Klinklang
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Shift Gear
+- Gear Up
+- Gear Grind
+- Magnet Rise
+
+Golurk
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Shadow Punch
+- Drain Punch
+- Heavy Slam
+
+Porygon-Z
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Gallade @ Galladite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Psycho Cut
+- Drain Punch
+- Aqua Cutter
+- Leaf Blade
+
+Metagross
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
+- Earthquake
+
+Magmortar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Flamethrower
+- Thunderbolt
+- Earth Power
+- Psychic
+
+=== TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
+Difficulty: Normal
 
 Klinklang @ Leftovers
 EVs: 252 Atk / 252 HP / 4 Spe
