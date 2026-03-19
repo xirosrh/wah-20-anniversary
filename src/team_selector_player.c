@@ -133,7 +133,7 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_HITMONCHAN, MON_BRONZONG, MON_LANTURN, MON_MAGCARGO, MON_HONCHKROW, MON_DRAGALGE},
+                        MON_HARIYAMA, MON_CRADILY, MON_MILOTIC, MON_FLYGON, MON_MASQUERAIN, MON_METAGROSS},
             },
 
         [TEAM_2] =
@@ -141,7 +141,7 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_TINKATON, MON_ARMAROUGE, MON_BAXCALIBUR, MON_SHIFTRY, MON_GOLEM, MON_MISMAGIUS},
+                        MON_FORRETRESS, MON_VICTREEBEL, MON_ARCANINE_HISUI, MON_CONKELDURR, MON_ALAKAZAM, MON_WEAVILE},
             },
 
         [TEAM_3] =
@@ -156,7 +156,7 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_FORRETRESS, MON_VICTREEBEL, MON_ARCANINE_HISUI, MON_CONKELDURR, MON_ALAKAZAM, MON_WEAVILE},
+                        MON_TINKATON, MON_ARMAROUGE, MON_BAXCALIBUR, MON_SHIFTRY, MON_GOLEM, MON_MISMAGIUS},
             },
 
         [TEAM_5] =
@@ -192,7 +192,7 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_ALOLAN_GOLEM, MON_ALOLAN_SANDSLASH, MON_ALOLAN_MUK, MON_ALOLAN_DUGTRIO, MON_HISUIAN_ELECTRODE, MON_SIRFECTHD},
+                        MON_SLOWKING, MON_LEAVANNY, MON_ZANGOOSE, MON_SEVIPER, MON_AGGRON, MON_ALTARIA},
             },
         [TEAM_10] =
             {
@@ -234,14 +234,14 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_SLOWKING, MON_LEAVANNY, MON_ZANGOOSE, MON_SEVIPER, MON_AGGRON, MON_ALTARIA},
+                        MON_ALOLAN_GOLEM, MON_ALOLAN_SANDSLASH, MON_ALOLAN_MUK, MON_ALOLAN_DUGTRIO, MON_HISUIAN_ELECTRODE, MON_SIRFECTHD},
             },
         [TEAM_16] =
             {
                 .teamSize = 6,
                 .team =
                     {
-                        MON_HARIYAMA, MON_CRADILY, MON_MILOTIC, MON_FLYGON, MON_MASQUERAIN, MON_METAGROSS},
+                        MON_BRONZONG, MON_LANTURN, MON_MAGCARGO, MON_HONCHKROW, MON_DRAGALGE, MON_HITMONCHAN},
             },
         [TEAM_17] =
             {
