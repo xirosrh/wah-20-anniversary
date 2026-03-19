@@ -5801,7 +5801,64 @@ Pic: Klein
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Difficulty: Easy
+
+Ludicolo
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro Pump
+- Ice Beam
+- Energy Ball
+- Fake Out
+
+Ludicolo
+Ability: Own Tempo
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Giga Drain
+- Ice Beam
+- Knock Off
+
+Ludicolo
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Sludge Bomb
+
+Ludicolo
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Fake Out
+- Leech Seed
+- Toxic
+- Tickle
+
+Ludicolo
+Shiny: Yes
+Ability: Own Tempo
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Waterfall
+- Drain Punch
+- Seed Bomb
+- Fire Punch
+
+=== TRAINER_WAH_ADMIN_KLEIN_MAIN ===
+Name: Klein
+Class: WAH Admin
+Pic: Klein
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
+Difficulty: Normal
 
 Ludicolo @ Assault Vest
 Ability: Swift Swim
@@ -5856,7 +5913,68 @@ Pic: Klein
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer
+Difficulty: Easy
+
+Weezing
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Gunk Shot
+- Memento
+
+Electrode
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Wild Charge
+- Headbutt
+
+Lopunny
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Attract
+- Captivate
+- Tickle
+- Swagger
+
+Muk
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Explosion
+- Memento
+- Tickle
+- Attract
+
+Whimsicott
+Ability: Prankster
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Memento
+- Swagger
+- Thunder Wave
+- Tickle
+
+Golem Alola
+Ability: Galvanize
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Slam
+- Rock Slide
+
+=== TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE ===
+Name: Klein
+Class: WAH Admin
+Pic: Klein
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer
+Difficulty: Normal
 
 Weezing @ Choice Scarf
 EVs: 252 Atk / 252 HP / 4 Spe
