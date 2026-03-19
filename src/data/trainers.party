@@ -5302,8 +5302,74 @@ Pic: Xiros
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Easy
+
+Venusaur @ Venusaurite
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Energy Ball
+- Sludge Bomb
+- Giga Drain
+- Earth Power
+
+Torkoal
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scorching Sands
+- Burning Jealousy
+- Solar Beam
+- Earth Power
+
+Swampert
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
+Scizor
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Bullet Punch
+- Leech Life
+- Aerial Ace
+- Knock Off
+
+Gardevoir
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Moonblast
+- Psychic
+- Aura Sphere
+- Shadow Ball
+
+ElectrodeS
+Ability: Explosive Pulp
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
+
+=== TRAINER_WAH_ADMIN_XIROS_MAIN ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
+Difficulty: Normal
 
 Venusaur @ Venusaurite
 Shiny: Yes
@@ -5367,8 +5433,77 @@ Pic: Xiros
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Easy
+
+Arcanine Hisui
+Ability: Rock Head
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Luxray
+Ability: Intimidate
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wild Charge
+- Crunch
+- Ice Fang
+- Fire Fang
+
+Poliwrath
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Belly Drum
+- Liquidation
+- Drain Punch
+- Ice Punch
+
+Torterra
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Seed Bomb
+- Earthquake
+- Rock Slide
+- Iron Head
+
+Malamar @ Malamarite
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Psycho Cut
+- Night Slash
+- Close Combat
+- Drill Peck
+
+ElectrodeS
+Ability: Explosive Pulp
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
+
+
+=== TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
+Difficulty: Normal
 
 Arcanine Hisui @ Leftovers
 Ability: Rock Head
