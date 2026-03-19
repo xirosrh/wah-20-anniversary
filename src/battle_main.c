@@ -20,6 +20,7 @@
 #include "bg.h"
 #include "data.h"
 #include "debug.h"
+#include "difficulty.h"
 #include "decompress.h"
 #include "dexnav.h"
 #include "dma3.h"
@@ -2944,6 +2945,8 @@ static void ClearSetBScriptingStruct(void)
 
     gBattleScripting.windowsType = temp;
     if (TESTING)
+        gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
         gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     else
         gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
