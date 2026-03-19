@@ -1872,7 +1872,7 @@ Difficulty: Easy
 Ceruledge
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Adamant Nature
-- Bitter Blade
+- Flame Charge
 - Solar Blade
 - Night Slash
 - Shadow Claw
@@ -1887,7 +1887,7 @@ Modest Nature
 - Baby-Doll Eyes  
 
 Miraidon  
-Ability: Hadron Engine
+Ability: Pressure
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature  
 - Dragon Pulse  
@@ -1896,29 +1896,30 @@ Timid Nature
 - Flash Cannon  
 
 Greninja
-Ability: Protean
+Ability: Torrent
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
-- Water Shuriken
+- Water Pulse
 - Ice Beam
 - Dark Pulse
 - Sludge Bomb
 
 Zacian
+Ability: Pressure
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Adamant Nature  
-- Play Rough  
+Calm Nature  
+- Quick Attack  
 - Slash  
-- Sacred Sword  
+- Thunder Wave 
 - Howl  
 
 Calyrex-Shadow  
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Modest Nature  
-- Psychic  
-- Giga Drain  
-- Draining Kiss  
-- Confuse Ray  
+Adamant Nature  
+- Psybeam
+- Confuse Ray
+- Disable
+- Amnesia
 
 
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
