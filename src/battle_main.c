@@ -519,6 +519,8 @@ static void CB2_InitBattleInternal(void)
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_BATTLE_TYPE_SINGLES:
+            if (FlagGet(FLAG_FORCE_DOUBLE_BATTLE))
+                gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
             break;
         case TRAINER_BATTLE_TYPE_DOUBLES:
             gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
