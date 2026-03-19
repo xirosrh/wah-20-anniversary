@@ -3,7 +3,7 @@
   "name": "CollaboratorsRoom",
   "layout": "LAYOUT_COLLABORATORS_ROOM",
   "music": "MUS_BW_THE_DREAMYARD",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_COLLABORATORS_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
