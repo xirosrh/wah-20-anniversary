@@ -9,7 +9,6 @@
 EWRAM_DATA u32 sSkipCounter = 0;
 EWRAM_DATA bool32 sDoSpeedup = FALSE;
 EWRAM_DATA u32 sNumSkips = 0;
-EWRAM_DATA bool32 sPause = FALSE;
 
 EWRAM_INIT u32 sSpeedupSpriteId = SPRITE_NONE;
 EWRAM_DATA u32 *sSpeedupSpriteStart;
@@ -80,21 +79,6 @@ void CheckSpeedupControls(void)
             for (u32 i = 0; i < 8; i++)
                 sSpeedupSpriteStart[i] = sSpeedupGfx[8 * (1 + sNumSkips) + i];
         }
-        else if (JOY_NEW(B_BUTTON))
-        {
-            if (sPause)
-            {
-                sPause = FALSE;
-                for (u32 i = 0; i < 8; i++)
-                    sSpeedupSpriteStart[8 + i] = sSpeedupGfx[8 + i];
-            }
-            else
-            {
-                sPause = TRUE;
-                for (u32 i = 0; i < 8; i++)
-                    sSpeedupSpriteStart[8 + i] = sSpeedupGfx[i];
-            }
-        }
     }
 }
 
@@ -114,9 +98,4 @@ bool32 SpeedupShouldSkip(void)
         sSkipCounter++;
         return TRUE;
     }
-}
-
-bool32 SpeedupIsPaused(void)
-{
-    return sPause;
 }

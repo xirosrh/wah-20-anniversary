@@ -147,11 +147,8 @@ void AgbMainLoop(void)
             DoSoftReset();
         }
 
-        if (!SpeedupIsPaused())
-        {
-            gLinkTransferringData = FALSE;
-            UpdateLinkAndCallCallbacks();
-        }
+        gLinkTransferringData = FALSE;
+        UpdateLinkAndCallCallbacks();
         PlayTimeCounter_Update();
         MapMusicMain();
         CheckSpeedupControls();

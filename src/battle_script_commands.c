@@ -4387,9 +4387,6 @@ static void Cmd_tryfaintmon(void)
         if (!(gAbsentBattlerFlags & (1u << battler))
          && !IsBattlerAlive(battler))
         {
-            if (battler == 1)
-                StopSpeedup();
-
             gBattlerFainted = battler;
             gHitMarker |= HITMARKER_FAINTED(battler);
             BattleScriptPush(cmd->nextInstr);
@@ -7529,6 +7526,8 @@ static void Cmd_switchinanim(void)
     if (gBattleControllerExecFlags)
         return;
 
+    StartSpeedup();
+
     battler = GetBattlerForBattleScript(cmd->battler);
 
     GetBattlerPartyState(battler)->sentOut = TRUE;
@@ -8879,6 +8878,7 @@ static void Cmd_yesnobox(void)
     switch (gBattleCommunication[0])
     {
     case 0:
+        StopSpeedup();
         HandleBattleWindow(YESNOBOX_X_Y, 0);
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[0]++;
