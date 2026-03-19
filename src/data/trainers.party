@@ -5063,8 +5063,70 @@ Pic: Sergio
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Green
+Difficulty: Easy
+
+Lapras
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
+
+Darkrai
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
+- Dark Pulse
+
+Celebi
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Giga drain
+- Psychic
+- Recover
+- Moonblast
+
+Dialga
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Roar of Time
+- Flash Cannon
+- Earth Power
+- Aura Sphere
+
+Groudon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Precipice Blades
+- Fissure
+- Solar Blade
+- Heat Crash
+
+Dragonite @ Dragoninite
+Ability: No Guard
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Extreme Speed
+- Dragon Pulse
+- Hurricane
+- Hydro pump
+
+
+=== TRAINER_WAH_ADMIN_SERGIO_MAIN ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer / Prediction / Ace Pokemon
 Mugshot: Green
+Difficulty: Normal
 
 Lapras @ Leftovers
 EVs: 252 HP / 252 SpA / 4 Spe
@@ -5122,8 +5184,68 @@ Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Silvally /* @ Multi disk TODO Xiros */
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Multi Attack
+- Iron Head
+- Dragon Claw
+- X Scissor
+
+Genesect  /* @ @ Multi Rom */
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Techno Blast
+- Flamethrower
+- Flash Cannon
+- Bug Buzz
+
+Eternatus @ Black Sludge
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dynamax Cannon
+- Recover
+- Sludge Wave
+- Eternabeam
+
+Necrozma Dusk Mane @ Ultranecrozium Z
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sunsteel Strike
+- Photon Geyser
+- Prismatic Laser
+- Recover
+
+Arceus
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Judgment
+- Roar of Time
+- Photon Geyser
+- Light of ruin
+
+Zygarde @ Zygardite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Thousand Arrows
+- Land's Wrath
+- Thousand Waves
+- Core Enforcer
+
+=== TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
+Name: FOSTER
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Double Battle: No
 AI: Smart Trainer / Prediction
 Mugshot: Green
+Difficulty: Normal
 
 Silvally /* @ Multi disk TODO Xiros */
 EVs: 252 Atk / 252 Spe / 4 HP
