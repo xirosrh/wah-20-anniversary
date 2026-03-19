@@ -1874,8 +1874,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Adamant Nature
 - Flame Charge
 - Solar Blade
-- Night Slash
-- Shadow Claw
+- Feint Attack
+- Shadow Sneak
 
 Sylveon  
 Ability: Cute Charm
@@ -1899,13 +1899,12 @@ Greninja
 Ability: Torrent
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
-- Water Pulse
+- Water Shuriken
 - Ice Beam
 - Dark Pulse
 - Sludge Bomb
 
 Zacian
-Ability: Pressure
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Calm Nature  
 - Quick Attack  
