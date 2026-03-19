@@ -16,28 +16,41 @@ script Lobby_EventScript_StartChallenge {
     turnobject(LOCALID_PLAYER, DIR_WEST)
     delay(20)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
-    msgbox(format("¿Así que ya estás list{OA} para intentar el desafío?"), MSGBOX_YESNO, speaker = SP_NAME_COPE)
-    waitmovement(0)
+    setspeaker(SP_NAME_COPE)
+    message(format("¿En qué modo quieres afrontar el desafío?"))
+    waitmessage
+    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Estándar"), format("Batallas dobles"), format("Salir"))
     closemessage
     delay(10)
-    if(var(VAR_RESULT) == YES) {
-        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
-        msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-        turnobject(LOCALID_PLAYER, DIR_NORTH)
-        call(WahRoomsShared_OpenDoor)
-        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
-        hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
-        warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
-        waitstate
-    } else {
-        playse(SE_PIN)
-        applymovement(LOCALID_LOBBY_COPE, Common_Movement_SurpriseWithDelay48)
-        msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-        waitmovement(0)
-        delay(20)
-        msgbox(format("Recuerda que las personas del Lobby pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-        applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
-        turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+            call(WahRoomsShared_OpenDoor)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+            hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
+            warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
+            waitstate
+        case 1:
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            setflag(FLAG_FORCE_DOUBLE_BATTLE)
+            msgbox(format("¡Excelente! El desafío será en modo batallas dobles.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+            call(WahRoomsShared_OpenDoor)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+            hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
+            warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
+            waitstate
+        default:
+            playse(SE_PIN)
+            applymovement(LOCALID_LOBBY_COPE, Common_Movement_SurpriseWithDelay48)
+            msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            waitmovement(0)
+            delay(20)
+            msgbox(format("Recuerda que las personas de la sala de espera pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+            turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
     }
     release
     end

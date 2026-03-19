@@ -94,6 +94,8 @@ HallOfFame_EventScript_SetGameClearFlags::
 # 52 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
 # 53 "data/maps/HallOfFame/scripts.pory"
+	clearflag FLAG_FORCE_DOUBLE_BATTLE
+# 54 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 
