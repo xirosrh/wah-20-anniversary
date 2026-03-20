@@ -346,6 +346,9 @@ const u16 gTrainerPalette_Javi4315[] = INCBIN_U16("graphics/trainers/palettes/ad
 const u32 gTrainerFrontPic_Erkey[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/erkey.4bpp.smol");
 const u16 gTrainerPalette_Erkey[] = INCBIN_U16("graphics/trainers/palettes/collaborators/erkey.gbapal");
 
+const u32 gTrainerFrontPic_GameboyCl[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/gameboycl.4bpp.smol");
+const u16 gTrainerPalette_GameboyCl[] = INCBIN_U16("graphics/trainers/front_pics/collaborators/gameboycl.gbapal");
+
 const u32 gTrainerFrontPic_Alexmad[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/alexmad.4bpp.smol");
 const u16 gTrainerPalette_Alexmad[] = INCBIN_U16("graphics/trainers/palettes/collaborators/alexmad.gbapal");
 
@@ -535,6 +538,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_KAKTUS, gTrainerFrontPic_Kaktus, gTrainerPalette_Kaktus),
     TRAINER_SPRITE(TRAINER_PIC_GOSUTO, gTrainerFrontPic_Gosuto, gTrainerPalette_Gosuto),
     TRAINER_SPRITE(TRAINER_PIC_CACO, gTrainerFrontPic_Caco, gTrainerPalette_Caco),
+    TRAINER_SPRITE(TRAINER_PIC_GAMEBOY_CL, gTrainerFrontPic_GameboyCl, gTrainerPalette_GameboyCl),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
