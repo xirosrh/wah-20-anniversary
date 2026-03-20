@@ -6389,14 +6389,13 @@ IVs: 0 Spe
 - Knock Off
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
-Name: GEORGE
+Name: Gameboy cl
 Class: Collaborator
-Pic: Cooltrainer M
+Pic: Gameboy Cl
 Gender: Male
 Music: Cool
-Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 
 Slakoth @ Sitrus Berry
@@ -6406,15 +6405,21 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Counter
 - Shadow Ball
 
+Slakoth @ Sitrus Berry
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slack Off
+- Counter
+- Shadow Ball
+
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
-Name: BERKE
+Name: Gameboy cl
 Class: Collaborator
-Pic: Cooltrainer M
+Pic: Gameboy Cl
 Gender: Male
 Music: Cool
-Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 
 Vigoroth
@@ -6423,15 +6428,28 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Energy
 - Slash
 
+
+Vigoroth
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Focus Energy
+- Slash
+
+
+Vigoroth
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Focus Energy
+- Slash
+
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
-Name: BRAXTON
+Name: Gameboy cl
 Class: Collaborator
-Pic: Cooltrainer M
+Pic: Gameboy Cl
 Gender: Male
 Music: Cool
-Items: Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 
 Swellow

@@ -440,3 +440,13 @@ script Lobby_EventScript_TrainerCardGirl {
     msgbox(format("¿Sabías que en la parte de atrás de tu tarjeta de entrenador puedes ver tus logros?\p¡También puedes ver los requerimientos para obtener cada uno!"), MSGBOX_NPC)
     end
 }
+
+script Lobby_EventScript_QREventInfoKid {
+    lock
+    faceplayer
+    msgbox(format("Un chico de la zona creativa te da un regalo por completar un evento especial.\pEs imposible adivinar lo que hay que hacer sin mirar el video.\p¡Incluso tuve que cambiar de orden a dos de los Pokémon de mi equipo!\pEso sí, me gustó el premio por completar el evento, ¡valió la pena!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    release
+    end
+}

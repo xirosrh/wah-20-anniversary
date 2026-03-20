@@ -153,6 +153,46 @@ static const struct SpriteFrameImage sPicTable_Cook[] = {
     overworld_frame(gObjectEventPic_Cook, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_LobbyMan1[] = {
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyMan1, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_LobbyManiac[] = {
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyManiac, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_LobbyWoman1[] = {
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 0),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 1),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LobbyWoman1, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_LobbyKid[] = {
+    overworld_ascending_frames(gObjectEventPic_LobbyKid, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_LinkReceptionist[] = {
     overworld_ascending_frames(gObjectEventPic_LinkReceptionist, 2, 4),
 };
@@ -409,6 +449,14 @@ static const struct SpriteFrameImage sPicTable_Micolo[] = {
     overworld_ascending_frames(gObjectEventPic_Micolo, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Acimut[] = {
+    overworld_ascending_frames(gObjectEventPic_Acimut, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Gameboycl[] = {
+    overworld_ascending_frames(gObjectEventPic_Gameboycl, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
     overworld_ascending_frames(gObjectEventPic_Beauty, 2, 4),
 };
@@ -531,7 +579,15 @@ static const struct SpriteFrameImage sPicTable_CuttableTree[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_MartEmployee[] = {
-    overworld_ascending_frames(gObjectEventPic_MartEmployee, 2, 4),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 1),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 2),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 1),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 1),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 2),
+    overworld_frame(gObjectEventPic_MartEmployee, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_RooftopSaleWoman[] = {
