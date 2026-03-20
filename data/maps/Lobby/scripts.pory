@@ -24,6 +24,7 @@ script Lobby_EventScript_StartChallenge {
     delay(10)
     switch(var(VAR_RESULT)) {
         case 0:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
             msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             turnobject(LOCALID_PLAYER, DIR_NORTH)
@@ -33,6 +34,7 @@ script Lobby_EventScript_StartChallenge {
             warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
             waitstate
         case 1:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
             setflag(FLAG_FORCE_DOUBLE_BATTLE)
             msgbox(format("¡Excelente! El desafío será en modo batallas dobles.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
