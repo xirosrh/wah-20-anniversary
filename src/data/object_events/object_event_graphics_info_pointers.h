@@ -31,6 +31,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman4;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyMan1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyManiac;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyWoman1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyKid;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkReceptionist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldMan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman;
@@ -612,6 +616,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH] =       &gObjectEventGraphicsInfo_AstronautVigoroth,
     [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
     [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
+    [OBJ_EVENT_GFX_LOBBY_MAN_1] =              &gObjectEventGraphicsInfo_LobbyMan1,
+    [OBJ_EVENT_GFX_LOBBY_MANIAC] =             &gObjectEventGraphicsInfo_LobbyManiac,
+    [OBJ_EVENT_GFX_LOBBY_WOMAN_1] =            &gObjectEventGraphicsInfo_LobbyWoman1,
+    [OBJ_EVENT_GFX_LOBBY_KID] =                &gObjectEventGraphicsInfo_LobbyKid,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

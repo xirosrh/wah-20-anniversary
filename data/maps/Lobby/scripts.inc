@@ -862,6 +862,22 @@ Lobby_EventScript_TrainerCardGirl::
 	end
 
 
+Lobby_EventScript_QREventInfoKid::
+# 445 "data/maps/Lobby/scripts.pory"
+	lock
+# 446 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 447 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_QREventInfoKid_Text_0, MSGBOX_AUTOCLOSE
+# 448 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 449 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+# 450 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
 # 162 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 162 "data/maps/Lobby/scripts.pory"
@@ -1152,6 +1168,18 @@ Lobby_EventScript_TrainerCardGirl_Text_0:
 	.string "logros?\p"
 	.string "¡También puedes ver los requerimientos\n"
 	.string "para obtener cada uno!$"
+
+Lobby_EventScript_QREventInfoKid_Text_0:
+# 447 "data/maps/Lobby/scripts.pory"
+	.string "Un chico de la zona creativa te da un\n"
+	.string "regalo por completar un evento\l"
+	.string "especial.\p"
+	.string "Es imposible adivinar lo que hay que\n"
+	.string "hacer sin mirar el video.\p"
+	.string "¡Incluso tuve que cambiar de orden a\n"
+	.string "dos de los Pokémon de mi equipo!\p"
+	.string "Eso sí, me gustó el premio por completar\n"
+	.string "el evento, ¡valió la pena!$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 81 "data/maps/Lobby/scripts.pory"
