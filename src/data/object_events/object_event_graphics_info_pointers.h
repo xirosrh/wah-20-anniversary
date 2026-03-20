@@ -77,6 +77,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gosuto;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tokyn;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Micolo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Acimut;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gameboycl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
@@ -575,6 +577,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TOKYN] =                     &gObjectEventGraphicsInfo_Tokyn,
     [OBJ_EVENT_GFX_ROXAS] =                     &gObjectEventGraphicsInfo_Roxas,
     [OBJ_EVENT_GFX_MICOLO] =                    &gObjectEventGraphicsInfo_Micolo,
+    [OBJ_EVENT_GFX_ACIMUT] =                    &gObjectEventGraphicsInfo_Acimut,
+    [OBJ_EVENT_GFX_GAMEBOYCL] =                 &gObjectEventGraphicsInfo_Gameboycl,
     [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,

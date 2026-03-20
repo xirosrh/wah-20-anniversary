@@ -554,6 +554,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Tokyn,                 OBJ_EVENT_PAL_TAG_TOKYN},
     {gObjectEventPal_Roxas,                 OBJ_EVENT_PAL_TAG_ROXAS},
     {gObjectEventPal_Micolo,                OBJ_EVENT_PAL_TAG_MICOLO},
+    {gObjectEventPal_Acimut,                OBJ_EVENT_PAL_TAG_ACIMUT},
+    {gObjectEventPal_Gameboycl,             OBJ_EVENT_PAL_TAG_GAMEBOYCL},
     {gObjectEventPal_TrainerInWater1,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1},
     {gObjectEventPal_TrainerInWater2,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2},
     {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
