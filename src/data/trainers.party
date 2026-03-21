@@ -6036,9 +6036,36 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
+Difficulty: Easy
 
-Lugia
-Level: 100
+Lugia Shadow @ Life Orb
+Ability: Berserk
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Aeroblast
+- Dark Pulse
+- Shadow Ball
+- Sucker Punch
+
+=== TRAINER_WAH_ADMIN_ROXAS ===
+Name: Roxas
+Class: WAH Admin
+Pic: Roxas
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Normal
+
+Lugia Shadow @ Life Orb
+Ability: Berserk
+EVs: 252 SpA / 252 Spe / 4 Atk
+Timid Nature
+- Aeroblast
+- Dark Pulse
+- Shadow Ball
+- Sucker Punch
 
 
 === TRAINER_GABBY_AND_TY_1 ===
