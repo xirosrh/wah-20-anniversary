@@ -36,7 +36,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
     setspeaker(SP_NAME_INMORTAL_KAKTUS)
     message(format("¿Otro asalto?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -45,7 +45,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
-        case 2:
+        default:
             msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     }
@@ -133,7 +133,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
     setspeaker(SP_NAME_GAMEBOY_CL)
     message(format("¿Quieres luchar contra uno de mis 3 equipos?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -142,7 +142,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     }
@@ -230,7 +230,7 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
     setspeaker(SP_NAME_ERKEY)
     message(format("¿Quieres volver a luchar?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -243,7 +243,7 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
@@ -344,7 +344,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     setspeaker(SP_NAME_MICOLO)
     message(format("¿Te atreves?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -353,7 +353,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     }
@@ -493,7 +493,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
     setspeaker(SP_NAME_MRNIGHTOLOGY)
     message(format("¿Te has quedado con ganas de más?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     switch(var(VAR_RESULT)) {
         case 0:
@@ -501,7 +501,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
-        case 2:
+        default:
             msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
@@ -672,7 +672,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
     setspeaker(SP_NAME_GOSUTO)
     message(format("¿Otro combate? ¿Estás segur{OA} de estar list{OA} para entrar al mundo de las tinieblas?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -681,7 +681,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
@@ -787,7 +787,7 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
     setspeaker(SP_NAME_ACIMUT)
     message(format("¿List{OA} para la revancha?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -797,7 +797,7 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
         case 1:
             fadedefaultbgm()
             goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
-        case 2:
+        default:
             fadedefaultbgm()
             msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
@@ -924,7 +924,7 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
     setspeaker(SP_NAME_ALEXMAD)
     message(format("¿Otro combate?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -934,7 +934,7 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
         case 1:
             call(CollaboratorsRoom_EventScript_Alexmad_LongIntro)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
-        case 2:
+        default:
             msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
     }
@@ -1033,7 +1033,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
                 msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 waitmovement(0)
             }
-            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
+            dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
             switch(var(VAR_RESULT)) {
                 case 0:
                     goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
@@ -1047,6 +1047,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
                     }
                     goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
                 default:
+                    msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
             }
         } else {

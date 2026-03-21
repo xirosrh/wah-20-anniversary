@@ -587,3 +587,5 @@ gSpecials::
 	def_special BufferSpeciesStats
 	def_special Special_CheckAndCompleteAchievement
 	def_special Special_BufferAchievementTitle
+	def_special Special_StartAchievementConfetti
+	def_special Special_StopAchievementConfetti

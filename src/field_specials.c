@@ -78,6 +78,7 @@
 #include "battle_util.h"
 #include "naming_screen.h"
 #include "achievements.h"
+#include "achievement_confetti.h"
 #include "constants/achievements.h"
 #include "constants/characters.h"
 #include "constants/pokemon.h"
@@ -1461,6 +1462,17 @@ void Special_BufferAchievementTitle(void)
         StringCopy(gStringVar1, title);
     else
         gStringVar1[0] = EOS;
+}
+
+
+void Special_StartAchievementConfetti(void)
+{
+    StartAchievementConfetti();
+}
+
+void Special_StopAchievementConfetti(void)
+{
+    StopAchievementConfetti();
 }
 
 u8 TryUpdateRusturfTunnelState(void)

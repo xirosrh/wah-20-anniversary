@@ -72,30 +72,78 @@ HallOfFame_OnFrame::
 # 39 "data/maps/HallOfFame/scripts.pory"
 	setvar VAR_TEMP_1, 1
 # 40 "data/maps/HallOfFame/scripts.pory"
-	call HallOfFame_EventScript_SetGameClearFlags
+	call HallOfFame_EventScript_SetGameClear
 # 41 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge
+	call HallOfFame_EventScript_EvalAchievements
 # 42 "data/maps/HallOfFame/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 24
+	call HallOfFame_EventScript_ResetWahChallenge
 # 43 "data/maps/HallOfFame/scripts.pory"
-	special GameClear
+	fadescreenspeed FADE_TO_BLACK, 24
 # 44 "data/maps/HallOfFame/scripts.pory"
-	waitstate
+	special GameClear
 # 45 "data/maps/HallOfFame/scripts.pory"
+	waitstate
+# 46 "data/maps/HallOfFame/scripts.pory"
 	releaseall
 	end
 
 
-HallOfFame_EventScript_SetGameClearFlags::
-# 50 "data/maps/HallOfFame/scripts.pory"
-	call EventScript_ClearWahAdminFlags
+HallOfFame_EventScript_EvalAchievements::
 # 51 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_WAH_CHALLENGE_COMPLETED
+	call Achievements_EventScript_Eval_WinWahChallenge
 # 52 "data/maps/HallOfFame/scripts.pory"
-	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
+	switch VAR_WAH_CHALLENGE_MODE
 # 53 "data/maps/HallOfFame/scripts.pory"
-	clearflag FLAG_FORCE_DOUBLE_BATTLE
+	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_EvalAchievements_3
+# 55 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_EvalAchievements_4
+HallOfFame_EventScript_EvalAchievements_1:
+# 58 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_5Times
+# 59 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
+	return
+
+HallOfFame_EventScript_EvalAchievements_3:
 # 54 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_Standard
+	goto HallOfFame_EventScript_EvalAchievements_1
+
+HallOfFame_EventScript_EvalAchievements_4:
+# 56 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_Double
+	goto HallOfFame_EventScript_EvalAchievements_1
+
+
+HallOfFame_EventScript_SetGameClear::
+# 64 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_WAH_CHALLENGE_COMPLETED
+# 65 "data/maps/HallOfFame/scripts.pory"
+	switch VAR_WAH_CHALLENGE_MODE
+# 66 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_SetGameClear_3
+# 68 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_SetGameClear_4
+HallOfFame_EventScript_SetGameClear_1:
+# 71 "data/maps/HallOfFame/scripts.pory"
+	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
+	return
+
+HallOfFame_EventScript_SetGameClear_3:
+# 67 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_WAH_CHALLENGE_STANDARD_COMPLETED
+	goto HallOfFame_EventScript_SetGameClear_1
+
+HallOfFame_EventScript_SetGameClear_4:
+# 69 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED
+	goto HallOfFame_EventScript_SetGameClear_1
+
+
+HallOfFame_EventScript_ResetWahChallenge::
+# 76 "data/maps/HallOfFame/scripts.pory"
+	call EventScript_ResetWahChallenge
+# 77 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 
