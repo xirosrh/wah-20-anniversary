@@ -6,6 +6,7 @@
 #include "bg.h"
 #include "graphics.h"
 #include "menu.h"
+#include "gpu_regs.h"
 
 const u8 gTextWindowFrame1_Gfx[] = INCBIN_U8("graphics/text_window/1.4bpp");
 static const u8 sTextWindowFrame2_Gfx[] = INCBIN_U8("graphics/text_window/2.4bpp");
@@ -52,6 +53,10 @@ static const u16 sTextWindowFrame20_Pal[] = INCBIN_U16("graphics/text_window/20.
 //textborder battle
 static const u8 gTextWindowBattleBorder_Gfx[] = INCBIN_U8("graphics/text_window/textborder_battle.4bpp");
 static const u16 gTextWindowBattleBorder_Pal[] = INCBIN_U16("graphics/text_window/text_border_battle_pal.gbapal");
+
+static const u8 sTextWindowMessageBoxTransparent_Gfx[] = INCBIN_U8("graphics/text_window/transparent_box.4bpp");
+static const u8 sTextWindowFrameTransparent_Gfx[] = INCBIN_U8("graphics/text_window/transparent_box.4bpp");
+static const u16 sMessageBoxTransparent_Pal[] = INCBIN_U16("graphics/text_window/transparent_box.gbapal");
 
 static const u16 sTextWindowPalettes[][16] =
 {
@@ -220,4 +225,29 @@ void LoadDexNavWindowGfx(u8 windowId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sDexNavWindowFrame.tiles, 0x120, destOffset);
     LoadPalette(sDexNavWindowFrame.pal, palOffset, 32);
+}
+
+void LoadMessageBoxGfxTransparent(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sTextWindowMessageBoxTransparent_Gfx, 0x1C0, destOffset);
+    LoadPalette(sMessageBoxTransparent_Pal, palOffset, PLTT_SIZE_4BPP);
+}
+
+void LoadUserWindowBorderGfxTransparent(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sTextWindowFrameTransparent_Gfx, 0x120, destOffset);
+    LoadPalette(sMessageBoxTransparent_Pal, palOffset, PLTT_SIZE_4BPP);
+}
+
+void SetUiTransparent(void)
+{
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL | BLDCNT_TGT1_BG0);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(15, 6));
+    SetGpuRegBits(REG_OFFSET_WININ, WININ_WIN0_CLR);
+}
+
+void ClearUiTransparent(void)
+{
+    ClearGpuRegBits(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_BLEND);
+    ClearGpuRegBits(REG_OFFSET_WININ, WININ_WIN0_CLR);
 }
