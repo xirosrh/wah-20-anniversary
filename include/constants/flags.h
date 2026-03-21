@@ -82,7 +82,7 @@
 #define FLAG_FORCE_DOUBLE_BATTLE    0x44 // Forces all single-trainer battles to be double battles
 #define FLAG_WAH_CHALLENGE_STANDARD_COMPLETED    0x45 // Used WAH
 #define FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED    0x46 // Used WAH
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI    0x47 // Used WAH
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag

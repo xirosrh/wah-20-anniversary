@@ -1122,3 +1122,124 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     releaseall
     end
 }
+
+script CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly {
+    msgbox(format("Mi nombre es El Gran Jefe Topo, quiero decir, Ryuzaki, aunque algunos desgraciados me están llamando Ryutopo para desprestigiarme…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+    msgbox(format("Y eso que mis animalines favoritos son las nutrias.\pPero hay que admitir que es una conjugación bastante hilarante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox(format("¿Lees manga? Hay uno que me gustaría recomendarte…\pEs Tokyo Ghoul."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    waitse
+    msgbox(format("Sí, entiendo esa cara de decepción, ¡no soy un adolescente emo de 2017!\pAunque mis pintas sugieran lo contrario…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("El manga trata las bifurcaciones de la introspectiva de sus personajes, ideologías, emociones y patrones de comportamiento con tanto amor que resulta ser una experiencia preciosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("No te estoy desinformando, puedes confiar en mí. Es muy especial para mí, tenía que usar descaradamente mi influencia para darle visibilidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+    goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle {
+    msgbox(format("Bueno, es hora de la violencia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    waitse
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¡Te mostraré la verdad divina!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
+    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema.\pTen, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox("{FONT_SMALL}“¡Ay, langosta sucia! No es solo cuestión\nde calandracas. Es el naufragio del\lespíritu, en el océano del carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    delay(20)
+    setspeaker(SP_NAME_RYUZAKI)
+    message(format("Profundo y seinen, ¿verdad? Bueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    closemessage
+    delay(20)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("Prepárate para conocer la verdadera fuerza de la Jode Jode no Mi: Modelo Duende de La Buena Pipa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
+        default:
+            msgbox(format("Las moscas no pueden simplemente echarse gafas para ver la luz."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+            goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent {
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)) {
+            call(CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_RYUZAKI, CollaboratorsRoom_Text_Ryuzaki_OnDefeat)
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Me fumigaste. Te salvaste de que no estamos en territorio ryutámico."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)
+        } else {
+            msgbox(format("Eres una burla, asere. Recoge tu baraja."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        }
+        goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+    } else {
+        msgbox(format("Hola querido coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+        msgbox(format("La vida da más vueltas que una cantimplora, ¿verdad?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        delay(20)
+        msgbox(format("¿Qué? ¿Yo? Oh, no te preocupes, no soy nadie sospechoso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
+    }
+}
+
+text CollaboratorsRoom_Text_Ryuzaki_OnDefeat {
+    format("Espero de corazón que puedas disfrutar los colores de nuestra única vida a tu manera.")
+}
