@@ -1,6 +1,7 @@
 
 
 
+
 script Achievements_EventScript_Eval_WinWahChallenge {
     setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
     call(Achievements_EventScript_Eval_Common)
@@ -63,7 +64,9 @@ script Achievements_EventScript_Eval_Common {
         //playse(SE_VICTORY) //TODO Xiros
         special(Special_BufferAchievementTitle)
         special(Special_StartAchievementConfetti)
+        setflag(FLAG_TRANSPARENT_BOX)
         msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
+        clearflag(FLAG_TRANSPARENT_BOX)
         special(Special_StopAchievementConfetti)
         //waitse
     }
