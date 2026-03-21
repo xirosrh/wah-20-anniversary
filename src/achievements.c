@@ -120,7 +120,8 @@ static bool8 CheckDefeatAllCollaborators(u8 id)
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD) &&
-           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT);
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT) &&
+           FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI);
 }
 
 static bool8 CheckDefeatAllAdmins(u8 id)
