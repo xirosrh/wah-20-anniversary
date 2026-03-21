@@ -174,7 +174,7 @@ script Lobby_EventScript_Roxas_IntroFirstBattle {
     msgbox(format("Terminé mi investigación en el Archipiélago Suzuka… es una historia larga, tendrías que haberlo visto…\pNo sabes lo que fue… Pero logré dar con el rastro de esa fuerza que estaba causando tantos males y estoy listo para probar si realmente este bicho es tan legendario como dicen las crónicas del archipiélago."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
     call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    call(Lobby_EventScript_Roxas_ExplainPartyLimit)
     return
 }
 
@@ -183,13 +183,45 @@ script Lobby_EventScript_Roxas_IntroRematch {
     closemessage
     delay(20)
     if(var(VAR_RESULT) == YES) {
-        msgbox(format("¡Vamos de nuevo! Elige a tu mejor bicho y prepárate."), speaker = SP_NAME_ROXAS)
+        call(Lobby_EventScript_Roxas_ExplainPartyLimit)
         return
     } else {
         msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         releaseall
         end
     }
+}
+
+script Lobby_EventScript_Roxas_ExplainPartyLimit {
+    switch(var(VAR_DIFFICULTY)) {
+        case DIFFICULTY_EASY:
+            msgbox(format("Vamos a hacerlo más interesante: vos vení con todo tu equipo.\pNo hace falta que elijas, usá todos tus Pokémon y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        case DIFFICULTY_NORMAL:
+            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        default:
+            msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+    }
+    return
+}
+
+script Lobby_EventScript_Roxas_SelectPlayerMons {
+    setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
+    setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+    fadescreen(FADE_TO_BLACK)
+    special(ChoosePartyForBattleFrontier)
+    waitstate
+    lock
+    if (var(VAR_RESULT) == 0) {
+        special(LoadPlayerParty)
+        msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        releaseall
+        end
+    }
+    special(ReducePlayerPartyToSelectedMons)
+    return
 }
 
 script Lobby_EventScript_Roxas {
@@ -204,20 +236,18 @@ script Lobby_EventScript_Roxas {
             call(Lobby_EventScript_Roxas_IntroFirstBattle)
         }
         special(SavePlayerParty)
-        setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
-        setvar(VAR_0x8005, 1)
-        setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
-        fadescreen(FADE_TO_BLACK)
-        special(ChoosePartyForBattleFrontier)
-        waitstate
-        lock
-        if (var(VAR_RESULT) == 0) {
-            special(LoadPlayerParty)
-            msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-            releaseall
-            end
+        switch(var(VAR_DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                break
+            case DIFFICULTY_NORMAL:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+            default:
+                setvar(VAR_0x8005, 1)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
         }
-        special(ReducePlayerPartyToSelectedMons)
         msgbox(format("¡A ver si te la bancas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         setflag(B_FLAG_NO_WHITEOUT)
         trainerbattle_no_intro(TRAINER_WAH_ADMIN_ROXAS, format("¡Nooooo!"))
