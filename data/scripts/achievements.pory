@@ -1,13 +1,51 @@
 
 
-script Achievements_EventScript_Eval_AllAdminsDefeated {
+
+script Achievements_EventScript_Eval_WinWahChallenge {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Standard {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_STANDARD)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Double {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_DOUBLE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Random {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_DefeatAllAdmins {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_ADMINS)
     call(Achievements_EventScript_Eval_Common)
     return
 }
 
-script Achievements_EventScript_Eval_WinWahChallenge {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
+script Achievements_EventScript_Eval_WinWahChallenge_5Times {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_HardMode {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+
+script Achievements_EventScript_Eval_UnlockAllPokemon {
+    setvar(VAR_0x8004, UNLOCK_ALL_POKEMON)
     call(Achievements_EventScript_Eval_Common)
     return
 }

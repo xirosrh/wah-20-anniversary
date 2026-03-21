@@ -242,7 +242,7 @@ script Lobby_EventScript_Roxas {
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
-        call(Achievements_EventScript_Eval_AllAdminsDefeated)
+        call(Achievements_EventScript_Eval_DefeatAllAdmins)
         releaseall
         end
     } else {

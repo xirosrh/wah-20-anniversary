@@ -34,7 +34,7 @@ Lobby_EventScript_StartChallenge::
 # 21 "data/maps/Lobby/scripts.pory"
 	waitmessage
 # 22 "data/maps/Lobby/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, Lobby_EventScript_StartChallenge_Text_2, Lobby_EventScript_StartChallenge_Text_3, Lobby_EventScript_StartChallenge_Text_4
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Lobby_EventScript_StartChallenge_Text_2, Lobby_EventScript_StartChallenge_Text_3, Lobby_EventScript_StartChallenge_Text_4
 # 23 "data/maps/Lobby/scripts.pory"
 	closemessage
 # 24 "data/maps/Lobby/scripts.pory"
@@ -452,7 +452,7 @@ Lobby_EventScript_Roxas_15:
 	msgbox Lobby_EventScript_Roxas_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 Lobby_EventScript_Roxas_11:
 # 245 "data/maps/Lobby/scripts.pory"
-	call Achievements_EventScript_Eval_AllAdminsDefeated
+	call Achievements_EventScript_Eval_DefeatAllAdmins
 # 246 "data/maps/Lobby/scripts.pory"
 	releaseall
 	end
