@@ -62,7 +62,9 @@ script Achievements_EventScript_Eval_Common {
     if(var(VAR_RESULT) == TRUE) {
         //playse(SE_VICTORY) //TODO Xiros
         special(Special_BufferAchievementTitle)
+        special(Special_StartAchievementConfetti)
         msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
+        special(Special_StopAchievementConfetti)
         //waitse
     }
     return

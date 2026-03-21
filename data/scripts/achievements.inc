@@ -85,11 +85,15 @@ Achievements_EventScript_Eval_Common_2:
 # 64 "data/scripts/achievements.pory"
 	special Special_BufferAchievementTitle
 # 65 "data/scripts/achievements.pory"
+	special Special_StartAchievementConfetti
+# 66 "data/scripts/achievements.pory"
 	msgbox Achievements_EventScript_Eval_Common_Text_0, MSGBOX_AUTOCLOSE_CENTER
+# 67 "data/scripts/achievements.pory"
+	special Special_StopAchievementConfetti
 	goto Achievements_EventScript_Eval_Common_1
 
 
 Achievements_EventScript_Eval_Common_Text_0:
-# 65 "data/scripts/achievements.pory"
+# 66 "data/scripts/achievements.pory"
 	.string "¡Felicidades! Has completado el logro:\n"
 	.string "“{STR_VAR_1}”$"
