@@ -362,7 +362,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
 script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
     switch(var(VAR_DIFFICULTY)) {
         case DIFFICULTY_EASY:
-            msgbox(format("Elige tres Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             break
         case DIFFICULTY_NORMAL:
             msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
@@ -395,7 +395,7 @@ script CollaboratorsRoom_EventScript_Micolo {
         setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
         switch(var(VAR_DIFFICULTY)) {
             case DIFFICULTY_EASY:
-                setvar(VAR_0x8005, 3)
+                setvar(VAR_0x8005, 2)
                 break
             case DIFFICULTY_NORMAL:
                 setvar(VAR_0x8005, 2)

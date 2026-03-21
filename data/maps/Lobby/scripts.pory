@@ -187,7 +187,7 @@ script Lobby_EventScript_Roxas_IntroRematch {
         return
     } else {
         msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        releaseall
+        release
         end
     }
 }
@@ -195,7 +195,7 @@ script Lobby_EventScript_Roxas_IntroRematch {
 script Lobby_EventScript_Roxas_ExplainPartyLimit {
     switch(var(VAR_DIFFICULTY)) {
         case DIFFICULTY_EASY:
-            msgbox(format("Vamos a hacerlo más interesante: vos vení con todo tu equipo.\pNo hace falta que elijas, usá todos tus Pokémon y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
             break
         case DIFFICULTY_NORMAL:
             msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
@@ -217,7 +217,7 @@ script Lobby_EventScript_Roxas_SelectPlayerMons {
     if (var(VAR_RESULT) == 0) {
         special(LoadPlayerParty)
         msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        releaseall
+        release
         end
     }
     special(ReducePlayerPartyToSelectedMons)
@@ -225,9 +225,9 @@ script Lobby_EventScript_Roxas_SelectPlayerMons {
 }
 
 script Lobby_EventScript_Roxas {
+    lock
+    faceplayer
     if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
-        lock
-        faceplayer
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         if(flag(FLAG_DEFEATED_LOBBY_ROXAS)) {
@@ -238,6 +238,8 @@ script Lobby_EventScript_Roxas {
         special(SavePlayerParty)
         switch(var(VAR_DIFFICULTY)) {
             case DIFFICULTY_EASY:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
                 break
             case DIFFICULTY_NORMAL:
                 setvar(VAR_0x8005, 3)
@@ -276,8 +278,6 @@ script Lobby_EventScript_Roxas {
         release
         end
     } else {
-        lock
-        faceplayer
         msgbox(format("No te molestes en preguntar… A mí tampoco me dejan pasar estos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
@@ -301,6 +301,8 @@ script Lobby_EventScript_Roxas {
         end
     }
 }
+
+
 
 text Lobby_Text_Roxas_PlayerCancelled {
     format("¿Así que le tenés miedo a mi bicho legendario? ¡Y aún así ganaste las salas!")
