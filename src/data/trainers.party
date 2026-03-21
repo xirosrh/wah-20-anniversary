@@ -1869,13 +1869,14 @@ AI: Basic Trainer
 Mugshot: Blue
 Difficulty: Easy
 
-Ceruledge
+Houndoom @ Life Orb
+Ability: Sheer Force
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Adamant Nature
-- Flame Charge
-- Solar Blade
-- Feint Attack
-- Shadow Sneak
+Modest Nature
+- Flamethrower
+- Dark Pulse
+- Shadow Ball
+- Sludge Bomb
 
 Sylveon  
 Ability: Cute Charm
@@ -1886,14 +1887,13 @@ Modest Nature
 - Mystical Fire  
 - Baby-Doll Eyes  
 
-Miraidon  
-Ability: Pressure
+Goodra @ Leftovers
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Timid Nature  
-- Dragon Pulse  
-- Charge Beam  
-- Snarl  
-- Flash Cannon  
+Modest Nature
+- Thunderbolt
+- Dragon Pulse
+- Ice Beam
+- Hydro Pump
 
 Greninja
 Ability: Torrent
@@ -1904,21 +1904,23 @@ Timid Nature
 - Dark Pulse
 - Sludge Bomb
 
-Zacian
+Sneasler @ Assault Vest
+Ability: Poison Touch
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Calm Nature  
-- Quick Attack  
-- Slash  
-- Thunder Wave 
-- Howl  
+Adamant Nature
+- Fake Out
+- Knock Off
+- Brick Break
+- Dire Claw
 
-Calyrex-Shadow  
+Lycanroc Midnight @ Leftovers
+Ability: No Guard
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Adamant Nature  
-- Psybeam
-- Confuse Ray
-- Disable
-- Amnesia
+Jolly Nature
+- Stone Edge
+- Crunch
+- Dynamic Punch
+- Knock Off
 
 
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
@@ -1949,13 +1951,13 @@ Modest Nature
 - Moonblast
 - Mystical Fire
 
-Miraidon @ Leftovers
-EVs: 252 SpA / 252 Spe / 4 HP
-Timid Nature
-- Electro Drift
+Goodra @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 Def
+Modest Nature
+- Thunderbolt
 - Dragon Pulse
-- Flash Cannon
-- Snarl
+- Ice Beam
+- Hydro Pump
 
 Greninja @ Leftovers
 Ability: Protean
@@ -1966,13 +1968,14 @@ Timid Nature
 - Dark Pulse
 - Sludge Bomb
 
-Zacian @ Choice Scarf
-EVs: 252 Atk / 252 Spe / 4 HP
+Sneasler @ Assault Vest
+Ability: Poison Touch
+EVs: 252 Atk / 252 HP / 4 Spe
 Adamant Nature
-- Behemoth Blade
-- Sacred Sword
-- Play Rough
-- Swords Dance
+- Fake Out
+- Knock Off
+- Brick Break
+- Dire Claw
 
 Calyrex Shadow  @ Leftovers
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -6355,8 +6358,75 @@ Pic: Kaktus
 Gender: Male
 Music: Cool
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Easy
+
+Pelipper
+Ability: Drizzle
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Scald
+- U-turn
+- Roost
+- Defog
+
+Ludicolo
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Focus Blast
+
+Swampert @ Swampertite
+Ability: Swift Swim
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Superpower
+
+Dragonite
+Ability: Multiscale
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Earthquake
+
+Metagross
+Ability: Clear Body
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Meteor Mash
+- Earthquake
+- Ice Punch
+- Bullet Punch
+
+Ferrothorn
+Ability: Iron Barbs
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Relaxed Nature
+- Stealth Rock
+- Spikes
+- Power Whip
+- Knock Off
+
+
+=== TRAINER_WAH_COLLABORATOR_KAKTUS ===
+Name: Kaktus
+Class: Collaborator
+Pic: Kaktus
+Gender: Male
+Music: Cool
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
+Difficulty: Normal
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -6526,18 +6596,74 @@ Pic: Erkey
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Pink
+Difficulty: Easy
+
+Weavile
+Ability: Pressure
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Icicle Crash
+- Knock Off
+- Ice Shard
+- Low Kick
 
 Feraligatr @ Feraligite
 Ability: Strong Jaw
-Tera Type: Water
-EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Dragon Dance
 - Waterfall
 - Dragon Claw
 - Crunch
+
+Tyranitar
+Ability: Sand Stream
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Dragon Dance
+- Stone Edge
+- Crunch
+- Fire Punch
+
+Drapion
+Ability: Sniper
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Careful Nature
+- Knock Off
+- Poison Jab
+- Earthquake
+- Ice Fang
+
+Scizor
+Ability: Technician
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bullet Punch
+- Swords Dance
+- Knock Off
+- U-turn
+
+Gengar
+Ability: Levitate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Taunt
+
+=== TRAINER_WAH_COLLABORATOR_ERKEY ===
+Name: Erkey
+Class: Collaborator
+Pic: Erkey
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Normal
 
 Weavile @ Focus Sash
 Ability: Pressure
@@ -6548,6 +6674,16 @@ Jolly Nature
 - Knock Off
 - Ice Shard
 - Low Kick
+
+Feraligatr @ Feraligite
+Ability: Strong Jaw
+Tera Type: Water
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Dragon Claw
+- Crunch
 
 Tyranitar @ Leftovers
 Ability: Sand Stream
@@ -6601,6 +6737,73 @@ AI: Basic Trainer
 Party Size: 1
 Pool Rules: Basic
 Mugshot: Green
+Difficulty: Easy
+
+Greninja @ Greninjite
+Ability: Protean
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Flamethrower
+- Dark Pulse
+
+Chesnaught @ Chesnaughtite
+Ability: Bulletproof
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Rock Slide
+- Play Rough
+
+Raichu @ Raichunite X
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Earthquake
+
+Rayquaza
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Recover
+- Earthquake
+
+Darkrai @ Darkranite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Dream Eater
+- Moonblast
+
+Zygarde @ Zygardite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quirky Nature
+- Thousand Arrows
+- Thousand Waves
+- Land's Wrath
+- Light of ruin
+
+=== TRAINER_WAH_COLLABORATOR_MICOLO ===
+Name: Micolo
+Class: Collaborator
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Party Size: 1
+Pool Rules: Basic
+Mugshot: Green
+Difficulty: Normal
 
 Greninja @ Greninjite
 Ability: Protean
@@ -6662,24 +6865,114 @@ Pic: Gosuto
 Gender: Male
 Music: Cool
 Double Battle: Yes
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Gengar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Psychic
+- Sucker Punch
+
+Mimikyu
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Play Rough
+- Shadow Claw
+- Wood Hammer
+- Pain Split
+
+Zoroark Hisui
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Tri Attack
+- Flamethrower
+- Bitter Malice
+
+Froslass @ Froslassite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Ice Beam
+- Shadow Ball
+- Draining Kiss
+- Ice Shard
+
+Ceruledge
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Shadow Claw
+- Solar Blade
+- Bitter Blade
+- Sucker Punch
+
+Annihilape
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Rage Fist
+- Drain Punch
+- Play Rough
+- Bullet Punch
+
+=== TRAINER_WAH_COLLABORATOR_GOSUTO ===
+Name: Gosuto
+Class: Collaborator
+Pic: Gosuto
+Gender: Male
+Music: Cool
+Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
-Electrike
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Psychic
+- Sucker Punch
 
-Wailmer
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mimikyu @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Play Rough
+- Shadow Claw
+- Wood Hammer
+- Pain Split
 
-Makuhita
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Zoroark Hisui @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Flamethrower
+- Bitter Malice
 
-Makuhita
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Froslass @ Froslassite
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Ice Beam
+- Shadow Ball
+- Draining Kiss
+- Ice Shard
+
+Ceruledge @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shadow Claw
+- Solar Blade
+- Bitter Blade
+- Sucker Punch
+
+Annihilape @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rage Fist
+- Drain Punch
+- Play Rough
+- Bullet Punch
 
 === TRAINER_WAH_COLLABORATOR_ALEXMAD ===
 Name: Alexmad
@@ -6689,14 +6982,113 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Difficulty: Easy
 
-Cacturne
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mewtwo
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Psystrike
+- Calm Mind
+- Shadow Ball
+- Recover
 
-Pelipper
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Rayquaza
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Earthquake
+- Extreme Speed
+
+Jolteon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wild Charge
+- Quick Attack
+- Dig
+- Pin Missile
+
+Latias
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Dragon Pulse
+- Calm Mind
+- Recover
+- Mist Ball
+
+Gengar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga drain
+- Focus Blast
+
+Jirachi
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Wish
+- Healing Wish
+- Doom Desire
+- Psychic 
+
+=== TRAINER_WAH_COLLABORATOR_ALEXMAD ===
+Name: Alexmad
+Class: Collaborator
+Pic: Alexmad
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Normal
+
+Mewtwo @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psystrike
+- Calm Mind
+- Shadow Ball
+- Recover
+
+Rayquaza @ Choice Scarf
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Earthquake
+- Extreme Speed
+
+Jolteon @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Quick Attack
+- Dig
+- Pin Missile
+
+Latias @ Soul Dew
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Calm Mind
+- Recover
+- Mist Ball
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga drain
+- Focus Blast
+
+Jirachi @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Wish
+- Healing Wish
+- Doom Desire
+- Psychic 
 
 === TRAINER_WAH_COLLABORATOR_ACIMUT ===
 Name: Acimut
@@ -6706,22 +7098,119 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Difficulty: Easy
+
+Gengar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Dazzling Gleam
+- Destiny Bond
+
+Meowstic @ Meowsticite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Energy Ball
 
 Exploud
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Hyper Voice
-- Flamethrower
-- Ice Beam
-- Shadow Ball
-
-Noivern
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Air Slash
-- Dragon Pulse
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
 - Boomburst
-- Roost
+- Fire Blast
+- Water Pulse
+- Extrasensory
+
+Marowak Alola
+Ability: Rock Head
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Shadow Bone
+- Bonemerang
+- Flare Blitz
+- Head Smash
+
+Perrserker
+Ability: Tough Claws
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Earthquake
+- Drain Punch
+
+Garchomp
+Ability: Rough Skin
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Liquidation
+- Iron Head
+
+=== TRAINER_WAH_COLLABORATOR_ACIMUT ===
+Name: Acimut
+Class: Collaborator
+Pic: Youngster
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Normal
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Dazzling Gleam
+- Destiny Bond
+
+Meowstic @ Meowsticite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Energy Ball
+
+Exploud @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Boomburst
+- Fire Blast
+- Water Pulse
+- Extrasensory
+
+Marowak Alola @ Thick Club
+Ability: Rock Head
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shadow Bone
+- Bonemerang
+- Flare Blitz
+- Head Smash
+
+Perrserker @ Leftovers
+Ability: Tough Claws
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Earthquake
+- Drain Punch
+
+Garchomp @ Rocky Helmet
+Ability: Rough Skin
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Liquidation
+- Iron Head
 
 === TRAINER_WAH_COLLABORATOR_RYUZAKI ===
 Name: Ryuzaki
