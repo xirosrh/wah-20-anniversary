@@ -194,7 +194,7 @@ script Lobby_EventScript_Roxas_IntroRematch {
 
 script Lobby_EventScript_Roxas {
     if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
-        lockall
+        lock
         faceplayer
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
@@ -210,7 +210,7 @@ script Lobby_EventScript_Roxas {
         fadescreen(FADE_TO_BLACK)
         special(ChoosePartyForBattleFrontier)
         waitstate
-        lockall
+        lock
         if (var(VAR_RESULT) == 0) {
             special(LoadPlayerParty)
             msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
@@ -243,10 +243,10 @@ script Lobby_EventScript_Roxas {
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
         call(Achievements_EventScript_Eval_DefeatAllAdmins)
-        releaseall
+        release
         end
     } else {
-        lockall
+        lock
         faceplayer
         msgbox(format("No te molestes en preguntar… A mí tampoco me dejan pasar estos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         playse(SE_PIN)
@@ -262,12 +262,12 @@ script Lobby_EventScript_Roxas {
         applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
         msgbox(format("¡Unos caraduras loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         waitmovement(0)
-        lockall
+        lock
         delay(20)
         msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… Aterrador…\pHabrá que investigar y ver que onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         msgbox(format("Che, discúlpame, mejor me voy a seguir con mis investigaciones.\p¡Suerte, espero que a vos sí te den bola!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        releaseall
+        release
         end
     }
 }

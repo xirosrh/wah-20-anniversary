@@ -339,7 +339,7 @@ Lobby_EventScript_Roxas::
 # 196 "data/maps/Lobby/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Roxas_1
 # 249 "data/maps/Lobby/scripts.pory"
-	lockall
+	lock
 # 250 "data/maps/Lobby/scripts.pory"
 	faceplayer
 # 251 "data/maps/Lobby/scripts.pory"
@@ -371,7 +371,7 @@ Lobby_EventScript_Roxas::
 # 264 "data/maps/Lobby/scripts.pory"
 	waitmovement 0
 # 265 "data/maps/Lobby/scripts.pory"
-	lockall
+	lock
 # 266 "data/maps/Lobby/scripts.pory"
 	delay 20
 # 267 "data/maps/Lobby/scripts.pory"
@@ -381,12 +381,12 @@ Lobby_EventScript_Roxas::
 # 269 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Roxas_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 270 "data/maps/Lobby/scripts.pory"
-	releaseall
+	release
 	end
 
 Lobby_EventScript_Roxas_1:
 # 197 "data/maps/Lobby/scripts.pory"
-	lockall
+	lock
 # 198 "data/maps/Lobby/scripts.pory"
 	faceplayer
 # 199 "data/maps/Lobby/scripts.pory"
@@ -413,7 +413,7 @@ Lobby_EventScript_Roxas_4:
 # 212 "data/maps/Lobby/scripts.pory"
 	waitstate
 # 213 "data/maps/Lobby/scripts.pory"
-	lockall
+	lock
 # 214 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Lobby_EventScript_Roxas_9
@@ -454,7 +454,7 @@ Lobby_EventScript_Roxas_11:
 # 245 "data/maps/Lobby/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllAdmins
 # 246 "data/maps/Lobby/scripts.pory"
-	releaseall
+	release
 	end
 
 Lobby_EventScript_Roxas_5:
