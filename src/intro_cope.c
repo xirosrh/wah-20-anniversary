@@ -701,8 +701,6 @@ void CB2_InitCopeSpeech_FromNewMainMenu(void)
 {
     u8 x;
 
-    NewGameInitData();
-
     ResetBgsAndClearDma3BusyFlags(0);
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
@@ -1136,6 +1134,7 @@ static void TaskChooseOptions(u8 taskId)
             }
             else
             {
+                NewGameInitData();
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
                 gTasks[taskId].func = TaskSelectDifficulty;
             }
