@@ -7334,8 +7334,6 @@ static u8 GetPartySlotEntryStatus(s8 slot)
 
 static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
 {
-    u32 species;
-
     if (GetMonData(mon, MON_DATA_IS_EGG)
         || GetMonData(mon, MON_DATA_LEVEL) > GetBattleEntryLevelCap()
         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY)
@@ -7354,9 +7352,6 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
     case FACILITY_UNION_ROOM:
         return TRUE;
     default: // Battle Frontier
-        species = GetMonData(mon, MON_DATA_SPECIES);
-        if (gSpeciesInfo[species].isFrontierBanned)
-            return FALSE;
         return TRUE;
     }
 }
