@@ -308,7 +308,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
     waitmovement(0)
     msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres buen{OA} con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    call(CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit)
     return
 }
 
@@ -349,7 +349,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            call(CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
@@ -359,8 +359,19 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     }
 }
 
-text CollaboratorsRoom_Text_Micolo_ChoosePokemon {
-    format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!")
+script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
+    switch(var(VAR_DIFFICULTY)) {
+        case DIFFICULTY_EASY:
+            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+        case DIFFICULTY_NORMAL:
+            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+        default:
+            msgbox(format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+    }
+    return
 }
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
@@ -381,8 +392,18 @@ script CollaboratorsRoom_EventScript_Micolo {
         }
         special(SavePlayerParty)
         setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
-        setvar(VAR_0x8005, 1)
         setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+        switch(var(VAR_DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                setvar(VAR_0x8005, 2)
+                break
+            case DIFFICULTY_NORMAL:
+                setvar(VAR_0x8005, 2)
+                break
+            default:
+                setvar(VAR_0x8005, 1)
+                break
+        }
         fadescreen(FADE_TO_BLACK)
         special(ChoosePartyForBattleFrontier)
         waitstate

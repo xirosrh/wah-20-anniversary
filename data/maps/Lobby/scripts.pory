@@ -174,7 +174,7 @@ script Lobby_EventScript_Roxas_IntroFirstBattle {
     msgbox(format("Terminé mi investigación en el Archipiélago Suzuka… es una historia larga, tendrías que haberlo visto…\pNo sabes lo que fue… Pero logré dar con el rastro de esa fuerza que estaba causando tantos males y estoy listo para probar si realmente este bicho es tan legendario como dicen las crónicas del archipiélago."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
     call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    call(Lobby_EventScript_Roxas_ExplainPartyLimit)
     return
 }
 
@@ -183,19 +183,51 @@ script Lobby_EventScript_Roxas_IntroRematch {
     closemessage
     delay(20)
     if(var(VAR_RESULT) == YES) {
-        msgbox(format("¡Vamos de nuevo! Elige a tu mejor bicho y prepárate."), speaker = SP_NAME_ROXAS)
+        call(Lobby_EventScript_Roxas_ExplainPartyLimit)
         return
     } else {
         msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        releaseall
+        release
         end
     }
 }
 
+script Lobby_EventScript_Roxas_ExplainPartyLimit {
+    switch(var(VAR_DIFFICULTY)) {
+        case DIFFICULTY_EASY:
+            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        case DIFFICULTY_NORMAL:
+            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        default:
+            msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+    }
+    return
+}
+
+script Lobby_EventScript_Roxas_SelectPlayerMons {
+    setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
+    setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+    fadescreen(FADE_TO_BLACK)
+    special(ChoosePartyForBattleFrontier)
+    waitstate
+    lock
+    if (var(VAR_RESULT) == 0) {
+        special(LoadPlayerParty)
+        msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        release
+        end
+    }
+    special(ReducePlayerPartyToSelectedMons)
+    return
+}
+
 script Lobby_EventScript_Roxas {
+    lock
+    faceplayer
     if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
-        lockall
-        faceplayer
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         if(flag(FLAG_DEFEATED_LOBBY_ROXAS)) {
@@ -204,20 +236,20 @@ script Lobby_EventScript_Roxas {
             call(Lobby_EventScript_Roxas_IntroFirstBattle)
         }
         special(SavePlayerParty)
-        setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
-        setvar(VAR_0x8005, 1)
-        setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
-        fadescreen(FADE_TO_BLACK)
-        special(ChoosePartyForBattleFrontier)
-        waitstate
-        lockall
-        if (var(VAR_RESULT) == 0) {
-            special(LoadPlayerParty)
-            msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-            releaseall
-            end
+        switch(var(VAR_DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+            case DIFFICULTY_NORMAL:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+            default:
+                setvar(VAR_0x8005, 1)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
         }
-        special(ReducePlayerPartyToSelectedMons)
         msgbox(format("¡A ver si te la bancas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         setflag(B_FLAG_NO_WHITEOUT)
         trainerbattle_no_intro(TRAINER_WAH_ADMIN_ROXAS, format("¡Nooooo!"))
@@ -243,11 +275,9 @@ script Lobby_EventScript_Roxas {
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
         call(Achievements_EventScript_Eval_DefeatAllAdmins)
-        releaseall
+        release
         end
     } else {
-        lockall
-        faceplayer
         msgbox(format("No te molestes en preguntar… A mí tampoco me dejan pasar estos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
@@ -262,15 +292,17 @@ script Lobby_EventScript_Roxas {
         applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
         msgbox(format("¡Unos caraduras loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         waitmovement(0)
-        lockall
+        lock
         delay(20)
         msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… Aterrador…\pHabrá que investigar y ver que onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         msgbox(format("Che, discúlpame, mejor me voy a seguir con mis investigaciones.\p¡Suerte, espero que a vos sí te den bola!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        releaseall
+        release
         end
     }
 }
+
+
 
 text Lobby_Text_Roxas_PlayerCancelled {
     format("¿Así que le tenés miedo a mi bicho legendario? ¡Y aún así ganaste las salas!")
