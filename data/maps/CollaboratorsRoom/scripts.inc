@@ -77,7 +77,7 @@ CollaboratorsRoom_EventScript_Kaktus_IntroRematch::
 # 38 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 39 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 40 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 41 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -88,8 +88,10 @@ CollaboratorsRoom_EventScript_Kaktus_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Kaktus_IntroRematch_2
 # 46 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Kaktus_IntroRematch_3
-# 48 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Kaktus_IntroRematch_4
+# 49 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
+# 50 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_2:
@@ -100,13 +102,6 @@ CollaboratorsRoom_EventScript_Kaktus_IntroRematch_2:
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_3:
 # 47 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Kaktus_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Kaktus_IntroRematch_4:
-# 49 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS
-# 50 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent
 	return
 
 
@@ -260,7 +255,7 @@ CollaboratorsRoom_EventScript_Gameboycl_IntroRematch::
 # 135 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 136 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 137 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 138 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -271,8 +266,10 @@ CollaboratorsRoom_EventScript_Gameboycl_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_2
 # 143 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_3
-# 145 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_4
+# 146 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
+# 147 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_2:
@@ -283,13 +280,6 @@ CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_2:
 CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_3:
 # 144 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Gameboycl_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_4:
-# 146 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL
-# 147 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent
 	return
 
 
@@ -443,7 +433,7 @@ CollaboratorsRoom_EventScript_Erkey_IntroRematch::
 # 232 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 233 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 234 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 235 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -454,8 +444,14 @@ CollaboratorsRoom_EventScript_Erkey_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Erkey_IntroRematch_2
 # 244 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Erkey_IntroRematch_3
-# 246 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Erkey_IntroRematch_4
+# 247 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
+# 248 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_PIN
+# 249 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
+# 250 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Erkey_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_2:
@@ -474,17 +470,6 @@ CollaboratorsRoom_EventScript_Erkey_IntroRematch_2:
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_3:
 # 245 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Erkey_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Erkey_IntroRematch_4:
-# 247 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY
-# 248 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
-# 249 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
-# 250 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Erkey_OnFinishEvent
 	return
 
 
@@ -662,7 +647,7 @@ CollaboratorsRoom_EventScript_Micolo_IntroRematch::
 # 346 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 347 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 348 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 349 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -673,8 +658,10 @@ CollaboratorsRoom_EventScript_Micolo_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Micolo_IntroRematch_2
 # 354 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Micolo_IntroRematch_3
-# 356 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Micolo_IntroRematch_4
+# 357 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Micolo_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
+# 358 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Micolo_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Micolo_IntroRematch_2:
@@ -685,13 +672,6 @@ CollaboratorsRoom_EventScript_Micolo_IntroRematch_2:
 CollaboratorsRoom_EventScript_Micolo_IntroRematch_3:
 # 355 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Micolo_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Micolo_IntroRematch_4:
-# 357 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Micolo_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
-# 358 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Micolo_OnFinishEvent
 	return
 
 
@@ -938,7 +918,7 @@ CollaboratorsRoom_EventScript_MrNightology_IntroRematch::
 # 495 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 496 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 497 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 498 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -947,8 +927,10 @@ CollaboratorsRoom_EventScript_MrNightology_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_MrNightology_IntroRematch_2
 # 502 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_MrNightology_IntroRematch_3
-# 504 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_MrNightology_IntroRematch_4
+# 505 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+# 506 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_2:
@@ -959,13 +941,6 @@ CollaboratorsRoom_EventScript_MrNightology_IntroRematch_2:
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_3:
 # 503 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_MrNightology_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_MrNightology_IntroRematch_4:
-# 505 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
-# 506 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent
 	return
 
 
@@ -1291,7 +1266,7 @@ CollaboratorsRoom_EventScript_Gosuto_IntroRematch::
 # 674 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 675 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 676 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 677 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1302,8 +1277,10 @@ CollaboratorsRoom_EventScript_Gosuto_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Gosuto_IntroRematch_2
 # 682 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Gosuto_IntroRematch_3
-# 684 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Gosuto_IntroRematch_4
+# 685 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
+# 686 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Gosuto_IntroRematch_2:
@@ -1314,13 +1291,6 @@ CollaboratorsRoom_EventScript_Gosuto_IntroRematch_2:
 CollaboratorsRoom_EventScript_Gosuto_IntroRematch_3:
 # 683 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Gosuto_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Gosuto_IntroRematch_4:
-# 685 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO
-# 686 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent
 	return
 
 
@@ -1486,7 +1456,7 @@ CollaboratorsRoom_EventScript_Acimut_IntroRematch::
 # 789 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 790 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 791 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 792 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1497,8 +1467,12 @@ CollaboratorsRoom_EventScript_Acimut_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Acimut_IntroRematch_2
 # 797 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Acimut_IntroRematch_3
-# 800 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Acimut_IntroRematch_4
+# 801 "data/maps/CollaboratorsRoom/scripts.pory"
+	fadedefaultbgm
+# 802 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
+# 803 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Acimut_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_2:
@@ -1511,15 +1485,6 @@ CollaboratorsRoom_EventScript_Acimut_IntroRematch_3:
 	fadedefaultbgm
 # 799 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Acimut_TalkOnly
-	return
-
-CollaboratorsRoom_EventScript_Acimut_IntroRematch_4:
-# 801 "data/maps/CollaboratorsRoom/scripts.pory"
-	fadedefaultbgm
-# 802 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
-# 803 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Acimut_OnFinishEvent
 	return
 
 
@@ -1746,7 +1711,7 @@ CollaboratorsRoom_EventScript_Alexmad_IntroRematch::
 # 926 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitmessage
 # 927 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 928 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 929 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1757,8 +1722,10 @@ CollaboratorsRoom_EventScript_Alexmad_IntroRematch::
 	case 0, CollaboratorsRoom_EventScript_Alexmad_IntroRematch_2
 # 934 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Alexmad_IntroRematch_3
-# 937 "data/maps/CollaboratorsRoom/scripts.pory"
-	case 2, CollaboratorsRoom_EventScript_Alexmad_IntroRematch_4
+# 938 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 939 "data/maps/CollaboratorsRoom/scripts.pory"
+	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_2:
@@ -1770,13 +1737,6 @@ CollaboratorsRoom_EventScript_Alexmad_IntroRematch_3:
 # 935 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_LongIntro
 # 936 "data/maps/CollaboratorsRoom/scripts.pory"
-	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
-	return
-
-CollaboratorsRoom_EventScript_Alexmad_IntroRematch_4:
-# 938 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
-# 939 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
@@ -1887,20 +1847,20 @@ CollaboratorsRoom_EventScript_Alexmad_7:
 	goto_if_set FLAG_ALEXMAD_EVENT_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_10
 # 1026 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, CollaboratorsRoom_EventScript_Alexmad_16
-# 1053 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1054 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_TEMP_C, 1
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_28
-# 1056 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1057 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_12, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
 CollaboratorsRoom_EventScript_Alexmad_27:
-# 1058 "data/maps/CollaboratorsRoom/scripts.pory"
-	closemessage
 # 1059 "data/maps/CollaboratorsRoom/scripts.pory"
+	closemessage
+# 1060 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_35
-# 1062 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 # 1063 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 1064 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
@@ -1964,7 +1924,7 @@ CollaboratorsRoom_EventScript_Alexmad_16:
 	waitmovement 0
 CollaboratorsRoom_EventScript_Alexmad_23:
 # 1036 "data/maps/CollaboratorsRoom/scripts.pory"
-	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_EventScript_Alexmad_Text_7, CollaboratorsRoom_EventScript_Alexmad_Text_8, CollaboratorsRoom_EventScript_Alexmad_Text_9
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_EventScript_Alexmad_Text_7, CollaboratorsRoom_EventScript_Alexmad_Text_8, CollaboratorsRoom_EventScript_Alexmad_Text_9
 # 1037 "data/maps/CollaboratorsRoom/scripts.pory"
 	switch VAR_RESULT
 # 1038 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1972,6 +1932,8 @@ CollaboratorsRoom_EventScript_Alexmad_23:
 # 1040 "data/maps/CollaboratorsRoom/scripts.pory"
 	case 1, CollaboratorsRoom_EventScript_Alexmad_33
 # 1050 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+# 1051 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
 	return
 
@@ -1986,7 +1948,7 @@ CollaboratorsRoom_EventScript_Alexmad_24:
 	goto CollaboratorsRoom_EventScript_Alexmad_23
 
 CollaboratorsRoom_EventScript_Alexmad_28:
-# 1054 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1055 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Alexmad_Text_11, MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD
 	goto CollaboratorsRoom_EventScript_Alexmad_27
 
@@ -2010,7 +1972,7 @@ CollaboratorsRoom_EventScript_Alexmad_38:
 	return
 
 CollaboratorsRoom_EventScript_Alexmad_35:
-# 1060 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1061 "data/maps/CollaboratorsRoom/scripts.pory"
 	goto CollaboratorsRoom_EventScript_Alexmad_QRFlow
 	return
 
@@ -2021,61 +1983,61 @@ CollaboratorsRoom_EventScript_Alexmad_39:
 
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete::
-# 1070 "data/maps/CollaboratorsRoom/scripts.pory"
-	lockall
 # 1071 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceRight
+	lockall
 # 1072 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceRight
 # 1073 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark
-# 1074 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
+# 1074 "data/maps/CollaboratorsRoom/scripts.pory"
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_DoubleExclamationMark
 # 1075 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_0
+	playse SE_PIN
 # 1076 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_0
 # 1077 "data/maps/CollaboratorsRoom/scripts.pory"
+	playse SE_LEDGE
+# 1078 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_1
-# 1079 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_SUCCESS
 # 1080 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	playse SE_SUCCESS
 # 1081 "data/maps/CollaboratorsRoom/scripts.pory"
-	delay 20
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 # 1082 "data/maps/CollaboratorsRoom/scripts.pory"
-	directmovementtopos LOCALID_PLAYER, 4, 4
+	delay 20
 # 1083 "data/maps/CollaboratorsRoom/scripts.pory"
-	waitmovement 0
+	directmovementtopos LOCALID_PLAYER, 4, 4
 # 1084 "data/maps/CollaboratorsRoom/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
+	waitmovement 0
 # 1085 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	turnobject LOCALID_PLAYER, DIR_WEST
 # 1086 "data/maps/CollaboratorsRoom/scripts.pory"
-	setflag FLAG_ALEXMAD_EVENT_COMPLETED
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 # 1087 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	setflag FLAG_ALEXMAD_EVENT_COMPLETED
 # 1088 "data/maps/CollaboratorsRoom/scripts.pory"
-	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 # 1089 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
+# 1090 "data/maps/CollaboratorsRoom/scripts.pory"
 	releaseall
 	end
 
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed::
-# 1094 "data/maps/CollaboratorsRoom/scripts.pory"
-	lockall
 # 1095 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer
+	lockall
 # 1096 "data/maps/CollaboratorsRoom/scripts.pory"
-	playse SE_FAILURE
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer
 # 1097 "data/maps/CollaboratorsRoom/scripts.pory"
-	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48
+	playse SE_FAILURE
 # 1098 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48
 # 1099 "data/maps/CollaboratorsRoom/scripts.pory"
-	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
 # 1100 "data/maps/CollaboratorsRoom/scripts.pory"
+	turnobject LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH
+# 1101 "data/maps/CollaboratorsRoom/scripts.pory"
 	releaseall
 	end
 
@@ -2250,17 +2212,17 @@ CollaboratorsRoom_EventScript_Alexmad_Movement_0:
 	jump_in_place_down
 	step_end
 
-# 1075 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1076 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_0:
-# 1075 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1076 "data/maps/CollaboratorsRoom/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 1077 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1078 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_1:
-# 1077 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1078 "data/maps/CollaboratorsRoom/scripts.pory"
 	jump_in_place_right
-# 1077 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1078 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay_16
 	step_end
 
@@ -2947,38 +2909,38 @@ CollaboratorsRoom_EventScript_Alexmad_Text_10:
 	.string "Veamos qué versión eres ahora.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_11:
-# 1054 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1055 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Tengo para ti un evento al puro estilo\n"
 	.string "del Mitic.\p"
 	.string "Dime… ¿lo quieres hacer?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_12:
-# 1056 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1057 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Has vuelto, ¿quieres seguir con el\n"
 	.string "evento?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_13:
-# 1062 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1063 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Vuelve cuando estés list{OA}.\n"
 	.string "El Mitic no espera… pero tampoco se\l"
 	.string "repite.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0:
-# 1080 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1081 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡Lo has logrado! Veo que eres buen{OA}.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1:
-# 1085 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1086 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Me recuerdas a KODER. Siempre fue bueno\n"
 	.string "con los acertijos.\p"
 	.string "Quizás pueda ayudarte en tu camino.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2:
-# 1087 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1088 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "PENDIENTE PREMIO$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0:
-# 1098 "data/maps/CollaboratorsRoom/scripts.pory"
+# 1099 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "No, no… así no es.\p"
 	.string "Vuelve a hablarme si quieres intentarlo\n"
 	.string "de nuevo.$"

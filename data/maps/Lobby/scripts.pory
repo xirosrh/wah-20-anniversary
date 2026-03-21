@@ -19,7 +19,7 @@ script Lobby_EventScript_StartChallenge {
     setspeaker(SP_NAME_COPE)
     message(format("¿En qué modo quieres afrontar el desafío?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Estándar"), format("Batallas dobles"), format("Salir"))
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Estándar"), format("Batallas dobles"), format("Salir"))
     closemessage
     delay(10)
     switch(var(VAR_RESULT)) {
