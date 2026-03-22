@@ -7,6 +7,10 @@
 #include "graphics.h"
 #include "menu.h"
 #include "gpu_regs.h"
+#include "field_weather.h"
+#include "field_effect_helpers.h"
+#include "overworld.h"
+#include "metatile_behavior.h"
 
 const u8 gTextWindowFrame1_Gfx[] = INCBIN_U8("graphics/text_window/1.4bpp");
 static const u8 sTextWindowFrame2_Gfx[] = INCBIN_U8("graphics/text_window/2.4bpp");
@@ -241,6 +245,7 @@ void LoadUserWindowBorderGfxTransparent(u8 windowId, u16 destOffset, u8 palOffse
 
 void SetUiTransparent(void)
 {
+    gWeatherPtr->noShadows = TRUE;
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL | BLDCNT_TGT1_BG0);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(15, 6));
     SetGpuRegBits(REG_OFFSET_WININ, WININ_WIN0_CLR);
@@ -248,6 +253,24 @@ void SetUiTransparent(void)
 
 void ClearUiTransparent(void)
 {
-    ClearGpuRegBits(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_BLEND);
+    u8 i;
+    gWeatherPtr->noShadows = FALSE;
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3
+                                | BLDCNT_TGT2_OBJ | BLDCNT_EFFECT_BLEND);
+    Weather_SetBlendCoeffs(gWeatherPtr->currBlendEVA, gWeatherPtr->currBlendEVB);
     ClearGpuRegBits(REG_OFFSET_WININ, WININ_WIN0_CLR);
+    if (!OW_OBJECT_VANILLA_SHADOWS && CurrentMapHasShadows())
+    {
+        for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        {
+            struct ObjectEvent *objEvent = &gObjectEvents[i];
+            if (objEvent->active
+             && !objEvent->inHotSprings
+             && !objEvent->inSandPile
+             && !MetatileBehavior_IsPuddle(objEvent->currentMetatileBehavior))
+            {
+                SetUpShadow(objEvent);
+            }
+        }
+    }
 }

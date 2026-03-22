@@ -91,7 +91,7 @@ Achievements_EventScript_Eval_Common_2:
 # 68 "data/scripts/achievements.pory"
 	msgbox Achievements_EventScript_Eval_Common_Text_0, MSGBOX_AUTOCLOSE_CENTER
 # 69 "data/scripts/achievements.pory"
-	clearflag FLAG_TRANSPARENT_BOX
+	special Special_ClearTransparentBox
 # 70 "data/scripts/achievements.pory"
 	special Special_StopAchievementConfetti
 	goto Achievements_EventScript_Eval_Common_1

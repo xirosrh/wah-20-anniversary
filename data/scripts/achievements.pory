@@ -66,9 +66,8 @@ script Achievements_EventScript_Eval_Common {
         special(Special_StartAchievementConfetti)
         setflag(FLAG_TRANSPARENT_BOX)
         msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
-        clearflag(FLAG_TRANSPARENT_BOX)
+        special(Special_ClearTransparentBox)
         special(Special_StopAchievementConfetti)
-        //waitse
     }
     return
 }
