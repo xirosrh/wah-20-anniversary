@@ -82,8 +82,10 @@ Achievements_EventScript_Eval_Common_1:
 	return
 
 Achievements_EventScript_Eval_Common_2:
-# 65 "data/scripts/achievements.pory"
+# 64 "data/scripts/achievements.pory"
 	special Special_BufferAchievementTitle
+# 65 "data/scripts/achievements.pory"
+	playse SE_APPLAUSE
 # 66 "data/scripts/achievements.pory"
 	special Special_StartAchievementConfetti
 # 67 "data/scripts/achievements.pory"
@@ -93,6 +95,8 @@ Achievements_EventScript_Eval_Common_2:
 # 69 "data/scripts/achievements.pory"
 	special Special_ClearTransparentBox
 # 70 "data/scripts/achievements.pory"
+	waitse
+# 71 "data/scripts/achievements.pory"
 	special Special_StopAchievementConfetti
 	goto Achievements_EventScript_Eval_Common_1
 
