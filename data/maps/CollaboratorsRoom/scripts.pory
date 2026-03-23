@@ -1124,48 +1124,42 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly {
-    msgbox(format("Mi nombre es El Gran Jefe Topo, quiero decir, Ryuzaki, aunque algunos desgraciados me están llamando Ryutopo para desprestigiarme…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Mi nombre es El Gran Jefe Topo, quiero decir, Ryuzaki, aunque recientemente algunos desgraciados me están llamando Ryutopo para desprestigiarme…\pY eso que mis animalines favoritos son las nutrias…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
-    msgbox(format("Y eso que mis animalines favoritos son las nutrias.\pPero hay que admitir que es una conjugación bastante hilarante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Pero hay que admitir que es una conjugación bastante hilarante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox(format("¿Lees manga? Hay uno que me gustaría recomendarte…\pEs Tokyo Ghoul."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox("¿Lees manga? ¡No me mientas! Sé que sí.\nEn todo caso, aún si no lo haces, hay\luno que me gustaría recomendarte.\pEs Tokyo Ghoul.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
     waitse
-    msgbox(format("Sí, entiendo esa cara de decepción, ¡no soy un adolescente emo de 2017!\pAunque mis pintas sugieran lo contrario…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
-    playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    msgbox(format("Sí, entiendo esa cara de decepción, ¡no soy un adolescente emo en 2017!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("El manga trata las bifurcaciones de la introspectiva de sus personajes, ideologías, emociones y patrones de comportamiento con tanto amor que resulta ser una experiencia preciosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
-    playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    delay(20)
+    msgbox(format("Su adaptación fue un relajo, pero no es la burla que probablemente imaginas.\pEl manga trata las bifurcaciones de la introspectiva de sus personajes con tanto amor que resulta ser una experiencia preciosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("No te estoy desinformando, puedes confiar en mí. Es muy especial para mí, tenía que usar descaradamente mi influencia para darle visibilidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("No te estoy desinformando, puedes confiar en mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Es muy especial para mí… tenía que usar descaradamente mi influencia para darle visibilidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle {
-    msgbox(format("Bueno, es hora de la violencia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
-    playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
-    waitse
-    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("¡Te mostraré la verdad divina!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox("Es hora de la violencia.\nTe mostraré La Verdad Divina.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     return
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
-    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema.\pTen, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema. Ten, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox("{FONT_SMALL}“¡Ay, langosta sucia!\nNo es solo cuestión de calandracas\lEs el naufragio del espíritu\lEn el Océano del Carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox("{FONT_SMALL}“¡Ay, langosta sucia! No es solo cuestión\nde calandracas. Es el naufragio del\lespíritu, en el océano del carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
-    playse(SE_PIN)
-    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     delay(20)
     setspeaker(SP_NAME_RYUZAKI)
     message(format("Profundo y seinen, ¿verdad? Bueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
@@ -1180,7 +1174,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
         case 1:
             goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
         default:
-            msgbox(format("Las moscas no pueden simplemente echarse gafas para ver la luz."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("Las moscas no pueden simplemente echarse gafas para ver La Luz."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
@@ -1218,8 +1212,12 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             msgbox(format("Me fumigaste. Te salvaste de que no estamos en territorio ryutámico."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
-            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)
+        } elif(var(VAR_RESULT) == B_OUTCOME_FORFEITED) {
+            msgbox(format("¿Ah? ¿No íbamos a pelear? Veo que has perfeccionado tus habilidades desinformativas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
         } else {
             msgbox(format("Eres una burla, asere. Recoge tu baraja."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
@@ -1234,12 +1232,12 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
         call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         delay(20)
         msgbox(format("¿Qué? ¿Yo? Oh, no te preocupes, no soy nadie sospechoso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        delay(20)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
     }
 }
 
 text CollaboratorsRoom_Text_Ryuzaki_OnDefeat {
-    format("Espero de corazón que puedas disfrutar los colores de nuestra única vida a tu manera.")
+    format("Ya sabes lo que dicen, la voluntad es la fuerza del alma.")
 }
