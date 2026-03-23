@@ -49,6 +49,7 @@
 #include "strings.h"
 #include "task.h"
 #include "text.h"
+#include "text_window.h"
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
@@ -69,6 +70,7 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/battle_frontier.h"
+#include "constants/flags.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
@@ -1473,6 +1475,12 @@ void Special_StartAchievementConfetti(void)
 void Special_StopAchievementConfetti(void)
 {
     StopAchievementConfetti();
+}
+
+void Special_ClearTransparentBox(void)
+{
+    ClearUiTransparent();
+    FlagClear(FLAG_TRANSPARENT_BOX);
 }
 
 u8 TryUpdateRusturfTunnelState(void)
