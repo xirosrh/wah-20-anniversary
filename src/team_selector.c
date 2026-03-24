@@ -40,11 +40,13 @@
 #include "trainer_pokemon_sprites.h"
 #include "pokemon_icon.h"
 #include "team_selector.h"
+#include "team_selector_player.h"
 #include "pokeball.h"
 #include "pokemon.h"
 #include "script_pokemon_util.h"
 #include "event_data.h"
 #include "pokemon.h"
+
 
 //========== SECCIÓN: VARIABLES ==========//
 
@@ -496,18 +498,18 @@ static void LoadMoveIconType(u16 move, u8 indexMove)
     CopyWindowToVram(WINDOW_MOVE_TYPE, 3);
 }
 
-static void LoadMonIconType(u16 specie)
+void LoadMonIconType(u8 windowId, u16 specie, u8 x, u8 y, u8 fillColor)
 {
     u8 type1 = gSpeciesInfo[specie].types[0];
     u8 type2 = gSpeciesInfo[specie].types[1];
 
-    FillWindowPixelBuffer(WINDOW_MON_TYPE, PIXEL_FILL(15));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(fillColor));
 
-    BlitMenuInfoIcon(WINDOW_MON_TYPE, type1, 0, 2);  
+    BlitMenuInfoIcon(windowId, type1, x, y);  
     if( type1 != type2)
-        BlitMenuInfoIcon(WINDOW_MON_TYPE, type2, 40, 2);  
+        BlitMenuInfoIcon(windowId, type2, x + 40, y);  
 
-    CopyWindowToVram(WINDOW_MON_TYPE, 3);
+    CopyWindowToVram(windowId, 3);
 }
 
 static void ShowMoveCateroyIcon(u16 move, u8 indexMove)
@@ -641,20 +643,31 @@ static u8 GetAbilitySlotForSpecies(u16 species, u16 abilityId)
     return NUM_ABILITY_SLOTS;
 }
 
-static void GiveTeamPlayer()
+void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon)
 {
-    const struct TeamSelectorMonData *mon;
-    u8 i;
-    u8 indexMon = 0;
+    u8 gender;
+    u8 evs[6];
+    u8 ivs[6];
+    u16 tempMoves[4];
+   
     enum PokeBall  ball = BALL_POKE;
     enum ShinyMode shiny;
     enum Type typeTera = TYPE_NONE;
 
-    u8 gender;
-    u8 evs[6];
-    u8 ivs[6];
+    shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
+    memcpy(tempMoves, mon->moves, sizeof(tempMoves));
+    memcpy(evs, mon->ev, sizeof(evs));
+    GetIVsByNature(mon, ivs);
 
-    u16 tempMoves[4];
+    gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
+    ScriptGiveMonParameterized(0, slot, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+}
+
+static void GiveTeamPlayer()
+{
+    u8 i;
+    u16 indexMon;
+    const struct TeamSelectorMonData *mon;
 
     for ( i = 0; i < MAX_TEAM_SIZE; i++)
     {
@@ -665,13 +678,7 @@ static void GiveTeamPlayer()
             indexMon = gTeamSelectorPlayer[teamSelectorObj.monTeamNum].team[i];
 
         mon = &gAllTeamMons[indexMon];
-        shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
-        memcpy(tempMoves, mon->moves, sizeof(tempMoves));
-        memcpy(evs, mon->ev, sizeof(evs));
-        GetIVsByNature(mon, ivs);
-
-        gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
-        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+        GiveMonTeamFromSelector(i, mon);
     }
     gPlayerPartyCount = MAX_TEAM_SIZE;
 }
@@ -888,7 +895,7 @@ void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons)
     PrintNameMon(mon);
     PrintMovesMon(mon);
     PrintAbilityMon(mon);
-    LoadMonIconType(mon->specie);
+    LoadMonIconType(WINDOW_MON_TYPE, mon->specie, 0, 2, 15);
 }
 
 static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons)
@@ -987,7 +994,7 @@ static void AddSpecialMonToRandomTeamByPlayerName()
 {
     u8 i;
     u8 indexToReplace = 0xFF;
-    u8 indexSpecialMon = 119; //indice de electrode sandia
+    u8 indexSpecialMon = MON_WATERMELON_ELECTRODE;
     const struct TeamSelectorMonData *mon1;
     const struct TeamSelectorMonData *mon2;
 

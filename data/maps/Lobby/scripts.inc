@@ -878,6 +878,12 @@ Lobby_EventScript_QREventInfoKid::
 	end
 
 
+Lobby_Pokebox::
+# 455 "data/maps/Lobby/scripts.pory"
+	callnative StartPokeBox_CB2
+	end
+
+
 # 162 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 162 "data/maps/Lobby/scripts.pory"

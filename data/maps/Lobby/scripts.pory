@@ -450,3 +450,8 @@ script Lobby_EventScript_QREventInfoKid {
     release
     end
 }
+
+script Lobby_Pokebox {
+    callnative(StartPokeBox_CB2)
+    end
+}
