@@ -364,6 +364,7 @@ script JackJohnsonRoom_OnFrame {
     waitmovement(LOCALID_JACKROOM_NPC3)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_JumpDownFaceLeft)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight)
+    waitmovement(0)
     msgbox(format("¡Giro! ¡Más energía, que parezca un huracán!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs)
     applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_SecondCombinationNpcs)
@@ -388,8 +389,8 @@ script JackJohnsonRoom_OnFrame {
         jump_in_place_up
         delay_16 * 2
     ))
-    msgbox(format("¡Perfecto! ¡Lo hemos clavado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     waitmovement(0)
+    msgbox(format("¡Perfecto! ¡Lo hemos clavado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     delay(20)
     msgbox(format("¡Formación!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     lock

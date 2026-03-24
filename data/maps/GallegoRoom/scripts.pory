@@ -75,21 +75,19 @@ script GallegoRoom_EventScript_Gallego {
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_double_exclamation_mark))
     waitmovement(0)
     waitse
+    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_LEDGE)
-    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
         jump_in_place_up
     ))
-    waitmovement(0)
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         jump_in_place_up,
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
-    waitmovement(0)
     delay(40)
     msgbox(format("El aniversario me ha pillado totalmente por sorpresa. ¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
@@ -164,13 +162,12 @@ script GallegoRoom_EventScript_Gallego {
     waitmovement(0)
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         jump_in_place_up,
         unlock_facing_direction,
         face_player
     ))
     msgbox(format("Ve, continúa, ¡busca tu sueño y abrázalo con fuerza!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
-    waitmovement(0)
     call(WahRoomsShared_OpenDoor)
     msgbox(format("Yo me quedaré aquí un rato más… recordando mis viejos intentos y soñando con un nuevo y emocionante comienzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     setflag(FLAG_DEFEATED_ADMIN_GALLEGO)
