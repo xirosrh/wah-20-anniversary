@@ -19,12 +19,22 @@ script Lobby_EventScript_StartChallenge {
     setspeaker(SP_NAME_COPE)
     message(format("¿En qué modo quieres afrontar el desafío?"))
     waitmessage
-    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Estándar"), format("Batallas dobles"), format("Salir"))
+    dynmultipush(format("Estándar"), 0)
+    dynmultipush(format("Batallas dobles"), 1)
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        dynmultipush(format("Batallas inversas"), 2)
+    } else {
+        dynmultipush(format("{COLOR LIGHT_GRAY}Batallas inversas"), -3)
+    }
+    dynmultipush(format("Salir"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
     delay(10)
     switch(var(VAR_RESULT)) {
         case 0:
             setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD)
+            clearflag(FLAG_FORCE_DOUBLE_BATTLE)
+            clearflag(FLAG_INVERSE_BATTLE)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
             msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             turnobject(LOCALID_PLAYER, DIR_NORTH)
@@ -36,8 +46,21 @@ script Lobby_EventScript_StartChallenge {
         case 1:
             setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            clearflag(FLAG_INVERSE_BATTLE)
             setflag(FLAG_FORCE_DOUBLE_BATTLE)
             msgbox(format("¡Excelente! El desafío será en modo batallas dobles.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            turnobject(LOCALID_PLAYER, DIR_NORTH)
+            call(WahRoomsShared_OpenDoor)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+            hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
+            warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
+            waitstate
+        case 2:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            clearflag(FLAG_FORCE_DOUBLE_BATTLE)
+            setflag(FLAG_INVERSE_BATTLE)
+            msgbox(format("¡Excelente! El desafío será en modo batallas inversas.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             turnobject(LOCALID_PLAYER, DIR_NORTH)
             call(WahRoomsShared_OpenDoor)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
