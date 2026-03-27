@@ -17,6 +17,7 @@ static bool8 CheckDummyChallenge(u8 id);
 static bool8 CheckWinWahChallenge(u8 id);
 static bool8 CheckWinWahChallengeStandard(u8 id);
 static bool8 CheckWinWahChallengeDouble(u8 id);
+static bool8 CheckWinWahChallengeInverse(u8 id);
 static bool8 CheckDefeatAllAdmins(u8 id);
 static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
@@ -46,6 +47,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("Gana el desafío donde cada rival\ntiene un equipo distinto y\naleatorio. Cada batalla es única."),
         .target = TRUE,
         .check = CheckDummyChallenge, //TODO Xiros
+    },
+    [ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE] = {
+        .title = COMPOUND_STRING("El mundo al revés"),
+        .description = COMPOUND_STRING("Supera el desafío en modo batallas\ninversas. Las efectividades de tipo\nse invierten. ¡Adapta tu estrategia!"),
+        .target = TRUE,
+        .check = CheckWinWahChallengeInverse,
     },
     [ACHIEVEMENT_DEFEAT_ALL_ADMINS] = {
         .title = COMPOUND_STRING("Derrota a todos los admins"),
@@ -104,6 +111,11 @@ static bool8 CheckWinWahChallengeStandard(u8 id)
 static bool8 CheckWinWahChallengeDouble(u8 id)
 {
     return FlagGet(FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED) == sAchievements[id].target;
+}
+
+static bool8 CheckWinWahChallengeInverse(u8 id)
+{
+    return FlagGet(FLAG_WAH_CHALLENGE_INVERSE_COMPLETED) == sAchievements[id].target;
 }
 
 static bool8 CheckWinWahChallengeXTimes(u8 id)

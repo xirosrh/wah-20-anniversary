@@ -1,6 +1,7 @@
 script EventScript_ResetWahChallenge {
 	call(EventScript_ClearWahAdminFlags)
 	clearflag(FLAG_FORCE_DOUBLE_BATTLE)
+	clearflag(FLAG_INVERSE_BATTLE)
 	setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_NONE)
 	return
 }

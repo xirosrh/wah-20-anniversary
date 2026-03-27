@@ -26,6 +26,12 @@ script Achievements_EventScript_Eval_WinWahChallenge_Random {
     return
 }
 
+script Achievements_EventScript_Eval_WinWahChallenge_Inverse {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
 script Achievements_EventScript_Eval_DefeatAllAdmins {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_ADMINS)
     call(Achievements_EventScript_Eval_Common)
