@@ -62,13 +62,28 @@ script Lobby_EventScript_StartChallenge {
 
 script Lobby_StartChallenge_EnterOmegaRoom {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
-    call(WahRoomsShared_OpenDoor)
-    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
+    call(Lobby_EventScript_OpenDoor)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
     hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
     warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
     waitstate
     release
     end
+}
+
+
+script Lobby_EventScript_OpenDoor {
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)
+	playse(SE_DOOR)
+	setmetatile(7, 2, METATILE_RoomGeneral_Door_Opening1, FALSE)
+	special(DrawWholeMapView)
+	delay(5)
+	setmetatile(7, 2, METATILE_RoomGeneral_Door_Opening2, FALSE)
+    special(DrawWholeMapView)
+	delay(5)
+    setmetatile(7, 2, METATILE_RoomGeneral_Door_Open, FALSE)
+    special(DrawWholeMapView)
+	return
 }
 
 

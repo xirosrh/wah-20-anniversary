@@ -1039,3 +1039,14 @@ const struct Tileset gTileset_room_sayerblax =
     .metatileAttributes = gMetatileAttributes_room_sayerblax,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_lobby =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_lobby,
+    .palettes = gTilesetPalettes_lobby,
+    .metatiles = gMetatiles_lobby,
+    .metatileAttributes = gMetatileAttributes_lobby,
+    .callback = NULL,
+};
