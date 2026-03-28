@@ -54,6 +54,8 @@ script HallOfFame_EventScript_EvalAchievements {
 			call(Achievements_EventScript_Eval_WinWahChallenge_Standard)
 		case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE:
 			call(Achievements_EventScript_Eval_WinWahChallenge_Double)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
+			call(Achievements_EventScript_Eval_WinWahChallenge_Inverse)
 	}
 	call(Achievements_EventScript_Eval_WinWahChallenge_5Times)
 	call(Achievements_EventScript_Eval_WinWahChallenge_HardMode)
@@ -67,6 +69,8 @@ script HallOfFame_EventScript_SetGameClear {
 			setflag(FLAG_WAH_CHALLENGE_STANDARD_COMPLETED)
 		case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE:
 			setflag(FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
+			setflag(FLAG_WAH_CHALLENGE_INVERSE_COMPLETED)
 	}
 	addvar(VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1)
 	return

@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_LOBBY_COPE",
       "graphics_id": "OBJ_EVENT_GFX_COPE",
-      "x": 5,
-      "y": 3,
+      "x": 6,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LOBBY_MANIAC",
-      "x": 3,
+      "x": 4,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -43,7 +43,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 9,
+      "x": 10,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -56,10 +56,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 11,
-      "y": 5,
+      "x": 12,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -69,8 +69,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROXAS",
-      "x": 3,
-      "y": 9,
+      "x": 6,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -83,10 +83,10 @@
     {
       "local_id": "LOCALID_LOBBY_FAKEMON_SAGE",
       "graphics_id": "OBJ_EVENT_GFX_LOBBY_MAN_1",
-      "x": 11,
-      "y": 7,
+      "x": 9,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -96,10 +96,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LOBBY_WOMAN_1",
-      "x": 8,
+      "x": 12,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -109,7 +109,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 1,
+      "x": 2,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -122,10 +122,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LOBBY_KID",
-      "x": 9,
-      "y": 12,
+      "x": 2,
+      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -137,32 +137,25 @@
   "warp_events": [
     {
       "warp_id": "WARP_ID_LOBBY_INITIAL",
-      "x": 6,
+      "x": 7,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LOBBY",
       "dest_warp_id": "0"
     },
     {
-      "x": 12,
-      "y": 10,
+      "x": 13,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_COLLABORATORS_ROOM",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 12,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_COLLABORATORS_ROOM",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 6,
-      "y": 3,
+      "x": 7,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
