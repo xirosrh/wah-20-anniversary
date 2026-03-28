@@ -70,7 +70,7 @@ script SayerBlaxRoom_OnFrame {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown5)
     waitmovement(LOCALID_CAMERA)
     special(RemoveCameraObject)
-    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
+    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval{A}.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     delay(20)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         face_up

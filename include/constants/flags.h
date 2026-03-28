@@ -84,7 +84,7 @@
 #define FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED    0x46 // Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI    0x47 // Used WAH
 #define FLAG_TRANSPARENT_BOX 0x48
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_WAH_CHALLENGE_INVERSE_COMPLETED    0x49 // Used WAH
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag

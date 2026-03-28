@@ -561,7 +561,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_POKENAV_ON)
         waitse
         applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
-        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿Estás preparad{OA}?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_POKENAV_HANG_UP)
         waitse
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
@@ -1220,7 +1220,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
         }
         goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
     } else {
-        msgbox(format("Hola querido coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        msgbox(format("Hola querid{OA} coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
         msgbox(format("La vida da más vueltas que una cantimplora, ¿verdad?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
