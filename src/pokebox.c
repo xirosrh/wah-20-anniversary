@@ -57,17 +57,21 @@
 #define MAX_MON_ICONS_IN_BOX 16
 
 #define NUM_MON_ICON_ROW 4
+
 #define MON_ICON_POS_X 119
-#define MON_ICON_POS_Y 48
+#define MON_ICON_POS_Y 46
+
 #define INCREMENT_MON_ICON_POS_X 34
 #define INCREMENT_MON_ICON_POS_Y 32
 
-
 #define MON_ICON_TEAM_ROWS 3
 #define MON_ICON_TEAM_COLS 2
+
 #define INITIAL_POS_X_BG_TEAM_PLAYER -144
+
 #define MON_ICON_PLAYER_TEAM_POS_X 124
 #define MON_ICON_PLAYER_TEAM_POS_Y 48
+
 #define INCREMENT_MON_ICON_PLAYER_TEAM_POS_X 41
 #define INCREMENT_MON_ICON_PLAYER_TEAM_POS_Y 40
 
@@ -84,8 +88,9 @@ struct PokeBox
     u8 row_team;
     u8 col_team;
 
+    u8 boxMonIconCategoyIds[4]; //id de las categorias de los movs
     u8 boxMonSpritesIds[NUM_MON_ICON_ROW][NUM_MON_ICON_ROW]; //id de los icons sprites de cada mon en la box
-    u8 playerTeamMonSpritesIds[MON_ICON_TEAM_ROWS][MON_ICON_TEAM_COLS];
+    u8 playerTeamMonSpritesIds[MON_ICON_TEAM_ROWS][MON_ICON_TEAM_COLS]; //id de los icons sprites en la party
 };
 
 #define tBgSlice data[1]
@@ -94,7 +99,9 @@ struct PokeBox
 static EWRAM_DATA struct PokeBox pokeBoxObj = {0};
 
 const u8 sTextColorWhitePokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
-const u8 sTextColorBlackPokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_RED};
+const u8 sTextColorBlackPokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
+
+const u8 sTextColorBlackMonInfo2PagePokebox[]= {TEXT_COLOR_TRANSPARENT, 8, 6};
 
 const u16 PokeboxBG_Palette[] = INCBIN_U16("graphics/pokebox/bg_pal0.gbapal");
 
@@ -107,7 +114,9 @@ const u32 PokeboxBG2_Tilemap[] = INCBIN_U32("graphics/pokebox/bg2_tilemap.bin.lz
 const u32 PokeboxBG3_Tileset[] = INCBIN_U32("graphics/pokebox/bg3_tileset.4bpp.lz");
 const u32 PokeboxBG3_Tilemap[] = INCBIN_U32("graphics/pokebox/bg3_tilemap.bin.lz");
 
-
+static u8 getTotalNumPages();
+static u16 GetSelectedPokemonIndex(void);
+bool8 IsLockMon(u8 i);
 static void Task_HandlePokebox(u8 taskId);
 static void Task_HandleTeamPlayerPokebox(u8 taskId);
 static void Task_ShowMonInfo(u8 taskId);
@@ -290,6 +299,9 @@ enum
     WINDOW_MSG,
     WINDOW_NAME,
     WINDOW_MON_TYPE,
+    WINDOW_SWAP_BOX,
+    WINDOW_MON_INFO,
+    WINDOW_MON_INFO_2,
     WINDOW_COUNT,
 };
 
@@ -325,6 +337,36 @@ static const struct WindowTemplate sWindowTemplatesPokeBox[] =
         .paletteNum = 6,
         .baseBlock = 71
     },
+    [WINDOW_SWAP_BOX]
+    {
+        .bg = 0,
+        .tilemapLeft = 13,
+        .tilemapTop = 2,
+        .width = 16,
+        .height = 2,
+        .paletteNum = 15,
+        .baseBlock = 89
+    },
+    [WINDOW_MON_INFO]
+    {
+        .bg = 0,
+        .tilemapLeft = 13,
+        .tilemapTop = 4,
+        .width = 17,
+        .height = 8,
+        .paletteNum = 15,
+        .baseBlock = 121
+    },
+    [WINDOW_MON_INFO_2]
+    {
+        .bg = 0,
+        .tilemapLeft = 13,
+        .tilemapTop = 12,
+        .width = 17,
+        .height = 8,
+        .paletteNum = 6,
+        .baseBlock = 257
+    },
 
     DUMMY_WIN_TEMPLATE,
 };
@@ -339,6 +381,9 @@ static void InitWindowPokeBox(void)
     PutWindowTilemap(WINDOW_MSG);
     PutWindowTilemap(WINDOW_NAME);
     PutWindowTilemap(WINDOW_MON_TYPE);
+    PutWindowTilemap(WINDOW_SWAP_BOX);
+    PutWindowTilemap(WINDOW_MON_INFO);
+    PutWindowTilemap(WINDOW_MON_INFO_2);
 }
 
 static void PrintNameMonPokebox(u16 specie)
@@ -347,7 +392,6 @@ static void PrintNameMonPokebox(u16 specie)
     AddTextPrinterParameterized3(WINDOW_NAME, FONT_NORMAL, 0, 0, sTextColorWhitePokebox, 0, GetSpeciesName(specie));
     CopyWindowToVram(WINDOW_NAME, 3);
 }
-
 
 static void PrintMsgActions(u8 msgAction)
 {
@@ -368,14 +412,164 @@ static void PrintMsgActions(u8 msgAction)
     CopyWindowToVram(WINDOW_MSG, 3);
 }
 
+static void PrintTextSwapBox()
+{
+    u8 x;
+    
+    const u8 gText_L_Button[] = _("{L_BUTTON}");
+    const u8 gText_Box_Name[] = _("CAJA {STR_VAR_2}");
+    const u8 gText_R_Button[] = _("{R_BUTTON}");
+
+    FillWindowPixelBuffer(WINDOW_SWAP_BOX, PIXEL_FILL(0));
+
+    if(pokeBoxObj.currentPageNum > 0)
+        AddTextPrinterParameterized3(WINDOW_SWAP_BOX, FONT_NORMAL, 0, 0, sTextColorWhitePokebox, 0, gText_L_Button);
+
+    if(pokeBoxObj.currentPageNum < getTotalNumPages()-1)
+        AddTextPrinterParameterized3(WINDOW_SWAP_BOX, FONT_NORMAL, 112, 0, sTextColorWhitePokebox, 0, gText_R_Button);
+
+    ConvertIntToDecimalStringN(gStringVar2, pokeBoxObj.currentPageNum, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    StringExpandPlaceholders(gStringVar3, gText_Box_Name);
+
+    x = GetStringCenterAlignXOffset(FONT_SMALL, gStringVar3, sWindowTemplatesPokeBox[WINDOW_SWAP_BOX].width*8);
+    AddTextPrinterParameterized3(WINDOW_SWAP_BOX, FONT_NORMAL, x, 0, sTextColorWhitePokebox, 0, gStringVar3);
+
+    CopyWindowToVram(WINDOW_SWAP_BOX, 3);
+}
+
 static void PrintAllDataMon(u16 specie)
 {
+    if(IsLockMon( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
+        specie = SPECIES_NONE;
+
     PrintNameMonPokebox(specie);
     LoadMonIconType(WINDOW_MON_TYPE, specie, 0, 3, 0);
 }
 
+static void ClearWindoMonData(bool8 clearSwapBox)
+{
+    FillWindowPixelBuffer(WINDOW_NAME, PIXEL_FILL(0));
+    FillWindowPixelBuffer(WINDOW_MON_TYPE, PIXEL_FILL(0));
+    CopyWindowToVram(WINDOW_NAME, 3);
+    CopyWindowToVram(WINDOW_MON_TYPE, 3);
 
-u8 getTotalNumPages()
+    if(clearSwapBox)
+    {
+        FillWindowPixelBuffer(WINDOW_SWAP_BOX, PIXEL_FILL(0));
+        CopyWindowToVram(WINDOW_SWAP_BOX, 3);
+    }
+}
+
+static void PrintAbility(u16 specie, u16 ability)
+{
+    u16 indexAbility;
+
+    if(ability == ABILITY_NONE)
+    {
+        do {
+            indexAbility = Random() % NUM_ABILITY_SLOTS;
+            ability = gSpeciesInfo[specie].abilities[indexAbility];
+        } while ( ability == ABILITY_NONE);
+    }
+
+    AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_NORMAL, 0, 0, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].name);
+    AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_SMALL, 0, 16, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].description);
+}
+
+static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
+
+static void PrintMoves(u8 windowId, const u16* moves)
+{
+    u8 i;
+    u8 y = 0;
+
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+
+    for (i = 0; i < 4; i++)
+    {
+        if(moves[i] == MOVE_NONE)
+            StringCopy(gStringVar1, gText_OneDash);
+        else
+            StringCopy(gStringVar1, GetMoveName(moves[i]));
+        
+        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, y, sTextColorBlackMonInfo2PagePokebox, 0, gStringVar1);
+        LoadMoveIconType(windowId, moves[i], i, 88, 2);
+        LoadMoveCateroyIcon(moves[i], i);
+        y += 16;
+    }
+    
+    CopyWindowToVram(windowId, 3);
+}
+
+static void PrintMonTextInfoPage()
+{
+    FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
+
+    u16 index = GetSelectedPokemonIndex();
+    u16 ability = ABILITY_NONE;
+
+    if (index < MON_TEAM_SELECTOR_COUNT)
+    {
+        PrintAbility(gAllTeamMons[index].specie, gAllTeamMons[index].ability);
+        PrintMoves(WINDOW_MON_INFO_2, gAllTeamMons[index].moves);
+
+    }/*else{
+
+    }*/
+
+    CopyWindowToVram(WINDOW_MON_INFO, 3);
+}
+
+static void LoadMoveCateroyIcon(u16 move, u8 indexMove)
+{   
+    u8 categoryIconId = 0xFF;
+    enum DamageCategory category;
+
+    if(move == MOVE_NONE)
+        return;
+
+    if(pokeBoxObj.boxMonIconCategoyIds[indexMove] != 0xFF)
+    {
+        gSprites[pokeBoxObj.boxMonIconCategoyIds[indexMove]].invisible = FALSE;
+        return;
+    }
+
+    category = GetBattleMoveCategory(move);
+    
+    categoryIconId = CreateSprite(&gSpriteTemplate_CategoryIcons, 232, 103 + (16 * indexMove), 1);
+
+    StartSpriteAnim(&gSprites[categoryIconId], category);
+    gSprites[categoryIconId].invisible = FALSE;
+    gSprites[categoryIconId].oam.priority = 1; 
+    pokeBoxObj.boxMonIconCategoyIds[indexMove] = categoryIconId;
+}
+
+static void ClearMonTextInfoPage(bool8 destroyCategoryIcons)
+{
+    u8 i;
+
+    FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
+    FillWindowPixelBuffer(WINDOW_MON_INFO_2, PIXEL_FILL(0));
+
+    for (i = 0; i < 4; i++)
+    {
+        if(pokeBoxObj.boxMonIconCategoyIds[i] == 0xFF) 
+            continue;
+
+        if(!destroyCategoryIcons)
+            gSprites[pokeBoxObj.boxMonIconCategoyIds[i]].invisible = TRUE;
+        else
+        {
+            DestroySprite(&gSprites[pokeBoxObj.boxMonIconCategoyIds[i]]);
+            pokeBoxObj.boxMonIconCategoyIds[i] = 0xFF;
+        }
+    }
+
+    CopyWindowToVram(WINDOW_MON_INFO, 3);
+    CopyWindowToVram(WINDOW_MON_INFO_2, 3);
+}
+
+static u8 getTotalNumPages()
 {
     u16 totalCount = MON_TEAM_SELECTOR_COUNT + PokeboxSpeciesList_GetCount();
     return (totalCount + MAX_MON_ICONS_IN_BOX - 1) / MAX_MON_ICONS_IN_BOX;
@@ -412,7 +606,7 @@ bool8 HasMonInParty(u16 specieBox)
     return FALSE;
 }
 
-u16 GetSelectedPokemonIndex(void)
+static u16 GetSelectedPokemonIndex(void)
 {
     return pokeBoxObj.currentPageNum * MAX_MON_ICONS_IN_BOX
          + pokeBoxObj.row * NUM_MON_ICON_ROW
@@ -468,7 +662,6 @@ void LoadCurrentMonData()
     PrintAllDataMon(species);
 }
 
-
 static void CompactAndMovePlayerTeamSprites(void)
 {
     u8 writeIndex = 0;
@@ -517,7 +710,10 @@ void LoadCurrentMonDataPlayerTeam()
     species = GetMonData(&gPlayerParty[index], MON_DATA_SPECIES_OR_EGG);
 
     if(species == SPECIES_NONE)
+    {
+        ClearWindoMonData(FALSE);
         return;
+    }
 
     pokeBoxObj.frontMonId = CreateMonPicSprite(species, isShiny, 0, TRUE, 38, 58, 15, TAG_NONE);
     gSprites[pokeBoxObj.frontMonId].oam.priority = 1;
@@ -565,6 +761,14 @@ void LoadMonIconSprites()
             SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, 7));
             SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
         }
+
+        // if(!IsLockMon(i) && HasMonInParty(species))
+        // {
+        //     gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+        //     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+        //     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(9, 7));
+        //     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
+        // }
 
         pokeBoxObj.boxMonSpritesIds[row][col] = spriteId;
     }
@@ -711,6 +915,7 @@ static void Task_SlideRightBgTeamPlayer(u8 taskId)
         UpdateSelectorPosition(FALSE);
         SetVisibilitySpriteSelector(FALSE);
         LoadCurrentMonData();
+        PrintTextSwapBox();
         gTasks[taskId].func = Task_HandlePokebox;
     }
 
@@ -786,6 +991,7 @@ static void Task_HandlePokebox(u8 taskId)
     if (JOY_NEW(START_BUTTON))
     {
         SetVisibilitySpriteSelector(TRUE);
+        ClearWindoMonData(TRUE);
         ClearMonData(TRUE);
         gTasks[taskId].func = Task_SlideLeftBgTeamPlayer;
     }
@@ -816,6 +1022,7 @@ static void Task_HandlePokebox(u8 taskId)
         LoadMonIconSprites();
         ResetSelectorPosition();
         LoadCurrentMonData();
+        PrintTextSwapBox();
     }
     else if (JOY_NEW(R_BUTTON) && pokeBoxObj.currentPageNum < getTotalNumPages()-1)
     {
@@ -824,6 +1031,7 @@ static void Task_HandlePokebox(u8 taskId)
         LoadMonIconSprites();
         ResetSelectorPosition();
         LoadCurrentMonData();
+        PrintTextSwapBox();
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
@@ -884,6 +1092,7 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 {
     if (JOY_NEW(SELECT_BUTTON) || JOY_NEW(B_BUTTON))
     {
+        ClearMonTextInfoPage(TRUE);
         HidenMonIconsBox(FALSE);
         SetVisibilitySpriteSelector(FALSE);
         gTasks[taskId].func = Task_HandlePokebox;
@@ -892,6 +1101,7 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 
 static void Task_ShowMonInfo(u8 taskId)
 {
+    PrintMonTextInfoPage();
     gTasks[taskId].func = Task_WaitToReturnHandlePokebox;
 }
 
@@ -964,6 +1174,7 @@ static void Task_StorageMonInPokebox(u8 taskId)
     else
     {
         ClearMonDataPlayerTeam(FALSE);
+        ClearWindoMonData(FALSE);
         FreeAndDestroyMonIconSprite(&gSprites[spriteId]);
         pokeBoxObj.playerTeamMonSpritesIds[pokeBoxObj.row_team][pokeBoxObj.col_team] = 0xFF;
 
@@ -1050,7 +1261,8 @@ void CB2_InitPokeBoxSetUp(void)
 
         memset(pokeBoxObj.boxMonSpritesIds, 0xFF, sizeof(pokeBoxObj.boxMonSpritesIds));
         memset(pokeBoxObj.playerTeamMonSpritesIds, 0xFF, sizeof(pokeBoxObj.playerTeamMonSpritesIds));
-
+        memset(pokeBoxObj.boxMonIconCategoyIds, 0xFF, sizeof(pokeBoxObj.boxMonIconCategoyIds));
+        
         gMain.state++;
         break;
     case 4:
@@ -1058,6 +1270,7 @@ void CB2_InitPokeBoxSetUp(void)
         LoadMonIconSprites();
         LoadCurrentMonData();
         PrintMsgActions(MSG_ACTION_CONTROLS);
+        PrintTextSwapBox();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         gMain.state++;
     default:

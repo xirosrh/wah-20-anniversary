@@ -87,8 +87,6 @@ static EWRAM_DATA struct TeamSelector teamSelectorObj = {0};
 const u8 sTextColorWhite[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 const u8 sTextColorBlack[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_RED};
 
-
-static void LoadMoveIconType(u16 move, u8 indexMove);
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
 void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons);
 static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons);
@@ -460,6 +458,13 @@ static void PrintAbilityMon(const struct TeamSelectorMonData *mon)
     CopyWindowToVram(WINDOW_ABILITY_DESCRIPTION, 3);
 }
 
+void LoadMoveIconType(u8 windowId, u16 move, u8 indexMove, u8 x, u8 y)
+{
+    enum Type type = GetMoveType(move);
+    BlitMenuInfoIcon(windowId, type, x, y + (16 * indexMove));   
+    CopyWindowToVram(windowId, 3);
+}
+
 static void PrintMovesMon(const struct TeamSelectorMonData *mon)
 {
     u8 i;
@@ -477,7 +482,7 @@ static void PrintMovesMon(const struct TeamSelectorMonData *mon)
         
         AddTextPrinterParameterized3(WINDOW_MOVES, FONT_SMALL, 0, y, sTextColorWhite, 0, gStringVar1);
         LoadMoveCateroyIcon(mon->moves[i], i);
-        LoadMoveIconType(mon->moves[i], i);
+        LoadMoveIconType(WINDOW_MOVE_TYPE, mon->moves[i], i, 0, 4);
         y += 16; 
     }
     
@@ -491,12 +496,6 @@ static void PrintNameMon(const struct TeamSelectorMonData *mon)
     CopyWindowToVram(WINDOW_NAME, 3);
 }
 
-static void LoadMoveIconType(u16 move, u8 indexMove)
-{
-    enum Type type = GetMoveType(move);
-    BlitMenuInfoIcon(WINDOW_MOVE_TYPE, type, 0, 4 + (16 * indexMove));   
-    CopyWindowToVram(WINDOW_MOVE_TYPE, 3);
-}
 
 void LoadMonIconType(u8 windowId, u16 specie, u8 x, u8 y, u8 fillColor)
 {
