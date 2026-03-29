@@ -36,8 +36,8 @@ script AngelRoom_EventScript_Angel {
         jump_in_place_down
         unlock_facing_direction
     ))
-    msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     waitmovement(0)
+    msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     delay(30)
     msgbox(format("Ha pasado mucho desde la última vez, ¿verdad?\pEspero que este reencuentro… ¡SEA MEMORABLE!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     delay(10)
@@ -82,10 +82,9 @@ script AngelRoom_EventScript_Angel {
     applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus))
     waitse
     call(AngelRoom_EventScript_AngelBattle)
-    playse(SE_PIN)
-    applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
     msgbox(format("¡Increíble! ¡El poder de la nueva generación es asombroso!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
-    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
     delay(20)
     msgbox(format("No esperaba perder y aún así, no me dejaste opciones.\pSin duda, la función ha terminado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     call(AngelRoom_EventScript_TurnOffScreen)
