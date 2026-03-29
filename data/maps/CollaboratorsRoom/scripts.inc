@@ -2807,7 +2807,7 @@ CollaboratorsRoom_EventScript_MrNightology_Text_0:
 
 CollaboratorsRoom_EventScript_MrNightology_Text_1:
 # 566 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Estás preparado?\n"
+	.string "¿Estás preparad{OA}?\n"
 	.string "¿Sí? Genial.\p"
 	.string "¡Vente p'acá!$"
 
@@ -3308,7 +3308,7 @@ CollaboratorsRoom_EventScript_Ryuzaki_Text_2:
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_3:
 # 1228 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Hola querido coyote. No esperaba verte\n"
+	.string "Hola querid{OA} coyote. No esperaba verte\n"
 	.string "por aquí.\p"
 	.string "De hecho, no esperaba verme a mí mismo\n"
 	.string "ni pinga.$"
