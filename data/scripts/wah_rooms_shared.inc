@@ -79,7 +79,7 @@ WahRoomsShared_Kecleon_2:
 
 WahRoomsShared_Kecleon_5:
 # 46 "data/scripts/wah_rooms_shared.pory"
-	msgbox Kecleon_Text_UseDevonScopeMonAttacked, MSGBOX_AUTOCLOSE
+	msgbox WahRoomsShared_Kecleon_Text_0, MSGBOX_AUTOCLOSE
 # 47 "data/scripts/wah_rooms_shared.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_FacePlayer
 # 48 "data/scripts/wah_rooms_shared.pory"
@@ -92,6 +92,8 @@ WahRoomsShared_Kecleon_5:
 	delay 40
 # 52 "data/scripts/wah_rooms_shared.pory"
 	waitmoncry
+# 55 "data/scripts/wah_rooms_shared.pory"
+	call WahRoomsShared_Kecleon_Recompensa
 # 57 "data/scripts/wah_rooms_shared.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 58 "data/scripts/wah_rooms_shared.pory"
@@ -101,938 +103,948 @@ WahRoomsShared_Kecleon_5:
 	goto WahRoomsShared_Kecleon_1
 
 
+WahRoomsShared_Kecleon_Recompensa::
+	return
+
+
 WahRoomsShared_Kecleon_ResetFlags::
-# 73 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_OMEGA
-# 74 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_GOCE
 # 75 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_TOKYNWAR
+	setflag FLAG_HIDE_KECLEON_ROOM_OMEGA
 # 76 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON
+	setflag FLAG_HIDE_KECLEON_ROOM_GOCE
 # 77 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS
+	setflag FLAG_HIDE_KECLEON_ROOM_TOKYNWAR
 # 78 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_COSARARA
+	setflag FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON
 # 79 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE
+	setflag FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS
 # 80 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_AGUIAR
+	setflag FLAG_HIDE_KECLEON_ROOM_COSARARA
 # 81 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_ANGEL
+	setflag FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE
 # 82 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_SAYERBLAX
+	setflag FLAG_HIDE_KECLEON_ROOM_AGUIAR
 # 83 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_REYBOO
+	setflag FLAG_HIDE_KECLEON_ROOM_ANGEL
 # 84 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_DAVZERO
+	setflag FLAG_HIDE_KECLEON_ROOM_SAYERBLAX
 # 85 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315
+	setflag FLAG_HIDE_KECLEON_ROOM_REYBOO
 # 86 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_GALLEGO
+	setflag FLAG_HIDE_KECLEON_ROOM_DAVZERO
 # 87 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_REONEKY
+	setflag FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315
 # 88 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_CHEVE
+	setflag FLAG_HIDE_KECLEON_ROOM_GALLEGO
 # 89 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_BARO
+	setflag FLAG_HIDE_KECLEON_ROOM_REONEKY
 # 90 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER
+	setflag FLAG_HIDE_KECLEON_ROOM_CHEVE
 # 91 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_EING
+	setflag FLAG_HIDE_KECLEON_ROOM_BARO
 # 92 "data/scripts/wah_rooms_shared.pory"
-	setflag FLAG_HIDE_KECLEON_ROOM_XIROS
+	setflag FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER
+# 93 "data/scripts/wah_rooms_shared.pory"
+	setflag FLAG_HIDE_KECLEON_ROOM_EING
 # 94 "data/scripts/wah_rooms_shared.pory"
+	setflag FLAG_HIDE_KECLEON_ROOM_XIROS
+# 96 "data/scripts/wah_rooms_shared.pory"
 	checkitem ITEM_DEVON_SCOPE
-# 95 "data/scripts/wah_rooms_shared.pory"
+# 97 "data/scripts/wah_rooms_shared.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne WahRoomsShared_Kecleon_ResetFlags_2
 WahRoomsShared_Kecleon_ResetFlags_1:
 	return
 
 WahRoomsShared_Kecleon_ResetFlags_2:
-# 97 "data/scripts/wah_rooms_shared.pory"
-	random 4
-# 98 "data/scripts/wah_rooms_shared.pory"
-	copyvar VAR_KECLEON_POSITION, VAR_RESULT
 # 99 "data/scripts/wah_rooms_shared.pory"
-	random 20
+	random 4
 # 100 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_RESULT
+	copyvar VAR_KECLEON_POSITION, VAR_RESULT
+# 101 "data/scripts/wah_rooms_shared.pory"
+	random 20
 # 102 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_RESULT
+# 104 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_ResetFlags_5
-# 105 "data/scripts/wah_rooms_shared.pory"
+# 107 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_ResetFlags_6
-# 108 "data/scripts/wah_rooms_shared.pory"
+# 110 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_ResetFlags_7
-# 111 "data/scripts/wah_rooms_shared.pory"
+# 113 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_ResetFlags_8
-# 114 "data/scripts/wah_rooms_shared.pory"
+# 116 "data/scripts/wah_rooms_shared.pory"
 	case 4, WahRoomsShared_Kecleon_ResetFlags_9
-# 117 "data/scripts/wah_rooms_shared.pory"
+# 119 "data/scripts/wah_rooms_shared.pory"
 	case 5, WahRoomsShared_Kecleon_ResetFlags_10
-# 120 "data/scripts/wah_rooms_shared.pory"
+# 122 "data/scripts/wah_rooms_shared.pory"
 	case 6, WahRoomsShared_Kecleon_ResetFlags_11
-# 123 "data/scripts/wah_rooms_shared.pory"
+# 125 "data/scripts/wah_rooms_shared.pory"
 	case 7, WahRoomsShared_Kecleon_ResetFlags_12
-# 126 "data/scripts/wah_rooms_shared.pory"
+# 128 "data/scripts/wah_rooms_shared.pory"
 	case 8, WahRoomsShared_Kecleon_ResetFlags_13
-# 129 "data/scripts/wah_rooms_shared.pory"
+# 131 "data/scripts/wah_rooms_shared.pory"
 	case 9, WahRoomsShared_Kecleon_ResetFlags_14
-# 132 "data/scripts/wah_rooms_shared.pory"
+# 134 "data/scripts/wah_rooms_shared.pory"
 	case 10, WahRoomsShared_Kecleon_ResetFlags_15
-# 135 "data/scripts/wah_rooms_shared.pory"
+# 137 "data/scripts/wah_rooms_shared.pory"
 	case 11, WahRoomsShared_Kecleon_ResetFlags_16
-# 138 "data/scripts/wah_rooms_shared.pory"
+# 140 "data/scripts/wah_rooms_shared.pory"
 	case 12, WahRoomsShared_Kecleon_ResetFlags_17
-# 141 "data/scripts/wah_rooms_shared.pory"
+# 143 "data/scripts/wah_rooms_shared.pory"
 	case 13, WahRoomsShared_Kecleon_ResetFlags_18
-# 144 "data/scripts/wah_rooms_shared.pory"
+# 146 "data/scripts/wah_rooms_shared.pory"
 	case 14, WahRoomsShared_Kecleon_ResetFlags_19
-# 147 "data/scripts/wah_rooms_shared.pory"
+# 149 "data/scripts/wah_rooms_shared.pory"
 	case 15, WahRoomsShared_Kecleon_ResetFlags_20
-# 150 "data/scripts/wah_rooms_shared.pory"
+# 152 "data/scripts/wah_rooms_shared.pory"
 	case 16, WahRoomsShared_Kecleon_ResetFlags_21
-# 153 "data/scripts/wah_rooms_shared.pory"
+# 155 "data/scripts/wah_rooms_shared.pory"
 	case 17, WahRoomsShared_Kecleon_ResetFlags_22
-# 156 "data/scripts/wah_rooms_shared.pory"
+# 158 "data/scripts/wah_rooms_shared.pory"
 	case 18, WahRoomsShared_Kecleon_ResetFlags_23
-# 159 "data/scripts/wah_rooms_shared.pory"
+# 161 "data/scripts/wah_rooms_shared.pory"
 	case 19, WahRoomsShared_Kecleon_ResetFlags_24
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_5:
-# 103 "data/scripts/wah_rooms_shared.pory"
+# 105 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_OMEGA
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_6:
-# 106 "data/scripts/wah_rooms_shared.pory"
+# 108 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_GOCE
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_7:
-# 109 "data/scripts/wah_rooms_shared.pory"
+# 111 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_TOKYNWAR
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_8:
-# 112 "data/scripts/wah_rooms_shared.pory"
+# 114 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_JACKJOHNSON
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_9:
-# 115 "data/scripts/wah_rooms_shared.pory"
+# 117 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_SCAREXOZUMAS
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_10:
-# 118 "data/scripts/wah_rooms_shared.pory"
+# 120 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_COSARARA
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_11:
-# 121 "data/scripts/wah_rooms_shared.pory"
+# 123 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_DRIVEKATHERINE
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_12:
-# 124 "data/scripts/wah_rooms_shared.pory"
+# 126 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_AGUIAR
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_13:
-# 127 "data/scripts/wah_rooms_shared.pory"
+# 129 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_ANGEL
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_14:
-# 130 "data/scripts/wah_rooms_shared.pory"
+# 132 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_SAYERBLAX
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_15:
-# 133 "data/scripts/wah_rooms_shared.pory"
+# 135 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_REYBOO
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_16:
-# 136 "data/scripts/wah_rooms_shared.pory"
+# 138 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_DAVZERO
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_17:
-# 139 "data/scripts/wah_rooms_shared.pory"
+# 141 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_JAVSJAVI4315
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_18:
-# 142 "data/scripts/wah_rooms_shared.pory"
+# 144 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_GALLEGO
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_19:
-# 145 "data/scripts/wah_rooms_shared.pory"
+# 147 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_REONEKY
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_20:
-# 148 "data/scripts/wah_rooms_shared.pory"
+# 150 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_CHEVE
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_21:
-# 151 "data/scripts/wah_rooms_shared.pory"
+# 153 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_BARO
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_22:
-# 154 "data/scripts/wah_rooms_shared.pory"
+# 156 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_23:
-# 157 "data/scripts/wah_rooms_shared.pory"
+# 159 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_EING
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 WahRoomsShared_Kecleon_ResetFlags_24:
-# 160 "data/scripts/wah_rooms_shared.pory"
+# 162 "data/scripts/wah_rooms_shared.pory"
 	clearflag FLAG_HIDE_KECLEON_ROOM_XIROS
 	goto WahRoomsShared_Kecleon_ResetFlags_1
 
 
 WahRoomsShared_Kecleon_SetSala_Omega::
-# 170 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 172 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 174 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Omega_3
-# 175 "data/scripts/wah_rooms_shared.pory"
+# 177 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Omega_4
-# 178 "data/scripts/wah_rooms_shared.pory"
+# 180 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Omega_5
-# 181 "data/scripts/wah_rooms_shared.pory"
+# 183 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Omega_6
 WahRoomsShared_Kecleon_SetSala_Omega_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Omega_3:
-# 173 "data/scripts/wah_rooms_shared.pory"
+# 175 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_OMEGAROOM_KECLEON, 2, 4
 	goto WahRoomsShared_Kecleon_SetSala_Omega_1
 
 WahRoomsShared_Kecleon_SetSala_Omega_4:
-# 176 "data/scripts/wah_rooms_shared.pory"
+# 178 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_OMEGAROOM_KECLEON, 11, 6
 	goto WahRoomsShared_Kecleon_SetSala_Omega_1
 
 WahRoomsShared_Kecleon_SetSala_Omega_5:
-# 179 "data/scripts/wah_rooms_shared.pory"
+# 181 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_OMEGAROOM_KECLEON, 11, 10
 	goto WahRoomsShared_Kecleon_SetSala_Omega_1
 
 WahRoomsShared_Kecleon_SetSala_Omega_6:
-# 182 "data/scripts/wah_rooms_shared.pory"
+# 184 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_OMEGAROOM_KECLEON, 3, 8
 	goto WahRoomsShared_Kecleon_SetSala_Omega_1
 
 
 WahRoomsShared_Kecleon_SetSala_Goce::
-# 191 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 193 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 195 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Goce_3
-# 196 "data/scripts/wah_rooms_shared.pory"
+# 198 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Goce_4
-# 199 "data/scripts/wah_rooms_shared.pory"
+# 201 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Goce_5
-# 202 "data/scripts/wah_rooms_shared.pory"
+# 204 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Goce_6
 WahRoomsShared_Kecleon_SetSala_Goce_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Goce_3:
-# 194 "data/scripts/wah_rooms_shared.pory"
+# 196 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GOCEROOM_KECLEON, 7, 3
 	goto WahRoomsShared_Kecleon_SetSala_Goce_1
 
 WahRoomsShared_Kecleon_SetSala_Goce_4:
-# 197 "data/scripts/wah_rooms_shared.pory"
+# 199 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GOCEROOM_KECLEON, 8, 6
 	goto WahRoomsShared_Kecleon_SetSala_Goce_1
 
 WahRoomsShared_Kecleon_SetSala_Goce_5:
-# 200 "data/scripts/wah_rooms_shared.pory"
+# 202 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GOCEROOM_KECLEON, 4, 8
 	goto WahRoomsShared_Kecleon_SetSala_Goce_1
 
 WahRoomsShared_Kecleon_SetSala_Goce_6:
-# 203 "data/scripts/wah_rooms_shared.pory"
+# 205 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GOCEROOM_KECLEON, 9, 10
 	goto WahRoomsShared_Kecleon_SetSala_Goce_1
 
 
 WahRoomsShared_Kecleon_SetSala_TokynWar::
-# 212 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 214 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 216 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_TokynWar_3
-# 217 "data/scripts/wah_rooms_shared.pory"
+# 219 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_TokynWar_4
-# 220 "data/scripts/wah_rooms_shared.pory"
+# 222 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_TokynWar_5
-# 223 "data/scripts/wah_rooms_shared.pory"
+# 225 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_TokynWar_6
 WahRoomsShared_Kecleon_SetSala_TokynWar_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_TokynWar_3:
-# 215 "data/scripts/wah_rooms_shared.pory"
+# 217 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_TOKYNWARROOM_KECLEON, 5, 3
 	goto WahRoomsShared_Kecleon_SetSala_TokynWar_1
 
 WahRoomsShared_Kecleon_SetSala_TokynWar_4:
-# 218 "data/scripts/wah_rooms_shared.pory"
+# 220 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_TOKYNWARROOM_KECLEON, 4, 4
 	goto WahRoomsShared_Kecleon_SetSala_TokynWar_1
 
 WahRoomsShared_Kecleon_SetSala_TokynWar_5:
-# 221 "data/scripts/wah_rooms_shared.pory"
+# 223 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_TOKYNWARROOM_KECLEON, 8, 5
 	goto WahRoomsShared_Kecleon_SetSala_TokynWar_1
 
 WahRoomsShared_Kecleon_SetSala_TokynWar_6:
-# 224 "data/scripts/wah_rooms_shared.pory"
+# 226 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_TOKYNWARROOM_KECLEON, 9, 6
 	goto WahRoomsShared_Kecleon_SetSala_TokynWar_1
 
 
 WahRoomsShared_Kecleon_SetSala_JackJohnson::
-# 233 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 235 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 237 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_JackJohnson_3
-# 238 "data/scripts/wah_rooms_shared.pory"
+# 240 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_JackJohnson_4
-# 241 "data/scripts/wah_rooms_shared.pory"
+# 243 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_JackJohnson_5
-# 244 "data/scripts/wah_rooms_shared.pory"
+# 246 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_JackJohnson_6
 WahRoomsShared_Kecleon_SetSala_JackJohnson_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_JackJohnson_3:
-# 236 "data/scripts/wah_rooms_shared.pory"
+# 238 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JACKROOM_KECLEON, 4, 3
 	goto WahRoomsShared_Kecleon_SetSala_JackJohnson_1
 
 WahRoomsShared_Kecleon_SetSala_JackJohnson_4:
-# 239 "data/scripts/wah_rooms_shared.pory"
+# 241 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JACKROOM_KECLEON, 1, 7
 	goto WahRoomsShared_Kecleon_SetSala_JackJohnson_1
 
 WahRoomsShared_Kecleon_SetSala_JackJohnson_5:
-# 242 "data/scripts/wah_rooms_shared.pory"
+# 244 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JACKROOM_KECLEON, 3, 11
 	goto WahRoomsShared_Kecleon_SetSala_JackJohnson_1
 
 WahRoomsShared_Kecleon_SetSala_JackJohnson_6:
-# 245 "data/scripts/wah_rooms_shared.pory"
+# 247 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JACKROOM_KECLEON, 10, 4
 	goto WahRoomsShared_Kecleon_SetSala_JackJohnson_1
 
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas::
-# 254 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 256 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 258 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_ScarexOzumas_3
-# 259 "data/scripts/wah_rooms_shared.pory"
+# 261 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_ScarexOzumas_4
-# 262 "data/scripts/wah_rooms_shared.pory"
+# 264 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_ScarexOzumas_5
-# 265 "data/scripts/wah_rooms_shared.pory"
+# 267 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_ScarexOzumas_6
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_3:
-# 257 "data/scripts/wah_rooms_shared.pory"
+# 259 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 2, 3
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_4:
-# 260 "data/scripts/wah_rooms_shared.pory"
+# 262 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 5, 4
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_5:
-# 263 "data/scripts/wah_rooms_shared.pory"
+# 265 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 10, 5
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_6:
-# 266 "data/scripts/wah_rooms_shared.pory"
+# 268 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 8, 8
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 
 WahRoomsShared_Kecleon_SetSala_Cosarara::
-# 275 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 277 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 279 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Cosarara_3
-# 280 "data/scripts/wah_rooms_shared.pory"
+# 282 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Cosarara_4
-# 283 "data/scripts/wah_rooms_shared.pory"
+# 285 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Cosarara_5
-# 286 "data/scripts/wah_rooms_shared.pory"
+# 288 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Cosarara_6
 WahRoomsShared_Kecleon_SetSala_Cosarara_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Cosarara_3:
-# 278 "data/scripts/wah_rooms_shared.pory"
+# 280 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_COSARARAROOM_KECLEON, 9, 4
 	goto WahRoomsShared_Kecleon_SetSala_Cosarara_1
 
 WahRoomsShared_Kecleon_SetSala_Cosarara_4:
-# 281 "data/scripts/wah_rooms_shared.pory"
+# 283 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_COSARARAROOM_KECLEON, 3, 8
 	goto WahRoomsShared_Kecleon_SetSala_Cosarara_1
 
 WahRoomsShared_Kecleon_SetSala_Cosarara_5:
-# 284 "data/scripts/wah_rooms_shared.pory"
+# 286 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_COSARARAROOM_KECLEON, 1, 5
 	goto WahRoomsShared_Kecleon_SetSala_Cosarara_1
 
 WahRoomsShared_Kecleon_SetSala_Cosarara_6:
-# 287 "data/scripts/wah_rooms_shared.pory"
+# 289 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_COSARARAROOM_KECLEON, 9, 9
 	goto WahRoomsShared_Kecleon_SetSala_Cosarara_1
 
 
 WahRoomsShared_Kecleon_SetSala_DriveKatherine::
-# 296 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 298 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 300 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_DriveKatherine_3
-# 301 "data/scripts/wah_rooms_shared.pory"
+# 303 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_DriveKatherine_4
-# 304 "data/scripts/wah_rooms_shared.pory"
+# 306 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_DriveKatherine_5
-# 307 "data/scripts/wah_rooms_shared.pory"
+# 309 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_DriveKatherine_6
 WahRoomsShared_Kecleon_SetSala_DriveKatherine_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_DriveKatherine_3:
-# 299 "data/scripts/wah_rooms_shared.pory"
+# 301 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_DRIVEKATHERINEROOM_KECLEON, 1, 6
 	goto WahRoomsShared_Kecleon_SetSala_DriveKatherine_1
 
 WahRoomsShared_Kecleon_SetSala_DriveKatherine_4:
-# 302 "data/scripts/wah_rooms_shared.pory"
+# 304 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_DRIVEKATHERINEROOM_KECLEON, 1, 9
 	goto WahRoomsShared_Kecleon_SetSala_DriveKatherine_1
 
 WahRoomsShared_Kecleon_SetSala_DriveKatherine_5:
-# 305 "data/scripts/wah_rooms_shared.pory"
+# 307 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_DRIVEKATHERINEROOM_KECLEON, 11, 6
 	goto WahRoomsShared_Kecleon_SetSala_DriveKatherine_1
 
 WahRoomsShared_Kecleon_SetSala_DriveKatherine_6:
-# 308 "data/scripts/wah_rooms_shared.pory"
+# 310 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_DRIVEKATHERINEROOM_KECLEON, 11, 9
 	goto WahRoomsShared_Kecleon_SetSala_DriveKatherine_1
 
 
 WahRoomsShared_Kecleon_SetSala_Aguiar::
-# 317 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 319 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 321 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Aguiar_3
-# 322 "data/scripts/wah_rooms_shared.pory"
+# 324 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Aguiar_4
-# 325 "data/scripts/wah_rooms_shared.pory"
+# 327 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Aguiar_5
-# 328 "data/scripts/wah_rooms_shared.pory"
+# 330 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Aguiar_6
 WahRoomsShared_Kecleon_SetSala_Aguiar_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Aguiar_3:
-# 320 "data/scripts/wah_rooms_shared.pory"
+# 322 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_AGUIARROOM_KECLEON, 1, 4
 	goto WahRoomsShared_Kecleon_SetSala_Aguiar_1
 
 WahRoomsShared_Kecleon_SetSala_Aguiar_4:
-# 323 "data/scripts/wah_rooms_shared.pory"
+# 325 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_AGUIARROOM_KECLEON, 2, 7
 	goto WahRoomsShared_Kecleon_SetSala_Aguiar_1
 
 WahRoomsShared_Kecleon_SetSala_Aguiar_5:
-# 326 "data/scripts/wah_rooms_shared.pory"
+# 328 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_AGUIARROOM_KECLEON, 10, 4
 	goto WahRoomsShared_Kecleon_SetSala_Aguiar_1
 
 WahRoomsShared_Kecleon_SetSala_Aguiar_6:
-# 329 "data/scripts/wah_rooms_shared.pory"
+# 331 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_AGUIARROOM_KECLEON, 9, 9
 	goto WahRoomsShared_Kecleon_SetSala_Aguiar_1
 
 
 WahRoomsShared_Kecleon_SetSala_Angel::
-# 338 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 340 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 342 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Angel_3
-# 343 "data/scripts/wah_rooms_shared.pory"
+# 345 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Angel_4
-# 346 "data/scripts/wah_rooms_shared.pory"
+# 348 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Angel_5
-# 349 "data/scripts/wah_rooms_shared.pory"
+# 351 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Angel_6
 WahRoomsShared_Kecleon_SetSala_Angel_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Angel_3:
-# 341 "data/scripts/wah_rooms_shared.pory"
+# 343 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ANGELROOM_KECLEON, 3, 7
 	goto WahRoomsShared_Kecleon_SetSala_Angel_1
 
 WahRoomsShared_Kecleon_SetSala_Angel_4:
-# 344 "data/scripts/wah_rooms_shared.pory"
+# 346 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ANGELROOM_KECLEON, 2, 11
 	goto WahRoomsShared_Kecleon_SetSala_Angel_1
 
 WahRoomsShared_Kecleon_SetSala_Angel_5:
-# 347 "data/scripts/wah_rooms_shared.pory"
+# 349 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ANGELROOM_KECLEON, 9, 5
 	goto WahRoomsShared_Kecleon_SetSala_Angel_1
 
 WahRoomsShared_Kecleon_SetSala_Angel_6:
-# 350 "data/scripts/wah_rooms_shared.pory"
+# 352 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ANGELROOM_KECLEON, 11, 9
 	goto WahRoomsShared_Kecleon_SetSala_Angel_1
 
 
 WahRoomsShared_Kecleon_SetSala_SayerBlax::
-# 359 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 361 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 363 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_SayerBlax_3
-# 364 "data/scripts/wah_rooms_shared.pory"
+# 366 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_SayerBlax_4
-# 367 "data/scripts/wah_rooms_shared.pory"
+# 369 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_SayerBlax_5
-# 370 "data/scripts/wah_rooms_shared.pory"
+# 372 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_SayerBlax_6
 WahRoomsShared_Kecleon_SetSala_SayerBlax_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_SayerBlax_3:
-# 362 "data/scripts/wah_rooms_shared.pory"
+# 364 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SAYERBLAXROOM_KECLEON, 4, 5
 	goto WahRoomsShared_Kecleon_SetSala_SayerBlax_1
 
 WahRoomsShared_Kecleon_SetSala_SayerBlax_4:
-# 365 "data/scripts/wah_rooms_shared.pory"
+# 367 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SAYERBLAXROOM_KECLEON, 8, 9
 	goto WahRoomsShared_Kecleon_SetSala_SayerBlax_1
 
 WahRoomsShared_Kecleon_SetSala_SayerBlax_5:
-# 368 "data/scripts/wah_rooms_shared.pory"
+# 370 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SAYERBLAXROOM_KECLEON, 3, 11
 	goto WahRoomsShared_Kecleon_SetSala_SayerBlax_1
 
 WahRoomsShared_Kecleon_SetSala_SayerBlax_6:
-# 371 "data/scripts/wah_rooms_shared.pory"
+# 373 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SAYERBLAXROOM_KECLEON, 9, 11
 	goto WahRoomsShared_Kecleon_SetSala_SayerBlax_1
 
 
 WahRoomsShared_Kecleon_SetSala_ReyBoo::
-# 380 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 382 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 384 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_ReyBoo_3
-# 385 "data/scripts/wah_rooms_shared.pory"
+# 387 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_ReyBoo_4
-# 388 "data/scripts/wah_rooms_shared.pory"
+# 390 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_ReyBoo_5
-# 391 "data/scripts/wah_rooms_shared.pory"
+# 393 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_ReyBoo_6
 WahRoomsShared_Kecleon_SetSala_ReyBoo_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_ReyBoo_3:
-# 383 "data/scripts/wah_rooms_shared.pory"
+# 385 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REYBOOROOM_KECLEON, 4, 4
 	goto WahRoomsShared_Kecleon_SetSala_ReyBoo_1
 
 WahRoomsShared_Kecleon_SetSala_ReyBoo_4:
-# 386 "data/scripts/wah_rooms_shared.pory"
+# 388 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REYBOOROOM_KECLEON, 5, 4
 	goto WahRoomsShared_Kecleon_SetSala_ReyBoo_1
 
 WahRoomsShared_Kecleon_SetSala_ReyBoo_5:
-# 389 "data/scripts/wah_rooms_shared.pory"
+# 391 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REYBOOROOM_KECLEON, 4, 8
 	goto WahRoomsShared_Kecleon_SetSala_ReyBoo_1
 
 WahRoomsShared_Kecleon_SetSala_ReyBoo_6:
-# 392 "data/scripts/wah_rooms_shared.pory"
+# 394 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REYBOOROOM_KECLEON, 8, 8
 	goto WahRoomsShared_Kecleon_SetSala_ReyBoo_1
 
 
 WahRoomsShared_Kecleon_SetSala_DavZero::
-# 401 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 403 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 405 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_DavZero_3
-# 406 "data/scripts/wah_rooms_shared.pory"
+# 408 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_DavZero_4
-# 409 "data/scripts/wah_rooms_shared.pory"
+# 411 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_DavZero_5
-# 412 "data/scripts/wah_rooms_shared.pory"
+# 414 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_DavZero_6
 WahRoomsShared_Kecleon_SetSala_DavZero_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_DavZero_3:
-# 404 "data/scripts/wah_rooms_shared.pory"
+# 406 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ZEROROOM_KECLEON, 2, 4
 	goto WahRoomsShared_Kecleon_SetSala_DavZero_1
 
 WahRoomsShared_Kecleon_SetSala_DavZero_4:
-# 407 "data/scripts/wah_rooms_shared.pory"
+# 409 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ZEROROOM_KECLEON, 3, 7
 	goto WahRoomsShared_Kecleon_SetSala_DavZero_1
 
 WahRoomsShared_Kecleon_SetSala_DavZero_5:
-# 410 "data/scripts/wah_rooms_shared.pory"
+# 412 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ZEROROOM_KECLEON, 2, 11
 	goto WahRoomsShared_Kecleon_SetSala_DavZero_1
 
 WahRoomsShared_Kecleon_SetSala_DavZero_6:
-# 413 "data/scripts/wah_rooms_shared.pory"
+# 415 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_ZEROROOM_KECLEON, 9, 9
 	goto WahRoomsShared_Kecleon_SetSala_DavZero_1
 
 
 WahRoomsShared_Kecleon_SetSala_JavsJavi::
-# 422 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 424 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 426 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_JavsJavi_3
-# 427 "data/scripts/wah_rooms_shared.pory"
+# 429 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_JavsJavi_4
-# 430 "data/scripts/wah_rooms_shared.pory"
+# 432 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_JavsJavi_5
-# 433 "data/scripts/wah_rooms_shared.pory"
+# 435 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_JavsJavi_6
 WahRoomsShared_Kecleon_SetSala_JavsJavi_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_JavsJavi_3:
-# 425 "data/scripts/wah_rooms_shared.pory"
+# 427 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JAVSJAVIROOM_KECLEON, 0, 0
 	goto WahRoomsShared_Kecleon_SetSala_JavsJavi_1
 
 WahRoomsShared_Kecleon_SetSala_JavsJavi_4:
-# 428 "data/scripts/wah_rooms_shared.pory"
+# 430 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JAVSJAVIROOM_KECLEON, 0, 0
 	goto WahRoomsShared_Kecleon_SetSala_JavsJavi_1
 
 WahRoomsShared_Kecleon_SetSala_JavsJavi_5:
-# 431 "data/scripts/wah_rooms_shared.pory"
+# 433 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JAVSJAVIROOM_KECLEON, 0, 0
 	goto WahRoomsShared_Kecleon_SetSala_JavsJavi_1
 
 WahRoomsShared_Kecleon_SetSala_JavsJavi_6:
-# 434 "data/scripts/wah_rooms_shared.pory"
+# 436 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_JAVSJAVIROOM_KECLEON, 0, 0
 	goto WahRoomsShared_Kecleon_SetSala_JavsJavi_1
 
 
 WahRoomsShared_Kecleon_SetSala_Gallego::
-# 443 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 445 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 447 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Gallego_3
-# 448 "data/scripts/wah_rooms_shared.pory"
+# 450 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Gallego_4
-# 451 "data/scripts/wah_rooms_shared.pory"
+# 453 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Gallego_5
-# 454 "data/scripts/wah_rooms_shared.pory"
+# 456 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Gallego_6
 WahRoomsShared_Kecleon_SetSala_Gallego_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Gallego_3:
-# 446 "data/scripts/wah_rooms_shared.pory"
+# 448 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GALLEGOROOM_KECLEON, 3, 4
 	goto WahRoomsShared_Kecleon_SetSala_Gallego_1
 
 WahRoomsShared_Kecleon_SetSala_Gallego_4:
-# 449 "data/scripts/wah_rooms_shared.pory"
+# 451 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GALLEGOROOM_KECLEON, 2, 8
 	goto WahRoomsShared_Kecleon_SetSala_Gallego_1
 
 WahRoomsShared_Kecleon_SetSala_Gallego_5:
-# 452 "data/scripts/wah_rooms_shared.pory"
+# 454 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GALLEGOROOM_KECLEON, 11, 6
 	goto WahRoomsShared_Kecleon_SetSala_Gallego_1
 
 WahRoomsShared_Kecleon_SetSala_Gallego_6:
-# 455 "data/scripts/wah_rooms_shared.pory"
+# 457 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_GALLEGOROOM_KECLEON, 9, 13
 	goto WahRoomsShared_Kecleon_SetSala_Gallego_1
 
 
 WahRoomsShared_Kecleon_SetSala_Reoneky::
-# 464 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 466 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 468 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Reoneky_3
-# 469 "data/scripts/wah_rooms_shared.pory"
+# 471 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Reoneky_4
-# 472 "data/scripts/wah_rooms_shared.pory"
+# 474 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Reoneky_5
-# 475 "data/scripts/wah_rooms_shared.pory"
+# 477 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Reoneky_6
 WahRoomsShared_Kecleon_SetSala_Reoneky_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Reoneky_3:
-# 467 "data/scripts/wah_rooms_shared.pory"
+# 469 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REOROOM_KECLEON, 2, 5
 	goto WahRoomsShared_Kecleon_SetSala_Reoneky_1
 
 WahRoomsShared_Kecleon_SetSala_Reoneky_4:
-# 470 "data/scripts/wah_rooms_shared.pory"
+# 472 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REOROOM_KECLEON, 2, 11
 	goto WahRoomsShared_Kecleon_SetSala_Reoneky_1
 
 WahRoomsShared_Kecleon_SetSala_Reoneky_5:
-# 473 "data/scripts/wah_rooms_shared.pory"
+# 475 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REOROOM_KECLEON, 8, 4
 	goto WahRoomsShared_Kecleon_SetSala_Reoneky_1
 
 WahRoomsShared_Kecleon_SetSala_Reoneky_6:
-# 476 "data/scripts/wah_rooms_shared.pory"
+# 478 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_REOROOM_KECLEON, 9, 10
 	goto WahRoomsShared_Kecleon_SetSala_Reoneky_1
 
 
 WahRoomsShared_Kecleon_SetSala_Cheve::
-# 485 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 487 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 489 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Cheve_3
-# 490 "data/scripts/wah_rooms_shared.pory"
+# 492 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Cheve_4
-# 493 "data/scripts/wah_rooms_shared.pory"
+# 495 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Cheve_5
-# 496 "data/scripts/wah_rooms_shared.pory"
+# 498 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Cheve_6
 WahRoomsShared_Kecleon_SetSala_Cheve_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Cheve_3:
-# 488 "data/scripts/wah_rooms_shared.pory"
+# 490 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_CHEVEROOM_KECLEON, 2, 8
 	goto WahRoomsShared_Kecleon_SetSala_Cheve_1
 
 WahRoomsShared_Kecleon_SetSala_Cheve_4:
-# 491 "data/scripts/wah_rooms_shared.pory"
+# 493 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_CHEVEROOM_KECLEON, 10, 9
 	goto WahRoomsShared_Kecleon_SetSala_Cheve_1
 
 WahRoomsShared_Kecleon_SetSala_Cheve_5:
-# 494 "data/scripts/wah_rooms_shared.pory"
+# 496 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_CHEVEROOM_KECLEON, 11, 7
 	goto WahRoomsShared_Kecleon_SetSala_Cheve_1
 
 WahRoomsShared_Kecleon_SetSala_Cheve_6:
-# 497 "data/scripts/wah_rooms_shared.pory"
+# 499 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_CHEVEROOM_KECLEON, 3, 11
 	goto WahRoomsShared_Kecleon_SetSala_Cheve_1
 
 
 WahRoomsShared_Kecleon_SetSala_Baro::
-# 506 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 508 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 510 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Baro_3
-# 511 "data/scripts/wah_rooms_shared.pory"
+# 513 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Baro_4
-# 514 "data/scripts/wah_rooms_shared.pory"
+# 516 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Baro_5
-# 517 "data/scripts/wah_rooms_shared.pory"
+# 519 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Baro_6
 WahRoomsShared_Kecleon_SetSala_Baro_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Baro_3:
-# 509 "data/scripts/wah_rooms_shared.pory"
+# 511 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_BAROROOM_KECLEON, 4, 3
 	goto WahRoomsShared_Kecleon_SetSala_Baro_1
 
 WahRoomsShared_Kecleon_SetSala_Baro_4:
-# 512 "data/scripts/wah_rooms_shared.pory"
+# 514 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_BAROROOM_KECLEON, 11, 5
 	goto WahRoomsShared_Kecleon_SetSala_Baro_1
 
 WahRoomsShared_Kecleon_SetSala_Baro_5:
-# 515 "data/scripts/wah_rooms_shared.pory"
+# 517 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_BAROROOM_KECLEON, 1, 12
 	goto WahRoomsShared_Kecleon_SetSala_Baro_1
 
 WahRoomsShared_Kecleon_SetSala_Baro_6:
-# 518 "data/scripts/wah_rooms_shared.pory"
+# 520 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_BAROROOM_KECLEON, 3, 6
 	goto WahRoomsShared_Kecleon_SetSala_Baro_1
 
 
 WahRoomsShared_Kecleon_SetSala_KelinPkPower::
-# 527 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 529 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 531 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_KelinPkPower_3
-# 532 "data/scripts/wah_rooms_shared.pory"
+# 534 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_KelinPkPower_4
-# 535 "data/scripts/wah_rooms_shared.pory"
+# 537 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_KelinPkPower_5
-# 538 "data/scripts/wah_rooms_shared.pory"
+# 540 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_KelinPkPower_6
 WahRoomsShared_Kecleon_SetSala_KelinPkPower_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_KelinPkPower_3:
-# 530 "data/scripts/wah_rooms_shared.pory"
+# 532 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_KLEINROOM_KECLEON, 2, 10
 	goto WahRoomsShared_Kecleon_SetSala_KelinPkPower_1
 
 WahRoomsShared_Kecleon_SetSala_KelinPkPower_4:
-# 533 "data/scripts/wah_rooms_shared.pory"
+# 535 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_KLEINROOM_KECLEON, 11, 10
 	goto WahRoomsShared_Kecleon_SetSala_KelinPkPower_1
 
 WahRoomsShared_Kecleon_SetSala_KelinPkPower_5:
-# 536 "data/scripts/wah_rooms_shared.pory"
+# 538 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_KLEINROOM_KECLEON, 11, 5
 	goto WahRoomsShared_Kecleon_SetSala_KelinPkPower_1
 
 WahRoomsShared_Kecleon_SetSala_KelinPkPower_6:
-# 539 "data/scripts/wah_rooms_shared.pory"
+# 541 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_KLEINROOM_KECLEON, 1, 7
 	goto WahRoomsShared_Kecleon_SetSala_KelinPkPower_1
 
 
 WahRoomsShared_Kecleon_SetSala_Eing::
-# 548 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 550 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 552 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Eing_3
-# 553 "data/scripts/wah_rooms_shared.pory"
+# 555 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Eing_4
-# 556 "data/scripts/wah_rooms_shared.pory"
+# 558 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Eing_5
-# 559 "data/scripts/wah_rooms_shared.pory"
+# 561 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Eing_6
 WahRoomsShared_Kecleon_SetSala_Eing_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Eing_3:
-# 551 "data/scripts/wah_rooms_shared.pory"
+# 553 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_EINGROOM_KECLEON, 5, 5
 	goto WahRoomsShared_Kecleon_SetSala_Eing_1
 
 WahRoomsShared_Kecleon_SetSala_Eing_4:
-# 554 "data/scripts/wah_rooms_shared.pory"
+# 556 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_EINGROOM_KECLEON, 4, 8
 	goto WahRoomsShared_Kecleon_SetSala_Eing_1
 
 WahRoomsShared_Kecleon_SetSala_Eing_5:
-# 557 "data/scripts/wah_rooms_shared.pory"
+# 559 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_EINGROOM_KECLEON, 8, 8
 	goto WahRoomsShared_Kecleon_SetSala_Eing_1
 
 WahRoomsShared_Kecleon_SetSala_Eing_6:
-# 560 "data/scripts/wah_rooms_shared.pory"
+# 562 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_EINGROOM_KECLEON, 8, 5
 	goto WahRoomsShared_Kecleon_SetSala_Eing_1
 
 
 WahRoomsShared_Kecleon_SetSala_Xiros::
-# 569 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 571 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 573 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Xiros_3
-# 574 "data/scripts/wah_rooms_shared.pory"
+# 576 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Xiros_4
-# 577 "data/scripts/wah_rooms_shared.pory"
+# 579 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Xiros_5
-# 580 "data/scripts/wah_rooms_shared.pory"
+# 582 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Xiros_6
 WahRoomsShared_Kecleon_SetSala_Xiros_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Xiros_3:
-# 572 "data/scripts/wah_rooms_shared.pory"
+# 574 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_XIROSROOM_KECLEON, 2, 5
 	goto WahRoomsShared_Kecleon_SetSala_Xiros_1
 
 WahRoomsShared_Kecleon_SetSala_Xiros_4:
-# 575 "data/scripts/wah_rooms_shared.pory"
+# 577 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_XIROSROOM_KECLEON, 2, 7
 	goto WahRoomsShared_Kecleon_SetSala_Xiros_1
 
 WahRoomsShared_Kecleon_SetSala_Xiros_5:
-# 578 "data/scripts/wah_rooms_shared.pory"
+# 580 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_XIROSROOM_KECLEON, 9, 7
 	goto WahRoomsShared_Kecleon_SetSala_Xiros_1
 
 WahRoomsShared_Kecleon_SetSala_Xiros_6:
-# 581 "data/scripts/wah_rooms_shared.pory"
+# 583 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_XIROSROOM_KECLEON, 10, 3
 	goto WahRoomsShared_Kecleon_SetSala_Xiros_1
 
 
 WahRoomsShared_Kecleon_SetSala_Sergio::
-# 590 "data/scripts/wah_rooms_shared.pory"
-	switch VAR_KECLEON_POSITION
 # 592 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_KECLEON_POSITION
+# 594 "data/scripts/wah_rooms_shared.pory"
 	case 0, WahRoomsShared_Kecleon_SetSala_Sergio_3
-# 595 "data/scripts/wah_rooms_shared.pory"
+# 597 "data/scripts/wah_rooms_shared.pory"
 	case 1, WahRoomsShared_Kecleon_SetSala_Sergio_4
-# 598 "data/scripts/wah_rooms_shared.pory"
+# 600 "data/scripts/wah_rooms_shared.pory"
 	case 2, WahRoomsShared_Kecleon_SetSala_Sergio_5
-# 601 "data/scripts/wah_rooms_shared.pory"
+# 603 "data/scripts/wah_rooms_shared.pory"
 	case 3, WahRoomsShared_Kecleon_SetSala_Sergio_6
 WahRoomsShared_Kecleon_SetSala_Sergio_1:
 	return
 
 WahRoomsShared_Kecleon_SetSala_Sergio_3:
-# 593 "data/scripts/wah_rooms_shared.pory"
+# 595 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SERGIOROOM_KECLEON, 10, 9
 	goto WahRoomsShared_Kecleon_SetSala_Sergio_1
 
 WahRoomsShared_Kecleon_SetSala_Sergio_4:
-# 596 "data/scripts/wah_rooms_shared.pory"
+# 598 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SERGIOROOM_KECLEON, 4, 10
 	goto WahRoomsShared_Kecleon_SetSala_Sergio_1
 
 WahRoomsShared_Kecleon_SetSala_Sergio_5:
-# 599 "data/scripts/wah_rooms_shared.pory"
+# 601 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SERGIOROOM_KECLEON, 2, 11
 	goto WahRoomsShared_Kecleon_SetSala_Sergio_1
 
 WahRoomsShared_Kecleon_SetSala_Sergio_6:
-# 602 "data/scripts/wah_rooms_shared.pory"
+# 604 "data/scripts/wah_rooms_shared.pory"
 	setobjectxyperm LOCALID_SERGIOROOM_KECLEON, 9, 13
 	goto WahRoomsShared_Kecleon_SetSala_Sergio_1
 
+
+WahRoomsShared_Kecleon_Text_0:
+# 46 "data/scripts/wah_rooms_shared.pory"
+	.string "{PLAYER} usó el Detector Devon.\p"
+	.string "¡Un POKéMON que era invisible\n"
+	.string "se ha vuelto completamente visible!$"

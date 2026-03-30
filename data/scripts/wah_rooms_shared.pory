@@ -43,7 +43,7 @@ script WahRoomsShared_Kecleon {
         msgbox(Kecleon_Text_WantToUseDevonScope, MSGBOX_YESNO)
         if(var(VAR_RESULT))
         {
-            msgbox(Kecleon_Text_UseDevonScopeMonAttacked, MSGBOX_AUTOCLOSE)
+            msgbox(format("{PLAYER} usó el Detector Devon.\p¡Un POKéMON que era invisible\nse ha vuelto completamente visible!"), MSGBOX_AUTOCLOSE)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
             applymovementandwait(VAR_LAST_TALKED, Movement_KecleonAppears)
             waitse
@@ -52,7 +52,7 @@ script WahRoomsShared_Kecleon {
             waitmoncry
             // Desafío, recompensa...
 
-
+            call(WahRoomsShared_Kecleon_Recompensa)
 
             fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject(VAR_LAST_TALKED)
@@ -67,7 +67,9 @@ script WahRoomsShared_Kecleon {
     end
 }
 
+script WahRoomsShared_Kecleon_Recompensa {
 
+}
 
 script WahRoomsShared_Kecleon_ResetFlags {
     setflag(FLAG_HIDE_KECLEON_ROOM_OMEGA)
