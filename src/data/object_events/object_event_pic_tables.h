@@ -457,6 +457,14 @@ static const struct SpriteFrameImage sPicTable_Gameboycl[] = {
     overworld_ascending_frames(gObjectEventPic_Gameboycl, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Kaktus[] = {
+    overworld_ascending_frames(gObjectEventPic_Kaktus, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Ryuzaki[] = {
+    overworld_ascending_frames(gObjectEventPic_Ryuzaki, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
     overworld_ascending_frames(gObjectEventPic_Beauty, 2, 4),
 };
