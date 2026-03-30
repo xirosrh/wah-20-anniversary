@@ -4296,8 +4296,8 @@
       "name": "DragonMountain_Top_Layout",
       "width": 31,
       "height": 40,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_dragon_mountain",
+      "secondary_tileset": "gTileset_dragon_mountain_2",
       "border_filepath": "data/layouts/DragonMountain_Top/border.bin",
       "blockdata_filepath": "data/layouts/DragonMountain_Top/map.bin"
     },

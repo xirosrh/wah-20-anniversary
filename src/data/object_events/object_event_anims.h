@@ -764,6 +764,54 @@ static const union AnimCmd sAnim_RunEast[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_BrendanClimbStairsDown[] =
+{
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BrendanClimbStairsUp[] =
+{
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BrendanClimbStairsFace[] =
+{
+    ANIMCMD_FRAME(21, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_MayClimbStairsDown[] =
+{
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_MayClimbStairsUp[] =
+{
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_MayClimbStairsFace[] =
+{
+    ANIMCMD_FRAME(21, 16),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_FieldMove[] =
 {
     ANIMCMD_FRAME(0, 4),
@@ -1653,6 +1701,12 @@ static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_RUN_NORTH] = sAnim_RunNorth,
     [ANIM_RUN_WEST] = sAnim_RunWest,
     [ANIM_RUN_EAST] = sAnim_RunEast,
+    [ANIM_CLIMB_STAIRS_DOWN] = sAnim_MayClimbStairsDown,
+    [ANIM_CLIMB_STAIRS_UP] = sAnim_MayClimbStairsUp,
+    [ANIM_CLIMB_STAIRS_FACE_DOWN] = sAnim_MayClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_UP] = sAnim_MayClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_LEFT] = sAnim_MayClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_RIGHT] = sAnim_MayClimbStairsFace,
 };
 
 static const union AnimCmd *const sAnimTable_BrendanNormal[] = {
@@ -1680,6 +1734,12 @@ static const union AnimCmd *const sAnimTable_BrendanNormal[] = {
     [ANIM_RUN_NORTH] = sAnim_RunNorth,
     [ANIM_RUN_WEST] = sAnim_RunWest,
     [ANIM_RUN_EAST] = sAnim_RunEast,
+    [ANIM_CLIMB_STAIRS_DOWN] = sAnim_BrendanClimbStairsDown,
+    [ANIM_CLIMB_STAIRS_UP] = sAnim_BrendanClimbStairsUp,
+    [ANIM_CLIMB_STAIRS_FACE_DOWN] = sAnim_BrendanClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_UP] = sAnim_BrendanClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_LEFT] = sAnim_BrendanClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_RIGHT] = sAnim_BrendanClimbStairsFace,
 };
 
 static const union AnimCmd *const sAnimTable_AcroBike[] = {

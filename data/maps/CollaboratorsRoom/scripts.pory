@@ -96,8 +96,8 @@ script CollaboratorsRoom_EventScript_Kaktus {
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
             applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             waitmovement(0)
+            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         }
         goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     } else {
@@ -184,11 +184,11 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         special(GetBattleOutcome)
         special(HealPlayerParty)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             waitmovement(0)
-            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL)
         } else {
             msgbox(format("Cuando te sientas preparad{OA}, vuelve y probamos nuestros equipos en un duelo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
@@ -205,9 +205,8 @@ text CollaboratorsRoom_Text_Gameboycl_OnDefeat {
 
 script CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     msgbox(format("Lo fuerte será débil. Lo débil será decisivo.\p¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-    waitmovement(0)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     return
 }
@@ -235,9 +234,9 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
+            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
-            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             waitmovement(0)
             delay(30)
             return
@@ -436,12 +435,11 @@ script CollaboratorsRoom_EventScript_Micolo {
         } else {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             playse(SE_LEDGE)
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
-            applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-            waitmovement(0)
+            applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
         }
         goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     } else {
@@ -755,11 +753,10 @@ script CollaboratorsRoom_EventScript_Gosuto {
 
 script CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle {
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_MusicNote)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNote)
     msgbox(format("¡Espera! ¿Escuchas eso?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-    waitmovement(0)
     waitse
-    delay(40)
+    delay(60)
     msgbox(format("¡Es el sonido de la batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     return
 }
@@ -781,10 +778,9 @@ script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
     waitse
     delay(30)
-    playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     waitse
     goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
 }
@@ -1008,11 +1004,10 @@ script CollaboratorsRoom_EventScript_Alexmad {
         msgbox(format("Ya sabes lo que tienes que hacer, ¿no?"), MSGBOX_NPC, speaker = SP_NAME_ALEXMAD)
         end
     }
-    applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
     if(!flag(FLAG_ALEXMAD_EVENT_COMPLETED)) {
         msgbox(format("Sm1, sm2 o…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
-    waitmovement(0)
     delay(30)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(emote_exclamation_mark))
@@ -1050,9 +1045,9 @@ script CollaboratorsRoom_EventScript_Alexmad {
             } else {
                 msgbox(format("¡Tu de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 playse(SE_PIN)
-                applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMarkWithDelay48)
+                applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMark)
                 msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-                waitmovement(0)
+                delay(60)
             }
             dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
             switch(var(VAR_RESULT)) {

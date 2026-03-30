@@ -1050,3 +1050,25 @@ const struct Tileset gTileset_lobby =
     .metatileAttributes = gMetatileAttributes_lobby,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_dragon_mountain =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_dragon_mountain,
+    .palettes = gTilesetPalettes_dragon_mountain,
+    .metatiles = gMetatiles_dragon_mountain,
+    .metatileAttributes = gMetatileAttributes_dragon_mountain,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dragon_mountain_2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dragon_mountain_2,
+    .palettes = gTilesetPalettes_dragon_mountain_2,
+    .metatiles = gMetatiles_dragon_mountain_2,
+    .metatileAttributes = gMetatileAttributes_dragon_mountain_2,
+    .callback = InitTilesetAnim_DragonMountain2,
+};

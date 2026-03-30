@@ -5182,11 +5182,11 @@ Timid Nature
 - Hydro pump
 
 === TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
-Name: FOSTER
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 Mugshot: Green
@@ -5241,11 +5241,11 @@ Modest Nature
 - Core Enforcer
 
 === TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
-Name: FOSTER
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Prediction
 Mugshot: Green

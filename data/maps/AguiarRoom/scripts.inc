@@ -32,11 +32,11 @@ AguiarRoom_OnFrame::
 # 22 "data/maps/AguiarRoom/scripts.pory"
 	waitmovement 0
 # 23 "data/maps/AguiarRoom/scripts.pory"
-	playse SE_PIN
-# 24 "data/maps/AguiarRoom/scripts.pory"
-	applymovement LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
-# 25 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
+# 24 "data/maps/AguiarRoom/scripts.pory"
+	playse SE_PIN
+# 25 "data/maps/AguiarRoom/scripts.pory"
+	applymovement LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
 # 26 "data/maps/AguiarRoom/scripts.pory"
 	waitmovement 0
 # 27 "data/maps/AguiarRoom/scripts.pory"
@@ -310,7 +310,7 @@ AguiarRoom_EventScript_Aguiar_Movement_0:
 	step_end
 
 AguiarRoom_OnFrame_Text_0:
-# 25 "data/maps/AguiarRoom/scripts.pory"
+# 23 "data/maps/AguiarRoom/scripts.pory"
 	.string "¡Pero qué buen programa! Hoy si que es\n"
 	.string "un día tranquilo.$"
 
