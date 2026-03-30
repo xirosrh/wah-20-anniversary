@@ -106,7 +106,7 @@ script EingRoom_EventScript_Eing {
     if(flag(FLAG_DEFEATED_ADMIN_EING)) {
         playse(SE_PIN)
         applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
-        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+        msgbox(format("¿Pero mira que eres pesad{OA} eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
         delay(50)
         turnobject(LOCALID_EINGROOM_EING, DIR_WEST)
         release
@@ -126,7 +126,7 @@ script EingRoom_EventScript_Eing {
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
     call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
     delay(40)
-    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tonto te baneo, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tont{OA} te baneo, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     fadescreen(FADE_TO_BLACK)
     delay(30)
     fadescreen(FADE_FROM_BLACK)
@@ -151,7 +151,7 @@ script EingRoom_EventScript_Eing {
     call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
     delay(30)
     call(EingRoom_EventScript_EingBattle)
-    msgbox(format("Enhorabuena chaval, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado..."), speaker = SP_NAME_EING)
+    msgbox(format("Enhorabuena chaval{A}, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado…"), speaker = SP_NAME_EING)
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
     setflag(FLAG_DEFEATED_ADMIN_EING)
@@ -176,7 +176,7 @@ script EingRoom_EventScript_EingBattle {
 }
 
 text EingRoom_Text_EingDefeated {
-    format("¡Míralo, si parecía tonto al principio!")
+    format("¡Míral{OA}, si parecía tont{OA} al principio!")
 }
 
 script EingRoom_EventScript_WalkInPlaceEingFacingPlayer {

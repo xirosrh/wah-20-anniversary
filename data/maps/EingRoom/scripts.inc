@@ -542,7 +542,7 @@ EingRoom_OnFrame_Text_4:
 
 EingRoom_EventScript_Eing_Text_0:
 # 109 "data/maps/EingRoom/scripts.pory"
-	.string "¿Pero mira que eres pesado eh? ¿Tú no\n"
+	.string "¿Pero mira que eres pesad{OA} eh? ¿Tú no\n"
 	.string "tienes amigos u otra persona a la que\l"
 	.string "molestar?$"
 
@@ -554,7 +554,7 @@ EingRoom_EventScript_Eing_Text_1:
 EingRoom_EventScript_Eing_Text_2:
 # 129 "data/maps/EingRoom/scripts.pory"
 	.string "Si quieres un cambio de nick, tendrás\n"
-	.string "que esperar y como te pongas tonto te\l"
+	.string "que esperar y como te pongas tont{OA} te\l"
 	.string "baneo, ¿eh?$"
 
 EingRoom_EventScript_Eing_Text_3:
@@ -569,10 +569,10 @@ EingRoom_EventScript_Eing_Text_4:
 
 EingRoom_EventScript_Eing_Text_5:
 # 154 "data/maps/EingRoom/scripts.pory"
-	.string "Enhorabuena chaval, ahora avanza a la\n"
+	.string "Enhorabuena chaval{A}, ahora avanza a la\n"
 	.string "siguiente sala y déjame tranquilo, que\l"
-	.string "estaba muy ocupado...$"
+	.string "estaba muy ocupado…$"
 
 EingRoom_Text_EingDefeated::
 # 178 "data/maps/EingRoom/scripts.pory"
-	.string "¡Míralo, si parecía tonto al principio!$"
+	.string "¡Míral{OA}, si parecía tont{OA} al principio!$"
