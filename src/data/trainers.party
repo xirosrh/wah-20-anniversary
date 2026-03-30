@@ -6728,48 +6728,122 @@ Pic: Gameboy Cl
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Smart Trainer
+AI: Basic Trainer
 Mugshot: Purple
+Difficulty: Easy
 
-Swellow
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Energy
-- Quick Attack
-- Wing Attack
-- Endeavor
+Feraligatr /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Ability: Sheer force
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Waterfall 
+- Ice Punch
+- Rock Slide 
+- Crunch 
 
-Trapinch
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bite
-- Dig
-- Feint Attack
-- Sand Tomb
+Dragonite
+Ability: Multiscale
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Aerial Ace
+- Extreme Speed
 
-Wailmer
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
-- Whirlpool
-- Astonish
-- Water Pulse
+Scizor
+Ability: Technician
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Aerial Ace
+- Night Slash
+
+Espeon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+
+Slowking
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Psychic
+- Flamethrower
+- Slack Off
 
 Magneton
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
 - Thunderbolt
-- Supersonic
-- Thunder Wave
-- Sonic Boom
+- Flash Cannon
+- Tri Attack
+- Signal Beam
 
-Shiftry
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Giga Drain
-- Feint Attack
-- Double Team
-- Swagger
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Normal
+
+Feraligatr @ Life Orb /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Ability: Sheer force
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Waterfall 
+- Ice Punch
+- Rock Slide 
+- Crunch 
+
+Dragonite @ Weakness Policy
+Ability: Multiscale
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Aerial Ace
+- Extreme Speed
+
+Scizor @ Choice Scarf
+Ability: Technician
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Aerial Ace
+- Night Slash
+
+Espeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+
+Slowking @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Psychic
+- Flamethrower
+- Slack Off
+
+Magneton @ Eviolite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Signal Beam
 
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
