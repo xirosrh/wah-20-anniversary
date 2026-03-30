@@ -1,4 +1,5 @@
 const FLAG_TEMP_1_HIDE_MOLTRES = FLAG_TEMP_1
+const FLAG_TEMP_2_HIDE_ABRA_2 = FLAG_TEMP_2
 
 mapscripts DragonMountain_Top_MapScripts {
      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
@@ -15,6 +16,7 @@ script DragonMountain_Top_OnWarp {
     hideobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
     hideobjectat(LOCALID_PLAYER, MAP_DRAGON_MOUNTAIN_TOP)
     hideobjectat(LOCALID_MOUNTAINTOP_MOLTRES, MAP_DRAGON_MOUNTAIN_TOP)
+    setflag(FLAG_TEMP_2_HIDE_ABRA_2)
     end
 }
 
@@ -108,8 +110,10 @@ script DragonMountan_Top_EventScript_Sergio {
     delay(20)
     fadescreen(FADE_FROM_BLACK)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_DoubleExclamationMarkWithDelay48)
-    msgbox(format("¿Eh? ¿Así que quieres combatir ahora? Admiro que hayas llegado hasta aquí, se que a veces soy difícil de encontrar.\pPero todavía no estoy listo para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_DoubleExclamationMark)
+    msgbox(format("¿Eh? ¿Así que quieres combatir ahora?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    delay(50)
+    msgbox(format("Admiro que hayas llegado hasta aquí, se que a veces soy difícil de encontrar.\pPero todavía no estoy listo para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     special(SpawnCameraObject)
     directcameramovementtopos(15, 13)
@@ -144,7 +148,10 @@ script DragonMountan_Top_EventScript_Sergio {
     waitmovement(LOCALID_MOUNTAINTOP_SERGIODRAGONITE)
     special(RemoveCameraObject)
     release
-    msgbox(format("¡Ahora sí! Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    msgbox(format("¡Ahora sí!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(disable_jump_landing_ground_effect, jump_in_place_down, enable_jump_landing_ground_effect))
+    release
+    msgbox(format("Ha llegado el momento de combatir, y mis dragones no se contendrán.\p¡Dragonite, desata toda tu furia sobre el campo de batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIODRAGONITE, moves(emote_versus))
     waitse
@@ -212,28 +219,42 @@ script DragonMountan_Top_EventScript_Sergio {
     msgbox(format("Moltres es un Pokémon que siempre nos ha acompañado, porque renacemos de nuestras cenizas como el ave fénix."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     delay(30)
-    msgbox(format("Que locura que ya llevemos 20 años entre todos construyendo esta comunidad.\pHa pasado mucho tiempo, pero me siento muy orgulloso de que entre todos hayamos colaborado y poniendo en común nuestro conocimiento, buscando mantener el espíritu divertido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO) //TODO Xiros
+    msgbox(format("Que locura que ya llevemos 20 años entre todos construyendo esta comunidad.\pHa pasado mucho tiempo, pero me siento muy orgulloso de que entre todos hayamos colaborado y puesto en común nuestro conocimiento, buscando mantener el espíritu divertido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     delay(20)
-    msgbox(format("¡Mil gracias por haber formado parte de esta celebración!"), speaker = SP_NAME_SERGIO)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_HeartWithDelay48)
+    applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_Heart)
+    msgbox(format("¡Mil gracias por haber formado parte de esta celebración!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    delay(60)
     msgbox(format("Ahora ven, acompañame, es hora de dejar registro de tu hazaña en el Salón de la fama."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down * 17, walk_fast_right, walk_fast_down, face_left))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 18, walk_fast_left, walk_fast_down, face_right))
+    clearflag(FLAG_TEMP_2_HIDE_ABRA_2)
+    addobject(LOCALID_MOUNTAINTOP_ABRA_2)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+    showobjectat(LOCALID_MOUNTAINTOP_ABRA_2, MAP_DRAGON_MOUNTAIN_TOP)
+    turnobject(LOCALID_MOUNTAINTOP_ABRA_2, DIR_NORTH)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+    release
+    delay(30)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_SPECIES(ABRA))
+    release
+    playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
+    applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down, walk_fast_right, walk_fast_down, face_left))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 2))
     waitmovement(LOCALID_PLAYER)
-    turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_EAST)
+    turnobject(LOCALID_MOUNTAINTOP_ABRA_2, DIR_EAST)
     delay(20)
     playse(SE_WARP_IN)
-    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
     updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
     release
     delay(30)
-    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
+    updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
     updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
     updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
     release
