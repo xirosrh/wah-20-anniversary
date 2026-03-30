@@ -1885,3 +1885,31 @@ void InitTilesetAnim_EingRoom(void) {
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_EingRoom;
 }
+
+
+const u16 gTilesetAnims_DragonMountain2_Flag_Frame0[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/anim/flag/00.4bpp");
+const u16 gTilesetAnims_DragonMountain2_Flag_Frame1[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/anim/flag/01.4bpp");
+
+const u16 *const gTilesetAnims_DragonMountain2_Flag[] = {
+    gTilesetAnims_DragonMountain2_Flag_Frame0,
+    gTilesetAnims_DragonMountain2_Flag_Frame1,
+    gTilesetAnims_DragonMountain2_Flag_Frame0,
+    gTilesetAnims_DragonMountain2_Flag_Frame1,
+};
+
+static void QueueAnimTiles_DragonMountain2_Flag(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_DragonMountain2_Flag);
+    AppendTilesetAnimToBuffer(gTilesetAnims_DragonMountain2_Flag[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 12 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_DragonMountain2(u16 timer) {
+    if (timer % 16 == 0) {
+        QueueAnimTiles_DragonMountain2_Flag(timer / 16);
+    }
+}
+
+void InitTilesetAnim_DragonMountain2(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_DragonMountain2;
+}

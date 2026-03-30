@@ -1070,5 +1070,5 @@ const struct Tileset gTileset_dragon_mountain_2 =
     .palettes = gTilesetPalettes_dragon_mountain_2,
     .metatiles = gMetatiles_dragon_mountain_2,
     .metatileAttributes = gMetatileAttributes_dragon_mountain_2,
-    .callback = NULL,
+    .callback = InitTilesetAnim_DragonMountain2,
 };
