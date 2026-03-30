@@ -8,12 +8,6 @@ script Achievements_EventScript_Eval_WinWahChallenge {
     return
 }
 
-script Achievements_EventScript_Eval_WinWahChallenge_Standard {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_STANDARD)
-    call(Achievements_EventScript_Eval_Common)
-    return
-}
-
 script Achievements_EventScript_Eval_WinWahChallenge_Double {
     setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_DOUBLE)
     call(Achievements_EventScript_Eval_Common)

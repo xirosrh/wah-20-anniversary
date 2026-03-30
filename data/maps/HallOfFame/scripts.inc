@@ -94,70 +94,64 @@ HallOfFame_EventScript_EvalAchievements::
 # 52 "data/maps/HallOfFame/scripts.pory"
 	switch VAR_WAH_CHALLENGE_MODE
 # 53 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_EvalAchievements_3
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_EvalAchievements_3
 # 55 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_EvalAchievements_4
-# 57 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_EvalAchievements_5
+	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_EvalAchievements_4
 HallOfFame_EventScript_EvalAchievements_1:
-# 60 "data/maps/HallOfFame/scripts.pory"
+# 58 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_5Times
-# 61 "data/maps/HallOfFame/scripts.pory"
+# 59 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
 	return
 
 HallOfFame_EventScript_EvalAchievements_3:
 # 54 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_Standard
+	call Achievements_EventScript_Eval_WinWahChallenge_Double
 	goto HallOfFame_EventScript_EvalAchievements_1
 
 HallOfFame_EventScript_EvalAchievements_4:
 # 56 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_Double
-	goto HallOfFame_EventScript_EvalAchievements_1
-
-HallOfFame_EventScript_EvalAchievements_5:
-# 58 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_Inverse
 	goto HallOfFame_EventScript_EvalAchievements_1
 
 
 HallOfFame_EventScript_SetGameClear::
-# 66 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_WAH_CHALLENGE_COMPLETED
-# 67 "data/maps/HallOfFame/scripts.pory"
-	switch VAR_WAH_CHALLENGE_MODE
-# 68 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_SetGameClear_3
-# 70 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_SetGameClear_4
-# 72 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_SetGameClear_5
+# 64 "data/maps/HallOfFame/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, HallOfFame_EventScript_SetGameClear_2
 HallOfFame_EventScript_SetGameClear_1:
-# 75 "data/maps/HallOfFame/scripts.pory"
+# 68 "data/maps/HallOfFame/scripts.pory"
+	switch VAR_WAH_CHALLENGE_MODE
+# 69 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_SetGameClear_6
+# 71 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_SetGameClear_7
+HallOfFame_EventScript_SetGameClear_4:
+# 74 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
 	return
 
-HallOfFame_EventScript_SetGameClear_3:
-# 69 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_WAH_CHALLENGE_STANDARD_COMPLETED
+HallOfFame_EventScript_SetGameClear_2:
+# 65 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_WAH_CHALLENGE_COMPLETED
+# 66 "data/maps/HallOfFame/scripts.pory"
+	setflag FLAG_EXPLAIN_NEW_CHALLENGE_MODES
 	goto HallOfFame_EventScript_SetGameClear_1
 
-HallOfFame_EventScript_SetGameClear_4:
-# 71 "data/maps/HallOfFame/scripts.pory"
+HallOfFame_EventScript_SetGameClear_6:
+# 70 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED
-	goto HallOfFame_EventScript_SetGameClear_1
+	goto HallOfFame_EventScript_SetGameClear_4
 
-HallOfFame_EventScript_SetGameClear_5:
-# 73 "data/maps/HallOfFame/scripts.pory"
+HallOfFame_EventScript_SetGameClear_7:
+# 72 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_INVERSE_COMPLETED
-	goto HallOfFame_EventScript_SetGameClear_1
+	goto HallOfFame_EventScript_SetGameClear_4
 
 
 HallOfFame_EventScript_ResetWahChallenge::
-# 80 "data/maps/HallOfFame/scripts.pory"
+# 79 "data/maps/HallOfFame/scripts.pory"
 	call EventScript_ResetWahChallenge
-# 81 "data/maps/HallOfFame/scripts.pory"
+# 80 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 

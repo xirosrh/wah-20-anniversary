@@ -16,14 +16,29 @@ script Lobby_EventScript_StartChallenge {
     turnobject(LOCALID_PLAYER, DIR_WEST)
     delay(20)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
+    if (flag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES) == TRUE) {
+        msgbox(format("¡Increíble, {PLAYER}! Has superado el desafío por completo.\pA partir de ahora puedes volver a enfrentarlo en otras modalidades: batallas dobles y batallas inversas.\p¡Seguro que te van a divertir un montón!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        clearflag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES)
+    }
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        msgbox(format("¿Así que ya estás list{OA} para intentar el desafío?"), MSGBOX_YESNO, speaker = SP_NAME_COPE)
+        closemessage
+        delay(10)
+        if (var(VAR_RESULT) == YES) {
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
+        } else {
+            goto(Lobby_StartChallenge_CancelledChallenge)
+        }
+    }
     setspeaker(SP_NAME_COPE)
     message(format("¿En qué modo quieres afrontar el desafío?"))
     waitmessage
     dynmultipush(format("Estándar"), 0)
     dynmultipush(format("Batallas dobles"), 1)
-    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
-        dynmultipush(format("Batallas inversas"), 2)
-    } 
+    dynmultipush(format("Batallas inversas"), 2)
     dynmultipush(format("Salir"), 4)
     dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
@@ -47,16 +62,20 @@ script Lobby_EventScript_StartChallenge {
             msgbox(format("¡Excelente! El desafío será en modo batallas inversas.\pLas efectividades de tipo se invierten: lo que normalmente es súper efectivo será poco efectivo y viceversa.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             goto(Lobby_StartChallenge_EnterOmegaRoom)
         default:
-            playse(SE_PIN)
-            applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_Surprise)
-            msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-            delay(60)
-            msgbox(format("Recuerda que las personas de la sala de espera pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
-            turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
-            release
-            end
+            goto(Lobby_StartChallenge_CancelledChallenge)
     }
+}
+
+script Lobby_StartChallenge_CancelledChallenge {
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_Surprise)
+    msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    delay(60)
+    msgbox(format("Recuerda que las personas de la sala de espera pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+    turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
+    release
+    end
 }
 
 script Lobby_StartChallenge_EnterOmegaRoom {

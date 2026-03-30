@@ -210,7 +210,7 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
             waitmovement(LOCALID_KLEINROOM_KLEIN)
             playbgm(MUS_B_PIKE, FALSE)
             msgbox(format("¡Sí! ¡Soy libre!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
-            applymovement(LOCALID_KLEINROOM_KLEIN, moves(walk_down walk_left))
+            applymovement(LOCALID_KLEINROOM_KLEIN, moves(walk_down, walk_left))
             waitmovement(LOCALID_KLEINROOM_KLEIN)
             playse(SE_PIN)
             applymovement(LOCALID_KLEINROOM_KLEIN, moves(emote_question_mark))
