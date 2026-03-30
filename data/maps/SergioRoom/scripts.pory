@@ -131,9 +131,9 @@ script SergioRoom_EventScript_Abra {
 script SergioRoom_EventScript_SecurityGuardTrigger {
     lock
     playse(SE_PIN)
-    applymovement(LOCALID_SERGIOROOM_SECURITYGUARD, moves(emote_double_exclamation_mark, face_player, delay_16 * 3))
+    applymovementandwait(LOCALID_SERGIOROOM_SECURITYGUARD, moves(emote_double_exclamation_mark, face_player))
     msgbox(format("¡Alto ahí!"), MSGBOX_AUTOCLOSE)
-    waitmovement(0)
+    delay(48)
     getdirectiontoface(VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD)
     switch(var(VAR_TEMP_A)){
         case DIR_EAST:

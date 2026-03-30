@@ -233,11 +233,11 @@ SergioRoom_EventScript_SecurityGuardTrigger::
 # 133 "data/maps/SergioRoom/scripts.pory"
 	playse SE_PIN
 # 134 "data/maps/SergioRoom/scripts.pory"
-	applymovement LOCALID_SERGIOROOM_SECURITYGUARD, SergioRoom_EventScript_SecurityGuardTrigger_Movement_0
+	applymovementandwait LOCALID_SERGIOROOM_SECURITYGUARD, SergioRoom_EventScript_SecurityGuardTrigger_Movement_0
 # 135 "data/maps/SergioRoom/scripts.pory"
 	msgbox SergioRoom_EventScript_SecurityGuardTrigger_Text_0, MSGBOX_AUTOCLOSE
 # 136 "data/maps/SergioRoom/scripts.pory"
-	waitmovement 0
+	delay 48
 # 137 "data/maps/SergioRoom/scripts.pory"
 	getdirectiontoface VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD
 # 138 "data/maps/SergioRoom/scripts.pory"
@@ -354,12 +354,6 @@ SergioRoom_EventScript_SecurityGuardTrigger_Movement_0:
 	emote_double_exclamation_mark
 # 134 "data/maps/SergioRoom/scripts.pory"
 	face_player
-# 134 "data/maps/SergioRoom/scripts.pory"
-	delay_16
-# 134 "data/maps/SergioRoom/scripts.pory"
-	delay_16
-# 134 "data/maps/SergioRoom/scripts.pory"
-	delay_16
 	step_end
 
 SergioRoom_EventScript_Abra_Text_0:

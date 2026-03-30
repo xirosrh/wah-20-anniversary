@@ -15,7 +15,6 @@ struct AchievementEntry
 
 static bool8 CheckDummyChallenge(u8 id);
 static bool8 CheckWinWahChallenge(u8 id);
-static bool8 CheckWinWahChallengeStandard(u8 id);
 static bool8 CheckWinWahChallengeDouble(u8 id);
 static bool8 CheckWinWahChallengeInverse(u8 id);
 static bool8 CheckDefeatAllAdmins(u8 id);
@@ -29,12 +28,6 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("¡Supera el desafío completo una vez\ny conquista el salón de la fama!"),
         .target = TRUE,
         .check = CheckWinWahChallenge,
-    },
-    [ACHIEVEMENT_WIN_WAH_CHALLENGE_STANDARD] = {
-        .title = COMPOUND_STRING("Modo estándar superado"),
-        .description = COMPOUND_STRING("Completa el desafío en modo\nestándar.\n¡Lo mínimo que se espera de ti!"),
-        .target = TRUE,
-        .check = CheckWinWahChallengeStandard,
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_DOUBLE] = {
         .title = COMPOUND_STRING("Doble o nada"),
@@ -102,11 +95,6 @@ static bool8 CheckWinWahChallengeHardMode(u8 id)
     return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) == sAchievements[id].target && GetCurrentDifficultyLevel() == DIFFICULTY_HARD;
 }
 
-
-static bool8 CheckWinWahChallengeStandard(u8 id)
-{
-    return FlagGet(FLAG_WAH_CHALLENGE_STANDARD_COMPLETED) == sAchievements[id].target;
-}
 
 static bool8 CheckWinWahChallengeDouble(u8 id)
 {

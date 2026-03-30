@@ -80,12 +80,12 @@
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD    0x42 // Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT    0x43 // Used WAH
 #define FLAG_FORCE_DOUBLE_BATTLE    0x44 // Forces all single-trainer battles to be double battles
-#define FLAG_WAH_CHALLENGE_STANDARD_COMPLETED    0x45 // Used WAH
+#define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED    0x46 // Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI    0x47 // Used WAH
 #define FLAG_TRANSPARENT_BOX 0x48
 #define FLAG_WAH_CHALLENGE_INVERSE_COMPLETED    0x49 // Used WAH
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_EXPLAIN_NEW_CHALLENGE_MODES    0x4A // Used WAH
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag

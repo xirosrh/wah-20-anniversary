@@ -127,217 +127,207 @@ DriveKatherineRoom_EventScript_Drive::
 # 80 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
 # 81 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_0
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_0
 # 84 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitmovement 0
+	waitse
 # 85 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 86 "data/maps/DriveKatherineRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
 # 87 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
-# 88 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitmovement 0
-# 89 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitse
-# 90 "data/maps/DriveKatherineRoom/scripts.pory"
+# 88 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
-# 91 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_2
-# 95 "data/maps/DriveKatherineRoom/scripts.pory"
+# 89 "data/maps/DriveKatherineRoom/scripts.pory"
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_2
+# 93 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_2, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 96 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitmovement 0
-# 97 "data/maps/DriveKatherineRoom/scripts.pory"
+# 94 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 30
-# 98 "data/maps/DriveKatherineRoom/scripts.pory"
+# 95 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_3, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 99 "data/maps/DriveKatherineRoom/scripts.pory"
+# 96 "data/maps/DriveKatherineRoom/scripts.pory"
 	call DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer
-# 100 "data/maps/DriveKatherineRoom/scripts.pory"
+# 97 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 10
-# 101 "data/maps/DriveKatherineRoom/scripts.pory"
+# 98 "data/maps/DriveKatherineRoom/scripts.pory"
 	turnobject LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH
-# 102 "data/maps/DriveKatherineRoom/scripts.pory"
+# 99 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
-# 103 "data/maps/DriveKatherineRoom/scripts.pory"
+# 100 "data/maps/DriveKatherineRoom/scripts.pory"
 	special GetPlayerFacingDirection
-# 104 "data/maps/DriveKatherineRoom/scripts.pory"
+# 101 "data/maps/DriveKatherineRoom/scripts.pory"
 	switch VAR_RESULT
-# 105 "data/maps/DriveKatherineRoom/scripts.pory"
+# 102 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_NORTH, DriveKatherineRoom_EventScript_Drive_6
-# 108 "data/maps/DriveKatherineRoom/scripts.pory"
+# 105 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_SOUTH, DriveKatherineRoom_EventScript_Drive_7
-# 111 "data/maps/DriveKatherineRoom/scripts.pory"
+# 108 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_WEST, DriveKatherineRoom_EventScript_Drive_8
-# 114 "data/maps/DriveKatherineRoom/scripts.pory"
+# 111 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_EAST, DriveKatherineRoom_EventScript_Drive_9
 DriveKatherineRoom_EventScript_Drive_4:
-# 118 "data/maps/DriveKatherineRoom/scripts.pory"
+# 115 "data/maps/DriveKatherineRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 119 "data/maps/DriveKatherineRoom/scripts.pory"
+# 116 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 40
-# 120 "data/maps/DriveKatherineRoom/scripts.pory"
+# 117 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
-# 121 "data/maps/DriveKatherineRoom/scripts.pory"
+# 118 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_JumpDown
-# 122 "data/maps/DriveKatherineRoom/scripts.pory"
+# 119 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitse
-# 123 "data/maps/DriveKatherineRoom/scripts.pory"
+# 120 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_4, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 124 "data/maps/DriveKatherineRoom/scripts.pory"
+# 121 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown
-# 125 "data/maps/DriveKatherineRoom/scripts.pory"
+# 122 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 30
-# 126 "data/maps/DriveKatherineRoom/scripts.pory"
+# 123 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_5, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 127 "data/maps/DriveKatherineRoom/scripts.pory"
+# 124 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
-# 128 "data/maps/DriveKatherineRoom/scripts.pory"
+# 125 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_7
-# 129 "data/maps/DriveKatherineRoom/scripts.pory"
+# 126 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitse
-# 130 "data/maps/DriveKatherineRoom/scripts.pory"
+# 127 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
-# 131 "data/maps/DriveKatherineRoom/scripts.pory"
+# 128 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
-# 132 "data/maps/DriveKatherineRoom/scripts.pory"
+# 129 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_6, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 133 "data/maps/DriveKatherineRoom/scripts.pory"
+# 130 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitse
-# 134 "data/maps/DriveKatherineRoom/scripts.pory"
+# 131 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
-# 135 "data/maps/DriveKatherineRoom/scripts.pory"
+# 132 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_SurpriseWithDelay48
-# 136 "data/maps/DriveKatherineRoom/scripts.pory"
+# 133 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_7, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 137 "data/maps/DriveKatherineRoom/scripts.pory"
+# 134 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown
-# 138 "data/maps/DriveKatherineRoom/scripts.pory"
+# 135 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 30
-# 139 "data/maps/DriveKatherineRoom/scripts.pory"
+# 136 "data/maps/DriveKatherineRoom/scripts.pory"
 	turnobject LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_EAST
-# 140 "data/maps/DriveKatherineRoom/scripts.pory"
+# 137 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_8, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 141 "data/maps/DriveKatherineRoom/scripts.pory"
+# 138 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceRight
-# 142 "data/maps/DriveKatherineRoom/scripts.pory"
+# 139 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
-# 143 "data/maps/DriveKatherineRoom/scripts.pory"
+# 140 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_EventScript_Drive_Movement_8
-# 144 "data/maps/DriveKatherineRoom/scripts.pory"
+# 141 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_9, MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE
+# 142 "data/maps/DriveKatherineRoom/scripts.pory"
+	playse SE_PIN
+# 143 "data/maps/DriveKatherineRoom/scripts.pory"
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48
+# 144 "data/maps/DriveKatherineRoom/scripts.pory"
+	delay 20
 # 145 "data/maps/DriveKatherineRoom/scripts.pory"
-	playse SE_PIN
-# 146 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48
-# 147 "data/maps/DriveKatherineRoom/scripts.pory"
-	delay 20
-# 148 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_10, MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE
-# 149 "data/maps/DriveKatherineRoom/scripts.pory"
+# 146 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceDown
-# 150 "data/maps/DriveKatherineRoom/scripts.pory"
+# 147 "data/maps/DriveKatherineRoom/scripts.pory"
 	turnobject LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH
-# 151 "data/maps/DriveKatherineRoom/scripts.pory"
+# 148 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_11, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 152 "data/maps/DriveKatherineRoom/scripts.pory"
+# 149 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown
-# 153 "data/maps/DriveKatherineRoom/scripts.pory"
+# 150 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_12, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 154 "data/maps/DriveKatherineRoom/scripts.pory"
+# 151 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
-# 155 "data/maps/DriveKatherineRoom/scripts.pory"
+# 152 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_9
-# 156 "data/maps/DriveKatherineRoom/scripts.pory"
+# 153 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_EventScript_Drive_Movement_9
-# 157 "data/maps/DriveKatherineRoom/scripts.pory"
+# 154 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitmovement 0
-# 158 "data/maps/DriveKatherineRoom/scripts.pory"
+# 155 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitse
-# 159 "data/maps/DriveKatherineRoom/scripts.pory"
+# 156 "data/maps/DriveKatherineRoom/scripts.pory"
 	call DriveKatherineRoom_EventScript_DriveKatherineBattle
-# 160 "data/maps/DriveKatherineRoom/scripts.pory"
+# 157 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
-# 161 "data/maps/DriveKatherineRoom/scripts.pory"
+# 158 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattleEmote
-# 162 "data/maps/DriveKatherineRoom/scripts.pory"
+# 159 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattleEmote
-# 163 "data/maps/DriveKatherineRoom/scripts.pory"
+# 160 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitmovement 0
-# 164 "data/maps/DriveKatherineRoom/scripts.pory"
+# 161 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
-# 165 "data/maps/DriveKatherineRoom/scripts.pory"
+# 162 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_Movement_SurpriseAfterBattleJump
-# 166 "data/maps/DriveKatherineRoom/scripts.pory"
+# 163 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovement LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_Movement_SurpriseAfterBattleJump
-# 167 "data/maps/DriveKatherineRoom/scripts.pory"
+# 164 "data/maps/DriveKatherineRoom/scripts.pory"
 	waitmovement 0
-# 168 "data/maps/DriveKatherineRoom/scripts.pory"
+# 165 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
-# 169 "data/maps/DriveKatherineRoom/scripts.pory"
+# 166 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkDown
-# 170 "data/maps/DriveKatherineRoom/scripts.pory"
+# 167 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_13, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 171 "data/maps/DriveKatherineRoom/scripts.pory"
+# 168 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown
-# 172 "data/maps/DriveKatherineRoom/scripts.pory"
+# 169 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
-# 173 "data/maps/DriveKatherineRoom/scripts.pory"
+# 170 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_14, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 174 "data/maps/DriveKatherineRoom/scripts.pory"
+# 171 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
-# 175 "data/maps/DriveKatherineRoom/scripts.pory"
+# 172 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_HappyWithDelay48
-# 176 "data/maps/DriveKatherineRoom/scripts.pory"
+# 173 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 15
-# 177 "data/maps/DriveKatherineRoom/scripts.pory"
+# 174 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkDown
-# 178 "data/maps/DriveKatherineRoom/scripts.pory"
+# 175 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_15, MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE
-# 179 "data/maps/DriveKatherineRoom/scripts.pory"
+# 176 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_PIN
-# 180 "data/maps/DriveKatherineRoom/scripts.pory"
+# 177 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48
-# 181 "data/maps/DriveKatherineRoom/scripts.pory"
+# 178 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 30
+# 179 "data/maps/DriveKatherineRoom/scripts.pory"
+	playse SE_LEDGE
+# 180 "data/maps/DriveKatherineRoom/scripts.pory"
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
+# 181 "data/maps/DriveKatherineRoom/scripts.pory"
+	waitse
 # 182 "data/maps/DriveKatherineRoom/scripts.pory"
 	playse SE_LEDGE
 # 183 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
 # 184 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitmovement 0
-# 185 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitse
-# 186 "data/maps/DriveKatherineRoom/scripts.pory"
-	playse SE_LEDGE
-# 187 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_DRIVE, DriveKatherineRoom_EventScript_Drive_Movement_1
-# 188 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_16, MSGBOX_AUTOCLOSE, SP_NAME_DRIVE
-# 189 "data/maps/DriveKatherineRoom/scripts.pory"
-	waitmovement 0
-# 190 "data/maps/DriveKatherineRoom/scripts.pory"
+# 185 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 30
-# 191 "data/maps/DriveKatherineRoom/scripts.pory"
-	applymovement LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_EventScript_Drive_Movement_8
-# 192 "data/maps/DriveKatherineRoom/scripts.pory"
+# 186 "data/maps/DriveKatherineRoom/scripts.pory"
+	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_EventScript_Drive_Movement_8
+# 187 "data/maps/DriveKatherineRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
-# 193 "data/maps/DriveKatherineRoom/scripts.pory"
+# 188 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Drive_Text_17, MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE
-# 194 "data/maps/DriveKatherineRoom/scripts.pory"
+# 189 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceLeft
-# 195 "data/maps/DriveKatherineRoom/scripts.pory"
+# 190 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
-# 196 "data/maps/DriveKatherineRoom/scripts.pory"
+# 191 "data/maps/DriveKatherineRoom/scripts.pory"
 	msgbox DriveKatherineRoom_EventScript_Katherine_Text_1, MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE
-# 197 "data/maps/DriveKatherineRoom/scripts.pory"
+# 192 "data/maps/DriveKatherineRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
-# 198 "data/maps/DriveKatherineRoom/scripts.pory"
+# 193 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_KATHERINE, DriveKatherineRoom_EventScript_Drive_Movement_10
-# 199 "data/maps/DriveKatherineRoom/scripts.pory"
+# 194 "data/maps/DriveKatherineRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE
-# 200 "data/maps/DriveKatherineRoom/scripts.pory"
+# 195 "data/maps/DriveKatherineRoom/scripts.pory"
 	release
 	end
 
@@ -359,131 +349,131 @@ DriveKatherineRoom_EventScript_Drive_2:
 	end
 
 DriveKatherineRoom_EventScript_Drive_6:
-# 106 "data/maps/DriveKatherineRoom/scripts.pory"
+# 103 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, DriveKatherineRoom_EventScript_Drive_Movement_3
 	goto DriveKatherineRoom_EventScript_Drive_4
 
 DriveKatherineRoom_EventScript_Drive_7:
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, DriveKatherineRoom_EventScript_Drive_Movement_4
 	goto DriveKatherineRoom_EventScript_Drive_4
 
 DriveKatherineRoom_EventScript_Drive_8:
-# 112 "data/maps/DriveKatherineRoom/scripts.pory"
+# 109 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, DriveKatherineRoom_EventScript_Drive_Movement_5
 	goto DriveKatherineRoom_EventScript_Drive_4
 
 DriveKatherineRoom_EventScript_Drive_9:
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, DriveKatherineRoom_EventScript_Drive_Movement_6
 	goto DriveKatherineRoom_EventScript_Drive_4
 
 
-# 204 "data/maps/DriveKatherineRoom/scripts.pory"
+# 199 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_Movement_SurpriseAfterBattleEmote:
-# 205 "data/maps/DriveKatherineRoom/scripts.pory"
+# 200 "data/maps/DriveKatherineRoom/scripts.pory"
 	emote_surprise
 	step_end
 
-# 208 "data/maps/DriveKatherineRoom/scripts.pory"
+# 203 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_Movement_SurpriseAfterBattleJump:
-# 209 "data/maps/DriveKatherineRoom/scripts.pory"
+# 204 "data/maps/DriveKatherineRoom/scripts.pory"
 	lock_facing_direction
-# 210 "data/maps/DriveKatherineRoom/scripts.pory"
+# 205 "data/maps/DriveKatherineRoom/scripts.pory"
 	jump_up
-# 211 "data/maps/DriveKatherineRoom/scripts.pory"
+# 206 "data/maps/DriveKatherineRoom/scripts.pory"
 	unlock_facing_direction
-# 212 "data/maps/DriveKatherineRoom/scripts.pory"
+# 207 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay_16
-# 212 "data/maps/DriveKatherineRoom/scripts.pory"
+# 207 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay_16
-# 212 "data/maps/DriveKatherineRoom/scripts.pory"
+# 207 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay_16
 	step_end
 
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer::
-# 216 "data/maps/DriveKatherineRoom/scripts.pory"
+# 211 "data/maps/DriveKatherineRoom/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 217 "data/maps/DriveKatherineRoom/scripts.pory"
+# 212 "data/maps/DriveKatherineRoom/scripts.pory"
 	switch VAR_RESULT
-# 218 "data/maps/DriveKatherineRoom/scripts.pory"
+# 213 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_NORTH, DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_3
-# 221 "data/maps/DriveKatherineRoom/scripts.pory"
+# 216 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_SOUTH, DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_4
-# 224 "data/maps/DriveKatherineRoom/scripts.pory"
+# 219 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_WEST, DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_5
-# 227 "data/maps/DriveKatherineRoom/scripts.pory"
+# 222 "data/maps/DriveKatherineRoom/scripts.pory"
 	case DIR_EAST, DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_6
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_1:
 	return
 
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_3:
-# 219 "data/maps/DriveKatherineRoom/scripts.pory"
+# 214 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown
 	goto DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_1
 
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_4:
-# 222 "data/maps/DriveKatherineRoom/scripts.pory"
+# 217 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceUp
 	goto DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_1
 
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_5:
-# 225 "data/maps/DriveKatherineRoom/scripts.pory"
+# 220 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceRight
 	goto DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_1
 
 DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_6:
-# 228 "data/maps/DriveKatherineRoom/scripts.pory"
+# 223 "data/maps/DriveKatherineRoom/scripts.pory"
 	applymovementandwait LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceLeft
 	goto DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer_1
 
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle::
-# 235 "data/maps/DriveKatherineRoom/scripts.pory"
+# 230 "data/maps/DriveKatherineRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, DriveKatherineRoom_EventScript_DriveKatherineBattle_2
-# 238 "data/maps/DriveKatherineRoom/scripts.pory"
+# 233 "data/maps/DriveKatherineRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_DRIVE
-# 239 "data/maps/DriveKatherineRoom/scripts.pory"
+# 234 "data/maps/DriveKatherineRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 240 "data/maps/DriveKatherineRoom/scripts.pory"
+# 235 "data/maps/DriveKatherineRoom/scripts.pory"
 	copyvar VAR_0x8005, VAR_RESULT
-# 241 "data/maps/DriveKatherineRoom/scripts.pory"
+# 236 "data/maps/DriveKatherineRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_KATHERINE
-# 242 "data/maps/DriveKatherineRoom/scripts.pory"
+# 237 "data/maps/DriveKatherineRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 244 "data/maps/DriveKatherineRoom/scripts.pory"
+# 239 "data/maps/DriveKatherineRoom/scripts.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq DriveKatherineRoom_EventScript_DriveKatherineBattle_5
-# 251 "data/maps/DriveKatherineRoom/scripts.pory"
+# 246 "data/maps/DriveKatherineRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DriveKatherineRoom_EventScript_DriveKatherineBattle_11
-# 254 "data/maps/DriveKatherineRoom/scripts.pory"
+# 249 "data/maps/DriveKatherineRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, DriveKatherineRoom_Text_KatherineDefeated
 DriveKatherineRoom_EventScript_DriveKatherineBattle_1:
-# 258 "data/maps/DriveKatherineRoom/scripts.pory"
+# 253 "data/maps/DriveKatherineRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle_2:
-# 236 "data/maps/DriveKatherineRoom/scripts.pory"
+# 231 "data/maps/DriveKatherineRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated
 	goto DriveKatherineRoom_EventScript_DriveKatherineBattle_1
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle_5:
-# 245 "data/maps/DriveKatherineRoom/scripts.pory"
+# 240 "data/maps/DriveKatherineRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DriveKatherineRoom_EventScript_DriveKatherineBattle_8
-# 248 "data/maps/DriveKatherineRoom/scripts.pory"
+# 243 "data/maps/DriveKatherineRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, DriveKatherineRoom_Text_KatherineDefeated
 	goto DriveKatherineRoom_EventScript_DriveKatherineBattle_1
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle_8:
-# 246 "data/maps/DriveKatherineRoom/scripts.pory"
+# 241 "data/maps/DriveKatherineRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_MAIN, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated
 	goto DriveKatherineRoom_EventScript_DriveKatherineBattle_1
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle_11:
-# 252 "data/maps/DriveKatherineRoom/scripts.pory"
+# 247 "data/maps/DriveKatherineRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_MAIN, DriveKatherineRoom_Text_KatherineDefeated
 	goto DriveKatherineRoom_EventScript_DriveKatherineBattle_1
 
@@ -496,89 +486,89 @@ DriveKatherineRoom_EventScript_Drive_Movement_0:
 	lock_facing_direction
 	step_end
 
-# 87 "data/maps/DriveKatherineRoom/scripts.pory"
+# 86 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_1:
-# 87 "data/maps/DriveKatherineRoom/scripts.pory"
+# 86 "data/maps/DriveKatherineRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 91 "data/maps/DriveKatherineRoom/scripts.pory"
+# 89 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_2:
-# 92 "data/maps/DriveKatherineRoom/scripts.pory"
+# 90 "data/maps/DriveKatherineRoom/scripts.pory"
 	jump_in_place_down
-# 93 "data/maps/DriveKatherineRoom/scripts.pory"
+# 91 "data/maps/DriveKatherineRoom/scripts.pory"
 	unlock_facing_direction
-# 94 "data/maps/DriveKatherineRoom/scripts.pory"
+# 92 "data/maps/DriveKatherineRoom/scripts.pory"
 	face_player
 	step_end
 
-# 106 "data/maps/DriveKatherineRoom/scripts.pory"
+# 103 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_3:
-# 106 "data/maps/DriveKatherineRoom/scripts.pory"
+# 103 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 106 "data/maps/DriveKatherineRoom/scripts.pory"
+# 103 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_right
 	step_end
 
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_4:
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_right
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 109 "data/maps/DriveKatherineRoom/scripts.pory"
+# 106 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 112 "data/maps/DriveKatherineRoom/scripts.pory"
+# 109 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_5:
-# 112 "data/maps/DriveKatherineRoom/scripts.pory"
+# 109 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 112 "data/maps/DriveKatherineRoom/scripts.pory"
+# 109 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_6:
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_right
-# 115 "data/maps/DriveKatherineRoom/scripts.pory"
+# 112 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_right
 	step_end
 
-# 128 "data/maps/DriveKatherineRoom/scripts.pory"
+# 125 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_7:
-# 128 "data/maps/DriveKatherineRoom/scripts.pory"
+# 125 "data/maps/DriveKatherineRoom/scripts.pory"
 	emote_smile
 	step_end
 
-# 143 "data/maps/DriveKatherineRoom/scripts.pory"
+# 140 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_8:
-# 143 "data/maps/DriveKatherineRoom/scripts.pory"
+# 140 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_down
-# 143 "data/maps/DriveKatherineRoom/scripts.pory"
+# 140 "data/maps/DriveKatherineRoom/scripts.pory"
 	face_left
 	step_end
 
-# 155 "data/maps/DriveKatherineRoom/scripts.pory"
+# 152 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_9:
-# 155 "data/maps/DriveKatherineRoom/scripts.pory"
+# 152 "data/maps/DriveKatherineRoom/scripts.pory"
 	emote_versus
-# 155 "data/maps/DriveKatherineRoom/scripts.pory"
+# 152 "data/maps/DriveKatherineRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 198 "data/maps/DriveKatherineRoom/scripts.pory"
+# 193 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_10:
-# 198 "data/maps/DriveKatherineRoom/scripts.pory"
+# 193 "data/maps/DriveKatherineRoom/scripts.pory"
 	walk_up
-# 198 "data/maps/DriveKatherineRoom/scripts.pory"
+# 193 "data/maps/DriveKatherineRoom/scripts.pory"
 	face_down
 	step_end
 
@@ -622,16 +612,16 @@ DriveKatherineRoom_EventScript_Drive_Text_1:
 	.string "cocina ya cerró.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_2:
-# 95 "data/maps/DriveKatherineRoom/scripts.pory"
+# 93 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "¡Ah, por fin un comensal con hambre de\n"
 	.string "fiesta!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_3:
-# 98 "data/maps/DriveKatherineRoom/scripts.pory"
+# 95 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Ven, tenemos un lugar especial para ti.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_4:
-# 123 "data/maps/DriveKatherineRoom/scripts.pory"
+# 120 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Bienvenid{OA} al gran restaurante de la\n"
 	.string "celebración.\p"
 	.string "Aquí servimos emociones recién hechas\n"
@@ -641,31 +631,31 @@ DriveKatherineRoom_EventScript_Drive_Text_4:
 	.string "Hoy, ¡el plato principal eres tú!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_5:
-# 126 "data/maps/DriveKatherineRoom/scripts.pory"
+# 123 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Cada plato cuenta una historia, y cada\n"
 	.string "batalla… ¡una receta para el alma!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_6:
-# 132 "data/maps/DriveKatherineRoom/scripts.pory"
+# 129 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Empezaremos con un entrante de\n"
 	.string "entusiasmo, un toque de curiosidad y\l"
 	.string "una pizca de locura.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_7:
-# 136 "data/maps/DriveKatherineRoom/scripts.pory"
+# 133 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Después, el plato principal: un duelo\n"
 	.string "doble delicioso.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_8:
-# 140 "data/maps/DriveKatherineRoom/scripts.pory"
+# 137 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Katherine, ¿listos los ingredientes?$"
 
 DriveKatherineRoom_EventScript_Drive_Text_9:
-# 144 "data/maps/DriveKatherineRoom/scripts.pory"
+# 141 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Todos cortados y preparados, Drive.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_10:
-# 148 "data/maps/DriveKatherineRoom/scripts.pory"
+# 145 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Pero recuerda: no todo se trata de\n"
 	.string "ganar. Lo importante es moverse con\l"
 	.string "gracia… y caer siempre de pie.\p"
@@ -673,27 +663,27 @@ DriveKatherineRoom_EventScript_Drive_Text_10:
 	.string "merece.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_11:
-# 151 "data/maps/DriveKatherineRoom/scripts.pory"
+# 148 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "¡Entonces, que empiece el banquete!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_12:
-# 153 "data/maps/DriveKatherineRoom/scripts.pory"
+# 150 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Dos chefs, un banquete, un nuevo\n"
 	.string "desafío.\p"
 	.string "¡A tus hornallas, entrenador{A}!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_13:
-# 170 "data/maps/DriveKatherineRoom/scripts.pory"
+# 167 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Un sabor intenso, equilibrado…\n"
 	.string "inolvidable…$"
 
 DriveKatherineRoom_EventScript_Drive_Text_14:
-# 173 "data/maps/DriveKatherineRoom/scripts.pory"
+# 170 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Si cada celebración tuviera este toque,\n"
 	.string "el mundo sería un festín eterno.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_15:
-# 178 "data/maps/DriveKatherineRoom/scripts.pory"
+# 175 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Fue una danza perfecta. En cada paso\n"
 	.string "se sentía la alegría de este día, casi\l"
 	.string "como si la sala estuviera ronroneando\l"
@@ -701,19 +691,19 @@ DriveKatherineRoom_EventScript_Drive_Text_15:
 	.string "Gracias por compartirlo con nosotros.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_16:
-# 188 "data/maps/DriveKatherineRoom/scripts.pory"
+# 184 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "¡Brindo por eso!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_17:
-# 193 "data/maps/DriveKatherineRoom/scripts.pory"
+# 188 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Has superado esta sala con elegancia.\n"
 	.string "Sigue disfrutando de la celebración… y\l"
 	.string "hasta que nos volvamos a ver…$"
 
 DriveKatherineRoom_Text_DriveDefeated::
-# 262 "data/maps/DriveKatherineRoom/scripts.pory"
+# 257 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "¡Eso sí que fue un festín!$"
 
 DriveKatherineRoom_Text_KatherineDefeated::
-# 266 "data/maps/DriveKatherineRoom/scripts.pory"
+# 261 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Suave, armonioso… me ha encantado.$"
