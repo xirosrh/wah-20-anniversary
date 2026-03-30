@@ -78,22 +78,19 @@ script DriveKatherineRoom_EventScript_Drive {
     lock
     faceplayer
     playse(SE_PIN)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
         emote_double_exclamation_mark, 
         lock_facing_direction))
-    waitmovement(0)
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
-    waitmovement(0)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(
         jump_in_place_down,
         unlock_facing_direction
         face_player))
     msgbox(format("¡Ah, por fin un comensal con hambre de fiesta!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
-    waitmovement(0)
     delay(30)
     msgbox(format("Ven, tenemos un lugar especial para ti."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     call(DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer)
@@ -180,15 +177,13 @@ script DriveKatherineRoom_EventScript_Drive {
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
     delay(30)
     playse(SE_LEDGE)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
-    waitmovement(0)
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
     msgbox(format("¡Brindo por eso!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
-    waitmovement(0)
     delay(30)
-    applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(walk_down, face_left))
+    applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(walk_down, face_left))
     turnobject(LOCALID_PLAYER, DIR_EAST)
     msgbox(format("Has superado esta sala con elegancia. Sigue disfrutando de la celebración… y hasta que nos volvamos a ver…"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceLeft)

@@ -48,9 +48,8 @@ script EingRoom_OnFrame {
     applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_down))
     waitse
     playse(SE_PIN)
-    applymovement(LOCALID_EINGROOM_EING, moves(emote_angry))
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(emote_angry))
     msgbox(format("¡Y yo sin las malditas credenciales!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
-    waitmovement(0)
     delay(30)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(walk_right * 2, walk_left * 2, walk_right * 2, walk_left * 2))
     playse(SE_LEDGE)
@@ -106,9 +105,10 @@ script EingRoom_EventScript_Eing {
     faceplayer
     if(flag(FLAG_DEFEATED_ADMIN_EING)) {
         playse(SE_PIN)
-        applymovement(LOCALID_EINGROOM_EING, Common_Movement_AngryWithDelay48)
+        applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
         msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
-        waitmovement(0)
+        delay(50)
+        turnobject(LOCALID_EINGROOM_EING, DIR_WEST)
         release
         end
     }
@@ -131,13 +131,12 @@ script EingRoom_EventScript_Eing {
     delay(30)
     fadescreen(FADE_FROM_BLACK)
     playse(SE_LEDGE)
-    applymovement(LOCALID_EINGROOM_EING, moves(
+    applymovementandwait(LOCALID_EINGROOM_EING, moves(
         lock_facing_direction, 
         jump_in_place_down, 
         unlock_facing_direction, 
         face_player))
     msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
-    waitmovement(0)
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(
         face_away_player

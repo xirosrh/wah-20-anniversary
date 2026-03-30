@@ -70,10 +70,9 @@ script ReonekyRoom_OnFrame {
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(jump_in_place_right))
     playse(SE_LEDGE)
-    applymovement(LOCALID_REOROOM_REONEKY, moves(jump_in_place_right, delay_16 * 3))
+    applymovementandwait(LOCALID_REOROOM_REONEKY, moves(jump_in_place_right))
     msgbox(format("¿Te ríes, eh? Aficionada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
-    waitmovement(0)
-    delay(30)
+    delay(60)
     msgbox(format("Estaba estacionado perfectamente, ¡no voy a rendirme ante esta multa injusta!"), speaker = SP_NAME_REONEKY)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
     msgbox(format("¡Spitfire, Cabezazo Zen!"))
@@ -167,9 +166,8 @@ script ReonekyRoom_OnFrame {
     waitmovement(0)
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight)
+    applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_JumpInPlaceRight)
     msgbox(format("¡Venga, a pastar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
-    waitmovement(0)
     delay(20)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_WalkInPlaceLeft)
     release

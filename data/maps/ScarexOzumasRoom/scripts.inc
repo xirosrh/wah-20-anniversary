@@ -89,11 +89,11 @@ ScarexOzumasRoom_EventScript_EnterRoom::
 # 63 "data/maps/ScarexOzumasRoom/scripts.pory"
 	playse SE_PIN
 # 64 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovement LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMarkWithDelay48
+	applymovementandwait LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMark
 # 65 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_EnterRoom_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS
 # 66 "data/maps/ScarexOzumasRoom/scripts.pory"
-	waitmovement 0
+	delay 48
 # 67 "data/maps/ScarexOzumasRoom/scripts.pory"
 	waitse
 # 68 "data/maps/ScarexOzumasRoom/scripts.pory"

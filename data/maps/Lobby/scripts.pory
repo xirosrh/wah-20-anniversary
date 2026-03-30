@@ -48,10 +48,9 @@ script Lobby_EventScript_StartChallenge {
             goto(Lobby_StartChallenge_EnterOmegaRoom)
         default:
             playse(SE_PIN)
-            applymovement(LOCALID_LOBBY_COPE, Common_Movement_SurpriseWithDelay48)
+            applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_Surprise)
             msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-            waitmovement(0)
-            delay(20)
+            delay(60)
             msgbox(format("Recuerda que las personas de la sala de espera pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
             turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
@@ -287,9 +286,9 @@ script Lobby_EventScript_Roxas {
         special(HealPlayerParty)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
-            applymovement(VAR_LAST_TALKED, Common_Movement_X)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_X)
             msgbox(format("¡Nooo, me estás cargando! Ni con la fuerza de este Pokémon oscuro te pude ganar.\pAhora me cierra por qué a vos te dejaron pasar a las salas y a mí me sacaron de un voleo.\pTenés algo distinto, pasta de campeón, no es solo fuerza bruta.\pLa verdad, me cerraste la boca. Bien ganado."), MSGBOX_AUTOCLOSE)
-            waitmovement(0)
+            delay(40)
             setflag(FLAG_DEFEATED_LOBBY_ROXAS)
         } else {
             checkplayergender
@@ -317,9 +316,8 @@ script Lobby_EventScript_Roxas {
         playse(SE_LEDGE)
         applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
         playse(SE_LEDGE)
-        applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
+        applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
         msgbox(format("¡Unos caraduras loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
-        waitmovement(0)
         lock
         delay(20)
         msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… Aterrador…\pHabrá que investigar y ver que onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)

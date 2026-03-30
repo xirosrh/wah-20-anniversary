@@ -42,219 +42,217 @@ XirosRoom_OnTransition::
 XirosRoom_EventScript_Xiros::
 # 31 "data/maps/XirosRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_XIROS, XirosRoom_EventScript_Xiros_2
-# 56 "data/maps/XirosRoom/scripts.pory"
+# 55 "data/maps/XirosRoom/scripts.pory"
 	lock
-# 57 "data/maps/XirosRoom/scripts.pory"
+# 56 "data/maps/XirosRoom/scripts.pory"
 	faceplayer
-# 58 "data/maps/XirosRoom/scripts.pory"
+# 57 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 58 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 59 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
 # 60 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
-# 61 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 61 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 62 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
-# 63 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_SweatDropWithDelay48
-# 64 "data/maps/XirosRoom/scripts.pory"
+# 63 "data/maps/XirosRoom/scripts.pory"
 	fadescreen FADE_TO_BLACK
+# 64 "data/maps/XirosRoom/scripts.pory"
+	turnobject LOCALID_XIROSROOM_XIROS, DIR_SOUTH
 # 65 "data/maps/XirosRoom/scripts.pory"
-	turnobject LOCALID_XIROSROOM_XIROS, DIR_SOUTH
-# 66 "data/maps/XirosRoom/scripts.pory"
 	directmovementtopos LOCALID_PLAYER, 6, 6
+# 66 "data/maps/XirosRoom/scripts.pory"
+	waitmovement 0
 # 67 "data/maps/XirosRoom/scripts.pory"
-	waitmovement 0
-# 68 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 69 "data/maps/XirosRoom/scripts.pory"
+# 68 "data/maps/XirosRoom/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 70 "data/maps/XirosRoom/scripts.pory"
+# 69 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 70 "data/maps/XirosRoom/scripts.pory"
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown
 # 71 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown
+	delay 20
 # 72 "data/maps/XirosRoom/scripts.pory"
-	delay 20
-# 73 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 73 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 74 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
-# 75 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HeartWithDelay48
+# 75 "data/maps/XirosRoom/scripts.pory"
+	delay 20
 # 76 "data/maps/XirosRoom/scripts.pory"
-	delay 20
-# 77 "data/maps/XirosRoom/scripts.pory"
 	special SpawnCameraObject
-# 78 "data/maps/XirosRoom/scripts.pory"
+# 77 "data/maps/XirosRoom/scripts.pory"
 	applymovement LOCALID_XIROSROOM_XIROS, Common_Movement_WalkUp2
-# 79 "data/maps/XirosRoom/scripts.pory"
+# 78 "data/maps/XirosRoom/scripts.pory"
 	applymovement LOCALID_CAMERA, Common_Movement_WalkUp2
+# 79 "data/maps/XirosRoom/scripts.pory"
+	waitmovement 0
 # 80 "data/maps/XirosRoom/scripts.pory"
-	waitmovement 0
+	playse SE_PIN
 # 81 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48
 # 82 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48
-# 83 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 83 "data/maps/XirosRoom/scripts.pory"
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown
 # 84 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown
-# 85 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
-# 86 "data/maps/XirosRoom/scripts.pory"
+# 85 "data/maps/XirosRoom/scripts.pory"
 	applymovement LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown2
-# 87 "data/maps/XirosRoom/scripts.pory"
+# 86 "data/maps/XirosRoom/scripts.pory"
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown2
+# 87 "data/maps/XirosRoom/scripts.pory"
+	waitmovement 0
 # 88 "data/maps/XirosRoom/scripts.pory"
-	waitmovement 0
-# 89 "data/maps/XirosRoom/scripts.pory"
 	special RemoveCameraObject
-# 90 "data/maps/XirosRoom/scripts.pory"
+# 89 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 90 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 91 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
 # 92 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
-# 93 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_3
-# 98 "data/maps/XirosRoom/scripts.pory"
+# 97 "data/maps/XirosRoom/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 99 "data/maps/XirosRoom/scripts.pory"
+# 98 "data/maps/XirosRoom/scripts.pory"
 	addobject LOCALID_XIROSROOM_POKEBALL
-# 100 "data/maps/XirosRoom/scripts.pory"
+# 99 "data/maps/XirosRoom/scripts.pory"
 	showobjectat LOCALID_XIROSROOM_POKEBALL, MAP_XIROS_ROOM
-# 101 "data/maps/XirosRoom/scripts.pory"
+# 100 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_POKEBALL, Common_Movement_WalkDiagSouthEast
+# 101 "data/maps/XirosRoom/scripts.pory"
+	playse SE_BALL_OPEN
 # 102 "data/maps/XirosRoom/scripts.pory"
-	playse SE_BALL_OPEN
+	fadescreen FADE_TO_WHITE
 # 103 "data/maps/XirosRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 104 "data/maps/XirosRoom/scripts.pory"
 	removeobject LOCALID_XIROSROOM_POKEBALL
-# 105 "data/maps/XirosRoom/scripts.pory"
+# 104 "data/maps/XirosRoom/scripts.pory"
 	setflag FLAG_TEMP_1
-# 106 "data/maps/XirosRoom/scripts.pory"
+# 105 "data/maps/XirosRoom/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 107 "data/maps/XirosRoom/scripts.pory"
+# 106 "data/maps/XirosRoom/scripts.pory"
 	addobject LOCALID_XIROSROOM_ELECTRODE
+# 107 "data/maps/XirosRoom/scripts.pory"
+	waitse
 # 108 "data/maps/XirosRoom/scripts.pory"
-	waitse
+	fadescreen FADE_FROM_WHITE
 # 109 "data/maps/XirosRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	release
 # 110 "data/maps/XirosRoom/scripts.pory"
-	release
+	delay 30
 # 111 "data/maps/XirosRoom/scripts.pory"
-	delay 30
+	playse SE_LEDGE
 # 112 "data/maps/XirosRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_XIROSROOM_ELECTRODE, XirosRoom_EventScript_Xiros_Movement_4
 # 113 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_ELECTRODE, XirosRoom_EventScript_Xiros_Movement_4
+	playse SE_LEDGE
 # 114 "data/maps/XirosRoom/scripts.pory"
-	playse SE_LEDGE
-# 115 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_ELECTRODE, XirosRoom_EventScript_Xiros_Movement_4
+# 115 "data/maps/XirosRoom/scripts.pory"
+	waitse
 # 116 "data/maps/XirosRoom/scripts.pory"
-	waitse
-# 117 "data/maps/XirosRoom/scripts.pory"
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_NORMAL
-# 118 "data/maps/XirosRoom/scripts.pory"
+# 117 "data/maps/XirosRoom/scripts.pory"
 	waitmoncry
-# 119 "data/maps/XirosRoom/scripts.pory"
+# 118 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_ELECTRODE, XirosRoom_EventScript_Xiros_Movement_5
-# 120 "data/maps/XirosRoom/scripts.pory"
+# 119 "data/maps/XirosRoom/scripts.pory"
 	release
-# 121 "data/maps/XirosRoom/scripts.pory"
+# 120 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_XIROSROOM_XIROS, DIR_WEST
-# 122 "data/maps/XirosRoom/scripts.pory"
+# 121 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 122 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 123 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
-# 124 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48
-# 125 "data/maps/XirosRoom/scripts.pory"
+# 124 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_XIROSROOM_XIROS, DIR_SOUTH
-# 126 "data/maps/XirosRoom/scripts.pory"
+# 125 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_XIROSROOM_ELECTRODE, DIR_SOUTH
-# 127 "data/maps/XirosRoom/scripts.pory"
+# 126 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 127 "data/maps/XirosRoom/scripts.pory"
+	playse SE_LEDGE
 # 128 "data/maps/XirosRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown
 # 129 "data/maps/XirosRoom/scripts.pory"
-	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown
+	waitse
 # 130 "data/maps/XirosRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 131 "data/maps/XirosRoom/scripts.pory"
-	playse SE_LEDGE
-# 132 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown
-# 133 "data/maps/XirosRoom/scripts.pory"
+# 132 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
-# 134 "data/maps/XirosRoom/scripts.pory"
+# 133 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceLeft
-# 135 "data/maps/XirosRoom/scripts.pory"
+# 134 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_XIROSROOM_ELECTRODE, DIR_EAST
-# 136 "data/maps/XirosRoom/scripts.pory"
+# 135 "data/maps/XirosRoom/scripts.pory"
 	playse SE_BALL_OPEN
-# 137 "data/maps/XirosRoom/scripts.pory"
+# 136 "data/maps/XirosRoom/scripts.pory"
 	fadescreen FADE_TO_WHITE
-# 138 "data/maps/XirosRoom/scripts.pory"
+# 137 "data/maps/XirosRoom/scripts.pory"
 	removeobject LOCALID_XIROSROOM_ELECTRODE
-# 139 "data/maps/XirosRoom/scripts.pory"
+# 138 "data/maps/XirosRoom/scripts.pory"
 	setflag FLAG_TEMP_2
-# 140 "data/maps/XirosRoom/scripts.pory"
+# 139 "data/maps/XirosRoom/scripts.pory"
 	delay 30
-# 141 "data/maps/XirosRoom/scripts.pory"
+# 140 "data/maps/XirosRoom/scripts.pory"
 	fadescreen FADE_FROM_WHITE
+# 141 "data/maps/XirosRoom/scripts.pory"
+	delay 20
 # 142 "data/maps/XirosRoom/scripts.pory"
-	delay 20
-# 143 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown
-# 144 "data/maps/XirosRoom/scripts.pory"
+# 143 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
+# 144 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 145 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
-# 146 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_6
-# 147 "data/maps/XirosRoom/scripts.pory"
+# 146 "data/maps/XirosRoom/scripts.pory"
 	call XirosRoom_EventScript_XirosBattle
+# 147 "data/maps/XirosRoom/scripts.pory"
+	playse SE_PIN
 # 148 "data/maps/XirosRoom/scripts.pory"
-	playse SE_PIN
-# 149 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_7
+# 149 "data/maps/XirosRoom/scripts.pory"
+	waitse
 # 150 "data/maps/XirosRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 151 "data/maps/XirosRoom/scripts.pory"
-	playse SE_LEDGE
-# 152 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_4
-# 153 "data/maps/XirosRoom/scripts.pory"
+# 152 "data/maps/XirosRoom/scripts.pory"
 	waitse
-# 154 "data/maps/XirosRoom/scripts.pory"
+# 153 "data/maps/XirosRoom/scripts.pory"
 	playse SE_LEDGE
+# 154 "data/maps/XirosRoom/scripts.pory"
+	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_4
 # 155 "data/maps/XirosRoom/scripts.pory"
-	applymovement LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_4
-# 156 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
-# 157 "data/maps/XirosRoom/scripts.pory"
-	waitmovement 0
-# 158 "data/maps/XirosRoom/scripts.pory"
+# 156 "data/maps/XirosRoom/scripts.pory"
 	delay 20
-# 159 "data/maps/XirosRoom/scripts.pory"
+# 157 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown
-# 160 "data/maps/XirosRoom/scripts.pory"
+# 158 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
-# 161 "data/maps/XirosRoom/scripts.pory"
+# 159 "data/maps/XirosRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
-# 162 "data/maps/XirosRoom/scripts.pory"
+# 160 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
-# 163 "data/maps/XirosRoom/scripts.pory"
+# 161 "data/maps/XirosRoom/scripts.pory"
 	playse SE_PIN
-# 164 "data/maps/XirosRoom/scripts.pory"
+# 162 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
-# 165 "data/maps/XirosRoom/scripts.pory"
+# 163 "data/maps/XirosRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_XIROS
-# 166 "data/maps/XirosRoom/scripts.pory"
+# 164 "data/maps/XirosRoom/scripts.pory"
 	release
 	end
 
@@ -290,46 +288,44 @@ XirosRoom_EventScript_Xiros_2:
 # 46 "data/maps/XirosRoom/scripts.pory"
 	playse SE_LEDGE
 # 47 "data/maps/XirosRoom/scripts.pory"
-	applymovement LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_2
+	applymovementandwait LOCALID_XIROSROOM_XIROS, XirosRoom_EventScript_Xiros_Movement_2
 # 48 "data/maps/XirosRoom/scripts.pory"
 	msgbox XirosRoom_EventScript_Xiros_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS
 # 49 "data/maps/XirosRoom/scripts.pory"
-	waitmovement 0
-# 50 "data/maps/XirosRoom/scripts.pory"
 	playse SE_PIN
-# 51 "data/maps/XirosRoom/scripts.pory"
+# 50 "data/maps/XirosRoom/scripts.pory"
 	applymovementandwait LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48
-# 52 "data/maps/XirosRoom/scripts.pory"
+# 51 "data/maps/XirosRoom/scripts.pory"
 	turnobject LOCALID_XIROSROOM_XIROS, DIR_SOUTH
-# 53 "data/maps/XirosRoom/scripts.pory"
+# 52 "data/maps/XirosRoom/scripts.pory"
 	release
 	end
 
 
 XirosRoom_EventScript_XirosBattle::
-# 171 "data/maps/XirosRoom/scripts.pory"
+# 169 "data/maps/XirosRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, XirosRoom_EventScript_XirosBattle_2
-# 174 "data/maps/XirosRoom/scripts.pory"
+# 172 "data/maps/XirosRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_XIROS
-# 175 "data/maps/XirosRoom/scripts.pory"
+# 173 "data/maps/XirosRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 176 "data/maps/XirosRoom/scripts.pory"
+# 174 "data/maps/XirosRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq XirosRoom_EventScript_XirosBattle_5
-# 179 "data/maps/XirosRoom/scripts.pory"
+# 177 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated
 XirosRoom_EventScript_XirosBattle_1:
-# 182 "data/maps/XirosRoom/scripts.pory"
+# 180 "data/maps/XirosRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 XirosRoom_EventScript_XirosBattle_2:
-# 172 "data/maps/XirosRoom/scripts.pory"
+# 170 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated
 	goto XirosRoom_EventScript_XirosBattle_1
 
 XirosRoom_EventScript_XirosBattle_5:
-# 177 "data/maps/XirosRoom/scripts.pory"
+# 175 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated
 	goto XirosRoom_EventScript_XirosBattle_1
 
@@ -368,47 +364,47 @@ XirosRoom_EventScript_Xiros_Movement_2:
 	face_player
 	step_end
 
-# 93 "data/maps/XirosRoom/scripts.pory"
+# 92 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_3:
-# 94 "data/maps/XirosRoom/scripts.pory"
+# 93 "data/maps/XirosRoom/scripts.pory"
 	lock_facing_direction
-# 95 "data/maps/XirosRoom/scripts.pory"
+# 94 "data/maps/XirosRoom/scripts.pory"
 	walk_up
-# 96 "data/maps/XirosRoom/scripts.pory"
+# 95 "data/maps/XirosRoom/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 113 "data/maps/XirosRoom/scripts.pory"
+# 112 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_4:
-# 113 "data/maps/XirosRoom/scripts.pory"
+# 112 "data/maps/XirosRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 119 "data/maps/XirosRoom/scripts.pory"
+# 118 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_5:
-# 119 "data/maps/XirosRoom/scripts.pory"
+# 118 "data/maps/XirosRoom/scripts.pory"
 	walk_left
-# 119 "data/maps/XirosRoom/scripts.pory"
+# 118 "data/maps/XirosRoom/scripts.pory"
 	walk_up
-# 119 "data/maps/XirosRoom/scripts.pory"
+# 118 "data/maps/XirosRoom/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 146 "data/maps/XirosRoom/scripts.pory"
+# 145 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_6:
-# 146 "data/maps/XirosRoom/scripts.pory"
+# 145 "data/maps/XirosRoom/scripts.pory"
 	emote_versus
-# 146 "data/maps/XirosRoom/scripts.pory"
+# 145 "data/maps/XirosRoom/scripts.pory"
 	delay_16
-# 146 "data/maps/XirosRoom/scripts.pory"
+# 145 "data/maps/XirosRoom/scripts.pory"
 	walk_in_place_down
-# 146 "data/maps/XirosRoom/scripts.pory"
+# 145 "data/maps/XirosRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 149 "data/maps/XirosRoom/scripts.pory"
+# 148 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_7:
-# 149 "data/maps/XirosRoom/scripts.pory"
+# 148 "data/maps/XirosRoom/scripts.pory"
 	emote_happy
 	step_end
 
@@ -436,21 +432,21 @@ XirosRoom_EventScript_Xiros_Text_3:
 	.string "avanzando.$"
 
 XirosRoom_EventScript_Xiros_Text_4:
-# 58 "data/maps/XirosRoom/scripts.pory"
+# 57 "data/maps/XirosRoom/scripts.pory"
 	.string "Así que llegaste hasta acá, ¡a la sala\n"
 	.string "número veinte!\p"
 	.string "Un lugar al que no se llega por\n"
 	.string "casualidad.$"
 
 XirosRoom_EventScript_Xiros_Text_5:
-# 61 "data/maps/XirosRoom/scripts.pory"
+# 60 "data/maps/XirosRoom/scripts.pory"
 	.string "Voy a tratar de ser más breve que Zero\n"
 	.string "en mi discurso, pero a mi también me\l"
 	.string "gusta reflexionar, así que no prometo\l"
 	.string "nada…$"
 
 XirosRoom_EventScript_Xiros_Text_6:
-# 70 "data/maps/XirosRoom/scripts.pory"
+# 69 "data/maps/XirosRoom/scripts.pory"
 	.string "En el camino te cruzaste con muchas\n"
 	.string "personas, algunas conocidas, otras que\l"
 	.string "quizá solo habías escuchado nombrar\l"
@@ -458,14 +454,14 @@ XirosRoom_EventScript_Xiros_Text_6:
 	.string "este recorrido.$"
 
 XirosRoom_EventScript_Xiros_Text_7:
-# 73 "data/maps/XirosRoom/scripts.pory"
+# 72 "data/maps/XirosRoom/scripts.pory"
 	.string "Cada encuentro, cada charla y cada\n"
 	.string "combate forma parte de una historia\l"
 	.string "más grande, aunque a veces no lo\l"
 	.string "notemos en el momento.$"
 
 XirosRoom_EventScript_Xiros_Text_8:
-# 83 "data/maps/XirosRoom/scripts.pory"
+# 82 "data/maps/XirosRoom/scripts.pory"
 	.string "Es normal que en algún punto las cosas\n"
 	.string "parezcan difíciles o incluso imposibles,\l"
 	.string "porque nadie nace sabiendo, ni empieza\l"
@@ -473,32 +469,32 @@ XirosRoom_EventScript_Xiros_Text_8:
 	.string "todas las respuestas.$"
 
 XirosRoom_EventScript_Xiros_Text_9:
-# 85 "data/maps/XirosRoom/scripts.pory"
+# 84 "data/maps/XirosRoom/scripts.pory"
 	.string "Lo importante no es saberlo todo, sino\n"
 	.string "animarse a buscar, porque cuando uno\l"
 	.string "busca de verdad, siempre aparece\l"
 	.string "alguien dispuesto a ayudar.$"
 
 XirosRoom_EventScript_Xiros_Text_10:
-# 90 "data/maps/XirosRoom/scripts.pory"
+# 89 "data/maps/XirosRoom/scripts.pory"
 	.string "Es lo lindo de esta comunidad, ¿no\n"
 	.string "crees?$"
 
 XirosRoom_EventScript_Xiros_Text_11:
-# 122 "data/maps/XirosRoom/scripts.pory"
+# 121 "data/maps/XirosRoom/scripts.pory"
 	.string "Este es Electrode Sandía, un símbolo de\n"
 	.string "una época que muchos recuerdan con\l"
 	.string "cariño y nostalgia, cuando todo parecía\l"
 	.string "más simple.$"
 
 XirosRoom_EventScript_Xiros_Text_12:
-# 127 "data/maps/XirosRoom/scripts.pory"
+# 126 "data/maps/XirosRoom/scripts.pory"
 	.string "Personalmente nunca creí que la época\n"
 	.string "dorada fuera un momento que quedó\l"
 	.string "atrás en el tiempo.$"
 
 XirosRoom_EventScript_Xiros_Text_13:
-# 133 "data/maps/XirosRoom/scripts.pory"
+# 132 "data/maps/XirosRoom/scripts.pory"
 	.string "Para mí, la época dorada es hoy, y\n"
 	.string "también será mañana, mientras sigan\l"
 	.string "existiendo personas con ganas de\l"
@@ -506,19 +502,19 @@ XirosRoom_EventScript_Xiros_Text_13:
 	.string "poco más adelante.$"
 
 XirosRoom_EventScript_Xiros_Text_14:
-# 144 "data/maps/XirosRoom/scripts.pory"
+# 143 "data/maps/XirosRoom/scripts.pory"
 	.string "Hagamos que este momento también\n"
 	.string "cuente.$"
 
 XirosRoom_EventScript_Xiros_Text_15:
-# 156 "data/maps/XirosRoom/scripts.pory"
+# 155 "data/maps/XirosRoom/scripts.pory"
 	.string "¡Wow! ¡Que gran combate! Me encanta tu\n"
 	.string "forma de combatir.\p"
 	.string "¡Sobretodo la pasión que le pones a\n"
 	.string "cada movimiento!$"
 
 XirosRoom_EventScript_Xiros_Text_16:
-# 160 "data/maps/XirosRoom/scripts.pory"
+# 158 "data/maps/XirosRoom/scripts.pory"
 	.string "Todavía te queda un último\n"
 	.string "enfrentamiento, y si conocés un poco la\l"
 	.string "historia de este lugar, seguramente ya\l"
@@ -527,5 +523,5 @@ XirosRoom_EventScript_Xiros_Text_16:
 	.string "tienen la suerte de encontrarlo.$"
 
 XirosRoom_Text_XirosDefeated::
-# 186 "data/maps/XirosRoom/scripts.pory"
+# 184 "data/maps/XirosRoom/scripts.pory"
 	.string "¡Muy buen combate!$"

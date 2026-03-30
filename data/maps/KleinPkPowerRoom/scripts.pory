@@ -63,10 +63,9 @@ script KleinPkPowerRoom_OnFrame {
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
-    applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
+    applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
     msgbox(format("¡Pues enchúfalo, hombre!\n¡Esas cosas se comprueban antes!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
-    waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_POKENAV_HANG_UP)
     waitse
     // Segunda llamada
@@ -93,10 +92,9 @@ script KleinPkPowerRoom_OnFrame {
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
-    applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
+    applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
     msgbox(format("¡Joder! ¡Pues pónselas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
-    waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_POKENAV_HANG_UP)
     waitse
     // Tercera llamada
@@ -123,18 +121,16 @@ script KleinPkPowerRoom_OnFrame {
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
-    applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
+    applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
     msgbox(format("¡Que no hay ninguna tecla que se llame “cualquier tecla”! ¡Pulsa una tecla cualquiera y ya!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
-    waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_POKENAV_HANG_UP)
     waitse
     playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
     playse(SE_PIN)
-    applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry walk_in_place_up))
+    applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry, walk_in_place_up))
     msgbox(format("¡Esto es increíble! ¿Pero cómo puede haber gente así? ¡Estoy rodeado de inútiles! Pero se va a acabar...\p¡Los voy a echar a todos!\n¡A la puta calle!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
-    waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_LEDGE)
     applymovement(LOCALID_KLEINROOM_KLEIN, moves(jump_in_place_down))
     waitse
