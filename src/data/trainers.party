@@ -6556,7 +6556,7 @@ Mugshot: Purple
 Difficulty: Normal
 
 Blastoise  @ Assault Vest
-EVs: 252 SpA / 252 HP / 4 SpD
+EVs: 252 SpA / 252 HP / 4 SpD /* //TODO Xiros 4 SpD verify with Micolo */
 Modest Nature
 - Hydro pump
 - Scald
@@ -6610,28 +6610,116 @@ Pic: Gameboy Cl
 Gender: Male
 Music: Cool
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Typhlosion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Eruption
+- Scorching Sands
+- Solar Beam
+- Flamethrower
+
+Umbreon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Calm Mind
+- Snarl
+- Recover
+- Baton Pass
+
+Ampharos
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Dragon Pulse
+- Flash Cannon
+- Dazzling Gleam
+
+Heracross /* //TODO Xiros: Check attacks, micolo had an alternative list */
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Megahorn
+- Drain Punch
+- Swords Dance
+- Earthquake
+
+Togetic
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Play Rough
+- Aerial Ace
+- Drain Punch
+- Metronome
+
+Noctowl
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Hurricane
+- Psychic
+- Night Shade
+- Roost
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Typhlosion @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Eruption
+- Scorching Sands
+- Solar Beam
+- Flamethrower
 
+Umbreon @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 HP
+Bold Nature
+- Calm Mind
+- Snarl
+- Recover
+- Baton Pass
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Ampharos @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Dragon Pulse
+- Flash Cannon
+- Dazzling Gleam
 
+Heracross @ Assault Vest /* //TODO Xiros: Check attacks, micolo had an alternative list */
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Megahorn
+- Drain Punch
+- Swords Dance
+- Earthquake
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Togetic @ Eviolite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Aerial Ace
+- Drain Punch
+- Metronome
+
+Noctowl @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Psychic
+- Night Shade
+- Roost
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
 Name: Gameboy cl
