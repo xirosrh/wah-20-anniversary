@@ -401,6 +401,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
          || gWeatherPtr->noShadows
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsPuddle(objectEvent->currentMetatileBehavior)
+         || MetatileBehavior_IsClimbableStairs(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
         {

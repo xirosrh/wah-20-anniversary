@@ -775,6 +775,24 @@ static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NORTHEAST] = ANIM_RUN_EAST,
 };
 
+static const u8 sClimbStairsDirectionAnimNums[] = {
+    [DIR_NONE] = ANIM_CLIMB_STAIRS_DOWN,
+    [DIR_SOUTH] = ANIM_CLIMB_STAIRS_DOWN,
+    [DIR_NORTH] = ANIM_CLIMB_STAIRS_UP,
+};
+
+static const u8 sClimbStairsFaceDirectionAnimNums[] = {
+    [DIR_NONE] = ANIM_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_SOUTH] = ANIM_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_NORTH] = ANIM_CLIMB_STAIRS_FACE_UP,
+    [DIR_WEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_EAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_SOUTHWEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_SOUTHEAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_NORTHWEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_NORTHEAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+};
+
 const u8 gTrainerFacingDirectionMovementTypes[] = {
     [DIR_NONE] = MOVEMENT_TYPE_FACE_DOWN,
     [DIR_SOUTH] = MOVEMENT_TYPE_FACE_DOWN,
@@ -1102,6 +1120,24 @@ const u8 gRunSlowMovementActions[] = {
     [DIR_SOUTHEAST]  = MOVEMENT_ACTION_RUN_RIGHT_SLOW,
     [DIR_NORTHWEST]  = MOVEMENT_ACTION_RUN_LEFT_SLOW,
     [DIR_NORTHEAST]  = MOVEMENT_ACTION_RUN_RIGHT_SLOW,
+};
+
+const u8 gClimbStairsMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_CLIMB_STAIRS_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_CLIMB_STAIRS_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_CLIMB_STAIRS_UP,
+};
+
+const u8 gClimbStairsFaceDirectionMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_SOUTHWEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_SOUTHEAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_NORTHWEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_NORTHEAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
 };
 
 static const u8 sOppositeDirections[] = {
@@ -5925,6 +5961,16 @@ u8 GetRunningDirectionAnimNum(u8 direction)
     return sRunningDirectionAnimNums[direction];
 }
 
+u8 GetClimbStairsDirectionAnimNum(u8 direction)
+{
+    return sClimbStairsDirectionAnimNums[direction];
+}
+
+u8 GetClimbStairsFaceDirectionAnimNum(u8 direction)
+{
+    return sClimbStairsFaceDirectionAnimNums[direction];
+}
+
 static const struct StepAnimTable *GetStepAnimTable(const union AnimCmd *const *anims)
 {
     const struct StepAnimTable *stepTable;
@@ -6562,6 +6608,8 @@ dirn_to_anim(GetFaceDirectionMovementAction, gFaceDirectionMovementActions);
 dirn_to_anim(GetWalkSlowStairsMovementAction, gWalkSlowStairsMovementActions);
 dirn_to_anim(GetWalkSlowMovementAction, gWalkSlowMovementActions);
 dirn_to_anim(GetPlayerRunSlowMovementAction, gRunSlowMovementActions);
+dirn_to_anim(GetClimbStairsMovementAction, gClimbStairsMovementActions);
+dirn_to_anim(GetClimbStairsFaceMovementAction, gClimbStairsFaceDirectionMovementActions);
 dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
 dirn_to_anim(GetWalkFastMovementAction, gWalkFastMovementActions);
 dirn_to_anim(GetRideWaterCurrentMovementAction, gRideWaterCurrentMovementActions);
@@ -11470,6 +11518,77 @@ bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct S
         return TRUE;
     }
     return FALSE;
+}
+
+static void StartClimbStairsAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 speed)
+{
+    InitNpcForMovement(objectEvent, sprite, direction, speed);
+    SetStepAnimHandleAlternation(objectEvent, sprite, GetClimbStairsDirectionAnimNum(objectEvent->facingDirection));
+}
+
+bool8 MovementActionFunc_ClimbStairsDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartClimbStairsAnim(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_NORMAL);
+    return MovementActionFunc_ClimbStairsDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementActionFunc_ClimbStairsDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlow(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementActionFunc_ClimbStairsUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartClimbStairsAnim(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_NORMAL);
+    return MovementActionFunc_ClimbStairsUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementActionFunc_ClimbStairsUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlow(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static void FaceDirectionClimb(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
+{
+    SetObjectEventDirection(objectEvent, direction);
+    ShiftStillObjectEventCoords(objectEvent);
+    SetStepAnim(objectEvent, sprite, GetClimbStairsFaceDirectionAnimNum(objectEvent->facingDirection));
+    sprite->animPaused = TRUE;
+    sprite->sActionFuncId = 1;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_SOUTH);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_NORTH);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_WEST);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_EAST);
+    return TRUE;
 }
 
 static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
