@@ -680,6 +680,12 @@ DragonMountan_Top_EventScript_Sergio_Movement_12:
 	walk_fast_down
 # 247 "data/maps/DragonMountain_Top/scripts.pory"
 	walk_fast_down
+# 247 "data/maps/DragonMountain_Top/scripts.pory"
+	walk_fast_left
+# 247 "data/maps/DragonMountain_Top/scripts.pory"
+	walk_fast_down
+# 247 "data/maps/DragonMountain_Top/scripts.pory"
+	face_right
 	step_end
 
 DragonMountain_Top_EventScript_Abra_Text_0:

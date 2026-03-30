@@ -244,7 +244,7 @@ script DragonMountan_Top_EventScript_Sergio {
     release
     playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
     applymovement(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_fast_down, walk_fast_right, walk_fast_down, face_left))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 2))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down * 2, walk_fast_left, walk_fast_down, face_right))
     waitmovement(LOCALID_PLAYER)
     turnobject(LOCALID_MOUNTAINTOP_ABRA_2, DIR_EAST)
     delay(20)
