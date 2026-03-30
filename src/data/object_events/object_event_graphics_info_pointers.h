@@ -83,6 +83,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Micolo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Acimut;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gameboycl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kaktus;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ryuzaki;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
@@ -620,6 +622,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LOBBY_MANIAC] =             &gObjectEventGraphicsInfo_LobbyManiac,
     [OBJ_EVENT_GFX_LOBBY_WOMAN_1] =            &gObjectEventGraphicsInfo_LobbyWoman1,
     [OBJ_EVENT_GFX_LOBBY_KID] =                &gObjectEventGraphicsInfo_LobbyKid,
+    [OBJ_EVENT_GFX_KAKTUS] =                   &gObjectEventGraphicsInfo_Kaktus,
+    [OBJ_EVENT_GFX_RYUZAKI] =                  &gObjectEventGraphicsInfo_Ryuzaki,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
