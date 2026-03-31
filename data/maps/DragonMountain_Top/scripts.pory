@@ -226,7 +226,7 @@ script DragonMountan_Top_EventScript_Sergio {
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, Common_Movement_Heart)
     msgbox(format("¡Mil gracias por haber formado parte de esta celebración!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     delay(60)
-    msgbox(format("Ahora ven, acompañame, es hora de dejar registro de tu hazaña en el Salón de la fama."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+    msgbox(format("Ahora ven, acompañame; es hora de dejar registro de tu hazaña en el Salón de la fama."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)

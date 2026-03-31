@@ -783,7 +783,7 @@ DragonMountan_Top_EventScript_Sergio_Text_15:
 
 DragonMountan_Top_EventScript_Sergio_Text_16:
 # 229 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora ven, acompañame, es hora de dejar\n"
+	.string "Ahora ven, acompañame; es hora de dejar\n"
 	.string "registro de tu hazaña en el Salón de la\l"
 	.string "fama.$"
 
