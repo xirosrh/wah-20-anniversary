@@ -194,6 +194,6 @@ script JavsJavi4315Room_EventScript_Javi4315 {
 }
 
 script JavsJavi4315Room_EventScript_Javs {
-    msgbox(format("¿Te gusta como se ve la sala? ¡Ni se te ocurra copiar sus colores sin mi permiso!"), MSGBOX_NPC, speaker = SP_NAME_JAVS)
+    msgbox(format("¿Te gusta cómo se ve la sala? ¡Ni se te ocurra copiar sus colores sin mi permiso!"), MSGBOX_NPC, speaker = SP_NAME_JAVS)
     end
 }

@@ -20,7 +20,7 @@ script AguiarRoom_OnFrame {
     special(SpawnCameraObject)
     directcameramovementtopos(10, 6)
     waitmovement(0)
-    msgbox(format("¡Pero qué buen programa! Hoy si que es un día tranquilo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("¡Pero qué buen programa! Hoy sí que es un día tranquilo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovement(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)
     waitmovement(0)
