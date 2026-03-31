@@ -311,7 +311,7 @@ AguiarRoom_EventScript_Aguiar_Movement_0:
 
 AguiarRoom_OnFrame_Text_0:
 # 23 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Pero qué buen programa! Hoy si que es\n"
+	.string "¡Pero qué buen programa! Hoy sí que es\n"
 	.string "un día tranquilo.$"
 
 AguiarRoom_OnFrame_Text_1:

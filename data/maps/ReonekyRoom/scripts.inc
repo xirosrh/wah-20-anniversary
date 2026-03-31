@@ -671,7 +671,7 @@ ReonekyRoom_EventScript_Reoneky_Text_2:
 ReonekyRoom_EventScript_Reoneky_Text_3:
 # 228 "data/maps/ReonekyRoom/scripts.pory"
 	.string "Puede parecer que soy un emo, pero me\n"
-	.string "considero más instrospectivo que otra\l"
+	.string "considero más introspectivo que otra\l"
 	.string "cosa.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_4:

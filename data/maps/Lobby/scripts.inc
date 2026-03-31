@@ -1180,7 +1180,7 @@ Lobby_EventScript_Roxas_IntroRematch_Text_0:
 
 Lobby_EventScript_Roxas_ExplainPartyLimit_Text_0:
 # 244 "data/maps/Lobby/scripts.pory"
-	.string "Vamos a hacerlo más interesante: elegí\n"
+	.string "Vamos a hacerlo más interesante: elige\n"
 	.string "a tres de tus bichos.\p"
 	.string "Yo voy a salir con mi legendario, así que\n"
 	.string "más te vale elegir bien.$"
@@ -1247,7 +1247,7 @@ Lobby_EventScript_Roxas_Text_7:
 
 Lobby_EventScript_Roxas_Text_8:
 # 339 "data/maps/Lobby/scripts.pory"
-	.string "¡Unos caraduras loco!$"
+	.string "¡Unos caraduras, loco!$"
 
 Lobby_EventScript_Roxas_Text_9:
 # 342 "data/maps/Lobby/scripts.pory"
@@ -1259,8 +1259,8 @@ Lobby_EventScript_Roxas_Text_9:
 	.string "El Team Rocket anda haciendo de las\n"
 	.string "suyas y dicen que hay un bicho oscuro\l"
 	.string "con ojos rojos que es un peligro…\l"
-	.string "Aterrador…\p"
-	.string "Habrá que investigar y ver que onda…$"
+	.string "aterrador…\p"
+	.string "Habrá que investigar y ver qué onda…$"
 
 Lobby_EventScript_Roxas_Text_10:
 # 344 "data/maps/Lobby/scripts.pory"
@@ -1340,7 +1340,7 @@ Lobby_EventScript_QREventInfoKid_Text_0:
 	.string "regalo por completar un evento\l"
 	.string "especial.\p"
 	.string "Es imposible adivinar lo que hay que\n"
-	.string "hacer sin mirar el video.\p"
+	.string "hacer sin mirar el vídeo.\p"
 	.string "¡Incluso tuve que cambiar de orden a\n"
 	.string "dos de los Pokémon de mi equipo!\p"
 	.string "Eso sí, me gustó el premio por completar\n"

@@ -508,9 +508,9 @@ XirosRoom_EventScript_Xiros_Text_14:
 
 XirosRoom_EventScript_Xiros_Text_15:
 # 155 "data/maps/XirosRoom/scripts.pory"
-	.string "¡Wow! ¡Que gran combate! Me encanta tu\n"
+	.string "¡Wow! ¡Qué gran combate! Me encanta tu\n"
 	.string "forma de combatir.\p"
-	.string "¡Sobretodo la pasión que le pones a\n"
+	.string "¡Sobre todo la pasión que le pones a\n"
 	.string "cada movimiento!$"
 
 XirosRoom_EventScript_Xiros_Text_16:

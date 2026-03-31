@@ -876,8 +876,8 @@ ScarexOzumasRoom_EventScript_Ozumas_Text_2:
 	.string "que teníamos pendiente.\p"
 	.string "Soy Ozumas, de la sangre de la\n"
 	.string "legendaria dinastía Mendrax.\p"
-	.string "Hace mucho, fuimos muy conocidos,\n"
-	.string "sobretodo por nunca escapar a un reto.$"
+	.string "Hace mucho, fuimos muy conocidos, sobre\n"
+	.string "todo por nunca escapar a un reto.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_3:
 # 180 "data/maps/ScarexOzumasRoom/scripts.pory"
