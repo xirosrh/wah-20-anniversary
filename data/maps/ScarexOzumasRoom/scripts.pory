@@ -171,7 +171,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     }
     lock
     faceplayer
-    msgbox(format("Bueno, parece que ha llegado el momento que teníamos pendiente.\pSoy Ozumas, de la sangre de la legendaria dinastía Mendrax.\pHace mucho, fuimos muy conocidos, sobretodo por nunca escapar a un reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("Bueno, parece que ha llegado el momento que teníamos pendiente.\pSoy Ozumas, de la sangre de la legendaria dinastía Mendrax.\pHace mucho, fuimos muy conocidos, sobre todo por nunca escapar a un reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction))
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down, unlock_facing_direction, face_player))

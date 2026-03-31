@@ -427,7 +427,7 @@ OmegaRoom_EventScript_StartChallenge_Text_1:
 # 66 "data/maps/OmegaRoom/scripts.pory"
 	.string "¡Bienvenid{OA} al primer encuentro del\n"
 	.string "desafío de esta celebración!\p"
-	.string "Te estabamos esperando.$"
+	.string "Te estábamos esperando.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_2:
 # 70 "data/maps/OmegaRoom/scripts.pory"
@@ -477,7 +477,7 @@ OmegaRoom_EventScript_StartChallenge_Text_9:
 
 OmegaRoom_EventScript_StartChallenge_Text_10:
 # 130 "data/maps/OmegaRoom/scripts.pory"
-	.string "Ahora avanza, y demuestra que estas\n"
+	.string "Ahora avanza, y demuestra que estás\n"
 	.string "aquí para lograr grandes cosas.$"
 
 OmegaRoom_EventScript_Omega_Text_0:
