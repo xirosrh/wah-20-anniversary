@@ -241,10 +241,10 @@ script Lobby_EventScript_Roxas_IntroRematch {
 script Lobby_EventScript_Roxas_ExplainPartyLimit {
     switch(var(VAR_DIFFICULTY)) {
         case DIFFICULTY_EASY:
-            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            msgbox(format("Vamos a hacerlo más interesante: elige a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
             break
         case DIFFICULTY_NORMAL:
-            msgbox(format("Vamos a hacerlo más interesante: elegí a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            msgbox(format("Vamos a hacerlo más interesante: elige a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
             break
         default:
             msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
@@ -339,7 +339,7 @@ script Lobby_EventScript_Roxas {
         msgbox(format("¡Unos caraduras, loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         lock
         delay(20)
-        msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… Aterrador…\pHabrá que investigar y ver qué onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… aterrador…\pHabrá que investigar y ver qué onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         msgbox(format("Che, discúlpame, mejor me voy a seguir con mis investigaciones.\p¡Suerte, espero que a vos sí te den bola!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         release
