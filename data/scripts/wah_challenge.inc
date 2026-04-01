@@ -6,22 +6,26 @@ EventScript_ResetWahChallenge::
 # 4 "data/scripts/wah_challenge.pory"
 	clearflag FLAG_INVERSE_BATTLE
 # 5 "data/scripts/wah_challenge.pory"
+	clearflag FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES
+# 6 "data/scripts/wah_challenge.pory"
+	clearflag FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES
+# 7 "data/scripts/wah_challenge.pory"
 	setvar VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_NONE
 	return
 
 
 EventScript_ClearWahAdminFlags::
-# 10 "data/scripts/wah_challenge.pory"
-	clearflag FLAG_DEFEATED_ADMIN_OMEGA
-# 11 "data/scripts/wah_challenge.pory"
-	cleartrainerflag TRAINER_WAH_ADMIN_OMEGA_MAIN
 # 12 "data/scripts/wah_challenge.pory"
-	cleartrainerflag TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE
+	clearflag FLAG_DEFEATED_ADMIN_OMEGA
+# 13 "data/scripts/wah_challenge.pory"
+	cleartrainerflag TRAINER_WAH_ADMIN_OMEGA_MAIN
 # 14 "data/scripts/wah_challenge.pory"
-	clearflag FLAG_DEFEATED_ADMIN_GOCE
-# 15 "data/scripts/wah_challenge.pory"
-	cleartrainerflag TRAINER_WAH_ADMIN_GOCE_MAIN
+	cleartrainerflag TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE
 # 16 "data/scripts/wah_challenge.pory"
+	clearflag FLAG_DEFEATED_ADMIN_GOCE
+# 17 "data/scripts/wah_challenge.pory"
+	cleartrainerflag TRAINER_WAH_ADMIN_GOCE_MAIN
+# 18 "data/scripts/wah_challenge.pory"
 	cleartrainerflag TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE
 # 18 "data/scripts/wah_challenge.pory"
 	clearflag FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR
@@ -168,4 +172,3 @@ EventScript_ClearWahAdminFlags::
 # 110 "data/scripts/wah_challenge.pory"
 	setvar VAR_SERGIO_ROOM_STATE, 0
 	return
-

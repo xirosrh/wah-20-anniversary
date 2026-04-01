@@ -157,18 +157,20 @@ Lobby_StartChallenge_CancelledChallenge::
 
 Lobby_StartChallenge_EnterOmegaRoom::
 # 82 "data/maps/Lobby/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	special SetWahChallengeInitialAchievementFlags
 # 83 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_OpenDoor
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 84 "data/maps/Lobby/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkUp2
+	call Lobby_EventScript_OpenDoor
 # 85 "data/maps/Lobby/scripts.pory"
-	hideobjectat LOCALID_PLAYER, MAP_LOBBY
+	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkUp2
 # 86 "data/maps/Lobby/scripts.pory"
-	warp MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL
+	hideobjectat LOCALID_PLAYER, MAP_LOBBY
 # 87 "data/maps/Lobby/scripts.pory"
-	waitstate
+	warp MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL
 # 88 "data/maps/Lobby/scripts.pory"
+	waitstate
+# 89 "data/maps/Lobby/scripts.pory"
 	release
 	end
 

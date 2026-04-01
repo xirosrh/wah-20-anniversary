@@ -4457,6 +4457,40 @@ void RandomizeWahAdminTeams(void)
     VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
 }
 
+void SetWahChallengeInitialAchievementFlags(void)
+{
+    u32 i;
+    bool8 hasElectrodeS = FALSE;
+    bool8 hasLegendary = FALSE;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (species == SPECIES_EGG || species == SPECIES_NONE)
+            continue;
+
+        if (species == SPECIES_ELECTRODES)
+            hasElectrodeS = TRUE;
+
+        if (gSpeciesInfo[SanitizeSpeciesId(species)].isLegendary)
+        {
+            hasLegendary = TRUE;
+            break;
+        }
+    }
+
+    if (hasLegendary)
+        FlagClear(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
+    else
+        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
+
+    if (hasElectrodeS)
+        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
+    else
+        FlagClear(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
+}
+
 // Checks if admin at given index should use ALTERNATIVE team
 // Input: gSpecialVar_0x8004 = admin index (0-23)
 // Output: gSpecialVar_Result = 0 (MAIN) or 1 (ALTERNATIVE)

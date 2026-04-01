@@ -79,6 +79,7 @@ script Lobby_StartChallenge_CancelledChallenge {
 }
 
 script Lobby_StartChallenge_EnterOmegaRoom {
+    special(SetWahChallengeInitialAchievementFlags)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     call(Lobby_EventScript_OpenDoor)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
