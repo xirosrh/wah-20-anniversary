@@ -155,6 +155,26 @@ text Lobby_Text_DifficultySelector_Cancelled {
     format("¡Entendido! Si cambias de opinión, estaré por aquí.")
 }
 
+script Lobby_EventScript_ChallengeHistorian {
+    lock
+    faceplayer
+    if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        msgbox(format("Veo que aún no has completado el desafío ni una vez.\pTodavía no te has ganado un lugar en mi cuaderno."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    msgbox(format("¡Hey, {PLAYER}! No trabajo aquí ni nada, pero me encanta sacar estadísticas.\pMe quedo en el lobby observando a todos los que entran y lo anoto todo en mi cuaderno."), MSGBOX_AUTOCLOSE)
+    buffernumberstring(STR_VAR_1, VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT)
+    msgbox(format("Según mi cuaderno, en modo estándar llevas {STR_VAR_1} victoria(s).\p¡Nada mal, de verdad!"), MSGBOX_AUTOCLOSE)
+    buffernumberstring(STR_VAR_1, VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT)
+    msgbox(format("En batallas dobles tienes {STR_VAR_1} victoria(s).\pAhí se nota quién piensa dos turnos por adelantado."), MSGBOX_AUTOCLOSE)
+    buffernumberstring(STR_VAR_1, VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT)
+    msgbox(format("Y en batallas invertidas sumas {STR_VAR_1} victoria(s).\pEse modo le da vuelta la cabeza a cualquiera."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Si sigues así, voy a tener que comprar otro cuaderno para registrar tus números."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
 
 script Lobby_EventScript_Shop {
 	lock
