@@ -461,6 +461,10 @@ static void PrintAbilityMon(const struct TeamSelectorMonData *mon)
 void LoadMoveIconType(u8 windowId, u16 move, u8 indexMove, u8 x, u8 y)
 {
     enum Type type = GetMoveType(move);
+    
+    if(move == MOVE_NONE)
+        return;
+
     BlitMenuInfoIcon(windowId, type, x, y + (16 * indexMove));   
     CopyWindowToVram(windowId, 3);
 }
@@ -614,9 +618,7 @@ static void UpdateSelectedMonIcon()
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
-
     }
-
 }
 
 

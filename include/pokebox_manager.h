@@ -5,6 +5,7 @@ struct PokeboxSpecies
 {
     u16 specie;
     const u8 *description;
+    u16 money;
     bool8 (*check)(u8 id);
 };
 
@@ -21,8 +22,14 @@ enum{
 
 const u8 *Get_PokeboxMsgAction(u8 index);
 
+bool8 Pokebox_SetActive(u8 id);
+bool8 CheckPokebox_IsActive(u8 id);
+
 u8 PokeboxSpeciesList_GetCount(void);
 u16 PokeboxSpeciesList_GetSpecie(u8 index);
 bool8 PokeboxSpecies_Lock(u8 id);
+const u8 *Get_PokeboxDescription(u8 id);
+u32 PokeboxSpecies_GetMoney(u8 id);
+bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id);
 
 #endif

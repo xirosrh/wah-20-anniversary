@@ -49,6 +49,7 @@
 #include "event_data.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "money.h"
 
 //========== SECCIÓN: VARIABLES ==========//
 
@@ -94,12 +95,14 @@ struct PokeBox
 };
 
 #define tBgSlice data[1]
+#define tCursorBuyMon data[6]//indica si esta seleccionado si/no al comprar un pokemon
 #define tTimer data[7]
 
 static EWRAM_DATA struct PokeBox pokeBoxObj = {0};
 
 const u8 sTextColorWhitePokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 const u8 sTextColorBlackPokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
+const u8 sTextColorRedPokebox[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_RED};
 
 const u8 sTextColorBlackMonInfo2PagePokebox[]= {TEXT_COLOR_TRANSPARENT, 8, 6};
 
@@ -116,9 +119,10 @@ const u32 PokeboxBG3_Tilemap[] = INCBIN_U32("graphics/pokebox/bg3_tilemap.bin.lz
 
 static u8 getTotalNumPages();
 static u16 GetSelectedPokemonIndex(void);
-bool8 IsLockMon(u8 i);
+static void GetLastLevelUpMoves(u16 specie, u16 *moves);
 static void Task_HandlePokebox(u8 taskId);
 static void Task_HandleTeamPlayerPokebox(u8 taskId);
+static void Task_HandleBuyMon(u8 taskId);
 static void Task_ShowMonInfo(u8 taskId);
 static void Task_AddMonTeamPlayer(u8 taskId);
 static void Task_StorageMonInPokebox(u8 taskId);
@@ -302,6 +306,7 @@ enum
     WINDOW_SWAP_BOX,
     WINDOW_MON_INFO,
     WINDOW_MON_INFO_2,
+    WINDOW_MON_INFO_TYPE,
     WINDOW_COUNT,
 };
 
@@ -362,10 +367,21 @@ static const struct WindowTemplate sWindowTemplatesPokeBox[] =
         .bg = 0,
         .tilemapLeft = 13,
         .tilemapTop = 12,
-        .width = 17,
+        .width = 11,
+        .height = 8,
+        .paletteNum = 15,
+        .baseBlock = 257
+    },
+
+    [WINDOW_MON_INFO_TYPE]
+    {
+        .bg = 0,
+        .tilemapLeft = 24,
+        .tilemapTop = 12,
+        .width = 6,
         .height = 8,
         .paletteNum = 6,
-        .baseBlock = 257
+        .baseBlock = 345
     },
 
     DUMMY_WIN_TEMPLATE,
@@ -384,6 +400,7 @@ static void InitWindowPokeBox(void)
     PutWindowTilemap(WINDOW_SWAP_BOX);
     PutWindowTilemap(WINDOW_MON_INFO);
     PutWindowTilemap(WINDOW_MON_INFO_2);
+    PutWindowTilemap(WINDOW_MON_INFO_TYPE);
 }
 
 static void PrintNameMonPokebox(u16 specie)
@@ -439,7 +456,9 @@ static void PrintTextSwapBox()
 
 static void PrintAllDataMon(u16 specie)
 {
-    if(IsLockMon( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
+    u8 index = GetSelectedPokemonIndex();
+
+    if(index >= MON_TEAM_SELECTOR_COUNT && !CheckPokebox_IsActive(index - MON_TEAM_SELECTOR_COUNT))
         specie = SPECIES_NONE;
 
     PrintNameMonPokebox(specie);
@@ -464,6 +483,8 @@ static void PrintAbility(u16 specie, u16 ability)
 {
     u16 indexAbility;
 
+    FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
+
     if(ability == ABILITY_NONE)
     {
         do {
@@ -474,16 +495,19 @@ static void PrintAbility(u16 specie, u16 ability)
 
     AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_NORMAL, 0, 0, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].name);
     AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_SMALL, 0, 16, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].description);
+
+    CopyWindowToVram(WINDOW_MON_INFO, 3);
 }
 
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
 
-static void PrintMoves(u8 windowId, const u16* moves)
+static void PrintMoves(u8 windowId, u8 windowTypeId, const u16* moves)
 {
     u8 i;
     u8 y = 0;
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+    FillWindowPixelBuffer(windowTypeId, PIXEL_FILL(0));
 
     for (i = 0; i < 4; i++)
     {
@@ -492,32 +516,135 @@ static void PrintMoves(u8 windowId, const u16* moves)
         else
             StringCopy(gStringVar1, GetMoveName(moves[i]));
         
-        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, y, sTextColorBlackMonInfo2PagePokebox, 0, gStringVar1);
-        LoadMoveIconType(windowId, moves[i], i, 88, 2);
+        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, y, sTextColorBlackPokebox, 0, gStringVar1);
+        LoadMoveIconType(windowTypeId, moves[i], i, 0, 2);
         LoadMoveCateroyIcon(moves[i], i);
         y += 16;
     }
     
     CopyWindowToVram(windowId, 3);
+    CopyWindowToVram(windowTypeId, 3);
+}
+
+static void PrintDescriptionUnlockMon(u8 windowId, const u8 *description)
+{
+    const u8 gText_TexttaskToUnlockMon[] = _("Misión a completar:");
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+    AddTextPrinterParameterized3(windowId, FONT_NORMAL, 0, 0, sTextColorBlackPokebox, 0, gText_TexttaskToUnlockMon);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 12, sTextColorBlackPokebox, 0, description);
+    CopyWindowToVram(windowId, 3);
+}
+
+void DrawMenuCursorPokebox(u8 windowId, bool8 isYes)
+{
+    u8 width, height;
+    u8 x = (isYes) ? 1*8 : 12*8;
+    u8 x_fill = (!isYes) ?  1*8 : 12*8;
+
+    width = GetMenuCursorDimensionByFont(FONT_SMALL, 0);
+    height = GetMenuCursorDimensionByFont(FONT_SMALL, 1);
+
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), x_fill, 6*8, width, height);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, x, 6*8, sTextColorBlackPokebox, 0, gText_SelectorArrow3);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+}
+
+static void PrintMoneyToBuyMon(u8 windowId, u16 specie, u32 money, bool8 enoughtMoneyToBuy, const u8 *description)
+{
+    const u8 gText_PriceToUnlockMon[] = _("Precio: "); 
+    const u8 gText_NotEnoughtMoneyToBuyMon[] = _("No tienes suficiente dinero"); 
+    const u8 gText_YesNo_Pokebox[] = _("Sí{CLEAR_TO 88}No");
+
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+    StringCopy(gStringVar2, GetSpeciesName(specie));
+    StringExpandPlaceholders(gStringVar3, description);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 0, sTextColorBlackPokebox, 0, gStringVar3);
+
+    ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+    StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 28, sTextColorBlackPokebox, 0, gText_PriceToUnlockMon);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 80, 28, sTextColorBlackPokebox, 0, gStringVar4);
+
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 80, 28, sTextColorBlackPokebox, 0, gStringVar4);
+
+    if(!enoughtMoneyToBuy)
+    {
+        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 46, sTextColorRedPokebox, 0, gText_NotEnoughtMoneyToBuyMon);
+    }else{
+        DrawMenuCursorPokebox(windowId, TRUE);
+        AddTextPrinterParameterized3(windowId, FONT_SMALL, 18, 48, sTextColorBlackPokebox, 0, gText_YesNo_Pokebox);
+    }
+
+    CopyWindowToVram(windowId, 3);
 }
 
 static void PrintMonTextInfoPage()
 {
-    FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
-
-    u16 index = GetSelectedPokemonIndex();
+    bool8 isActive = TRUE;
+    u16 specie = SPECIES_NONE;
     u16 ability = ABILITY_NONE;
+    u16 moves[4];
+    u16 index = GetSelectedPokemonIndex();
+    u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
 
     if (index < MON_TEAM_SELECTOR_COUNT)
     {
-        PrintAbility(gAllTeamMons[index].specie, gAllTeamMons[index].ability);
-        PrintMoves(WINDOW_MON_INFO_2, gAllTeamMons[index].moves);
+        specie = gAllTeamMons[index].specie;
+        ability = gAllTeamMons[index].ability;
+        moves[0] = gAllTeamMons[index].moves[0];
+        moves[1] = gAllTeamMons[index].moves[1];
+        moves[2] = gAllTeamMons[index].moves[2];
+        moves[3] = gAllTeamMons[index].moves[3];
+    }else{
+        specie = PokeboxSpeciesList_GetSpecie(secondIndex);
+        isActive = CheckPokebox_IsActive(secondIndex);
+        GetLastLevelUpMoves(specie, moves);
+    }
 
-    }/*else{
+    if(isActive)
+    {
+        PrintAbility( specie, ability);
+        PrintMoves(WINDOW_MON_INFO_2, WINDOW_MON_INFO_TYPE, moves);
+    }else{
 
-    }*/
+        if(PokeboxSpecies_GetMoney(secondIndex) <= 0)
+        {
+            PrintDescriptionUnlockMon(WINDOW_MON_INFO, Get_PokeboxDescription(secondIndex));
+        }else
+        {
+            bool8 enoughtMoneyToBuy = PokeboxSpecies_EnoughtMoneyToBuy(secondIndex); 
+            PrintMoneyToBuyMon(
+                WINDOW_MON_INFO, 
+                specie, 
+                PokeboxSpecies_GetMoney(secondIndex), 
+                enoughtMoneyToBuy,
+                Get_PokeboxDescription(secondIndex)
+            );
+        }
+    }
+}
 
-    CopyWindowToVram(WINDOW_MON_INFO, 3);
+
+static void GetLastLevelUpMoves(u16 specie, u16 *moves)
+{
+    u8 count = 0;
+    u8 numMoves = 0;
+    u8 i;
+    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(specie);
+
+    memset(moves, MOVE_NONE, 4 * sizeof(u16));
+
+    while (learnset[count].move != LEVEL_UP_MOVE_END && count < MAX_LEVEL_UP_MOVES)
+        count++;
+
+    numMoves = (count > 4) ? 4 : count;
+
+    for (i = 0; i < numMoves; i++)
+    {
+        u8 indexMove = count - (i + 1);
+        moves[i] = learnset[indexMove].move;
+    }
 }
 
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove)
@@ -550,6 +677,7 @@ static void ClearMonTextInfoPage(bool8 destroyCategoryIcons)
 
     FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
     FillWindowPixelBuffer(WINDOW_MON_INFO_2, PIXEL_FILL(0));
+    FillWindowPixelBuffer(WINDOW_MON_INFO_TYPE, PIXEL_FILL(0));
 
     for (i = 0; i < 4; i++)
     {
@@ -567,6 +695,7 @@ static void ClearMonTextInfoPage(bool8 destroyCategoryIcons)
 
     CopyWindowToVram(WINDOW_MON_INFO, 3);
     CopyWindowToVram(WINDOW_MON_INFO_2, 3);
+    CopyWindowToVram(WINDOW_MON_INFO_TYPE, 3);
 }
 
 static u8 getTotalNumPages()
@@ -613,27 +742,11 @@ static u16 GetSelectedPokemonIndex(void)
          + pokeBoxObj.column;
 }
 
-bool8 IsLockMon(u8 i)
-{
-    u16 index = pokeBoxObj.currentPageNum * MAX_MON_ICONS_IN_BOX + i;
-
-    if (index >= MON_TEAM_SELECTOR_COUNT)
-    {
-        u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
-        return PokeboxSpecies_Lock(secondIndex);
-    }else{
-        //gAllTeamMons[selectedIndex]
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
 void LoadCurrentMonData()
 {
     u16 species;
     bool8 isShiny = FALSE;
-    bool8 isLock = FALSE;
+    bool8 isActive = TRUE;
     u16 index = GetSelectedPokemonIndex();
 
     if (index < MON_TEAM_SELECTOR_COUNT)
@@ -645,13 +758,13 @@ void LoadCurrentMonData()
     {
         u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
         species = PokeboxSpeciesList_GetSpecie(secondIndex);
-        isLock = PokeboxSpecies_Lock(secondIndex);
+        isActive = CheckPokebox_IsActive(secondIndex);
     }
 
     pokeBoxObj.frontMonId = CreateMonPicSprite(species, isShiny, 0, TRUE, 38, 58, 15, TAG_NONE);
     gSprites[pokeBoxObj.frontMonId].oam.priority = 1;
 
-    if(isLock)
+    if(!isActive)
     {
         gSprites[pokeBoxObj.frontMonId].oam.objMode = ST_OAM_OBJ_BLEND;
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
@@ -726,6 +839,7 @@ void LoadMonIconSprites()
     u8 spriteId;
     u16 species;
     u8 i, row, col;
+    bool8 isActive = TRUE;
 
     u16 totalCount = MON_TEAM_SELECTOR_COUNT + PokeboxSpeciesList_GetCount();
 
@@ -749,12 +863,13 @@ void LoadMonIconSprites()
         {
             u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
             species = PokeboxSpeciesList_GetSpecie(secondIndex);
+            isActive = CheckPokebox_IsActive(secondIndex);
         }
 
         spriteId = CreateMonIcon(species, SpriteCallbackDummy, x, y, 0, 0);
         gSprites[spriteId].oam.priority = 1;
 
-        if(IsLockMon(i))
+        if(!isActive)
         {
             gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
             SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
@@ -762,7 +877,7 @@ void LoadMonIconSprites()
             SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
         }
 
-        // if(!IsLockMon(i) && HasMonInParty(species))
+        // if(!!CheckPokebox_IsActive(i) && HasMonInParty(species))
         // {
         //     gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         //     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
@@ -919,6 +1034,48 @@ static void Task_SlideRightBgTeamPlayer(u8 taskId)
         gTasks[taskId].func = Task_HandlePokebox;
     }
 
+}
+
+
+static void Task_HandleBuyMon(u8 taskId)
+{
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        gTasks[taskId].tCursorBuyMon = TRUE;
+        DrawMenuCursorPokebox(WINDOW_MON_INFO, TRUE);
+    }
+    else if (JOY_NEW(DPAD_RIGHT))
+    {
+        gTasks[taskId].tCursorBuyMon = FALSE;
+        DrawMenuCursorPokebox(WINDOW_MON_INFO, FALSE);
+    }
+    else if (JOY_NEW(A_BUTTON)  )
+    {
+        if(gTasks[taskId].tCursorBuyMon == TRUE)
+        {
+            u16 index = GetSelectedPokemonIndex() - MON_TEAM_SELECTOR_COUNT;
+            u8 iconSpriteId = pokeBoxObj.boxMonSpritesIds[pokeBoxObj.row][pokeBoxObj.column];
+
+            gSprites[pokeBoxObj.frontMonId].oam.objMode = ST_OAM_OBJ_NORMAL;
+            gSprites[iconSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
+
+            RemoveMoney(&gSaveBlock1Ptr->money, PokeboxSpecies_GetMoney(index));
+            Pokebox_SetActive(index);
+            PrintMonTextInfoPage();
+        }else{
+            ClearMonTextInfoPage(TRUE);
+            HidenMonIconsBox(FALSE);
+            SetVisibilitySpriteSelector(FALSE);
+            gTasks[taskId].func = Task_HandlePokebox;
+        }
+    }
+    else if(JOY_NEW(B_BUTTON))
+    {
+        ClearMonTextInfoPage(TRUE);
+        HidenMonIconsBox(FALSE);
+        SetVisibilitySpriteSelector(FALSE);
+        gTasks[taskId].func = Task_HandlePokebox;
+    }
 }
 
 static void Task_HandleTeamPlayerPokebox(u8 taskId)
@@ -1101,8 +1258,19 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 
 static void Task_ShowMonInfo(u8 taskId)
 {
+    u16 index = GetSelectedPokemonIndex();
+    u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
+    bool8 enoughtMoneyToBuy = PokeboxSpecies_EnoughtMoneyToBuy(secondIndex); 
+
     PrintMonTextInfoPage();
-    gTasks[taskId].func = Task_WaitToReturnHandlePokebox;
+
+    if(enoughtMoneyToBuy)
+    {
+        gTasks[taskId].tCursorBuyMon = TRUE;
+        gTasks[taskId].func = Task_HandleBuyMon;
+    }else{
+        gTasks[taskId].func = Task_WaitToReturnHandlePokebox;
+    }
 }
 
 static void Task_AddMonTeamPlayer(u8 taskId)
@@ -1134,7 +1302,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
     }
     else{
         specie = PokeboxSpeciesList_GetSpecie(index - MON_TEAM_SELECTOR_COUNT);
-        if(IsLockMon( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
+        if(!CheckPokebox_IsActive( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
             PrintMsgActions(MSG_ACTION_LOCK_MON);
         else if(HasMonInParty(specie))
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);

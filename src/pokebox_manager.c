@@ -2,9 +2,11 @@
 #include "event_data.h"
 #include "constants/vars.h"
 #include "pokebox_manager.h"
+#include "money.h"
 
-static bool8 CheckAchievement_Generic(u8 id);
-static bool8 CheckAchievement_Generic2(u8 id);
+
+static bool8 CheckPokebox_isBuyMon(u8 id);
+static bool8 CheckPokebox_Active(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -29,145 +31,174 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 {
     { 
         .specie = SPECIES_DRAGONITE,        
-        .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_Active
     },
     { 
         .specie = SPECIES_VOLCARONA,        
-        .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .description = COMPOUND_STRING("¿Quieres a comprar a\n{STR_VAR_2}?"), 
+        .money = 10000,
+        .check = CheckPokebox_isBuyMon
     },
     { 
         .specie = SPECIES_GRENINJA,         
-        .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .description = COMPOUND_STRING("¿Quieres a comprar a\n{STR_VAR_2}?"), 
+        .money = 200,
+        .check = CheckPokebox_isBuyMon
     },
     { 
         .specie = SPECIES_CINDERACE,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_EXCADRILL,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_AEGISLASH,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_MIMIKYU,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_TOXAPEX,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_FERROTHORN,       
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_CORVIKNIGHT,      
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_SKARMORY,         
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_BLISSEY,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_GASTRODON,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_ROTOM_WASH,       
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_LANDORUS_THERIAN,
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_GLISCOR,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_AMOONGUSS,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_INDEEDEE,         
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_PORYGON2,         
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_HATTERENE,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_REUNICLUS,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_SLOWKING_GALAR,   
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic2 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_HEATRAN,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_TAPU_FINI,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_TAPU_KOKO,        
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_KARTANA,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_URSHIFU,          
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
     { 
         .specie = SPECIES_FLUTTER_MANE,     
         .description = COMPOUND_STRING(""), 
-        .check = CheckAchievement_Generic 
+        .money = 0,
+        .check = CheckPokebox_Active 
     },
 };
+
 
 
 u8 PokeboxSpeciesList_GetCount(void)
@@ -183,20 +214,79 @@ u16 PokeboxSpeciesList_GetSpecie(u8 index)
     return sPokeboxSpeciesList[index].specie;
 }
 
-static bool8 CheckAchievement_Generic(u8 id)
+const u8 *Get_PokeboxDescription(u8 id) 
 {
-    return TRUE;
+    return sPokeboxSpeciesList[id].description;
 }
 
-static bool8 CheckAchievement_Generic2(u8 id)
+
+//comprobar si el bit esta activo
+bool8 Pokebox_IsActive(u8 index)
 {
-    return FALSE;
+    if (index >= PokeboxSpeciesList_GetCount())
+        return FALSE;
+
+    return ((gSaveBlock2Ptr->monActiveOnPokebox >> index) & 1) != 0;
 }
 
-bool8 PokeboxSpecies_Lock(u8 id)
+//cambiar el bit a activo
+bool8 Pokebox_SetActive(u8 id)
 {
     if (id >= PokeboxSpeciesList_GetCount())
         return FALSE;
 
-    return sPokeboxSpeciesList[id].check(id);
+    if ((gSaveBlock2Ptr->monActiveOnPokebox >> id) & 1)
+        return FALSE;
+
+    gSaveBlock2Ptr->monActiveOnPokebox |= (1u << id);
+
+    return TRUE;
 }
+
+
+static bool8 CheckPokebox_Active(u8 id)
+{
+    return FALSE;
+}
+
+static bool8 CheckPokebox_isBuyMon(u8 id)
+{
+    if (id >= PokeboxSpeciesList_GetCount())
+        return FALSE;
+
+    if(sPokeboxSpeciesList[id].money <= 0)
+        return FALSE;
+
+    return Pokebox_IsActive(id);
+}
+
+bool8 CheckPokebox_IsActive(u8 id)
+{
+    bool8 isActive = FALSE;
+
+    if (id >= PokeboxSpeciesList_GetCount())
+        return FALSE;
+
+    isActive = sPokeboxSpeciesList[id].check(id);
+
+    if(isActive) Pokebox_SetActive(id);
+
+    return isActive;
+}
+
+u32 PokeboxSpecies_GetMoney(u8 id)
+{
+    return sPokeboxSpeciesList[id].money;
+}
+
+bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id)
+{
+    u32 money = GetMoney(&gSaveBlock1Ptr->money);
+
+    if(Pokebox_IsActive(id))
+        return FALSE;
+
+    return money >= PokeboxSpecies_GetMoney(id);
+}
+
+
