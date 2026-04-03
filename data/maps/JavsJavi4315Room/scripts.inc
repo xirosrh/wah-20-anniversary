@@ -547,7 +547,7 @@ JavsJavi4315Room_EventScript_Javi4315_Text_0:
 
 JavsJavi4315Room_EventScript_Javs_Text_0:
 # 197 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Te gusta como se ve la sala? ¡Ni se te\n"
+	.string "¿Te gusta cómo se ve la sala? ¡Ni se te\n"
 	.string "ocurra copiar sus colores sin mi\l"
 	.string "permiso!$"
 

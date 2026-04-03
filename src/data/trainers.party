@@ -6492,22 +6492,176 @@ Pic: Gameboy Cl
 Gender: Male
 Music: Cool
 Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Blastoise
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro pump
+- Scald
+- Flash Cannon
+- Ice Beam
+ 
+Lapras
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro pump
+- Freeze Dry
+- Thunderbolt
+- Solar Beam
+ 
+Gyarados
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Crunch
+
+Raichu
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Iron Tail
+
+Pidgeot
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Hurricane
+- Hyper Beam
+- Heat Wave
+- Twister
+
+Muk
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Sludge Bomb
+- Moonblast
+- Earth Power
+- Flamethrower
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
-Slakoth @ Sitrus Berry
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slack Off
-- Counter
-- Shadow Ball
+Blastoise  @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 SpD /* //TODO Xiros 4 SpD verify with Micolo */
+Modest Nature
+- Hydro pump
+- Scald
+- Flash Cannon
+- Ice Beam
+ 
+Lapras @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Hydro pump
+- Freeze Dry
+- Thunderbolt
+- Solar Beam
+ 
+Gyarados @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Crunch
 
-Slakoth @ Sitrus Berry
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slack Off
-- Counter
-- Shadow Ball
+Raichu @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Iron Tail
+
+Pidgeot @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Hyper Beam
+- Heat Wave
+- Twister
+
+Muk @ Black Sludge
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Sludge Bomb
+- Moonblast
+- Earth Power
+- Flamethrower
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Typhlosion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Eruption
+- Scorching Sands
+- Solar Beam
+- Flamethrower
+
+Umbreon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Calm Mind
+- Snarl
+- Recover
+- Baton Pass
+
+Ampharos
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Dragon Pulse
+- Flash Cannon
+- Dazzling Gleam
+
+Heracross /* //TODO Xiros: Check attacks, micolo had an alternative list */
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Megahorn
+- Drain Punch
+- Swords Dance
+- Earthquake
+
+Togetic
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Play Rough
+- Aerial Ace
+- Drain Punch
+- Metronome
+
+Noctowl
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shiny: Yes
+Timid Nature
+- Hurricane
+- Psychic
+- Night Shade
+- Roost
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
 Name: Gameboy cl
@@ -6518,26 +6672,118 @@ Music: Cool
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Typhlosion @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Eruption
+- Scorching Sands
+- Solar Beam
+- Flamethrower
 
+Umbreon @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 HP
+Bold Nature
+- Calm Mind
+- Snarl
+- Recover
+- Baton Pass
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Ampharos @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Dragon Pulse
+- Flash Cannon
+- Dazzling Gleam
 
+Heracross @ Assault Vest /* //TODO Xiros: Check attacks, micolo had an alternative list */
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Megahorn
+- Drain Punch
+- Swords Dance
+- Earthquake
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Togetic @ Eviolite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Aerial Ace
+- Drain Punch
+- Metronome
+
+Noctowl @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Shiny: Yes
+Timid Nature
+- Hurricane
+- Psychic
+- Night Shade
+- Roost
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
+
+Feraligatr /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Ability: Sheer force
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Waterfall 
+- Ice Punch
+- Rock Slide 
+- Crunch 
+
+Dragonite
+Ability: Multiscale
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Aerial Ace
+- Extreme Speed
+
+Scizor
+Ability: Technician
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Aerial Ace
+- Night Slash
+
+Espeon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+
+Slowking
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Psychic
+- Flamethrower
+- Slack Off
+
+Magneton
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Signal Beam
 
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
 Name: Gameboy cl
@@ -6548,46 +6794,58 @@ Music: Cool
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
+Difficulty: Normal
 
-Swellow
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Energy
-- Quick Attack
-- Wing Attack
-- Endeavor
+Feraligatr @ Life Orb /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Ability: Sheer force
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Waterfall 
+- Ice Punch
+- Rock Slide 
+- Crunch 
 
-Trapinch
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bite
-- Dig
-- Feint Attack
-- Sand Tomb
+Dragonite @ Weakness Policy
+Ability: Multiscale
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Aerial Ace
+- Extreme Speed
 
-Wailmer
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
-- Whirlpool
-- Astonish
-- Water Pulse
+Scizor @ Choice Scarf
+Ability: Technician
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Aerial Ace
+- Night Slash
 
-Magneton
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Espeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+
+Slowking @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Psychic
+- Flamethrower
+- Slack Off
+
+Magneton @ Eviolite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
 - Thunderbolt
-- Supersonic
-- Thunder Wave
-- Sonic Boom
-
-Shiftry
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Giga Drain
-- Feint Attack
-- Double Team
-- Swagger
+- Flash Cannon
+- Tri Attack
+- Signal Beam
 
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
@@ -6609,7 +6867,7 @@ Jolly Nature
 - Ice Shard
 - Low Kick
 
-Feraligatr @ Feraligite
+Feraligatr
 Ability: Strong Jaw
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature

@@ -700,7 +700,7 @@ DragonMountan_Top_EventScript_Sergio_Text_0:
 DragonMountan_Top_EventScript_Sergio_Text_1:
 # 88 "data/maps/DragonMountain_Top/scripts.pory"
 	.string "¡Ey ti{OA}! ¿qué tal? ¿de verdad pensabas\n"
-	.string "que no ibamos a hablar?$"
+	.string "que no íbamos a hablar?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_2:
 # 91 "data/maps/DragonMountain_Top/scripts.pory"
@@ -728,7 +728,7 @@ DragonMountan_Top_EventScript_Sergio_Text_6:
 
 DragonMountan_Top_EventScript_Sergio_Text_7:
 # 116 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Admiro que hayas llegado hasta aquí, se\n"
+	.string "Admiro que hayas llegado hasta aquí, sé\n"
 	.string "que a veces soy difícil de encontrar.\p"
 	.string "Pero todavía no estoy listo para\n"
 	.string "combatir.$"
@@ -767,7 +767,7 @@ DragonMountan_Top_EventScript_Sergio_Text_13:
 
 DragonMountan_Top_EventScript_Sergio_Text_14:
 # 222 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Que locura que ya llevemos 20 años\n"
+	.string "Qué locura que ya llevemos 20 años\n"
 	.string "entre todos construyendo esta\l"
 	.string "comunidad.\p"
 	.string "Ha pasado mucho tiempo, pero me siento\n"
@@ -783,7 +783,7 @@ DragonMountan_Top_EventScript_Sergio_Text_15:
 
 DragonMountan_Top_EventScript_Sergio_Text_16:
 # 229 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora ven, acompañame, es hora de dejar\n"
+	.string "Ahora ven, acompañame; es hora de dejar\n"
 	.string "registro de tu hazaña en el Salón de la\l"
 	.string "fama.$"
 

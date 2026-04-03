@@ -1889,11 +1889,12 @@ void InitTilesetAnim_EingRoom(void) {
 
 const u16 gTilesetAnims_DragonMountain2_Flag_Frame0[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/anim/flag/00.4bpp");
 const u16 gTilesetAnims_DragonMountain2_Flag_Frame1[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/anim/flag/01.4bpp");
+const u16 gTilesetAnims_DragonMountain2_Flag_Frame2[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/anim/flag/02.4bpp");
 
 const u16 *const gTilesetAnims_DragonMountain2_Flag[] = {
     gTilesetAnims_DragonMountain2_Flag_Frame0,
     gTilesetAnims_DragonMountain2_Flag_Frame1,
-    gTilesetAnims_DragonMountain2_Flag_Frame0,
+    gTilesetAnims_DragonMountain2_Flag_Frame2,
     gTilesetAnims_DragonMountain2_Flag_Frame1,
 };
 

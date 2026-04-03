@@ -225,7 +225,7 @@ script ReonekyRoom_EventScript_Reoneky {
     delay(30)
     msgbox(format("A estas alturas ya sabrás que hago aquí, así que me presento.\pSoy Reoneky, experto en llevar el prefijo 'ex' tanto ámbito laboral como profesional."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     delay(20)
-    msgbox(format("Puede parecer que soy un emo, pero me considero más instrospectivo que otra cosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("Puede parecer que soy un emo, pero me considero más introspectivo que otra cosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
     msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió el WAH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
