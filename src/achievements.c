@@ -5,6 +5,7 @@
 #include "achievements.h"
 #include "constants/difficulty.h"
 #include "difficulty.h"
+#include "pokemon.h"
 struct AchievementEntry
 {
     const u8 *title;
@@ -21,6 +22,8 @@ static bool8 CheckDefeatAllAdmins(u8 id);
 static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
+static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
+static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     [ACHIEVEMENT_WIN_WAH_CHALLENGE] = {
@@ -71,6 +74,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckWinWahChallengeHardMode,
     },
+    [ACHIEVEMENT_WIN_WAH_CHALLENGE_WITH_ELECTRODES] = {
+        .title = COMPOUND_STRING("La sandía explosiva"),
+        .description = COMPOUND_STRING("Supera el desafío con Electrode\nSandía en tu equipo de principio\na fin."),
+        .target = TRUE,
+        .check = CheckWinWahChallengeWithElectrodeS,
+    },
     [UNLOCK_ALL_POKEMON] = {
         .title = COMPOUND_STRING("Colección completa"),
         .description = COMPOUND_STRING("Consigue todos los Pokémon que el\njuego te permite desbloquear.\nYa no queda nada por descubrir."),
@@ -93,6 +102,27 @@ static bool8 CheckWinWahChallenge(u8 id)
 static bool8 CheckWinWahChallengeHardMode(u8 id)
 {
     return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) == sAchievements[id].target && GetCurrentDifficultyLevel() == DIFFICULTY_HARD;
+}
+
+static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
+{
+    if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
+        return FALSE;
+
+    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
+}
+
+static bool8 PartyHasElectrodeS(void)
+{
+    u32 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) == SPECIES_ELECTRODES)
+            return TRUE;
+    }
+
+    return FALSE;
 }
 
 

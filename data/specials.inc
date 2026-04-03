@@ -577,6 +577,7 @@ gSpecials::
 	def_special SetMsgboxBottom
 	def_special UpdateObjectEventSprite
 	def_special RandomizeWahAdminTeams
+	def_special SetWahChallengeInitialAchievementFlags
 	def_special ShouldUseAlternativeTeam
 	def_special OpenTeamSelectorFromField
 	def_special OpenDifficultySelectorFromField
