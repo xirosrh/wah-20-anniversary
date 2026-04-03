@@ -128,7 +128,7 @@ HallOfFame_EventScript_SetGameClear_1:
 # 74 "data/maps/HallOfFame/scripts.pory"
 	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_SetGameClear_8
 HallOfFame_EventScript_SetGameClear_4:
-# 80 "data/maps/HallOfFame/scripts.pory"
+# 78 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
 	return
 
@@ -160,9 +160,9 @@ HallOfFame_EventScript_SetGameClear_8:
 
 
 HallOfFame_EventScript_ResetWahChallenge::
-# 85 "data/maps/HallOfFame/scripts.pory"
+# 83 "data/maps/HallOfFame/scripts.pory"
 	call EventScript_ResetWahChallenge
-# 86 "data/maps/HallOfFame/scripts.pory"
+# 84 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 
