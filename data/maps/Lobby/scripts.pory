@@ -157,6 +157,82 @@ text Lobby_Text_DifficultySelector_Cancelled {
 }
 
 
+script Lobby_EventScript_BufferVictoryWordFromCountVar {
+    if(var(VAR_0x8004) == 0) {
+        bufferstring(STR_VAR_1, "0")
+    } else {
+        buffernumberstring(STR_VAR_1, VAR_0x8004)
+    }
+    if(var(VAR_0x8004) == 1) {
+        bufferstring(STR_VAR_2, "victoria")
+    } else {
+        bufferstring(STR_VAR_2, "victorias")
+    }
+    return
+}
+
+script Lobby_EventScript_BufferTimeWordFromCountVar {
+    if(var(VAR_0x8004) == 0) {
+        bufferstring(STR_VAR_1, "0")
+    } else {
+        buffernumberstring(STR_VAR_1, VAR_0x8004)
+    }
+    if(var(VAR_0x8004) == 1) {
+        bufferstring(STR_VAR_2, "vez")
+    } else {
+        bufferstring(STR_VAR_2, "veces")
+    }
+    return
+}
+
+script Lobby_EventScript_ChallengeHistorian {
+    lock
+    faceplayer
+    
+    msgbox(format("¡Hey, {PLAYER}! No trabajo aquí ni nada, pero me encanta sacar estadísticas.\pMe quedo en la sala de espera observando a todos los que entran y lo anoto todo."), MSGBOX_AUTOCLOSE)
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+        faceplayer
+        msgbox(format("Veo que aún no has completado el desafío ni una vez.\pTodavía no te has ganado un lugar en mis notas."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SadWithDelay48)
+        turnobject(VAR_LAST_TALKED, DIR_NORTH)
+        release
+        end
+    }
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    faceplayer
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("Según mi cuaderno, en modo estándar llevas {STR_VAR_1} {STR_VAR_2}.\p¡Nada mal, de verdad!"))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("En batallas dobles tienes {STR_VAR_1} {STR_VAR_2}.\pAhí se nota quién piensa dos turnos por adelantado."))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("Y en batallas invertidas sumas {STR_VAR_1} {STR_VAR_2}.\pEse modo le da vuelta la cabeza a cualquiera."))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferTimeWordFromCountVar)
+    msgbox(format("En total, has completado el desafío {STR_VAR_1} {STR_VAR_2}."))
+    if(var(VAR_WAH_CHALLENGE_COMPLETION_COUNT) > 5) {
+        msgbox(format("¡Si sigues así, voy a tener que comprar otro cuaderno para registrar tus números!"), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    }
+    else {
+        msgbox(format("Aún no son tantas victorias, pero sigue así."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
+    }
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    release
+    end
+}
+
+
 script Lobby_EventScript_Shop {
 	lock
     faceplayer
