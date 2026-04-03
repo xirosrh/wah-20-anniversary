@@ -1152,6 +1152,12 @@ Lobby_EventScript_QREventInfoKid::
 	end
 
 
+Lobby_EventScript_AdminCountNPC::
+# 612 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_AdminCountNPC, MSGBOX_NPC
+	end
+
+
 # 287 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 287 "data/maps/Lobby/scripts.pory"
@@ -1572,3 +1578,14 @@ Lobby_Text_Roxas_PlayerCancelled::
 	.string "¿Así que le tenés miedo a mi bicho\n"
 	.string "legendario? ¡Y aún así ganaste las\l"
 	.string "salas!$"
+
+Lobby_Text_AdminCountNPC::
+# 616 "data/maps/Lobby/scripts.pory"
+	.string "Dicen que son 21 salas para completar\n"
+	.string "el desafío…\p"
+	.string "Para la cantidad de administradores que \n"
+	.string "hubo en la historia de WAH, hay algo que\l"
+	.string "no termina de cuadrar.\p"
+	.string "¿Habrán dejado a algunos afuera de la \n"
+	.string "celebración?\p"
+	.string "¿Cómo lo resolvieron?$"

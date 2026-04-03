@@ -606,3 +606,23 @@ script Lobby_EventScript_QREventInfoKid {
     release
     end
 }
+
+
+script Lobby_EventScript_AdminCountNPC {
+    msgbox(Lobby_Text_AdminCountNPC, MSGBOX_NPC)
+    end
+}
+
+text Lobby_Text_AdminCountNPC {
+    "Dicen que son 21 salas para completar
+     el desafío…
+    
+    Para la cantidad de administradores que 
+    hubo en la historia de WAH, hay algo que
+    no termina de cuadrar.
+
+    ¿Habrán dejado a algunos afuera de la 
+    celebración?
+
+    ¿Cómo lo resolvieron?"
+}
