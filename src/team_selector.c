@@ -757,7 +757,7 @@ static void Task_HandleExitConfirm(u8 taskId)
         }
         else
         {
-            PlaySE(SE_PC_OFF);
+            PlaySE(SE_SELECT);
             BeginNormalPaletteFade(PALETTES_ALL, 10, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_ExitWithoutSelection;
         }
@@ -841,7 +841,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
     {
-        PlaySE(SE_PC_OFF);
+        PlaySE(SE_SELECT);
         CreateExitConfirmWindow();
         gTasks[taskId].func = Task_HandleExitConfirm;
     }
