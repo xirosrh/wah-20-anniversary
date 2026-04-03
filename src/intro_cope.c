@@ -1102,15 +1102,18 @@ static void TaskChooseOptions(u8 taskId)
             gTasks[taskId].tPlayerGender = MALE;
             gTasks[taskId].tSliceBgsState = 16;
             UpdateGenderSprites(taskId);
+            PlaySE(SE_SELECT);
         }
         else if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tPlayerGender == MALE && gTasks[taskId].tSliceBgsState == 0)
         {
             gTasks[taskId].tPlayerGender = FEMALE;
             gTasks[taskId].tSliceBgsState = 16;
             UpdateGenderSprites(taskId);
+            PlaySE(SE_SELECT);
         }
         else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tSliceBgsState == 0)
         {
+            PlaySE(SE_SELECT);
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gSaveBlock2Ptr->playerGender = gTasks[taskId].tPlayerGender;
             gTasks[taskId].func = TaskStartNamingScreen;
@@ -1124,9 +1127,11 @@ static void TaskChooseOptions(u8 taskId)
         {
              gTasks[taskId].tOptionChoose ^= 1;
              UpdateOptionSelected();
+             PlaySE(SE_SELECT);
         }
         else if (JOY_NEW(A_BUTTON))
         {
+            PlaySE(SE_SELECT);
             if (gTasks[taskId].tOptionChoose == FALSE)
             {
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1146,6 +1151,7 @@ static void TaskChooseOptions(u8 taskId)
     {
         if (sDifficultySelectorFromField && JOY_NEW(B_BUTTON))
         {
+            PlaySE(SE_SELECT);
             gSpecialVar_Result = FALSE;
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_ExitDifficultySelectorToField;
@@ -1156,14 +1162,17 @@ static void TaskChooseOptions(u8 taskId)
         {
              gTasks[taskId].tDifficulty--;
              UpdateDifficultySelected();
+             PlaySE(SE_SELECT);
         }
         else if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tDifficulty < DIFFICULTY_HARD)
         {
              gTasks[taskId].tDifficulty++;
             UpdateDifficultySelected();
+            PlaySE(SE_SELECT);
         }
         else if (JOY_NEW(A_BUTTON))
         {
+            PlaySE(SE_SELECT);
             if (sDifficultySelectorFromField)
             {
                 SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
