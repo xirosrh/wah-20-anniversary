@@ -44,11 +44,6 @@ script Achievements_EventScript_Eval_WinWahChallenge_HardMode {
     return
 }
 
-script Achievements_EventScript_Eval_WinWahChallenge_WithoutLegendaries {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_WITHOUT_LEGENDARIES)
-    call(Achievements_EventScript_Eval_Common)
-    return
-}
 
 script Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS {
     setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_WITH_ELECTRODES)

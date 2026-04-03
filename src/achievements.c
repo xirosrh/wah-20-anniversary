@@ -22,9 +22,7 @@ static bool8 CheckDefeatAllAdmins(u8 id);
 static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
-static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
-static bool8 PartyHasLegendary(void);
 static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
@@ -76,15 +74,9 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckWinWahChallengeHardMode,
     },
-    [ACHIEVEMENT_WIN_WAH_CHALLENGE_WITHOUT_LEGENDARIES] = {
-        .title = COMPOUND_STRING("Sin apoyo divino"),
-        .description = COMPOUND_STRING("Empieza y termina todo el desafío\nsin Pokémon legendarios en\ntu equipo."),
-        .target = TRUE,
-        .check = CheckWinWahChallengeWithoutLegendaries,
-    },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_WITH_ELECTRODES] = {
         .title = COMPOUND_STRING("La sandía explosiva"),
-        .description = COMPOUND_STRING("Empieza y termina todo el desafío\ncon ElectrodeS en tu equipo."),
+        .description = COMPOUND_STRING("Supera el desafío con Electrode\nSandía en tu equipo de principio\na fin."),
         .target = TRUE,
         .check = CheckWinWahChallengeWithElectrodeS,
     },
@@ -112,38 +104,12 @@ static bool8 CheckWinWahChallengeHardMode(u8 id)
     return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) == sAchievements[id].target && GetCurrentDifficultyLevel() == DIFFICULTY_HARD;
 }
 
-static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id)
-{
-    if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
-        return FALSE;
-
-    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES) && !PartyHasLegendary();
-}
-
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
 {
     if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
         return FALSE;
 
     return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
-}
-
-static bool8 PartyHasLegendary(void)
-{
-    u32 i;
-
-    for (i = 0; i < gPlayerPartyCount; i++)
-    {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
-
-        if (species == SPECIES_EGG || species == SPECIES_NONE)
-            continue;
-
-        if (gSpeciesInfo[SanitizeSpeciesId(species)].isLegendary)
-            return TRUE;
-    }
-
-    return FALSE;
 }
 
 static bool8 PartyHasElectrodeS(void)

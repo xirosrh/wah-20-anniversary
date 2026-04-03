@@ -86,7 +86,7 @@
 #define FLAG_TRANSPARENT_BOX 0x48
 #define FLAG_WAH_CHALLENGE_INVERSE_COMPLETED    0x49 // Used WAH
 #define FLAG_EXPLAIN_NEW_CHALLENGE_MODES    0x4A // Used WAH
-#define FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES    0x4B // Used WAH achievements
+#define FLAG_UNUSED_0x04B    0x4B // Unused flag
 #define FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES        0x4C // Used WAH achievements
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag

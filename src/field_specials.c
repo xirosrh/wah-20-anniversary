@@ -4461,7 +4461,6 @@ void SetWahChallengeInitialAchievementFlags(void)
 {
     u32 i;
     bool8 hasElectrodeS = FALSE;
-    bool8 hasLegendary = FALSE;
 
     for (i = 0; i < gPlayerPartyCount; i++)
     {
@@ -4471,24 +4470,8 @@ void SetWahChallengeInitialAchievementFlags(void)
             continue;
 
         if (species == SPECIES_ELECTRODES)
-            hasElectrodeS = TRUE;
-
-        if (gSpeciesInfo[SanitizeSpeciesId(species)].isLegendary)
-        {
-            hasLegendary = TRUE;
-            break;
-        }
+            FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
     }
-
-    if (hasLegendary)
-        FlagClear(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
-    else
-        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
-
-    if (hasElectrodeS)
-        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
-    else
-        FlagClear(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
 }
 
 // Checks if admin at given index should use ALTERNATIVE team
