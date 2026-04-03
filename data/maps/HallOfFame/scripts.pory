@@ -56,6 +56,8 @@ script HallOfFame_EventScript_EvalAchievements {
 			call(Achievements_EventScript_Eval_WinWahChallenge_Inverse)
 	}
 	call(Achievements_EventScript_Eval_WinWahChallenge_5Times)
+	call(Achievements_EventScript_Eval_WinWahChallenge_10Times)
+	call(Achievements_EventScript_Eval_WinWahEachModeTwice)
 	call(Achievements_EventScript_Eval_WinWahChallenge_HardMode)
 	call(Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS)
 	return

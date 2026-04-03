@@ -101,8 +101,12 @@ HallOfFame_EventScript_EvalAchievements_1:
 # 58 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_5Times
 # 59 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
+	call Achievements_EventScript_Eval_WinWahChallenge_10Times
 # 60 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahEachModeTwice
+# 61 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
+# 62 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS
 	return
 

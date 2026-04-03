@@ -38,6 +38,18 @@ script Achievements_EventScript_Eval_WinWahChallenge_5Times {
     return
 }
 
+script Achievements_EventScript_Eval_WinWahChallenge_10Times {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_10_TIMES)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahEachModeTwice {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_EACH_MODE_TWICE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
 script Achievements_EventScript_Eval_WinWahChallenge_HardMode {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE)
     call(Achievements_EventScript_Eval_Common)

@@ -23,6 +23,7 @@ static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
+static bool8 CheckWinWahEachModeAtLeastTwice(u8 id);
 static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
@@ -56,17 +57,29 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckDefeatAllAdmins,
     },
+    [ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS] = {
+        .title = COMPOUND_STRING("Limpieza de la zona creativa"),
+        .description = COMPOUND_STRING("Derrota a todos los colaboradores\nde la zona creativa.\nNadie queda sin probar tu nivel."),
+        .target = TRUE,
+        .check = CheckDefeatAllCollaborators,
+    },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES] = {
         .title = COMPOUND_STRING("Pesadilla recurrente"),
         .description = COMPOUND_STRING("Supera el desafío cinco veces.\nYa no es suerte. Es obsesión."),
         .target = 5,
         .check = CheckWinWahChallengeXTimes,
     },
-    [ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS] = {
-        .title = COMPOUND_STRING("Limpieza de la zona creativa"),
-        .description = COMPOUND_STRING("Derrota a todos los colaboradores\nde la zona creativa.\nNadie queda sin probar tu nivel."),
+    [ACHIEVEMENT_WIN_WAH_CHALLENGE_10_TIMES] = {
+        .title = COMPOUND_STRING("Insaciable"),
+        .description = COMPOUND_STRING("Supera el desafío diez veces.\nEl salón de la fama te conoce\npor tu nombre."),
+        .target = 10,
+        .check = CheckWinWahChallengeXTimes,
+    },
+    [ACHIEVEMENT_WIN_WAH_EACH_MODE_TWICE] = {
+        .title = COMPOUND_STRING("Doblete en cada modo"),
+        .description = COMPOUND_STRING("Gana el desafío al menos dos veces\nen todos los modos (estándar,\ndobles, inversas, etc.). Sin atajos."),
         .target = TRUE,
-        .check = CheckDefeatAllCollaborators,
+        .check = CheckWinWahEachModeAtLeastTwice,
     },
     [ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE] = {
         .title = COMPOUND_STRING("Solo para expertos"),
@@ -85,7 +98,7 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("Consigue todos los Pokémon que el\njuego te permite desbloquear.\nYa no queda nada por descubrir."),
         .target = TRUE,
         .check = CheckDummyChallenge, //TODO Xiros
-    }
+    },
 };
 
 static bool8 CheckDummyChallenge(u8 id)
@@ -139,6 +152,14 @@ static bool8 CheckWinWahChallengeInverse(u8 id)
 static bool8 CheckWinWahChallengeXTimes(u8 id)
 {
     return VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT) >= sAchievements[id].target;
+}
+
+static bool8 CheckWinWahEachModeAtLeastTwice(u8 id)
+{
+    (void)id;
+    return VarGet(VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT) >= 2
+        && VarGet(VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT) >= 2
+        && VarGet(VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT) >= 2;
 }
 
 static bool8 CheckDefeatAllCollaborators(u8 id)
