@@ -652,8 +652,8 @@ ReonekyRoom_EventScript_Reoneky_Text_0:
 # 213 "data/maps/ReonekyRoom/scripts.pory"
 	.string "¡Un golpe de suerte ocurre cuando\n"
 	.string "aprovechas una buena oportunidad!\p"
-	.string "No dejes que te detengan y sobre todo,\n"
-	.string "disfruta del momento.$"
+	.string "No dejes que te detengan... y, sobre\n"
+	.string "todo, disfruta del momento.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_1:
 # 222 "data/maps/ReonekyRoom/scripts.pory"
@@ -677,7 +677,7 @@ ReonekyRoom_EventScript_Reoneky_Text_3:
 ReonekyRoom_EventScript_Reoneky_Text_4:
 # 231 "data/maps/ReonekyRoom/scripts.pory"
 	.string "Yo no era nadie… Sentía que no era\n"
-	.string "nadie… Y eso lo cambió el WAH.\p"
+	.string "nadie… Y eso lo cambió WaH.\p"
 	.string "Así que fuera sentimentalismos y\n"
 	.string "presentaciones, vamos al lío.\p"
 	.string "Mente fría, corazón caliente, así es\n"
@@ -689,8 +689,8 @@ ReonekyRoom_EventScript_Reoneky_Text_5:
 
 ReonekyRoom_EventScript_Reoneky_Text_6:
 # 247 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Apuntas maneras, el talento tiene\n"
-	.string "límites, el esfuerzo y la pasión, no.$"
+	.string "Apuntas maneras. El talento tiene\n"
+	.string "límites; el esfuerzo y la pasión no.$"
 
 ReonekyRoom_Text_ReonekyDefeated::
 # 275 "data/maps/ReonekyRoom/scripts.pory"

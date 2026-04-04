@@ -90,7 +90,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         },
         [TRAINER_WAH_ADMIN_COSARARA_MAIN] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tu una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tú una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_EING_MAIN] =
         {

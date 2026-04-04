@@ -638,7 +638,7 @@ AngelRoom_EventScript_Angel_Text_6:
 
 AngelRoom_EventScript_Angel_Text_7:
 # 89 "data/maps/AngelRoom/scripts.pory"
-	.string "No esperaba perder y aún así, no me\n"
+	.string "No esperaba perder... Y aun así, no me\n"
 	.string "dejaste opciones.\p"
 	.string "Sin duda, la función ha terminado.$"
 
