@@ -652,7 +652,7 @@ ReonekyRoom_EventScript_Reoneky_Text_0:
 # 213 "data/maps/ReonekyRoom/scripts.pory"
 	.string "¡Un golpe de suerte ocurre cuando\n"
 	.string "aprovechas una buena oportunidad!\p"
-	.string "No dejes que te detengan... y, sobre\n"
+	.string "No dejes que te detengan… y, sobre\n"
 	.string "todo, disfruta del momento.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_1:
