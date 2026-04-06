@@ -273,6 +273,7 @@ extern const u8 gText_Choose_Difficulty[];
 extern const u8 gText_Cope_Easy[];
 extern const u8 gText_Cope_Normal[];
 extern const u8 gText_Cope_Hard[];
+extern const u8 gText_Difficulty_CharacteristicsHeader[];
 extern const u8 gText_Easy_Description[];
 extern const u8 gText_Normal_Description[];
 extern const u8 gText_Hard_Description[];
