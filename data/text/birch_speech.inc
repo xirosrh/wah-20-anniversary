@@ -26,9 +26,10 @@ gText_Difficulty_CharacteristicsHeader::
 	.string "Características:$"
 
 gText_Easy_Description::
-	.string "- Modo accesible (placeholder)\n"
-	.string "- Menos presión en combate\n"
-	.string "- Ideal para probar el juego$"
+	.string "- IA básica\n"
+	.string "- Equipos más accesibles\n"
+	.string "- Pokémon rivales con 0 IVs\ny EVs\n"
+	.string "- Rivales usan pocos ítems$"
 
 gText_Normal_Description::
 	.string "- Experiencia equilibrada (placeholder)\n"
