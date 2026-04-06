@@ -209,8 +209,8 @@ static void CB2_DifficultySelectorMain(void)
 
 void DifficultySelector_RefreshPanel(enum DifficultyLevel level)
 {
-    const u8 headerY = 1;
-    u8 bodyY = headerY + GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT)
+    const u8 headerY = 2;
+    u8 bodyY = 1 + GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT)
         + GetFontAttribute(FONT_NORMAL, FONTATTR_LINE_SPACING) + 1;
 
     FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
@@ -220,21 +220,21 @@ void DifficultySelector_RefreshPanel(enum DifficultyLevel level)
         LZ77UnCompVram(sDifficultyEasy_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplates[2].mapBaseIndex));
         LoadPalette(sPalEasy, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
         AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, headerY, sTextBlack, TEXT_SKIP_DRAW, gText_Difficulty_CharacteristicsHeader);
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Easy_Description);
+        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_SMALL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Easy_Description);
     }
     else if (level == DIFFICULTY_NORMAL)
     {
         LZ77UnCompVram(sDifficultyNormal_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplates[2].mapBaseIndex));
         LoadPalette(sPalNormal, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
         AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, headerY, sTextBlack, TEXT_SKIP_DRAW, gText_Difficulty_CharacteristicsHeader);
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Normal_Description);
+        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_SMALL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Normal_Description);
     }
     else if (level == DIFFICULTY_HARD)
     {
         LZ77UnCompVram(sDifficultyHard_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplates[2].mapBaseIndex));
         LoadPalette(sPalHard, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
         AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, headerY, sTextBlack, TEXT_SKIP_DRAW, gText_Difficulty_CharacteristicsHeader);
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Hard_Description);
+        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_SMALL, 4, bodyY, sTextBlack, TEXT_SKIP_DRAW, gText_Hard_Description);
     }
     CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
 }
@@ -264,6 +264,7 @@ static void PrintDifficultyStaticWindowText(void)
 void DifficultySelector_SetupUiForIntro(void)
 {
     LoadDifficultyGraphicsToBgs();
+    ChangeBgX(2, 0, BG_COORD_SET);
 
     FillWindowPixelBuffer(WINDOW_TITLE_BOX, PIXEL_FILL(10));
     FillWindowPixelBuffer(WINDOW_YESNO_BOX, PIXEL_FILL(0));
@@ -384,7 +385,7 @@ static void CB2_InitDifficultySelector(void)
         InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
         InitWindows(sWindowTemplates);
         ResetAllBgsCoordinates();
-        ChangeBgX(2, 8 << 8, BG_COORD_ADD);
+        ChangeBgX(2, 0, BG_COORD_SET);
         ShowBg(0);
         ShowBg(1);
         ShowBg(2);
