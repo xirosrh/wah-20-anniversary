@@ -210,7 +210,7 @@ script ReonekyRoom_EventScript_Reoneky {
         lock
         release
         faceplayer
-        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan... y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan… y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
         playse(SE_PIN)
         applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
         release
@@ -248,7 +248,7 @@ script ReonekyRoom_EventScript_Reoneky {
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan... y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan… y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     call(WahRoomsShared_OpenDoor)
     delay(30)
     setflag(FLAG_DEFEATED_ADMIN_REONEKY)
