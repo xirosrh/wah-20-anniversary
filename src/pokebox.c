@@ -92,6 +92,9 @@ struct PokeBox
     u8 boxMonIconCategoyIds[4]; //id de las categorias de los movs
     u8 boxMonSpritesIds[NUM_MON_ICON_ROW][NUM_MON_ICON_ROW]; //id de los icons sprites de cada mon en la box
     u8 playerTeamMonSpritesIds[MON_ICON_TEAM_ROWS][MON_ICON_TEAM_COLS]; //id de los icons sprites en la party
+
+    u16 speciesAddFromPc[3]; //alamacena las species de los pokes que has añadido al equipo desde el pc
+    u8 numMonAddFromPC;
 };
 
 #define tBgSlice data[1]
@@ -698,12 +701,14 @@ static void ClearMonTextInfoPage(bool8 destroyCategoryIcons)
     CopyWindowToVram(WINDOW_MON_INFO_TYPE, 3);
 }
 
+//calcula el numeor total de cjas q tiene la box
 static u8 getTotalNumPages()
 {
     u16 totalCount = MON_TEAM_SELECTOR_COUNT + PokeboxSpeciesList_GetCount();
     return (totalCount + MAX_MON_ICONS_IN_BOX - 1) / MAX_MON_ICONS_IN_BOX;
 }
 
+//obtiene el primer slot libre del equipo
 u8 GetFirstFreeSlotMonParty()
 {
     u8 i;
@@ -720,6 +725,7 @@ u8 GetFirstFreeSlotMonParty()
     return 0xFF;
 }
 
+//comprobar si el pokemon ya esta añadido al equipo
 bool8 HasMonInParty(u16 specieBox)
 {
     u8 i;
@@ -735,6 +741,7 @@ bool8 HasMonInParty(u16 specieBox)
     return FALSE;
 }
 
+//obtine le indice del pokemon que esta selecionado en la box
 static u16 GetSelectedPokemonIndex(void)
 {
     return pokeBoxObj.currentPageNum * MAX_MON_ICONS_IN_BOX
@@ -742,6 +749,7 @@ static u16 GetSelectedPokemonIndex(void)
          + pokeBoxObj.column;
 }
 
+//Carga la info de los pokes de la box
 void LoadCurrentMonData()
 {
     u16 species;
@@ -775,6 +783,7 @@ void LoadCurrentMonData()
     PrintAllDataMon(species);
 }
 
+//Reordena los sprite en el visor del equipo
 static void CompactAndMovePlayerTeamSprites(void)
 {
     u8 writeIndex = 0;
@@ -814,6 +823,7 @@ static void CompactAndMovePlayerTeamSprites(void)
     }
 }
 
+//Carga el sprite de mon y el texto con la infromacion al estar visualizando el equipo
 void LoadCurrentMonDataPlayerTeam()
 {
     u16 species;
@@ -834,6 +844,89 @@ void LoadCurrentMonDataPlayerTeam()
     PrintAllDataMon(species);
 }
 
+//comprueba si el pokemon selecionado del team fue añadido del pc
+u8 isMonAddFromPc(u16 specieSelected)
+{
+    u8 i;
+    for (i = 0; i < 3; i++)
+    {
+        if(specieSelected == SPECIES_NONE)
+            continue;
+
+        if(pokeBoxObj.speciesAddFromPc[i] == specieSelected)
+            return i;
+    }
+    
+    return 0xFF;
+}
+
+//comprobar q el poke a añadir es del equipo original del selector
+static bool8 IsSpecieOfOriginalTeam(u16 specie)
+{
+    u8 i;
+    u16 originalSpecie;
+
+    for(i = 0; i < PARTY_SIZE; i++)
+    {
+        originalSpecie = gSaveBlock2Ptr->playerTeamSelector[i];
+
+        if(specie == originalSpecie)
+        {
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
+}
+
+//actualiza la lista de los pokes q has sacado del pc
+void UpdateListMonAddFromPc()
+{
+    u8 i;
+    u8 count = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if(!IsSpecieOfOriginalTeam(species))
+        {
+            pokeBoxObj.speciesAddFromPc[count] = species;
+            pokeBoxObj.numMonAddFromPC += 1;
+        }
+    }
+}
+
+//Añade la specie a la lista de pokes q se añadido al equipo desde el pc
+bool8 AddNewMonToListSpeciesAddMon(u16 speciesAdd)
+{
+    u8 i;
+
+    //si la specie añadida ya estaba en el equipo original se resta un al contador
+    if(IsSpecieOfOriginalTeam(speciesAdd))
+    {
+        if(pokeBoxObj.numMonAddFromPC > 0)
+            pokeBoxObj.numMonAddFromPC -= 1;
+        
+        return TRUE;
+    }
+
+    for (i = 0; i < 3; i++)
+    {
+        if(speciesAdd == SPECIES_NONE)
+            return TRUE;
+
+        if(pokeBoxObj.speciesAddFromPc[i] == SPECIES_NONE)
+        {
+            pokeBoxObj.speciesAddFromPc[i] = speciesAdd;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+//carga los iconos de los pokes de la box
 void LoadMonIconSprites()
 {
     u8 spriteId;
@@ -889,6 +982,7 @@ void LoadMonIconSprites()
     }
 }
 
+//carga los iconos de los pokes de team
 static void LoadMonIconPlayerTeam()
 {
     u8 i, row, col;
@@ -918,6 +1012,7 @@ static void LoadMonIconPlayerTeam()
     }
 }
 
+//oculta los iconos de lso pokes de la box
 static void HidenMonIconsBox(bool8 invisible)
 {
     u8 row, col;
@@ -936,10 +1031,10 @@ static void HidenMonIconsBox(bool8 invisible)
     }
 }
 
+//elimina el los sprite que hay cargados en la pantalla de la box tanto los iconos con el front
 static void ClearMonData(bool8 destroyMonIcons)
 {
     u8 row, col;
-
 
     if(pokeBoxObj.frontMonId != 0xFF) 
     {
@@ -965,6 +1060,7 @@ static void ClearMonData(bool8 destroyMonIcons)
     }
 }
 
+//elimina el los sprite que hay cargados en la pantalla del team tanto los iconos con el front
 static void ClearMonDataPlayerTeam(bool8 destroyMonIcons)
 {
     u8 row, col;
@@ -993,6 +1089,8 @@ static void ClearMonDataPlayerTeam(bool8 destroyMonIcons)
     }
 }
 
+
+//deslizar el bg del team a la izq
 static void Task_SlideLeftBgTeamPlayer(u8 taskId)
 {
     if(++gTasks[taskId].tTimer % 2 == 0)
@@ -1014,6 +1112,7 @@ static void Task_SlideLeftBgTeamPlayer(u8 taskId)
     gTasks[taskId].tTimer += 2;
 }
 
+//deslizar el bg del team a la derecha
 static void Task_SlideRightBgTeamPlayer(u8 taskId)
 {
     if(++gTasks[taskId].tTimer % 2 == 0)
@@ -1036,7 +1135,7 @@ static void Task_SlideRightBgTeamPlayer(u8 taskId)
 
 }
 
-
+//controles de la pantalla de compra de un pokemon
 static void Task_HandleBuyMon(u8 taskId)
 {
     if (JOY_NEW(DPAD_LEFT))
@@ -1078,6 +1177,7 @@ static void Task_HandleBuyMon(u8 taskId)
     }
 }
 
+//controles de la pantalla del tema del jugador
 static void Task_HandleTeamPlayerPokebox(u8 taskId)
 {
     if (JOY_NEW(B_BUTTON) || JOY_NEW(START_BUTTON))
@@ -1137,6 +1237,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     }
 }
 
+//controles de la pantalla de la box
 static void Task_HandlePokebox(u8 taskId)
 {
     u8 newRow = pokeBoxObj.row;
@@ -1245,6 +1346,7 @@ static void Task_HandlePokebox(u8 taskId)
     }
 }
 
+//controles de la pantalla de la info de pokemon
 static void Task_WaitToReturnHandlePokebox(u8 taskId)
 {
     if (JOY_NEW(SELECT_BUTTON) || JOY_NEW(B_BUTTON))
@@ -1273,6 +1375,7 @@ static void Task_ShowMonInfo(u8 taskId)
     }
 }
 
+//Añadir el pokemon al equipo
 static void Task_AddMonTeamPlayer(u8 taskId)
 {
     u16 specie = SPECIES_NONE;
@@ -1295,13 +1398,15 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         if(HasMonInParty(mon->specie))
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
         else{
-            GiveMonTeamFromSelector(slot, mon);
+            GiveMonTeamFromSelector(slot, mon, FALSE);
             specie = mon->specie;
             addMon = TRUE;
         }
     }
     else{
+        
         specie = PokeboxSpeciesList_GetSpecie(index - MON_TEAM_SELECTOR_COUNT);
+
         if(!CheckPokebox_IsActive( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
             PrintMsgActions(MSG_ACTION_LOCK_MON);
         else if(HasMonInParty(specie))
@@ -1317,13 +1422,31 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         StringCopy(gStringVar1, GetSpeciesName(specie));
         PrintMsgActions(MSG_ACTION_ADD_MON_PARTY);
         CalculatePlayerPartyCount();
+        
+        AddNewMonToListSpeciesAddMon(specie);
     }
 
     gTasks[taskId].func = Task_HandlePokebox;
 }
 
+//comrpueba si puedes almacenar el pokemon la box
+bool8 CanStoregeMon(u16 specieToStorage, u8 maxNumChangesOnTeam)
+{
+    bool8 originalTeam = IsSpecieOfOriginalTeam(specieToStorage);
+    
+    if(pokeBoxObj.numMonAddFromPC < maxNumChangesOnTeam)
+        return TRUE;
+
+    if(pokeBoxObj.numMonAddFromPC >= maxNumChangesOnTeam && !originalTeam)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+//Almacenar el pokemon en la box
 static void Task_StorageMonInPokebox(u8 taskId)
 {
+    u8 maxNumChangesOnTeam;
     u16 index = pokeBoxObj.row_team * 2 + pokeBoxObj.col_team;
     u8 spriteId = pokeBoxObj.playerTeamMonSpritesIds[pokeBoxObj.row_team][pokeBoxObj.col_team];
  
@@ -1335,12 +1458,31 @@ static void Task_StorageMonInPokebox(u8 taskId)
         return;
     }
 
+    maxNumChangesOnTeam = (!FlagGet(FLAG_WAH_CHALLENGE_COMPLETED)) ? 1 : 3;
+
+    if(!CanStoregeMon(specie, maxNumChangesOnTeam))
+    {
+        if(maxNumChangesOnTeam == 1)
+            PrintMsgActions(MSG_ACTION_ONLY_STORAGE_ONE_MON);
+        else
+            PrintMsgActions(MSG_ACTION_ONLY_STORAGE_THREE_MON);
+
+        gTasks[taskId].func = Task_HandleTeamPlayerPokebox;
+        return;
+    }
+
     if(gPlayerPartyCount == 1)
     {
         PrintMsgActions(MSG_ACTION_ONLY_ONE_MON_IN_TEAM);
     }
     else
     {
+        u8 indexAddMon = isMonAddFromPc(specie);
+        if(indexAddMon != 0xFF)
+            pokeBoxObj.speciesAddFromPc[indexAddMon] = SPECIES_NONE;
+        
+        pokeBoxObj.numMonAddFromPC += 1;
+
         ClearMonDataPlayerTeam(FALSE);
         ClearWindoMonData(FALSE);
         FreeAndDestroyMonIconSprite(&gSprites[spriteId]);
@@ -1391,6 +1533,7 @@ static void Task_FadeOut(u8 taskId)
 
 void CB2_InitPokeBoxSetUp(void)
 {
+    u8 i;
     switch (gMain.state)
     {
     case 0:
@@ -1426,10 +1569,13 @@ void CB2_InitPokeBoxSetUp(void)
         pokeBoxObj.currentPageNum = 0;
         pokeBoxObj.row_team = 0;
         pokeBoxObj.col_team = 0;
+        pokeBoxObj.numMonAddFromPC = 0;
 
         memset(pokeBoxObj.boxMonSpritesIds, 0xFF, sizeof(pokeBoxObj.boxMonSpritesIds));
         memset(pokeBoxObj.playerTeamMonSpritesIds, 0xFF, sizeof(pokeBoxObj.playerTeamMonSpritesIds));
         memset(pokeBoxObj.boxMonIconCategoyIds, 0xFF, sizeof(pokeBoxObj.boxMonIconCategoyIds));
+        memset(pokeBoxObj.speciesAddFromPc, SPECIES_NONE, sizeof(pokeBoxObj.speciesAddFromPc));
+        UpdateListMonAddFromPc();
         
         gMain.state++;
         break;

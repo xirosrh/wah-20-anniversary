@@ -54,7 +54,7 @@ extern const struct TeamSelectorMonData gAllTeamMons[];
 
 void StartTeamSelector_CB2();
 void CB2_InitTeamSelectorSetUp();
-void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon);
+void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon, bool8 editOriginalTeam);
 
 void LoadMoveIconType(u8 windowId, u16 move, u8 indexMove, u8 x, u8 y);
 void LoadMonIconType(u8 windowId, u16 specie, u8 x, u8 y, u8 fillColor);

@@ -17,6 +17,8 @@ static const u8 *sPokeboxMsgActionsList[] =
     [MSG_ACTION_MON_IN_TEAM]   = COMPOUND_STRING("Este Pokémon ya está en el equipo."),
     [MSG_ACTION_ONLY_ONE_MON_IN_TEAM] = COMPOUND_STRING("Debes tener un Pokémon en el equipo"), 
     [MSG_ACTION_ADD_MON_PARTY] = COMPOUND_STRING("{STR_VAR_1} añadido al equipo"), 
+    [MSG_ACTION_ONLY_STORAGE_ONE_MON] = COMPOUND_STRING("Solo puedes cambiar un Pokémon del equipo"), 
+    [MSG_ACTION_ONLY_STORAGE_THREE_MON] = COMPOUND_STRING("Solo puedes cambiar tres Pokémon del equipo"), 
 };
 
 const u8 *Get_PokeboxMsgAction(u8 index) 
@@ -269,7 +271,7 @@ bool8 CheckPokebox_IsActive(u8 id)
 
     isActive = sPokeboxSpeciesList[id].check(id);
 
-    if(isActive) Pokebox_SetActive(id);
+    // if(isActive) Pokebox_SetActive(id);
 
     return isActive;
 }
