@@ -210,7 +210,7 @@ script ReonekyRoom_EventScript_Reoneky {
         lock
         release
         faceplayer
-        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan… y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
         playse(SE_PIN)
         applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
         release
@@ -228,7 +228,7 @@ script ReonekyRoom_EventScript_Reoneky {
     msgbox(format("Puede parecer que soy un emo, pero me considero más introspectivo que otra cosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió el WAH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió WaH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(
         lock_facing_direction
@@ -244,11 +244,11 @@ script ReonekyRoom_EventScript_Reoneky {
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(emote_versus))
     waitse
     call(ReonekyRoom_EventScript_ReonekyBattle)
-    msgbox(format("Apuntas maneras, el talento tiene límites, el esfuerzo y la pasión, no."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("Apuntas maneras. El talento tiene límites; el esfuerzo y la pasión no."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan y sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("¡Un golpe de suerte ocurre cuando aprovechas una buena oportunidad!\pNo dejes que te detengan… y, sobre todo, disfruta del momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     call(WahRoomsShared_OpenDoor)
     delay(30)
     setflag(FLAG_DEFEATED_ADMIN_REONEKY)

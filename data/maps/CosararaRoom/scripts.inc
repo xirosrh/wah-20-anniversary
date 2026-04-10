@@ -305,7 +305,7 @@ CosararaRoom_EventScript_Cosarara_Text_6:
 	.string "Ha sido una buena batalla, {PLAYER}.\n"
 	.string "Creo que te recordaré.\p"
 	.string "Recuerda no cambiar de nick, ya que me\n"
-	.string "cuesta mucho saber quién es quien.\p"
+	.string "cuesta mucho saber quién es quién.\p"
 	.string "Ya puedes avanzar.$"
 
 CosararaRoom_Text_CosararaDefeated::
