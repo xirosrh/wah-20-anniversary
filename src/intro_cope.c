@@ -28,6 +28,7 @@
 #include "task.h"
 #include "team_selector.h"
 #include "difficulty.h"
+#include "difficulty_selector.h"
 #include "text.h"
 #include "text_window.h"
 #include "trainer_pokemon_sprites.h"
@@ -56,10 +57,6 @@ static void TaskCopeSpeech_Cleanup(u8 taskId);
 static void TaskCopeSpeech_FadeOut(u8 taskId);
 static void SpriteCallbackCopeMovement(struct Sprite *sprite);
 static void CB2_ReturnFromNamingScreen(void);
-static void CB2_InitDifficultySelectorFromField(void);
-static void Task_InitDifficultyFromField(u8 taskId);
-static void Task_ExitDifficultySelectorToField(u8 taskId);
-
 // ============================================================================
 // CONSTANTS & CONFIGURATION
 // ============================================================================
@@ -131,7 +128,6 @@ enum {
 // EWRAM VARIABLES
 // ============================================================================
 static EWRAM_DATA u8 sTaskId;  // Global task ID for functions without taskId parameter
-static EWRAM_DATA bool8 sDifficultySelectorFromField;
 
 // ============================================================================
 // GRAPHICS DATA - GENDER SELECTION
@@ -142,17 +138,6 @@ static const u32 sGenderMaleFemale_Map[] = INCBIN_U32("graphics/cope_speech/gend
 static const u32 sGenderMale_Map[] = INCBIN_U32("graphics/cope_speech/gender/male.bin.lz");
 static const u32 sGenderFemale_Map[] = INCBIN_U32("graphics/cope_speech/gender/female.bin.lz");
 static const u32 sGenderBg_Map[] = INCBIN_U32("graphics/cope_speech/gender/bg.bin.lz");
-
-// ============================================================================
-// GRAPHICS DATA - DIFFICULTY SELECTION
-// ============================================================================
-static const u16 sDifficulty_Pal[] = INCBIN_U16("graphics/cope_speech/difficulty/palette.gbapal");
-static const u32 sDifficulty_Tiles[] = INCBIN_U32("graphics/cope_speech/difficulty/tiles.4bpp.lz");
-static const u32 sDifficultyInterface_Map[] = INCBIN_U32("graphics/cope_speech/difficulty/interface.bin.lz");
-static const u32 sDifficultyEasy_Map[] = INCBIN_U32("graphics/cope_speech/difficulty/easy.bin.lz");
-static const u32 sDifficultyNormal_Map[] = INCBIN_U32("graphics/cope_speech/difficulty/normal.bin.lz");
-static const u32 sDifficultyHard_Map[] = INCBIN_U32("graphics/cope_speech/difficulty/hard.bin.lz");
-static const u32 sDifficultyBg_Map[] = INCBIN_U32("graphics/cope_speech/difficulty/bg.bin.lz");
 
 // ============================================================================
 // GRAPHICS DATA - INTRO/COPE SPEECH
@@ -170,9 +155,6 @@ static const u16 sMayGrey_Pal[] = INCBIN_U16("graphics/trainers/front_pics/may_g
 static const u16 sBrendanGrey_Pal[] = INCBIN_U16("graphics/trainers/front_pics/brendan_grey.gbapal");
 static const u8 sTextWhite[3] = {0, 1, 2};
 static const u8 sTextBlack[3] = {0, 2, 3};
-static const u16 sPalEasy[] = {RGB(8, 21, 8)};
-static const u16 sPalNormal[] = {RGB(14, 14, 31)};
-static const u16 sPalHard[] = {RGB(31, 14, 14)};
 extern const u16 gTrainerPalette_Brendan[];
 extern const u16 gTrainerPalette_May[];
 
@@ -605,11 +587,15 @@ static void SpriteCallbackCopeMovement(struct Sprite *sprite)
 static void ScrollBackground(void)
 {    
     u8 speed = 1;
-    
-    ChangeBgX(3, 128, BG_COORD_ADD);
-    ChangeBgY(3, 128, BG_COORD_SUB);
-    
-    if (!gPaletteFade.active && gTasks[sTaskId].tSliceBgsState != 0)
+
+    if (!gPaletteFade.active)
+    {
+        ChangeBgX(3, 128, BG_COORD_ADD);
+        ChangeBgY(3, 128, BG_COORD_SUB);
+    }
+
+    if (!gPaletteFade.active && gTasks[sTaskId].tSliceBgsState != 0
+        && gTasks[sTaskId].tScene == SCENE_CHOOSE_GENDER)
     {
         gTasks[sTaskId].tSliceBgsState--;
         if (gTasks[sTaskId].tPlayerGender == FEMALE)
@@ -807,31 +793,6 @@ static void UpdateOptionSelected(void)
     CopyWindowToVram(WINDOW_YESNO_BOX, COPYWIN_GFX);
 }
 
-static void UpdateDifficultySelected(void)
-{
-    FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
-    
-    if (gTasks[sTaskId].tDifficulty == DIFFICULTY_EASY)
-    {
-        LZ77UnCompVram(sDifficultyEasy_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
-        LoadPalette(sPalEasy, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Easy_Description);
-    }
-    else if (gTasks[sTaskId].tDifficulty == DIFFICULTY_NORMAL)
-    {
-        LZ77UnCompVram(sDifficultyNormal_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
-        LoadPalette(sPalNormal, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Normal_Description);
-    }
-    else if (gTasks[sTaskId].tDifficulty == DIFFICULTY_HARD)
-    {
-        LZ77UnCompVram(sDifficultyHard_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
-        LoadPalette(sPalHard, BG_PLTT_ID(0) + 10, PLTT_SIZEOF(1));
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Hard_Description);
-    }
-    CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
-}
-
 // ============================================================================
 // CALLBACK: RETURN FROM NAMING SCREEN
 // ============================================================================
@@ -973,8 +934,6 @@ static void CB2_ReturnFromTeamSelector(void)
 
 static void TaskSelectDifficulty(u8 taskId)
 {
-    u8 x;
-    
     if (!gPaletteFade.active)
     {
         SetVBlankCallback(NULL);
@@ -982,47 +941,15 @@ static void TaskSelectDifficulty(u8 taskId)
         DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteId]);
         FreeAndDestroyMonPicSprite(gTasks[taskId].tSpriteId);
 
-        LoadPalette(sDifficulty_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
-        LZ77UnCompVram(sDifficulty_Tiles, (void *)VRAM + BG_CHAR_SIZE * sBgTemplateCopeSpeech[1].charBaseIndex);
-        LZ77UnCompVram(sDifficultyInterface_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
-        LZ77UnCompVram(sDifficultyBg_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[3].mapBaseIndex));
-        
-        gTasks[sTaskId].tOptionChoose = TRUE;
-        gTasks[sTaskId].tScene = SCENE_CHOOSE_DIFFICULTY;
-        gTasks[sTaskId].tDifficulty = DIFFICULTY_EASY;
-        gTasks[sTaskId].tConfirmSelection = FALSE;
-        UpdateDifficultySelected();
-        
-        FillWindowPixelBuffer(WINDOW_TITLE_BOX, PIXEL_FILL(10));
-        FillWindowPixelBuffer(WINDOW_YESNO_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_EASY_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_NORMAL_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_HARD_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
-        PutWindowTilemap(WINDOW_EASY_BOX);
-        PutWindowTilemap(WINDOW_NORMAL_BOX);
-        PutWindowTilemap(WINDOW_HARD_BOX);
-        PutWindowTilemap(WINDOW_DIFFICULTY_BOX);
-
-        x = (240 - GetStringWidth(FONT_NORMAL, gText_Choose_Difficulty, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_TITLE_BOX, FONT_NORMAL, x, 0, sTextWhite, TEXT_SKIP_DRAW, gText_Choose_Difficulty);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Easy, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_EASY_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Easy);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Normal, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_NORMAL_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Normal);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Hard, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_HARD_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Hard);
-        AddTextPrinterParameterized3(WINDOW_DIFFICULTY_BOX, FONT_NORMAL, 4, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Easy_Description);
-        CopyWindowToVram(WINDOW_TITLE_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_YESNO_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_EASY_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_NORMAL_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_HARD_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
+        DifficultySelector_SetupUiForIntro();
+        gTasks[taskId].tOptionChoose = TRUE;
+        gTasks[taskId].tScene = SCENE_CHOOSE_DIFFICULTY;
+        gTasks[taskId].tDifficulty = DIFFICULTY_EASY;
+        gTasks[taskId].tConfirmSelection = FALSE;
 
         gTasks[taskId].func = TaskChooseOptions;
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-        SetVBlankCallback(VBlank_CB2_CopeSpeech);
+        SetVBlankCallback(VBlank_CB2_Gender);
     }
 }
 
@@ -1149,44 +1076,15 @@ static void TaskChooseOptions(u8 taskId)
     // --- SCENE: CHOOSE DIFFICULTY ---
     if (gTasks[taskId].tScene == SCENE_CHOOSE_DIFFICULTY)
     {
-        if (sDifficultySelectorFromField && JOY_NEW(B_BUTTON))
-        {
-            PlaySE(SE_SELECT);
-            gSpecialVar_Result = FALSE;
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            gTasks[taskId].func = Task_ExitDifficultySelectorToField;
+        if (gPaletteFade.active)
             return;
-        }
 
-        if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tDifficulty > DIFFICULTY_EASY)
+        if (DifficultySelector_HandleInputIntro(taskId))
         {
-             gTasks[taskId].tDifficulty--;
-             UpdateDifficultySelected();
-             PlaySE(SE_SELECT);
-        }
-        else if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tDifficulty < DIFFICULTY_HARD)
-        {
-             gTasks[taskId].tDifficulty++;
-            UpdateDifficultySelected();
-            PlaySE(SE_SELECT);
-        }
-        else if (JOY_NEW(A_BUTTON))
-        {
-            PlaySE(SE_SELECT);
-            if (sDifficultySelectorFromField)
-            {
-                SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
-                gSpecialVar_Result = TRUE;
-                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].func = Task_ExitDifficultySelectorToField;
-            }
-            else
-            {
-                SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
-                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-                gTasks[taskId].tState = 0;
-                gTasks[taskId].func = TaskInitCopeSpeech;
-            }
+            SetCurrentDifficultyLevel(gTasks[taskId].tDifficulty);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gTasks[taskId].tState = 0;
+            gTasks[taskId].func = TaskInitCopeSpeech;
         }
     }
 }
@@ -1321,118 +1219,6 @@ static void TaskCopeSpeech_FadeOut(u8 taskId)
         }
         DestroyTask(taskId);
         FreeAllWindowBuffers();
-    }
-}
-
-// ============================================================================
-// DIFFICULTY SELECTOR FROM FIELD
-// ============================================================================
-
-void StartDifficultySelectorFromField_CB2(void)
-{
-    gMain.state = 0;
-    sDifficultySelectorFromField = TRUE;
-    CleanupOverworldWindowsAndTilemaps();
-    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
-    SetMainCallback2(CB2_InitDifficultySelectorFromField);
-}
-
-static void CB2_InitDifficultySelectorFromField(void)
-{
-    u8 x;
-
-    switch (gMain.state)
-    {
-    case 0:
-        SetVBlankHBlankCallbacksToNull();
-        ScanlineEffect_Stop();
-        ResetTasks();
-        ResetSpriteData();
-        ResetPaletteFade();
-        FreeAllSpritePalettes();
-        DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
-        gMain.state++;
-        break;
-    case 1:
-        ResetBgsAndClearDma3BusyFlags(0);
-        SetGpuReg(REG_OFFSET_DISPCNT, 0);
-        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
-        InitBgsFromTemplates(0, sBgTemplateCopeSpeech, ARRAY_COUNT(sBgTemplateCopeSpeech));
-        InitWindows(sWindowTemplate_Gender);
-        ResetAllBgsCoordinates();
-        ChangeBgX(2, 8 << 8, BG_COORD_ADD);
-        ShowBg(0);
-        ShowBg(1);
-        ShowBg(2);
-        ShowBg(3);
-        LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-        gMain.state++;
-        break;
-    case 2:
-        sTaskId = CreateTask(Task_InitDifficultyFromField, 0);
-        gTasks[sTaskId].tDifficulty = GetCurrentDifficultyLevel();
-        gTasks[sTaskId].tScene = SCENE_CHOOSE_DIFFICULTY;
-        gTasks[sTaskId].tOptionChoose = TRUE;
-        gTasks[sTaskId].tConfirmSelection = FALSE;
-
-        LoadPalette(sDifficulty_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
-        LZ77UnCompVram(sDifficulty_Tiles, (void *)VRAM + BG_CHAR_SIZE * sBgTemplateCopeSpeech[1].charBaseIndex);
-        LZ77UnCompVram(sDifficultyInterface_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[2].mapBaseIndex));
-        LZ77UnCompVram(sDifficultyBg_Map, (u16 *)BG_SCREEN_ADDR(sBgTemplateCopeSpeech[3].mapBaseIndex));
-
-        FillWindowPixelBuffer(WINDOW_TITLE_BOX, PIXEL_FILL(10));
-        FillWindowPixelBuffer(WINDOW_YESNO_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_EASY_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_NORMAL_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_HARD_BOX, PIXEL_FILL(0));
-        FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
-        PutWindowTilemap(WINDOW_EASY_BOX);
-        PutWindowTilemap(WINDOW_NORMAL_BOX);
-        PutWindowTilemap(WINDOW_HARD_BOX);
-        PutWindowTilemap(WINDOW_DIFFICULTY_BOX);
-
-        x = (240 - GetStringWidth(FONT_NORMAL, gText_Choose_Difficulty, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_TITLE_BOX, FONT_NORMAL, x, 0, sTextWhite, TEXT_SKIP_DRAW, gText_Choose_Difficulty);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Easy, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_EASY_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Easy);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Normal, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_NORMAL_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Normal);
-        x = (64 - GetStringWidth(FONT_NORMAL, gText_Cope_Hard, 0)) / 2;
-        AddTextPrinterParameterized3(WINDOW_HARD_BOX, FONT_NORMAL, x, 0, sTextBlack, TEXT_SKIP_DRAW, gText_Cope_Hard);
-
-        CopyWindowToVram(WINDOW_TITLE_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_YESNO_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_EASY_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_NORMAL_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_HARD_BOX, COPYWIN_FULL);
-        CopyWindowToVram(WINDOW_DIFFICULTY_BOX, COPYWIN_FULL);
-
-        UpdateDifficultySelected();
-
-        if (sDifficultySelectorFromField)
-            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-        SetupWindowBlendRegisters();
-        SetVBlankCallback(VBlank_CB2_CopeSpeech);
-        SetMainCallback2(CB2_CopeSpeech);
-        break;
-    }
-}
-
-static void Task_InitDifficultyFromField(u8 taskId)
-{
-    if (!gPaletteFade.active)
-        gTasks[taskId].func = TaskChooseOptions;
-}
-
-static void Task_ExitDifficultySelectorToField(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        sDifficultySelectorFromField = FALSE;
-        FreeAllWindowBuffers();
-        SetMainCallback2(gMain.savedCallback);
-        DestroyTask(taskId);
     }
 }
 
