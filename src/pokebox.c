@@ -1153,6 +1153,7 @@ static void Task_HandleBuyMon(u8 taskId)
         if(gTasks[taskId].tCursorBuyMon == TRUE)
         {
             u16 index = GetSelectedPokemonIndex() - MON_TEAM_SELECTOR_COUNT;
+            u16 specie = PokeboxSpeciesList_GetSpecie(index);
             u8 iconSpriteId = pokeBoxObj.boxMonSpritesIds[pokeBoxObj.row][pokeBoxObj.column];
 
             gSprites[pokeBoxObj.frontMonId].oam.objMode = ST_OAM_OBJ_NORMAL;
@@ -1161,6 +1162,7 @@ static void Task_HandleBuyMon(u8 taskId)
             RemoveMoney(&gSaveBlock1Ptr->money, PokeboxSpecies_GetMoney(index));
             Pokebox_SetActive(index);
             PrintMonTextInfoPage();
+            PrintAllDataMon(specie);
         }else{
             ClearMonTextInfoPage(TRUE);
             HidenMonIconsBox(FALSE);
@@ -1407,7 +1409,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         
         specie = PokeboxSpeciesList_GetSpecie(index - MON_TEAM_SELECTOR_COUNT);
 
-        if(!CheckPokebox_IsActive( pokeBoxObj.row * NUM_MON_ICON_ROW + pokeBoxObj.column))
+        if(!CheckPokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
             PrintMsgActions(MSG_ACTION_LOCK_MON);
         else if(HasMonInParty(specie))
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
