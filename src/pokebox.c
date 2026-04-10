@@ -130,6 +130,7 @@ static void Task_ShowMonInfo(u8 taskId);
 static void Task_AddMonTeamPlayer(u8 taskId);
 static void Task_StorageMonInPokebox(u8 taskId);
 static void Task_FadeOut(u8 taskId);
+static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
 
 //========== SECCIÓN: SPRITES ==========//
 
@@ -502,7 +503,6 @@ static void PrintAbility(u16 specie, u16 ability)
     CopyWindowToVram(WINDOW_MON_INFO, 3);
 }
 
-static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
 
 static void PrintMoves(u8 windowId, u8 windowTypeId, const u16* moves)
 {
@@ -541,14 +541,14 @@ static void PrintDescriptionUnlockMon(u8 windowId, const u8 *description)
 void DrawMenuCursorPokebox(u8 windowId, bool8 isYes)
 {
     u8 width, height;
-    u8 x = (isYes) ? 1*8 : 12*8;
-    u8 x_fill = (!isYes) ?  1*8 : 12*8;
+    u8 x = (isYes) ? 2*8 : 8*8;
+    u8 x_fill = (!isYes) ?  2*8 : 8*8;
 
     width = GetMenuCursorDimensionByFont(FONT_SMALL, 0);
     height = GetMenuCursorDimensionByFont(FONT_SMALL, 1);
 
-    FillWindowPixelRect(windowId, PIXEL_FILL(3), x_fill, 6*8, width, height);
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, x, 6*8, sTextColorBlackPokebox, 0, gText_SelectorArrow3);
+    FillWindowPixelRect(windowId, PIXEL_FILL(12), x_fill, 1*8, width, height);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, x, 1*8, sTextColorBlackPokebox, 0, gText_SelectorArrow3);
     CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
@@ -556,27 +556,25 @@ static void PrintMoneyToBuyMon(u8 windowId, u16 specie, u32 money, bool8 enought
 {
     const u8 gText_PriceToUnlockMon[] = _("Precio: "); 
     const u8 gText_NotEnoughtMoneyToBuyMon[] = _("No tienes suficiente dinero"); 
-    const u8 gText_YesNo_Pokebox[] = _("Sí{CLEAR_TO 88}No");
+    const u8 gText_YesNo_Pokebox[] = _("Sí{CLEAR_TO 45}No");
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
-    StringCopy(gStringVar2, GetSpeciesName(specie));
-    StringExpandPlaceholders(gStringVar3, description);
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 0, sTextColorBlackPokebox, 0, gStringVar3);
+    FillWindowPixelBuffer(WINDOW_MON_INFO_2, PIXEL_FILL(0));
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 0, sTextColorBlackPokebox, 0, description);
 
     ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
 
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 28, sTextColorBlackPokebox, 0, gText_PriceToUnlockMon);
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, 80, 28, sTextColorBlackPokebox, 0, gStringVar4);
-
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, 80, 28, sTextColorBlackPokebox, 0, gStringVar4);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 38, sTextColorBlackPokebox, 0, gText_PriceToUnlockMon);
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, 80, 38, sTextColorBlackPokebox, 0, gStringVar4);
 
     if(!enoughtMoneyToBuy)
     {
-        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 46, sTextColorRedPokebox, 0, gText_NotEnoughtMoneyToBuyMon);
+        AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 50, sTextColorRedPokebox, 0, gText_NotEnoughtMoneyToBuyMon);
     }else{
-        DrawMenuCursorPokebox(windowId, TRUE);
-        AddTextPrinterParameterized3(windowId, FONT_SMALL, 18, 48, sTextColorBlackPokebox, 0, gText_YesNo_Pokebox);
+        DrawMenuCursorPokebox(WINDOW_MON_INFO_2, TRUE);
+        AddTextPrinterParameterized3(WINDOW_MON_INFO_2, FONT_SMALL, 30, 8, sTextColorBlackPokebox, 0, gText_YesNo_Pokebox);
+        CopyWindowToVram(WINDOW_MON_INFO_2, 3);
     }
 
     CopyWindowToVram(windowId, 3);
@@ -1141,12 +1139,12 @@ static void Task_HandleBuyMon(u8 taskId)
     if (JOY_NEW(DPAD_LEFT))
     {
         gTasks[taskId].tCursorBuyMon = TRUE;
-        DrawMenuCursorPokebox(WINDOW_MON_INFO, TRUE);
+        DrawMenuCursorPokebox(WINDOW_MON_INFO_2, TRUE);
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
         gTasks[taskId].tCursorBuyMon = FALSE;
-        DrawMenuCursorPokebox(WINDOW_MON_INFO, FALSE);
+        DrawMenuCursorPokebox(WINDOW_MON_INFO_2, FALSE);
     }
     else if (JOY_NEW(A_BUTTON)  )
     {
@@ -1535,7 +1533,6 @@ static void Task_FadeOut(u8 taskId)
 
 void CB2_InitPokeBoxSetUp(void)
 {
-    u8 i;
     switch (gMain.state)
     {
     case 0:

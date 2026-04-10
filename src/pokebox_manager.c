@@ -29,6 +29,8 @@ const u8 *Get_PokeboxMsgAction(u8 index)
     return sPokeboxMsgActionsList[index];
 }
 
+const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
+
 static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 {
     { 
@@ -39,13 +41,13 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     { 
         .specie = SPECIES_VOLCARONA,        
-        .description = COMPOUND_STRING("¿Quieres a comprar a\n{STR_VAR_2}?"), 
+        .description = gText_PokeboxBuyThisMon, 
         .money = 10000,
         .check = CheckPokebox_isBuyMon
     },
     { 
         .specie = SPECIES_GRENINJA,         
-        .description = COMPOUND_STRING("¿Quieres a comprar a\n{STR_VAR_2}?"), 
+        .description = gText_PokeboxBuyThisMon, 
         .money = 200,
         .check = CheckPokebox_isBuyMon
     },
