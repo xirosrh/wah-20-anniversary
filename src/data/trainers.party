@@ -7240,6 +7240,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 Difficulty: Easy
 
 Mewtwo
@@ -7298,6 +7299,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Purple
 Difficulty: Normal
 
 Mewtwo @ Leftovers
@@ -7356,6 +7358,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 Difficulty: Easy
 
 Gengar
@@ -7417,6 +7420,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Normal
 
 Gengar @ Black Sludge

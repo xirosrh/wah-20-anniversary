@@ -1422,7 +1422,7 @@ CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle::
 # 758 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitse
 # 759 "data/maps/CollaboratorsRoom/scripts.pory"
-	delay 60
+	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Movement_0
 # 760 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT
 	return
@@ -2450,6 +2450,16 @@ CollaboratorsRoom_EventScript_MrNightology_Movement_9:
 	delay_16
 # 618 "data/maps/CollaboratorsRoom/scripts.pory"
 	walk_in_place_down
+	step_end
+
+# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Movement_0:
+# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_16
+# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_16
+# 759 "data/maps/CollaboratorsRoom/scripts.pory"
+	delay_16
 	step_end
 
 # 1015 "data/maps/CollaboratorsRoom/scripts.pory"
