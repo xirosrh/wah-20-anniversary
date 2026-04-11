@@ -53,7 +53,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -150,7 +150,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -566,7 +566,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         waitse
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         playse(SE_WARP_OUT)
-        setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, 3)
+        setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, 3)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
         showobjectat(LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM)
         turnobject(LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH)
@@ -625,7 +625,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             msgbox(format("Dale una vuelta a tu estrategia y…\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             fadescreen(FADE_TO_BLACK)
-            setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, -3)
+            setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, -3)
             fadescreen(FADE_FROM_BLACK)
         }
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
@@ -708,7 +708,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
 }
@@ -1096,7 +1096,7 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     playse(SE_SUCCESS)
     msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
-    directmovementtopos(LOCALID_PLAYER, 4, 4)
+    directmovementtopos(LOCALID_PLAYER, 5, 3)
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
@@ -1178,7 +1178,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
 }
