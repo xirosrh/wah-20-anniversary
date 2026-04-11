@@ -276,3 +276,6 @@ const u16 gMetatileAttributes_dragon_mountain_2[] = INCBIN_U16("data/tilesets/se
 
 const u16 gMetatiles_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatiles.bin");
 const u16 gMetatileAttributes_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatile_attributes.bin");
+
+const u16 gMetatiles_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatiles.bin");
+const u16 gMetatileAttributes_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatile_attributes.bin");
