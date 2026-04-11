@@ -1072,3 +1072,14 @@ const struct Tileset gTileset_dragon_mountain_2 =
     .metatileAttributes = gMetatileAttributes_dragon_mountain_2,
     .callback = InitTilesetAnim_DragonMountain2,
 };
+
+const struct Tileset gTileset_room_collaborators =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_collaborators,
+    .palettes = gTilesetPalettes_room_collaborators,
+    .metatiles = gMetatiles_room_collaborators,
+    .metatileAttributes = gMetatileAttributes_room_collaborators,
+    .callback = NULL,
+};
