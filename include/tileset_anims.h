@@ -42,4 +42,5 @@ void InitTilesetAnim_XirosRoom(void);
 void InitTilesetAnim_CosararaRoom(void);
 void InitTilesetAnim_EingRoom(void);
 void InitTilesetAnim_DragonMountain2(void);
+void InitTilesetAnim_HallOfFame(void);
 #endif // GUARD_TILESET_ANIMS_H

@@ -1923,3 +1923,81 @@ void InitTilesetAnim_DragonMountain2(void) {
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_DragonMountain2;
 }
+
+
+const u16 gTilesetAnims_HallOfFame_Floor_Frame0[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/00.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame1[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/01.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame2[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/02.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame3[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/03.4bpp");
+
+const u16 *const gTilesetAnims_HallOfFame_Floor_Illuminated[] = {
+    gTilesetAnims_HallOfFame_Floor_Frame1,
+    gTilesetAnims_HallOfFame_Floor_Frame2,
+    gTilesetAnims_HallOfFame_Floor_Frame3,
+    gTilesetAnims_HallOfFame_Floor_Frame3,
+    gTilesetAnims_HallOfFame_Floor_Frame2,
+    gTilesetAnims_HallOfFame_Floor_Frame1,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+};
+
+const u16 *const gTilesetAnims_HallOfFame_Floor_NotIlluminated[] = {
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+};
+
+static void QueueAnimTiles_HallOfFame_Floor_Illuminated(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_HallOfFame_Floor_Illuminated);
+    AppendTilesetAnimToBuffer(gTilesetAnims_HallOfFame_Floor_Illuminated[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 2 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_HallOfFame_Floor_NotIlluminated(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_HallOfFame_Floor_NotIlluminated);
+    AppendTilesetAnimToBuffer(gTilesetAnims_HallOfFame_Floor_NotIlluminated[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 2 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame0[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/00.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame1[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/01.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame2[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/02.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame3[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/03.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame4[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/04.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame5[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/05.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame6[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/06.4bpp");
+const u16 gTilesetAnims_HallOfFame_WahLogo_Frame7[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/wah_logo/07.4bpp");
+
+const u16 *const gTilesetAnims_HallOfFame_WahLogo[] = {
+    gTilesetAnims_HallOfFame_WahLogo_Frame0,
+    gTilesetAnims_HallOfFame_WahLogo_Frame1,
+    gTilesetAnims_HallOfFame_WahLogo_Frame2,
+    gTilesetAnims_HallOfFame_WahLogo_Frame3,
+    gTilesetAnims_HallOfFame_WahLogo_Frame4,
+    gTilesetAnims_HallOfFame_WahLogo_Frame5,
+    gTilesetAnims_HallOfFame_WahLogo_Frame6,
+    gTilesetAnims_HallOfFame_WahLogo_Frame7,
+};
+
+static void QueueAnimTiles_HallOfFame_WahLogo(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_HallOfFame_WahLogo);
+    AppendTilesetAnimToBuffer(gTilesetAnims_HallOfFame_WahLogo[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 2)), 18 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_HallOfFame(u16 timer) {
+    if (timer % 16 == 0) {
+        if(FlagGet(FLAG_TEMP_1) == TRUE)
+            QueueAnimTiles_HallOfFame_Floor_Illuminated(timer / 16);
+        else
+            QueueAnimTiles_HallOfFame_Floor_NotIlluminated(timer / 16);
+    }
+    if (timer % 16 == 1) {
+        QueueAnimTiles_HallOfFame_WahLogo(timer / 16);
+    }
+}
+
+void InitTilesetAnim_HallOfFame(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_HallOfFame;
+}

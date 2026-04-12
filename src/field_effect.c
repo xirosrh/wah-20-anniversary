@@ -36,6 +36,9 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/flags.h"
+#include "constants/map_groups.h"
+#include "constants/maps.h"
+#include "constants/metatile_labels.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -60,8 +63,6 @@ static void HallOfFameRecordEffect_Init(struct Task *);
 static void HallOfFameRecordEffect_WaitForBallPlacement(struct Task *);
 static void HallOfFameRecordEffect_WaitForBallFlashing(struct Task *);
 static void HallOfFameRecordEffect_WaitForSoundAndEnd(struct Task *);
-static void CreateHofMonitorSprite(s16, s16, s16, bool8);
-static void SpriteCB_HallOfFameMonitor(struct Sprite *);
 
 static u8 CreateGlowingPokeballsEffect(s16, s16, s16, bool16);
 static void SpriteCB_PokeballGlowEffect(struct Sprite *);
@@ -273,9 +274,6 @@ static const u32 sPokeballGlow_Gfx[] = INCBIN_U32("graphics/field_effects/pics/p
 static const u16 sPokeballGlow_Pal[16] = INCBIN_U16("graphics/field_effects/palettes/pokeball_glow.gbapal");
 static const u32 sPokecenterMonitor0_Gfx[] = INCBIN_U32("graphics/field_effects/pics/pokecenter_monitor/0.4bpp");
 static const u32 sPokecenterMonitor1_Gfx[] = INCBIN_U32("graphics/field_effects/pics/pokecenter_monitor/1.4bpp");
-static const u32 sHofMonitorBig_Gfx[] = INCBIN_U32("graphics/field_effects/pics/hof_monitor_big.4bpp");
-static const u8 sHofMonitorSmall_Gfx[] = INCBIN_U8("graphics/field_effects/pics/hof_monitor_small.4bpp");
-static const u16 sHofMonitor_Pal[16] = INCBIN_U16("graphics/field_effects/palettes/hof_monitor.gbapal");
 
 // Graphics for the lights streaking past your Pokémon when it uses a field move.
 static const u32 sFieldMoveStreaksOutdoors_Gfx[] = INCBIN_U32("graphics/field_effects/pics/field_move_streaks.4bpp");
@@ -387,26 +385,6 @@ const struct SpritePalette gSpritePalette_PokeballGlow =
     .tag = FLDEFF_PAL_TAG_POKEBALL_GLOW
 };
 
-const struct SpritePalette gSpritePalette_HofMonitor =
-{
-    .data = sHofMonitor_Pal,
-    .tag = FLDEFF_PAL_TAG_HOF_MONITOR
-};
-
-static const struct OamData sOam_32x16 =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(32x16),
-    .x = 0,
-    .size = SPRITE_SIZE(32x16),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-};
-
 static const struct SpriteFrameImage sPicTable_PokeballGlow[] =
 {
     obj_frame_tiles(sPokeballGlow_Gfx)
@@ -416,16 +394,6 @@ static const struct SpriteFrameImage sPicTable_PokecenterMonitor[] =
 {
     obj_frame_tiles(sPokecenterMonitor0_Gfx),
     obj_frame_tiles(sPokecenterMonitor1_Gfx)
-};
-
-static const struct SpriteFrameImage sPicTable_HofMonitorBig[] =
-{
-    obj_frame_tiles(sHofMonitorBig_Gfx)
-};
-
-static const struct SpriteFrameImage sPicTable_HofMonitorSmall[] =
-{
-    {.data = sHofMonitorSmall_Gfx, .size = 0x200} // the macro breaks down here
 };
 
 /*
@@ -471,49 +439,6 @@ static const struct Subsprite sSubsprites_PokecenterMonitor[] =
 
 static const struct SubspriteTable sSubspriteTable_PokecenterMonitor = subsprite_table(sSubsprites_PokecenterMonitor);
 
-/*
-[0_____][1_____]    24x16
-[2     ][3     ]
-        ^-- Origin
-*/
-static const struct Subsprite sSubsprites_HofMonitorBig[] =
-{
-    {
-        .x = -32,
-        .y = -8,
-        .shape = SPRITE_SHAPE(32x8),
-        .size = SPRITE_SIZE(32x8),
-        .tileOffset = 0,
-        .priority = 2
-    },
-    {
-        .x =  0,
-        .y = -8,
-        .shape = SPRITE_SHAPE(32x8),
-        .size = SPRITE_SIZE(32x8),
-        .tileOffset = 4,
-        .priority = 2
-    },
-    {
-        .x = -32,
-        .y =  0,
-        .shape = SPRITE_SHAPE(32x8),
-        .size = SPRITE_SIZE(32x8),
-        .tileOffset = 8,
-        .priority = 2
-    },
-    {
-        .x =   0,
-        .y =  0,
-        .shape = SPRITE_SHAPE(32x8),
-        .size = SPRITE_SIZE(32x8),
-        .tileOffset = 12,
-        .priority = 2
-    }
-};
-
-static const struct SubspriteTable sSubspriteTable_HofMonitorBig = subsprite_table(sSubsprites_HofMonitorBig);
-
 static const union AnimCmd sAnim_Static[] =
 {
     ANIMCMD_FRAME(.imageValue = 0, .duration = 1),
@@ -540,11 +465,6 @@ static const union AnimCmd *const sAnims_Flicker[] =
     sAnim_Flicker
 };
 
-static const union AnimCmd *const sAnims_HofMonitor[] =
-{
-    sAnim_Static
-};
-
 static const struct SpriteTemplate sSpriteTemplate_PokeballGlow =
 {
     .tileTag = TAG_NONE,
@@ -565,28 +485,6 @@ static const struct SpriteTemplate sSpriteTemplate_PokecenterMonitor =
     .images = sPicTable_PokecenterMonitor,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_PokecenterMonitor
-};
-
-static const struct SpriteTemplate sSpriteTemplate_HofMonitorBig =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_HOF_MONITOR,
-    .oam = &sOam_16x16,
-    .anims = sAnims_HofMonitor,
-    .images = sPicTable_HofMonitorBig,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_HallOfFameMonitor
-};
-
-static const struct SpriteTemplate sSpriteTemplate_HofMonitorSmall =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_HOF_MONITOR,
-    .oam = &sOam_32x16,
-    .anims = sAnims_HofMonitor,
-    .images = sPicTable_HofMonitorSmall,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_HallOfFameMonitor
 };
 
 static void (*const sPokecenterHealEffectFuncs[])(struct Task *) =
@@ -1036,7 +934,6 @@ void MultiplyPaletteRGBComponents(u16 i, u8 r, u8 g, u8 b)
 #define tMonitorY        data[5]
 #define tBallSpriteId    data[6]
 #define tMonitorSpriteId data[7]
-#define tStartHofFlash   data[15]
 
 // Sprite data for SpriteCB_PokeballGlowEffect
 #define sState      data[0]
@@ -1114,7 +1011,7 @@ bool8 FldEff_HallOfFameRecord(void)
     task = &gTasks[CreateTask(Task_HallOfFameRecord, 0xff)];
     task->tNumMons = nPokemon;
     task->tFirstBallX = 117;
-    task->tFirstBallY = 52;
+    task->tFirstBallY = 46;
     return FALSE;
 }
 
@@ -1127,22 +1024,35 @@ static void Task_HallOfFameRecord(u8 taskId)
 
 static void HallOfFameRecordEffect_Init(struct Task *task)
 {
-    u8 taskId;
     task->tState++;
-    task->tBallSpriteId = CreateGlowingPokeballsEffect(task->tNumMons, task->tFirstBallX, task->tFirstBallY, FALSE);
-    taskId = FindTaskIdByFunc(Task_HallOfFameRecord);
-    CreateHofMonitorSprite(taskId, 120, 24, FALSE);
-    CreateHofMonitorSprite(taskId, 40, 8, TRUE);
-    CreateHofMonitorSprite(taskId, 72, 8, TRUE);
-    CreateHofMonitorSprite(taskId, 168, 8, TRUE);
-    CreateHofMonitorSprite(taskId, 200, 8, TRUE);
+    task->tBallSpriteId = CreateGlowingPokeballsEffect(
+        task->tNumMons, task->tFirstBallX, task->tFirstBallY, FALSE);
 }
 
 static void HallOfFameRecordEffect_WaitForBallPlacement(struct Task *task)
 {
     if (gSprites[task->tBallSpriteId].sState > 1)
     {
-        task->tStartHofFlash++;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_HALL_OF_FAME)
+            && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HALL_OF_FAME))
+        {
+            MapGridSetMetatileIdAt(1 + MAP_OFFSET, 0 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_2005_TOP);
+            MapGridSetMetatileIdAt(1 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_2005_BOTTOM);
+            MapGridSetMetatileIdAt(2 + MAP_OFFSET, 0 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_RH_TOP);
+            MapGridSetMetatileIdAt(2 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_RH_BOTTOM);
+            MapGridSetMetatileIdAt(8 + MAP_OFFSET, 0 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_PKMN_TOP);
+            MapGridSetMetatileIdAt(8 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_PKMN_BOTTOM);
+            MapGridSetMetatileIdAt(9 + MAP_OFFSET, 0 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_2026_TOP);
+            MapGridSetMetatileIdAt(9 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_2026_BOTTOM);
+            MapGridSetMetatileIdAt(4 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_1);
+            MapGridSetMetatileIdAt(5 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_2);
+            MapGridSetMetatileIdAt(6 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_3);
+            MapGridSetMetatileIdAt(4 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_4);
+            MapGridSetMetatileIdAt(5 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_5);
+            MapGridSetMetatileIdAt(6 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_hall_of_fame_SCREEN_WAH_6);
+            DrawWholeMapView();
+            FlagSet(FLAG_TEMP_1);
+        }
         task->tState++;
     }
 }
@@ -1328,39 +1238,6 @@ static void SpriteCB_PokecenterMonitor(struct Sprite *sprite)
     }
 }
 
-static void CreateHofMonitorSprite(s16 taskId, s16 x, s16 y, bool8 isSmallMonitor)
-{
-    u8 spriteId;
-    if (!isSmallMonitor)
-    {
-        spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HofMonitorBig, x, y, 0);
-        SetSubspriteTables(&gSprites[spriteId], &sSubspriteTable_HofMonitorBig);
-    }
-    else
-    {
-        spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HofMonitorSmall, x, y, 0);
-    }
-    gSprites[spriteId].invisible = TRUE;
-    gSprites[spriteId].data[0] = taskId;
-}
-
-static void SpriteCB_HallOfFameMonitor(struct Sprite *sprite)
-{
-    if (gTasks[sprite->data[0]].tStartHofFlash)
-    {
-        if (sprite->data[1] == 0 || (--sprite->data[1]) == 0)
-        {
-            sprite->data[1] = 16;
-            sprite->invisible ^= 1;
-        }
-        sprite->data[2]++;
-    }
-    if (sprite->data[2] > 127)
-    {
-        FieldEffectFreeGraphicsResources(sprite);
-    }
-}
-
 #undef tState
 #undef tNumMons
 #undef tFirstBallX
@@ -1369,7 +1246,6 @@ static void SpriteCB_HallOfFameMonitor(struct Sprite *sprite)
 #undef tMonitorY
 #undef tBallSpriteId
 #undef tMonitorSpriteId
-#undef tStartHofFlash
 #undef sState
 #undef sTimer
 #undef sCounter
