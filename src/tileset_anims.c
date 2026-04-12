@@ -1923,3 +1923,52 @@ void InitTilesetAnim_DragonMountain2(void) {
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_DragonMountain2;
 }
+
+
+const u16 gTilesetAnims_HallOfFame_Floor_Frame0[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/00.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame1[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/01.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame2[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/02.4bpp");
+const u16 gTilesetAnims_HallOfFame_Floor_Frame3[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/anim/floor/03.4bpp");
+
+const u16 *const gTilesetAnims_HallOfFame_Floor_Illuminated[] = {
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame1,
+    gTilesetAnims_HallOfFame_Floor_Frame2,
+    gTilesetAnims_HallOfFame_Floor_Frame3,
+    gTilesetAnims_HallOfFame_Floor_Frame2,
+    gTilesetAnims_HallOfFame_Floor_Frame1,
+};
+
+const u16 *const gTilesetAnims_HallOfFame_Floor_NotIlluminated[] = {
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+    gTilesetAnims_HallOfFame_Floor_Frame0,
+};
+
+static void QueueAnimTiles_HallOfFame_Floor_Illuminated(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_HallOfFame_Floor_Illuminated);
+    AppendTilesetAnimToBuffer(gTilesetAnims_HallOfFame_Floor_Illuminated[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 2 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_HallOfFame_Floor_NotIlluminated(u16 timer) {
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_HallOfFame_Floor_NotIlluminated);
+    AppendTilesetAnimToBuffer(gTilesetAnims_HallOfFame_Floor_NotIlluminated[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 2 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_HallOfFame(u16 timer) {
+    if (timer % 16 == 0) {
+        if(FlagGet(FLAG_TEMP_1) == TRUE)
+            QueueAnimTiles_HallOfFame_Floor_Illuminated(timer / 16);
+        else
+            QueueAnimTiles_HallOfFame_Floor_NotIlluminated(timer / 16);
+    }
+}
+
+void InitTilesetAnim_HallOfFame(void) {
+    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_HallOfFame;
+}

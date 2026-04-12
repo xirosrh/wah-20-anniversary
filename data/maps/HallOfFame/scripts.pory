@@ -1,3 +1,5 @@
+const FLAG_TEMP_1_ILLUMINATE_FLOOR = FLAG_TEMP_1
+
 mapscripts HallOfFame_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0: HallOfFame_OnFrame
@@ -36,6 +38,7 @@ script HallOfFame_OnFrame {
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
 	waitmovement(0)
 	delay(20)
+	setflag(FLAG_TEMP_1_ILLUMINATE_FLOOR)
 	dofieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	delay(40)

@@ -1,195 +1,197 @@
 HallOfFame_MapScripts::
-# 2 "data/maps/HallOfFame/scripts.pory"
+# 4 "data/maps/HallOfFame/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, HallOfFame_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
-# 5 "data/maps/HallOfFame/scripts.pory"
+# 7 "data/maps/HallOfFame/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, HallOfFame_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 HallOfFame_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 3 "data/maps/HallOfFame/scripts.pory"
+# 5 "data/maps/HallOfFame/scripts.pory"
 	map_script_2 VAR_TEMP_1, 0, HallOfFame_OnFrame
 	.2byte 0
 
 HallOfFame_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-# 6 "data/maps/HallOfFame/scripts.pory"
+# 8 "data/maps/HallOfFame/scripts.pory"
 	map_script_2 VAR_TEMP_1, 0, HallOfFame_OnWarp
 	.2byte 0
 
 
 HallOfFame_OnWarp::
-# 11 "data/maps/HallOfFame/scripts.pory"
+# 13 "data/maps/HallOfFame/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 	end
 
 
 HallOfFame_OnFrame::
-# 16 "data/maps/HallOfFame/scripts.pory"
-	lockall
-# 17 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp3
 # 18 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp3
+	lockall
 # 19 "data/maps/HallOfFame/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp3
 # 20 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp3
 # 21 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
 # 22 "data/maps/HallOfFame/scripts.pory"
-	waitmovement 0
-# 23 "data/maps/HallOfFame/scripts.pory"
-	msgbox HallOfFame_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 24 "data/maps/HallOfFame/scripts.pory"
-	playse SE_PIN
-# 25 "data/maps/HallOfFame/scripts.pory"
-	applymovementandwait LOCALID_HALLOFFAME_SERGIO, Common_Movement_HappyWithDelay48
-# 26 "data/maps/HallOfFame/scripts.pory"
-	msgbox HallOfFame_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 27 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp4
-# 28 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
-# 29 "data/maps/HallOfFame/scripts.pory"
-	waitmovement 0
-# 30 "data/maps/HallOfFame/scripts.pory"
-	delay 20
-# 31 "data/maps/HallOfFame/scripts.pory"
 	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight
-# 32 "data/maps/HallOfFame/scripts.pory"
+# 23 "data/maps/HallOfFame/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-# 33 "data/maps/HallOfFame/scripts.pory"
+# 24 "data/maps/HallOfFame/scripts.pory"
 	waitmovement 0
-# 34 "data/maps/HallOfFame/scripts.pory"
-	msgbox HallOfFame_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
-# 35 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterUp
-# 36 "data/maps/HallOfFame/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-# 37 "data/maps/HallOfFame/scripts.pory"
+# 25 "data/maps/HallOfFame/scripts.pory"
+	msgbox HallOfFame_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 26 "data/maps/HallOfFame/scripts.pory"
+	playse SE_PIN
+# 27 "data/maps/HallOfFame/scripts.pory"
+	applymovementandwait LOCALID_HALLOFFAME_SERGIO, Common_Movement_HappyWithDelay48
+# 28 "data/maps/HallOfFame/scripts.pory"
+	msgbox HallOfFame_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 29 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp4
+# 30 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
+# 31 "data/maps/HallOfFame/scripts.pory"
 	waitmovement 0
-# 38 "data/maps/HallOfFame/scripts.pory"
+# 32 "data/maps/HallOfFame/scripts.pory"
 	delay 20
+# 33 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight
+# 34 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+# 35 "data/maps/HallOfFame/scripts.pory"
+	waitmovement 0
+# 36 "data/maps/HallOfFame/scripts.pory"
+	msgbox HallOfFame_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO
+# 37 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterUp
+# 38 "data/maps/HallOfFame/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 # 39 "data/maps/HallOfFame/scripts.pory"
-	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD
+	waitmovement 0
 # 40 "data/maps/HallOfFame/scripts.pory"
-	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD
+	delay 20
 # 41 "data/maps/HallOfFame/scripts.pory"
-	delay 40
+	setflag FLAG_TEMP_1
 # 42 "data/maps/HallOfFame/scripts.pory"
-	setvar VAR_TEMP_1, 1
+	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD
 # 43 "data/maps/HallOfFame/scripts.pory"
-	call HallOfFame_EventScript_SetGameClear
+	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD
 # 44 "data/maps/HallOfFame/scripts.pory"
-	call HallOfFame_EventScript_EvalAchievements
+	delay 40
 # 45 "data/maps/HallOfFame/scripts.pory"
-	call HallOfFame_EventScript_ResetWahChallenge
+	setvar VAR_TEMP_1, 1
 # 46 "data/maps/HallOfFame/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 24
+	call HallOfFame_EventScript_SetGameClear
 # 47 "data/maps/HallOfFame/scripts.pory"
-	special GameClear
+	call HallOfFame_EventScript_EvalAchievements
 # 48 "data/maps/HallOfFame/scripts.pory"
-	waitstate
+	call HallOfFame_EventScript_ResetWahChallenge
 # 49 "data/maps/HallOfFame/scripts.pory"
+	fadescreenspeed FADE_TO_BLACK, 24
+# 50 "data/maps/HallOfFame/scripts.pory"
+	special GameClear
+# 51 "data/maps/HallOfFame/scripts.pory"
+	waitstate
+# 52 "data/maps/HallOfFame/scripts.pory"
 	releaseall
 	end
 
 
 HallOfFame_EventScript_EvalAchievements::
-# 54 "data/maps/HallOfFame/scripts.pory"
+# 57 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge
-# 55 "data/maps/HallOfFame/scripts.pory"
-	switch VAR_WAH_CHALLENGE_MODE
-# 56 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_EvalAchievements_3
 # 58 "data/maps/HallOfFame/scripts.pory"
+	switch VAR_WAH_CHALLENGE_MODE
+# 59 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_EvalAchievements_3
+# 61 "data/maps/HallOfFame/scripts.pory"
 	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_EvalAchievements_4
 HallOfFame_EventScript_EvalAchievements_1:
-# 61 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_5Times
-# 62 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_10Times
-# 63 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahEachModeTwice
 # 64 "data/maps/HallOfFame/scripts.pory"
-	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
+	call Achievements_EventScript_Eval_WinWahChallenge_5Times
 # 65 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_10Times
+# 66 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahEachModeTwice
+# 67 "data/maps/HallOfFame/scripts.pory"
+	call Achievements_EventScript_Eval_WinWahChallenge_HardMode
+# 68 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS
 	return
 
 HallOfFame_EventScript_EvalAchievements_3:
-# 57 "data/maps/HallOfFame/scripts.pory"
+# 60 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_Double
 	goto HallOfFame_EventScript_EvalAchievements_1
 
 HallOfFame_EventScript_EvalAchievements_4:
-# 59 "data/maps/HallOfFame/scripts.pory"
+# 62 "data/maps/HallOfFame/scripts.pory"
 	call Achievements_EventScript_Eval_WinWahChallenge_Inverse
 	goto HallOfFame_EventScript_EvalAchievements_1
 
 
 HallOfFame_EventScript_SetGameClear::
-# 70 "data/maps/HallOfFame/scripts.pory"
+# 73 "data/maps/HallOfFame/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, HallOfFame_EventScript_SetGameClear_2
 HallOfFame_EventScript_SetGameClear_1:
-# 74 "data/maps/HallOfFame/scripts.pory"
-	switch VAR_WAH_CHALLENGE_MODE
-# 75 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_SetGameClear_6
 # 77 "data/maps/HallOfFame/scripts.pory"
-	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_SetGameClear_7
+	switch VAR_WAH_CHALLENGE_MODE
+# 78 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD, HallOfFame_EventScript_SetGameClear_6
 # 80 "data/maps/HallOfFame/scripts.pory"
+	case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE, HallOfFame_EventScript_SetGameClear_7
+# 83 "data/maps/HallOfFame/scripts.pory"
 	case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE, HallOfFame_EventScript_SetGameClear_8
 HallOfFame_EventScript_SetGameClear_4:
-# 84 "data/maps/HallOfFame/scripts.pory"
+# 87 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1
 	return
 
 HallOfFame_EventScript_SetGameClear_2:
-# 71 "data/maps/HallOfFame/scripts.pory"
+# 74 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_COMPLETED
-# 72 "data/maps/HallOfFame/scripts.pory"
+# 75 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_EXPLAIN_NEW_CHALLENGE_MODES
 	goto HallOfFame_EventScript_SetGameClear_1
 
 HallOfFame_EventScript_SetGameClear_6:
-# 76 "data/maps/HallOfFame/scripts.pory"
+# 79 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT, 1
 	goto HallOfFame_EventScript_SetGameClear_4
 
 HallOfFame_EventScript_SetGameClear_7:
-# 78 "data/maps/HallOfFame/scripts.pory"
+# 81 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED
-# 79 "data/maps/HallOfFame/scripts.pory"
+# 82 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT, 1
 	goto HallOfFame_EventScript_SetGameClear_4
 
 HallOfFame_EventScript_SetGameClear_8:
-# 81 "data/maps/HallOfFame/scripts.pory"
+# 84 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_INVERSE_COMPLETED
-# 82 "data/maps/HallOfFame/scripts.pory"
+# 85 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT, 1
 	goto HallOfFame_EventScript_SetGameClear_4
 
 
 HallOfFame_EventScript_ResetWahChallenge::
-# 89 "data/maps/HallOfFame/scripts.pory"
+# 92 "data/maps/HallOfFame/scripts.pory"
 	call EventScript_ResetWahChallenge
-# 90 "data/maps/HallOfFame/scripts.pory"
+# 93 "data/maps/HallOfFame/scripts.pory"
 	special RandomizeWahAdminTeams
 	return
 
 
 HallOfFame_OnFrame_Text_0:
-# 23 "data/maps/HallOfFame/scripts.pory"
+# 25 "data/maps/HallOfFame/scripts.pory"
 	.string "¡Bienvenid{OA} al Salón de la Fama!$"
 
 HallOfFame_OnFrame_Text_1:
-# 26 "data/maps/HallOfFame/scripts.pory"
+# 28 "data/maps/HallOfFame/scripts.pory"
 	.string "Aquí quedan registrados los nombres y\n"
 	.string "Pokémon de quienes lograron superar\l"
 	.string "este desafío.$"
 
 HallOfFame_OnFrame_Text_2:
-# 34 "data/maps/HallOfFame/scripts.pory"
+# 36 "data/maps/HallOfFame/scripts.pory"
 	.string "¡Es hora de grabar tu nombre en la\n"
 	.string "historia de WAH!$"

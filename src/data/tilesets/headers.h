@@ -1092,5 +1092,5 @@ const struct Tileset gTileset_hall_of_fame =
     .palettes = gTilesetPalettes_hall_of_fame,
     .metatiles = gMetatiles_hall_of_fame,
     .metatileAttributes = gMetatileAttributes_hall_of_fame,
-    .callback = NULL,
+    .callback = InitTilesetAnim_HallOfFame,
 };
