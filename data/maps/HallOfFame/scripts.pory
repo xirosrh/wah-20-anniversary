@@ -1,3 +1,4 @@
+
 mapscripts HallOfFame_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0: HallOfFame_OnFrame
@@ -14,21 +15,24 @@ script HallOfFame_OnWarp {
 
 script HallOfFame_OnFrame {
 	lockall
-	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp6)
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp6)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp3)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp3)
 	waitmovement(0)
 	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
 	waitmovement(0)
-	msgbox(format("TODO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
-	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp5)
-	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp5)
+	msgbox(format("¡Bienvenid{OA} al Salón de la Fama!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+	playse(SE_PIN)
+	applymovementandwait(LOCALID_HALLOFFAME_SERGIO, Common_Movement_HappyWithDelay48)
+	msgbox(format("Aquí quedan registrados los nombres y Pokémon de quienes lograron superar este desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkUp4)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkUp4)
 	waitmovement(0)
 	delay(20)
 	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterRight)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
 	waitmovement(0)
-	msgbox(format("TODO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
+	msgbox(format("¡Es hora de grabar tu nombre en la historia de WAH!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
 	applymovement(LOCALID_HALLOFFAME_SERGIO, Common_Movement_WalkInPlaceFasterUp)
 	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
 	waitmovement(0)
@@ -37,8 +41,9 @@ script HallOfFame_OnFrame {
 	waitfieldeffect(FLDEFF_HALL_OF_FAME_RECORD)
 	delay(40)
 	setvar(VAR_TEMP_1, 1)
-	call(HallOfFame_EventScript_SetGameClearFlags)
-	call(Achievements_EventScript_Eval_WinWahChallenge) //TODO Xiros
+	call(HallOfFame_EventScript_SetGameClear)
+	call(HallOfFame_EventScript_EvalAchievements)
+	call(HallOfFame_EventScript_ResetWahChallenge)
 	fadescreenspeed(FADE_TO_BLACK, 24)
 	special(GameClear)
 	waitstate
@@ -46,11 +51,43 @@ script HallOfFame_OnFrame {
 	end
 }
 
-script HallOfFame_EventScript_SetGameClearFlags {
-	call(EventScript_ClearWahAdminFlags)
-	setflag(FLAG_WAH_CHALLENGE_COMPLETED)
+script HallOfFame_EventScript_EvalAchievements {
+	call(Achievements_EventScript_Eval_WinWahChallenge)
+	switch(var(VAR_WAH_CHALLENGE_MODE)) {
+		case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE:
+			call(Achievements_EventScript_Eval_WinWahChallenge_Double)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
+			call(Achievements_EventScript_Eval_WinWahChallenge_Inverse)
+	}
+	call(Achievements_EventScript_Eval_WinWahChallenge_5Times)
+	call(Achievements_EventScript_Eval_WinWahChallenge_10Times)
+	call(Achievements_EventScript_Eval_WinWahEachModeTwice)
+	call(Achievements_EventScript_Eval_WinWahChallenge_HardMode)
+	call(Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS)
+	return
+}
+
+script HallOfFame_EventScript_SetGameClear {
+	if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+		setflag(FLAG_WAH_CHALLENGE_COMPLETED)
+		setflag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES)
+	}
+	switch(var(VAR_WAH_CHALLENGE_MODE)) {
+		case VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD:
+			addvar(VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT, 1)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE:
+			setflag(FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED)
+			addvar(VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT, 1)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
+			setflag(FLAG_WAH_CHALLENGE_INVERSE_COMPLETED)
+			addvar(VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT, 1)
+	}
 	addvar(VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1)
-	clearflag(FLAG_FORCE_DOUBLE_BATTLE)
+	return
+}
+
+script HallOfFame_EventScript_ResetWahChallenge {
+	call(EventScript_ResetWahChallenge)
 	special(RandomizeWahAdminTeams)
 	return
 }

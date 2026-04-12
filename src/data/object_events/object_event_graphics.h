@@ -1,4 +1,4 @@
-const u32 gObjectEventPic_BrendanNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/brendan/walking.4bpp", "graphics/object_events/pics/people/brendan/running.4bpp");
+const u32 gObjectEventPic_BrendanNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/brendan/walking.4bpp", "graphics/object_events/pics/people/brendan/running.4bpp", "graphics/object_events/pics/people/brendan/climbing.4bpp");
 const u32 gObjectEventPic_BrendanTeleporting1[] = INCBIN_U32("graphics/object_events/pics/people/brendan/teleporting_1.4bpp");
 const u32 gObjectEventPic_BrendanTeleporting2[] = INCBIN_U32("graphics/object_events/pics/people/brendan/teleporting_2.4bpp");
 const u16 gObjectEventPal_Brendan[] = INCBIN_U16("graphics/object_events/palettes/brendan.gbapal");
@@ -82,6 +82,8 @@ const u16 gObjectEventPal_Roxas[] = INCBIN_U16("graphics/object_events/palettes/
 const u16 gObjectEventPal_Micolo[] = INCBIN_U16("graphics/object_events/palettes/collaborators/micolo.gbapal");
 const u16 gObjectEventPal_Acimut[] = INCBIN_U16("graphics/object_events/palettes/collaborators/acimut.gbapal");
 const u16 gObjectEventPal_Gameboycl[] = INCBIN_U16("graphics/object_events/palettes/collaborators/gameboycl.gbapal");
+const u16 gObjectEventPal_Kaktus[] = INCBIN_U16("graphics/object_events/palettes/collaborators/kaktus.gbapal");
+const u16 gObjectEventPal_Ryuzaki[] = INCBIN_U16("graphics/object_events/palettes/collaborators/ryuzaki.gbapal");
 const u32 gObjectEventPic_EingFishing[] = INCBIN_U32("graphics/object_events/pics/people/admins/eing_fishing.4bpp");
 const u32 gObjectEventPic_NinjaBoy[] = INCBIN_U32("graphics/object_events/pics/people/ninja_boy.4bpp");
 const u32 gObjectEventPic_Twin[] = INCBIN_U32("graphics/object_events/pics/people/twin.4bpp");
@@ -155,6 +157,8 @@ const u32 gObjectEventPic_Roxas[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Micolo[] = INCBIN_U32("graphics/object_events/pics/people/collaborators/micolo.4bpp");
 const u32 gObjectEventPic_Acimut[] = INCBIN_U32("graphics/object_events/pics/people/collaborators/acimut.4bpp");
 const u32 gObjectEventPic_Gameboycl[] = INCBIN_U32("graphics/object_events/pics/people/collaborators/gameboycl.4bpp");
+const u32 gObjectEventPic_Kaktus[] = INCBIN_U32("graphics/object_events/pics/people/collaborators/kaktus.4bpp");
+const u32 gObjectEventPic_Ryuzaki[] = INCBIN_U32("graphics/object_events/pics/people/collaborators/ryuzaki.4bpp");
 const u32 gObjectEventPic_Police[] = INCBIN_U32("graphics/object_events/pics/people/police.4bpp");
 const u32 gObjectEventPic_StagePerformer1[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_1.4bpp");
 const u32 gObjectEventPic_StagePerformer2[] = INCBIN_U32("graphics/object_events/pics/people/stage_performer_2.4bpp");
@@ -466,6 +470,7 @@ const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palet
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/substitute.gbapal");
 
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
+const u16 gObjectEventPaletteEmotes2[] = INCBIN_U16("graphics/field_effects/palettes/emotes_2.gbapal");
 const u16 gObjectEventPaletteNeonLight[] = INCBIN_U16("graphics/object_events/palettes/neon_light.gbapal");
 
 #if OW_FOLLOWERS_POKEBALLS

@@ -577,6 +577,7 @@ gSpecials::
 	def_special SetMsgboxBottom
 	def_special UpdateObjectEventSprite
 	def_special RandomizeWahAdminTeams
+	def_special SetWahChallengeInitialAchievementFlags
 	def_special ShouldUseAlternativeTeam
 	def_special OpenTeamSelectorFromField
 	def_special OpenDifficultySelectorFromField
@@ -587,3 +588,6 @@ gSpecials::
 	def_special BufferSpeciesStats
 	def_special Special_CheckAndCompleteAchievement
 	def_special Special_BufferAchievementTitle
+	def_special Special_StartAchievementConfetti
+	def_special Special_StopAchievementConfetti
+	def_special Special_ClearTransparentBox

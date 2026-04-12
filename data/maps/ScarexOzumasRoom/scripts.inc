@@ -89,11 +89,11 @@ ScarexOzumasRoom_EventScript_EnterRoom::
 # 63 "data/maps/ScarexOzumasRoom/scripts.pory"
 	playse SE_PIN
 # 64 "data/maps/ScarexOzumasRoom/scripts.pory"
-	applymovement LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMarkWithDelay48
+	applymovementandwait LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMark
 # 65 "data/maps/ScarexOzumasRoom/scripts.pory"
 	msgbox ScarexOzumasRoom_EventScript_EnterRoom_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS
 # 66 "data/maps/ScarexOzumasRoom/scripts.pory"
-	waitmovement 0
+	delay 48
 # 67 "data/maps/ScarexOzumasRoom/scripts.pory"
 	waitse
 # 68 "data/maps/ScarexOzumasRoom/scripts.pory"
@@ -876,8 +876,8 @@ ScarexOzumasRoom_EventScript_Ozumas_Text_2:
 	.string "que teníamos pendiente.\p"
 	.string "Soy Ozumas, de la sangre de la\n"
 	.string "legendaria dinastía Mendrax.\p"
-	.string "Hace mucho, fuimos muy conocidos,\n"
-	.string "sobretodo por nunca escapar a un reto.$"
+	.string "Hace mucho, fuimos muy conocidos, sobre\n"
+	.string "todo por nunca escapar a un reto.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_3:
 # 180 "data/maps/ScarexOzumasRoom/scripts.pory"

@@ -896,6 +896,22 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_hall_of_fame
+#define METATILE_hall_of_fame_SCREEN_2005_BOTTOM  0x233
+#define METATILE_hall_of_fame_SCREEN_2005_TOP     0x22B
+#define METATILE_hall_of_fame_SCREEN_2026_BOTTOM  0x236
+#define METATILE_hall_of_fame_SCREEN_2026_TOP     0x22E
+#define METATILE_hall_of_fame_SCREEN_PKMN_BOTTOM  0x235
+#define METATILE_hall_of_fame_SCREEN_PKMN_TOP     0x22D
+#define METATILE_hall_of_fame_SCREEN_RH_BOTTOM    0x234
+#define METATILE_hall_of_fame_SCREEN_RH_TOP       0x22C
+#define METATILE_hall_of_fame_SCREEN_WAH_1        0x253
+#define METATILE_hall_of_fame_SCREEN_WAH_2        0x254
+#define METATILE_hall_of_fame_SCREEN_WAH_3        0x255
+#define METATILE_hall_of_fame_SCREEN_WAH_4        0x25B
+#define METATILE_hall_of_fame_SCREEN_WAH_5        0x25C
+#define METATILE_hall_of_fame_SCREEN_WAH_6        0x25D
+
 // gTileset_room_aguiar
 #define METATILE_room_aguiar_TV_OFF_LEFT   0x205
 #define METATILE_room_aguiar_TV_OFF_RIGHT  0x206

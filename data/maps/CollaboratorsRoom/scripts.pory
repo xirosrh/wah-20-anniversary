@@ -36,7 +36,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
     setspeaker(SP_NAME_INMORTAL_KAKTUS)
     message(format("¿Otro asalto?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -45,7 +45,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
-        case 2:
+        default:
             msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     }
@@ -53,7 +53,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -96,8 +96,8 @@ script CollaboratorsRoom_EventScript_Kaktus {
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
             applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             waitmovement(0)
+            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         }
         goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     } else {
@@ -133,7 +133,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
     setspeaker(SP_NAME_GAMEBOY_CL)
     message(format("¿Quieres luchar contra uno de mis 3 equipos?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -142,7 +142,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     }
@@ -150,7 +150,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
 }
@@ -184,11 +184,11 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         special(GetBattleOutcome)
         special(HealPlayerParty)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             waitmovement(0)
-            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL)
         } else {
             msgbox(format("Cuando te sientas preparad{OA}, vuelve y probamos nuestros equipos en un duelo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
@@ -205,9 +205,8 @@ text CollaboratorsRoom_Text_Gameboycl_OnDefeat {
 
 script CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     msgbox(format("Lo fuerte será débil. Lo débil será decisivo.\p¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
-    waitmovement(0)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     return
 }
@@ -230,20 +229,20 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
     setspeaker(SP_NAME_ERKEY)
     message(format("¿Quieres volver a luchar?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
+            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
-            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             waitmovement(0)
             delay(30)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
@@ -308,7 +307,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
     waitmovement(0)
     msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres buen{OA} con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    call(CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit)
     return
 }
 
@@ -344,23 +343,34 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     setspeaker(SP_NAME_MICOLO)
     message(format("¿Te atreves?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(CollaboratorsRoom_Text_Micolo_ChoosePokemon, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            call(CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     }
 }
 
-text CollaboratorsRoom_Text_Micolo_ChoosePokemon {
-    format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!")
+script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
+    switch(var(VAR_DIFFICULTY)) {
+        case DIFFICULTY_EASY:
+            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+        case DIFFICULTY_NORMAL:
+            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+        default:
+            msgbox(format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            break
+    }
+    return
 }
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
@@ -381,8 +391,18 @@ script CollaboratorsRoom_EventScript_Micolo {
         }
         special(SavePlayerParty)
         setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
-        setvar(VAR_0x8005, 1)
         setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+        switch(var(VAR_DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                setvar(VAR_0x8005, 2)
+                break
+            case DIFFICULTY_NORMAL:
+                setvar(VAR_0x8005, 2)
+                break
+            default:
+                setvar(VAR_0x8005, 1)
+                break
+        }
         fadescreen(FADE_TO_BLACK)
         special(ChoosePartyForBattleFrontier)
         waitstate
@@ -415,12 +435,11 @@ script CollaboratorsRoom_EventScript_Micolo {
         } else {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             playse(SE_LEDGE)
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
-            applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-            waitmovement(0)
+            applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
         }
         goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     } else {
@@ -493,7 +512,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
     setspeaker(SP_NAME_MRNIGHTOLOGY)
     message(format("¿Te has quedado con ganas de más?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     switch(var(VAR_RESULT)) {
         case 0:
@@ -501,7 +520,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
-        case 2:
+        default:
             msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
@@ -542,12 +561,12 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_POKENAV_ON)
         waitse
         applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
-        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿Estás preparad{OA}?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_POKENAV_HANG_UP)
         waitse
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         playse(SE_WARP_OUT)
-        setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, 3)
+        setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, 3)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
         showobjectat(LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM)
         turnobject(LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH)
@@ -606,7 +625,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
             call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             msgbox(format("Dale una vuelta a tu estrategia y…\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             fadescreen(FADE_TO_BLACK)
-            setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 9, -3)
+            setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, -3)
             fadescreen(FADE_FROM_BLACK)
         }
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
@@ -672,7 +691,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
     setspeaker(SP_NAME_GOSUTO)
     message(format("¿Otro combate? ¿Estás segur{OA} de estar list{OA} para entrar al mundo de las tinieblas?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -681,7 +700,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
-        case 2:
+        default:
             msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
@@ -689,7 +708,7 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
 }
@@ -734,11 +753,10 @@ script CollaboratorsRoom_EventScript_Gosuto {
 
 script CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle {
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_MusicNote)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNote)
     msgbox(format("¡Espera! ¿Escuchas eso?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-    waitmovement(0)
     waitse
-    delay(40)
+    applymovementandwait(VAR_LAST_TALKED, moves(delay_16 * 3))
     msgbox(format("¡Es el sonido de la batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     return
 }
@@ -760,10 +778,9 @@ script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
     waitse
     delay(30)
-    playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
-    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     waitse
     goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
 }
@@ -787,7 +804,7 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
     setspeaker(SP_NAME_ACIMUT)
     message(format("¿List{OA} para la revancha?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -797,7 +814,7 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
         case 1:
             fadedefaultbgm()
             goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
-        case 2:
+        default:
             fadedefaultbgm()
             msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
@@ -924,7 +941,7 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
     setspeaker(SP_NAME_ALEXMAD)
     message(format("¿Otro combate?"))
     waitmessage
-    dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
@@ -934,7 +951,7 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
         case 1:
             call(CollaboratorsRoom_EventScript_Alexmad_LongIntro)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
-        case 2:
+        default:
             msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
     }
@@ -987,11 +1004,10 @@ script CollaboratorsRoom_EventScript_Alexmad {
         msgbox(format("Ya sabes lo que tienes que hacer, ¿no?"), MSGBOX_NPC, speaker = SP_NAME_ALEXMAD)
         end
     }
-    applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
     if(!flag(FLAG_ALEXMAD_EVENT_COMPLETED)) {
         msgbox(format("Sm1, sm2 o…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
-    waitmovement(0)
     delay(30)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(emote_exclamation_mark))
@@ -1029,11 +1045,11 @@ script CollaboratorsRoom_EventScript_Alexmad {
             } else {
                 msgbox(format("¡Tu de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 playse(SE_PIN)
-                applymovement(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMarkWithDelay48)
+                applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMark)
                 msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-                waitmovement(0)
+                delay(60)
             }
-            dynmultichoice(0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
+            dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
             switch(var(VAR_RESULT)) {
                 case 0:
                     goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
@@ -1047,6 +1063,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
                     }
                     goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
                 default:
+                    msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
             }
         } else {
@@ -1079,7 +1096,7 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     playse(SE_SUCCESS)
     msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
-    directmovementtopos(LOCALID_PLAYER, 4, 4)
+    directmovementtopos(LOCALID_PLAYER, 5, 3)
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
@@ -1099,4 +1116,123 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
     releaseall
     end
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly {
+    msgbox(format("Mi nombre es El Gran Jefe Topo, quiero decir, Ryuzaki, aunque recientemente algunos desgraciados me están llamando Ryutopo para desprestigiarme…\pY eso que mis animalines favoritos son las nutrias…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+    msgbox(format("Pero hay que admitir que es una conjugación bastante hilarante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox("¿Lees manga? ¡No me mientas! Sé que sí.\nEn todo caso, aún si no lo haces, hay\luno que me gustaría recomendarte.\pEs Tokyo Ghoul.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    waitse
+    msgbox(format("Sí, entiendo esa cara de decepción, ¡no soy un adolescente emo en 2017!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox(format("Su adaptación fue un relajo, pero no es la burla que probablemente imaginas.\pEl manga trata las bifurcaciones de la introspectiva de sus personajes con tanto amor que resulta ser una experiencia preciosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("No te estoy desinformando, puedes confiar en mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Es muy especial para mí… tenía que usar descaradamente mi influencia para darle visibilidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle {
+    msgbox("Es hora de la violencia.\nTe mostraré La Verdad Divina.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
+    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema. Ten, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    msgbox("{FONT_SMALL}“¡Ay, langosta sucia!\nNo es solo cuestión de calandracas\lEs el naufragio del espíritu\lEn el Océano del Carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    delay(20)
+    setspeaker(SP_NAME_RYUZAKI)
+    message(format("Profundo y seinen, ¿verdad? Bueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    closemessage
+    delay(20)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("Prepárate para conocer la verdadera fuerza de la Jode Jode no Mi: Modelo Duende de La Buena Pipa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
+        default:
+            msgbox(format("Las moscas no pueden simplemente echarse gafas para ver La Luz."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+            goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent {
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Ryuzaki {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)) {
+            call(CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle)
+        }
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_RYUZAKI, CollaboratorsRoom_Text_Ryuzaki_OnDefeat)
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        if(var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Me fumigaste. Te salvaste de que no estamos en territorio ryutámico."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)
+        } elif(var(VAR_RESULT) == B_OUTCOME_FORFEITED) {
+            msgbox(format("¿Ah? ¿No íbamos a pelear? Veo que has perfeccionado tus habilidades desinformativas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        } else {
+            msgbox(format("Eres una burla, asere. Recoge tu baraja."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        }
+        goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
+    } else {
+        msgbox(format("Hola querid{OA} coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+        msgbox(format("La vida da más vueltas que una cantimplora, ¿verdad?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        delay(20)
+        msgbox(format("¿Qué? ¿Yo? Oh, no te preocupes, no soy nadie sospechoso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        delay(20)
+        call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
+    }
+}
+
+text CollaboratorsRoom_Text_Ryuzaki_OnDefeat {
+    format("Ya sabes lo que dicen, la voluntad es la fuerza del alma.")
 }

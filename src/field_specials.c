@@ -30,7 +30,7 @@
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
 #include "team_selector.h"
-#include "intro_cope.h"
+#include "difficulty_selector.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -49,6 +49,7 @@
 #include "strings.h"
 #include "task.h"
 #include "text.h"
+#include "text_window.h"
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
@@ -69,6 +70,7 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/battle_frontier.h"
+#include "constants/flags.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
@@ -78,6 +80,7 @@
 #include "battle_util.h"
 #include "naming_screen.h"
 #include "achievements.h"
+#include "achievement_confetti.h"
 #include "constants/achievements.h"
 #include "constants/characters.h"
 #include "constants/pokemon.h"
@@ -1461,6 +1464,23 @@ void Special_BufferAchievementTitle(void)
         StringCopy(gStringVar1, title);
     else
         gStringVar1[0] = EOS;
+}
+
+
+void Special_StartAchievementConfetti(void)
+{
+    StartAchievementConfetti();
+}
+
+void Special_StopAchievementConfetti(void)
+{
+    StopAchievementConfetti();
+}
+
+void Special_ClearTransparentBox(void)
+{
+    ClearUiTransparent();
+    FlagClear(FLAG_TRANSPARENT_BOX);
 }
 
 u8 TryUpdateRusturfTunnelState(void)
@@ -4435,6 +4455,23 @@ void RandomizeWahAdminTeams(void)
 {
     VarSet(VAR_WAH_ADMIN_TEAMS_LO, Random());
     VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
+}
+
+void SetWahChallengeInitialAchievementFlags(void)
+{
+    u32 i;
+    bool8 hasElectrodeS = FALSE;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (species == SPECIES_EGG || species == SPECIES_NONE)
+            continue;
+
+        if (species == SPECIES_ELECTRODES)
+            FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
+    }
 }
 
 // Checks if admin at given index should use ALTERNATIVE team

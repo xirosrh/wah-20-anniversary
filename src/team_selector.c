@@ -695,18 +695,21 @@ static void Task_HandleWantThisTeam(u8 taskId)
 {
     if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.optionSelectMsg != TRUE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(TRUE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
 
     if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.optionSelectMsg != FALSE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(FALSE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
 
     if (JOY_NEW(A_BUTTON))
     {
+        PlaySE(SE_SELECT);
         if(teamSelectorObj.optionSelectMsg == FALSE)
         {
             RemoveWindowMsgWantThisTeam();
@@ -721,6 +724,7 @@ static void Task_HandleWantThisTeam(u8 taskId)
 
     if (JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SELECT);
         RemoveWindowMsgWantThisTeam();
         gTasks[taskId].func = Task_HandleTeamSelector;
     }
@@ -743,12 +747,14 @@ static void Task_HandleExitConfirm(u8 taskId)
 {
     if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.optionSelectMsg != TRUE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(TRUE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
 
     if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.optionSelectMsg != FALSE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(FALSE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
@@ -757,11 +763,13 @@ static void Task_HandleExitConfirm(u8 taskId)
     {
         if(teamSelectorObj.optionSelectMsg == FALSE)
         {
+            PlaySE(SE_SELECT);
             RemoveExitConfirmWindow();
             gTasks[taskId].func = Task_HandleTeamSelector;
         }
         else
         {
+            PlaySE(SE_SELECT);
             BeginNormalPaletteFade(PALETTES_ALL, 10, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_ExitWithoutSelection;
         }
@@ -769,6 +777,7 @@ static void Task_HandleExitConfirm(u8 taskId)
 
     if (JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SELECT);
         RemoveExitConfirmWindow();
         gTasks[taskId].func = Task_HandleTeamSelector;
     }
@@ -781,6 +790,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if( JOY_NEW(SELECT_BUTTON) && teamSelectorObj.monTeamNum == TEAM_RANDOM)
     {
+        PlaySE(SE_SELECT);
         GenerateRandomTeam();
         ClearMonSprites(TRUE, TRUE);
         teamSelectorObj.indexSelectedMon = 0;
@@ -790,6 +800,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if ( JOY_NEW(R_BUTTON) && teamSelectorObj.monTeamNum <= TEAM_COUNT - 1 && teamSelectorObj.monTeamNum != TEAM_RANDOM)
     {
+        PlaySE(SE_SELECT);
         if( teamSelectorObj.monTeamNum !=  TEAM_RANDOM)
             teamSelectorObj.monTeamNum += 1;
 
@@ -807,6 +818,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(L_BUTTON) && teamSelectorObj.monTeamNum > 0)
     {
+        PlaySE(SE_SELECT);
         teamSelectorObj.monTeamNum -= 1;
         ClearMonSprites(TRUE, TRUE);
         teamSelectorObj.indexSelectedMon = 0;
@@ -816,6 +828,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.indexSelectedMon >  0)
     {
+        PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon -= 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
@@ -824,6 +837,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.indexSelectedMon < MAX_TEAM_SIZE-1)
     {
+        PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon += 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
@@ -832,12 +846,14 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if(JOY_NEW(A_BUTTON))
     {
+        PlaySE(SE_SELECT);
         CreateMsgWindow();
         gTasks[taskId].func = Task_HandleWantThisTeam;
     }
 
     if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
     {
+        PlaySE(SE_SELECT);
         CreateExitConfirmWindow();
         gTasks[taskId].func = Task_HandleExitConfirm;
     }

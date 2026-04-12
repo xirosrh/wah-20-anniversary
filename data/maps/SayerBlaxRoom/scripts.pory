@@ -70,7 +70,7 @@ script SayerBlaxRoom_OnFrame {
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown5)
     waitmovement(LOCALID_CAMERA)
     special(RemoveCameraObject)
-    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
+    msgbox(format("¿Cómo, que quieres combatir? Yo me jubilé hace muchos años chaval{A}.\pHemos pasado una pandemia incluso… Pero si insistes… No creas que te lo pondré fácil."), MSGBOX_AUTOCLOSE, SP_NAME_BLAX)
     delay(20)
     applymovementandwait(LOCALID_SAYERBLAXROOM_BLAX, moves(
         face_up
@@ -157,7 +157,7 @@ script SayerBlaxRoom_EventScript_Sayer {
 
 script SayerBlaxRoom_EventScript_SayerBlaxBattle {
     if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, format("Bueno, pues has ganado. ¡Enhorabuena!"), TRAINER_WAH_ADMIN_SAYER_MAIN, "Pues si que la has liado.")
+        trainerbattle_two_trainers(TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated)
     } else {
         setvar(VAR_0x8004, TEAM_INDEX_BLAX)
         special(ShouldUseAlternativeTeam)
@@ -188,5 +188,5 @@ text SayerBlaxRoom_Text_BlaxDefeated {
 }
 
 text SayerBlaxRoom_Text_SayerDefeated {
-    format("Pues si que la has liado.")
+    format("Pues sí que la has liado.")
 }

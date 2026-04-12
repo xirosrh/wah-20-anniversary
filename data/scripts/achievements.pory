@@ -1,13 +1,71 @@
 
 
-script Achievements_EventScript_Eval_AllAdminsDefeated {
+
+
+script Achievements_EventScript_Eval_WinWahChallenge {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Double {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_DOUBLE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Random {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_Inverse {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_DefeatAllAdmins {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_ADMINS)
     call(Achievements_EventScript_Eval_Common)
     return
 }
 
-script Achievements_EventScript_Eval_WinWahChallenge {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE)
+script Achievements_EventScript_Eval_WinWahChallenge_5Times {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_10Times {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_10_TIMES)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahEachModeTwice {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_EACH_MODE_TWICE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_WinWahChallenge_HardMode {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+
+script Achievements_EventScript_Eval_WinWahChallenge_WithElectrodeS {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_WITH_ELECTRODES)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+
+script Achievements_EventScript_Eval_UnlockAllPokemon {
+    setvar(VAR_0x8004, UNLOCK_ALL_POKEMON)
     call(Achievements_EventScript_Eval_Common)
     return
 }
@@ -22,10 +80,14 @@ script Achievements_EventScript_Eval_Common {
     delay(30)
     specialvar(VAR_RESULT, Special_CheckAndCompleteAchievement)
     if(var(VAR_RESULT) == TRUE) {
-        //playse(SE_VICTORY) //TODO Xiros
         special(Special_BufferAchievementTitle)
+        playse(SE_APPLAUSE)
+        special(Special_StartAchievementConfetti)
+        setflag(FLAG_TRANSPARENT_BOX)
         msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
-        //waitse
+        special(Special_ClearTransparentBox)
+        waitse
+        special(Special_StopAchievementConfetti)
     }
     return
 }

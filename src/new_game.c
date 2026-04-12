@@ -216,6 +216,7 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    gSaveBlock2Ptr->achievements = 0;
 }
 
 static void ResetMiniGamesRecords(void)

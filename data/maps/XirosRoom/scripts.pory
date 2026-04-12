@@ -44,9 +44,8 @@ script XirosRoom_EventScript_Xiros {
         applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(delay_16 * 2, lock_facing_direction, jump_in_place_down))
         waitse
         playse(SE_LEDGE)
-        applymovement(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down, unlock_facing_direction, face_player))
+        applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down, unlock_facing_direction, face_player))
         msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
-        waitmovement(0)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
         turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
@@ -152,9 +151,8 @@ script XirosRoom_EventScript_Xiros {
     applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
     waitse
     playse(SE_LEDGE)
-    applymovement(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
-    msgbox(format("¡Wow! ¡Que gran combate! Me encanta tu forma de combatir.\p¡Sobretodo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
-    waitmovement(0)
+    applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
+    msgbox(format("¡Wow! ¡Qué gran combate! Me encanta tu forma de combatir.\p¡Sobre todo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     delay(20)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
     msgbox(format("Todavía te queda un último enfrentamiento, y si conocés un poco la historia de este lugar, seguramente ya te estés imaginando quién te espera.\pAprovecha la oportunidad, que no todos tienen la suerte de encontrarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)

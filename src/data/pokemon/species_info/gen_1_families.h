@@ -19943,7 +19943,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         OVERWORLD(
             sPicTable_Moltres,
             SIZE_32x32,
-            SHADOW_SIZE_M,
+            SHADOW_SIZE_NONE,
             TRACKS_NONE,
             sAnimTable_Following,
             gOverworldPalette_Moltres,

@@ -264,3 +264,18 @@ const u16 gMetatileAttributes_room_zero[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_room_sayerblax[] = INCBIN_U16("data/tilesets/secondary/room_sayerblax/metatiles.bin");
 const u16 gMetatileAttributes_room_sayerblax[] = INCBIN_U16("data/tilesets/secondary/room_sayerblax/metatile_attributes.bin");
+
+const u16 gMetatiles_lobby[] = INCBIN_U16("data/tilesets/secondary/lobby/metatiles.bin");
+const u16 gMetatileAttributes_lobby[] = INCBIN_U16("data/tilesets/secondary/lobby/metatile_attributes.bin");
+
+const u16 gMetatiles_dragon_mountain[] = INCBIN_U16("data/tilesets/primary/dragon_mountain/metatiles.bin");
+const u16 gMetatileAttributes_dragon_mountain[] = INCBIN_U16("data/tilesets/primary/dragon_mountain/metatile_attributes.bin");
+
+const u16 gMetatiles_dragon_mountain_2[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/metatiles.bin");
+const u16 gMetatileAttributes_dragon_mountain_2[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/metatile_attributes.bin");
+
+const u16 gMetatiles_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatiles.bin");
+const u16 gMetatileAttributes_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatile_attributes.bin");
+
+const u16 gMetatiles_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatiles.bin");
+const u16 gMetatileAttributes_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatile_attributes.bin");

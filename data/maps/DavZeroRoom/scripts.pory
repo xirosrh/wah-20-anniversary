@@ -139,11 +139,10 @@ script DavZeroRoom_OnFrame {
     msgbox(format("Pero escucha algo: la derrota no es el final de nada. Al contrario, es un espejo.\pRefleja lo que todavía no queremos ver de nosotros mismos, aquello que evitamos afrontar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
     msgbox(format("Yo también lo he aprendido así, perdiendo, equivocándome, cayendo una y otra vez…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Riéndome."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovement(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48)
-    msgbox(format("Riéndome."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     waitmovement(0)
-    closemessage
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(walk_left))
     playse(SE_PIN)
