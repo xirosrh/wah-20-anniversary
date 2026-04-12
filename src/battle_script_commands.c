@@ -4871,7 +4871,16 @@ static void Cmd_getexp(void)
                 && gEnemyPartyCount >= 3 //cantidad de pokémon en el equipo rival (máx 6, min 2)
                 && gBattleResults.opponentFaintCounter == (gEnemyPartyCount-1))
             {
-                PlayBGM(MUS_VICTORY_LIES_BEFORE_YOU);
+                switch (TRAINER_BATTLE_PARAM.opponentA)
+                {
+                case TRAINER_WAH_ADMIN_SERGIO_MAIN:
+                case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
+                    PlayBGM(MUS_TV_GOTTA_CATCH_EM_ALL);
+                    break;
+                default:
+                    PlayBGM(MUS_VICTORY_LIES_BEFORE_YOU);
+                    break;
+                }
             }
         }
         break;

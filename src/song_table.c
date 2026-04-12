@@ -279,6 +279,8 @@ const struct Song gSongTable[] =
 
     [MUS_INSTRUMENT_TEST]           = SONG(mus_instrument_test, MUSIC_PLAYER_BGM),
 
+    [MUS_TV_GOTTA_CATCH_EM_ALL]     = SONG(mus_TV_Gotta_Catch_Em_All, MUSIC_PLAYER_BGM),
+    [MUS_TV_TOTAL_WAR]              = SONG(mus_TV_Total_War, MUSIC_PLAYER_BGM),
     [MUS_HG_DRAGONS_DEN]            = SONG(mus_hg_dragons_den, MUSIC_PLAYER_BGM),
     [MUS_DP_GALACTIC_HQ_BASEMENT]   = SONG(mus_dp_galactic_hq_basement, MUSIC_PLAYER_BGM),
     [MUS_DP_GYM]                    = SONG(mus_dp_gym, MUSIC_PLAYER_BGM),

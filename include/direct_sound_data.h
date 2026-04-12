@@ -754,7 +754,7 @@ extern const s8 gDirectSoundWaveData_Acimut_GM_115_Woodblock_60[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60[];
-//extern const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[];
 
 // SOUND EFFECTS
 

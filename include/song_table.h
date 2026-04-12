@@ -281,6 +281,8 @@ extern const struct SongHeader se_sudowoodo_shake;
 
 extern const struct SongHeader mus_instrument_test;
 
+extern const struct SongHeader mus_TV_Gotta_Catch_Em_All;
+extern const struct SongHeader mus_TV_Total_War;
 extern const struct SongHeader mus_hg_dragons_den;
 extern const struct SongHeader mus_dp_galactic_hq_basement;
 extern const struct SongHeader mus_dp_gym;

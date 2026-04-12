@@ -6159,6 +6159,11 @@ u16 GetBattleBGM(void)
             case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
             case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
                 return MUS_WI_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_SERGIO_MAIN:
+            case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
+                return MUS_HGSS_VS_CHAMPION;
+            case TRAINER_WAH_COLLABORATOR_ACIMUT:
+                return MUS_TOUHOU11_11;
             default:
                 return MUS_VS_AQUA_MAGMA;
             }

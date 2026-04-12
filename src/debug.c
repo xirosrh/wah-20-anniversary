@@ -3490,8 +3490,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
-    X(MUS_HG_DRAGONS_DEN)           \
     X(MUS_INSTRUMENT_TEST)          \
+    X(MUS_TV_GOTTA_CATCH_EM_ALL)    \
+    X(MUS_TV_TOTAL_WAR)             \
+    X(MUS_HG_DRAGONS_DEN)           \
     X(MUS_DP_GALACTIC_HQ_BASEMENT)  \
     X(MUS_DP_GYM)                   \
     X(MUS_DP_INSIDE_POKEMON_LEAGUE) \

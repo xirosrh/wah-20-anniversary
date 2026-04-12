@@ -747,7 +747,7 @@ ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_115_Woodblock_60[] = INCBIN_S
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM116_Taiko_Drum_60.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM117_MelodicTom_60.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM118_Synth_Drum_60.bin");
-//ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM119_ReverseCym_60.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM119_R_Cymbal_79.bin");
 
 // SOUND EFFECTS
 
