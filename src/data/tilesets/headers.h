@@ -1083,3 +1083,14 @@ const struct Tileset gTileset_room_collaborators =
     .metatileAttributes = gMetatileAttributes_room_collaborators,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_hall_of_fame =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_hall_of_fame,
+    .palettes = gTilesetPalettes_hall_of_fame,
+    .metatiles = gMetatiles_hall_of_fame,
+    .metatileAttributes = gMetatileAttributes_hall_of_fame,
+    .callback = InitTilesetAnim_HallOfFame,
+};
