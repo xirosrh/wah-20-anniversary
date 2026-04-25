@@ -30,7 +30,7 @@
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
 #include "team_selector.h"
-#include "intro_cope.h"
+#include "difficulty_selector.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"

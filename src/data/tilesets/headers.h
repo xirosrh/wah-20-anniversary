@@ -1072,3 +1072,25 @@ const struct Tileset gTileset_dragon_mountain_2 =
     .metatileAttributes = gMetatileAttributes_dragon_mountain_2,
     .callback = InitTilesetAnim_DragonMountain2,
 };
+
+const struct Tileset gTileset_room_collaborators =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_collaborators,
+    .palettes = gTilesetPalettes_room_collaborators,
+    .metatiles = gMetatiles_room_collaborators,
+    .metatileAttributes = gMetatileAttributes_room_collaborators,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_hall_of_fame =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_hall_of_fame,
+    .palettes = gTilesetPalettes_hall_of_fame,
+    .metatiles = gMetatiles_hall_of_fame,
+    .metatileAttributes = gMetatileAttributes_hall_of_fame,
+    .callback = InitTilesetAnim_HallOfFame,
+};

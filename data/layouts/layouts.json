@@ -4304,10 +4304,10 @@
     {
       "id": "LAYOUT_HALL_OF_FAME",
       "name": "HallOfFame_Layout",
-      "width": 15,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_CableClub",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_hall_of_fame",
       "border_filepath": "data/layouts/HallOfFame/border.bin",
       "blockdata_filepath": "data/layouts/HallOfFame/map.bin"
     },
@@ -4324,10 +4324,10 @@
     {
       "id": "LAYOUT_COLLABORATORS_ROOM",
       "name": "CollaboratorsRoom_Layout",
-      "width": 13,
-      "height": 16,
+      "width": 17,
+      "height": 12,
       "primary_tileset": "gTileset_RoomGeneral",
-      "secondary_tileset": "gTileset_room_omega",
+      "secondary_tileset": "gTileset_room_collaborators",
       "border_filepath": "data/layouts/CollaboratorsRoom/border.bin",
       "blockdata_filepath": "data/layouts/CollaboratorsRoom/map.bin"
     }

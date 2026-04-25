@@ -22,17 +22,24 @@ gText_Cope_Normal::
 gText_Cope_Hard::
 	.string "Difícil$"
 
+gText_Difficulty_CharacteristicsHeader::
+	.string "Características:$"
+
 gText_Easy_Description::
-	.string "Descripción de dificultad :\n"
-	.string "Fácil$"
+	.string "· IA básica\n"
+	.string "· Equipos más accesibles\n"
+	.string "· Pokémon rivales con 0 IVs\ny EVs\n"
+	.string "· Rivales usan pocos ítems$"
 
 gText_Normal_Description::
-	.string "Descripción de dificultad :\n"
-	.string "Normal$"
+	.string "· Experiencia equilibrada (placeholder)\n"
+	.string "· Dificultad estándar\n"
+	.string "· Recomendado en general$"
 
 gText_Hard_Description::
-	.string "Descripción de dificultad :\n"
-	.string "Difícil$"
+	.string "· Máximo desafío (placeholder)\n"
+	.string "· Enemigos más exigentes\n"
+	.string "· Solo para valientes$"
 
 gText_Cope_Welcome::
 	.string "Ah... genial.\n"
