@@ -115,9 +115,7 @@ script AguiarRoom_EventScript_Aguiar {
     playse(SE_REPEL)
     waitmovement(0)
     delay(20)
-    msgbox(format("No te voy a dar discursos épicos ni consejos de abuelo, que para eso hay otros.\p
-                Si quieres pelear, perfecto. Si pierdo, pues nada, me enciendo otro.\p
-                Y si gano… bueno, tampoco me voy a hacer un póster con tu cara, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("No te voy a dar discursos épicos ni consejos de abuelo, que para eso hay otros.\pSi quieres pelear, perfecto. Si pierdo, pues nada, me enciendo otro.\pY si gano… bueno, tampoco me voy a hacer un póster con tu cara, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
