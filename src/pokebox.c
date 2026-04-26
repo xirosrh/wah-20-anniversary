@@ -462,7 +462,7 @@ static void PrintAllDataMon(u16 specie)
 {
     u8 index = GetSelectedPokemonIndex();
 
-    if(index >= MON_TEAM_SELECTOR_COUNT && !CheckPokebox_IsActive(index - MON_TEAM_SELECTOR_COUNT))
+    if(index >= MON_TEAM_SELECTOR_COUNT && !Pokebox_IsActive(index - MON_TEAM_SELECTOR_COUNT))
         specie = SPECIES_NONE;
 
     PrintNameMonPokebox(specie);
@@ -599,7 +599,7 @@ static void PrintMonTextInfoPage()
         moves[3] = gAllTeamMons[index].moves[3];
     }else{
         specie = PokeboxSpeciesList_GetSpecie(secondIndex);
-        isActive = CheckPokebox_IsActive(secondIndex);
+        isActive = Pokebox_IsActive(secondIndex);
         GetLastLevelUpMoves(specie, moves);
     }
 
@@ -764,7 +764,7 @@ void LoadCurrentMonData()
     {
         u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
         species = PokeboxSpeciesList_GetSpecie(secondIndex);
-        isActive = CheckPokebox_IsActive(secondIndex);
+        isActive = Pokebox_IsActive(secondIndex);
     }
 
     pokeBoxObj.frontMonId = CreateMonPicSprite(species, isShiny, 0, TRUE, 38, 58, 15, TAG_NONE);
@@ -954,7 +954,7 @@ void LoadMonIconSprites()
         {
             u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
             species = PokeboxSpeciesList_GetSpecie(secondIndex);
-            isActive = CheckPokebox_IsActive(secondIndex);
+            isActive = Pokebox_IsActive(secondIndex);
         }
 
         spriteId = CreateMonIcon(species, SpriteCallbackDummy, x, y, 0, 0);
@@ -968,7 +968,7 @@ void LoadMonIconSprites()
             SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
         }
 
-        // if(!!CheckPokebox_IsActive(i) && HasMonInParty(species))
+        // if(!!Pokebox_IsActive(i) && HasMonInParty(species))
         // {
         //     gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         //     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
@@ -1407,7 +1407,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         
         specie = PokeboxSpeciesList_GetSpecie(index - MON_TEAM_SELECTOR_COUNT);
 
-        if(!CheckPokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
+        if(!Pokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
             PrintMsgActions(MSG_ACTION_LOCK_MON);
         else if(HasMonInParty(specie))
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
