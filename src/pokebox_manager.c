@@ -1,12 +1,14 @@
 #include "global.h"
 #include "event_data.h"
 #include "constants/vars.h"
+#include "constants/flags.h"
 #include "pokebox_manager.h"
 #include "money.h"
 
 
 static bool8 CheckPokebox_isBuyMon(u8 id);
 static bool8 CheckPokebox_Active(u8 id);
+static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -37,7 +39,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .specie = SPECIES_DRAGONITE,        
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_Active
+        .check = CheckPokebox_WahChallengeCompleted
     },
     { 
         .specie = SPECIES_VOLCARONA,        
@@ -53,9 +55,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     { 
         .specie = SPECIES_CINDERACE,        
-        .description = COMPOUND_STRING(""), 
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_Active 
+        .check = CheckPokebox_WahChallengeCompleted 
     },
     { 
         .specie = SPECIES_EXCADRILL,        
@@ -253,6 +255,12 @@ static bool8 CheckPokebox_Active(u8 id)
     return FALSE;
 }
 
+static bool8 CheckPokebox_WahChallengeCompleted(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED);
+}
+
 static bool8 CheckPokebox_isBuyMon(u8 id)
 {
     if (id >= PokeboxSpeciesList_GetCount())
@@ -266,16 +274,22 @@ static bool8 CheckPokebox_isBuyMon(u8 id)
 
 bool8 CheckPokebox_IsActive(u8 id)
 {
-    bool8 isActive = FALSE;
-
     if (id >= PokeboxSpeciesList_GetCount())
         return FALSE;
 
-    isActive = sPokeboxSpeciesList[id].check(id);
+    return sPokeboxSpeciesList[id].check(id);
+}
 
-    // if(isActive) Pokebox_SetActive(id);
-
-    return isActive;
+bool8 PokeboxSpecies_TryUnlockNew(u8 id)
+{
+    if (id >= PokeboxSpeciesList_GetCount())
+        return FALSE;
+    if (Pokebox_IsActive(id))
+        return FALSE;
+    if (!sPokeboxSpeciesList[id].check(id))
+        return FALSE;
+    Pokebox_SetActive(id);
+    return TRUE;
 }
 
 u32 PokeboxSpecies_GetMoney(u8 id)

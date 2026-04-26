@@ -24,8 +24,10 @@ enum{
 
 const u8 *Get_PokeboxMsgAction(u8 index);
 
+bool8 Pokebox_IsActive(u8 id);
 bool8 Pokebox_SetActive(u8 id);
 bool8 CheckPokebox_IsActive(u8 id);
+bool8 PokeboxSpecies_TryUnlockNew(u8 id);
 
 u8 PokeboxSpeciesList_GetCount(void);
 u16 PokeboxSpeciesList_GetSpecie(u8 index);
