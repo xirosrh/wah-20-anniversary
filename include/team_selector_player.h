@@ -1,6 +1,8 @@
 #ifndef GUARD_TEAM_SELECTOR_PLAYER_H
 #define GUARD_TEAM_SELECTOR_PLAYER_H
 
+u8 GetIndexMonTeamSelectorBySpecie(u16 specie);
+
 enum
 {
     MON_HITMONCHAN,

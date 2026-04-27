@@ -12,7 +12,8 @@ static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
-    [MSG_ACTION_CONTROLS] = COMPOUND_STRING("{START_BUTTON} Equipo {SELECT_BUTTON} Info. {DPAD_NONE} Mover {A_BUTTON} Añadir"),     
+    [MSG_ACTION_CONTROLS] = COMPOUND_STRING("{START_BUTTON} Equipo {SELECT_BUTTON} Info. {DPAD_NONE} Mover {A_BUTTON} Añadir"),
+    [MSG_ACTION_CONTROLS_TEAM] = COMPOUND_STRING("{A_BUTTON} Dejar {B_BUTTON} Atras {DPAD_NONE} Mover {START_BUTTON} Resetear"),    
     [MSG_ACTION_FULL_TEAM]     = COMPOUND_STRING("Tu equipo está completo"),
     [MSG_ACTION_NOT_TEAM_FULL] = COMPOUND_STRING("Debes tener 6 Pokémon en el equipo"),
     [MSG_ACTION_LOCK_MON]      = COMPOUND_STRING("Este Pokémon está bloqueado."),

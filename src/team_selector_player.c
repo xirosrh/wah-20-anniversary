@@ -1297,5 +1297,16 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .isShiny = FALSE,
             .moves = {MOVE_JUICY_EXPLOSION, MOVE_ACID_PULP, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN},
         },
-
 };
+
+
+u8 GetIndexMonTeamSelectorBySpecie(u16 specie)
+{
+    for (u8 i = 0; i < ARRAY_COUNT(gAllTeamMons); i++)
+    {
+        if(specie == gAllTeamMons[i].specie)
+            return i;
+    }
+
+    return 0xFF;
+}

@@ -1104,6 +1104,7 @@ static void Task_SlideLeftBgTeamPlayer(u8 taskId)
         UpdateSelectorPosition(TRUE);
         SetVisibilitySpriteSelector(FALSE);
         LoadCurrentMonDataPlayerTeam();
+        PrintMsgActions(MSG_ACTION_CONTROLS_TEAM);
         gTasks[taskId].func = Task_HandleTeamPlayerPokebox;
     }
 
@@ -1128,6 +1129,7 @@ static void Task_SlideRightBgTeamPlayer(u8 taskId)
         SetVisibilitySpriteSelector(FALSE);
         LoadCurrentMonData();
         PrintTextSwapBox();
+        PrintMsgActions(MSG_ACTION_CONTROLS);
         gTasks[taskId].func = Task_HandlePokebox;
     }
 
@@ -1177,10 +1179,89 @@ static void Task_HandleBuyMon(u8 taskId)
     }
 }
 
-//controles de la pantalla del tema del jugador
+void ResetMonsToPartyTeamSelector()
+{
+    u16 specie;
+    u8 col, row;
+    u8 spriteId;
+    u8 indexFreeSlot, x, y;
+    const struct TeamSelectorMonData *mon;
+
+    //eliminar los pokemon que han sido sacados del pc
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        specie =  GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if(specie == SPECIES_NONE)
+            continue;
+
+        if(IsSpecieOfOriginalTeam(specie))
+            continue;
+
+        col = i % MON_ICON_TEAM_COLS;
+        row = i / MON_ICON_TEAM_COLS;
+
+        ZeroMonData(&gPlayerParty[i]);
+
+        spriteId = pokeBoxObj.playerTeamMonSpritesIds[row][col];
+        FreeAndDestroyMonIconSprite(&gSprites[spriteId]);
+        pokeBoxObj.playerTeamMonSpritesIds[row][col] = 0xFF;
+    }
+
+    pokeBoxObj.numMonAddFromPC = 0;
+    memset(pokeBoxObj.speciesAddFromPc, SPECIES_NONE, sizeof(pokeBoxObj.speciesAddFromPc));
+
+    CalculatePlayerPartyCount();
+    CompactPartySlots();
+    CompactAndMovePlayerTeamSprites();
+    ClearMonData(FALSE);
+
+    // añadir los pokemon que tenia el team del selector por defecto
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        specie = gSaveBlock2Ptr->playerTeamSelector[i];
+
+        if(gSaveBlock2Ptr->playerTeamSelector[i] == SPECIES_NONE)
+            continue;
+
+        if(HasMonInParty(gSaveBlock2Ptr->playerTeamSelector[i]))
+            continue;
+
+        indexFreeSlot = GetFirstFreeSlotMonParty();
+
+        if(indexFreeSlot == 0xFF)
+            continue;
+
+        mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie)];
+        GiveMonTeamFromSelector(indexFreeSlot, mon, FALSE);
+
+        col = indexFreeSlot % MON_ICON_TEAM_COLS;
+        row = indexFreeSlot / MON_ICON_TEAM_COLS;
+
+        x = MON_ICON_PLAYER_TEAM_POS_X + col * INCREMENT_MON_ICON_PLAYER_TEAM_POS_X;
+        y = MON_ICON_PLAYER_TEAM_POS_Y + row * INCREMENT_MON_ICON_PLAYER_TEAM_POS_Y;
+
+        spriteId = CreateMonIcon(gSaveBlock2Ptr->playerTeamSelector[i], SpriteCallbackDummy, x, y, 0, 0);
+        gSprites[spriteId].oam.priority = 1;
+        pokeBoxObj.playerTeamMonSpritesIds[row][col] = spriteId;
+    }
+
+    CalculatePlayerPartyCount();
+    CompactPartySlots();
+    LoadCurrentMonDataPlayerTeam();
+}
+
+
+
+//controles de la pantalla del team del jugador
 static void Task_HandleTeamPlayerPokebox(u8 taskId)
 {
-    if (JOY_NEW(B_BUTTON) || JOY_NEW(START_BUTTON))
+    if(JOY_NEW(START_BUTTON))
+    {
+        //resetar los pokes por los del team original del selector
+        ResetMonsToPartyTeamSelector();
+    }
+    else if (JOY_NEW(B_BUTTON) || JOY_NEW(START_BUTTON))
     {
         SetVisibilitySpriteSelector(TRUE);
         ClearMonDataPlayerTeam(TRUE);
@@ -1233,7 +1314,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     }
     
     if (JOY_NEW(DPAD_ANY)) {
-        PrintMsgActions(MSG_ACTION_CONTROLS);
+        PrintMsgActions(MSG_ACTION_CONTROLS_TEAM);
     }
 }
 
@@ -1261,7 +1342,16 @@ static void Task_HandlePokebox(u8 taskId)
     }
     else if (JOY_NEW(A_BUTTON))
     {
-        gTasks[taskId].func = Task_AddMonTeamPlayer;
+        u16 index = GetSelectedPokemonIndex();
+        //si el pokemon no esta activo, muestra la informacion para obternerlo. En caso contrario intenta añadirlo al team
+        if(index > MON_TEAM_SELECTOR_COUNT-1 && !Pokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
+        {
+            HidenMonIconsBox(TRUE);
+            SetVisibilitySpriteSelector(TRUE);
+            gTasks[taskId].func = Task_ShowMonInfo;
+        }else{
+            gTasks[taskId].func = Task_AddMonTeamPlayer;
+        }
     }
     else if (JOY_NEW(B_BUTTON))
     {
