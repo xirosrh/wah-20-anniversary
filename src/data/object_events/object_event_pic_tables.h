@@ -333,6 +333,10 @@ static const struct SpriteFrameImage sPicTable_Javs[] = {
     overworld_ascending_frames(gObjectEventPic_Javs, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Javi4315[] = {
+    overworld_ascending_frames(gObjectEventPic_Javi4315, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Angel[] = {
     overworld_ascending_frames(gObjectEventPic_Angel, 2, 4),
 };
@@ -463,6 +467,10 @@ static const struct SpriteFrameImage sPicTable_Kaktus[] = {
 
 static const struct SpriteFrameImage sPicTable_Ryuzaki[] = {
     overworld_ascending_frames(gObjectEventPic_Ryuzaki, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Caco[] = {
+    overworld_ascending_frames(gObjectEventPic_Caco, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
