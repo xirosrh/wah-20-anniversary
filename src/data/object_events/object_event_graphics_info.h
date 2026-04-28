@@ -10,7 +10,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_BrendanNormal,
+    .anims = sAnimTable_PlayersNormal,
     .images = sPicTable_BrendanNormal,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -27,7 +27,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_BrendanNormal,
+    .anims = sAnimTable_PlayersNormal,
     .images = sPicTable_BrendanTeleporting1,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -44,7 +44,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanTeleporting
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_BrendanNormal,
+    .anims = sAnimTable_PlayersNormal,
     .images = sPicTable_BrendanTeleporting2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -2526,8 +2526,42 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayNormal = {
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_BrendanMayNormal,
+    .anims = sAnimTable_PlayersNormal,
     .images = sPicTable_MayNormal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting1 = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING,
+    .size = 512,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_PlayersNormal,
+    .images = sPicTable_MayTeleporting1,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting2 = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING,
+    .size = 512,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_PlayersNormal,
+    .images = sPicTable_MayTeleporting2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

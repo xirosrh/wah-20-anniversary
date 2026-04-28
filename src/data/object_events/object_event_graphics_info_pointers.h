@@ -150,6 +150,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRo
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
@@ -628,6 +630,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KAKTUS] =                   &gObjectEventGraphicsInfo_Kaktus,
     [OBJ_EVENT_GFX_RYUZAKI] =                  &gObjectEventGraphicsInfo_Ryuzaki,
     [OBJ_EVENT_GFX_CACO] =                     &gObjectEventGraphicsInfo_Caco,
+    [OBJ_EVENT_GFX_MAY_TELEPORTING_1] =        &gObjectEventGraphicsInfo_MayTeleporting1,
+    [OBJ_EVENT_GFX_MAY_TELEPORTING_2] =        &gObjectEventGraphicsInfo_MayTeleporting2,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

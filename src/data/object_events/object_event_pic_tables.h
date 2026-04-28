@@ -678,6 +678,14 @@ static const struct SpriteFrameImage sPicTable_MayNormal[] = {
     overworld_ascending_frames(gObjectEventPic_MayNormalRunning, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_MayTeleporting1[] = {
+    overworld_ascending_frames(gObjectEventPic_MayTeleporting1, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_MayTeleporting2[] = {
+    overworld_ascending_frames(gObjectEventPic_MayTeleporting2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_MayMachBike[] = {
     overworld_ascending_frames(gObjectEventPic_MayMachBike, 4, 4),
 };
