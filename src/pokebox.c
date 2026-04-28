@@ -1613,7 +1613,15 @@ static void Task_FadeOut(u8 taskId)
     {
         gSpecialVar_Result = TRUE;
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToField);
+        if (gMain.savedCallback != NULL)
+        {
+            SetMainCallback2(gMain.savedCallback);
+            gMain.savedCallback = NULL;
+        }
+        else
+        {
+            SetMainCallback2(CB2_ReturnToField);
+        }
         DestroyTask(taskId);
     }
 }
@@ -1688,6 +1696,7 @@ void StartPokeBox_CB2(void)
     if (!gPaletteFade.active)
     {
         gMain.state = 0;
+        gMain.savedCallback = NULL;
         // PokeBoxObj.fromField = FALSE;
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
@@ -1697,10 +1706,13 @@ void StartPokeBox_CB2(void)
 
 void StartPokeBoxFromField_CB2(void)
 {
-    gMain.state = 0;
-    // PokeBoxObj.fromField = TRUE;
-    CleanupOverworldWindowsAndTilemaps();
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
-    SetMainCallback2(CB2_InitPokeBoxSetUp);
+    if (!gPaletteFade.active)
+    {
+        gMain.state = 0;
+        // PokeBoxObj.fromField = TRUE;
+        CleanupOverworldWindowsAndTilemaps();
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+        SetMainCallback2(CB2_InitPokeBoxSetUp);
+    }
 }
