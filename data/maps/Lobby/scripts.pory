@@ -626,3 +626,8 @@ text Lobby_Text_AdminCountNPC {
 
     ¿Cómo lo resolvieron?"
 }
+
+script Lobby_Pokebox {
+    callnative(StartPokeBox_CB2)
+    end
+}

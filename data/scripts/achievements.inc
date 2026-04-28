@@ -122,10 +122,40 @@ Achievements_EventScript_Eval_Common_2:
 	waitse
 # 90 "data/scripts/achievements.pory"
 	special Special_StopAchievementConfetti
+# 91 "data/scripts/achievements.pory"
+	call Pokebox_EventScript_ShowUnlocks
 	goto Achievements_EventScript_Eval_Common_1
+
+
+Pokebox_EventScript_ShowUnlocks::
+# 97 "data/scripts/achievements.pory"
+	specialvar VAR_RESULT, Special_FindNextPokeboxUnlock
+# 98 "data/scripts/achievements.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_ne Pokebox_EventScript_ShowUnlocks_2
+# 101 "data/scripts/achievements.pory"
+	playse SE_PIN
+# 102 "data/scripts/achievements.pory"
+	showmonpic VAR_0x8005, 10, 3
+# 103 "data/scripts/achievements.pory"
+	bufferspeciesname STR_VAR_1, VAR_0x8005
+# 104 "data/scripts/achievements.pory"
+	msgbox Pokebox_EventScript_ShowUnlocks_Text_0, MSGBOX_AUTOCLOSE
+# 105 "data/scripts/achievements.pory"
+	hidemonpic
+# 106 "data/scripts/achievements.pory"
+	goto Pokebox_EventScript_ShowUnlocks
+	return
+
+Pokebox_EventScript_ShowUnlocks_2:
+	return
 
 
 Achievements_EventScript_Eval_Common_Text_0:
 # 87 "data/scripts/achievements.pory"
 	.string "¡Felicidades! Has completado el logro:\n"
 	.string "“{STR_VAR_1}”$"
+
+Pokebox_EventScript_ShowUnlocks_Text_0:
+# 104 "data/scripts/achievements.pory"
+	.string "¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.$"

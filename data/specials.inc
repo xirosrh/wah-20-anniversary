@@ -591,3 +591,4 @@ gSpecials::
 	def_special Special_StartAchievementConfetti
 	def_special Special_StopAchievementConfetti
 	def_special Special_ClearTransparentBox
+	def_special Special_FindNextPokeboxUnlock

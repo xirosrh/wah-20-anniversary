@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokebox_manager.h"
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
@@ -1466,6 +1467,22 @@ void Special_BufferAchievementTitle(void)
         gStringVar1[0] = EOS;
 }
 
+
+u16 Special_FindNextPokeboxUnlock(void)
+{
+    u8 i;
+    u8 count = PokeboxSpeciesList_GetCount();
+
+    for (i = 0; i < count; i++)
+    {
+        if (PokeboxSpecies_TryUnlockNew(i))
+        {
+            gSpecialVar_0x8005 = PokeboxSpeciesList_GetSpecie(i);
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
 
 void Special_StartAchievementConfetti(void)
 {

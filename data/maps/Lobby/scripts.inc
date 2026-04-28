@@ -1158,6 +1158,12 @@ Lobby_EventScript_AdminCountNPC::
 	end
 
 
+Lobby_Pokebox::
+# 631 "data/maps/Lobby/scripts.pory"
+	callnative StartPokeBox_CB2
+	end
+
+
 # 287 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 287 "data/maps/Lobby/scripts.pory"

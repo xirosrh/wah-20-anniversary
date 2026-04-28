@@ -88,6 +88,20 @@ script Achievements_EventScript_Eval_Common {
         special(Special_ClearTransparentBox)
         waitse
         special(Special_StopAchievementConfetti)
+        call(Pokebox_EventScript_ShowUnlocks)
     }
     return
+}
+
+script Pokebox_EventScript_ShowUnlocks {
+    specialvar(VAR_RESULT, Special_FindNextPokeboxUnlock)
+    if(var(VAR_RESULT) != TRUE) {
+        return
+    }
+    playse(SE_PIN)
+    showmonpic(VAR_0x8005, 10, 3)
+    bufferspeciesname(STR_VAR_1, VAR_0x8005)
+    msgbox("¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.", MSGBOX_AUTOCLOSE)
+    hidemonpic
+    goto(Pokebox_EventScript_ShowUnlocks)
 }
