@@ -321,6 +321,14 @@ static const struct SpriteFrameImage sPicTable_Reoneky[] = {
     overworld_ascending_frames(gObjectEventPic_Reoneky, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_ReonekyTeleporting1[] = {
+    overworld_ascending_frames(gObjectEventPic_ReonekyTeleporting1, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_ReonekyTeleporting2[] = {
+    overworld_ascending_frames(gObjectEventPic_ReonekyTeleporting2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Xiros[] = {
     overworld_ascending_frames(gObjectEventPic_Xiros, 2, 4),
 };

@@ -561,18 +561,18 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_POKENAV_ON)
         waitse
         applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
-        msgbox(format("¿Estás preparad{OA}?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_POKENAV_HANG_UP)
         waitse
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         playse(SE_WARP_OUT)
         setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, 3)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY_TELEPORTING_1)
         showobjectat(LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM)
         turnobject(LOCALID_COLLABORATORS_ROOM_REONEKY, DIR_SOUTH)
         release
         delay(30)
-        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+        updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY_TELEPORTING_2)
         release
         delay(30)
         updateobjectsprite(LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY)

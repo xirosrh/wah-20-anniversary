@@ -316,11 +316,13 @@
 #define OBJ_EVENT_GFX_CACO                        309
 #define OBJ_EVENT_GFX_MAY_TELEPORTING_1           310
 #define OBJ_EVENT_GFX_MAY_TELEPORTING_2           311
+#define OBJ_EVENT_GFX_REONEKY_TELEPORTING_1       312
+#define OBJ_EVENT_GFX_REONEKY_TELEPORTING_2       313
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        312
+#define NUM_OBJ_EVENT_GFX                        314
 
 
 // These are dynamic object gfx ids.

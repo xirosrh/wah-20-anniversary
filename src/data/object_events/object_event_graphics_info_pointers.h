@@ -66,6 +66,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReyBoo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goce;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Reoneky;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReonekyTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReonekyTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cosarara;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
@@ -572,6 +574,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REY_BOO] =                  &gObjectEventGraphicsInfo_ReyBoo,
     [OBJ_EVENT_GFX_GOCE] =                     &gObjectEventGraphicsInfo_Goce,
     [OBJ_EVENT_GFX_REONEKY] =                  &gObjectEventGraphicsInfo_Reoneky,
+    [OBJ_EVENT_GFX_REONEKY_TELEPORTING_1] =    &gObjectEventGraphicsInfo_ReonekyTeleporting1,
+    [OBJ_EVENT_GFX_REONEKY_TELEPORTING_2] =    &gObjectEventGraphicsInfo_ReonekyTeleporting2,
     [OBJ_EVENT_GFX_COSARARA] =                 &gObjectEventGraphicsInfo_Cosarara,
     [OBJ_EVENT_GFX_OZUMAS] =                   &gObjectEventGraphicsInfo_Ozumas,
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
