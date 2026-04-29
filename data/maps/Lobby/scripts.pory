@@ -735,3 +735,8 @@ text Lobby_Text_Pokebox_HelpSwapsAfterChallenge {
 text Lobby_Text_Pokebox_HelpUnlock {
     format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
 }
+
+script Lobby_EventScript_Turbo {
+    msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
+    end
+}

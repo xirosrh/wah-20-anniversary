@@ -1315,6 +1315,12 @@ Lobby_EventScript_Pokebox_Shutdown::
 	end
 
 
+Lobby_EventScript_Turbo::
+# 740 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Turbo_Text_0, MSGBOX_NPC
+	end
+
+
 # 287 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 287 "data/maps/Lobby/scripts.pory"
@@ -1740,6 +1746,15 @@ Lobby_EventScript_Pokebox_HelpMenu_Text_1:
 Lobby_EventScript_Pokebox_HelpMenu_Text_2:
 # 680 "data/maps/Lobby/scripts.pory"
 	.string "Volver$"
+
+Lobby_EventScript_Turbo_Text_0:
+# 740 "data/maps/Lobby/scripts.pory"
+	.string "¿Sabías qué existe un modo turbo para\n"
+	.string "vivir la aventura a toda velocidad?\p"
+	.string "Desde el menú de opciones puedes\n"
+	.string "configurar tu velocidad de texto, de\l"
+	.string "caminar, ¡y un turbo para los combates!\p"
+	.string "¿Te animas a probarlo?$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 130 "data/maps/Lobby/scripts.pory"
