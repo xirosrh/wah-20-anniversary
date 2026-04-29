@@ -1035,7 +1035,7 @@ CollaboratorsRoom_EventScript_MrNightology_8:
 # 569 "data/maps/CollaboratorsRoom/scripts.pory"
 	setobjectxy LOCALID_COLLABORATORS_ROOM_REONEKY, 11, 3
 # 570 "data/maps/CollaboratorsRoom/scripts.pory"
-	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY_TELEPORTING_1
 # 571 "data/maps/CollaboratorsRoom/scripts.pory"
 	showobjectat LOCALID_COLLABORATORS_ROOM_REONEKY, MAP_COLLABORATORS_ROOM
 # 572 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1045,7 +1045,7 @@ CollaboratorsRoom_EventScript_MrNightology_8:
 # 574 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 30
 # 575 "data/maps/CollaboratorsRoom/scripts.pory"
-	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
+	updateobjectsprite LOCALID_COLLABORATORS_ROOM_REONEKY, OBJ_EVENT_GFX_REONEKY_TELEPORTING_2
 # 576 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 # 577 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -2807,7 +2807,7 @@ CollaboratorsRoom_EventScript_MrNightology_Text_0:
 
 CollaboratorsRoom_EventScript_MrNightology_Text_1:
 # 564 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Estás preparad{OA}?\n"
+	.string "¿Estás preparado?\n"
 	.string "¿Sí? Genial.\p"
 	.string "¡Vente p'acá!$"
 

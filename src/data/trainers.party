@@ -2731,11 +2731,117 @@ Pic: Baro
 Gender: Male
 Music: Aqua
 Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Pink
+Difficulty: Easy
+
+Oceadino
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Earth Power
+- Sludge Bomb
+
+Tyradino
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Blaze Kick
+- Shadow Claw
+- Thunder Punch
+- Sky Uppercut
+
+Kaosune
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Heavy Slam
+- Solar Blade
+- Heat Crash
+
+Jardino
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Leaf Blade
+- Dragon Claw
+
+Magiken
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
+
+=== TRAINER_WAH_ADMIN_BARO_ALTERNATIVE ===
+Name: Baro
+Class: WAH Admin
+Pic: Baro
+Gender: Male
+Music: Aqua
+Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
+Difficulty: Normal
 
-Magikarp
-Level: 1
+Oceadino @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Earth Power
+- Sludge Bomb
+
+Tyradino @ Charcoal
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Blaze Kick
+- Shadow Claw
+- Thunder Punch
+- Sky Uppercut
+
+Kaosune @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Earthquake
+- Heavy Slam
+- Solar Blade
+- Heat Crash
+
+Jardino @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Leaf Blade
+- Dragon Claw
+
+Magiken @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu @ Light Ball
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
+
 
 === TRAINER_WAH_ADMIN_REYBOO_MAIN ===
 Name: Rey Boo

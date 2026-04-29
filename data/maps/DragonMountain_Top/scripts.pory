@@ -27,9 +27,10 @@ script DragonMountain_Top_OnTransition {
 }
 
 script DragonMountain_Top_OnFrame {
+    call(WahRoomsShared_SetPlayerTeleportGfxVars)
     playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
     showobjectat(LOCALID_MOUNTAINTOP_ABRA, MAP_DRAGON_MOUNTAIN_TOP)
     showobjectat(LOCALID_PLAYER, MAP_DRAGON_MOUNTAIN_TOP)
     turnobject(LOCALID_MOUNTAINTOP_ABRA, DIR_WEST)
@@ -37,11 +38,11 @@ script DragonMountain_Top_OnFrame {
     release
     delay(30)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
     release
     delay(30)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    call(WahRoomsShared_UpdatePlayerSpriteNormal)
     playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
     setvar(VAR_TEMP_1, 1)
     release
@@ -59,13 +60,14 @@ script DragonMountain_Top_EventScript_Abra {
     delay(20)
     msgbox(format("¿Deseas volver a la sala de Sergio?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
+        call(WahRoomsShared_SetPlayerTeleportGfxVars)
         playse(SE_WARP_IN)
         updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+		call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
 		release
 		delay(30)
 		updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+		call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
         release
         delay(20)
         setvar(VAR_SERGIO_ROOM_STATE, 1)
@@ -248,14 +250,15 @@ script DragonMountan_Top_EventScript_Sergio {
     waitmovement(LOCALID_PLAYER)
     turnobject(LOCALID_MOUNTAINTOP_ABRA_2, DIR_EAST)
     delay(20)
+    call(WahRoomsShared_SetPlayerTeleportGfxVars)
     playse(SE_WARP_IN)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
     updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
     release
     delay(30)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
     updateobjectsprite(LOCALID_MOUNTAINTOP_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
     release
     delay(20)

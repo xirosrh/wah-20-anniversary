@@ -37,9 +37,10 @@ script SergioRoom_OnWarp_AfterSergioBattle {
 }
 
 script SergioRoom_OnFrame_AbraReturns {
+    call(WahRoomsShared_SetPlayerTeleportGfxVars)
     playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
     showobjectat(LOCALID_SERGIOROOM_ABRA, MAP_SERGIO_ROOM)
     showobjectat(LOCALID_PLAYER, MAP_SERGIO_ROOM)
     turnobject(LOCALID_SERGIOROOM_ABRA, DIR_WEST)
@@ -47,11 +48,11 @@ script SergioRoom_OnFrame_AbraReturns {
     release
     delay(30)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
     release
     delay(30)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    call(WahRoomsShared_UpdatePlayerSpriteNormal)
     playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
     setvar(VAR_SERGIO_ROOM_STATE, 0)
     release
@@ -59,9 +60,10 @@ script SergioRoom_OnFrame_AbraReturns {
 }
 
 script SergioRoom_OnFrame_AfterSergioBattle {
+    call(WahRoomsShared_SetPlayerTeleportGfxVars)
     playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
     updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_1)
     showobjectat(LOCALID_SERGIOROOM_ABRA, MAP_SERGIO_ROOM)
     showobjectat(LOCALID_PLAYER, MAP_SERGIO_ROOM)
@@ -72,12 +74,12 @@ script SergioRoom_OnFrame_AfterSergioBattle {
     release
     delay(30)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
     updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO_TELEPORTING_2)
     release
     delay(30)
     updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_SPECIES(ABRA))
-    updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    call(WahRoomsShared_UpdatePlayerSpriteNormal)
     updateobjectsprite(LOCALID_SERGIOROOM_SERGIO, OBJ_EVENT_GFX_SERGIO)
     playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
     release
@@ -112,13 +114,14 @@ script SergioRoom_EventScript_Abra {
     delay(20)
     msgbox(format("Parece que Abra quiere teletransportarte a otro lugar. ¿Deseas ir?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
+        call(WahRoomsShared_SetPlayerTeleportGfxVars)
         playse(SE_WARP_IN)
         updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_2)
-		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+		call(WahRoomsShared_UpdatePlayerSpriteTeleporting2)
 		release
 		delay(30)
 		updateobjectsprite(LOCALID_SERGIOROOM_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
-		updateobjectsprite(LOCALID_PLAYER, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+		call(WahRoomsShared_UpdatePlayerSpriteTeleporting1)
         release
         delay(20)
 		warpsilent(MAP_DRAGON_MOUNTAIN_TOP, WARP_ID_DRAGON_MOUNTAIN_TOP)

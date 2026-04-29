@@ -48,7 +48,6 @@
 #define SHOP_MENU_PALETTE_ID 12
 
 enum {
-    WIN_BUY_SELL_QUIT,
     WIN_BUY_QUIT,
 };
 
@@ -154,7 +153,6 @@ static void RecordItemPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId);
 static void Task_HandleShopMenuBuy(u8 taskId);
-static void Task_HandleShopMenuSell(u8 taskId);
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list);
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
 
@@ -162,13 +160,6 @@ static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
     BuyMenuTryMakePurchase,
     BuyMenuReturnToItemList
-};
-
-static const struct MenuAction sShopMenuActions_BuySellQuit[] =
-{
-    { gText_ShopBuy, {.void_u8=Task_HandleShopMenuBuy} },
-    { gText_ShopSell, {.void_u8=Task_HandleShopMenuSell} },
-    { gText_ShopQuit, {.void_u8=Task_HandleShopMenuQuit} }
 };
 
 static const struct MenuAction sShopMenuActions_BuyQuit[] =
@@ -179,16 +170,6 @@ static const struct MenuAction sShopMenuActions_BuyQuit[] =
 
 static const struct WindowTemplate sShopMenuWindowTemplates[] =
 {
-    [WIN_BUY_SELL_QUIT] = {
-        .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 1,
-        .width = 9,
-        .height = 6,
-        .paletteNum = 15,
-        .baseBlock = 0x0008,
-    },
-    // Separate shop menu window for decorations, which can't be sold
     [WIN_BUY_QUIT] = {
         .bg = 0,
         .tilemapLeft = 2,
@@ -347,15 +328,6 @@ static u8 CreateShopMenu(u8 martType)
     LockPlayerFieldControls();
     sMartInfo.martType = martType;
 
-    if (martType == MART_TYPE_NORMAL)
-    {
-        struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
-        winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
-        sMartInfo.windowId = AddWindow(&winTemplate);
-        sMartInfo.menuActions = sShopMenuActions_BuySellQuit;
-        numMenuItems = ARRAY_COUNT(sShopMenuActions_BuySellQuit);
-    }
-    else
     {
         struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_QUIT];
         winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuyQuit, ARRAY_COUNT(sShopMenuActions_BuyQuit));
@@ -421,15 +393,6 @@ static void Task_HandleShopMenuBuy(u8 taskId)
     s16 *data = gTasks[taskId].data;
     tCallbackHi = (u32)CB2_InitBuyMenu >> 16;
     tCallbackLo = (u32)CB2_InitBuyMenu;
-    gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(FADE_TO_BLACK, 0);
-}
-
-static void Task_HandleShopMenuSell(u8 taskId)
-{
-    s16 *data = gTasks[taskId].data;
-    tCallbackHi = (u32)CB2_GoToSellMenu >> 16;
-    tCallbackLo = (u32)CB2_GoToSellMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
     FadeScreen(FADE_TO_BLACK, 0);
 }

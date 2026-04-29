@@ -912,6 +912,10 @@
 #define METATILE_hall_of_fame_SCREEN_WAH_5        0x25C
 #define METATILE_hall_of_fame_SCREEN_WAH_6        0x25D
 
+// gTileset_lobby
+#define METATILE_lobby_PC_OFF  0x211
+#define METATILE_lobby_PC_ON   0x212
+
 // gTileset_room_aguiar
 #define METATILE_room_aguiar_TV_OFF_LEFT   0x205
 #define METATILE_room_aguiar_TV_OFF_RIGHT  0x206

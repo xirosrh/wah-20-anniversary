@@ -31,3 +31,38 @@ script WahRoomsShared_SetDoorAsOpen {
     setmetatile(6, 2, METATILE_RoomGeneral_Door_Open, FALSE)
     return
 }
+
+script WahRoomsShared_SetPlayerTeleportGfxVars {
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        setvar(VAR_TEMP_D, OBJ_EVENT_GFX_BRENDAN_NORMAL)
+        setvar(VAR_TEMP_E, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1)
+        setvar(VAR_TEMP_F, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2)
+    } else {
+        setvar(VAR_TEMP_D, OBJ_EVENT_GFX_MAY_NORMAL)
+        setvar(VAR_TEMP_E, OBJ_EVENT_GFX_MAY_TELEPORTING_1)
+        setvar(VAR_TEMP_F, OBJ_EVENT_GFX_MAY_TELEPORTING_2)
+    }
+    return
+}
+
+script WahRoomsShared_UpdatePlayerSpriteNormal {
+    setvar(VAR_0x8004, LOCALID_PLAYER)
+    copyvar(VAR_0x8005, VAR_TEMP_D)
+    special(UpdateObjectEventSprite)
+    return
+}
+
+script WahRoomsShared_UpdatePlayerSpriteTeleporting1 {
+    setvar(VAR_0x8004, LOCALID_PLAYER)
+    copyvar(VAR_0x8005, VAR_TEMP_E)
+    special(UpdateObjectEventSprite)
+    return
+}
+
+script WahRoomsShared_UpdatePlayerSpriteTeleporting2 {
+    setvar(VAR_0x8004, LOCALID_PLAYER)
+    copyvar(VAR_0x8005, VAR_TEMP_F)
+    special(UpdateObjectEventSprite)
+    return
+}

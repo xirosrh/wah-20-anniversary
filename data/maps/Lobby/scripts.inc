@@ -1158,9 +1158,166 @@ Lobby_EventScript_AdminCountNPC::
 	end
 
 
-Lobby_Pokebox::
+Lobby_EventScript_Pokebox::
 # 631 "data/maps/Lobby/scripts.pory"
-	callnative StartPokeBox_CB2
+	lock
+# 632 "data/maps/Lobby/scripts.pory"
+	playse SE_PC_ON
+# 633 "data/maps/Lobby/scripts.pory"
+	setmetatile 8, 3, METATILE_lobby_PC_ON, FALSE
+# 634 "data/maps/Lobby/scripts.pory"
+	special DrawWholeMapView
+# 635 "data/maps/Lobby/scripts.pory"
+	waitse
+# 636 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Pokebox_3
+Lobby_EventScript_Pokebox_1:
+# 647 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_MainMenu
+	return
+
+Lobby_EventScript_Pokebox_2:
+# 637 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 638 "data/maps/Lobby/scripts.pory"
+	playse SE_CONTEST_HEART
+# 639 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Pokebox_SoftwareUpdate, MSGBOX_AUTOCLOSE_CENTER
+# 640 "data/maps/Lobby/scripts.pory"
+	waitse
+# 641 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 642 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Pokebox_SoftwareUpdateExplanation, MSGBOX_AUTOCLOSE_CENTER
+# 643 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 644 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN
+	goto Lobby_EventScript_Pokebox_1
+
+Lobby_EventScript_Pokebox_3:
+# 636 "data/maps/Lobby/scripts.pory"
+	goto_if_unset FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN, Lobby_EventScript_Pokebox_2
+	goto Lobby_EventScript_Pokebox_1
+
+
+Lobby_EventScript_Pokebox_MainMenu::
+# 651 "data/maps/Lobby/scripts.pory"
+	message Lobby_Text_Pokebox_MainPrompt
+# 652 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 653 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_Pokebox_MainMenu_Text_0, 0
+# 654 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_Pokebox_MainMenu_Text_1, 1
+# 655 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_StartChallenge_Text_8, 2
+# 656 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 657 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 658 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 659 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 660 "data/maps/Lobby/scripts.pory"
+	case 0, Lobby_EventScript_Pokebox_MainMenu_2
+# 668 "data/maps/Lobby/scripts.pory"
+	case 1, Lobby_EventScript_Pokebox_MainMenu_3
+# 671 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_Shutdown
+	return
+
+Lobby_EventScript_Pokebox_MainMenu_2:
+# 661 "data/maps/Lobby/scripts.pory"
+	callnative StartPokeBoxFromField_CB2
+# 662 "data/maps/Lobby/scripts.pory"
+	waitstate
+# 663 "data/maps/Lobby/scripts.pory"
+	playse SE_PC_OFF
+# 664 "data/maps/Lobby/scripts.pory"
+	setmetatile 8, 3, METATILE_lobby_PC_OFF, FALSE
+# 665 "data/maps/Lobby/scripts.pory"
+	special DrawWholeMapView
+# 666 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_Pokebox_MainMenu_3:
+# 669 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_HelpMenu
+	return
+
+
+Lobby_EventScript_Pokebox_HelpMenu::
+# 676 "data/maps/Lobby/scripts.pory"
+	message Lobby_Text_Pokebox_HelpPrompt
+# 677 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 678 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_Pokebox_HelpMenu_Text_0, 0
+# 679 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_Pokebox_HelpMenu_Text_1, 1
+# 680 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_Pokebox_HelpMenu_Text_2, 2
+# 681 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 682 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 683 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 684 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 685 "data/maps/Lobby/scripts.pory"
+	case 0, Lobby_EventScript_Pokebox_HelpMenu_2
+# 693 "data/maps/Lobby/scripts.pory"
+	case 1, Lobby_EventScript_Pokebox_HelpMenu_3
+# 698 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_MainMenu
+	return
+
+Lobby_EventScript_Pokebox_HelpMenu_2:
+# 686 "data/maps/Lobby/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Pokebox_HelpMenu_6
+# 689 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Pokebox_HelpSwapsBeforeChallenge, MSGBOX_AUTOCLOSE
+Lobby_EventScript_Pokebox_HelpMenu_5:
+# 691 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 692 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_HelpMenu
+	return
+
+Lobby_EventScript_Pokebox_HelpMenu_3:
+# 694 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Pokebox_HelpUnlock, MSGBOX_AUTOCLOSE
+# 695 "data/maps/Lobby/scripts.pory"
+	delay 10
+# 696 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_Pokebox_HelpMenu
+	return
+
+Lobby_EventScript_Pokebox_HelpMenu_6:
+# 687 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_Pokebox_HelpSwapsAfterChallenge, MSGBOX_AUTOCLOSE
+	goto Lobby_EventScript_Pokebox_HelpMenu_5
+
+
+Lobby_EventScript_Pokebox_Shutdown::
+# 703 "data/maps/Lobby/scripts.pory"
+	playse SE_PC_OFF
+# 704 "data/maps/Lobby/scripts.pory"
+	setmetatile 8, 3, METATILE_lobby_PC_OFF, FALSE
+# 705 "data/maps/Lobby/scripts.pory"
+	special DrawWholeMapView
+# 706 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
+Lobby_EventScript_Turbo::
+# 740 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Turbo_Text_0, MSGBOX_NPC
 	end
 
 
@@ -1570,6 +1727,35 @@ Lobby_EventScript_QREventInfoKid_Text_0:
 	.string "Eso sí, me gustó el premio por completar\n"
 	.string "el evento, ¡valió la pena!$"
 
+Lobby_EventScript_Pokebox_MainMenu_Text_0:
+# 653 "data/maps/Lobby/scripts.pory"
+	.string "Acceder a PC$"
+
+Lobby_EventScript_Pokebox_MainMenu_Text_1:
+# 654 "data/maps/Lobby/scripts.pory"
+	.string "¿Cómo funciona?$"
+
+Lobby_EventScript_Pokebox_HelpMenu_Text_0:
+# 678 "data/maps/Lobby/scripts.pory"
+	.string "¿Cuántos Pokémon puedo cambiar?$"
+
+Lobby_EventScript_Pokebox_HelpMenu_Text_1:
+# 679 "data/maps/Lobby/scripts.pory"
+	.string "¿Cómo desbloqueo nuevos Pokémon?$"
+
+Lobby_EventScript_Pokebox_HelpMenu_Text_2:
+# 680 "data/maps/Lobby/scripts.pory"
+	.string "Volver$"
+
+Lobby_EventScript_Turbo_Text_0:
+# 740 "data/maps/Lobby/scripts.pory"
+	.string "¿Sabías qué existe un modo turbo para\n"
+	.string "vivir la aventura a toda velocidad?\p"
+	.string "Desde el menú de opciones puedes\n"
+	.string "configurar tu velocidad de texto, de\l"
+	.string "caminar, ¡y un turbo para los combates!\p"
+	.string "¿Te animas a probarlo?$"
+
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 130 "data/maps/Lobby/scripts.pory"
 	.string "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!$"
@@ -1595,3 +1781,49 @@ Lobby_Text_AdminCountNPC::
 	.string "¿Habrán dejado a algunos afuera de la \n"
 	.string "celebración?\p"
 	.string "¿Cómo lo resolvieron?$"
+
+Lobby_Text_Pokebox_SoftwareUpdate::
+# 710 "data/maps/Lobby/scripts.pory"
+	.string "¡El software de la PC se ha actualizado!$"
+
+Lobby_Text_Pokebox_SoftwareUpdateExplanation::
+# 714 "data/maps/Lobby/scripts.pory"
+	.string "Ahora puedes cambiar hasta 3 Pokémon\n"
+	.string "de tu equipo y sustituirlos por Pokémon\l"
+	.string "de la caja, en lugar de solo 1.$"
+
+Lobby_Text_Pokebox_MainPrompt::
+# 718 "data/maps/Lobby/scripts.pory"
+	.string "¿Qué quieres hacer?$"
+
+Lobby_Text_Pokebox_HelpPrompt::
+# 722 "data/maps/Lobby/scripts.pory"
+	.string "¿Sobre qué quieres saber?$"
+
+Lobby_Text_Pokebox_HelpSwapsBeforeChallenge::
+# 726 "data/maps/Lobby/scripts.pory"
+	.string "Puedes reemplazar solo uno de los\n"
+	.string "Pokémon predefinidos del equipo\l"
+	.string "seleccionado por uno de la caja.\p"
+	.string "Puedes hacerlo las veces que quieras,\n"
+	.string "pero siempre tendrás al menos 5\l"
+	.string "Pokémon del equipo original.$"
+
+Lobby_Text_Pokebox_HelpSwapsAfterChallenge::
+# 730 "data/maps/Lobby/scripts.pory"
+	.string "Puedes reemplazar hasta 3 Pokémon\n"
+	.string "predefinidos del equipo seleccionado\l"
+	.string "por Pokémon de la caja.\p"
+	.string "Puedes hacerlo las veces que quieras,\n"
+	.string "pero siempre tendrás al menos 3\l"
+	.string "Pokémon del equipo original.$"
+
+Lobby_Text_Pokebox_HelpUnlock::
+# 735 "data/maps/Lobby/scripts.pory"
+	.string "Algunos Pokémon se desbloquean\n"
+	.string "comprándolos en la PC.\p"
+	.string "Otros, se obtienen avanzando en el\n"
+	.string "juego, consiguiendo Logros o con\l"
+	.string "eventos especiales.\p"
+	.string "Para descubrir cómo desbloquear un\n"
+	.string "Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.$"

@@ -627,7 +627,116 @@ text Lobby_Text_AdminCountNPC {
     ¿Cómo lo resolvieron?"
 }
 
-script Lobby_Pokebox {
-    callnative(StartPokeBox_CB2)
+script Lobby_EventScript_Pokebox {
+    lock
+    playse(SE_PC_ON)
+    setmetatile(8, 3, METATILE_lobby_PC_ON, FALSE)
+    special(DrawWholeMapView)
+    waitse
+    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)) {
+        delay(10)
+        playse(SE_CONTEST_HEART)
+        msgbox(Lobby_Text_Pokebox_SoftwareUpdate, MSGBOX_AUTOCLOSE_CENTER)
+        waitse
+        delay(10)
+        msgbox(Lobby_Text_Pokebox_SoftwareUpdateExplanation, MSGBOX_AUTOCLOSE_CENTER)
+        delay(20)
+        setflag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)
+
+    }
+    goto(Lobby_EventScript_Pokebox_MainMenu)
+}
+
+script Lobby_EventScript_Pokebox_MainMenu {
+    message(Lobby_Text_Pokebox_MainPrompt)
+    waitmessage
+    dynmultipush(format("Acceder a PC"), 0)
+    dynmultipush(format("¿Cómo funciona?"), 1)
+    dynmultipush(format("Salir"), 2)
+    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    delay(10)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            callnative(StartPokeBoxFromField_CB2)
+            waitstate
+            playse(SE_PC_OFF)
+            setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
+            special(DrawWholeMapView)
+            release
+            end
+        case 1:
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        default:
+            goto(Lobby_EventScript_Pokebox_Shutdown)
+    }
+}
+
+script Lobby_EventScript_Pokebox_HelpMenu {
+    message(Lobby_Text_Pokebox_HelpPrompt)
+    waitmessage
+    dynmultipush(format("¿Cuántos Pokémon puedo cambiar?"), 0)
+    dynmultipush(format("¿Cómo desbloqueo nuevos Pokémon?"), 1)
+    dynmultipush(format("Volver"), 2)
+    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    delay(10)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+                msgbox(Lobby_Text_Pokebox_HelpSwapsAfterChallenge, MSGBOX_AUTOCLOSE)
+            } else {
+                msgbox(Lobby_Text_Pokebox_HelpSwapsBeforeChallenge, MSGBOX_AUTOCLOSE)
+            }
+            delay(10)
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        case 1:
+            msgbox(Lobby_Text_Pokebox_HelpUnlock, MSGBOX_AUTOCLOSE)
+            delay(10)
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        default:
+            goto(Lobby_EventScript_Pokebox_MainMenu)
+    }
+}
+
+script Lobby_EventScript_Pokebox_Shutdown {
+    playse(SE_PC_OFF)
+    setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
+    special(DrawWholeMapView)
+    release
+    end
+}
+
+text Lobby_Text_Pokebox_SoftwareUpdate {
+    format("¡El software de la PC se ha actualizado!")
+}
+
+text Lobby_Text_Pokebox_SoftwareUpdateExplanation {
+    format("Ahora puedes cambiar hasta 3 Pokémon de tu equipo y sustituirlos por Pokémon de la caja, en lugar de solo 1.")
+}
+
+text Lobby_Text_Pokebox_MainPrompt {
+    "¿Qué quieres hacer?"
+}
+
+text Lobby_Text_Pokebox_HelpPrompt {
+    "¿Sobre qué quieres saber?"
+}
+
+text Lobby_Text_Pokebox_HelpSwapsBeforeChallenge {
+    format("Puedes reemplazar solo uno de los Pokémon predefinidos del equipo seleccionado por uno de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 5 Pokémon del equipo original.")
+}
+
+text Lobby_Text_Pokebox_HelpSwapsAfterChallenge {
+    format("Puedes reemplazar hasta 3 Pokémon predefinidos del equipo seleccionado por Pokémon de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 3 Pokémon del equipo original.")
+
+}
+
+text Lobby_Text_Pokebox_HelpUnlock {
+    format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
+}
+
+script Lobby_EventScript_Turbo {
+    msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
     end
 }

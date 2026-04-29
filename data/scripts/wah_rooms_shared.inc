@@ -51,3 +51,58 @@ WahRoomsShared_SetDoorAsOpen::
 	setmetatile 6, 2, METATILE_RoomGeneral_Door_Open, FALSE
 	return
 
+
+WahRoomsShared_SetPlayerTeleportGfxVars::
+# 36 "data/scripts/wah_rooms_shared.pory"
+	checkplayergender
+# 37 "data/scripts/wah_rooms_shared.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq WahRoomsShared_SetPlayerTeleportGfxVars_2
+# 42 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_D, OBJ_EVENT_GFX_MAY_NORMAL
+# 43 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_E, OBJ_EVENT_GFX_MAY_TELEPORTING_1
+# 44 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_F, OBJ_EVENT_GFX_MAY_TELEPORTING_2
+WahRoomsShared_SetPlayerTeleportGfxVars_1:
+	return
+
+WahRoomsShared_SetPlayerTeleportGfxVars_2:
+# 38 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_D, OBJ_EVENT_GFX_BRENDAN_NORMAL
+# 39 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_E, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_1
+# 40 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_TEMP_F, OBJ_EVENT_GFX_BRENDAN_TELEPORTING_2
+	goto WahRoomsShared_SetPlayerTeleportGfxVars_1
+
+
+WahRoomsShared_UpdatePlayerSpriteNormal::
+# 50 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_0x8004, LOCALID_PLAYER
+# 51 "data/scripts/wah_rooms_shared.pory"
+	copyvar VAR_0x8005, VAR_TEMP_D
+# 52 "data/scripts/wah_rooms_shared.pory"
+	special UpdateObjectEventSprite
+	return
+
+
+WahRoomsShared_UpdatePlayerSpriteTeleporting1::
+# 57 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_0x8004, LOCALID_PLAYER
+# 58 "data/scripts/wah_rooms_shared.pory"
+	copyvar VAR_0x8005, VAR_TEMP_E
+# 59 "data/scripts/wah_rooms_shared.pory"
+	special UpdateObjectEventSprite
+	return
+
+
+WahRoomsShared_UpdatePlayerSpriteTeleporting2::
+# 64 "data/scripts/wah_rooms_shared.pory"
+	setvar VAR_0x8004, LOCALID_PLAYER
+# 65 "data/scripts/wah_rooms_shared.pory"
+	copyvar VAR_0x8005, VAR_TEMP_F
+# 66 "data/scripts/wah_rooms_shared.pory"
+	special UpdateObjectEventSprite
+	return
+

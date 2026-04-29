@@ -82,7 +82,7 @@ HallOfFame_OnFrame::
 # 45 "data/maps/HallOfFame/scripts.pory"
 	call HallOfFame_EventScript_EvalAchievements
 # 46 "data/maps/HallOfFame/scripts.pory"
-	call HallOfFame_EventScript_ResetWahChallenge
+	call EventScript_ResetWahChallenge
 # 47 "data/maps/HallOfFame/scripts.pory"
 	fadescreenspeed FADE_TO_BLACK, 24
 # 48 "data/maps/HallOfFame/scripts.pory"
@@ -169,14 +169,6 @@ HallOfFame_EventScript_SetGameClear_8:
 # 83 "data/maps/HallOfFame/scripts.pory"
 	addvar VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT, 1
 	goto HallOfFame_EventScript_SetGameClear_4
-
-
-HallOfFame_EventScript_ResetWahChallenge::
-# 90 "data/maps/HallOfFame/scripts.pory"
-	call EventScript_ResetWahChallenge
-# 91 "data/maps/HallOfFame/scripts.pory"
-	special RandomizeWahAdminTeams
-	return
 
 
 HallOfFame_OnFrame_Text_0:
