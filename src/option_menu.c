@@ -1,6 +1,7 @@
 #include "global.h"
 #include "option_menu.h"
 #include "bg.h"
+#include "graphics.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "main.h"
@@ -47,6 +48,8 @@ enum
 
 #define Y_DIFF 16
 #define OPTIONS_ON_SCREEN 7
+#define BG_SCROLL 3
+#define BG_SCROLL_DELAY 4
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -72,12 +75,17 @@ static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 static void DrawItemChoices(u8 taskId, u8 menuItem, u8 y);
 static void DrawItemLabel(u8 menuItem, u8 y);
+static void LoadScrollBg(void);
 static void ScrollMenu(u8 direction);
+static void UpdateScrollBg(void);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 EWRAM_DATA static u8 sMenuCursor = 0;
 EWRAM_DATA static u16 sScrollOffset = 0;
 EWRAM_DATA static u8 sScrollArrowsTaskId = 0;
+EWRAM_DATA static u16 sBgScrollX = 0;
+EWRAM_DATA static u16 sBgScrollY = 0;
+EWRAM_DATA static u8 sBgScrollFrameCounter = 0;
 
 static const u8 gText_Option[]             = _("Opciones");
 static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Lento");
@@ -142,6 +150,15 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
 static const struct BgTemplate sOptionMenuBgTemplates[] =
 {
     {
+        .bg = BG_SCROLL,
+        .charBaseIndex = 3,
+        .mapBaseIndex = 28,
+        .screenSize = 0,
+        .paletteMode = 0,
+        .priority = 3,
+        .baseTile = 0
+    },
+    {
         .bg = 1,
         .charBaseIndex = 1,
         .mapBaseIndex = 30,
@@ -161,14 +178,13 @@ static const struct BgTemplate sOptionMenuBgTemplates[] =
     }
 };
 
-static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
-
 static void MainCB2(void)
 {
     RunTasks();
     AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
+    UpdateScrollBg();
 }
 
 static void VBlankCB(void)
@@ -202,18 +218,22 @@ void CB2_InitOptionMenu(void)
         ChangeBgY(2, 0, BG_COORD_SET);
         ChangeBgX(3, 0, BG_COORD_SET);
         ChangeBgY(3, 0, BG_COORD_SET);
+        sBgScrollX = 0;
+        sBgScrollY = 0;
+        sBgScrollFrameCounter = 0;
         InitWindows(sOptionMenuWinTemplates);
         DeactivateAllTextPrinters();
         SetGpuReg(REG_OFFSET_WIN0H, 0);
         SetGpuReg(REG_OFFSET_WIN0V, 0);
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG0);
-        SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_CLR);
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG0 | WININ_WIN0_BG3);
+        SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_BG3 | WINOUT_WIN01_CLR);
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_DARKEN);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
         SetGpuReg(REG_OFFSET_BLDY, 4);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
         ShowBg(0);
         ShowBg(1);
+        ShowBg(BG_SCROLL);
         gMain.state++;
         break;
     case 2:
@@ -224,37 +244,42 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 3:
-        LoadBgTiles(1, GetWindowFrameTilesPal(0)->tiles, 0x120, 0x1A2);
+        LoadScrollBg();
         gMain.state++;
         break;
     case 4:
-        LoadPalette(sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
-        LoadPalette(GetWindowFrameTilesPal(0)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        LoadBgTiles(1, GetWindowFrameTilesPal(0)->tiles, 0x120, 0x1A2);
         gMain.state++;
         break;
     case 5:
-        LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+        LoadPalette(gBagBg_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        LoadPalette(GetWindowFrameTilesPal(0)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         gMain.state++;
         break;
     case 6:
+        LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+        gMain.state++;
+        break;
+    case 7:
         PutWindowTilemap(WIN_HEADER);
         DrawHeaderText();
         gMain.state++;
         break;
-    case 7:
+    case 8:
         sMenuCursor = 0;
         sScrollOffset = 0;
         gMain.state++;
         break;
-    case 8:
+    case 9:
         PutWindowTilemap(WIN_OPTIONS);
         DrawOptionMenuTexts();
         gMain.state++;
-    case 9:
+        break;
+    case 10:
         DrawBgWindowFrames();
         gMain.state++;
         break;
-    case 10:
+    case 11:
     {
         u8 taskId = CreateTask(Task_OptionMenuFadeIn, 0);
         u8 i;
@@ -283,7 +308,7 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     }
-    case 11:
+    case 12:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB);
         SetMainCallback2(MainCB2);
@@ -446,6 +471,8 @@ static void Task_OptionMenuFadeOut(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        SetGpuReg(REG_OFFSET_BG3HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG3VOFS, 0);
         DestroyTask(taskId);
         FreeAllWindowBuffers();
         SetMainCallback2(gMain.savedCallback);
@@ -779,6 +806,25 @@ static void ScrollMenu(u8 direction)
     if (taskId != TASK_NONE)
         DrawItemChoices(taskId, menuItem, pos * Y_DIFF);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+}
+
+static void LoadScrollBg(void)
+{
+    LZ77UnCompVram(gBagBg_Gfx, (void *)BG_CHAR_ADDR(sOptionMenuBgTemplates[0].charBaseIndex));
+    LZ77UnCompVram(gBagBg_Tilemap, (void *)BG_SCREEN_ADDR(sOptionMenuBgTemplates[0].mapBaseIndex));
+}
+
+static void UpdateScrollBg(void)
+{
+    if (++sBgScrollFrameCounter >= BG_SCROLL_DELAY)
+    {
+        sBgScrollFrameCounter = 0;
+        sBgScrollX++;
+        sBgScrollY++;
+    }
+
+    SetGpuReg(REG_OFFSET_BG3HOFS, sBgScrollX);
+    SetGpuReg(REG_OFFSET_BG3VOFS, sBgScrollY);
 }
 
 static void DrawHeaderText(void)
