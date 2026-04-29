@@ -73,7 +73,6 @@
 #define MAX_ITEMS_SHOWN sShopData->gridItems->numItems
 
 enum {
-    WIN_BUY_SELL_QUIT,
     WIN_BUY_QUIT,
 };
 
@@ -278,7 +277,6 @@ static void BuyMenuSubtractMoney(u8 taskId);
 static void RecordItemPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId);
 static void Task_HandleShopMenuBuy(u8 taskId);
-static void Task_HandleShopMenuSell(u8 taskId);
 static void PrintMoneyLocal(u8 windowId, u32 x, u32 y, u32 amount, u8 colorIdx, u32 align, bool32 copy);
 static void UpdateItemData(void);
 static void Task_ReturnToItemListWaitMsg(u8 taskId);
@@ -292,13 +290,6 @@ static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
     BuyMenuReturnToItemList
 };
 
-static const struct MenuAction sShopMenuActions_BuySellQuit[] =
-{
-    { gText_ShopBuy, {.void_u8=Task_HandleShopMenuBuy} },
-    { gText_ShopSell, {.void_u8=Task_HandleShopMenuSell} },
-    { gText_ShopQuit, {.void_u8=Task_HandleShopMenuQuit} }
-};
-
 static const struct MenuAction sShopMenuActions_BuyQuit[] =
 {
     { gText_ShopBuy, {.void_u8=Task_HandleShopMenuBuy} },
@@ -307,16 +298,6 @@ static const struct MenuAction sShopMenuActions_BuyQuit[] =
 
 static const struct WindowTemplate sShopMenuWindowTemplates[] =
 {
-    [WIN_BUY_SELL_QUIT] = {
-        .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 1,
-        .width = 9,
-        .height = 6,
-        .paletteNum = 15,
-        .baseBlock = 0x0008,
-    },
-    // Separate shop menu window for decorations, which can't be sold
     [WIN_BUY_QUIT] = {
         .bg = 0,
         .tilemapLeft = 2,
@@ -587,16 +568,6 @@ static u8 CreateShopMenu(u8 martType)
             numMenuItems = ARRAY_COUNT(sShopMenuActions_BuyQuit);
             break;
         }
-        case NEW_SHOP_TYPE_NORMAL:
-        case NEW_SHOP_TYPE_VARIABLE:
-        {
-            struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
-            winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
-            sMartInfo.windowId = AddWindow(&winTemplate);
-            sMartInfo.menuActions = sShopMenuActions_BuySellQuit;
-            numMenuItems = ARRAY_COUNT(sShopMenuActions_BuySellQuit);
-            break;
-        }
     }
 
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
@@ -803,15 +774,6 @@ static void Task_HandleShopMenuBuy(u8 taskId)
     s16 *data = gTasks[taskId].data;
     tCallbackHi = (u32)CB2_InitBuyMenu >> 16;
     tCallbackLo = (u32)CB2_InitBuyMenu;
-    gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(FADE_TO_BLACK, 0);
-}
-
-static void Task_HandleShopMenuSell(u8 taskId)
-{
-    s16 *data = gTasks[taskId].data;
-    tCallbackHi = (u32)CB2_GoToSellMenu >> 16;
-    tCallbackLo = (u32)CB2_GoToSellMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
     FadeScreen(FADE_TO_BLACK, 0);
 }
