@@ -43,7 +43,7 @@ script HallOfFame_OnFrame {
 	setvar(VAR_TEMP_1, 1)
 	call(HallOfFame_EventScript_SetGameClear)
 	call(HallOfFame_EventScript_EvalAchievements)
-	call(HallOfFame_EventScript_ResetWahChallenge)
+	call(EventScript_ResetWahChallenge)
 	fadescreenspeed(FADE_TO_BLACK, 24)
 	special(GameClear)
 	waitstate
@@ -83,11 +83,5 @@ script HallOfFame_EventScript_SetGameClear {
 			addvar(VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT, 1)
 	}
 	addvar(VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1)
-	return
-}
-
-script HallOfFame_EventScript_ResetWahChallenge {
-	call(EventScript_ResetWahChallenge)
-	special(RandomizeWahAdminTeams)
 	return
 }

@@ -4,6 +4,7 @@ script EventScript_ResetWahChallenge {
 	clearflag(FLAG_INVERSE_BATTLE)
 	clearflag(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES)
 	setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_NONE)
+	special(RandomizeWahAdminTeams)
 	return
 }
 
