@@ -1094,3 +1094,14 @@ const struct Tileset gTileset_hall_of_fame =
     .metatileAttributes = gMetatileAttributes_hall_of_fame,
     .callback = InitTilesetAnim_HallOfFame,
 };
+
+const struct Tileset gTileset_room_javsjavi4315 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_javsjavi4315,
+    .palettes = gTilesetPalettes_room_javsjavi4315,
+    .metatiles = gMetatiles_room_javsjavi4315,
+    .metatileAttributes = gMetatileAttributes_room_javsjavi4315,
+    .callback = NULL,
+};

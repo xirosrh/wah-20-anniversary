@@ -33,13 +33,13 @@ JavsJavi4315Room_OnTransition_1:
 
 JavsJavi4315Room_OnTransition_2:
 # 20 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxy LOCALID_JAVSJAVIROOM_JAVI4315, 3, 3
+	setobjectxy LOCALID_JAVSJAVIROOM_JAVI4315, 2, 3
 # 21 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxy LOCALID_JAVSJAVIROOM_JAVS, 4, 3
+	setobjectxy LOCALID_JAVSJAVIROOM_JAVS, 3, 3
 # 22 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVI4315, 3, 3
+	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVI4315, 2, 3
 # 23 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVS, 4, 3
+	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVS, 3, 3
 # 24 "data/maps/JavsJavi4315Room/scripts.pory"
 	setobjectmovementtype LOCALID_JAVSJAVIROOM_JAVI4315, MOVEMENT_TYPE_FACE_UP
 # 25 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -69,7 +69,7 @@ JavsJavi4315Room_EventScript_MainTrigger::
 # 45 "data/maps/JavsJavi4315Room/scripts.pory"
 	special SpawnCameraObject
 # 46 "data/maps/JavsJavi4315Room/scripts.pory"
-	directcameramovementtopos 4, 4
+	directcameramovementtopos 3, 4
 # 47 "data/maps/JavsJavi4315Room/scripts.pory"
 	waitmovement 0
 # 48 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -361,9 +361,11 @@ JavsJavi4315Room_EventScript_MainTrigger_Movement_0:
 # 71 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_1:
 # 71 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_down
+# 71 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_right
 # 71 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_down
+	walk_right
 # 71 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_right
 # 71 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -375,13 +377,15 @@ JavsJavi4315Room_EventScript_MainTrigger_Movement_1:
 # 72 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_2:
 # 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
+# 72 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 72 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 72 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 72 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
 # 72 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
 	step_end
