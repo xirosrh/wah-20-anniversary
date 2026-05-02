@@ -741,7 +741,7 @@ static void PrintTextStartMenu()
     }
 
     //LOGROS
-    ConvertIntToDecimalStringN(gStringVar3, 0, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+    ConvertIntToDecimalStringN(gStringVar3, GetCompletedAchievementsCount(), STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar2, sText_Task);
     x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar1, 80);
     AddTextPrinterParameterized3(sStartMenuWindowId, FONT_NORMAL, x + (18*8), 1, sStartMenuTextColorsWhite, 0, gStringVar2);
