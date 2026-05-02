@@ -279,3 +279,6 @@ const u16 gMetatileAttributes_room_collaborators[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatiles.bin");
 const u16 gMetatileAttributes_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatile_attributes.bin");
+
+const u16 gMetatiles_room_javsjavi4315[] = INCBIN_U16("data/tilesets/secondary/room_javsjavi_4315/metatiles.bin");
+const u16 gMetatileAttributes_room_javsjavi4315[] = INCBIN_U16("data/tilesets/secondary/room_javsjavi_4315/metatile_attributes.bin");
