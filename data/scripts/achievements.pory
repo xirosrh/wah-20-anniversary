@@ -14,12 +14,6 @@ script Achievements_EventScript_Eval_WinWahChallenge_Double {
     return
 }
 
-script Achievements_EventScript_Eval_WinWahChallenge_Random {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM)
-    call(Achievements_EventScript_Eval_Common)
-    return
-}
-
 script Achievements_EventScript_Eval_WinWahChallenge_Inverse {
     setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE)
     call(Achievements_EventScript_Eval_Common)
@@ -44,11 +38,6 @@ script Achievements_EventScript_Eval_WinWahChallenge_10Times {
     return
 }
 
-script Achievements_EventScript_Eval_WinWahEachModeTwice {
-    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_EACH_MODE_TWICE)
-    call(Achievements_EventScript_Eval_Common)
-    return
-}
 
 script Achievements_EventScript_Eval_WinWahChallenge_HardMode {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE)

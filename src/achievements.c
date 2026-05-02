@@ -23,7 +23,6 @@ static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
-static bool8 CheckWinWahEachModeAtLeastTwice(u8 id);
 static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
@@ -38,12 +37,6 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("Supera el desafío en modalidad\nbatallas dobles. Dos decisiones\npor turno, ¿lo lograrás?"),
         .target = TRUE,
         .check = CheckWinWahChallengeDouble,
-    },
-    [ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM] = {
-        .title = COMPOUND_STRING("Factor sorpresa con modo aleatorio"),
-        .description = COMPOUND_STRING("Gana el desafío donde cada rival\ntiene un equipo distinto y\naleatorio. Cada batalla es única."),
-        .target = TRUE,
-        .check = CheckDummyChallenge, //TODO Xiros
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE] = {
         .title = COMPOUND_STRING("El mundo al revés"),
@@ -74,12 +67,6 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("Supera el desafío diez veces.\nEl salón de la fama te conoce\npor tu nombre."),
         .target = 10,
         .check = CheckWinWahChallengeXTimes,
-    },
-    [ACHIEVEMENT_WIN_WAH_EACH_MODE_TWICE] = {
-        .title = COMPOUND_STRING("Doblete en cada modo"),
-        .description = COMPOUND_STRING("Gana el desafío al menos dos veces\nen todos los modos (estándar,\ndobles, inversas, etc.). Sin atajos."),
-        .target = TRUE,
-        .check = CheckWinWahEachModeAtLeastTwice,
     },
     [ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE] = {
         .title = COMPOUND_STRING("Solo para expertos"),
@@ -152,14 +139,6 @@ static bool8 CheckWinWahChallengeInverse(u8 id)
 static bool8 CheckWinWahChallengeXTimes(u8 id)
 {
     return VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT) >= sAchievements[id].target;
-}
-
-static bool8 CheckWinWahEachModeAtLeastTwice(u8 id)
-{
-    (void)id;
-    return VarGet(VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT) >= 2
-        && VarGet(VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT) >= 2
-        && VarGet(VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT) >= 2;
 }
 
 static bool8 CheckDefeatAllCollaborators(u8 id)
