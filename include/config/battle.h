@@ -225,8 +225,8 @@
 #define B_FLAG_NO_RUNNING           0     // Si esta flag está activada, no se puede escapar de batallas salvajes. Además, hace que Rugido/Torbellino y Teletransporte (con el config en menos de 8ª Gen) fallen.
 #define B_FLAG_AI_VS_AI_BATTLE      0     // Si esta flag está activada, los Pokémon del jugador serán controlados por la IA en las siguientes batallas.
 #define B_FLAG_DYNAMAX_BATTLE       0     // Si esta flag está activada, la habilidad de Dynamax en batalla está habilitada para todos los entrenadores.
-#define B_FLAG_TERA_ORB_CHARGED     0     // Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
-#define B_FLAG_TERA_ORB_NO_COST     0     // Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
+#define B_FLAG_TERA_ORB_CHARGED     FLAG_TERA_ORB_CHARGED     // Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
+#define B_FLAG_TERA_ORB_NO_COST     FLAG_TERA_ORB_NO_COST     // Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
 #define B_FLAG_SLEEP_CLAUSE         0     // Si esta flag está activada, clausula de sueño está activada; si el jugador o la IA ha puesto a dormir ya a algún Pokémon, no puede dormir más. IA requiere AI_FLAG_CHECK_BAD_MOVE para entenderlo.
 #define B_FLAG_NO_WHITEOUT          FLAG_NO_WHITEOUT     // Si esta flag está activada, el jugador no puede perder contra entrenadores. Ten en cuenta que esto no cura a tu equipo automáticamente.
 

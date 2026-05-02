@@ -677,9 +677,9 @@
 #define FLAG_HIDE_KECLEON_ROOM_EING  0x276 // Used WAH
 #define FLAG_HIDE_KECLEON_ROOM_XIROS  0x277 // Used WAH
 #define FLAG_HIDE_KECLEON_ROOM_SERGIO  0x278 // Used WAH
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
+#define FLAG_KECLEON_ENTREGA_TERA_ORB  0x279 // Used WAH
+#define FLAG_TERA_ORB_CHARGED  0x27A // Used WAH
+#define FLAG_TERA_ORB_NO_COST  0x27B // Used WAH
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag

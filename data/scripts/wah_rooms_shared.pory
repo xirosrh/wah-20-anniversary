@@ -47,13 +47,13 @@ script WahRoomsShared_Kecleon {
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
             applymovementandwait(VAR_LAST_TALKED, Movement_KecleonAppears)
             waitse
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+            waitse
             playmoncry(SPECIES_KECLEON, CRY_MODE_NORMAL)
             delay(40)
             waitmoncry
-            // Desafío, recompensa...
-
             call(WahRoomsShared_Kecleon_Recompensa)
-
             fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject(VAR_LAST_TALKED)
             fadescreenswapbuffers(FADE_FROM_BLACK)
@@ -68,7 +68,98 @@ script WahRoomsShared_Kecleon {
 }
 
 script WahRoomsShared_Kecleon_Recompensa {
+    if(!flag(FLAG_KECLEON_ENTREGA_TERA_ORB))
+    {
+        giveitem(ITEM_TERA_ORB)
+        setflag(FLAG_KECLEON_ENTREGA_TERA_ORB)
+        setflag(B_FLAG_TERA_ORB_CHARGED)
+        setflag(B_FLAG_TERA_ORB_NO_COST)
+        return
+    }
+    else
+    {
+        random(2)
+        switch(var(VAR_RESULT))
+        {
+            case 0:
+                call(WahRoomsShared_Kecleon_Dinero)
+                break
+            case 1:
+                call(WahRoomsShared_Kecleon_KitCuracion)
+                break
+        }
+    }
 
+    return
+}
+
+script WahRoomsShared_Kecleon_Dinero {
+    showmoneybox(0, 0)
+    random(10)
+    switch(var(VAR_RESULT))
+    {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            addmoney(5000)
+            setvar(VAR_RESULT, 0)
+            break
+        case 4:
+        case 5:
+        case 6:
+            addmoney(8000)
+            setvar(VAR_RESULT, 1)
+            break
+        case 7:
+        case 8:
+            addmoney(10000)
+            setvar(VAR_RESULT, 2)
+            break
+        case 9:
+            addmoney(15000)
+            setvar(VAR_RESULT, 3)
+            break
+    }
+    delay(30)
+    playse(SE_SHOP)
+    updatemoneybox
+    switch(var(VAR_RESULT))
+    {
+        case 0:
+            msgbox(format("¡Tile te ha entregado 5000¥!"), MSGBOX_AUTOCLOSE)
+            break
+        case 1:
+            msgbox(format("¡Tile te ha entregado 8000¥!"), MSGBOX_AUTOCLOSE)
+            break
+        case 2:
+            msgbox(format("¡Tile te ha entregado 10000¥!"), MSGBOX_AUTOCLOSE)
+            break
+        case 3:
+            msgbox(format("¡Tile te ha entregado 15000¥!"), MSGBOX_AUTOCLOSE)
+            break
+    }
+    hidemoneybox
+    return
+}
+
+script WahRoomsShared_Kecleon_KitCuracion {
+    msgbox(format("¡Tile te ha entregado un kit de curación!"), MSGBOX_AUTOCLOSE)
+    random(2)
+    switch(var(VAR_RESULT))
+    {
+        case 0:
+            giveitem(ITEM_MAX_REVIVE, 1)
+            giveitem(ITEM_REVIVE, 2)
+            giveitem(ITEM_FULL_RESTORE, 3)
+            break
+        case 1:
+            giveitem(ITEM_REVIVE, 2)
+            giveitem(ITEM_MAX_POTION, 2)
+            giveitem(ITEM_FULL_HEAL, 2)
+            break
+    }
+    return
 }
 
 script WahRoomsShared_Kecleon_ResetFlags {
@@ -424,16 +515,16 @@ script WahRoomsShared_Kecleon_SetSala_JavsJavi {
     switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
             break
         case 1:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
             break
         case 2:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
             break
         case 3:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0)
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
             break
         default: 
             break
