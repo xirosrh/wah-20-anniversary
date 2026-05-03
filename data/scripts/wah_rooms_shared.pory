@@ -184,38 +184,78 @@ script WahRoomsShared_Kecleon_KitCuracion {
     switch(var(VAR_RESULT))
     {
         case 0:
-            giveitem(ITEM_MAX_REVIVE, 1)
+            setvar(VAR_0x8000, ITEM_MAX_REVIVE)
+            setvar(VAR_0x8001, 1)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
-            giveitem(ITEM_REVIVE, 2)
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
+
+            setvar(VAR_0x8000, ITEM_REVIVE)
+            setvar(VAR_0x8001, 2)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
-            giveitem(ITEM_FULL_RESTORE, 3)
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
+
+            setvar(VAR_0x8000, ITEM_FULL_RESTORE)
+            setvar(VAR_0x8001, 3)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
             break
         case 1:
-            giveitem(ITEM_REVIVE, 2)
+            setvar(VAR_0x8000, ITEM_REVIVE)
+            setvar(VAR_0x8001, 2)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
-            giveitem(ITEM_MAX_POTION, 2)
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
+
+            setvar(VAR_0x8000, ITEM_MAX_POTION)
+            setvar(VAR_0x8001, 2)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
-            giveitem(ITEM_FULL_HEAL, 2)
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
+
+            setvar(VAR_0x8000, ITEM_FULL_HEAL)
+            setvar(VAR_0x8001, 2)
+            additem(VAR_0x8000, VAR_0x8001)
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
             }
+            bufferitemnameplural(STR_VAR_2, VAR_0x8000, VAR_0x8001)
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox(format("¡Tile te entregó {STR_VAR_2}!"), MSGBOX_AUTOCLOSE)
+            waitfanfare
             break
     }
     return
