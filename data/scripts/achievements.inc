@@ -70,64 +70,72 @@ Achievements_EventScript_Eval_UnlockAllPokemon::
 	return
 
 
-Achievements_EventScript_Eval_DefeatAllCollaborators::
+Achievements_EventScript_Eval_FoundTileKecleon::
 # 63 "data/scripts/achievements.pory"
-	setvar VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS
+	setvar VAR_0x8004, ACHIEVEMENT_FOUND_TILE_KECLEON
 # 64 "data/scripts/achievements.pory"
 	call Achievements_EventScript_Eval_Common
 	return
 
 
-Achievements_EventScript_Eval_Common::
+Achievements_EventScript_Eval_DefeatAllCollaborators::
 # 69 "data/scripts/achievements.pory"
-	delay 30
+	setvar VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS
 # 70 "data/scripts/achievements.pory"
+	call Achievements_EventScript_Eval_Common
+	return
+
+
+Achievements_EventScript_Eval_Common::
+# 75 "data/scripts/achievements.pory"
+	delay 30
+# 76 "data/scripts/achievements.pory"
 	specialvar VAR_RESULT, Special_CheckAndCompleteAchievement
-# 71 "data/scripts/achievements.pory"
+# 77 "data/scripts/achievements.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Achievements_EventScript_Eval_Common_2
 Achievements_EventScript_Eval_Common_1:
 	return
 
 Achievements_EventScript_Eval_Common_2:
-# 72 "data/scripts/achievements.pory"
-	special Special_BufferAchievementTitle
-# 73 "data/scripts/achievements.pory"
-	playse SE_APPLAUSE
-# 74 "data/scripts/achievements.pory"
-	special Special_StartAchievementConfetti
-# 75 "data/scripts/achievements.pory"
-	setflag FLAG_TRANSPARENT_BOX
-# 76 "data/scripts/achievements.pory"
-	msgbox Achievements_EventScript_Eval_Common_Text_0, MSGBOX_AUTOCLOSE_CENTER
-# 77 "data/scripts/achievements.pory"
-	special Special_ClearTransparentBox
 # 78 "data/scripts/achievements.pory"
-	waitse
+	special Special_BufferAchievementTitle
 # 79 "data/scripts/achievements.pory"
-	special Special_StopAchievementConfetti
+	playse SE_APPLAUSE
 # 80 "data/scripts/achievements.pory"
+	special Special_StartAchievementConfetti
+# 81 "data/scripts/achievements.pory"
+	setflag FLAG_TRANSPARENT_BOX
+# 82 "data/scripts/achievements.pory"
+	msgbox Achievements_EventScript_Eval_Common_Text_0, MSGBOX_AUTOCLOSE_CENTER
+# 83 "data/scripts/achievements.pory"
+	special Special_ClearTransparentBox
+# 84 "data/scripts/achievements.pory"
+	waitse
+# 85 "data/scripts/achievements.pory"
+	special Special_StopAchievementConfetti
+# 86 "data/scripts/achievements.pory"
 	call Pokebox_EventScript_ShowUnlocks
 	goto Achievements_EventScript_Eval_Common_1
 
 
 Pokebox_EventScript_ShowUnlocks::
-# 86 "data/scripts/achievements.pory"
+# 92 "data/scripts/achievements.pory"
 	specialvar VAR_RESULT, Special_FindNextPokeboxUnlock
-# 87 "data/scripts/achievements.pory"
+# 93 "data/scripts/achievements.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_ne Pokebox_EventScript_ShowUnlocks_2
-# 90 "data/scripts/achievements.pory"
+# 96 "data/scripts/achievements.pory"
 	playse SE_PIN
-# 91 "data/scripts/achievements.pory"
+# 97 "data/scripts/achievements.pory"
 	showmonpic VAR_0x8005, 10, 3
-# 92 "data/scripts/achievements.pory"
+# 98 "data/scripts/achievements.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8005
-# 93 "data/scripts/achievements.pory"
+# 99 "data/scripts/achievements.pory"
 	msgbox Pokebox_EventScript_ShowUnlocks_Text_0, MSGBOX_AUTOCLOSE
-# 94 "data/scripts/achievements.pory"
+# 100 "data/scripts/achievements.pory"
 	hidemonpic
-# 95 "data/scripts/achievements.pory"
+# 101 "data/scripts/achievements.pory"
 	goto Pokebox_EventScript_ShowUnlocks
 	return
 
@@ -136,10 +144,10 @@ Pokebox_EventScript_ShowUnlocks_2:
 
 
 Achievements_EventScript_Eval_Common_Text_0:
-# 76 "data/scripts/achievements.pory"
+# 82 "data/scripts/achievements.pory"
 	.string "¡Felicidades! Has completado el logro:\n"
 	.string "“{STR_VAR_1}”$"
 
 Pokebox_EventScript_ShowUnlocks_Text_0:
-# 93 "data/scripts/achievements.pory"
+# 99 "data/scripts/achievements.pory"
 	.string "¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.$"

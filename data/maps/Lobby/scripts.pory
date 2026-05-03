@@ -29,7 +29,6 @@ script Lobby_EventScript_StartChallenge {
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
             msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             goto(Lobby_StartChallenge_EnterOmegaRoom)
-        call(WahRoomsShared_Kecleon_ResetFlags)
         } else {
             goto(Lobby_StartChallenge_CancelledChallenge)
         }
@@ -81,6 +80,7 @@ script Lobby_StartChallenge_CancelledChallenge {
 
 script Lobby_StartChallenge_EnterOmegaRoom {
     special(SetWahChallengeInitialAchievementFlags)
+    call(WahRoomsShared_Kecleon_ResetFlags)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     call(Lobby_EventScript_OpenDoor)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)

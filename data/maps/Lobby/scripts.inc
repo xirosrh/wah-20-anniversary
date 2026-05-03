@@ -33,35 +33,35 @@ Lobby_EventScript_StartChallenge_1:
 # 23 "data/maps/Lobby/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_StartChallenge_5
 Lobby_EventScript_StartChallenge_4:
-# 37 "data/maps/Lobby/scripts.pory"
+# 36 "data/maps/Lobby/scripts.pory"
 	setspeaker SP_NAME_COPE
-# 38 "data/maps/Lobby/scripts.pory"
+# 37 "data/maps/Lobby/scripts.pory"
 	message Lobby_EventScript_StartChallenge_Text_4
-# 39 "data/maps/Lobby/scripts.pory"
+# 38 "data/maps/Lobby/scripts.pory"
 	waitmessage
-# 40 "data/maps/Lobby/scripts.pory"
+# 39 "data/maps/Lobby/scripts.pory"
 	dynmultipush Lobby_EventScript_StartChallenge_Text_5, 0
-# 41 "data/maps/Lobby/scripts.pory"
+# 40 "data/maps/Lobby/scripts.pory"
 	dynmultipush Lobby_EventScript_StartChallenge_Text_6, 1
-# 42 "data/maps/Lobby/scripts.pory"
+# 41 "data/maps/Lobby/scripts.pory"
 	dynmultipush Lobby_EventScript_StartChallenge_Text_7, 2
-# 43 "data/maps/Lobby/scripts.pory"
+# 42 "data/maps/Lobby/scripts.pory"
 	dynmultipush Lobby_EventScript_StartChallenge_Text_8, 4
-# 44 "data/maps/Lobby/scripts.pory"
+# 43 "data/maps/Lobby/scripts.pory"
 	dynmultistack 0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
-# 45 "data/maps/Lobby/scripts.pory"
+# 44 "data/maps/Lobby/scripts.pory"
 	closemessage
-# 46 "data/maps/Lobby/scripts.pory"
+# 45 "data/maps/Lobby/scripts.pory"
 	delay 10
-# 47 "data/maps/Lobby/scripts.pory"
+# 46 "data/maps/Lobby/scripts.pory"
 	switch VAR_RESULT
-# 48 "data/maps/Lobby/scripts.pory"
+# 47 "data/maps/Lobby/scripts.pory"
 	case 0, Lobby_EventScript_StartChallenge_8
-# 53 "data/maps/Lobby/scripts.pory"
+# 52 "data/maps/Lobby/scripts.pory"
 	case 1, Lobby_EventScript_StartChallenge_9
-# 59 "data/maps/Lobby/scripts.pory"
+# 58 "data/maps/Lobby/scripts.pory"
 	case 2, Lobby_EventScript_StartChallenge_10
-# 66 "data/maps/Lobby/scripts.pory"
+# 65 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_CancelledChallenge
 	return
 
@@ -82,44 +82,44 @@ Lobby_EventScript_StartChallenge_5:
 # 27 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Lobby_EventScript_StartChallenge_12
-# 34 "data/maps/Lobby/scripts.pory"
+# 33 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_CancelledChallenge
 	goto Lobby_EventScript_StartChallenge_4
 
 Lobby_EventScript_StartChallenge_8:
-# 49 "data/maps/Lobby/scripts.pory"
+# 48 "data/maps/Lobby/scripts.pory"
 	setvar VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD
-# 50 "data/maps/Lobby/scripts.pory"
+# 49 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft
-# 51 "data/maps/Lobby/scripts.pory"
+# 50 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_StartChallenge_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 52 "data/maps/Lobby/scripts.pory"
+# 51 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_EnterOmegaRoom
 	return
 
 Lobby_EventScript_StartChallenge_9:
-# 54 "data/maps/Lobby/scripts.pory"
+# 53 "data/maps/Lobby/scripts.pory"
 	setvar VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE
-# 55 "data/maps/Lobby/scripts.pory"
+# 54 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft
-# 56 "data/maps/Lobby/scripts.pory"
+# 55 "data/maps/Lobby/scripts.pory"
 	setflag FLAG_FORCE_DOUBLE_BATTLE
-# 57 "data/maps/Lobby/scripts.pory"
+# 56 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_StartChallenge_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 58 "data/maps/Lobby/scripts.pory"
+# 57 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_EnterOmegaRoom
 	return
 
 Lobby_EventScript_StartChallenge_10:
-# 60 "data/maps/Lobby/scripts.pory"
+# 59 "data/maps/Lobby/scripts.pory"
 	setvar VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE
-# 61 "data/maps/Lobby/scripts.pory"
+# 60 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft
-# 62 "data/maps/Lobby/scripts.pory"
+# 61 "data/maps/Lobby/scripts.pory"
 	setflag FLAG_INVERSE_BATTLE
-# 63 "data/maps/Lobby/scripts.pory"
+# 62 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_StartChallenge_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 64 "data/maps/Lobby/scripts.pory"
+# 63 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_EnterOmegaRoom
 	return
 
@@ -132,34 +132,34 @@ Lobby_EventScript_StartChallenge_12:
 	msgbox Lobby_EventScript_StartChallenge_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
 # 31 "data/maps/Lobby/scripts.pory"
 	goto Lobby_StartChallenge_EnterOmegaRoom
-# 32 "data/maps/Lobby/scripts.pory"
-	call WahRoomsShared_Kecleon_ResetFlags
 	goto Lobby_EventScript_StartChallenge_4
 
 
 Lobby_StartChallenge_CancelledChallenge::
-# 71 "data/maps/Lobby/scripts.pory"
+# 70 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 72 "data/maps/Lobby/scripts.pory"
+# 71 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_LOBBY_COPE, Common_Movement_Surprise
-# 73 "data/maps/Lobby/scripts.pory"
+# 72 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_StartChallenge_CancelledChallenge_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 74 "data/maps/Lobby/scripts.pory"
+# 73 "data/maps/Lobby/scripts.pory"
 	delay 60
-# 75 "data/maps/Lobby/scripts.pory"
+# 74 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_StartChallenge_CancelledChallenge_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 76 "data/maps/Lobby/scripts.pory"
+# 75 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkDown
-# 77 "data/maps/Lobby/scripts.pory"
+# 76 "data/maps/Lobby/scripts.pory"
 	turnobject LOCALID_LOBBY_COPE, DIR_SOUTH
-# 78 "data/maps/Lobby/scripts.pory"
+# 77 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 
 Lobby_StartChallenge_EnterOmegaRoom::
-# 83 "data/maps/Lobby/scripts.pory"
+# 82 "data/maps/Lobby/scripts.pory"
 	special SetWahChallengeInitialAchievementFlags
+# 83 "data/maps/Lobby/scripts.pory"
+	call WahRoomsShared_Kecleon_ResetFlags
 # 84 "data/maps/Lobby/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 # 85 "data/maps/Lobby/scripts.pory"
@@ -1410,35 +1410,35 @@ Lobby_EventScript_StartChallenge_Text_3:
 	.string "suerte y sobre todo que te diviertas!$"
 
 Lobby_EventScript_StartChallenge_Text_4:
-# 38 "data/maps/Lobby/scripts.pory"
+# 37 "data/maps/Lobby/scripts.pory"
 	.string "¿En qué modo quieres afrontar el\n"
 	.string "desafío?$"
 
 Lobby_EventScript_StartChallenge_Text_5:
-# 40 "data/maps/Lobby/scripts.pory"
+# 39 "data/maps/Lobby/scripts.pory"
 	.string "Estándar$"
 
 Lobby_EventScript_StartChallenge_Text_6:
-# 41 "data/maps/Lobby/scripts.pory"
+# 40 "data/maps/Lobby/scripts.pory"
 	.string "Batallas dobles$"
 
 Lobby_EventScript_StartChallenge_Text_7:
-# 42 "data/maps/Lobby/scripts.pory"
+# 41 "data/maps/Lobby/scripts.pory"
 	.string "Batallas inversas$"
 
 Lobby_EventScript_StartChallenge_Text_8:
-# 43 "data/maps/Lobby/scripts.pory"
+# 42 "data/maps/Lobby/scripts.pory"
 	.string "Salir$"
 
 Lobby_EventScript_StartChallenge_Text_9:
-# 57 "data/maps/Lobby/scripts.pory"
+# 56 "data/maps/Lobby/scripts.pory"
 	.string "¡Excelente! El desafío será en modo\n"
 	.string "batallas dobles.\p"
 	.string "¡Adelante, te deseo mucha suerte y\n"
 	.string "sobre todo que te diviertas!$"
 
 Lobby_EventScript_StartChallenge_Text_10:
-# 63 "data/maps/Lobby/scripts.pory"
+# 62 "data/maps/Lobby/scripts.pory"
 	.string "¡Excelente! El desafío será en modo\n"
 	.string "batallas inversas.\p"
 	.string "Las efectividades de tipo se invierten:\n"
@@ -1448,11 +1448,11 @@ Lobby_EventScript_StartChallenge_Text_10:
 	.string "sobre todo que te diviertas!$"
 
 Lobby_StartChallenge_CancelledChallenge_Text_0:
-# 73 "data/maps/Lobby/scripts.pory"
+# 72 "data/maps/Lobby/scripts.pory"
 	.string "¿Así que no te sientes list{OA}?$"
 
 Lobby_StartChallenge_CancelledChallenge_Text_1:
-# 75 "data/maps/Lobby/scripts.pory"
+# 74 "data/maps/Lobby/scripts.pory"
 	.string "Recuerda que las personas de la sala de\n"
 	.string "espera pueden ayudar en tu\l"
 	.string "preparación.$"

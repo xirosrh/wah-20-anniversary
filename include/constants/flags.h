@@ -88,7 +88,7 @@
 #define FLAG_EXPLAIN_NEW_CHALLENGE_MODES    0x4A // Used WAH
 #define FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN    0x4B // First PC boot message after WAH Challenge (Pokebox software update)
 #define FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES        0x4C // Used WAH achievements
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_FOUND_TILE_KECLEON    0x4D // Used WAH
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
 #define FLAG_INVERSE_BATTLE    0x4F // Used WAH
 
@@ -677,7 +677,7 @@
 #define FLAG_HIDE_KECLEON_ROOM_EING  0x276 // Used WAH
 #define FLAG_HIDE_KECLEON_ROOM_XIROS  0x277 // Used WAH
 #define FLAG_HIDE_KECLEON_ROOM_SERGIO  0x278 // Used WAH
-#define FLAG_KECLEON_ENTREGA_TERA_ORB  0x279 // Used WAH
+#define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_TERA_ORB_CHARGED  0x27A // Used WAH
 #define FLAG_TERA_ORB_NO_COST  0x27B // Used WAH
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag

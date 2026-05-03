@@ -89,9 +89,14 @@ script WahRoomsShared_Kecleon {
             delay(40)
             waitmoncry
             call(WahRoomsShared_Kecleon_Recompensa)
-            fadescreenswapbuffers(FADE_TO_BLACK)
+            fadescreen(FADE_TO_BLACK)
             removeobject(VAR_LAST_TALKED)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
+            fadescreen(FADE_FROM_BLACK)
+            delay(20)
+            if (!flag(FLAG_FOUND_TILE_KECLEON)) {
+                setflag(FLAG_FOUND_TILE_KECLEON)
+                call(Achievements_EventScript_Eval_FoundTileKecleon)
+            }
         }
     }
     else
@@ -103,34 +108,23 @@ script WahRoomsShared_Kecleon {
 }
 
 script WahRoomsShared_Kecleon_Recompensa {
-    if(!flag(FLAG_KECLEON_ENTREGA_TERA_ORB))
+    random(2)
+    switch(var(VAR_RESULT))
     {
-        giveitem(ITEM_TERA_ORB)
-        setflag(FLAG_KECLEON_ENTREGA_TERA_ORB)
-        setflag(B_FLAG_TERA_ORB_CHARGED)
-        setflag(B_FLAG_TERA_ORB_NO_COST)
-        return
-    }
-    else
-    {
-        random(2)
-        switch(var(VAR_RESULT))
-        {
-            case 0:
-                call(WahRoomsShared_Kecleon_Dinero)
-                break
-            case 1:
-                call(WahRoomsShared_Kecleon_KitCuracion)
-                break
-        }
+        case 0:
+            call(WahRoomsShared_Kecleon_Dinero)
+            break
+        case 1:
+            call(WahRoomsShared_Kecleon_KitCuracion)
+            break
     }
 
     return
 }
 
 script WahRoomsShared_Kecleon_Dinero {
-    showmoneybox(0, 0)
     random(10)
+    showmoneybox(0, 0)
     switch(var(VAR_RESULT))
     {
         case 0:
@@ -178,20 +172,50 @@ script WahRoomsShared_Kecleon_Dinero {
     return
 }
 
+script WahRoomsShared_Kecleon_KitCuracion_BagFull {
+    msgbox(format("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del kit."), MSGBOX_AUTOCLOSE)
+    return
+}
+
 script WahRoomsShared_Kecleon_KitCuracion {
     msgbox(format("¡Tile te ha entregado un kit de curación!"), MSGBOX_AUTOCLOSE)
+    delay(10)
     random(2)
     switch(var(VAR_RESULT))
     {
         case 0:
             giveitem(ITEM_MAX_REVIVE, 1)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             giveitem(ITEM_REVIVE, 2)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             giveitem(ITEM_FULL_RESTORE, 3)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             break
         case 1:
             giveitem(ITEM_REVIVE, 2)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             giveitem(ITEM_MAX_POTION, 2)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             giveitem(ITEM_FULL_HEAL, 2)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                return
+            }
             break
     }
     return
