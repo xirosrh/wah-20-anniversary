@@ -764,6 +764,30 @@ static const union AnimCmd sAnim_RunEast[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_ClimbStairsDown[] =
+{
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_ClimbStairsUp[] =
+{
+    ANIMCMD_FRAME(23, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_FRAME(22, 8),
+    ANIMCMD_FRAME(21, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_ClimbStairsFace[] =
+{
+    ANIMCMD_FRAME(21, 16),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_FieldMove[] =
 {
     ANIMCMD_FRAME(0, 4),
@@ -1655,7 +1679,7 @@ static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_RUN_EAST] = sAnim_RunEast,
 };
 
-static const union AnimCmd *const sAnimTable_BrendanNormal[] = {
+static const union AnimCmd *const sAnimTable_PlayersNormal[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
@@ -1680,6 +1704,12 @@ static const union AnimCmd *const sAnimTable_BrendanNormal[] = {
     [ANIM_RUN_NORTH] = sAnim_RunNorth,
     [ANIM_RUN_WEST] = sAnim_RunWest,
     [ANIM_RUN_EAST] = sAnim_RunEast,
+    [ANIM_CLIMB_STAIRS_DOWN] = sAnim_ClimbStairsDown,
+    [ANIM_CLIMB_STAIRS_UP] = sAnim_ClimbStairsUp,
+    [ANIM_CLIMB_STAIRS_FACE_DOWN] = sAnim_ClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_UP] = sAnim_ClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_LEFT] = sAnim_ClimbStairsFace,
+    [ANIM_CLIMB_STAIRS_FACE_RIGHT] = sAnim_ClimbStairsFace,
 };
 
 static const union AnimCmd *const sAnimTable_AcroBike[] = {
@@ -1921,7 +1951,7 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .animPos = {1, 3, 0, 2},
     },
     {
-        .anims = sAnimTable_BrendanNormal,
+        .anims = sAnimTable_PlayersNormal,
         .animPos = {1, 3, 0, 2},
     },
     {

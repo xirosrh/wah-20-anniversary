@@ -3150,6 +3150,29 @@ static void IllusionNickHack(u32 battler, u32 partyId, u8 *dst)
         GetMonData(mon, MON_DATA_NICKNAME, dst);
 }
 
+static void IllusionSpeciesNameHack(u32 battler, u32 partyId, u8 *dst)
+{
+    u32 id = PARTY_SIZE;
+    struct Pokemon *mon = &gEnemyParty[partyId], *partnerMon;
+
+    if (GetMonAbility(mon) == ABILITY_ILLUSION)
+    {
+        if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+            partnerMon = GetBattlerMon(BATTLE_PARTNER(battler));
+        else
+            partnerMon = mon;
+
+        id = GetIllusionMonPartyId(gEnemyParty, mon, partnerMon, battler);
+    }
+
+    u16 species;
+    if (id != PARTY_SIZE)
+        species = GetMonData(&gEnemyParty[id], MON_DATA_SPECIES, NULL);
+    else
+        species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    StringCopy(dst, GetSpeciesName(species));
+}
+
 void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)
 {
     u32 srcID = 1;
@@ -3225,8 +3248,7 @@ void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)
             else if (gBattleScripting.illusionNickHack) // for STRINGID_ENEMYABOUTTOSWITCHPKMN
             {
                 gBattleScripting.illusionNickHack = 0;
-                IllusionNickHack(src[srcID + 1], src[srcID + 2], dst);
-                StringGet_Nickname(dst);
+                IllusionSpeciesNameHack(src[srcID + 1], src[srcID + 2], dst);
             }
             else
             {

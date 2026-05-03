@@ -304,11 +304,26 @@
 #define OBJ_EVENT_GFX_TOKYN                     297
 #define OBJ_EVENT_GFX_ROXAS                     298
 #define OBJ_EVENT_GFX_MICOLO                    299
+#define OBJ_EVENT_GFX_ACIMUT                    300
+#define OBJ_EVENT_GFX_GAMEBOYCL                 301
+#define OBJ_EVENT_GFX_LOBBY_MAN_1                 302
+#define OBJ_EVENT_GFX_LOBBY_MANIAC                303
+#define OBJ_EVENT_GFX_LOBBY_WOMAN_1               304
+#define OBJ_EVENT_GFX_LOBBY_KID                   305
+#define OBJ_EVENT_GFX_KAKTUS                      306
+#define OBJ_EVENT_GFX_RYUZAKI                     307
+#define OBJ_EVENT_GFX_JAVI4315                    308
+#define OBJ_EVENT_GFX_CACO                        309
+#define OBJ_EVENT_GFX_MAY_TELEPORTING_1           310
+#define OBJ_EVENT_GFX_MAY_TELEPORTING_2           311
+#define OBJ_EVENT_GFX_REONEKY_TELEPORTING_1       312
+#define OBJ_EVENT_GFX_REONEKY_TELEPORTING_2       313
+#define OBJ_EVENT_GFX_LOBBY_MASK_BOY              314
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        300
+#define NUM_OBJ_EVENT_GFX                        315
 
 
 // These are dynamic object gfx ids.
@@ -478,6 +493,17 @@
 #define OBJ_EVENT_PAL_TAG_TOKYN                 0x1175
 #define OBJ_EVENT_PAL_TAG_ROXAS                 0x1176
 #define OBJ_EVENT_PAL_TAG_MICOLO                0x1177
+#define OBJ_EVENT_PAL_TAG_ACIMUT                0x1178
+#define OBJ_EVENT_PAL_TAG_GAMEBOYCL             0x1179
+#define OBJ_EVENT_PAL_TAG_MART_EMPLOYEE           0x117A
+#define OBJ_EVENT_PAL_TAG_LOBBY_MAN_1             0x117B
+#define OBJ_EVENT_PAL_TAG_LOBBY_MANIAC            0x117C
+#define OBJ_EVENT_PAL_TAG_LOBBY_WOMAN_1           0x117D
+#define OBJ_EVENT_PAL_TAG_KAKTUS                  0x117E
+#define OBJ_EVENT_PAL_TAG_RYUZAKI                 0x117F
+#define OBJ_EVENT_PAL_TAG_JAVI4315                0x1180
+#define OBJ_EVENT_PAL_TAG_CACO                    0x1181
+#define OBJ_EVENT_PAL_TAG_LOBBY_MASK_BOY          0x1182
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
@@ -520,6 +546,7 @@
 #define OBJ_EVENT_PAL_TAG_LIGHT_2                 0x8002
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8003
 #define OBJ_EVENT_PAL_TAG_NEON_LIGHT              0x8004
+#define OBJ_EVENT_PAL_TAG_EMOTES_2                0x8008
 // Not a real OW palette tag; used for the white flash applied to followers
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF

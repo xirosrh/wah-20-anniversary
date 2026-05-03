@@ -20,6 +20,7 @@
 #include "bg.h"
 #include "data.h"
 #include "debug.h"
+#include "difficulty.h"
 #include "decompress.h"
 #include "dexnav.h"
 #include "dma3.h"
@@ -77,6 +78,7 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 #include "test/test_runner_battle.h"
+#include "speedup.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -517,6 +519,8 @@ static void CB2_InitBattleInternal(void)
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_BATTLE_TYPE_SINGLES:
+            if (FlagGet(FLAG_FORCE_DOUBLE_BATTLE))
+                gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
             break;
         case TRAINER_BATTLE_TYPE_DOUBLES:
             gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
@@ -2943,6 +2947,8 @@ static void ClearSetBScriptingStruct(void)
 
     gBattleScripting.windowsType = temp;
     if (TESTING)
+        gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
+    else if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
         gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     else
         gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
@@ -5511,6 +5517,8 @@ static void HandleEndTurn_MonFled(void)
 static void HandleEndTurn_FinishBattle(void)
 {
     u32 i, battler;
+
+    StopSpeedup();
 
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {

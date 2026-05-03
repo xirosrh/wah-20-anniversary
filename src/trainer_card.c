@@ -1079,7 +1079,7 @@ static void PrintTaskOnCardBack()
 
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 64, sTrainerCardTextColors, TEXT_SKIP_DRAW, Achievement_GetDescription(sData->optionTaskSelected));
 
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 142, 105, 
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 142, 108, 
         (statusTask) ? sTrainerCardSGreenColors: sTrainerCardStatColors, 
         TEXT_SKIP_DRAW, 
         (statusTask) ? gText_CompletedTaskTrainerCard : gText_InProgressTakTrainerCard);

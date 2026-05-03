@@ -250,8 +250,8 @@ extern const u8 gText_PlayerSavedGame[];
 extern const u8 gText_SaveError[];
 extern const u8 gText_SavingDontTurnOffPower[];
 extern const u8 gText_SavingPlayer[];
-extern const u8 gText_SavingBadges[];
-extern const u8 gText_SavingPokedex[];
+extern const u8 gText_SavingChallenges[];
+extern const u8 gText_SavingAchievements[];
 extern const u8 gText_SavingTime[];
 
 // Battle pyramid menu texts
@@ -273,6 +273,7 @@ extern const u8 gText_Choose_Difficulty[];
 extern const u8 gText_Cope_Easy[];
 extern const u8 gText_Cope_Normal[];
 extern const u8 gText_Cope_Hard[];
+extern const u8 gText_Difficulty_CharacteristicsHeader[];
 extern const u8 gText_Easy_Description[];
 extern const u8 gText_Normal_Description[];
 extern const u8 gText_Hard_Description[];

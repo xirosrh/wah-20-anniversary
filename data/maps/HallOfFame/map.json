@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_HALLOFFAME_SERGIO",
       "graphics_id": "OBJ_EVENT_GFX_SERGIO",
-      "x": 6,
-      "y": 16,
+      "x": 4,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -32,8 +32,8 @@
   "warp_events": [
     {
       "warp_id": "WARP_ID_HALL_OF_FAME",
-      "x": 7,
-      "y": 16,
+      "x": 5,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_HALL_OF_FAME",
       "dest_warp_id": "0"

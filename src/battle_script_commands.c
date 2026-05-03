@@ -71,6 +71,7 @@
 #include "follower_npc.h"
 #include "load_save.h"
 #include "test/test_runner_battle.h"
+#include "speedup.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -4864,6 +4865,23 @@ static void Cmd_getexp(void)
                 }
                 gBattleScripting.getexpState++;
             }
+
+            // Cambiar la música durante la batalla estilo BW cuando solo quede 1 pokémon rival:
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER 
+                && gEnemyPartyCount >= 3 //cantidad de pokémon en el equipo rival (máx 6, min 2)
+                && gBattleResults.opponentFaintCounter == (gEnemyPartyCount-1))
+            {
+                switch (TRAINER_BATTLE_PARAM.opponentA)
+                {
+                case TRAINER_WAH_ADMIN_SERGIO_MAIN:
+                case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
+                    PlayBGM(MUS_TV_GOTTA_CATCH_EM_ALL);
+                    break;
+                default:
+                    PlayBGM(MUS_VICTORY_LIES_BEFORE_YOU);
+                    break;
+                }
+            }
         }
         break;
     case 3: // Set stats and give exp
@@ -5065,9 +5083,15 @@ static void Cmd_checkteamslost(void)
         return;
 
     if (NoAliveMonsForPlayer())
+    {
+        StopSpeedup();
         gBattleOutcome |= B_OUTCOME_LOST;
+    }
     if (NoAliveMonsForOpponent())
+    {
+        StopSpeedup();
         gBattleOutcome |= B_OUTCOME_WON;
+    }
 
     // Fair switching - everyone has to switch in most at the same time, without knowing which pokemon the other trainer selected.
     // In vanilla Emerald this was only used for link battles, in expansion it's also used for regular trainer battles.
@@ -7488,6 +7512,8 @@ static void Cmd_switchinanim(void)
     if (gBattleControllerExecFlags)
         return;
 
+    StartSpeedup();
+
     battler = GetBattlerForBattleScript(cmd->battler);
 
     GetBattlerPartyState(battler)->sentOut = TRUE;
@@ -8838,6 +8864,7 @@ static void Cmd_yesnobox(void)
     switch (gBattleCommunication[0])
     {
     case 0:
+        StopSpeedup();
         HandleBattleWindow(YESNOBOX_X_Y, 0);
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[0]++;

@@ -31,6 +31,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman4;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyMan1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyManiac;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyWoman1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyKid;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LobbyMaskBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkReceptionist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldMan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman;
@@ -62,6 +67,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JackJohnson
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReyBoo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goce;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Reoneky;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReonekyTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReonekyTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cosarara;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ozumas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zero;
@@ -69,6 +76,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scarex;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Xiros;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cope;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Javs;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Javi4315;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Angel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrNightology;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erkey;
@@ -77,6 +85,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gosuto;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tokyn;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxas;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Micolo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Acimut;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gameboycl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kaktus;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ryuzaki;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Caco;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
@@ -140,6 +153,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRo
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayTeleporting2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
@@ -560,6 +575,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REY_BOO] =                  &gObjectEventGraphicsInfo_ReyBoo,
     [OBJ_EVENT_GFX_GOCE] =                     &gObjectEventGraphicsInfo_Goce,
     [OBJ_EVENT_GFX_REONEKY] =                  &gObjectEventGraphicsInfo_Reoneky,
+    [OBJ_EVENT_GFX_REONEKY_TELEPORTING_1] =    &gObjectEventGraphicsInfo_ReonekyTeleporting1,
+    [OBJ_EVENT_GFX_REONEKY_TELEPORTING_2] =    &gObjectEventGraphicsInfo_ReonekyTeleporting2,
     [OBJ_EVENT_GFX_COSARARA] =                 &gObjectEventGraphicsInfo_Cosarara,
     [OBJ_EVENT_GFX_OZUMAS] =                   &gObjectEventGraphicsInfo_Ozumas,
     [OBJ_EVENT_GFX_ZERO] =                     &gObjectEventGraphicsInfo_Zero,
@@ -567,6 +584,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_XIROS] =                    &gObjectEventGraphicsInfo_Xiros,
     [OBJ_EVENT_GFX_COPE] =                     &gObjectEventGraphicsInfo_Cope,
     [OBJ_EVENT_GFX_JAVS] =                     &gObjectEventGraphicsInfo_Javs,
+    [OBJ_EVENT_GFX_JAVI4315] =                 &gObjectEventGraphicsInfo_Javi4315,
     [OBJ_EVENT_GFX_ANGEL] =                    &gObjectEventGraphicsInfo_Angel,
     [OBJ_EVENT_GFX_MRNIGHTOLOGY] =            &gObjectEventGraphicsInfo_MrNightology,
     [OBJ_EVENT_GFX_ERKEY] =                    &gObjectEventGraphicsInfo_Erkey,
@@ -575,6 +593,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TOKYN] =                     &gObjectEventGraphicsInfo_Tokyn,
     [OBJ_EVENT_GFX_ROXAS] =                     &gObjectEventGraphicsInfo_Roxas,
     [OBJ_EVENT_GFX_MICOLO] =                    &gObjectEventGraphicsInfo_Micolo,
+    [OBJ_EVENT_GFX_ACIMUT] =                    &gObjectEventGraphicsInfo_Acimut,
+    [OBJ_EVENT_GFX_GAMEBOYCL] =                 &gObjectEventGraphicsInfo_Gameboycl,
     [OBJ_EVENT_GFX_POLICE] =                   &gObjectEventGraphicsInfo_Police,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_1] =        &gObjectEventGraphicsInfo_StagePerformer1,
     [OBJ_EVENT_GFX_STAGE_PERFORMER_2] =        &gObjectEventGraphicsInfo_StagePerformer2,
@@ -608,6 +628,16 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH] =       &gObjectEventGraphicsInfo_AstronautVigoroth,
     [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
     [OBJ_EVENT_GFX_AGUIAR] =                   &gObjectEventGraphicsInfo_Aguiar,
+    [OBJ_EVENT_GFX_LOBBY_MAN_1] =              &gObjectEventGraphicsInfo_LobbyMan1,
+    [OBJ_EVENT_GFX_LOBBY_MANIAC] =             &gObjectEventGraphicsInfo_LobbyManiac,
+    [OBJ_EVENT_GFX_LOBBY_WOMAN_1] =            &gObjectEventGraphicsInfo_LobbyWoman1,
+    [OBJ_EVENT_GFX_LOBBY_KID] =                &gObjectEventGraphicsInfo_LobbyKid,
+    [OBJ_EVENT_GFX_LOBBY_MASK_BOY] =            &gObjectEventGraphicsInfo_LobbyMaskBoy,
+    [OBJ_EVENT_GFX_KAKTUS] =                   &gObjectEventGraphicsInfo_Kaktus,
+    [OBJ_EVENT_GFX_RYUZAKI] =                  &gObjectEventGraphicsInfo_Ryuzaki,
+    [OBJ_EVENT_GFX_CACO] =                     &gObjectEventGraphicsInfo_Caco,
+    [OBJ_EVENT_GFX_MAY_TELEPORTING_1] =        &gObjectEventGraphicsInfo_MayTeleporting1,
+    [OBJ_EVENT_GFX_MAY_TELEPORTING_2] =        &gObjectEventGraphicsInfo_MayTeleporting2,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -54,6 +54,7 @@ extern const u8 EventScript_ResetAllMapFlags[];
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
+static void ResetPlayerTeamSelector(void);
 static void ResetItemFlags(void);
 static void ResetDexNav(void);
 static void AddInitialGameItems(void);
@@ -97,11 +98,12 @@ static void InitPlayerTrainerId(void)
 static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
-    gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsWalkSpeed = OPTIONS_WALK_SPEED_NORMAL;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    gSaveBlock2Ptr->optionsSpeedup = 0;
 }
 
 static void ClearPokedexFlags(void)
@@ -215,6 +217,16 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    gSaveBlock2Ptr->achievements = 0;
+    gSaveBlock2Ptr->monActiveOnPokebox = 0;
+    ResetPlayerTeamSelector();
+}
+
+static void ResetPlayerTeamSelector(void)
+{
+    u8 i;
+    for(i = 0; i < PARTY_SIZE; i++)
+        gSaveBlock2Ptr->playerTeamSelector[i] = SPECIES_NONE;
 }
 
 static void ResetMiniGamesRecords(void)

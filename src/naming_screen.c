@@ -1401,7 +1401,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 static void NamingScreen_CreateCodeIcon(void)
 {
     u8 spriteId;
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MYSTERY_GIFT_MAN, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_ALEXMAD, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
 }
 

@@ -7062,6 +7062,7 @@ BattleScript_BadDreamsIncrement:
 	destroyabilitypopup
 	pause 15
 BattleScript_BadDreamsEnd:
+	setbyte sFIXED_ABILITY_POPUP, FALSE
 	end2
 BattleScript_BadDreams_ShowPopUp:
 	copybyte gBattlerAbility, gBattlerAttacker
@@ -7070,6 +7071,7 @@ BattleScript_BadDreams_ShowPopUp:
 	goto BattleScript_BadDreams_DmgAfterPopUp
 BattleScript_BadDreams_HidePopUp:
 	destroyabilitypopup
+	setbyte sFIXED_ABILITY_POPUP, FALSE
 	tryfaintmon BS_TARGET
 	goto BattleScript_BadDreamsIncrement
 

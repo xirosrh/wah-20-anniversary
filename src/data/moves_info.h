@@ -21341,7 +21341,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_AcidPulp,
     },
 
-    [MOVE_xQ4Zc0E] =
+    [MOVE_XQ4ZC0E] =
     {
         .name = COMPOUND_STRING("xQ4Zc0E"),
         .description = COMPOUND_STRING(

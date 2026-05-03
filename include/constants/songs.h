@@ -279,9 +279,11 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   303
-#define MUS_INSTRUMENT_TEST         303 // mus_instrument_test (currently: 11 vibraphone)
+#define START_MUS                   301
+#define MUS_INSTRUMENT_TEST         301 // mus_instrument_test (currently: 11 vibraphone)
 
+#define MUS_TV_GOTTA_CATCH_EM_ALL   302 // mus_TV_Gotta_Catch_Em_All
+#define MUS_TV_TOTAL_WAR            303 // mus_TV_Total_War
 #define MUS_HG_DRAGONS_DEN          304 // [Sergio      - Sala]     mus_hg_dragons_den
 #define MUS_DP_GALACTIC_HQ_BASEMENT 305 // [Xiros       - Sala]     mus_dp_galactic_hq_basement
 #define MUS_DP_GYM                  306 // [TokynWar    - Sala]     mus_dp_gym

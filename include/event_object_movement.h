@@ -493,6 +493,8 @@ bool32 IsFollowerVisible(void);
 
 // run slow
 u8 GetPlayerRunSlowMovementAction(u32);
+u8 GetClimbStairsMovementAction(u32);
+u8 GetClimbStairsFaceMovementAction(u32);
 //sideways stairs
 u8 GetSidewaysStairsToRightDirection(s16, s16, u8);
 u8 GetSidewaysStairsToLeftDirection(s16, s16, u8);
@@ -512,6 +514,7 @@ bool8 MovementAction_EmoteSmile_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteCry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteMusicNote_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *, struct Sprite *);

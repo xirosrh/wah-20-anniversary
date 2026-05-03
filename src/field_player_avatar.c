@@ -116,6 +116,7 @@ static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
 static void PlayerWalkSlowStairs(u8 direction);
+static void PlayerClimbStairs(u8 direction);
 static void UNUSED PlayerWalkSlow(u8 direction);
 static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
@@ -791,6 +792,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerJumpLedge(direction);
             return;
         }
+        else if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+        {
+            return;
+        }
         else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
         {
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
@@ -841,6 +846,12 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             // speed 2 is fast, same speed as running
             PlayerWalkFast(direction);
         }
+        return;
+    }
+
+    if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+    {
+        PlayerClimbStairs(direction);
         return;
     }
 
@@ -989,7 +1000,8 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
             y = gObjectEvents[objectEventId].currentCoords.y;
             MoveCoords(direction, &x, &y);
             if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
-             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE
+             && MetatileBehavior_IsClimbableStairs(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
             {
                 StartStrengthAnim(objectEventId, direction);
                 return TRUE;
@@ -1206,6 +1218,11 @@ static void PlayerWalkSlowStairs(u8 direction)
     PlayerSetAnimId(GetWalkSlowStairsMovementAction(direction), COPY_MOVE_WALK);
 }
 
+static void PlayerClimbStairs(u8 direction)
+{
+    PlayerSetAnimId(GetClimbStairsMovementAction(direction), 2);
+}
+
 // slow
 static void UNUSED PlayerWalkSlow(u8 direction)
 {
@@ -1288,12 +1305,20 @@ static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8 direction)
 
 void PlayerFaceDirection(u8 direction)
 {
-    PlayerSetAnimId(GetFaceDirectionMovementAction(direction), COPY_MOVE_FACE);
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (MetatileBehavior_IsClimbableStairs(player->currentMetatileBehavior))
+        PlayerSetAnimId(GetClimbStairsFaceMovementAction(direction), COPY_MOVE_FACE);
+    else
+        PlayerSetAnimId(GetFaceDirectionMovementAction(direction), COPY_MOVE_FACE);
 }
 
 void PlayerTurnInPlace(u8 direction)
 {
-    PlayerSetAnimId(GetWalkInPlaceFastMovementAction(direction), COPY_MOVE_FACE);
+    if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+        PlayerSetAnimId(GetClimbStairsFaceMovementAction(direction), COPY_MOVE_FACE);
+    else
+        PlayerSetAnimId(GetWalkInPlaceFastMovementAction(direction), COPY_MOVE_FACE);
 }
 
 void PlayerJumpLedge(u8 direction)

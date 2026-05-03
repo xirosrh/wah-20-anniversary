@@ -1325,7 +1325,11 @@
     },
     {
       "id": "MAPSEC_LOBBY",
-      "name": "Lobby"
+      "name": "Sala de espera"
+    },
+    {
+      "id": "MAPSEC_COLLABORATORS_ROOM",
+      "name": "Zona creativa"
     }
   ]
 }

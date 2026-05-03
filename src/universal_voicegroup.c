@@ -941,7 +941,7 @@ const union VoiceGroup voicegroup_agm_standard[] =
     [TAIKO_DRUM]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60, 255, 0, 255, 165),
     [MELODIC_TOM]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60, 255, 0, 255, 165),
     [SYNTH_DRUM]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_118_Synth_Drum_60, 255, 0, 255, 165),
-    [REVERSE_CYMBAL]        = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
+    [REVERSE_CYMBAL]        = INSTRUMENT(NOTE_G5, 0, gDirectSoundWaveData_Acimut_GM_119_Reverse_Cymbal_60, 255, 0, 255, 135),
 
     [GUITAR_FRET_NOISE]     = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_120_Guitar_Fret_Noise_60, 255, 0, 255, 165),
     [BREATH_NOISE]          = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_121_Breath_Noise_60, 255, 0, 255, 165),

@@ -110,7 +110,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 
     if ((tileTransitionState == T_TILE_CENTER && forcedMove == FALSE) || tileTransitionState == T_NOT_MOVING)
     {
-        if (GetPlayerSpeed() != PLAYER_SPEED_FASTEST)
+        if (GetPlayerSpeed() != PLAYER_SPEED_FASTEST
+         && !MetatileBehavior_IsClimbableStairs(GetPlayerCurMetatileBehavior(runningState)))
         {
             if (newKeys & START_BUTTON)
                 input->pressedStartButton = TRUE;

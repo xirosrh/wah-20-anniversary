@@ -1681,7 +1681,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TANGLING_HAIR] =
     {
         .name = _("Rizos rebeldes"),
-        .description = COMPOUND_STRING("Baja velococidad al contacto."),
+        .description = COMPOUND_STRING("Baja velocidad al contacto."),
         .aiRating = 5,
     },
 

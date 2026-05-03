@@ -162,7 +162,7 @@ static const struct LevelUpMove sTyradinoLevelUpLearnset[] = {
 
 static const struct LevelUpMove sMolikaiLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TEETER_DANCE),
-    LEVEL_UP_MOVE( 1, MOVE_xQ4Zc0E),
+    LEVEL_UP_MOVE( 1, MOVE_XQ4ZC0E),
     LEVEL_UP_MOVE( 1, MOVE_CROSS_POISON),
     LEVEL_UP_MOVE( 1, MOVE_KNOCK_OFF),
     LEVEL_UP_END
