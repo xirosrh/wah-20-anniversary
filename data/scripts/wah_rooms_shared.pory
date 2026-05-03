@@ -173,12 +173,14 @@ script WahRoomsShared_Kecleon_Dinero {
 }
 
 script WahRoomsShared_Kecleon_KitCuracion_BagFull {
-    msgbox(format("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del kit."), MSGBOX_AUTOCLOSE)
+    msgbox("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del kit.", MSGBOX_DEFAULT)
+    closemessage
     return
 }
 
 script WahRoomsShared_Kecleon_KitCuracion {
-    msgbox(format("¡Tile te ha entregado un kit de curación!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Tile te ha entregado un kit de curación!"), MSGBOX_DEFAULT)
+    closemessage
     delay(10)
     random(2)
     switch(var(VAR_RESULT))
@@ -195,6 +197,7 @@ script WahRoomsShared_Kecleon_KitCuracion {
                 return
             }
             giveitem(ITEM_FULL_RESTORE, 3)
+            closemessage
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
@@ -212,6 +215,7 @@ script WahRoomsShared_Kecleon_KitCuracion {
                 return
             }
             giveitem(ITEM_FULL_HEAL, 2)
+            closemessage
             if (var(VAR_RESULT) == FALSE) {
                 call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
                 return
