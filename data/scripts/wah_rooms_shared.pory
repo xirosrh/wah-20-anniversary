@@ -218,13 +218,14 @@ script WahRoomsShared_Kecleon_ResetFlags {
     setflag(FLAG_HIDE_KECLEON_ROOM_KLEINPKPOWER)
     setflag(FLAG_HIDE_KECLEON_ROOM_EING)
     setflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
+    setflag(FLAG_HIDE_KECLEON_ROOM_SERGIO)
 
     checkitem(ITEM_DEVON_SCOPE)
     if(var(VAR_RESULT))
     {
         random(4)
         copyvar(VAR_KECLEON_POSITION, VAR_RESULT)
-        random(20)
+        random(21)
         switch(var(VAR_RESULT))
         {
             case 0:
@@ -286,6 +287,9 @@ script WahRoomsShared_Kecleon_ResetFlags {
                 break
             case 19:
                 clearflag(FLAG_HIDE_KECLEON_ROOM_XIROS)
+                break
+            case 20:
+                clearflag(FLAG_HIDE_KECLEON_ROOM_SERGIO)
                 break
             default:
                 break
@@ -550,16 +554,16 @@ script WahRoomsShared_Kecleon_SetSala_JavsJavi {
     switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 11, 4)
             break
         case 1:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 1, 10)
             break
         case 2:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 1, 5)
             break
         case 3:
-            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 0, 0) // Por determinar
+            setobjectxyperm(LOCALID_JAVSJAVIROOM_KECLEON, 3, 12)
             break
         default: 
             break

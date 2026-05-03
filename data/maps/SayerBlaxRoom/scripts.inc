@@ -261,7 +261,7 @@ SayerBlaxRoom_EventScript_SayerBlaxBattle_1:
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_2:
 # 161 "data/maps/SayerBlaxRoom/scripts.pory"
-	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_0, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_1
+	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
 	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_5:
@@ -419,7 +419,7 @@ SayerBlaxRoom_OnFrame_Text_2:
 SayerBlaxRoom_OnFrame_Text_3:
 # 74 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "¿Cómo, que quieres combatir? Yo me\n"
-	.string "jubilé hace muchos años chaval.\p"
+	.string "jubilé hace muchos años chaval{A}.\p"
 	.string "Hemos pasado una pandemia incluso…\n"
 	.string "Pero si insistes… No creas que te lo\l"
 	.string "pondré fácil.$"
@@ -465,18 +465,10 @@ SayerBlaxRoom_EventScript_Sayer_Text_0:
 	.string "bastante contento con la batalla.\p"
 	.string "Avanza, fiera.$"
 
-SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_0:
-# 161 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
-
-SayerBlaxRoom_EventScript_SayerBlaxBattle_Text_1:
-# 161 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Pues si que la has liado.$"
-
 SayerBlaxRoom_Text_BlaxDefeated::
 # 187 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
 
 SayerBlaxRoom_Text_SayerDefeated::
 # 191 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Pues si que la has liado.$"
+	.string "Pues sí que la has liado.$"

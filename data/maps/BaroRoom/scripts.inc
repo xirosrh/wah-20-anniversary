@@ -302,9 +302,9 @@ BaroRoom_EventScript_PlugOink::
 # 185 "data/maps/BaroRoom/scripts.pory"
 	applymovement LOCALID_BAROROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_Movement_0
 # 186 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_AUTOCLOSE
-# 187 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
+# 187 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -462,7 +462,7 @@ BaroRoom_OnFrame_Text_8:
 	.string "Bueno, buena suerte y tal.$"
 
 BaroRoom_EventScript_PlugOink_Text_0:
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 187 "data/maps/BaroRoom/scripts.pory"
 	.string "Oink, oink, oink…$"
 
 BaroRoom_EventScript_Sever_Text_0:

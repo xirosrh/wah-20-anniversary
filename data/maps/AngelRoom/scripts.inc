@@ -61,9 +61,9 @@ AngelRoom_EventScript_Angel::
 # 39 "data/maps/AngelRoom/scripts.pory"
 	applymovement LOCALID_ANGELROOM_ANGEL, AngelRoom_EventScript_Angel_Movement_1
 # 44 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
-# 45 "data/maps/AngelRoom/scripts.pory"
 	waitmovement 0
+# 45 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
 # 46 "data/maps/AngelRoom/scripts.pory"
 	delay 30
 # 47 "data/maps/AngelRoom/scripts.pory"
@@ -119,70 +119,68 @@ AngelRoom_EventScript_Angel_10:
 # 89 "data/maps/AngelRoom/scripts.pory"
 	call AngelRoom_EventScript_AngelBattle
 # 90 "data/maps/AngelRoom/scripts.pory"
-	playse SE_PIN
-# 91 "data/maps/AngelRoom/scripts.pory"
-	applymovement LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48
-# 92 "data/maps/AngelRoom/scripts.pory"
 	msgbox AngelRoom_EventScript_Angel_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
-# 93 "data/maps/AngelRoom/scripts.pory"
-	waitmovement 0
-# 94 "data/maps/AngelRoom/scripts.pory"
-	delay 20
-# 95 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
-# 96 "data/maps/AngelRoom/scripts.pory"
-	call AngelRoom_EventScript_TurnOffScreen
-# 97 "data/maps/AngelRoom/scripts.pory"
-	delay 20
-# 98 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
-# 99 "data/maps/AngelRoom/scripts.pory"
-	getplayerxy VAR_TEMP_A, VAR_TEMP_B
-# 100 "data/maps/AngelRoom/scripts.pory"
-	special SpawnCameraObject
-# 101 "data/maps/AngelRoom/scripts.pory"
-	directcameramovementtopos 6, 2
-# 102 "data/maps/AngelRoom/scripts.pory"
-	waitmovement 0
-# 103 "data/maps/AngelRoom/scripts.pory"
-	call AngelRoom_EventScript_CloseScreen
-# 104 "data/maps/AngelRoom/scripts.pory"
-	delay 30
-# 105 "data/maps/AngelRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
-# 106 "data/maps/AngelRoom/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
-# 107 "data/maps/AngelRoom/scripts.pory"
-	waitmovement 0
-# 108 "data/maps/AngelRoom/scripts.pory"
-	special RemoveCameraObject
-# 109 "data/maps/AngelRoom/scripts.pory"
-	delay 20
-# 110 "data/maps/AngelRoom/scripts.pory"
-	msgbox AngelRoom_EventScript_Angel_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
-# 111 "data/maps/AngelRoom/scripts.pory"
+# 91 "data/maps/AngelRoom/scripts.pory"
 	playse SE_PIN
-# 112 "data/maps/AngelRoom/scripts.pory"
+# 92 "data/maps/AngelRoom/scripts.pory"
+	applymovementandwait LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48
+# 93 "data/maps/AngelRoom/scripts.pory"
+	delay 20
+# 94 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
+# 95 "data/maps/AngelRoom/scripts.pory"
+	call AngelRoom_EventScript_TurnOffScreen
+# 96 "data/maps/AngelRoom/scripts.pory"
+	delay 20
+# 97 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
+# 98 "data/maps/AngelRoom/scripts.pory"
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
+# 99 "data/maps/AngelRoom/scripts.pory"
+	special SpawnCameraObject
+# 100 "data/maps/AngelRoom/scripts.pory"
+	directcameramovementtopos 6, 2
+# 101 "data/maps/AngelRoom/scripts.pory"
+	waitmovement 0
+# 102 "data/maps/AngelRoom/scripts.pory"
+	call AngelRoom_EventScript_CloseScreen
+# 103 "data/maps/AngelRoom/scripts.pory"
+	delay 30
+# 104 "data/maps/AngelRoom/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 105 "data/maps/AngelRoom/scripts.pory"
+	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
+# 106 "data/maps/AngelRoom/scripts.pory"
+	waitmovement 0
+# 107 "data/maps/AngelRoom/scripts.pory"
+	special RemoveCameraObject
+# 108 "data/maps/AngelRoom/scripts.pory"
+	delay 20
+# 109 "data/maps/AngelRoom/scripts.pory"
+	msgbox AngelRoom_EventScript_Angel_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL
+# 110 "data/maps/AngelRoom/scripts.pory"
+	playse SE_PIN
+# 111 "data/maps/AngelRoom/scripts.pory"
 	applymovementandwait LOCALID_ANGELROOM_ANGEL, Common_Movement_HappyWithDelay48
-# 113 "data/maps/AngelRoom/scripts.pory"
+# 112 "data/maps/AngelRoom/scripts.pory"
 	waitse
-# 114 "data/maps/AngelRoom/scripts.pory"
+# 113 "data/maps/AngelRoom/scripts.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 115 "data/maps/AngelRoom/scripts.pory"
+# 114 "data/maps/AngelRoom/scripts.pory"
 	compare VAR_TEMP_0, 5
 	goto_if_eq AngelRoom_EventScript_Angel_17
-# 122 "data/maps/AngelRoom/scripts.pory"
+# 121 "data/maps/AngelRoom/scripts.pory"
 	applymovementandwait LOCALID_ANGELROOM_ANGEL, AngelRoom_EventScript_Angel_Movement_8
-# 124 "data/maps/AngelRoom/scripts.pory"
+# 123 "data/maps/AngelRoom/scripts.pory"
 	setobjectxy LOCALID_ANGELROOM_ANGEL, 5, 5
-# 125 "data/maps/AngelRoom/scripts.pory"
+# 124 "data/maps/AngelRoom/scripts.pory"
 	setobjectxyperm LOCALID_ANGELROOM_ANGEL, 5, 5
-# 126 "data/maps/AngelRoom/scripts.pory"
+# 125 "data/maps/AngelRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_ANGELROOM_ANGEL, MOVEMENT_TYPE_FACE_RIGHT
 AngelRoom_EventScript_Angel_16:
-# 128 "data/maps/AngelRoom/scripts.pory"
+# 127 "data/maps/AngelRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_ANGEL
-# 129 "data/maps/AngelRoom/scripts.pory"
+# 128 "data/maps/AngelRoom/scripts.pory"
 	release
 	end
 
@@ -234,289 +232,289 @@ AngelRoom_EventScript_Angel_15:
 	goto AngelRoom_EventScript_Angel_10
 
 AngelRoom_EventScript_Angel_17:
-# 116 "data/maps/AngelRoom/scripts.pory"
+# 115 "data/maps/AngelRoom/scripts.pory"
 	applymovementandwait LOCALID_ANGELROOM_ANGEL, AngelRoom_EventScript_Angel_Movement_7
-# 118 "data/maps/AngelRoom/scripts.pory"
+# 117 "data/maps/AngelRoom/scripts.pory"
 	setobjectxy LOCALID_ANGELROOM_ANGEL, 7, 5
-# 119 "data/maps/AngelRoom/scripts.pory"
+# 118 "data/maps/AngelRoom/scripts.pory"
 	setobjectxyperm LOCALID_ANGELROOM_ANGEL, 7, 5
-# 120 "data/maps/AngelRoom/scripts.pory"
+# 119 "data/maps/AngelRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_ANGELROOM_ANGEL, MOVEMENT_TYPE_FACE_LEFT
 	goto AngelRoom_EventScript_Angel_16
 
 
 AngelRoom_EventScript_AngelBattle::
-# 134 "data/maps/AngelRoom/scripts.pory"
+# 133 "data/maps/AngelRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AngelRoom_EventScript_AngelBattle_2
-# 137 "data/maps/AngelRoom/scripts.pory"
+# 136 "data/maps/AngelRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_ANGEL
-# 138 "data/maps/AngelRoom/scripts.pory"
+# 137 "data/maps/AngelRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 139 "data/maps/AngelRoom/scripts.pory"
+# 138 "data/maps/AngelRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AngelRoom_EventScript_AngelBattle_5
-# 142 "data/maps/AngelRoom/scripts.pory"
+# 141 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated
 AngelRoom_EventScript_AngelBattle_1:
-# 145 "data/maps/AngelRoom/scripts.pory"
+# 144 "data/maps/AngelRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 AngelRoom_EventScript_AngelBattle_2:
-# 135 "data/maps/AngelRoom/scripts.pory"
+# 134 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated
 	goto AngelRoom_EventScript_AngelBattle_1
 
 AngelRoom_EventScript_AngelBattle_5:
-# 140 "data/maps/AngelRoom/scripts.pory"
+# 139 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated
 	goto AngelRoom_EventScript_AngelBattle_1
 
 
 AngelRoom_EventScript_TurnOffScreen::
-# 154 "data/maps/AngelRoom/scripts.pory"
+# 153 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 1, METATILE_room_angel_SCREEN_OFF_TOP_LEFT, TRUE
-# 155 "data/maps/AngelRoom/scripts.pory"
+# 154 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 156 "data/maps/AngelRoom/scripts.pory"
+# 155 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 157 "data/maps/AngelRoom/scripts.pory"
+# 156 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 158 "data/maps/AngelRoom/scripts.pory"
+# 157 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 159 "data/maps/AngelRoom/scripts.pory"
+# 158 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 160 "data/maps/AngelRoom/scripts.pory"
+# 159 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 161 "data/maps/AngelRoom/scripts.pory"
+# 160 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 1, METATILE_room_angel_SCREEN_OFF_TOP_CENTER, TRUE
-# 162 "data/maps/AngelRoom/scripts.pory"
+# 161 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 1, METATILE_room_angel_SCREEN_OFF_TOP_RIGHT, TRUE
-# 163 "data/maps/AngelRoom/scripts.pory"
+# 162 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_LEFT, TRUE
-# 164 "data/maps/AngelRoom/scripts.pory"
+# 163 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 165 "data/maps/AngelRoom/scripts.pory"
+# 164 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 166 "data/maps/AngelRoom/scripts.pory"
+# 165 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 167 "data/maps/AngelRoom/scripts.pory"
+# 166 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 168 "data/maps/AngelRoom/scripts.pory"
+# 167 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 169 "data/maps/AngelRoom/scripts.pory"
+# 168 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 170 "data/maps/AngelRoom/scripts.pory"
+# 169 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_CENTER, TRUE
-# 171 "data/maps/AngelRoom/scripts.pory"
+# 170 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 2, METATILE_room_angel_SCREEN_OFF_MIDDLE_RIGHT, TRUE
-# 172 "data/maps/AngelRoom/scripts.pory"
+# 171 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_LEFT, TRUE
-# 173 "data/maps/AngelRoom/scripts.pory"
+# 172 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 174 "data/maps/AngelRoom/scripts.pory"
+# 173 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 175 "data/maps/AngelRoom/scripts.pory"
+# 174 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 176 "data/maps/AngelRoom/scripts.pory"
+# 175 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 177 "data/maps/AngelRoom/scripts.pory"
+# 176 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 178 "data/maps/AngelRoom/scripts.pory"
+# 177 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 179 "data/maps/AngelRoom/scripts.pory"
+# 178 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_CENTER, TRUE
-# 180 "data/maps/AngelRoom/scripts.pory"
+# 179 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 3, METATILE_room_angel_SCREEN_OFF_BOTTOM_RIGHT, TRUE
-# 181 "data/maps/AngelRoom/scripts.pory"
+# 180 "data/maps/AngelRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 AngelRoom_EventScript_CloseScreen::
-# 186 "data/maps/AngelRoom/scripts.pory"
+# 185 "data/maps/AngelRoom/scripts.pory"
 	playse SE_WARP_OUT
-# 187 "data/maps/AngelRoom/scripts.pory"
+# 186 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 2, METATILE_room_angel_SCREEN_CLOSING_1_LEFT, TRUE
-# 188 "data/maps/AngelRoom/scripts.pory"
+# 187 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 189 "data/maps/AngelRoom/scripts.pory"
+# 188 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 190 "data/maps/AngelRoom/scripts.pory"
+# 189 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 191 "data/maps/AngelRoom/scripts.pory"
+# 190 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 192 "data/maps/AngelRoom/scripts.pory"
+# 191 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 193 "data/maps/AngelRoom/scripts.pory"
+# 192 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 194 "data/maps/AngelRoom/scripts.pory"
+# 193 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE
-# 195 "data/maps/AngelRoom/scripts.pory"
+# 194 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 2, METATILE_room_angel_SCREEN_CLOSING_1_RIGHT, TRUE
-# 196 "data/maps/AngelRoom/scripts.pory"
+# 195 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 197 "data/maps/AngelRoom/scripts.pory"
+# 196 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 198 "data/maps/AngelRoom/scripts.pory"
+# 197 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 199 "data/maps/AngelRoom/scripts.pory"
+# 198 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 200 "data/maps/AngelRoom/scripts.pory"
+# 199 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 201 "data/maps/AngelRoom/scripts.pory"
+# 200 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 202 "data/maps/AngelRoom/scripts.pory"
+# 201 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 203 "data/maps/AngelRoom/scripts.pory"
+# 202 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 204 "data/maps/AngelRoom/scripts.pory"
+# 203 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
+# 204 "data/maps/AngelRoom/scripts.pory"
+	special DrawWholeMapView
 # 205 "data/maps/AngelRoom/scripts.pory"
-	special DrawWholeMapView
+	delay 5
 # 206 "data/maps/AngelRoom/scripts.pory"
-	delay 5
-# 207 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 2, METATILE_room_angel_SCREEN_CLOSING_2_LEFT, TRUE
-# 208 "data/maps/AngelRoom/scripts.pory"
+# 207 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 2, METATILE_room_angel_SCREEN_CLOSING_2_CENTER, TRUE
-# 209 "data/maps/AngelRoom/scripts.pory"
+# 208 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 2, METATILE_room_angel_SCREEN_CLOSING_2_CENTER, TRUE
-# 210 "data/maps/AngelRoom/scripts.pory"
+# 209 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 2, METATILE_room_angel_SCREEN_CLOSING_2_DOOR_1, TRUE
-# 211 "data/maps/AngelRoom/scripts.pory"
+# 210 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 2, METATILE_room_angel_SCREEN_CLOSING_2_DOOR_2, TRUE
-# 212 "data/maps/AngelRoom/scripts.pory"
+# 211 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 2, METATILE_room_angel_SCREEN_CLOSING_2_DOOR_3, TRUE
-# 213 "data/maps/AngelRoom/scripts.pory"
+# 212 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 2, METATILE_room_angel_SCREEN_CLOSING_2_CENTER, TRUE
-# 214 "data/maps/AngelRoom/scripts.pory"
+# 213 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 2, METATILE_room_angel_SCREEN_CLOSING_2_CENTER, TRUE
-# 215 "data/maps/AngelRoom/scripts.pory"
+# 214 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 2, METATILE_room_angel_SCREEN_CLOSING_2_RIGHT, TRUE
+# 215 "data/maps/AngelRoom/scripts.pory"
+	special DrawWholeMapView
 # 216 "data/maps/AngelRoom/scripts.pory"
-	special DrawWholeMapView
+	delay 5
 # 217 "data/maps/AngelRoom/scripts.pory"
-	delay 5
-# 218 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 1, METATILE_room_angel_SCREEN_CLOSING_3_LEFT, TRUE
-# 219 "data/maps/AngelRoom/scripts.pory"
+# 218 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 1, METATILE_room_angel_SCREEN_CLOSING_3_CENTER, TRUE
-# 220 "data/maps/AngelRoom/scripts.pory"
+# 219 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 1, METATILE_room_angel_SCREEN_CLOSING_3_CENTER, TRUE
-# 221 "data/maps/AngelRoom/scripts.pory"
+# 220 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 1, METATILE_room_angel_SCREEN_CLOSING_3_DOOR_1, TRUE
-# 222 "data/maps/AngelRoom/scripts.pory"
+# 221 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 1, METATILE_room_angel_SCREEN_CLOSING_3_DOOR_2, TRUE
-# 223 "data/maps/AngelRoom/scripts.pory"
+# 222 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 1, METATILE_room_angel_SCREEN_CLOSING_3_DOOR_3, TRUE
-# 224 "data/maps/AngelRoom/scripts.pory"
+# 223 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 1, METATILE_room_angel_SCREEN_CLOSING_3_CENTER, TRUE
-# 225 "data/maps/AngelRoom/scripts.pory"
+# 224 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 1, METATILE_room_angel_SCREEN_CLOSING_3_CENTER, TRUE
-# 226 "data/maps/AngelRoom/scripts.pory"
+# 225 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 1, METATILE_room_angel_SCREEN_CLOSING_3_RIGHT, TRUE
-# 228 "data/maps/AngelRoom/scripts.pory"
+# 227 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 2, METATILE_room_angel_WALL, TRUE
-# 229 "data/maps/AngelRoom/scripts.pory"
+# 228 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 2, METATILE_room_angel_WALL, TRUE
-# 230 "data/maps/AngelRoom/scripts.pory"
+# 229 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 2, METATILE_room_angel_WALL, TRUE
-# 231 "data/maps/AngelRoom/scripts.pory"
+# 230 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 2, METATILE_room_angel_DOOR_LEFT, TRUE
-# 232 "data/maps/AngelRoom/scripts.pory"
+# 231 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 2, METATILE_room_angel_DOOR_CENTER, TRUE
-# 233 "data/maps/AngelRoom/scripts.pory"
+# 232 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 2, METATILE_room_angel_DOOR_RIGHT, TRUE
-# 234 "data/maps/AngelRoom/scripts.pory"
+# 233 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 2, METATILE_room_angel_WALL, TRUE
-# 235 "data/maps/AngelRoom/scripts.pory"
+# 234 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 2, METATILE_room_angel_WALL, TRUE
-# 236 "data/maps/AngelRoom/scripts.pory"
+# 235 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 2, METATILE_room_angel_WALL, TRUE
-# 237 "data/maps/AngelRoom/scripts.pory"
+# 236 "data/maps/AngelRoom/scripts.pory"
 	special DrawWholeMapView
-# 238 "data/maps/AngelRoom/scripts.pory"
+# 237 "data/maps/AngelRoom/scripts.pory"
 	delay 5
-# 239 "data/maps/AngelRoom/scripts.pory"
+# 238 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 1, METATILE_room_angel_SCREEN_CLOSED_LEFT, TRUE
-# 240 "data/maps/AngelRoom/scripts.pory"
+# 239 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 241 "data/maps/AngelRoom/scripts.pory"
+# 240 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 242 "data/maps/AngelRoom/scripts.pory"
+# 241 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_LEFT, TRUE
-# 243 "data/maps/AngelRoom/scripts.pory"
+# 242 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_CENTER, TRUE
-# 244 "data/maps/AngelRoom/scripts.pory"
+# 243 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_RIGHT, TRUE
-# 245 "data/maps/AngelRoom/scripts.pory"
+# 244 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 246 "data/maps/AngelRoom/scripts.pory"
+# 245 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 247 "data/maps/AngelRoom/scripts.pory"
+# 246 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 1, METATILE_room_angel_SCREEN_CLOSED_RIGHT, TRUE
-# 248 "data/maps/AngelRoom/scripts.pory"
+# 247 "data/maps/AngelRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 AngelRoom_EventScript_SetScreenAsClosed::
-# 252 "data/maps/AngelRoom/scripts.pory"
+# 251 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 253 "data/maps/AngelRoom/scripts.pory"
+# 252 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 254 "data/maps/AngelRoom/scripts.pory"
+# 253 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 255 "data/maps/AngelRoom/scripts.pory"
+# 254 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 256 "data/maps/AngelRoom/scripts.pory"
+# 255 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 257 "data/maps/AngelRoom/scripts.pory"
+# 256 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 258 "data/maps/AngelRoom/scripts.pory"
+# 257 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 259 "data/maps/AngelRoom/scripts.pory"
+# 258 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 260 "data/maps/AngelRoom/scripts.pory"
+# 259 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 3, METATILE_room_angel_SCREEN_FLOOR, FALSE
-# 261 "data/maps/AngelRoom/scripts.pory"
+# 260 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 2, METATILE_room_angel_WALL, TRUE
-# 262 "data/maps/AngelRoom/scripts.pory"
+# 261 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 2, METATILE_room_angel_WALL, TRUE
-# 263 "data/maps/AngelRoom/scripts.pory"
+# 262 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 2, METATILE_room_angel_WALL, TRUE
-# 264 "data/maps/AngelRoom/scripts.pory"
+# 263 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 2, METATILE_room_angel_DOOR_LEFT, TRUE
-# 265 "data/maps/AngelRoom/scripts.pory"
+# 264 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 2, METATILE_room_angel_DOOR_CENTER, TRUE
-# 266 "data/maps/AngelRoom/scripts.pory"
+# 265 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 2, METATILE_room_angel_DOOR_RIGHT, TRUE
-# 267 "data/maps/AngelRoom/scripts.pory"
+# 266 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 2, METATILE_room_angel_WALL, TRUE
-# 268 "data/maps/AngelRoom/scripts.pory"
+# 267 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 2, METATILE_room_angel_WALL, TRUE
-# 269 "data/maps/AngelRoom/scripts.pory"
+# 268 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 2, METATILE_room_angel_WALL, TRUE
-# 270 "data/maps/AngelRoom/scripts.pory"
+# 269 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 2, 1, METATILE_room_angel_SCREEN_CLOSED_LEFT, TRUE
-# 271 "data/maps/AngelRoom/scripts.pory"
+# 270 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 3, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 272 "data/maps/AngelRoom/scripts.pory"
+# 271 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 4, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 273 "data/maps/AngelRoom/scripts.pory"
+# 272 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 5, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_LEFT, TRUE
-# 274 "data/maps/AngelRoom/scripts.pory"
+# 273 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 6, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_CENTER, TRUE
-# 275 "data/maps/AngelRoom/scripts.pory"
+# 274 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 7, 1, METATILE_room_angel_SCREEN_CLOSED_DOOR_RIGHT, TRUE
-# 276 "data/maps/AngelRoom/scripts.pory"
+# 275 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 8, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 277 "data/maps/AngelRoom/scripts.pory"
+# 276 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 9, 1, METATILE_room_angel_SCREEN_CLOSED_CENTER, TRUE
-# 278 "data/maps/AngelRoom/scripts.pory"
+# 277 "data/maps/AngelRoom/scripts.pory"
 	setmetatile 10, 1, METATILE_room_angel_SCREEN_CLOSED_RIGHT, TRUE
-# 279 "data/maps/AngelRoom/scripts.pory"
+# 278 "data/maps/AngelRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
@@ -583,29 +581,29 @@ AngelRoom_EventScript_Angel_Movement_6:
 	emote_versus
 	step_end
 
-# 116 "data/maps/AngelRoom/scripts.pory"
+# 115 "data/maps/AngelRoom/scripts.pory"
 AngelRoom_EventScript_Angel_Movement_7:
-# 117 "data/maps/AngelRoom/scripts.pory"
+# 116 "data/maps/AngelRoom/scripts.pory"
 	lock_facing_direction
-# 117 "data/maps/AngelRoom/scripts.pory"
+# 116 "data/maps/AngelRoom/scripts.pory"
 	walk_right
-# 117 "data/maps/AngelRoom/scripts.pory"
+# 116 "data/maps/AngelRoom/scripts.pory"
 	unlock_facing_direction
-# 117 "data/maps/AngelRoom/scripts.pory"
+# 116 "data/maps/AngelRoom/scripts.pory"
 	face_left
 	step_end
 
-# 122 "data/maps/AngelRoom/scripts.pory"
+# 121 "data/maps/AngelRoom/scripts.pory"
 AngelRoom_EventScript_Angel_Movement_8:
-# 123 "data/maps/AngelRoom/scripts.pory"
+# 122 "data/maps/AngelRoom/scripts.pory"
 	face_right
-# 123 "data/maps/AngelRoom/scripts.pory"
+# 122 "data/maps/AngelRoom/scripts.pory"
 	lock_facing_direction
-# 123 "data/maps/AngelRoom/scripts.pory"
+# 122 "data/maps/AngelRoom/scripts.pory"
 	walk_left
-# 123 "data/maps/AngelRoom/scripts.pory"
+# 122 "data/maps/AngelRoom/scripts.pory"
 	unlock_facing_direction
-# 123 "data/maps/AngelRoom/scripts.pory"
+# 122 "data/maps/AngelRoom/scripts.pory"
 	face_right
 	step_end
 
@@ -623,7 +621,7 @@ AngelRoom_EventScript_Angel_Text_1:
 	.string "de verdad.$"
 
 AngelRoom_EventScript_Angel_Text_2:
-# 44 "data/maps/AngelRoom/scripts.pory"
+# 45 "data/maps/AngelRoom/scripts.pory"
 	.string "¡Cuánto tiempo!$"
 
 AngelRoom_EventScript_Angel_Text_3:
@@ -642,29 +640,29 @@ AngelRoom_EventScript_Angel_Text_5:
 	.string "¡Ven! ¡Atácame con todo lo que tengas!$"
 
 AngelRoom_EventScript_Angel_Text_6:
-# 92 "data/maps/AngelRoom/scripts.pory"
+# 90 "data/maps/AngelRoom/scripts.pory"
 	.string "¡Increíble! ¡El poder de la nueva\n"
 	.string "generación es asombroso!$"
 
 AngelRoom_EventScript_Angel_Text_7:
-# 95 "data/maps/AngelRoom/scripts.pory"
-	.string "No esperaba perder y aún así, no me\n"
+# 94 "data/maps/AngelRoom/scripts.pory"
+	.string "No esperaba perder… Y aun así, no me\n"
 	.string "dejaste opciones.\p"
 	.string "Sin duda, la función ha terminado.$"
 
 AngelRoom_EventScript_Angel_Text_8:
-# 98 "data/maps/AngelRoom/scripts.pory"
+# 97 "data/maps/AngelRoom/scripts.pory"
 	.string "Te abriré la puerta para que puedas\n"
 	.string "continuar con tu viaje.$"
 
 AngelRoom_EventScript_Angel_Text_9:
-# 110 "data/maps/AngelRoom/scripts.pory"
+# 109 "data/maps/AngelRoom/scripts.pory"
 	.string "Dejo en tus manos el legado de toda mi\n"
 	.string "generación. ¡Espero de verdad que\l"
 	.string "volvamos a encontrarnos algún día y\l"
 	.string "poder volver a pelear juntos!$"
 
 AngelRoom_Text_AngelDefeated::
-# 149 "data/maps/AngelRoom/scripts.pory"
+# 148 "data/maps/AngelRoom/scripts.pory"
 	.string "¿Así que este es el poder de la nueva\n"
 	.string "generación?$"

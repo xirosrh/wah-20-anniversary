@@ -34,11 +34,11 @@ AguiarRoom_OnFrame::
 # 23 "data/maps/AguiarRoom/scripts.pory"
 	waitmovement 0
 # 24 "data/maps/AguiarRoom/scripts.pory"
-	playse SE_PIN
-# 25 "data/maps/AguiarRoom/scripts.pory"
-	applymovement LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
-# 26 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
+# 25 "data/maps/AguiarRoom/scripts.pory"
+	playse SE_PIN
+# 26 "data/maps/AguiarRoom/scripts.pory"
+	applymovement LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48
 # 27 "data/maps/AguiarRoom/scripts.pory"
 	waitmovement 0
 # 28 "data/maps/AguiarRoom/scripts.pory"
@@ -170,43 +170,43 @@ AguiarRoom_EventScript_Aguiar_4:
 	delay 20
 # 124 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
-# 127 "data/maps/AguiarRoom/scripts.pory"
+# 125 "data/maps/AguiarRoom/scripts.pory"
 	playse SE_PIN
-# 128 "data/maps/AguiarRoom/scripts.pory"
+# 126 "data/maps/AguiarRoom/scripts.pory"
 	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48
-# 129 "data/maps/AguiarRoom/scripts.pory"
+# 127 "data/maps/AguiarRoom/scripts.pory"
 	waitse
-# 130 "data/maps/AguiarRoom/scripts.pory"
+# 128 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
-# 131 "data/maps/AguiarRoom/scripts.pory"
+# 129 "data/maps/AguiarRoom/scripts.pory"
 	playse SE_PIN
-# 132 "data/maps/AguiarRoom/scripts.pory"
+# 130 "data/maps/AguiarRoom/scripts.pory"
 	applymovementandwait LOCALID_AGUIARROOM_AGUIAR_SMOKING, AguiarRoom_EventScript_Aguiar_Movement_0
-# 133 "data/maps/AguiarRoom/scripts.pory"
+# 131 "data/maps/AguiarRoom/scripts.pory"
 	waitse
-# 134 "data/maps/AguiarRoom/scripts.pory"
+# 132 "data/maps/AguiarRoom/scripts.pory"
 	call AguiarRoom_EventScript_AguiarBattle
-# 135 "data/maps/AguiarRoom/scripts.pory"
+# 133 "data/maps/AguiarRoom/scripts.pory"
 	delay 10
-# 136 "data/maps/AguiarRoom/scripts.pory"
+# 134 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
-# 137 "data/maps/AguiarRoom/scripts.pory"
+# 135 "data/maps/AguiarRoom/scripts.pory"
 	applymovement LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette
-# 138 "data/maps/AguiarRoom/scripts.pory"
+# 136 "data/maps/AguiarRoom/scripts.pory"
 	playse SE_REPEL
-# 139 "data/maps/AguiarRoom/scripts.pory"
+# 137 "data/maps/AguiarRoom/scripts.pory"
 	waitmovement 0
-# 140 "data/maps/AguiarRoom/scripts.pory"
+# 138 "data/maps/AguiarRoom/scripts.pory"
 	delay 20
-# 141 "data/maps/AguiarRoom/scripts.pory"
+# 139 "data/maps/AguiarRoom/scripts.pory"
 	msgbox AguiarRoom_EventScript_Aguiar_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR
-# 142 "data/maps/AguiarRoom/scripts.pory"
+# 140 "data/maps/AguiarRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
-# 143 "data/maps/AguiarRoom/scripts.pory"
+# 141 "data/maps/AguiarRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_AGUIAR
-# 144 "data/maps/AguiarRoom/scripts.pory"
+# 142 "data/maps/AguiarRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP
-# 145 "data/maps/AguiarRoom/scripts.pory"
+# 143 "data/maps/AguiarRoom/scripts.pory"
 	release
 	end
 
@@ -266,29 +266,29 @@ AguiarRoom_EventScript_Aguiar_11:
 
 
 AguiarRoom_EventScript_AguiarBattle::
-# 150 "data/maps/AguiarRoom/scripts.pory"
+# 148 "data/maps/AguiarRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AguiarRoom_EventScript_AguiarBattle_2
-# 153 "data/maps/AguiarRoom/scripts.pory"
+# 151 "data/maps/AguiarRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_AGUIAR
-# 154 "data/maps/AguiarRoom/scripts.pory"
+# 152 "data/maps/AguiarRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 155 "data/maps/AguiarRoom/scripts.pory"
+# 153 "data/maps/AguiarRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AguiarRoom_EventScript_AguiarBattle_5
-# 158 "data/maps/AguiarRoom/scripts.pory"
+# 156 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated
 AguiarRoom_EventScript_AguiarBattle_1:
-# 161 "data/maps/AguiarRoom/scripts.pory"
+# 159 "data/maps/AguiarRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 AguiarRoom_EventScript_AguiarBattle_2:
-# 151 "data/maps/AguiarRoom/scripts.pory"
+# 149 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated
 	goto AguiarRoom_EventScript_AguiarBattle_1
 
 AguiarRoom_EventScript_AguiarBattle_5:
-# 156 "data/maps/AguiarRoom/scripts.pory"
+# 154 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated
 	goto AguiarRoom_EventScript_AguiarBattle_1
 
@@ -311,15 +311,15 @@ AguiarRoom_OnFrame_Movement_0:
 	face_down
 	step_end
 
-# 132 "data/maps/AguiarRoom/scripts.pory"
+# 130 "data/maps/AguiarRoom/scripts.pory"
 AguiarRoom_EventScript_Aguiar_Movement_0:
-# 132 "data/maps/AguiarRoom/scripts.pory"
+# 130 "data/maps/AguiarRoom/scripts.pory"
 	emote_versus
 	step_end
 
 AguiarRoom_OnFrame_Text_0:
-# 26 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Pero qué buen programa! Hoy si que es\n"
+# 24 "data/maps/AguiarRoom/scripts.pory"
+	.string "¡Pero qué buen programa! Hoy sí que es\n"
 	.string "un día tranquilo.$"
 
 AguiarRoom_OnFrame_Text_1:
@@ -364,7 +364,7 @@ AguiarRoom_EventScript_Aguiar_Text_4:
 	.string "hacer un póster con tu cara, ¿eh?$"
 
 AguiarRoom_EventScript_Aguiar_Text_5:
-# 130 "data/maps/AguiarRoom/scripts.pory"
+# 128 "data/maps/AguiarRoom/scripts.pory"
 	.string "Así que venga, no le demos más vueltas.\n"
 	.string "Saca a tus Pokémon, que yo ya tengo\l"
 	.string "ganas de ver si al menos me haces dejar\l"
@@ -372,16 +372,16 @@ AguiarRoom_EventScript_Aguiar_Text_5:
 	.string "¡Vamos allá!$"
 
 AguiarRoom_EventScript_Aguiar_Text_6:
-# 136 "data/maps/AguiarRoom/scripts.pory"
+# 134 "data/maps/AguiarRoom/scripts.pory"
 	.string "¡Pues mira que me la has liado! Y yo\n"
 	.string "pensando que iba a ser otro paseo…$"
 
 AguiarRoom_EventScript_Aguiar_Text_7:
-# 141 "data/maps/AguiarRoom/scripts.pory"
+# 139 "data/maps/AguiarRoom/scripts.pory"
 	.string "No está mal, no está nada mal. Ya puedes\n"
 	.string "seguir avanzando.$"
 
 AguiarRoom_Text_AguiarDefeated::
-# 165 "data/maps/AguiarRoom/scripts.pory"
+# 163 "data/maps/AguiarRoom/scripts.pory"
 	.string "¡Vaya combate! Me lo he pasado de\n"
 	.string "lujo.$"
