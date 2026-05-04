@@ -163,31 +163,50 @@ const u8 sTextColor2CreditsWah[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED,
 struct WahCredits
 {
     const u8 *title;
-    const u8 *sListCredits[30];
+    const u8 *sListCredits[40];
 };
 
 static const struct WahCredits sWahCreditsSections[] =
 {
     {
+        .title = COMPOUND_STRING("CREADORES PRINCIPALES"),
+        .sListCredits =
+        {
+            COMPOUND_STRING("Caco5400 & Xiros"),
+            NULL
+        }
+    },
+    {
+        .title = COMPOUND_STRING("COLABORADORES"),
+        .sListCredits = 
+        { 
+            COMPOUND_STRING("Gameboy_cl"),
+            COMPOUND_STRING("Gosuto"),
+            COMPOUND_STRING("Erkey830"),
+            COMPOUND_STRING("Micolo"),
+            COMPOUND_STRING("Alexmad"),
+            COMPOUND_STRING("MrNightology"),
+            COMPOUND_STRING("Acimut"),
+            COMPOUND_STRING("Kaktus"),
+            COMPOUND_STRING("Ryuzaki"),
+            NULL
+        },
+    },
+    {
         .title = COMPOUND_STRING("CREDITOS"),
         .sListCredits =
         {
-            COMPOUND_STRING("Alex"),
-            COMPOUND_STRING("Bruno"),
-            COMPOUND_STRING("Carlos"),
-            COMPOUND_STRING("Dante"),
-            COMPOUND_STRING("Ethan"),
-            COMPOUND_STRING("Fabio"),
-            COMPOUND_STRING("Gael"),
-            COMPOUND_STRING("Hector"),
-            COMPOUND_STRING("Ivan"),
-            COMPOUND_STRING("Javier"),
-            COMPOUND_STRING("Kevin"),
-            COMPOUND_STRING("Leo"),
-            COMPOUND_STRING("Marco"),
-            COMPOUND_STRING("Nico"),
-            COMPOUND_STRING("Oscar"),
-            COMPOUND_STRING("Pablo"),
+            COMPOUND_STRING("Star Gazaar"),
+            COMPOUND_STRING("X_TERRA"),
+            COMPOUND_STRING("liovy"),
+            COMPOUND_STRING("Samu"),
+            COMPOUND_STRING("Morti"),
+            COMPOUND_STRING("CompuMax"),
+            COMPOUND_STRING("Luna"),
+            COMPOUND_STRING("Howdy"),
+            COMPOUND_STRING("RevkenHack"),
+            COMPOUND_STRING("gogglesdegiraffe"),
+            COMPOUND_STRING("Hedara"),
             NULL
         }
     },
@@ -195,21 +214,41 @@ static const struct WahCredits sWahCreditsSections[] =
         .title = COMPOUND_STRING("AGRADECIMIENTOS"),
         .sListCredits =
         {
-            COMPOUND_STRING("XXX"),
             COMPOUND_STRING("Pret"),
+            COMPOUND_STRING("RHH"),
+            COMPOUND_STRING("PBH"),
+            COMPOUND_STRING("Huderlem"),
+            COMPOUND_STRING("grunt-lucas"),
+            COMPOUND_STRING("Baro"),
+            COMPOUND_STRING("Serg!o"),
+            COMPOUND_STRING("eing"),
+            COMPOUND_STRING("Scarex"),
+            COMPOUND_STRING("Tokyn"),
+            COMPOUND_STRING("Gallego13"),
+            COMPOUND_STRING("cosarara97"),
+            COMPOUND_STRING("Helix Boo"),
+            COMPOUND_STRING("Angel"),
+            COMPOUND_STRING("Cheve"),
+            COMPOUND_STRING("Javi4315"),
+            COMPOUND_STRING("War"),
+            COMPOUND_STRING("ReoNeky"),
+            COMPOUND_STRING("Sayer"),
+            COMPOUND_STRING("BLAx501!"),
+            COMPOUND_STRING("KleinStudio"),
+            COMPOUND_STRING("DavZero"),
+            COMPOUND_STRING("Katherine"),
+            COMPOUND_STRING("PkPower"),
+            COMPOUND_STRING("Drive"),
+            COMPOUND_STRING("Aguiar"),
+            COMPOUND_STRING("Jack Johnson"),
+            COMPOUND_STRING("Omega"),
+            COMPOUND_STRING("Javs"),
+            COMPOUND_STRING("Ozumas"),
+            COMPOUND_STRING("MAIDEN"),
             COMPOUND_STRING("WAH"),
             NULL
         }
     },
-    {
-        .title = COMPOUND_STRING("ESPECIALES"),
-        .sListCredits =
-        {
-            COMPOUND_STRING("AAA"),
-            COMPOUND_STRING("BBBB"),
-            NULL
-        }
-    }
 };
 
 // static const u8 trainnerWahList[][2] =
@@ -231,7 +270,7 @@ static const struct WahCredits sWahCreditsSections[] =
 
 static const u8 trainnerWahList[][2] =
 {
-    {TRAINER_PIC_OMEGA, TRAINER_PIC_XIROS},
+    {TRAINER_PIC_CACO, TRAINER_PIC_XIROS},
     {TRAINER_PIC_CHEVE, TRAINER_PIC_EING},
     {TRAINER_PIC_REONEKY, TRAINER_PIC_KATHERINE},
     {TRAINER_PIC_DRIVE, TRAINER_PIC_ANGEL},
@@ -244,7 +283,12 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_WAR, TRAINER_PIC_DRIVE},
     {TRAINER_PIC_GALLEGO, TRAINER_PIC_KATHERINE},
     {TRAINER_PIC_JAVS, TRAINER_PIC_BOO},
-    {TRAINER_PIC_SERGIO, TRAINER_NONE}
+    {TRAINER_PIC_OMEGA, TRAINER_PIC_SERGIO},
+    {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
+    {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, //ACIMUT
+    {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, //MICOLO
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_KAKTUS}, //RYUZAKI
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_ROXAS}, //MrNightology
 };
 
 
