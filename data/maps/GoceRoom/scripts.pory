@@ -3,6 +3,7 @@ mapscripts GoceRoom_MapScripts {
 		VAR_TEMP_8, 0: GoceRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: GoceRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : GoceRoom_OnTransition
 
 }
 
@@ -15,6 +16,11 @@ script GoceRoom_OnLoad {
 
 script GoceRoom_OnWarp_PlayerTurnNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script GoceRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Goce)
     end
 }
 

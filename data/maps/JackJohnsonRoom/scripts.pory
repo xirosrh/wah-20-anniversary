@@ -100,6 +100,7 @@ script JackJohnsonRoom_OnLoad {
 
 
 script JackJohnsonRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_JackJohnson)
     setflag(FLAG_TEMP_1_JACK_JOHNSON_ROOM_HIDE_NPC1_BALL)
     setflag(FLAG_TEMP_2_JACK_JOHNSON_ROOM_HIDE_NPC1_BALL)
     setflag(FLAG_TEMP_3_JACK_JOHNSON_ROOM_HIDE_NPC4_BALL)

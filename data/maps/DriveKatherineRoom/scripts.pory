@@ -3,6 +3,7 @@ mapscripts DriveKatherineRoom_MapScripts {
         VAR_TEMP_8, 0: DriveKatherineRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: DriveKatherineRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : DriveKatherineRoom_OnTransition
 }
 
 script DriveKatherineRoom_OnLoad {
@@ -14,6 +15,11 @@ script DriveKatherineRoom_OnLoad {
 
 script DriveKatherineRoom_OnWarp_PlayerTurnNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script DriveKatherineRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_DriveKatherine)
     end
 }
 

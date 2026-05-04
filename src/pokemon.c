@@ -6147,21 +6147,87 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_COLLABORATOR:
             switch (TRAINER_BATTLE_PARAM.opponentA)
             {
+            case TRAINER_WAH_ADMIN_OMEGA_MAIN:
+            case TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE:
+                return MUS_BW_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_GOCE_MAIN:
+            case TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE:
+                return MUS_HGSS_KANTO_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_BLAX_MAIN:
+            case TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE:
+                return MUS_BW_WILD_BATTLE;
+            case TRAINER_WAH_ADMIN_SAYER_MAIN:
+            case TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE:
+                return MUS_BW_WILD_BATTLE;
+            case TRAINER_WAH_ADMIN_AGUIAR_MAIN:
+            case TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE:
+                return MUS_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_ANGEL_MAIN:
+            case TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE:
+                return MUS_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_OZUMAS_MAIN:
+            case TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE:
+                return MUS_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_SCAREX_MAIN:
+            case TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE:
+                return MUS_RG_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_BARO_MAIN:
+            case TRAINER_WAH_ADMIN_BARO_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_REYBOO_MAIN:
+            case TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE:
+                return MUS_VS_FRONTIER_BRAIN;
+            case TRAINER_WAH_ADMIN_COSARARA_MAIN:
+            case TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE:
+                return MUS_VS_ELITE_FOUR;
+            case TRAINER_WAH_ADMIN_DRIVE_MAIN:
+            case TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE:
+                return MUS_BW_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_KATHERINE_MAIN:
+            case TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE:
+                return MUS_BW_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_GALLEGO_MAIN:
+            case TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
             case TRAINER_WAH_ADMIN_REONEKY_MAIN:
             case TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE:
                 return MUS_CAZA_LEGENDARIOS_TO;
-            case TRAINER_WAH_ADMIN_DAVZERO_MAIN:
-            case TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE:
-                return MUS_THE_GRAND_FINALE;
             case TRAINER_WAH_ADMIN_CHEVE_MAIN:
             case TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE:
                 return MUS_MASTERED_BATTLE_4;
-            case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
-            case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
-                return MUS_WI_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_EING_MAIN:
+            case TRAINER_WAH_ADMIN_EING_ALTERNATIVE:
+                return MUS_RG_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_TOKYN_MAIN:
+            case TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_WAR_MAIN:
+            case TRAINER_WAH_ADMIN_WAR_ALTERNATIVE:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_JAVI4315_MAIN:
+            case TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_JAVS_MAIN:
+            case TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
             case TRAINER_WAH_ADMIN_SERGIO_MAIN:
             case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
                 return MUS_HGSS_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_XIROS_MAIN:
+            case TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE:
+                return MUS_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_PKPOWER_MAIN:
+            case TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE:
+                return MUS_BW_VS_TRAINER_80;
+            case TRAINER_WAH_ADMIN_KLEIN_MAIN:
+            case TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE:
+                return MUS_BW_VS_TRAINER_7F;
+            case TRAINER_WAH_ADMIN_DAVZERO_MAIN:
+            case TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE:
+                return MUS_THE_GRAND_FINALE;
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
+                return MUS_WI_VS_GYM_LEADER;
             case TRAINER_WAH_COLLABORATOR_ACIMUT:
                 return MUS_TOUHOU11_11;
             default:

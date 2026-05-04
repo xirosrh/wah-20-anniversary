@@ -80,6 +80,7 @@ script Lobby_StartChallenge_CancelledChallenge {
 
 script Lobby_StartChallenge_EnterOmegaRoom {
     special(SetWahChallengeInitialAchievementFlags)
+    call(WahRoomsShared_Kecleon_ResetFlags)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     call(Lobby_EventScript_OpenDoor)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
@@ -597,6 +598,28 @@ script Lobby_EventScript_TrainerCardGirl {
     end
 }
 
+script Lobby_EventScript_Cope {
+    lock
+    faceplayer
+    checkitem(ITEM_DEVON_SCOPE)
+    if(var(VAR_RESULT))
+    {
+        msgbox(format("¡Hola {PLAYER}!\p¿Estás list{OA} para intentar el desafío?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    }
+    else
+    {
+        msgbox(format("¡Hola {PLAYER}!\p¿Has visto a Tile?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_PLAYER, moves(emote_question_mark))
+        waitse
+        msgbox(format("¿Cómo? ¿No sabes quién es?\nEs mi famoso Kecleon.\pLo he perdido de vista y no sé por dónde se ha metido... Además, ¡me ha robado el kit de objetos que le doy a los entrenadores del desafío!\pHazme un favor y búscale por mí.\nToma, llévate esto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        giveitem(ITEM_DEVON_SCOPE)
+        msgbox(format("Con el Detector Devon podrás ver dónde se esconde Tile."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    }
+    release
+    end
+}
+
 script Lobby_EventScript_QREventInfoKid {
     lock
     faceplayer
@@ -606,7 +629,6 @@ script Lobby_EventScript_QREventInfoKid {
     release
     end
 }
-
 
 script Lobby_EventScript_AdminCountNPC {
     msgbox(Lobby_Text_AdminCountNPC, MSGBOX_NPC)

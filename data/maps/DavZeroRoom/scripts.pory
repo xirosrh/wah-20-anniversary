@@ -26,6 +26,7 @@ script DavZeroRoom_OnWarp_PlayerTurnNorth {
 }
 
 script DavZeroRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_DavZero)
     if(var(VAR_TEMP_0_DAVZERO_ROOM_STATE) == 0) {
         setflag(FLAG_TEMP_1_DAVZERO_ROOM_HIDE_MILOTIC)
         setflag(FLAG_TEMP_2_DAVZERO_ROOM_HIDE_BALL)

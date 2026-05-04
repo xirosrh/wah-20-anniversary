@@ -23,6 +23,7 @@ static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
+static bool8 CheckFoundTileKecleon(u8 id);
 static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
@@ -86,6 +87,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckDummyChallenge, //TODO Xiros
     },
+    [ACHIEVEMENT_FOUND_TILE_KECLEON] = {
+        .title = COMPOUND_STRING("Tile al descubierto"),
+        .description = COMPOUND_STRING("Encuentra a Tile (Kecleon) con el\nDetector Devon por primera vez.\n¡Ningún camuflaje es para siempre!"),
+        .target = TRUE,
+        .check = CheckFoundTileKecleon,
+    },
 };
 
 static bool8 CheckDummyChallenge(u8 id)
@@ -110,6 +117,11 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
         return FALSE;
 
     return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
+}
+
+static bool8 CheckFoundTileKecleon(u8 id)
+{
+    return FlagGet(FLAG_FOUND_TILE_KECLEON) == sAchievements[id].target;
 }
 
 static bool8 PartyHasElectrodeS(void)

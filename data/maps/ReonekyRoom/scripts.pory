@@ -28,6 +28,7 @@ script ReonekyRoom_OnWarp_PlayerTurnNorth {
 
 
 script ReonekyRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Reoneky)
     if(var(VAR_TEMP_0_REONEKY_ROOM_STATE) == 0) {
         setflag(FLAG_TEMP_2_REONEKYROOM_HIDE_FIRE)
         setflag(FLAG_TEMP_3_REONEKYROOM_HIDE_HAUNTER)

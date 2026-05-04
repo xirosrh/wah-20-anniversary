@@ -59,6 +59,12 @@ script Achievements_EventScript_Eval_UnlockAllPokemon {
     return
 }
 
+script Achievements_EventScript_Eval_FoundTileKecleon {
+    setvar(VAR_0x8004, ACHIEVEMENT_FOUND_TILE_KECLEON)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
 script Achievements_EventScript_Eval_DefeatAllCollaborators {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS)
     call(Achievements_EventScript_Eval_Common)
