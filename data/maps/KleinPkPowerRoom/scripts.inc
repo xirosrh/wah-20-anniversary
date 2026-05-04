@@ -65,29 +65,29 @@ KleinPkPowerRoom_OnTransition::
 
 KleinPkPowerRoom_OnFrame::
 # 38 "data/maps/KleinPkPowerRoom/scripts.pory"
-	lock
+	special ShowMapNamePopup
 # 39 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_0
+	lock
 # 40 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_0
+# 41 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitmovement LOCALID_PLAYER
-# 42 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_CALL
 # 43 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	playse SE_POKENAV_CALL
 # 44 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_CALL
+	waitse
 # 45 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	special HideMapNamePopUpWindow
 # 46 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 47 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_1
-# 48 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 49 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 50 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_POKENAV_CALL
+# 47 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 48 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 49 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_1
+# 50 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
 # 51 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
 # 52 "data/maps/KleinPkPowerRoom/scripts.pory"
@@ -95,807 +95,811 @@ KleinPkPowerRoom_OnFrame::
 # 53 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
 # 54 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
+	playse SE_POKENAV_CALL
 # 55 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_ON
+	waitse
 # 56 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	delay 30
 # 57 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+	playse SE_POKENAV_ON
 # 58 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 59 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 60 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 61 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 62 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 63 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 64 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 65 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 66 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 67 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 68 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 69 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 70 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 71 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 72 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
-# 73 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 74 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 59 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+# 60 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 61 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 62 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 63 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 64 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 65 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 66 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 67 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 68 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 69 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 70 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 71 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 72 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 73 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 74 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
 # 75 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_HANG_UP
+	msgbox KleinPkPowerRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 # 76 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 77 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_POKENAV_HANG_UP
 # 78 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 79 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_CALL
-# 80 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 80 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
 # 81 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_POKENAV_CALL
 # 82 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
 # 83 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
+	playse SE_POKENAV_CALL
 # 84 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_ON
+	waitse
 # 85 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	delay 30
 # 86 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+	playse SE_POKENAV_ON
 # 87 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 88 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 89 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 90 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 91 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 92 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 93 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 94 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 95 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 96 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 97 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 98 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 99 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 100 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 101 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
-# 102 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 103 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 88 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+# 89 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 90 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 91 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 92 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 93 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 94 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 95 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 96 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 97 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 98 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 99 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 100 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 101 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 102 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 103 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
 # 104 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_HANG_UP
+	msgbox KleinPkPowerRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 # 105 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 106 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_POKENAV_HANG_UP
 # 107 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 108 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_CALL
-# 109 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 109 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
 # 110 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_POKENAV_CALL
 # 111 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
 # 112 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
+	playse SE_POKENAV_CALL
 # 113 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_ON
+	waitse
 # 114 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	delay 30
 # 115 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+	playse SE_POKENAV_ON
 # 116 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 117 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 118 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 119 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 120 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 121 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 122 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 123 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 124 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 125 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 126 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
-# 127 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
-# 128 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 129 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 130 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
-# 131 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 132 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 117 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_2
+# 118 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 119 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 120 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 121 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 122 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 123 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 124 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 125 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 126 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 127 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 128 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_3
+# 129 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 130 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 131 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 132 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_4
 # 133 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_POKENAV_HANG_UP
+	msgbox KleinPkPowerRoom_OnFrame_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 # 134 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
 # 135 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	playse SE_POKENAV_HANG_UP
 # 136 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	waitse
 # 137 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_5
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 # 138 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+	playse SE_PIN
 # 139 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	applymovementandwait LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_OnFrame_Movement_5
 # 140 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_LEDGE
+	msgbox KleinPkPowerRoom_OnFrame_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 # 141 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
+	waitse
 # 142 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 143 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
-# 144 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_LEDGE
-# 145 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 143 "data/maps/KleinPkPowerRoom/scripts.pory"
 	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
-# 146 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 144 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
-# 147 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 145 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitmovement LOCALID_KLEINROOM_KLEIN
+# 146 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_LEDGE
+# 147 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
 # 148 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+	waitse
 # 149 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 150 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_7
+	msgbox KleinPkPowerRoom_OnFrame_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 151 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	playse SE_PIN
 # 152 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_7
 # 153 "data/maps/KleinPkPowerRoom/scripts.pory"
-	fadedefaultbgm
+	waitse
 # 154 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 60
+	waitmovement LOCALID_PLAYER
 # 155 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_8
-# 156 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playbgm MUS_B_PIKE, FALSE
-# 158 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
-# 159 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 160 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_3
-# 161 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 162 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 163 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
-# 164 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
-# 165 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
-# 166 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_9
-# 167 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 168 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 169 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
-# 170 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_10
-# 172 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
-# 174 "data/maps/KleinPkPowerRoom/scripts.pory"
 	fadedefaultbgm
+# 156 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 60
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_8
+# 158 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 159 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playbgm MUS_B_PIKE, FALSE
+# 160 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_14, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+# 161 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 162 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_3
+# 163 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 164 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 165 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 30
+# 166 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_15, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+# 167 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 168 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_9
+# 169 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 170 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 30
+# 172 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_OnFrame_Text_16, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_OnFrame_Movement_10
+# 174 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
 # 175 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	msgbox KleinPkPowerRoom_OnFrame_Text_17, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 176 "data/maps/KleinPkPowerRoom/scripts.pory"
+	fadedefaultbgm
+# 177 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 178 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
 
 KleinPkPowerRoom_EventScript_BotonRojo::
-# 181 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 183 "data/maps/KleinPkPowerRoom/scripts.pory"
 	lock
-# 182 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 184 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_2
-# 188 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_1, MSGBOX_YESNO
-# 189 "data/maps/KleinPkPowerRoom/scripts.pory"
-	closemessage
 # 190 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_1, MSGBOX_YESNO
+# 191 "data/maps/KleinPkPowerRoom/scripts.pory"
+	closemessage
+# 192 "data/maps/KleinPkPowerRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq KleinPkPowerRoom_EventScript_BotonRojo_5
 KleinPkPowerRoom_EventScript_BotonRojo_1:
-# 267 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 269 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
 KleinPkPowerRoom_EventScript_BotonRojo_2:
-# 184 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 186 "data/maps/KleinPkPowerRoom/scripts.pory"
 	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_0, MSGBOX_AUTOCLOSE
 	goto KleinPkPowerRoom_EventScript_BotonRojo_1
 
 KleinPkPowerRoom_EventScript_BotonRojo_5:
-# 192 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_CLICK
-# 193 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
 # 194 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 30
+	playse SE_CLICK
 # 195 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_SUCCESS
+	waitse
 # 196 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 7, 5, METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN, 1
-# 197 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
-# 198 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 199 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay 30
+# 197 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_SUCCESS
+# 198 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setmetatile 7, 5, METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN, 1
+# 199 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special DrawWholeMapView
 # 200 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_UNLOCK
+	waitse
 # 201 "data/maps/KleinPkPowerRoom/scripts.pory"
-	call KleinPkPowerRoom_EventScript_OpenJail
+	delay 30
 # 202 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_0
+	playse SE_UNLOCK
 # 203 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_1
+	call KleinPkPowerRoom_EventScript_OpenJail
 # 204 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_0
 # 205 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_1
 # 206 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 207 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 208 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
-# 209 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_LEDGE
-# 210 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 208 "data/maps/KleinPkPowerRoom/scripts.pory"
 	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
+# 209 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 210 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 211 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 212 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_6
 # 213 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	waitse
 # 214 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_2
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 215 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	playse SE_PIN
 # 216 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_2
 # 217 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playbgm MUS_B_PIKE, FALSE
+	waitse
 # 218 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 219 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_3
+	playbgm MUS_B_PIKE, FALSE
 # 220 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 221 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_3
 # 222 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_9
-# 223 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 224 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitmovement LOCALID_KLEINROOM_KLEIN
+# 223 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
+# 224 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_OnFrame_Movement_9
 # 225 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+	waitse
 # 226 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	waitmovement LOCALID_KLEINROOM_KLEIN
 # 227 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_4
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 228 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	playse SE_PIN
 # 229 "data/maps/KleinPkPowerRoom/scripts.pory"
-	call KleinPkPowerRoom_EventScript_KleinBattle
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_4
 # 230 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	waitse
 # 231 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_5
+	call KleinPkPowerRoom_EventScript_KleinBattle
 # 232 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
+	playse SE_PIN
 # 233 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_5
 # 234 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_6
+	waitmovement LOCALID_KLEINROOM_PKPOWER
 # 235 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
+	waitse
 # 236 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playse SE_PIN
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_6
 # 237 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_7
+	waitmovement LOCALID_KLEINROOM_PKPOWER
 # 238 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 239 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
-# 240 "data/maps/KleinPkPowerRoom/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
-# 241 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 242 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_8
-# 243 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
-# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_9
-# 245 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 246 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
-# 247 "data/maps/KleinPkPowerRoom/scripts.pory"
 	playse SE_PIN
-# 248 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_4
-# 249 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 239 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_7
+# 240 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 241 "data/maps/KleinPkPowerRoom/scripts.pory"
 	waitse
+# 242 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+# 243 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_8
+# 245 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 246 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_9
+# 247 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 248 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+# 249 "data/maps/KleinPkPowerRoom/scripts.pory"
+	playse SE_PIN
 # 250 "data/maps/KleinPkPowerRoom/scripts.pory"
-	call KleinPkPowerRoom_EventScript_PkPowerBattle
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_4
 # 251 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
+	waitse
 # 252 "data/maps/KleinPkPowerRoom/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	call KleinPkPowerRoom_EventScript_PkPowerBattle
 # 253 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectxy LOCALID_KLEINROOM_PKPOWER, 2, 4
+	msgbox KleinPkPowerRoom_EventScript_BotonRojo_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 # 254 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectxyperm LOCALID_KLEINROOM_PKPOWER, 2, 4
+	fadescreen FADE_TO_BLACK
 # 255 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectmovementtype LOCALID_KLEINROOM_PKPOWER, MOVEMENT_TYPE_FACE_UP
+	setobjectxy LOCALID_KLEINROOM_PKPOWER, 2, 4
 # 256 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectxy LOCALID_KLEINROOM_KLEIN, 2, 7
+	setobjectxyperm LOCALID_KLEINROOM_PKPOWER, 2, 4
 # 257 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectxyperm LOCALID_KLEINROOM_KLEIN, 2, 7
+	setobjectmovementtype LOCALID_KLEINROOM_PKPOWER, MOVEMENT_TYPE_FACE_UP
 # 258 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setobjectmovementtype LOCALID_KLEINROOM_KLEIN, MOVEMENT_TYPE_FACE_UP
+	setobjectxy LOCALID_KLEINROOM_KLEIN, 2, 7
 # 259 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+	setobjectxyperm LOCALID_KLEINROOM_KLEIN, 2, 7
 # 260 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+	setobjectmovementtype LOCALID_KLEINROOM_KLEIN, MOVEMENT_TYPE_FACE_UP
 # 261 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_11
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
 # 262 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_NONE
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
 # 263 "data/maps/KleinPkPowerRoom/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_PLAYER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_11
 # 264 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_NONE
+# 265 "data/maps/KleinPkPowerRoom/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 266 "data/maps/KleinPkPowerRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
 	goto KleinPkPowerRoom_EventScript_BotonRojo_1
 
 
 KleinPkPowerRoom_EventScript_OpenJail::
-# 272 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1, 0
-# 273 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
 # 274 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 10
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1, 0
 # 275 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2, 0
+	special DrawWholeMapView
 # 276 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
+	delay 10
 # 277 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 10
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2, 0
 # 278 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3, 0
+	special DrawWholeMapView
 # 279 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
-# 280 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay 10
+# 280 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3, 0
 # 281 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0
-# 282 "data/maps/KleinPkPowerRoom/scripts.pory"
 	special DrawWholeMapView
+# 282 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 10
 # 283 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0
 # 284 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special DrawWholeMapView
+# 285 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 286 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setmetatileelevation 9, 6, 0
 	return
 
 
 KleinPkPowerRoom_EventScript_KleinBattle::
-# 289 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 291 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, KleinPkPowerRoom_EventScript_KleinBattle_2
-# 292 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_KLEIN
-# 293 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 294 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_KLEIN
+# 295 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 296 "data/maps/KleinPkPowerRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KleinPkPowerRoom_EventScript_KleinBattle_5
-# 297 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 299 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE, KleinPkPowerRoom_Text_KleinDefeated
 KleinPkPowerRoom_EventScript_KleinBattle_1:
-# 300 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 302 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_KLEIN
-# 301 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 303 "data/maps/KleinPkPowerRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 KleinPkPowerRoom_EventScript_KleinBattle_2:
-# 290 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 292 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_MAIN, KleinPkPowerRoom_Text_KleinDefeated
 	goto KleinPkPowerRoom_EventScript_KleinBattle_1
 
 KleinPkPowerRoom_EventScript_KleinBattle_5:
-# 295 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 297 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_MAIN, KleinPkPowerRoom_Text_KleinDefeated
 	goto KleinPkPowerRoom_EventScript_KleinBattle_1
 
 
 KleinPkPowerRoom_EventScript_PkPowerBattle::
-# 310 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 312 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, KleinPkPowerRoom_EventScript_PkPowerBattle_2
-# 313 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_PKPOWER
-# 314 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 315 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_PKPOWER
+# 316 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 317 "data/maps/KleinPkPowerRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KleinPkPowerRoom_EventScript_PkPowerBattle_5
-# 318 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 320 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE, KleinPkPowerRoom_Text_PkPowerDefeated
 KleinPkPowerRoom_EventScript_PkPowerBattle_1:
-# 321 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 323 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_PKPOWER
-# 322 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 324 "data/maps/KleinPkPowerRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 KleinPkPowerRoom_EventScript_PkPowerBattle_2:
-# 311 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 313 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_MAIN, KleinPkPowerRoom_Text_PkPowerDefeated
 	goto KleinPkPowerRoom_EventScript_PkPowerBattle_1
 
 KleinPkPowerRoom_EventScript_PkPowerBattle_5:
-# 316 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 318 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_MAIN, KleinPkPowerRoom_Text_PkPowerDefeated
 	goto KleinPkPowerRoom_EventScript_PkPowerBattle_1
 
 
 KleinPkPowerRoom_EventScript_PkPower::
-# 331 "data/maps/KleinPkPowerRoom/scripts.pory"
-	lock
-# 332 "data/maps/KleinPkPowerRoom/scripts.pory"
-	faceplayer
 # 333 "data/maps/KleinPkPowerRoom/scripts.pory"
+	lock
+# 334 "data/maps/KleinPkPowerRoom/scripts.pory"
+	faceplayer
+# 335 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_PKPOWER, KleinPkPowerRoom_EventScript_PkPower_2
-# 337 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 339 "data/maps/KleinPkPowerRoom/scripts.pory"
 	msgbox KleinPkPowerRoom_EventScript_PkPower_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 KleinPkPowerRoom_EventScript_PkPower_1:
-# 339 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
-# 340 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
 # 341 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+# 342 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 343 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
 KleinPkPowerRoom_EventScript_PkPower_2:
-# 334 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 336 "data/maps/KleinPkPowerRoom/scripts.pory"
 	msgbox KleinPkPowerRoom_EventScript_PkPower_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 	goto KleinPkPowerRoom_EventScript_PkPower_1
 
 
 KleinPkPowerRoom_EventScript_Klein::
-# 346 "data/maps/KleinPkPowerRoom/scripts.pory"
-	lock
-# 347 "data/maps/KleinPkPowerRoom/scripts.pory"
-	faceplayer
 # 348 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_Klein_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+	lock
 # 349 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+	faceplayer
 # 350 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	msgbox KleinPkPowerRoom_EventScript_Klein_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 351 "data/maps/KleinPkPowerRoom/scripts.pory"
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+# 352 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_KLEIN
+# 353 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
 
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_0:
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
-# 39 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
 	step_end
 
-# 47 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 49 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_1:
-# 47 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 49 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 57 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 59 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_2:
-# 57 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 59 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 60 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 62 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_3:
-# 60 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 62 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_thinking
 	step_end
 
-# 72 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 74 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_4:
-# 72 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 74 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_angry
 	step_end
 
-# 137 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 139 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_5:
-# 137 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 139 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_angry
-# 137 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 139 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 141 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 143 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_6:
-# 141 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 143 "data/maps/KleinPkPowerRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 150 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 152 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_7:
-# 150 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 152 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_question_mark
-# 150 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 152 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_right
 	step_end
 
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_8:
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 155 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 157 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
 	step_end
 
-# 166 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 168 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_9:
-# 166 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 168 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_10:
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_left
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay_16
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay_16
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay_16
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay_16
-# 171 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_up
 	step_end
 
-# 202 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 204 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_0:
-# 202 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 204 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_right
 	step_end
 
-# 203 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 205 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_1:
-# 203 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 205 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_left
-# 203 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 205 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
 	step_end
 
-# 214 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 216 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_2:
-# 214 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 216 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_happy
 	step_end
 
-# 219 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 221 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_3:
-# 219 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 221 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
-# 219 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 221 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_left
 	step_end
 
-# 227 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 229 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_4:
-# 227 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 229 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_versus
 	step_end
 
-# 231 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 233 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_5:
-# 231 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 233 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_down
-# 231 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 233 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_6:
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_down
-# 234 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 236 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_right
 	step_end
 
-# 237 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 239 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_7:
-# 237 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 239 "data/maps/KleinPkPowerRoom/scripts.pory"
 	emote_double_exclamation_mark
 	step_end
 
-# 242 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_8:
-# 242 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_right
 	step_end
 
-# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 246 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_9:
-# 244 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 246 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_left
 	step_end
 
-# 259 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 261 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_10:
-# 259 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 261 "data/maps/KleinPkPowerRoom/scripts.pory"
 	face_up
 	step_end
 
-# 261 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 263 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_EventScript_BotonRojo_Movement_11:
-# 261 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 263 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_left
-# 261 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 263 "data/maps/KleinPkPowerRoom/scripts.pory"
 	walk_up
 	step_end
 
 KleinPkPowerRoom_OnFrame_Text_0:
-# 59 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 61 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Aquí el soporte técnico.\n"
 	.string "¿En qué puedo ayudarte?$"
 
 KleinPkPowerRoom_OnFrame_Text_1:
-# 63 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 65 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Que el Güindous no arranca?\n"
 	.string "¿Y qué aparece en pantalla?$"
 
 KleinPkPowerRoom_OnFrame_Text_2:
-# 67 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 69 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Nada?\n"
 	.string "¿Pero… tienes el ordenador encendido?$"
 
 KleinPkPowerRoom_OnFrame_Text_3:
-# 73 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 75 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Pues enchúfalo, hombre!\n"
 	.string "¡Esas cosas se comprueban antes!$"
 
 KleinPkPowerRoom_OnFrame_Text_4:
-# 88 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 90 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Aquí el soporte técnico.\n"
 	.string "¿Qué necesitas?$"
 
 KleinPkPowerRoom_OnFrame_Text_5:
-# 92 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 94 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿¡Cómo que has perdido el cursor!?\n"
 	.string "¿Has probado a mover el ratón?$"
 
 KleinPkPowerRoom_OnFrame_Text_6:
-# 96 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 98 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "No será el ratón inalámbrico...\n"
 	.string "¿Tiene pilas?$"
 
 KleinPkPowerRoom_OnFrame_Text_7:
-# 102 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 104 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Joder! ¡Pues pónselas!$"
 
 KleinPkPowerRoom_OnFrame_Text_8:
-# 117 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 119 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Aquí el soporte técnico.$"
 
 KleinPkPowerRoom_OnFrame_Text_9:
-# 121 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 123 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿¡Que cuál es la tecla de “cualquier\n"
 	.string "tecla”!? ¿¡Pero qué pregunta es esa!?$"
 
 KleinPkPowerRoom_OnFrame_Text_10:
-# 125 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 127 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Pues si el mensaje dice “pulse\n"
 	.string "cualquier tecla”, haz lo que dice!$"
 
 KleinPkPowerRoom_OnFrame_Text_11:
-# 131 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 133 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Que no hay ninguna tecla que se llame\n"
 	.string "“cualquier tecla”! ¡Pulsa una tecla\l"
 	.string "cualquiera y ya!$"
 
 KleinPkPowerRoom_OnFrame_Text_12:
-# 138 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 140 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Esto es increíble! ¿Pero cómo puede\n"
 	.string "haber gente así? ¡Estoy rodeado de\l"
 	.string "inútiles! Pero se va a acabar...\p"
@@ -903,15 +907,15 @@ KleinPkPowerRoom_OnFrame_Text_12:
 	.string "¡A la puta calle!$"
 
 KleinPkPowerRoom_OnFrame_Text_13:
-# 148 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 150 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Eh, tú! ¡Aquí! ¡Ven!$"
 
 KleinPkPowerRoom_OnFrame_Text_14:
-# 158 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 160 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Sabes quién soy?$"
 
 KleinPkPowerRoom_OnFrame_Text_15:
-# 164 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 166 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Claro... Tú qué vas a saber...\n"
 	.string "Soy Klein, el webmaster de WaH.\p"
 	.string "Oye... Tienes que ayudarme, ¡la he liado\n"
@@ -922,41 +926,41 @@ KleinPkPowerRoom_OnFrame_Text_15:
 	.string "¿Puedes liberarme?$"
 
 KleinPkPowerRoom_OnFrame_Text_16:
-# 170 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 172 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Que no sabes cómo liberarme? ¡Pues es\n"
 	.string "muy fácil!\p"
 	.string "¿Ves ese botón rojo?$"
 
 KleinPkPowerRoom_OnFrame_Text_17:
-# 173 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 175 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Sí, ese botón! ¡Púlsalo y podré salir!\p"
 	.string "¡Vamos, no me hagas esperar más, que\n"
 	.string "tengo que levantar el foro!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_0:
-# 184 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 186 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "La celda ya está abierta.$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_1:
-# 188 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 190 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Quieres pulsar el botón rojo?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_2:
-# 218 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 220 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Sí! ¡Soy libre!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_3:
-# 225 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 227 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Por cierto... ¿Tú quién eras?\n"
 	.string "¿No será una trampa para encerrarme de\l"
 	.string "nuevo?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_4:
-# 241 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 243 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿¡Pero qué!?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_5:
-# 246 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 248 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Qué estáis haciendo?\n"
 	.string "¡Si acabo de pagar la fianza para\l"
 	.string "sacarlo de la cárcel!\p"
@@ -966,32 +970,32 @@ KleinPkPowerRoom_EventScript_BotonRojo_Text_5:
 	.string "¡Que lleva caído todo el día!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_6:
-# 251 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 253 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Perfecto! ¡Has superado la prueba!\n"
 	.string "Hay que saber actuar bajo presión.\p"
 	.string "¡Vamos, a levantar el foro!$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_0:
-# 334 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 336 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Pero mira que eres pesado eh? ¿Tú no\n"
 	.string "tienes amigos u otra persona a la que\l"
 	.string "molestar?$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_1:
-# 337 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 339 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿No ves que estoy ocupado?$"
 
 KleinPkPowerRoom_EventScript_Klein_Text_0:
-# 348 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 350 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Equipo de Investigación?\n"
 	.string "¿O Equipo de la mierda?\p"
 	.string "Qué te importa a ti el hackeo al Perro.$"
 
 KleinPkPowerRoom_Text_KleinDefeated::
-# 305 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 307 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Y ahora qué?\n"
 	.string "¿Al talego de nuevo?$"
 
 KleinPkPowerRoom_Text_PkPowerDefeated::
-# 326 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 328 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Vaya tela! ¡A seguir trabajando!$"

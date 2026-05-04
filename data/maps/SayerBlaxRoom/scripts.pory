@@ -35,6 +35,7 @@ script SayerBlaxRoom_OnWarp_PlayerTurnNorth {
 }
 
 script SayerBlaxRoom_OnFrame {
+    special(ShowMapNamePopup)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(SpawnCameraObject)
     directcameramovementtopos(6,5)

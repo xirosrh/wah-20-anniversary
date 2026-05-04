@@ -35,6 +35,7 @@ script DavZeroRoom_OnTransition {
 }
 
 script DavZeroRoom_OnFrame {
+    special(ShowMapNamePopup)
     applymovementandwait(LOCALID_PLAYER, moves(walk_up * 8, face_right))
     special(SpawnCameraObject)
     directcameramovementtopos(10,5)

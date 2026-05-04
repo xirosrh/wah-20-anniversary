@@ -27,6 +27,7 @@ script DragonMountain_Top_OnTransition {
 }
 
 script DragonMountain_Top_OnFrame {
+    special(ShowMapNamePopup)
     call(WahRoomsShared_SetPlayerTeleportGfxVars)
     playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
