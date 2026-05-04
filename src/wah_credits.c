@@ -224,6 +224,7 @@ static const struct WahCredits sWahCreditsSections[] =
 
             COMPOUND_STRING("Big Snort"),
             COMPOUND_STRING("Retro NC"),
+            COMPOUND_STRING("DestvoL"),
 
             NULL
         }
@@ -294,7 +295,7 @@ static const struct WahCredits sWahCreditsSections[] =
         .title = COMPOUND_STRING("ESTO FUE UNA CELEBRACIÓN DE"),
         .sListCredits =
         {
-            COMPOUND_STRING("21 años de WAH"),
+            COMPOUND_STRING("21 años de Whack a Hack"),
             NULL
         }
     }
