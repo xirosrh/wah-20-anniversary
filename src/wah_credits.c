@@ -183,9 +183,11 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Gameboy_cl"),
             COMPOUND_STRING("Gosuto"),
             COMPOUND_STRING("Erkey830"),
+
             COMPOUND_STRING("Micolo"),
             COMPOUND_STRING("Alexmad"),
             COMPOUND_STRING("MrNightology"),
+
             COMPOUND_STRING("Acimut"),
             COMPOUND_STRING("Kaktus"),
             COMPOUND_STRING("Ryuzaki"),
@@ -197,16 +199,27 @@ static const struct WahCredits sWahCreditsSections[] =
         .sListCredits =
         {
             COMPOUND_STRING("Star Gazaar"),
-            COMPOUND_STRING("X_TERRA"),
+            COMPOUND_STRING("X-TERRA"),
             COMPOUND_STRING("liovy"),
+
             COMPOUND_STRING("Samu"),
-            COMPOUND_STRING("Morti"),
             COMPOUND_STRING("CompuMax"),
-            COMPOUND_STRING("Luna"),
+            COMPOUND_STRING("Axel Loquendo"),
+
             COMPOUND_STRING("Howdy"),
             COMPOUND_STRING("RevkenHack"),
-            COMPOUND_STRING("gogglesdegiraffe"),
             COMPOUND_STRING("Hedara"),
+
+            COMPOUND_STRING("Mudskip"),
+            COMPOUND_STRING("Archie"),
+            COMPOUND_STRING("Lykeron"),
+
+            COMPOUND_STRING("Juanjo"),
+            COMPOUND_STRING("Luna"),
+            COMPOUND_STRING("ghoulslash"),
+
+            COMPOUND_STRING("TheXaman"),
+            COMPOUND_STRING("gogglesdegiraffe"),
             NULL
         }
     },
@@ -217,38 +230,69 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Pret"),
             COMPOUND_STRING("RHH"),
             COMPOUND_STRING("PBH"),
+
+            COMPOUND_STRING("WAH"),
             COMPOUND_STRING("Huderlem"),
             COMPOUND_STRING("grunt-lucas"),
+
             COMPOUND_STRING("Baro"),
             COMPOUND_STRING("Serg!o"),
             COMPOUND_STRING("eing"),
+
             COMPOUND_STRING("Scarex"),
             COMPOUND_STRING("Tokyn"),
             COMPOUND_STRING("Gallego13"),
+
             COMPOUND_STRING("cosarara97"),
             COMPOUND_STRING("Helix Boo"),
             COMPOUND_STRING("Angel"),
+
             COMPOUND_STRING("Cheve"),
             COMPOUND_STRING("Javi4315"),
-            COMPOUND_STRING("War"),
+            COMPOUND_STRING("Katherine"),
+
             COMPOUND_STRING("ReoNeky"),
             COMPOUND_STRING("Sayer"),
             COMPOUND_STRING("BLAx501!"),
+
             COMPOUND_STRING("KleinStudio"),
             COMPOUND_STRING("DavZero"),
-            COMPOUND_STRING("Katherine"),
+            COMPOUND_STRING("War"),
+
             COMPOUND_STRING("PkPower"),
             COMPOUND_STRING("Drive"),
             COMPOUND_STRING("Aguiar"),
+
             COMPOUND_STRING("Jack Johnson"),
             COMPOUND_STRING("Omega"),
             COMPOUND_STRING("Javs"),
+
             COMPOUND_STRING("Ozumas"),
             COMPOUND_STRING("MAIDEN"),
-            COMPOUND_STRING("WAH"),
+            COMPOUND_STRING("Dragonsden"),
+
+            COMPOUND_STRING("Morti"),
+            COMPOUND_STRING("Kakarotto"),
+            COMPOUND_STRING("Criisss"),
             NULL
         }
     },
+    {   
+        .title = COMPOUND_STRING("EN MEMORIA DE"),
+        .sListCredits =
+        {
+            COMPOUND_STRING("Cope"),
+            NULL
+        }
+    },
+    {   
+        .title = COMPOUND_STRING("ESTO FUE UNA CELEBRACIÓN DE"),
+        .sListCredits =
+        {
+            COMPOUND_STRING("21 años de WAH"),
+            NULL
+        }
+    }
 };
 
 // static const u8 trainnerWahList[][2] =
