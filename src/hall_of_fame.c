@@ -17,6 +17,7 @@
 #include "strings.h"
 #include "window.h"
 #include "credits.h"
+#include "wah_credits.h"
 #include "bg.h"
 #include "constants/game_stat.h"
 #include "util.h"
@@ -777,7 +778,8 @@ static void Task_Hof_HandleExit(u8 taskId)
 
 static void StartCredits(void)
 {
-    SetMainCallback2(CB2_StartCreditsSequence);
+    gMain.state = 0;
+    SetMainCallback2(CB2_InitCreditsSetUp);
 }
 
 #undef tDontSaveData

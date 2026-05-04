@@ -64,6 +64,28 @@ static const struct BgTemplate CreditsBgTemplates[] =
 
 //========== SECCIÓN: FUNCIONES DE CARGA DE BGS ==========//
 
+static void ResetGpuAndVram(void)
+{
+    SetGpuReg(REG_OFFSET_DISPCNT, 0);
+
+    SetGpuReg(REG_OFFSET_BG3HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG3VOFS, 0);
+    SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG2VOFS, 0);
+    SetGpuReg(REG_OFFSET_BG1HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG1VOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+    SetGpuReg(REG_OFFSET_BLDY, 0);
+
+    DmaFill16(3, 0, (void *)VRAM, VRAM_SIZE);
+    DmaFill32(3, 0, (void *)OAM, OAM_SIZE);
+    DmaFill16(3, 0, (void *)(PLTT + 2), PLTT_SIZE - 2);
+}
+
 static void LoadBgs(void)
 {
     InitBgsFromTemplates(0, CreditsBgTemplates, ARRAY_COUNT(CreditsBgTemplates));
@@ -77,6 +99,8 @@ static void LoadBgs(void)
 
     ShowBg(BG_CREDITS);
     ShowBg(BG_LOGO);
+    /* ResetGpuAndVram pone DISPCNT a 0; ShowBg solo ajusta bits de fondo, no OBJ. */
+    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
 }
 
 static void VBlank_CB_Credits(void)
@@ -453,6 +477,12 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
 }
 
 
+static void Task_WahCreditsSoftReset(u8 taskId)
+{
+    if (!gPaletteFade.active)
+        SoftReset(RESET_ALL);
+}
+
 static void Task_EndCredits(u8 taskId)
 {
     // Limpiar ventana
@@ -463,8 +493,9 @@ static void Task_EndCredits(u8 taskId)
     gTasks[taskId].tTrainerId1 = DestroySpriteTrainners(gTasks[taskId].tTrainerId1);
     gTasks[taskId].tTrainerId2 = DestroySpriteTrainners(gTasks[taskId].tTrainerId2);
 
-    // Destruir task
-    DestroyTask(taskId);
+    FadeOutBGM(4);
+    BeginNormalPaletteFade(PALETTES_ALL, 8, 0, 16, RGB_WHITEALPHA);
+    gTasks[taskId].func = Task_WahCreditsSoftReset;
 }
 
 
@@ -481,7 +512,7 @@ void CB2_InitCreditsSetUp(void)
         ResetTasks();
         ResetSpriteData();
         ResetPaletteFade();
-        DmaClearLarge16(3, (void *) VRAM, VRAM_SIZE, 4096);
+        ResetGpuAndVram();
         FreeAllSpritePalettes();
         gMain.state++;
     case 1:
