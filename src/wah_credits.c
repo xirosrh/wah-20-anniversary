@@ -292,25 +292,38 @@ u8 PrintCredits(u8 windowId, u8 sectionId, u8 indexToContinue)
 
 #define tIndex data[0]
 #define tSection data[1]
-#define tTrainerId1 data[2]
-#define tTrainerId2 data[3]
+#define tTrainerSpriteId1 data[2]
+#define tTrainerSpriteId2 data[3]
 #define tIndexTrainer data[4]
 #define tNumCreditsSteps data[5]
 #define tSpriteTimer data[6]
 #define tTimer data[7]
+#define tTrainerPicId1 data[8]
+#define tTrainerPicId2 data[9]
 
 static void Task_TrainnerSlice(u8 taskId);
 
 
-static u8 DestroySpriteTrainners(u8 trainerId)
+static void CreateCreditsTrainerSprite(u8 trainerPicId, s16 x, s16 y, s16 *spriteId, s16 *storedTrainerPicId)
 {
-    //Destruir los sprites de los trainners
-    if(trainerId != 0xFF) {
-        DestroySpriteAndFreeResources(&gSprites[trainerId]);
-        return 0xFF;
+    *storedTrainerPicId = trainerPicId;
+    *spriteId = CreateTrainerSprite(trainerPicId, x, y, 0, NULL);
+}
+
+static void DestroyCreditsTrainerSprite(s16 *spriteId, s16 *trainerPicId)
+{
+    if (*spriteId != 0xFF)
+    {
+        if (*trainerPicId != 0xFF)
+        {
+            FreeSpriteTilesByTag(*trainerPicId);
+            FreeSpritePaletteByTag(*trainerPicId);
+        }
+        DestroySprite(&gSprites[*spriteId]);
     }
-    
-    return trainerId;
+
+    *spriteId = 0xFF;
+    *trainerPicId = 0xFF;
 }
 
 static void Task_ShowCreditsWAH(u8 taskId)
@@ -334,8 +347,8 @@ static void Task_ShowCreditsWAH(u8 taskId)
 
             if(taskId2 !=  TASK_NONE) 
             {
-                gTasks[taskId2].tTrainerId1 = DestroySpriteTrainners(gTasks[taskId2].tTrainerId1);
-                gTasks[taskId2].tTrainerId2 = DestroySpriteTrainners(gTasks[taskId2].tTrainerId2);
+                DestroyCreditsTrainerSprite(&gTasks[taskId2].tTrainerSpriteId1, &gTasks[taskId2].tTrainerPicId1);
+                DestroyCreditsTrainerSprite(&gTasks[taskId2].tTrainerSpriteId2, &gTasks[taskId2].tTrainerPicId2);
                 DestroyTask(taskId2);
             }
             
@@ -352,14 +365,13 @@ static void Task_ShowCreditsWAH(u8 taskId)
 
 static void Task_TrainnerSlice(u8 taskId)
 {
-    u8 i = 0;
     u8 x = 120;
 
     if (gTasks[taskId].tTimer++ % TIMER_TRAINER_SPRITE != 0)
         return;
 
-    gTasks[taskId].tTrainerId1 = DestroySpriteTrainners(gTasks[taskId].tTrainerId1);
-    gTasks[taskId].tTrainerId2 = DestroySpriteTrainners(gTasks[taskId].tTrainerId2);
+    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
     if(gTasks[taskId].tIndexTrainer >= ARRAY_COUNT(trainnerWahList) - 1)
         gTasks[taskId].tIndexTrainer = 0;
@@ -368,10 +380,12 @@ static void Task_TrainnerSlice(u8 taskId)
     if(trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
         x = 100;
 
-    gTasks[taskId].tTrainerId1 = CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60, 0, NULL);
+    CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
+                               &gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
 
     if(trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
-        gTasks[taskId].tTrainerId2 = CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x+30, 60, 0, NULL);
+        CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x+30, 60,
+                                   &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
     gTasks[taskId].tIndexTrainer += 1;
 }
@@ -451,8 +465,8 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
         // -----------------------------
         // Destruir sprites anteriores
         // -----------------------------
-        gTasks[taskId].tTrainerId1 = DestroySpriteTrainners(gTasks[taskId].tTrainerId1);
-        gTasks[taskId].tTrainerId2 = DestroySpriteTrainners(gTasks[taskId].tTrainerId2);
+        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
         // -----------------------------
         // Crear nuevos sprites
@@ -460,9 +474,11 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
         if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
             x = 100;
 
-        gTasks[taskId].tTrainerId1 = CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60, 0, NULL);
+        CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
+                                   &gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
         if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
-            gTasks[taskId].tTrainerId2 = CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60, 0, NULL);
+            CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60,
+                                       &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
         gTasks[taskId].tIndexTrainer++;
         if (gTasks[taskId].tIndexTrainer >= totalSprites)
@@ -490,8 +506,8 @@ static void Task_EndCredits(u8 taskId)
     CopyWindowToVram(WINDOW_CREDITS, COPYWIN_FULL);
 
     // Destruir sprites finales
-    gTasks[taskId].tTrainerId1 = DestroySpriteTrainners(gTasks[taskId].tTrainerId1);
-    gTasks[taskId].tTrainerId2 = DestroySpriteTrainners(gTasks[taskId].tTrainerId2);
+    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
     FadeOutBGM(4);
     BeginNormalPaletteFade(PALETTES_ALL, 8, 0, 16, RGB_WHITEALPHA);
@@ -541,9 +557,17 @@ void CB2_InitCreditsSetUp(void)
         gTasks[taskId].tIndexTrainer = 0;
         gTasks[taskId].tSpriteTimer = 0;
         gTasks[taskId].tNumCreditsSteps = GetTotalCreditsSteps();
+        gTasks[taskId].tTrainerSpriteId1 = 0xFF;
+        gTasks[taskId].tTrainerSpriteId2 = 0xFF;
+        gTasks[taskId].tTrainerPicId1 = 0xFF;
+        gTasks[taskId].tTrainerPicId2 = 0xFF;
         x = (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE) ? X_TRAINER_POS-20 : X_TRAINER_POS;
-        gTasks[taskId].tTrainerId1 =  (trainnerWahList[gTasks[taskId].tIndexTrainer][0] != TRAINER_NONE) ? CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60, 0, NULL) : 0xFF;
-        gTasks[taskId].tTrainerId2 = (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE) ? CreateTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60, 0, NULL) : 0xFF;
+        if (trainnerWahList[gTasks[taskId].tIndexTrainer][0] != TRAINER_NONE)
+            CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
+                                       &gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+        if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
+            CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60,
+                                       &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
     }
 }
 
