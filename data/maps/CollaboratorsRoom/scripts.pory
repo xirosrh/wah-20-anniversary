@@ -595,7 +595,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         waitmovement(0)
         waitse
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("¿Qué? ¡Pero si era un plan genial!"))
+        trainerbattle_two_trainers(TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY, format("¿Qué? ¡Pero si era un plan genial!"), TRAINER_WAH_COLLABORATOR_REONEKY, format("¿He vuelto a perder?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
         special(HealPlayerParty)

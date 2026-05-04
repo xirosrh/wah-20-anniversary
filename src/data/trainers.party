@@ -7583,7 +7583,7 @@ Jolly Nature
 === TRAINER_WAH_COLLABORATOR_RYUZAKI ===
 Name: Ryuzaki
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Ryuzaki
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -7602,53 +7602,158 @@ Kadabra
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_VITO ===
-Name: VITO
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY ===
+Name: Nightology
+Class: Collaborator
+Pic: MrNightology
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
 
-Dodrio
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Toxtricity Low Key
+Ability: Punk Rock
+Gigantamax: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sludge Wave
+- Boomburst
+- Snarl
+- Overdrive
 
-Kadabra
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Krookodile
+Ability: Intimidate
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Earthquake
+- Drain Punch
 
-Electrode
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Houndoom @ Houndoominite
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Flamethrower
+- Snarl
+- Scorching Sands
+- Shadow Ball
 
-Shiftry
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-=== TRAINER_OWEN ===
-Name: OWEN
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY ===
+Name: Nightology
+Class: Collaborator
+Pic: MrNightology
 Gender: Male
 Music: Cool
-Items: Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Normal
+
+Toxtricity Low Key @ Black Sludge
+Ability: Punk Rock
+Gigantamax: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Wave
+- Boomburst
+- Snarl
+- Overdrive
+
+Krookodile @ Assault Vest
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Earthquake
+- Drain Punch
+
+Houndoom @ Houndoominite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Snarl
+- Scorching Sands
+- Shadow Ball
+
+=== TRAINER_WAH_COLLABORATOR_REONEKY ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Easy
 
-Kecleon
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Toxtricity Amped
+Ability: Punk Rock
+Gigantamax: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Gunk Shot
+- Wild Charge
+- Drain Punch
+- Fire Punch
 
-Graveler
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Umbreon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Snarl
+- Helping Hand
+- Wish
+- Calm Mind
 
-Wailord
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gengar @ Gengarite
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Sludge Wave
+- Shadow Ball
+- Giga Drain
+- Focus Blast 
+
+
+=== TRAINER_WAH_COLLABORATOR_REONEKY ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Normal
+
+Toxtricity Amped @ Black Sludge
+Ability: Punk Rock
+Gigantamax: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Gunk Shot
+- Wild Charge
+- Drain Punch
+- Fire Punch
+
+Umbreon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Snarl
+- Helping Hand
+- Wish
+- Calm Mind
+
+Gengar @ Gengarite
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Wave
+- Shadow Ball
+- Giga Drain
+- Focus Blast 
 
 === TRAINER_WILTON_2 ===
 Name: WILTON

@@ -1091,7 +1091,7 @@ CollaboratorsRoom_EventScript_MrNightology_8:
 # 597 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag B_FLAG_NO_WHITEOUT
 # 598 "data/maps/CollaboratorsRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_COLLABORATOR_KAKTUS, CollaboratorsRoom_EventScript_MrNightology_Text_6
+	trainerbattle_two_trainers TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY, CollaboratorsRoom_EventScript_MrNightology_Text_6, TRAINER_WAH_COLLABORATOR_REONEKY, CollaboratorsRoom_EventScript_MrNightology_Text_7
 # 599 "data/maps/CollaboratorsRoom/scripts.pory"
 	clearflag B_FLAG_NO_WHITEOUT
 # 600 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1102,13 +1102,13 @@ CollaboratorsRoom_EventScript_MrNightology_8:
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_MrNightology_13
 # 623 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
 # 624 "data/maps/CollaboratorsRoom/scripts.pory"
 	delay 20
 # 625 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer
 # 626 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
 # 627 "data/maps/CollaboratorsRoom/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 628 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1155,7 +1155,7 @@ CollaboratorsRoom_EventScript_MrNightology_13:
 # 607 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitse
 # 608 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_7, MSGBOX_AUTOCLOSE_TOP
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_8, MSGBOX_AUTOCLOSE_TOP
 # 609 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_FALL
 # 610 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1165,7 +1165,7 @@ CollaboratorsRoom_EventScript_MrNightology_13:
 # 612 "data/maps/CollaboratorsRoom/scripts.pory"
 	waitse
 # 613 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_8, MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_9, MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY
 # 614 "data/maps/CollaboratorsRoom/scripts.pory"
 	closemessage
 # 615 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -1177,7 +1177,7 @@ CollaboratorsRoom_EventScript_MrNightology_13:
 # 618 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_MrNightology_Movement_9
 # 619 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
+	msgbox CollaboratorsRoom_EventScript_MrNightology_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY
 # 620 "data/maps/CollaboratorsRoom/scripts.pory"
 	setflag FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY
 	goto CollaboratorsRoom_EventScript_MrNightology_12
@@ -2855,24 +2855,28 @@ CollaboratorsRoom_EventScript_MrNightology_Text_6:
 	.string "¿Qué? ¡Pero si era un plan genial!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_7:
+# 598 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "¿He vuelto a perder?$"
+
+CollaboratorsRoom_EventScript_MrNightology_Text_8:
 # 608 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡El Team Rocket despega de nuevooooo…!$"
 
-CollaboratorsRoom_EventScript_MrNightology_Text_8:
+CollaboratorsRoom_EventScript_MrNightology_Text_9:
 # 613 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¡Vaya aterrizaje!$"
 
-CollaboratorsRoom_EventScript_MrNightology_Text_9:
+CollaboratorsRoom_EventScript_MrNightology_Text_10:
 # 619 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "¿Y ReoNeky?\n"
 	.string "Espero que haya aterrizado en su sala.$"
 
-CollaboratorsRoom_EventScript_MrNightology_Text_10:
+CollaboratorsRoom_EventScript_MrNightology_Text_11:
 # 623 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Has hecho todo lo que has podido, pero\n"
 	.string "no es suficiente.$"
 
-CollaboratorsRoom_EventScript_MrNightology_Text_11:
+CollaboratorsRoom_EventScript_MrNightology_Text_12:
 # 626 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Dale una vuelta a tu estrategia y…\p"
 	.string "¡No nos hagas esperar mucho para la\n"
