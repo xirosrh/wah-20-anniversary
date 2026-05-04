@@ -220,6 +220,11 @@ static const struct WahCredits sWahCreditsSections[] =
 
             COMPOUND_STRING("TheXaman"),
             COMPOUND_STRING("gogglesdegiraffe"),
+            COMPOUND_STRING(""), //Empty on purpose
+
+            COMPOUND_STRING("Big Snort"),
+            COMPOUND_STRING("Retro NC"),
+
             NULL
         }
     },
