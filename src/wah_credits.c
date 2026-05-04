@@ -25,12 +25,14 @@
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
+#include "trainer_pokemon_sprites.h"
 #include "overworld.h"
 #include "event_data.h"
 #include "constants/items.h"
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/species.h"
 #include "sprite.h"
 #include "window.h"
 
@@ -155,7 +157,8 @@ static void InitWindowCredits(void)
 
 #define LINES_GROUP 6
 #define TIMER_TRAINER_SPRITE 100
-#define TIMER_CREDITS 150
+#define TIMER_CREDITS 120
+#define TIMER_CREDITS_SPRITE_SYNC 150
 
 const u8 sTextColorWhiteCreditsWah[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 const u8 sTextColor2CreditsWah[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_DARK_GRAY};
@@ -328,17 +331,35 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_ZERO, TRAINER_PIC_AGUIAR},
     {TRAINER_PIC_BARO, TRAINER_PIC_GOCE},
     {TRAINER_PIC_PKPOWER, TRAINER_PIC_KLEIN},
+    {TRAINER_PIC_OMEGA, TRAINER_NONE},
     {TRAINER_PIC_JACK_JOHNSON, TRAINER_PIC_SAYER},
     {TRAINER_PIC_BLAX, TRAINER_PIC_OZUMAS},
-    {TRAINER_PIC_WAR, TRAINER_PIC_DRIVE},
+    {TRAINER_PIC_DRIVE, TRAINER_PIC_WAR},
     {TRAINER_PIC_GALLEGO, TRAINER_PIC_KATHERINE},
     {TRAINER_PIC_JAVS, TRAINER_PIC_BOO},
-    {TRAINER_PIC_OMEGA, TRAINER_PIC_SERGIO},
+    {TRAINER_PIC_SERGIO, TRAINER_NONE},
     {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
-    {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, //ACIMUT
-    {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, //MICOLO
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_KAKTUS}, //RYUZAKI
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_ROXAS}, //MrNightology
+    {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, ////TODO XirosACIMUT
+    {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, ////TODO Xiros MICOLO
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_KAKTUS}, ////TODO Xiros RYUZAKI
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_ROXAS}, ////TODO Xiros MrNightology
+};
+
+static const u16 sWahCreditsPokemonList[] =
+{
+    SPECIES_ELECTRODES,
+    SPECIES_PLUGOINK,
+    SPECIES_EING,
+    SPECIES_DIRAEI,
+    SPECIES_MEWTWO, //TODO Xiros: Mewtwo with armor
+    SPECIES_VENUSAUR, //TODO Xiros:  Clone
+    SPECIES_CHARIZARD,  //TODO Xiros:  Clone
+    SPECIES_BLASTOISE,  //TODO Xiros:  Clone
+    SPECIES_FREECH,
+    SPECIES_DRAGONITE_MEGA,
+    SPECIES_GRENINJA, //TODO Xiros: Red greninja
+    //TODO Xiros Species Beta pokemon
+    SPECIES_MOLTRES,
 };
 
 
@@ -394,6 +415,14 @@ u8 PrintCredits(u8 windowId, u8 sectionId, u8 indexToContinue)
 #define tTimer data[7]
 #define tTrainerPicId1 data[8]
 #define tTrainerPicId2 data[9]
+#define tSpriteMode data[10]
+#define tIndexPokemon data[11]
+
+enum
+{
+    CREDITS_SPRITE_MODE_TRAINER,
+    CREDITS_SPRITE_MODE_POKEMON,
+};
 
 static void Task_TrainnerSlice(u8 taskId);
 
@@ -418,6 +447,37 @@ static void DestroyCreditsTrainerSprite(s16 *spriteId, s16 *trainerPicId)
 
     *spriteId = 0xFF;
     *trainerPicId = 0xFF;
+}
+
+static void CreateCreditsPokemonSprite(u16 species, s16 x, s16 y, s16 *spriteId)
+{
+    u16 createdSpriteId = CreateMonPicSprite(species, FALSE, 0, TRUE, x, y, 0, TAG_NONE);
+
+    *spriteId = (createdSpriteId == 0xFFFF) ? 0xFF : createdSpriteId;
+}
+
+static void DestroyCreditsPokemonSprite(s16 *spriteId)
+{
+    if (*spriteId != 0xFF)
+        FreeAndDestroyMonPicSprite(*spriteId);
+
+    *spriteId = 0xFF;
+}
+
+static void DestroyActiveCreditsSprites(u8 taskId)
+{
+    if (gTasks[taskId].tSpriteMode == CREDITS_SPRITE_MODE_POKEMON)
+    {
+        DestroyCreditsPokemonSprite(&gTasks[taskId].tTrainerSpriteId1);
+        gTasks[taskId].tTrainerSpriteId2 = 0xFF;
+        gTasks[taskId].tTrainerPicId1 = 0xFF;
+        gTasks[taskId].tTrainerPicId2 = 0xFF;
+    }
+    else
+    {
+        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
+    }
 }
 
 static void Task_ShowCreditsWAH(u8 taskId)
@@ -518,6 +578,7 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
     u8 x = X_TRAINER_POS;
     u8 spriteStepInterval = 0;
     u8 totalSprites = ARRAY_COUNT(trainnerWahList);
+    u8 totalSpriteSlots = totalSprites + ARRAY_COUNT(sWahCreditsPokemonList);
 
     // Incrementar timer
     gTasks[taskId].tTimer++;
@@ -544,9 +605,9 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
     // Calcular la sincronización proporcional de sprites
     // -----------------------------
     
-    if (totalSprites == 0) return;
+    if (totalSpriteSlots == 0) return;
 
-    spriteStepInterval =  (TIMER_CREDITS*gTasks[taskId].tNumCreditsSteps) / totalSprites;
+    spriteStepInterval =  (TIMER_CREDITS_SPRITE_SYNC*gTasks[taskId].tNumCreditsSteps) / totalSpriteSlots;
 
 
     // Incrementar contador de sprites
@@ -559,24 +620,39 @@ static void Task_ShowCreditsAndTrainers(u8 taskId)
         // -----------------------------
         // Destruir sprites anteriores
         // -----------------------------
-        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
-        DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
+        DestroyActiveCreditsSprites(taskId);
+
+        if (gTasks[taskId].tSpriteMode == CREDITS_SPRITE_MODE_TRAINER
+         && gTasks[taskId].tIndexTrainer >= totalSprites)
+        {
+            gTasks[taskId].tSpriteMode = CREDITS_SPRITE_MODE_POKEMON;
+            gTasks[taskId].tIndexPokemon = 0;
+        }
 
         // -----------------------------
         // Crear nuevos sprites
         // -----------------------------
-        if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
-            x = 100;
+        if (gTasks[taskId].tSpriteMode == CREDITS_SPRITE_MODE_POKEMON)
+        {
+            CreateCreditsPokemonSprite(sWahCreditsPokemonList[gTasks[taskId].tIndexPokemon],
+                                       X_TRAINER_POS, 60, &gTasks[taskId].tTrainerSpriteId1);
+            gTasks[taskId].tIndexPokemon++;
+            if (gTasks[taskId].tIndexPokemon >= ARRAY_COUNT(sWahCreditsPokemonList))
+                gTasks[taskId].tIndexPokemon = 0;
+        }
+        else
+        {
+            if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
+                x = 100;
 
-        CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
-                                   &gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
-        if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
-            CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60,
-                                       &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
+            CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
+                                       &gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
+            if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
+                CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60,
+                                           &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
 
-        gTasks[taskId].tIndexTrainer++;
-        if (gTasks[taskId].tIndexTrainer >= totalSprites)
-            gTasks[taskId].tIndexTrainer = totalSprites - 1; // mantener el último sprite
+            gTasks[taskId].tIndexTrainer++;
+        }
     }
 
     // -----------------------------
@@ -600,8 +676,7 @@ static void Task_EndCredits(u8 taskId)
     CopyWindowToVram(WINDOW_CREDITS, COPYWIN_FULL);
 
     // Destruir sprites finales
-    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId1, &gTasks[taskId].tTrainerPicId1);
-    DestroyCreditsTrainerSprite(&gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
+    DestroyActiveCreditsSprites(taskId);
 
     FadeOutBGM(4);
     BeginNormalPaletteFade(PALETTES_ALL, 8, 0, 16, RGB_WHITEALPHA);
@@ -621,6 +696,7 @@ void CB2_InitCreditsSetUp(void)
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
+        ResetAllPicSprites();
         ResetPaletteFade();
         ResetGpuAndVram();
         FreeAllSpritePalettes();
@@ -633,7 +709,7 @@ void CB2_InitCreditsSetUp(void)
     case 2:
         LoadBgs();
         InitWindowCredits();
-        FadeOutAndPlayNewMapMusic(MUS_CREDITS, 4); 
+        FadeOutAndPlayNewMapMusic(MUS_TV_GOTTA_CATCH_EM_ALL, 4);
         gMain.state++;
         break;
     case 3:
@@ -655,6 +731,8 @@ void CB2_InitCreditsSetUp(void)
         gTasks[taskId].tTrainerSpriteId2 = 0xFF;
         gTasks[taskId].tTrainerPicId1 = 0xFF;
         gTasks[taskId].tTrainerPicId2 = 0xFF;
+        gTasks[taskId].tSpriteMode = CREDITS_SPRITE_MODE_TRAINER;
+        gTasks[taskId].tIndexPokemon = 0;
         x = (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE) ? X_TRAINER_POS-20 : X_TRAINER_POS;
         if (trainnerWahList[gTasks[taskId].tIndexTrainer][0] != TRAINER_NONE)
             CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][0], x, 60,
@@ -662,6 +740,7 @@ void CB2_InitCreditsSetUp(void)
         if (trainnerWahList[gTasks[taskId].tIndexTrainer][1] != TRAINER_NONE)
             CreateCreditsTrainerSprite(trainnerWahList[gTasks[taskId].tIndexTrainer][1], x + 30, 60,
                                        &gTasks[taskId].tTrainerSpriteId2, &gTasks[taskId].tTrainerPicId2);
+        gTasks[taskId].tIndexTrainer++;
     }
 }
 
