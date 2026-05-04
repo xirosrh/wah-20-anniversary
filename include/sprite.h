@@ -307,7 +307,6 @@ u16 GetSpriteTileTagByTileStart(u16 start);
 void FreeAllSpritePalettes(void);
 u32 LoadSpritePalette(const struct SpritePalette *palette);
 u32 LoadSpritePaletteWithTag(const u16 *pal, u16 tag);
-u32 LoadSpritePaletteWithTagHueShifted(const u16 *pal, u16 tag, u32 personality);
 u8 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u8 paletteNum);
 void LoadSpritePalettes(const struct SpritePalette *palettes);
 u32 AllocSpritePalette(u16 tag);
@@ -322,10 +321,10 @@ void CopyFromSprites(u8 *dest);
 void ClearSpriteCopyRequests(void);
 void ResetAffineAnimData(void);
 u32 GetSpanPerImage(u32 shape, u32 size);
-u32 LoadUniqueSpritePalette(const struct SpritePalette *palette, u32 personality);
 u32 LoadEggSpritePalette(const struct SpritePalette *palette1, const struct SpritePalette *palette2);
 void RequestSpriteFrameImageCopy(u16 index, u16 tileNum, const struct SpriteFrameImage *images);
 void SetSpriteOamFlipBits(struct Sprite *sprite, u8 hFlip, u8 vFlip);
 u8 IndexOfSpriteTileTag(u16 tag);
+u32 LoadSpritePaletteWithTagHueShifted(const u16 *pal, u16 tag, u32 personality);
 
 #endif //GUARD_SPRITE_H

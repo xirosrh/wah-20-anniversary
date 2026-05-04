@@ -58,7 +58,9 @@
     "XirosRoom",
     "SergioRoom",
     "DragonMountain_Top",
-    "HallOfFame"
+    "HallOfFame",
+    "Lobby",
+    "CollaboratorsRoom"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

@@ -43,5 +43,6 @@ u8 FldEff_IdeaIcon(void);
 u8 FldEff_XdIcon(void);
 u8 FldEff_WinkIcon(void);
 u8 FldEff_AnnoyedIcon(void);
+u8 FldEff_MusicNoteIcon(void);
 
 #endif // GUARD_TRAINER_SEE_H

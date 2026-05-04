@@ -65,8 +65,11 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/field_pics.h"
+#include "constants/new_shop.h"
 #include "constants/speaker_names.h"
 #include "constants/wah_team_indexes.h"
+#include "constants/achievements.h"
+#include "constants/var_values.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -588,10 +591,10 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
+	.include "data/scripts/wah_challenge.inc"
 
 EventScript_WhiteOut::
-	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
-	goto EventScript_ResetMrBriney
+	call EventScript_ResetWahChallenge
 	end
 
 EventScript_AfterWhiteOutHeal::
@@ -1127,6 +1130,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wah_rooms_shared.inc"
+	.include "data/scripts/achievements.inc"
 
 
 	.include "data/maps/CheveRoom/scripts.inc"
@@ -1174,3 +1178,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DragonMountain_Top/scripts.inc"
 
 	.include "data/maps/HallOfFame/scripts.inc"
+
+	.include "data/maps/Lobby/scripts.inc"
+
+	.include "data/maps/CollaboratorsRoom/scripts.inc"

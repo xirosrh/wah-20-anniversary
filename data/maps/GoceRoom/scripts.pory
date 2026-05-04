@@ -3,6 +3,7 @@ mapscripts GoceRoom_MapScripts {
 		VAR_TEMP_8, 0: GoceRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: GoceRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : GoceRoom_OnTransition
 
 }
 
@@ -18,6 +19,11 @@ script GoceRoom_OnWarp_PlayerTurnNorth {
     end
 }
 
+script GoceRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Goce)
+    end
+}
+
 script GoceRoom_EventScript_Goce {
     if(flag(FLAG_DEFEATED_ADMIN_GOCE)){
         msgbox(format("Ya puedes avanzar al siguiente desafío.\pTodavía queda mucho por recorrer."), MSGBOX_NPC, speaker = SP_NAME_GOCE)
@@ -28,6 +34,10 @@ script GoceRoom_EventScript_Goce {
           lock
         faceplayer
         msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."), speaker = SP_NAME_GOCE)
+        playse(SE_PIN)
+        applymovement(LOCALID_GOCEROOM_GOCE, moves(emote_versus))
+        waitmovement(0)
+        waitse
         call(GoceRoom_EventScript_GoceBattle)
         delay(10)
         msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)

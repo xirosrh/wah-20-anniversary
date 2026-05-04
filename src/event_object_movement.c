@@ -77,6 +77,7 @@ enum {
     MOVE_SPEED_FAST_2, // water current / acro bike
     MOVE_SPEED_FASTER, // mach bike's max speed
     MOVE_SPEED_FASTEST,
+    MOVE_SPEED_MAX, // same pixel speed as FASTEST but with walk animation
 };
 
 enum {
@@ -515,6 +516,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_HoOh,                  OBJ_EVENT_PAL_TAG_HO_OH},
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gOverworldPalette_Abra,                OBJ_EVENT_PAL_TAG_ABRA_TELEPORTING},
+    {gObjectEventPal_AstronautVigoroth,     OBJ_EVENT_PAL_TAG_ASTRONAUT_VIGOROTH},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Blax,                  OBJ_EVENT_PAL_TAG_BLAX},
@@ -528,23 +530,58 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Zero,                  OBJ_EVENT_PAL_TAG_ZERO},
     {gObjectEventPal_Scarex,                OBJ_EVENT_PAL_TAG_SCAREX},
     {gObjectEventPal_Xiros,                 OBJ_EVENT_PAL_TAG_XIROS},
+    {gObjectEventPal_Cope,                  OBJ_EVENT_PAL_TAG_COPE},
+    {gObjectEventPal_Javs,                  OBJ_EVENT_PAL_TAG_JAVS},
+    {gObjectEventPal_Javi4315,              OBJ_EVENT_PAL_TAG_JAVI4315},
+    {gObjectEventPal_Angel,                 OBJ_EVENT_PAL_TAG_ANGEL},
+    {gObjectEventPal_MrNightology,           OBJ_EVENT_PAL_TAG_MRNIGHTOLOGY},
+    {gObjectEventPal_War,                   OBJ_EVENT_PAL_TAG_WAR},
+    {gObjectEventPal_Gallego,               OBJ_EVENT_PAL_TAG_GALLEGO},
+    {gObjectEventPal_Katherine,             OBJ_EVENT_PAL_TAG_KATHERINE},
     {gObjectEventPal_Baro,                  OBJ_EVENT_PAL_TAG_BARO},
     {gObjectEventPal_Sayer,                 OBJ_EVENT_PAL_TAG_SAYER},
     {gObjectEventPal_Cheve,                 OBJ_EVENT_PAL_TAG_CHEVE},
     {gObjectEventPal_Eing,                  OBJ_EVENT_PAL_TAG_EING},
+    {gObjectEventPal_EingFishing,           OBJ_EVENT_PAL_TAG_EING_FISHING},
+    {gObjectEventPal_Erkey,                 OBJ_EVENT_PAL_TAG_ERKEY},
+    {gObjectEventPal_Alexmad,                OBJ_EVENT_PAL_TAG_ALEXMAD},
+    {gObjectEventPal_Gosuto,                OBJ_EVENT_PAL_TAG_GOSUTO},
     {gObjectEventPal_Sergio,                OBJ_EVENT_PAL_TAG_SERGIO},
     {gObjectEventPal_SergioDragonite,       OBJ_EVENT_PAL_TAG_SERGIO_DRAGONITE},
     {gObjectEventPal_Drive,                 OBJ_EVENT_PAL_TAG_DRIVE},
     {gObjectEventPal_PkPower,               OBJ_EVENT_PAL_TAG_PKPOWER},
     {gObjectEventPal_Omega,                 OBJ_EVENT_PAL_TAG_OMEGA},
     {gObjectEventPal_Klein,                 OBJ_EVENT_PAL_TAG_KLEIN},
+    {gObjectEventPal_Tokyn,                 OBJ_EVENT_PAL_TAG_TOKYN},
+    {gObjectEventPal_Roxas,                 OBJ_EVENT_PAL_TAG_ROXAS},
+    {gObjectEventPal_Micolo,                OBJ_EVENT_PAL_TAG_MICOLO},
+    {gObjectEventPal_Acimut,                OBJ_EVENT_PAL_TAG_ACIMUT},
+    {gObjectEventPal_Gameboycl,             OBJ_EVENT_PAL_TAG_GAMEBOYCL},
+    {gObjectEventPal_Kaktus,                OBJ_EVENT_PAL_TAG_KAKTUS},
+    {gObjectEventPal_Ryuzaki,               OBJ_EVENT_PAL_TAG_RYUZAKI},
+    {gObjectEventPal_Caco,                  OBJ_EVENT_PAL_TAG_CACO},
+    {gObjectEventPal_MartEmployee,          OBJ_EVENT_PAL_TAG_MART_EMPLOYEE},
+    {gObjectEventPal_LobbyMan1,             OBJ_EVENT_PAL_TAG_LOBBY_MAN_1},
+    {gObjectEventPal_LobbyManiac,           OBJ_EVENT_PAL_TAG_LOBBY_MANIAC},
+    {gObjectEventPal_LobbyWoman1,           OBJ_EVENT_PAL_TAG_LOBBY_WOMAN_1},
+    {gObjectEventPal_LobbyMaskBoy,           OBJ_EVENT_PAL_TAG_LOBBY_MASK_BOY},
     {gObjectEventPal_TrainerInWater1,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_1},
     {gObjectEventPal_TrainerInWater2,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_2},
     {gObjectEventPal_TrainerInWater3,       OBJ_EVENT_PAL_TAG_TRAINER_IN_WATER_3},
     {gObjectEventPal_Crane,                 OBJ_EVENT_PAL_TAG_CRANE},
     {gObjectEventPal_FlameWheelAttack,      OBJ_EVENT_PAL_TAG_FLAME_WHEEL_ATTACK},
-    {gObjectEventPal_CuttableTree,         OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
-    {gFieldEffectPal_TreeDisguise,         OBJ_EVENT_PAL_TAG_TREE_DISGUISE},
+    {gObjectEventPal_CuttableTree,          OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
+    {gObjectEventPal_Seeg,                  OBJ_EVENT_PAL_TAG_SEEG},
+    {gObjectEventPal_Sever,                 OBJ_EVENT_PAL_TAG_SEVER},
+    {gObjectEventPal_PlugOink,              OBJ_EVENT_PAL_TAG_PLUGOINK},
+    {gFieldEffectPal_TreeDisguise,          OBJ_EVENT_PAL_TAG_TREE_DISGUISE},
+    {gObjectEventPal_StagePerformer1,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_1},
+    {gObjectEventPal_StagePerformer2,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_2},
+    {gObjectEventPal_StagePerformer3,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_3},
+    {gObjectEventPal_StagePerformer4,        OBJ_EVENT_PAL_TAG_STAGE_PERFORMER_4},
+    {gObjectEventPal_Police,                 OBJ_EVENT_PAL_TAG_POLICE},
+    {gObjectEventPal_SchoolKidM,             OBJ_EVENT_PAL_TAG_SCHOOL_KID_M},
+    {gObjectEventPal_SchoolKidF,             OBJ_EVENT_PAL_TAG_SCHOOL_KID_F},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -581,6 +618,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPaletteLight,              OBJ_EVENT_PAL_TAG_LIGHT},
     {gObjectEventPaletteLight2,             OBJ_EVENT_PAL_TAG_LIGHT_2},
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
+    {gObjectEventPaletteEmotes2,            OBJ_EVENT_PAL_TAG_EMOTES_2},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
@@ -743,6 +781,24 @@ static const u8 sRunningDirectionAnimNums[] = {
     [DIR_NORTHEAST] = ANIM_RUN_EAST,
 };
 
+static const u8 sClimbStairsDirectionAnimNums[] = {
+    [DIR_NONE] = ANIM_CLIMB_STAIRS_DOWN,
+    [DIR_SOUTH] = ANIM_CLIMB_STAIRS_DOWN,
+    [DIR_NORTH] = ANIM_CLIMB_STAIRS_UP,
+};
+
+static const u8 sClimbStairsFaceDirectionAnimNums[] = {
+    [DIR_NONE] = ANIM_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_SOUTH] = ANIM_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_NORTH] = ANIM_CLIMB_STAIRS_FACE_UP,
+    [DIR_WEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_EAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_SOUTHWEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_SOUTHEAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_NORTHWEST] = ANIM_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_NORTHEAST] = ANIM_CLIMB_STAIRS_FACE_RIGHT,
+};
+
 const u8 gTrainerFacingDirectionMovementTypes[] = {
     [DIR_NONE] = MOVEMENT_TYPE_FACE_DOWN,
     [DIR_SOUTH] = MOVEMENT_TYPE_FACE_DOWN,
@@ -837,6 +893,13 @@ const u8 gWalkFasterMovementActions[] = {
     [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTER_UP,
     [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
     [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
+};
+const u8 gWalkMaxMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_MAX_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_MAX_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_MAX_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_MAX_RIGHT,
 };
 const u8 gSlideMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_SLIDE_DOWN,
@@ -1063,6 +1126,24 @@ const u8 gRunSlowMovementActions[] = {
     [DIR_SOUTHEAST]  = MOVEMENT_ACTION_RUN_RIGHT_SLOW,
     [DIR_NORTHWEST]  = MOVEMENT_ACTION_RUN_LEFT_SLOW,
     [DIR_NORTHEAST]  = MOVEMENT_ACTION_RUN_RIGHT_SLOW,
+};
+
+const u8 gClimbStairsMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_CLIMB_STAIRS_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_CLIMB_STAIRS_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_CLIMB_STAIRS_UP,
+};
+
+const u8 gClimbStairsFaceDirectionMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_SOUTHWEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_SOUTHEAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
+    [DIR_NORTHWEST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_LEFT,
+    [DIR_NORTHEAST] = MOVEMENT_ACTION_CLIMB_STAIRS_FACE_RIGHT,
 };
 
 static const u8 sOppositeDirections[] = {
@@ -1791,7 +1872,11 @@ struct Pokemon *GetFirstLiveMon(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
-        if ((OW_FOLLOWERS_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
+        u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        if (species == SPECIES_NONE)
+            continue;
+
+        if ((OW_FOLLOWERS_ALLOWED_SPECIES && species != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
          || (OW_FOLLOWERS_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LVL))
          || (OW_FOLLOWERS_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LOC)))
             continue;
@@ -3121,7 +3206,7 @@ u8 GetObjectEventIdByPosition(u16 x, u16 y, u8 elevation)
 
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *objectEvent, u8 elevation)
 {
-    if (objectEvent->currentElevation != 0 && elevation != 0 && objectEvent->currentElevation != elevation)
+    if (objectEvent->currentElevation != ELEVATION_TRANSITION && elevation != ELEVATION_TRANSITION && objectEvent->currentElevation != elevation)
         return FALSE;
 
     return TRUE;
@@ -5882,6 +5967,16 @@ u8 GetRunningDirectionAnimNum(u8 direction)
     return sRunningDirectionAnimNums[direction];
 }
 
+u8 GetClimbStairsDirectionAnimNum(u8 direction)
+{
+    return sClimbStairsDirectionAnimNums[direction];
+}
+
+u8 GetClimbStairsFaceDirectionAnimNum(u8 direction)
+{
+    return sClimbStairsFaceDirectionAnimNums[direction];
+}
+
 static const struct StepAnimTable *GetStepAnimTable(const union AnimCmd *const *anims)
 {
     const struct StepAnimTable *stepTable;
@@ -6519,10 +6614,13 @@ dirn_to_anim(GetFaceDirectionMovementAction, gFaceDirectionMovementActions);
 dirn_to_anim(GetWalkSlowStairsMovementAction, gWalkSlowStairsMovementActions);
 dirn_to_anim(GetWalkSlowMovementAction, gWalkSlowMovementActions);
 dirn_to_anim(GetPlayerRunSlowMovementAction, gRunSlowMovementActions);
+dirn_to_anim(GetClimbStairsMovementAction, gClimbStairsMovementActions);
+dirn_to_anim(GetClimbStairsFaceMovementAction, gClimbStairsFaceDirectionMovementActions);
 dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
 dirn_to_anim(GetWalkFastMovementAction, gWalkFastMovementActions);
 dirn_to_anim(GetRideWaterCurrentMovementAction, gRideWaterCurrentMovementActions);
 dirn_to_anim(GetWalkFasterMovementAction, gWalkFasterMovementActions);
+dirn_to_anim(GetWalkMaxMovementAction, gWalkMaxMovementActions);
 dirn_to_anim(GetSlideMovementAction, gSlideMovementActions);
 dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
 dirn_to_anim(GetJump2MovementAction, gJump2MovementActions);
@@ -7834,6 +7932,76 @@ bool8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *objectEvent, stru
 }
 
 bool8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxLeft_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkMaxRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_MAX);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_MAX);
+    return MovementAction_WalkMaxRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkMaxRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateMovementNormal(objectEvent, sprite))
     {
@@ -9644,12 +9812,15 @@ bool8 IsElevationMismatchAt(u8 elevation, s16 x, s16 y)
 {
     u8 mapElevation;
 
-    if (elevation == 0)
+    if (elevation == ELEVATION_TRANSITION)
         return FALSE;
 
     mapElevation = MapGridGetElevationAt(x, y);
 
-    if (mapElevation == 0 || mapElevation == 15)
+    if (mapElevation == ELEVATION_TRANSITION || mapElevation == ELEVATION_MULTI_LEVEL)
+        return FALSE;
+
+    if ((elevation == 5 && mapElevation == 6) || (elevation == 6 && mapElevation == 5))
         return FALSE;
 
     if (mapElevation != elevation)
@@ -9708,7 +9879,7 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
     u8 curElevation = MapGridGetElevationAt(objEvent->currentCoords.x, objEvent->currentCoords.y);
     u8 prevElevation = MapGridGetElevationAt(objEvent->previousCoords.x, objEvent->previousCoords.y);
 
-    if (curElevation == 15 || prevElevation == 15)
+    if (curElevation == ELEVATION_MULTI_LEVEL || prevElevation == ELEVATION_MULTI_LEVEL)
     {
         // Ignore subsprite priorities under bridges
         // so all subsprites will display below it
@@ -9719,8 +9890,36 @@ void ObjectEventUpdateElevation(struct ObjectEvent *objEvent, struct Sprite *spr
 
     objEvent->currentElevation = curElevation;
 
-    if (curElevation != 0 && curElevation != 15)
-        objEvent->previousElevation = curElevation;
+    if (curElevation != ELEVATION_TRANSITION && curElevation != ELEVATION_MULTI_LEVEL)
+    {
+        bool8 is5to6 = (curElevation == 5 && prevElevation == 6) || (curElevation == 6 && prevElevation == 5);
+        bool8 hasStopped = (objEvent->currentCoords.x == objEvent->previousCoords.x
+                         && objEvent->currentCoords.y == objEvent->previousCoords.y);
+
+        if (!is5to6)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (hasStopped)
+        {
+            objEvent->previousElevation = curElevation;
+        }
+        else if (sprite != NULL)
+        {
+            s16 spriteMapX, spriteMapY;
+            s16 midX, midY;
+            s16 dx = objEvent->currentCoords.x - objEvent->previousCoords.x;
+            s16 dy = objEvent->currentCoords.y - objEvent->previousCoords.y;
+
+            GetMapCoordsFromSpritePos(sprite->x, sprite->y, &spriteMapX, &spriteMapY);
+            midX = (objEvent->previousCoords.x + objEvent->currentCoords.x) * 8;
+            midY = (objEvent->previousCoords.y + objEvent->currentCoords.y) * 8;
+
+            if ((dx > 0 && spriteMapX >= midX) || (dx < 0 && spriteMapX <= midX)
+             || (dy > 0 && spriteMapY >= midY) || (dy < 0 && spriteMapY <= midY))
+                objEvent->previousElevation = curElevation;
+        }
+    }
 }
 
 void SetObjectSubpriorityByElevation(u8 elevation, struct Sprite *sprite, u8 subpriority)
@@ -9747,7 +9946,7 @@ static void ObjectEventUpdateSubpriority(struct ObjectEvent *objEvent, struct Sp
 
 static bool8 AreElevationsCompatible(u8 a, u8 b)
 {
-    if (a == 0 || b == 0)
+    if (a == ELEVATION_TRANSITION || b == ELEVATION_TRANSITION)
         return TRUE;
 
     if (a != b)
@@ -10313,12 +10512,19 @@ static const SpriteStepFunc sStep8Funcs[] = {
     Step8,
 };
 
+static const SpriteStepFunc sStep844Funcs[] = {
+    Step8,
+    Step4,
+    Step4,
+};
+
 static const SpriteStepFunc *const sNpcStepFuncTables[] = {
     [MOVE_SPEED_NORMAL] = sStep1Funcs,
     [MOVE_SPEED_FAST_1] = sStep2Funcs,
     [MOVE_SPEED_FAST_2] = sStep3Funcs,
     [MOVE_SPEED_FASTER] = sStep4Funcs,
     [MOVE_SPEED_FASTEST] = sStep8Funcs,
+    [MOVE_SPEED_MAX] = sStep844Funcs,
 };
 
 static const s16 sStepTimes[] = {
@@ -10327,6 +10533,7 @@ static const s16 sStepTimes[] = {
     [MOVE_SPEED_FAST_2] = ARRAY_COUNT(sStep3Funcs),
     [MOVE_SPEED_FASTER] = ARRAY_COUNT(sStep4Funcs),
     [MOVE_SPEED_FASTEST] = ARRAY_COUNT(sStep8Funcs),
+    [MOVE_SPEED_MAX] = ARRAY_COUNT(sStep844Funcs),
 };
 
 static bool8 NpcTakeStep(struct Sprite *sprite)
@@ -11121,6 +11328,14 @@ bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *objectEvent, struct 
     return TRUE;
 }
 
+bool8 MovementAction_EmoteMusicNote_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_MUSIC_NOTE_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
 bool8 MovementAction_EmoteWink_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
@@ -11309,6 +11524,77 @@ bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct S
         return TRUE;
     }
     return FALSE;
+}
+
+static void StartClimbStairsAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 speed)
+{
+    InitNpcForMovement(objectEvent, sprite, direction, speed);
+    SetStepAnimHandleAlternation(objectEvent, sprite, GetClimbStairsDirectionAnimNum(objectEvent->facingDirection));
+}
+
+bool8 MovementActionFunc_ClimbStairsDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartClimbStairsAnim(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_NORMAL);
+    return MovementActionFunc_ClimbStairsDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementActionFunc_ClimbStairsDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlow(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementActionFunc_ClimbStairsUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartClimbStairsAnim(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_NORMAL);
+    return MovementActionFunc_ClimbStairsUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementActionFunc_ClimbStairsUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlow(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static void FaceDirectionClimb(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
+{
+    SetObjectEventDirection(objectEvent, direction);
+    ShiftStillObjectEventCoords(objectEvent);
+    SetStepAnim(objectEvent, sprite, GetClimbStairsFaceDirectionAnimNum(objectEvent->facingDirection));
+    sprite->animPaused = TRUE;
+    sprite->sActionFuncId = 1;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_SOUTH);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_NORTH);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_WEST);
+    return TRUE;
+}
+
+bool8 MovementActionFunc_ClimbStairsFaceRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    FaceDirectionClimb(objectEvent, sprite, DIR_EAST);
+    return TRUE;
 }
 
 static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)

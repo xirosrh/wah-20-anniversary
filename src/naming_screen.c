@@ -1401,7 +1401,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 static void NamingScreen_CreateCodeIcon(void)
 {
     u8 spriteId;
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MYSTERY_GIFT_MAN, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_ALEXMAD, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
 }
 
@@ -2097,7 +2097,7 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
 };
 
 static const u8 sText_EnterCode[] = _("Inserta código:");
-static const struct NamingScreenTemplate sCodeScreenTemplate = 
+static const struct NamingScreenTemplate sCodeScreenTemplate =
 {
     .copyExistingString = FALSE,
     .maxChars = CODE_NAME_LENGTH,
@@ -2564,5 +2564,3 @@ static const struct SpritePalette sSpritePalettes[] =
     {gNamingScreenMenu_Pal[4], PALTAG_OK_BUTTON},
     {}
 };
-
-

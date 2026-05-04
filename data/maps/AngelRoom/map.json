@@ -2,8 +2,8 @@
   "id": "MAP_ANGEL_ROOM",
   "name": "AngelRoom",
   "layout": "LAYOUT_ANGEL_ROOM",
-  "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "music": "MUS_PL_B_CASTLE",
+  "region_map_section": "MAPSEC_ANGEL_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_ANGELROOM_ANGEL",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_ANGEL",
       "x": 6,
       "y": 5,
       "elevation": 0,
@@ -27,6 +27,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AngelRoom_EventScript_Angel",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ANGELROOM_KECLEON",
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 0,
+      "y": 0,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WahRoomsShared_Kecleon",
+      "flag": "FLAG_HIDE_KECLEON_ROOM_ANGEL"
     }
   ],
   "warp_events": [

@@ -1,11 +1,15 @@
+const VAR_TEMP_0_BARO_ROOM_STATE = VAR_TEMP_0
+const FLAG_TEMP_1_BARO_ROOM_HIDE_BARO = FLAG_TEMP_1
+
 mapscripts BaroRoom_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_BARO_ROOM_STATE, 0: BaroRoom_OnFrame
+        VAR_TEMP_0_BARO_ROOM_STATE, 0: BaroRoom_OnFrame
 	]
      MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_TEMP_8, 0: BaroRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: BaroRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : BaroRoom_OnTransition
 }
 
 
@@ -21,7 +25,13 @@ script BaroRoom_OnWarp_PlayerTurnNorth {
     end
 }
 
+script BaroRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Baro)
+    end
+}
+
 script BaroRoom_OnFrame {
+    special(ShowMapNamePopup)
     applymovementandwait(LOCALID_PLAYER, moves(
         walk_up * 5, 
         face_right
@@ -71,6 +81,9 @@ script BaroRoom_OnFrame {
     delay(20)
     msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"), speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_BAROROOM_BARO, moves(emote_versus))
+    waitse
     call(BaroRoom_EventScript_BaroBattle)
     msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
@@ -94,14 +107,14 @@ script BaroRoom_OnFrame {
     call(BaroRoom_EventScript_OpenSideDoor)
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(walk_right, walk_in_place_right, set_invisible))
     removeobject(LOCALID_BAROROOM_BARO)
-    setflag(FLAG_BAROROOM_HIDE_BARO)
+    setflag(FLAG_TEMP_1_BARO_ROOM_HIDE_BARO)
     call(BaroRoom_EventScript_CloseSideDoor)
     applymovementandwait(LOCALID_CAMERA, Common_Movement_WalkLeft2)
     special(RemoveCameraObject)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_FaceUp)
     delay(20)
     call(WahRoomsShared_OpenDoor)
-    setvar(VAR_BARO_ROOM_STATE, 1)
+    setvar(VAR_TEMP_0_BARO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_BARO)
     release
     end
@@ -109,6 +122,7 @@ script BaroRoom_OnFrame {
 
 
  script BaroRoom_EventScript_OpenSideDoor {
+    playse(SE_RG_DOOR)
     setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_1_UP, 0)
     setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0)
     special(DrawWholeMapView)
@@ -128,6 +142,7 @@ script BaroRoom_OnFrame {
  }
 
   script BaroRoom_EventScript_CloseSideDoor {
+    playse(SE_FU_ZAKU)
     setmetatile(11, 7,  METATILE_Room_Baro_DOOR_OPENING_3_UP, 0)
     setmetatile(11, 8,  METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0)
     special(DrawWholeMapView)
@@ -164,4 +179,22 @@ script BaroRoom_OnFrame {
 
  text BaroRoom_Text_BaroDefeated {
     format("En fin…")
+ }
+
+ script BaroRoom_EventScript_PlugOink {
+    lock
+    applymovement(LOCALID_BAROROOM_PLUGOINK, moves(face_player, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
+    waitmovement(0)
+    msgbox(format("Oink, oink, oink…"), MSGBOX_AUTOCLOSE)
+    end
+ }	
+
+ script BaroRoom_EventScript_Sever {
+    msgbox(format("¡Sever!"), MSGBOX_NPC)
+    end
+ }
+
+ script BaroRoom_EventScript_Seeg {
+    msgbox(format("See, see."), MSGBOX_NPC)
+    end
  }

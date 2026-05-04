@@ -40,10 +40,13 @@
 #include "trainer_pokemon_sprites.h"
 #include "pokemon_icon.h"
 #include "team_selector.h"
+#include "team_selector_player.h"
 #include "pokeball.h"
 #include "pokemon.h"
 #include "script_pokemon_util.h"
 #include "event_data.h"
+#include "pokemon.h"
+
 
 //========== SECCIÓN: VARIABLES ==========//
 
@@ -55,6 +58,12 @@
 #define TAG_ITEM_ICON 5400
 #define ITEM_SPRITE_POS_X 80
 #define ITEM_SPRITE_POS_Y 101
+
+#define NUM_MAX_CHARACTHERS 7
+
+static const u8 sSpecialWordList[][NUM_MAX_CHARACTHERS] = {
+    { CHAR_X, CHAR_I, CHAR_R, CHAR_O, CHAR_S, EOS, EOS },
+};
 
 struct TeamSelector
 {
@@ -70,6 +79,7 @@ struct TeamSelector
 
     u8 windowIdMsg;
     u8 optionSelectMsg;//1 SI, 0 NO
+    bool8 fromField; 
 };
 
 static EWRAM_DATA struct TeamSelector teamSelectorObj = {0};
@@ -77,14 +87,16 @@ static EWRAM_DATA struct TeamSelector teamSelectorObj = {0};
 const u8 sTextColorWhite[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 const u8 sTextColorBlack[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_RED};
 
-
-static void LoadMoveIconType(u16 move, u8 indexMove);
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
 void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons);
 static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons);
 static void GenerateRandomTeam();
 static void Task_HandleTeamSelector(u8 taskId);
 static void Task_HandleWantThisTeam(u8 taskId);
+static void Task_HandleExitConfirm(u8 taskId);
+static void Task_ExitWithoutSelection(u8 taskId);
+static void CreateExitConfirmWindow(void);
+static void RemoveExitConfirmWindow(void);
 
 const u32 TeamSelectorBG23_Tileset[] = INCBIN_U32("graphics/team_selector/bg23_tileset.4bpp.lz");
 const u32 TeamSelectorBG2_Tilemap[] = INCBIN_U32("graphics/team_selector/bg2_tilemap.bin.lz");
@@ -336,7 +348,7 @@ static void CreateMsgWindow()
 
     PutWindowTilemap(windowId);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, 1, BG_PLTT_ID(14));
+    LoadWindowGfx(windowId, 0, 1, BG_PLTT_ID(14));
     DrawTextBorderOuter(windowId, 1, 14);
 
     x = GetStringCenterAlignXOffset(FONT_SMALL, gText_WantThisTeam, sMsgTeamSelector_WindowTemplate.width*8);
@@ -351,6 +363,41 @@ static void CreateMsgWindow()
 }
 
 static void RemoveWindowMsgWantThisTeam()
+{
+    ClearDialogWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, TRUE);
+    ClearStdWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, FALSE);
+    CopyWindowToVram(teamSelectorObj.windowIdMsg, COPYWIN_GFX);
+    RemoveWindow(teamSelectorObj.windowIdMsg);
+}
+
+static void CreateExitConfirmWindow(void)
+{
+    u8 windowId;
+    u8 x;
+
+    const u8 gText_WantToExit[] = _("¿Quieres salir?");
+    const u8 gText_YesNo[] = _("Sí{CLEAR_TO 88}No");
+
+    windowId = AddWindow(&sMsgTeamSelector_WindowTemplate);
+    teamSelectorObj.windowIdMsg = windowId;
+
+    PutWindowTilemap(windowId);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    LoadWindowGfx(windowId, 0, 1, BG_PLTT_ID(14));
+    DrawTextBorderOuter(windowId, 1, 14);
+
+    x = GetStringCenterAlignXOffset(FONT_SMALL, gText_WantToExit, sMsgTeamSelector_WindowTemplate.width*8);
+    AddTextPrinterParameterized(windowId, FONT_SMALL, gText_WantToExit, x, 0, 0, NULL);
+    
+    x = GetStringCenterAlignXOffset(FONT_SMALL, gText_YesNo, sMsgTeamSelector_WindowTemplate.width*8);
+    AddTextPrinterParameterized(windowId, FONT_SMALL, gText_YesNo, x, 16, 0, NULL);
+    
+    teamSelectorObj.optionSelectMsg = 1;
+    DrawMenuCursor(TRUE);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+}
+
+static void RemoveExitConfirmWindow(void)
 {
     ClearDialogWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, TRUE);
     ClearStdWindowAndFrameToTransparent(teamSelectorObj.windowIdMsg, FALSE);
@@ -411,6 +458,17 @@ static void PrintAbilityMon(const struct TeamSelectorMonData *mon)
     CopyWindowToVram(WINDOW_ABILITY_DESCRIPTION, 3);
 }
 
+void LoadMoveIconType(u8 windowId, u16 move, u8 indexMove, u8 x, u8 y)
+{
+    enum Type type = GetMoveType(move);
+    
+    if(move == MOVE_NONE)
+        return;
+
+    BlitMenuInfoIcon(windowId, type, x, y + (16 * indexMove));   
+    CopyWindowToVram(windowId, 3);
+}
+
 static void PrintMovesMon(const struct TeamSelectorMonData *mon)
 {
     u8 i;
@@ -428,7 +486,7 @@ static void PrintMovesMon(const struct TeamSelectorMonData *mon)
         
         AddTextPrinterParameterized3(WINDOW_MOVES, FONT_SMALL, 0, y, sTextColorWhite, 0, gStringVar1);
         LoadMoveCateroyIcon(mon->moves[i], i);
-        LoadMoveIconType(mon->moves[i], i);
+        LoadMoveIconType(WINDOW_MOVE_TYPE, mon->moves[i], i, 0, 4);
         y += 16; 
     }
     
@@ -442,25 +500,19 @@ static void PrintNameMon(const struct TeamSelectorMonData *mon)
     CopyWindowToVram(WINDOW_NAME, 3);
 }
 
-static void LoadMoveIconType(u16 move, u8 indexMove)
-{
-    enum Type type = GetMoveType(move);
-    BlitMenuInfoIcon(WINDOW_MOVE_TYPE, type, 0, 4 + (16 * indexMove));   
-    CopyWindowToVram(WINDOW_MOVE_TYPE, 3);
-}
 
-static void LoadMonIconType(u16 specie)
+void LoadMonIconType(u8 windowId, u16 specie, u8 x, u8 y, u8 fillColor)
 {
     u8 type1 = gSpeciesInfo[specie].types[0];
     u8 type2 = gSpeciesInfo[specie].types[1];
 
-    FillWindowPixelBuffer(WINDOW_MON_TYPE, PIXEL_FILL(15));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(fillColor));
 
-    BlitMenuInfoIcon(WINDOW_MON_TYPE, type1, 0, 2);  
+    BlitMenuInfoIcon(windowId, type1, x, y);  
     if( type1 != type2)
-        BlitMenuInfoIcon(WINDOW_MON_TYPE, type2, 40, 2);  
+        BlitMenuInfoIcon(windowId, type2, x + 40, y);  
 
-    CopyWindowToVram(WINDOW_MON_TYPE, 3);
+    CopyWindowToVram(windowId, 3);
 }
 
 static void ShowMoveCateroyIcon(u16 move, u8 indexMove)
@@ -566,25 +618,61 @@ static void UpdateSelectedMonIcon()
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
-
     }
+}
 
+
+static void GetIVsByNature(const struct TeamSelectorMonData *mon, u8 *ivs)
+{
+    const struct NatureInfo natureMod = gNaturesInfo[mon->nature];
+
+    for (u8 i = 0; i < NUM_STATS; i++)
+    {
+        ivs[i] = (natureMod.statDown == i) ? 0 : 31;
+    }
+}
+
+static u8 GetAbilitySlotForSpecies(u16 species, u16 abilityId)
+{
+    if (abilityId == ABILITY_NONE)
+        return NUM_ABILITY_SLOTS;
+    for (u8 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        if (GetAbilityBySpecies(species, slot) == (enum Ability)abilityId)
+            return slot;
+    }
+    return NUM_ABILITY_SLOTS;
+}
+
+void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon, bool8 editOriginalTeam)
+{
+    u8 gender;
+    u8 evs[6];
+    u8 ivs[6];
+    u16 tempMoves[4];
+   
+    enum PokeBall  ball = BALL_POKE;
+    enum ShinyMode shiny;
+    enum Type typeTera = TYPE_NONE;
+
+    shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
+    memcpy(tempMoves, mon->moves, sizeof(tempMoves));
+    memcpy(evs, mon->ev, sizeof(evs));
+    GetIVsByNature(mon, ivs);
+
+    gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
+
+    if(editOriginalTeam)
+        gSaveBlock2Ptr->playerTeamSelector[slot] = mon->specie;
+
+    ScriptGiveMonParameterized(0, slot, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
 }
 
 static void GiveTeamPlayer()
 {
-    const struct TeamSelectorMonData *mon;
     u8 i;
-    u8 indexMon = 0;
-
-    enum PokeBall  ball = BALL_POKE;
-    enum ShinyMode shiny = SHINY_MODE_RANDOM;
-    enum Type typeTera = TYPE_NONE;
-
-    u8 evs[6];
-    u8 ivs[6] = {0,0,0,0,0,0};
-
-    u16 tempMoves[4];
+    u16 indexMon;
+    const struct TeamSelectorMonData *mon;
 
     for ( i = 0; i < MAX_TEAM_SIZE; i++)
     {
@@ -595,11 +683,9 @@ static void GiveTeamPlayer()
             indexMon = gTeamSelectorPlayer[teamSelectorObj.monTeamNum].team[i];
 
         mon = &gAllTeamMons[indexMon];
-        memcpy(tempMoves, mon->moves, sizeof(tempMoves));
-        memcpy(evs, mon->ev, sizeof(evs));
-
-        ScriptGiveMonParameterized(0, i, mon->specie, 100, mon->itemId, ball, mon->nature, mon->ability, MON_FEMALE, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
+        GiveMonTeamFromSelector(i, mon, TRUE);
     }
+    gPlayerPartyCount = MAX_TEAM_SIZE;
 }
 
 //========== SECCIÓN: FUNCIONES ÚTILES ==========//
@@ -609,18 +695,21 @@ static void Task_HandleWantThisTeam(u8 taskId)
 {
     if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.optionSelectMsg != TRUE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(TRUE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
 
     if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.optionSelectMsg != FALSE)
     {
+        PlaySE(SE_SELECT);
         DrawMenuCursor(FALSE);
         teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
     }
 
     if (JOY_NEW(A_BUTTON))
     {
+        PlaySE(SE_SELECT);
         if(teamSelectorObj.optionSelectMsg == FALSE)
         {
             RemoveWindowMsgWantThisTeam();
@@ -635,7 +724,61 @@ static void Task_HandleWantThisTeam(u8 taskId)
 
     if (JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SELECT);
         RemoveWindowMsgWantThisTeam();
+        gTasks[taskId].func = Task_HandleTeamSelector;
+    }
+}
+
+static void Task_ExitWithoutSelection(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        gSpecialVar_Result = FALSE;
+        ClearMonSprites(FALSE, TRUE);
+        RemoveExitConfirmWindow();
+        FreeAllWindowBuffers();
+        SetMainCallback2(gMain.savedCallback);
+        DestroyTask(taskId);
+    }
+}
+
+static void Task_HandleExitConfirm(u8 taskId)
+{
+    if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.optionSelectMsg != TRUE)
+    {
+        PlaySE(SE_SELECT);
+        DrawMenuCursor(TRUE);
+        teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
+    }
+
+    if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.optionSelectMsg != FALSE)
+    {
+        PlaySE(SE_SELECT);
+        DrawMenuCursor(FALSE);
+        teamSelectorObj.optionSelectMsg = !teamSelectorObj.optionSelectMsg;
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        if(teamSelectorObj.optionSelectMsg == FALSE)
+        {
+            PlaySE(SE_SELECT);
+            RemoveExitConfirmWindow();
+            gTasks[taskId].func = Task_HandleTeamSelector;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            BeginNormalPaletteFade(PALETTES_ALL, 10, 0, 16, RGB_BLACK);
+            gTasks[taskId].func = Task_ExitWithoutSelection;
+        }
+    }
+
+    if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        RemoveExitConfirmWindow();
         gTasks[taskId].func = Task_HandleTeamSelector;
     }
 }
@@ -647,6 +790,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if( JOY_NEW(SELECT_BUTTON) && teamSelectorObj.monTeamNum == TEAM_RANDOM)
     {
+        PlaySE(SE_SELECT);
         GenerateRandomTeam();
         ClearMonSprites(TRUE, TRUE);
         teamSelectorObj.indexSelectedMon = 0;
@@ -656,6 +800,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if ( JOY_NEW(R_BUTTON) && teamSelectorObj.monTeamNum <= TEAM_COUNT - 1 && teamSelectorObj.monTeamNum != TEAM_RANDOM)
     {
+        PlaySE(SE_SELECT);
         if( teamSelectorObj.monTeamNum !=  TEAM_RANDOM)
             teamSelectorObj.monTeamNum += 1;
 
@@ -673,6 +818,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(L_BUTTON) && teamSelectorObj.monTeamNum > 0)
     {
+        PlaySE(SE_SELECT);
         teamSelectorObj.monTeamNum -= 1;
         ClearMonSprites(TRUE, TRUE);
         teamSelectorObj.indexSelectedMon = 0;
@@ -682,6 +828,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.indexSelectedMon >  0)
     {
+        PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon -= 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
@@ -690,6 +837,7 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.indexSelectedMon < MAX_TEAM_SIZE-1)
     {
+        PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon += 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
@@ -698,8 +846,16 @@ static void Task_HandleTeamSelector(u8 taskId)
 
     if(JOY_NEW(A_BUTTON))
     {
+        PlaySE(SE_SELECT);
         CreateMsgWindow();
         gTasks[taskId].func = Task_HandleWantThisTeam;
+    }
+
+    if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
+    {
+        PlaySE(SE_SELECT);
+        CreateExitConfirmWindow();
+        gTasks[taskId].func = Task_HandleExitConfirm;
     }
 }
 
@@ -722,15 +878,13 @@ static void Task_MovementBgs(u8 taskId)
 
 static void Task_FadeOut(u8 taskId)
 {
-    // u16 music = GetCurrLocationDefaultMusic();
-
     if (!gPaletteFade.active)
     {
+        gSpecialVar_Result = TRUE;
         ClearMonSprites(FALSE, TRUE);
         RemoveWindowMsgWantThisTeam();
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
-        // FadeOutAndPlayNewMapMusic(music, 4);
+        SetMainCallback2(gMain.savedCallback);
         DestroyTask(taskId);
     }
 }
@@ -762,7 +916,7 @@ void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons)
     PrintNameMon(mon);
     PrintMovesMon(mon);
     PrintAbilityMon(mon);
-    LoadMonIconType(mon->specie);
+    LoadMonIconType(WINDOW_MON_TYPE, mon->specie, 0, 2, 15);
 }
 
 static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons)
@@ -811,6 +965,88 @@ static void ClearMonSprites(bool8 hiddenCategoryIcons, bool8 destroyMonIcons)
     }
 }
 
+static void ConvertNameToUpper(u8 *name)
+{
+    s8 i;
+
+    for (i = 0; i < NUM_MAX_CHARACTHERS; i++)
+    {
+        if (name[i] == EOS)
+            break;
+
+        if (name[i] >= CHAR_a && name[i] <= CHAR_z)
+            name[i] -= 26;
+    }
+}
+
+static bool8 CheckPlayerName(void)
+{
+    s8 i, z;
+    u8 playerNameUpper[NUM_MAX_CHARACTHERS];
+
+    memset(playerNameUpper, EOS, sizeof(playerNameUpper));
+    StringCopy(playerNameUpper, gSaveBlock2Ptr->playerName);
+    ConvertNameToUpper(playerNameUpper);
+
+    for (z = 0; z < ARRAY_COUNT(sSpecialWordList); z++)
+    {
+        bool8 match = TRUE;
+
+        for (i = 0; i < NUM_MAX_CHARACTHERS; i++)
+        {
+            if (playerNameUpper[i] == EOS && sSpecialWordList[z][i] == EOS)
+                break;
+
+            if (playerNameUpper[i] != sSpecialWordList[z][i])
+            {
+                match = FALSE;
+                break;
+            }
+        }
+
+        if (match)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void AddSpecialMonToRandomTeamByPlayerName()
+{
+    u8 i;
+    u8 indexToReplace = 0xFF;
+    u8 indexSpecialMon = MON_WATERMELON_ELECTRODE;
+    const struct TeamSelectorMonData *mon1;
+    const struct TeamSelectorMonData *mon2;
+
+    if(!CheckPlayerName())
+        return;
+
+    for (i = 0; i < ARRAY_COUNT(teamSelectorObj.monIndexRandomTeam); i++)
+    {
+        mon1 = &gAllTeamMons[teamSelectorObj.monIndexRandomTeam[i]];
+        mon2 = &gAllTeamMons[teamSelectorObj.monIndexRandomTeam[i]];
+        
+        if(mon1->specie == mon2->specie) {
+            indexToReplace = 0xFF;
+            break;
+        }
+
+        if( gSpeciesInfo[mon1->specie].types[0] == gSpeciesInfo[mon2->specie].types[0] || 
+            gSpeciesInfo[mon1->specie].types[0] == gSpeciesInfo[mon2->specie].types[1] ||
+            gSpeciesInfo[mon1->specie].types[1] == gSpeciesInfo[mon2->specie].types[0] || 
+            gSpeciesInfo[mon1->specie].types[1] == gSpeciesInfo[mon2->specie].types[1]
+        ){
+            indexToReplace = i;
+            break;
+        }
+    }
+
+    if(indexToReplace != 0xFF)
+        teamSelectorObj.monIndexRandomTeam[indexToReplace] = indexSpecialMon;
+    else
+        teamSelectorObj.monIndexRandomTeam[Random() % 6] = indexSpecialMon;
+}
 
 static void GenerateRandomTeam()
 {
@@ -838,6 +1074,8 @@ static void GenerateRandomTeam()
         teamSelectorObj.monIndexRandomTeam[i] = idx;
         teamSelectorObj.teamAbilities[TEAM_RANDOM][i] = ABILITY_NONE;
     }
+
+    AddSpecialMonToRandomTeamByPlayerName();
 }
 
 
@@ -872,7 +1110,8 @@ void CB2_InitTeamSelectorSetUp(void)
         LoadBgs();
         InitWindowTeamSelector();
         // LoadMessageBoxAndBorderGfx();
-        FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4); 
+        if (teamSelectorObj.fromField)
+            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
         gMain.state++;
         break;
     case 3:
@@ -906,17 +1145,24 @@ void CB2_InitTeamSelectorSetUp(void)
     }
 }
 
-bool8 StartTeamSelector_CB2(void)
+void StartTeamSelector_CB2(void)
 {
     if (!gPaletteFade.active)
     {
         gMain.state = 0;
+        teamSelectorObj.fromField = FALSE; 
         CleanupOverworldWindowsAndTilemaps();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetMainCallback2(CB2_InitTeamSelectorSetUp);
-
-        return TRUE;
     }
+}
 
-    return FALSE;
+void StartTeamSelectorFromField_CB2(void)
+{
+    gMain.state = 0;
+    teamSelectorObj.fromField = TRUE;
+    CleanupOverworldWindowsAndTilemaps();
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    SetMainCallback2(CB2_InitTeamSelectorSetUp);
 }

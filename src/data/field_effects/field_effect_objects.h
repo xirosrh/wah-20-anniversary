@@ -770,8 +770,8 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_JumpLongGrass = {
     .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
     .oam = &gObjectEventBaseOam_16x16,
-    .anims = sAnimTable_JumpLongGrass,
-    .images = sPicTable_JumpLongGrass,
+    .anims = sAnimTable_LongGrass,
+    .images = sPicTable_LongGrass,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateJumpImpactEffect,
 };

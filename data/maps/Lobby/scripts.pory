@@ -1,0 +1,764 @@
+mapscripts Lobby_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Lobby_OnTransition
+}
+
+script Lobby_OnTransition {
+    setrespawn(HEAL_LOCATION_LOBBY)
+    end
+}
+
+script Lobby_EventScript_StartChallenge {
+    lock
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_FacePlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¡Hola {PLAYER}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    delay(20)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
+    if (flag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES) == TRUE) {
+        msgbox(format("¡Increíble, {PLAYER}! Has superado el desafío por completo.\pA partir de ahora puedes volver a enfrentarlo en otras modalidades: batallas dobles y batallas inversas.\p¡Seguro que te van a divertir un montón!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        clearflag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES)
+    }
+    if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        msgbox(format("¿Así que ya estás list{OA} para intentar el desafío?"), MSGBOX_YESNO, speaker = SP_NAME_COPE)
+        closemessage
+        delay(10)
+        if (var(VAR_RESULT) == YES) {
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
+        } else {
+            goto(Lobby_StartChallenge_CancelledChallenge)
+        }
+    }
+    setspeaker(SP_NAME_COPE)
+    message(format("¿En qué modo quieres afrontar el desafío?"))
+    waitmessage
+    dynmultipush(format("Estándar"), 0)
+    dynmultipush(format("Batallas dobles"), 1)
+    dynmultipush(format("Batallas inversas"), 2)
+    dynmultipush(format("Salir"), 4)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    delay(10)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_STANDARD)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            msgbox(format("¡Excelente! Adelante, ¡te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
+        case 1:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_DOUBLE)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            setflag(FLAG_FORCE_DOUBLE_BATTLE)
+            msgbox(format("¡Excelente! El desafío será en modo batallas dobles.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
+        case 2:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE)
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            setflag(FLAG_INVERSE_BATTLE)
+            msgbox(format("¡Excelente! El desafío será en modo batallas inversas.\pLas efectividades de tipo se invierten: lo que normalmente es súper efectivo será poco efectivo y viceversa.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
+        default:
+            goto(Lobby_StartChallenge_CancelledChallenge)
+    }
+}
+
+script Lobby_StartChallenge_CancelledChallenge {
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_Surprise)
+    msgbox(format("¿Así que no te sientes list{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    delay(60)
+    msgbox(format("Recuerda que las personas de la sala de espera pueden ayudar en tu preparación."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+    turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
+    release
+    end
+}
+
+script Lobby_StartChallenge_EnterOmegaRoom {
+    special(SetWahChallengeInitialAchievementFlags)
+    call(WahRoomsShared_Kecleon_ResetFlags)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    call(Lobby_EventScript_OpenDoor)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
+    hideobjectat(LOCALID_PLAYER, MAP_LOBBY)
+    warp(MAP_OMEGA_ROOM, WARP_ID_OMEGA_ROOM_INITIAL)
+    waitstate
+    release
+    end
+}
+
+
+script Lobby_EventScript_OpenDoor {
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)
+	playse(SE_DOOR)
+	setmetatile(7, 2, METATILE_RoomGeneral_Door_Opening1, FALSE)
+	special(DrawWholeMapView)
+	delay(5)
+	setmetatile(7, 2, METATILE_RoomGeneral_Door_Opening2, FALSE)
+    special(DrawWholeMapView)
+	delay(5)
+    setmetatile(7, 2, METATILE_RoomGeneral_Door_Open, FALSE)
+    special(DrawWholeMapView)
+	return
+}
+
+
+script Lobby_EventScript_TeamSelector {
+    lock
+    faceplayer
+    msgbox(format("¡Hola! Soy el encargado de la selección de equipos para el desafío.\pVeo que equipo actual es bueno, pero creo que puedes conseguir uno mejor.\p¿Quieres elegir otro equipo?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        special(OpenTeamSelectorFromField)
+        waitstate
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox( format("¡Excelente elección! Eso sí es un equipo ganador.\p¡Ve por la gloria!"), MSGBOX_AUTOCLOSE)
+        } else {
+            msgbox(Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE)
+        }
+    } else {
+        msgbox(Lobby_Text_TeamSelector_TeamSelectionCancelled, MSGBOX_AUTOCLOSE)
+    }
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+
+text Lobby_Text_TeamSelector_TeamSelectionCancelled {
+    "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!"
+}
+
+
+script Lobby_EventScript_DifficultySelector {
+    lock
+    faceplayer
+    msgbox(format("¡Hola! Soy la encargada de la selección de dificultad del desafío.\pNo parece que la dificultad actual sea la adecuada para ti.\p¿Quieres cambiar el nivel de dificultad?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        special(OpenDifficultySelectorFromField)
+        waitstate
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox("¡Listo! La dificultad ha sido actualizada.\n¡Buena suerte con el desafío!", MSGBOX_AUTOCLOSE)
+        } else {
+            msgbox(Lobby_Text_DifficultySelector_Cancelled, MSGBOX_AUTOCLOSE)
+        }
+    } else {
+        msgbox(Lobby_Text_DifficultySelector_Cancelled, MSGBOX_AUTOCLOSE)
+    }
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+text Lobby_Text_DifficultySelector_Cancelled {
+    format("¡Entendido! Si cambias de opinión, estaré por aquí.")
+}
+
+
+script Lobby_EventScript_BufferVictoryWordFromCountVar {
+    if(var(VAR_0x8004) == 0) {
+        bufferstring(STR_VAR_1, "0")
+    } else {
+        buffernumberstring(STR_VAR_1, VAR_0x8004)
+    }
+    if(var(VAR_0x8004) == 1) {
+        bufferstring(STR_VAR_2, "victoria")
+    } else {
+        bufferstring(STR_VAR_2, "victorias")
+    }
+    return
+}
+
+script Lobby_EventScript_BufferTimeWordFromCountVar {
+    if(var(VAR_0x8004) == 0) {
+        bufferstring(STR_VAR_1, "0")
+    } else {
+        buffernumberstring(STR_VAR_1, VAR_0x8004)
+    }
+    if(var(VAR_0x8004) == 1) {
+        bufferstring(STR_VAR_2, "vez")
+    } else {
+        bufferstring(STR_VAR_2, "veces")
+    }
+    return
+}
+
+script Lobby_EventScript_ChallengeHistorian {
+    lock
+    faceplayer
+    
+    msgbox(format("¡Hey, {PLAYER}! No trabajo aquí ni nada, pero me encanta sacar estadísticas.\pMe quedo en la sala de espera observando a todos los que entran y lo anoto todo."), MSGBOX_AUTOCLOSE)
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+        faceplayer
+        msgbox(format("Veo que aún no has completado el desafío ni una vez.\pTodavía no te has ganado un lugar en mis notas."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SadWithDelay48)
+        turnobject(VAR_LAST_TALKED, DIR_NORTH)
+        release
+        end
+    }
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    faceplayer
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("Según mi cuaderno, en modo estándar llevas {STR_VAR_1} {STR_VAR_2}.\p¡Nada mal, de verdad!"))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("En batallas dobles tienes {STR_VAR_1} {STR_VAR_2}.\pAhí se nota quién piensa dos turnos por adelantado."))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("Y en batallas invertidas sumas {STR_VAR_1} {STR_VAR_2}.\pEse modo le da vuelta la cabeza a cualquiera."))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferTimeWordFromCountVar)
+    msgbox(format("En total, has completado el desafío {STR_VAR_1} {STR_VAR_2}."))
+    if(var(VAR_WAH_CHALLENGE_COMPLETION_COUNT) > 5) {
+        msgbox(format("¡Si sigues así, voy a tener que comprar otro cuaderno para registrar tus números!"), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    }
+    else {
+        msgbox(format("Aún no son tantas victorias, pero sigue así."), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
+    }
+    turnobject(VAR_LAST_TALKED, DIR_NORTH)
+    release
+    end
+}
+
+
+script Lobby_EventScript_Shop {
+	lock
+    faceplayer
+	message(format("¡Hola! ¿En qué puedo ayudarte?"))
+	waitmessage
+	pokemart(Lobby_MartItems)
+	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+	release
+    end
+}
+
+mart Lobby_MartItems {
+	ITEM_HYPER_POTION
+	ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+	ITEM_ETHER
+    ITEM_MAX_ETHER
+    ITEM_ELIXIR
+    ITEM_MAX_ELIXIR
+    ITEM_REVIVE
+    ITEM_MAX_REVIVE
+    ITEM_REVIVAL_HERB
+    ITEM_BAXCALIBURITE
+    ITEM_DRAGALGITE
+    ITEM_TYRANITARITE
+    ITEM_DARKRANITE
+    ITEM_ALAKAZITE
+    ITEM_LUCARIONITE
+    ITEM_LUCARIONITE_Z
+    ITEM_MEWTWONITE_X
+    ITEM_MEWTWONITE_Y
+    ITEM_CHARIZARDITE_X
+    ITEM_CHARIZARDITE_Y
+    ITEM_GALLADITE
+    ITEM_GLALITITE
+    ITEM_FROSLASSITE
+    ITEM_CLEFABLITE
+    ITEM_HOUNDOOMINITE
+    ITEM_AGGRONITE
+    ITEM_ZYGARDITE
+    ITEM_VICTREEBELITE
+}
+
+script Lobby_EventScript_Roxas_IntroFirstBattle {
+    checkplayergender
+    if(var(VAR_RESULT) == MALE) {
+        msgbox(format("¡Apa, mira vos!  ¡El nuevo campeón! ¡Felicidades loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    } else {
+        msgbox(format("¡Apa, mira vos! ¡La nueva campeona! ¡Felicidades loca!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    }
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
+    msgbox(format("Veo que se la diste a esos traidores de las salas… Me alegra que alguien les bajara los humos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    delay(20)
+    msgbox(format("¿Te acordas de lo que te conté la ultima vez?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
+    msgbox(format("Terminé mi investigación en el Archipiélago Suzuka… es una historia larga, tendrías que haberlo visto…\pNo sabes lo que fue… Pero logré dar con el rastro de esa fuerza que estaba causando tantos males y estoy listo para probar si realmente este bicho es tan legendario como dicen las crónicas del archipiélago."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    delay(20)
+    call(Lobby_EventScript_Roxas_ExplainPartyLimit)
+    return
+}
+
+script Lobby_EventScript_Roxas_IntroRematch {
+    msgbox(format("¡Apa, tu de nuevo! ¿Quieres volver a combatir contra mi legendario?"), MSGBOX_YESNO, speaker = SP_NAME_ROXAS)
+    closemessage
+    delay(20)
+    if(var(VAR_RESULT) == YES) {
+        call(Lobby_EventScript_Roxas_ExplainPartyLimit)
+        return
+    } else {
+        msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        release
+        end
+    }
+}
+
+script Lobby_EventScript_Roxas_ExplainPartyLimit {
+    switch(var(VAR_DIFFICULTY)) {
+        case DIFFICULTY_EASY:
+            msgbox(format("Vamos a hacerlo más interesante: elige a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        case DIFFICULTY_NORMAL:
+            msgbox(format("Vamos a hacerlo más interesante: elige a tres de tus bichos.\pYo voy a salir con mi legendario, así que más te vale elegir bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+        default:
+            msgbox(format("Vamos a hacerlo más interesante: un mano a mano.\pElige a tu mejor bicho y prepárate para enfrentar a mi legendario."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            break
+    }
+    return
+}
+
+script Lobby_EventScript_Roxas_SelectPlayerMons {
+    setvar(VAR_FRONTIER_FACILITY, FRONTIER_FACILITY_TOWER)
+    setvar(VAR_0x8004, FRONTIER_LVL_OPEN)
+    fadescreen(FADE_TO_BLACK)
+    special(ChoosePartyForBattleFrontier)
+    waitstate
+    lock
+    if (var(VAR_RESULT) == 0) {
+        special(LoadPlayerParty)
+        msgbox(Lobby_Text_Roxas_PlayerCancelled, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        release
+        end
+    }
+    special(ReducePlayerPartyToSelectedMons)
+    return
+}
+
+script Lobby_EventScript_Roxas {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
+        if(flag(FLAG_DEFEATED_LOBBY_ROXAS)) {
+            call(Lobby_EventScript_Roxas_IntroRematch)
+        } else {
+            call(Lobby_EventScript_Roxas_IntroFirstBattle)
+        }
+        special(SavePlayerParty)
+        switch(var(VAR_DIFFICULTY)) {
+            case DIFFICULTY_EASY:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+            case DIFFICULTY_NORMAL:
+                setvar(VAR_0x8005, 3)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+            default:
+                setvar(VAR_0x8005, 1)
+                call(Lobby_EventScript_Roxas_SelectPlayerMons)
+                break
+        }
+        msgbox(format("¡A ver si te la bancas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        setflag(B_FLAG_NO_WHITEOUT)
+        trainerbattle_no_intro(TRAINER_WAH_ADMIN_ROXAS, format("¡Nooooo!"))
+        clearflag(B_FLAG_NO_WHITEOUT)
+        special(GetBattleOutcome)
+        special(LoadPlayerParty)
+        special(HealPlayerParty)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_X)
+            msgbox(format("¡Nooo, me estás cargando! Ni con la fuerza de este Pokémon oscuro te pude ganar.\pAhora me cierra por qué a vos te dejaron pasar a las salas y a mí me sacaron de un voleo.\pTenés algo distinto, pasta de campeón, no es solo fuerza bruta.\pLa verdad, me cerraste la boca. Bien ganado."), MSGBOX_AUTOCLOSE)
+            delay(40)
+            setflag(FLAG_DEFEATED_LOBBY_ROXAS)
+        } else {
+            checkplayergender
+            if(var(VAR_RESULT) == MALE) {
+                msgbox(format("Mamita lo que me imaginaba… El poder de este bicho es de otro planeta, ni vos que sos el campeón te la bancaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            } else {
+                msgbox(format("Mamita lo que me imaginaba… El poder de este bicho es de otro planeta, ni vos que sos la campeona te la bancaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+            }
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+            msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        }
+        call(Achievements_EventScript_Eval_DefeatAllAdmins)
+        release
+        end
+    } else {
+        msgbox(format("No te molestes en preguntar… A mí tampoco me dejan pasar estos…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
+        delay(20)
+        msgbox(format("Dicen que haber sido Líder de WAH en el Archipiélago Suzuka durante solo dos semanas no es “trayectoria suficiente” para participar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        delay(20)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Angry)
+        playse(SE_LEDGE)
+        applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
+        playse(SE_LEDGE)
+        applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16 * 2))
+        msgbox(format("¡Unos caraduras, loco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        lock
+        delay(20)
+        msgbox(format("Pero bueno, tampoco me voy a quedar acá llorando.\pEstoy tras un barco que desapareció al oeste de las Islas Naranja, el archipiélago Suzuka.\pEl Team Rocket anda haciendo de las suyas y dicen que hay un bicho oscuro con ojos rojos que es un peligro… aterrador…\pHabrá que investigar y ver qué onda…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        call(Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Che, discúlpame, mejor me voy a seguir con mis investigaciones.\p¡Suerte, espero que a vos sí te den bola!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+        release
+        end
+    }
+}
+
+
+
+text Lobby_Text_Roxas_PlayerCancelled {
+    format("¿Así que le tenés miedo a mi bicho legendario? ¡Y aún así ganaste las salas!")
+}
+
+script Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(VAR_LAST_TALKED,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}
+
+
+script Lobby_EventScript_FakemonDexMenu {
+    lock
+    faceplayer
+    msgbox(format("Soy el experto en las especies exclusivas de Whack a Hack.\pTe revelaré todo sobre ellas, pero solo de las que hayas visto.\p¡No quiero arruinar el factor sorpresa!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
+    setvar(VAR_0x8000, 0)
+    getseenmon(SPECIES_KAOSUNE)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_KAOSUNE)
+        dynmultipush(gStringVar1, 0)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_FREECH)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_FREECH)
+        dynmultipush(gStringVar1, 1)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_PLUGOINK)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_PLUGOINK)
+        dynmultipush(gStringVar1, 2)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_GRITESPEC)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_GRITESPEC)
+        dynmultipush(gStringVar1, 3)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MAGIKEN)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MAGIKEN)
+        dynmultipush(gStringVar1, 4)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_AYEWIRAZ)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_AYEWIRAZ)
+        dynmultipush(gStringVar1, 5)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_ELECTRODES)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_EING)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_EING)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    if(var(VAR_0x8000) == 0) {
+        msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
+        release
+        end
+    }
+    dynmultipush("Salir", 8)
+    msgbox(format("¿De cuál especie te gustaría conocer más?"))
+    dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    if(var(VAR_RESULT) > 7) {
+        msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    switch(var(VAR_RESULT)) {
+        case 0:
+            showmonpic(SPECIES_KAOSUNE, 10, 3)
+            setvar(VAR_0x8004, SPECIES_KAOSUNE)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 1:
+            showmonpic(SPECIES_FREECH, 10, 3)
+            setvar(VAR_0x8004, SPECIES_FREECH)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 2:
+            showmonpic(SPECIES_PLUGOINK, 10, 3)
+            setvar(VAR_0x8004, SPECIES_PLUGOINK)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 3:
+            showmonpic(SPECIES_GRITESPEC, 10, 3)
+            setvar(VAR_0x8004, SPECIES_GRITESPEC)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 4:
+            showmonpic(SPECIES_MAGIKEN, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MAGIKEN)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 5:
+            showmonpic(SPECIES_AYEWIRAZ, 10, 3)
+            setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 6:
+            showmonpic(SPECIES_ELECTRODES, 10, 3)
+            setvar(VAR_0x8004, SPECIES_ELECTRODES)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 7:
+            showmonpic(SPECIES_EING, 10, 3)
+            setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+    }
+    goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
+}
+
+script Lobby_EventScript_ShowFakemonDexInfo {
+    special(BufferSpeciesDexDescriptionForTextbox)
+    msgbox(format("Ya que no tienes una Pokedex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
+    special(BufferSpeciesTypeNames)
+    if(var(VAR_RESULT) == 1) {
+        msgbox("Su tipo es: {STR_VAR_2}.")
+    } else {
+        msgbox("Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.")
+    }
+    msgbox("¡Y esto seguramente no lo sabías!\nSus habilidades son:")
+    setvar(VAR_0x8005, 0)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 1)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    setvar(VAR_0x8005, 2)
+    special(BufferSpeciesAbilityNameAndDescription)
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("{STR_VAR_1}:\n{FONT_SMALL}“{STR_VAR_2}”"))
+    }
+    special(BufferSpeciesStats)
+    msgbox(format("¡Último dato! ¿Qué tan buenos son sus stats base?\p{FONT_SMALL}{STR_VAR_1}"))
+    hidemonpic()
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    msgbox("Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.")
+    return
+}
+
+script Lobby_EventScript_TrainerCardGirl {
+    msgbox(format("¿Sabías que en la parte de atrás de tu tarjeta de entrenador puedes ver tus logros?\p¡También puedes ver los requerimientos para obtener cada uno!"), MSGBOX_NPC)
+    end
+}
+
+script Lobby_EventScript_Cope {
+    lock
+    faceplayer
+    checkitem(ITEM_DEVON_SCOPE)
+    if(var(VAR_RESULT))
+    {
+        msgbox(format("¡Hola {PLAYER}!\p¿Estás list{OA} para intentar el desafío?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    }
+    else
+    {
+        msgbox(format("¡Hola {PLAYER}!\p¿Has visto a Tile?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_PLAYER, moves(emote_question_mark))
+        waitse
+        msgbox(format("¿Cómo? ¿No sabes quién es?\nEs mi famoso Kecleon.\pLo he perdido de vista y no sé por dónde se ha metido... Además, ¡me ha robado el kit de objetos que le doy a los entrenadores del desafío!\pHazme un favor y búscale por mí.\nToma, llévate esto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        giveitem(ITEM_DEVON_SCOPE)
+        msgbox(format("Con el Detector Devon podrás ver dónde se esconde Tile."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    }
+    release
+    end
+}
+
+script Lobby_EventScript_QREventInfoKid {
+    lock
+    faceplayer
+    msgbox(format("Un chico de la zona creativa te da un regalo por completar un evento especial.\pEs imposible adivinar lo que hay que hacer sin mirar el vídeo.\p¡Incluso tuve que cambiar de orden a dos de los Pokémon de mi equipo!\pEso sí, me gustó el premio por completar el evento, ¡valió la pena!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    release
+    end
+}
+
+script Lobby_EventScript_AdminCountNPC {
+    msgbox(Lobby_Text_AdminCountNPC, MSGBOX_NPC)
+    end
+}
+
+text Lobby_Text_AdminCountNPC {
+    "Dicen que son 21 salas para completar
+     el desafío…
+    
+    Para la cantidad de administradores que 
+    hubo en la historia de WAH, hay algo que
+    no termina de cuadrar.
+
+    ¿Habrán dejado a algunos afuera de la 
+    celebración?
+
+    ¿Cómo lo resolvieron?"
+}
+
+script Lobby_EventScript_Pokebox {
+    lock
+    playse(SE_PC_ON)
+    setmetatile(8, 3, METATILE_lobby_PC_ON, FALSE)
+    special(DrawWholeMapView)
+    waitse
+    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)) {
+        delay(10)
+        playse(SE_CONTEST_HEART)
+        msgbox(Lobby_Text_Pokebox_SoftwareUpdate, MSGBOX_AUTOCLOSE_CENTER)
+        waitse
+        delay(10)
+        msgbox(Lobby_Text_Pokebox_SoftwareUpdateExplanation, MSGBOX_AUTOCLOSE_CENTER)
+        delay(20)
+        setflag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)
+
+    }
+    goto(Lobby_EventScript_Pokebox_MainMenu)
+}
+
+script Lobby_EventScript_Pokebox_MainMenu {
+    message(Lobby_Text_Pokebox_MainPrompt)
+    waitmessage
+    dynmultipush(format("Acceder a PC"), 0)
+    dynmultipush(format("¿Cómo funciona?"), 1)
+    dynmultipush(format("Salir"), 2)
+    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    delay(10)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            callnative(StartPokeBoxFromField_CB2)
+            waitstate
+            playse(SE_PC_OFF)
+            setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
+            special(DrawWholeMapView)
+            release
+            end
+        case 1:
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        default:
+            goto(Lobby_EventScript_Pokebox_Shutdown)
+    }
+}
+
+script Lobby_EventScript_Pokebox_HelpMenu {
+    message(Lobby_Text_Pokebox_HelpPrompt)
+    waitmessage
+    dynmultipush(format("¿Cuántos Pokémon puedo cambiar?"), 0)
+    dynmultipush(format("¿Cómo desbloqueo nuevos Pokémon?"), 1)
+    dynmultipush(format("Volver"), 2)
+    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    delay(10)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
+                msgbox(Lobby_Text_Pokebox_HelpSwapsAfterChallenge, MSGBOX_AUTOCLOSE)
+            } else {
+                msgbox(Lobby_Text_Pokebox_HelpSwapsBeforeChallenge, MSGBOX_AUTOCLOSE)
+            }
+            delay(10)
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        case 1:
+            msgbox(Lobby_Text_Pokebox_HelpUnlock, MSGBOX_AUTOCLOSE)
+            delay(10)
+            goto(Lobby_EventScript_Pokebox_HelpMenu)
+        default:
+            goto(Lobby_EventScript_Pokebox_MainMenu)
+    }
+}
+
+script Lobby_EventScript_Pokebox_Shutdown {
+    playse(SE_PC_OFF)
+    setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
+    special(DrawWholeMapView)
+    release
+    end
+}
+
+text Lobby_Text_Pokebox_SoftwareUpdate {
+    format("¡El software de la PC se ha actualizado!")
+}
+
+text Lobby_Text_Pokebox_SoftwareUpdateExplanation {
+    format("Ahora puedes cambiar hasta 3 Pokémon de tu equipo y sustituirlos por Pokémon de la caja, en lugar de solo 1.")
+}
+
+text Lobby_Text_Pokebox_MainPrompt {
+    "¿Qué quieres hacer?"
+}
+
+text Lobby_Text_Pokebox_HelpPrompt {
+    "¿Sobre qué quieres saber?"
+}
+
+text Lobby_Text_Pokebox_HelpSwapsBeforeChallenge {
+    format("Puedes reemplazar solo uno de los Pokémon predefinidos del equipo seleccionado por uno de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 5 Pokémon del equipo original.")
+}
+
+text Lobby_Text_Pokebox_HelpSwapsAfterChallenge {
+    format("Puedes reemplazar hasta 3 Pokémon predefinidos del equipo seleccionado por Pokémon de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 3 Pokémon del equipo original.")
+
+}
+
+text Lobby_Text_Pokebox_HelpUnlock {
+    format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
+}
+
+script Lobby_EventScript_Turbo {
+    msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
+    end
+}

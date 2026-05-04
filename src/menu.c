@@ -210,6 +210,12 @@ void LoadMessageBoxAndBorderGfx(void)
     LoadUserWindowBorderGfx(0, STD_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM));
 }
 
+void LoadMessageBoxAndBorderGfxTransparent(void)
+{
+    LoadMessageBoxGfxTransparent(0, DLG_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(DLG_WINDOW_PALETTE_NUM));
+    LoadUserWindowBorderGfxTransparent(0, STD_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM));
+}
+
 void LoadSignPostWindowFrameGfx(void)
 {
     Menu_LoadStdPal();

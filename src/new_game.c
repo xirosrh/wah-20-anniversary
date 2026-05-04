@@ -54,8 +54,10 @@ extern const u8 EventScript_ResetAllMapFlags[];
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
+static void ResetPlayerTeamSelector(void);
 static void ResetItemFlags(void);
 static void ResetDexNav(void);
+static void AddInitialGameItems(void);
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
 EWRAM_DATA bool8 gEnableContestDebugging = FALSE;
@@ -96,11 +98,12 @@ static void InitPlayerTrainerId(void)
 static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
-    gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsWalkSpeed = OPTIONS_WALK_SPEED_NORMAL;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    gSaveBlock2Ptr->optionsSpeedup = 0;
 }
 
 static void ClearPokedexFlags(void)
@@ -130,7 +133,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_OMEGA_ROOM), MAP_NUM(MAP_OMEGA_ROOM), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_LOBBY), MAP_NUM(MAP_LOBBY), 0, -1, -1);
     WarpIntoMap();
 }
 
@@ -188,6 +191,7 @@ void NewGameInitData(void)
     DeactivateAllRoamers();
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     ClearBag();
+    AddInitialGameItems();
     NewGameInitPCItems();
     ClearPokeblocks();
     ClearDecorationInventories();
@@ -213,6 +217,16 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    gSaveBlock2Ptr->achievements = 0;
+    gSaveBlock2Ptr->monActiveOnPokebox = 0;
+    ResetPlayerTeamSelector();
+}
+
+static void ResetPlayerTeamSelector(void)
+{
+    u8 i;
+    for(i = 0; i < PARTY_SIZE; i++)
+        gSaveBlock2Ptr->playerTeamSelector[i] = SPECIES_NONE;
 }
 
 static void ResetMiniGamesRecords(void)
@@ -236,4 +250,9 @@ static void ResetDexNav(void)
     memset(gSaveBlock3Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock3Ptr->dexNavSearchLevels));
 #endif
     gSaveBlock3Ptr->dexNavChain = 0;
+}
+
+static void AddInitialGameItems(void)
+{
+    AddBagItem(ITEM_MEGA_RING, 1);
 }

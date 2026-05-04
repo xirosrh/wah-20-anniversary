@@ -96,6 +96,7 @@
 #define FLDEFF_USE_HEADBUTT        91
 #define FLDEFF_ORAS_DOWSE          92
 #define FLDEFF_ANNOYED_ICON        93
+#define FLDEFF_MUSIC_NOTE_ICON    94
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

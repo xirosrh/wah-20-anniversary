@@ -116,6 +116,7 @@ static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
 static void PlayerWalkSlowStairs(u8 direction);
+static void PlayerClimbStairs(u8 direction);
 static void UNUSED PlayerWalkSlow(u8 direction);
 static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
@@ -277,7 +278,11 @@ static const u8 sRSAvatarGfxIds[GENDER_COUNT] =
     [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
 };
 
-static const u8 sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5][2] =
+static const struct PACKED
+{
+    u16 graphicsId;
+    u8 playerFlag;
+} sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5] =
 {
     [MALE] =
     {
@@ -787,6 +792,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerJumpLedge(direction);
             return;
         }
+        else if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+        {
+            return;
+        }
         else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
         {
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
@@ -840,11 +849,17 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
+    if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+    {
+        PlayerClimbStairs(direction);
+        return;
+    }
+
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-     && (heldKeys & B_BUTTON) 
+     && (heldKeys & B_BUTTON)
      && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 
-     && !FollowerNPCComingThroughDoor() 
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
+     && !FollowerNPCComingThroughDoor()
      && (I_ORAS_DOWSING_FLAG == 0 || (I_ORAS_DOWSING_FLAG != 0 && !FlagGet(I_ORAS_DOWSING_FLAG))))
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
@@ -865,7 +880,23 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerWalkSlowStairs(direction);
         else
-            PlayerWalkNormal(direction);
+        {
+            switch (gSaveBlock2Ptr->optionsWalkSpeed)
+            {
+            case OPTIONS_WALK_SPEED_FAST:
+                PlayerWalkFast(direction);
+                break;
+            case OPTIONS_WALK_SPEED_FASTER:
+                PlayerWalkFaster(direction);
+                break;
+            case OPTIONS_WALK_SPEED_MAX:
+                PlayerWalkMax(direction);
+                break;
+            default:
+                PlayerWalkNormal(direction);
+                break;
+            }
+        }
     }
 }
 
@@ -935,9 +966,9 @@ static u8 CheckForObjectEventStaticCollision(struct ObjectEvent *objectEvent, s1
 static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
 {
     if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
-     && MapGridGetElevationAt(x, y) == 3
-     && (GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT
-     || GetObjectEventIdByPosition(x, y, 3) == GetFollowerNPCObjectId()
+     && MapGridGetElevationAt(x, y) == ELEVATION_DEFAULT
+     && (GetObjectEventIdByPosition(x, y, ELEVATION_DEFAULT) == OBJECT_EVENTS_COUNT
+     || GetObjectEventIdByPosition(x, y, ELEVATION_DEFAULT) == GetFollowerNPCObjectId()
      ))
     {
         CreateStopSurfingTask(direction);
@@ -969,7 +1000,8 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
             y = gObjectEvents[objectEventId].currentCoords.y;
             MoveCoords(direction, &x, &y);
             if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
-             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE
+             && MetatileBehavior_IsClimbableStairs(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
             {
                 StartStrengthAnim(objectEventId, direction);
                 return TRUE;
@@ -1186,6 +1218,11 @@ static void PlayerWalkSlowStairs(u8 direction)
     PlayerSetAnimId(GetWalkSlowStairsMovementAction(direction), COPY_MOVE_WALK);
 }
 
+static void PlayerClimbStairs(u8 direction)
+{
+    PlayerSetAnimId(GetClimbStairsMovementAction(direction), 2);
+}
+
 // slow
 static void UNUSED PlayerWalkSlow(u8 direction)
 {
@@ -1216,6 +1253,11 @@ void PlayerRideWaterCurrent(u8 direction)
 void PlayerWalkFaster(u8 direction)
 {
     PlayerSetAnimId(GetWalkFasterMovementAction(direction), COPY_MOVE_WALK);
+}
+
+void PlayerWalkMax(u8 direction)
+{
+    PlayerSetAnimId(GetWalkMaxMovementAction(direction), COPY_MOVE_WALK);
 }
 
 static void PlayerRun(u8 direction)
@@ -1263,12 +1305,20 @@ static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8 direction)
 
 void PlayerFaceDirection(u8 direction)
 {
-    PlayerSetAnimId(GetFaceDirectionMovementAction(direction), COPY_MOVE_FACE);
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (MetatileBehavior_IsClimbableStairs(player->currentMetatileBehavior))
+        PlayerSetAnimId(GetClimbStairsFaceMovementAction(direction), COPY_MOVE_FACE);
+    else
+        PlayerSetAnimId(GetFaceDirectionMovementAction(direction), COPY_MOVE_FACE);
 }
 
 void PlayerTurnInPlace(u8 direction)
 {
-    PlayerSetAnimId(GetWalkInPlaceFastMovementAction(direction), COPY_MOVE_FACE);
+    if (MetatileBehavior_IsClimbableStairs(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+        PlayerSetAnimId(GetClimbStairsFaceMovementAction(direction), COPY_MOVE_FACE);
+    else
+        PlayerSetAnimId(GetWalkInPlaceFastMovementAction(direction), COPY_MOVE_FACE);
 }
 
 void PlayerJumpLedge(u8 direction)
@@ -1553,7 +1603,7 @@ bool8 IsPlayerFacingSurfableFishableWater(void)
 
     MoveCoords(playerObjEvent->facingDirection, &x, &y);
     if (GetCollisionAtCoords(playerObjEvent, x, y, playerObjEvent->facingDirection) == COLLISION_ELEVATION_MISMATCH
-     && PlayerGetElevation() == 3
+     && PlayerGetElevation() == ELEVATION_DEFAULT
      && MetatileBehavior_IsSurfableFishableWater(MapGridGetMetatileBehaviorAt(x, y)))
         return TRUE;
     else
@@ -1577,8 +1627,8 @@ static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId, u8 gender)
 
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag[0]); i++)
     {
-        if (sPlayerAvatarGfxToStateFlag[gender][i][0] == graphicsId)
-            return sPlayerAvatarGfxToStateFlag[gender][i][1];
+        if (sPlayerAvatarGfxToStateFlag[gender][i].graphicsId == graphicsId)
+            return sPlayerAvatarGfxToStateFlag[gender][i].playerFlag;
     }
     return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
@@ -1590,8 +1640,8 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
 
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag[0]); i++)
     {
-        if (sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i][1] & flags)
-            return sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i][0];
+        if (sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i].playerFlag & flags)
+            return sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i].graphicsId;
     }
     return 0;
 }
@@ -1614,7 +1664,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     playerObjEventTemplate.graphicsId = GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, gender);
     playerObjEventTemplate.x = x - MAP_OFFSET;
     playerObjEventTemplate.y = y - MAP_OFFSET;
-    playerObjEventTemplate.elevation = 0;
+    playerObjEventTemplate.elevation = ELEVATION_TRANSITION;
     playerObjEventTemplate.movementType = MOVEMENT_TYPE_PLAYER;
     playerObjEventTemplate.movementRangeX = 0;
     playerObjEventTemplate.movementRangeY = 0;

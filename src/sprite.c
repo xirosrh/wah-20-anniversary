@@ -3,6 +3,7 @@
 #include "main.h"
 #include "palette.h"
 #include "util.h"
+#include "config/pbh.h"
 
 #define MAX_SPRITE_COPY_REQUESTS 64
 
@@ -1593,6 +1594,28 @@ u32 LoadSpritePaletteWithTag(const u16 *pal, u16 tag)
     return LoadSpritePalette(&spritePal);
 }
 
+static u32 LoadUniqueSpritePalette(const struct SpritePalette *palette, u32 personality)
+{
+    u32 index = IndexOfSpritePaletteTag(palette->tag);
+
+    if (index != 0xFF)
+        return index;
+
+    index = IndexOfSpritePaletteTag(TAG_NONE);
+
+    if (index == 0xFF)
+    {
+        return 0xFF;
+    }
+    else
+    {
+        sSpritePaletteTags[index] = palette->tag;
+        DoLoadSpritePalette(palette->data, PLTT_ID(index));
+        DesplazaTonoPaleta(OBJ_PLTT_ID(index), personality);
+        return index;
+    }
+}
+
 u32 LoadSpritePaletteWithTagHueShifted(const u16 *pal, u16 tag, u32 personality)
 {
     struct SpritePalette spritePal;
@@ -1784,28 +1807,6 @@ static const u8 sSpanPerImage[4][4] =
 u32 GetSpanPerImage(u32 shape, u32 size)
 {
     return sSpanPerImage[shape][size];
-}
-
-u32 LoadUniqueSpritePalette(const struct SpritePalette *palette, u32 personality)
-{
-    u32 index = IndexOfSpritePaletteTag(palette->tag);
-
-    if (index != 0xFF)
-        return index;
-
-    index = IndexOfSpritePaletteTag(TAG_NONE);
-
-    if (index == 0xFF)
-    {
-        return 0xFF;
-    }
-    else
-    {
-        sSpritePaletteTags[index] = palette->tag;
-        DoLoadSpritePalette(palette->data, PLTT_ID(index));
-        DesplazaTonoPaleta(OBJ_PLTT_ID(index), personality);
-        return index;
-    }
 }
 
 u32 LoadEggSpritePalette(const struct SpritePalette *palette1, const struct SpritePalette *palette2)

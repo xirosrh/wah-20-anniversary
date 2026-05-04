@@ -250,8 +250,8 @@ extern const u8 gText_PlayerSavedGame[];
 extern const u8 gText_SaveError[];
 extern const u8 gText_SavingDontTurnOffPower[];
 extern const u8 gText_SavingPlayer[];
-extern const u8 gText_SavingBadges[];
-extern const u8 gText_SavingPokedex[];
+extern const u8 gText_SavingChallenges[];
+extern const u8 gText_SavingAchievements[];
 extern const u8 gText_SavingTime[];
 
 // Battle pyramid menu texts
@@ -265,9 +265,22 @@ extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
 
 // main menu/birch speech text
+extern const u8 gText_GirlOrBoy[];
+extern const u8 gText_SoItsPlayer[];
+extern const u8 gText_Cope_YesNo[];
+extern const u8 gText_Cope_NoYes[];
+extern const u8 gText_Choose_Difficulty[];
+extern const u8 gText_Cope_Easy[];
+extern const u8 gText_Cope_Normal[];
+extern const u8 gText_Cope_Hard[];
+extern const u8 gText_Difficulty_CharacteristicsHeader[];
+extern const u8 gText_Easy_Description[];
+extern const u8 gText_Normal_Description[];
+extern const u8 gText_Hard_Description[];
 extern const u8 gText_Cope_Welcome[];
 extern const u8 gText_Cope_Pokemon[];
 extern const u8 gText_Cope_ExplainChalenge[];
+extern const u8 gText_Cope_Farewell[];
 extern const u8 gText_Birch_AndYouAre[];
 extern const u8 gText_Birch_BoyOrGirl[];
 extern const u8 gText_Birch_WhatsYourName[];

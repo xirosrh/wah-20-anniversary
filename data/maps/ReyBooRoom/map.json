@@ -2,8 +2,8 @@
   "id": "MAP_REY_BOO_ROOM",
   "name": "ReyBooRoom",
   "layout": "LAYOUT_REY_BOO_ROOM",
-  "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "music": "MUS_HG_LIGHTHOUSE",
+  "region_map_section": "MAPSEC_REY_BOO_ROOM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -26,11 +26,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REYBOOROOM_HIDE_BOO"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "local_id": "LOCALID_REYBOOROOM_VIGOROTH",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VIGOROTH)",
+      "graphics_id": "OBJ_EVENT_GFX_ASTRONAUT_VIGOROTH",
       "x": 7,
       "y": 5,
       "elevation": 0,
@@ -40,7 +40,21 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_REYBOOROOM_HIDE_VIGOROTH"
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "local_id": "LOCALID_REYBOOROOM_KECLEON",
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 0,
+      "y": 0,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WahRoomsShared_Kecleon",
+      "flag": "FLAG_HIDE_KECLEON_ROOM_REYBOO"
     }
   ],
   "warp_events": [
@@ -65,7 +79,7 @@
       "x": 4,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -74,7 +88,7 @@
       "x": 5,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -83,7 +97,7 @@
       "x": 6,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -92,7 +106,7 @@
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     },
@@ -101,7 +115,7 @@
       "x": 8,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_REY_BOO_ROOM_STATE",
+      "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "ReyBooRoom_EventScript_BooEncounter"
     }

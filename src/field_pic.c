@@ -79,14 +79,16 @@ static const u16 sCutAttackPal[] = INCBIN_U16("graphics/field_pics/cut.gbapal");
 static const u32 sPicMagikarpJumpingLeft[] = INCBIN_U32("graphics/field_pics/magikarp_jumping_left.4bpp.lz");
 static const u32 sPicMagikarpJumpingRight[] = INCBIN_U32("graphics/field_pics/magikarp_jumping_right.4bpp.lz");
 static const u16 sMagikarpJumpingPal[] = INCBIN_U16("graphics/field_pics/magikarp_jumping.gbapal");
-
+static const u32 sPicMadQr[] = INCBIN_U32("graphics/field_pics/mad_qr.4bpp.lz");
+static const u16 sMadQrPal[] = INCBIN_U16("graphics/field_pics/mad_qr.gbapal");
 
 
 static const struct Pic sPics[] =
 {
     [FP_CUT_ATTACK] = {sPicCutAttack, sCutAttackPal, SPRITE_SHAPE(32x32), SPRITE_SIZE(32x32), sAnimsCutAttack},
     [FP_MAGIKARP_JUMPING_LEFT] = {sPicMagikarpJumpingLeft, sMagikarpJumpingPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnimsMagikarpJumpingLeft},
-    [FP_MAGIKARP_JUMPING_RIGHT] = {sPicMagikarpJumpingRight, sMagikarpJumpingPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnimsMagikarpJumpingRight}
+    [FP_MAGIKARP_JUMPING_RIGHT] = {sPicMagikarpJumpingRight, sMagikarpJumpingPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnimsMagikarpJumpingRight},
+    [FP_MAD_QR] = {sPicMadQr, sMadQrPal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), NULL}
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

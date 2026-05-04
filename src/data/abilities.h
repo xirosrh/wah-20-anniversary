@@ -1681,7 +1681,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TANGLING_HAIR] =
     {
         .name = _("Rizos rebeldes"),
-        .description = COMPOUND_STRING("Baja velococidad al contacto."),
+        .description = COMPOUND_STRING("Baja velocidad al contacto."),
         .aiRating = 5,
     },
 
@@ -2424,4 +2424,23 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
+    [ABILITY_MELONSHIELD] =
+    {
+        .name = _("Cáscara"),
+        .description = COMPOUND_STRING("Absorbe mov. tipo Tierra."),
+        .aiRating = 6,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
+
+    [ABILITY_SHADOW_AURA] =
+    {
+        .name = _("Aura Oscura"),
+        .description = COMPOUND_STRING("Potencia mov. siniestros"),
+        .aiRating = 6,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
 };

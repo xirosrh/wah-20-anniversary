@@ -14,6 +14,7 @@
 #include "constants/berry.h"
 #include "constants/species.h"
 #include "constants/apricorn_tree.h"
+#include "constants/var_values.h"
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
 

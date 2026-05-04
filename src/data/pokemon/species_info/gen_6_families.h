@@ -225,7 +225,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
         .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : 239,
+        .expYield = 265,
         .evYield_Defense = 3,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
@@ -495,7 +495,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 125,
         .types = MON_TYPES(TYPE_FIRE, TYPE_PSYCHIC),
         .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 267 : 240,
+        .expYield = 267,
         .evYield_SpAttack = 3,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
@@ -815,7 +815,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 71,
         .types = MON_TYPES(TYPE_WATER, TYPE_DARK),
         .catchRate = 45,
-        .expYield = 288,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 320 : 288,
         .evYield_Speed = 3,
         .genderRatio = MON_MALE,
         .eggCycles = 20,
@@ -886,7 +886,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 81,
         .types = MON_TYPES(TYPE_WATER, TYPE_DARK),
         .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : 239,
+        .expYield = 265,
         .evYield_Speed = 3,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
@@ -1520,6 +1520,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras heladas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_POLAR] =
     {
         VIVILLON_MISC_INFO(Polar, BODY_COLOR_BLUE, 0),
@@ -1529,6 +1530,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras nevadas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_TUNDRA] =
     {
         VIVILLON_MISC_INFO(Tundra, BODY_COLOR_BLUE, 0),
@@ -1538,6 +1540,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras de frío extremo.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_CONTINENTAL] =
     {
         VIVILLON_MISC_INFO(Continental, BODY_COLOR_YELLOW, 2),
@@ -1547,6 +1550,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras de vastos espacios.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_GARDEN] =
     {
         VIVILLON_MISC_INFO(Garden, BODY_COLOR_GREEN, 1),
@@ -1556,6 +1560,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras verdes.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_ELEGANT] =
     {
         VIVILLON_MISC_INFO(Elegant, BODY_COLOR_PURPLE, 0),
@@ -1565,6 +1570,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de estaciones definidas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_MEADOW] =
     {
         VIVILLON_MISC_INFO(Meadow, BODY_COLOR_PINK, 0),
@@ -1574,6 +1580,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de donde florecen las flores.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_MODERN] =
     {
         VIVILLON_MISC_INFO(Modern, BODY_COLOR_RED, 2),
@@ -1583,6 +1590,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras bañadas por el Sol.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_MARINE] =
     {
         VIVILLON_MISC_INFO(Marine, BODY_COLOR_BLUE, 0),
@@ -1592,6 +1600,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras con brisas oceánicas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_ARCHIPELAGO] =
     {
         VIVILLON_MISC_INFO(Archipelago, BODY_COLOR_BROWN, 0),
@@ -1601,6 +1610,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de lugares con muchas islas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_HIGH_PLAINS] =
     {
         VIVILLON_MISC_INFO(HighPlains, BODY_COLOR_BROWN, 0),
@@ -1610,6 +1620,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras con poca lluvia.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_SANDSTORM] =
     {
         VIVILLON_MISC_INFO(Sandstorm, BODY_COLOR_BROWN, 1),
@@ -1619,6 +1630,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de tierras áridas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_RIVER] =
     {
         VIVILLON_MISC_INFO(River, BODY_COLOR_BROWN, 2),
@@ -1628,6 +1640,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras con grandes ríos.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_MONSOON] =
     {
         VIVILLON_MISC_INFO(Monsoon, BODY_COLOR_GRAY, 0),
@@ -1637,6 +1650,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras con lluvias intensas.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_SAVANNA] =
     {
         VIVILLON_MISC_INFO(Savanna, BODY_COLOR_GREEN, 0),
@@ -1646,6 +1660,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras con clima tropical.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_SUN] =
     {
         VIVILLON_MISC_INFO(Sun, BODY_COLOR_RED, 0),
@@ -1655,6 +1670,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras bañadas por la luz.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_OCEAN] =
     {
         VIVILLON_MISC_INFO(Ocean, BODY_COLOR_RED, 0),
@@ -1664,6 +1680,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras de verano perpetuo.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_JUNGLE] =
     {
         VIVILLON_MISC_INFO(Jungle, BODY_COLOR_GREEN, 0),
@@ -1673,6 +1690,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "forma es de tierras de selvas tropicales.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_FANCY] =
     {
         VIVILLON_MISC_INFO(Fancy, BODY_COLOR_PINK, 1),
@@ -1682,6 +1700,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Esta forma es de una tierra misteriosa.\n"
             "Suelta escamas tóxicas de color al luchar."),
     },
+
     [SPECIES_VIVILLON_POKEBALL] =
     {
         VIVILLON_MISC_INFO(PokeBall, BODY_COLOR_RED, 2),
@@ -1889,7 +1908,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_PyroarMega,
         .shinyPalette = gMonShinyPalette_PyroarMega,
         .iconSprite = gMonIcon_PyroarMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Pyroar)
         SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
@@ -1972,6 +1991,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Pokémon comienza a volar en busca de\n"
             "una flor que le guste."),
     },
+
     [SPECIES_FLABEBE_YELLOW] =
     {
         FLABEBE_MISC_INFO(Yellow, YELLOW, 1),
@@ -1981,6 +2001,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "flores. Este Pokémon tiene una especial\n"
             "preferencia por las flores amarillas."),
     },
+
     [SPECIES_FLABEBE_ORANGE] =
     {
         FLABEBE_MISC_INFO(Orange, ORANGE, 0),
@@ -1990,6 +2011,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "le gustan las flores naranjas sobre\n"
             "todas las demás."),
     },
+
     [SPECIES_FLABEBE_BLUE]   =
     {
         FLABEBE_MISC_INFO(Blue, BLUE, 0),
@@ -1999,6 +2021,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "usando el poder que emana de su flor\n"
             "y se desliza suavemente por el aire."),
     },
+
     [SPECIES_FLABEBE_WHITE]  =
     {
         FLABEBE_MISC_INFO(White, WHITE, 1),
@@ -2078,6 +2101,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "de luz para transferir su energía\n"
             "a las flores y liberar su potencial."),
     },
+
     [SPECIES_FLOETTE_YELLOW] =
     {
         FLOETTE_NORMAL_INFO(Yellow, YELLOW, 1),
@@ -2087,6 +2111,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "convierte en los movimientos que\n"
             "Floette usa para protegerse."),
     },
+
     [SPECIES_FLOETTE_ORANGE] =
     {
         FLOETTE_NORMAL_INFO(Orange, ORANGE, 0),
@@ -2096,6 +2121,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "flores naranjas, en comparación con\n"
             "flores de otros colores."),
     },
+
     [SPECIES_FLOETTE_BLUE] =
     {
         FLOETTE_NORMAL_INFO(Blue, BLUE, 0),
@@ -2105,6 +2131,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "marchitando, las lleva a su territorio\n"
             "y se encarga de cuidarlas."),
     },
+
     [SPECIES_FLOETTE_WHITE] =
     {
         FLOETTE_NORMAL_INFO(White, WHITE, 1),
@@ -2114,6 +2141,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "sin piedad. Este Floette cuida\n"
             "muy bien de las flores blancas."),
     },
+
     [SPECIES_FLOETTE_ETERNAL] =
     {
         FLOETTE_MISC_INFO(Eternal, ETERNAL, 0),
@@ -2209,6 +2237,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "el poder de las flores rojas\n"
             "alrededor de su cuello."),
     },
+
     [SPECIES_FLORGES_YELLOW] =
     {
         FLORGES_MISC_INFO(Yellow, 1),
@@ -2218,6 +2247,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "piedad a cualquiera que pise\n"
             "las plantas en flor."),
     },
+
     [SPECIES_FLORGES_ORANGE] =
     {
         FLORGES_MISC_INFO(Orange, 0),
@@ -2227,6 +2257,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "para cuidar los exquisitos jardines\n"
             "de sus castillos."),
     },
+
     [SPECIES_FLORGES_BLUE] =
     {
         FLORGES_MISC_INFO(Blue, 0),
@@ -2236,6 +2267,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "pinturas de Florges azules son\n"
             "altamente valiosas."),
     },
+
     [SPECIES_FLORGES_WHITE] =
     {
         FLORGES_MISC_INFO(White, 0),
@@ -2277,22 +2309,23 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "all the energy from Mega\n"
             "Evolution. The flower now attacks\n"
             "enemies on its own."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_FloetteMega
+        .frontPic = gMonFrontPic_FloetteMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_FloetteMega
+        .enemyMonElevation = 7,
+        .backPic = gMonBackPic_FloetteMega,
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_FloetteMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_FloetteMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_FloetteMega
+        .palette = gMonPalette_FloetteMega,
+        .shinyPalette = gMonShinyPalette_FloetteMega,
+        .iconSprite = gMonIcon_FloetteMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Floette)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 17, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sFloetteEternalLevelUpLearnset,
         .teachableLearnset = sFloetteEternalTeachableLearnset,
@@ -2862,6 +2895,124 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sMeowsticFTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
     },
+
+    #if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_MEOWSTIC_M_MEGA] =
+    {
+        .baseHP        = 74,
+        .baseAttack    = 48,
+        .baseDefense   = 76,
+        .baseSpeed     = 124,
+        .baseSpAttack  = 143,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 75,
+        .expYield = 163,
+        .evYield_Speed = 2,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_PRANKSTER },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Meowstic"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_MEOWSTIC_MEGA,
+    #else
+        .cryId = CRY_MEOWSTIC,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_MEOWSTIC,
+        .categoryName = _("Constraint"),
+        .height = 8,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Mega Meowstic can use its psychic power\n"
+            "to compress or expand anything. It\n"
+            "overwhelms foes by contorting space\n"
+            "itself."),
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Meowstic)
+        SHADOW(-1, 14, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMeowsticMLevelUpLearnset,
+        .teachableLearnset = sMeowsticMTeachableLearnset,
+        .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticMFormChangeTable,
+    },
+    
+    [SPECIES_MEOWSTIC_F_MEGA] =
+    {
+        .baseHP        = 74,
+        .baseAttack    = 48,
+        .baseDefense   = 76,
+        .baseSpeed     = 124,
+        .baseSpAttack  = 143,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 75,
+        .expYield = 163,
+        .evYield_Speed = 2,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_COMPETITIVE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Meowstic"),
+    #if P_MODIFIED_MEGA_CRIES
+        .cryId = CRY_MEOWSTIC_MEGA,
+    #else
+        .cryId = CRY_MEOWSTIC,
+    #endif // P_MODIFIED_MEGA_CRIES
+        .natDexNum = NATIONAL_DEX_MEOWSTIC,
+        .categoryName = _("Constraint"),
+        .height = 8,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Mega Meowstic can use its psychic power\n"
+            "to compress or expand anything. It\n"
+            "overwhelms foes by contorting space\n"
+            "itself."),
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Meowstic)
+        SHADOW(-1, 14, SHADOW_SIZE_M)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMeowsticFLevelUpLearnset,
+        .teachableLearnset = sMeowsticFTeachableLearnset,
+        .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticFFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ESPURR
 
 #if P_FAMILY_HONEDGE
@@ -3621,7 +3772,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_MalamarMega,
         .shinyPalette = gMonShinyPalette_MalamarMega,
         .iconSprite = gMonIcon_MalamarMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Malamar)
         SHADOW(1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
@@ -3799,29 +3950,30 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .speciesName = _("Barbaracle"),
         .cryId = CRY_BARBARACLE, // CRY_BARBARACLE_MEGA,
         .natDexNum = NATIONAL_DEX_BARBARACLE,
-        .categoryName = _("Collective"),
+        .categoryName = _("Combinación"),
         .height = 22,
         .weight = 1000,
         .description = COMPOUND_STRING(
             "It uses its many arms to toy\n"
             "with its opponents. This\n"
             "keeps the head extremely busy."),
-        //.frontPic = gMonFrontPic_CircledQuestionMark,
-        //.frontPicSize = MON_COORDS_SIZE(40, 40),
-        //.frontPicYOffset = 12,
-        //.frontAnimFrames = sAnims_TwoFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        //.backPic = gMonBackPic_CircledQuestionMark,
-        //.backPicSize = MON_COORDS_SIZE(40, 40),
-        //.backPicYOffset = 12,
-        //.backAnimId = BACK_ANIM_NONE,
-        //.palette = gMonPalette_CircledQuestionMark,
-        //.shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        //.iconSprite = gMonIcon_QuestionMark,
-        //.iconPalIndex = 0,
+        .frontPic = gMonFrontPic_BarbaracleMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_BarbaracleMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_BarbaracleMega,
+        .shinyPalette = gMonShinyPalette_BarbaracleMega,
+        .iconSprite = gMonIcon_BarbaracleMega,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Barbaracle)
-        //SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sBarbaracleLevelUpLearnset,
         .teachableLearnset = sBarbaracleTeachableLearnset,
@@ -4006,22 +4158,23 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "regenerative power of cells to run\n"
             "wild. The liquid is deadly poison\n"
             "to everything other than itself."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_DragalgeMega
+        .frontPic = gMonFrontPic_DragalgeMega, 
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_DragalgeMega
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_DragalgeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_DragalgeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_DragalgeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_DragalgeMega
+        .palette = gMonPalette_DragalgeMega, 
+        .shinyPalette = gMonShinyPalette_DragalgeMega,
+        .iconSprite = gMonIcon_DragalgeMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Dragalge)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sDragalgeLevelUpLearnset,
         .teachableLearnset = sDragalgeTeachableLearnset,
@@ -5107,6 +5260,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON),
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_SHELL_ARMOR, ABILITY_GOOEY },
         .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = TRUE,
         .speciesName = _("Sliggoo"),
         .cryId = CRY_SLIGGOO,
         .natDexNum = NATIONAL_DEX_SLIGGOO,
@@ -5166,7 +5320,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 150,
         .types = MON_TYPES(TYPE_DRAGON, TYPE_STEEL),
         .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
+        .expYield = 300,
         .evYield_SpDefense = 3,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 40,
@@ -6189,6 +6343,12 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #endif //P_FAMILY_BERGMITE
 
 #if P_FAMILY_NOIBAT
+#if P_UPDATED_EGG_GROUPS >= GEN_8
+    #define NOIBAT_EGG_GROUPS MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_DRAGON)
+#else
+    #define NOIBAT_EGG_GROUPS MON_EGG_GROUPS(EGG_GROUP_FLYING)
+#endif
+
     [SPECIES_NOIBAT] =
     {
         .baseHP        = 40,
@@ -6205,11 +6365,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-    #if P_UPDATED_EGG_GROUPS >= GEN_8
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_DRAGON),
-    #else
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-    #endif
+        .eggGroups = NOIBAT_EGG_GROUPS,
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Noibat"),
@@ -6284,11 +6440,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-    #if P_UPDATED_EGG_GROUPS >= GEN_8
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_DRAGON),
-    #else
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-    #endif
+        .eggGroups = NOIBAT_EGG_GROUPS,
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Noivern"),
@@ -6607,6 +6759,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formSpeciesIdTable = sZygardeFormSpeciesIdTable,
         .formChangeTable = sZygarde50AuraBreakFormChangeTable,
     },
+
     [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] =
     {
         .baseHP        = 108,
@@ -6671,6 +6824,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formSpeciesIdTable = sZygardeFormSpeciesIdTable,
         .formChangeTable = sZygarde50PowerConstructFormChangeTable,
     },
+
     [SPECIES_ZYGARDE_10_AURA_BREAK] =
     {
         .baseHP        = 54,
@@ -6885,7 +7039,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_DRAGON, TYPE_GROUND),
         .catchRate = 3,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 354 : 319,
+        .expYield = 354,
         .evYield_HP = 3,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 120,
@@ -6906,22 +7060,23 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "during an unprecedented crisis,\n"
             "Zygarde Mega Evolves and calms the\n"
             "situation with its unmatched power."),
-        .frontPic = gMonFrontPic_CircledQuestionMark, //gMonFrontPic_ZygardeMega
+        .frontPic = gMonFrontPic_ZygardeMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TwoFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark, //gMonBackPic_ZygardeMega
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_ZygardeMega, 
         .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
+        .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark, //gMonPalette_ZygardeMega
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark, //gMonShinyPalette_ZygardeMega
-        .iconSprite = gMonIcon_QuestionMark, //gMonIcon_ZygardeMega
+        .palette = gMonPalette_ZygardeMega,
+        .shinyPalette = gMonShinyPalette_ZygardeMega,
+        .iconSprite = gMonIcon_ZygardeMega, 
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Zygarde)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(5, 13, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
         .teachableLearnset = sZygardeTeachableLearnset,
@@ -7016,7 +7171,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_ROCK, TYPE_FAIRY),
         .catchRate = 3,
-        .expYield = 315,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 350 : 315,
         .evYield_Defense = 1,
         .evYield_SpDefense = 2,
         .genderRatio = MON_GENDERLESS,

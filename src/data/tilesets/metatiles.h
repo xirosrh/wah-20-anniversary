@@ -243,3 +243,42 @@ const u16 gMetatileAttributes_room_drivekatherine[] = INCBIN_U16("data/tilesets/
 
 const u16 gMetatiles_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatiles.bin");
 const u16 gMetatileAttributes_room_xiros[] = INCBIN_U16("data/tilesets/secondary/room_xiros/metatile_attributes.bin");
+
+const u16 gMetatiles_room_cosarara[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/metatiles.bin");
+const u16 gMetatileAttributes_room_cosarara[] = INCBIN_U16("data/tilesets/secondary/room_cosarara/metatile_attributes.bin");
+
+const u16 gMetatiles_room_kleinpkpower[] = INCBIN_U16("data/tilesets/secondary/room_kleinpkpower/metatiles.bin");
+const u16 gMetatileAttributes_room_kleinpkpower[] = INCBIN_U16("data/tilesets/secondary/room_kleinpkpower/metatile_attributes.bin");
+
+const u16 gMetatiles_room_sergio[] = INCBIN_U16("data/tilesets/secondary/room_sergio/metatiles.bin");
+const u16 gMetatileAttributes_room_sergio[] = INCBIN_U16("data/tilesets/secondary/room_sergio/metatile_attributes.bin");
+
+const u16 gMetatiles_room_aguiar[] = INCBIN_U16("data/tilesets/secondary/room_aguiar/metatiles.bin");
+const u16 gMetatileAttributes_room_aguiar[] = INCBIN_U16("data/tilesets/secondary/room_aguiar/metatile_attributes.bin");
+
+const u16 gMetatiles_room_eing[] = INCBIN_U16("data/tilesets/secondary/room_eing/metatiles.bin");
+const u16 gMetatileAttributes_room_eing[] = INCBIN_U16("data/tilesets/secondary/room_eing/metatile_attributes.bin");
+
+const u16 gMetatiles_room_zero[] = INCBIN_U16("data/tilesets/secondary/room_zero/metatiles.bin");
+const u16 gMetatileAttributes_room_zero[] = INCBIN_U16("data/tilesets/secondary/room_zero/metatile_attributes.bin");
+
+const u16 gMetatiles_room_sayerblax[] = INCBIN_U16("data/tilesets/secondary/room_sayerblax/metatiles.bin");
+const u16 gMetatileAttributes_room_sayerblax[] = INCBIN_U16("data/tilesets/secondary/room_sayerblax/metatile_attributes.bin");
+
+const u16 gMetatiles_lobby[] = INCBIN_U16("data/tilesets/secondary/lobby/metatiles.bin");
+const u16 gMetatileAttributes_lobby[] = INCBIN_U16("data/tilesets/secondary/lobby/metatile_attributes.bin");
+
+const u16 gMetatiles_dragon_mountain[] = INCBIN_U16("data/tilesets/primary/dragon_mountain/metatiles.bin");
+const u16 gMetatileAttributes_dragon_mountain[] = INCBIN_U16("data/tilesets/primary/dragon_mountain/metatile_attributes.bin");
+
+const u16 gMetatiles_dragon_mountain_2[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/metatiles.bin");
+const u16 gMetatileAttributes_dragon_mountain_2[] = INCBIN_U16("data/tilesets/secondary/dragon_mountain_2/metatile_attributes.bin");
+
+const u16 gMetatiles_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatiles.bin");
+const u16 gMetatileAttributes_room_collaborators[] = INCBIN_U16("data/tilesets/secondary/room_collaborators/metatile_attributes.bin");
+
+const u16 gMetatiles_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatiles.bin");
+const u16 gMetatileAttributes_hall_of_fame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame/metatile_attributes.bin");
+
+const u16 gMetatiles_room_javsjavi4315[] = INCBIN_U16("data/tilesets/secondary/room_javsjavi_4315/metatiles.bin");
+const u16 gMetatileAttributes_room_javsjavi4315[] = INCBIN_U16("data/tilesets/secondary/room_javsjavi_4315/metatile_attributes.bin");

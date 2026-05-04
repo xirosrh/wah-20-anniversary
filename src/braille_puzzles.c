@@ -338,3 +338,76 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 
     return FALSE;
 }
+
+#define ALEXMAD_PUZZLE_RESULT_NONE    0
+#define ALEXMAD_PUZZLE_RESULT_SUCCESS 1
+#define ALEXMAD_PUZZLE_RESULT_FAIL    2
+
+static const s8 sAlexmadStepOffsets[][2] =
+{
+    { 0,  1},
+    { 0,  2},
+    {-1,  2},
+    { 0,  2},
+    { 1,  2},
+    { 2,  2},
+    { 2,  1},
+    { 2,  0},
+};
+
+static bool8 HasSwappedAlexmadPuzzlePartyLeadAndSixth(void)
+{
+    u32 expectedLeadPersonality = VarGet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO) | (VarGet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI) << 16);
+    u32 expectedSixthPersonality = VarGet(VAR_ALEXMAD_PUZZLE_LEAD_PID_LO) | (VarGet(VAR_ALEXMAD_PUZZLE_LEAD_PID_HI) << 16);
+    u32 currentLeadPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+    u32 currentSixthPersonality = GetMonData(&gPlayerParty[5], MON_DATA_PERSONALITY);
+
+    return currentLeadPersonality == expectedLeadPersonality
+        && currentSixthPersonality == expectedSixthPersonality;
+}
+
+u8 ShouldDoAlexmadCornerPuzzle(void)
+{
+    u16 checkpoint;
+    s16 expectedX, expectedY;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_COLLABORATORS_ROOM)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_COLLABORATORS_ROOM))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (!FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    checkpoint = VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT);
+    if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+
+    if (checkpoint == 0 && !HasSwappedAlexmadPuzzlePartyLeadAndSixth())
+    {
+        FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+        FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+        return ALEXMAD_PUZZLE_RESULT_FAIL;
+    }
+
+    expectedX = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_X) + sAlexmadStepOffsets[checkpoint][0];
+    expectedY = (s16)VarGet(VAR_ALEXMAD_PUZZLE_START_Y) + sAlexmadStepOffsets[checkpoint][1];
+
+    if (gSaveBlock1Ptr->pos.x == expectedX && gSaveBlock1Ptr->pos.y == expectedY)
+    {
+        checkpoint++;
+        VarSet(VAR_ALEXMAD_PUZZLE_CHECKPOINT, checkpoint);
+        if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
+        {
+            FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+            return ALEXMAD_PUZZLE_RESULT_SUCCESS;
+        }
+        return ALEXMAD_PUZZLE_RESULT_NONE;
+    }
+
+    FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
+    FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
+    return ALEXMAD_PUZZLE_RESULT_FAIL;
+}

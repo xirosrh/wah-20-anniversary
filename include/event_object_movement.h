@@ -3,6 +3,10 @@
 
 #include "constants/event_object_movement.h"
 
+#if OW_BATTLE_ONLY_FORMS && !OW_POKEMON_OBJECT_EVENTS
+#error "OW_POKEMON_OBJECT_EVENTS needs to be TRUE in order for OW_BATTLE_ONLY_FORMS to work."
+#endif
+
 #if OW_POKEMON_OBJECT_EVENTS == FALSE && OW_FOLLOWERS_ENABLED == TRUE
 #error "OW_POKEMON_OBJECT_EVENTS needs to be TRUE in order for OW_FOLLOWERS_ENABLED to work."
 #endif
@@ -170,6 +174,7 @@ u8 GetWalkNormalMovementAction(u32);
 u8 GetWalkFastMovementAction(u32);
 u8 GetRideWaterCurrentMovementAction(u32);
 u8 GetWalkFasterMovementAction(u32);
+u8 GetWalkMaxMovementAction(u32);
 u8 GetPlayerRunMovementAction(u32);
 u8 GetJumpInPlaceMovementAction(u32);
 u8 GetAcroWheelieFaceDirectionMovementAction(u32);
@@ -488,6 +493,8 @@ bool32 IsFollowerVisible(void);
 
 // run slow
 u8 GetPlayerRunSlowMovementAction(u32);
+u8 GetClimbStairsMovementAction(u32);
+u8 GetClimbStairsFaceMovementAction(u32);
 //sideways stairs
 u8 GetSidewaysStairsToRightDirection(s16, s16, u8);
 u8 GetSidewaysStairsToLeftDirection(s16, s16, u8);
@@ -507,6 +514,7 @@ bool8 MovementAction_EmoteSmile_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteCry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteAnnoyed_Step0(struct ObjectEvent *, struct Sprite *);
+bool8 MovementAction_EmoteMusicNote_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteSurprise_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteV_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteIdea_Step0(struct ObjectEvent *, struct Sprite *);

@@ -5,6 +5,7 @@ mapscripts GallegoRoom_MapScripts {
 		VAR_TEMP_8, 0: GallegoRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: GallegoRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : GallegoRoom_OnTransition
 }
 
 script GallegoRoom_OnLoad {
@@ -16,6 +17,11 @@ script GallegoRoom_OnLoad {
 
 script GallegoRoom_OnWarp_PlayerTurnNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+    end
+}
+
+script GallegoRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Gallego)
     end
 }
 
@@ -72,21 +78,27 @@ script GallegoRoom_EventScript_Gallego {
     msgbox(format("¡Hola! Soy Gallego13, y llevo años observando desde las sombras.\pCasi podría decir que en vez de irme, me escondí.\pDe vez en cuando echaba un ojo por nuestra querida comunidad, sin decir nada, viendo los avances y cómo evolucionaba…\pNunca quise que fuese tan largo, pero los estudios y después la vida me hicieron perder la noción del tiempo.\pAntes de que me diera cuenta, me acostumbré a ver este mundo desde la distancia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
     playse(SE_PIN)
-    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
-        delay_16
-        emote_double_exclamation_mark,
+    applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_double_exclamation_mark))
+    waitmovement(0)
+    waitse
+    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
-        jump_in_place_up * 2,
+        jump_in_place_up
+    ))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
+        jump_in_place_up,
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
-    waitmovement(0)
     delay(40)
     msgbox(format("El aniversario me ha pillado totalmente por sorpresa. ¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HeartWithDelay48)
-    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese 'no sé qué' del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese “no sé qué” del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     special(SpawnCameraObject)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
@@ -125,16 +137,19 @@ script GallegoRoom_EventScript_Gallego {
     ))
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
     msgbox(format("Vamos a ver si no se me ha olvidado combatir en este tiempo."), speaker = SP_NAME_GALLEGO)
-    playse(SE_PIN)
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
-        emote_versus,
         lock_facing_direction,
         jump_in_place_up,
         delay_16,
         unlock_facing_direction,
         face_player
     ))
+    waitse
     msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"), speaker = SP_NAME_GALLEGO)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_versus))
+    waitse
     call(GallegoRoom_EventScript_GallegoBattle)
     msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
@@ -145,15 +160,20 @@ script GallegoRoom_EventScript_Gallego {
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     delay(30)
     msgbox(format("Supongo que algunos sueños no se apagan."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    playse(SE_LEDGE)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
-        jump_in_place_up,
+        jump_in_place_up
+    ))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         jump_in_place_up,
         unlock_facing_direction,
         face_player
     ))
     msgbox(format("Ve, continúa, ¡busca tu sueño y abrázalo con fuerza!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
-    waitmovement(0)
     call(WahRoomsShared_OpenDoor)
     msgbox(format("Yo me quedaré aquí un rato más… recordando mis viejos intentos y soñando con un nuevo y emocionante comienzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     setflag(FLAG_DEFEATED_ADMIN_GALLEGO)
@@ -193,6 +213,21 @@ script GallegoRoom_EventScript_Coffee {
 
 script GallegoRoom_EventScript_Drawings {
     msgbox(format("Parecen diseños de varios fakémon y Pokémon de generaciones posteriores a la segunda en el estilo de la Gameboy Color.\pEstán entremezclados con apuntes muy viejos de la universidad.\pParece que nadie ha puesto orden aquí en una década."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Shelf {
+    msgbox(format("Es una colección de libros y apuntes de la universidad mezclada con tomos de manga.\pNo parece muy organizada."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Library {
+    msgbox(format("Hay una fila enorme de tomos negros de tapa dura.\pEn el lomo se puede leer “Berserk” en letras rojas."), MSGBOX_SIGN)
+    end
+}
+
+script GallegoRoom_EventScript_Drawer {
+    msgbox(format("Es un mueble lleno de consolas y videojuegos de distintas épocas, apilados en varios compartimentos.\pNo se ve el fondo."), MSGBOX_SIGN)
     end
 }
 

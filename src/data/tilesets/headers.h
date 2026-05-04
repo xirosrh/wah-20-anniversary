@@ -962,3 +962,146 @@ const struct Tileset gTileset_room_xiros =
     .metatileAttributes = gMetatileAttributes_room_xiros,
     .callback = InitTilesetAnim_XirosRoom,
 };
+
+const struct Tileset gTileset_room_cosarara =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_cosarara,
+    .palettes = gTilesetPalettes_room_cosarara,
+    .metatiles = gMetatiles_room_cosarara,
+    .metatileAttributes = gMetatileAttributes_room_cosarara,
+    .callback = InitTilesetAnim_CosararaRoom,
+};
+
+const struct Tileset gTileset_room_kleinpkpower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_kleinpkpower,
+    .palettes = gTilesetPalettes_room_kleinpkpower,
+    .metatiles = gMetatiles_room_kleinpkpower,
+    .metatileAttributes = gMetatileAttributes_room_kleinpkpower,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_sergio =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_sergio,
+    .palettes = gTilesetPalettes_room_sergio,
+    .metatiles = gMetatiles_room_sergio,
+    .metatileAttributes = gMetatileAttributes_room_sergio,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_aguiar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_aguiar,
+    .palettes = gTilesetPalettes_room_aguiar,
+    .metatiles = gMetatiles_room_aguiar,
+    .metatileAttributes = gMetatileAttributes_room_aguiar,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_eing =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_eing,
+    .palettes = gTilesetPalettes_room_eing,
+    .metatiles = gMetatiles_room_eing,
+    .metatileAttributes = gMetatileAttributes_room_eing,
+    .callback = InitTilesetAnim_EingRoom,
+};
+
+const struct Tileset gTileset_room_zero =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_zero,
+    .palettes = gTilesetPalettes_room_zero,
+    .metatiles = gMetatiles_room_zero,
+    .metatileAttributes = gMetatileAttributes_room_zero,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_room_sayerblax =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_sayerblax,
+    .palettes = gTilesetPalettes_room_sayerblax,
+    .metatiles = gMetatiles_room_sayerblax,
+    .metatileAttributes = gMetatileAttributes_room_sayerblax,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_lobby =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_lobby,
+    .palettes = gTilesetPalettes_lobby,
+    .metatiles = gMetatiles_lobby,
+    .metatileAttributes = gMetatileAttributes_lobby,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dragon_mountain =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_dragon_mountain,
+    .palettes = gTilesetPalettes_dragon_mountain,
+    .metatiles = gMetatiles_dragon_mountain,
+    .metatileAttributes = gMetatileAttributes_dragon_mountain,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dragon_mountain_2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dragon_mountain_2,
+    .palettes = gTilesetPalettes_dragon_mountain_2,
+    .metatiles = gMetatiles_dragon_mountain_2,
+    .metatileAttributes = gMetatileAttributes_dragon_mountain_2,
+    .callback = InitTilesetAnim_DragonMountain2,
+};
+
+const struct Tileset gTileset_room_collaborators =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_collaborators,
+    .palettes = gTilesetPalettes_room_collaborators,
+    .metatiles = gMetatiles_room_collaborators,
+    .metatileAttributes = gMetatileAttributes_room_collaborators,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_hall_of_fame =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_hall_of_fame,
+    .palettes = gTilesetPalettes_hall_of_fame,
+    .metatiles = gMetatiles_hall_of_fame,
+    .metatileAttributes = gMetatileAttributes_hall_of_fame,
+    .callback = InitTilesetAnim_HallOfFame,
+};
+
+const struct Tileset gTileset_room_javsjavi4315 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_room_javsjavi4315,
+    .palettes = gTilesetPalettes_room_javsjavi4315,
+    .metatiles = gMetatiles_room_javsjavi4315,
+    .metatileAttributes = gMetatileAttributes_room_javsjavi4315,
+    .callback = NULL,
+};

@@ -1,383 +1,449 @@
 BaroRoom_MapScripts::
-# 8 "data/maps/BaroRoom/scripts.pory"
+# 11 "data/maps/BaroRoom/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, BaroRoom_OnLoad
-# 2 "data/maps/BaroRoom/scripts.pory"
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, BaroRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+# 12 "data/maps/BaroRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, BaroRoom_OnTransition
 # 5 "data/maps/BaroRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BaroRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+# 8 "data/maps/BaroRoom/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BaroRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 BaroRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 3 "data/maps/BaroRoom/scripts.pory"
-	map_script_2 VAR_BARO_ROOM_STATE, 0, BaroRoom_OnFrame
+# 6 "data/maps/BaroRoom/scripts.pory"
+	map_script_2 VAR_TEMP_0, 0, BaroRoom_OnFrame
 	.2byte 0
 
 BaroRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-# 6 "data/maps/BaroRoom/scripts.pory"
+# 9 "data/maps/BaroRoom/scripts.pory"
 	map_script_2 VAR_TEMP_8, 0, BaroRoom_OnWarp_PlayerTurnNorth
 	.2byte 0
 
 
 BaroRoom_OnLoad::
-# 13 "data/maps/BaroRoom/scripts.pory"
+# 17 "data/maps/BaroRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_BARO, BaroRoom_OnLoad_2
 BaroRoom_OnLoad_1:
 	end
 
 BaroRoom_OnLoad_2:
-# 14 "data/maps/BaroRoom/scripts.pory"
+# 18 "data/maps/BaroRoom/scripts.pory"
 	call WahRoomsShared_SetDoorAsOpen
 	goto BaroRoom_OnLoad_1
 
 
 BaroRoom_OnWarp_PlayerTurnNorth::
-# 20 "data/maps/BaroRoom/scripts.pory"
+# 24 "data/maps/BaroRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 	end
 
 
+BaroRoom_OnTransition::
+# 29 "data/maps/BaroRoom/scripts.pory"
+	call WahRoomsShared_Kecleon_SetSala_Baro
+	end
+
+
 BaroRoom_OnFrame::
-# 25 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, BaroRoom_OnFrame_Movement_0
+# 34 "data/maps/BaroRoom/scripts.pory"
+	special ShowMapNamePopup
 # 35 "data/maps/BaroRoom/scripts.pory"
-	playse SE_PIN
-# 36 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48
-# 37 "data/maps/BaroRoom/scripts.pory"
-	special SpawnCameraObject
-# 38 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkRight2
-# 39 "data/maps/BaroRoom/scripts.pory"
-	waitmovement 0
-# 40 "data/maps/BaroRoom/scripts.pory"
-	call BaroRoom_EventScript_OpenSideDoor
-# 41 "data/maps/BaroRoom/scripts.pory"
-	showobjectat LOCALID_BAROROOM_BARO, MAP_BARO_ROOM
-# 42 "data/maps/BaroRoom/scripts.pory"
-	setobjectmovementtype LOCALID_BAROROOM_BARO, MOVEMENT_TYPE_FACE_LEFT
-# 43 "data/maps/BaroRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_BAROROOM_BARO, MOVEMENT_TYPE_FACE_LEFT
-# 44 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceLeft
+	applymovementandwait LOCALID_PLAYER, BaroRoom_OnFrame_Movement_0
 # 45 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceRight
+	playse SE_PIN
 # 46 "data/maps/BaroRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48
 # 47 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_ExclamationMarkWithDelay48
-# 48 "data/maps/BaroRoom/scripts.pory"
-	delay 10
-# 49 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 50 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft
-# 51 "data/maps/BaroRoom/scripts.pory"
-	call BaroRoom_EventScript_CloseSideDoor
-# 52 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkLeft2
-# 53 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft2
-# 54 "data/maps/BaroRoom/scripts.pory"
-	waitmovement 0
-# 55 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_1
-# 56 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceUp
-# 57 "data/maps/BaroRoom/scripts.pory"
-	special RemoveCameraObject
-# 58 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 59 "data/maps/BaroRoom/scripts.pory"
-	playse SE_PIN
-# 60 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_SweatDropWithDelay48
-# 61 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 62 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 63 "data/maps/BaroRoom/scripts.pory"
-	setspeaker SP_NAME_BARO
-# 64 "data/maps/BaroRoom/scripts.pory"
-	playse SE_PIN
-# 65 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_2
-# 66 "data/maps/BaroRoom/scripts.pory"
-	message BaroRoom_OnFrame_Text_3
-# 67 "data/maps/BaroRoom/scripts.pory"
-	waitmovement 0
-# 68 "data/maps/BaroRoom/scripts.pory"
-	closemessage
-# 69 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 70 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 71 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 72 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_5, speaker = SP_NAME_BARO
-# 73 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown
-# 74 "data/maps/BaroRoom/scripts.pory"
-	call BaroRoom_EventScript_BaroBattle
-# 75 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 76 "data/maps/BaroRoom/scripts.pory"
-	playse SE_PIN
-# 77 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_HappyWithDelay48
-# 78 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 79 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 80 "data/maps/BaroRoom/scripts.pory"
 	special SpawnCameraObject
-# 81 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_3
-# 84 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_CAMERA, Common_Movement_WalkRight2
-# 85 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_BAROROOM_BARO, Common_Movement_WalkRight2
-# 86 "data/maps/BaroRoom/scripts.pory"
+# 48 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkRight2
+# 49 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
-# 87 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 88 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 89 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_BAROROOM_BARO, Common_Movement_FaceLeft
-# 90 "data/maps/BaroRoom/scripts.pory"
-	waitmovement 0
-# 91 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
-# 92 "data/maps/BaroRoom/scripts.pory"
-	delay 20
-# 93 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_FaceRight
-# 94 "data/maps/BaroRoom/scripts.pory"
+# 50 "data/maps/BaroRoom/scripts.pory"
 	call BaroRoom_EventScript_OpenSideDoor
-# 95 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_4
-# 96 "data/maps/BaroRoom/scripts.pory"
-	removeobject LOCALID_BAROROOM_BARO
-# 97 "data/maps/BaroRoom/scripts.pory"
-	setflag FLAG_BAROROOM_HIDE_BARO
-# 98 "data/maps/BaroRoom/scripts.pory"
+# 51 "data/maps/BaroRoom/scripts.pory"
+	showobjectat LOCALID_BAROROOM_BARO, MAP_BARO_ROOM
+# 52 "data/maps/BaroRoom/scripts.pory"
+	setobjectmovementtype LOCALID_BAROROOM_BARO, MOVEMENT_TYPE_FACE_LEFT
+# 53 "data/maps/BaroRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_BAROROOM_BARO, MOVEMENT_TYPE_FACE_LEFT
+# 54 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceLeft
+# 55 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceRight
+# 56 "data/maps/BaroRoom/scripts.pory"
+	playse SE_PIN
+# 57 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_ExclamationMarkWithDelay48
+# 58 "data/maps/BaroRoom/scripts.pory"
+	delay 10
+# 59 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 60 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft
+# 61 "data/maps/BaroRoom/scripts.pory"
 	call BaroRoom_EventScript_CloseSideDoor
-# 99 "data/maps/BaroRoom/scripts.pory"
-	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkLeft2
-# 100 "data/maps/BaroRoom/scripts.pory"
-	special RemoveCameraObject
-# 101 "data/maps/BaroRoom/scripts.pory"
+# 62 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_CAMERA, Common_Movement_WalkLeft2
+# 63 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft2
+# 64 "data/maps/BaroRoom/scripts.pory"
+	waitmovement 0
+# 65 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_1
+# 66 "data/maps/BaroRoom/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceUp
-# 102 "data/maps/BaroRoom/scripts.pory"
+# 67 "data/maps/BaroRoom/scripts.pory"
+	special RemoveCameraObject
+# 68 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 69 "data/maps/BaroRoom/scripts.pory"
+	playse SE_PIN
+# 70 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_SweatDropWithDelay48
+# 71 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 72 "data/maps/BaroRoom/scripts.pory"
 	delay 20
+# 73 "data/maps/BaroRoom/scripts.pory"
+	setspeaker SP_NAME_BARO
+# 74 "data/maps/BaroRoom/scripts.pory"
+	playse SE_PIN
+# 75 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_2
+# 76 "data/maps/BaroRoom/scripts.pory"
+	message BaroRoom_OnFrame_Text_3
+# 77 "data/maps/BaroRoom/scripts.pory"
+	waitmovement 0
+# 78 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 79 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 80 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 81 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 82 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_5, speaker = SP_NAME_BARO
+# 83 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown
+# 84 "data/maps/BaroRoom/scripts.pory"
+	playse SE_PIN
+# 85 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_3
+# 86 "data/maps/BaroRoom/scripts.pory"
+	waitse
+# 87 "data/maps/BaroRoom/scripts.pory"
+	call BaroRoom_EventScript_BaroBattle
+# 88 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 89 "data/maps/BaroRoom/scripts.pory"
+	playse SE_PIN
+# 90 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_HappyWithDelay48
+# 91 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 92 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_OnFrame_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
+# 93 "data/maps/BaroRoom/scripts.pory"
+	special SpawnCameraObject
+# 94 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_4
+# 97 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_CAMERA, Common_Movement_WalkRight2
+# 98 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_BARO, Common_Movement_WalkRight2
+# 99 "data/maps/BaroRoom/scripts.pory"
+	waitmovement 0
+# 100 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 101 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 102 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_BARO, Common_Movement_FaceLeft
 # 103 "data/maps/BaroRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	waitmovement 0
 # 104 "data/maps/BaroRoom/scripts.pory"
-	setvar VAR_BARO_ROOM_STATE, 1
+	msgbox BaroRoom_OnFrame_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO
 # 105 "data/maps/BaroRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_BARO
+	delay 20
 # 106 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, Common_Movement_FaceRight
+# 107 "data/maps/BaroRoom/scripts.pory"
+	call BaroRoom_EventScript_OpenSideDoor
+# 108 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_BAROROOM_BARO, BaroRoom_OnFrame_Movement_5
+# 109 "data/maps/BaroRoom/scripts.pory"
+	removeobject LOCALID_BAROROOM_BARO
+# 110 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_TEMP_1
+# 111 "data/maps/BaroRoom/scripts.pory"
+	call BaroRoom_EventScript_CloseSideDoor
+# 112 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_CAMERA, Common_Movement_WalkLeft2
+# 113 "data/maps/BaroRoom/scripts.pory"
+	special RemoveCameraObject
+# 114 "data/maps/BaroRoom/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_FaceUp
+# 115 "data/maps/BaroRoom/scripts.pory"
+	delay 20
+# 116 "data/maps/BaroRoom/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 117 "data/maps/BaroRoom/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 118 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_BARO
+# 119 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
 
 BaroRoom_EventScript_OpenSideDoor::
-# 112 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
-# 113 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
-# 114 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 115 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 116 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
-# 117 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
-# 118 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 119 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 120 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
-# 121 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
-# 122 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 123 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 124 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPEN_UP, 0
 # 125 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPEN_DOWN, 0
+	playse SE_RG_DOOR
 # 126 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
+# 127 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
+# 128 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 129 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 130 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
+# 131 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
+# 132 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 133 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 134 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
+# 135 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
+# 136 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 137 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 138 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPEN_UP, 0
+# 139 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPEN_DOWN, 0
+# 140 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BaroRoom_EventScript_CloseSideDoor::
-# 131 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
-# 132 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
-# 133 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 134 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 135 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
-# 136 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
-# 137 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 138 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 139 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
-# 140 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
-# 141 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
-# 142 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 143 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_CLOSED_UP, 0
-# 144 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0
 # 145 "data/maps/BaroRoom/scripts.pory"
+	playse SE_FU_ZAKU
+# 146 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
+# 147 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
+# 148 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 149 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 150 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
+# 151 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
+# 152 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 153 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 154 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
+# 155 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
+# 156 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
+# 157 "data/maps/BaroRoom/scripts.pory"
+	delay 5
+# 158 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_CLOSED_UP, 0
+# 159 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0
+# 160 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BaroRoom_EventScript_BaroBattle::
-# 150 "data/maps/BaroRoom/scripts.pory"
+# 165 "data/maps/BaroRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, BaroRoom_EventScript_BaroBattle_2
-# 153 "data/maps/BaroRoom/scripts.pory"
+# 168 "data/maps/BaroRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_BARO
-# 154 "data/maps/BaroRoom/scripts.pory"
+# 169 "data/maps/BaroRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 155 "data/maps/BaroRoom/scripts.pory"
+# 170 "data/maps/BaroRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BaroRoom_EventScript_BaroBattle_5
-# 158 "data/maps/BaroRoom/scripts.pory"
+# 173 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated
 BaroRoom_EventScript_BaroBattle_1:
-# 161 "data/maps/BaroRoom/scripts.pory"
+# 176 "data/maps/BaroRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 BaroRoom_EventScript_BaroBattle_2:
-# 151 "data/maps/BaroRoom/scripts.pory"
+# 166 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
 	goto BaroRoom_EventScript_BaroBattle_1
 
 BaroRoom_EventScript_BaroBattle_5:
-# 156 "data/maps/BaroRoom/scripts.pory"
+# 171 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
 	goto BaroRoom_EventScript_BaroBattle_1
 
 
-# 25 "data/maps/BaroRoom/scripts.pory"
+BaroRoom_EventScript_PlugOink::
+# 185 "data/maps/BaroRoom/scripts.pory"
+	lock
+# 186 "data/maps/BaroRoom/scripts.pory"
+	applymovement LOCALID_BAROROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_Movement_0
+# 187 "data/maps/BaroRoom/scripts.pory"
+	waitmovement 0
+# 188 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
+BaroRoom_EventScript_Sever::
+# 193 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_NPC
+	end
+
+
+BaroRoom_EventScript_Seeg::
+# 198 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_NPC
+	end
+
+
+# 35 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_0:
-# 26 "data/maps/BaroRoom/scripts.pory"
+# 36 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 26 "data/maps/BaroRoom/scripts.pory"
+# 36 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 26 "data/maps/BaroRoom/scripts.pory"
+# 36 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 26 "data/maps/BaroRoom/scripts.pory"
+# 36 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 26 "data/maps/BaroRoom/scripts.pory"
+# 36 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 27 "data/maps/BaroRoom/scripts.pory"
+# 37 "data/maps/BaroRoom/scripts.pory"
 	face_right
-# 28 "data/maps/BaroRoom/scripts.pory"
+# 38 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 29 "data/maps/BaroRoom/scripts.pory"
+# 39 "data/maps/BaroRoom/scripts.pory"
 	face_left
-# 30 "data/maps/BaroRoom/scripts.pory"
+# 40 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 31 "data/maps/BaroRoom/scripts.pory"
+# 41 "data/maps/BaroRoom/scripts.pory"
 	face_up
-# 32 "data/maps/BaroRoom/scripts.pory"
+# 42 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 33 "data/maps/BaroRoom/scripts.pory"
+# 43 "data/maps/BaroRoom/scripts.pory"
 	face_down
-# 34 "data/maps/BaroRoom/scripts.pory"
+# 44 "data/maps/BaroRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 55 "data/maps/BaroRoom/scripts.pory"
+# 65 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_1:
-# 55 "data/maps/BaroRoom/scripts.pory"
+# 65 "data/maps/BaroRoom/scripts.pory"
 	walk_up
-# 55 "data/maps/BaroRoom/scripts.pory"
+# 65 "data/maps/BaroRoom/scripts.pory"
 	walk_left
-# 55 "data/maps/BaroRoom/scripts.pory"
+# 65 "data/maps/BaroRoom/scripts.pory"
 	walk_left
-# 55 "data/maps/BaroRoom/scripts.pory"
+# 65 "data/maps/BaroRoom/scripts.pory"
 	face_down
 	step_end
 
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_2:
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 	emote_surprise
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 	delay_16
-# 65 "data/maps/BaroRoom/scripts.pory"
+# 75 "data/maps/BaroRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 81 "data/maps/BaroRoom/scripts.pory"
+# 85 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_3:
-# 82 "data/maps/BaroRoom/scripts.pory"
-	walk_right
-# 82 "data/maps/BaroRoom/scripts.pory"
-	walk_right
-# 82 "data/maps/BaroRoom/scripts.pory"
-	walk_down
+# 85 "data/maps/BaroRoom/scripts.pory"
+	emote_versus
 	step_end
 
-# 95 "data/maps/BaroRoom/scripts.pory"
+# 94 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_4:
 # 95 "data/maps/BaroRoom/scripts.pory"
 	walk_right
 # 95 "data/maps/BaroRoom/scripts.pory"
-	walk_in_place_right
+	walk_right
 # 95 "data/maps/BaroRoom/scripts.pory"
+	walk_down
+	step_end
+
+# 108 "data/maps/BaroRoom/scripts.pory"
+BaroRoom_OnFrame_Movement_5:
+# 108 "data/maps/BaroRoom/scripts.pory"
+	walk_right
+# 108 "data/maps/BaroRoom/scripts.pory"
+	walk_in_place_right
+# 108 "data/maps/BaroRoom/scripts.pory"
 	set_invisible
 	step_end
 
+# 186 "data/maps/BaroRoom/scripts.pory"
+BaroRoom_EventScript_PlugOink_Movement_0:
+# 186 "data/maps/BaroRoom/scripts.pory"
+	face_player
+# 186 "data/maps/BaroRoom/scripts.pory"
+	lock_facing_direction
+# 186 "data/maps/BaroRoom/scripts.pory"
+	jump_in_place_down
+# 186 "data/maps/BaroRoom/scripts.pory"
+	jump_in_place_down
+# 186 "data/maps/BaroRoom/scripts.pory"
+	unlock_facing_direction
+# 186 "data/maps/BaroRoom/scripts.pory"
+	face_player
+	step_end
+
 BaroRoom_OnFrame_Text_0:
-# 49 "data/maps/BaroRoom/scripts.pory"
+# 59 "data/maps/BaroRoom/scripts.pory"
 	.string "Erhm… Tú eres {PLAYER}, ¿no?\n"
 	.string "Encantado, soy Baro.$"
 
 BaroRoom_OnFrame_Text_1:
-# 58 "data/maps/BaroRoom/scripts.pory"
+# 68 "data/maps/BaroRoom/scripts.pory"
 	.string "En fin… En qué jaleos se mete uno…$"
 
 BaroRoom_OnFrame_Text_2:
-# 61 "data/maps/BaroRoom/scripts.pory"
+# 71 "data/maps/BaroRoom/scripts.pory"
 	.string "¿Yo estaba en una comunidad? ¿En\n"
 	.string "serio? ¿De Pokémon?$"
 
 BaroRoom_OnFrame_Text_3:
-# 66 "data/maps/BaroRoom/scripts.pory"
+# 76 "data/maps/BaroRoom/scripts.pory"
 	.string "Wow.$"
 
 BaroRoom_OnFrame_Text_4:
-# 70 "data/maps/BaroRoom/scripts.pory"
+# 80 "data/maps/BaroRoom/scripts.pory"
 	.string "Vaya tiempos… En fin.$"
 
 BaroRoom_OnFrame_Text_5:
-# 72 "data/maps/BaroRoom/scripts.pory"
+# 82 "data/maps/BaroRoom/scripts.pory"
 	.string "Supongo que lo de reminiscir del pasado\n"
 	.string "es apropiado para el momento.\l"
 	.string "Tu viaje y todo eso.\p"
@@ -386,17 +452,29 @@ BaroRoom_OnFrame_Text_5:
 	.string "contigo. ¿Vamos?$"
 
 BaroRoom_OnFrame_Text_6:
-# 75 "data/maps/BaroRoom/scripts.pory"
+# 88 "data/maps/BaroRoom/scripts.pory"
 	.string "El Pikachu no te lo esperabas, ¿eh?$"
 
 BaroRoom_OnFrame_Text_7:
-# 79 "data/maps/BaroRoom/scripts.pory"
+# 92 "data/maps/BaroRoom/scripts.pory"
 	.string "Pues ya estaría. Ya he cumplido. Chao.$"
 
 BaroRoom_OnFrame_Text_8:
-# 91 "data/maps/BaroRoom/scripts.pory"
+# 104 "data/maps/BaroRoom/scripts.pory"
 	.string "Bueno, buena suerte y tal.$"
 
+BaroRoom_EventScript_PlugOink_Text_0:
+# 188 "data/maps/BaroRoom/scripts.pory"
+	.string "Oink, oink, oink…$"
+
+BaroRoom_EventScript_Sever_Text_0:
+# 193 "data/maps/BaroRoom/scripts.pory"
+	.string "¡Sever!$"
+
+BaroRoom_EventScript_Seeg_Text_0:
+# 198 "data/maps/BaroRoom/scripts.pory"
+	.string "See, see.$"
+
 BaroRoom_Text_BaroDefeated::
-# 165 "data/maps/BaroRoom/scripts.pory"
+# 180 "data/maps/BaroRoom/scripts.pory"
 	.string "En fin…$"

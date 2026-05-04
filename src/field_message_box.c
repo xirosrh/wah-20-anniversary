@@ -8,6 +8,8 @@
 #include "text_window.h"
 #include "script.h"
 #include "field_name_box.h"
+#include "event_data.h"
+#include "constants/flags.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
@@ -35,8 +37,16 @@ static void Task_DrawFieldMessage(u8 taskId)
         case 0:
             if (gMsgIsSignPost)
                 LoadSignPostWindowFrameGfx();
+            else if (FlagGet(FLAG_TRANSPARENT_BOX))
+            {
+                LoadMessageBoxAndBorderGfxTransparent();
+                SetUiTransparent();
+            }
             else
+            {
+                ClearUiTransparent();
                 LoadMessageBoxAndBorderGfx();
+            }
             task->tState++;
             break;
         case 1:

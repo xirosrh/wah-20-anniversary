@@ -90,12 +90,15 @@
 #define B_MINIMIZE_EVASION          GEN_LATEST // En Gen5+, Reducción aumenta la evasión en 2 etapas en lugar de 1.
 #define B_GROWTH_STAT_RAISE         GEN_LATEST // En Gen5+, Desarrollo aumenta el Ataque además de la Ataque Especial en 1 etapa cada uno. Bajo los efectos del sol, los aumenta en 2 etapas cada uno en su lugar.
 #define B_FOCUS_ENERGY_CRIT_RATIO   GEN_LATEST // En Gen3+, Foco energía aumenta el ratio de golpes críticos en 2 en vez de en 1.
+#define B_PSYCH_UP_CRIT_RATIO       GEN_LATEST // In Gen6+, Psych Up also copies the target's critical hit ratio.
 
 // Otras configuraciones de movimientos
 #define B_INCINERATE_GEMS           GEN_LATEST // En Gen6+, Incinerate puede destruir Gemas.
 #define B_CAN_SPITE_FAIL            GEN_LATEST // En Gen4+, Spite ya no puede fallar si el último movimiento del oponente solo tiene 1 PP restante.
 #define B_CRASH_IF_TARGET_IMMUNE    GEN_LATEST // En Gen4+, el usuario de Patada salto y Patada salto alta "seguirá adelante y chocará" si ataca a un objetivo que es inmune al movimiento.
 #define B_MEMENTO_FAIL              GEN_LATEST // En Gen4+, Memento falla si no hay objetivo o si el objetivo está protegido o detrás de un sustituto. Pero no si el Atk/Sp. Atk están en -6.
+#define B_PARTING_SHOT_SWITCH       GEN_LATEST // En Gen7+, el usuario no se retirar� si Desarme (Parting Shot) falla al bajar las estad�sticas del objetivo.
+#define B_BATON_PASS_TRAPPING       GEN_LATEST // In Gen5+, Baton Pass does not keep trapping effects on other battlers when the user switches out.
 #define B_GLARE_GHOST               GEN_LATEST // En Gen4+, Deslumbrar puede golpear a Pokémon de tipo Fantasma normalmente.
 #define B_SKILL_SWAP                GEN_LATEST // En Gen4+, Skill Swap activa las habilidades de entrada después de su uso.
 #define B_BRICK_BREAK               GEN_LATEST // En Gen4+, puedes destruir las pantallas de tu propio lado. En Gen 5+, las pantallas no se eliminan si el objetivo es inmune.
@@ -117,16 +120,23 @@
 #define B_TRANSFORM_FORM_CHANGES    GEN_LATEST // En Gen5+, los Pokémon transformados no pueden cambiar de forma.
 #define B_WIDE_GUARD                GEN_LATEST // Solo en Gen5, Vastaguardia tiene una posibilidad de fallar si se usa consecutivamente.
 #define B_QUICK_GUARD               GEN_LATEST // Solo en Gen5, Quick Guard tiene una posibilidad de fallar si se usa consecutivamente.
+#define B_TRANSFORM_SEMI_INV_FAIL   GEN_LATEST // In Gen2+, Transform fails if the target is semi-invulnerable.
+#define B_TRANSFORM_TARGET_FAIL     GEN_LATEST // In Gen2+, Transform fails if the target is already transformed.
+#define B_TRANSFORM_USER_FAIL       GEN_LATEST // In Gen5+, Transform fails if the user is already transformed.
+#define B_TRANSFORM_SUBSTITUTE_FAIL GEN_LATEST // In Gen5+, Transform fails if the target is behind a Substitute.
 #define B_IMPRISON                  GEN_LATEST // En Gen5+, Imprison no falla si los Pokémon opuestos no tienen ningún movimiento que el usuario conozca.
 #define B_ALLY_SWITCH_FAIL_CHANCE   GEN_LATEST // En Gen9, usar Ally Switch consecutivamente disminuye la probabilidad de éxito de cada uso consecutivo.
 #define B_SKETCH_BANS               GEN_LATEST // En Gen9+, Esquema no puede copiar más movimientos que en generaciones anteriores.
 #define B_KNOCK_OFF_REMOVAL         GEN_LATEST // En Gen5+, Desarme elimina el objeto del oponente en lugar de hacerlo inutilizable.
 #define B_HEAL_BELL_SOUNDPROOF      GEN_LATEST // En Gen5, Heal Bell afecta a todos los Pokémon con Soundproof. En Gen6-8 afecta a Pokémon inactivos, pero no a los que están en batalla. En Gen9 siempre afecta al usuario.
+#define B_TAUNT_ME_FIRST            GEN_LATEST // In Gen5+, Taunt does not block Me First.
 #define B_CHARGE                    GEN_LATEST // En Gen8-, estado Cargado se pierde sea cuál sea el tipo del siguiente movimiento.
 #define B_POWDER_RAIN               GEN_LATEST // En Gen7+, Polvo explosivo no daña al atacante si está lloviendo.
 #define B_AFTER_YOU_TURN_ORDER      GEN_LATEST // En Gen8+, Cede paso no falla si el orden del turno no cambiaría después de usarse.
 #define B_QUASH_TURN_ORDER          GEN_LATEST // En Gen8+, los ataques se ven afectados por Último lugar según su velocidad. Antes de la 8 gen, los que eran afectados por este ataque se movían en el orden en que recibían el movimiento.
 #define B_DESTINY_BOND_FAIL         GEN_LATEST // En Gen7+, Mismodestino falla si lo usas repetidamente.
+#define B_FORESIGHT_FAIL            GEN_LATEST // In Gen2 and Gen5+, Foresight fails if used against a target already under its effect.
+#define B_MIRACLE_EYE_FAIL          GEN_LATEST // In Gen5+, Miracle Eye fails if used against a target already under its effect.
 #define B_PURSUIT_TARGET            GEN_LATEST // En Gen4+, Persecución ataca al Pokémon que está cambiando aunque no fuera el objetivo original. En generaciones anteriores, Persecución solo ataca al Pokémon que cambia si era el objetivo del movimiento.
 #define B_SKIP_RECHARGE             GEN_LATEST // En Gen1, movimientos que requieren recarga como Hiperrayo no lo necesitan si el oponente es debilitado.
 #define B_ENCORE_TARGET             GEN_LATEST // In Gen5+, encored moves are allowed to choose a target
@@ -168,6 +178,7 @@
 #define B_ATE_MULTIPLIER            GEN_LATEST // Desde la Gen 7, las habilidades del tipo -ado (Ej.: Piel celeste, Piel eléctrica, Normalidad, Piel feérica, Piel helada) multiplican el daño por 1.2. En generaciones anteriores, el multiplicador es 1.3, excepto para Normalidad, que no aplica bonificación.
 #define B_DEFIANT_STICKY_WEB        GEN_LATEST // In Gen9+, Defiant activates on Sticky Web regardless of who set it up. In Gen8, Defiant does not activate on Sticky Web set up by an ally after Court Change swaps its side.
 #define B_POWDER_OVERCOAT           GEN_LATEST // In Gen6+, Overcoat blocks powder and spore moves from affecting the user.
+#define B_INFILTRATOR_SUBSTITUTE    GEN_LATEST // In Gen6+, Infiltrator bypasses Substitute when using a move, excluding Transform and Sky Drop.
 
 // Configuración de ítems
 #define B_CONFUSE_BERRIES_HEAL      GEN_LATEST // Antes de Gen7, Figy y bayas similares restauran 1/8 de HP y se activan a la mitad de HP. En Gen7 restauran la mitad de HP, activándose al 25% de HP. En Gen8 curan 1/3 de HP.
@@ -206,7 +217,7 @@
 #define B_FLAG_BADGE_BOOST_SPDEF    FLAG_BADGE07_GET // Si esta flag está activada y B_BADGE_BOOST == GEN_3, se multiplicará la Defensa Especial del Pokémon por 1,1.
 
 // Otras flags de batalla
-#define B_FLAG_INVERSE_BATTLE       0     // Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
+#define B_FLAG_INVERSE_BATTLE       FLAG_INVERSE_BATTLE     // Si esta flag está activada, la efectividad de los tipos en la batalla se invierte. Por ejemplo, fuego es super efectivo contra agua.
 #define B_FLAG_FORCE_DOUBLE_WILD    0     // Si esta flag está activada, todas las batallas salvajes en tierra y en surf serán batallas dobles.
 #define B_SMART_WILD_AI_FLAG        0     // Si no es 0, puedes configurar esta flag en un script para habilitar la IA inteligente de Pokémon salvajes.
 #define B_FLAG_NO_BAG_USE           0     // Si esta flag está activada, la capacidad de usar la bolsa en batalla está desactivada.
@@ -214,10 +225,10 @@
 #define B_FLAG_NO_RUNNING           0     // Si esta flag está activada, no se puede escapar de batallas salvajes. Además, hace que Rugido/Torbellino y Teletransporte (con el config en menos de 8ª Gen) fallen.
 #define B_FLAG_AI_VS_AI_BATTLE      0     // Si esta flag está activada, los Pokémon del jugador serán controlados por la IA en las siguientes batallas.
 #define B_FLAG_DYNAMAX_BATTLE       0     // Si esta flag está activada, la habilidad de Dynamax en batalla está habilitada para todos los entrenadores.
-#define B_FLAG_TERA_ORB_CHARGED     0     // Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
-#define B_FLAG_TERA_ORB_NO_COST     0     // Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
+#define B_FLAG_TERA_ORB_CHARGED     FLAG_TERA_ORB_CHARGED     // Si esta flag está activada, el Tera Orb está cargado. Se activa automáticamente al curar y se borra al Terastalizar una vez configurado.
+#define B_FLAG_TERA_ORB_NO_COST     FLAG_TERA_ORB_NO_COST     // Si esta flag está activada, el Tera Orb no usa su carga al Terastalizar. En S/V, esto ocurre después de un evento con Terapagos.
 #define B_FLAG_SLEEP_CLAUSE         0     // Si esta flag está activada, clausula de sueño está activada; si el jugador o la IA ha puesto a dormir ya a algún Pokémon, no puede dormir más. IA requiere AI_FLAG_CHECK_BAD_MOVE para entenderlo.
-#define B_FLAG_NO_WHITEOUT          0     // Si esta flag está activada, el jugador no puede perder contra entrenadores. Ten en cuenta que esto no cura a tu equipo automáticamente.
+#define B_FLAG_NO_WHITEOUT          FLAG_NO_WHITEOUT     // Si esta flag está activada, el jugador no puede perder contra entrenadores. Ten en cuenta que esto no cura a tu equipo automáticamente.
 
 // Configuración de variables
 // Para usar las siguientes características en scripting, reemplaza los 0s con el ID de la variable que le asignas.
@@ -228,7 +239,7 @@
 #define B_VAR_WILD_AI_FLAGS                 0       // Si no es 0, puedes usar esta variable para añadir a los flags de IA salvaje predeterminados. NO usable con las flags anteriores (1 << 15)
                                                     // Esta var no debería permanecer como un valor distinto de cero el tiempo suficiente para que el jugador guarde.
                                                     // Para controlar mejor la IA de los Pokémon salvajes, edita GetWildAiFlags() en src/battle_ai_main.c
-#define B_VAR_DIFFICULTY                    0       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
+#define B_VAR_DIFFICULTY                    VAR_DIFFICULTY       // Si no es 0, puedes usar esta Var para controlar qué nivel de dificultad tienen los entrenadores. Esto debe ser implementado manualmente por el desarrollador usando Script_SetDifficulty DESPUÉS de que NewGameInitData haya sido llamada.
 
 // No bag settings
 #define NO_BAG_RESTRICTION       0
@@ -313,6 +324,7 @@
 #define B_AFFECTION_MECHANICS           TRUE       // En Gen6+, hay una estadística llamada afecto que puede desencadenar diferentes efectos en batalla. A partir de LGPE, esos efectos usan amistad en su lugar.
 #define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // En Gen7+, los entrenadores usarán ciertos tipos de Poké Balls según su clase de entrenador.
 #define B_TRAINER_MON_RANDOM_ABILITY    FALSE      // Si se establece en TRUE, se generará una habilidad legal aleatoria para un Pokémon de entrenador.
+#define B_USE_OBEDIENCE                 FALSE      // Si es FALSE, se ignoran las restricciones de obediencia en combate.
 #define B_OBEDIENCE_MECHANICS           GEN_LATEST // En PLA+ (aquí Gen8+), las restricciones de obediencia también se aplican a los Pokémon no extranjeros, aunque basadas en su nivel encontrado en lugar de nivel real.
 #define B_USE_FROSTBITE                 FALSE      // En PLA, Frostbite reemplaza a Freeze. Habilitar esta flag hace lo mismo aquí. Los movimientos aún pueden ser seleccionados para Freeze o Frostbite. Freeze-Dry, Secret Power y Tri Attack dependen de esta configuración.
 #define B_TOXIC_REVERSAL                GEN_LATEST // En Gen5+, el veneno grave se convierte en veneno normal al final de las batallas.

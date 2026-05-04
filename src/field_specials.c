@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokebox_manager.h"
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
@@ -29,6 +30,8 @@
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
+#include "team_selector.h"
+#include "difficulty_selector.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -47,6 +50,7 @@
 #include "strings.h"
 #include "task.h"
 #include "text.h"
+#include "text_window.h"
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
@@ -67,12 +71,21 @@
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/battle_frontier.h"
+#include "constants/flags.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
 #include "palette.h"
+#include "battle_main.h"
+#include "battle_message.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "achievements.h"
+#include "achievement_confetti.h"
+#include "constants/achievements.h"
+#include "constants/characters.h"
+#include "constants/pokemon.h"
+#include "constants/vars.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -1290,7 +1303,7 @@ void SpawnCameraObject(void)
                                                   LOCALID_CAMERA,
                                                   gSaveBlock1Ptr->pos.x + MAP_OFFSET,
                                                   gSaveBlock1Ptr->pos.y + MAP_OFFSET,
-                                                  3); // elevation
+                                                  ELEVATION_DEFAULT);
     gObjectEvents[obj].invisible = TRUE;
     CameraObjectSetFollowedSpriteId(gObjectEvents[obj].spriteId);
 }
@@ -1428,6 +1441,63 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
         return TRUE;
 
     return FALSE;
+}
+
+u16 Special_CheckAndCompleteAchievement(void)
+{
+    u8 index = (u8)VarGet(VAR_0x8004);
+    if (index >= Achievement_GetCount())
+        return 0;
+    return (u16)Achievement_CheckAndMarkComplete(index);
+}
+
+void Special_BufferAchievementTitle(void)
+{
+    u8 id = (u8)VarGet(VAR_0x8004);
+    const u8 *title;
+    if (id >= Achievement_GetCount())
+    {
+        gStringVar1[0] = EOS;
+        return;
+    }
+    title = Achievement_GetTitle(id);
+    if (title != NULL)
+        StringCopy(gStringVar1, title);
+    else
+        gStringVar1[0] = EOS;
+}
+
+
+u16 Special_FindNextPokeboxUnlock(void)
+{
+    u8 i;
+    u8 count = PokeboxSpeciesList_GetCount();
+
+    for (i = 0; i < count; i++)
+    {
+        if (PokeboxSpecies_TryUnlockNew(i))
+        {
+            gSpecialVar_0x8005 = PokeboxSpeciesList_GetSpecie(i);
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void Special_StartAchievementConfetti(void)
+{
+    StartAchievementConfetti();
+}
+
+void Special_StopAchievementConfetti(void)
+{
+    StopAchievementConfetti();
+}
+
+void Special_ClearTransparentBox(void)
+{
+    ClearUiTransparent();
+    FlagClear(FLAG_TRANSPARENT_BOX);
 }
 
 u8 TryUpdateRusturfTunnelState(void)
@@ -4358,11 +4428,22 @@ void EnterCode(void)
 
 void GetCodeFeedback(void)
 {
-    static const u8 sText_SampleCode[] = _("SampleCode");
+    static const u8 sText_SampleCode[] = _("Sm3");
     if (!StringCompare(gStringVar2, sText_SampleCode))
         gSpecialVar_Result = 1;
     else
         gSpecialVar_Result = 0;
+}
+
+void InitAlexmadPuzzlePartyOrderCheck(void)
+{
+    u32 leadPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+    u32 sixthPersonality = GetMonData(&gPlayerParty[5], MON_DATA_PERSONALITY);
+
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_LO, leadPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_LEAD_PID_HI, leadPersonality >> 16);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO, sixthPersonality & 0xFFFF);
+    VarSet(VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI, sixthPersonality >> 16);
 }
 
 void SetHiddenNature(void)
@@ -4393,6 +4474,23 @@ void RandomizeWahAdminTeams(void)
     VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
 }
 
+void SetWahChallengeInitialAchievementFlags(void)
+{
+    u32 i;
+    bool8 hasElectrodeS = FALSE;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (species == SPECIES_EGG || species == SPECIES_NONE)
+            continue;
+
+        if (species == SPECIES_ELECTRODES)
+            FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
+    }
+}
+
 // Checks if admin at given index should use ALTERNATIVE team
 // Input: gSpecialVar_0x8004 = admin index (0-23)
 // Output: gSpecialVar_Result = 0 (MAIN) or 1 (ALTERNATIVE)
@@ -4407,4 +4505,160 @@ void ShouldUseAlternativeTeam(void)
         teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_HI);
 
     gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
+}
+
+void OpenTeamSelectorFromField(void)
+{
+    StartTeamSelectorFromField_CB2();
+}
+
+void OpenDifficultySelectorFromField(void)
+{
+    StartDifficultySelectorFromField_CB2();
+}
+
+void BufferSpeciesDexDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *desc = GetSpeciesPokedexDescription(species);
+    if (desc != NULL)
+        StringCopy(gStringVar1, desc);
+    else
+        gStringVar1[0] = EOS;
+}
+
+void BufferSpeciesDexDescriptionForTextbox(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    const u8 *src = GetSpeciesPokedexDescription(species);
+    u8 *dest = gStringVar1;
+    bool8 prevWasNewline = FALSE;
+    bool8 hasOutputFirstNewline = FALSE;
+
+    if (src == NULL)
+    {
+        dest[0] = EOS;
+        return;
+    }
+    while (*src != EOS)
+    {
+        u8 c = *src++;
+        if (c == CHAR_NEWLINE || c == '\n')
+        {
+            if (!prevWasNewline)
+            {
+                if (!hasOutputFirstNewline)
+                {
+                    *dest++ = CHAR_NEWLINE;  /* first \n */
+                    hasOutputFirstNewline = TRUE;
+                }
+                else
+                {
+                    *dest++ = CHAR_PROMPT_SCROLL;  /* rest as \l (scroll) */
+                }
+                prevWasNewline = TRUE;
+            }
+        }
+        else
+        {
+            *dest++ = c;
+            prevWasNewline = FALSE;
+        }
+    }
+    *dest = EOS;
+}
+
+void BufferSpeciesAbilityNameAndDescription(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 slot = (u8)gSpecialVar_0x8005;
+    enum Ability ability = GetSpeciesAbility(species, slot);
+    const u8 *name;
+    const u8 *desc;
+
+    gSpecialVar_Result = 0;
+    gStringVar1[0] = EOS;
+    gStringVar2[0] = EOS;
+    if (ability == ABILITY_NONE)
+        return;
+    name = gAbilitiesInfo[ability].name;
+    desc = gAbilitiesInfo[ability].description;
+    if (desc == NULL)
+        return;
+    StringCopy(gStringVar1, name);
+    StringCopy(gStringVar2, desc);
+    gSpecialVar_Result = 1;
+}
+
+
+void BufferSpeciesTypeNames(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    enum Type type1 = GetSpeciesType(species, 0);
+    enum Type type2 = GetSpeciesType(species, 1);
+    StringCopy(gStringVar2, gTypesInfo[type1].name);
+    if (type2 != TYPE_NONE && type2 != type1)
+    {
+        StringCopy(gStringVar3, gTypesInfo[type2].name);
+        gSpecialVar_Result = 2;
+    }
+    else
+    {
+        gStringVar3[0] = EOS;
+        gSpecialVar_Result = 1;
+    }
+}
+
+
+static u8 *BufferSpeciesStats_AppendStat(u8 *dest, enum Stat stat, u32 value)
+{
+    dest = StringCopy(dest, gStatNamesTable[stat]);
+    *dest++ = CHAR_COLON;
+    *dest++ = CHAR_SPACE;
+    dest = ConvertIntToDecimalStringN(dest, value, STR_CONV_MODE_LEFT_ALIGN, 3);
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendSep(u8 *dest)
+{
+    *dest++ = CHAR_SPACE;
+    *dest++ = CHAR_HYPHEN;
+    *dest++ = CHAR_SPACE;
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendNewline(u8 *dest)
+{
+    *dest++ = CHAR_NEWLINE;
+    return dest;
+}
+
+static u8 *BufferSpeciesStats_AppendScroll(u8 *dest)
+{
+    *dest++ = CHAR_PROMPT_SCROLL;
+    return dest;
+}
+
+void BufferSpeciesStats(void)
+{
+    u16 species = gSpecialVar_0x8004;
+    u8 *dest = gStringVar1;
+
+    dest[0] = EOS;
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_HP, GetSpeciesBaseHP(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_ATK, GetSpeciesBaseAttack(species));
+    dest = BufferSpeciesStats_AppendNewline(dest);
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_DEF, GetSpeciesBaseDefense(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPEED, GetSpeciesBaseSpeed(species));
+    dest = BufferSpeciesStats_AppendScroll(dest);
+
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPATK, GetSpeciesBaseSpAttack(species));
+    dest = BufferSpeciesStats_AppendSep(dest);
+    dest = BufferSpeciesStats_AppendStat(dest, STAT_SPDEF, GetSpeciesBaseSpDefense(species));
+
+    *dest = EOS;
 }

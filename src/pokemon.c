@@ -718,6 +718,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/object_events/object_event_pic_tables_followers.h"
 
 #include "data/pokemon/species_info.h"
+#include "constants/opponents.h"
 
 #define PP_UP_SHIFTS(val)           val,        (val) << 2,        (val) << 4,        (val) << 6
 #define PP_UP_SHIFTS_INV(val) (u8)~(val), (u8)~((val) << 2), (u8)~((val) << 4), (u8)~((val) << 6)
@@ -3724,6 +3725,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
+    u8 levelBefore;
+    bool8 didLevelUp = FALSE;
+    bool8 isLevelUpItem;
 
     // Determine the EV cap to use
     u32 maxAllowedEVs = !B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap();
@@ -3745,6 +3749,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
     // Get item effect
     itemEffect = GetItemEffect(item);
+    isLevelUpItem = (itemEffect[3] & ITEM3_LEVEL_UP) != 0;
+    levelBefore = GetMonData(mon, MON_DATA_LEVEL, NULL);
 
     // Do item effect
     for (i = 0; i < ITEM_EFFECT_ARG_START; i++)
@@ -3799,6 +3805,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 {
                     SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
                     CalculateMonStats(mon);
+                    if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
+                        didLevelUp = TRUE;
                     retVal = FALSE;
                 }
             }
@@ -3917,6 +3925,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     {
                         u32 currentHP = GetMonData(mon, MON_DATA_HP, NULL);
                         u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+                        if (isLevelUpItem && !didLevelUp && (effectFlags & (ITEM4_REVIVE >> 2)))
+                        {
+                            itemEffectParam++;
+                            break;
+                        }
                         // Check use validity.
                         if ((effectFlags & (ITEM4_REVIVE >> 2) && currentHP != 0)
                               || (!(effectFlags & (ITEM4_REVIVE >> 2)) && currentHP == 0))
@@ -6109,7 +6122,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
-        case TRAINER_CLASS_WAH_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
@@ -6131,6 +6143,96 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_WAH_ADMIN:
+        case TRAINER_CLASS_COLLABORATOR:
+            switch (TRAINER_BATTLE_PARAM.opponentA)
+            {
+            case TRAINER_WAH_ADMIN_OMEGA_MAIN:
+            case TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE:
+                return MUS_BW_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_GOCE_MAIN:
+            case TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE:
+                return MUS_HGSS_KANTO_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_BLAX_MAIN:
+            case TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE:
+                return MUS_BW_WILD_BATTLE;
+            case TRAINER_WAH_ADMIN_SAYER_MAIN:
+            case TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE:
+                return MUS_BW_WILD_BATTLE;
+            case TRAINER_WAH_ADMIN_AGUIAR_MAIN:
+            case TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE:
+                return MUS_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_ANGEL_MAIN:
+            case TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE:
+                return MUS_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_OZUMAS_MAIN:
+            case TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE:
+                return MUS_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_SCAREX_MAIN:
+            case TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE:
+                return MUS_RG_VS_TRAINER;
+            case TRAINER_WAH_ADMIN_BARO_MAIN:
+            case TRAINER_WAH_ADMIN_BARO_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_REYBOO_MAIN:
+            case TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE:
+                return MUS_VS_FRONTIER_BRAIN;
+            case TRAINER_WAH_ADMIN_COSARARA_MAIN:
+            case TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE:
+                return MUS_VS_ELITE_FOUR;
+            case TRAINER_WAH_ADMIN_DRIVE_MAIN:
+            case TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE:
+                return MUS_BW_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_KATHERINE_MAIN:
+            case TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE:
+                return MUS_BW_VS_RIVAL;
+            case TRAINER_WAH_ADMIN_GALLEGO_MAIN:
+            case TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_REONEKY_MAIN:
+            case TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE:
+                return MUS_CAZA_LEGENDARIOS_TO;
+            case TRAINER_WAH_ADMIN_CHEVE_MAIN:
+            case TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE:
+                return MUS_MASTERED_BATTLE_4;
+            case TRAINER_WAH_ADMIN_EING_MAIN:
+            case TRAINER_WAH_ADMIN_EING_ALTERNATIVE:
+                return MUS_RG_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_TOKYN_MAIN:
+            case TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_WAR_MAIN:
+            case TRAINER_WAH_ADMIN_WAR_ALTERNATIVE:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_ADMIN_JAVI4315_MAIN:
+            case TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_JAVS_MAIN:
+            case TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_ADMIN_SERGIO_MAIN:
+            case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
+                return MUS_HGSS_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_XIROS_MAIN:
+            case TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE:
+                return MUS_VS_CHAMPION;
+            case TRAINER_WAH_ADMIN_PKPOWER_MAIN:
+            case TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE:
+                return MUS_BW_VS_TRAINER_80;
+            case TRAINER_WAH_ADMIN_KLEIN_MAIN:
+            case TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE:
+                return MUS_BW_VS_TRAINER_7F;
+            case TRAINER_WAH_ADMIN_DAVZERO_MAIN:
+            case TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE:
+                return MUS_THE_GRAND_FINALE;
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN:
+            case TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE:
+                return MUS_WI_VS_GYM_LEADER;
+            case TRAINER_WAH_COLLABORATOR_ACIMUT:
+                return MUS_TOUHOU11_11;
+            default:
+                return MUS_VS_AQUA_MAGMA;
+            }
         default:
             return MUS_VS_TRAINER;
         }
@@ -6864,6 +6966,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
                 case FORM_CHANGE_DEPOSIT:
                 case FORM_CHANGE_FAINT:
                 case FORM_CHANGE_DAYS_PASSED:
+                case FORM_CHANGE_BEGIN_WILD_ENCOUNTER:
                     targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_STATUS:
@@ -7060,10 +7163,19 @@ bool32 TryFormChange(u32 monId, enum BattleSide side, enum FormChanges method)
     u32 currentSpecies = GetMonData(&party[monId], MON_DATA_SPECIES);
     u32 targetSpecies = GetFormChangeTargetSpecies(&party[monId], method, 0);
 
-    if (targetSpecies == currentSpecies && gBattleStruct != NULL && gBattleStruct->partyState[side][monId].changedSpecies != SPECIES_NONE)
+    // If the battle ends, and there's not a specified species to change back to,,
+    // use the species at the start of the battle.
+    if (targetSpecies == SPECIES_NONE
+        && gBattleStruct != NULL
+        && gBattleStruct->partyState[side][monId].changedSpecies != SPECIES_NONE
+        // This is added to prevent FORM_CHANGE_END_BATTLE_ENVIRONMENT from omitting move changes
+        // at the end of the battle, as it was being counting as a successful form change.
+        && method == FORM_CHANGE_END_BATTLE)
+    {
         targetSpecies = gBattleStruct->partyState[side][monId].changedSpecies;
+    }
 
-    if (targetSpecies != currentSpecies)
+    if (targetSpecies != currentSpecies && targetSpecies != SPECIES_NONE)
     {
         TryToSetBattleFormChangeMoves(&party[monId], method);
         SetMonData(&party[monId], MON_DATA_SPECIES, &targetSpecies);
@@ -7273,7 +7385,7 @@ void UpdateDaysPassedSinceFormChange(u16 days)
         {
             u32 targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_DAYS_PASSED, 0);
 
-            if (targetSpecies != currentSpecies)
+            if (targetSpecies != currentSpecies && targetSpecies != SPECIES_NONE)
             {
                 SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
                 CalculateMonStats(mon);

@@ -32,9 +32,9 @@ const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environ
 
 const u16 gBattleEnvironmentPalette_Plain[] = INCBIN_U16("graphics/battle_environment/plain/palette.gbapal");
 
-const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_environment/building/tiles.4bpp.smol");
+const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_environment/wah_mountain/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Frontier[] = INCBIN_U16("graphics/battle_environment/stadium/battle_frontier.gbapal"); // this is also used for link battles
-const u32 gBattleEnvironmentTilemap_Building[] = INCBIN_U32("graphics/battle_environment/building/map.bin.smolTM");
+const u32 gBattleEnvironmentTilemap_Building[] = INCBIN_U32("graphics/battle_environment/wah_mountain/tiles.bin.smolTM");
 
 #define ENVIRONMENT_BACKGROUND(background)                      \
 {                                                               \

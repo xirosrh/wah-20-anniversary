@@ -3,6 +3,7 @@ mapscripts AngelRoom_MapScripts {
         VAR_TEMP_8, 0: AngelRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: AngelRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : AngelRoom_OnTransition
 }
 
 
@@ -17,6 +18,10 @@ script AngelRoom_OnLoad {
     }
     end
 }
+script AngelRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Angel)
+    end
+}
 script AngelRoom_EventScript_Angel {
     if(flag(FLAG_DEFEATED_ADMIN_ANGEL)){
         msgbox(format("¡Me alegro de verte de nuevo! Espero que sigas siendo tan fuerte como la última vez."), MSGBOX_NPC, speaker = SP_NAME_ANGEL)
@@ -28,14 +33,16 @@ script AngelRoom_EventScript_Angel {
     delay(20)
     faceplayer
     playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_double_exclamation_mark))
+    waitse
+    playse(SE_LEDGE)
     applymovement(LOCALID_ANGELROOM_ANGEL, moves(
-        emote_double_exclamation_mark
         lock_facing_direction
         jump_in_place_down
         unlock_facing_direction
     ))
-    msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     waitmovement(0)
+    msgbox(format("¡Cuánto tiempo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     delay(30)
     msgbox(format("Ha pasado mucho desde la última vez, ¿verdad?\pEspero que este reencuentro… ¡SEA MEMORABLE!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     delay(10)
@@ -59,30 +66,32 @@ script AngelRoom_EventScript_Angel {
             break
     }
     msgbox(format("Veamos tu potencial."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
-    playse(SE_PIN)
+    playse(SE_LEDGE)
     switch(var(VAR_TEMP_0)) {
     case DIR_NORTH:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_down, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_down, delay_16 * 2))
         break
     case DIR_SOUTH:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL,moves(emote_versus, jump_2_up, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL,moves(jump_2_up, delay_16 * 2))
         break
     case DIR_WEST:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_right, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_right, delay_16 * 2))
         break
     case DIR_EAST:
-        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus, jump_2_left, delay_16 * 2))
+        applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(jump_2_left, delay_16 * 2))
         break
     }
     waitse
     msgbox(format("¡Ven! ¡Atácame con todo lo que tengas!"), speaker = SP_NAME_ANGEL)
-    call(AngelRoom_EventScript_AngelBattle)
     playse(SE_PIN)
-    applymovement(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, moves(emote_versus))
+    waitse
+    call(AngelRoom_EventScript_AngelBattle)
     msgbox(format("¡Increíble! ¡El poder de la nueva generación es asombroso!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
-    waitmovement(0)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_ANGELROOM_ANGEL, Common_Movement_SurpriseWithDelay48)
     delay(20)
-    msgbox(format("No esperaba perder y aún así, no me dejaste opciones.\pSin duda, la función ha terminado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
+    msgbox(format("No esperaba perder… Y aun así, no me dejaste opciones.\pSin duda, la función ha terminado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
     call(AngelRoom_EventScript_TurnOffScreen)
     delay(20)
     msgbox(format("Te abriré la puerta para que puedas continuar con tu viaje."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ANGEL)
@@ -173,6 +182,7 @@ script AngelRoom_EventScript_TurnOffScreen {
 }
 
 script AngelRoom_EventScript_CloseScreen {
+    playse(SE_WARP_OUT)
     setmetatile(2, 2, METATILE_room_angel_SCREEN_CLOSING_1_LEFT, TRUE)
     setmetatile(3, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE)
     setmetatile(4, 2, METATILE_room_angel_SCREEN_CLOSING_1_CENTER, TRUE)

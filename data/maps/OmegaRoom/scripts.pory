@@ -4,6 +4,7 @@ mapscripts OmegaRoom_MapScripts {
         VAR_TEMP_8, 0: OmegaRoom_OnWarp_PlayerTurnNorth
     ]
     MAP_SCRIPT_ON_LOAD: OmegaRoom_OnLoad
+    MAP_SCRIPT_ON_TRANSITION : OmegaRoom_OnTransition
 }
 
 
@@ -19,6 +20,12 @@ script OmegaRoom_OnWarp_PlayerTurnNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     end
 }
+
+script OmegaRoom_OnTransition {
+    call(WahRoomsShared_Kecleon_SetSala_Omega)
+    end
+}
+
 script OmegaRoom_EventScript_StartChallenge {
     lock
     directmovementtopos(LOCALID_PLAYER, 6, 9)
@@ -44,12 +51,17 @@ script OmegaRoom_EventScript_StartChallenge {
     turnobject(LOCALID_OMEGAROOM_OMEGA, DIR_SOUTH)
     fadescreen(FADE_FROM_BLACK)
     playse(SE_PIN)
-    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_double_exclamation_mark, jump_in_place_down, delay_16 * 2))
-    msgbox(format("¡Ostras, un{A} nuev{OA} contrincante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)  
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_double_exclamation_mark))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
+    msgbox(format("¡Ostras, un{A} nuev{OA} contrincante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)  
+    delay(50)
     directcameramovementtopos(6, 9)
     waitmovement(0)
     special(RemoveCameraObject)
+    playse(SE_LEDGE)
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(
         jump_2_down))
     applymovement(LOCALID_PLAYER, moves(delay_8, lock_facing_direction, jump_down, unlock_facing_direction, face_up))
@@ -58,7 +70,7 @@ script OmegaRoom_EventScript_StartChallenge {
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
     delay(30)
-    msgbox(format("¡Bienvenid{OA} al primer encuentro del desafío de esta celebración!\pTe estabamos esperando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("¡Bienvenid{OA} al primer encuentro del desafío de esta celebración!\pTe estábamos esperando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_HappyWithDelay48)
     delay(20)
@@ -67,25 +79,43 @@ script OmegaRoom_EventScript_StartChallenge {
     delay(20)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
     delay(10)
-    playse(SE_PIN)
-    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_versus, jump_in_place_down * 2, delay_16))
-    msgbox(format("Perfecto, ¡vamos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down, delay_16))
+    waitmovement(0)
+    waitse
+    msgbox(format("Perfecto, ¡vamos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    playse(SE_PIN)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_versus))
+    waitmovement(0)
+    waitse
     call(OmegaRoom_EventScript_OmegaBattle)
     playse(SE_PIN)
-    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(emote_x, lock_facing_direction, jump_up, unlock_facing_direction, face_down, delay_16 * 2))
+    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(emote_x))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(lock_facing_direction, jump_up, unlock_facing_direction, face_down, delay_16 * 2))
     delay(40)
     playse(SE_PIN)
-    applymovement(LOCALID_OMEGAROOM_OMEGA, Common_Movement_SurpriseWithDelay48)
+    applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_Surprise)
     msgbox(format("¡Sí que sacaste los colmillos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
-    waitmovement(0)
-    delay(20)
+    delay(48)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkDown)
     msgbox(format("Ha sido un buen combate. Me quedo con ganas de más, la verdad.\pTocará esperar a que completes el desafío para tener una revancha."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown)
     msgbox(format("De todas formas, esta fue solo la primera sala; todavía tenés un largo camino por delante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
-    applymovement(LOCALID_OMEGAROOM_OMEGA, Common_Movement_JumpInPlaceDown2)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
+    waitmovement(0)
+    waitse
     delay(30)
     msgbox(format("Va a ser interesante ver qué tanto puedes avanzar en este desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     waitmovement(0)
@@ -95,8 +125,16 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_SweatDropWithDelay48)
     delay(20)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown)
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    msgbox(format("Te abriré la puerta para que puedas continuar con tu viaje."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    special(SpawnCameraObject)
+    directcameramovementtopos(6, 4)
+    waitmovement(0)
     call(WahRoomsShared_OpenDoor)
-    msgbox(format("Te he abierto la puerta. Ahora avanza, y demuestra que estas aquí para lograr grandes cosas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    msgbox(format("Ahora avanza, y demuestra que estás aquí para lograr grandes cosas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(walk_up * 2, face_down))
     setflag(FLAG_DEFEATED_ADMIN_OMEGA)
     setvar(VAR_TEMP_0, 1)
@@ -117,6 +155,10 @@ script OmegaRoom_EventScript_OmegaAwakens {
 }
 
 script OmegaRoom_EventScript_BrokenCapsule {
+    playse(SE_ICE_CRACK)
+    waitse
+    playse(SE_M_BRICK_BREAK)
+    waitse
     setmetatile(5, 4, METATILE_room_omega_CAPSULE_BROKEN_1, FALSE)
     setmetatile(6, 4, METATILE_room_omega_CAPSULE_BROKEN_2, FALSE)
     setmetatile(7, 4, METATILE_room_omega_CAPSULE_BROKEN_3, FALSE)
@@ -147,4 +189,9 @@ script OmegaRoom_EventScript_OmegaBattle {
 
 text OmegaRoom_Text_OmegaDefeated {
     format("¡Qué nivel has demostrado! No esperaba un combate tan entretenido.")
+}
+
+script OmegaRoom_EventScript_Omega {
+    msgbox(format("¿Qué estás esperando? Ve a demostrar a esos viejos que no me has ganado por casualidad."), MSGBOX_NPC, speaker = SP_NAME_OMEGA)
+    end
 }

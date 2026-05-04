@@ -58,7 +58,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
     {
         [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Cookie, excelente trabajo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No lo esperaba, pero excelente trabajo.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.{PAUSE_UNTIL_PRESS}")
         },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
@@ -75,7 +75,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("-.-' Menuda suerte el colega.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Menuda suerte el colega…{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_DAVZERO_MAIN] = 
         {
@@ -90,14 +90,26 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         },
         [TRAINER_WAH_ADMIN_COSARARA_MAIN] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tu una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tú una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_EING_MAIN] =
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Venga ya, qué chorra.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Toca sacar el as en la manga.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Todo depende de ti, compañero.{PAUSE_UNTIL_PRESS}"),
-        }
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1] =	
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
     },
 };
 

@@ -896,6 +896,32 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_hall_of_fame
+#define METATILE_hall_of_fame_SCREEN_2005_BOTTOM  0x233
+#define METATILE_hall_of_fame_SCREEN_2005_TOP     0x22B
+#define METATILE_hall_of_fame_SCREEN_2026_BOTTOM  0x236
+#define METATILE_hall_of_fame_SCREEN_2026_TOP     0x22E
+#define METATILE_hall_of_fame_SCREEN_PKMN_BOTTOM  0x235
+#define METATILE_hall_of_fame_SCREEN_PKMN_TOP     0x22D
+#define METATILE_hall_of_fame_SCREEN_RH_BOTTOM    0x234
+#define METATILE_hall_of_fame_SCREEN_RH_TOP       0x22C
+#define METATILE_hall_of_fame_SCREEN_WAH_1        0x253
+#define METATILE_hall_of_fame_SCREEN_WAH_2        0x254
+#define METATILE_hall_of_fame_SCREEN_WAH_3        0x255
+#define METATILE_hall_of_fame_SCREEN_WAH_4        0x25B
+#define METATILE_hall_of_fame_SCREEN_WAH_5        0x25C
+#define METATILE_hall_of_fame_SCREEN_WAH_6        0x25D
+
+// gTileset_lobby
+#define METATILE_lobby_PC_OFF  0x211
+#define METATILE_lobby_PC_ON   0x212
+
+// gTileset_room_aguiar
+#define METATILE_room_aguiar_TV_OFF_LEFT   0x205
+#define METATILE_room_aguiar_TV_OFF_RIGHT  0x206
+#define METATILE_room_aguiar_TV_ON_LEFT    0x215
+#define METATILE_room_aguiar_TV_ON_RIGHT   0x216
+
 // gTileset_room_angel
 #define METATILE_room_angel_DOOR_CENTER                0x275
 #define METATILE_room_angel_DOOR_LEFT                  0x274
@@ -932,6 +958,36 @@
 #define METATILE_room_angel_SCREEN_OFF_TOP_LEFT        0x225
 #define METATILE_room_angel_SCREEN_OFF_TOP_RIGHT       0x227
 #define METATILE_room_angel_WALL                       0x20E
+
+// gTileset_room_cosarara
+#define METATILE_room_cosarara_PC_LOCKED_1   0x26A
+#define METATILE_room_cosarara_PC_LOCKED_10  0x276
+#define METATILE_room_cosarara_PC_LOCKED_2   0x26B
+#define METATILE_room_cosarara_PC_LOCKED_3   0x26C
+#define METATILE_room_cosarara_PC_LOCKED_4   0x26D
+#define METATILE_room_cosarara_PC_LOCKED_5   0x26E
+#define METATILE_room_cosarara_PC_LOCKED_6   0x272
+#define METATILE_room_cosarara_PC_LOCKED_7   0x273
+#define METATILE_room_cosarara_PC_LOCKED_8   0x274
+#define METATILE_room_cosarara_PC_LOCKED_9   0x275
+#define METATILE_room_cosarara_PC_MATRIX_1   0x208
+#define METATILE_room_cosarara_PC_MATRIX_10  0x214
+#define METATILE_room_cosarara_PC_MATRIX_2   0x209
+#define METATILE_room_cosarara_PC_MATRIX_3   0x20A
+#define METATILE_room_cosarara_PC_MATRIX_4   0x20B
+#define METATILE_room_cosarara_PC_MATRIX_5   0x20C
+#define METATILE_room_cosarara_PC_MATRIX_6   0x210
+#define METATILE_room_cosarara_PC_MATRIX_7   0x211
+#define METATILE_room_cosarara_PC_MATRIX_8   0x212
+#define METATILE_room_cosarara_PC_MATRIX_9   0x213
+
+// gTileset_room_kleinpkpower
+#define METATILE_room_kleinpkpower_JAIL_DOOR_CLOSED     0x272
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1  0x25E
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2  0x25D
+#define METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3  0x25C
+#define METATILE_room_kleinpkpower_JAIL_FLOOR           0x25B
+#define METATILE_room_kleinpkpower_SCREEN_JAIL_OPEN     0x270
 
 // gTileset_room_omega
 #define METATILE_room_omega_BROKEN_GLASS      0x28B

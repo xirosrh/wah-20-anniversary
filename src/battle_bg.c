@@ -271,7 +271,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .tilemapTop = 9,
         .width = 4,
         .height = 4,
-        .paletteNum = 5,
+        .paletteNum = 1,
         .baseBlock = 256,
     },
     [B_WIN_LEVEL_UP_BOX] = {
@@ -722,7 +722,8 @@ void InitBattleBgsVideo(void)
 void LoadBattleMenuWindowGfx(void)
 {
     LoadUserWindowBorderGfx(2, 18, BG_PLTT_ID(1));
-    LoadUserWindowBorderGfx(2, 34, BG_PLTT_ID(1));
+    LoadBattleWindowBorderGfx(2, 34, BG_PLTT_ID(1));
+    // LoadUserWindowBorderGfx(2, 34, BG_PLTT_ID(1));
     LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
     LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(6), PLTT_SIZE_4BPP); //Para PBH_ICONOS_TIPOS_BATALLA
 

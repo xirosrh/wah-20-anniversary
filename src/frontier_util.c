@@ -138,7 +138,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
             COMPOUND_STRING("¡Mi título no es solo para presumir!")   //Gold
         },
         .battledBit = {1 << 2, 1 << 3},
-        .streakAppearances = {1, 2, 5, 0},
+        .streakAppearances = {4, 9, 5, 0},
     },
     [FRONTIER_FACILITY_PALACE] =
     {
@@ -2020,8 +2020,6 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
     if (species == SPECIES_EGG || species == SPECIES_NONE)
         return;
-    if (gSpeciesInfo[species].isFrontierBanned)
-        return;
     if (lvlMode == FRONTIER_LVL_50 && monLevel > FRONTIER_MAX_LEVEL_50)
         return;
 
@@ -2612,8 +2610,6 @@ void CreateFrontierBrainPokemon(void)
                 friendship = 0;
         }
         SetMonData(&gEnemyParty[monPartyId], MON_DATA_FRIENDSHIP, &friendship);
-        j = FALSE;
-        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_IS_SHINY, &j);
         CalculateMonStats(&gEnemyParty[monPartyId]);
         monPartyId++;
     }
@@ -2713,6 +2709,35 @@ void ClearEnemyPartyAfterChallenge()
     {
         ZeroEnemyPartyMons();
     }
+}
+
+u16 GetBattlePoints(void)
+{
+    return gSaveBlock2Ptr->frontier.battlePoints;
+}
+
+bool8 IsEnoughBattlePoints(u16 cost)
+{
+    if (GetBattlePoints() >= cost)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void SetBattlePoints(u16 pointAmount)
+{
+    gSaveBlock2Ptr->frontier.battlePoints = pointAmount;
+}
+
+bool8 RemoveBattlePoints(u16 toSub)
+{
+    u16 ownedBp = GetBattlePoints();
+    if (ownedBp >= toSub)
+    {
+        SetBattlePoints(ownedBp - toSub);
+        return TRUE;
+    }
+    return FALSE;
 }
 
 #define tWindowId     data[0]

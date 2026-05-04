@@ -1,0 +1,15 @@
+para usar cualquiera de los scripts de esta carpeta en el fichero pokemon.txt, poner la lista de pokemon que se quieren añadir al team selector en este formato
+Clefable @ Leftovers
+Ability: Magic Guard
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+Soft Boiled
+Moonblast
+Mystical Fire
+Metronome
+
+
+Para lanzarlos unicamente usar:
+python3 nombreScript.py
+
+

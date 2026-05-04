@@ -7,5 +7,6 @@ bool8 ShouldDoBrailleDigEffect(void);
 void DoBrailleDigEffect(void);
 void SetUpPuzzleEffectRegisteel(void);
 void SetUpPuzzleEffectRegirock(void);
+u8 ShouldDoAlexmadCornerPuzzle(void);
 
 #endif // GUARD_BRAILLE_PUZZLES_H

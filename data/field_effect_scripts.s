@@ -100,6 +100,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseHeadbutt 				@ FLDEFF_USE_HEADBUTT
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
 	.4byte gFldEffScript_AnnoyedIcon               @ FLDEFF_ANNOYED_ICON
+	.4byte gFldEffScript_MusicNoteIcon             @ FLDEFF_MUSIC_NOTE_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -353,7 +354,7 @@ gFieldEffectScript_SecretBaseBootPC::
 
 gFieldEffectScript_HallOfFameRecord::
 	field_eff_loadfadedpal gSpritePalette_PokeballGlow
-	field_eff_loadfadedpal_callnative gSpritePalette_HofMonitor, FldEff_HallOfFameRecord
+	field_eff_callnative FldEff_HallOfFameRecord
 	field_eff_end
 
 gFieldEffectScript_UseTeleport::
@@ -441,8 +442,12 @@ gFldEffScript_XdIcon::
         field_eff_end
 
 gFldEffScript_WinkIcon::
-        field_eff_callnative FldEff_WinkIcon
-        field_eff_end
+	field_eff_callnative FldEff_WinkIcon
+	field_eff_end
+
+gFldEffScript_MusicNoteIcon::
+	field_eff_callnative FldEff_MusicNoteIcon
+	field_eff_end
 
 gFieldEffectScript_TracksBug::
         field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug
@@ -479,4 +484,4 @@ gFieldEffectScript_UseHeadbutt::
 gFieldEffectScript_ORASDowse::
 	field_eff_callnative FldEff_ORASDowsing
 	field_eff_end
-    
+

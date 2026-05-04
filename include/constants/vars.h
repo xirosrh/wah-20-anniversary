@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_DIFFICULTY                                   0x408B
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -174,7 +174,7 @@
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_UNUSED_0x409B                                0x409B // Unused Var
 #define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
+#define VAR_KECLEON_POSITION                                0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
@@ -201,10 +201,10 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
+#define VAR_WAH_CHALLENGE_MODE                                0x40B8 // Used WAH
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
+#define VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT       0x40BB // Used WAH
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
 #define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
 #define VAR_GLASS_WORKSHOP_STATE                         0x40BE
@@ -236,8 +236,8 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+#define VAR_WAH_CHALLENGE_STANDARD_COMPLETION_COUNT      0x40DB // WAH
+#define VAR_WAH_CHALLENGE_DOUBLE_COMPLETION_COUNT        0x40DC // WAH
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
@@ -264,15 +264,15 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_SAYER_BLAX_ROOM_STATE                                0x40F7 // WAH
-#define VAR_JACK_JOHNSON_ROOM_STATE                                0x40F8 // WAH
-#define VAR_DAVZERO_ROOM_STATE                                0x40F9 // WAH
-#define VAR_BARO_ROOM_STATE                                0x40FA //WAH
-#define VAR_REY_BOO_ROOM_STATE                             0x40FB //WAH
-#define VAR_REONEKY_ROOM_STATE                                0x40FC // WAH
-#define VAR_EING_ROOM_STATE                                0x40FD // WAH
-#define VAR_TOKYN_WAR_ROOM_STATE                                0x40FE // WAH
-#define VAR_JAVS_JAVI4315_ROOM_STATE                                0x40FF // WAH
+#define VAR_COSARARA_ROOM_COMPUTER_FRAMES                 0x40F7 // WAH
+#define VAR_WAH_CHALLENGE_COMPLETION_COUNT                0x40F8 // WAH
+#define VAR_ALEXMAD_PUZZLE_CHECKPOINT                     0x40F9 // WAH: next step index (0-7)
+#define VAR_ALEXMAD_PUZZLE_START_X                       0x40FA // WAH: player X when puzzle started
+#define VAR_ALEXMAD_PUZZLE_START_Y                       0x40FB // WAH: player Y when puzzle started
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_LO                   0x40FC // WAH: low 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_LEAD_PID_HI                   0x40FD // WAH: high 16 bits of slot 1 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_LO                  0x40FE // WAH: low 16 bits of slot 6 personality at challenge start
+#define VAR_ALEXMAD_PUZZLE_SIXTH_PID_HI                  0x40FF // WAH: high 16 bits of slot 6 personality at challenge start
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
