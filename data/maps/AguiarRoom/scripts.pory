@@ -15,12 +15,14 @@ mapscripts AguiarRoom_MapScripts {
 
 
 script AguiarRoom_OnFrame {
+    special(ShowMapNamePopup)
     setflag(FLAG_TEMP_2_HIDE_AGUIAR_SMOKING)
     removeobject(LOCALID_AGUIARROOM_AGUIAR_SMOKING)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
     special(SpawnCameraObject)
     directcameramovementtopos(10, 6)
     waitmovement(0)
+    special(HideMapNamePopUpWindow)
     msgbox(format("¡Pero qué buen programa! Hoy sí que es un día tranquilo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovement(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)

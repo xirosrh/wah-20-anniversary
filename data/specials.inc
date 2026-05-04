@@ -592,3 +592,4 @@ gSpecials::
 	def_special Special_StopAchievementConfetti
 	def_special Special_ClearTransparentBox
 	def_special Special_FindNextPokeboxUnlock
+	def_special HideMapNamePopUpWindow

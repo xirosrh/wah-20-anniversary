@@ -44,12 +44,14 @@ script ReonekyRoom_OnTransition {
 
 script ReonekyRoom_OnFrame {
     playbgm(MUS_TEAM_ORIGEN_TO, FALSE)
+    special(ShowMapNamePopup)
     release
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp2)
     special(SpawnCameraObject)
     directcameramovementtopos(6, 7)
     waitmovement(0)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_WalkInPlaceRight)
+    special(HideMapNamePopUpWindow)
     msgbox(format("¡Spitfire, mantén la distancia!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_TYPHLOSION, Common_Movement_DoubleExclamationMark)

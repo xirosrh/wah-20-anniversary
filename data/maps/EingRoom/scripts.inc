@@ -66,515 +66,519 @@ EingRoom_OnTransition_5:
 
 EingRoom_OnFrame::
 # 41 "data/maps/EingRoom/scripts.pory"
-	release
+	special ShowMapNamePopup
 # 42 "data/maps/EingRoom/scripts.pory"
-	getplayerxy VAR_TEMP_A, VAR_TEMP_B
+	release
 # 43 "data/maps/EingRoom/scripts.pory"
-	special SpawnCameraObject
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
 # 44 "data/maps/EingRoom/scripts.pory"
-	directcameramovementtopos 6, 6
+	special SpawnCameraObject
 # 45 "data/maps/EingRoom/scripts.pory"
-	waitmovement 0
+	directcameramovementtopos 6, 6
 # 46 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
+	waitmovement 0
 # 47 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+	special HideMapNamePopUpWindow
 # 48 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
 # 49 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_0
+	msgbox EingRoom_OnFrame_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 50 "data/maps/EingRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 51 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_0
 # 52 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_1
+	waitse
 # 53 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+	playse SE_PIN
 # 54 "data/maps/EingRoom/scripts.pory"
-	delay 30
-# 55 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_2
-# 56 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
-# 57 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
-# 58 "data/maps/EingRoom/scripts.pory"
-	waitse
-# 59 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 60 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_4
-# 61 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 62 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_5
-# 63 "data/maps/EingRoom/scripts.pory"
-	hideobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
-# 64 "data/maps/EingRoom/scripts.pory"
-	clearflag FLAG_TEMP_1
-# 65 "data/maps/EingRoom/scripts.pory"
-	addobject LOCALID_EINGROOM_EING_FISHING
-# 66 "data/maps/EingRoom/scripts.pory"
-	showobjectat LOCALID_EINGROOM_EING_FISHING, MAP_EING_ROOM
-# 67 "data/maps/EingRoom/scripts.pory"
-	playse SE_M_DOUBLE_TEAM
-# 68 "data/maps/EingRoom/scripts.pory"
-	applymovement LOCALID_EINGROOM_EING_FISHING, Common_Movement_Fishing
-# 69 "data/maps/EingRoom/scripts.pory"
-	delay 90
-# 70 "data/maps/EingRoom/scripts.pory"
-	playse SE_M_DIVE
-# 71 "data/maps/EingRoom/scripts.pory"
-	waitmovement 0
-# 72 "data/maps/EingRoom/scripts.pory"
-	setflag FLAG_TEMP_1
-# 73 "data/maps/EingRoom/scripts.pory"
-	removeobject LOCALID_EINGROOM_EING_FISHING
-# 74 "data/maps/EingRoom/scripts.pory"
-	showobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
-# 75 "data/maps/EingRoom/scripts.pory"
-	clearflag FLAG_TEMP_2
-# 76 "data/maps/EingRoom/scripts.pory"
-	addobject LOCALID_EINGROOM_TRAINER_IN_WATER
-# 77 "data/maps/EingRoom/scripts.pory"
-	showobjectat LOCALID_EINGROOM_TRAINER_IN_WATER, MAP_EING_ROOM
-# 78 "data/maps/EingRoom/scripts.pory"
-	waitse
-# 79 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
-# 80 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
-# 81 "data/maps/EingRoom/scripts.pory"
-	waitse
-# 82 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
-# 83 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
-# 84 "data/maps/EingRoom/scripts.pory"
-	waitse
-# 85 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
-# 86 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
-# 87 "data/maps/EingRoom/scripts.pory"
-	waitse
-# 88 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 89 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_1
-# 90 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 91 "data/maps/EingRoom/scripts.pory"
+# 55 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 56 "data/maps/EingRoom/scripts.pory"
 	delay 30
-# 92 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_FaceRight
-# 93 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 94 "data/maps/EingRoom/scripts.pory"
-	turnobject LOCALID_EINGROOM_EING, DIR_WEST
-# 95 "data/maps/EingRoom/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
-# 96 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_2
+# 58 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 59 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
+# 60 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 61 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 62 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_4
+# 63 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 64 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_5
+# 65 "data/maps/EingRoom/scripts.pory"
+	hideobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
+# 66 "data/maps/EingRoom/scripts.pory"
+	clearflag FLAG_TEMP_1
+# 67 "data/maps/EingRoom/scripts.pory"
+	addobject LOCALID_EINGROOM_EING_FISHING
+# 68 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_EING_FISHING, MAP_EING_ROOM
+# 69 "data/maps/EingRoom/scripts.pory"
+	playse SE_M_DOUBLE_TEAM
+# 70 "data/maps/EingRoom/scripts.pory"
+	applymovement LOCALID_EINGROOM_EING_FISHING, Common_Movement_Fishing
+# 71 "data/maps/EingRoom/scripts.pory"
+	delay 90
+# 72 "data/maps/EingRoom/scripts.pory"
+	playse SE_M_DIVE
+# 73 "data/maps/EingRoom/scripts.pory"
 	waitmovement 0
+# 74 "data/maps/EingRoom/scripts.pory"
+	setflag FLAG_TEMP_1
+# 75 "data/maps/EingRoom/scripts.pory"
+	removeobject LOCALID_EINGROOM_EING_FISHING
+# 76 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_EING, MAP_EING_ROOM
+# 77 "data/maps/EingRoom/scripts.pory"
+	clearflag FLAG_TEMP_2
+# 78 "data/maps/EingRoom/scripts.pory"
+	addobject LOCALID_EINGROOM_TRAINER_IN_WATER
+# 79 "data/maps/EingRoom/scripts.pory"
+	showobjectat LOCALID_EINGROOM_TRAINER_IN_WATER, MAP_EING_ROOM
+# 80 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 81 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 82 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
+# 83 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 84 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 85 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
+# 86 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 87 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 88 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_3
+# 89 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 90 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 91 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_OnFrame_Movement_1
+# 92 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 93 "data/maps/EingRoom/scripts.pory"
+	delay 30
+# 94 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_FaceRight
+# 95 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_OnFrame_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 96 "data/maps/EingRoom/scripts.pory"
+	turnobject LOCALID_EINGROOM_EING, DIR_WEST
 # 97 "data/maps/EingRoom/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	directcameramovementtoposwithvars VAR_TEMP_A, VAR_TEMP_B
 # 98 "data/maps/EingRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT
+	waitmovement 0
 # 99 "data/maps/EingRoom/scripts.pory"
-	special RemoveCameraObject
+	setvar VAR_TEMP_0, 1
 # 100 "data/maps/EingRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_EINGROOM_EING, MOVEMENT_TYPE_FACE_LEFT
+# 101 "data/maps/EingRoom/scripts.pory"
+	special RemoveCameraObject
+# 102 "data/maps/EingRoom/scripts.pory"
 	release
 	end
 
 
 EingRoom_EventScript_Eing::
-# 105 "data/maps/EingRoom/scripts.pory"
-	lock
-# 106 "data/maps/EingRoom/scripts.pory"
-	faceplayer
 # 107 "data/maps/EingRoom/scripts.pory"
+	lock
+# 108 "data/maps/EingRoom/scripts.pory"
+	faceplayer
+# 109 "data/maps/EingRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_EING, EingRoom_EventScript_Eing_2
-# 116 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 117 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_0
 # 118 "data/maps/EingRoom/scripts.pory"
-	waitse
+	playse SE_PIN
 # 119 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_0
 # 120 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_1
+	waitse
 # 121 "data/maps/EingRoom/scripts.pory"
-	waitse
+	playse SE_LEDGE
 # 122 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_1
 # 123 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_2
-# 124 "data/maps/EingRoom/scripts.pory"
 	waitse
-# 125 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 126 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 127 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Angry
-# 128 "data/maps/EingRoom/scripts.pory"
-	call EingRoom_EventScript_WalkInPlaceEingFacingPlayer
-# 129 "data/maps/EingRoom/scripts.pory"
-	delay 40
-# 130 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 131 "data/maps/EingRoom/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 132 "data/maps/EingRoom/scripts.pory"
-	delay 30
-# 133 "data/maps/EingRoom/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 134 "data/maps/EingRoom/scripts.pory"
+# 124 "data/maps/EingRoom/scripts.pory"
 	playse SE_LEDGE
-# 135 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_3
-# 140 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 141 "data/maps/EingRoom/scripts.pory"
+# 125 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_2
+# 126 "data/maps/EingRoom/scripts.pory"
+	waitse
+# 127 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Eing_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 128 "data/maps/EingRoom/scripts.pory"
 	playse SE_PIN
-# 142 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_4
-# 147 "data/maps/EingRoom/scripts.pory"
-	delay 30
-# 148 "data/maps/EingRoom/scripts.pory"
-	call EingRoom_EventScript_JumpToPlayerDirection
-# 149 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
-# 150 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 151 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Versus
-# 152 "data/maps/EingRoom/scripts.pory"
+# 129 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Angry
+# 130 "data/maps/EingRoom/scripts.pory"
 	call EingRoom_EventScript_WalkInPlaceEingFacingPlayer
-# 153 "data/maps/EingRoom/scripts.pory"
+# 131 "data/maps/EingRoom/scripts.pory"
+	delay 40
+# 132 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Eing_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 133 "data/maps/EingRoom/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 134 "data/maps/EingRoom/scripts.pory"
 	delay 30
+# 135 "data/maps/EingRoom/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 136 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 137 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_3
+# 142 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Eing_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 143 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 144 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_Eing_Movement_4
+# 149 "data/maps/EingRoom/scripts.pory"
+	delay 30
+# 150 "data/maps/EingRoom/scripts.pory"
+	call EingRoom_EventScript_JumpToPlayerDirection
+# 151 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Eing_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+# 152 "data/maps/EingRoom/scripts.pory"
+	playse SE_PIN
+# 153 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Versus
 # 154 "data/maps/EingRoom/scripts.pory"
-	call EingRoom_EventScript_EingBattle
+	call EingRoom_EventScript_WalkInPlaceEingFacingPlayer
 # 155 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_5, speaker = SP_NAME_EING
+	delay 30
 # 156 "data/maps/EingRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	call EingRoom_EventScript_EingBattle
 # 157 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
+	msgbox EingRoom_EventScript_Eing_Text_5, speaker = SP_NAME_EING
 # 158 "data/maps/EingRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_EING
+	call WahRoomsShared_OpenDoor
 # 159 "data/maps/EingRoom/scripts.pory"
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
+# 160 "data/maps/EingRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ADMIN_EING
+# 161 "data/maps/EingRoom/scripts.pory"
 	release
 	end
 
 EingRoom_EventScript_Eing_2:
-# 108 "data/maps/EingRoom/scripts.pory"
-	playse SE_PIN
-# 109 "data/maps/EingRoom/scripts.pory"
-	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Angry
 # 110 "data/maps/EingRoom/scripts.pory"
-	msgbox EingRoom_EventScript_Eing_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
+	playse SE_PIN
 # 111 "data/maps/EingRoom/scripts.pory"
-	delay 50
+	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_Angry
 # 112 "data/maps/EingRoom/scripts.pory"
-	turnobject LOCALID_EINGROOM_EING, DIR_WEST
+	msgbox EingRoom_EventScript_Eing_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING
 # 113 "data/maps/EingRoom/scripts.pory"
+	delay 50
+# 114 "data/maps/EingRoom/scripts.pory"
+	turnobject LOCALID_EINGROOM_EING, DIR_WEST
+# 115 "data/maps/EingRoom/scripts.pory"
 	release
 	end
 
 
 EingRoom_EventScript_EingBattle::
-# 164 "data/maps/EingRoom/scripts.pory"
+# 166 "data/maps/EingRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, EingRoom_EventScript_EingBattle_2
-# 167 "data/maps/EingRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_EING
-# 168 "data/maps/EingRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 169 "data/maps/EingRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_EING
+# 170 "data/maps/EingRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 171 "data/maps/EingRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq EingRoom_EventScript_EingBattle_5
-# 172 "data/maps/EingRoom/scripts.pory"
+# 174 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_ALTERNATIVE, EingRoom_Text_EingDefeated
 EingRoom_EventScript_EingBattle_1:
-# 175 "data/maps/EingRoom/scripts.pory"
+# 177 "data/maps/EingRoom/scripts.pory"
 	special HealPlayerParty
 	return
 
 EingRoom_EventScript_EingBattle_2:
-# 165 "data/maps/EingRoom/scripts.pory"
+# 167 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated
 	goto EingRoom_EventScript_EingBattle_1
 
 EingRoom_EventScript_EingBattle_5:
-# 170 "data/maps/EingRoom/scripts.pory"
+# 172 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated
 	goto EingRoom_EventScript_EingBattle_1
 
 
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer::
-# 184 "data/maps/EingRoom/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 185 "data/maps/EingRoom/scripts.pory"
-	switch VAR_RESULT
 # 186 "data/maps/EingRoom/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 187 "data/maps/EingRoom/scripts.pory"
+	switch VAR_RESULT
+# 188 "data/maps/EingRoom/scripts.pory"
 	case DIR_NORTH, EingRoom_EventScript_WalkInPlaceEingFacingPlayer_3
-# 189 "data/maps/EingRoom/scripts.pory"
+# 191 "data/maps/EingRoom/scripts.pory"
 	case DIR_SOUTH, EingRoom_EventScript_WalkInPlaceEingFacingPlayer_4
-# 192 "data/maps/EingRoom/scripts.pory"
+# 194 "data/maps/EingRoom/scripts.pory"
 	case DIR_WEST, EingRoom_EventScript_WalkInPlaceEingFacingPlayer_5
-# 195 "data/maps/EingRoom/scripts.pory"
+# 197 "data/maps/EingRoom/scripts.pory"
 	case DIR_EAST, EingRoom_EventScript_WalkInPlaceEingFacingPlayer_6
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer_1:
 	return
 
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer_3:
-# 187 "data/maps/EingRoom/scripts.pory"
+# 189 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown
 	goto EingRoom_EventScript_WalkInPlaceEingFacingPlayer_1
 
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer_4:
-# 190 "data/maps/EingRoom/scripts.pory"
+# 192 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceUp
 	goto EingRoom_EventScript_WalkInPlaceEingFacingPlayer_1
 
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer_5:
-# 193 "data/maps/EingRoom/scripts.pory"
+# 195 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceRight
 	goto EingRoom_EventScript_WalkInPlaceEingFacingPlayer_1
 
 EingRoom_EventScript_WalkInPlaceEingFacingPlayer_6:
-# 196 "data/maps/EingRoom/scripts.pory"
+# 198 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft
 	goto EingRoom_EventScript_WalkInPlaceEingFacingPlayer_1
 
 
 EingRoom_EventScript_JumpToPlayerDirection::
-# 204 "data/maps/EingRoom/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 205 "data/maps/EingRoom/scripts.pory"
-	playse SE_LEDGE
 # 206 "data/maps/EingRoom/scripts.pory"
-	switch VAR_RESULT
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 207 "data/maps/EingRoom/scripts.pory"
+	playse SE_LEDGE
+# 208 "data/maps/EingRoom/scripts.pory"
+	switch VAR_RESULT
+# 209 "data/maps/EingRoom/scripts.pory"
 	case DIR_NORTH, EingRoom_EventScript_JumpToPlayerDirection_3
-# 210 "data/maps/EingRoom/scripts.pory"
+# 212 "data/maps/EingRoom/scripts.pory"
 	case DIR_SOUTH, EingRoom_EventScript_JumpToPlayerDirection_4
-# 213 "data/maps/EingRoom/scripts.pory"
+# 215 "data/maps/EingRoom/scripts.pory"
 	case DIR_WEST, EingRoom_EventScript_JumpToPlayerDirection_5
-# 216 "data/maps/EingRoom/scripts.pory"
+# 218 "data/maps/EingRoom/scripts.pory"
 	case DIR_EAST, EingRoom_EventScript_JumpToPlayerDirection_6
 EingRoom_EventScript_JumpToPlayerDirection_1:
 	return
 
 EingRoom_EventScript_JumpToPlayerDirection_3:
-# 208 "data/maps/EingRoom/scripts.pory"
+# 210 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_JumpToPlayerDirection_Movement_0
 	goto EingRoom_EventScript_JumpToPlayerDirection_1
 
 EingRoom_EventScript_JumpToPlayerDirection_4:
-# 211 "data/maps/EingRoom/scripts.pory"
+# 213 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_JumpToPlayerDirection_Movement_1
 	goto EingRoom_EventScript_JumpToPlayerDirection_1
 
 EingRoom_EventScript_JumpToPlayerDirection_5:
-# 214 "data/maps/EingRoom/scripts.pory"
+# 216 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_JumpToPlayerDirection_Movement_2
 	goto EingRoom_EventScript_JumpToPlayerDirection_1
 
 EingRoom_EventScript_JumpToPlayerDirection_6:
-# 217 "data/maps/EingRoom/scripts.pory"
+# 219 "data/maps/EingRoom/scripts.pory"
 	applymovementandwait LOCALID_EINGROOM_EING, EingRoom_EventScript_JumpToPlayerDirection_Movement_3
 	goto EingRoom_EventScript_JumpToPlayerDirection_1
 
 
-# 49 "data/maps/EingRoom/scripts.pory"
+# 51 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_0:
-# 49 "data/maps/EingRoom/scripts.pory"
+# 51 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 52 "data/maps/EingRoom/scripts.pory"
+# 54 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_1:
-# 52 "data/maps/EingRoom/scripts.pory"
+# 54 "data/maps/EingRoom/scripts.pory"
 	emote_angry
 	step_end
 
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_2:
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_right
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 55 "data/maps/EingRoom/scripts.pory"
+# 57 "data/maps/EingRoom/scripts.pory"
 	walk_left
 	step_end
 
-# 57 "data/maps/EingRoom/scripts.pory"
+# 59 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_3:
-# 57 "data/maps/EingRoom/scripts.pory"
+# 59 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 60 "data/maps/EingRoom/scripts.pory"
+# 62 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_4:
-# 60 "data/maps/EingRoom/scripts.pory"
+# 62 "data/maps/EingRoom/scripts.pory"
 	emote_idea
 	step_end
 
-# 62 "data/maps/EingRoom/scripts.pory"
+# 64 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_5:
-# 62 "data/maps/EingRoom/scripts.pory"
+# 64 "data/maps/EingRoom/scripts.pory"
 	walk_left
-# 62 "data/maps/EingRoom/scripts.pory"
+# 64 "data/maps/EingRoom/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 117 "data/maps/EingRoom/scripts.pory"
+# 119 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_Eing_Movement_0:
-# 117 "data/maps/EingRoom/scripts.pory"
+# 119 "data/maps/EingRoom/scripts.pory"
 	emote_double_exclamation_mark
 	step_end
 
-# 120 "data/maps/EingRoom/scripts.pory"
+# 122 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_Eing_Movement_1:
-# 120 "data/maps/EingRoom/scripts.pory"
+# 122 "data/maps/EingRoom/scripts.pory"
 	lock_facing_direction
-# 120 "data/maps/EingRoom/scripts.pory"
+# 122 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 123 "data/maps/EingRoom/scripts.pory"
+# 125 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_Eing_Movement_2:
-# 123 "data/maps/EingRoom/scripts.pory"
+# 125 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_down
-# 123 "data/maps/EingRoom/scripts.pory"
+# 125 "data/maps/EingRoom/scripts.pory"
 	unlock_facing_direction
-# 123 "data/maps/EingRoom/scripts.pory"
+# 125 "data/maps/EingRoom/scripts.pory"
 	face_player
 	step_end
 
-# 135 "data/maps/EingRoom/scripts.pory"
-EingRoom_EventScript_Eing_Movement_3:
-# 136 "data/maps/EingRoom/scripts.pory"
-	lock_facing_direction
 # 137 "data/maps/EingRoom/scripts.pory"
-	jump_in_place_down
+EingRoom_EventScript_Eing_Movement_3:
 # 138 "data/maps/EingRoom/scripts.pory"
-	unlock_facing_direction
+	lock_facing_direction
 # 139 "data/maps/EingRoom/scripts.pory"
+	jump_in_place_down
+# 140 "data/maps/EingRoom/scripts.pory"
+	unlock_facing_direction
+# 141 "data/maps/EingRoom/scripts.pory"
 	face_player
 	step_end
 
-# 142 "data/maps/EingRoom/scripts.pory"
-EingRoom_EventScript_Eing_Movement_4:
-# 143 "data/maps/EingRoom/scripts.pory"
-	face_away_player
 # 144 "data/maps/EingRoom/scripts.pory"
+EingRoom_EventScript_Eing_Movement_4:
+# 145 "data/maps/EingRoom/scripts.pory"
+	face_away_player
+# 146 "data/maps/EingRoom/scripts.pory"
 	emote_thinking
-# 145 "data/maps/EingRoom/scripts.pory"
+# 147 "data/maps/EingRoom/scripts.pory"
 	delay_16
-# 145 "data/maps/EingRoom/scripts.pory"
+# 147 "data/maps/EingRoom/scripts.pory"
 	delay_16
-# 145 "data/maps/EingRoom/scripts.pory"
+# 147 "data/maps/EingRoom/scripts.pory"
 	delay_16
 	step_end
 
-# 208 "data/maps/EingRoom/scripts.pory"
+# 210 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_JumpToPlayerDirection_Movement_0:
-# 208 "data/maps/EingRoom/scripts.pory"
+# 210 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_up_down
 	step_end
 
-# 211 "data/maps/EingRoom/scripts.pory"
+# 213 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_JumpToPlayerDirection_Movement_1:
-# 211 "data/maps/EingRoom/scripts.pory"
+# 213 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_down_up
 	step_end
 
-# 214 "data/maps/EingRoom/scripts.pory"
+# 216 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_JumpToPlayerDirection_Movement_2:
-# 214 "data/maps/EingRoom/scripts.pory"
+# 216 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_left_right
 	step_end
 
-# 217 "data/maps/EingRoom/scripts.pory"
+# 219 "data/maps/EingRoom/scripts.pory"
 EingRoom_EventScript_JumpToPlayerDirection_Movement_3:
-# 217 "data/maps/EingRoom/scripts.pory"
+# 219 "data/maps/EingRoom/scripts.pory"
 	jump_in_place_right_left
 	step_end
 
 EingRoom_OnFrame_Text_0:
-# 47 "data/maps/EingRoom/scripts.pory"
+# 49 "data/maps/EingRoom/scripts.pory"
 	.string "Malditos Xiros y Serg!o, que se han\n"
 	.string "pirado dejándome a mí con el marrón de\l"
 	.string "administrar la página web y el foro…$"
 
 EingRoom_OnFrame_Text_1:
-# 53 "data/maps/EingRoom/scripts.pory"
+# 55 "data/maps/EingRoom/scripts.pory"
 	.string "¡Y yo sin las malditas credenciales!$"
 
 EingRoom_OnFrame_Text_2:
-# 61 "data/maps/EingRoom/scripts.pory"
+# 63 "data/maps/EingRoom/scripts.pory"
 	.string "A ver si las han tirado al fondo del mar\n"
 	.string "como una prueba para desafiarme y ver\l"
 	.string "si soy digno de administrar WAH…\p"
 	.string "¡Voy a ver si las pesco!$"
 
 EingRoom_OnFrame_Text_3:
-# 90 "data/maps/EingRoom/scripts.pory"
+# 92 "data/maps/EingRoom/scripts.pory"
 	.string "¡Maldita sea! ¿Otro entrenador?$"
 
 EingRoom_OnFrame_Text_4:
-# 93 "data/maps/EingRoom/scripts.pory"
+# 95 "data/maps/EingRoom/scripts.pory"
 	.string "Esto se está pareciendo a mi rutina de\n"
 	.string "wildbattles dobles del Hoenn\l"
 	.string "Adventures…$"
 
 EingRoom_EventScript_Eing_Text_0:
-# 110 "data/maps/EingRoom/scripts.pory"
+# 112 "data/maps/EingRoom/scripts.pory"
 	.string "¿Pero mira que eres pesad{OA} eh? ¿Tú no\n"
 	.string "tienes amigos u otra persona a la que\l"
 	.string "molestar?$"
 
 EingRoom_EventScript_Eing_Text_1:
-# 125 "data/maps/EingRoom/scripts.pory"
+# 127 "data/maps/EingRoom/scripts.pory"
 	.string "¡Coño si tenemos visita! ¿Qué quieres?\n"
 	.string "¿No ves que estoy ocupado?$"
 
 EingRoom_EventScript_Eing_Text_2:
-# 130 "data/maps/EingRoom/scripts.pory"
+# 132 "data/maps/EingRoom/scripts.pory"
 	.string "Si quieres un cambio de nick, tendrás\n"
 	.string "que esperar y como te pongas tont{OA} te\l"
 	.string "baneo, ¿eh?$"
 
 EingRoom_EventScript_Eing_Text_3:
-# 140 "data/maps/EingRoom/scripts.pory"
+# 142 "data/maps/EingRoom/scripts.pory"
 	.string "¿Cómo? ¿Que quieres retarme a un\n"
 	.string "combate Pokémon?$"
 
 EingRoom_EventScript_Eing_Text_4:
-# 149 "data/maps/EingRoom/scripts.pory"
+# 151 "data/maps/EingRoom/scripts.pory"
 	.string "Está bien, prepárate porque iré con\n"
 	.string "todo, ¡luego no me llores!$"
 
 EingRoom_EventScript_Eing_Text_5:
-# 155 "data/maps/EingRoom/scripts.pory"
+# 157 "data/maps/EingRoom/scripts.pory"
 	.string "Enhorabuena chaval{A}, ahora avanza a la\n"
 	.string "siguiente sala y déjame tranquilo, que\l"
 	.string "estaba muy ocupado…$"
 
 EingRoom_Text_EingDefeated::
-# 179 "data/maps/EingRoom/scripts.pory"
+# 181 "data/maps/EingRoom/scripts.pory"
 	.string "¡Míral{OA}, si parecía tont{OA} al principio!$"

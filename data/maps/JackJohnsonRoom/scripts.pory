@@ -318,17 +318,18 @@ script JackJohnsonRoom_EventScript_TurnOnLights {
 }
 
 script JackJohnsonRoom_OnFrame {
+    special(ShowMapNamePopup)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     special(SpawnCameraObject)
     directcameramovementtopos(6,9)
     waitmovement(0)
+    special(HideMapNamePopUpWindow)
     msgbox(format("Es hora de comenzar el ensayo… ¡Cortinas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
     directcameramovementtopos(6,7)
     waitmovement(0)
     call(JackJohnsonRoom_EventScript_OpenCurtain)
     msgbox(format("¡Desde el principio! ¡Quiero que cada movimiento sea perfecto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
-    //TODO Xiros:
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
     delay(30)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown)

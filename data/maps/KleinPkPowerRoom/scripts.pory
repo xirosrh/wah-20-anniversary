@@ -35,12 +35,14 @@ script KleinPkPowerRoom_OnTransition {
 }
 
 script KleinPkPowerRoom_OnFrame {
+    special(ShowMapNamePopup)
     lock
     applymovement(LOCALID_PLAYER, moves(walk_up * 7))
     waitmovement(LOCALID_PLAYER)
     // Primera llamada
     playse(SE_POKENAV_CALL)
     waitse
+    special(HideMapNamePopUpWindow)
     playse(SE_POKENAV_CALL)
     waitse
     playse(SE_PIN)
