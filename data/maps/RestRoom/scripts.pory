@@ -1,0 +1,95 @@
+mapscripts RestRoom_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RestRoom_OnTransition
+}
+
+
+script RestRoom_OnTransition {
+    call(Common_EventScript_SetupRivalGfxId)
+    end
+}
+
+script RestRoom_EventScript_Boy1 {
+    lock
+    faceplayer
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Surprise)
+        msgbox("¿En serio ya ganaste el desafío?
+                ¿Y decidiste repetirlo?
+                
+                Definitivamente no estamos jugando en
+                el mismo nivel.
+                
+                ¡Aún no me he atrevido a continuar!", MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        release 
+        end
+    }
+    else {
+        msgbox(format("¡Uf, al fin una zona de descanso!"), MSGBOX_AUTOCLOSE)
+        call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+        msgbox(format("Por un momento pensé que las 21 salas eran seguidas sin pausa…"), MSGBOX_AUTOCLOSE)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+        msgbox(format("Voy a ajustar algunos ataques, comprar items curativos y seguir."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+}
+
+script RestRoom_EventScript_Girl1 {
+    lock
+    faceplayer
+    msgbox(format("¡Los diseños de las salas son increíbles!"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
+    msgbox("Un teatro, una jungla… ¡hasta un cine!
+           ¿Te imaginas cuánto trabajo hay
+           detrás de todo esto?", MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script RestRoom_EventScript_Boy2 {
+    msgbox(format("¡Los precios de esta tienda son una estafa!\pTendría que haber comprado todo lo necesario antes de entrar."), MSGBOX_NPC)
+    end
+}
+
+script RestRoom_EventScript_PlayerCounterpart {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    msgbox(format("¡Qué sorpresa, {PLAYER}!"), MSGBOX_AUTOCLOSE)
+    delay(48)
+    msgbox(format("¿Así que también estás participando en el desafío?\p¡Cada sala nos enseña algo sobre los líderes de la comunidad!\p¡He aprendido mucho de ellos!"), MSGBOX_AUTOCLOSE)
+    delay(10)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
+    msgbox(format("¡Qué emocionante!"), MSGBOX_AUTOCLOSE)
+    delay(48)
+    release
+    end
+}
+
+script RestRoom_EventScript_Shop {
+	lock
+    faceplayer
+    message("¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!")
+	waitmessage
+	setflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
+	call(WahRoomsShared_EventScript_Shop)
+	clearflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
+	release
+    end
+}
+
+script RestRoom_EventScript_Pokebox {
+    setvar(VAR_TEMP_C, 3)
+    setvar(VAR_TEMP_D, 4)
+    setvar(VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF)
+    setvar(VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON)
+    call(WahRoomsShared_EventScript_Pokebox)
+    end
+}

@@ -190,6 +190,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Micolo"),
             COMPOUND_STRING("Alexmad"),
             COMPOUND_STRING("MrNightology"),
+            
 
             COMPOUND_STRING("Acimut"),
             COMPOUND_STRING("Kaktus"),
@@ -213,6 +214,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("RevkenHack"),
             COMPOUND_STRING("Hedara"),
 
+
             COMPOUND_STRING("Mudskip"),
             COMPOUND_STRING("Archie"),
             COMPOUND_STRING("Lykeron"),
@@ -220,6 +222,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Juanjo"),
             COMPOUND_STRING("Luna"),
             COMPOUND_STRING("ghoulslash"),
+
 
             COMPOUND_STRING("TheXaman"),
             COMPOUND_STRING("gogglesdegiraffe"),
@@ -244,6 +247,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Huderlem"),
             COMPOUND_STRING("grunt-lucas"),
 
+
             COMPOUND_STRING("Baro"),
             COMPOUND_STRING("Serg!o"),
             COMPOUND_STRING("eing"),
@@ -251,6 +255,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Scarex"),
             COMPOUND_STRING("Tokyn"),
             COMPOUND_STRING("Gallego13"),
+
 
             COMPOUND_STRING("cosarara97"),
             COMPOUND_STRING("Helix Boo"),
@@ -260,6 +265,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Javi4315"),
             COMPOUND_STRING("Katherine"),
 
+
             COMPOUND_STRING("ReoNeky"),
             COMPOUND_STRING("Sayer"),
             COMPOUND_STRING("BLAx501!"),
@@ -267,6 +273,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("KleinStudio"),
             COMPOUND_STRING("DavZero"),
             COMPOUND_STRING("War"),
+
 
             COMPOUND_STRING("PkPower"),
             COMPOUND_STRING("Drive"),
@@ -276,6 +283,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Omega"),
             COMPOUND_STRING("Javs"),
 
+
             COMPOUND_STRING("Ozumas"),
             COMPOUND_STRING("MAIDEN"),
             COMPOUND_STRING("Dragonsden"),
@@ -283,6 +291,10 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Morti"),
             COMPOUND_STRING("Kakarotto"),
             COMPOUND_STRING("Criisss"),
+
+
+            COMPOUND_STRING("Ivantxo"),
+            COMPOUND_STRING("Seven7hNight"),
             NULL
         }
     },
@@ -341,8 +353,8 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
     {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, ////TODO XirosACIMUT
     {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, ////TODO Xiros MICOLO
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_KAKTUS}, ////TODO Xiros RYUZAKI
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_ROXAS}, ////TODO Xiros MrNightology
+    {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
 };
 
 static const u16 sWahCreditsPokemonList[] =

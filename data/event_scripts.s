@@ -1182,3 +1182,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Lobby/scripts.inc"
 
 	.include "data/maps/CollaboratorsRoom/scripts.inc"
+
+	.include "data/maps/RestRoom/scripts.inc"

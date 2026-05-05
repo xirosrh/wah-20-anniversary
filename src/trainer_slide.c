@@ -34,6 +34,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/difficulty.h"
 #include "trainer_slide.h"
 #include "battle_message.h"
 
@@ -54,6 +55,20 @@ static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId);
 
 static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
+    [DIFFICULTY_EASY] =
+    {
+        [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Me gusta ver caras nuevas por aquí, ¡enséñame de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("En mis tiempos, esto que voy a hacer sería impensable, pero... ¡adelante megaevolución!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, ¡buen golpe!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Rayos, parece que me excedí un poco!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Un movimiento muy inteligente, ¡buen trabajo!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Reconozco que a veces, con estas cosas, me equivoco hasta yo.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Muy bien, uno fuera, ¡a por el siguiente!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Pues llegamos al final de este encuentro, pero no bajes la guardia, ¡la lucha aún no ha terminado!{PAUSE_UNTIL_PRESS}"),
+        },
+    },
     [DIFFICULTY_NORMAL] =
     {
         [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
@@ -70,6 +85,17 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tocado…{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Bien, toca entrar en materia.{PAUSE_UNTIL_PRESS}"),
             [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Mi última baza.{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Hagamos de éste un combate entrañable, ¡veamos de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("El pasado nos enseña a construir un mejor futuro, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, pero más vale maña que fuerza.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Sabes, esto me duele más a mí que a ti... es coña.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Vaya, qué inteligente, eso me gusta...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("No importa, un error lo tiene cualquiera.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No se te da nada mal, ¡pero esto sólo es el calentamiento!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Este es mi último Pokémon, pero la lucha aún no ha terminado.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_BLAX_MAIN] =
         {
@@ -109,6 +135,20 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
         [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3] =
         {
             [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+        },
+    },
+    [DIFFICULTY_HARD] =
+    {
+        [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Señor Micael, vamos a divertirnos, ¡hagamos de éste un combate inolvidable!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Vamos a darle un poco más de chispa al reto, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, pero necesitarás algo mejor para vencernos.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Sabes, esto nos duele más que a ti... es coña.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Oh, qué inteligente, eso me gusta...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("…\p¿En serio?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No cantes victoria todavía, esto sólo acaba de empezar.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("El combate físico llega a su fin, pero el cultural acaba de comenzar.{PAUSE_UNTIL_PRESS}"),
         },
     },
 };

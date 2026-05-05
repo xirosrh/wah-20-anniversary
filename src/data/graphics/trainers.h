@@ -361,6 +361,12 @@ const u16 gTrainerPalette_Gosuto[] = INCBIN_U16("graphics/trainers/palettes/coll
 const u32 gTrainerFrontPic_Caco[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/caco.4bpp.smol");
 const u16 gTrainerPalette_Caco[] = INCBIN_U16("graphics/trainers/palettes/collaborators/caco.gbapal");
 
+const u32 gTrainerFrontPic_Ryuzaki[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/ryuzaki.4bpp.smol");
+const u16 gTrainerPalette_Ryuzaki[] = INCBIN_U16("graphics/trainers/palettes/collaborators/ryuzaki.gbapal");
+
+const u32 gTrainerFrontPic_MrNightology[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/mrnightology.4bpp.smol");
+const u16 gTrainerPalette_MrNightology[] = INCBIN_U16("graphics/trainers/palettes/collaborators/mrnightology.gbapal");
+
 const u32 gTrainerFrontPic_Sergio[] = INCBIN_U32("graphics/trainers/front_pics/admins/sergio.4bpp.smol");
 const u16 gTrainerPalette_Sergio[] = INCBIN_U16("graphics/trainers/palettes/admins/sergio.gbapal");
 
@@ -540,6 +546,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_GOSUTO, gTrainerFrontPic_Gosuto, gTrainerPalette_Gosuto),
     TRAINER_SPRITE(TRAINER_PIC_CACO, gTrainerFrontPic_Caco, gTrainerPalette_Caco),
     TRAINER_SPRITE(TRAINER_PIC_GAMEBOY_CL, gTrainerFrontPic_GameboyCl, gTrainerPalette_GameboyCl),
+    TRAINER_SPRITE(TRAINER_PIC_RYUZAKI, gTrainerFrontPic_Ryuzaki, gTrainerPalette_Ryuzaki),
+    TRAINER_SPRITE(TRAINER_PIC_MRNIGHTOLOGY, gTrainerFrontPic_MrNightology, gTrainerPalette_MrNightology),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

@@ -1203,7 +1203,7 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
         },
         [MON_ZYGARDE] = {
             .specie = SPECIES_ZYGARDE,
-            .ability = ABILITY_NONE,
+            .ability = ABILITY_POWER_CONSTRUCT,
             .nature = NATURE_QUIRKY,
             .itemId = ITEM_LEFTOVERS,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 252, 0),

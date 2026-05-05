@@ -747,4 +747,6 @@ ReyBooRoom_EventScript_BooEncounter_Text_14:
 
 ReyBooRoom_Text_ReyBooDefeated::
 # 225 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Madre mía!$"
+	.string "Enhorabuena, pero recuerda, gloria\n"
+	.string "vana, florece y no grana.\p"
+	.string "Todavía te quedan retos por afrontar.$"

@@ -223,5 +223,5 @@ script ReyBooRoom_EventScript_ReyBooBattle {
 }
 
 text ReyBooRoom_Text_ReyBooDefeated {
-    format("¡Madre mía!")
+    format("Enhorabuena, pero recuerda, gloria vana, florece y no grana.\pTodavía te quedan retos por afrontar.")
 }
