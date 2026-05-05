@@ -651,17 +651,20 @@ text Lobby_Text_AdminCountNPC {
 
 script Lobby_EventScript_Pokebox {
     lock
+    waitse
     playse(SE_PC_ON)
     setmetatile(8, 3, METATILE_lobby_PC_ON, FALSE)
     special(DrawWholeMapView)
     waitse
+    delay(10)
     if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)) {
-        delay(10)
-        playse(SE_CONTEST_HEART)
+        playse(SE_PC_LOGIN)
         msgbox(Lobby_Text_Pokebox_SoftwareUpdate, MSGBOX_AUTOCLOSE_CENTER)
         waitse
         delay(10)
+        playse(SE_USE_ITEM)
         msgbox(Lobby_Text_Pokebox_SoftwareUpdateExplanation, MSGBOX_AUTOCLOSE_CENTER)
+        waitse
         delay(20)
         setflag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)
 
@@ -670,6 +673,7 @@ script Lobby_EventScript_Pokebox {
 }
 
 script Lobby_EventScript_Pokebox_MainMenu {
+    playse(SE_PC_LOGIN)
     message(Lobby_Text_Pokebox_MainPrompt)
     waitmessage
     dynmultipush(format("Acceder a PC"), 0)
