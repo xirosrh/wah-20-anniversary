@@ -803,3 +803,23 @@ script WahRoomsShared_Kecleon_SetSala_Sergio {
     }
     return
 }
+
+
+script WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(VAR_LAST_TALKED,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
+}

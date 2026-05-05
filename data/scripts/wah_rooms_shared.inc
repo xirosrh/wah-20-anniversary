@@ -1409,6 +1409,43 @@ WahRoomsShared_Kecleon_SetSala_Sergio_6:
 	goto WahRoomsShared_Kecleon_SetSala_Sergio_1
 
 
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer::
+# 809 "data/scripts/wah_rooms_shared.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 810 "data/scripts/wah_rooms_shared.pory"
+	switch VAR_RESULT
+# 811 "data/scripts/wah_rooms_shared.pory"
+	case DIR_NORTH, WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_3
+# 814 "data/scripts/wah_rooms_shared.pory"
+	case DIR_SOUTH, WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_4
+# 817 "data/scripts/wah_rooms_shared.pory"
+	case DIR_WEST, WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_5
+# 820 "data/scripts/wah_rooms_shared.pory"
+	case DIR_EAST, WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_6
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1:
+	return
+
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_3:
+# 812 "data/scripts/wah_rooms_shared.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceDown
+	goto WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_4:
+# 815 "data/scripts/wah_rooms_shared.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceUp
+	goto WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_5:
+# 818 "data/scripts/wah_rooms_shared.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceRight
+	goto WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_6:
+# 821 "data/scripts/wah_rooms_shared.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft
+	goto WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
+
+
 # 123 "data/scripts/wah_rooms_shared.pory"
 WahRoomsShared_Kecleon_Movement_0:
 # 123 "data/scripts/wah_rooms_shared.pory"
