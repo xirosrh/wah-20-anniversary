@@ -57,7 +57,19 @@ script RestRoom_EventScript_Boy2 {
 }
 
 script RestRoom_EventScript_PlayerCounterpart {
-    msgbox(format("PENDIENTE"), MSGBOX_NPC)
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
+    msgbox(format("¡Qué sorpresa, {PLAYER}!"), MSGBOX_AUTOCLOSE)
+    delay(48)
+    msgbox(format("¿Así que también estás participando en el desafío?\p¡Cada sala nos enseña algo sobre los líderes de la comunidad!\p¡He aprendido mucho de ellos!"), MSGBOX_AUTOCLOSE)
+    delay(10)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
+    msgbox(format("¡Qué emocionante!"), MSGBOX_AUTOCLOSE)
+    delay(48)
+    release
     end
 }
 

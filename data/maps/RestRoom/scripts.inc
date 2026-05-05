@@ -75,40 +75,64 @@ RestRoom_EventScript_Boy2::
 
 RestRoom_EventScript_PlayerCounterpart::
 # 60 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_PlayerCounterpart_Text_0, MSGBOX_NPC
-	end
-
-
-RestRoom_EventScript_Shop::
-# 65 "data/maps/RestRoom/scripts.pory"
 	lock
-# 66 "data/maps/RestRoom/scripts.pory"
+# 61 "data/maps/RestRoom/scripts.pory"
 	faceplayer
+# 62 "data/maps/RestRoom/scripts.pory"
+	playse SE_PIN
+# 63 "data/maps/RestRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark
+# 64 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_0, MSGBOX_AUTOCLOSE
+# 65 "data/maps/RestRoom/scripts.pory"
+	delay 48
+# 66 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_1, MSGBOX_AUTOCLOSE
 # 67 "data/maps/RestRoom/scripts.pory"
-	message RestRoom_EventScript_Shop_Text_0
+	delay 10
 # 68 "data/maps/RestRoom/scripts.pory"
-	waitmessage
+	playse SE_PIN
 # 69 "data/maps/RestRoom/scripts.pory"
-	setflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_Happy
 # 70 "data/maps/RestRoom/scripts.pory"
-	call WahRoomsShared_EventScript_Shop
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_2, MSGBOX_AUTOCLOSE
 # 71 "data/maps/RestRoom/scripts.pory"
-	clearflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
+	delay 48
 # 72 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 
-RestRoom_EventScript_Pokebox::
+RestRoom_EventScript_Shop::
 # 77 "data/maps/RestRoom/scripts.pory"
-	setvar VAR_TEMP_C, 3
+	lock
 # 78 "data/maps/RestRoom/scripts.pory"
-	setvar VAR_TEMP_D, 4
+	faceplayer
 # 79 "data/maps/RestRoom/scripts.pory"
-	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
+	message RestRoom_EventScript_Shop_Text_0
 # 80 "data/maps/RestRoom/scripts.pory"
-	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
+	waitmessage
 # 81 "data/maps/RestRoom/scripts.pory"
+	setflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
+# 82 "data/maps/RestRoom/scripts.pory"
+	call WahRoomsShared_EventScript_Shop
+# 83 "data/maps/RestRoom/scripts.pory"
+	clearflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
+# 84 "data/maps/RestRoom/scripts.pory"
+	release
+	end
+
+
+RestRoom_EventScript_Pokebox::
+# 89 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_C, 3
+# 90 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_D, 4
+# 91 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
+# 92 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
+# 93 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Pokebox
 	end
 
@@ -154,9 +178,21 @@ RestRoom_EventScript_Boy2_Text_0:
 	.string "necesario antes de entrar.$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_0:
-# 60 "data/maps/RestRoom/scripts.pory"
-	.string "PENDIENTE$"
+# 64 "data/maps/RestRoom/scripts.pory"
+	.string "¡Qué sorpresa, {PLAYER}!$"
+
+RestRoom_EventScript_PlayerCounterpart_Text_1:
+# 66 "data/maps/RestRoom/scripts.pory"
+	.string "¿Así que también estás participando en\n"
+	.string "el desafío?\p"
+	.string "¡Cada sala nos enseña algo sobre los\n"
+	.string "líderes de la comunidad!\p"
+	.string "¡He aprendido mucho de ellos!$"
+
+RestRoom_EventScript_PlayerCounterpart_Text_2:
+# 70 "data/maps/RestRoom/scripts.pory"
+	.string "¡Qué emocionante!$"
 
 RestRoom_EventScript_Shop_Text_0:
-# 67 "data/maps/RestRoom/scripts.pory"
+# 79 "data/maps/RestRoom/scripts.pory"
 	.string "¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!$"
