@@ -190,7 +190,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Micolo"),
             COMPOUND_STRING("Alexmad"),
             COMPOUND_STRING("MrNightology"),
-            
+
 
             COMPOUND_STRING("Acimut"),
             COMPOUND_STRING("Kaktus"),
@@ -351,7 +351,7 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_JAVS, TRAINER_PIC_BOO},
     {TRAINER_PIC_SERGIO, TRAINER_NONE},
     {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
-    {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, ////TODO XirosACIMUT
+    {TRAINER_PIC_GOSUTO, TRAINER_PIC_ACIMUT},
     {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, ////TODO Xiros MICOLO
     {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
     {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
