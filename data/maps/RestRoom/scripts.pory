@@ -23,6 +23,18 @@ script RestRoom_EventScript_PlayerCounterpart {
     end
 }
 
+script RestRoom_EventScript_Shop {
+	lock
+    faceplayer
+    message("¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!")
+	waitmessage
+	setflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
+	call(WahRoomsShared_EventScript_Shop)
+	clearflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
+	release
+    end
+}
+
 script RestRoom_EventScript_Pokebox {
     end
 }

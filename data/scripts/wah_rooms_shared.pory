@@ -1,3 +1,40 @@
+script WahRoomsShared_EventScript_Shop {
+	pokemart(WahRoomsShared_MartItems)
+	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+	return
+}
+
+mart WahRoomsShared_MartItems {
+	ITEM_HYPER_POTION
+	ITEM_MAX_POTION
+    ITEM_FULL_RESTORE
+	ITEM_ETHER
+    ITEM_MAX_ETHER
+    ITEM_ELIXIR
+    ITEM_MAX_ELIXIR
+    ITEM_REVIVE
+    ITEM_MAX_REVIVE
+    ITEM_REVIVAL_HERB
+    ITEM_BAXCALIBURITE
+    ITEM_DRAGALGITE
+    ITEM_TYRANITARITE
+    ITEM_DARKRANITE
+    ITEM_ALAKAZITE
+    ITEM_LUCARIONITE
+    ITEM_LUCARIONITE_Z
+    ITEM_MEWTWONITE_X
+    ITEM_MEWTWONITE_Y
+    ITEM_CHARIZARDITE_X
+    ITEM_CHARIZARDITE_Y
+    ITEM_GALLADITE
+    ITEM_GLALITITE
+    ITEM_FROSLASSITE
+    ITEM_CLEFABLITE
+    ITEM_HOUNDOOMINITE
+    ITEM_AGGRONITE
+    ITEM_ZYGARDITE
+    ITEM_VICTREEBELITE
+}
 
 script WahRoomsShared_OpenDoor {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)

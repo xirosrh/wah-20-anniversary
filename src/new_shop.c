@@ -44,6 +44,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/event_objects.h"
+#include "constants/flags.h"
 
 #ifdef MUDSKIP_SHOP_UI
 
@@ -1124,8 +1125,15 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
 
 static inline u32 BuyMenuGetItemPrice(u32 id)
 {
+    u32 price;
+
     switch (sMartInfo.martType)
     {
+        case NEW_SHOP_TYPE_NORMAL:
+            price = GetItemPrice(sMartInfo.itemList[id]);
+            if (FlagGet(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER))
+                price *= 5;
+            return price;
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].price;
         default:
