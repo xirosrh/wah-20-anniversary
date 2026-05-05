@@ -53,7 +53,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
 }
@@ -375,7 +375,7 @@ script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
     call(Achievements_EventScript_Eval_DefeatAllCollaborators)
-    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
     releaseall
     end
 }

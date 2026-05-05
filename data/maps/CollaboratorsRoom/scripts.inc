@@ -109,7 +109,7 @@ CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent::
 # 55 "data/maps/CollaboratorsRoom/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllCollaborators
 # 56 "data/maps/CollaboratorsRoom/scripts.pory"
-	turnobject VAR_LAST_TALKED, DIR_WEST
+	turnobject VAR_LAST_TALKED, DIR_EAST
 # 57 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
@@ -700,7 +700,7 @@ CollaboratorsRoom_EventScript_Micolo_OnFinishEvent::
 # 377 "data/maps/CollaboratorsRoom/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllCollaborators
 # 378 "data/maps/CollaboratorsRoom/scripts.pory"
-	turnobject VAR_LAST_TALKED, DIR_EAST
+	turnobject VAR_LAST_TALKED, DIR_WEST
 # 379 "data/maps/CollaboratorsRoom/scripts.pory"
 	releaseall
 	end
