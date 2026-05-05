@@ -1330,6 +1330,10 @@
     {
       "id": "MAPSEC_COLLABORATORS_ROOM",
       "name": "Zona creativa"
+    },
+    {
+      "id": "MAPSEC_REST_ROOM",
+      "name": "Zona de descanso"
     }
   ]
 }

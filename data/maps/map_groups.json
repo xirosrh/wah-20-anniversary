@@ -60,7 +60,8 @@
     "DragonMountain_Top",
     "HallOfFame",
     "Lobby",
-    "CollaboratorsRoom"
+    "CollaboratorsRoom",
+    "RestRoom"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

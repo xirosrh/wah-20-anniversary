@@ -1,0 +1,28 @@
+mapscripts RestRoom_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RestRoom_OnTransition
+}
+
+
+script RestRoom_OnTransition {
+    call(Common_EventScript_SetupRivalGfxId)
+    end
+}
+
+script RestRoom_EventScript_Boy1 {
+    msgbox(format("PENDIENTE"), MSGBOX_NPC)
+    end
+}
+
+script RestRoom_EventScript_Girl1 {
+    msgbox(format("PENDIENTE"), MSGBOX_NPC)
+    end
+}
+
+script RestRoom_EventScript_PlayerCounterpart {
+    msgbox(format("PENDIENTE"), MSGBOX_NPC)
+    end
+}
+
+script RestRoom_EventScript_Pokebox {
+    end
+}
