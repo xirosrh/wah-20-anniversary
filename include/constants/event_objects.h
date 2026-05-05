@@ -504,6 +504,8 @@
 #define OBJ_EVENT_PAL_TAG_JAVI4315                0x1180
 #define OBJ_EVENT_PAL_TAG_CACO                    0x1181
 #define OBJ_EVENT_PAL_TAG_LOBBY_MASK_BOY          0x1182
+#define OBJ_EVENT_PAL_TAG_BOY_3                   0x1183
+#define OBJ_EVENT_PAL_TAG_GIRL_1                  0x1184
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
