@@ -74,5 +74,10 @@ script RestRoom_EventScript_Shop {
 }
 
 script RestRoom_EventScript_Pokebox {
+    setvar(VAR_TEMP_C, 3)
+    setvar(VAR_TEMP_D, 4)
+    setvar(VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF)
+    setvar(VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON)
+    call(WahRoomsShared_EventScript_Pokebox)
     end
 }

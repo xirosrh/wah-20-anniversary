@@ -100,6 +100,16 @@ RestRoom_EventScript_Shop::
 
 
 RestRoom_EventScript_Pokebox::
+# 77 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_C, 3
+# 78 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_D, 4
+# 79 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
+# 80 "data/maps/RestRoom/scripts.pory"
+	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
+# 81 "data/maps/RestRoom/scripts.pory"
+	call WahRoomsShared_EventScript_Pokebox
 	end
 
 
