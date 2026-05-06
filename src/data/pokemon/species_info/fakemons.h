@@ -793,6 +793,78 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sDiraeiLevelUpLearnset,
     },
 
+#if P_FAMILY_OSHAWOTT
+    [SPECIES_OSHAWOTT_X] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 100,
+        .baseDefense   = 85,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 108,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Oshawott X"),
+        .cryId = CRY_OSHAWOTT,
+        .natDexNum = NATIONAL_DEX_OSHAWOTT_X,
+        .categoryName = _("Nutria"),
+        .height = 5,
+        .weight = 59,
+        .description = COMPOUND_STRING(
+            "Ataca con la vieira de su ombligo.\n"
+            "En cuanto para un ataque, pasa al\n"
+            "contraataque sin dilación."),
+        .pokemonScale = 432,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Oshawott,
+        .frontPicSize = MON_COORDS_SIZE(32, 40),
+        .frontPicYOffset = 14,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 11),
+        ),
+        .frontAnimId = ANIM_H_JUMPS,
+        .backPic = gMonBackPic_Oshawott,
+        .backPicSize = MON_COORDS_SIZE(40, 48),
+        .backPicYOffset = 14,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        .palette = gMonPalette_Oshawott,
+        .shinyPalette = gMonShinyPalette_Oshawott,
+        .iconSprite = gMonIcon_Oshawott,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-3, 0, SHADOW_SIZE_S)
+        FOOTPRINT(Oshawott)
+        OVERWORLD(
+            sPicTable_Oshawott,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Oshawott,
+            gShinyOverworldPalette_Oshawott
+        )
+        .levelUpLearnset = sSamurottLevelUpLearnset,
+        .teachableLearnset = sSamurottTeachableLearnset,
+    },
+#endif //P_FAMILY_OSHAWOTT
+
     [SPECIES_LUGIA_SHADOW] =
     {
         .baseHP        = 120,
