@@ -210,27 +210,31 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("CompuMax"),
             COMPOUND_STRING("Axel Loquendo"),
 
+
             COMPOUND_STRING("Howdy"),
             COMPOUND_STRING("RevkenHack"),
             COMPOUND_STRING("Hedara"),
-
 
             COMPOUND_STRING("Mudskip"),
             COMPOUND_STRING("Archie"),
             COMPOUND_STRING("Lykeron"),
 
+
             COMPOUND_STRING("Juanjo"),
             COMPOUND_STRING("Luna"),
             COMPOUND_STRING("ghoulslash"),
-
 
             COMPOUND_STRING("TheXaman"),
             COMPOUND_STRING("gogglesdegiraffe"),
             COMPOUND_STRING(""), //Empty on purpose
 
+
             COMPOUND_STRING("Big Snort"),
             COMPOUND_STRING("Retro NC"),
             COMPOUND_STRING("DestvoL"),
+
+            COMPOUND_STRING("Boxheadpaint"),
+            COMPOUND_STRING("Galton"),
 
             NULL
         }
