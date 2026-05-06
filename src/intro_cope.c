@@ -52,6 +52,7 @@ static void TaskCopeSpeech_WaitPressA(u8 taskId);
 static void TaskCopeSpeech_CopeDialogue2(u8 taskId);
 static void TaskCopeSpeech_CopeDialogue3(u8 taskId);
 static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId);
+static void TaskCopeSpeech_DoFaceBeforeEndEndSpeechExit(u8 taskId);
 static void TaskCopeSpeech_OpenDoor(u8 taskId);
 static void TaskCopeSpeech_Cleanup(u8 taskId);
 static void TaskCopeSpeech_FadeOut(u8 taskId);
@@ -667,7 +668,6 @@ void CB2_InitCopeSpeech(void)
     case 2:
         SetVBlankCallback(VBlank_CB2_Gender);
         SetMainCallback2(CB2_CopeSpeech);
-        PlayBGM(MUS_ROUTE101);
 
         BeginNormalPaletteFade(PALETTES_ALL, 60, 16, 0, RGB_BLACK);
         taskId = CreateTask(TaskInitCopeSpeechWaitForFade, 0);
@@ -720,7 +720,7 @@ void CB2_InitCopeSpeech_FromNewMainMenu(void)
     UpdateGenderSprites(sTaskId);
     LoadPalette(sMainMenuTextPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     
-    PlayBGM(MUS_ROUTE101);
+    PlayBGM(MUS_B_DOME_LOBBY);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     
     SetupWindowBlendRegisters();
@@ -979,6 +979,8 @@ static void TaskInitCopeSpeech(u8 taskId)
             FillWindowPixelBuffer(WINDOW_MSG_BOX, PIXEL_FILL(0));
             PutWindowTilemap(WINDOW_MSG_BOX);
 
+            PlayBGM(MUS_ENCOUNTER_CHAMPION);
+
             LoadMainMenuWindowFrameTiles(0, 408);
             LoadMessageBoxGfx(0, 696, BG_PLTT_ID(15));
             NewGameBirchSpeech_ShowDialogueWindow(WINDOW_MSG_BOX, TRUE);
@@ -1165,6 +1167,7 @@ static void TaskCopeSpeech_WaitPressA(u8 taskId)
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
         CopyWindowToVram(0, COPYWIN_GFX);
         RemoveWindow(0);
+        PlaySE(SE_RG_DOOR);
         gTasks[taskId].tTimer = 0;
         gTasks[taskId].tSliceBg3 = 0;
         gTasks[taskId].func = TaskCopeSpeech_OpenDoor;
@@ -1179,7 +1182,7 @@ static void TaskCopeSpeech_OpenDoor(u8 taskId)
         SetGpuReg(REG_OFFSET_BG3HOFS, gTasks[taskId].tSliceBg3);
 
         if (gTasks[taskId].tSliceBg3 >= MAX_SLICE_BG_3)
-            gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeech;
+            gTasks[taskId].func = TaskCopeSpeech_DoFaceBeforeEndEndSpeechExit;
     }
     gTasks[taskId].tTimer++;
 }
@@ -1193,9 +1196,19 @@ static void TaskCopeSpeech_DoFaceBeforeEndEndSpeech(u8 taskId)
     }
 }
 
+static void TaskCopeSpeech_DoFaceBeforeEndEndSpeechExit(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        PlaySE(SE_EXIT);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = TaskCopeSpeech_Cleanup;
+    }
+}
+
 static void TaskCopeSpeech_Cleanup(u8 taskId)
 {
-    if (!gPaletteFade.active)
+    if (!gPaletteFade.active && !IsSEPlaying())
     {
         CleanupOverworldWindowsAndTilemaps();
         DestroySpriteAndFreeResources(&gSprites[gTasks[taskId].tSpriteCopeBodyId]);
