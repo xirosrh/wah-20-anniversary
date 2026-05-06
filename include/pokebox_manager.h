@@ -36,5 +36,6 @@ bool8 PokeboxSpecies_Lock(u8 id);
 const u8 *Get_PokeboxDescription(u8 id);
 u32 PokeboxSpecies_GetMoney(u8 id);
 bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id);
+bool8 PokeboxSpecies_BufferBuyOfferFromSpecies(u16 species);
 
 #endif
