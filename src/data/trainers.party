@@ -147,6 +147,7 @@ Class: WAH Admin
 Pic: Omega
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -267,6 +268,7 @@ Class: WAH Admin
 Pic: Omega
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -387,6 +389,7 @@ Class: WAH Admin
 Pic: Goce
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Yellow
@@ -506,6 +509,7 @@ Class: WAH Admin
 Pic: Goce
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -633,6 +637,7 @@ Class: WAH Admin
 Pic: Cheve
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -764,6 +769,7 @@ Class: WAH Admin
 Pic: Cheve
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -871,6 +877,7 @@ Class: WAH Admin
 Pic: Blax
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -956,6 +963,7 @@ Class: WAH Admin
 Pic: Blax
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -1037,6 +1045,7 @@ Class: WAH Admin
 Pic: Sayer
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -1107,6 +1116,7 @@ Class: WAH Admin
 Pic: Sayer
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -1208,6 +1218,7 @@ Class: WAH Admin
 Pic: Aguiar
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -1333,6 +1344,7 @@ Class: WAH Admin
 Pic: Aguiar
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -1451,6 +1463,7 @@ Class: WAH Admin
 Pic: Jack Johnson
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -1569,6 +1582,7 @@ Class: WAH Admin
 Pic: Jack Johnson
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -1687,6 +1701,7 @@ Class: WAH Admin
 Pic: Angel
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -1805,6 +1820,7 @@ Class: WAH Admin
 Pic: Angel
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -1929,6 +1945,7 @@ Class: WAH Admin
 Pic: Ozumas
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -2051,6 +2068,7 @@ Class: WAH Admin
 Pic: Ozumas
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -2170,6 +2188,7 @@ Class: WAH Admin
 Pic: Scarex
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -2290,6 +2309,7 @@ Class: WAH Admin
 Pic: Scarex
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -2416,6 +2436,7 @@ Class: WAH Admin
 Pic: Zero
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -2547,6 +2568,7 @@ Class: WAH Admin
 Pic: Zero
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -2671,6 +2693,7 @@ Class: WAH Admin
 Pic: Baro
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
@@ -2789,6 +2812,7 @@ Class: WAH Admin
 Pic: Baro
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
@@ -2909,6 +2933,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
+Items: 
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -2975,6 +3000,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -3104,6 +3130,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -3171,6 +3198,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -3306,6 +3334,7 @@ Class: WAH Admin
 Pic: Cosarara
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -3448,6 +3477,7 @@ Class: WAH Admin
 Pic: Cosarara
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -3561,6 +3591,7 @@ Class: WAH Admin
 Pic: Drive
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -3604,6 +3635,7 @@ Class: WAH Admin
 Pic: Drive
 Gender: Male
 Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -3689,6 +3721,7 @@ Class: WAH Admin
 Pic: Drive
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -3768,6 +3801,7 @@ Class: WAH Admin
 Pic: Katherine
 Gender: Female
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -3841,6 +3875,7 @@ Class: WAH Admin
 Pic: Katherine
 Gender: Female
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -3937,6 +3972,7 @@ Class: WAH Admin
 Pic: Reoneky
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -4055,6 +4091,7 @@ Class: WAH Admin
 Pic: Reoneky
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -4177,6 +4214,7 @@ Class: WAH Admin
 Pic: Gallego
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4299,6 +4337,7 @@ Class: WAH Admin
 Pic: Gallego
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4417,6 +4456,7 @@ Class: WAH Admin
 Pic: Eing
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
@@ -4536,6 +4576,7 @@ Class: WAH Admin
 Pic: Eing
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
@@ -4631,6 +4672,7 @@ Class: WAH Admin
 Pic: Tokyn
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4701,6 +4743,7 @@ Class: WAH Admin
 Pic: Tokyn
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4772,6 +4815,7 @@ Class: WAH Admin
 Pic: War
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4843,6 +4887,7 @@ Class: WAH Admin
 Pic: War
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
@@ -4915,6 +4960,7 @@ Class: WAH Admin
 Pic: Javi4315
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -4988,6 +5034,7 @@ Class: WAH Admin
 Pic: Javi4315
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -5061,6 +5108,7 @@ Class: WAH Admin
 Pic: Javs
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -5135,6 +5183,7 @@ Class: WAH Admin
 Pic: Javs
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -5233,6 +5282,7 @@ Class: WAH Admin
 Pic: Sergio
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Prediction / Ace Pokemon
 Mugshot: Green
@@ -5352,6 +5402,7 @@ Class: WAH Admin
 Pic: Sergio
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Prediction
 Mugshot: Green
@@ -5476,6 +5527,7 @@ Class: WAH Admin
 Pic: Xiros
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
@@ -5610,6 +5662,7 @@ Class: WAH Admin
 Pic: Xiros
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
@@ -5735,6 +5788,7 @@ Class: WAH Admin
 Pic: PkPower
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
@@ -5852,6 +5906,7 @@ Class: WAH Admin
 Pic: PkPower
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
@@ -5966,6 +6021,7 @@ Class: WAH Admin
 Pic: Klein
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
@@ -6082,6 +6138,7 @@ Class: WAH Admin
 Pic: Klein
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
@@ -6162,6 +6219,7 @@ Class: WAH Admin
 Pic: Roxas
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -6529,6 +6587,7 @@ Class: Collaborator
 Pic: Kaktus
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -6656,6 +6715,7 @@ Class: Collaborator
 Pic: Gameboy Cl
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -6775,6 +6835,7 @@ Class: Collaborator
 Pic: Gameboy Cl
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -6897,6 +6958,7 @@ Class: Collaborator
 Pic: Gameboy Cl
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -7024,6 +7086,7 @@ Class: Collaborator
 Pic: Erkey
 Gender: Male
 Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
@@ -7162,6 +7225,7 @@ Class: Collaborator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Party Size: 1
@@ -7286,6 +7350,7 @@ Class: Collaborator
 Pic: Gosuto
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Purple
@@ -7403,6 +7468,7 @@ Class: Collaborator
 Pic: Alexmad
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -7524,6 +7590,7 @@ Class: Collaborator
 Pic: Youngster
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
@@ -7646,6 +7713,7 @@ Class: Collaborator
 Pic: MrNightology
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -7723,6 +7791,7 @@ Class: WAH Admin
 Pic: Reoneky
 Gender: Male
 Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
