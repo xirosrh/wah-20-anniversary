@@ -11,31 +11,18 @@ script RestRoom_OnTransition {
 script RestRoom_EventScript_Boy1 {
     lock
     faceplayer
-    if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Surprise)
-        msgbox("¿En serio ya ganaste el desafío?
-                ¿Y decidiste repetirlo?
-                
-                Definitivamente no estamos jugando en
-                el mismo nivel.
-                
-                ¡Aún no me he atrevido a continuar!", MSGBOX_AUTOCLOSE)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-        release 
-        end
+    msgbox(format("¡Uf, al fin una zona de descanso!"), MSGBOX_AUTOCLOSE)
+    call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("Por un momento pensé que las 21 salas eran seguidas sin pausa…"), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    setvar(VAR_0x8004, SPECIES_GRENINJA)
+    specialvar(VAR_RESULT, Special_BufferPokeboxBuyOfferFromSpecies)
+    if(var(VAR_RESULT) == TRUE) {
+        msgbox(format("Me viene costando, necesito prepararme mejor para las próximas salas.\pVoy a ajustar algunos ataques, comprar objetos curativos y…\p¡Creo que compraré un {STR_VAR_1}! Vi que en la PC está a solo {STR_VAR_2}, ¡está regalado!"), MSGBOX_AUTOCLOSE)
     }
-    else {
-        msgbox(format("¡Uf, al fin una zona de descanso!"), MSGBOX_AUTOCLOSE)
-        call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Por un momento pensé que las 21 salas eran seguidas sin pausa…"), MSGBOX_AUTOCLOSE)
-        playse(SE_PIN)
-        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-        msgbox(format("Voy a ajustar algunos ataques, comprar items curativos y seguir."), MSGBOX_AUTOCLOSE)
-        release
-        end
-    }
+    release
+    end
 }
 
 script RestRoom_EventScript_Girl1 {
