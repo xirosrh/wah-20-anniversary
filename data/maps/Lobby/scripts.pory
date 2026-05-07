@@ -465,16 +465,52 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         dynmultipush(gStringVar1, 5)
         addvar(VAR_0x8000, 1)
     }
+    getseenmon(SPECIES_JARDINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_JARDINO)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_OCEADINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_OCEADINO)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_TYRADINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_TYRADINO)
+        dynmultipush(gStringVar1, 8)
+        addvar(VAR_0x8000, 1)
+    }
     getseenmon(SPECIES_ELECTRODES)
     if(var(VAR_RESULT) != 0) {
         bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
-        dynmultipush(gStringVar1, 6)
+        dynmultipush(gStringVar1, 9)
         addvar(VAR_0x8000, 1)
     }
     getseenmon(SPECIES_EING)
     if(var(VAR_RESULT) != 0) {
         bufferspeciesname(STR_VAR_1, SPECIES_EING)
-        dynmultipush(gStringVar1, 7)
+        dynmultipush(gStringVar1, 10)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MICAEL)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MICAEL)
+        dynmultipush(gStringVar1, 11)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MOLIKAI)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MOLIKAI)
+        dynmultipush(gStringVar1, 12)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_DIRAEI)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_DIRAEI)
+        dynmultipush(gStringVar1, 13)
         addvar(VAR_0x8000, 1)
     }
     if(var(VAR_0x8000) == 0) {
@@ -482,10 +518,10 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         release
         end
     }
-    dynmultipush("Salir", 8)
+    dynmultipush("Salir", 14)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) > 7) {
+    if(var(VAR_RESULT) > 13) {
         msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
@@ -516,12 +552,36 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
             setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
             call(Lobby_EventScript_ShowFakemonDexInfo)
         case 6:
+            showmonpic(SPECIES_JARDINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_JARDINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 7:
+            showmonpic(SPECIES_OCEADINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_OCEADINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 8:
+            showmonpic(SPECIES_TYRADINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_TYRADINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 9:
             showmonpic(SPECIES_ELECTRODES, 10, 3)
             setvar(VAR_0x8004, SPECIES_ELECTRODES)
             call(Lobby_EventScript_ShowFakemonDexInfo)
-        case 7:
+        case 10:
             showmonpic(SPECIES_EING, 10, 3)
             setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 11:
+            showmonpic(SPECIES_MICAEL, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MICAEL)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 12:
+            showmonpic(SPECIES_MOLIKAI, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MOLIKAI)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 13:
+            showmonpic(SPECIES_DIRAEI, 10, 3)
+            setvar(VAR_0x8004, SPECIES_DIRAEI)
             call(Lobby_EventScript_ShowFakemonDexInfo)
     }
     goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)

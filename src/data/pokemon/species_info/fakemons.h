@@ -669,7 +669,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Su cuerpo fue corrompido por la energía\n"
+            "radioactiva que emana, su comportamiento\n"
+            "es impredecible y violento.\n"
+            "Puede transformarse y usar sus mechones\n"
+            "como tentáculos."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -719,7 +723,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Emergió desde los restos de un muñeco\n"
+            "abandonado, es sarcástico, carismático y\n"
+            "adora el lujo.\n"
+            "Puede provocar toda clase de fenómenos\n"
+            "extraños a su alrededor."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -769,7 +777,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Se estima que procede de un planeta lejano\n"
+            "con el que tiene un enlace energético.\n"
+            "Se caracteriza por tener un gran intelecto\n"
+            "y extraordinarios poderes psíquicos."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
