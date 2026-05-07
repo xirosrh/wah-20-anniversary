@@ -1708,7 +1708,14 @@
 #define SPECIES_DIRAEI                                  1587
 #define SPECIES_OSHAWOTT_X                              1588
 
-#define SPECIES_EGG                                     (SPECIES_OSHAWOTT_X + 1)
+#define SPECIES_GOROCHU                                1589
+#define SPECIES_DUN                                    1590
+#define SPECIES_TAABAN                                 1591
+#define SPECIES_BLESSPARCE                             1592
+#define SPECIES_MADAAMU                                1593
+#define SPECIES_AKUERIA                                1594
+
+#define SPECIES_EGG                                     (SPECIES_AKUERIA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
