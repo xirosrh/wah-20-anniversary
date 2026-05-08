@@ -818,7 +818,7 @@ CollaboratorsRoom_EventScript_Micolo_14:
 # 414 "data/maps/CollaboratorsRoom/scripts.pory"
 	msgbox CollaboratorsRoom_EventScript_Micolo_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO
 # 415 "data/maps/CollaboratorsRoom/scripts.pory"
-	releaseall
+	call CollaboratorsRoom_EventScript_Micolo_OnFinishEvent
 	end
 
 CollaboratorsRoom_EventScript_Micolo_17:
