@@ -47,6 +47,42 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .check = CheckPokebox_WahChallengeCompleted
     },
     { 
+        .specie = SPECIES_GOROCHU,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_DUN,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 1000,
+        .check = CheckPokebox_isBuyMon
+    },
+    { 
+        .specie = SPECIES_TAABAN,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_BLESSPARCE,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_MADAAMU,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_AKUERIA,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
         .specie = SPECIES_VOLCARONA,        
         .description = gText_PokeboxBuyThisMon, 
         .money = 10000,
@@ -58,6 +94,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 200,
         .check = CheckPokebox_isBuyMon
     },
+
     { 
         .specie = SPECIES_CINDERACE,        
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
