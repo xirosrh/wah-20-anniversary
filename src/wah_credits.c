@@ -185,16 +185,20 @@ static const struct WahCredits sWahCreditsSections[] =
         { 
             COMPOUND_STRING("Gameboy_cl"),
             COMPOUND_STRING("Gosuto"),
+            COMPOUND_STRING(""), //Empty on purpose
+            
             COMPOUND_STRING("Erkey830"),
-
             COMPOUND_STRING("Micolo"),
+            COMPOUND_STRING(""), //Empty on purpose
+
+
             COMPOUND_STRING("Alexmad"),
             COMPOUND_STRING("MrNightology"),
-
-
             COMPOUND_STRING("Acimut"),
+            
             COMPOUND_STRING("Kaktus"),
             COMPOUND_STRING("Ryuzaki"),
+            COMPOUND_STRING(""), //Empty on purpose
             NULL
         },
     },
@@ -224,19 +228,19 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Luna"),
             COMPOUND_STRING("ghoulslash"),
 
-            COMPOUND_STRING("TheXaman"),
+            COMPOUND_STRING("aethestode"),
             COMPOUND_STRING("gogglesdegiraffe"),
             COMPOUND_STRING(""), //Empty on purpose
-
-
+            
+            
             COMPOUND_STRING("Big Snort"),
+            COMPOUND_STRING("TheXaman"),
             COMPOUND_STRING("Retro NC"),
-            COMPOUND_STRING("aethestode"),
-
+            
             COMPOUND_STRING("Boxheadpaint"),
             COMPOUND_STRING("Galton"),
             COMPOUND_STRING("DestvoL"),
-
+            
             NULL
         }
     },
@@ -357,7 +361,7 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_SERGIO, TRAINER_NONE},
     {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
     {TRAINER_PIC_GOSUTO, TRAINER_PIC_ACIMUT},
-    {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, ////TODO Xiros MICOLO
+    {TRAINER_PIC_MICOLO, TRAINER_PIC_ERKEY },
     {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
     {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
 };
@@ -375,6 +379,8 @@ static const u16 sWahCreditsPokemonList[] =
     SPECIES_FREECH,
     SPECIES_DRAGONITE_MEGA,
     SPECIES_GRENINJA, //TODO Xiros: Red greninja
+    SPECIES_GOROCHU,
+    SPECIES_DUN,
     //TODO Xiros Species Beta pokemon
     SPECIES_MOLTRES,
 };
