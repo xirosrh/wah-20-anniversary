@@ -6230,6 +6230,27 @@ u16 GetBattleBGM(void)
                 return MUS_WI_VS_GYM_LEADER;
             case TRAINER_WAH_COLLABORATOR_ACIMUT:
                 return MUS_TOUHOU11_11;
+            case TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY:
+            case TRAINER_WAH_COLLABORATOR_REONEKY:
+                return MUS_HG_VS_ROCKET;
+            case TRAINER_WAH_ADMIN_ROXAS:
+                return MUS_VS_REGI;
+            case TRAINER_WAH_COLLABORATOR_KAKTUS:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1:
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2:
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3:
+                return MUS_RG_VS_TRAINER;
+            case TRAINER_WAH_COLLABORATOR_ERKEY:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_COLLABORATOR_MICOLO:
+                return MUS_VS_RAYQUAZA;
+            case TRAINER_WAH_COLLABORATOR_GOSUTO:
+                return MUS_VS_AQUA_MAGMA_LEADER;
+            case TRAINER_WAH_COLLABORATOR_ALEXMAD:
+                return MUS_HG_VS_TRAINER;
+            case TRAINER_WAH_COLLABORATOR_RYUZAKI:
+                return MUS_RG_VS_CHAMPION;
             default:
                 return MUS_VS_AQUA_MAGMA;
             }
