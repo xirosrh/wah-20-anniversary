@@ -346,6 +346,9 @@ const u16 gTrainerPalette_Javi4315[] = INCBIN_U16("graphics/trainers/palettes/ad
 const u32 gTrainerFrontPic_Erkey[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/erkey.4bpp.smol");
 const u16 gTrainerPalette_Erkey[] = INCBIN_U16("graphics/trainers/palettes/collaborators/erkey.gbapal");
 
+const u32 gTrainerFrontPic_Micolo[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/micolo.4bpp.smol");
+const u16 gTrainerPalette_Micolo[] = INCBIN_U16("graphics/trainers/palettes/collaborators/micolo.gbapal");
+
 const u32 gTrainerFrontPic_Acimut[] = INCBIN_U32("graphics/trainers/front_pics/collaborators/acimut.4bpp.smol");
 const u16 gTrainerPalette_Acimut[] = INCBIN_U16("graphics/trainers/palettes/collaborators/acimut.gbapal");
 
@@ -536,6 +539,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_WAR, gTrainerFrontPic_War, gTrainerPalette_War),
     TRAINER_SPRITE(TRAINER_PIC_TOKYN, gTrainerFrontPic_Tokyn, gTrainerPalette_Tokyn),
     TRAINER_SPRITE(TRAINER_PIC_ERKEY, gTrainerFrontPic_Erkey, gTrainerPalette_Erkey),
+    TRAINER_SPRITE(TRAINER_PIC_MICOLO, gTrainerFrontPic_Micolo, gTrainerPalette_Micolo),
     TRAINER_SPRITE(TRAINER_PIC_ACIMUT, gTrainerFrontPic_Acimut, gTrainerPalette_Acimut),
     TRAINER_SPRITE(TRAINER_PIC_ALEXMAD, gTrainerFrontPic_Alexmad, gTrainerPalette_Alexmad),
     TRAINER_SPRITE(TRAINER_PIC_JAVI4315, gTrainerFrontPic_Javi4315, gTrainerPalette_Javi4315),
