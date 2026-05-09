@@ -202,6 +202,67 @@ Jolly Nature
 - Drain Punch
 - Flying Press
 
+=== TRAINER_WAH_ADMIN_OMEGA_MAIN ===
+Name: Omega
+Class: WAH Admin
+Pic: Omega
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Cookie (Kingler) @ Leftovers
+EVs: 252Atk / 252 Spe / 4 HP
+Adamant Nature
+- Crabhammer
+- Ice Hammer
+- Earthquake
+- Liquidation
+
+Cacturne @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Seed Bomb
+- Drain Punch
+- Night Slash
+- Thunder Punch
+
+Porygon Z @ Assault Vest
+Ability: Download
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Magmortar @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Flamethrower
+- Psychic
+- Thunderbolt
+- Earth Power
+
+Articuno @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 Def
+Timid Nature
+- Mind Reader
+- Sheer Cold
+- Hurricane
+- Blizzard
+
+Hawlucha @ Hawluchanite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
 === TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
 Name: Omega
 Class: WAH Admin
@@ -273,6 +334,67 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Hawlucha @ Hawluchanite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Hone Claws
+- Roost
+- Drain Punch
+- Flying Press
+
+Gyarados @ Leftovers
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Ice Fang
+
+Onix @ Eviolite
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Dragon Dance
+- Curse
+- Earthquake
+- Rock Slide
+
+Electivire @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Fire Punch
+- Drain Punch
+
+Mamoswine @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Ice Shard
+- Earthquake
+- Stone Edge
+- Iron Head
+
+Articuno Galar @ Leftovers
+EVs:  252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Freezing Glare
+- Hurricane
+- Recover
+- Calm Mind
+
+=== TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE ===
+Name: Omega
+Class: WAH Admin
+Pic: Omega
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Hawlucha @ Hawluchanite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -444,6 +566,67 @@ Jolly Nature
 - Wild Charge
 - Iron Head
 
+=== TRAINER_WAH_ADMIN_GOCE_MAIN ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Yellow
+Difficulty: Hard
+
+Aerodactyl @ Aerodactylite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Slide
+- Aerial Ace
+- Dragon Claw
+- Hone Claws
+
+Tyrantrum @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Smash
+- Dragon Claw
+- Earthquake
+- Fire Fang
+
+Cradily @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Giga drain
+- Energy Ball
+- Earth Power
+- Ancient Power
+
+Kabutops @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Leech Life
+- Metal Claw
+
+Arctozolt @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Arcanine Hisui @ Choice Scarf
+Ability: Rock Head
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
 === TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE ===
 Name: Goce
 Class: WAH Admin
@@ -565,6 +748,68 @@ Timid Nature
 - Burning Jealousy
 - Fiery Wrath
 
+=== TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE ===
+Name: Goce
+Class: WAH Admin
+Pic: Goce
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Necrozma Dusk Mane @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+- Hidden Power 
+
+Lugia @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Moltres Galar @ Leftovers
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dark Pulse
+- Hurricane
+- Burning Jealousy
+- Fiery Wrath
+
 === TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 Name: Cheve
 Class: WAH Admin
@@ -630,7 +875,6 @@ Modest Nature
 - Substitute
 - Disable
 
-
 === TRAINER_WAH_ADMIN_CHEVE_MAIN ===
 Name: Cheve
 Class: WAH Admin
@@ -642,6 +886,72 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
 Difficulty: Normal
+
+Umbreon
+Shiny: Yes
+Ability: Synchronize
+EVs: 252 HP / 252 Spe / 4 Def
+Bold Nature
+- Toxic
+- Heal Bell
+- Yawn
+- Moonlight
+
+Weavile @ Iron Ball
+Ability: Pickpocket
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fling
+- Ice Shard
+- Fake Out
+- Brick Break
+
+Plantita (Meganium) @ Leftovers
+Ability: Leaf Guard
+EVs: 252 HP / 252 SpD / 4 Def
+Bold Nature
+- Leech Seed
+- Protect
+- Toxic
+- Synthesis
+
+Swampert @ Swampertite
+Ability: Swift Swim
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Stealth Rock
+
+Noctowl @ Leftovers
+Ability: Insomnia
+EVs: 252 Atk / 252 Spe / 4 SpA
+- Wing Attack
+- Sky Attack
+- Shadow Ball
+- Hypnosis
+
+Gengar @ Choice Scarf
+Ability: Cursed Body
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Will-O-Wisp
+- Hex
+- Substitute
+- Disable
+
+=== TRAINER_WAH_ADMIN_CHEVE_MAIN ===
+Name: Cheve
+Class: WAH Admin
+Pic: Cheve
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Hard
 
 Umbreon
 Shiny: Yes
@@ -829,6 +1139,72 @@ Timid Nature
 - Rest
 - Sleep Talk
 
+=== TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE ===
+Name: Cheve
+Class: WAH Admin
+Pic: Cheve
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Hard
+
+Dragonite @Leftovers
+Ability: Multiscale
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Roost
+- Dragon Claw
+- Fire Punch
+- Dragon Dance
+
+Charizard @Leftovers
+Ability: Blaze
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Earthquake
+- Thunder Punch
+- Roost
+
+Espeon @Leftovers
+Ability: Magic Bounce
+EVs: 252 HP / 252 Spe / 4 SpA
+Calm Nature
+- Calm Mind
+- Baton Pass
+- Stored Power
+- Substitute
+
+Cresselia @Flame Orb
+Ability: Levitate
+EVs: 252 SpA / 252 HP / 4 Spe
+Calm Nature
+- Psychic
+- Psycho Shift
+- Rest
+- Sleep Talk
+
+Houndoom @Houndoominite
+Ability: Solar Power
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Nasty Plot
+- Fire Blast
+- Dark Pulse
+- Solar Beam
+
+Suicune @Leftovers
+Ability: Pressure
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Calm Mind
+- Scald
+- Rest
+- Sleep Talk
+
 === TRAINER_WAH_ADMIN_BLAX_MAIN ===
 Name: Blax
 Class: WAH Admin
@@ -882,6 +1258,49 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 Difficulty: Normal
+
+BLAxTOISE (Blastoise) (M) @ Blastoisinite
+Ability: Torrent
+Tera Type: Water
+EVs: 176 HP / 252 Atk / 80 Spe
+Adamant Nature
+- Shell Smash
+- Flip Turn
+- Earthquake
+- Liquidation
+
+SiriusBLAx (Dragapult) @ Roseli Berry
+Ability: Cursed Body
+Shiny: Yes
+Tera Type: Dragon
+EVs: 232 HP / 252 Atk / 24 Spe
+Adamant Nature
+- Dragon Darts
+- Phantom Force
+- Outrage
+- Acrobatics
+
+BLAxThePatcher (Aron) @ Shell Bell
+Ability: Sturdy
+Level: 10
+Shiny: Yes
+Tera Type: Steel
+EVs: 236 Spe
+Timid Nature
+IVs: 0 Atk
+- Endeavor
+
+=== TRAINER_WAH_ADMIN_BLAX_MAIN ===
+Name: Blax
+Class: WAH Admin
+Pic: Blax
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
 
 BLAxTOISE (Blastoise) (M) @ Blastoisinite
 Ability: Torrent
@@ -1003,6 +1422,52 @@ Adamant Nature
 - Protect
 - Psychic Fangs
 
+=== TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE ===
+Name: Blax
+Class: WAH Admin
+Pic: Blax
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Rey BLAxtasar (Reuniclus) @ Twisted Spoon
+Ability: Regenerator
+Shiny: Yes
+Tera Type: Psychic
+EVs: 120 HP / 252 Def / 136 SpA
+Modest Nature
+IVs: 0 Atk
+- Stored Power
+- Calm Mind
+- Light Screen
+- Substitute
+
+Toise D. BLAx (Iron Valiant) @ Booster Energy
+Ability: Quark Drive
+Tera Type: Fairy
+EVs: 252 SpA / 124 SpD / 132 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Dazzling Gleam
+- Psychic
+- Shadow Ball
+
+BLAx-Atlas (Zacian) @ Rusted Sword
+Ability: Intrepid Sword
+Shiny: Yes
+Tera Type: Fairy
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Play Rough
+- Iron Head
+- Protect
+- Psychic Fangs
+
 === TRAINER_WAH_ADMIN_SAYER_MAIN ===
 Name: Sayer
 Class: WAH Admin
@@ -1076,6 +1541,43 @@ Adamant Nature
 - Rock Slide
 - Aqua Jet
 
+=== TRAINER_WAH_ADMIN_SAYER_MAIN ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Metagross @ Assault Vest
+Shiny: Yes
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Drain Punch
+- Earthquake
+
+Tyranitar @ Choice Band
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Crunch
+- Stone Edge
+- Earthquake
+- Heavy slam
+
+Swampert @ Swampertite
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Liquidation
+- Earthquake
+- Rock Slide
+- Aqua Jet
+
 === TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
 Name: Sayer
 Class: WAH Admin
@@ -1121,6 +1623,43 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 Difficulty: Normal
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Ice Beam
+- Focus Blast
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Seismic Toss
+- Dragon Claw
+- Fire Punch
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Thunderbolt
+- Heat Wave
+- Hurricane
+- Hidden Power
+
+=== TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE ===
+Name: Sayer
+Class: WAH Admin
+Pic: Sayer
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
 
 Gengar @ Black Sludge
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -1223,6 +1762,72 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 Difficulty: Normal
+
+Swampert @ Leftovers
+Ability: Torrent
+Nature: Lonely
+EVs: 252 Atk / 252 Spe / 4 HP
+- Earthquake
+- Surf
+- Ice Punch
+- Protect
+
+Skarmory @ Leftovers
+Ability: Sturdy
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpA
+- Spikes
+- Stealth Rock
+- Drill Peck
+- Roar
+
+Gengar @ Leftovers
+Ability: Levitate
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Shadow Ball
+- Thunderbolt
+- Hypnosis
+- Protect
+
+Tyranitar @ Leftovers
+Ability: Sand Stream
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Earthquake
+- Flamethrower
+- Dragon Claw
+- Protect
+
+Blissey @ Leftovers
+Ability: Natural Cure
+Nature: Calm
+EVs: 252 HP / 252 SpD / 4 SpA
+- Protect
+- Wish
+- Ice Beam
+- Toxic
+
+Salamence @ Leftovers
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Dragon Claw
+- Earthquake
+- Flamethrower
+- Protect
+
+=== TRAINER_WAH_ADMIN_AGUIAR_MAIN ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
 
 Swampert @ Leftovers
 Ability: Torrent
@@ -1398,6 +2003,66 @@ Timid Nature
 - Giga Drain
 - Dark Pulse
 
+=== TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE ===
+Name: Aguiar
+Class: WAH Admin
+Pic: Aguiar
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
+
+Torkoal @Charcoal
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Eruption
+- Overheat
+- Solar Beam
+- Slack Off
+
+Weezing Galar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Moonblast
+- Flamethrower
+- Strange Steam
+
+Barbaracle @ Barbaracite
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Liquidation
+- Rock Slide
+- Drain Punch
+- Earthquake
+
+Hydreigon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Dark Pulse
+- Flash Cannon
+- Earth Power
+
+Forretress @ Leftovers
+EVs: 252 Spe / 252 HP / 4 SpD
+Jolly Nature
+- Stealth Rock
+- Spikes
+- Toxic Spikes
+- Rapid Spin
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga Drain
+- Dark Pulse
+
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
 Name: Jack
 Class: WAH Admin
@@ -1468,6 +2133,66 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Venusaur @ Shell Bell
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Toxic
+- Leech Seed
+- Sleep Powder
+- Frenzy Plant
+
+Magnezone @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Thunderbolt
+- Thunder Wave
+- Rain Dance
+- Thunder
+
+Tyranitar @ Choice Band
+EVs: 252 Atk / 252 HP / 4 SpA
+Careful Nature
+- Crunch
+- Ancient Power
+- Brick Break
+- Curse
+
+Crobat @ Bright Powder
+EVs: 22 Atk / 252 Spe / 4 SpA
+Jolly Nature
+- Poison Fang
+- Shadow Ball
+- Facade
+- Aerial Ace
+
+Gyarados @ King's Rock
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Frustration
+- Dragon Dance
+- Earthquake
+- Double-Edge
+
+Arcanine @ Quick Claw
+EVs: 252 Spe / 252 SpA / 4 Atk
+Naive Nature
+- Flamethrower
+- Sunny Day
+- Extreme Speed
+- Facade
+
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
+Name: Jack
+Class: WAH Admin
+Pic: Jack Johnson
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Venusaur @ Shell Bell
 EVs: 252 SpA / 252 HP / 4 Spe
@@ -1636,6 +2361,66 @@ Jolly Nature
 - Earthquake
 - Extreme Speed
 
+=== TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE ===
+Name: Jack
+Class: WAH Admin
+Pic: Jack Johnson
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Electivire @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Thunder Punch
+- Ice Punch
+- Drain Punch
+- Earthquake
+
+Ludicolo @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Giga Drain
+- Scald
+- Ice Beam
+- Sludge Bomb
+
+Mightyena @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Crunch
+- Play Rough
+- Ice Fang
+- Psychic Fangs
+
+Groudon @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Eruption
+- Earthquake
+- Drain Punch
+
+Kyogre @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Ice Beam
+- Thunder
+
+Rayquaza @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Dragon Dance
+- Earthquake
+- Extreme Speed
+
 === TRAINER_WAH_ADMIN_ANGEL_MAIN ===
 Name: Angel
 Class: WAH Admin
@@ -1706,6 +2491,66 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 Difficulty: Normal
+
+Typhlosion @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
+
+Lucario @ Assault Vest
+EVs: 252 SpA / 252 Atk / 4 Spe
+Naive Nature
+- Aura Sphere
+- Drain Punch
+- Meteor Mash
+- Earth Power
+
+Darkrai @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Dark Void
+- Dream Eater
+- Nightmare
+- Dark Pulse
+
+Latios @ Soul Dew
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Luster Purge
+- Psychic
+- Recover
+- Dragon Pulse
+
+Landorus Therian @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Sandsear Storm
+- Air Slash
+- U Turn
+- Knock Off
+
+Suicune @ Leftovers
+EVs: 252 SpA / 252 Spe /4 HP
+Timid Nature
+- Scald
+- Air Slash 
+- Ice Beam
+- Extreme Speed
+
+=== TRAINER_WAH_ADMIN_ANGEL_MAIN ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
 
 Typhlosion @ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -1874,6 +2719,66 @@ Jolly Nature
 - Flare Blitz
 - Mega Punch
 
+=== TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE ===
+Name: Angel
+Class: WAH Admin
+Pic: Angel
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
+
+Necrozma Dusk Mane @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Sunsteel Strike
+- Zen Headbutt
+- Dragon Dance
+- Hone Claws
+
+Calyrex Shadow @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+Zekrom @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fusion Bolt
+- Bolt Strike
+- Dragon Claw
+- Iron Head
+
+Chien Pao @ Leftovers
+EVs: 252 Atk/ 252 HP / 4 SpA
+Jolly Nature
+- Ruination
+- Ice Shard
+- Sacred Sword
+- Recover
+
+Urshifu @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wicked Blow
+- Surging Strikes
+- Drain Punch
+- Iron Head
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Flare Blitz
+- Mega Punch
+
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
 Name: Ozumas
 Class: WAH Admin
@@ -1938,7 +2843,6 @@ Jolly Nature
 - Dynamic Punch
 - Knock Off
 
-
 === TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
 Name: Ozumas
 Class: WAH Admin
@@ -1993,6 +2897,68 @@ Adamant Nature
 - Knock Off
 - Brick Break
 - Dire Claw
+
+Calyrex Shadow  @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Astral Barrage
+- Psychic
+- Giga drain
+- Ice Beam
+
+=== TRAINER_WAH_ADMIN_OZUMAS_MAIN ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
+
+Ceruledge @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Bitter Blade
+- Solar Blade
+- Night Slash
+- Shadow Claw
+
+Sylveon @  Choice Specs
+Ability: Pixilate
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Hyper Voice
+- Boomburst
+- Moonblast
+- Mystical Fire
+
+Miraidon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Electro Drift
+- Dragon Pulse
+- Flash Cannon
+- Snarl
+
+Greninja @ Leftovers
+Ability: Protean
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Dark Pulse
+- Sludge Bomb
+
+Zacian @ Rusted Sword
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Behemoth Blade
+- Sacred Sword
+- Play Rough
+- Swords Dance
 
 Calyrex Shadow  @ Leftovers
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -2061,7 +3027,6 @@ Calm Nature
 - Destiny Bond
 - Amnesia 
 
-
 === TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE ===
 Name: Ozumas
 Class: WAH Admin
@@ -2073,6 +3038,66 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Typhlosion@ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Eruption
+- Blast Burn
+- Scorching Sands
+
+Milotic @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Recover
+- Moonblast
+- Ice Beam
+
+Rayquaza @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Extreme Speed
+- Dragon Claw
+- V create
+
+Kyogre @ Blue Orb
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Sheer Cold
+- Thunder
+
+Skarmory @ Rocky Helmet
+EVs: 252 Def / 252 Spe / 4 HP
+Naive Nature
+- Stealth Rock
+- Spikes
+- Tailwind
+- Roost
+
+Wobbuffet @ Leftovers
+EVs: 252 HP / 252 Def / 4 Atk
+Calm Nature
+- Mirror Coat
+- Counter
+- Destiny Bond
+- Amnesia 
+
+=== TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE ===
+Name: Ozumas
+Class: WAH Admin
+Pic: Ozumas
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Typhlosion@ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -2193,6 +3218,67 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
 Difficulty: Normal
+
+Porygon Z @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Zoroark Hisui @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Bitter Malice
+- Hyper Voice
+- Nasty Plot
+- Dark Pulse
+
+Beheeyem @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Calm Mind
+- Recover
+- Psychic
+- Stored Power
+
+Grimmsnarl @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Spirit Break
+- False Surrender
+- Drain Punch
+
+Yamask Galar @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
+
+Scolipede @ Scolipite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Poison Jab
+- Leech Life
+- Rock Slide
+- Aqua Tail
+
+=== TRAINER_WAH_ADMIN_SCAREX_MAIN ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Hard
 
 Porygon Z @ Choice Scarf
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -2364,6 +3450,67 @@ Adamant Nature
 - Thunder Punch
 - Ice Punch
 
+=== TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE ===
+Name: Scarex
+Class: WAH Admin
+Pic: Scarex
+Gender: Male
+Music: Aqua
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Hard
+
+Porygon Z @ Choice Scarf
+EVs: 252 SpA / 252 Spe / 4 HP
+Ability: Download
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Charge Beam
+- Psychic
+
+Musharna @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Calm Mind
+- Moonblast
+- Psychic
+- Stored Power
+
+Walrein @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Ice Ball
+- Liquidation
+- Steel Roller
+- Rock Slide
+
+Rapidash Galar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Psycho Cut
+- Megahorn
+- Drill Run
+
+Maractus @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Def
+Modest Nature
+- Giga drain
+- Spikes
+- Leech Seed
+- Energy Ball
+
+Buzzwole @ Assault Vest
+EVs: 252 Atk / 252 Def / 4 SpD
+Adamant Nature
+- Leech Life
+- Drain Punch
+- Thunder Punch
+- Ice Punch
+
 === TRAINER_WAH_ADMIN_DAVZERO_MAIN ===
 Name: Zero
 Class: WAH Admin
@@ -2441,6 +3588,73 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Benji (Braviary) @ Choice Scarf
+Ability: Keen Eye
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Brave Bird
+- Close Combat
+- U-turn
+- Rock Slide
+
+Samus (Charizard) (F) @ Charizardite X
+Ability: Tough Claws
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Flare Blitz
+- Dragon Claw
+- Earthquake
+
+0 (Milotic) (M) @ Leftovers
+Ability: Marvel Scale
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
+Iris (Xerneas) @ Power Herb
+Ability: Fairy Aura
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Geomancy
+- Moonblast
+- Thunderbolt
+- Focus Blast
+
+Hydreigon (F) @ Choice Specs
+Ability: Levitate
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Draco Meteor
+- Dark Pulse
+- Flamethrower
+- Earth Power
+
+Kingambit (M) @ Leftovers
+Ability: Supreme Overlord
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Swords Dance
+- Iron Head
+- Kowtow Cleave
+- Sucker Punch
+
+=== TRAINER_WAH_ADMIN_DAVZERO_MAIN ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
@@ -2628,6 +3842,72 @@ Adamant Nature
 - Gigaton Hammer
 - Play Rough
 
+=== TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE ===
+Name: Zero
+Class: WAH Admin
+Pic: Zero
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
+
+Zero (Zoroark) (M) @ Choice Scarf
+Ability: Illusion
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Dark Pulse
+- Flamethrower
+- Focus Blast
+- U-turn
+
+Lea (Volcarona) (F) @ Leftovers
+Ability: Flame Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+Darkus (Darkrai) @ Life Orb
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Nasty Plot
+- Dark Pulse
+- Hypnosis
+- Focus Blast
+
+Tyranitar (F) @ Tyranitarite
+Ability: Sand Stream
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Stone Edge
+- Earthquake
+
+Grimmsnarl @ Light Clay
+Ability: Prankster
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Light Screen
+- Reflect
+- Parting Shot
+- Taunt
+
+Tinkaton @ Heavy-Duty Boots
+Ability: Mold Breaker
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Stealth Rock
+- Knock Off
+- Gigaton Hammer
+- Play Rough
+
 === TRAINER_WAH_ADMIN_BARO_MAIN ===
 Name: Baro
 Class: WAH Admin
@@ -2698,6 +3978,66 @@ Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Normal
+
+PlugOink @ Eviolite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Charge Beam
+- Snarl
+- Thunderbolt
+
+Ayewiraz @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 Spe
+Jolly Nature
+- Play Rough
+- Crunch
+- Poison Tail
+- Psychic Fangs
+
+Gritespec @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Psychic
+- Moonblast
+- Shadow Ball
+- Energy Ball
+
+Freech @ Weakness Policy
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Dragon Pulse
+- Ice Beam
+- Ice Shard
+- Recover
+
+Magiken @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu @ Light Ball
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
+
+=== TRAINER_WAH_ADMIN_BARO_MAIN ===
+Name: Baro
+Class: WAH Admin
+Pic: Baro
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Pink
+Difficulty: Hard
 
 PlugOink @ Eviolite
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -2866,6 +4206,65 @@ Mild Nature
 - Thunderbolt
 - Surf
 
+=== TRAINER_WAH_ADMIN_BARO_ALTERNATIVE ===
+Name: Baro
+Class: WAH Admin
+Pic: Baro
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Pink
+Difficulty: Hard
+
+Oceadino @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Earth Power
+- Sludge Bomb
+
+Tyradino @ Charcoal
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Blaze Kick
+- Shadow Claw
+- Thunder Punch
+- Sky Uppercut
+
+Kaosune @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Earthquake
+- Heavy Slam
+- Solar Blade
+- Heat Crash
+
+Jardino @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Leaf Blade
+- Dragon Claw
+
+Magiken @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Shadow Claw
+- Night Slash
+- Brave Bird
+
+Pikachu @ Light Ball
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Volt Tackle
+- Extreme Speed
+- Thunderbolt
+- Surf
 
 === TRAINER_WAH_ADMIN_REYBOO_MAIN ===
 Name: Helix Boo
@@ -3191,7 +4590,6 @@ Modest Nature
 - Recover
 - Calm Mind
 
-
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Helix Boo
 Class: WAH Admin
@@ -3400,6 +4798,78 @@ Mild Nature
 - Focus Blast
 - Fire Punch
 
+=== TRAINER_WAH_ADMIN_COSARARA_MAIN ===
+Name: Cosarara
+Class: WAH Admin
+Pic: Cosarara
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Handy (Hariyama) @ Life Orb
+Ability: Guts
+Tera Type: Fighting
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Fake Out
+- Low Kick
+- Dynamic Punch
+- Close Combat
+
+Brenda (Breloom) (F) @ Quick Claw
+Ability: Effect Spore
+Tera Type: Grass
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Body Slam
+- Drain Punch
+- Seed Bomb
+- Low Kick
+
+Galleta (Gallade) (M) @ Leftovers
+Ability: Sharpness
+Tera Type: Psychic
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Sacred Sword
+- Drain Punch
+- Psycho Cut
+- Agility
+
+Lucas (Lucario) (M) @ Loaded Dice
+Ability: Inner Focus
+Tera Type: Fighting
+EVs: 4 Atk / 252 SpA / 252 Spe
+Hasty Nature
+- Bone Rush
+- Close Combat
+- Flash Cannon
+- Steel Beam
+
+Goshima (Poliwrath) (F) @ Sitrus Berry
+Ability: Water Absorb
+Tera Type: Water
+EVs: 248 HP / 252 Atk / 8 SpA
+Brave Nature
+- Liquidation
+- Surf
+- Close Combat
+- Seismic Toss
+
+Nugget (Combusken) (M) @ Rocky Helmet
+Ability: Speed Boost
+Tera Type: Fire
+EVs: 4 Atk / 252 SpA / 252 Spe
+Mild Nature
+- Flamethrower
+- Overheat
+- Focus Blast
+- Fire Punch
+
 === TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE ===
 Name: Cosarara
 Class: WAH Admin
@@ -3482,6 +4952,79 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 Difficulty: Normal
+
+Brenda (Breloom) (F) @ Loaded Dice
+Ability: Technician
+Tera Type: Grass
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Spore
+- Mach Punch
+- Bullet Seed
+- Close Combat
+
+Medichamp (Medicham) (F) @ Medichamite
+Ability: Pure Power
+Tera Type: Fighting
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Fake Out
+- Close Combat
+- Zen Headbutt
+- Ice Punch
+
+Fairy King (Iron Valiant) @ Booster Energy
+Ability: Quark Drive
+Tera Type: Fairy
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Calm Mind
+- Moonblast
+- Aura Sphere
+- Psychic
+
+Lucas (Lucario) (M) @ Fightinium Z
+Ability: Justified
+Tera Type: Fighting
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Close Combat
+- Swords Dance
+- Extreme Speed
+- Meteor Mash
+
+Goshima (Poliwrath) (F) @ Choice Scarf
+Ability: Water Absorb
+Tera Type: Water
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Close Combat
+- Liquidation
+- Earthquake
+- Knock Off
+
+Alitas (Blaziken) (M) @ Focus Sash
+Ability: Speed Boost
+Tera Type: Fire
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Swords Dance
+- Close Combat
+- Blaze Kick
+- Earthquake
+
+=== TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE ===
+Name: Cosarara
+Class: WAH Admin
+Pic: Cosarara
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
 
 Brenda (Breloom) (F) @ Loaded Dice
 Ability: Technician
@@ -3628,7 +5171,6 @@ Timid Nature
 - Focus Blast
 - Taunt
 
-
 === TRAINER_WAH_ADMIN_DRIVE_MAIN ===
 Name: Drive
 Class: WAH Admin
@@ -3714,7 +5256,6 @@ Jolly Nature
 - Flare Blitz
 - Earthquake
 
-
 === TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
 Name: Drive
 Class: WAH Admin
@@ -3726,6 +5267,50 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 Difficulty: Normal
+
+Luxray (M) @ Flame Orb
+Ability: Guts
+Shiny: Yes
+Tera Type: Electric
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Facade
+- Ice Fang
+- Crunch
+
+Manaphy @ Leftovers
+Ability: Hydration
+Tera Type: Water
+IVs: 0 Atk
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tail Glow
+- Scald
+- Ice Beam
+- Energy Ball
+
+Typhlosion (M) @ Choice Band
+Ability: Blaze
+Tera Type: Fire
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Howl
+- Flare Blitz
+- Earthquake
+
+=== TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE ===
+Name: Drive
+Class: WAH Admin
+Pic: Drive
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
 
 Luxray (M) @ Flame Orb
 Ability: Guts
@@ -3832,6 +5417,43 @@ Jolly Nature
 - Triple Axel
 - Play Rough
 
+=== TRAINER_WAH_ADMIN_KATHERINE_MAIN ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
+
+Lapras @ Leftovers
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
+
+Clefable @ Clefablite
+Ability: Magic Guard
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Moonblast
+- Softboiled
+- Flamethrower
+- Hyper Voice
+
+Lilligant @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Trop Kick
+- Drain Punch
+- Triple Axel
+- Play Rough
+
 === TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE ===
 Name: Katherine
 Class: WAH Admin
@@ -3880,6 +5502,44 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 Difficulty: Normal
+
+Umbreon @ Leftovers
+Ability: Synchronize
+EVs: 252 HP / 252 SpA / 4 Def
+Calm Nature
+- Helping Hand
+- Moonlight
+- Calm Mind
+- Dark Pulse
+
+Arcanine @ Choice Scarf
+Ability: Rock Head
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Ninetales @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Play Rough
+- Triple Axel
+- Aqua Tail
+- Iron Tail
+
+=== TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE ===
+Name: Katherine
+Class: WAH Admin
+Pic: Katherine
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
 
 Umbreon @ Leftovers
 Ability: Synchronize
@@ -3965,7 +5625,6 @@ Modest Nature
 - Sludge Bomb
 - Earth Power
 
-
 === TRAINER_WAH_ADMIN_REONEKY_MAIN ===
 Name: Reoneky
 Class: WAH Admin
@@ -3977,6 +5636,65 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Pidgeot @ Pidgeotite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Heat Wave
+- Mimic
+- Roost
+
+Swampert @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
+Spitfire (Typhlosion) @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Burning Jealousy
+
+Metagross @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
+
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Dragon Dance
+- Earthquake
+- Crunch
+- Rock Slide
+
+Venusaur @ Black Sludge
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Leech Seed
+- Giga Drain
+- Sludge Bomb
+- Earth Power
+
+=== TRAINER_WAH_ADMIN_REONEKY_MAIN ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Pidgeot @ Pidgeotite
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -4084,7 +5802,6 @@ Hasty Nature
 - Psychic
 - Play Rough 
 
-
 === TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
 Name: Reoneky
 Class: WAH Admin
@@ -4096,6 +5813,66 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Absol @ Absolite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Zen Headbutt
+- Knock Off
+- Play Rough
+
+Espeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Calm Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Wish
+
+Noivern @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Air Slash
+- Hurricane
+- Boomburst
+
+Lucario @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 HP
+Impish Nature
+- Aura Sphere
+- Drain Punch
+- Earthquake
+- Flash Cannon
+
+Zoroark @ Assault Vest
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Foul Play
+- Night Daze
+- Burning Jealousy
+- Sludge Bomb
+
+Meloetta @ Leftovers
+EVs: 252 Atk / 252 SpA / 4 HP
+Hasty Nature
+- Relic Song
+- Drain Punch
+- Psychic
+- Play Rough
+
+=== TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Absol @ Absolite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4207,7 +5984,6 @@ Jolly Nature
 - Drain Punch
 - Earthquake
 
-
 === TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
 Name: Gallego
 Class: WAH Admin
@@ -4219,6 +5995,69 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Nidoking @ Life Orb
+Ability: Sheer force
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Earth Power
+- Sludge Bomb
+- Flamethrower
+- Ice Beam
+
+Feraligatr @ Feraligite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Dragon Claw
+- Crunch
+
+Lugia @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Aeroblast
+- Dragon Pulse
+- Psychic
+- Recover
+
+Dragonite @ Weakness Policy
+EVs: 252 Atk / 252 Spe / 4 HP
+Ability: Multiscale
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Iron Head
+
+Lucario @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Shadow Ball
+
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rock Slide
+- Crunch
+- Drain Punch
+- Earthquake
+
+=== TRAINER_WAH_ADMIN_GALLEGO_MAIN ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Nidoking @ Life Orb
 Ability: Sheer force
@@ -4330,7 +6169,6 @@ Modest Nature
 - Energy Ball
 - Calm Mind
 
-
 === TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
 Name: Gallego
 Class: WAH Admin
@@ -4342,6 +6180,66 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Snorlax @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Def
+Adamant Nature
+- Body Slam
+- Heavy Slam
+- Drain Punch
+- Play Rough
+
+Shedinja @ Focus Sash
+EVs: 252 HP / 252 Spe / 4 Atk
+Impish Nature
+- Destiny Bond
+- X Scissor
+- Leech Life
+- Shadow Claw
+
+Zapdos @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Heat Wave
+- Roost
+- Air Slash
+
+Gyarados @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Liquidation
+- Earthquake
+- Iron Head
+
+Scizor @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bullet Punch
+- X Scissor
+- Aerial Ace
+- Brick Break
+
+Chandelure @ Chandelurite
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Burning Jealousy
+- Shadow Ball
+- Energy Ball
+- Calm Mind
+
+=== TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE ===
+Name: Gallego
+Class: WAH Admin
+Pic: Gallego
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Snorlax @ Assault Vest
 EVs: 252 Atk / 252 HP / 4 Def
@@ -4449,7 +6347,6 @@ Timid Nature
 - Draco Meteor
 - Surf
 
-
 === TRAINER_WAH_ADMIN_EING_MAIN ===
 Name: Eing
 Class: WAH Admin
@@ -4461,6 +6358,67 @@ Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Normal
+
+Crobat @ Black Sludge
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- U-turn
+- Cross Poison
+- Brave Bird
+- Tailwind
+
+Klefki @ Leftovers
+EVs: 252HP / 252 SpA / 4 Spe
+Calm Nature
+- Barrier
+- Light Screen
+- Draining Kiss
+- Dazzling Gleam
+
+Jolteon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Thunderbolt
+- Calm Mind
+- Magnet Rise
+- Hidden Power
+
+Darkrai @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
+- Dark Pulse
+
+Blaziken @ Blazikenite
+EVs: 252 Atk / 252 HP / 4 Spe
+Jolly Nature
+- Blaze Kick
+- Sky Uppercut
+- Brave Bird
+- Thunder Punch
+
+Eing @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
+
+=== TRAINER_WAH_ADMIN_EING_MAIN ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Hard
 
 Crobat @ Black Sludge
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4630,6 +6588,66 @@ Timid Nature
 - Draco Meteor
 - Surf
 
+=== TRAINER_WAH_ADMIN_EING_ALTERNATIVE ===
+Name: Eing
+Class: WAH Admin
+Pic: Eing
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Hard
+
+Vaporeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Scald
+- Ice Beam
+- Shadow Ball
+- Recover
+
+Mawile @ Mawilite
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Drain Punch
+- Crunch
+
+Tropius @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Timid Nature
+- Energy Ball
+- Sludge Bomb
+- Air Slash
+- Earth Power
+
+Drapion @ Black Sludge
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Cross Poison
+- X Scissor
+- Fire Fang
+- Brick Break
+
+Eelektross @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Signal Beam
+- Flamethrower
+- Recover
+
+Eing @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Sing
+- Hyper Voice
+- Draco Meteor
+- Surf
+
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
 Class: WAH Admin
@@ -4665,7 +6683,6 @@ Jolly Nature
 - Steel Wing
 - Endeavor
 
-
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
 Class: WAH Admin
@@ -4677,6 +6694,42 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Linoone @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Belly Drum
+- Facade
+- Extreme Speed
+- Endeavor
+
+Sceptile @ Sceptilite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Energy Ball
+- Giga drain
+- Dragon Pulse
+- Solar Beam
+
+Swellow @ Choice Scarf
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Sky Attack
+- Aerial Ace
+- Steel Wing
+- Endeavor
+
+=== TRAINER_WAH_ADMIN_TOKYN_MAIN ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Tokyn
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Linoone @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4748,6 +6801,42 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Infernape @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Fire Punch
+- Thunder Punch
+- Close Combat
+
+Gengar @ Gengarite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Bomb
+- Shadow Ball
+- Giga drain
+- Dark Pulse
+
+Weavile @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Fake Out
+- Ice Punch
+- Shadow Claw
+
+=== TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
+Name: Tokyn
+Class: WAH Admin
+Pic: Tokyn
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Infernape @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -4846,6 +6935,43 @@ Jolly Nature
 - Meteor Mash
 - X Scissor
 
+=== TRAINER_WAH_ADMIN_WAR_MAIN ===
+Name: War
+Class: WAH Admin
+Pic: War
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
+
+Gliscor @ Toxic Orb    
+Ability: Poison Heal
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Earthquake
+- Aerial Ace
+- Fire Fang
+- Knock Off
+
+Blissey @ Leftovers
+EVs: 252 HP / 252 Def / 4 SpD
+Calm Nature
+- Softboiled
+- Counter
+- Helping Hand
+- Mirror Coat
+
+Scizor @ Scizorite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Meteor Mash
+- X Scissor
+
 === TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
 Name: War
 Class: WAH Admin
@@ -4892,6 +7018,42 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
+
+Ferrothorn @ Rocky Helmet
+EVs: 252 HP / 252 SpD / 4 Def
+Bold Nature
+- Leech Seed
+- Spikes
+- Stealth Rock
+- Body Press
+
+Garchomp @ Garchompite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Liquidation
+
+Umbreon @ Leftovers
+EVs: 252 Spe / 252 HP / 4 SpD
+Bold Nature
+- Helping Hand
+- Wish
+- Nasty Plot
+- Baton Pass
+
+=== TRAINER_WAH_ADMIN_WAR_ALTERNATIVE ===
+Name: War
+Class: WAH Admin
+Pic: War
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Hard
 
 Ferrothorn @ Rocky Helmet
 EVs: 252 HP / 252 SpD / 4 Def
@@ -4992,6 +7154,44 @@ Adamant Nature
 - Rock Slide
 - Heat Crash
 
+=== TRAINER_WAH_ADMIN_JAVI4315_MAIN ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Javi4315
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Torkoal @ Heat Rock
+Ability: Drought
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
+
+Infernape @ Leftovers
+Ability: Iron Fist
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Fire Punch
+- Mach Punch
+- Thunder Punch
+- Protect
+
+Groudon @ Red Orb
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Lava Plume
+- Rock Slide
+- Heat Crash
+
 === TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
 Name: Javi4315
 Class: WAH Admin
@@ -5039,6 +7239,43 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Hydro pump
+- Scald
+- Roost
+
+Wailord @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Water Spout
+- Scald
+- Aqua Ring
+- Rain Dance
+
+Kyogre @ Blue Orb
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Origin Pulse
+- Water Spout
+- Thunder
+- Ice Beam
+
+=== TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE ===
+Name: Javi4315
+Class: WAH Admin
+Pic: Javi4315
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -5113,6 +7350,44 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Shiftry @ Life Orb
+Ability: Chlorophyll
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Solar Blade
+- Leaf Blade
+- Fake Out
+- Knock Off
+
+Exeggutor @ Leftovers
+Ability: Chlorophyll
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Solar Beam
+- Energy Ball
+- Psychic
+- Sludge Bomb
+
+Venusaur @ Venusaurite
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Solar Beam
+- Leech Seed
+- Synthesis
+- Giga Drain
+
+=== TRAINER_WAH_ADMIN_JAVS_MAIN ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Shiftry @ Life Orb
 Ability: Chlorophyll
@@ -5215,6 +7490,44 @@ Jolly Nature
 - Ice Punch
 - Drain Punch
 
+=== TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE ===
+Name: Javs
+Class: WAH Admin
+Pic: Javs
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Toxicroak @ Black Sludge
+Ability: Dry Skin
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Drain Punch
+- Poison Jab
+- Thunder Punch
+- Sucker Punch
+
+Kingdra @ Choice Specs
+Ability: Swift Swim
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Scald
+- Dragon Pulse
+- Sludge Bomb
+- Ice Beam
+
+Swampert @ Swampertite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Drain Punch
+
 === TRAINER_WAH_ADMIN_SERGIO_MAIN ===
 Name: Sergio
 Class: WAH Admin
@@ -5275,7 +7588,6 @@ Timid Nature
 - Hurricane
 - Hydro pump
 
-
 === TRAINER_WAH_ADMIN_SERGIO_MAIN ===
 Name: Sergio
 Class: WAH Admin
@@ -5287,6 +7599,67 @@ Double Battle: No
 AI: Smart Trainer / Prediction / Ace Pokemon
 Mugshot: Green
 Difficulty: Normal
+
+Lapras @ Leftovers
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Scald
+- Ice Beam
+- Solar Beam
+- Earth Power
+
+Darkrai @ Leftovers
+EVs: 252 HP / 252 Spe / 4 SpA
+Timid Nature
+- Dark Void
+- Nightmare
+- Dream Eater
+- Dark Pulse
+
+Celebi @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Giga drain
+- Psychic
+- Recover
+- Moonblast
+
+Dialga @ Adamant Orb
+EVs: 252 SpA / 252 SpD / 4 HP
+Modest Nature
+- Roar of Time
+- Flash Cannon
+- Earth Power
+- Aura Sphere
+
+Groudon @ Red Orb
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Precipice Blades
+- Fissure
+- Solar Blade
+- Heat Crash
+
+Dragonite @ Dragoninite
+Ability: No Guard
+EVs: 252 SpA / 252 Spe / 4 Atk
+Timid Nature
+- Extreme Speed
+- Dragon Pulse
+- Hurricane
+- Hydro pump
+
+=== TRAINER_WAH_ADMIN_SERGIO_MAIN ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction / Ace Pokemon
+Mugshot: Green
+Difficulty: Hard
 
 Lapras @ Leftovers
 EVs: 252 HP / 252 SpA / 4 Spe
@@ -5407,6 +7780,66 @@ Double Battle: No
 AI: Smart Trainer / Prediction
 Mugshot: Green
 Difficulty: Normal
+
+Silvally /* @ Multi disk TODO Xiros */
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Multi Attack
+- Iron Head
+- Dragon Claw
+- X Scissor
+
+Genesect  /* @ @ Multi Rom */
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Techno Blast
+- Flamethrower
+- Flash Cannon
+- Bug Buzz
+
+Eternatus @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dynamax Cannon
+- Recover
+- Sludge Wave
+- Eternabeam
+
+Necrozma Dusk Mane @ Ultranecrozium Z
+EVs: 252 Atk / 252 SpA / 4 HP
+Timid Nature
+- Sunsteel Strike
+- Photon Geyser
+- Prismatic Laser
+- Recover
+
+Arceus   /* @ Legend Plate //TODO Xiros */
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Judgment
+- Roar of Time
+- Photon Geyser
+- Light of ruin
+
+Zygarde @ Zygardite
+EVs: 252 SpA / 252 Atk / 4 HP
+Modest Nature
+- Thousand Arrows
+- Land's Wrath
+- Thousand Waves
+- Core Enforcer
+
+=== TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE ===
+Name: Sergio
+Class: WAH Admin
+Pic: Sergio
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction
+Mugshot: Green
+Difficulty: Hard
 
 Silvally /* @ Multi disk TODO Xiros */
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -5587,6 +8020,71 @@ Timid Nature
 - Charge Beam
 - Thunderbolt
 
+=== TRAINER_WAH_ADMIN_XIROS_MAIN ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Hard
+
+Venusaur @ Venusaurite
+Shiny: Yes
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Energy Ball
+- Sludge Bomb
+- Giga Drain
+- Earth Power
+
+Torkoal @ Charcoal
+Shiny: Yes
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Scorching Sands
+- Burning Jealousy
+- Solar Beam
+- Earth Power
+
+Swampert @ Choice Scarf
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Liquidation
+- Earthquake
+- Ice Punch
+- Rock Slide
+
+Scizor @ Assault Vest
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Leech Life
+- Aerial Ace
+- Knock Off
+
+Gardevoir @ Leftovers
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 SpD
+Timid Nature
+- Moonblast
+- Psychic
+- Aura Sphere
+- Shadow Ball
+
+ElectrodeS @ Leftovers
+Ability: Explosive Pulp
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
 
 === TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
 Name: Xiros
@@ -5655,7 +8153,6 @@ Timid Nature
 - Charge Beam
 - Thunderbolt
 
-
 === TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
 Name: Xiros
 Class: WAH Admin
@@ -5667,6 +8164,74 @@ Double Battle: No
 AI: Smart Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Normal
+
+Arcanine Hisui @ Leftovers
+Ability: Rock Head
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Head Smash
+- Wild Charge
+- Iron Head
+
+Luxray @ Assault Vest
+Ability: Intimidate
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Crunch
+- Ice Fang
+- Fire Fang
+
+Poliwrath @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Belly Drum
+- Liquidation
+- Drain Punch
+- Ice Punch
+
+Torterra @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Seed Bomb
+- Earthquake
+- Rock Slide
+- Iron Head
+
+Malamar @ Malamarite
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Night Slash
+- Close Combat
+- Drill Peck
+
+ElectrodeS @ Leftovers
+Ability: Explosive Pulp
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Acid Pulp
+- Giga Drain
+- Charge Beam
+- Thunderbolt
+
+=== TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE ===
+Name: Xiros
+Class: WAH Admin
+Pic: Xiros
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Ace Pokemon
+Mugshot: Blue
+Difficulty: Hard
 
 Arcanine Hisui @ Leftovers
 Ability: Rock Head
@@ -5781,7 +8346,6 @@ Modest Nature
 - Draining Kiss
 - Aura Sphere
 
-
 === TRAINER_WAH_ADMIN_PKPOWER_MAIN ===
 Name: PkPower
 Class: WAH Admin
@@ -5792,6 +8356,66 @@ Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
+
+Absol @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Night Slash
+- Psycho cut
+- Hone Claws
+- Play Rough
+
+Magearna @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Fleur Cannon
+- Flash Cannon
+- Earth Power
+- Moonblast
+
+Frosmoth @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Timid Nature
+- Ice Beam
+- Bug Buzz
+- Air Slash
+- Hidden Power
+
+Swanna @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Air Slash
+- Scald
+- Ice Beam
+- Roost
+
+Arctozolt @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Bolt Beak
+- Ice Punch
+- Drain Punch
+- Pluck
+
+Gardevoir @ Gardevoirite
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Moonblast
+- Psychic
+- Draining Kiss
+- Aura Sphere
+
+=== TRAINER_WAH_ADMIN_PKPOWER_MAIN ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Hard
 
 Absol @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -5959,6 +8583,65 @@ Modest Nature
 - Earth Power
 - Psychic
 
+=== TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE ===
+Name: PkPower
+Class: WAH Admin
+Pic: PkPower
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Hard
+
+Klinklang @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shift Gear
+- Gear Up
+- Gear Grind
+- Magnet Rise
+
+Golurk @ Assault Vest
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Earthquake
+- Shadow Punch
+- Drain Punch
+- Heavy Slam
+
+Porygon-Z @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Shadow Ball
+- Psychic
+- Charge Beam
+
+Gallade @ Galladite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Psycho Cut
+- Drain Punch
+- Aqua Cutter
+- Leaf Blade
+
+Metagross @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Iron Head
+- Earthquake
+
+Magmortar @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Flamethrower
+- Thunderbolt
+- Earth Power
+- Psychic
+
 === TRAINER_WAH_ADMIN_KLEIN_MAIN ===
 Name: Klein
 Class: WAH Admin
@@ -6025,6 +8708,63 @@ Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Difficulty: Normal
+
+Ludicolo @ Assault Vest
+Ability: Swift Swim
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Hydro Pump
+- Ice Beam
+- Energy Ball
+- Fake Out
+
+Ludicolo @ Assault Vest
+Ability: Own Tempo
+EVs: 160 HP / 252 SpA / 96 Spe
+Modest Nature
+- Scald
+- Giga Drain
+- Ice Beam
+- Knock Off
+
+Ludicolo @ Choice Scarf
+Ability: Swift Swim
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Sludge Bomb
+
+Ludicolo @ Leftovers
+Ability: Swift Swim
+EVs: 252 Def / 4 SpD / 252 Spe
+Modest Nature
+- Fake Out
+- Leech Seed
+- Toxic
+- Tickle
+
+Ludicolo @ Assault Vest
+Shiny: Yes
+Ability: Own Tempo
+EVs: 156 HP / 156 Atk / 52 Def / 4 SpD / 140 Spe
+Adamant Nature
+- Waterfall
+- Drain Punch
+- Seed Bomb
+- Fire Punch
+
+=== TRAINER_WAH_ADMIN_KLEIN_MAIN ===
+Name: Klein
+Class: WAH Admin
+Pic: Klein
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Hard
 
 Ludicolo @ Assault Vest
 Ability: Swift Swim
@@ -6193,6 +8933,67 @@ Adamant Nature
 - Slam
 - Rock Slide
 
+=== TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE ===
+Name: Klein
+Class: WAH Admin
+Pic: Klein
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Hard
+
+Weezing @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Gunk Shot
+- Memento
+
+Electrode @ Choice Scarf
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Wild Charge
+- Headbutt
+
+Lopunny @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Jolly Nature
+- Attract
+- Captivate
+- Tickle
+- Swagger
+
+Muk @ Choice Scarf
+EVs: 252 HP / 252 Spe / 4 Def
+Adamant Nature
+- Explosion
+- Memento
+- Tickle
+- Attract
+
+Whimsicott @ Choice Scarf
+Ability: Prankster
+EVs: 252 HP / 252 Spe / 4 Def
+Bold Nature
+- Memento
+- Swagger
+- Thunder Wave
+- Tickle
+
+Golem Alola @ Choice Scarf
+Ability: Galvanize
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Explosion
+- Self Destruct
+- Slam
+- Rock Slide
+
 === TRAINER_WAH_ADMIN_ROXAS ===
 Name: Roxas
 Class: WAH Admin
@@ -6234,6 +9035,26 @@ Timid Nature
 - Shadow Ball
 - Sucker Punch
 
+=== TRAINER_WAH_ADMIN_ROXAS ===
+Name: Roxas
+Class: WAH Admin
+Pic: Roxas
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Hard
+
+Lugia Shadow @ Life Orb
+Ability: Berserk
+EVs: 252 SpA / 252 Spe / 4 Atk
+Timid Nature
+- Aeroblast
+- Dark Pulse
+- Shadow Ball
+- Sucker Punch
 
 === TRAINER_GABBY_AND_TY_1 ===
 Name: GABBY & TY
@@ -6580,7 +9401,6 @@ Relaxed Nature
 - Power Whip
 - Knock Off
 
-
 === TRAINER_WAH_COLLABORATOR_KAKTUS ===
 Name: Kaktus
 Class: Collaborator
@@ -6592,6 +9412,75 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 Difficulty: Normal
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 248 HP / 252 Def / 8 SpD
+Bold Nature
+IVs: 0 Atk
+- Scald
+- U-turn
+- Roost
+- Defog
+
+Ludicolo @ Life Orb
+Ability: Swift Swim
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Focus Blast
+
+Swampert @ Swampertite
+Ability: Swift Swim
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Superpower
+
+Dragonite @ Lum Berry
+Ability: Multiscale
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Extreme Speed
+- Earthquake
+
+Metagross @ Assault Vest
+Ability: Clear Body
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Meteor Mash
+- Earthquake
+- Ice Punch
+- Bullet Punch
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+EVs: 252 HP / 252 Def / 4 SpD
+Relaxed Nature
+IVs: 0 Spe
+- Stealth Rock
+- Spikes
+- Power Whip
+- Knock Off
+
+=== TRAINER_WAH_COLLABORATOR_KAKTUS ===
+Name: Kaktus
+Class: Collaborator
+Pic: Kaktus
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
 
 Pelipper @ Damp Rock
 Ability: Drizzle
@@ -6769,6 +9658,66 @@ Modest Nature
 - Earth Power
 - Flamethrower
 
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Blastoise  @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 SpD /* //TODO Xiros 4 SpD verify with Micolo */
+Modest Nature
+- Hydro pump
+- Scald
+- Flash Cannon
+- Ice Beam
+ 
+Lapras @ Leftovers
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Hydro pump
+- Freeze Dry
+- Thunderbolt
+- Solar Beam
+ 
+Gyarados @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Crunch
+
+Raichu @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Iron Tail
+
+Pidgeot @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Hurricane
+- Hyper Beam
+- Heat Wave
+- Twister
+
+Muk @ Black Sludge
+EVs: 252 SpA / 252 HP / 4 SpD
+Modest Nature
+- Sludge Bomb
+- Moonblast
+- Earth Power
+- Flamethrower
+
 === TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
 Name: Gameboy cl
 Class: Collaborator
@@ -6840,6 +9789,67 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Typhlosion @ Charcoal
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Eruption
+- Scorching Sands
+- Solar Beam
+- Flamethrower
+
+Umbreon @ Leftovers
+EVs: 252 SpA / 252 SpD / 4 HP
+Bold Nature
+- Calm Mind
+- Snarl
+- Recover
+- Baton Pass
+
+Ampharos @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Dragon Pulse
+- Flash Cannon
+- Dazzling Gleam
+
+Heracross @ Assault Vest /* //TODO Xiros: Check attacks, micolo had an alternative list */
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Megahorn
+- Drain Punch
+- Swords Dance
+- Earthquake
+
+Togetic @ Eviolite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Play Rough
+- Aerial Ace
+- Drain Punch
+- Metronome
+
+Noctowl @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Shiny: Yes
+Timid Nature
+- Hurricane
+- Psychic
+- Night Shade
+- Roost
+
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Typhlosion @ Charcoal
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -7015,6 +10025,69 @@ Timid Nature
 - Tri Attack
 - Signal Beam
 
+=== TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3 ===
+Name: Gameboy cl
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Feraligatr @ Life Orb /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Ability: Sheer force
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Waterfall 
+- Ice Punch
+- Rock Slide 
+- Crunch 
+
+Dragonite @ Weakness Policy
+Ability: Multiscale
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Aerial Ace
+- Extreme Speed
+
+Scizor @ Choice Scarf
+Ability: Technician
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Bullet Punch
+- Fury Cutter
+- Aerial Ace
+- Night Slash
+
+Espeon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Calm Mind
+- Psychic
+- Shadow Ball
+- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+
+Slowking @ Leftovers
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Scald
+- Psychic
+- Flamethrower
+- Slack Off
+
+Magneton @ Eviolite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Signal Beam
+
 === TRAINER_WAH_COLLABORATOR_ERKEY ===
 Name: Erkey
 Class: Collaborator
@@ -7091,6 +10164,79 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 Difficulty: Normal
+
+Weavile @ Focus Sash
+Ability: Pressure
+Tera Type: Dark
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Icicle Crash
+- Knock Off
+- Ice Shard
+- Low Kick
+
+Feraligatr @ Feraligite
+Ability: Strong Jaw
+Tera Type: Water
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Dragon Claw
+- Crunch
+
+Tyranitar @ Leftovers
+Ability: Sand Stream
+Tera Type: Rock
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Adamant Nature
+- Dragon Dance
+- Stone Edge
+- Crunch
+- Fire Punch
+
+Drapion @ Assault Vest
+Ability: Sniper
+Tera Type: Poison
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Careful Nature
+- Knock Off
+- Poison Jab
+- Earthquake
+- Ice Fang
+
+Scizor @ Life Orb
+Ability: Technician
+Tera Type: Bug
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Adamant Nature
+- Bullet Punch
+- Swords Dance
+- Knock Off
+- U-turn
+
+Gengar @ Life Orb
+Ability: Levitate
+Tera Type: Ghost
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+IVs: 0 Atk
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Taunt
+
+=== TRAINER_WAH_COLLABORATOR_ERKEY ===
+Name: Erkey
+Class: Collaborator
+Pic: Erkey
+Gender: Male
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Hard
 
 Weavile @ Focus Sash
 Ability: Pressure
@@ -7286,6 +10432,73 @@ Quirky Nature
 - Land's Wrath
 - Light of ruin
 
+=== TRAINER_WAH_COLLABORATOR_MICOLO ===
+Name: Micolo
+Class: Collaborator
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Party Size: 1
+Pool Rules: Basic
+Mugshot: Green
+Difficulty: Hard
+
+Greninja @ Greninjite
+Ability: Protean
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Water Shuriken
+- Ice Beam
+- Flamethrower
+- Dark Pulse
+
+Chesnaught @ Chesnaughtite
+Ability: Bulletproof
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Drain Punch
+- Seed Bomb
+- Rock Slide
+- Play Rough
+
+Raichu @ Raichunite X
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Volt Tackle
+- Drain Punch
+- Play Rough
+- Earthquake
+
+Rayquaza @ Leftovers
+Shiny: Yes
+EVs: 252 Atk / 252 Spe / 252 HP / 252 Def / 252 SpD
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Recover
+- Earthquake
+
+Darkrai @ Darkranite
+EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Dream Eater
+- Moonblast
+
+Zygarde @ Zygardite
+EVs: 252 Atk / 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
+Quirky Nature
+- Thousand Arrows
+- Thousand Waves
+- Land's Wrath
+- Light of ruin
+
 === TRAINER_WAH_COLLABORATOR_GOSUTO ===
 Name: Gosuto
 Class: Collaborator
@@ -7355,6 +10568,65 @@ Double Battle: Yes
 AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Psychic
+- Sucker Punch
+
+Mimikyu @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Play Rough
+- Shadow Claw
+- Wood Hammer
+- Pain Split
+
+Zoroark Hisui @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Tri Attack
+- Flamethrower
+- Bitter Malice
+
+Froslass @ Froslassite
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Ice Beam
+- Shadow Ball
+- Draining Kiss
+- Ice Shard
+
+Ceruledge @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shadow Claw
+- Solar Blade
+- Bitter Blade
+- Sucker Punch
+
+Annihilape @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Rage Fist
+- Drain Punch
+- Play Rough
+- Bullet Punch
+
+=== TRAINER_WAH_COLLABORATOR_GOSUTO ===
+Name: Gosuto
+Class: Collaborator
+Pic: Gosuto
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
 
 Gengar @ Black Sludge
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -7522,6 +10794,66 @@ Modest Nature
 - Doom Desire
 - Psychic 
 
+=== TRAINER_WAH_COLLABORATOR_ALEXMAD ===
+Name: Alexmad
+Class: Collaborator
+Pic: Alexmad
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Mewtwo @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psystrike
+- Calm Mind
+- Shadow Ball
+- Recover
+
+Rayquaza @ Choice Scarf
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Ascent
+- Dragon Claw
+- Earthquake
+- Extreme Speed
+
+Jolteon @ Leftovers
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Wild Charge
+- Quick Attack
+- Dig
+- Pin Missile
+
+Latias @ Soul Dew
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Dragon Pulse
+- Calm Mind
+- Recover
+- Mist Ball
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Giga drain
+- Focus Blast
+
+Jirachi @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Modest Nature
+- Wish
+- Healing Wish
+- Doom Desire
+- Psychic 
+
 === TRAINER_WAH_COLLABORATOR_ACIMUT ===
 Name: Acimut
 Class: Collaborator
@@ -7595,6 +10927,69 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 Difficulty: Normal
+
+Gengar @ Black Sludge
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Dazzling Gleam
+- Destiny Bond
+
+Meowstic @ Meowsticite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Energy Ball
+
+Exploud @ Assault Vest
+EVs: 252 SpA / 252 HP / 4 Spe
+Modest Nature
+- Boomburst
+- Fire Blast
+- Water Pulse
+- Extrasensory
+
+Marowak Alola @ Thick Club
+Ability: Rock Head
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Shadow Bone
+- Bonemerang
+- Flare Blitz
+- Head Smash
+
+Perrserker @ Leftovers
+Ability: Tough Claws
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Earthquake
+- Drain Punch
+
+Garchomp @ Rocky Helmet
+Ability: Rough Skin
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Claw
+- Earthquake
+- Liquidation
+- Iron Head
+
+=== TRAINER_WAH_COLLABORATOR_ACIMUT ===
+Name: Acimut
+Class: Collaborator
+Pic: Acimut
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
 
 Gengar @ Black Sludge
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -7772,6 +11167,69 @@ Jolly Nature
 - Razor Shell
 - Aqua Cutter
 
+=== TRAINER_WAH_COLLABORATOR_RYUZAKI ===
+Name: Ryuzaki
+Class: Collaborator
+Pic: Ryuzaki
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Hard
+
+Greninja @ Leftovers
+Ability: Battle Bond
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Water Shuriken
+- Dark Pulse
+- Ice Beam
+- Sludge Bomb
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Dragon Claw
+- Thunder Punch
+- Dig
+
+Lycanroc Dusk @ Scope Lens
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Stone Edge
+- Play Rough
+- Fire Fang
+- Sucker Punch
+
+Gardevoir @ Quick Claw
+Ability: Trace
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psychic
+- Moonblast
+- Energy Ball
+- Focus Blast
+
+Gengar @ Black Sludge
+Ability: Cursed Body
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Psychic
+- Sludge Wave
+- Hex
+
+Oshawott X @ Focus Band
+Ability: Sharpness
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Ceaseless Edge
+- Glaive Rush
+- Razor Shell
+- Aqua Cutter
+
 === TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY ===
 Name: Nightology
 Class: Collaborator
@@ -7849,6 +11307,45 @@ Timid Nature
 - Scorching Sands
 - Shadow Ball
 
+=== TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY ===
+Name: Nightology
+Class: Collaborator
+Pic: MrNightology
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Toxtricity Low Key @ Black Sludge
+Ability: Punk Rock
+Gigantamax: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Wave
+- Boomburst
+- Snarl
+- Overdrive
+
+Krookodile @ Assault Vest
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Dance
+- Crunch
+- Earthquake
+- Drain Punch
+
+Houndoom @ Houndoominite
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Flamethrower
+- Snarl
+- Scorching Sands
+- Shadow Ball
+
 === TRAINER_WAH_COLLABORATOR_REONEKY ===
 Name: Reoneky
 Class: WAH Admin
@@ -7886,7 +11383,6 @@ Timid Nature
 - Shadow Ball
 - Giga Drain
 - Focus Blast 
-
 
 === TRAINER_WAH_COLLABORATOR_REONEKY ===
 Name: Reoneky
@@ -7926,6 +11422,45 @@ Timid Nature
 - Shadow Ball
 - Giga Drain
 - Focus Blast 
+
+=== TRAINER_WAH_COLLABORATOR_REONEKY ===
+Name: Reoneky
+Class: WAH Admin
+Pic: Reoneky
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Toxtricity Amped @ Black Sludge
+Ability: Punk Rock
+Gigantamax: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Gunk Shot
+- Wild Charge
+- Drain Punch
+- Fire Punch
+
+Umbreon @ Leftovers
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Snarl
+- Helping Hand
+- Wish
+- Calm Mind
+
+Gengar @ Gengarite
+Shiny: Yes
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Sludge Wave
+- Shadow Ball
+- Giga Drain
+- Focus Blast
 
 === TRAINER_WILTON_2 ===
 Name: WILTON
