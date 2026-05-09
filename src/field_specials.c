@@ -1484,6 +1484,11 @@ u16 Special_FindNextPokeboxUnlock(void)
     return FALSE;
 }
 
+bool8 Special_BufferPokeboxBuyOfferFromSpecies(void)
+{
+    return PokeboxSpecies_BufferBuyOfferFromSpecies(VarGet(VAR_0x8004));
+}
+
 void Special_StartAchievementConfetti(void)
 {
     StartAchievementConfetti();
@@ -4477,7 +4482,6 @@ void RandomizeWahAdminTeams(void)
 void SetWahChallengeInitialAchievementFlags(void)
 {
     u32 i;
-    bool8 hasElectrodeS = FALSE;
 
     for (i = 0; i < gPlayerPartyCount; i++)
     {

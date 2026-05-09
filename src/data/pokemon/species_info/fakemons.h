@@ -669,7 +669,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Su cuerpo fue corrompido por la energía\n"
+            "radioactiva que emana, su comportamiento\n"
+            "es impredecible y violento.\n"
+            "Puede transformarse y usar sus mechones\n"
+            "como tentáculos."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -719,7 +723,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Emergió desde los restos de un muñeco\n"
+            "abandonado, es sarcástico, carismático y\n"
+            "adora el lujo.\n"
+            "Puede provocar toda clase de fenómenos\n"
+            "extraños a su alrededor."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -769,7 +777,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "No se que poner(?)"),
+            "Se estima que procede de un planeta lejano\n"
+            "con el que tiene un enlace energético.\n"
+            "Se caracteriza por tener un gran intelecto\n"
+            "y extraordinarios poderes psíquicos."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -792,6 +803,415 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         FOOTPRINT(Dratini)
         .levelUpLearnset = sDiraeiLevelUpLearnset,
     },
+
+    [SPECIES_GOROCHU] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 100,
+        .baseDefense   = 65,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
+        .catchRate = 3,
+        .expYield = 206,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_TRANSISTOR, ABILITY_GUTS, ABILITY_SPEED_BOOST },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Gorochu"),
+        .cryId = CRY_RAICHU,
+        .natDexNum = NATIONAL_DEX_GOROCHU,
+        .categoryName = _("Ratón"),
+        .height = 9,
+        .weight = 380,
+        .description = COMPOUND_STRING(
+            "Tiene un ímpetu y energía inusuales.\n"
+            "Cuanto más tiempo pasa activo, más nervios\n"
+            "y electricidad acumula, hasta que\n"
+            "colapsa y necesita descansar otra vez."),
+        .pokemonScale = 338,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Gorochu,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Gorochu,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Gorochu,
+        .shinyPalette = gMonShinyPalette_Gorochu,
+        .iconSprite = gMonIcon_Gorochu,
+        .iconPalIndex = 0,
+        SHADOW(1, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Raichu)
+        .levelUpLearnset = sGorochuLevelUpLearnset,
+        .teachableLearnset = sGorochuTeachableLearnset,
+    },
+
+    [SPECIES_DUN] =
+    {
+        .baseHP        = 153,
+        .baseAttack    = 44,
+        .baseDefense   = 66,
+        .baseSpeed     = 99,
+        .baseSpAttack  = 117,
+        .baseSpDefense = 122,
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_PSYCHIC),
+        .catchRate = 190,
+        .expYield = 267,
+        .evYield_HP  = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_PSYCHIC_SURGE, ABILITY_MULTISCALE, ABILITY_SERENE_GRACE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Dun"),
+        .cryId = CRY_DUNSPARCE,
+        .natDexNum = NATIONAL_DEX_DUN,
+        .categoryName = _("Bendecido"),
+        .height = 68,
+        .weight = 599,
+        .description = COMPOUND_STRING(
+"Fue bendecido con el don de mantenerse\n"
+"siempre presente, capaz de percibir y\n"
+"saborear todos los matices de la realidad.\n"
+"Es por esto que jamás se aburre."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 614,
+        .trainerOffset = 13,
+        .frontPic = gMonFrontPic_Dun,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Dun,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Dun,
+        .shinyPalette = gMonShinyPalette_Dun,
+        .iconSprite = gMonIcon_Dun,
+        .iconPalIndex = 0,
+        #if P_GENDER_DIFFERENCES
+        .iconSpriteFemale = gMonIcon_DunF,
+        .frontPicFemale = gMonFrontPic_DunF,
+        .backPicFemale = gMonBackPic_DunF,
+#endif //P_GENDER_DIFFERENCES
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Dunsparce)
+        .levelUpLearnset = sDunLevelUpLearnset,
+        .teachableLearnset = sDunTeachableLearnset,
+    },
+
+    [SPECIES_TAABAN] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 95,
+        .baseDefense   = 180,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 55,
+        .types = MON_TYPES(TYPE_WATER, TYPE_GHOST),
+        .catchRate = 75,
+        .expYield = 204,
+        .evYield_Defense  = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_SKILL_LINK, ABILITY_REGENERATOR },
+        .bodyColor = BODY_COLOR_PINK,
+        .speciesName = _("Taaban"),
+        .cryId = CRY_SHELLDER,
+        .natDexNum = NATIONAL_DEX_TAABAN,
+        .categoryName = _("Bivalbo"),
+        .height = 15,
+        .weight = 585,
+        .description = COMPOUND_STRING(
+            "   El SHELLDER adherido a SLOWBRO cobra\n"
+            "   conciencia propia después de su\n"
+            "   muerte, absorbiendo parte de sus\n"
+            "   habilidades."),
+        .pokemonScale = 256,
+        .pokemonOffset = 6,
+        .trainerScale = 296,
+        .trainerOffset = 2,
+        .frontPic = gMonFrontPic_Taaban,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Taaban,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Taaban,
+        .shinyPalette = gMonShinyPalette_Taaban,
+        .iconSprite = gMonIcon_Taaban,
+        .iconPalIndex = 0,
+        SHADOW(1, 10, SHADOW_SIZE_M)
+        FOOTPRINT(Shellder)
+        .levelUpLearnset = sTaabanLevelUpLearnset,
+        .teachableLearnset = sTaabanTeachableLearnset,
+    },
+
+    [SPECIES_BLESSPARCE] =
+    {
+        .baseHP        = 125,
+        .baseAttack    = 60,
+        .baseDefense   = 63,
+        .baseSpeed     = 66,
+        .baseSpAttack  = 83,
+        .baseSpDefense = 101,
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_NORMAL),
+        .catchRate = 75,
+        .expYield = 209,
+        .evYield_SpDefense  = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_PSYCHIC_SURGE, ABILITY_MULTISCALE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Blessparce"),
+        .cryId = CRY_DUNSPARCE,
+        .natDexNum = NATIONAL_DEX_BLESSPARCE,
+        .categoryName = _("Bendecido"),
+        .height = 22,
+        .weight = 220,
+        .description = COMPOUND_STRING(
+"El sacrificio de un primer DUNSPARCE\n"
+"que superó sus límites, hizo que los\n"
+"dioses bendijeran a todos los DUNSPARCE\n"
+"capaces de alcanzar esta forma."),
+        .pokemonScale = 256,
+        .pokemonOffset = 1,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+        .frontPic = gMonFrontPic_Blessparce,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Blessparce,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Blessparce,
+        .shinyPalette = gMonShinyPalette_Blessparce,
+        .iconSprite = gMonIcon_Blessparce,
+        .iconPalIndex = 0,
+        SHADOW(1, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Dunsparce)
+        .levelUpLearnset = sBlessparceLevelUpLearnset,
+        .teachableLearnset = sBlessparceTeachableLearnset,
+    },
+
+    [SPECIES_MADAAMU] =
+    {
+        .baseHP        = 77,
+        .baseAttack    = 145,
+        .baseDefense   = 95,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 63,
+        .baseSpDefense = 82,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
+        .catchRate = 75,
+        .expYield = 196,
+        .evYield_Attack  = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_SUPER_LUCK, ABILITY_SHARPNESS },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Madaamu"),
+        .cryId = CRY_FARFETCHD,
+        .natDexNum = NATIONAL_DEX_MADAAMU,
+        .categoryName = _("Pato Salv."),
+        .height = 13,
+        .weight = 260,
+        .description = COMPOUND_STRING(
+            "   Se anticipa tan rápido a los ataques\n"
+            "   que se llegó a pensar que veía el\n"
+            "   futuro. Se ha demostrado que su\n"
+            "   nivel de reacción es instantáneo."),
+        .pokemonScale = 272,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Madaamu,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Madaamu,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 2,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Madaamu,
+        .shinyPalette = gMonShinyPalette_Madaamu,
+        .iconSprite = gMonIcon_Madaamu,
+        .iconPalIndex = 1,
+        SHADOW(-5, 11, SHADOW_SIZE_L)
+        FOOTPRINT(Farfetchd)
+        .levelUpLearnset = sMadaamuLevelUpLearnset,
+        .teachableLearnset = sMadaamuTeachableLearnset,
+    },
+
+    [SPECIES_AKUERIA] =
+    {
+        .baseHP        = 122,
+        .baseAttack    = 126,
+        .baseDefense   = 102,
+        .baseSpeed     = 82,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 74,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
+        .catchRate = 75,
+        .expYield = 154,
+        .evYield_Attack  = 1,
+        .evYield_SpDefense  = 1,
+        .evYield_SpAttack  = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_NO_GUARD, ABILITY_STRONG_JAW, ABILITY_DRAGONS_MAW },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Akueria"),
+        .cryId = CRY_DRUDDIGON,
+        .natDexNum = NATIONAL_DEX_AKUERIA,
+        .categoryName = _("Apx-Predator"),
+        .height = 91,
+        .weight = 5870,
+        .description = COMPOUND_STRING(
+            "   Se creía extinto.\n"
+            "   No tenía rival en las profundidades\n"
+            "   marinas, los GYARADOS salvajes huían\n"
+            "   de él."),
+        .pokemonScale = 256,
+        .pokemonOffset = 8,
+        .trainerScale = 880,
+        .trainerOffset = 14,
+        .frontPic = gMonFrontPic_Akueria,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES( //Xiros
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Akueria,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Akueria,
+        .shinyPalette = gMonShinyPalette_Akueria,
+        .iconSprite = gMonIcon_Akueria,
+        .iconPalIndex = 0,
+        SHADOW(5, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Lapras)
+        .levelUpLearnset = sAkueriaLevelUpLearnset,
+        .teachableLearnset = sAkueriaTeachableLearnset,
+    },
+
+#if P_FAMILY_OSHAWOTT
+    [SPECIES_OSHAWOTT_X] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 100,
+        .baseDefense   = 85,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 108,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Oshawott X"),
+        .cryId = CRY_OSHAWOTT,
+        .natDexNum = NATIONAL_DEX_OSHAWOTT_X,
+        .categoryName = _("Nutria"),
+        .height = 5,
+        .weight = 59,
+        .description = COMPOUND_STRING(
+            "Ataca con la vieira de su ombligo.\n"
+            "En cuanto para un ataque, pasa al\n"
+            "contraataque sin dilación."),
+        .pokemonScale = 432,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Oshawott,
+        .frontPicSize = MON_COORDS_SIZE(32, 40),
+        .frontPicYOffset = 14,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 13),
+            ANIMCMD_FRAME(1, 7),
+            ANIMCMD_FRAME(0, 11),
+        ),
+        .frontAnimId = ANIM_H_JUMPS,
+        .backPic = gMonBackPic_Oshawott,
+        .backPicSize = MON_COORDS_SIZE(40, 48),
+        .backPicYOffset = 14,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        .palette = gMonPalette_Oshawott,
+        .shinyPalette = gMonShinyPalette_Oshawott,
+        .iconSprite = gMonIcon_Oshawott,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-3, 0, SHADOW_SIZE_S)
+        FOOTPRINT(Oshawott)
+        OVERWORLD(
+            sPicTable_Oshawott,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Oshawott,
+            gShinyOverworldPalette_Oshawott
+        )
+        .levelUpLearnset = sSamurottLevelUpLearnset,
+        .teachableLearnset = sSamurottTeachableLearnset,
+    },
+#endif //P_FAMILY_OSHAWOTT
 
     [SPECIES_LUGIA_SHADOW] =
     {

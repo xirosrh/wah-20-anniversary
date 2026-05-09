@@ -2,8 +2,12 @@
 #include "event_data.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
+#include "constants/characters.h"
 #include "pokebox_manager.h"
 #include "money.h"
+#include "pokemon.h"
+#include "strings.h"
+#include "string_util.h"
 
 
 static bool8 CheckPokebox_isBuyMon(u8 id);
@@ -43,6 +47,42 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .check = CheckPokebox_WahChallengeCompleted
     },
     { 
+        .specie = SPECIES_GOROCHU,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_DUN,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 1000,
+        .check = CheckPokebox_isBuyMon
+    },
+    { 
+        .specie = SPECIES_TAABAN,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_BLESSPARCE,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_MADAAMU,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
+        .specie = SPECIES_AKUERIA,
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    { 
         .specie = SPECIES_VOLCARONA,        
         .description = gText_PokeboxBuyThisMon, 
         .money = 10000,
@@ -54,6 +94,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 200,
         .check = CheckPokebox_isBuyMon
     },
+
     { 
         .specie = SPECIES_CINDERACE,        
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
@@ -306,6 +347,37 @@ bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id)
         return FALSE;
 
     return money >= PokeboxSpecies_GetMoney(id);
+}
+
+bool8 PokeboxSpecies_BufferBuyOfferFromSpecies(u16 species)
+{
+    u8 i;
+    u8 count = PokeboxSpeciesList_GetCount();
+    u32 money;
+
+    for (i = 0; i < count; i++)
+    {
+        if (PokeboxSpeciesList_GetSpecie(i) != species)
+            continue;
+
+        money = PokeboxSpecies_GetMoney(i);
+        if (money == 0)
+        {
+            gStringVar1[0] = EOS;
+            gStringVar2[0] = EOS;
+            return FALSE;
+        }
+
+        ConvertIntToDecimalStringN(gStringVar1, money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+        StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+        StringCopy(gStringVar2, gStringVar4);
+        StringCopy(gStringVar1, GetSpeciesName(species));
+        return TRUE;
+    }
+
+    gStringVar1[0] = EOS;
+    gStringVar2[0] = EOS;
+    return FALSE;
 }
 
 

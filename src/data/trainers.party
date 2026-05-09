@@ -7525,7 +7525,7 @@ Modest Nature
 === TRAINER_WAH_COLLABORATOR_ACIMUT ===
 Name: Acimut
 Class: Collaborator
-Pic: Youngster
+Pic: Acimut
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -7587,7 +7587,7 @@ Jolly Nature
 === TRAINER_WAH_COLLABORATOR_ACIMUT ===
 Name: Acimut
 Class: Collaborator
-Pic: Youngster
+Pic: Acimut
 Gender: Male
 Music: Cool
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
@@ -7649,25 +7649,128 @@ Jolly Nature
 
 === TRAINER_WAH_COLLABORATOR_RYUZAKI ===
 Name: Ryuzaki
-Class: Cooltrainer
+Class: Collaborator
 Pic: Ryuzaki
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Difficulty: Easy
 
-Swellow
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Greninja
+Ability: Battle Bond
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Water Shuriken
+- Dark Pulse
+- Ice Beam
+- Sludge Bomb
 
-Mawile
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Charizard @ Charizardite X
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Dragon Claw
+- Thunder Punch
+- Dig
 
-Kadabra
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Lycanroc Dusk
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Stone Edge
+- Play Rough
+- Fire Fang
+- Sucker Punch
+
+Gardevoir
+Ability: Trace
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Psychic
+- Moonblast
+- Energy Ball
+- Focus Blast
+
+Gengar
+Ability: Cursed Body
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Shadow Ball
+- Psychic
+- Sludge Wave
+- Hex
+
+Oshawott X
+Ability: Sharpness
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Ceaseless Edge
+- Glaive Rush
+- Razor Shell
+- Aqua Cutter
+
+=== TRAINER_WAH_COLLABORATOR_RYUZAKI ===
+Name: Ryuzaki
+Class: Collaborator
+Pic: Ryuzaki
+Gender: Male
+Music: Cool
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Normal
+
+Greninja @ Leftovers
+Ability: Battle Bond
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Water Shuriken
+- Dark Pulse
+- Ice Beam
+- Sludge Bomb
+
+Charizard @ Charizardite X
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Dragon Claw
+- Thunder Punch
+- Dig
+
+Lycanroc Dusk @ Scope Lens
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Stone Edge
+- Play Rough
+- Fire Fang
+- Sucker Punch
+
+Gardevoir @ Quick Claw
+Ability: Trace
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Psychic
+- Moonblast
+- Energy Ball
+- Focus Blast
+
+Gengar @ Black Sludge
+Ability: Cursed Body
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature
+- Shadow Ball
+- Psychic
+- Sludge Wave
+- Hex
+
+Oshawott X @ Focus Band
+Ability: Sharpness
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Ceaseless Edge
+- Glaive Rush
+- Razor Shell
+- Aqua Cutter
 
 === TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY ===
 Name: Nightology
