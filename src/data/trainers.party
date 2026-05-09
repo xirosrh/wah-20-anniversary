@@ -4401,7 +4401,7 @@ Gender: Male
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Try To 2HKO / Check Viability / Check Bad Move
 Mugshot: Purple
 Difficulty: Hard
 
@@ -4461,7 +4461,6 @@ Timid Nature
 - Rest
 - Draco Meteor
 - Hypnosis
-
 
 === TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE ===
 Name: Helix Boo
@@ -4598,7 +4597,7 @@ Gender: Male
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Try To Faint / Risky / Check Viability / Prefer Baton Pass / Check Bad Move / Will Suicide
 Mugshot: Purple
 Difficulty: Hard
 
