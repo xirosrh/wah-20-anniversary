@@ -131,6 +131,8 @@ static void Task_AddMonTeamPlayer(u8 taskId);
 static void Task_StorageMonInPokebox(u8 taskId);
 static void Task_FadeOut(u8 taskId);
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove);
+static void GetMovesForPokeboxMon(const struct TeamSelectorMonData *mon, u16 *moves);
+static void GiveMonFromPokeboxConfig(u8 slot, const struct TeamSelectorMonData *mon);
 
 //========== SECCIÓN: SPRITES ==========//
 
@@ -585,9 +587,10 @@ static void PrintMonTextInfoPage()
     bool8 isActive = TRUE;
     u16 specie = SPECIES_NONE;
     u16 ability = ABILITY_NONE;
-    u16 moves[4];
+    u16 moves[4] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
     u16 index = GetSelectedPokemonIndex();
     u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
+    const struct TeamSelectorMonData *mon;
 
     if (index < MON_TEAM_SELECTOR_COUNT)
     {
@@ -598,9 +601,14 @@ static void PrintMonTextInfoPage()
         moves[2] = gAllTeamMons[index].moves[2];
         moves[3] = gAllTeamMons[index].moves[3];
     }else{
-        specie = PokeboxSpeciesList_GetSpecie(secondIndex);
-        isActive = Pokebox_IsActive(secondIndex);
-        GetLastLevelUpMoves(specie, moves);
+        mon = PokeboxSpeciesList_GetMonData(secondIndex);
+        if (mon != NULL)
+        {
+            specie = mon->specie;
+            ability = mon->ability;
+            isActive = Pokebox_IsActive(secondIndex);
+            GetMovesForPokeboxMon(mon, moves);
+        }
     }
 
     if(isActive)
@@ -646,6 +654,73 @@ static void GetLastLevelUpMoves(u16 specie, u16 *moves)
         u8 indexMove = count - (i + 1);
         moves[i] = learnset[indexMove].move;
     }
+}
+
+static void GetMovesForPokeboxMon(const struct TeamSelectorMonData *mon, u16 *moves)
+{
+    if (mon->moves[0] == MOVE_NONE)
+        GetLastLevelUpMoves(mon->specie, moves);
+    else
+        memcpy(moves, mon->moves, MAX_MON_MOVES * sizeof(u16));
+}
+
+static void GetIVsByNaturePokebox(const struct TeamSelectorMonData *mon, u8 *ivs)
+{
+    const struct NatureInfo natureMod = gNaturesInfo[mon->nature];
+
+    for (u8 i = 0; i < NUM_STATS; i++)
+    {
+        ivs[i] = (natureMod.statDown == i) ? 0 : MAX_PER_STAT_IVS;
+    }
+}
+
+static u8 GetAbilitySlotForSpeciesPokebox(u16 species, u16 abilityId)
+{
+    if (abilityId == ABILITY_NONE)
+        return NUM_ABILITY_SLOTS;
+
+    for (u8 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        if (GetAbilityBySpecies(species, slot) == (enum Ability)abilityId)
+            return slot;
+    }
+
+    return NUM_ABILITY_SLOTS;
+}
+
+static void GiveMonFromPokeboxConfig(u8 slot, const struct TeamSelectorMonData *mon)
+{
+    u8 gender;
+    u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
+    u8 ivs[NUM_STATS];
+    u16 tempMoves[MAX_MON_MOVES];
+    enum ShinyMode shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
+
+    if (mon->ev != NULL)
+        memcpy(evs, mon->ev, sizeof(evs));
+
+    memcpy(tempMoves, mon->moves, sizeof(tempMoves));
+    GetIVsByNaturePokebox(mon, ivs);
+    gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
+
+    ScriptGiveMonParameterized(
+        0,
+        slot,
+        mon->specie,
+        100,
+        mon->itemId,
+        BALL_POKE,
+        mon->nature,
+        GetAbilitySlotForSpeciesPokebox(mon->specie, mon->ability),
+        gender,
+        evs,
+        ivs,
+        tempMoves,
+        shiny,
+        FALSE,
+        TYPE_NONE,
+        FALSE
+    );
 }
 
 static void LoadMoveCateroyIcon(u16 move, u8 indexMove)
@@ -1494,15 +1569,24 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         }
     }
     else{
+        u16 pokeboxIndex = index - MON_TEAM_SELECTOR_COUNT;
+        const struct TeamSelectorMonData *pokeboxMon = PokeboxSpeciesList_GetMonData(pokeboxIndex);
         
-        specie = PokeboxSpeciesList_GetSpecie(index - MON_TEAM_SELECTOR_COUNT);
+        if (pokeboxMon == NULL)
+        {
+            PrintMsgActions(MSG_ACTION_LOCK_MON);
+            gTasks[taskId].func = Task_HandlePokebox;
+            return;
+        }
 
-        if(!Pokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
+        specie = pokeboxMon->specie;
+
+        if(!Pokebox_IsActive(pokeboxIndex))
             PrintMsgActions(MSG_ACTION_LOCK_MON);
         else if(HasMonInParty(specie))
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
         else{
-            ScriptGiveMon(specie, 100, ITEM_NONE);
+            GiveMonFromPokeboxConfig(slot, pokeboxMon);
             addMon = TRUE;
         }
     }

@@ -1,9 +1,11 @@
 #ifndef GUARD_POKEBOX_MANAGER_H
 #define GUARD_POKEBOX_MANAGER_H
 
+#include "team_selector.h"
+
 struct PokeboxSpecies
 {
-    u16 specie;
+    struct TeamSelectorMonData mon;
     const u8 *description;
     u16 money;
     bool8 (*check)(u8 id);
@@ -31,6 +33,7 @@ bool8 CheckPokebox_IsActive(u8 id);
 bool8 PokeboxSpecies_TryUnlockNew(u8 id);
 
 u8 PokeboxSpeciesList_GetCount(void);
+const struct TeamSelectorMonData *PokeboxSpeciesList_GetMonData(u8 index);
 u16 PokeboxSpeciesList_GetSpecie(u8 index);
 bool8 PokeboxSpecies_Lock(u8 id);
 const u8 *Get_PokeboxDescription(u8 id);

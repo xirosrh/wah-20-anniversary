@@ -148,7 +148,7 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                 .teamSize = 6,
                 .team =
                     {
-                        MON_CHARIZARD, MON_CROBAT_2, MON_GARCHOMP, MON_PIDGEOT, MON_MELMETAL, MON_WATERMELON_ELECTRODE},
+                        MON_CHARIZARD, MON_CROBAT_2, MON_GARCHOMP, MON_PIDGEOT, MON_MELMETAL, MON_LUDICOLO},
             },
 
 };
@@ -1288,14 +1288,14 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .isShiny = FALSE,
             .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH},
         },
-        [MON_WATERMELON_ELECTRODE] = {
-            .specie = SPECIES_ELECTRODES,
-            .ability = ABILITY_MELONSHIELD,
-            .nature = NATURE_MODEST,
-            .itemId = ITEM_LEFTOVERS,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_JUICY_EXPLOSION, MOVE_ACID_PULP, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN},
+        [MON_LUDICOLO] = {
+            .specie = SPECIES_LUDICOLO,
+            .ability = ABILITY_OWN_TEMPO,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_ASSAULT_VEST,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
+            .isShiny = TRUE,
+            .moves = {MOVE_SEED_BOMB, MOVE_LIQUIDATION, MOVE_DRAIN_PUNCH, MOVE_FIRE_PUNCH},
         },
 };
 
