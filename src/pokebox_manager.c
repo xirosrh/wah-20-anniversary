@@ -65,12 +65,33 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_DRAGONITE),
+    {
+        .mon = {
+            .specie = SPECIES_MOLTRES,
+            .ability = ABILITY_PRESSURE,
+            .nature = NATURE_TIMID,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLAMETHROWER, MOVE_AEROBLAST, MOVE_EARTH_POWER, MOVE_MOONBLAST},
+        },
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },
+    { 
+        .mon = {
+            .specie = SPECIES_DRAGONITE,
+            .ability = ABILITY_MULTISCALE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_PLAY_ROUGH, MOVE_EXTREME_SPEED},
+        },
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },  
     { 
         .mon = POKEBOX_MON(SPECIES_GOROCHU),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
