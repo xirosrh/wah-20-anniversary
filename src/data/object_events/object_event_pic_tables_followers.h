@@ -83,14 +83,6 @@ static const struct SpriteFrameImage sPicTable_BlastoiseMega[] = {
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SQUIRTLE
 
-static const struct SpriteFrameImage sPicTable_VenusaurC[] = {
-    overworld_ascending_frames(gObjectEventPic_VenusaurC, 4, 4),
-};
-#if P_GENDER_DIFFERENCES
-static const struct SpriteFrameImage sPicTable_VenusaurCF[] = {
-    overworld_ascending_frames(gObjectEventPic_VenusaurCF, 4, 4),
-};
-#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CharizardC[] = {
     overworld_ascending_frames(gObjectEventPic_CharizardC, 4, 4),
 };

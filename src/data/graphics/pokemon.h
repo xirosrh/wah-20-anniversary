@@ -27474,36 +27474,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Akueria[] = INCBIN_U16("graphics/pokemon/akueria/shiny.gbapal");
     const u8 gMonIcon_Akueria[] = INCBIN_U8("graphics/pokemon/akueria/icon.4bpp");
 
-#if P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/anim_front_gba.4bpp.smol");
-    const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal_gba.gbapal");
-    const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back_gba.4bpp.smol");
-    const u16 gMonShinyPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/shiny_gba.gbapal");
-#else
-    const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/front.4bpp.smol");
     const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal.gbapal");
     const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back.4bpp.smol");
     const u16 gMonShinyPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/shiny.gbapal");
-#endif
-#if P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_VenusaurC[] = INCBIN_U8("graphics/pokemon/venusaur_c/icon_gba.4bpp");
-#else
     const u8 gMonIcon_VenusaurC[] = INCBIN_U8("graphics/pokemon/venusaur_c/icon.4bpp");
-#endif
-#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_VenusaurCF[] = INCBIN_U32("graphics/pokemon/venusaur_c/anim_frontf.4bpp.smol");
-    const u32 gMonBackPic_VenusaurCF[] = INCBIN_U32("graphics/pokemon/venusaur_c/backf.4bpp.smol");
-#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_VenusaurC[] = INCBIN_COMP("graphics/pokemon/venusaur_c/overworld.4bpp");
-#if P_GENDER_DIFFERENCES
-    const u32 gObjectEventPic_VenusaurCF[] = INCBIN_COMP("graphics/pokemon/venusaur_c/overworldf.4bpp");
-#endif //P_GENDER_DIFFERENCES
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/overworld_shiny.gbapal");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/anim_front_gba.4bpp.smol");

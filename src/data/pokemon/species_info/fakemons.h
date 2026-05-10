@@ -1178,46 +1178,20 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 6,
         .frontPic = gMonFrontPic_VenusaurC,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 25),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_ROTATE_UP_SLAM_DOWN,
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_VenusaurC,
-        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SHAKE,
+        //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_VenusaurC,
         .shinyPalette = gMonShinyPalette_VenusaurC,
         .iconSprite = gMonIcon_VenusaurC,
         .iconPalIndex = 4,
-#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-        .frontPicFemale = gMonFrontPic_VenusaurCF,
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
-        .backPicFemale = gMonBackPic_VenusaurCF,
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 48),
-#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Venusaur)
-        OVERWORLD(
-            sPicTable_VenusaurC,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_VenusaurC,
-            gShinyOverworldPalette_VenusaurC
-        )
-        OVERWORLD_FEMALE(
-            sPicTable_VenusaurCF,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following
-        )
         .levelUpLearnset = sVenusaurLevelUpLearnset,
         .teachableLearnset = sVenusaurTeachableLearnset,
     },
