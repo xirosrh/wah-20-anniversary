@@ -27474,6 +27474,19 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Akueria[] = INCBIN_U16("graphics/pokemon/akueria/shiny.gbapal");
     const u8 gMonIcon_Akueria[] = INCBIN_U8("graphics/pokemon/akueria/icon.4bpp");
 
+    const u32 gMonFrontPic_GreninjaR[] = INCBIN_U32("graphics/pokemon/greninja_r/anim_front.4bpp.smol");
+    const u16 gMonPalette_GreninjaR[] = INCBIN_U16("graphics/pokemon/greninja_r/normal.gbapal");
+    const u32 gMonBackPic_GreninjaR[] = INCBIN_U32("graphics/pokemon/greninja_r/back.4bpp.smol");
+    const u16 gMonShinyPalette_GreninjaR[] = INCBIN_U16("graphics/pokemon/greninja_r/shiny.gbapal");
+    const u8 gMonIcon_GreninjaR[] = INCBIN_U8("graphics/pokemon/greninja_r/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GreninjaR[] = INCBIN_COMP("graphics/pokemon/greninja_r/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GreninjaR[] = INCBIN_U16("graphics/pokemon/greninja_r/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_GreninjaR[] = INCBIN_U16("graphics/pokemon/greninja_r/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
     const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/front.4bpp.smol");
     const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal.gbapal");
     const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back.4bpp.smol");
