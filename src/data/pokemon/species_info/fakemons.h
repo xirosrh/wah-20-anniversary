@@ -305,12 +305,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Ayewiraz,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 4,
+        .backPicYOffset = 10,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Ayewiraz,
         .shinyPalette = gMonShinyPalette_Ayewiraz,
         .iconSprite = gMonIcon_Ayewiraz,
-        .iconPalIndex = 2,
+        .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 11, SHADOW_SIZE_L)
         FOOTPRINT(Mightyena)
