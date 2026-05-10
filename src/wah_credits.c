@@ -373,9 +373,9 @@ static const u16 sWahCreditsPokemonList[] =
     SPECIES_EING,
     SPECIES_DIRAEI,
     SPECIES_MEWTWO, //TODO Xiros: Mewtwo with armor
-    SPECIES_VENUSAUR, //TODO Xiros:  Clone
-    SPECIES_CHARIZARD,  //TODO Xiros:  Clone
-    SPECIES_BLASTOISE,  //TODO Xiros:  Clone
+    SPECIES_VENUSAUR_C,
+    SPECIES_CHARIZARD_C,
+    SPECIES_BLASTOISE_C,
     SPECIES_FREECH,
     SPECIES_DRAGONITE_MEGA,
     SPECIES_GRENINJA, //TODO Xiros: Red greninja

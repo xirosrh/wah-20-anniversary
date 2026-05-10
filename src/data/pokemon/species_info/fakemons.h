@@ -1141,6 +1141,222 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sAkueriaTeachableLearnset,
     },
 
+    [SPECIES_VENUSAUR_C] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 82,
+        .baseDefense   = 83,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 263 : (P_UPDATED_EXP_YIELDS >= GEN_5) ? 236 : 208,
+        .evYield_SpAttack = 2,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Venusaur C"),
+        .cryId = CRY_VENUSAUR,
+        .natDexNum = NATIONAL_DEX_VENUSAUR_C,
+        .categoryName = _("Semilla"),
+        .height = 20,
+        .weight = 1000,
+        .description = COMPOUND_STRING(
+            "Clon creado a partir de Venusaur.\n"
+            "Conserva su aroma floral y fuerza,\n"
+            "pero no pertenece a ninguna linea\n"
+            "evolutiva conocida."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 388,
+        .trainerOffset = 6,
+        .frontPic = gMonFrontPic_VenusaurC,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 25),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_ROTATE_UP_SLAM_DOWN,
+        .backPic = gMonBackPic_VenusaurC,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_H_SHAKE,
+        .palette = gMonPalette_VenusaurC,
+        .shinyPalette = gMonShinyPalette_VenusaurC,
+        .iconSprite = gMonIcon_VenusaurC,
+        .iconPalIndex = 4,
+#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .frontPicFemale = gMonFrontPic_VenusaurCF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_VenusaurCF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 48),
+#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Venusaur)
+        OVERWORLD(
+            sPicTable_VenusaurC,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_VenusaurC,
+            gShinyOverworldPalette_VenusaurC
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_VenusaurCF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sVenusaurLevelUpLearnset,
+        .teachableLearnset = sVenusaurTeachableLearnset,
+    },
+
+    [SPECIES_CHARIZARD_C] =
+    {
+        .baseHP        = 78,
+        .baseAttack    = 84,
+        .baseDefense   = 78,
+        .baseSpeed     = 100,
+        .baseSpAttack  = P_UPDATED_STATS >= GEN_2 ? 109 : 85,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FLYING),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 267 : (P_UPDATED_EXP_YIELDS >= GEN_5) ? 240 : 209,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+        .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Charizard C"),
+        .cryId = CRY_CHARIZARD,
+        .natDexNum = NATIONAL_DEX_CHARIZARD_C,
+        .categoryName = _("Llama"),
+        .height = 17,
+        .weight = 905,
+        .description = COMPOUND_STRING(
+            "Clon creado a partir de Charizard.\n"
+            "Conserva su potencia y vuelo, pero\n"
+            "no muestra desarrollo desde\n"
+            "Charmander o Charmeleon."),
+        .pokemonScale = 256,
+        .pokemonOffset = 1,
+        .trainerScale = 302,
+        .trainerOffset = 3,
+        .frontPic = gMonFrontPic_CharizardC,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 0,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_V_SHAKE,
+        .backPic = gMonBackPic_CharizardC,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        .palette = gMonPalette_CharizardC,
+        .shinyPalette = gMonShinyPalette_CharizardC,
+        .iconSprite = gMonIcon_CharizardC,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Charizard)
+        OVERWORLD(
+            sPicTable_CharizardC,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CharizardC,
+            gShinyOverworldPalette_CharizardC
+        )
+        .levelUpLearnset = sCharizardLevelUpLearnset,
+        .teachableLearnset = sCharizardTeachableLearnset,
+    },
+
+    [SPECIES_BLASTOISE_C] =
+    {
+        .baseHP        = 79,
+        .baseAttack    = 83,
+        .baseDefense   = 100,
+        .baseSpeed     = 78,
+        .baseSpAttack  = 85,
+        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 105 : 85,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : (P_UPDATED_EXP_YIELDS >= GEN_5) ? 239 : 210,
+        .evYield_SpDefense = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Blastoise C"),
+        .cryId = CRY_BLASTOISE,
+        .natDexNum = NATIONAL_DEX_BLASTOISE_C,
+        .categoryName = _("Caparazon"),
+        .height = 16,
+        .weight = 855,
+        .description = COMPOUND_STRING(
+            "Clon creado a partir de Blastoise.\n"
+            "Replica la presion de sus canones,\n"
+            "pero no desciende de Squirtle ni\n"
+            "de Wartortle."),
+        .pokemonScale = 256,
+        .pokemonOffset = -1,
+        .trainerScale = 293,
+        .trainerOffset = 2,
+        .frontPic = gMonFrontPic_BlastoiseC,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 4,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 25),
+            ANIMCMD_FRAME(0, 20),
+        ),
+        .frontAnimId = ANIM_V_SHAKE_TWICE,
+        .frontAnimDelay = 20,
+        .backPic = gMonBackPic_BlastoiseC,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 7,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_BlastoiseC,
+        .shinyPalette = gMonShinyPalette_BlastoiseC,
+        .iconSprite = gMonIcon_BlastoiseC,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 7, SHADOW_SIZE_L)
+        FOOTPRINT(Blastoise)
+        OVERWORLD(
+            sPicTable_BlastoiseC,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_BlastoiseC,
+            gShinyOverworldPalette_BlastoiseC
+        )
+        .levelUpLearnset = sBlastoiseLevelUpLearnset,
+        .teachableLearnset = sBlastoiseTeachableLearnset,
+    },
+
 #if P_FAMILY_OSHAWOTT
     [SPECIES_OSHAWOTT_X] =
     {
