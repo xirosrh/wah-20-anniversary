@@ -1232,16 +1232,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 3,
         .frontPic = gMonFrontPic_CharizardC,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 20),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_V_SHAKE,
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CharizardC,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 1,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_CharizardC,
         .shinyPalette = gMonShinyPalette_CharizardC,
         .iconSprite = gMonIcon_CharizardC,
@@ -1249,15 +1246,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, 13, SHADOW_SIZE_L)
         FOOTPRINT(Charizard)
-        OVERWORLD(
-            sPicTable_CharizardC,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_CharizardC,
-            gShinyOverworldPalette_CharizardC
-        )
         .levelUpLearnset = sCharizardLevelUpLearnset,
         .teachableLearnset = sCharizardTeachableLearnset,
     },
@@ -1298,19 +1286,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 2,
         .frontPic = gMonFrontPic_BlastoiseC,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 4,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 20),
-            ANIMCMD_FRAME(0, 20),
-            ANIMCMD_FRAME(1, 25),
-            ANIMCMD_FRAME(0, 20),
-        ),
-        .frontAnimId = ANIM_V_SHAKE_TWICE,
-        .frontAnimDelay = 20,
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_BlastoiseC,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 7,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 10,
+        //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_BlastoiseC,
         .shinyPalette = gMonShinyPalette_BlastoiseC,
         .iconSprite = gMonIcon_BlastoiseC,
@@ -1318,15 +1300,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 7, SHADOW_SIZE_L)
         FOOTPRINT(Blastoise)
-        OVERWORLD(
-            sPicTable_BlastoiseC,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_BlastoiseC,
-            gShinyOverworldPalette_BlastoiseC
-        )
         .levelUpLearnset = sBlastoiseLevelUpLearnset,
         .teachableLearnset = sBlastoiseTeachableLearnset,
     },

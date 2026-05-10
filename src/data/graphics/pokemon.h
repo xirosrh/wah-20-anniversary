@@ -27480,53 +27480,17 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/shiny.gbapal");
     const u8 gMonIcon_VenusaurC[] = INCBIN_U8("graphics/pokemon/venusaur_c/icon.4bpp");
 
-#if P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/anim_front_gba.4bpp.smol");
-    const u16 gMonPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/normal_gba.gbapal");
-    const u32 gMonBackPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/back_gba.4bpp.smol");
-    const u16 gMonShinyPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/shiny_gba.gbapal");
-#else
-    const u32 gMonFrontPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/front.4bpp.smol");
     const u16 gMonPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/normal.gbapal");
     const u32 gMonBackPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/back.4bpp.smol");
     const u16 gMonShinyPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/shiny.gbapal");
-#endif
-#if P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_CharizardC[] = INCBIN_U8("graphics/pokemon/charizard_c/icon_gba.4bpp");
-#else
     const u8 gMonIcon_CharizardC[] = INCBIN_U8("graphics/pokemon/charizard_c/icon.4bpp");
-#endif
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_CharizardC[] = INCBIN_COMP("graphics/pokemon/charizard_c/overworld.4bpp");
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/overworld_shiny.gbapal");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/anim_front_gba.4bpp.smol");
-    const u16 gMonPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/normal_gba.gbapal");
-    const u32 gMonBackPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/back_gba.4bpp.smol");
-    const u16 gMonShinyPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/shiny_gba.gbapal");
-#else
-    const u32 gMonFrontPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/front.4bpp.smol");
     const u16 gMonPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/normal.gbapal");
     const u32 gMonBackPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/back.4bpp.smol");
     const u16 gMonShinyPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/shiny.gbapal");
-#endif
-#if P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_BlastoiseC[] = INCBIN_U8("graphics/pokemon/blastoise_c/icon_gba.4bpp");
-#else
     const u8 gMonIcon_BlastoiseC[] = INCBIN_U8("graphics/pokemon/blastoise_c/icon.4bpp");
-#endif
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_BlastoiseC[] = INCBIN_COMP("graphics/pokemon/blastoise_c/overworld.4bpp");
-#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/overworld_shiny.gbapal");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/lugia/dark/front.4bpp.smol");
     const u16 gMonPalette_ShadowLugia[] = INCBIN_U16("graphics/pokemon/lugia/dark/normal.gbapal");

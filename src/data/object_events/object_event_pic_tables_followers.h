@@ -83,13 +83,6 @@ static const struct SpriteFrameImage sPicTable_BlastoiseMega[] = {
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SQUIRTLE
 
-static const struct SpriteFrameImage sPicTable_CharizardC[] = {
-    overworld_ascending_frames(gObjectEventPic_CharizardC, 4, 4),
-};
-static const struct SpriteFrameImage sPicTable_BlastoiseC[] = {
-    overworld_ascending_frames(gObjectEventPic_BlastoiseC, 4, 4),
-};
-
 #if P_FAMILY_CATERPIE
 static const struct SpriteFrameImage sPicTable_Caterpie[] = {
     overworld_ascending_frames(gObjectEventPic_Caterpie, 4, 4),
