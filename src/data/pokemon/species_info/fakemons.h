@@ -208,7 +208,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .palette = gMonPalette_Gritespec,
         .shinyPalette = gMonShinyPalette_Gritespec,
         .iconSprite = gMonIcon_Gritespec,
-        .iconPalIndex = 1,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 10, SHADOW_SIZE_M)
         FOOTPRINT(Chimecho)
