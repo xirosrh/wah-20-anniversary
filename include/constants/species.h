@@ -1714,8 +1714,11 @@
 #define SPECIES_BLESSPARCE                             1592
 #define SPECIES_MADAAMU                                1593
 #define SPECIES_AKUERIA                                1594
+#define SPECIES_VENUSAUR_C                             1595
+#define SPECIES_CHARIZARD_C                            1596
+#define SPECIES_BLASTOISE_C                            1597
 
-#define SPECIES_EGG                                     (SPECIES_AKUERIA + 1)
+#define SPECIES_EGG                                     (SPECIES_BLASTOISE_C + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

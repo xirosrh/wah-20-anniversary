@@ -412,7 +412,7 @@ script CollaboratorsRoom_EventScript_Micolo {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
             msgbox(format("¿Te da miedo enfrentarte a uno de mis ejemplares? Con lo que te costó pasar las salas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
-            releaseall
+            call(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
             end
         }
         playse(SE_PIN)

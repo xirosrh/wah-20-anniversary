@@ -147,6 +147,7 @@ mart WahRoomsShared_MartItems {
     ITEM_AGGRONITE
     ITEM_ZYGARDITE
     ITEM_VICTREEBELITE
+    ITEM_DRAGONINITE
 }
 
 script WahRoomsShared_OpenDoor {

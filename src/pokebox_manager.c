@@ -1,8 +1,13 @@
 #include "global.h"
+#include "data.h"
 #include "event_data.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
 #include "constants/characters.h"
+#include "constants/abilities.h"
+#include "constants/items.h"
+#include "constants/moves.h"
+#include "constants/pokemon.h"
 #include "pokebox_manager.h"
 #include "money.h"
 #include "pokemon.h"
@@ -38,214 +43,257 @@ const u8 *Get_PokeboxMsgAction(u8 index)
 
 const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
 
+#define POKEBOX_MON(species_)                                                           \
+    {                                                                                   \
+        .specie = species_, .ability = ABILITY_NONE, .nature = NATURE_HARDY,            \
+        .itemId = ITEM_NONE, .ev = NULL, .isShiny = FALSE,                              \
+        .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}                           \
+    }
+
 static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 {
-    { 
-        .specie = SPECIES_DRAGONITE,        
+    {
+        .mon = {
+            .specie = SPECIES_ELECTRODES,
+            .ability = ABILITY_MELONSHIELD,
+            .nature = NATURE_MODEST,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_JUICY_EXPLOSION, MOVE_ACID_PULP, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN},
+        },
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_WahChallengeCompleted
+    },
+    {
+        .mon = {
+            .specie = SPECIES_MOLTRES,
+            .ability = ABILITY_PRESSURE,
+            .nature = NATURE_TIMID,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLAMETHROWER, MOVE_AEROBLAST, MOVE_EARTH_POWER, MOVE_MOONBLAST},
+        },
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },
     { 
-        .specie = SPECIES_GOROCHU,
+        .mon = {
+            .specie = SPECIES_DRAGONITE,
+            .ability = ABILITY_MULTISCALE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_PLAY_ROUGH, MOVE_EXTREME_SPEED},
+        },
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
+    },  
+    { 
+        .mon = POKEBOX_MON(SPECIES_GOROCHU),
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_DUN,
+        .mon = POKEBOX_MON(SPECIES_DUN),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 1000,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_TAABAN,
+        .mon = POKEBOX_MON(SPECIES_TAABAN),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_WahChallengeCompleted
+        .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_BLESSPARCE,
+        .mon = POKEBOX_MON(SPECIES_BLESSPARCE),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_WahChallengeCompleted
+        .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_MADAAMU,
+        .mon = POKEBOX_MON(SPECIES_MADAAMU),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_WahChallengeCompleted
+        .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_AKUERIA,
+        .mon = POKEBOX_MON(SPECIES_AKUERIA),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_WahChallengeCompleted
+        .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_VOLCARONA,        
+        .mon = POKEBOX_MON(SPECIES_VOLCARONA),
         .description = gText_PokeboxBuyThisMon, 
         .money = 10000,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .specie = SPECIES_GRENINJA,         
+        .mon = POKEBOX_MON(SPECIES_GRENINJA),
         .description = gText_PokeboxBuyThisMon, 
         .money = 200,
         .check = CheckPokebox_isBuyMon
     },
 
     { 
-        .specie = SPECIES_CINDERACE,        
+        .mon = POKEBOX_MON(SPECIES_CINDERACE),
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
-        .check = CheckPokebox_WahChallengeCompleted 
+        .check = CheckPokebox_isBuyMon 
     },
     { 
-        .specie = SPECIES_EXCADRILL,        
+        .mon = POKEBOX_MON(SPECIES_EXCADRILL),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_AEGISLASH,        
+        .mon = POKEBOX_MON(SPECIES_AEGISLASH),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_MIMIKYU,          
+        .mon = POKEBOX_MON(SPECIES_MIMIKYU),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_TOXAPEX,          
+        .mon = POKEBOX_MON(SPECIES_TOXAPEX),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_FERROTHORN,       
+        .mon = POKEBOX_MON(SPECIES_FERROTHORN),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_CORVIKNIGHT,      
+        .mon = POKEBOX_MON(SPECIES_CORVIKNIGHT),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_SKARMORY,         
+        .mon = POKEBOX_MON(SPECIES_SKARMORY),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_BLISSEY,          
+        .mon = POKEBOX_MON(SPECIES_BLISSEY),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_GASTRODON,        
+        .mon = POKEBOX_MON(SPECIES_GASTRODON),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_ROTOM_WASH,       
+        .mon = POKEBOX_MON(SPECIES_ROTOM_WASH),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_LANDORUS_THERIAN,
+        .mon = POKEBOX_MON(SPECIES_LANDORUS_THERIAN),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_GLISCOR,          
+        .mon = POKEBOX_MON(SPECIES_GLISCOR),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_AMOONGUSS,        
+        .mon = POKEBOX_MON(SPECIES_AMOONGUSS),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_INDEEDEE,         
+        .mon = POKEBOX_MON(SPECIES_INDEEDEE),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_PORYGON2,         
+        .mon = POKEBOX_MON(SPECIES_PORYGON2),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_HATTERENE,        
+        .mon = POKEBOX_MON(SPECIES_HATTERENE),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_REUNICLUS,        
+        .mon = POKEBOX_MON(SPECIES_REUNICLUS),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_SLOWKING_GALAR,   
+        .mon = POKEBOX_MON(SPECIES_SLOWKING_GALAR),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_HEATRAN,          
+        .mon = POKEBOX_MON(SPECIES_HEATRAN),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_TAPU_FINI,        
+        .mon = POKEBOX_MON(SPECIES_TAPU_FINI),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_TAPU_KOKO,        
+        .mon = POKEBOX_MON(SPECIES_TAPU_KOKO),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_KARTANA,          
+        .mon = POKEBOX_MON(SPECIES_KARTANA),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_URSHIFU,          
+        .mon = POKEBOX_MON(SPECIES_URSHIFU),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
     { 
-        .specie = SPECIES_FLUTTER_MANE,     
+        .mon = POKEBOX_MON(SPECIES_FLUTTER_MANE),
         .description = COMPOUND_STRING(""), 
         .money = 0,
         .check = CheckPokebox_Active 
     },
 };
+
+#undef POKEBOX_MON
 
 
 
@@ -254,12 +302,22 @@ u8 PokeboxSpeciesList_GetCount(void)
     return ARRAY_COUNT(sPokeboxSpeciesList);
 }
 
-u16 PokeboxSpeciesList_GetSpecie(u8 index)
+const struct TeamSelectorMonData *PokeboxSpeciesList_GetMonData(u8 index)
 {
     if (index >= PokeboxSpeciesList_GetCount())
+        return NULL;
+
+    return &sPokeboxSpeciesList[index].mon;
+}
+
+u16 PokeboxSpeciesList_GetSpecie(u8 index)
+{
+    const struct TeamSelectorMonData *mon = PokeboxSpeciesList_GetMonData(index);
+
+    if (mon == NULL)
         return SPECIES_NONE;
 
-    return sPokeboxSpeciesList[index].specie;
+    return mon->specie;
 }
 
 const u8 *Get_PokeboxDescription(u8 id) 
@@ -379,5 +437,3 @@ bool8 PokeboxSpecies_BufferBuyOfferFromSpecies(u16 species)
     gStringVar2[0] = EOS;
     return FALSE;
 }
-
-

@@ -1015,7 +1015,7 @@ static void AddSpecialMonToRandomTeamByPlayerName()
 {
     u8 i;
     u8 indexToReplace = 0xFF;
-    u8 indexSpecialMon = MON_WATERMELON_ELECTRODE;
+    u8 indexSpecialMon = MON_LUDICOLO;
     const struct TeamSelectorMonData *mon1;
     const struct TeamSelectorMonData *mon2;
 

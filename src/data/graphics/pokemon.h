@@ -27474,6 +27474,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Akueria[] = INCBIN_U16("graphics/pokemon/akueria/shiny.gbapal");
     const u8 gMonIcon_Akueria[] = INCBIN_U8("graphics/pokemon/akueria/icon.4bpp");
 
+    const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/front.4bpp.smol");
+    const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal.gbapal");
+    const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back.4bpp.smol");
+    const u16 gMonShinyPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/shiny.gbapal");
+    const u8 gMonIcon_VenusaurC[] = INCBIN_U8("graphics/pokemon/venusaur_c/icon.4bpp");
+
+    const u32 gMonFrontPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/front.4bpp.smol");
+    const u16 gMonPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/normal.gbapal");
+    const u32 gMonBackPic_CharizardC[] = INCBIN_U32("graphics/pokemon/charizard_c/back.4bpp.smol");
+    const u16 gMonShinyPalette_CharizardC[] = INCBIN_U16("graphics/pokemon/charizard_c/shiny.gbapal");
+    const u8 gMonIcon_CharizardC[] = INCBIN_U8("graphics/pokemon/charizard_c/icon.4bpp");
+
+    const u32 gMonFrontPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/front.4bpp.smol");
+    const u16 gMonPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/normal.gbapal");
+    const u32 gMonBackPic_BlastoiseC[] = INCBIN_U32("graphics/pokemon/blastoise_c/back.4bpp.smol");
+    const u16 gMonShinyPalette_BlastoiseC[] = INCBIN_U16("graphics/pokemon/blastoise_c/shiny.gbapal");
+    const u8 gMonIcon_BlastoiseC[] = INCBIN_U8("graphics/pokemon/blastoise_c/icon.4bpp");
+
     const u32 gMonFrontPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/lugia/dark/front.4bpp.smol");
     const u16 gMonPalette_ShadowLugia[] = INCBIN_U16("graphics/pokemon/lugia/dark/normal.gbapal");
     const u32 gMonBackPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/lugia/dark/back.4bpp.smol");
