@@ -255,12 +255,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Magiken,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 10,
+        .backPicYOffset = 13,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Magiken,
         .shinyPalette = gMonShinyPalette_Magiken,
         .iconSprite = gMonIcon_Magiken,
-        .iconPalIndex = 1,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 9, SHADOW_SIZE_M)
         FOOTPRINT(Gastly)
