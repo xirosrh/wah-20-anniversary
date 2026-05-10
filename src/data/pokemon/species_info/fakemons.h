@@ -102,12 +102,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .enemyMonElevation = 7,
         .backPic = gMonBackPic_Freech,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 2,
+        .backPicYOffset = 5,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Freech,
         .shinyPalette = gMonShinyPalette_Freech,
         .iconSprite = gMonIcon_Freech,
-        .iconPalIndex = 1,
+        .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
         SHADOW(-2, 17, SHADOW_SIZE_L)
         FOOTPRINT(Skarmory)
