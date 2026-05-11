@@ -18,6 +18,9 @@
 static bool8 CheckPokebox_isBuyMon(u8 id);
 static bool8 CheckPokebox_Active(u8 id);
 static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
+static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
+static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
+static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -52,6 +55,72 @@ const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
 
 static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 {
+    {
+        .mon = POKEBOX_MON(SPECIES_JIRACHI),
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveLegendaries
+    },
+    {
+        .mon = POKEBOX_MON(SPECIES_MEW),
+        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveLegendaries
+    },
+    {
+        .mon = POKEBOX_MON(SPECIES_CELEBI),
+        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveLegendaries
+    },
+    {
+        .mon = {
+            .specie = SPECIES_VENUSAUR_C,
+            .ability = ABILITY_SPEED_BOOST,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_PETAL_DANCE, MOVE_SLUDGE_WAVE},
+        },
+        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveClones
+    },
+    {
+        .mon = {
+            .specie = SPECIES_CHARIZARD_C,
+            .ability = ABILITY_ROCK_HEAD,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLARE_BLITZ, MOVE_BRAVE_BIRD, MOVE_HEAD_SMASH, MOVE_WAVE_CRASH},
+        },
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveClones
+    },
+    {
+        .mon = {
+            .specie = SPECIES_BLASTOISE_C,
+            .ability = ABILITY_CONTRARY,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 0, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_LIQUIDATION, MOVE_CLOSE_COMBAT, MOVE_PLAY_ROUGH, MOVE_HEAT_CRASH},
+        },
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventGiveClones
+    },
+    {
+        .mon = POKEBOX_MON(SPECIES_MEWTWO), //TODO Xiros: Armored mewtwo
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .money = 0,
+        .check = CheckPokebox_AlexmadEventCompleted
+    },
     {
         .mon = {
             .specie = SPECIES_ELECTRODES,
@@ -359,6 +428,24 @@ static bool8 CheckPokebox_WahChallengeCompleted(u8 id)
 {
     (void)id;
     return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED);
+}
+
+static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_ALEXMAD_EVENT_GIVE_CLONES);
+}
+
+static bool8 CheckPokebox_AlexmadEventCompleted(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_ALEXMAD_EVENT_COMPLETED);
+}
+
+static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES);
 }
 
 static bool8 CheckPokebox_isBuyMon(u8 id)

@@ -89,6 +89,7 @@ script Achievements_EventScript_Eval_Common {
 }
 
 script Pokebox_EventScript_ShowUnlocks {
+    delay(20)
     specialvar(VAR_RESULT, Special_FindNextPokeboxUnlock)
     if(var(VAR_RESULT) != TRUE) {
         return
