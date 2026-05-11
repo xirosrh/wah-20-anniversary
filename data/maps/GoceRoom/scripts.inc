@@ -89,6 +89,8 @@ GoceRoom_EventScript_Goce_4:
 # 63 "data/maps/GoceRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_GOCE
 # 64 "data/maps/GoceRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 65 "data/maps/GoceRoom/scripts.pory"
 	release
 	end
 
@@ -110,29 +112,27 @@ GoceRoom_EventScript_Goce_5:
 
 
 GoceRoom_EventScript_GoceBattle::
-# 71 "data/maps/GoceRoom/scripts.pory"
+# 72 "data/maps/GoceRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, GoceRoom_EventScript_GoceBattle_2
-# 74 "data/maps/GoceRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_GOCE
 # 75 "data/maps/GoceRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_GOCE
 # 76 "data/maps/GoceRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 77 "data/maps/GoceRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GoceRoom_EventScript_GoceBattle_5
-# 79 "data/maps/GoceRoom/scripts.pory"
+# 80 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated
 GoceRoom_EventScript_GoceBattle_1:
-# 82 "data/maps/GoceRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 GoceRoom_EventScript_GoceBattle_2:
-# 72 "data/maps/GoceRoom/scripts.pory"
+# 73 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated
 	goto GoceRoom_EventScript_GoceBattle_1
 
 GoceRoom_EventScript_GoceBattle_5:
-# 77 "data/maps/GoceRoom/scripts.pory"
+# 78 "data/maps/GoceRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_MAIN, GoceRoom_Text_GoceDefeated
 	goto GoceRoom_EventScript_GoceBattle_1
 

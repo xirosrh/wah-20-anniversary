@@ -228,6 +228,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
         call(WahRoomsShared_OpenDoor)
     }
     setflag(FLAG_DEFEATED_ADMIN_OZUMAS)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -244,7 +245,6 @@ script ScarexOzumasRoom_EventScript_OzumasBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, ScarexOzumasRoom_Text_OzumasDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 
@@ -359,6 +359,7 @@ script ScarexOzumasRoom_EventScript_Scarex {
         applymovementandwait(LOCALID_SCAREXOZUROOM_SCAREX, Common_Movement_FacePlayer)
     }
     setflag(FLAG_DEFEATED_ADMIN_SCAREX)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -375,7 +376,6 @@ script ScarexOzumasRoom_EventScript_ScarexBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, ScarexOzumasRoom_Text_ScarexDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

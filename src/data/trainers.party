@@ -8296,6 +8296,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 Difficulty: Easy
 
 Absol
@@ -8354,6 +8355,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 Difficulty: Normal
 
 Absol @ Leftovers
@@ -8473,6 +8475,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 Difficulty: Easy
 
 Klinklang
@@ -8649,6 +8652,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 Difficulty: Easy
 
 Ludicolo
@@ -8706,6 +8710,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Normal
 
 Ludicolo @ Assault Vest
@@ -8763,6 +8768,7 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Hard
 
 Ludicolo @ Assault Vest
@@ -10311,7 +10317,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Easy
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -10378,7 +10384,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Normal
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
@@ -10445,7 +10451,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Hard
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD

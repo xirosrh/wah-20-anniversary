@@ -116,6 +116,7 @@ script BaroRoom_OnFrame {
     call(WahRoomsShared_OpenDoor)
     setvar(VAR_TEMP_0_BARO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_BARO)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
  }
@@ -173,7 +174,6 @@ script BaroRoom_OnFrame {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated)
         }
     }
-    special(HealPlayerParty)
     return
  }
 

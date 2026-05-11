@@ -1613,6 +1613,18 @@ WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_6:
 	goto WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer_1
 
 
+WahRoomsShared_EventScript_AfterBattle::
+# 942 "data/scripts/wah_rooms_shared.pory"
+	copyvar VAR_0x8008, VAR_RESULT
+# 943 "data/scripts/wah_rooms_shared.pory"
+	special HealPlayerParty
+# 944 "data/scripts/wah_rooms_shared.pory"
+	call Achievements_EventScript_Eval_Avaricia
+# 945 "data/scripts/wah_rooms_shared.pory"
+	copyvar VAR_RESULT, VAR_0x8008
+	return
+
+
 # 237 "data/scripts/wah_rooms_shared.pory"
 WahRoomsShared_Kecleon_Movement_0:
 # 237 "data/scripts/wah_rooms_shared.pory"

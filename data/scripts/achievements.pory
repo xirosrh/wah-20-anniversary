@@ -101,3 +101,8 @@ script Pokebox_EventScript_ShowUnlocks {
     hidemonpic
     goto(Pokebox_EventScript_ShowUnlocks)
 }
+script Achievements_EventScript_Eval_Avaricia {
+    setvar(VAR_0x8004, ACHIEVEMENT_AVARICIA)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}

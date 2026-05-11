@@ -239,172 +239,172 @@ TokynWarRoom_EventScript_MainCutscene::
 # 129 "data/maps/TokynWarRoom/scripts.pory"
 	setvar VAR_TEMP_A, 2
 # 130 "data/maps/TokynWarRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 131 "data/maps/TokynWarRoom/scripts.pory"
 	releaseall
 	return
 
 
 TokynWarRoom_EventScript_War::
-# 135 "data/maps/TokynWarRoom/scripts.pory"
-	lock
 # 136 "data/maps/TokynWarRoom/scripts.pory"
-	faceplayer
+	lock
 # 137 "data/maps/TokynWarRoom/scripts.pory"
+	faceplayer
+# 138 "data/maps/TokynWarRoom/scripts.pory"
 	compare VAR_TEMP_A, 0
 	goto_if_eq TokynWarRoom_EventScript_War_2
-# 142 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_War_Text_0, speaker = SP_NAME_WAR
 # 143 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_PIN
+	msgbox TokynWarRoom_EventScript_War_Text_0, speaker = SP_NAME_WAR
 # 144 "data/maps/TokynWarRoom/scripts.pory"
-	applymovementandwait LOCALID_TOKYNWARROOM_WAR, Common_Movement_XDWithDelay48
+	playse SE_PIN
 # 145 "data/maps/TokynWarRoom/scripts.pory"
+	applymovementandwait LOCALID_TOKYNWARROOM_WAR, Common_Movement_XDWithDelay48
+# 146 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end
 
 TokynWarRoom_EventScript_War_2:
-# 138 "data/maps/TokynWarRoom/scripts.pory"
-	release
 # 139 "data/maps/TokynWarRoom/scripts.pory"
+	release
+# 140 "data/maps/TokynWarRoom/scripts.pory"
 	call TokynWarRoom_EventScript_MainCutscene
 	end
 
 
 TokynWarRoom_EventScript_Tokyn::
-# 150 "data/maps/TokynWarRoom/scripts.pory"
-	lock
 # 151 "data/maps/TokynWarRoom/scripts.pory"
-	faceplayer
+	lock
 # 152 "data/maps/TokynWarRoom/scripts.pory"
+	faceplayer
+# 153 "data/maps/TokynWarRoom/scripts.pory"
 	compare VAR_TEMP_A, 0
 	goto_if_eq TokynWarRoom_EventScript_Tokyn_2
-# 157 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_Tokyn_Text_0, speaker = SP_NAME_TOKYN
 # 158 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_PIN
+	msgbox TokynWarRoom_EventScript_Tokyn_Text_0, speaker = SP_NAME_TOKYN
 # 159 "data/maps/TokynWarRoom/scripts.pory"
-	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48
+	playse SE_PIN
 # 160 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_Tokyn_Text_1, speaker = SP_NAME_TOKYN
+	applymovementandwait LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48
 # 161 "data/maps/TokynWarRoom/scripts.pory"
+	msgbox TokynWarRoom_EventScript_Tokyn_Text_1, speaker = SP_NAME_TOKYN
+# 162 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end
 
 TokynWarRoom_EventScript_Tokyn_2:
-# 153 "data/maps/TokynWarRoom/scripts.pory"
-	release
 # 154 "data/maps/TokynWarRoom/scripts.pory"
+	release
+# 155 "data/maps/TokynWarRoom/scripts.pory"
 	call TokynWarRoom_EventScript_MainCutscene
 	end
 
 
 TokynWarRoom_EventScript_MagikarpJumping::
-# 167 "data/maps/TokynWarRoom/scripts.pory"
-	lock
 # 168 "data/maps/TokynWarRoom/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	lock
 # 169 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_BALLOON_RED
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 170 "data/maps/TokynWarRoom/scripts.pory"
-	switch VAR_TEMP_0
+	playse SE_BALLOON_RED
 # 171 "data/maps/TokynWarRoom/scripts.pory"
+	switch VAR_TEMP_0
+# 172 "data/maps/TokynWarRoom/scripts.pory"
 	case 5, TokynWarRoom_EventScript_MagikarpJumping_3
-# 174 "data/maps/TokynWarRoom/scripts.pory"
+# 175 "data/maps/TokynWarRoom/scripts.pory"
 	case 6, TokynWarRoom_EventScript_MagikarpJumping_4
-# 177 "data/maps/TokynWarRoom/scripts.pory"
+# 178 "data/maps/TokynWarRoom/scripts.pory"
 	case 7, TokynWarRoom_EventScript_MagikarpJumping_5
 TokynWarRoom_EventScript_MagikarpJumping_1:
-# 181 "data/maps/TokynWarRoom/scripts.pory"
-	waitse
 # 182 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_M_DIVE
-# 183 "data/maps/TokynWarRoom/scripts.pory"
-	delay 70
-# 184 "data/maps/TokynWarRoom/scripts.pory"
-	destroy_field_pic FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2
-# 185 "data/maps/TokynWarRoom/scripts.pory"
-	destroy_field_pic FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3
-# 186 "data/maps/TokynWarRoom/scripts.pory"
 	waitse
+# 183 "data/maps/TokynWarRoom/scripts.pory"
+	playse SE_M_DIVE
+# 184 "data/maps/TokynWarRoom/scripts.pory"
+	delay 70
+# 185 "data/maps/TokynWarRoom/scripts.pory"
+	destroy_field_pic FP_MAGIKARP_JUMPING_LEFT, VAR_TEMP_2
+# 186 "data/maps/TokynWarRoom/scripts.pory"
+	destroy_field_pic FP_MAGIKARP_JUMPING_RIGHT, VAR_TEMP_3
 # 187 "data/maps/TokynWarRoom/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
+	waitse
 # 188 "data/maps/TokynWarRoom/scripts.pory"
-	playse SE_PIN
+	turnobject LOCALID_PLAYER, DIR_WEST
 # 189 "data/maps/TokynWarRoom/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
+	playse SE_PIN
 # 190 "data/maps/TokynWarRoom/scripts.pory"
-	setvar VAR_TEMP_A, 1
+	applymovementandwait LOCALID_PLAYER, Common_Movement_DoubleExclamationMarkWithDelay48
 # 191 "data/maps/TokynWarRoom/scripts.pory"
+	setvar VAR_TEMP_A, 1
+# 192 "data/maps/TokynWarRoom/scripts.pory"
 	release
 	end
 
 TokynWarRoom_EventScript_MagikarpJumping_3:
-# 172 "data/maps/TokynWarRoom/scripts.pory"
-	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 102, 60, VAR_TEMP_2
 # 173 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 102, 60, VAR_TEMP_2
+# 174 "data/maps/TokynWarRoom/scripts.pory"
 	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 166, 60, VAR_TEMP_3
 	goto TokynWarRoom_EventScript_MagikarpJumping_1
 
 TokynWarRoom_EventScript_MagikarpJumping_4:
-# 175 "data/maps/TokynWarRoom/scripts.pory"
-	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 86, 60, VAR_TEMP_2
 # 176 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 86, 60, VAR_TEMP_2
+# 177 "data/maps/TokynWarRoom/scripts.pory"
 	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 150, 60, VAR_TEMP_3
 	goto TokynWarRoom_EventScript_MagikarpJumping_1
 
 TokynWarRoom_EventScript_MagikarpJumping_5:
-# 178 "data/maps/TokynWarRoom/scripts.pory"
-	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 70, 60, VAR_TEMP_2
 # 179 "data/maps/TokynWarRoom/scripts.pory"
+	load_field_pic FP_MAGIKARP_JUMPING_LEFT, 70, 60, VAR_TEMP_2
+# 180 "data/maps/TokynWarRoom/scripts.pory"
 	load_field_pic FP_MAGIKARP_JUMPING_RIGHT, 134, 60, VAR_TEMP_3
 	goto TokynWarRoom_EventScript_MagikarpJumping_1
 
 
 TokynWarRoom_EventScript_TokynWarBattle::
-# 196 "data/maps/TokynWarRoom/scripts.pory"
+# 197 "data/maps/TokynWarRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, TokynWarRoom_EventScript_TokynWarBattle_2
-# 199 "data/maps/TokynWarRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_TOKYN
 # 200 "data/maps/TokynWarRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_TOKYN
 # 201 "data/maps/TokynWarRoom/scripts.pory"
-	copyvar VAR_0x8005, VAR_RESULT
-# 202 "data/maps/TokynWarRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_WAR
-# 203 "data/maps/TokynWarRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 205 "data/maps/TokynWarRoom/scripts.pory"
+# 202 "data/maps/TokynWarRoom/scripts.pory"
+	copyvar VAR_0x8005, VAR_RESULT
+# 203 "data/maps/TokynWarRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_WAR
+# 204 "data/maps/TokynWarRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 206 "data/maps/TokynWarRoom/scripts.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq TokynWarRoom_EventScript_TokynWarBattle_5
-# 212 "data/maps/TokynWarRoom/scripts.pory"
+# 213 "data/maps/TokynWarRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq TokynWarRoom_EventScript_TokynWarBattle_11
-# 215 "data/maps/TokynWarRoom/scripts.pory"
+# 216 "data/maps/TokynWarRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_ALTERNATIVE, TokynWarRoom_Text_WarDefeated
 TokynWarRoom_EventScript_TokynWarBattle_1:
-# 219 "data/maps/TokynWarRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 TokynWarRoom_EventScript_TokynWarBattle_2:
-# 197 "data/maps/TokynWarRoom/scripts.pory"
+# 198 "data/maps/TokynWarRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated
 	goto TokynWarRoom_EventScript_TokynWarBattle_1
 
 TokynWarRoom_EventScript_TokynWarBattle_5:
-# 206 "data/maps/TokynWarRoom/scripts.pory"
+# 207 "data/maps/TokynWarRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq TokynWarRoom_EventScript_TokynWarBattle_8
-# 209 "data/maps/TokynWarRoom/scripts.pory"
+# 210 "data/maps/TokynWarRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_ALTERNATIVE, TokynWarRoom_Text_WarDefeated
 	goto TokynWarRoom_EventScript_TokynWarBattle_1
 
 TokynWarRoom_EventScript_TokynWarBattle_8:
-# 207 "data/maps/TokynWarRoom/scripts.pory"
+# 208 "data/maps/TokynWarRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_MAIN, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated
 	goto TokynWarRoom_EventScript_TokynWarBattle_1
 
 TokynWarRoom_EventScript_TokynWarBattle_11:
-# 213 "data/maps/TokynWarRoom/scripts.pory"
+# 214 "data/maps/TokynWarRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_MAIN, TokynWarRoom_Text_WarDefeated
 	goto TokynWarRoom_EventScript_TokynWarBattle_1
 
@@ -615,21 +615,21 @@ TokynWarRoom_EventScript_MainCutscene_Text_12:
 	.string "olvides seguir tus sueños.$"
 
 TokynWarRoom_EventScript_War_Text_0:
-# 142 "data/maps/TokynWarRoom/scripts.pory"
+# 143 "data/maps/TokynWarRoom/scripts.pory"
 	.string "¿Quieres otra? ¡Ni loco!\p"
 	.string "Tokyn me tira charla motivadora si\n"
 	.string "pierdo dos veces seguidas.\p"
 	.string "Pero estuvo buenísimo, eh.$"
 
 TokynWarRoom_EventScript_Tokyn_Text_0:
-# 157 "data/maps/TokynWarRoom/scripts.pory"
+# 158 "data/maps/TokynWarRoom/scripts.pory"
 	.string "Me alegra muchísimo haber sido\n"
 	.string "convocado para esta celebración.\p"
 	.string "Estar acá, compartir un combate así… me\n"
 	.string "trajo muy buenos recuerdos.$"
 
 TokynWarRoom_EventScript_Tokyn_Text_1:
-# 160 "data/maps/TokynWarRoom/scripts.pory"
+# 161 "data/maps/TokynWarRoom/scripts.pory"
 	.string "Gracias por hacerlo especial.$"
 
 TokynWarRoom_Text_TokynDefeated::

@@ -198,6 +198,7 @@ script DriveKatherineRoom_EventScript_Drive {
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves (walk_up, face_down))
     setflag(FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -256,7 +257,6 @@ script DriveKatherineRoom_EventScript_DriveKatherineBattle {
             }
         }
     }
-    special(HealPlayerParty)
     return
 }
 
