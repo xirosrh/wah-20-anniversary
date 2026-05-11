@@ -603,7 +603,7 @@ struct SaveBlock2
     /*0x64C*/ struct BattleFrontier frontier;
               u32 miningPlaces;
               u32 achievements;
-              u32 monActiveOnPokebox;
+              u64 monActiveOnPokebox;
               u16 playerTeamSelector[PARTY_SIZE];
 }; // sizeof=0xF2C
 

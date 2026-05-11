@@ -8,6 +8,8 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/pokemon.h"
+#include "constants/achievements.h"
+#include "achievements.h"
 #include "pokebox_manager.h"
 #include "money.h"
 #include "pokemon.h"
@@ -21,6 +23,7 @@ static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
 static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
+static bool8 CheckPokebox_AchievementAvaricia(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -360,7 +363,23 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_Active 
     },
+    {
+        .mon = {
+            .specie = SPECIES_MICAEL,
+            .ability = ABILITY_PRANKSTER,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_VOODOO, MOVE_ASTRAL_BARRAGE, MOVE_DOUBLE_TEAM, MOVE_DESTINY_BOND},
+        },
+        .description = COMPOUND_STRING("Completa el logro “Avaricia”."),
+        .money = 0,
+        .check = CheckPokebox_AchievementAvaricia
+    },
 };
+
+STATIC_ASSERT(ARRAY_COUNT(sPokeboxSpeciesList) <= 64, PokeboxSpeciesListExceedsMonActiveBits);
 
 #undef POKEBOX_MON
 
@@ -413,7 +432,7 @@ bool8 Pokebox_SetActive(u8 id)
     if ((gSaveBlock2Ptr->monActiveOnPokebox >> id) & 1)
         return FALSE;
 
-    gSaveBlock2Ptr->monActiveOnPokebox |= (1u << id);
+    gSaveBlock2Ptr->monActiveOnPokebox |= (1ull << id);
 
     return TRUE;
 }
@@ -446,6 +465,12 @@ static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id)
 {
     (void)id;
     return FlagGet(FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES);
+}
+
+static bool8 CheckPokebox_AchievementAvaricia(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_AVARICIA);
 }
 
 static bool8 CheckPokebox_isBuyMon(u8 id)
