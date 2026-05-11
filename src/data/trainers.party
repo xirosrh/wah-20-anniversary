@@ -8296,6 +8296,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 Difficulty: Easy
 
 Absol
@@ -8354,6 +8355,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 Difficulty: Normal
 
 Absol @ Leftovers
@@ -8473,6 +8475,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 Difficulty: Easy
 
 Klinklang
@@ -8649,6 +8652,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 Difficulty: Easy
 
 Ludicolo
@@ -8706,6 +8710,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Normal
 
 Ludicolo @ Assault Vest
@@ -8763,6 +8768,7 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Hard
 
 Ludicolo @ Assault Vest
