@@ -211,6 +211,8 @@ AguiarRoom_EventScript_Aguiar_4:
 # 144 "data/maps/AguiarRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP
 # 145 "data/maps/AguiarRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 146 "data/maps/AguiarRoom/scripts.pory"
 	release
 	end
 
@@ -270,29 +272,27 @@ AguiarRoom_EventScript_Aguiar_11:
 
 
 AguiarRoom_EventScript_AguiarBattle::
-# 150 "data/maps/AguiarRoom/scripts.pory"
+# 151 "data/maps/AguiarRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AguiarRoom_EventScript_AguiarBattle_2
-# 153 "data/maps/AguiarRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_AGUIAR
 # 154 "data/maps/AguiarRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_AGUIAR
 # 155 "data/maps/AguiarRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 156 "data/maps/AguiarRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AguiarRoom_EventScript_AguiarBattle_5
-# 158 "data/maps/AguiarRoom/scripts.pory"
+# 159 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated
 AguiarRoom_EventScript_AguiarBattle_1:
-# 161 "data/maps/AguiarRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 AguiarRoom_EventScript_AguiarBattle_2:
-# 151 "data/maps/AguiarRoom/scripts.pory"
+# 152 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated
 	goto AguiarRoom_EventScript_AguiarBattle_1
 
 AguiarRoom_EventScript_AguiarBattle_5:
-# 156 "data/maps/AguiarRoom/scripts.pory"
+# 157 "data/maps/AguiarRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_MAIN, AguiarRoom_Text_AguiarDefeated
 	goto AguiarRoom_EventScript_AguiarBattle_1
 

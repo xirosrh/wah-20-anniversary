@@ -231,6 +231,7 @@ script DragonMountan_Top_EventScript_Sergio {
     delay(60)
     msgbox(format("Ahora ven, acompañame; es hora de dejar registro de tu hazaña en el Salón de la fama."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_SERGIO)
     call(DragonMountan_Top_EventScript_WalkInPlaceSergioFacingPlayer)
+    call(WahRoomsShared_EventScript_AfterBattle)
     applymovementandwait(LOCALID_MOUNTAINTOP_SERGIO, moves(walk_down, walk_left, face_down))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
     clearflag(FLAG_TEMP_2_HIDE_ABRA_2)
@@ -283,7 +284,6 @@ script DragonMountan_Top_EventScript_SergioBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_Text_SergioDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

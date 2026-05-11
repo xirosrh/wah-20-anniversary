@@ -586,6 +586,7 @@ script JackJohnsonRoom_OnFrame {
     turnobject(LOCALID_JACKROOM_NPC4, DIR_SOUTH)
     setvar(VAR_TEMP_0_JACK_JOHNSON_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_JACK_JOHNSON)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release 
     end
 }
@@ -690,7 +691,6 @@ script JackJohnsonRoom_EventScript_JackBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE, JackJohnsonRoom_Text_JackDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

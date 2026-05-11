@@ -255,6 +255,8 @@ XirosRoom_EventScript_Xiros::
 # 164 "data/maps/XirosRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_XIROS
 # 165 "data/maps/XirosRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 166 "data/maps/XirosRoom/scripts.pory"
 	release
 	end
 
@@ -305,29 +307,27 @@ XirosRoom_EventScript_Xiros_2:
 
 
 XirosRoom_EventScript_XirosBattle::
-# 170 "data/maps/XirosRoom/scripts.pory"
+# 171 "data/maps/XirosRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, XirosRoom_EventScript_XirosBattle_2
-# 173 "data/maps/XirosRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_XIROS
 # 174 "data/maps/XirosRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_XIROS
 # 175 "data/maps/XirosRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 176 "data/maps/XirosRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq XirosRoom_EventScript_XirosBattle_5
-# 178 "data/maps/XirosRoom/scripts.pory"
+# 179 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated
 XirosRoom_EventScript_XirosBattle_1:
-# 181 "data/maps/XirosRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 XirosRoom_EventScript_XirosBattle_2:
-# 171 "data/maps/XirosRoom/scripts.pory"
+# 172 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated
 	goto XirosRoom_EventScript_XirosBattle_1
 
 XirosRoom_EventScript_XirosBattle_5:
-# 176 "data/maps/XirosRoom/scripts.pory"
+# 177 "data/maps/XirosRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_MAIN, XirosRoom_Text_XirosDefeated
 	goto XirosRoom_EventScript_XirosBattle_1
 

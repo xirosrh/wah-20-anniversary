@@ -142,6 +142,7 @@ script SayerBlaxRoom_OnFrame {
     setobjectmovementtype2(LOCALID_SAYERBLAXROOM_SAYER, MOVEMENT_TYPE_FACE_RIGHT)
     call(WahRoomsShared_OpenDoor)
     setflag(FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 
@@ -181,7 +182,6 @@ script SayerBlaxRoom_EventScript_SayerBlaxBattle {
             }
         }
     }
-    special(HealPlayerParty)
     return
 }
 

@@ -142,6 +142,7 @@ script AguiarRoom_EventScript_Aguiar {
     call(WahRoomsShared_OpenDoor)
     setflag(FLAG_DEFEATED_ADMIN_AGUIAR)
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -158,7 +159,6 @@ script AguiarRoom_EventScript_AguiarBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

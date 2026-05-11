@@ -634,27 +634,27 @@ Lobby_EventScript_Roxas_8:
 # 349 "data/maps/Lobby/scripts.pory"
 	special LoadPlayerParty
 # 350 "data/maps/Lobby/scripts.pory"
-	special HealPlayerParty
-# 351 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Lobby_EventScript_Roxas_14
-# 358 "data/maps/Lobby/scripts.pory"
+# 357 "data/maps/Lobby/scripts.pory"
 	checkplayergender
-# 359 "data/maps/Lobby/scripts.pory"
+# 358 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Lobby_EventScript_Roxas_18
-# 362 "data/maps/Lobby/scripts.pory"
+# 361 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Roxas_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 Lobby_EventScript_Roxas_17:
-# 364 "data/maps/Lobby/scripts.pory"
+# 363 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 365 "data/maps/Lobby/scripts.pory"
+# 364 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
-# 366 "data/maps/Lobby/scripts.pory"
+# 365 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Roxas_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 Lobby_EventScript_Roxas_13:
-# 368 "data/maps/Lobby/scripts.pory"
+# 367 "data/maps/Lobby/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllAdmins
+# 368 "data/maps/Lobby/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
 # 369 "data/maps/Lobby/scripts.pory"
 	release
 	end
@@ -679,20 +679,20 @@ Lobby_EventScript_Roxas_11:
 	goto Lobby_EventScript_Roxas_8
 
 Lobby_EventScript_Roxas_14:
-# 352 "data/maps/Lobby/scripts.pory"
+# 351 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 353 "data/maps/Lobby/scripts.pory"
+# 352 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_X
-# 354 "data/maps/Lobby/scripts.pory"
+# 353 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Roxas_Text_2, MSGBOX_AUTOCLOSE
-# 355 "data/maps/Lobby/scripts.pory"
+# 354 "data/maps/Lobby/scripts.pory"
 	delay 40
-# 356 "data/maps/Lobby/scripts.pory"
+# 355 "data/maps/Lobby/scripts.pory"
 	setflag FLAG_DEFEATED_LOBBY_ROXAS
 	goto Lobby_EventScript_Roxas_13
 
 Lobby_EventScript_Roxas_18:
-# 360 "data/maps/Lobby/scripts.pory"
+# 359 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Roxas_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 	goto Lobby_EventScript_Roxas_17
 
@@ -1568,7 +1568,7 @@ Lobby_EventScript_Roxas_Text_1:
 	.string "¡Nooooo!$"
 
 Lobby_EventScript_Roxas_Text_2:
-# 354 "data/maps/Lobby/scripts.pory"
+# 353 "data/maps/Lobby/scripts.pory"
 	.string "¡Nooo, me estás cargando! Ni con la\n"
 	.string "fuerza de este Pokémon oscuro te pude\l"
 	.string "ganar.\p"
@@ -1581,19 +1581,19 @@ Lobby_EventScript_Roxas_Text_2:
 	.string "ganado.$"
 
 Lobby_EventScript_Roxas_Text_3:
-# 360 "data/maps/Lobby/scripts.pory"
+# 359 "data/maps/Lobby/scripts.pory"
 	.string "Mamita lo que me imaginaba… El poder de\n"
 	.string "este bicho es de otro planeta, ni vos\l"
 	.string "que sos el campeón te la bancaste.$"
 
 Lobby_EventScript_Roxas_Text_4:
-# 362 "data/maps/Lobby/scripts.pory"
+# 361 "data/maps/Lobby/scripts.pory"
 	.string "Mamita lo que me imaginaba… El poder de\n"
 	.string "este bicho es de otro planeta, ni vos\l"
 	.string "que sos la campeona te la bancaste.$"
 
 Lobby_EventScript_Roxas_Text_5:
-# 366 "data/maps/Lobby/scripts.pory"
+# 365 "data/maps/Lobby/scripts.pory"
 	.string "Si algún día te das una vuelta por el\n"
 	.string "Archipiélago Suzuka, anda con cuidado\l"
 	.string "maquina, porque allá este no te perdona\l"

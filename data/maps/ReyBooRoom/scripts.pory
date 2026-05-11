@@ -202,6 +202,7 @@ script ReyBooRoom_EventScript_BooEncounter {
     setvar(VAR_TEMP_2_REY_BOO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_REY_BOO)
     fadedefaultbgm()
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -218,7 +219,6 @@ script ReyBooRoom_EventScript_ReyBooBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

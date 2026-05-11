@@ -61,6 +61,7 @@ script GoceRoom_EventScript_Goce {
         }
         call(WahRoomsShared_OpenDoor)
         setflag(FLAG_DEFEATED_ADMIN_GOCE)
+        call(WahRoomsShared_EventScript_AfterBattle)
         release
         end
     }
@@ -79,7 +80,6 @@ script GoceRoom_EventScript_GoceBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

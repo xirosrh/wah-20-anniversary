@@ -138,6 +138,7 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(walk_up * 2, face_down))
     setflag(FLAG_DEFEATED_ADMIN_OMEGA)
     setvar(VAR_TEMP_0, 1)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -183,7 +184,6 @@ script OmegaRoom_EventScript_OmegaBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

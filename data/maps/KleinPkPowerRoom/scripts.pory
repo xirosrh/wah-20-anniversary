@@ -264,6 +264,8 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
             waitmovement(LOCALID_NONE)
             fadescreen(FADE_FROM_BLACK)
             call(WahRoomsShared_OpenDoor)
+            call(WahRoomsShared_EventScript_AfterBattle)
+
         }
     }
     release
@@ -300,7 +302,7 @@ script KleinPkPowerRoom_EventScript_KleinBattle {
         }
     }
     setflag(FLAG_DEFEATED_ADMIN_KLEIN)
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
@@ -321,7 +323,6 @@ script KleinPkPowerRoom_EventScript_PkPowerBattle {
         }
     }
     setflag(FLAG_DEFEATED_ADMIN_PKPOWER)
-    special(HealPlayerParty)
     return
 }
 
