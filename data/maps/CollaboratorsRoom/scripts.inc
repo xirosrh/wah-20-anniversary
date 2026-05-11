@@ -149,7 +149,7 @@ CollaboratorsRoom_EventScript_Kaktus_4:
 # 78 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 79 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 80 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Kaktus_9
@@ -338,7 +338,7 @@ CollaboratorsRoom_EventScript_Gameboycl_8:
 # 184 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 185 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 186 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Gameboycl_14
@@ -519,7 +519,7 @@ CollaboratorsRoom_EventScript_Erkey_4:
 # 278 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 279 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 280 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Erkey_9
@@ -770,7 +770,7 @@ CollaboratorsRoom_EventScript_Micolo_8:
 # 427 "data/maps/CollaboratorsRoom/scripts.pory"
 	special LoadPlayerParty
 # 428 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 429 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Micolo_17
@@ -1060,7 +1060,7 @@ CollaboratorsRoom_EventScript_MrNightology_8:
 # 581 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 582 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 583 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_MrNightology_13
@@ -1337,7 +1337,7 @@ CollaboratorsRoom_EventScript_Gosuto_4:
 # 713 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 714 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 715 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Gosuto_9
@@ -1531,7 +1531,7 @@ CollaboratorsRoom_EventScript_Acimut_4:
 # 830 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 831 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 832 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Acimut_9
@@ -1754,7 +1754,7 @@ CollaboratorsRoom_EventScript_Alexmad_DoBattle::
 # 949 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 950 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 951 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Alexmad_DoBattle_2
@@ -2221,7 +2221,7 @@ CollaboratorsRoom_EventScript_Ryuzaki_4:
 # 1192 "data/maps/CollaboratorsRoom/scripts.pory"
 	special GetBattleOutcome
 # 1193 "data/maps/CollaboratorsRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 1194 "data/maps/CollaboratorsRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CollaboratorsRoom_EventScript_Ryuzaki_9

@@ -79,7 +79,7 @@ script GoceRoom_EventScript_GoceBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

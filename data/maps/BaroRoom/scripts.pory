@@ -173,7 +173,7 @@ script BaroRoom_OnFrame {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
  }
 

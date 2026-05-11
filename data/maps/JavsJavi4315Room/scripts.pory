@@ -165,7 +165,7 @@ script JavsJavi4315Room_EventScript_JavsJavi4315Battle {
             }
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

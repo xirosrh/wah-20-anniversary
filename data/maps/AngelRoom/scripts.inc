@@ -257,7 +257,7 @@ AngelRoom_EventScript_AngelBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated
 AngelRoom_EventScript_AngelBattle_1:
 # 144 "data/maps/AngelRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 AngelRoom_EventScript_AngelBattle_2:

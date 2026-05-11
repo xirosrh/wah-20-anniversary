@@ -380,7 +380,7 @@ CheveRoom_EventScript_CheveBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE, CheveRoom_Text_CheveDefeated
 CheveRoom_EventScript_CheveBattle_1:
 # 234 "data/maps/CheveRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 CheveRoom_EventScript_CheveBattle_2:

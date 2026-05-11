@@ -216,7 +216,7 @@ script TokynWarRoom_EventScript_TokynWarBattle {
             }
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

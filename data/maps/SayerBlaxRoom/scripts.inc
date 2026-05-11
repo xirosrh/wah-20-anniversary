@@ -258,7 +258,7 @@ SayerBlaxRoom_EventScript_SayerBlaxBattle::
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated
 SayerBlaxRoom_EventScript_SayerBlaxBattle_1:
 # 184 "data/maps/SayerBlaxRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_2:

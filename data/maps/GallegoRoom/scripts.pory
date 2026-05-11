@@ -262,7 +262,7 @@ script GallegoRoom_EventScript_GallegoBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_Text_GallegoDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

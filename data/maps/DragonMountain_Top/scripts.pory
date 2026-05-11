@@ -283,7 +283,7 @@ script DragonMountan_Top_EventScript_SergioBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_Text_SergioDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

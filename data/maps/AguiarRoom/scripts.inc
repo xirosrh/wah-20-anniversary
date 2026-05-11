@@ -283,7 +283,7 @@ AguiarRoom_EventScript_AguiarBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated
 AguiarRoom_EventScript_AguiarBattle_1:
 # 161 "data/maps/AguiarRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 AguiarRoom_EventScript_AguiarBattle_2:

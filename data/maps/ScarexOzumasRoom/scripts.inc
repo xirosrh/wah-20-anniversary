@@ -379,7 +379,7 @@ ScarexOzumasRoom_EventScript_OzumasBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, ScarexOzumasRoom_Text_OzumasDefeated
 ScarexOzumasRoom_EventScript_OzumasBattle_1:
 # 247 "data/maps/ScarexOzumasRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ScarexOzumasRoom_EventScript_OzumasBattle_2:
@@ -638,7 +638,7 @@ ScarexOzumasRoom_EventScript_ScarexBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, ScarexOzumasRoom_Text_ScarexDefeated
 ScarexOzumasRoom_EventScript_ScarexBattle_1:
 # 378 "data/maps/ScarexOzumasRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ScarexOzumasRoom_EventScript_ScarexBattle_2:

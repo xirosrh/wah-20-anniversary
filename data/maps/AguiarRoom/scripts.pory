@@ -158,7 +158,7 @@ script AguiarRoom_EventScript_AguiarBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_AGUIAR_ALTERNATIVE, AguiarRoom_Text_AguiarDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

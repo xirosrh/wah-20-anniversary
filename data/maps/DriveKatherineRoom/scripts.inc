@@ -459,7 +459,7 @@ DriveKatherineRoom_EventScript_DriveKatherineBattle::
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_DRIVE_ALTERNATIVE, DriveKatherineRoom_Text_DriveDefeated, TRAINER_WAH_ADMIN_KATHERINE_ALTERNATIVE, DriveKatherineRoom_Text_KatherineDefeated
 DriveKatherineRoom_EventScript_DriveKatherineBattle_1:
 # 259 "data/maps/DriveKatherineRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 DriveKatherineRoom_EventScript_DriveKatherineBattle_2:

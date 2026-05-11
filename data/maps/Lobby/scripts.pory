@@ -347,7 +347,7 @@ script Lobby_EventScript_Roxas {
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
         special(LoadPlayerParty)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_X)

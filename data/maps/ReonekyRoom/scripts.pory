@@ -271,7 +271,7 @@ script ReonekyRoom_EventScript_ReonekyBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, ReonekyRoom_Text_ReonekyDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

@@ -256,7 +256,7 @@ script DriveKatherineRoom_EventScript_DriveKatherineBattle {
             }
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

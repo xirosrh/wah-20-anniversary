@@ -218,7 +218,7 @@ script ReyBooRoom_EventScript_ReyBooBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

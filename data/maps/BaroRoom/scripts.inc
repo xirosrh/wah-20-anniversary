@@ -284,7 +284,7 @@ BaroRoom_EventScript_BaroBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated
 BaroRoom_EventScript_BaroBattle_1:
 # 176 "data/maps/BaroRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 BaroRoom_EventScript_BaroBattle_2:

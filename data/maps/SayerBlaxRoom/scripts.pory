@@ -181,7 +181,7 @@ script SayerBlaxRoom_EventScript_SayerBlaxBattle {
             }
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

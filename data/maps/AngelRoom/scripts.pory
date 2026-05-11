@@ -141,7 +141,7 @@ script AngelRoom_EventScript_AngelBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

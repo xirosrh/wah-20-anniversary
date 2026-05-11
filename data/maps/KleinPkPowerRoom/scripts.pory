@@ -300,7 +300,7 @@ script KleinPkPowerRoom_EventScript_KleinBattle {
         }
     }
     setflag(FLAG_DEFEATED_ADMIN_KLEIN)
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
@@ -321,7 +321,7 @@ script KleinPkPowerRoom_EventScript_PkPowerBattle {
         }
     }
     setflag(FLAG_DEFEATED_ADMIN_PKPOWER)
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

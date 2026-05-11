@@ -513,7 +513,7 @@ DragonMountan_Top_EventScript_SergioBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE, DragonMountan_Top_Text_SergioDefeated
 DragonMountan_Top_EventScript_SergioBattle_1:
 # 286 "data/maps/DragonMountain_Top/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 DragonMountan_Top_EventScript_SergioBattle_2:

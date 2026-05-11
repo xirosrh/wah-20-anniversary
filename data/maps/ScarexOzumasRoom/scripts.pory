@@ -244,7 +244,7 @@ script ScarexOzumasRoom_EventScript_OzumasBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, ScarexOzumasRoom_Text_OzumasDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
@@ -375,7 +375,7 @@ script ScarexOzumasRoom_EventScript_ScarexBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, ScarexOzumasRoom_Text_ScarexDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

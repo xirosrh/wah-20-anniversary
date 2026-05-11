@@ -361,7 +361,7 @@ GallegoRoom_EventScript_GallegoBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE, GallegoRoom_Text_GallegoDefeated
 GallegoRoom_EventScript_GallegoBattle_1:
 # 265 "data/maps/GallegoRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 GallegoRoom_EventScript_GallegoBattle_2:

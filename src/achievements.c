@@ -6,11 +6,12 @@
 #include "constants/difficulty.h"
 #include "difficulty.h"
 #include "pokemon.h"
+#include "money.h"
 struct AchievementEntry
 {
     const u8 *title;
     const u8 *description;
-    u8 target;
+    u32 target;
     bool8 (*check)(u8 id);
 };
 
@@ -24,6 +25,7 @@ static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
 static bool8 CheckFoundTileKecleon(u8 id);
+static bool8 CheckAvaricia(u8 id);
 static bool8 PartyHasElectrodeS(void);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
@@ -93,6 +95,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckFoundTileKecleon,
     },
+    [ACHIEVEMENT_AVARICIA] = {
+        .title = COMPOUND_STRING("Avaricia"),
+        .description = COMPOUND_STRING("Acumula 400000 de dinero.\nNo todo en la vida es combatir,\npero ayuda a llenar la cartera."),
+        .target = 400000,
+        .check = CheckAvaricia,
+    },
 };
 
 static bool8 CheckDummyChallenge(u8 id)
@@ -122,6 +130,11 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
 static bool8 CheckFoundTileKecleon(u8 id)
 {
     return FlagGet(FLAG_FOUND_TILE_KECLEON) == sAchievements[id].target;
+}
+
+static bool8 CheckAvaricia(u8 id)
+{
+    return GetMoney(&gSaveBlock1Ptr->money) >= sAchievements[id].target;
 }
 
 static bool8 PartyHasElectrodeS(void)

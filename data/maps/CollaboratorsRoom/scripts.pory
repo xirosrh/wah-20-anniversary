@@ -76,7 +76,7 @@ script CollaboratorsRoom_EventScript_Kaktus {
         trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("¿Acaso perdí?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
@@ -182,7 +182,7 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         }
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
@@ -276,7 +276,7 @@ script CollaboratorsRoom_EventScript_Erkey {
         clearflag(FLAG_INVERSE_BATTLE)
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
@@ -425,7 +425,7 @@ script CollaboratorsRoom_EventScript_Micolo {
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
         special(LoadPlayerParty)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
@@ -579,7 +579,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         trainerbattle_two_trainers(TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY, format("¿Qué? ¡Pero si era un plan genial!"), TRAINER_WAH_COLLABORATOR_REONEKY, format("¿He vuelto a perder?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_M_EXPLOSION)
             applymovement(VAR_LAST_TALKED, CollaboratorsRoom_Movement_MrNightology_Despegue)
@@ -711,7 +711,7 @@ script CollaboratorsRoom_EventScript_Gosuto {
         trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GOSUTO, format("Creo que ya superaste tus miedos y superaste las sombras."))
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
@@ -828,7 +828,7 @@ script CollaboratorsRoom_EventScript_Acimut {
         trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ACIMUT, format("¿Qué ha pasado aquí?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
@@ -947,7 +947,7 @@ script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
     trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ALEXMAD, CollaboratorsRoom_Text_Alexmad_OnDefeat)
     clearflag(B_FLAG_NO_WHITEOUT)
     special(GetBattleOutcome)
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     if(var(VAR_RESULT) == B_OUTCOME_WON) {
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48)
@@ -1190,7 +1190,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
         trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_RYUZAKI, CollaboratorsRoom_Text_Ryuzaki_OnDefeat)
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
-        special(HealPlayerParty)
+        call(WahRoomsShared_EventScript_AfterBattle)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)

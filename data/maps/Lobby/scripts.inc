@@ -634,7 +634,7 @@ Lobby_EventScript_Roxas_8:
 # 349 "data/maps/Lobby/scripts.pory"
 	special LoadPlayerParty
 # 350 "data/maps/Lobby/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 # 351 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Lobby_EventScript_Roxas_14

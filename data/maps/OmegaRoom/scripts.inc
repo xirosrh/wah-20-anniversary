@@ -329,7 +329,7 @@ OmegaRoom_EventScript_OmegaBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated
 OmegaRoom_EventScript_OmegaBattle_1:
 # 186 "data/maps/OmegaRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 OmegaRoom_EventScript_OmegaBattle_2:

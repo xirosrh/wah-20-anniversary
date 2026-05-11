@@ -289,7 +289,7 @@ JavsJavi4315Room_EventScript_JavsJavi4315Battle::
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_1:
 # 168 "data/maps/JavsJavi4315Room/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_2:

@@ -231,7 +231,7 @@ script CheveRoom_EventScript_CheveBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE, CheveRoom_Text_CheveDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

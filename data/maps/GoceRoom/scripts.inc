@@ -123,7 +123,7 @@ GoceRoom_EventScript_GoceBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_GOCE_ALTERNATIVE, GoceRoom_Text_GoceDefeated
 GoceRoom_EventScript_GoceBattle_1:
 # 82 "data/maps/GoceRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 GoceRoom_EventScript_GoceBattle_2:

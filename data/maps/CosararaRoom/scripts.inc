@@ -170,7 +170,7 @@ CosararaRoom_EventScript_CosararaBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, CosararaRoom_Text_CosararaDefeated
 CosararaRoom_EventScript_CosararaBattle_1:
 # 100 "data/maps/CosararaRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 CosararaRoom_EventScript_CosararaBattle_2:

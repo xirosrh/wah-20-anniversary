@@ -178,7 +178,7 @@ script XirosRoom_EventScript_XirosBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

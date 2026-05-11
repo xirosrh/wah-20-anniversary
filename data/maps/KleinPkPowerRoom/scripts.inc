@@ -561,7 +561,7 @@ KleinPkPowerRoom_EventScript_KleinBattle_1:
 # 302 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_KLEIN
 # 303 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 KleinPkPowerRoom_EventScript_KleinBattle_2:
@@ -591,7 +591,7 @@ KleinPkPowerRoom_EventScript_PkPowerBattle_1:
 # 323 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_PKPOWER
 # 324 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 KleinPkPowerRoom_EventScript_PkPowerBattle_2:

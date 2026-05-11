@@ -427,7 +427,7 @@ ReonekyRoom_EventScript_ReonekyBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, ReonekyRoom_Text_ReonekyDefeated
 ReonekyRoom_EventScript_ReonekyBattle_1:
 # 274 "data/maps/ReonekyRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ReonekyRoom_EventScript_ReonekyBattle_2:

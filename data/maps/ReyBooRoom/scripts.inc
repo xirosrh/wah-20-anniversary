@@ -370,7 +370,7 @@ ReyBooRoom_EventScript_ReyBooBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated
 ReyBooRoom_EventScript_ReyBooBattle_1:
 # 221 "data/maps/ReyBooRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ReyBooRoom_EventScript_ReyBooBattle_2:

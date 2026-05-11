@@ -183,7 +183,7 @@ script OmegaRoom_EventScript_OmegaBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

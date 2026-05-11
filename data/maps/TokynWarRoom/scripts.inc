@@ -382,7 +382,7 @@ TokynWarRoom_EventScript_TokynWarBattle::
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE, TokynWarRoom_Text_TokynDefeated, TRAINER_WAH_ADMIN_WAR_ALTERNATIVE, TokynWarRoom_Text_WarDefeated
 TokynWarRoom_EventScript_TokynWarBattle_1:
 # 219 "data/maps/TokynWarRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 TokynWarRoom_EventScript_TokynWarBattle_2:

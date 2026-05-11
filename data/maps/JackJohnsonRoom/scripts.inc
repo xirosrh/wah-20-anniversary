@@ -1235,7 +1235,7 @@ JackJohnsonRoom_EventScript_JackBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE, JackJohnsonRoom_Text_JackDefeated
 JackJohnsonRoom_EventScript_JackBattle_1:
 # 693 "data/maps/JackJohnsonRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 JackJohnsonRoom_EventScript_JackBattle_2:

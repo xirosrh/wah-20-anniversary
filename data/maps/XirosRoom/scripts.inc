@@ -318,7 +318,7 @@ XirosRoom_EventScript_XirosBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated
 XirosRoom_EventScript_XirosBattle_1:
 # 181 "data/maps/XirosRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 XirosRoom_EventScript_XirosBattle_2:

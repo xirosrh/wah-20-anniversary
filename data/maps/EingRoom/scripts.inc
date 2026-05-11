@@ -303,7 +303,7 @@ EingRoom_EventScript_EingBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_ALTERNATIVE, EingRoom_Text_EingDefeated
 EingRoom_EventScript_EingBattle_1:
 # 177 "data/maps/EingRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 EingRoom_EventScript_EingBattle_2:

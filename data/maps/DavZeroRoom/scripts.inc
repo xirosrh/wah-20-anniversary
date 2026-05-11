@@ -390,7 +390,7 @@ DavZeroRoom_EventScript_DavZeroBattle::
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, DavZeroRoom_Text_DavZeroDefeated
 DavZeroRoom_EventScript_DavZeroBattle_1:
 # 211 "data/maps/DavZeroRoom/scripts.pory"
-	special HealPlayerParty
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 DavZeroRoom_EventScript_DavZeroBattle_2:

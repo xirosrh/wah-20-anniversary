@@ -208,7 +208,7 @@ script DavZeroRoom_EventScript_DavZeroBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, DavZeroRoom_Text_DavZeroDefeated)
         }
     }
-    special(HealPlayerParty)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
