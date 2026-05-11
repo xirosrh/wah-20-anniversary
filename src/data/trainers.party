@@ -4332,7 +4332,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
-Items: 
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
