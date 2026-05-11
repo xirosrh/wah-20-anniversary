@@ -27487,6 +27487,14 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_GreninjaRMega[] = INCBIN_U32("graphics/pokemon/greninja_r/mega/front.4bpp.smol");
+    const u16 gMonPalette_GreninjaRMega[] = INCBIN_U16("graphics/pokemon/greninja_r/mega/normal.gbapal");
+    const u32 gMonBackPic_GreninjaRMega[] = INCBIN_U32("graphics/pokemon/greninja_r/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_GreninjaRMega[] = INCBIN_U16("graphics/pokemon/greninja_r/mega/shiny.gbapal");
+    const u8 gMonIcon_GreninjaRMega[] = INCBIN_U8("graphics/pokemon/greninja_r/mega/icon.4bpp");
+#endif //P_GEN_9_MEGA_EVOLUTIONS
+
     const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/front.4bpp.smol");
     const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal.gbapal");
     const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back.4bpp.smol");

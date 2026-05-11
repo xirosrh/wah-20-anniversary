@@ -1362,7 +1362,65 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sGreninjaLevelUpLearnset,
         .teachableLearnset = sGreninjaTeachableLearnset,
+        .formSpeciesIdTable = sGreninjaRFormSpeciesIdTable,
+        .formChangeTable = sGreninjaRFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_GRENINJA_R_MEGA] =
+    {
+        .baseHP        = 72,
+        .baseAttack    = 125,
+        .baseDefense   = 77,
+        .baseSpeed     = 142,
+        .baseSpAttack  = 133,
+        .baseSpDefense = 81,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DARK),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = TRUE,
+        .speciesName = _("Greninja R"),
+        .cryId = CRY_GRENINJA,
+        .natDexNum = NATIONAL_DEX_GRENINJA_R,
+        .categoryName = _("Ninja"),
+        .height = 15,
+        .weight = 400,
+        .description = COMPOUND_STRING(
+            "This Pokémon spins a giant\n"
+            "shuriken at high speed to make it\n"
+            "float, then clings to it upside\n"
+            "down to catch opponents unawares."),
+        .frontPic = gMonFrontPic_GreninjaRMega,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_GreninjaRMega,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 11,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_GreninjaRMega,
+        .shinyPalette = gMonShinyPalette_GreninjaRMega,
+        .iconSprite = gMonIcon_GreninjaRMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Greninja)
+        SHADOW(-6, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sGreninjaLevelUpLearnset,
+        .teachableLearnset = sGreninjaTeachableLearnset,
+        .formSpeciesIdTable = sGreninjaRFormSpeciesIdTable,
+        .formChangeTable = sGreninjaRFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 
 #if P_FAMILY_OSHAWOTT
     [SPECIES_OSHAWOTT_X] =
