@@ -1717,8 +1717,10 @@
 #define SPECIES_VENUSAUR_C                             1595
 #define SPECIES_CHARIZARD_C                            1596
 #define SPECIES_BLASTOISE_C                            1597
+#define SPECIES_GRENINJA_R                             1598
+#define SPECIES_GRENINJA_R_MEGA                        1599
 
-#define SPECIES_EGG                                     (SPECIES_BLASTOISE_C + 1)
+#define SPECIES_EGG                                     (SPECIES_GRENINJA_R_MEGA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

@@ -383,7 +383,7 @@ static const u16 sWahCreditsPokemonList[] =
     SPECIES_BLASTOISE_C,
     SPECIES_FREECH,
     SPECIES_DRAGONITE_MEGA,
-    SPECIES_GRENINJA, //TODO Xiros: Red greninja
+    SPECIES_GRENINJA_R,
     SPECIES_GOROCHU,
     SPECIES_DUN,
     //TODO Xiros Species Beta pokemon
