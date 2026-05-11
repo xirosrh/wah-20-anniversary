@@ -913,9 +913,9 @@ static void LoadBattleBg(u8 battleBgType, enum BattleEnvironments battleEnvironm
         LoadPalette(gBattleEnvironmentPalette_StadiumSidney, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_PHOEBE:
-        DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
-        DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
-        LoadPalette(gBattleEnvironmentPalette_StadiumPhoebe, 0x20, 0x60);
+        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_PHOEBE].background.tileset, (void*)(BG_CHAR_ADDR(2)));
+        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_PHOEBE].background.tilemap, (void*)(BG_SCREEN_ADDR(26)));
+        LoadPalette(gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_PHOEBE].background.palette, 0x20, 0x60);
         break;
     case MAP_BATTLE_SCENE_GLACIA:
         DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));

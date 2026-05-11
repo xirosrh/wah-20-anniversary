@@ -246,11 +246,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     {
         .background =
         {
-            .tileset = gBattleEnvironmentTiles_Stadium,
-            .tilemap = gBattleEnvironmentTilemap_Stadium,
+            .tileset = gBattleEnvironmentTiles_WahCollaboratorsRoom,
+            .tilemap = gBattleEnvironmentTilemap_WahCollaboratorsRoom,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
-            .palette = gBattleEnvironmentPalette_StadiumPhoebe,
+            .palette = gBattleEnvironmentPalette_WahCollaboratorsRoom,
         },
     },
 
