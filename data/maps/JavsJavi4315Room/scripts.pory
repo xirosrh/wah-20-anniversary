@@ -165,7 +165,6 @@ script JavsJavi4315Room_EventScript_JavsJavi4315Battle {
             }
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
@@ -216,6 +215,7 @@ script JavsJavi4315Room_EventScript_PostBattle {
     msgbox(format("Nosotros nos quedaremos por aquí contemplando la sala."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     setflag(FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS)
     setvar(VAR_TEMP_2_JAVS_JAVI4315_ROOM_STATE, 1)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

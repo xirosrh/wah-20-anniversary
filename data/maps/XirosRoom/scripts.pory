@@ -162,6 +162,7 @@ script XirosRoom_EventScript_Xiros {
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
     setflag(FLAG_DEFEATED_ADMIN_XIROS)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -178,7 +179,6 @@ script XirosRoom_EventScript_XirosBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE, XirosRoom_Text_XirosDefeated)
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

@@ -347,6 +347,8 @@ CheveRoom_EventScript_CuttableTree_1:
 # 217 "data/maps/CheveRoom/scripts.pory"
 	setobjectmovementtype2 LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN
 # 218 "data/maps/CheveRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 219 "data/maps/CheveRoom/scripts.pory"
 	release
 	end
 
@@ -367,29 +369,27 @@ CheveRoom_EventScript_CuttableTree_5:
 
 
 CheveRoom_EventScript_CheveBattle::
-# 223 "data/maps/CheveRoom/scripts.pory"
+# 224 "data/maps/CheveRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, CheveRoom_EventScript_CheveBattle_2
-# 226 "data/maps/CheveRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_CHEVE
 # 227 "data/maps/CheveRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_CHEVE
 # 228 "data/maps/CheveRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 229 "data/maps/CheveRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq CheveRoom_EventScript_CheveBattle_5
-# 231 "data/maps/CheveRoom/scripts.pory"
+# 232 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE, CheveRoom_Text_CheveDefeated
 CheveRoom_EventScript_CheveBattle_1:
-# 234 "data/maps/CheveRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 CheveRoom_EventScript_CheveBattle_2:
-# 224 "data/maps/CheveRoom/scripts.pory"
+# 225 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_MAIN, CheveRoom_Text_CheveDefeated
 	goto CheveRoom_EventScript_CheveBattle_1
 
 CheveRoom_EventScript_CheveBattle_5:
-# 229 "data/maps/CheveRoom/scripts.pory"
+# 230 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_MAIN, CheveRoom_Text_CheveDefeated
 	goto CheveRoom_EventScript_CheveBattle_1
 

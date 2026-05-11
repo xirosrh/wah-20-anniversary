@@ -158,6 +158,7 @@ script EingRoom_EventScript_Eing {
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
     setflag(FLAG_DEFEATED_ADMIN_EING)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -174,7 +175,6 @@ script EingRoom_EventScript_EingBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_EING_ALTERNATIVE, EingRoom_Text_EingDefeated)
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

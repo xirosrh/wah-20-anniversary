@@ -114,6 +114,8 @@ CosararaRoom_EventScript_Cosarara_4:
 # 83 "data/maps/CosararaRoom/scripts.pory"
 	call CosararaRoom_EventScript_UnlockPC
 # 84 "data/maps/CosararaRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 85 "data/maps/CosararaRoom/scripts.pory"
 	release
 	end
 
@@ -157,29 +159,27 @@ CosararaRoom_EventScript_Cosarara_8:
 
 
 CosararaRoom_EventScript_CosararaBattle::
-# 89 "data/maps/CosararaRoom/scripts.pory"
+# 90 "data/maps/CosararaRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, CosararaRoom_EventScript_CosararaBattle_2
-# 92 "data/maps/CosararaRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_COSARARA
 # 93 "data/maps/CosararaRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_COSARARA
 # 94 "data/maps/CosararaRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 95 "data/maps/CosararaRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq CosararaRoom_EventScript_CosararaBattle_5
-# 97 "data/maps/CosararaRoom/scripts.pory"
+# 98 "data/maps/CosararaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, CosararaRoom_Text_CosararaDefeated
 CosararaRoom_EventScript_CosararaBattle_1:
-# 100 "data/maps/CosararaRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 CosararaRoom_EventScript_CosararaBattle_2:
-# 90 "data/maps/CosararaRoom/scripts.pory"
+# 91 "data/maps/CosararaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated
 	goto CosararaRoom_EventScript_CosararaBattle_1
 
 CosararaRoom_EventScript_CosararaBattle_5:
-# 95 "data/maps/CosararaRoom/scripts.pory"
+# 96 "data/maps/CosararaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_COSARARA_MAIN, CosararaRoom_Text_CosararaDefeated
 	goto CosararaRoom_EventScript_CosararaBattle_1
 

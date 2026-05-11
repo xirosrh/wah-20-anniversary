@@ -255,6 +255,7 @@ script ReonekyRoom_EventScript_Reoneky {
     call(WahRoomsShared_OpenDoor)
     delay(30)
     setflag(FLAG_DEFEATED_ADMIN_REONEKY)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -271,7 +272,6 @@ script ReonekyRoom_EventScript_ReonekyBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, ReonekyRoom_Text_ReonekyDefeated)
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

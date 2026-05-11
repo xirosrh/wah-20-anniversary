@@ -181,6 +181,8 @@ AngelRoom_EventScript_Angel_16:
 # 127 "data/maps/AngelRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_ANGEL
 # 128 "data/maps/AngelRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 129 "data/maps/AngelRoom/scripts.pory"
 	release
 	end
 
@@ -244,29 +246,27 @@ AngelRoom_EventScript_Angel_17:
 
 
 AngelRoom_EventScript_AngelBattle::
-# 133 "data/maps/AngelRoom/scripts.pory"
+# 134 "data/maps/AngelRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, AngelRoom_EventScript_AngelBattle_2
-# 136 "data/maps/AngelRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_ANGEL
 # 137 "data/maps/AngelRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_ANGEL
 # 138 "data/maps/AngelRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 139 "data/maps/AngelRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq AngelRoom_EventScript_AngelBattle_5
-# 141 "data/maps/AngelRoom/scripts.pory"
+# 142 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated
 AngelRoom_EventScript_AngelBattle_1:
-# 144 "data/maps/AngelRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 AngelRoom_EventScript_AngelBattle_2:
-# 134 "data/maps/AngelRoom/scripts.pory"
+# 135 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated
 	goto AngelRoom_EventScript_AngelBattle_1
 
 AngelRoom_EventScript_AngelBattle_5:
-# 139 "data/maps/AngelRoom/scripts.pory"
+# 140 "data/maps/AngelRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_ANGEL_MAIN, AngelRoom_Text_AngelDefeated
 	goto AngelRoom_EventScript_AngelBattle_1
 

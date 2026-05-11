@@ -314,6 +314,8 @@ ScarexOzumasRoom_EventScript_Ozumas_20:
 # 230 "data/maps/ScarexOzumasRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_OZUMAS
 # 231 "data/maps/ScarexOzumasRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 232 "data/maps/ScarexOzumasRoom/scripts.pory"
 	release
 	end
 
@@ -366,29 +368,27 @@ ScarexOzumasRoom_EventScript_Ozumas_21:
 
 
 ScarexOzumasRoom_EventScript_OzumasBattle::
-# 236 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 237 "data/maps/ScarexOzumasRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ScarexOzumasRoom_EventScript_OzumasBattle_2
-# 239 "data/maps/ScarexOzumasRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_OZUMAS
 # 240 "data/maps/ScarexOzumasRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_OZUMAS
 # 241 "data/maps/ScarexOzumasRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 242 "data/maps/ScarexOzumasRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ScarexOzumasRoom_EventScript_OzumasBattle_5
-# 244 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 245 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE, ScarexOzumasRoom_Text_OzumasDefeated
 ScarexOzumasRoom_EventScript_OzumasBattle_1:
-# 247 "data/maps/ScarexOzumasRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ScarexOzumasRoom_EventScript_OzumasBattle_2:
-# 237 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 238 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OZUMAS_MAIN, ScarexOzumasRoom_Text_OzumasDefeated
 	goto ScarexOzumasRoom_EventScript_OzumasBattle_1
 
 ScarexOzumasRoom_EventScript_OzumasBattle_5:
-# 242 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 243 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OZUMAS_MAIN, ScarexOzumasRoom_Text_OzumasDefeated
 	goto ScarexOzumasRoom_EventScript_OzumasBattle_1
 
@@ -505,6 +505,8 @@ ScarexOzumasRoom_EventScript_Scarex_22:
 # 361 "data/maps/ScarexOzumasRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_SCAREX
 # 362 "data/maps/ScarexOzumasRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 363 "data/maps/ScarexOzumasRoom/scripts.pory"
 	release
 	end
 
@@ -625,29 +627,27 @@ ScarexOzumasRoom_EventScript_Scarex_23:
 
 
 ScarexOzumasRoom_EventScript_ScarexBattle::
-# 367 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 368 "data/maps/ScarexOzumasRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ScarexOzumasRoom_EventScript_ScarexBattle_2
-# 370 "data/maps/ScarexOzumasRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_SCAREX
 # 371 "data/maps/ScarexOzumasRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_SCAREX
 # 372 "data/maps/ScarexOzumasRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 373 "data/maps/ScarexOzumasRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ScarexOzumasRoom_EventScript_ScarexBattle_5
-# 375 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 376 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE, ScarexOzumasRoom_Text_ScarexDefeated
 ScarexOzumasRoom_EventScript_ScarexBattle_1:
-# 378 "data/maps/ScarexOzumasRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ScarexOzumasRoom_EventScript_ScarexBattle_2:
-# 368 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 369 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_SCAREX_MAIN, ScarexOzumasRoom_Text_ScarexDefeated
 	goto ScarexOzumasRoom_EventScript_ScarexBattle_1
 
 ScarexOzumasRoom_EventScript_ScarexBattle_5:
-# 373 "data/maps/ScarexOzumasRoom/scripts.pory"
+# 374 "data/maps/ScarexOzumasRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_SCAREX_MAIN, ScarexOzumasRoom_Text_ScarexDefeated
 	goto ScarexOzumasRoom_EventScript_ScarexBattle_1
 

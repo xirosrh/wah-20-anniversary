@@ -365,6 +365,8 @@ DavZeroRoom_OnFrame_1:
 # 194 "data/maps/DavZeroRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_DAVZERO
 # 195 "data/maps/DavZeroRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 196 "data/maps/DavZeroRoom/scripts.pory"
 	release
 	end
 
@@ -377,29 +379,27 @@ DavZeroRoom_OnFrame_2:
 
 
 DavZeroRoom_EventScript_DavZeroBattle::
-# 200 "data/maps/DavZeroRoom/scripts.pory"
+# 201 "data/maps/DavZeroRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, DavZeroRoom_EventScript_DavZeroBattle_2
-# 203 "data/maps/DavZeroRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_DAVZERO
 # 204 "data/maps/DavZeroRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_DAVZERO
 # 205 "data/maps/DavZeroRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 206 "data/maps/DavZeroRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq DavZeroRoom_EventScript_DavZeroBattle_5
-# 208 "data/maps/DavZeroRoom/scripts.pory"
+# 209 "data/maps/DavZeroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, DavZeroRoom_Text_DavZeroDefeated
 DavZeroRoom_EventScript_DavZeroBattle_1:
-# 211 "data/maps/DavZeroRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 DavZeroRoom_EventScript_DavZeroBattle_2:
-# 201 "data/maps/DavZeroRoom/scripts.pory"
+# 202 "data/maps/DavZeroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_DAVZERO_MAIN, DavZeroRoom_Text_DavZeroDefeated
 	goto DavZeroRoom_EventScript_DavZeroBattle_1
 
 DavZeroRoom_EventScript_DavZeroBattle_5:
-# 206 "data/maps/DavZeroRoom/scripts.pory"
+# 207 "data/maps/DavZeroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_DAVZERO_MAIN, DavZeroRoom_Text_DavZeroDefeated
 	goto DavZeroRoom_EventScript_DavZeroBattle_1
 

@@ -219,68 +219,68 @@ SayerBlaxRoom_OnFrame::
 # 144 "data/maps/SayerBlaxRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMINS_SAYER_AND_BLAX
 # 145 "data/maps/SayerBlaxRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 146 "data/maps/SayerBlaxRoom/scripts.pory"
 	release
 	end
 
 
 SayerBlaxRoom_EventScript_Blax::
-# 151 "data/maps/SayerBlaxRoom/scripts.pory"
+# 152 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_EventScript_Blax_Text_0, MSGBOX_AUTOCLOSE, SP_NAME_BLAX
 	end
 
 
 SayerBlaxRoom_EventScript_Sayer::
-# 156 "data/maps/SayerBlaxRoom/scripts.pory"
+# 157 "data/maps/SayerBlaxRoom/scripts.pory"
 	msgbox SayerBlaxRoom_EventScript_Sayer_Text_0, MSGBOX_NPC, SP_NAME_SAYER
 	end
 
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle::
-# 161 "data/maps/SayerBlaxRoom/scripts.pory"
+# 162 "data/maps/SayerBlaxRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, SayerBlaxRoom_EventScript_SayerBlaxBattle_2
-# 164 "data/maps/SayerBlaxRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_BLAX
 # 165 "data/maps/SayerBlaxRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_BLAX
 # 166 "data/maps/SayerBlaxRoom/scripts.pory"
-	copyvar VAR_0x8005, VAR_RESULT
-# 167 "data/maps/SayerBlaxRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_SAYER
-# 168 "data/maps/SayerBlaxRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 170 "data/maps/SayerBlaxRoom/scripts.pory"
+# 167 "data/maps/SayerBlaxRoom/scripts.pory"
+	copyvar VAR_0x8005, VAR_RESULT
+# 168 "data/maps/SayerBlaxRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_SAYER
+# 169 "data/maps/SayerBlaxRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 171 "data/maps/SayerBlaxRoom/scripts.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_5
-# 177 "data/maps/SayerBlaxRoom/scripts.pory"
+# 178 "data/maps/SayerBlaxRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_11
-# 180 "data/maps/SayerBlaxRoom/scripts.pory"
+# 181 "data/maps/SayerBlaxRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated
 SayerBlaxRoom_EventScript_SayerBlaxBattle_1:
-# 184 "data/maps/SayerBlaxRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_2:
-# 162 "data/maps/SayerBlaxRoom/scripts.pory"
+# 163 "data/maps/SayerBlaxRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
 	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_5:
-# 171 "data/maps/SayerBlaxRoom/scripts.pory"
+# 172 "data/maps/SayerBlaxRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SayerBlaxRoom_EventScript_SayerBlaxBattle_8
-# 174 "data/maps/SayerBlaxRoom/scripts.pory"
+# 175 "data/maps/SayerBlaxRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_ALTERNATIVE, SayerBlaxRoom_Text_SayerDefeated
 	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_8:
-# 172 "data/maps/SayerBlaxRoom/scripts.pory"
+# 173 "data/maps/SayerBlaxRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_MAIN, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
 	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
 SayerBlaxRoom_EventScript_SayerBlaxBattle_11:
-# 178 "data/maps/SayerBlaxRoom/scripts.pory"
+# 179 "data/maps/SayerBlaxRoom/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_BLAX_ALTERNATIVE, SayerBlaxRoom_Text_BlaxDefeated, TRAINER_WAH_ADMIN_SAYER_MAIN, SayerBlaxRoom_Text_SayerDefeated
 	goto SayerBlaxRoom_EventScript_SayerBlaxBattle_1
 
@@ -457,12 +457,12 @@ SayerBlaxRoom_OnFrame_Text_8:
 	.string "si.$"
 
 SayerBlaxRoom_EventScript_Blax_Text_0:
-# 151 "data/maps/SayerBlaxRoom/scripts.pory"
+# 152 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "Zzz… ¡Ve, BLAxTOISE!\p"
 	.string "Zzz…$"
 
 SayerBlaxRoom_EventScript_Sayer_Text_0:
-# 156 "data/maps/SayerBlaxRoom/scripts.pory"
+# 157 "data/maps/SayerBlaxRoom/scripts.pory"
 	.string "No me puedo quejar la verdad, quedé\n"
 	.string "bastante contento con la batalla.\p"
 	.string "Avanza, fiera.$"

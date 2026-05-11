@@ -270,6 +270,8 @@ EingRoom_EventScript_Eing::
 # 160 "data/maps/EingRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_EING
 # 161 "data/maps/EingRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 162 "data/maps/EingRoom/scripts.pory"
 	release
 	end
 
@@ -290,29 +292,27 @@ EingRoom_EventScript_Eing_2:
 
 
 EingRoom_EventScript_EingBattle::
-# 166 "data/maps/EingRoom/scripts.pory"
+# 167 "data/maps/EingRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, EingRoom_EventScript_EingBattle_2
-# 169 "data/maps/EingRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_EING
 # 170 "data/maps/EingRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_EING
 # 171 "data/maps/EingRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 172 "data/maps/EingRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq EingRoom_EventScript_EingBattle_5
-# 174 "data/maps/EingRoom/scripts.pory"
+# 175 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_ALTERNATIVE, EingRoom_Text_EingDefeated
 EingRoom_EventScript_EingBattle_1:
-# 177 "data/maps/EingRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 EingRoom_EventScript_EingBattle_2:
-# 167 "data/maps/EingRoom/scripts.pory"
+# 168 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated
 	goto EingRoom_EventScript_EingBattle_1
 
 EingRoom_EventScript_EingBattle_5:
-# 172 "data/maps/EingRoom/scripts.pory"
+# 173 "data/maps/EingRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_EING_MAIN, EingRoom_Text_EingDefeated
 	goto EingRoom_EventScript_EingBattle_1
 

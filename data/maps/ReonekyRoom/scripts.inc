@@ -392,6 +392,8 @@ ReonekyRoom_EventScript_Reoneky::
 # 257 "data/maps/ReonekyRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_REONEKY
 # 258 "data/maps/ReonekyRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 259 "data/maps/ReonekyRoom/scripts.pory"
 	release
 	end
 
@@ -414,29 +416,27 @@ ReonekyRoom_EventScript_Reoneky_2:
 
 
 ReonekyRoom_EventScript_ReonekyBattle::
-# 263 "data/maps/ReonekyRoom/scripts.pory"
+# 264 "data/maps/ReonekyRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReonekyRoom_EventScript_ReonekyBattle_2
-# 266 "data/maps/ReonekyRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_REONEKY
 # 267 "data/maps/ReonekyRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_REONEKY
 # 268 "data/maps/ReonekyRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 269 "data/maps/ReonekyRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReonekyRoom_EventScript_ReonekyBattle_5
-# 271 "data/maps/ReonekyRoom/scripts.pory"
+# 272 "data/maps/ReonekyRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE, ReonekyRoom_Text_ReonekyDefeated
 ReonekyRoom_EventScript_ReonekyBattle_1:
-# 274 "data/maps/ReonekyRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ReonekyRoom_EventScript_ReonekyBattle_2:
-# 264 "data/maps/ReonekyRoom/scripts.pory"
+# 265 "data/maps/ReonekyRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_Text_ReonekyDefeated
 	goto ReonekyRoom_EventScript_ReonekyBattle_1
 
 ReonekyRoom_EventScript_ReonekyBattle_5:
-# 269 "data/maps/ReonekyRoom/scripts.pory"
+# 270 "data/maps/ReonekyRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REONEKY_MAIN, ReonekyRoom_Text_ReonekyDefeated
 	goto ReonekyRoom_EventScript_ReonekyBattle_1
 

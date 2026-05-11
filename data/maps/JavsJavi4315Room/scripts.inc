@@ -288,8 +288,6 @@ JavsJavi4315Room_EventScript_JavsJavi4315Battle::
 # 164 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_1:
-# 168 "data/maps/JavsJavi4315Room/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_2:
@@ -317,82 +315,84 @@ JavsJavi4315Room_EventScript_JavsJavi4315Battle_11:
 
 
 JavsJavi4315Room_EventScript_PostBattle::
+# 180 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
 # 181 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_0
-# 183 "data/maps/JavsJavi4315Room/scripts.pory"
+# 182 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_0
-# 184 "data/maps/JavsJavi4315Room/scripts.pory"
+# 183 "data/maps/JavsJavi4315Room/scripts.pory"
 	waitmovement 0
-# 185 "data/maps/JavsJavi4315Room/scripts.pory"
+# 184 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 40
+# 185 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
 # 186 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
-# 187 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 187 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
 # 188 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 189 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_SweatDropWithDelay48
+# 189 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
 # 190 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitse
-# 191 "data/maps/JavsJavi4315Room/scripts.pory"
 	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
-# 192 "data/maps/JavsJavi4315Room/scripts.pory"
+# 191 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceRight
-# 193 "data/maps/JavsJavi4315Room/scripts.pory"
+# 192 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 194 "data/maps/JavsJavi4315Room/scripts.pory"
+# 193 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkUp
-# 195 "data/maps/JavsJavi4315Room/scripts.pory"
+# 194 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 195 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
 # 196 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 197 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_ThinkingWithDelay48
+# 197 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
 # 198 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 199 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_1
-# 200 "data/maps/JavsJavi4315Room/scripts.pory"
+# 199 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 200 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
 # 201 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 	playse SE_PIN
-# 203 "data/maps/JavsJavi4315Room/scripts.pory"
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_2
-# 204 "data/maps/JavsJavi4315Room/scripts.pory"
+# 203 "data/maps/JavsJavi4315Room/scripts.pory"
 	waitse
-# 205 "data/maps/JavsJavi4315Room/scripts.pory"
+# 204 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_3
-# 207 "data/maps/JavsJavi4315Room/scripts.pory"
+# 206 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 20
-# 208 "data/maps/JavsJavi4315Room/scripts.pory"
+# 207 "data/maps/JavsJavi4315Room/scripts.pory"
 	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
-# 209 "data/maps/JavsJavi4315Room/scripts.pory"
+# 208 "data/maps/JavsJavi4315Room/scripts.pory"
 	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH
-# 210 "data/maps/JavsJavi4315Room/scripts.pory"
+# 209 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 10
-# 211 "data/maps/JavsJavi4315Room/scripts.pory"
+# 210 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
-# 212 "data/maps/JavsJavi4315Room/scripts.pory"
+# 211 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 213 "data/maps/JavsJavi4315Room/scripts.pory"
+# 212 "data/maps/JavsJavi4315Room/scripts.pory"
 	call WahRoomsShared_OpenDoor
-# 214 "data/maps/JavsJavi4315Room/scripts.pory"
+# 213 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay 30
-# 215 "data/maps/JavsJavi4315Room/scripts.pory"
+# 214 "data/maps/JavsJavi4315Room/scripts.pory"
 	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
-# 216 "data/maps/JavsJavi4315Room/scripts.pory"
+# 215 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 217 "data/maps/JavsJavi4315Room/scripts.pory"
+# 216 "data/maps/JavsJavi4315Room/scripts.pory"
 	setflag FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS
-# 218 "data/maps/JavsJavi4315Room/scripts.pory"
+# 217 "data/maps/JavsJavi4315Room/scripts.pory"
 	setvar VAR_TEMP_2, 1
+# 218 "data/maps/JavsJavi4315Room/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 
@@ -476,43 +476,43 @@ JavsJavi4315Room_EventScript_MainTrigger_Movement_6:
 	emote_versus
 	step_end
 
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_0:
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	emote_surprise
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	lock_facing_direction
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_up
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	unlock_facing_direction
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	face_down
 	step_end
 
-# 199 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_1:
-# 199 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
-# 199 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
-# 199 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	face_left
 	step_end
 
-# 203 "data/maps/JavsJavi4315Room/scripts.pory"
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_2:
-# 203 "data/maps/JavsJavi4315Room/scripts.pory"
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 	emote_happy
 	step_end
 
-# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_3:
-# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_in_place_right
-# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
-# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
 	step_end
 
@@ -572,39 +572,39 @@ JavsJavi4315Room_EventScript_MainTrigger_Text_10:
 	.string "¡Ahora!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_0:
-# 187 "data/maps/JavsJavi4315Room/scripts.pory"
+# 186 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Me pasé semanas planeando esta\n"
 	.string "estrategia… Admito que eso ha dolido\l"
 	.string "más de lo que esperaba.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_1:
-# 193 "data/maps/JavsJavi4315Room/scripts.pory"
+# 192 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Y eso que armé mi equipo exactamente\n"
 	.string "como me pediste!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_2:
-# 195 "data/maps/JavsJavi4315Room/scripts.pory"
+# 194 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "La apertura era perfecta: sol activo y\n"
 	.string "presión desde el turno uno. ¿Qué habré\l"
 	.string "hecho mal?$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_3:
-# 200 "data/maps/JavsJavi4315Room/scripts.pory"
+# 199 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "La estrategia estuvo bien, pero\n"
 	.string "simplemente tuvimos un{A} oponente\l"
 	.string "demasiado fuerte.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_4:
-# 205 "data/maps/JavsJavi4315Room/scripts.pory"
+# 204 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Al menos nos divertimos!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_5:
-# 212 "data/maps/JavsJavi4315Room/scripts.pory"
+# 211 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Te abriremos la puerta, que ya te falta\n"
 	.string "menos de la mitad.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_6:
-# 216 "data/maps/JavsJavi4315Room/scripts.pory"
+# 215 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Nosotros nos quedaremos por aquí\n"
 	.string "contemplando la sala.$"
 
@@ -622,10 +622,10 @@ JavsJavi4315Room_EventScript_Javs_Text_0:
 	.string "permiso!$"
 
 JavsJavi4315Room_Text_Javi4315Defeated::
-# 172 "data/maps/JavsJavi4315Room/scripts.pory"
+# 171 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Acaso hemos perdido, Javs?$"
 
 JavsJavi4315Room_Text_JavsDefeated::
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
+# 175 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Cómo puede ser? ¡Mi estrategia era\n"
 	.string "infalible!$"

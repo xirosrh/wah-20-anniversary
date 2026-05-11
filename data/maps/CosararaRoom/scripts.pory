@@ -81,6 +81,7 @@ script CosararaRoom_EventScript_Cosarara {
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
     delay(20)
     call(CosararaRoom_EventScript_UnlockPC)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -97,7 +98,6 @@ script CosararaRoom_EventScript_CosararaBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_COSARARA_ALTERNATIVE, CosararaRoom_Text_CosararaDefeated)
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

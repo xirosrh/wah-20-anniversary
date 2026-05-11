@@ -332,6 +332,8 @@ ReyBooRoom_EventScript_BooEncounter_1:
 # 204 "data/maps/ReyBooRoom/scripts.pory"
 	fadedefaultbgm
 # 205 "data/maps/ReyBooRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 206 "data/maps/ReyBooRoom/scripts.pory"
 	release
 	end
 
@@ -357,29 +359,27 @@ ReyBooRoom_EventScript_BooEncounter_6:
 
 
 ReyBooRoom_EventScript_ReyBooBattle::
-# 210 "data/maps/ReyBooRoom/scripts.pory"
+# 211 "data/maps/ReyBooRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReyBooRoom_EventScript_ReyBooBattle_2
-# 213 "data/maps/ReyBooRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_REYBOO
 # 214 "data/maps/ReyBooRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_REYBOO
 # 215 "data/maps/ReyBooRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 216 "data/maps/ReyBooRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_5
-# 218 "data/maps/ReyBooRoom/scripts.pory"
+# 219 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated
 ReyBooRoom_EventScript_ReyBooBattle_1:
-# 221 "data/maps/ReyBooRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 ReyBooRoom_EventScript_ReyBooBattle_2:
-# 211 "data/maps/ReyBooRoom/scripts.pory"
+# 212 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 ReyBooRoom_EventScript_ReyBooBattle_5:
-# 216 "data/maps/ReyBooRoom/scripts.pory"
+# 217 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 

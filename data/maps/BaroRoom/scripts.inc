@@ -194,106 +194,106 @@ BaroRoom_OnFrame::
 # 118 "data/maps/BaroRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_BARO
 # 119 "data/maps/BaroRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 120 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
 
 BaroRoom_EventScript_OpenSideDoor::
-# 125 "data/maps/BaroRoom/scripts.pory"
-	playse SE_RG_DOOR
 # 126 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
+	playse SE_RG_DOOR
 # 127 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
 # 128 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
 # 129 "data/maps/BaroRoom/scripts.pory"
-	delay 5
+	special DrawWholeMapView
 # 130 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
+	delay 5
 # 131 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
 # 132 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
 # 133 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 134 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
-# 135 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
-# 136 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
-# 137 "data/maps/BaroRoom/scripts.pory"
+# 134 "data/maps/BaroRoom/scripts.pory"
 	delay 5
+# 135 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
+# 136 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
+# 137 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
 # 138 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPEN_UP, 0
+	delay 5
 # 139 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPEN_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPEN_UP, 0
 # 140 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPEN_DOWN, 0
+# 141 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BaroRoom_EventScript_CloseSideDoor::
-# 145 "data/maps/BaroRoom/scripts.pory"
-	playse SE_FU_ZAKU
 # 146 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
+	playse SE_FU_ZAKU
 # 147 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_3_UP, 0
 # 148 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_3_DOWN, 0
 # 149 "data/maps/BaroRoom/scripts.pory"
-	delay 5
+	special DrawWholeMapView
 # 150 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
+	delay 5
 # 151 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_2_UP, 0
 # 152 "data/maps/BaroRoom/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_2_DOWN, 0
 # 153 "data/maps/BaroRoom/scripts.pory"
-	delay 5
-# 154 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
-# 155 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
-# 156 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
-# 157 "data/maps/BaroRoom/scripts.pory"
+# 154 "data/maps/BaroRoom/scripts.pory"
 	delay 5
+# 155 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_OPENING_1_UP, 0
+# 156 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_OPENING_1_DOWN, 0
+# 157 "data/maps/BaroRoom/scripts.pory"
+	special DrawWholeMapView
 # 158 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 7, METATILE_Room_Baro_DOOR_CLOSED_UP, 0
+	delay 5
 # 159 "data/maps/BaroRoom/scripts.pory"
-	setmetatile 11, 8, METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0
+	setmetatile 11, 7, METATILE_Room_Baro_DOOR_CLOSED_UP, 0
 # 160 "data/maps/BaroRoom/scripts.pory"
+	setmetatile 11, 8, METATILE_Room_Baro_DOOR_CLOSED_DOWN, 0
+# 161 "data/maps/BaroRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 BaroRoom_EventScript_BaroBattle::
-# 165 "data/maps/BaroRoom/scripts.pory"
+# 166 "data/maps/BaroRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, BaroRoom_EventScript_BaroBattle_2
-# 168 "data/maps/BaroRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_BARO
 # 169 "data/maps/BaroRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_BARO
 # 170 "data/maps/BaroRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 171 "data/maps/BaroRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BaroRoom_EventScript_BaroBattle_5
-# 173 "data/maps/BaroRoom/scripts.pory"
+# 174 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated
 BaroRoom_EventScript_BaroBattle_1:
-# 176 "data/maps/BaroRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 BaroRoom_EventScript_BaroBattle_2:
-# 166 "data/maps/BaroRoom/scripts.pory"
+# 167 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
 	goto BaroRoom_EventScript_BaroBattle_1
 
 BaroRoom_EventScript_BaroBattle_5:
-# 171 "data/maps/BaroRoom/scripts.pory"
+# 172 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
 	goto BaroRoom_EventScript_BaroBattle_1
 

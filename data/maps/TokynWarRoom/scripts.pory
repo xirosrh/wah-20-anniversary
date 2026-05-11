@@ -127,6 +127,7 @@ script TokynWarRoom_EventScript_MainCutscene {
     waitmovement(0)
     setflag(FLAG_DEFEATED_ADMINS_TOKYN_AND_WAR)
     setvar(VAR_TEMP_A_TOKYN_WAR_ROOM_STATE, 2)
+    call(WahRoomsShared_EventScript_AfterBattle)
     releaseall
     return
 }
@@ -216,7 +217,6 @@ script TokynWarRoom_EventScript_TokynWarBattle {
             }
         }
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 
