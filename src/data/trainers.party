@@ -4332,7 +4332,7 @@ Class: WAH Admin
 Pic: Boo
 Gender: Male
 Music: Aqua
-Items: 
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Purple
@@ -10311,7 +10311,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Easy
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -10378,7 +10378,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Normal
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD
@@ -10445,7 +10445,7 @@ Pool Rules: Basic
 Mugshot: Green
 Difficulty: Hard
 
-Greninja @ Greninjite
+Greninja R @ Greninjite
 Ability: Protean
 Shiny: Yes
 EVs: 252 SpA / 252 Spe / 252 HP / 252 Def / 252 SpD

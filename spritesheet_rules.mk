@@ -3469,6 +3469,9 @@ $(POKEMONGFXDIR)/greninja/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/greninja/ash/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(POKEMONGFXDIR)/greninja_r/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(POKEMONGFXDIR)/bunnelby/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
