@@ -695,6 +695,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         SHADOW(-2, 8, SHADOW_SIZE_M)
         FOOTPRINT(Banette)
         .levelUpLearnset = sMolikaiLevelUpLearnset,
+        .teachableLearnset = sBanetteTeachableLearnset,
     },
 
         [SPECIES_MICAEL] =
@@ -749,6 +750,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         SHADOW(-3, 9, SHADOW_SIZE_M)
         FOOTPRINT(Banette)
         .levelUpLearnset = sMicaelLevelUpLearnset,
+        .teachableLearnset = sBanetteTeachableLearnset,
     },
 
     [SPECIES_DIRAEI] =
