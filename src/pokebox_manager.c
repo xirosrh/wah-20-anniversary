@@ -621,11 +621,15 @@ u32 PokeboxSpecies_GetMoney(u8 id)
 bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id)
 {
     u32 money = GetMoney(&gSaveBlock1Ptr->money);
+    u32 price = PokeboxSpecies_GetMoney(id);
 
     if(Pokebox_IsActive(id))
         return FALSE;
 
-    return money >= PokeboxSpecies_GetMoney(id);
+    if (price == 0)
+        return FALSE;
+
+    return money >= price;
 }
 
 bool8 PokeboxSpecies_BufferBuyOfferFromSpecies(u16 species)
