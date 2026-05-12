@@ -1228,16 +1228,20 @@ static void Task_HandleBuyMon(u8 taskId)
         if(gTasks[taskId].tCursorBuyMon == TRUE)
         {
             u16 index = GetSelectedPokemonIndex() - MON_TEAM_SELECTOR_COUNT;
-            u16 specie = PokeboxSpeciesList_GetSpecie(index);
-            u8 iconSpriteId = pokeBoxObj.boxMonSpritesIds[pokeBoxObj.row][pokeBoxObj.column];
 
-            gSprites[pokeBoxObj.frontMonId].oam.objMode = ST_OAM_OBJ_NORMAL;
-            gSprites[iconSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
+            if (PokeboxSpecies_GetMoney(index) != 0 && PokeboxSpecies_EnoughtMoneyToBuy(index))
+            {
+                u16 specie = PokeboxSpeciesList_GetSpecie(index);
+                u8 iconSpriteId = pokeBoxObj.boxMonSpritesIds[pokeBoxObj.row][pokeBoxObj.column];
 
-            RemoveMoney(&gSaveBlock1Ptr->money, PokeboxSpecies_GetMoney(index));
-            Pokebox_SetActive(index);
-            PrintMonTextInfoPage();
-            PrintAllDataMon(specie);
+                gSprites[pokeBoxObj.frontMonId].oam.objMode = ST_OAM_OBJ_NORMAL;
+                gSprites[iconSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
+
+                RemoveMoney(&gSaveBlock1Ptr->money, PokeboxSpecies_GetMoney(index));
+                Pokebox_SetActive(index);
+                PrintMonTextInfoPage();
+                PrintAllDataMon(specie);
+            }
         }else{
             ClearMonTextInfoPage(TRUE);
             HidenMonIconsBox(FALSE);

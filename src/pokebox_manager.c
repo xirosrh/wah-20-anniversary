@@ -48,6 +48,10 @@ const u8 *Get_PokeboxMsgAction(u8 index)
 
 const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
 
+static const u8 sText_PokeboxAlexmadEvent[] = _("Completa el evento especial\nde Alexmad.");
+static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
+static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
+
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \
         .specie = species_, .ability = ABILITY_NONE, .nature = NATURE_HARDY,            \
@@ -66,7 +70,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_PSYCHIC, MOVE_FLASH_CANNON, MOVE_DOOM_DESIRE, MOVE_MOONLIGHT},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
@@ -79,7 +83,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = TRUE,
             .moves = {MOVE_PSYCHIC, MOVE_RECOVER, MOVE_TRANSFORM, MOVE_PSYSTRIKE},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
@@ -92,7 +96,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = TRUE,
             .moves = {MOVE_PSYCHIC, MOVE_ENERGY_BALL, MOVE_RECOVER, MOVE_GIGA_DRAIN},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
@@ -106,7 +110,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_PETAL_DANCE, MOVE_SLUDGE_WAVE},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveClones
     },
@@ -120,7 +124,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_FLARE_BLITZ, MOVE_BRAVE_BIRD, MOVE_HEAD_SMASH, MOVE_WAVE_CRASH},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveClones
     },
@@ -134,13 +138,13 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_LIQUIDATION, MOVE_CLOSE_COMBAT, MOVE_PLAY_ROUGH, MOVE_HEAT_CRASH},
         },
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveClones
     },
     {
         .mon = POKEBOX_MON(SPECIES_MEWTWO), //TODO Xiros: Armored mewtwo
-        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
+        .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventCompleted
     },
@@ -153,7 +157,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_JUICY_EXPLOSION, MOVE_ACID_PULP, MOVE_THUNDERBOLT, MOVE_GIGA_DRAIN},
         },
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },
@@ -166,7 +170,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_FLAMETHROWER, MOVE_AEROBLAST, MOVE_EARTH_POWER, MOVE_MOONBLAST},
         },
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },
@@ -180,25 +184,25 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_PLAY_ROUGH, MOVE_EXTREME_SPEED},
         },
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },  
     { 
         .mon = POKEBOX_MON(SPECIES_GOROCHU), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
         .mon = POKEBOX_MON(SPECIES_DUN), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 1000,
         .check = CheckPokebox_isBuyMon
     },
     { 
         .mon = POKEBOX_MON(SPECIES_TAABAN), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
@@ -211,19 +215,19 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
         },
-        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .description = sText_PokeboxWahChallengeOnce,
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
         .mon = POKEBOX_MON(SPECIES_MADAAMU), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
         .mon = POKEBOX_MON(SPECIES_AKUERIA), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
@@ -250,7 +254,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 
     { 
         .mon = POKEBOX_MON(SPECIES_CINDERACE), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_isBuyMon 
     },
@@ -478,7 +482,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_VOODOO, MOVE_ASTRAL_BARRAGE, MOVE_DOUBLE_TEAM, MOVE_DESTINY_BOND},
         },
-        .description = COMPOUND_STRING("Completa el logro “Avaricia”."),
+        .description = sText_PokeboxAchievementAvaricia,
         .money = 0,
         .check = CheckPokebox_AchievementAvaricia
     },
@@ -617,11 +621,15 @@ u32 PokeboxSpecies_GetMoney(u8 id)
 bool8 PokeboxSpecies_EnoughtMoneyToBuy(u8 id)
 {
     u32 money = GetMoney(&gSaveBlock1Ptr->money);
+    u32 price = PokeboxSpecies_GetMoney(id);
 
     if(Pokebox_IsActive(id))
         return FALSE;
 
-    return money >= PokeboxSpecies_GetMoney(id);
+    if (price == 0)
+        return FALSE;
+
+    return money >= price;
 }
 
 bool8 PokeboxSpecies_BufferBuyOfferFromSpecies(u16 species)
