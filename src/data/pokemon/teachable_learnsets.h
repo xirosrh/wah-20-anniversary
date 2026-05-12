@@ -36048,7 +36048,35 @@ static const u16 sTaabanTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sBlessparceTeachableLearnset[] = {
+static const u16 sBomushikaaTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_BLIZZARD,
+    MOVE_BODY_SLAM,
+    MOVE_DIVE,
+    MOVE_DOUBLE_EDGE,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_FLAMETHROWER,
+    MOVE_HAIL,
+    MOVE_HYPER_BEAM,
+    MOVE_ICE_BEAM,
+    MOVE_ICY_WIND,
+    MOVE_IRON_TAIL,
+    MOVE_MUD_SLAP,
+    MOVE_OVERHEAT,
+    MOVE_PROTECT,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_SAFEGUARD,
+    MOVE_SLEEP_TALK,
+    MOVE_STRENGTH,
+    MOVE_SURF,
+    MOVE_SWAGGER,
+    MOVE_THIEF,
+    MOVE_TOXIC,
+    MOVE_WATERFALL,
+    MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
 

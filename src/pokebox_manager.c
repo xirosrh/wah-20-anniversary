@@ -203,7 +203,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_BLESSPARCE), //TODO Xiros
+        .mon = POKEBOX_MON(SPECIES_BOMUSHIKAA), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_isBuyMon
