@@ -1245,3 +1245,121 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
 text CollaboratorsRoom_Text_Ryuzaki_OnDefeat {
     format("Ya sabes lo que dicen, la voluntad es la fuerza del alma.")
 }
+
+script CollaboratorsRoom_EventScript_Caco_IntroFirstBattle {
+
+    msgbox(format("Puaj!!! Este café sabe a rayos. Creo que lleva en la taza desde que empezamos, pero debo beberlo...\pEs lo único que mantiene mis neuronas conectadas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+
+    delay(30)
+
+    // Salto y exclamación
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_ExclamationMark)
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_JumpInPlaceDown)
+    faceplayer
+
+    msgbox(format("¡Eyy! ¿No te han enseñado que no se debe escuchar a hurtadillas?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Tu cara... me suena de verla antes. ¿Eras un beta-tester o algo así?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Bueno, ya que estás aquí, me vendrás bien para despejar la mente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("¡Depués no me vengas con lloros! ¡A luchar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    return
+}
+
+script CollaboratorsRoom_EventScript_Caco_TalkOnly {
+    faceplayer
+    msgbox(format("¿Has probado ya el PC del lobi? Porque si sigues buscando el de los Centros Pokémon, vas listo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¡Me costó mil noches de insomnio y otros tantos cabezazos contra el teclado lograr que funcionara bien!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("¡Así que ya estás tardando en ir a probarlo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Y ni se te ocurra asomar la nariz por aquí de nuevo si no es con una buena taza de café humeante en la mano. ¡Venga, muévete!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
+}
+
+script CollaboratorsRoom_EventScript_Caco_IntroRematch {
+    msgbox(format("¿Tú otra vez? Tienes un aura distinta a la primera vez... y te aseguro que no son alucinaciones por el café."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    delay(30)
+
+    playse(SE_LEDGE)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_JumpInPlaceDown)
+    faceplayer
+    
+    msgbox(format("Esa mirada... No me digas que has ganado el desafío... ¿De verdad eres el nuevo Campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("¡Vaya! No esperaba eso... Pero a que adivino: ¡No me has traído un café!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Llevo aquí encerrado desde que empezamos el desarrollo ¡y ni siquiera puedes traerme un Latte templado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    
+    setspeaker(SP_NAME_CACO)
+    message(format("¡Pues prepárate para sufrir la cólera del desarrollador sin cafeína!"))
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    closemessage
+    
+    switch(var(VAR_RESULT)) {
+        case 0:
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("¡No te servirá de nada haber programado tu victoria!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            return
+        case 1:
+            goto(CollaboratorsRoom_EventScript_Caco_TalkOnly)
+        default:
+            msgbox(format("¡Más te vale que la próxima vez traigas cafeína!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
+    }
+}
+
+script CollaboratorsRoom_EventScript_Caco_OnFinishEvent {
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    turnobject(VAR_LAST_TALKED, DIR_WEST)
+    release
+    end
+}
+
+script CollaboratorsRoom_EventScript_Caco {
+    lock
+    // Comprobamos si ha ganado el desafío (FLAG_WAH_CHALLENGE_COMPLETED)
+    if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE){
+        if(flag(FLAG_DEFEATED_COLLABORATORS_ROOM_CACO)) {
+            call(CollaboratorsRoom_EventScript_Caco_IntroRematch)
+        } else {
+            call(CollaboratorsRoom_EventScript_Caco_IntroFirstBattle)
+        }
+        
+        delay(20)
+        playse(SE_PIN)
+        applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+        applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+        waitmovement(0)
+        
+        random(3)
+        setflag(B_FLAG_NO_WHITEOUT)
+        switch(var(VAR_RESULT)) {
+            case 0:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_CACO_1, CollaboratorsRoom_Text_Caco_OnDefeat)
+            case 1:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_CACO_2, CollaboratorsRoom_Text_Caco_OnDefeat)
+            case 2:
+                trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_CACO_3, CollaboratorsRoom_Text_Caco_OnDefeat)
+        }
+        clearflag(B_FLAG_NO_WHITEOUT)
+        
+        special(GetBattleOutcome)
+        special(HealPlayerParty)
+        
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            call(CollaboratorsRoom_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+            msgbox(format("Vale, lo admito... combates mejor de lo que yo programo. Pero sigo necesitando ese café."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_CACO)
+        } else {
+            msgbox(format("¿Lo ves? La falta de sueño me hace peligroso. ¡Vuelve cuando tengas el café!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        }
+        goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
+    } else {
+        // Si no ha completado el desafío
+        goto(CollaboratorsRoom_EventScript_Caco_TalkOnly)
+    }
+}
+
+text CollaboratorsRoom_Text_Caco_OnDefeat {
+    format("A veces, para que uno poder avanzar, debe de aceptar su error.")
+}
+

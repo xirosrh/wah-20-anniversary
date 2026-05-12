@@ -680,7 +680,7 @@
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_TERA_ORB_CHARGED  0x27A // Used WAH
 #define FLAG_TERA_ORB_NO_COST  0x27B // Used WAH
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
+#define FLAG_DEFEATED_COLLABORATORS_ROOM_CACO 0x27C // Used WAH
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag

@@ -7602,6 +7602,374 @@ Kadabra
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
+=== TRAINER_WAH_COLLABORATOR_CACO_1 ===
+Name: Caco
+Class: Collaborator
+Pic: Caco
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Empoleon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Modest Nature
+- Hydro Pump
+- Flash Cannon
+- Ice Beam
+- Grass Knot
+
+Crobat
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Excadrill
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Heracross
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Megahorn
+- Close Combat
+- Night Slash
+- Stone Edge
+
+Jolteon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Thunderbolt
+- Shadow Ball
+- Volt Switch
+- Thunder Wave
+
+Volcarona
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+=== TRAINER_WAH_COLLABORATOR_CACO_1 ===
+Name: Caco
+Class: Collaborator
+Pic: Caco
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Normal
+
+Empoleon @ Leftovers
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Hydro Pump
+- Flash Cannon
+- Ice Beam
+- Grass Knot
+
+Crobat @ Black Sludge
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Excadrill @ Focus Sash
+Ability: Mold Breaker
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Heracross @ Flame Orb
+Ability: Guts
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Megahorn
+- Close Combat
+- Night Slash
+- Facade
+
+Jolteon @ Choice Specs
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Thunderbolt
+- Shadow Ball
+- Volt Switch
+- Weather Ball
+
+Volcarona @ Heavy-Duty Boots
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+=== TRAINER_WAH_COLLABORATOR_CACO_2 ===
+Name: Caco
+Class: Collaborator
+Pic: Caco
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Muk-Alola
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Poison Jab
+- Crunch
+- Rock Slide
+- Shadow Sneak
+
+Swampert
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Earthquake
+- Waterfall
+- Ice Punch
+- Stealth Rock
+
+Slowbro
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Surf
+- Psychic
+- Ice Beam
+- Slack Off
+
+Krookodile
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Crunch
+- Dragon Claw
+- Rock Slide
+
+Snorlax
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Body Slam
+- Crunch
+- Zen Headbutt
+- Rest
+
+Salamence
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Claw
+- Fly
+- Flamethrower
+- Steel Wing
+
+=== TRAINER_WAH_COLLABORATOR_CACO_2 ===
+Name: Caco
+Class: Collaborator
+Pic: Caco
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Normal
+
+Muk-Alola @ Assault Vest
+Ability: Poison Touch
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Gunk Shot
+- Knock Off
+- Fire Punch
+- Shadow Sneak
+
+Swampert @ Leftovers
+Ability: Torrent
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Earthquake
+- Liquidation
+- Ice Punch
+- Flip Turn
+
+Slowbro @ Rocky Helmet
+Ability: Regenerator
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Scald
+- Psychic
+- Slack Off
+- Calm Mind
+
+Krookodile @ Choice Scarf
+Ability: Intimidate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Earthquake
+- Knock Off
+- Close Combat
+- Stone Edge
+
+Snorlax @ Figy Berry
+Ability: Thick Fat
+EVs: 252 HP / 4 Atk / 252 SpD
+Adamant Nature
+- Body Slam
+- Darkest Lariat
+- Heavy Slam
+- Recycle
+
+Salamence @ Lum Berry
+Ability: Intimidate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Outrage
+- Dual Wingbeat
+- Earthquake
+
+=== TRAINER_WAH_COLLABORATOR_CACO_3 ===
+Name: Caco
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Easy
+
+Ferrothorn
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Relaxed Nature
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Iron Defense
+
+Flygon
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Earthquake
+- Dragon Claw
+- Rock Slide
+- U-turn
+
+Drapion
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Night Slash
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+Darmanitan
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Flare Blitz
+- Superpower
+- Rock Slide
+- Fire Punch
+
+Milotic
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Surf
+- Ice Beam
+- Recover
+- Mirror Coat
+
+Electivire
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+=== TRAINER_WAH_COLLABORATOR_CACO_3 ===
+Name: Caco
+Class: Collaborator
+Pic: Gameboy Cl
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Normal
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+EVs: 252 HP / 4 Atk / 252 Def
+Relaxed Nature
+- Leech Seed
+- Spikes
+- Knock Off
+- Gyro Ball
+
+Flygon @ Life Orb
+Ability: Levitate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Earthquake
+- Dragon Dance
+- Outrage
+- Iron Tail
+
+Drapion @ Scope Lens
+Ability: Sniper
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Night Slash
+- Cross Poison
+- Earthquake
+- Swords Dance
+
+Darmanitan @ Choice Scarf
+Ability: Sheer Force
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Flare Blitz
+- Rock Slide
+- Earthquake
+- U-turn
+
+Milotic @ Flame Orb
+Ability: Marvel Scale
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Scald
+- Recover
+- Haze
+- Ice Beam
+
+Electivire @ Expert Belt
+Ability: Motor Drive
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Wild Charge
+- Ice Punch
+- Fire Punch
+- Earthquake
+
 === TRAINER_VITO ===
 Name: VITO
 Class: Cooltrainer
