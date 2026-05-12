@@ -7,6 +7,7 @@
 #include "difficulty.h"
 #include "pokemon.h"
 #include "money.h"
+#include "pokebox_manager.h"
 struct AchievementEntry
 {
     const u8 *title;
@@ -15,7 +16,7 @@ struct AchievementEntry
     bool8 (*check)(u8 id);
 };
 
-static bool8 CheckDummyChallenge(u8 id);
+static bool8 CheckUnlockAllPokemon(u8 id);
 static bool8 CheckWinWahChallenge(u8 id);
 static bool8 CheckWinWahChallengeDouble(u8 id);
 static bool8 CheckWinWahChallengeInverse(u8 id);
@@ -87,7 +88,7 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .title = COMPOUND_STRING("Colección completa"),
         .description = COMPOUND_STRING("Consigue todos los Pokémon que el\njuego te permite desbloquear.\nYa no queda nada por descubrir."),
         .target = TRUE,
-        .check = CheckDummyChallenge, //TODO Xiros
+        .check = CheckUnlockAllPokemon,
     },
     [ACHIEVEMENT_FOUND_TILE_KECLEON] = {
         .title = COMPOUND_STRING("Tile al descubierto"),
@@ -102,12 +103,6 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .check = CheckAvaricia,
     },
 };
-
-static bool8 CheckDummyChallenge(u8 id)
-{
-    (void)id;
-    return TRUE;
-}
 
 static bool8 CheckWinWahChallenge(u8 id)
 {
@@ -125,6 +120,22 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
         return FALSE;
 
     return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
+}
+
+static bool8 CheckUnlockAllPokemon(u8 id)
+{
+    u8 i;
+    u8 count = PokeboxSpeciesList_GetCount();
+
+    (void)id;
+
+    for (i = 0; i < count; i++)
+    {
+        if (!Pokebox_IsActive(i))
+            return FALSE;
+    }
+
+    return TRUE;
 }
 
 static bool8 CheckFoundTileKecleon(u8 id)
