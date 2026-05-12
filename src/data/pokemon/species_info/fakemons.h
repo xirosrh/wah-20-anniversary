@@ -1424,6 +1424,137 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 
+#if P_FAMILY_MEWTWO
+    [SPECIES_ARMORED_MEWTWO] =
+    {
+        .baseHP        = 106,
+        .baseAttack    = 110,
+        .baseDefense   = 90,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 154,
+        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 90 : 154,
+        .types = MON_TYPES(TYPE_PSYCHIC),
+        .catchRate = 3,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 340,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 306,
+    #else
+        .expYield = 220,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Mewtwo"),
+        .cryId = CRY_MEWTWO,
+        .natDexNum = NATIONAL_DEX_ARMORED_MEWTWO,
+        .categoryName = _("Genético"),
+        .height = 20,
+        .weight = 1220,
+        .description = COMPOUND_STRING(
+            "Fue creado por manipulación genética.\n"
+            "Pero, a pesar de que los científicos\n"
+            "dieron a Mewtwo un cuerpo, no lograron\n"
+            "dotarle de un corazón compasivo."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 309,
+        .trainerOffset = 4,
+        .frontPic = gMonFrontPic_ArmoredMewtwo,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 20),
+        ),
+        .frontAnimId = ANIM_GROW_VIBRATE,
+        .backPic = gMonBackPic_ArmoredMewtwo,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_GROW_STUTTER,
+        .palette = gMonPalette_ArmoredMewtwo,
+        .shinyPalette = gMonShinyPalette_ArmoredMewtwo,
+        .iconSprite = gMonIcon_ArmoredMewtwo,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Mewtwo)
+        .isLegendary = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sMewtwoLevelUpLearnset,
+        .teachableLearnset = sMewtwoTeachableLearnset,
+        .formSpeciesIdTable = sArmoredMewtwoFormSpeciesIdTable,
+        .formChangeTable = sArmoredMewtwoFormChangeTable,
+    },
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_ARMORED_MEWTWO_MEGA] =
+    {
+        .baseHP        = 106,
+        .baseAttack    = 190,
+        .baseDefense   = 100,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 154,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
+        .catchRate = 3,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 390 : 351,
+        .evYield_SpAttack = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_STEADFAST, ABILITY_STEADFAST, ABILITY_STEADFAST },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Mewtwo"),
+        .cryId = CRY_MEWTWO_MEGA_X,
+        .natDexNum = NATIONAL_DEX_ARMORED_MEWTWO,
+        .categoryName = _("Genético"),
+        .height = 23,
+        .weight = 1270,
+        .description = COMPOUND_STRING(
+            "Su poder incrementó sus músculos.\n"
+            "Tiene una fuerza de agarre de 1 T\n"
+            "y puede correr 100 mts en 2\n"
+            "segundos ¡en línea recta!"),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 309,
+        .trainerOffset = 4,
+        .frontPic = gMonFrontPic_ArmoredMewtwoMega,
+        .frontPicSize = MON_COORDS_SIZE(48, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_ArmoredMewtwoMega,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_GROW_STUTTER,
+        .palette = gMonPalette_ArmoredMewtwoMega,
+        .shinyPalette = gMonShinyPalette_ArmoredMewtwoMega,
+        .iconSprite = gMonIcon_ArmoredMewtwoMega,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Mewtwo)
+        .isLegendary = TRUE,
+        .isMegaEvolution = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sMewtwoLevelUpLearnset,
+        .teachableLearnset = sMewtwoTeachableLearnset,
+        .formSpeciesIdTable = sArmoredMewtwoFormSpeciesIdTable,
+        .formChangeTable = sArmoredMewtwoFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
+#endif //P_FAMILY_MEWTWO
+
 #if P_FAMILY_OSHAWOTT
     [SPECIES_OSHAWOTT_X] =
     {
