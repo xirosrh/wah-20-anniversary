@@ -1085,16 +1085,63 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_WEST)
     msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-    setflag(FLAG_ALEXMAD_EVENT_COMPLETED)
-    msgbox(format("PENDIENTE PREMIO"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-    //TODO Xiros: rewards
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    msgbox("Toma este objeto.\nNo entiendo bien qué hace, pero\lseguro te será útil.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
     giveitem(ITEM_TERA_ORB)
     setflag(B_FLAG_TERA_ORB_CHARGED)
     setflag(B_FLAG_TERA_ORB_NO_COST)
+    call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
+    msgbox(format("Además, ahora podrás encontrar en la PC a algunos legendarios de la Isla Mítica."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    setflag(FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES)
+    call(Pokebox_EventScript_ShowUnlocks)
+    delay(20)
+    msgbox(format("Quizá puedas reemplazar a alguno de tus Pokémon con uno de ellos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("¿Conoces el poder de los clones?\nAhora podrás vivirlo en carne propia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    delay(20)
+    setflag(FLAG_ALEXMAD_EVENT_GIVE_CLONES)
+    call(Pokebox_EventScript_ShowUnlocks)
+    delay(20)
+    msgbox(format("Estos clones son mucho más fuertes que los Pokémon originales.\pÚsalos sabiamente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
+    delay(20)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FaceAwayPlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    delay(20)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+    call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
+    msgbox(format("También te daré acceso a este Pokémon muy especial.\pEs una herramienta de combate muy codiciada."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    setflag(FLAG_ALEXMAD_EVENT_COMPLETED)
+    call(Pokebox_EventScript_ShowUnlocks)
+    call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
+    msgbox(format("KODER hubiera sonreído al verte salir de aquí con tantas cartas en la manga.\pNo lo desperdicies."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+}
 
-    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
-    releaseall
-    end
+script WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    switch(var(VAR_RESULT)) {
+        case DIR_NORTH:
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_WalkInPlaceDown)
+            break
+        case DIR_SOUTH:
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_WalkInPlaceUp)
+            break
+        case DIR_WEST:
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD,Common_Movement_WalkInPlaceRight)
+            break
+        case DIR_EAST:
+            applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_WalkInPlaceLeft)
+            break
+    }
+    return
 }
 
 script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
@@ -1103,9 +1150,7 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     playse(SE_FAILURE)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48)
     msgbox(format("No, no… así no es.\pVuelve a hablarme si quieres intentarlo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
-    turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
-    releaseall
-    end
+    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly {

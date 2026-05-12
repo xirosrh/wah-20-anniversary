@@ -695,6 +695,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         SHADOW(-2, 8, SHADOW_SIZE_M)
         FOOTPRINT(Banette)
         .levelUpLearnset = sMolikaiLevelUpLearnset,
+        .teachableLearnset = sBanetteTeachableLearnset,
     },
 
         [SPECIES_MICAEL] =
@@ -749,6 +750,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         SHADOW(-3, 9, SHADOW_SIZE_M)
         FOOTPRINT(Banette)
         .levelUpLearnset = sMicaelLevelUpLearnset,
+        .teachableLearnset = sBanetteTeachableLearnset,
     },
 
     [SPECIES_DIRAEI] =
@@ -974,59 +976,59 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sTaabanTeachableLearnset,
     },
 
-    [SPECIES_BLESSPARCE] =
+    [SPECIES_BOMUSHIKAA] =
     {
-        .baseHP        = 125,
-        .baseAttack    = 60,
-        .baseDefense   = 63,
-        .baseSpeed     = 66,
-        .baseSpAttack  = 83,
-        .baseSpDefense = 101,
-        .types = MON_TYPES(TYPE_DRAGON, TYPE_NORMAL),
+        .baseHP        = 90,
+        .baseAttack    = 65,
+        .baseDefense   = 80,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 102,
+        .baseSpDefense = 112,
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIRE),
         .catchRate = 75,
-        .expYield = 209,
-        .evYield_SpDefense  = 3,
+        .expYield = 196,
+        .evYield_SpDefense  = 2,
         .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
+        .eggCycles = 20,
+        .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_PSYCHIC_SURGE, ABILITY_MULTISCALE },
-        .bodyColor = BODY_COLOR_YELLOW,
-        .speciesName = _("Blessparce"),
-        .cryId = CRY_DUNSPARCE,
-        .natDexNum = NATIONAL_DEX_BLESSPARCE,
-        .categoryName = _("Bendecido"),
-        .height = 22,
-        .weight = 220,
+        .abilities = { ABILITY_WATER_ABSORB, ABILITY_PURIFYING_SALT, ABILITY_ADAPTABILITY },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Bomushikaa"),
+        .cryId = CRY_GASTRODON,
+        .natDexNum = NATIONAL_DEX_BOMUSHIKAA,
+        .categoryName = _("Leon Mar"),
+        .height = 16,
+        .weight = 1350,
         .description = COMPOUND_STRING(
-"El sacrificio de un primer DUNSPARCE\n"
-"que superó sus límites, hizo que los\n"
-"dioses bendijeran a todos los DUNSPARCE\n"
-"capaces de alcanzar esta forma."),
+            "   Cuenta con una exótica rama familiar.\n"
+            "   Como resultado, sus habilidades son\n"
+            "   muy diversas. Domina el agua y el\n"
+            "   fuego a la perfección."),
         .pokemonScale = 256,
-        .pokemonOffset = 1,
-        .trainerScale = 365,
-        .trainerOffset = 7,
-        .frontPic = gMonFrontPic_Blessparce,
+        .pokemonOffset = 0,
+        .trainerScale = 275,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Bomushikaa,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = ANIM_FRAMES( //Xiros
             ANIMCMD_FRAME(0, 1),
         ),
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Blessparce,
+        .backPic = gMonBackPic_Bomushikaa,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 0,
+        .backPicYOffset = 7,
         .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_Blessparce,
-        .shinyPalette = gMonShinyPalette_Blessparce,
-        .iconSprite = gMonIcon_Blessparce,
+        .palette = gMonPalette_Bomushikaa,
+        .shinyPalette = gMonShinyPalette_Bomushikaa,
+        .iconSprite = gMonIcon_Bomushikaa,
         .iconPalIndex = 0,
-        SHADOW(1, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(Dunsparce)
-        .levelUpLearnset = sBlessparceLevelUpLearnset,
-        .teachableLearnset = sBlessparceTeachableLearnset,
+        SHADOW(-7, 7, SHADOW_SIZE_M)
+        FOOTPRINT(Seel)
+        .levelUpLearnset = sBomushikaaLevelUpLearnset,
+        .teachableLearnset = sBomushikaaTeachableLearnset,
     },
 
     [SPECIES_MADAAMU] =

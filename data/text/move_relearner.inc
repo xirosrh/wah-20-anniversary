@@ -1,6 +1,7 @@
 MoveRelearner_Text_WouldLearnNewMoves:
-	.string "Hi, I'm the Move Relearner.\n"
-	.string "Would you like to learn new moves?$"
+	.string "Hola, soy el Recordador de\n"
+	.string "movimientos.\p"
+	.string "¿Quieres recordar movimientos?$"
 
 MoveRelearner_Text_LevelUpMoves:
 	.string "Mov. por nivel$"

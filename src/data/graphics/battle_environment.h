@@ -1,6 +1,9 @@
 const u32 gBattleEnvironmentTiles_Stadium[] = INCBIN_U32("graphics/battle_environment/wah_room/tiles.4bpp.smol");
 const u32 gBattleEnvironmentTilemap_Stadium[] = INCBIN_U32("graphics/battle_environment/wah_room/tiles.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_WahCollaboratorsRoom[] = INCBIN_U32("graphics/battle_environment/wah_collaborators_room/tiles.4bpp.smol");
+const u32 gBattleEnvironmentTilemap_WahCollaboratorsRoom[] = INCBIN_U32("graphics/battle_environment/wah_collaborators_room/tiles.bin.smolTM");
+
 const u32 gBattleEnvironmentTiles_Rayquaza[] = INCBIN_U32("graphics/battle_environment/sky/tiles.4bpp.smol");
 const u32 gBattleEnvironmentTilemap_Rayquaza[] = INCBIN_U32("graphics/battle_environment/sky/map.bin.smolTM");
 
@@ -13,7 +16,7 @@ const u16 gBattleEnvironmentPalette_BuildingLeader[] = INCBIN_U16("graphics/batt
 const u16 gBattleEnvironmentPalette_StadiumAqua[] = INCBIN_U16("graphics/battle_environment/stadium/aqua.gbapal");
 const u16 gBattleEnvironmentPalette_StadiumMagma[] = INCBIN_U16("graphics/battle_environment/stadium/magma.gbapal");
 const u16 gBattleEnvironmentPalette_StadiumSidney[] = INCBIN_U16("graphics/battle_environment/wah_room/palette.gbapal");
-const u16 gBattleEnvironmentPalette_StadiumPhoebe[] = INCBIN_U16("graphics/battle_environment/stadium/phoebe.gbapal");
+const u16 gBattleEnvironmentPalette_WahCollaboratorsRoom[] = INCBIN_U16("graphics/battle_environment/wah_collaborators_room/palette.gbapal");
 const u16 gBattleEnvironmentPalette_StadiumGlacia[] = INCBIN_U16("graphics/battle_environment/stadium/glacia.gbapal");
 const u16 gBattleEnvironmentPalette_StadiumDrake[] = INCBIN_U16("graphics/battle_environment/stadium/drake.gbapal");
 const u16 gBattleEnvironmentPalette_StadiumWallace[] = INCBIN_U16("graphics/battle_environment/stadium/wallace.gbapal");
