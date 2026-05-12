@@ -18,7 +18,6 @@
 
 
 static bool8 CheckPokebox_isBuyMon(u8 id);
-static bool8 CheckPokebox_Active(u8 id);
 static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
@@ -59,20 +58,41 @@ const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
 static const struct PokeboxSpecies sPokeboxSpeciesList[] =
 {
     {
-        .mon = POKEBOX_MON(SPECIES_JIRACHI),
+        .mon = {
+            .specie = SPECIES_JIRACHI,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_PSYCHIC, MOVE_FLASH_CANNON, MOVE_DOOM_DESIRE, MOVE_MOONLIGHT},
+        },
         .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
     {
-        .mon = POKEBOX_MON(SPECIES_MEW),
-        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .mon = {
+            .specie = SPECIES_MEW,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = TRUE,
+            .moves = {MOVE_PSYCHIC, MOVE_RECOVER, MOVE_TRANSFORM, MOVE_PSYSTRIKE},
+        },
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
     {
-        .mon = POKEBOX_MON(SPECIES_CELEBI),
-        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .mon = {
+            .specie = SPECIES_CELEBI,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = TRUE,
+            .moves = {MOVE_PSYCHIC, MOVE_ENERGY_BALL, MOVE_RECOVER, MOVE_GIGA_DRAIN},
+        },
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveLegendaries
     },
@@ -86,7 +106,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_PETAL_DANCE, MOVE_SLUDGE_WAVE},
         },
-        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .description = COMPOUND_STRING("Completa el evento especial de Alexmad."),
         .money = 0,
         .check = CheckPokebox_AlexmadEventGiveClones
     },
@@ -165,203 +185,288 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .check = CheckPokebox_WahChallengeCompleted
     },  
     { 
-        .mon = POKEBOX_MON(SPECIES_GOROCHU),
+        .mon = POKEBOX_MON(SPECIES_GOROCHU), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_DUN),
+        .mon = POKEBOX_MON(SPECIES_DUN), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 1000,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_TAABAN),
+        .mon = POKEBOX_MON(SPECIES_TAABAN), //TODO Xiros
+        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+        .money = 0,
+        .check = CheckPokebox_isBuyMon
+    },
+    {
+        .mon = {
+            .specie = SPECIES_BOMUSHIKAA,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
+        },
+        .description = COMPOUND_STRING("Gana el desafio una vez."),
+        .money = 0,
+        .check = CheckPokebox_isBuyMon
+    },
+    { 
+        .mon = POKEBOX_MON(SPECIES_MADAAMU), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_BLESSPARCE),
+        .mon = POKEBOX_MON(SPECIES_AKUERIA), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_MADAAMU),
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
-        .money = 0,
-        .check = CheckPokebox_isBuyMon
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_AKUERIA),
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
-        .money = 0,
-        .check = CheckPokebox_isBuyMon
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_VOLCARONA),
+        .mon = POKEBOX_MON(SPECIES_VOLCARONA), //TODO Xiros
         .description = gText_PokeboxBuyThisMon, 
         .money = 10000,
         .check = CheckPokebox_isBuyMon
     },
     { 
-        .mon = POKEBOX_MON(SPECIES_GRENINJA),
+        .mon = {
+            .specie = SPECIES_GRENINJA,
+            .ability = ABILITY_PROTEAN,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_WATER_SHURIKEN, MOVE_SCALD, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB},
+        },
         .description = gText_PokeboxBuyThisMon, 
-        .money = 200,
+        .money = 15000,
         .check = CheckPokebox_isBuyMon
     },
 
     { 
-        .mon = POKEBOX_MON(SPECIES_CINDERACE),
+        .mon = POKEBOX_MON(SPECIES_CINDERACE), //TODO Xiros
         .description = COMPOUND_STRING("Gana el desafio una vez."), 
         .money = 0,
         .check = CheckPokebox_isBuyMon 
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_EXCADRILL),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_MACHAMP,
+            .ability = ABILITY_NO_GUARD,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = TRUE,
+            .moves = {MOVE_DYNAMIC_PUNCH, MOVE_METEOR_MASH, MOVE_DRAIN_PUNCH, MOVE_FISSURE},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_AEGISLASH),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_FLAREON,
+            .ability = ABILITY_RECKLESS,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLARE_BLITZ, MOVE_WILD_CHARGE, MOVE_EXTREME_SPEED, MOVE_RECOVER},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_MIMIKYU),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_JOLTEON,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_WATER_PULSE, MOVE_FLAMETHROWER},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_TOXAPEX),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_LEAFEON,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_LEAF_BLADE, MOVE_SOLAR_BLADE, MOVE_QUICK_ATTACK, MOVE_LEECH_LIFE},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_FERROTHORN),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_GLACEON,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_WATER_PULSE, MOVE_SHADOW_BALL},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_CORVIKNIGHT),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_SHEDINJA,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SHADOW_SNEAK, MOVE_SUCKER_PUNCH, MOVE_X_SCISSOR, MOVE_LEECH_LIFE},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_SKARMORY),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_WIGGLYTUFF,
+            .ability = ABILITY_COMPETITIVE,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_HYPER_VOICE, MOVE_MOONBLAST, MOVE_METRONOME, MOVE_EARTH_POWER},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_BLISSEY),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_KINGDRA,
+            .ability = ABILITY_SNIPER,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SCALD, MOVE_DRAGON_PULSE, MOVE_ICE_BEAM, MOVE_HURRICANE},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_GASTRODON),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_ROTOM,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_SHADOW_BALL, MOVE_FOUL_PLAY, MOVE_VOLT_SWITCH},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_ROTOM_WASH),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_CHERRIM,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_ENERGY_BALL, MOVE_SOLAR_BEAM, MOVE_GIGA_DRAIN, MOVE_WEATHER_BALL},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_LANDORUS_THERIAN),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_CACTURNE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = TRUE,
+            .moves = {MOVE_SEED_BOMB, MOVE_NIGHT_SLASH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_GLISCOR),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_MEGANIUM,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SOLAR_BEAM, MOVE_SYNTHESIS, MOVE_MOONBLAST, MOVE_WEATHER_BALL},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_AMOONGUSS),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_FERALIGATR,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAGON_DANCE, MOVE_SLASH, MOVE_LIQUIDATION, MOVE_BODY_SLAM},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_INDEEDEE),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_STARAPTOR,
+            .ability = ABILITY_INTIMIDATE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_AERIAL_ACE, MOVE_BRAVE_BIRD, MOVE_CLOSE_COMBAT, MOVE_ROOST},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_PORYGON2),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_CHESNAUGHT,
+            .ability = ABILITY_BULLETPROOF,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SEED_BOMB, MOVE_DRAIN_PUNCH, MOVE_ROCK_SLIDE, MOVE_SPIKY_SHIELD},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_HATTERENE),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_REUNICLUS),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_SLOWKING_GALAR),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_HEATRAN),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_TAPU_FINI),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_TAPU_KOKO),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_KARTANA),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_URSHIFU),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_FLUTTER_MANE),
-        .description = COMPOUND_STRING(""), 
-        .money = 0,
-        .check = CheckPokebox_Active 
+    {
+        .mon = {
+            .specie = SPECIES_DELPHOX,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_MYSTICAL_FIRE, MOVE_PSYSHOCK, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
     },
     {
         .mon = {

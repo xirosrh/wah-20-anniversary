@@ -27456,11 +27456,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Taaban[] = INCBIN_U16("graphics/pokemon/taaban/shiny.gbapal");
     const u8 gMonIcon_Taaban[] = INCBIN_U8("graphics/pokemon/taaban/icon.4bpp");
 
-    const u32 gMonFrontPic_Blessparce[] = INCBIN_U32("graphics/pokemon/blessparce/front.4bpp.smol");
-    const u16 gMonPalette_Blessparce[] = INCBIN_U16("graphics/pokemon/blessparce/normal.gbapal");
-    const u32 gMonBackPic_Blessparce[] = INCBIN_U32("graphics/pokemon/blessparce/back.4bpp.smol");
-    const u16 gMonShinyPalette_Blessparce[] = INCBIN_U16("graphics/pokemon/blessparce/shiny.gbapal");
-    const u8 gMonIcon_Blessparce[] = INCBIN_U8("graphics/pokemon/blessparce/icon.4bpp");
+    const u32 gMonFrontPic_Bomushikaa[] = INCBIN_U32("graphics/pokemon/bomushikaa/front.4bpp.smol");
+    const u16 gMonPalette_Bomushikaa[] = INCBIN_U16("graphics/pokemon/bomushikaa/normal.gbapal");
+    const u32 gMonBackPic_Bomushikaa[] = INCBIN_U32("graphics/pokemon/bomushikaa/back.4bpp.smol");
+    const u16 gMonShinyPalette_Bomushikaa[] = INCBIN_U16("graphics/pokemon/bomushikaa/shiny.gbapal");
+    const u8 gMonIcon_Bomushikaa[] = INCBIN_U8("graphics/pokemon/bomushikaa/icon.4bpp");
 
     const u32 gMonFrontPic_Madaamu[] = INCBIN_U32("graphics/pokemon/madaamu/front.4bpp.smol");
     const u16 gMonPalette_Madaamu[] = INCBIN_U16("graphics/pokemon/madaamu/normal.gbapal");
