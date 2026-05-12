@@ -202,9 +202,16 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_BOMUSHIKAA), //TODO Xiros
-        .description = COMPOUND_STRING("Gana el desafio una vez."), 
+    {
+        .mon = {
+            .specie = SPECIES_BOMUSHIKAA,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
+        },
+        .description = COMPOUND_STRING("Gana el desafio una vez."),
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
