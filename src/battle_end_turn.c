@@ -210,7 +210,7 @@ static bool32 HandleEndTurnAffection(u32 battler)
 
     gBattleStruct->eventState.endTurnBattler++;
 
-    if (!B_AFFECTION_MECHANICS
+    if (!IsAffectionMechanicsEnabled()
      || !IsBattlerAlive(battler)
      || !IsOnPlayerSide(battler))
         return effect;

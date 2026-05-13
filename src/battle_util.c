@@ -9,6 +9,7 @@
 #include "battle_interface.h"
 #include "battle_setup.h"
 #include "battle_z_move.h"
+#include "difficulty.h"
 #include "battle_gimmick.h"
 #include "battle_hold_effects.h"
 #include "generational_changes.h"
@@ -1778,6 +1779,11 @@ u8 GetImprisonedMovesCount(u32 battler, u16 move)
     }
 
     return imprisonedMoves;
+}
+
+bool32 IsAffectionMechanicsEnabled(void)
+{
+    return B_AFFECTION_MECHANICS == TRUE && GetCurrentDifficultyLevel() == DIFFICULTY_EASY;
 }
 
 u32 GetBattlerAffectionHearts(u32 battler)
@@ -8433,6 +8439,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
             recordAbility = TRUE;
         }
         break;
+    case ABILITY_ULTIMATE_ARMOR:
+        if (ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
     case ABILITY_FLUFFY:
         if (ctx->moveType == TYPE_FIRE && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
         {
@@ -11127,7 +11140,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)
         calc = (calc * 5) / 3; // 1.66 Gravity acc boost
 
-    if (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS)
+    if (IsAffectionMechanicsEnabled() && GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS)
         calc = (calc * 90) / 100;
 
     if (HasWeatherEffect() && gBattleWeather & B_WEATHER_FOG)

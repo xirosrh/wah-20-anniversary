@@ -6167,13 +6167,13 @@ u16 GetBattleBGM(void)
                 return MUS_VS_GYM_LEADER;
             case TRAINER_WAH_ADMIN_OZUMAS_MAIN:
             case TRAINER_WAH_ADMIN_OZUMAS_ALTERNATIVE:
-                return MUS_VS_TRAINER;
+                return MUS_HG_VS_GYM_LEADER;
             case TRAINER_WAH_ADMIN_SCAREX_MAIN:
             case TRAINER_WAH_ADMIN_SCAREX_ALTERNATIVE:
-                return MUS_RG_VS_TRAINER;
+                return MUS_HG_VS_GYM_LEADER;
             case TRAINER_WAH_ADMIN_BARO_MAIN:
             case TRAINER_WAH_ADMIN_BARO_ALTERNATIVE:
-                return MUS_VS_AQUA_MAGMA;
+                return MUS_DP_VS_GYM_LEADER;
             case TRAINER_WAH_ADMIN_REYBOO_MAIN:
             case TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE:
                 return MUS_VS_FRONTIER_BRAIN;
@@ -6188,7 +6188,7 @@ u16 GetBattleBGM(void)
                 return MUS_BW_VS_RIVAL;
             case TRAINER_WAH_ADMIN_GALLEGO_MAIN:
             case TRAINER_WAH_ADMIN_GALLEGO_ALTERNATIVE:
-                return MUS_VS_AQUA_MAGMA;
+                return MUS_DP_VS_TRAINER;
             case TRAINER_WAH_ADMIN_REONEKY_MAIN:
             case TRAINER_WAH_ADMIN_REONEKY_ALTERNATIVE:
                 return MUS_CAZA_LEGENDARIOS_TO;
@@ -6197,25 +6197,25 @@ u16 GetBattleBGM(void)
                 return MUS_MASTERED_BATTLE_4;
             case TRAINER_WAH_ADMIN_EING_MAIN:
             case TRAINER_WAH_ADMIN_EING_ALTERNATIVE:
-                return MUS_RG_VS_CHAMPION;
+                return MUS_VS_CHAMPION;
             case TRAINER_WAH_ADMIN_TOKYN_MAIN:
             case TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE:
-                return MUS_RG_VS_GYM_LEADER;
+                return MUS_HG_VS_GYM_LEADER_KANTO;
             case TRAINER_WAH_ADMIN_WAR_MAIN:
             case TRAINER_WAH_ADMIN_WAR_ALTERNATIVE:
-                return MUS_RG_VS_GYM_LEADER;
+                return MUS_HG_VS_GYM_LEADER_KANTO;
             case TRAINER_WAH_ADMIN_JAVI4315_MAIN:
             case TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE:
-                return MUS_VS_AQUA_MAGMA;
+                return MUS_HG_VS_RIVAL;
             case TRAINER_WAH_ADMIN_JAVS_MAIN:
             case TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE:
-                return MUS_VS_AQUA_MAGMA;
+                return MUS_HG_VS_RIVAL;
             case TRAINER_WAH_ADMIN_SERGIO_MAIN:
             case TRAINER_WAH_ADMIN_SERGIO_ALTERNATIVE:
                 return MUS_HGSS_VS_CHAMPION;
             case TRAINER_WAH_ADMIN_XIROS_MAIN:
             case TRAINER_WAH_ADMIN_XIROS_ALTERNATIVE:
-                return MUS_VS_CHAMPION;
+                return MUS_DP_VS_GALACTIC_BOSS;
             case TRAINER_WAH_ADMIN_PKPOWER_MAIN:
             case TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE:
                 return MUS_BW_VS_TRAINER_80;
@@ -6230,6 +6230,27 @@ u16 GetBattleBGM(void)
                 return MUS_WI_VS_GYM_LEADER;
             case TRAINER_WAH_COLLABORATOR_ACIMUT:
                 return MUS_TOUHOU11_11;
+            case TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY:
+            case TRAINER_WAH_COLLABORATOR_REONEKY:
+                return MUS_HG_VS_ROCKET;
+            case TRAINER_WAH_ADMIN_ROXAS:
+                return MUS_VS_REGI;
+            case TRAINER_WAH_COLLABORATOR_KAKTUS:
+                return MUS_VS_AQUA_MAGMA;
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1:
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2:
+            case TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3:
+                return MUS_RG_VS_TRAINER;
+            case TRAINER_WAH_COLLABORATOR_ERKEY:
+                return MUS_RG_VS_GYM_LEADER;
+            case TRAINER_WAH_COLLABORATOR_MICOLO:
+                return MUS_VS_RAYQUAZA;
+            case TRAINER_WAH_COLLABORATOR_GOSUTO:
+                return MUS_VS_AQUA_MAGMA_LEADER;
+            case TRAINER_WAH_COLLABORATOR_ALEXMAD:
+                return MUS_HG_VS_TRAINER;
+            case TRAINER_WAH_COLLABORATOR_RYUZAKI:
+                return MUS_RG_VS_CHAMPION;
             default:
                 return MUS_VS_AQUA_MAGMA;
             }

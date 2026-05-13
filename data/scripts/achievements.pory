@@ -89,6 +89,7 @@ script Achievements_EventScript_Eval_Common {
 }
 
 script Pokebox_EventScript_ShowUnlocks {
+    delay(20)
     specialvar(VAR_RESULT, Special_FindNextPokeboxUnlock)
     if(var(VAR_RESULT) != TRUE) {
         return
@@ -98,5 +99,11 @@ script Pokebox_EventScript_ShowUnlocks {
     bufferspeciesname(STR_VAR_1, VAR_0x8005)
     msgbox("¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.", MSGBOX_AUTOCLOSE)
     hidemonpic
+    call(Achievements_EventScript_Eval_UnlockAllPokemon)
     goto(Pokebox_EventScript_ShowUnlocks)
+}
+script Achievements_EventScript_Eval_Avaricia {
+    setvar(VAR_0x8004, ACHIEVEMENT_AVARICIA)
+    call(Achievements_EventScript_Eval_Common)
+    return
 }

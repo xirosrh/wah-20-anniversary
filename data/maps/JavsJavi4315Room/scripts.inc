@@ -77,132 +77,186 @@ JavsJavi4315Room_EventScript_MainTrigger::
 # 49 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_0, speaker = SP_NAME_JAVI4315
 # 50 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_0
+	playse SE_LEDGE
 # 51 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_0
 # 52 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+	waitse
 # 53 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
+	playse SE_LEDGE
 # 54 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AngryWithDelay48
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_1
 # 55 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 30
+	waitse
 # 56 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_WEST
-# 57 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 58 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceLeft
-# 59 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 30
-# 60 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_NORTH
-# 61 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_NORTH
-# 62 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 63 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 64 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AnnoyedWithDelay48
-# 65 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 50
-# 66 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkInPlaceUp
-# 67 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
-# 68 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH
-# 69 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_DoubleExclamationMarkWithDelay48
-# 70 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_DoubleExclamationMarkWithDelay48
-# 71 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitmovement 0
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_1
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_2
-# 74 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitmovement 0
-# 75 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVI4315, 5, 5
-# 76 "data/maps/JavsJavi4315Room/scripts.pory"
-	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVS, 7, 5
-# 77 "data/maps/JavsJavi4315Room/scripts.pory"
-	directcameramovementtoposwithvars VAR_TEMP_0, VAR_TEMP_1
-# 78 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitmovement 0
-# 79 "data/maps/JavsJavi4315Room/scripts.pory"
-	special RemoveCameraObject
-# 80 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_3
-# 81 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 82 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
-# 83 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 84 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 85 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 86 "data/maps/JavsJavi4315Room/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
-# 87 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
-# 88 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 89 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 90 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_JumpInPlaceDown
-# 91 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 92 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 93 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
-# 94 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 95 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 10
-# 96 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
-# 97 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 98 "data/maps/JavsJavi4315Room/scripts.pory"
 	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
-# 99 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_QuestionMarkWithDelay48
-# 100 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 101 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
-# 102 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 30
-# 103 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkDown
-# 104 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkDown
-# 105 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitmovement 0
-# 106 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 107 "data/maps/JavsJavi4315Room/scripts.pory"
+# 57 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 58 "data/maps/JavsJavi4315Room/scripts.pory"
 	playse SE_PIN
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
-# 109 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
-# 110 "data/maps/JavsJavi4315Room/scripts.pory"
+# 59 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AngryWithDelay48
+# 60 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 30
+# 61 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_WEST
+# 62 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 63 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceLeft
+# 64 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 30
+# 65 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_NORTH
+# 66 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_NORTH
+# 67 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 68 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 69 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_AnnoyedWithDelay48
+# 70 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 50
+# 71 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_PLAYER, Common_Movement_WalkInPlaceUp
+# 72 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
+# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH
+# 74 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 75 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_DoubleExclamationMarkWithDelay48
+# 76 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_DoubleExclamationMarkWithDelay48
+# 77 "data/maps/JavsJavi4315Room/scripts.pory"
 	waitmovement 0
+# 78 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_2
+# 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_3
+# 81 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 82 "data/maps/JavsJavi4315Room/scripts.pory"
+	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVI4315, 5, 5
+# 83 "data/maps/JavsJavi4315Room/scripts.pory"
+	setobjectxyperm LOCALID_JAVSJAVIROOM_JAVS, 7, 5
+# 84 "data/maps/JavsJavi4315Room/scripts.pory"
+	directcameramovementtoposwithvars VAR_TEMP_0, VAR_TEMP_1
+# 85 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 86 "data/maps/JavsJavi4315Room/scripts.pory"
+	special RemoveCameraObject
+# 87 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_LEDGE
+# 88 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
+# 89 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 90 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_LEDGE
+# 91 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
+# 92 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 93 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 94 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
+# 95 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 96 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 97 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 98 "data/maps/JavsJavi4315Room/scripts.pory"
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+# 99 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
+# 100 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 101 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 102 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_LEDGE
+# 103 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_JumpInPlaceDown
+# 104 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 105 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 106 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 107 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
+# 108 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 109 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 10
+# 110 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
 # 111 "data/maps/JavsJavi4315Room/scripts.pory"
-	call JavsJavi4315Room_EventScript_JavsJavi4315Battle
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
 # 112 "data/maps/JavsJavi4315Room/scripts.pory"
-	call JavsJavi4315Room_EventScript_PostBattle
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
 # 113 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 114 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_QuestionMarkWithDelay48
+# 115 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 116 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 117 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
+# 118 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 30
+# 119 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkDown
+# 120 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkDown
+# 121 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 122 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MainTrigger_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 123 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_LEDGE
+# 124 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
+# 125 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_4
+# 126 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 127 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 128 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_LEDGE
+# 129 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_5
+# 130 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_5
+# 131 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 132 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 133 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 134 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_MainTrigger_Movement_6
+# 135 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_MainTrigger_Movement_6
+# 136 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitmovement 0
+# 137 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 138 "data/maps/JavsJavi4315Room/scripts.pory"
+	call JavsJavi4315Room_EventScript_JavsJavi4315Battle
+# 139 "data/maps/JavsJavi4315Room/scripts.pory"
+	call JavsJavi4315Room_EventScript_PostBattle
+# 140 "data/maps/JavsJavi4315Room/scripts.pory"
 	releaseall
 	end
 
@@ -213,242 +267,252 @@ JavsJavi4315Room_EventScript_MainTrigger_2:
 
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle::
-# 118 "data/maps/JavsJavi4315Room/scripts.pory"
+# 145 "data/maps/JavsJavi4315Room/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, JavsJavi4315Room_EventScript_JavsJavi4315Battle_2
-# 121 "data/maps/JavsJavi4315Room/scripts.pory"
+# 148 "data/maps/JavsJavi4315Room/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_JAVI4315
-# 122 "data/maps/JavsJavi4315Room/scripts.pory"
+# 149 "data/maps/JavsJavi4315Room/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 123 "data/maps/JavsJavi4315Room/scripts.pory"
+# 150 "data/maps/JavsJavi4315Room/scripts.pory"
 	copyvar VAR_0x8005, VAR_RESULT
-# 124 "data/maps/JavsJavi4315Room/scripts.pory"
+# 151 "data/maps/JavsJavi4315Room/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_JAVS
-# 125 "data/maps/JavsJavi4315Room/scripts.pory"
+# 152 "data/maps/JavsJavi4315Room/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 127 "data/maps/JavsJavi4315Room/scripts.pory"
+# 154 "data/maps/JavsJavi4315Room/scripts.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq JavsJavi4315Room_EventScript_JavsJavi4315Battle_5
-# 134 "data/maps/JavsJavi4315Room/scripts.pory"
+# 161 "data/maps/JavsJavi4315Room/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq JavsJavi4315Room_EventScript_JavsJavi4315Battle_11
-# 137 "data/maps/JavsJavi4315Room/scripts.pory"
+# 164 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_1:
-# 141 "data/maps/JavsJavi4315Room/scripts.pory"
-	special HealPlayerParty
 	return
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_2:
-# 119 "data/maps/JavsJavi4315Room/scripts.pory"
+# 146 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated
 	goto JavsJavi4315Room_EventScript_JavsJavi4315Battle_1
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_5:
-# 128 "data/maps/JavsJavi4315Room/scripts.pory"
+# 155 "data/maps/JavsJavi4315Room/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq JavsJavi4315Room_EventScript_JavsJavi4315Battle_8
-# 131 "data/maps/JavsJavi4315Room/scripts.pory"
+# 158 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_ALTERNATIVE, JavsJavi4315Room_Text_JavsDefeated
 	goto JavsJavi4315Room_EventScript_JavsJavi4315Battle_1
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_8:
-# 129 "data/maps/JavsJavi4315Room/scripts.pory"
+# 156 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_MAIN, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated
 	goto JavsJavi4315Room_EventScript_JavsJavi4315Battle_1
 
 JavsJavi4315Room_EventScript_JavsJavi4315Battle_11:
-# 135 "data/maps/JavsJavi4315Room/scripts.pory"
+# 162 "data/maps/JavsJavi4315Room/scripts.pory"
 	trainerbattle_two_trainers TRAINER_WAH_ADMIN_JAVI4315_ALTERNATIVE, JavsJavi4315Room_Text_Javi4315Defeated, TRAINER_WAH_ADMIN_JAVS_MAIN, JavsJavi4315Room_Text_JavsDefeated
 	goto JavsJavi4315Room_EventScript_JavsJavi4315Battle_1
 
 
 JavsJavi4315Room_EventScript_PostBattle::
-# 154 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_0
-# 156 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_0
-# 157 "data/maps/JavsJavi4315Room/scripts.pory"
-	waitmovement 0
-# 158 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 40
-# 159 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
-# 160 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 161 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_SweatDropWithDelay48
-# 162 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
-# 163 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceRight
-# 164 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 165 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkUp
-# 166 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 167 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 168 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_ThinkingWithDelay48
-# 169 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 170 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_1
-# 171 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
-# 172 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 173 "data/maps/JavsJavi4315Room/scripts.pory"
-	playse SE_PIN
-# 174 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_2
-# 175 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_3
-# 177 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 20
-# 178 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
-# 179 "data/maps/JavsJavi4315Room/scripts.pory"
-	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH
 # 180 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 10
+	playse SE_PIN
 # 181 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_0
 # 182 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+	applymovement LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_0
 # 183 "data/maps/JavsJavi4315Room/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	waitmovement 0
 # 184 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay 30
+	delay 40
 # 185 "data/maps/JavsJavi4315Room/scripts.pory"
-	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
 # 186 "data/maps/JavsJavi4315Room/scripts.pory"
-	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
 # 187 "data/maps/JavsJavi4315Room/scripts.pory"
-	setflag FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS
+	playse SE_PIN
 # 188 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_SweatDropWithDelay48
+# 189 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 190 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST
+# 191 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceRight
+# 192 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 193 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkUp
+# 194 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 195 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 196 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_ThinkingWithDelay48
+# 197 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, JavsJavi4315Room_EventScript_PostBattle_Movement_1
+# 199 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 200 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 201 "data/maps/JavsJavi4315Room/scripts.pory"
+	playse SE_PIN
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_2
+# 203 "data/maps/JavsJavi4315Room/scripts.pory"
+	waitse
+# 204 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, JavsJavi4315Room_EventScript_PostBattle_Movement_3
+# 206 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 20
+# 207 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH
+# 208 "data/maps/JavsJavi4315Room/scripts.pory"
+	turnobject LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH
+# 209 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 10
+# 210 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown
+# 211 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS
+# 212 "data/maps/JavsJavi4315Room/scripts.pory"
+	call WahRoomsShared_OpenDoor
+# 213 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay 30
+# 214 "data/maps/JavsJavi4315Room/scripts.pory"
+	applymovementandwait LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown
+# 215 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PostBattle_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315
+# 216 "data/maps/JavsJavi4315Room/scripts.pory"
+	setflag FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS
+# 217 "data/maps/JavsJavi4315Room/scripts.pory"
 	setvar VAR_TEMP_2, 1
+# 218 "data/maps/JavsJavi4315Room/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 
 JavsJavi4315Room_EventScript_Javi4315::
-# 193 "data/maps/JavsJavi4315Room/scripts.pory"
+# 223 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_Javi4315_Text_0, MSGBOX_NPC, speaker = SP_NAME_JAVI4315
 	end
 
 
 JavsJavi4315Room_EventScript_Javs::
-# 198 "data/maps/JavsJavi4315Room/scripts.pory"
+# 228 "data/maps/JavsJavi4315Room/scripts.pory"
 	msgbox JavsJavi4315Room_EventScript_Javs_Text_0, MSGBOX_NPC, speaker = SP_NAME_JAVS
 	end
 
 
-# 50 "data/maps/JavsJavi4315Room/scripts.pory"
+# 51 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_0:
-# 50 "data/maps/JavsJavi4315Room/scripts.pory"
+# 51 "data/maps/JavsJavi4315Room/scripts.pory"
 	lock_facing_direction
-# 50 "data/maps/JavsJavi4315Room/scripts.pory"
+# 51 "data/maps/JavsJavi4315Room/scripts.pory"
 	jump_in_place_up
-# 50 "data/maps/JavsJavi4315Room/scripts.pory"
+	step_end
+
+# 54 "data/maps/JavsJavi4315Room/scripts.pory"
+JavsJavi4315Room_EventScript_MainTrigger_Movement_1:
+# 54 "data/maps/JavsJavi4315Room/scripts.pory"
 	jump_in_place_up
-# 50 "data/maps/JavsJavi4315Room/scripts.pory"
+# 54 "data/maps/JavsJavi4315Room/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-JavsJavi4315Room_EventScript_MainTrigger_Movement_1:
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_down
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_down
-# 72 "data/maps/JavsJavi4315Room/scripts.pory"
-	delay_16
-	step_end
-
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_2:
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_right
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_right
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_right
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
-	walk_right
-# 73 "data/maps/JavsJavi4315Room/scripts.pory"
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
+# 79 "data/maps/JavsJavi4315Room/scripts.pory"
+	delay_16
 	step_end
 
 # 80 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_3:
 # 80 "data/maps/JavsJavi4315Room/scripts.pory"
-	jump_in_place_down
+	walk_down
 # 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_right
+# 80 "data/maps/JavsJavi4315Room/scripts.pory"
+	walk_down
+	step_end
+
+# 88 "data/maps/JavsJavi4315Room/scripts.pory"
+JavsJavi4315Room_EventScript_MainTrigger_Movement_4:
+# 88 "data/maps/JavsJavi4315Room/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
-JavsJavi4315Room_EventScript_MainTrigger_Movement_4:
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
-	emote_versus
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
+# 129 "data/maps/JavsJavi4315Room/scripts.pory"
+JavsJavi4315Room_EventScript_MainTrigger_Movement_5:
+# 129 "data/maps/JavsJavi4315Room/scripts.pory"
 	jump_in_place_down
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
-	jump_in_place_down
-# 108 "data/maps/JavsJavi4315Room/scripts.pory"
+# 129 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
 	step_end
 
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 134 "data/maps/JavsJavi4315Room/scripts.pory"
+JavsJavi4315Room_EventScript_MainTrigger_Movement_6:
+# 134 "data/maps/JavsJavi4315Room/scripts.pory"
+	emote_versus
+	step_end
+
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_0:
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	emote_surprise
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	lock_facing_direction
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_up
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	unlock_facing_direction
-# 155 "data/maps/JavsJavi4315Room/scripts.pory"
+# 181 "data/maps/JavsJavi4315Room/scripts.pory"
 	face_down
 	step_end
 
-# 170 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_1:
-# 170 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_down
-# 170 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
-# 170 "data/maps/JavsJavi4315Room/scripts.pory"
+# 198 "data/maps/JavsJavi4315Room/scripts.pory"
 	face_left
 	step_end
 
-# 174 "data/maps/JavsJavi4315Room/scripts.pory"
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_2:
-# 174 "data/maps/JavsJavi4315Room/scripts.pory"
+# 202 "data/maps/JavsJavi4315Room/scripts.pory"
 	emote_happy
 	step_end
 
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_PostBattle_Movement_3:
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	walk_in_place_right
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
-# 176 "data/maps/JavsJavi4315Room/scripts.pory"
+# 205 "data/maps/JavsJavi4315Room/scripts.pory"
 	delay_16
 	step_end
 
@@ -458,32 +522,32 @@ JavsJavi4315Room_EventScript_MainTrigger_Text_0:
 	.string "colocado aquí!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_1:
-# 52 "data/maps/JavsJavi4315Room/scripts.pory"
+# 57 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "A que molan mucho, ¿verdad, Javier?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_2:
-# 57 "data/maps/JavsJavi4315Room/scripts.pory"
+# 62 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Que no me llamo Javier…$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_3:
-# 62 "data/maps/JavsJavi4315Room/scripts.pory"
+# 67 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Y eso no es todo, ¡mira esas paletas!\n"
 	.string "Tan bien contrastadas y matizadas…\l"
 	.string "¿serán privadas?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_4:
-# 81 "data/maps/JavsJavi4315Room/scripts.pory"
+# 93 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Hombre… ¡hasta que alguien ha caído por\n"
 	.string "aquí!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_5:
-# 84 "data/maps/JavsJavi4315Room/scripts.pory"
+# 96 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Sabías que, de todas las desgracias\n"
 	.string "que te pudieron haber pasado hoy, caer\l"
 	.string "en nuestro piso era la peor?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_6:
-# 88 "data/maps/JavsJavi4315Room/scripts.pory"
+# 100 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "No has presenciado un enfrentamiento\n"
 	.string "en equipos como el nuestro ni en tus\l"
 	.string "mejores sueños…\p"
@@ -491,77 +555,77 @@ JavsJavi4315Room_EventScript_MainTrigger_Text_6:
 	.string "disfrútalo!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_7:
-# 91 "data/maps/JavsJavi4315Room/scripts.pory"
+# 105 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Aquí la estrategia manda, ¡que no se te\n"
 	.string "olvide!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_8:
-# 94 "data/maps/JavsJavi4315Room/scripts.pory"
+# 108 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Listo, Javs?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_9:
-# 97 "data/maps/JavsJavi4315Room/scripts.pory"
+# 111 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Listo, Javi69!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_10:
-# 106 "data/maps/JavsJavi4315Room/scripts.pory"
+# 122 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Ahora!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_0:
-# 160 "data/maps/JavsJavi4315Room/scripts.pory"
+# 186 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Me pasé semanas planeando esta\n"
 	.string "estrategia… Admito que eso ha dolido\l"
 	.string "más de lo que esperaba.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_1:
-# 164 "data/maps/JavsJavi4315Room/scripts.pory"
+# 192 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Y eso que armé mi equipo exactamente\n"
 	.string "como me pediste!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_2:
-# 166 "data/maps/JavsJavi4315Room/scripts.pory"
+# 194 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "La apertura era perfecta: sol activo y\n"
 	.string "presión desde el turno uno. ¿Qué habré\l"
 	.string "hecho mal?$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_3:
-# 171 "data/maps/JavsJavi4315Room/scripts.pory"
+# 199 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "La estrategia estuvo bien, pero\n"
 	.string "simplemente tuvimos un{A} oponente\l"
 	.string "demasiado fuerte.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_4:
-# 175 "data/maps/JavsJavi4315Room/scripts.pory"
+# 204 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¡Al menos nos divertimos!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_5:
-# 182 "data/maps/JavsJavi4315Room/scripts.pory"
+# 211 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Te abriremos la puerta, que ya te falta\n"
 	.string "menos de la mitad.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_6:
-# 186 "data/maps/JavsJavi4315Room/scripts.pory"
+# 215 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Nosotros nos quedaremos por aquí\n"
 	.string "contemplando la sala.$"
 
 JavsJavi4315Room_EventScript_Javi4315_Text_0:
-# 193 "data/maps/JavsJavi4315Room/scripts.pory"
+# 223 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Siempre quise crear algo que se sintiera\n"
 	.string "{COLOR GREEN}inmortal{COLOR DARK_GRAY}.\p"
 	.string "Supongo que por eso sigo aquí, dándole\n"
 	.string "vueltas a todo.$"
 
 JavsJavi4315Room_EventScript_Javs_Text_0:
-# 198 "data/maps/JavsJavi4315Room/scripts.pory"
+# 228 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Te gusta cómo se ve la sala? ¡Ni se te\n"
 	.string "ocurra copiar sus colores sin mi\l"
 	.string "permiso!$"
 
 JavsJavi4315Room_Text_Javi4315Defeated::
-# 145 "data/maps/JavsJavi4315Room/scripts.pory"
+# 171 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Acaso hemos perdido, Javs?$"
 
 JavsJavi4315Room_Text_JavsDefeated::
-# 149 "data/maps/JavsJavi4315Room/scripts.pory"
+# 175 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "¿Cómo puede ser? ¡Mi estrategia era\n"
 	.string "infalible!$"

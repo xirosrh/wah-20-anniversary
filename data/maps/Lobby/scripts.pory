@@ -237,44 +237,11 @@ script Lobby_EventScript_ChallengeHistorian {
 script Lobby_EventScript_Shop {
 	lock
     faceplayer
-	message(format("¡Hola! ¿En qué puedo ayudarte?"))
+    message(format("¡Hola! ¿En qué puedo ayudarte?"))
 	waitmessage
-	pokemart(Lobby_MartItems)
-	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+	call(WahRoomsShared_EventScript_Shop)
 	release
     end
-}
-
-mart Lobby_MartItems {
-	ITEM_HYPER_POTION
-	ITEM_MAX_POTION
-    ITEM_FULL_RESTORE
-	ITEM_ETHER
-    ITEM_MAX_ETHER
-    ITEM_ELIXIR
-    ITEM_MAX_ELIXIR
-    ITEM_REVIVE
-    ITEM_MAX_REVIVE
-    ITEM_REVIVAL_HERB
-    ITEM_BAXCALIBURITE
-    ITEM_DRAGALGITE
-    ITEM_TYRANITARITE
-    ITEM_DARKRANITE
-    ITEM_ALAKAZITE
-    ITEM_LUCARIONITE
-    ITEM_LUCARIONITE_Z
-    ITEM_MEWTWONITE_X
-    ITEM_MEWTWONITE_Y
-    ITEM_CHARIZARDITE_X
-    ITEM_CHARIZARDITE_Y
-    ITEM_GALLADITE
-    ITEM_GLALITITE
-    ITEM_FROSLASSITE
-    ITEM_CLEFABLITE
-    ITEM_HOUNDOOMINITE
-    ITEM_AGGRONITE
-    ITEM_ZYGARDITE
-    ITEM_VICTREEBELITE
 }
 
 script Lobby_EventScript_Roxas_IntroFirstBattle {
@@ -380,7 +347,6 @@ script Lobby_EventScript_Roxas {
         clearflag(B_FLAG_NO_WHITEOUT)
         special(GetBattleOutcome)
         special(LoadPlayerParty)
-        special(HealPlayerParty)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_X)
@@ -399,6 +365,7 @@ script Lobby_EventScript_Roxas {
             msgbox(format("Si algún día te das una vuelta por el Archipiélago Suzuka, anda con cuidado maquina, porque allá este no te perdona ni media.\pSuerte la próxima."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
         }
         call(Achievements_EventScript_Eval_DefeatAllAdmins)
+        call(WahRoomsShared_EventScript_AfterBattle)
         release
         end
     } else {
@@ -498,16 +465,52 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         dynmultipush(gStringVar1, 5)
         addvar(VAR_0x8000, 1)
     }
+    getseenmon(SPECIES_JARDINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_JARDINO)
+        dynmultipush(gStringVar1, 6)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_OCEADINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_OCEADINO)
+        dynmultipush(gStringVar1, 7)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_TYRADINO)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_TYRADINO)
+        dynmultipush(gStringVar1, 8)
+        addvar(VAR_0x8000, 1)
+    }
     getseenmon(SPECIES_ELECTRODES)
     if(var(VAR_RESULT) != 0) {
         bufferspeciesname(STR_VAR_1, SPECIES_ELECTRODES)
-        dynmultipush(gStringVar1, 6)
+        dynmultipush(gStringVar1, 9)
         addvar(VAR_0x8000, 1)
     }
     getseenmon(SPECIES_EING)
     if(var(VAR_RESULT) != 0) {
         bufferspeciesname(STR_VAR_1, SPECIES_EING)
-        dynmultipush(gStringVar1, 7)
+        dynmultipush(gStringVar1, 10)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MICAEL)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MICAEL)
+        dynmultipush(gStringVar1, 11)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_MOLIKAI)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_MOLIKAI)
+        dynmultipush(gStringVar1, 12)
+        addvar(VAR_0x8000, 1)
+    }
+    getseenmon(SPECIES_DIRAEI)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_DIRAEI)
+        dynmultipush(gStringVar1, 13)
         addvar(VAR_0x8000, 1)
     }
     if(var(VAR_0x8000) == 0) {
@@ -515,10 +518,10 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         release
         end
     }
-    dynmultipush("Salir", 8)
+    dynmultipush("Salir", 14)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) > 7) {
+    if(var(VAR_RESULT) > 13) {
         msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
@@ -549,12 +552,36 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
             setvar(VAR_0x8004, SPECIES_AYEWIRAZ)
             call(Lobby_EventScript_ShowFakemonDexInfo)
         case 6:
+            showmonpic(SPECIES_JARDINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_JARDINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 7:
+            showmonpic(SPECIES_OCEADINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_OCEADINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 8:
+            showmonpic(SPECIES_TYRADINO, 10, 3)
+            setvar(VAR_0x8004, SPECIES_TYRADINO)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 9:
             showmonpic(SPECIES_ELECTRODES, 10, 3)
             setvar(VAR_0x8004, SPECIES_ELECTRODES)
             call(Lobby_EventScript_ShowFakemonDexInfo)
-        case 7:
+        case 10:
             showmonpic(SPECIES_EING, 10, 3)
             setvar(VAR_0x8004, SPECIES_EING)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 11:
+            showmonpic(SPECIES_MICAEL, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MICAEL)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 12:
+            showmonpic(SPECIES_MOLIKAI, 10, 3)
+            setvar(VAR_0x8004, SPECIES_MOLIKAI)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 13:
+            showmonpic(SPECIES_DIRAEI, 10, 3)
+            setvar(VAR_0x8004, SPECIES_DIRAEI)
             call(Lobby_EventScript_ShowFakemonDexInfo)
     }
     goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
@@ -650,112 +677,12 @@ text Lobby_Text_AdminCountNPC {
 }
 
 script Lobby_EventScript_Pokebox {
-    lock
-    playse(SE_PC_ON)
-    setmetatile(8, 3, METATILE_lobby_PC_ON, FALSE)
-    special(DrawWholeMapView)
-    waitse
-    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)) {
-        delay(10)
-        playse(SE_CONTEST_HEART)
-        msgbox(Lobby_Text_Pokebox_SoftwareUpdate, MSGBOX_AUTOCLOSE_CENTER)
-        waitse
-        delay(10)
-        msgbox(Lobby_Text_Pokebox_SoftwareUpdateExplanation, MSGBOX_AUTOCLOSE_CENTER)
-        delay(20)
-        setflag(FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN)
-
-    }
-    goto(Lobby_EventScript_Pokebox_MainMenu)
-}
-
-script Lobby_EventScript_Pokebox_MainMenu {
-    message(Lobby_Text_Pokebox_MainPrompt)
-    waitmessage
-    dynmultipush(format("Acceder a PC"), 0)
-    dynmultipush(format("¿Cómo funciona?"), 1)
-    dynmultipush(format("Salir"), 2)
-    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    closemessage
-    delay(10)
-    switch(var(VAR_RESULT)) {
-        case 0:
-            callnative(StartPokeBoxFromField_CB2)
-            waitstate
-            playse(SE_PC_OFF)
-            setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
-            special(DrawWholeMapView)
-            release
-            end
-        case 1:
-            goto(Lobby_EventScript_Pokebox_HelpMenu)
-        default:
-            goto(Lobby_EventScript_Pokebox_Shutdown)
-    }
-}
-
-script Lobby_EventScript_Pokebox_HelpMenu {
-    message(Lobby_Text_Pokebox_HelpPrompt)
-    waitmessage
-    dynmultipush(format("¿Cuántos Pokémon puedo cambiar?"), 0)
-    dynmultipush(format("¿Cómo desbloqueo nuevos Pokémon?"), 1)
-    dynmultipush(format("Volver"), 2)
-    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    closemessage
-    delay(10)
-    switch(var(VAR_RESULT)) {
-        case 0:
-            if(flag(FLAG_WAH_CHALLENGE_COMPLETED) == TRUE) {
-                msgbox(Lobby_Text_Pokebox_HelpSwapsAfterChallenge, MSGBOX_AUTOCLOSE)
-            } else {
-                msgbox(Lobby_Text_Pokebox_HelpSwapsBeforeChallenge, MSGBOX_AUTOCLOSE)
-            }
-            delay(10)
-            goto(Lobby_EventScript_Pokebox_HelpMenu)
-        case 1:
-            msgbox(Lobby_Text_Pokebox_HelpUnlock, MSGBOX_AUTOCLOSE)
-            delay(10)
-            goto(Lobby_EventScript_Pokebox_HelpMenu)
-        default:
-            goto(Lobby_EventScript_Pokebox_MainMenu)
-    }
-}
-
-script Lobby_EventScript_Pokebox_Shutdown {
-    playse(SE_PC_OFF)
-    setmetatile(8, 3, METATILE_lobby_PC_OFF, FALSE)
-    special(DrawWholeMapView)
-    release
+    setvar(VAR_TEMP_C, 8)
+    setvar(VAR_TEMP_D, 3)
+    setvar(VAR_TEMP_E, METATILE_lobby_PC_OFF)
+    setvar(VAR_TEMP_F, METATILE_lobby_PC_ON)
+    call(WahRoomsShared_EventScript_Pokebox)
     end
-}
-
-text Lobby_Text_Pokebox_SoftwareUpdate {
-    format("¡El software de la PC se ha actualizado!")
-}
-
-text Lobby_Text_Pokebox_SoftwareUpdateExplanation {
-    format("Ahora puedes cambiar hasta 3 Pokémon de tu equipo y sustituirlos por Pokémon de la caja, en lugar de solo 1.")
-}
-
-text Lobby_Text_Pokebox_MainPrompt {
-    "¿Qué quieres hacer?"
-}
-
-text Lobby_Text_Pokebox_HelpPrompt {
-    "¿Sobre qué quieres saber?"
-}
-
-text Lobby_Text_Pokebox_HelpSwapsBeforeChallenge {
-    format("Puedes reemplazar solo uno de los Pokémon predefinidos del equipo seleccionado por uno de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 5 Pokémon del equipo original.")
-}
-
-text Lobby_Text_Pokebox_HelpSwapsAfterChallenge {
-    format("Puedes reemplazar hasta 3 Pokémon predefinidos del equipo seleccionado por Pokémon de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 3 Pokémon del equipo original.")
-
-}
-
-text Lobby_Text_Pokebox_HelpUnlock {
-    format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
 }
 
 script Lobby_EventScript_Turbo {

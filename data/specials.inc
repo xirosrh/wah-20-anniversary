@@ -593,3 +593,4 @@ gSpecials::
 	def_special Special_ClearTransparentBox
 	def_special Special_FindNextPokeboxUnlock
 	def_special HideMapNamePopUpWindow
+	def_special Special_BufferPokeboxBuyOfferFromSpecies

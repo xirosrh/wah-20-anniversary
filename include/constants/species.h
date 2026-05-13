@@ -1706,8 +1706,23 @@
 #define SPECIES_MOLIKAI                                 1585
 #define SPECIES_MICAEL                                  1586
 #define SPECIES_DIRAEI                                  1587
+#define SPECIES_OSHAWOTT_X                              1588
 
-#define SPECIES_EGG                                     (SPECIES_DIRAEI + 1)
+#define SPECIES_GOROCHU                                1589
+#define SPECIES_DUN                                    1590
+#define SPECIES_TAABAN                                 1591
+#define SPECIES_BOMUSHIKAA                             1592
+#define SPECIES_MADAAMU                                1593
+#define SPECIES_AKUERIA                                1594
+#define SPECIES_VENUSAUR_C                             1595
+#define SPECIES_CHARIZARD_C                            1596
+#define SPECIES_BLASTOISE_C                            1597
+#define SPECIES_GRENINJA_R                             1598
+#define SPECIES_GRENINJA_R_MEGA                        1599
+#define SPECIES_ARMORED_MEWTWO                         1600
+#define SPECIES_ARMORED_MEWTWO_MEGA                    1601
+
+#define SPECIES_EGG                                     (SPECIES_ARMORED_MEWTWO_MEGA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

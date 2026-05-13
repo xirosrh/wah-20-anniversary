@@ -496,6 +496,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     [PAL_NPC_2] =   {gObjectEventPal_Npc2,  OBJ_EVENT_PAL_TAG_NPC_2},
     [PAL_NPC_3] =   {gObjectEventPal_Npc3,  OBJ_EVENT_PAL_TAG_NPC_3},
     [PAL_NPC_4] =   {gObjectEventPal_Npc4,  OBJ_EVENT_PAL_TAG_NPC_4},
+    {gObjectEventPal_Boy3,                  OBJ_EVENT_PAL_TAG_BOY_3},
+    {gObjectEventPal_Girl1,                 OBJ_EVENT_PAL_TAG_GIRL_1},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_PlayerUnderwater,      OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER},
     {gObjectEventPal_QuintyPlump,           OBJ_EVENT_PAL_TAG_QUINTY_PLUMP},

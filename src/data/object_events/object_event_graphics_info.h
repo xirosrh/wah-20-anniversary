@@ -187,7 +187,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy1 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_GIRL_1,
     .size = 256,
     .width = 16,
     .height = 32,
@@ -272,7 +272,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirl = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy3 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BOY_3,
     .size = 256,
     .width = 16,
     .height = 32,

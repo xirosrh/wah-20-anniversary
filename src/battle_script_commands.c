@@ -1663,7 +1663,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + (gBattleMons[battlerAtk].volatiles.dragonCheer != 0 ? 1 : 0)
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
-                    + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
+                    + ((IsAffectionMechanicsEnabled() && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
                     + gBattleMons[battlerAtk].volatiles.bonusCritStages;
 
@@ -1977,7 +1977,7 @@ static void Cmd_adjustdamage(void)
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
-        else if (B_AFFECTION_MECHANICS == TRUE && IsOnPlayerSide(battlerDef) && affectionScore >= AFFECTION_THREE_HEARTS)
+        else if (IsAffectionMechanicsEnabled() && IsOnPlayerSide(battlerDef) && affectionScore >= AFFECTION_THREE_HEARTS)
         {
             if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 20)
              || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 15)
@@ -2764,7 +2764,7 @@ static void Cmd_resultmessage(void)
             {
                 stringId = STRINGID_BUTITFAILED;
             }
-            else if (B_AFFECTION_MECHANICS == TRUE && (*moveResultFlags & MOVE_RESULT_FOE_ENDURED_AFFECTION))
+            else if (IsAffectionMechanicsEnabled() && (*moveResultFlags & MOVE_RESULT_FOE_ENDURED_AFFECTION))
             {
                 *moveResultFlags &= ~MOVE_RESULT_FOE_ENDURED_AFFECTION;
                 BattleScriptCall(BattleScript_AffectionBasedEndurance);
@@ -5806,6 +5806,7 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
     case ABILITY_GRIM_NEIGH:
     case ABILITY_AS_ONE_SHADOW_RIDER:
     case ABILITY_BEAST_BOOST:
+    case ABILITY_BRAIN_UP:
         {
             if (!IsBattlerAlive(battlerAtk) || NoAliveMonsForEitherParty())
                 break;
@@ -5815,7 +5816,7 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
 
             if (abilityAtk == ABILITY_BEAST_BOOST)
                 stat = GetHighestStatId(battlerAtk);
-            else if (abilityAtk == ABILITY_GRIM_NEIGH || abilityAtk == ABILITY_AS_ONE_SHADOW_RIDER)
+            else if (abilityAtk == ABILITY_GRIM_NEIGH || abilityAtk == ABILITY_AS_ONE_SHADOW_RIDER || abilityAtk == ABILITY_BRAIN_UP)
                 stat = STAT_SPATK;
 
             if (numMonsFainted && CompareStat(battlerAtk, stat, MAX_STAT_STAGE, CMP_LESS_THAN, abilityAtk))
@@ -11168,7 +11169,7 @@ static void Cmd_tryKO(void)
         endured = FOCUS_SASHED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
-    else if (B_AFFECTION_MECHANICS == TRUE && IsOnPlayerSide(gBattlerTarget) && affectionScore >= AFFECTION_THREE_HEARTS)
+    else if (IsAffectionMechanicsEnabled() && IsOnPlayerSide(gBattlerTarget) && affectionScore >= AFFECTION_THREE_HEARTS)
     {
         if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 20)
          || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 15)
@@ -15047,7 +15048,7 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
         *expAmount = (*expAmount * 150) / 100;
     if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
         *expAmount = (*expAmount * 4915) / 4096;
-    if (B_AFFECTION_MECHANICS == TRUE && GetMonAffectionHearts(&gPlayerParty[expGetterMonId]) >= AFFECTION_FOUR_HEARTS)
+    if (IsAffectionMechanicsEnabled() && GetMonAffectionHearts(&gPlayerParty[expGetterMonId]) >= AFFECTION_FOUR_HEARTS)
         *expAmount = (*expAmount * 4915) / 4096;
     if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
         *expAmount = (*expAmount * 150) / 100;

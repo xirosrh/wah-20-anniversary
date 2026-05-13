@@ -47,7 +47,12 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     directcameramovementtopos(3, 4)
     waitmovement(0)
     msgbox(format("Tío… ¡pero qué pedazo de tiles nos han colocado aquí!"), speaker = SP_NAME_JAVI4315)
-    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, moves(lock_facing_direction, jump_in_place_up * 2, unlock_facing_direction))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, moves(lock_facing_direction, jump_in_place_up))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, moves(jump_in_place_up, unlock_facing_direction))
+    waitse
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST)
     msgbox(format("A que molan mucho, ¿verdad, Javier?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     playse(SE_PIN)
@@ -66,9 +71,11 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH)
     turnobject(LOCALID_JAVSJAVIROOM_JAVS, DIR_SOUTH)
+    playse(SE_PIN)
     applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_DoubleExclamationMarkWithDelay48)
     applymovement(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_DoubleExclamationMarkWithDelay48)
     waitmovement(0)
+    waitse
     applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(walk_down, walk_right * 2, walk_right, walk_down, delay_16))
     applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(walk_down, walk_right * 4, walk_down ))
     waitmovement(0)
@@ -77,7 +84,12 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     directcameramovementtoposwithvars(VAR_TEMP_0, VAR_TEMP_1)
     waitmovement(0)
     special(RemoveCameraObject)
-    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315,moves(jump_in_place_down * 2))
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315,moves(jump_in_place_down))
+    waitse
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315,moves(jump_in_place_down))
+    waitse
     msgbox(format("Hombre… ¡hasta que alguien ha caído por aquí!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown)
     delay(20)
@@ -87,7 +99,9 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown)
     msgbox(format("No has presenciado un enfrentamiento en equipos como el nuestro ni en tus mejores sueños…\p¡Y no volverás a verlo, así que disfrútalo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     delay(20)
+    playse(SE_LEDGE)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_JumpInPlaceDown)
+    waitse
     msgbox(format("Aquí la estrategia manda, ¡que no se te olvide!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS)
     delay(20)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceDown)
@@ -96,7 +110,9 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown)
     msgbox(format("¡Listo, Javi69!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS)
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST)
+    playse(SE_PIN)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_QuestionMarkWithDelay48)
+    waitse
     delay(20)
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_SOUTH)
     delay(30)
@@ -104,10 +120,21 @@ script JavsJavi4315Room_EventScript_MainTrigger {
     applymovement(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkDown)
     waitmovement(0)
     msgbox(format("¡Ahora!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS)
-    playse(SE_PIN)
-    applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(emote_versus, jump_in_place_down * 2, delay_16))
-    applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(emote_versus, jump_in_place_down * 2, delay_16))
+    playse(SE_LEDGE)
+    applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(jump_in_place_down))
+    applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(jump_in_place_down))
     waitmovement(0)
+    waitse
+    playse(SE_LEDGE)
+    applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(jump_in_place_down, delay_16))
+    applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(jump_in_place_down, delay_16))
+    waitmovement(0)
+    waitse
+    playse(SE_PIN)
+    applymovement(LOCALID_JAVSJAVIROOM_JAVI4315, moves(emote_versus))
+    applymovement(LOCALID_JAVSJAVIROOM_JAVS, moves(emote_versus))
+    waitmovement(0)
+    waitse
     call(JavsJavi4315Room_EventScript_JavsJavi4315Battle)
     call(JavsJavi4315Room_EventScript_PostBattle)
     releaseall
@@ -138,7 +165,6 @@ script JavsJavi4315Room_EventScript_JavsJavi4315Battle {
             }
         }
     }
-    special(HealPlayerParty)
     return
 }
 
@@ -158,7 +184,9 @@ script JavsJavi4315Room_EventScript_PostBattle {
     delay(40)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_WalkInPlaceDown)
     msgbox(format("Me pasé semanas planeando esta estrategia… Admito que eso ha dolido más de lo que esperaba."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVS)
+    playse(SE_PIN)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVS, Common_Movement_SweatDropWithDelay48)
+    waitse
     turnobject(LOCALID_JAVSJAVIROOM_JAVI4315, DIR_EAST)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, Common_Movement_WalkInPlaceRight)
     msgbox(format("¡Y eso que armé mi equipo exactamente como me pediste!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
@@ -172,6 +200,7 @@ script JavsJavi4315Room_EventScript_PostBattle {
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, moves(emote_happy))
+    waitse
     msgbox(format("¡Al menos nos divertimos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     applymovementandwait(LOCALID_JAVSJAVIROOM_JAVI4315, moves(walk_in_place_right, delay_16 * 2))
     delay(20)
@@ -186,6 +215,7 @@ script JavsJavi4315Room_EventScript_PostBattle {
     msgbox(format("Nosotros nos quedaremos por aquí contemplando la sala."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JAVI4315)
     setflag(FLAG_DEFEATED_ADMINS_JAVI4315_AND_JAVS)
     setvar(VAR_TEMP_2_JAVS_JAVI4315_ROOM_STATE, 1)
+    call(WahRoomsShared_EventScript_AfterBattle)
     return
 }
 

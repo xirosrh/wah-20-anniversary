@@ -356,7 +356,7 @@ KleinPkPowerRoom_EventScript_BotonRojo::
 	compare VAR_RESULT, YES
 	goto_if_eq KleinPkPowerRoom_EventScript_BotonRojo_5
 KleinPkPowerRoom_EventScript_BotonRojo_1:
-# 269 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 271 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
@@ -512,135 +512,135 @@ KleinPkPowerRoom_EventScript_BotonRojo_5:
 	fadescreen FADE_FROM_BLACK
 # 266 "data/maps/KleinPkPowerRoom/scripts.pory"
 	call WahRoomsShared_OpenDoor
+# 267 "data/maps/KleinPkPowerRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
 	goto KleinPkPowerRoom_EventScript_BotonRojo_1
 
 
 KleinPkPowerRoom_EventScript_OpenJail::
-# 274 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1, 0
-# 275 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
 # 276 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 10
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_1, 0
 # 277 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2, 0
+	special DrawWholeMapView
 # 278 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
+	delay 10
 # 279 "data/maps/KleinPkPowerRoom/scripts.pory"
-	delay 10
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_2, 0
 # 280 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3, 0
+	special DrawWholeMapView
 # 281 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special DrawWholeMapView
-# 282 "data/maps/KleinPkPowerRoom/scripts.pory"
 	delay 10
+# 282 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_DOOR_OPENING_3, 0
 # 283 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0
-# 284 "data/maps/KleinPkPowerRoom/scripts.pory"
 	special DrawWholeMapView
+# 284 "data/maps/KleinPkPowerRoom/scripts.pory"
+	delay 10
 # 285 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitse
+	setmetatile 9, 5, METATILE_room_kleinpkpower_JAIL_FLOOR, 0
 # 286 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special DrawWholeMapView
+# 287 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitse
+# 288 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setmetatileelevation 9, 6, 0
 	return
 
 
 KleinPkPowerRoom_EventScript_KleinBattle::
-# 291 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 293 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, KleinPkPowerRoom_EventScript_KleinBattle_2
-# 294 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_KLEIN
-# 295 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 296 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_KLEIN
+# 297 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 298 "data/maps/KleinPkPowerRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KleinPkPowerRoom_EventScript_KleinBattle_5
-# 299 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 301 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE, KleinPkPowerRoom_Text_KleinDefeated
 KleinPkPowerRoom_EventScript_KleinBattle_1:
-# 302 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 304 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_KLEIN
-# 303 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special HealPlayerParty
+# 305 "data/maps/KleinPkPowerRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
 	return
 
 KleinPkPowerRoom_EventScript_KleinBattle_2:
-# 292 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 294 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_MAIN, KleinPkPowerRoom_Text_KleinDefeated
 	goto KleinPkPowerRoom_EventScript_KleinBattle_1
 
 KleinPkPowerRoom_EventScript_KleinBattle_5:
-# 297 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 299 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_KLEIN_MAIN, KleinPkPowerRoom_Text_KleinDefeated
 	goto KleinPkPowerRoom_EventScript_KleinBattle_1
 
 
 KleinPkPowerRoom_EventScript_PkPowerBattle::
-# 312 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 314 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, KleinPkPowerRoom_EventScript_PkPowerBattle_2
-# 315 "data/maps/KleinPkPowerRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_PKPOWER
-# 316 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
 # 317 "data/maps/KleinPkPowerRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_PKPOWER
+# 318 "data/maps/KleinPkPowerRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 319 "data/maps/KleinPkPowerRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq KleinPkPowerRoom_EventScript_PkPowerBattle_5
-# 320 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 322 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_ALTERNATIVE, KleinPkPowerRoom_Text_PkPowerDefeated
 KleinPkPowerRoom_EventScript_PkPowerBattle_1:
-# 323 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 325 "data/maps/KleinPkPowerRoom/scripts.pory"
 	setflag FLAG_DEFEATED_ADMIN_PKPOWER
-# 324 "data/maps/KleinPkPowerRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 KleinPkPowerRoom_EventScript_PkPowerBattle_2:
-# 313 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 315 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_MAIN, KleinPkPowerRoom_Text_PkPowerDefeated
 	goto KleinPkPowerRoom_EventScript_PkPowerBattle_1
 
 KleinPkPowerRoom_EventScript_PkPowerBattle_5:
-# 318 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 320 "data/maps/KleinPkPowerRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_PKPOWER_MAIN, KleinPkPowerRoom_Text_PkPowerDefeated
 	goto KleinPkPowerRoom_EventScript_PkPowerBattle_1
 
 
 KleinPkPowerRoom_EventScript_PkPower::
-# 333 "data/maps/KleinPkPowerRoom/scripts.pory"
-	lock
 # 334 "data/maps/KleinPkPowerRoom/scripts.pory"
-	faceplayer
+	lock
 # 335 "data/maps/KleinPkPowerRoom/scripts.pory"
+	faceplayer
+# 336 "data/maps/KleinPkPowerRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ADMIN_PKPOWER, KleinPkPowerRoom_EventScript_PkPower_2
-# 339 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 340 "data/maps/KleinPkPowerRoom/scripts.pory"
 	msgbox KleinPkPowerRoom_EventScript_PkPower_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 KleinPkPowerRoom_EventScript_PkPower_1:
-# 341 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
 # 342 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_PKPOWER
+	applymovement LOCALID_KLEINROOM_PKPOWER, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
 # 343 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_PKPOWER
+# 344 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
 KleinPkPowerRoom_EventScript_PkPower_2:
-# 336 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 337 "data/maps/KleinPkPowerRoom/scripts.pory"
 	msgbox KleinPkPowerRoom_EventScript_PkPower_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER
 	goto KleinPkPowerRoom_EventScript_PkPower_1
 
 
 KleinPkPowerRoom_EventScript_Klein::
-# 348 "data/maps/KleinPkPowerRoom/scripts.pory"
-	lock
 # 349 "data/maps/KleinPkPowerRoom/scripts.pory"
-	faceplayer
+	lock
 # 350 "data/maps/KleinPkPowerRoom/scripts.pory"
-	msgbox KleinPkPowerRoom_EventScript_Klein_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
+	faceplayer
 # 351 "data/maps/KleinPkPowerRoom/scripts.pory"
-	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
+	msgbox KleinPkPowerRoom_EventScript_Klein_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN
 # 352 "data/maps/KleinPkPowerRoom/scripts.pory"
-	waitmovement LOCALID_KLEINROOM_KLEIN
+	applymovement LOCALID_KLEINROOM_KLEIN, KleinPkPowerRoom_EventScript_BotonRojo_Movement_10
 # 353 "data/maps/KleinPkPowerRoom/scripts.pory"
+	waitmovement LOCALID_KLEINROOM_KLEIN
+# 354 "data/maps/KleinPkPowerRoom/scripts.pory"
 	release
 	end
 
@@ -976,26 +976,26 @@ KleinPkPowerRoom_EventScript_BotonRojo_Text_6:
 	.string "¡Vamos, a levantar el foro!$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_0:
-# 336 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 337 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Pero mira que eres pesado eh? ¿Tú no\n"
 	.string "tienes amigos u otra persona a la que\l"
 	.string "molestar?$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_1:
-# 339 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 340 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿No ves que estoy ocupado?$"
 
 KleinPkPowerRoom_EventScript_Klein_Text_0:
-# 350 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 351 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Equipo de Investigación?\n"
 	.string "¿O Equipo de la mierda?\p"
 	.string "Qué te importa a ti el hackeo al Perro.$"
 
 KleinPkPowerRoom_Text_KleinDefeated::
-# 307 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 309 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¿Y ahora qué?\n"
 	.string "¿Al talego de nuevo?$"
 
 KleinPkPowerRoom_Text_PkPowerDefeated::
-# 328 "data/maps/KleinPkPowerRoom/scripts.pory"
+# 329 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "¡Vaya tela! ¡A seguir trabajando!$"

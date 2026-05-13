@@ -71,6 +71,22 @@ SINGLE_BATTLE_TEST("Rayquaza can Mega Evolve knowing Dragon Ascent")
     }
 }
 
+SINGLE_BATTLE_TEST("Armored Mewtwo can Mega Evolve knowing Psystrike")
+{
+    GIVEN {
+        PLAYER(SPECIES_ARMORED_MEWTWO) { Moves(MOVE_PSYSTRIKE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
+    } SCENE {
+        MESSAGE("1's fervent wish has reached Mewtwo!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, player);
+        MESSAGE("Mewtwo has Mega Evolved into Mega Mewtwo!");
+    } THEN {
+        EXPECT_EQ(player->species, SPECIES_ARMORED_MEWTWO_MEGA);
+    }
+}
+
 SINGLE_BATTLE_TEST("Mega Evolution doesn't affect turn order (Gen6)")
 {
     GIVEN {

@@ -4330,6 +4330,16 @@
       "secondary_tileset": "gTileset_room_collaborators",
       "border_filepath": "data/layouts/CollaboratorsRoom/border.bin",
       "blockdata_filepath": "data/layouts/CollaboratorsRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_REST_ROOM",
+      "name": "RestRoom_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_RoomGeneral",
+      "secondary_tileset": "gTileset_lobby",
+      "border_filepath": "data/layouts/RestRoom/border.bin",
+      "blockdata_filepath": "data/layouts/RestRoom/map.bin"
     }
   ]
 }

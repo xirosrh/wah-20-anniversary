@@ -192,6 +192,7 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(walk_up * 3, walk_right * 4, face_down))
     setvar(VAR_TEMP_0_DAVZERO_ROOM_STATE, 1)
     setflag(FLAG_DEFEATED_ADMIN_DAVZERO)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -208,7 +209,6 @@ script DavZeroRoom_EventScript_DavZeroBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_DAVZERO_ALTERNATIVE, DavZeroRoom_Text_DavZeroDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

@@ -215,6 +215,7 @@ script CheveRoom_EventScript_CuttableTree {
     setflag(FLAG_TEMP_3_CHEVE_ROOM_HIDE_TREE)
     setobjectxyperm(LOCALID_CHEVEROOM_CHEVE, 6, 5)
     setobjectmovementtype2(LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -231,7 +232,6 @@ script CheveRoom_EventScript_CheveBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE, CheveRoom_Text_CheveDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

@@ -142,7 +142,11 @@
 #define TRAINER_PIC_GOSUTO                124
 #define TRAINER_PIC_CACO                  125
 #define TRAINER_PIC_GAMEBOY_CL            126
-#define TRAINER_PIC_COUNT                 127
+#define TRAINER_PIC_RYUZAKI               127
+#define TRAINER_PIC_MRNIGHTOLOGY          128
+#define TRAINER_PIC_ACIMUT                129
+#define TRAINER_PIC_MICOLO                130
+#define TRAINER_PIC_COUNT                 131
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

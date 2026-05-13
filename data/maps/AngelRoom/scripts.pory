@@ -125,6 +125,7 @@ script AngelRoom_EventScript_Angel {
         setobjectmovementtype2(LOCALID_ANGELROOM_ANGEL, MOVEMENT_TYPE_FACE_RIGHT)
     }
     setflag(FLAG_DEFEATED_ADMIN_ANGEL)
+    call(WahRoomsShared_EventScript_AfterBattle)
     release
     end
 }
@@ -141,7 +142,6 @@ script AngelRoom_EventScript_AngelBattle {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_ANGEL_ALTERNATIVE, AngelRoom_Text_AngelDefeated)
         }
     }
-    special(HealPlayerParty)
     return
 }
 

@@ -33,10 +33,10 @@ enum {
 #define VERSION_BANNER_LEFT_X 102
 #define VERSION_BANNER_RIGHT_X 166
 #define VERSION_BANNER_Y 4
-#define VERSION_BANNER_Y_GOAL 42
+#define VERSION_BANNER_Y_GOAL 50
 #define START_BANNER_X 128
 
-#define MON_LOGO_FINAL_Y 20
+#define MON_LOGO_FINAL_Y 10
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
 #define RESET_RTC_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_LEFT)
@@ -890,8 +890,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
         CreatePressStartBanner(START_BANNER_X, 146);
         // CreateCopyrightBanner(START_BANNER_X, 148);
 
-        CreateSprite(&sMoltresBodySpriteTemplate, 120, 69, 0);
-        CreateSprite(&sMoltresTailSpriteTemplate, 160, 69, 0);
+        CreateSprite(&sMoltresBodySpriteTemplate, 120, 73, 0);
+        CreateSprite(&sMoltresTailSpriteTemplate, 160, 73, 0);
 
 
         gTasks[taskId].tBg1X = 0;

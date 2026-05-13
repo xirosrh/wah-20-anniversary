@@ -1819,7 +1819,6 @@ static const struct SpriteFrameImage sPicTable_DudunsparceThreeSegment[] = {
     overworld_ascending_frames(gObjectEventPic_DudunsparceThreeSegment, 8, 8),
 };
 
-
 #endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_DUNSPARCE
 
@@ -4557,7 +4556,6 @@ static const struct SpriteFrameImage sPicTable_Genesect[] = {
 
 
 
-
 #endif //P_FAMILY_GENESECT
 
 #if P_FAMILY_CHESPIN
@@ -4600,6 +4598,10 @@ static const struct SpriteFrameImage sPicTable_GreninjaAsh[] = {
 };
 #endif //OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_FROAKIE
+
+static const struct SpriteFrameImage sPicTable_GreninjaR[] = {
+    overworld_ascending_frames(gObjectEventPic_GreninjaR, 4, 4),
+};
 
 #if P_FAMILY_BUNNELBY
 static const struct SpriteFrameImage sPicTable_Bunnelby[] = {

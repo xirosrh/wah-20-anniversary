@@ -80,7 +80,7 @@
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD    0x42 // Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT    0x43 // Used WAH
 #define FLAG_FORCE_DOUBLE_BATTLE    0x44 // Forces all single-trainer battles to be double battles
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_REST_ROOM_MART_PRICE_MULTIPLIER    0x45 // Used WAH
 #define FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED    0x46 // Used WAH
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI    0x47 // Used WAH
 #define FLAG_TRANSPARENT_BOX 0x48
@@ -89,7 +89,7 @@
 #define FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN    0x4B // First PC boot message after WAH Challenge (Pokebox software update)
 #define FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES        0x4C // Used WAH achievements
 #define FLAG_FOUND_TILE_KECLEON    0x4D // Used WAH
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define FLAG_ALEXMAD_EVENT_GIVE_CLONES    0x4E // Used WAH
 #define FLAG_INVERSE_BATTLE    0x4F // Used WAH
 
 // Scripts
@@ -98,7 +98,7 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
+#define FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES    0x54  // Used WAH
 #define FLAG_UNUSED_0x055                    0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly

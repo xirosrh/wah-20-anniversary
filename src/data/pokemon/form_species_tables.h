@@ -2568,3 +2568,21 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+static const u16 sGreninjaRFormSpeciesIdTable[] = {
+    SPECIES_GRENINJA_R,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_GRENINJA_R_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+
+#if P_FAMILY_MEWTWO
+static const u16 sArmoredMewtwoFormSpeciesIdTable[] = {
+    SPECIES_ARMORED_MEWTWO,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_ARMORED_MEWTWO_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_MEWTWO

@@ -185,15 +185,20 @@ static const struct WahCredits sWahCreditsSections[] =
         { 
             COMPOUND_STRING("Gameboy_cl"),
             COMPOUND_STRING("Gosuto"),
+            COMPOUND_STRING(""), //Empty on purpose
+            
             COMPOUND_STRING("Erkey830"),
-
             COMPOUND_STRING("Micolo"),
+            COMPOUND_STRING(""), //Empty on purpose
+
+
             COMPOUND_STRING("Alexmad"),
             COMPOUND_STRING("MrNightology"),
-
             COMPOUND_STRING("Acimut"),
+            
             COMPOUND_STRING("Kaktus"),
             COMPOUND_STRING("Ryuzaki"),
+            COMPOUND_STRING(""), //Empty on purpose
             NULL
         },
     },
@@ -209,6 +214,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("CompuMax"),
             COMPOUND_STRING("Axel Loquendo"),
 
+
             COMPOUND_STRING("Howdy"),
             COMPOUND_STRING("RevkenHack"),
             COMPOUND_STRING("Hedara"),
@@ -217,17 +223,28 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Archie"),
             COMPOUND_STRING("Lykeron"),
 
+
             COMPOUND_STRING("Juanjo"),
             COMPOUND_STRING("Luna"),
             COMPOUND_STRING("ghoulslash"),
 
-            COMPOUND_STRING("TheXaman"),
+            COMPOUND_STRING("aethestode"),
             COMPOUND_STRING("gogglesdegiraffe"),
             COMPOUND_STRING(""), //Empty on purpose
-
+            
+            
             COMPOUND_STRING("Big Snort"),
+            COMPOUND_STRING("TheXaman"),
             COMPOUND_STRING("Retro NC"),
+            
+            COMPOUND_STRING("Boxheadpaint"),
+            COMPOUND_STRING("Galton"),
             COMPOUND_STRING("DestvoL"),
+            
+
+            COMPOUND_STRING("Lmburningsoul"),
+            COMPOUND_STRING("Tiempillo"),
+            COMPOUND_STRING("Oom"),
 
             NULL
         }
@@ -244,6 +261,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Huderlem"),
             COMPOUND_STRING("grunt-lucas"),
 
+
             COMPOUND_STRING("Baro"),
             COMPOUND_STRING("Serg!o"),
             COMPOUND_STRING("eing"),
@@ -251,6 +269,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Scarex"),
             COMPOUND_STRING("Tokyn"),
             COMPOUND_STRING("Gallego13"),
+
 
             COMPOUND_STRING("cosarara97"),
             COMPOUND_STRING("Helix Boo"),
@@ -260,6 +279,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Javi4315"),
             COMPOUND_STRING("Katherine"),
 
+
             COMPOUND_STRING("ReoNeky"),
             COMPOUND_STRING("Sayer"),
             COMPOUND_STRING("BLAx501!"),
@@ -267,6 +287,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("KleinStudio"),
             COMPOUND_STRING("DavZero"),
             COMPOUND_STRING("War"),
+
 
             COMPOUND_STRING("PkPower"),
             COMPOUND_STRING("Drive"),
@@ -276,6 +297,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Omega"),
             COMPOUND_STRING("Javs"),
 
+
             COMPOUND_STRING("Ozumas"),
             COMPOUND_STRING("MAIDEN"),
             COMPOUND_STRING("Dragonsden"),
@@ -283,6 +305,10 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Morti"),
             COMPOUND_STRING("Kakarotto"),
             COMPOUND_STRING("Criisss"),
+
+
+            COMPOUND_STRING("Ivantxo"),
+            COMPOUND_STRING("Seven7hNight"),
             NULL
         }
     },
@@ -339,10 +365,10 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_JAVS, TRAINER_PIC_BOO},
     {TRAINER_PIC_SERGIO, TRAINER_NONE},
     {TRAINER_PIC_GAMEBOY_CL, TRAINER_PIC_ALEXMAD},
-    {TRAINER_PIC_GOSUTO, TRAINER_PIC_GOSUTO}, ////TODO XirosACIMUT
-    {TRAINER_PIC_ERKEY, TRAINER_PIC_ERKEY}, ////TODO Xiros MICOLO
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_KAKTUS}, ////TODO Xiros RYUZAKI
-    {TRAINER_PIC_KAKTUS, TRAINER_PIC_ROXAS}, ////TODO Xiros MrNightology
+    {TRAINER_PIC_GOSUTO, TRAINER_PIC_ACIMUT},
+    {TRAINER_PIC_MICOLO, TRAINER_PIC_ERKEY },
+    {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
+    {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
 };
 
 static const u16 sWahCreditsPokemonList[] =
@@ -351,13 +377,15 @@ static const u16 sWahCreditsPokemonList[] =
     SPECIES_PLUGOINK,
     SPECIES_EING,
     SPECIES_DIRAEI,
-    SPECIES_MEWTWO, //TODO Xiros: Mewtwo with armor
-    SPECIES_VENUSAUR, //TODO Xiros:  Clone
-    SPECIES_CHARIZARD,  //TODO Xiros:  Clone
-    SPECIES_BLASTOISE,  //TODO Xiros:  Clone
+    SPECIES_ARMORED_MEWTWO,
+    SPECIES_VENUSAUR_C,
+    SPECIES_CHARIZARD_C,
+    SPECIES_BLASTOISE_C,
     SPECIES_FREECH,
     SPECIES_DRAGONITE_MEGA,
-    SPECIES_GRENINJA, //TODO Xiros: Red greninja
+    SPECIES_GRENINJA_R,
+    SPECIES_GOROCHU,
+    SPECIES_DUN,
     //TODO Xiros Species Beta pokemon
     SPECIES_MOLTRES,
 };

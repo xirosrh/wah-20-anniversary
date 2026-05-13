@@ -261,84 +261,84 @@ OmegaRoom_EventScript_StartChallenge::
 # 140 "data/maps/OmegaRoom/scripts.pory"
 	setvar VAR_TEMP_0, 1
 # 141 "data/maps/OmegaRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 142 "data/maps/OmegaRoom/scripts.pory"
 	release
 	end
 
 
 OmegaRoom_EventScript_OmegaAwakens::
-# 146 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 4, METATILE_room_omega_OMEGA_AWAKENS_1, FALSE
 # 147 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 4, METATILE_room_omega_OMEGA_AWAKENS_2, FALSE
+	setmetatile 5, 4, METATILE_room_omega_OMEGA_AWAKENS_1, FALSE
 # 148 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 4, METATILE_room_omega_OMEGA_AWAKENS_3, FALSE
+	setmetatile 6, 4, METATILE_room_omega_OMEGA_AWAKENS_2, FALSE
 # 149 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 5, METATILE_room_omega_OMEGA_AWAKENS_4, FALSE
+	setmetatile 7, 4, METATILE_room_omega_OMEGA_AWAKENS_3, FALSE
 # 150 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 5, METATILE_room_omega_OMEGA_AWAKENS_5, FALSE
+	setmetatile 5, 5, METATILE_room_omega_OMEGA_AWAKENS_4, FALSE
 # 151 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 5, METATILE_room_omega_OMEGA_AWAKENS_6, FALSE
+	setmetatile 6, 5, METATILE_room_omega_OMEGA_AWAKENS_5, FALSE
 # 152 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 6, METATILE_room_omega_OMEGA_AWAKENS_7, TRUE
+	setmetatile 7, 5, METATILE_room_omega_OMEGA_AWAKENS_6, FALSE
 # 153 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 6, METATILE_room_omega_OMEGA_AWAKENS_7, TRUE
+# 154 "data/maps/OmegaRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 OmegaRoom_EventScript_BrokenCapsule::
-# 158 "data/maps/OmegaRoom/scripts.pory"
-	playse SE_ICE_CRACK
 # 159 "data/maps/OmegaRoom/scripts.pory"
-	waitse
+	playse SE_ICE_CRACK
 # 160 "data/maps/OmegaRoom/scripts.pory"
-	playse SE_M_BRICK_BREAK
-# 161 "data/maps/OmegaRoom/scripts.pory"
 	waitse
+# 161 "data/maps/OmegaRoom/scripts.pory"
+	playse SE_M_BRICK_BREAK
 # 162 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 4, METATILE_room_omega_CAPSULE_BROKEN_1, FALSE
+	waitse
 # 163 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 4, METATILE_room_omega_CAPSULE_BROKEN_2, FALSE
+	setmetatile 5, 4, METATILE_room_omega_CAPSULE_BROKEN_1, FALSE
 # 164 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 4, METATILE_room_omega_CAPSULE_BROKEN_3, FALSE
+	setmetatile 6, 4, METATILE_room_omega_CAPSULE_BROKEN_2, FALSE
 # 165 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 5, 5, METATILE_room_omega_CAPSULE_BROKEN_4, FALSE
+	setmetatile 7, 4, METATILE_room_omega_CAPSULE_BROKEN_3, FALSE
 # 166 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 5, METATILE_room_omega_CAPSULE_BROKEN_5, FALSE
+	setmetatile 5, 5, METATILE_room_omega_CAPSULE_BROKEN_4, FALSE
 # 167 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 7, 5, METATILE_room_omega_CAPSULE_BROKEN_6, FALSE
+	setmetatile 6, 5, METATILE_room_omega_CAPSULE_BROKEN_5, FALSE
 # 168 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE
+	setmetatile 7, 5, METATILE_room_omega_CAPSULE_BROKEN_6, FALSE
 # 169 "data/maps/OmegaRoom/scripts.pory"
-	setmetatile 6, 7, METATILE_room_omega_BROKEN_GLASS, FALSE
+	setmetatile 6, 6, METATILE_room_omega_CAPSULE_BROKEN_7, TRUE
 # 170 "data/maps/OmegaRoom/scripts.pory"
+	setmetatile 6, 7, METATILE_room_omega_BROKEN_GLASS, FALSE
+# 171 "data/maps/OmegaRoom/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 OmegaRoom_EventScript_OmegaBattle::
-# 175 "data/maps/OmegaRoom/scripts.pory"
+# 176 "data/maps/OmegaRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, OmegaRoom_EventScript_OmegaBattle_2
-# 178 "data/maps/OmegaRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_OMEGA
 # 179 "data/maps/OmegaRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_OMEGA
 # 180 "data/maps/OmegaRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 181 "data/maps/OmegaRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OmegaRoom_EventScript_OmegaBattle_5
-# 183 "data/maps/OmegaRoom/scripts.pory"
+# 184 "data/maps/OmegaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_ALTERNATIVE, OmegaRoom_Text_OmegaDefeated
 OmegaRoom_EventScript_OmegaBattle_1:
-# 186 "data/maps/OmegaRoom/scripts.pory"
-	special HealPlayerParty
 	return
 
 OmegaRoom_EventScript_OmegaBattle_2:
-# 176 "data/maps/OmegaRoom/scripts.pory"
+# 177 "data/maps/OmegaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated
 	goto OmegaRoom_EventScript_OmegaBattle_1
 
 OmegaRoom_EventScript_OmegaBattle_5:
-# 181 "data/maps/OmegaRoom/scripts.pory"
+# 182 "data/maps/OmegaRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_OMEGA_MAIN, OmegaRoom_Text_OmegaDefeated
 	goto OmegaRoom_EventScript_OmegaBattle_1
 
