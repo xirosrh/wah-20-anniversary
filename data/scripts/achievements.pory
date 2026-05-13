@@ -71,6 +71,12 @@ script Achievements_EventScript_Eval_DefeatAllCollaborators {
     return
 }
 
+script Achievements_EventScript_Eval_DefeatAllCollaboratorsNoFaints {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS_NO_FAINTS)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
 script Achievements_EventScript_Eval_Common {
     delay(30)
     specialvar(VAR_RESULT, Special_CheckAndCompleteAchievement)

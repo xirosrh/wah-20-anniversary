@@ -2,12 +2,17 @@
 #include "event_data.h"
 #include "constants/achievements.h"
 #include "constants/vars.h"
+#include "constants/maps.h"
 #include "achievements.h"
 #include "constants/difficulty.h"
 #include "difficulty.h"
 #include "pokemon.h"
 #include "money.h"
 #include "pokebox_manager.h"
+
+#define COLLABORATORS_NO_FAINT_PROGRESS_VAR VAR_TEMP_0
+#define COLLABORATORS_NO_FAINT_ALL_BITS ((1 << 10) - 1)
+
 struct AchievementEntry
 {
     const u8 *title;
@@ -23,6 +28,7 @@ static bool8 CheckWinWahChallengeInverse(u8 id);
 static bool8 CheckDefeatAllAdmins(u8 id);
 static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
+static bool8 CheckDefeatAllCollaboratorsNoFaints(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
 static bool8 CheckFoundTileKecleon(u8 id);
@@ -59,6 +65,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .description = COMPOUND_STRING("Derrota a todos los colaboradores\nde la zona creativa.\nNadie queda sin probar tu nivel."),
         .target = TRUE,
         .check = CheckDefeatAllCollaborators,
+    },
+    [ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS_NO_FAINTS] = {
+        .title = COMPOUND_STRING("Zona creativa impecable"),
+        .description = COMPOUND_STRING("Derrota a todos los colaboradores\nsin salir de su sala y sin que se\ndebilite ningún Pokémon."),
+        .target = COLLABORATORS_NO_FAINT_ALL_BITS,
+        .check = CheckDefeatAllCollaboratorsNoFaints,
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES] = {
         .title = COMPOUND_STRING("Pesadilla recurrente"),
@@ -188,6 +200,13 @@ static bool8 CheckDefeatAllCollaborators(u8 id)
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT) &&
            FlagGet(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI);
+}
+
+static bool8 CheckDefeatAllCollaboratorsNoFaints(u8 id)
+{
+    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_COLLABORATORS_ROOM)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_COLLABORATORS_ROOM)
+        && VarGet(COLLABORATORS_NO_FAINT_PROGRESS_VAR) == sAchievements[id].target;
 }
 
 static bool8 CheckDefeatAllAdmins(u8 id)
