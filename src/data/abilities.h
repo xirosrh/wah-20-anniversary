@@ -2443,4 +2443,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_ULTIMATE_ARMOR] =
+    {
+        .name = _("Armadura Ult."),
+        .description = COMPOUND_STRING("Mitiga supereficaces x0.5."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_BRAIN_UP] =
+    {
+        .name = _("Cálculo mental"),
+        .description = COMPOUND_STRING("Debilitar sube Ataque Esp."),
+        .aiRating = 7,
+    },
 };

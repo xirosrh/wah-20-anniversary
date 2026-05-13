@@ -1719,8 +1719,10 @@
 #define SPECIES_BLASTOISE_C                            1597
 #define SPECIES_GRENINJA_R                             1598
 #define SPECIES_GRENINJA_R_MEGA                        1599
+#define SPECIES_ARMORED_MEWTWO                         1600
+#define SPECIES_ARMORED_MEWTWO_MEGA                    1601
 
-#define SPECIES_EGG                                     (SPECIES_GRENINJA_R_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_ARMORED_MEWTWO_MEGA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
