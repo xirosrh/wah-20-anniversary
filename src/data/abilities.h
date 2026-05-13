@@ -2450,4 +2450,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Mitiga supereficaces x0.5."),
         .aiRating = 8,
     },
+
+    [ABILITY_BRAIN_UP] =
+    {
+        .name = _("Cálculo mental"),
+        .description = COMPOUND_STRING("Debilitar sube Ataque Esp."),
+        .aiRating = 7,
+    },
 };
