@@ -143,7 +143,15 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .check = CheckPokebox_AlexmadEventGiveClones
     },
     {
-        .mon = POKEBOX_MON(SPECIES_MEWTWO), //TODO Xiros: Armored mewtwo
+        .mon = {
+            .specie = SPECIES_ARMORED_MEWTWO,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_PSYSTRIKE, MOVE_AURA_SPHERE, MOVE_SHADOW_BALL, MOVE_MOONBLAST},
+        },
         .description = sText_PokeboxAlexmadEvent,
         .money = 0,
         .check = CheckPokebox_AlexmadEventCompleted
