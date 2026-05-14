@@ -607,10 +607,6 @@ extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_32[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_35[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_44[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59[];
-extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_28[];
-extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_42[];
-extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_54[];
-extern const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_59[];
 
 extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_36[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_48[];

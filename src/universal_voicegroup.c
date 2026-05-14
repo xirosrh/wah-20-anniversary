@@ -848,8 +848,8 @@ const union VoiceGroup voicegroup_agm_standard[] =
     [ELECTRIC_BASS_FINGER]  = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
     [ELECTRIC_BASS_PICK]    = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
     [FRETLESS_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_Fretless_Bass, KeySplit_AGM_Bass),
-    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
-    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
+    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
     [SYNTH_BASS_1]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
     [SYNTH_BASS_2]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_2, KeySplit_AGM_Synth_Bass),
 
@@ -997,8 +997,8 @@ const union VoiceGroup voicegroup_agm_room[] =
     [ELECTRIC_BASS_FINGER]  = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
     [ELECTRIC_BASS_PICK]    = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
     [FRETLESS_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_Fretless_Bass, KeySplit_AGM_Bass),
-    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
-    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
+    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
     [SYNTH_BASS_1]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
     [SYNTH_BASS_2]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_2, KeySplit_AGM_Synth_Bass),
 
@@ -1145,8 +1145,8 @@ const union VoiceGroup voicegroup_agm_power[] =
     [ELECTRIC_BASS_FINGER]  = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
     [ELECTRIC_BASS_PICK]    = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
     [FRETLESS_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_Fretless_Bass, KeySplit_AGM_Bass),
-    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
-    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
+    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
     [SYNTH_BASS_1]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
     [SYNTH_BASS_2]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_2, KeySplit_AGM_Synth_Bass),
 
@@ -1293,8 +1293,8 @@ const union VoiceGroup voicegroup_agm_cm64[] =
     [ELECTRIC_BASS_FINGER]  = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
     [ELECTRIC_BASS_PICK]    = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
     [FRETLESS_BASS]         = INSTRUMENT_SPLIT(Instrument_AGM_Fretless_Bass, KeySplit_AGM_Bass),
-    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
-    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
+    [SLAP_BASS_2]           = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
     [SYNTH_BASS_1]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
     [SYNTH_BASS_2]          = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_2, KeySplit_AGM_Synth_Bass),
 
@@ -1435,7 +1435,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [ROCK_ORGAN]            = INSTRUMENT_SPLIT(Instrument_FE7_ElectricGuitarClean, KeySplitTable19),
     [CHURCH_ORGAN]          = INSTRUMENT_SPLIT(Instrument_AGM_Acoustic_Bass, KeySplit_AGM_Bass),//HGSS Upright Bass
     [REED_ORGAN]            = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Finger, KeySplit_AGM_Bass),
-    [ACCORDION]             = INSTRUMENT_SPLIT(Instrument_AGM_Slap_Bass_1, KeySplit_AGM_Slap_Bass),
+    [ACCORDION]             = INSTRUMENT_SPLIT(Instrument_FE7_SlapBass1, KeySplitTable23),
     [HARMONICA]             = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
     [TANGO_ACCORDION]       = INSTRUMENT_SPLIT(Instrument_FE7_StringEnsemble1, KeySplitTable12),
 
