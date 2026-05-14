@@ -78,12 +78,12 @@ const u8 KeySplit_AGM_Guitar[] =
 
 const struct Instrument Instrument_AGM_Acoustic_Guitar_Nylon[] =
 {
-    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40, 255, 0, 255, 208),
-    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50, 255, 0, 255, 208),
-    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59, 255, 0, 255, 208),
-    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69, 255, 0, 255, 208),
-    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76, 255, 0, 255, 208),
-    [SAMPLE_5] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84, 255, 0, 255, 208),
+    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40, 220, 0, 255, 208),
+    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50, 192, 0, 255, 208),
+    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59, 128, 0, 255, 208),
+    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69, 128, 0, 255, 208),
+    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76, 192, 0, 255, 208),
+    [SAMPLE_5] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84, 192, 0, 255, 208),
 };
 
 const struct Instrument Instrument_AGM_Acoustic_Guitar_Steel[] =

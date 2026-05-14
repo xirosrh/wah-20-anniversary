@@ -280,7 +280,7 @@
 
 // Music
 #define START_MUS                   301
-#define MUS_INSTRUMENT_TEST         301 // mus_instrument_test (currently: 11 vibraphone)
+#define MUS_INSTRUMENT_TEST         301 // mus_instrument_test (currently: 60 french horn)
 
 #define MUS_TV_GOTTA_CATCH_EM_ALL   302 // mus_TV_Gotta_Catch_Em_All
 #define MUS_TV_TOTAL_WAR            303 // mus_TV_Total_War
