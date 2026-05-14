@@ -15,6 +15,7 @@ mapscripts CollaboratorsRoom_MapScripts {}
 
 script CollaboratorsRoom_EventScript_AfterBattleCollaborators {
     special(Special_UpdateCollaboratorsNoFaintProgress)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     call(Achievements_EventScript_Eval_DefeatAllCollaboratorsNoFaints)
     call(WahRoomsShared_EventScript_AfterBattle)
     return
@@ -72,7 +73,6 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -170,7 +170,6 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
@@ -273,7 +272,6 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Erkey_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
@@ -397,7 +395,6 @@ script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
 }
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     releaseall
     end
@@ -713,7 +710,6 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
@@ -829,7 +825,6 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Acimut_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
@@ -996,7 +991,6 @@ script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
     release
     end
@@ -1240,7 +1234,6 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -1385,7 +1378,6 @@ script CollaboratorsRoom_EventScript_Caco_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Caco_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -1432,7 +1424,8 @@ script CollaboratorsRoom_EventScript_Caco {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_CACO)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
     } else {
         // Si no ha completado el desafío
