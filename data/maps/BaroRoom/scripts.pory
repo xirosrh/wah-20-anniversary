@@ -185,16 +185,36 @@ script BaroRoom_OnFrame {
     lock
     applymovement(LOCALID_BAROROOM_PLUGOINK, moves(face_player, lock_facing_direction, jump_in_place_down * 2, unlock_facing_direction, face_player))
     waitmovement(0)
-    msgbox(format("Oink, oink, oink…"), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_PLUGOINK, CRY_MODE_NORMAL)
+    msgbox(format("Oink, oink, oink…"), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    if (!flag(FLAG_MET_BARO_ROOM_PLUGOINK)) {
+         setflag(FLAG_MET_BARO_ROOM_PLUGOINK)
+         call(Pokebox_EventScript_ShowUnlocks)
+    }
+    release
     end
  }	
 
  script BaroRoom_EventScript_Sever {
-    msgbox(format("¡Sever!"), MSGBOX_NPC)
+    lock
+    faceplayer
+    playmoncry(SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+    msgbox(format("¡Sever!"), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    release
     end
  }
 
  script BaroRoom_EventScript_Seeg {
-    msgbox(format("See, see."), MSGBOX_NPC)
+    lock
+    faceplayer
+    playmoncry(SPECIES_TREECKO, CRY_MODE_NORMAL)
+    msgbox(format("See, see."), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    release
     end
  }

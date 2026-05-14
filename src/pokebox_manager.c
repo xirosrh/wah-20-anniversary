@@ -23,6 +23,7 @@ static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
 static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
 static bool8 CheckPokebox_AchievementAvaricia(u8 id);
+static bool8 CheckPokebox_MetBaroRoomPlugOink(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -51,6 +52,7 @@ const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
 static const u8 sText_PokeboxAlexmadEvent[] = _("Completa el evento especial\nde Alexmad.");
 static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
 static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
+static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Habla con Plug-Oink en la\nsala de Baro.");
 
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \
@@ -765,6 +767,20 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_AchievementAvaricia
     },
+    {
+        .mon = {
+            .specie = SPECIES_PLUGOINK,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLAMETHROWER, MOVE_CHARGE_BEAM, MOVE_SNARL, MOVE_THUNDERBOLT},
+        },
+        .description = sText_PokeboxMetBaroRoomPlugOink,
+        .money = 0,
+        .check = CheckPokebox_MetBaroRoomPlugOink
+    },
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sPokeboxSpeciesList) <= 64, PokeboxSpeciesListExceedsMonActiveBits);
@@ -859,6 +875,12 @@ static bool8 CheckPokebox_AchievementAvaricia(u8 id)
 {
     (void)id;
     return Achievement_IsComplete(ACHIEVEMENT_AVARICIA);
+}
+
+static bool8 CheckPokebox_MetBaroRoomPlugOink(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_MET_BARO_ROOM_PLUGOINK);
 }
 
 static bool8 CheckPokebox_isBuyMon(u8 id)

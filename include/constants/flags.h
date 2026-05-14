@@ -99,7 +99,7 @@
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES    0x54  // Used WAH
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_MET_BARO_ROOM_PLUGOINK          0x55  // Used WAH
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
