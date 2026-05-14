@@ -958,6 +958,27 @@ u8 GetBattleOutcome(void)
     return gBattleOutcome;
 }
 
+#define COLLABORATORS_NO_FAINT_PROGRESS_VAR VAR_TEMP_0
+#define COLLABORATORS_NO_FAINT_COUNT 10
+
+void Special_UpdateCollaboratorsNoFaintProgress(void)
+{
+    u16 collaboratorBit = gSpecialVar_0x8004;
+    u16 progress;
+
+    if (gBattleOutcome != B_OUTCOME_WON || gBattleResults.playerFaintCounter != 0)
+    {
+        VarSet(COLLABORATORS_NO_FAINT_PROGRESS_VAR, 0);
+        return;
+    }
+
+    if (collaboratorBit >= COLLABORATORS_NO_FAINT_COUNT)
+        return;
+
+    progress = VarGet(COLLABORATORS_NO_FAINT_PROGRESS_VAR);
+    VarSet(COLLABORATORS_NO_FAINT_PROGRESS_VAR, progress | (1 << collaboratorBit));
+}
+
 void CableCarWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)

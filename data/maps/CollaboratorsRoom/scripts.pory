@@ -1,4 +1,25 @@
+const VAR_TEMP_COLLABORATORS_NO_FAINT_PROGRESS = VAR_TEMP_0
+
+const COLLABORATOR_NO_FAINT_BIT_KAKTUS = 0
+const COLLABORATOR_NO_FAINT_BIT_GAMEBOYCL = 1
+const COLLABORATOR_NO_FAINT_BIT_ERKEY = 2
+const COLLABORATOR_NO_FAINT_BIT_MICOLO = 3
+const COLLABORATOR_NO_FAINT_BIT_MRNIGHTOLOGY = 4
+const COLLABORATOR_NO_FAINT_BIT_GOSUTO = 5
+const COLLABORATOR_NO_FAINT_BIT_ACIMUT = 6
+const COLLABORATOR_NO_FAINT_BIT_ALEXMAD = 7
+const COLLABORATOR_NO_FAINT_BIT_RYUZAKI = 8
+const COLLABORATOR_NO_FAINT_BIT_CACO = 9
+
 mapscripts CollaboratorsRoom_MapScripts {}
+
+script CollaboratorsRoom_EventScript_AfterBattleCollaborators {
+    special(Special_UpdateCollaboratorsNoFaintProgress)
+    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
+    call(Achievements_EventScript_Eval_DefeatAllCollaboratorsNoFaints)
+    call(WahRoomsShared_EventScript_AfterBattle)
+    return
+}
 
 
 script CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle {
@@ -52,7 +73,6 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -98,7 +118,8 @@ script CollaboratorsRoom_EventScript_Kaktus {
             waitmovement(0)
             msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_KAKTUS)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
@@ -149,7 +170,6 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
@@ -192,7 +212,8 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         } else {
             msgbox(format("Cuando te sientas preparad{OA}, vuelve y probamos nuestros equipos en un duelo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_GAMEBOYCL)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
@@ -251,7 +272,6 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Erkey_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     release
     end
@@ -291,7 +311,8 @@ script CollaboratorsRoom_EventScript_Erkey {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_ERKEY)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
@@ -374,7 +395,6 @@ script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
 }
 
 script CollaboratorsRoom_EventScript_Micolo_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_WEST)
     releaseall
     end
@@ -440,7 +460,8 @@ script CollaboratorsRoom_EventScript_Micolo {
             playse(SE_LEDGE)
             applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_MICOLO)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
@@ -608,7 +629,8 @@ script CollaboratorsRoom_EventScript_MrNightology {
             setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, -3)
             fadescreen(FADE_FROM_BLACK)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_MRNIGHTOLOGY)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
@@ -688,7 +710,6 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
@@ -724,7 +745,8 @@ script CollaboratorsRoom_EventScript_Gosuto {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_GOSUTO)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
@@ -803,7 +825,6 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Acimut_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_NORTH)
     release
     end
@@ -843,7 +864,8 @@ script CollaboratorsRoom_EventScript_Acimut {
             delay(20)
             msgbox(format("Si quieres volver a intentarlo, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_ACIMUT)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
     } else {
         goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
@@ -963,12 +985,12 @@ script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
         call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
-    call(WahRoomsShared_EventScript_AfterBattle)
+    setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_ALEXMAD)
+    call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(LOCALID_COLLABORATORS_ROOM_ALEXMAD, DIR_NORTH)
     release
     end
@@ -1212,7 +1234,6 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -1252,7 +1273,8 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_RYUZAKI)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
     } else {
         msgbox(format("Hola querid{OA} coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
@@ -1356,7 +1378,6 @@ script CollaboratorsRoom_EventScript_Caco_IntroRematch {
 }
 
 script CollaboratorsRoom_EventScript_Caco_OnFinishEvent {
-    call(Achievements_EventScript_Eval_DefeatAllCollaborators)
     turnobject(VAR_LAST_TALKED, DIR_EAST)
     release
     end
@@ -1403,7 +1424,8 @@ script CollaboratorsRoom_EventScript_Caco {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         }
-        call(WahRoomsShared_EventScript_AfterBattle)
+        setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_CACO)
+        call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
     } else {
         // Si no ha completado el desafío
