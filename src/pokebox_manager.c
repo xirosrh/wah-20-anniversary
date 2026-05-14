@@ -196,23 +196,43 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
     },  
-    { 
-        .mon = POKEBOX_MON(SPECIES_GOROCHU), //TODO Xiros
-        .description = sText_PokeboxWahChallengeOnce, 
+    {
+        .mon = {
+            .specie = SPECIES_GOROCHU,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_DUN), //TODO Xiros
-        .description = sText_PokeboxWahChallengeOnce, 
-        .money = 1000,
-        .check = CheckPokebox_isBuyMon
-    },
-    { 
-        .mon = POKEBOX_MON(SPECIES_TAABAN), //TODO Xiros
-        .description = sText_PokeboxWahChallengeOnce, 
+    {
+        .mon = {
+            .specie = SPECIES_DUN,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_PSYCHIC, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_AIR_SLASH},
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
+    },
+    {
+        .mon = {
+            .specie = SPECIES_TAABAN,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .money = 0,
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
     {
         .mon = {
@@ -223,21 +243,35 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
         },
-        .description = sText_PokeboxWahChallengeOnce,
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_MADAAMU), //TODO Xiros
-        .description = sText_PokeboxWahChallengeOnce, 
+    {
+        .mon = {
+            .specie = SPECIES_MADAAMU,
+            .ability = ABILITY_INTIMIDATE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
-    { 
-        .mon = POKEBOX_MON(SPECIES_AKUERIA), //TODO Xiros
-        .description = sText_PokeboxWahChallengeOnce, 
+    {
+        .mon = {
+            .specie = SPECIES_AKUERIA,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAGON_PULSE, MOVE_SCALD, MOVE_ICE_BEAM, MOVE_TRI_ATTACK},
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
     {
         .mon = {
@@ -248,9 +282,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_MIST_BALL, MOVE_BLAZE_KICK, MOVE_DRAGON_CLAW, MOVE_DRAIN_PUNCH}
         },
-        .description = sText_PokeboxWahChallengeOnce, 
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
         .money = 0,
-        .check = CheckPokebox_isBuyMon
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },	
     {
         .mon = {
