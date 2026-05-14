@@ -377,7 +377,7 @@ static const u16 sWahCreditsPokemonList[] =
     SPECIES_PLUGOINK,
     SPECIES_EING,
     SPECIES_DIRAEI,
-    SPECIES_MEWTWO, //TODO Xiros: Mewtwo with armor
+    SPECIES_ARMORED_MEWTWO,
     SPECIES_VENUSAUR_C,
     SPECIES_CHARIZARD_C,
     SPECIES_BLASTOISE_C,

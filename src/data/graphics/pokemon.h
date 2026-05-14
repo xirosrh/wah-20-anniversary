@@ -27495,6 +27495,21 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonIcon_GreninjaRMega[] = INCBIN_U8("graphics/pokemon/greninja_r/mega/icon.4bpp");
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 
+#if P_FAMILY_MEWTWO
+    const u32 gMonFrontPic_ArmoredMewtwo[] = INCBIN_U32("graphics/pokemon/armored_mewtwo/front.4bpp.smol");
+    const u16 gMonPalette_ArmoredMewtwo[] = INCBIN_U16("graphics/pokemon/armored_mewtwo/normal.gbapal");
+    const u32 gMonBackPic_ArmoredMewtwo[] = INCBIN_U32("graphics/pokemon/armored_mewtwo/back.4bpp.smol");
+    const u16 gMonShinyPalette_ArmoredMewtwo[] = INCBIN_U16("graphics/pokemon/armored_mewtwo/shiny.gbapal");
+    const u8 gMonIcon_ArmoredMewtwo[] = INCBIN_U8("graphics/pokemon/armored_mewtwo/icon.4bpp");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ArmoredMewtwoMega[] = INCBIN_U32("graphics/pokemon/armored_mewtwo/mega/front.4bpp.smol");
+    const u16 gMonPalette_ArmoredMewtwoMega[] = INCBIN_U16("graphics/pokemon/armored_mewtwo/mega/normal.gbapal");
+    const u32 gMonBackPic_ArmoredMewtwoMega[] = INCBIN_U32("graphics/pokemon/armored_mewtwo/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_ArmoredMewtwoMega[] = INCBIN_U16("graphics/pokemon/armored_mewtwo/mega/shiny.gbapal");
+    const u8 gMonIcon_ArmoredMewtwoMega[] = INCBIN_U8("graphics/pokemon/armored_mewtwo/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+#endif //P_FAMILY_MEWTWO
+
     const u32 gMonFrontPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/front.4bpp.smol");
     const u16 gMonPalette_VenusaurC[] = INCBIN_U16("graphics/pokemon/venusaur_c/normal.gbapal");
     const u32 gMonBackPic_VenusaurC[] = INCBIN_U32("graphics/pokemon/venusaur_c/back.4bpp.smol");

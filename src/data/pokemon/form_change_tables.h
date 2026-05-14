@@ -1995,5 +1995,16 @@ static const struct FormChange sGreninjaRFormChangeTable[] =
     {FORM_CHANGE_TERMINATOR},
 };
 
+#if P_FAMILY_MEWTWO
+static const struct FormChange sArmoredMewtwoFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE,    SPECIES_ARMORED_MEWTWO_MEGA, MOVE_PSYSTRIKE},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_ARMORED_MEWTWO},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_MEWTWO
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN
