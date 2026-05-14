@@ -668,11 +668,233 @@ script Lobby_EventScript_QREventInfoKid {
 }
 
 script Lobby_EventScript_BetaMonQuestionnaire {
-    msgbox("PENDIENTE", MSGBOX_NPC) //TODO Xiros
-    end
+    lock
+    faceplayer
+    msgbox(format("¡Buenas! Soy el maestro de los cuestionarios."), MSGBOX_AUTOCLOSE)
+    if(var(VAR_WAH_CHALLENGE_COMPLETION_COUNT) == 0) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Surprise)
+        msgbox(format("Así que aún no has completado el desafío.\l...\l...\pCuando lo superes, vuelve y te haré un cuestionario especial."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    delay(20)
+    setvar(VAR_TEMP_0, 0)
+    specialvar(VAR_RESULT, Special_TryPickBetaMonQuestion)
+    switch(var(VAR_RESULT)) {
+        case BETA_MON_QUESTION_PICK_QUESTION:
+            msgbox(format("Te haré una pregunta por cada vez que hayas completado el desafío.\pSi fallas, tendrás que volver a completar el desafío para intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+            goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+        case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
+            msgbox(format("Ya has respondido todas mis preguntas beta.\pTodos esos Pokémon están disponibles en la Pokébox."), MSGBOX_AUTOCLOSE)
+            release
+            end
+        default:
+            msgbox(format("Ahora mismo no tienes preguntas pendientes.\pCompleta el desafío otra vez y vuelve por aquí."), MSGBOX_AUTOCLOSE)
+            release
+            end
+    }
 }
 
+script Lobby_EventScript_BetaMonQuestionnaire_NextQuestion {
+    specialvar(VAR_RESULT, Special_TryPickBetaMonQuestion)
+    switch(var(VAR_RESULT)) {
+        case BETA_MON_QUESTION_PICK_QUESTION:
+            msgbox(format("Aún tengo otra pregunta disponible.\p¿Quieres seguir respondiendo?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+            }
+            msgbox(format("De acuerdo. Puedes volver cuando quieras."), MSGBOX_AUTOCLOSE)
+            release
+            end
+        case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
+            msgbox(format("Ya no quedan más preguntas beta.\pTodos esos Pokémon están disponibles en la Pokébox."), MSGBOX_AUTOCLOSE)
+            release
+            end
+        case BETA_MON_QUESTION_PICK_NONE_THIS_TALK:
+            msgbox(format("Por ahora no tengo más preguntas distintas para hacerte.\pVuelve a hablarme en otro momento."), MSGBOX_AUTOCLOSE)
+            release
+            end
+        default:
+            msgbox(format("Eso es todo por ahora.\pCompleta el desafío otra vez si quieres otra pregunta."), MSGBOX_AUTOCLOSE)
+            release
+            end
+    }
+}
 
+script Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion {
+    addvar(VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT, 1)
+    switch(var(VAR_0x8004)) {
+        case BETA_MON_QUESTION_GOROCHU:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Gorochu)
+            break
+        case BETA_MON_QUESTION_TAABAN:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Taaban)
+            break
+        case BETA_MON_QUESTION_BOMUSHIKAA:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa)
+            break
+        case BETA_MON_QUESTION_MADAAMU:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Madaamu)
+            break
+        case BETA_MON_QUESTION_AKUERIA:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Akueria)
+            break
+        case BETA_MON_QUESTION_LATIKEN:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Latiken)
+            break
+    }
+    goto(Lobby_EventScript_BetaMonQuestionnaire_NextQuestion)
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Gorochu {
+    message(format("¿Qué Pokémon es naranja, tiene una cola larga y a todo el mundo le encanta el que evoluciona en él?"))
+    waitmessage
+    dynmultipush(format("Raichu"), 0)
+    dynmultipush(format("Pikachu"), 1)
+    dynmultipush(format("Charizard"), 2)
+    dynmultipush(format("Dragonite"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 0) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_GOROCHU)
+        msgbox(format("Pues con este Pokémon te encontrarás."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Taaban {
+    message(format("Mi amigo siempre va con su Bro detrás.\p¿Qué Pokémon es mi amigo?"))
+    waitmessage
+    dynmultipush(format("Slowking"), 0)
+    dynmultipush(format("Slowbro"), 1)
+    dynmultipush(format("Slowpoke"), 2)
+    dynmultipush(format("Shellder"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 1) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_TAABAN)
+        msgbox(format("Pues con su Bro te irás."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa {
+    message(format("Blanco como la nieve y una carita mona.\p¿Quién es?"))
+    waitmessage
+    dynmultipush(format("Seel"), 0)
+    dynmultipush(format("Cubchoo"), 1)
+    dynmultipush(format("Dewgong"), 2)
+    dynmultipush(format("Vanillite"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 2) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA)
+        msgbox(format("¡Pues este se le parece!"), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Madaamu {
+    message(format("El Capitán Puerro blande su espada en el bosque.\p¿Quién es realmente el Capitán Puerro?"))
+    waitmessage
+    dynmultipush(format("Sirfetch'd"), 0)
+    dynmultipush(format("Gallade"), 1)
+    dynmultipush(format("Farfetch'd"), 2)
+    dynmultipush(format("Scyther"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 2) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_MADAAMU)
+        msgbox(format("Exacto. Ese filo también despertó la curiosidad de Madaamu."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Akueria {
+    message(format("Adivina, adivinanza.\p¿Qué serpiente azul tiene una evolución naranja?"))
+    waitmessage
+    dynmultipush(format("Gyarados"), 0)
+    dynmultipush(format("Dratini"), 1)
+    dynmultipush(format("Milotic"), 2)
+    dynmultipush(format("Dragonair"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 1) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_AKUERIA)
+        msgbox(format("Pues su primo te ha visto luchar y te espera."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Latiken {
+    msgbox(format("Adivina, adivinanza.\p¿Qué Pokémon hace este grito?"), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_JIRACHI, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Jirachi"), 0)
+    dynmultipush(format("Celebi"), 1)
+    dynmultipush(format("Mew"), 2)
+    dynmultipush(format("Deoxys"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) != 0) {
+        msgbox(format("Oh, fallaste. Vuelve a intentarlo cuando completes otro desafío."), MSGBOX_AUTOCLOSE)
+        return
+    }
+
+    msgbox(format("Oh, correcto. Ahora mismo intenta adivinar este."), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_LATIAS, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Latios"), 0)
+    dynmultipush(format("Latias"), 1)
+    dynmultipush(format("Altaria"), 2)
+    dynmultipush(format("Flygon"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) != 1) {
+        msgbox(format("Oh, fallaste. Vuelve a intentarlo cuando completes otro desafío."), MSGBOX_AUTOCLOSE)
+        return
+    }
+
+    msgbox(format("Oh, volviste a acertar. Ahora este."), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_BLAZIKEN, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Blaziken"), 0)
+    dynmultipush(format("Combusken"), 1)
+    dynmultipush(format("Infernape"), 2)
+    dynmultipush(format("Lucario"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 0) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_LATIKEN)
+        msgbox(format("Increíble, acertaste otra vez. Es impresionante.\pTen esto."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(format("Oh, fallaste. Vuelve a intentarlo cuando completes otro desafío."), MSGBOX_AUTOCLOSE)
+    }
+    return
+}
 
 script Lobby_EventScript_Pokebox {
     setvar(VAR_TEMP_C, 8)

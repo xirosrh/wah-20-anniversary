@@ -32,6 +32,7 @@ static bool8 CheckPokebox_DefeatAllAdminsAchievement(u8 id);
 static bool8 CheckPokebox_DefeatAllCollaboratorsAchievement(u8 id);
 static bool8 CheckPokebox_WinWahChallengeDoubleAchievement(u8 id);
 static bool8 CheckPokebox_WinWahChallengeInverseAchievement(u8 id);
+static bool8 CheckPokebox_BetaMonQuestionnaire(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -69,6 +70,7 @@ static const u8 sText_PokeboxAllAdmins[] = _("Completa el logro de\nderrotar a t
 static const u8 sText_PokeboxAllCollaborators[] = _("Completa el logro de\nderrotar a todos los\ncolaboradores.");
 static const u8 sText_PokeboxWahDouble[] = _("Completa el desafío en modo\nbatallas dobles.");
 static const u8 sText_PokeboxWahInverse[] = _("Completa el desafío en modo\nbatallas inversas.");
+static const u8 sText_PokeboxBetaMonQuestionnaire[] = _("Responde correctamente su\npregunta en el cuestionario\nde la Sala de estar.");
 
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \
@@ -263,9 +265,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -275,9 +277,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
             .isShiny = FALSE,
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -288,9 +290,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -301,9 +303,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
             .isShiny = FALSE,
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -314,9 +316,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_DRAGON_PULSE, MOVE_SCALD, MOVE_ICE_BEAM, MOVE_TRI_ATTACK},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -327,9 +329,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_MIST_BALL, MOVE_BLAZE_KICK, MOVE_DRAGON_CLAW, MOVE_DRAIN_PUNCH}
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -1063,6 +1065,27 @@ static bool8 CheckPokebox_WinWahChallengeInverseAchievement(u8 id)
 {
     (void)id;
     return Achievement_IsComplete(ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE);
+}
+
+static bool8 CheckPokebox_BetaMonQuestionnaire(u8 id)
+{
+    switch (PokeboxSpeciesList_GetSpecie(id))
+    {
+    case SPECIES_GOROCHU:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_GOROCHU);
+    case SPECIES_TAABAN:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_TAABAN);
+    case SPECIES_BOMUSHIKAA:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA);
+    case SPECIES_MADAAMU:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_MADAAMU);
+    case SPECIES_AKUERIA:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_AKUERIA);
+    case SPECIES_LATIKEN:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_LATIKEN);
+    default:
+        return FALSE;
+    }
 }
 
 static bool8 CheckPokebox_isBuyMon(u8 id)
