@@ -38,16 +38,8 @@ Achievements_EventScript_Eval_WinWahChallenge_5Times::
 	return
 
 
-Achievements_EventScript_Eval_WinWahChallenge_10Times::
-# 36 "data/scripts/achievements.pory"
-	setvar VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_10_TIMES
-# 37 "data/scripts/achievements.pory"
-	call Achievements_EventScript_Eval_Common
-	return
-
-
 Achievements_EventScript_Eval_WinWahChallenge_HardMode::
-# 43 "data/scripts/achievements.pory"
+# 35 "data/scripts/achievements.pory"
 	setvar VAR_0x8004, ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE
 # 44 "data/scripts/achievements.pory"
 	call Achievements_EventScript_Eval_Common

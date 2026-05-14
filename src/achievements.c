@@ -78,12 +78,6 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = 5,
         .check = CheckWinWahChallengeXTimes,
     },
-    [ACHIEVEMENT_WIN_WAH_CHALLENGE_10_TIMES] = {
-        .title = COMPOUND_STRING("Insaciable"),
-        .description = COMPOUND_STRING("Supera el desafío diez veces.\nEl salón de la fama te conoce\npor tu nombre."),
-        .target = 10,
-        .check = CheckWinWahChallengeXTimes,
-    },
     [ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE] = {
         .title = COMPOUND_STRING("Solo para expertos"),
         .description = COMPOUND_STRING("Supera el desafío en modo difícil.\nAquí es donde se separan los\nbuenos de los mejores."),
