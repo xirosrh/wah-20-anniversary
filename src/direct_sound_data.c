@@ -600,10 +600,6 @@ ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_32[] = INCB
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_35[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_35.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_44[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_44.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM035_Fretl_Bass_59.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_28[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_28.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_42[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_42.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_54[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_54.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_59[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM036_SlapBass_1_59.bin");
 
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_36[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_36.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_038_Synth_Bass_1_48[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/AGM038_SynthBass1_48.bin");

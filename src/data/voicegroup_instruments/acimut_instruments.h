@@ -78,12 +78,12 @@ const u8 KeySplit_AGM_Guitar[] =
 
 const struct Instrument Instrument_AGM_Acoustic_Guitar_Nylon[] =
 {
-    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40, 255, 0, 255, 208),
-    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50, 255, 0, 255, 208),
-    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59, 255, 0, 255, 208),
-    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69, 255, 0, 255, 208),
-    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76, 255, 0, 255, 208),
-    [SAMPLE_5] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84, 255, 0, 255, 208),
+    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_40, 220, 0, 255, 208),
+    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_50, 192, 0, 255, 208),
+    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_59, 128, 0, 255, 208),
+    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_69, 128, 0, 255, 208),
+    [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_76, 192, 0, 255, 208),
+    [SAMPLE_5] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_024_Acoustic_Guitar_Nylon_84, 192, 0, 255, 208),
 };
 
 const struct Instrument Instrument_AGM_Acoustic_Guitar_Steel[] =
@@ -191,22 +191,6 @@ const struct Instrument Instrument_AGM_Fretless_Bass[] =
     [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_44, 255, 0, 255, 165),
     [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59, 255, 0, 255, 165),
     [SAMPLE_4] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_035_Fretless_Bass_59, 255, 0, 255, 165),//
-};
-
-const u8 KeySplit_AGM_Slap_Bass[] =
-{
-    SPLIT(NOTE_CN , NOTE_A1 , SAMPLE_0),
-    SPLIT(NOTE_AS1, NOTE_B2 , SAMPLE_1),
-    SPLIT(NOTE_C3 , NOTE_AS3, SAMPLE_2),
-    SPLIT(NOTE_B3 , NOTE_G9 , SAMPLE_3),
-};
-
-const struct Instrument Instrument_AGM_Slap_Bass_1[] =
-{
-    [SAMPLE_0] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_28, 255, 0, 255, 165),
-    [SAMPLE_1] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_42, 255, 0, 255, 165),
-    [SAMPLE_2] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_54, 255, 0, 255, 165),
-    [SAMPLE_3] = SOUND_SAMPLE(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_036_Slap_Bass_1_59, 255, 0, 255, 165),
 };
 
 const u8 KeySplit_AGM_Synth_Bass[] =
