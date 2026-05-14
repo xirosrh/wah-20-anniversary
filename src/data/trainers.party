@@ -7721,7 +7721,7 @@ AI: Basic Trainer
 Mugshot: Green
 Difficulty: Easy
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Multi Attack
@@ -7729,7 +7729,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ Multi Rom */
+Genesect  @ Chill Drive
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Techno Blast
@@ -7737,7 +7737,7 @@ Timid Nature
 - Flash Cannon
 - Bug Buzz
 
-Eternatus @ Black Sludge
+Eternatus
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Dynamax Cannon
@@ -7745,7 +7745,7 @@ Timid Nature
 - Sludge Wave
 - Eternabeam
 
-Necrozma Dusk Mane @ Ultranecrozium Z
+Necrozma Dusk Mane
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Sunsteel Strike
@@ -7781,7 +7781,7 @@ AI: Smart Trainer / Prediction
 Mugshot: Green
 Difficulty: Normal
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Multi Attack
@@ -7789,7 +7789,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ //TODO Xiros Multi Rom */
+Genesect  @ Chill Drive
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
 - Techno Blast
@@ -7813,7 +7813,7 @@ Timid Nature
 - Prismatic Laser
 - Recover
 
-Arceus   /* @ Legend Plate //TODO Xiros */
+Arceus   @ Pixie Plate
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Judgment
@@ -7841,7 +7841,7 @@ AI: Smart Trainer / Prediction
 Mugshot: Green
 Difficulty: Hard
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Multi Attack
@@ -7849,7 +7849,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ Multi Rom */
+Genesect  @ Chill Drive
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
 - Techno Blast
@@ -7873,7 +7873,7 @@ Timid Nature
 - Prismatic Laser
 - Recover
 
-Arceus   /* @ Legend Plate //TODO Xiros */
+Arceus   @ Pixie Plate
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Judgment
