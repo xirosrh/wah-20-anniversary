@@ -44,6 +44,7 @@ enum SpeakerNames {
     SP_NAME_ALEXMAD,
     SP_NAME_ACIMUT,
     SP_NAME_RYUZAKI,
+    SP_NAME_CACO,
     SP_NAME_COUNT
 };
 
