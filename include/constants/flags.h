@@ -516,12 +516,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_POKEBOX_WON_EING_MAIN           0x1DE //Used WAH
+#define FLAG_POKEBOX_WON_EING_ALTERNATIVE    0x1DF //Used WAH
+#define FLAG_POKEBOX_WON_REYBOO_MAIN_HARD    0x1E0 //Used WAH
+#define FLAG_POKEBOX_WON_REYBOO_ALT_HARD     0x1E1 //Used WAH
+#define FLAG_POKEBOX_WON_BARO_MAIN           0x1E2 //Used WAH
+#define FLAG_POKEBOX_WON_BARO_ALTERNATIVE    0x1E3 //Used WAH
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4

@@ -513,15 +513,21 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         dynmultipush(gStringVar1, 13)
         addvar(VAR_0x8000, 1)
     }
+    getseenmon(SPECIES_LUGIA_SHADOW)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_LUGIA_SHADOW)
+        dynmultipush(gStringVar1, 14)
+        addvar(VAR_0x8000, 1)
+    }
     if(var(VAR_0x8000) == 0) {
         msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
         release
         end
     }
-    dynmultipush("Salir", 14)
+    dynmultipush("Salir", 15)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) > 13) {
+    if(var(VAR_RESULT) > 14) {
         msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
@@ -582,6 +588,10 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         case 13:
             showmonpic(SPECIES_DIRAEI, 10, 3)
             setvar(VAR_0x8004, SPECIES_DIRAEI)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 14:
+            showmonpic(SPECIES_LUGIA_SHADOW, 10, 3)
+            setvar(VAR_0x8004, SPECIES_LUGIA_SHADOW)
             call(Lobby_EventScript_ShowFakemonDexInfo)
     }
     goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
@@ -657,24 +667,12 @@ script Lobby_EventScript_QREventInfoKid {
     end
 }
 
-script Lobby_EventScript_AdminCountNPC {
-    msgbox(Lobby_Text_AdminCountNPC, MSGBOX_NPC)
+script Lobby_EventScript_BetaMonQuestionnaire {
+    msgbox("PENDIENTE", MSGBOX_NPC) //TODO Xiros
     end
 }
 
-text Lobby_Text_AdminCountNPC {
-    "Dicen que son 21 salas para completar
-     el desafío…
-    
-    Para la cantidad de administradores que 
-    hubo en la historia de WAH, hay algo que
-    no termina de cuadrar.
 
-    ¿Habrán dejado a algunos afuera de la 
-    celebración?
-
-    ¿Cómo lo resolvieron?"
-}
 
 script Lobby_EventScript_Pokebox {
     setvar(VAR_TEMP_C, 8)

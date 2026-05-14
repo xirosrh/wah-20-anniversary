@@ -165,13 +165,16 @@ script BaroRoom_OnFrame {
  script BaroRoom_EventScript_BaroBattle {
     if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
         trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated)
+        setflag(FLAG_POKEBOX_WON_BARO_MAIN)
     } else {
         setvar(VAR_0x8004, TEAM_INDEX_BARO)
         special(ShouldUseAlternativeTeam)
         if (var(VAR_RESULT) == 0) {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated)
+            setflag(FLAG_POKEBOX_WON_BARO_MAIN)
         } else {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated)
+            setflag(FLAG_POKEBOX_WON_BARO_ALTERNATIVE)
         }
     }
     return

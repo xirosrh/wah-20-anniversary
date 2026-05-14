@@ -140,7 +140,7 @@ Pokebox_EventScript_ShowUnlocks::
 # 101 "data/scripts/achievements.pory"
 	call Achievements_EventScript_Eval_UnlockAllPokemon
 # 102 "data/scripts/achievements.pory"
-	goto Pokebox_EventScript_ShowUnlocks
+	call Pokebox_EventScript_ShowUnlocks
 	return
 
 Pokebox_EventScript_ShowUnlocks_2:
@@ -148,9 +148,9 @@ Pokebox_EventScript_ShowUnlocks_2:
 
 
 Achievements_EventScript_Eval_Avaricia::
-# 105 "data/scripts/achievements.pory"
-	setvar VAR_0x8004, ACHIEVEMENT_AVARICIA
 # 106 "data/scripts/achievements.pory"
+	setvar VAR_0x8004, ACHIEVEMENT_AVARICIA
+# 107 "data/scripts/achievements.pory"
 	call Achievements_EventScript_Eval_Common
 	return
 
