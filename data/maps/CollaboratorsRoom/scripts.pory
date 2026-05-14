@@ -1391,7 +1391,6 @@ script CollaboratorsRoom_EventScript_Caco {
         clearflag(B_FLAG_NO_WHITEOUT)
         
         specialvar(VAR_RESULT, GetBattleOutcome)
-        special(HealPlayerParty)
         
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
@@ -1404,6 +1403,7 @@ script CollaboratorsRoom_EventScript_Caco {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         }
+        call(WahRoomsShared_EventScript_AfterBattle)
         goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
     } else {
         // Si no ha completado el desafío
