@@ -199,19 +199,33 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
-    },  
+    },
     {
         .mon = {
-            .specie = SPECIES_GOROCHU,
+            .specie = SPECIES_KAOSUNE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_EARTHQUAKE, MOVE_HEAVY_SLAM, MOVE_SOLAR_BLADE, MOVE_HEAT_CRASH},
+        },
+        .description = sText_PokeboxWahChallengeDifficult,
+        .money = 0,
+        .check = CheckPokebox_WahChallengeDifficultCompleted
+    },
+    {
+        .mon = {
+            .specie = SPECIES_DIRAEI,
+            .ability = ABILITY_CONTRARY,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
             .isShiny = FALSE,
-            .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
+            .moves = {MOVE_PSYCHO_BOOST, MOVE_REST, MOVE_DRACO_METEOR, MOVE_HYPNOSIS},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxWahChallengeDifficult,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_WahChallengeDifficultCompleted
     },
     {
         .mon = {
@@ -225,6 +239,19 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .description = sText_PokeboxWahChallengeDifficult,
         .money = 0,
         .check = CheckPokebox_WahChallengeDifficultCompleted
+    },
+    {
+        .mon = {
+            .specie = SPECIES_GOROCHU,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
+        },
+        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .money = 0,
+        .check = CheckPokebox_isBuyMon //TODO Xiros
     },
     {
         .mon = {
