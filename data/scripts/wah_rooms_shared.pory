@@ -151,6 +151,8 @@ mart WahRoomsShared_MartItems {
     ITEM_STARAPTITE
     ITEM_CHESNAUGHTITE
     ITEM_DELPHOXITE
+    ITEM_EXCADRITE
+    ITEM_SKARMORITE
 }
 
 script WahRoomsShared_OpenDoor {
