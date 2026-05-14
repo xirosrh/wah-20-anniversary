@@ -239,6 +239,19 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 0,
         .check = CheckPokebox_isBuyMon
     },
+    {
+        .mon = {
+            .specie = SPECIES_LATIKEN,
+            .ability = ABILITY_SPEED_BOOST,
+            .nature = NATURE_QUIRKY,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_MIST_BALL, MOVE_BLAZE_KICK, MOVE_DRAGON_CLAW, MOVE_DRAIN_PUNCH}
+        },
+        .description = sText_PokeboxWahChallengeOnce, 
+        .money = 0,
+        .check = CheckPokebox_isBuyMon
+    },	
     { 
         .mon = POKEBOX_MON(SPECIES_VOLCARONA), //TODO Xiros
         .description = gText_PokeboxBuyThisMon, 

@@ -99048,5 +99048,13 @@
     ],
     "EggMoves": [],
     "TutorMoves": []
+  },
+  "LATIKEN": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [],
+    "EggMoves": [],
+    "TutorMoves": [
+    ]
   }
 }
