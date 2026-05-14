@@ -11055,6 +11055,7 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Easy
 
 Greninja
@@ -11118,6 +11119,7 @@ Music: Cool
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Normal
 
 Greninja @ Leftovers
@@ -11181,6 +11183,7 @@ Music: Cool
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Hard
 
 Greninja @ Leftovers
