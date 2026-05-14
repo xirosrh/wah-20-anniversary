@@ -306,19 +306,61 @@ BaroRoom_EventScript_PlugOink::
 # 187 "data/maps/BaroRoom/scripts.pory"
 	waitmovement 0
 # 188 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_AUTOCLOSE
+	playmoncry SPECIES_PLUGOINK, CRY_MODE_NORMAL
+# 189 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_DEFAULT
+# 190 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 191 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 192 "data/maps/BaroRoom/scripts.pory"
+	goto_if_unset FLAG_MET_BARO_ROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_2
+BaroRoom_EventScript_PlugOink_1:
+# 196 "data/maps/BaroRoom/scripts.pory"
+	release
 	end
+
+BaroRoom_EventScript_PlugOink_2:
+# 193 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_MET_BARO_ROOM_PLUGOINK
+# 194 "data/maps/BaroRoom/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto BaroRoom_EventScript_PlugOink_1
 
 
 BaroRoom_EventScript_Sever::
-# 193 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_NPC
+# 201 "data/maps/BaroRoom/scripts.pory"
+	lock
+# 202 "data/maps/BaroRoom/scripts.pory"
+	faceplayer
+# 203 "data/maps/BaroRoom/scripts.pory"
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
+# 204 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_DEFAULT
+# 205 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 206 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 207 "data/maps/BaroRoom/scripts.pory"
+	release
 	end
 
 
 BaroRoom_EventScript_Seeg::
-# 198 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_NPC
+# 212 "data/maps/BaroRoom/scripts.pory"
+	lock
+# 213 "data/maps/BaroRoom/scripts.pory"
+	faceplayer
+# 214 "data/maps/BaroRoom/scripts.pory"
+	playmoncry SPECIES_TREECKO, CRY_MODE_NORMAL
+# 215 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_DEFAULT
+# 216 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 217 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 218 "data/maps/BaroRoom/scripts.pory"
+	release
 	end
 
 
@@ -464,15 +506,15 @@ BaroRoom_OnFrame_Text_8:
 	.string "Bueno, buena suerte y tal.$"
 
 BaroRoom_EventScript_PlugOink_Text_0:
-# 188 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	.string "Oink, oink, oink…$"
 
 BaroRoom_EventScript_Sever_Text_0:
-# 193 "data/maps/BaroRoom/scripts.pory"
+# 204 "data/maps/BaroRoom/scripts.pory"
 	.string "¡Sever!$"
 
 BaroRoom_EventScript_Seeg_Text_0:
-# 198 "data/maps/BaroRoom/scripts.pory"
+# 215 "data/maps/BaroRoom/scripts.pory"
 	.string "See, see.$"
 
 BaroRoom_Text_BaroDefeated::

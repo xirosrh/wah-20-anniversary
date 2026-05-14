@@ -1714,13 +1714,14 @@
 #define SPECIES_BOMUSHIKAA                             1592
 #define SPECIES_MADAAMU                                1593
 #define SPECIES_AKUERIA                                1594
-#define SPECIES_VENUSAUR_C                             1595
-#define SPECIES_CHARIZARD_C                            1596
-#define SPECIES_BLASTOISE_C                            1597
-#define SPECIES_GRENINJA_R                             1598
-#define SPECIES_GRENINJA_R_MEGA                        1599
-#define SPECIES_ARMORED_MEWTWO                         1600
-#define SPECIES_ARMORED_MEWTWO_MEGA                    1601
+#define SPECIES_LATIKEN                                1595
+#define SPECIES_VENUSAUR_C                             1596
+#define SPECIES_CHARIZARD_C                            1597
+#define SPECIES_BLASTOISE_C                            1598
+#define SPECIES_GRENINJA_R                             1599
+#define SPECIES_GRENINJA_R_MEGA                        1600
+#define SPECIES_ARMORED_MEWTWO                         1601
+#define SPECIES_ARMORED_MEWTWO_MEGA                    1602
 
 #define SPECIES_EGG                                     (SPECIES_ARMORED_MEWTWO_MEGA + 1)
 

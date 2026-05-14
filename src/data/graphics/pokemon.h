@@ -27474,6 +27474,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Akueria[] = INCBIN_U16("graphics/pokemon/akueria/shiny.gbapal");
     const u8 gMonIcon_Akueria[] = INCBIN_U8("graphics/pokemon/akueria/icon.4bpp");
 
+    const u32 gMonFrontPic_Latiken[] = INCBIN_U32("graphics/pokemon/latiken/front.4bpp.smol");
+    const u16 gMonPalette_Latiken[] = INCBIN_U16("graphics/pokemon/latiken/normal.gbapal");
+    const u32 gMonBackPic_Latiken[] = INCBIN_U32("graphics/pokemon/latiken/back.4bpp.smol");
+    const u16 gMonShinyPalette_Latiken[] = INCBIN_U16("graphics/pokemon/latiken/shiny.gbapal");
+    const u8 gMonIcon_Latiken[] = INCBIN_U8("graphics/pokemon/latiken/icon.4bpp");
+
     const u32 gMonFrontPic_GreninjaR[] = INCBIN_U32("graphics/pokemon/greninja_r/anim_front.4bpp.smol");
     const u16 gMonPalette_GreninjaR[] = INCBIN_U16("graphics/pokemon/greninja_r/normal.gbapal");
     const u32 gMonBackPic_GreninjaR[] = INCBIN_U32("graphics/pokemon/greninja_r/back.4bpp.smol");

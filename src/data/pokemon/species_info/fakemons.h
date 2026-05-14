@@ -1143,6 +1143,60 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sAkueriaTeachableLearnset,
     },
 
+    [SPECIES_LATIKEN] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 130,
+        .baseDefense   = 110,
+        .baseSpeed     = 160,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_DRAGON),
+        .catchRate = 15,
+        .expYield = 300,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Latiken"),
+        .cryId = CRY_BLAZIKEN,
+        .natDexNum = NATIONAL_DEX_LATIKEN,
+        .categoryName = _("Deseado"),
+        .height = 19,
+        .weight = 520,
+        .description = COMPOUND_STRING(
+            "   Se dice que un JIRACHI adormilado\n"
+            "   oyó a una niña decir que quería un\n"
+            "   LATIAS o un BLAZIKEN; medio dormido,\n"
+            "   creó a este Pokémon para dárselo."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 301,
+        .trainerOffset = 4,
+        .frontPic = gMonFrontPic_Latiken,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Latiken,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Latiken,
+        .shinyPalette = gMonShinyPalette_Latiken,
+        .iconSprite = gMonIcon_Latiken,
+        .iconPalIndex = 0,
+        SHADOW(5, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Blaziken)
+        .levelUpLearnset = sLatikenLevelUpLearnset
+    },
+
     [SPECIES_VENUSAUR_C] =
     {
         .baseHP        = 120,
