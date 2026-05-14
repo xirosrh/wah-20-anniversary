@@ -19,6 +19,7 @@
 
 static bool8 CheckPokebox_isBuyMon(u8 id);
 static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
+static bool8 CheckPokebox_WahChallengeDifficultCompleted(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
 static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
@@ -53,6 +54,7 @@ static const u8 sText_PokeboxAlexmadEvent[] = _("Completa el evento especial\nde
 static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
 static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
 static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Habla con Plug-Oink en la\nsala de Baro.");
+static const u8 sText_PokeboxWahChallengeDifficult[] = _("Gana el desafio en modo\ndifícil.");
 
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \
@@ -220,9 +222,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_PSYCHIC, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_AIR_SLASH},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxWahChallengeDifficult,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_WahChallengeDifficultCompleted
     },
     {
         .mon = {
@@ -850,7 +852,13 @@ static bool8 CheckPokebox_Active(u8 id)
 static bool8 CheckPokebox_WahChallengeCompleted(u8 id)
 {
     (void)id;
-    return FlagGet(FLAG_WAH_CHALLENGE_COMPLETED);
+    return Achievement_IsComplete(ACHIEVEMENT_WIN_WAH_CHALLENGE);
+}
+
+static bool8 CheckPokebox_WahChallengeDifficultCompleted(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE);
 }
 
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id)
