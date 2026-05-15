@@ -267,3 +267,23 @@ text DriveKatherineRoom_Text_DriveDefeated {
 text DriveKatherineRoom_Text_KatherineDefeated {
     format("Suave, armonioso… me ha encantado.")
 }
+
+script DriveKatherineRoom_EventScript_Bottles {
+    msgbox(format("Algunas botellas tienen nombres imposibles de pronunciar.\pHay una que se llama “Whack a Cola”."), MSGBOX_SIGN)
+    end
+}
+
+script DriveKatherineRoom_EventScript_Dispenser {
+    msgbox(format("El agua del dispensador está increíblemente fría."), MSGBOX_SIGN)
+    end
+}
+
+script DriveKatherineRoom_EventScript_Trash {
+    msgbox(format("La papelera desprende un leve olor a comida."), MSGBOX_SIGN)
+    end
+}
+
+script DriveKatherineRoom_EventScript_Cabinet {
+    msgbox(format("El mueble está lleno de platos, vasos y tazas.\pTodo está cuidadosamente organizado por tamaño y tipo."), MSGBOX_SIGN)
+    end
+}
