@@ -1009,7 +1009,7 @@ WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1:
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_3:
 # 573 "data/scripts/wah_rooms_shared.pory"
-	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 2, 3
+	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 4, 3
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_4:
@@ -1019,7 +1019,7 @@ WahRoomsShared_Kecleon_SetSala_ScarexOzumas_4:
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_5:
 # 579 "data/scripts/wah_rooms_shared.pory"
-	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 10, 5
+	setobjectxyperm LOCALID_SCAREXOZUROOM_KECLEON, 9, 10
 	goto WahRoomsShared_Kecleon_SetSala_ScarexOzumas_1
 
 WahRoomsShared_Kecleon_SetSala_ScarexOzumas_6:

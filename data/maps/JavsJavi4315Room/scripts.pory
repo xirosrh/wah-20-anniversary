@@ -228,3 +228,34 @@ script JavsJavi4315Room_EventScript_Javs {
     msgbox(format("¿Te gusta cómo se ve la sala? ¡Ni se te ocurra copiar sus colores sin mi permiso!"), MSGBOX_NPC, speaker = SP_NAME_JAVS)
     end
 }
+
+script JavsJavi4315Room_EventScript_PikachuPainting {
+    msgbox(format("El cuadro muestra a un Pikachu con un elegante sombrero gris.\pSu mirada seria intenta imponer respeto, pero sigue siendo adorable."), MSGBOX_SIGN)
+    end
+}
+
+script JavsJavi4315Room_EventScript_SmearglePainting {
+    msgbox(format("El cuadro muestra a Smeargle frente a un lienzo.\pDa la impresión de que acaba de pintarse a sí mismo."), MSGBOX_SIGN)
+    end
+}
+
+script JavsJavi4315Room_EventScript_EeveePainting {
+    msgbox(format("Eevee aparece retratado con un aire distinguido.\pEl marco dorado hace que parezca aún más importante."), MSGBOX_SIGN)
+    end
+}
+
+script JavsJavi4315Room_EventScript_MunchlaxPainting {
+    msgbox(format("El cuadro muestra una habitación sencilla y colorida.\pMunchlax parece haber encontrado el lugar perfecto para esperar la comida."), MSGBOX_SIGN)
+    end
+}
+
+
+script JavsJavi4315Room_EventScript_Boxes1 {
+    msgbox(format("Una caja tiene una etiqueta que dice: “No apilar”.\pNaturalmente, tiene otra caja encima."), MSGBOX_SIGN)
+    end
+}
+
+script JavsJavi4315Room_EventScript_Boxes2 {
+    msgbox(format("Hay varias cajas cuidadosamente selladas.\pProbablemente guardan marcos, catálogos y obras que aún no fueron montadas."), MSGBOX_SIGN)
+    end
+}

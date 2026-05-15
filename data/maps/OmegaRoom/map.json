@@ -107,5 +107,134 @@
       "script": "OmegaRoom_EventScript_StartChallenge"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_Eventscript_Capsule"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Machine1"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Machine1"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OmegaRoom_EventScript_Machine3"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OmegaRoom_EventScript_Machine3"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OmegaRoom_EventScript_Machine3"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OmegaRoom_EventScript_Machine2"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_EventScript_Box"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_Eventscript_Capsule"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OmegaRoom_Eventscript_Capsule"
+    }
+  ]
 }

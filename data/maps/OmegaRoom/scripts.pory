@@ -195,3 +195,28 @@ script OmegaRoom_EventScript_Omega {
     msgbox(format("¿Qué estás esperando? Ve a demostrar a esos viejos que no me has ganado por casualidad."), MSGBOX_NPC, speaker = SP_NAME_OMEGA)
     end
 }
+
+script OmegaRoom_Eventscript_Capsule {
+    msgbox(format("Parece una cápsula de experimentación."), MSGBOX_SIGN)
+    end
+}
+
+script OmegaRoom_EventScript_Machine1 {
+    msgbox(format("La máquina emite un zumbido constante.\pParece que nadie la revisa desde hace años."), MSGBOX_SIGN)
+    end
+}
+
+script OmegaRoom_EventScript_Machine2 {
+    msgbox(format("La máquina está completamente descuidada.\pPequeñas plantas crecieron entre los paneles y las grietas del metal."), MSGBOX_SIGN)
+    end
+}
+
+script OmegaRoom_EventScript_Machine3 {
+    msgbox(format("La pantalla está llena de fallos y píxeles muertos.\pEs increíble que el sistema aún siga funcionando."), MSGBOX_SIGN)
+    end
+}
+
+script OmegaRoom_EventScript_Box {
+    msgbox(format("La caja está cubierta por una gruesa capa de polvo.\pParece que hace años que nadie la toca."), MSGBOX_SIGN)
+    end
+}

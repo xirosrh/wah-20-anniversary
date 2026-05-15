@@ -134,3 +134,53 @@ script CosararaRoom_EventScript_UnlockPC {
     special(DrawWholeMapView)
     return
 }
+
+script CosararaRoom_EventScript_Server1 {
+    msgbox(format("Parece una máquina de servidor antigua.\pTiene un panel de control con botones y luces."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Server2 {
+    msgbox(format("Una pequeña etiqueta dice: “NO APAGAR”."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Server3 {
+    msgbox(format("El movimiento constante de las luces resulta hipnótico."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Box1 {
+    msgbox(format("La caja está llena de cables perfectamente enrollados."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Box2 {
+    msgbox(format("Hay discos y componentes electrónicos guardados con cuidado."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Box3 {
+    msgbox(format("Una pequeña etiqueta dice: “Hardware obsoleto”."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Box4 {
+    msgbox(format("La caja está vacía."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_Boxes {
+    msgbox(format("Hay varias cajas apiladas unas sobre otras.\pParece un depósito improvisado."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_OldComputers {
+    msgbox(format("Son computadoras demasiado viejas para seguir utilizándose.\pParece que nadie quiso deshacerse de ellas."), MSGBOX_SIGN)
+    end
+}
+
+script CosararaRoom_EventScript_SuperComputer {
+    msgbox(format("Columnas interminables de símbolos recorren las pantallas.\pTodo parece una enorme matriz de datos."), MSGBOX_SIGN)
+    end
+}

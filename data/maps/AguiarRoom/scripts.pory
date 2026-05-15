@@ -165,3 +165,55 @@ script AguiarRoom_EventScript_AguiarBattle {
 text AguiarRoom_Text_AguiarDefeated {
     format("¡Vaya combate! Me lo he pasado de\nlujo.")
 }
+
+script AguiarRoom_EventScript_Coffee {
+    msgbox(format("La taza de café todavía sigue caliente."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Ashtray {
+    msgbox(format("El cenicero está lleno de cigarros recién apagados.\pDefinitivamente, alguien tiene una adicción muy fuerte."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Microwave {
+    msgbox(format("El microondas tiene manchas de comida recalentada."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Trash {
+    msgbox(format("La papelera está llena de restos de cigarro y ceniza."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Refrigerator {
+    msgbox(format("La heladera desprende un aroma increíblemente rico.\pSeguro hay algo delicioso guardado dentro."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_TV {
+    msgbox("Es un televisor de 55 pulgadas.\nDefinitivamente ocupa media sala.", MSGBOX_SIGN)
+    end
+}
+
+
+
+script AguiarRoom_EventScript_Kitchen {
+    msgbox(format("Parece una cocina bastante moderna.\pTodo está impecablemente limpio."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Switch {
+    msgbox(format("Parece que alguien dejó la Nintendo Switch a mitad de una partida."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_Drawer {
+    msgbox(format("Parece que alguien usa este cajón exclusivamente para guardar cigarros."), MSGBOX_SIGN)
+    end
+}
+
+script AguiarRoom_EventScript_FullOfBooks {
+    msgbox(format("Hay muchos libros de todo tipo."), MSGBOX_SIGN)
+    end
+}

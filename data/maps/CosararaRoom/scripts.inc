@@ -236,6 +236,66 @@ CosararaRoom_EventScript_UnlockPC::
 	return
 
 
+CosararaRoom_EventScript_Server1::
+# 139 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Server1_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Server2::
+# 144 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Server2_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Server3::
+# 149 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Server3_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Box1::
+# 154 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Box1_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Box2::
+# 159 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Box2_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Box3::
+# 164 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Box3_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Box4::
+# 169 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Box4_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_Boxes::
+# 174 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Boxes_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_OldComputers::
+# 179 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_OldComputers_Text_0, MSGBOX_SIGN
+	end
+
+
+CosararaRoom_EventScript_SuperComputer::
+# 184 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_SuperComputer_Text_0, MSGBOX_SIGN
+	end
+
+
 # 31 "data/maps/CosararaRoom/scripts.pory"
 CosararaRoom_EventScript_Cosarara_Movement_0:
 # 31 "data/maps/CosararaRoom/scripts.pory"
@@ -315,6 +375,60 @@ CosararaRoom_EventScript_Cosarara_Text_6:
 	.string "Recuerda no cambiar de nick, ya que me\n"
 	.string "cuesta mucho saber quién es quién.\p"
 	.string "Ya puedes avanzar.$"
+
+CosararaRoom_EventScript_Server1_Text_0:
+# 139 "data/maps/CosararaRoom/scripts.pory"
+	.string "Parece una máquina de servidor antigua.\p"
+	.string "Tiene un panel de control con botones y\n"
+	.string "luces.$"
+
+CosararaRoom_EventScript_Server2_Text_0:
+# 144 "data/maps/CosararaRoom/scripts.pory"
+	.string "Una pequeña etiqueta dice: “NO\n"
+	.string "APAGAR”.$"
+
+CosararaRoom_EventScript_Server3_Text_0:
+# 149 "data/maps/CosararaRoom/scripts.pory"
+	.string "El movimiento constante de las luces\n"
+	.string "resulta hipnótico.$"
+
+CosararaRoom_EventScript_Box1_Text_0:
+# 154 "data/maps/CosararaRoom/scripts.pory"
+	.string "La caja está llena de cables\n"
+	.string "perfectamente enrollados.$"
+
+CosararaRoom_EventScript_Box2_Text_0:
+# 159 "data/maps/CosararaRoom/scripts.pory"
+	.string "Hay discos y componentes electrónicos\n"
+	.string "guardados con cuidado.$"
+
+CosararaRoom_EventScript_Box3_Text_0:
+# 164 "data/maps/CosararaRoom/scripts.pory"
+	.string "Una pequeña etiqueta dice: “Hardware\n"
+	.string "obsoleto”.$"
+
+CosararaRoom_EventScript_Box4_Text_0:
+# 169 "data/maps/CosararaRoom/scripts.pory"
+	.string "La caja está vacía.$"
+
+CosararaRoom_EventScript_Boxes_Text_0:
+# 174 "data/maps/CosararaRoom/scripts.pory"
+	.string "Hay varias cajas apiladas unas sobre\n"
+	.string "otras.\p"
+	.string "Parece un depósito improvisado.$"
+
+CosararaRoom_EventScript_OldComputers_Text_0:
+# 179 "data/maps/CosararaRoom/scripts.pory"
+	.string "Son computadoras demasiado viejas\n"
+	.string "para seguir utilizándose.\p"
+	.string "Parece que nadie quiso deshacerse de\n"
+	.string "ellas.$"
+
+CosararaRoom_EventScript_SuperComputer_Text_0:
+# 184 "data/maps/CosararaRoom/scripts.pory"
+	.string "Columnas interminables de símbolos\n"
+	.string "recorren las pantallas.\p"
+	.string "Todo parece una enorme matriz de datos.$"
 
 CosararaRoom_Text_CosararaDefeated::
 # 104 "data/maps/CosararaRoom/scripts.pory"

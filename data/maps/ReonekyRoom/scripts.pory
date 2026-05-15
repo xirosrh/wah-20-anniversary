@@ -280,6 +280,12 @@ text ReonekyRoom_Text_ReonekyDefeated {
 }
 
 
+script ReonekyRoom_EventScript_Trash {
+    msgbox(format("La papelera está completamente vacía.\pEs posible que la gente haya tirado la basura en la calle."), MSGBOX_SIGN)
+    end
+}
 
-
-
+script ReonekyRoom_EventScript_Hydrant {
+    msgbox(format("Es un pequeño hidrante pintado de rojo brillante."), MSGBOX_SIGN)
+    end
+}

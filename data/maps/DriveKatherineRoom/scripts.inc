@@ -486,6 +486,30 @@ DriveKatherineRoom_EventScript_DriveKatherineBattle_11:
 	goto DriveKatherineRoom_EventScript_DriveKatherineBattle_1
 
 
+DriveKatherineRoom_EventScript_Bottles::
+# 272 "data/maps/DriveKatherineRoom/scripts.pory"
+	msgbox DriveKatherineRoom_EventScript_Bottles_Text_0, MSGBOX_SIGN
+	end
+
+
+DriveKatherineRoom_EventScript_Dispenser::
+# 277 "data/maps/DriveKatherineRoom/scripts.pory"
+	msgbox DriveKatherineRoom_EventScript_Dispenser_Text_0, MSGBOX_SIGN
+	end
+
+
+DriveKatherineRoom_EventScript_Trash::
+# 282 "data/maps/DriveKatherineRoom/scripts.pory"
+	msgbox DriveKatherineRoom_EventScript_Trash_Text_0, MSGBOX_SIGN
+	end
+
+
+DriveKatherineRoom_EventScript_Cabinet::
+# 287 "data/maps/DriveKatherineRoom/scripts.pory"
+	msgbox DriveKatherineRoom_EventScript_Cabinet_Text_0, MSGBOX_SIGN
+	end
+
+
 # 87 "data/maps/DriveKatherineRoom/scripts.pory"
 DriveKatherineRoom_EventScript_Drive_Movement_0:
 # 88 "data/maps/DriveKatherineRoom/scripts.pory"
@@ -707,6 +731,29 @@ DriveKatherineRoom_EventScript_Drive_Text_17:
 	.string "Has superado esta sala con elegancia.\n"
 	.string "Sigue disfrutando de la celebración… y\l"
 	.string "hasta que nos volvamos a ver…$"
+
+DriveKatherineRoom_EventScript_Bottles_Text_0:
+# 272 "data/maps/DriveKatherineRoom/scripts.pory"
+	.string "Algunas botellas tienen nombres\n"
+	.string "imposibles de pronunciar.\p"
+	.string "Hay una que se llama “Whack a Cola”.$"
+
+DriveKatherineRoom_EventScript_Dispenser_Text_0:
+# 277 "data/maps/DriveKatherineRoom/scripts.pory"
+	.string "El agua del dispensador está\n"
+	.string "increíblemente fría.$"
+
+DriveKatherineRoom_EventScript_Trash_Text_0:
+# 282 "data/maps/DriveKatherineRoom/scripts.pory"
+	.string "La papelera desprende un leve olor a\n"
+	.string "comida.$"
+
+DriveKatherineRoom_EventScript_Cabinet_Text_0:
+# 287 "data/maps/DriveKatherineRoom/scripts.pory"
+	.string "El mueble está lleno de platos, vasos y\n"
+	.string "tazas.\p"
+	.string "Todo está cuidadosamente organizado\n"
+	.string "por tamaño y tipo.$"
 
 DriveKatherineRoom_Text_DriveDefeated::
 # 263 "data/maps/DriveKatherineRoom/scripts.pory"

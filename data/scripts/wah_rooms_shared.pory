@@ -570,13 +570,13 @@ script WahRoomsShared_Kecleon_SetSala_ScarexOzumas {
     switch(var(VAR_KECLEON_POSITION))
     {
         case 0:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 2, 3)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 4, 3)
             break
         case 1:
             setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 5, 4)
             break
         case 2:
-            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 10, 5)
+            setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 9, 10)
             break
         case 3:
             setobjectxyperm(LOCALID_SCAREXOZUROOM_KECLEON, 8, 8)

@@ -194,27 +194,27 @@ static EWRAM_DATA struct MartInfo sMartInfo = {0};
 static EWRAM_DATA struct ShopData *sShopData = NULL;
 static EWRAM_DATA u8 sPurchaseHistoryId = 0;
 
-static const u8 sText_SoldOut[] = _("Sold Out");
+static const u8 sText_SoldOut[] = _("Agotado");
 
-static const u8 sText_ThatItemIsSoldOut[] = _("I'm sorry, but\nthat item is\nsold out.");
-static const u8 sText_Var1CertainlyHowMany[] = _("{STR_VAR_1}?\nCertainly. How\nmany?");
-static const u8 sText_Var1AndYouWantedVar2[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be ¥{STR_VAR_3}.");
-static const u8 sText_Var1AndYouWantedVar2Coins[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be {STR_VAR_3} Coins.");
-static const u8 sText_Var1AndYouWantedVar2BP[] = _("So you wanted\n{STR_VAR_2} {STR_VAR_1}?\nThat'll be {STR_VAR_3} BP.");
-static const u8 sText_YouWantedVar1ThatllBeVar2[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}.");
-static const u8 sText_YouWantedVar1ThatllBeVar2Coins[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be {STR_VAR_2} Coins.");
-static const u8 sText_YouWantedVar1ThatllBeVar2BP[] = _("You wanted the\n{STR_VAR_1}?\nThat'll be {STR_VAR_2} BP.");
-static const u8 sText_YouWantedVar1OutfitThatllBeVar2[] = _("You wanted that {STR_VAR_1} Outfit?\nThat'll be ¥{STR_VAR_2}. Will that be okay?");
-static const u8 sText_HereYouGoThankYou[] = _("Here you go!\nThank you very much.");
-static const u8 sText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to\nyour home PC.");
-static const u8 sText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your\nPC at home.");
-static const u8 sText_YouDontHaveMoney[] = _("You don't have\nenough money.");
-static const u8 sText_YouDontHaveCoins[] = _("You don't have\nenough Coins.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_YouDontHaveBP[] = _("You don't have\nenough Battle Points.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_NoMoreRoomForThis[] = _("You have no more\nroom for this\nitem.");
-static const u8 sText_SpaceForVar1Full[] = _("The space for\n{STR_VAR_1}\nis full.");
-static const u8 sText_ThrowInPremierBall[] = _("I'll throw in\na PREMIER BALL,\ntoo.");
-static const u8 sText_ThrowInPremierBalls[] = _("I'll throw in\n{STR_VAR_1} PREMIER BALLS,\ntoo.");
+static const u8 sText_ThatItemIsSoldOut[] = _("Lo siento, pero\nese objeto está\nagotado.");
+static const u8 sText_Var1CertainlyHowMany[] = _("¿{STR_VAR_1}?\nPor supuesto.\n¿Cuántos?");
+static const u8 sText_Var1AndYouWantedVar2[] = _("Así que querías\n{STR_VAR_2} {STR_VAR_1}?\nSerán ¥{STR_VAR_3}.");
+static const u8 sText_Var1AndYouWantedVar2Coins[] = _("Así que querías\n{STR_VAR_2} {STR_VAR_1}?\nSerán {STR_VAR_3} Monedas.");
+static const u8 sText_Var1AndYouWantedVar2BP[] = _("Así que querías\n{STR_VAR_2} {STR_VAR_1}?\nSerán {STR_VAR_3} PB.");
+static const u8 sText_YouWantedVar1ThatllBeVar2[] = _("¿Querías el\n{STR_VAR_1}?\nSerán ¥{STR_VAR_2}.");
+static const u8 sText_YouWantedVar1ThatllBeVar2Coins[] = _("¿Querías el\n{STR_VAR_1}?\nSerán {STR_VAR_2} Monedas.");
+static const u8 sText_YouWantedVar1ThatllBeVar2BP[] = _("¿Querías el\n{STR_VAR_1}?\nSerán {STR_VAR_2} PB.");
+static const u8 sText_YouWantedVar1OutfitThatllBeVar2[] = _("¿Querías el atuendo\nde {STR_VAR_1}?\nSerán ¥{STR_VAR_2}. ¿Te parece bien?");
+static const u8 sText_HereYouGoThankYou[] = _("¡Aquí tienes!\nMuchas gracias.");
+static const u8 sText_ThankYouIllSendItHome[] = _("¡Gracias!\nTe lo enviaré al\nPC de tu casa.");
+static const u8 sText_ThanksIllSendItHome[] = _("¡Gracias!\nLo enviaré al\nPC de tu casa.");
+static const u8 sText_YouDontHaveMoney[] = _("No tienes\nsuficiente dinero.");
+static const u8 sText_YouDontHaveCoins[] = _("No tienes\nsuficientes Monedas.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_YouDontHaveBP[] = _("No tienes\nsuficientes Puntos\nde Batalla.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_NoMoreRoomForThis[] = _("No tienes más\nespacio para este\nobjeto.");
+static const u8 sText_SpaceForVar1Full[] = _("El espacio para\n{STR_VAR_1}\nestá lleno.");
+static const u8 sText_ThrowInPremierBall[] = _("Te regalo también\nuna BOLA PREMIER.");
+static const u8 sText_ThrowInPremierBalls[] = _("Te regalo también\n{STR_VAR_1} BOLAS PREMIER.");
 
 // default state if all seller-based graphics fails
 static const u32 sNewShopMenu_DefaultMenuGfx[] = INCBIN_U32("graphics/new_shop/menu.4bpp.lz");
@@ -1215,10 +1215,10 @@ static void BuyMenuInitWindows(void)
     SpawnWindow(WIN_MUGSHOT);
     SpawnWindow(WIN_ITEM_DESCRIPTION);
 
-    BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("PRICE"), 0, ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+    BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Precio"), 0, ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
     if (IsMartTypeItem(sMartInfo.martType))
     {
-        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("IN BAG"), 0, ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Tienes"), 0, ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
     }
 
     UpdateItemData();
@@ -1344,7 +1344,7 @@ static void UpdateItemData(void)
         return;
 
     FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 0,  ITEM_NAME_Y, 84, 16);
-    FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 24, ITEM_PRICE_Y, 84, 16);
+    FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 32, ITEM_PRICE_Y, 84, 16);
     FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 32, ITEM_IN_BAG_Y, 84, 16);
     if (sMartInfo.itemList[GridMenu_SelectedIndex(sShopData->gridItems)] == ITEM_NONE)
     {

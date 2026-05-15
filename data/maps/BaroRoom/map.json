@@ -101,5 +101,134 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "BaroRoom_EventScript_Poster"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "BaroRoom_EventScript_Poster"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "BaroRoom_EventScript_PC"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Coffee"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "BaroRoom_EventScript_Drawer"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Coffee"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Coffee"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Coffee2"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Clothes"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Wardrobe"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BaroRoom_EventScript_Wardrobe"
+    }
+  ]
 }
