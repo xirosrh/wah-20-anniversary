@@ -419,7 +419,7 @@ JackJohnsonRoom_EventScript_OpenCurtain4::
 # 250 "data/maps/JackJohnsonRoom/scripts.pory"
 	setmetatile 2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_7, 0
 # 251 "data/maps/JackJohnsonRoom/scripts.pory"
-	setmetatile 2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_8, 0
+	setmetatile 2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_8, 1
 # 252 "data/maps/JackJohnsonRoom/scripts.pory"
 	setmetatile 1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_1, 0
 # 253 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1309,6 +1309,36 @@ JackJohnsonRoom_EventScript_BrockPoster::
 	end
 
 
+JackJohnsonRoom_EventScript_Tree::
+# 744 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Tree_Text_0, MSGBOX_SIGN
+	end
+
+
+JackJohnsonRoom_EventScript_Boxes::
+# 749 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Boxes_Text_0, MSGBOX_SIGN
+	end
+
+
+JackJohnsonRoom_EventScript_Box::
+# 754 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Box_Text_0, MSGBOX_SIGN
+	end
+
+
+JackJohnsonRoom_EventScript_Book1::
+# 759 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Book1_Text_0, MSGBOX_SIGN
+	end
+
+
+JackJohnsonRoom_EventScript_Book2::
+# 764 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Book2_Text_0, MSGBOX_SIGN
+	end
+
+
 # 386 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_0:
 # 386 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1707,6 +1737,37 @@ JackJohnsonRoom_EventScript_BrockPoster_Text_0:
 	.string "Brock.\p"
 	.string "¿Realmente tiene esos músculos o será\n"
 	.string "Photoshop?$"
+
+JackJohnsonRoom_EventScript_Tree_Text_0:
+# 744 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "El árbol está hecho de cartón y pintura.\n"
+	.string "De lejos parece mucho más real.$"
+
+JackJohnsonRoom_EventScript_Boxes_Text_0:
+# 749 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Hay varias cajas llenas de objetos de\n"
+	.string "escenografía.$"
+
+JackJohnsonRoom_EventScript_Box_Text_0:
+# 754 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Dentro de esta caja hay más cajas.$"
+
+JackJohnsonRoom_EventScript_Book1_Text_0:
+# 759 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "El libro contiene el guion de una obra\n"
+	.string "teatral.\p"
+	.string "Los actos tienen nombres extraños: “La\n"
+	.string "época dorada”, “La fusión” y “El gran\l"
+	.string "caos”.$"
+
+JackJohnsonRoom_EventScript_Book2_Text_0:
+# 764 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Es una cronología de las épocas\n"
+	.string "doradas de WaH.\p"
+	.string "Casi todas las páginas se contradicen\n"
+	.string "entre sí.\p"
+	.string "Parece que nadie se puso de acuerdo\n"
+	.string "sobre cuándo fue.$"
 
 JackJohnsonRoom_Text_JackDefeated::
 # 697 "data/maps/JackJohnsonRoom/scripts.pory"

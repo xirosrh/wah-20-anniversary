@@ -248,7 +248,7 @@ script JackJohnsonRoom_EventScript_OpenCurtain4 {
     setmetatile(2, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_5, 0)
     setmetatile(2, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_6, 0)
     setmetatile(2, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_7, 0)
-    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_8, 0)
+    setmetatile(2, 8, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_8, 1)
     setmetatile(1, 5, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_1, 0)
     setmetatile(1, 6, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_2, 0)
     setmetatile(1, 7, METATILE_Room_Jack_Johnson_CURTAIN_LEFT_FRAME5_3, 0)
@@ -737,5 +737,30 @@ script JackJohnsonRoom_EventScript_NPC4 {
 
 script JackJohnsonRoom_EventScript_BrockPoster {
     msgbox(format("Es un poster con una foto de Oscar Brock.\p¿Realmente tiene esos músculos o será Photoshop?"), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Tree {
+    msgbox(format("El árbol está hecho de cartón y pintura.\nDe lejos parece mucho más real."), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Boxes {
+    msgbox(format("Hay varias cajas llenas de objetos de escenografía."), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Box {
+    msgbox(format("Dentro de esta caja hay más cajas."), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Book1 {
+    msgbox(format("El libro contiene el guion de una obra teatral.\pLos actos tienen nombres extraños: “La época dorada”, “La fusión” y “El gran caos”."), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Book2 {
+    msgbox(format("Es una cronología de las épocas doradas de WaH.\pCasi todas las páginas se contradicen entre sí.\pParece que nadie se puso de acuerdo sobre cuándo fue."), MSGBOX_SIGN)
     end
 }

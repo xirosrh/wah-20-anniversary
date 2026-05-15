@@ -349,6 +349,36 @@ OmegaRoom_EventScript_Omega::
 	end
 
 
+OmegaRoom_Eventscript_Capsule::
+# 200 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_Eventscript_Capsule_Text_0, MSGBOX_SIGN
+	end
+
+
+OmegaRoom_EventScript_Machine1::
+# 205 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_Machine1_Text_0, MSGBOX_SIGN
+	end
+
+
+OmegaRoom_EventScript_Machine2::
+# 210 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_Machine2_Text_0, MSGBOX_SIGN
+	end
+
+
+OmegaRoom_EventScript_Machine3::
+# 215 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_Machine3_Text_0, MSGBOX_SIGN
+	end
+
+
+OmegaRoom_EventScript_Box::
+# 220 "data/maps/OmegaRoom/scripts.pory"
+	msgbox OmegaRoom_EventScript_Box_Text_0, MSGBOX_SIGN
+	end
+
+
 # 54 "data/maps/OmegaRoom/scripts.pory"
 OmegaRoom_EventScript_StartChallenge_Movement_0:
 # 54 "data/maps/OmegaRoom/scripts.pory"
@@ -493,6 +523,36 @@ OmegaRoom_EventScript_Omega_Text_0:
 	.string "¿Qué estás esperando? Ve a demostrar a\n"
 	.string "esos viejos que no me has ganado por\l"
 	.string "casualidad.$"
+
+OmegaRoom_Eventscript_Capsule_Text_0:
+# 200 "data/maps/OmegaRoom/scripts.pory"
+	.string "Parece una cápsula de experimentación.$"
+
+OmegaRoom_EventScript_Machine1_Text_0:
+# 205 "data/maps/OmegaRoom/scripts.pory"
+	.string "La máquina emite un zumbido constante.\p"
+	.string "Parece que nadie la revisa desde hace\n"
+	.string "años.$"
+
+OmegaRoom_EventScript_Machine2_Text_0:
+# 210 "data/maps/OmegaRoom/scripts.pory"
+	.string "La máquina está completamente\n"
+	.string "descuidada.\p"
+	.string "Pequeñas plantas crecieron entre los\n"
+	.string "paneles y las grietas del metal.$"
+
+OmegaRoom_EventScript_Machine3_Text_0:
+# 215 "data/maps/OmegaRoom/scripts.pory"
+	.string "La pantalla está llena de fallos y\n"
+	.string "píxeles muertos.\p"
+	.string "Es increíble que el sistema aún siga\n"
+	.string "funcionando.$"
+
+OmegaRoom_EventScript_Box_Text_0:
+# 220 "data/maps/OmegaRoom/scripts.pory"
+	.string "La caja está cubierta por una gruesa\n"
+	.string "capa de polvo.\p"
+	.string "Parece que hace años que nadie la toca.$"
 
 OmegaRoom_Text_OmegaDefeated::
 # 190 "data/maps/OmegaRoom/scripts.pory"
