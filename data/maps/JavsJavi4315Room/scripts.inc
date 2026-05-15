@@ -408,6 +408,42 @@ JavsJavi4315Room_EventScript_Javs::
 	end
 
 
+JavsJavi4315Room_EventScript_PikachuPainting::
+# 233 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_PikachuPainting_Text_0, MSGBOX_SIGN
+	end
+
+
+JavsJavi4315Room_EventScript_SmearglePainting::
+# 238 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_SmearglePainting_Text_0, MSGBOX_SIGN
+	end
+
+
+JavsJavi4315Room_EventScript_EeveePainting::
+# 243 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_EeveePainting_Text_0, MSGBOX_SIGN
+	end
+
+
+JavsJavi4315Room_EventScript_MunchlaxPainting::
+# 248 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_MunchlaxPainting_Text_0, MSGBOX_SIGN
+	end
+
+
+JavsJavi4315Room_EventScript_Boxes1::
+# 254 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_Boxes1_Text_0, MSGBOX_SIGN
+	end
+
+
+JavsJavi4315Room_EventScript_Boxes2::
+# 259 "data/maps/JavsJavi4315Room/scripts.pory"
+	msgbox JavsJavi4315Room_EventScript_Boxes2_Text_0, MSGBOX_SIGN
+	end
+
+
 # 51 "data/maps/JavsJavi4315Room/scripts.pory"
 JavsJavi4315Room_EventScript_MainTrigger_Movement_0:
 # 51 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -620,6 +656,48 @@ JavsJavi4315Room_EventScript_Javs_Text_0:
 	.string "¿Te gusta cómo se ve la sala? ¡Ni se te\n"
 	.string "ocurra copiar sus colores sin mi\l"
 	.string "permiso!$"
+
+JavsJavi4315Room_EventScript_PikachuPainting_Text_0:
+# 233 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "El cuadro muestra a un Pikachu con un\n"
+	.string "elegante sombrero gris.\p"
+	.string "Su mirada seria intenta imponer\n"
+	.string "respeto, pero sigue siendo adorable.$"
+
+JavsJavi4315Room_EventScript_SmearglePainting_Text_0:
+# 238 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "El cuadro muestra a Smeargle frente a\n"
+	.string "un lienzo.\p"
+	.string "Da la impresión de que acaba de\n"
+	.string "pintarse a sí mismo.$"
+
+JavsJavi4315Room_EventScript_EeveePainting_Text_0:
+# 243 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "Eevee aparece retratado con un aire\n"
+	.string "distinguido.\p"
+	.string "El marco dorado hace que parezca aún\n"
+	.string "más importante.$"
+
+JavsJavi4315Room_EventScript_MunchlaxPainting_Text_0:
+# 248 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "El cuadro muestra una habitación\n"
+	.string "sencilla y colorida.\p"
+	.string "Munchlax parece haber encontrado el\n"
+	.string "lugar perfecto para esperar la comida.$"
+
+JavsJavi4315Room_EventScript_Boxes1_Text_0:
+# 254 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "Una caja tiene una etiqueta que dice:\n"
+	.string "“No apilar”.\p"
+	.string "Naturalmente, tiene otra caja encima.$"
+
+JavsJavi4315Room_EventScript_Boxes2_Text_0:
+# 259 "data/maps/JavsJavi4315Room/scripts.pory"
+	.string "Hay varias cajas cuidadosamente\n"
+	.string "selladas.\p"
+	.string "Probablemente guardan marcos,\n"
+	.string "catálogos y obras que aún no fueron\l"
+	.string "montadas.$"
 
 JavsJavi4315Room_Text_Javi4315Defeated::
 # 171 "data/maps/JavsJavi4315Room/scripts.pory"
