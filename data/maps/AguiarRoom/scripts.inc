@@ -297,6 +297,66 @@ AguiarRoom_EventScript_AguiarBattle_5:
 	goto AguiarRoom_EventScript_AguiarBattle_1
 
 
+AguiarRoom_EventScript_Coffee::
+# 170 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Coffee_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Ashtray::
+# 175 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Ashtray_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Microwave::
+# 180 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Microwave_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Trash::
+# 185 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Trash_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Refrigerator::
+# 190 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Refrigerator_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_TV::
+# 195 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_TV_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Kitchen::
+# 202 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Kitchen_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Switch::
+# 207 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Switch_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_Drawer::
+# 212 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_Drawer_Text_0, MSGBOX_SIGN
+	end
+
+
+AguiarRoom_EventScript_FullOfBooks::
+# 217 "data/maps/AguiarRoom/scripts.pory"
+	msgbox AguiarRoom_EventScript_FullOfBooks_Text_0, MSGBOX_SIGN
+	end
+
+
 # 34 "data/maps/AguiarRoom/scripts.pory"
 AguiarRoom_OnFrame_Movement_0:
 # 34 "data/maps/AguiarRoom/scripts.pory"
@@ -384,6 +444,57 @@ AguiarRoom_EventScript_Aguiar_Text_7:
 # 141 "data/maps/AguiarRoom/scripts.pory"
 	.string "No está mal, no está nada mal. Ya puedes\n"
 	.string "seguir avanzando.$"
+
+AguiarRoom_EventScript_Coffee_Text_0:
+# 170 "data/maps/AguiarRoom/scripts.pory"
+	.string "La taza de café todavía sigue caliente.$"
+
+AguiarRoom_EventScript_Ashtray_Text_0:
+# 175 "data/maps/AguiarRoom/scripts.pory"
+	.string "El cenicero está lleno de cigarros\n"
+	.string "recién apagados.\p"
+	.string "Definitivamente, alguien tiene una\n"
+	.string "adicción muy fuerte.$"
+
+AguiarRoom_EventScript_Microwave_Text_0:
+# 180 "data/maps/AguiarRoom/scripts.pory"
+	.string "El microondas tiene manchas de comida\n"
+	.string "recalentada.$"
+
+AguiarRoom_EventScript_Trash_Text_0:
+# 185 "data/maps/AguiarRoom/scripts.pory"
+	.string "La papelera está llena de restos de\n"
+	.string "cigarro y ceniza.$"
+
+AguiarRoom_EventScript_Refrigerator_Text_0:
+# 190 "data/maps/AguiarRoom/scripts.pory"
+	.string "La heladera desprende un aroma\n"
+	.string "increíblemente rico.\p"
+	.string "Seguro hay algo delicioso guardado\n"
+	.string "dentro.$"
+
+AguiarRoom_EventScript_TV_Text_0:
+# 195 "data/maps/AguiarRoom/scripts.pory"
+	.string "Es un televisor de 55 pulgadas.\nDefinitivamente ocupa media sala.$"
+
+AguiarRoom_EventScript_Kitchen_Text_0:
+# 202 "data/maps/AguiarRoom/scripts.pory"
+	.string "Parece una cocina bastante moderna.\p"
+	.string "Todo está impecablemente limpio.$"
+
+AguiarRoom_EventScript_Switch_Text_0:
+# 207 "data/maps/AguiarRoom/scripts.pory"
+	.string "Parece que alguien dejó la Nintendo\n"
+	.string "Switch a mitad de una partida.$"
+
+AguiarRoom_EventScript_Drawer_Text_0:
+# 212 "data/maps/AguiarRoom/scripts.pory"
+	.string "Parece que alguien usa este cajón\n"
+	.string "exclusivamente para guardar cigarros.$"
+
+AguiarRoom_EventScript_FullOfBooks_Text_0:
+# 217 "data/maps/AguiarRoom/scripts.pory"
+	.string "Hay muchos libros de todo tipo.$"
 
 AguiarRoom_Text_AguiarDefeated::
 # 165 "data/maps/AguiarRoom/scripts.pory"
