@@ -441,6 +441,18 @@ ReonekyRoom_EventScript_ReonekyBattle_5:
 	goto ReonekyRoom_EventScript_ReonekyBattle_1
 
 
+ReonekyRoom_EventScript_Trash::
+# 284 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Trash_Text_0, MSGBOX_SIGN
+	end
+
+
+ReonekyRoom_EventScript_Hydrant::
+# 289 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Hydrant_Text_0, MSGBOX_SIGN
+	end
+
+
 # 64 "data/maps/ReonekyRoom/scripts.pory"
 ReonekyRoom_OnFrame_Movement_0:
 # 65 "data/maps/ReonekyRoom/scripts.pory"
@@ -697,6 +709,17 @@ ReonekyRoom_EventScript_Reoneky_Text_6:
 # 250 "data/maps/ReonekyRoom/scripts.pory"
 	.string "Apuntas maneras. El talento tiene\n"
 	.string "límites; el esfuerzo y la pasión no.$"
+
+ReonekyRoom_EventScript_Trash_Text_0:
+# 284 "data/maps/ReonekyRoom/scripts.pory"
+	.string "La papelera está completamente vacía.\p"
+	.string "Es posible que la gente haya tirado la\n"
+	.string "basura en la calle.$"
+
+ReonekyRoom_EventScript_Hydrant_Text_0:
+# 289 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Es un pequeño hidrante pintado de rojo\n"
+	.string "brillante.$"
 
 ReonekyRoom_Text_ReonekyDefeated::
 # 278 "data/maps/ReonekyRoom/scripts.pory"

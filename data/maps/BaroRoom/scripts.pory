@@ -221,3 +221,38 @@ script BaroRoom_OnFrame {
     release
     end
  }
+
+ script BaroRoom_EventScript_Poster {
+    msgbox(format("Una esquina del póster ya comenzó a despegarse de la pared."), MSGBOX_SIGN)
+    end
+ }
+
+script BaroRoom_EventScript_Clothes {
+    msgbox(format("Hay ropa usada tirada por todo el suelo."), MSGBOX_SIGN)
+    end
+}
+
+script BaroRoom_EventScript_PC {
+    msgbox(format("La computadora tiene abierto un juego todavía en pleno desarrollo.\pVarias ventanas dicen: “TODO”, “BUG” y “ARREGLAR DESPUÉS”."), MSGBOX_SIGN)
+    end
+}
+
+script BaroRoom_EventScript_Coffee {
+    msgbox(format("Hay demasiadas tazas de café para una sola persona."), MSGBOX_SIGN)
+    end
+}
+
+script BaroRoom_EventScript_Coffee2 {
+    msgbox(format("El café ya se enfrió hace rato."), MSGBOX_SIGN)
+    end
+}
+
+script BaroRoom_EventScript_Wardrobe {
+    msgbox(format("El placard está lleno de ropa desordenada.\pLa mayoría parece haber sido guardada a las apuradas."), MSGBOX_SIGN)
+    end
+}
+
+script BaroRoom_EventScript_Drawer {
+    msgbox(format("Dentro hay varios bocetos y diseños de nuevas criaturas de Pokémon.\pMuchos de los diseños son muy curiosos."), MSGBOX_SIGN)
+    end
+}

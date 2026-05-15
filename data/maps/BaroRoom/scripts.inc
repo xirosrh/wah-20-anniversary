@@ -370,6 +370,48 @@ BaroRoom_EventScript_Seeg::
 	end
 
 
+BaroRoom_EventScript_Poster::
+# 226 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Poster_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_Clothes::
+# 231 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Clothes_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_PC::
+# 236 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PC_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_Coffee::
+# 241 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Coffee_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_Coffee2::
+# 246 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Coffee2_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_Wardrobe::
+# 251 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Wardrobe_Text_0, MSGBOX_SIGN
+	end
+
+
+BaroRoom_EventScript_Drawer::
+# 256 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Drawer_Text_0, MSGBOX_SIGN
+	end
+
+
 # 35 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_OnFrame_Movement_0:
 # 36 "data/maps/BaroRoom/scripts.pory"
@@ -522,6 +564,44 @@ BaroRoom_EventScript_Sever_Text_0:
 BaroRoom_EventScript_Seeg_Text_0:
 # 218 "data/maps/BaroRoom/scripts.pory"
 	.string "See, see.$"
+
+BaroRoom_EventScript_Poster_Text_0:
+# 226 "data/maps/BaroRoom/scripts.pory"
+	.string "Una esquina del póster ya comenzó a\n"
+	.string "despegarse de la pared.$"
+
+BaroRoom_EventScript_Clothes_Text_0:
+# 231 "data/maps/BaroRoom/scripts.pory"
+	.string "Hay ropa usada tirada por todo el suelo.$"
+
+BaroRoom_EventScript_PC_Text_0:
+# 236 "data/maps/BaroRoom/scripts.pory"
+	.string "La computadora tiene abierto un juego\n"
+	.string "todavía en pleno desarrollo.\p"
+	.string "Varias ventanas dicen: “TODO”, “BUG” y\n"
+	.string "“ARREGLAR DESPUÉS”.$"
+
+BaroRoom_EventScript_Coffee_Text_0:
+# 241 "data/maps/BaroRoom/scripts.pory"
+	.string "Hay demasiadas tazas de café para una\n"
+	.string "sola persona.$"
+
+BaroRoom_EventScript_Coffee2_Text_0:
+# 246 "data/maps/BaroRoom/scripts.pory"
+	.string "El café ya se enfrió hace rato.$"
+
+BaroRoom_EventScript_Wardrobe_Text_0:
+# 251 "data/maps/BaroRoom/scripts.pory"
+	.string "El placard está lleno de ropa\n"
+	.string "desordenada.\p"
+	.string "La mayoría parece haber sido guardada\n"
+	.string "a las apuradas.$"
+
+BaroRoom_EventScript_Drawer_Text_0:
+# 256 "data/maps/BaroRoom/scripts.pory"
+	.string "Dentro hay varios bocetos y diseños de\n"
+	.string "nuevas criaturas de Pokémon.\p"
+	.string "Muchos de los diseños son muy curiosos.$"
 
 BaroRoom_Text_BaroDefeated::
 # 183 "data/maps/BaroRoom/scripts.pory"
