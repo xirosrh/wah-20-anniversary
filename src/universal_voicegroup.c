@@ -1410,6 +1410,92 @@ const union VoiceGroup voicegroup_agm_cm64[] =
 //  usar unicamente con archivos MIDI que coincidan en el orden de instrumentos.
 //--------------------------------------------------------------
 
+const struct Instrument hgss_drum[] =
+{
+    [NOTE_CN...NOTE_D1]   = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_29_scratch_push_gm2, 255, 0, 255, 250),
+    [HIGH_Q_GM2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_27_high_Q_gm2, 255, 0, 255, 250),
+    [SLAP_GM2]            = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_28_slap_gm2, 255, 0, 255, 250),
+    [SCRATCH_PUSH_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap, 255, 0, 255, 250),
+    [SCRATCH_PULL_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_40_snare_drum_2, 255, 0, 255, 250),
+    [STICKS_GM2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
+    [SQUARE_CLICK_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_35_bass_drum_2, 255, 0, 255, 250),
+    [METRONOME_CLICK_GM2] = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_35_bass_drum_2, 255, 0, 255, 250),
+    [METRONOME_BELL_GM2]  = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_v2_40_snare_drum_2, 255, 0, 255, 250),
+    [BASS_DRUM_2]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_35_bass_drum_2, 255, 0, 255, 250),
+    [BASS_DRUM_1]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_36_bass_drum_1, 255, 0, 255, 250),
+    [SIDE_STICK]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_37_side_stick, 255, 0, 255, 250),
+    [SNARE_DRUM_1]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_38_snare_drum_1, 255, 0, 255, 250),
+    [HAND_CLAP]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap, 255, 0, 255, 250),
+    [SNARE_DRUM_2]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_40_snare_drum_2, 255, 0, 255, 250),
+    [LOW_TOM_2]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_41_low_tom_2, 255, 0, 255, 250),
+    [CLOSED_HI_HAT]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_42_closed_hi_hat, 255, 0, 255, 250),
+    [LOW_TOM_1]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_43_low_tom_1, 255, 0, 255, 250),
+    [PEDAL_HI_HAT]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_44_pedal_hi_hat, 255, 0, 255, 250),
+    [MID_TOM_2]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_45_mid_tom_2, 255, 0, 255, 250),
+    [OPEN_HI_HAT]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_46_open_hi_hat, 255, 25, 255, 250),
+    [MID_TOM_1]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_47_mid_tom_1, 255, 0, 255, 250),
+    [HIGH_TOM_2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_48_high_tom_2, 255, 0, 255, 250),
+    [CRASH_CYMBAL_1]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_49_crash_cymbal_1, 255, 25, 255, 250),
+    [HIGH_TOM_1]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_50_high_tom_1, 255, 0, 255, 250),
+    [RIDE_CYMBAL_1]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_51_ride_cymbal_1, 255, 0, 255, 250),
+    [CHINESE_CYMBAL]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_52_chinese_cymbal, 255, 25, 255, 250),
+    [RIDE_BELL]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_53_ride_bell, 255, 25, 255, 165),
+    [TAMBOURINE]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_54_tambourine, 255, 25, 255, 250),
+    [SPLASH_CYMBAL]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_55_splash_cymbal, 255, 25, 255, 250),
+    [COWBELL]             = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_56_cowbell, 255, 0, 255, 250),
+    [CRASH_CYMBAL_2]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_57_crash_cymbal_2, 255, 25, 255, 250),
+    [VIBRA_SLAP]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_57_crash_cymbal_2, 255, 25, 255, 250),
+    [RIDE_CYMBAL_2]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_59_ride_cymbal_2, 255, 25, 255, 250),
+    [HIGH_BONGO]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_60_high_bongo, 255, 0, 255, 250),
+    [LOW_BONGO]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_61_low_bongo, 255, 0, 255, 250),
+    [MUTE_HIGH_CONGA]     = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_62_mute_high_conga, 255, 0, 255, 250),
+    [OPEN_HIGH_CONGA]     = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_63_open_high_conga, 255, 0, 255, 250),
+    [LOW_CONGA]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_64_low_conga, 255, 0, 255, 250),
+    [HIGH_TIMBALE]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_65_high_timbale, 255, 0, 255, 250),
+    [LOW_TIMBALE]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_66_low_timbale, 255, 0, 255, 250),
+    [HIGH_AGOGO]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_69_cabasa, 255, 0, 255, 250),
+    [LOW_AGOGO]           = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_62_mute_high_conga, 255, 0, 255, 250),
+    [CABASA]              = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_63_open_high_conga, 255, 0, 255, 250),
+    //end hgss_drum (?) |----------------|!|
+    [MARACAS]             = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_70_maracas, 255, 0, 255, 250),
+    [SHORT_WHISTLE]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_69_cabasa, 255, 0, 255, 250),
+    [LONG_WHISTLE]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_69_cabasa, 255, 0, 255, 250),
+    [SHORT_GUIRO]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_73_short_guiro, 255, 0, 255, 250),
+    [LONG_GUIRO]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_74_logn_guiro, 255, 0, 255, 250),
+    [CLAVES]              = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_75_claves, 255, 0, 255, 250),
+    [HIGH_WOOD_BLOCK]     = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_76_high_wood_block, 255, 0, 255, 250),
+    [LOW_WOOD_BLOCK]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_77_low_wood_block, 255, 0, 255, 250),
+    [MUTE_CUICA]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_78_mute_cuica, 255, 0, 255, 250),
+    [OPEN_CUICA]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_79_open_cuica, 255, 0, 255, 250),
+    [MUTE_TRIANGLE]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_80_mute_triangle, 255, 0, 255, 250),
+    [OPEN_TRIANGLE]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_81_open_triangle, 255, 0, 255, 250),
+    [SHAKER_GM2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_82_shaker_gm2, 255, 0, 255, 250),
+    [JINGLE_BELL_GM2]     = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_83_jingle_bell_gm2, 255, 0, 255, 250),
+    [BELLTREE_GM2]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_84_belltree_gm2, 255, 0, 255, 250),
+    [CASTANETS_GM2]       = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_85_castanets_gm2, 255, 0, 255, 250),
+    [MUTE_SURDO_GM2]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_86_mute_surdo_gm2, 255, 0, 255, 250),
+    [OPEN_SURDO_GM2]      = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_87_open_surdo_gm2, 255, 0, 255, 250),
+    [NOTE_E6]             = SOUND_SAMPLE_RAW(NOTE_D3, 64, DirectSoundWaveData_ethnic_flavours_kotsuzumi, 255, 0, 255, 250),
+    [NOTE_F6]             = SOUND_SAMPLE_RAW(NOTE_E4, 64, DirectSoundWaveData_ethnic_flavours_kotsuzumi, 255, 0, 255, 250),
+};
+
+const struct Instrument hgss_drum_kick_and_snare[] =
+{
+    [NOTE_CN...NOTE_D1]   = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [HIGH_Q_GM2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [SLAP_GM2]            = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [SCRATCH_PUSH_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [SCRATCH_PULL_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [STICKS_GM2]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [SQUARE_CLICK_GM2]    = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [METRONOME_CLICK_GM2] = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2, 255, 0, 255, 250),
+    [METRONOME_BELL_GM2]  = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_34_metronome_bell_gm2, 255, 220, 255, 135),
+    [BASS_DRUM_2]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2, 255, 0, 255, 250),
+    [BASS_DRUM_1]         = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2, 255, 0, 255, 250),
+    [SIDE_STICK]          = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2, 255, 0, 255, 250),
+    [SNARE_DRUM_1]        = SOUND_SAMPLE_RAW(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_Standard_38_snare_drum_1, 255, 0, 255, 250),
+};
+
 const union VoiceGroup voicegroup_hgss_main[] =
 {
     [ACOUSTIC_GRAND_PIANO]  = INSTRUMENT_SPLIT(FE7_AcousticGrandPiano, KeySplit_FE7_Piano),
@@ -1455,7 +1541,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_Bassoon, KeySplitTable29),
     [SLAP_BASS_2]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
     [SYNTH_BASS_1]          = DEFAULT_INSTRUMENT,//Sampled Square Wave
-    [SYNTH_BASS_2]          = DRUM_SET(Acimut_Drumkit_Standard),//[modificar drumset] |----------------
+    [SYNTH_BASS_2]          = DRUM_SET(hgss_drum),
 
     [VIOLIN]                = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60, 255, 0, 255, 165),
     [VIOLA]                 = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
@@ -1473,6 +1559,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [CHOIR_AAHS]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 224, 242, 101, 192),//Square Wave 50%
     [VOICE_OOHS]            = DEFAULT_INSTRUMENT,//Sampled Noise 1 |----------------
     [SYNTH_VOICE]           = DEFAULT_INSTRUMENT,//Sampled Noise 2 |----------------
+// supuestamente instrumentos en hgss_drum |----------------|!|
     [ORCHESTRA_HIT]         = INSTRUMENT_SPLIT(Instrument_FE7_Whistle, KeySplitTable7),
 
     [TRUMPET]               = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_119_reverse_cymbal, 255, 0, 255, 235),
@@ -1481,7 +1568,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [MUTED_TRUMPET]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 80, 234, 191, 220),//Sampled Square Wave 12.5%
     [FRENCH_HORN]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Major
     [BRASS_SECTION]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Minor
-    [SYNTH_BRASS_1]         = DRUM_SET(Acimut_Drumkit_Standard),//[modificar drumset] |----------------
+    [SYNTH_BRASS_1]         = DRUM_SET(hgss_drum_kick_and_snare),
     [SYNTH_BRASS_2]         = INSTRUMENT_SPLIT(Instrument_AGM_Timpani, KeySplit_AGM_Timpani),
 
     [SOPRANO_SAX]           = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),
@@ -1506,6 +1593,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [LEAD_2_SAWTOOTH]       = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_117_Melodic_Tom_60, 255, 0, 255, 165),//DP Tom
     [LEAD_3_CALLIOPE]       = INSTRUMENT_SPLIT(Instrument_AGM_Trumpet, KeySplit_AGM_Trumpet),//DP Trumpet (Arceus)
     [LEAD_4_CHIFF]          = INSTRUMENT_SPLIT(Instrument_AGM_Trombone, KeySplit_AGM_Trombone),//DP Trombone (Arceus)
+// fin (?) |----------------|!|
     [LEAD_5_CHARANG]        = INSTRUMENT_SPLIT(Instrument_FE7_Lead5_Charang, KeySplitTable15),
     [LEAD_6_VOICE]          = INSTRUMENT_SPLIT(Instrument_FE7_Lead6_Voice, KeySplitTable33),
     [LEAD_7_FIFTHS]         = INSTRUMENT_SPLIT(Instrument_FE7_Lead7_Fifths, KeySplitTable34),
