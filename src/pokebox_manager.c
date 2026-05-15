@@ -25,6 +25,14 @@ static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
 static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
 static bool8 CheckPokebox_AchievementAvaricia(u8 id);
 static bool8 CheckPokebox_MetBaroRoomPlugOink(u8 id);
+static bool8 CheckPokebox_EingTeamsDefeated(u8 id);
+static bool8 CheckPokebox_ReyBooHardBothTeams(u8 id);
+static bool8 CheckPokebox_BaroBothTeams(u8 id);
+static bool8 CheckPokebox_DefeatAllAdminsAchievement(u8 id);
+static bool8 CheckPokebox_DefeatAllCollaboratorsAchievement(u8 id);
+static bool8 CheckPokebox_WinWahChallengeDoubleAchievement(u8 id);
+static bool8 CheckPokebox_WinWahChallengeInverseAchievement(u8 id);
+static bool8 CheckPokebox_BetaMonQuestionnaire(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
@@ -55,6 +63,14 @@ static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
 static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
 static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Habla con Plug-Oink en la\nsala de Baro.");
 static const u8 sText_PokeboxWahChallengeDifficult[] = _("Gana el desafio en modo\ndifícil.");
+static const u8 sText_PokeboxEingTeams[] = _("Derrota a ambos equipos\nde Eing (principal y\nalternativo).");
+static const u8 sText_PokeboxMolikai[] = _("Derrota a ambos equipos\nde Helix Boo en modo difícil\n(principal y alternativo).");
+static const u8 sText_PokeboxBaroTeams[] = _("Derrota a ambos equipos\nde Baro (principal y\nalternativo).");
+static const u8 sText_PokeboxAllAdmins[] = _("Completa el logro de\nderrotar a todos los\nadmins.");
+static const u8 sText_PokeboxAllCollaborators[] = _("Completa el logro de\nderrotar a todos los\ncolaboradores.");
+static const u8 sText_PokeboxWahDouble[] = _("Completa el desafío en modo\nbatallas dobles.");
+static const u8 sText_PokeboxWahInverse[] = _("Completa el desafío en modo\nbatallas inversas.");
+static const u8 sText_PokeboxBetaMonQuestionnaire[] = _("Responde correctamente su\npregunta en el cuestionario\nde la Sala de estar.");
 
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \
@@ -199,19 +215,33 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .description = sText_PokeboxWahChallengeOnce, 
         .money = 0,
         .check = CheckPokebox_WahChallengeCompleted
-    },  
+    },
     {
         .mon = {
-            .specie = SPECIES_GOROCHU,
+            .specie = SPECIES_KAOSUNE,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_EARTHQUAKE, MOVE_HEAVY_SLAM, MOVE_SOLAR_BLADE, MOVE_HEAT_CRASH},
+        },
+        .description = sText_PokeboxWahChallengeDifficult,
+        .money = 0,
+        .check = CheckPokebox_WahChallengeDifficultCompleted
+    },
+    {
+        .mon = {
+            .specie = SPECIES_DIRAEI,
+            .ability = ABILITY_CONTRARY,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
             .isShiny = FALSE,
-            .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
+            .moves = {MOVE_PSYCHO_BOOST, MOVE_REST, MOVE_DRACO_METEOR, MOVE_HYPNOSIS},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxWahChallengeDifficult,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_WahChallengeDifficultCompleted
     },
     {
         .mon = {
@@ -228,15 +258,28 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     {
         .mon = {
+            .specie = SPECIES_GOROCHU,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_THUNDERBOLT, MOVE_AURA_SPHERE, MOVE_SURF, MOVE_FOCUS_BLAST},
+        },
+        .description = sText_PokeboxBetaMonQuestionnaire,
+        .money = 0,
+        .check = CheckPokebox_BetaMonQuestionnaire
+    },
+    {
+        .mon = {
             .specie = SPECIES_TAABAN,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
             .isShiny = FALSE,
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -247,9 +290,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_SCALD, MOVE_FLAMETHROWER, MOVE_WATER_SPOUT, MOVE_ERUPTION},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -260,9 +303,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
             .isShiny = FALSE,
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -273,9 +316,9 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_DRAGON_PULSE, MOVE_SCALD, MOVE_ICE_BEAM, MOVE_TRI_ATTACK},
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
+        .check = CheckPokebox_BetaMonQuestionnaire
     },
     {
         .mon = {
@@ -286,10 +329,23 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .isShiny = FALSE,
             .moves = {MOVE_MIST_BALL, MOVE_BLAZE_KICK, MOVE_DRAGON_CLAW, MOVE_DRAIN_PUNCH}
         },
-        .description = sText_PokeboxWahChallengeOnce, //TODO Xiros
+        .description = sText_PokeboxBetaMonQuestionnaire,
         .money = 0,
-        .check = CheckPokebox_isBuyMon //TODO Xiros
-    },	
+        .check = CheckPokebox_BetaMonQuestionnaire
+    },
+    {
+        .mon = {
+            .specie = SPECIES_FREECH,
+            .nature = NATURE_CALM,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAGON_PULSE, MOVE_ICE_BEAM, MOVE_ICE_SHARD, MOVE_RECOVER},
+        },
+        .description = sText_PokeboxWahDouble,
+        .money = 0,
+        .check = CheckPokebox_WinWahChallengeDoubleAchievement
+    },
     {
         .mon = {
             .specie = SPECIES_VOLCARONA,
@@ -298,6 +354,178 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
             .isShiny = FALSE,
             .moves = {MOVE_QUIVER_DANCE, MOVE_FIERY_DANCE, MOVE_BUG_BUZZ, MOVE_FLAMETHROWER},
+        },
+        .description = sText_PokeboxWahDouble,
+        .money = 0,
+        .check = CheckPokebox_WinWahChallengeDoubleAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_GRENINJA,
+            .ability = ABILITY_PROTEAN,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_WATER_SHURIKEN, MOVE_SCALD, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB},
+        },
+        .description = sText_PokeboxAllCollaborators,
+        .money = 0,
+        .check = CheckPokebox_DefeatAllCollaboratorsAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_FERALIGATR,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAGON_DANCE, MOVE_SLASH, MOVE_LIQUIDATION, MOVE_BODY_SLAM},
+        },
+        .description = sText_PokeboxAllCollaborators,
+        .money = 0,
+        .check = CheckPokebox_DefeatAllCollaboratorsAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_EING,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 4, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_SING, MOVE_HYPER_VOICE, MOVE_DRACO_METEOR, MOVE_SURF},
+        },
+        .description = sText_PokeboxEingTeams,
+        .money = 0,
+        .check = CheckPokebox_EingTeamsDefeated
+    },
+    {
+        .mon = {
+            .specie = SPECIES_MOLIKAI,
+            .nature = NATURE_CAREFUL,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_XQ4ZC0E, MOVE_TEETER_DANCE, MOVE_CROSS_POISON, MOVE_KNOCK_OFF},
+        },
+        .description = sText_PokeboxMolikai,
+        .money = 0,
+        .check = CheckPokebox_ReyBooHardBothTeams
+    },
+    {
+        .mon = {
+            .specie = SPECIES_OCEADINO,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_EARTH_POWER, MOVE_SLUDGE_BOMB},
+        },
+        .description = sText_PokeboxBaroTeams,
+        .money = 0,
+        .check = CheckPokebox_BaroBothTeams
+    },
+    {
+        .mon = {
+            .specie = SPECIES_JARDINO,
+            .nature = NATURE_JOLLY,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRAIN_PUNCH, MOVE_SEED_BOMB, MOVE_LEAF_BLADE, MOVE_DRAGON_CLAW},
+        },
+        .description = sText_PokeboxBaroTeams,
+        .money = 0,
+        .check = CheckPokebox_BaroBothTeams
+    },
+    {
+        .mon = {
+            .specie = SPECIES_TYRADINO,
+            .nature = NATURE_ADAMANT,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+            .isShiny = FALSE,
+            .moves = {MOVE_BLAZE_KICK, MOVE_SHADOW_CLAW, MOVE_THUNDER_PUNCH, MOVE_SKY_UPPERCUT},
+        },
+        .description = sText_PokeboxBaroTeams,
+        .money = 0,
+        .check = CheckPokebox_BaroBothTeams
+    },
+    {
+        .mon = {
+            .specie = SPECIES_LUGIA_SHADOW,
+            .ability = ABILITY_BERSERK,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(0, 4, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_AEROBLAST, MOVE_DARK_PULSE, MOVE_SHADOW_BALL, MOVE_SUCKER_PUNCH},
+        },
+        .description = sText_PokeboxAllAdmins,
+        .money = 0,
+        .check = CheckPokebox_DefeatAllAdminsAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_GRITESPEC,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL},
+        },
+        .description = sText_PokeboxWahInverse,
+        .money = 0,
+        .check = CheckPokebox_WinWahChallengeInverseAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_AYEWIRAZ,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_PLAY_ROUGH, MOVE_CRUNCH, MOVE_POISON_TAIL, MOVE_PSYCHIC_FANGS},
+        },
+        .description = sText_PokeboxWahInverse,
+        .money = 0,
+        .check = CheckPokebox_WinWahChallengeInverseAchievement
+    },
+    {
+        .mon = {
+            .specie = SPECIES_MICAEL,
+            .ability = ABILITY_PRANKSTER,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_VOODOO, MOVE_ASTRAL_BARRAGE, MOVE_DOUBLE_TEAM, MOVE_DESTINY_BOND},
+        },
+        .description = sText_PokeboxAchievementAvaricia,
+        .money = 0,
+        .check = CheckPokebox_AchievementAvaricia
+    },
+    {
+        .mon = {
+            .specie = SPECIES_PLUGOINK,
+            .ability = ABILITY_NONE,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_FLAMETHROWER, MOVE_CHARGE_BEAM, MOVE_SNARL, MOVE_THUNDERBOLT},
+        },
+        .description = sText_PokeboxMetBaroRoomPlugOink,
+        .money = 0,
+        .check = CheckPokebox_MetBaroRoomPlugOink
+    },
+    {
+        .mon = {
+            .specie = SPECIES_SKARMORY,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
+            .isShiny = FALSE,
+            .moves = {MOVE_DRILL_RUN, MOVE_IRON_HEAD, MOVE_BRAVE_BIRD, MOVE_ROOST},
         },
         .description = gText_PokeboxBuyThisMon,
         .money = 15000,
@@ -397,19 +625,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     {
         .mon = {
-            .specie = SPECIES_SKARMORY,
-            .nature = NATURE_JOLLY,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_DRILL_RUN, MOVE_IRON_HEAD, MOVE_BRAVE_BIRD, MOVE_ROOST},
-        },
-        .description = gText_PokeboxBuyThisMon,
-        .money = 15000,
-        .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
             .specie = SPECIES_BLISSEY,
             .nature = NATURE_CALM,
             .itemId = ITEM_NONE,
@@ -450,19 +665,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     {
         .mon = {
-            .specie = SPECIES_INDEEDEE,
-            .nature = NATURE_CALM,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_TRI_ATTACK, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_MOONBLAST},
-        },
-        .description = gText_PokeboxBuyThisMon,
-        .money = 15000,
-        .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
             .specie = SPECIES_PORYGON2,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
@@ -482,19 +684,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
             .isShiny = FALSE,
             .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE},
-        },
-        .description = gText_PokeboxBuyThisMon,
-        .money = 15000,
-        .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
-            .specie = SPECIES_REUNICLUS,
-            .nature = NATURE_TIMID,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_CALM_MIND, MOVE_NASTY_PLOT, MOVE_RECOVER, MOVE_STORED_POWER},
         },
         .description = gText_PokeboxBuyThisMon,
         .money = 15000,
@@ -525,20 +714,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         },
         .description = gText_PokeboxBuyThisMon,
         .money = 30000,
-        .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
-            .specie = SPECIES_GRENINJA,
-            .ability = ABILITY_PROTEAN,
-            .nature = NATURE_TIMID,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_WATER_SHURIKEN, MOVE_SCALD, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB},
-        },
-        .description = gText_PokeboxBuyThisMon,
-        .money = 15000,
         .check = CheckPokebox_isBuyMon
     },
     {
@@ -703,19 +878,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     {
         .mon = {
-            .specie = SPECIES_FERALIGATR,
-            .nature = NATURE_JOLLY,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 0, 252),
-            .isShiny = FALSE,
-            .moves = {MOVE_DRAGON_DANCE, MOVE_SLASH, MOVE_LIQUIDATION, MOVE_BODY_SLAM},
-        },
-        .description = gText_PokeboxBuyThisMon,
-        .money = 15000,
-        .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
             .specie = SPECIES_STARAPTOR,
             .ability = ABILITY_INTIMIDATE,
             .nature = NATURE_JOLLY,
@@ -754,34 +916,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .description = gText_PokeboxBuyThisMon,
         .money = 15000,
         .check = CheckPokebox_isBuyMon
-    },
-    {
-        .mon = {
-            .specie = SPECIES_MICAEL,
-            .ability = ABILITY_PRANKSTER,
-            .nature = NATURE_TIMID,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-            .isShiny = FALSE,
-            .moves = {MOVE_VOODOO, MOVE_ASTRAL_BARRAGE, MOVE_DOUBLE_TEAM, MOVE_DESTINY_BOND},
-        },
-        .description = sText_PokeboxAchievementAvaricia,
-        .money = 0,
-        .check = CheckPokebox_AchievementAvaricia
-    },
-    {
-        .mon = {
-            .specie = SPECIES_PLUGOINK,
-            .ability = ABILITY_NONE,
-            .nature = NATURE_TIMID,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-            .isShiny = FALSE,
-            .moves = {MOVE_FLAMETHROWER, MOVE_CHARGE_BEAM, MOVE_SNARL, MOVE_THUNDERBOLT},
-        },
-        .description = sText_PokeboxMetBaroRoomPlugOink,
-        .money = 0,
-        .check = CheckPokebox_MetBaroRoomPlugOink
     },
 };
 
@@ -889,6 +1023,69 @@ static bool8 CheckPokebox_MetBaroRoomPlugOink(u8 id)
 {
     (void)id;
     return FlagGet(FLAG_MET_BARO_ROOM_PLUGOINK);
+}
+
+static bool8 CheckPokebox_EingTeamsDefeated(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_POKEBOX_WON_EING_MAIN) && FlagGet(FLAG_POKEBOX_WON_EING_ALTERNATIVE);
+}
+
+static bool8 CheckPokebox_ReyBooHardBothTeams(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_POKEBOX_WON_REYBOO_MAIN_HARD) && FlagGet(FLAG_POKEBOX_WON_REYBOO_ALT_HARD);
+}
+
+static bool8 CheckPokebox_BaroBothTeams(u8 id)
+{
+    (void)id;
+    return FlagGet(FLAG_POKEBOX_WON_BARO_MAIN) && FlagGet(FLAG_POKEBOX_WON_BARO_ALTERNATIVE);
+}
+
+static bool8 CheckPokebox_DefeatAllAdminsAchievement(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_DEFEAT_ALL_ADMINS);
+}
+
+static bool8 CheckPokebox_DefeatAllCollaboratorsAchievement(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_DEFEAT_ALL_COLLABORATORS);
+}
+
+static bool8 CheckPokebox_WinWahChallengeDoubleAchievement(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_WIN_WAH_CHALLENGE_DOUBLE);
+}
+
+static bool8 CheckPokebox_WinWahChallengeInverseAchievement(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_WIN_WAH_CHALLENGE_INVERSE);
+}
+
+static bool8 CheckPokebox_BetaMonQuestionnaire(u8 id)
+{
+    switch (PokeboxSpeciesList_GetSpecie(id))
+    {
+    case SPECIES_GOROCHU:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_GOROCHU);
+    case SPECIES_TAABAN:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_TAABAN);
+    case SPECIES_BOMUSHIKAA:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA);
+    case SPECIES_MADAAMU:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_MADAAMU);
+    case SPECIES_AKUERIA:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_AKUERIA);
+    case SPECIES_LATIKEN:
+        return FlagGet(FLAG_POKEBOX_UNLOCK_BETA_LATIKEN);
+    default:
+        return FALSE;
+    }
 }
 
 static bool8 CheckPokebox_isBuyMon(u8 id)

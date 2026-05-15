@@ -838,49 +838,57 @@ Lobby_EventScript_FakemonDexMenu_ChooseSpecies_37:
 	goto_if_ne Lobby_EventScript_FakemonDexMenu_ChooseSpecies_41
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_40:
 # 516 "data/maps/Lobby/scripts.pory"
-	compare VAR_0x8000, 0
-	goto_if_eq Lobby_EventScript_FakemonDexMenu_ChooseSpecies_44
-# 521 "data/maps/Lobby/scripts.pory"
-	dynmultipush Lobby_EventScript_StartChallenge_Text_8, 14
+	getseenmon SPECIES_LUGIA_SHADOW
+# 517 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_FakemonDexMenu_ChooseSpecies_44
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_43:
 # 522 "data/maps/Lobby/scripts.pory"
+	compare VAR_0x8000, 0
+	goto_if_eq Lobby_EventScript_FakemonDexMenu_ChooseSpecies_47
+# 527 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_StartChallenge_Text_8, 15
+# 528 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_1
-# 523 "data/maps/Lobby/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
-# 524 "data/maps/Lobby/scripts.pory"
-	compare VAR_RESULT, 13
-	goto_if_gt Lobby_EventScript_FakemonDexMenu_ChooseSpecies_47
 # 529 "data/maps/Lobby/scripts.pory"
-	switch VAR_RESULT
+	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
 # 530 "data/maps/Lobby/scripts.pory"
-	case 0, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_51
-# 534 "data/maps/Lobby/scripts.pory"
-	case 1, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
-# 538 "data/maps/Lobby/scripts.pory"
-	case 2, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_53
-# 542 "data/maps/Lobby/scripts.pory"
-	case 3, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_54
-# 546 "data/maps/Lobby/scripts.pory"
-	case 4, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_55
-# 550 "data/maps/Lobby/scripts.pory"
-	case 5, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_56
-# 554 "data/maps/Lobby/scripts.pory"
-	case 6, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_57
-# 558 "data/maps/Lobby/scripts.pory"
-	case 7, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_58
-# 562 "data/maps/Lobby/scripts.pory"
-	case 8, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_59
-# 566 "data/maps/Lobby/scripts.pory"
-	case 9, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_60
-# 570 "data/maps/Lobby/scripts.pory"
-	case 10, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_61
-# 574 "data/maps/Lobby/scripts.pory"
-	case 11, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_62
-# 578 "data/maps/Lobby/scripts.pory"
-	case 12, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_63
-# 582 "data/maps/Lobby/scripts.pory"
-	case 13, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_64
-Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49:
-# 587 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 14
+	goto_if_gt Lobby_EventScript_FakemonDexMenu_ChooseSpecies_50
+# 535 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 536 "data/maps/Lobby/scripts.pory"
+	case 0, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_54
+# 540 "data/maps/Lobby/scripts.pory"
+	case 1, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_55
+# 544 "data/maps/Lobby/scripts.pory"
+	case 2, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_56
+# 548 "data/maps/Lobby/scripts.pory"
+	case 3, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_57
+# 552 "data/maps/Lobby/scripts.pory"
+	case 4, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_58
+# 556 "data/maps/Lobby/scripts.pory"
+	case 5, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_59
+# 560 "data/maps/Lobby/scripts.pory"
+	case 6, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_60
+# 564 "data/maps/Lobby/scripts.pory"
+	case 7, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_61
+# 568 "data/maps/Lobby/scripts.pory"
+	case 8, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_62
+# 572 "data/maps/Lobby/scripts.pory"
+	case 9, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_63
+# 576 "data/maps/Lobby/scripts.pory"
+	case 10, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_64
+# 580 "data/maps/Lobby/scripts.pory"
+	case 11, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_65
+# 584 "data/maps/Lobby/scripts.pory"
+	case 12, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_66
+# 588 "data/maps/Lobby/scripts.pory"
+	case 13, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_67
+# 592 "data/maps/Lobby/scripts.pory"
+	case 14, Lobby_EventScript_FakemonDexMenu_ChooseSpecies_68
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52:
+# 597 "data/maps/Lobby/scripts.pory"
 	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies
 	return
 
@@ -1011,298 +1019,775 @@ Lobby_EventScript_FakemonDexMenu_ChooseSpecies_41:
 	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_40
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_44:
-# 517 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_0
 # 518 "data/maps/Lobby/scripts.pory"
-	release
-	end
+	bufferspeciesname STR_VAR_1, SPECIES_LUGIA_SHADOW
+# 519 "data/maps/Lobby/scripts.pory"
+	dynmultipush gStringVar1, 14
+# 520 "data/maps/Lobby/scripts.pory"
+	addvar VAR_0x8000, 1
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_43
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_47:
-# 525 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_2, MSGBOX_AUTOCLOSE
-# 526 "data/maps/Lobby/scripts.pory"
+# 523 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_0
+# 524 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
-Lobby_EventScript_FakemonDexMenu_ChooseSpecies_51:
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_50:
 # 531 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_KAOSUNE, 10, 3
+	msgbox Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_2, MSGBOX_AUTOCLOSE
 # 532 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_KAOSUNE
-# 533 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
-
-Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52:
-# 535 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_FREECH, 10, 3
-# 536 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_FREECH
-# 537 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
-
-Lobby_EventScript_FakemonDexMenu_ChooseSpecies_53:
-# 539 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_PLUGOINK, 10, 3
-# 540 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_PLUGOINK
-# 541 "data/maps/Lobby/scripts.pory"
-	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	release
+	end
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_54:
-# 543 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_GRITESPEC, 10, 3
-# 544 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_GRITESPEC
-# 545 "data/maps/Lobby/scripts.pory"
+# 537 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_KAOSUNE, 10, 3
+# 538 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_KAOSUNE
+# 539 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_55:
-# 547 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_MAGIKEN, 10, 3
-# 548 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MAGIKEN
-# 549 "data/maps/Lobby/scripts.pory"
+# 541 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_FREECH, 10, 3
+# 542 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_FREECH
+# 543 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_56:
-# 551 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_AYEWIRAZ, 10, 3
-# 552 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_AYEWIRAZ
-# 553 "data/maps/Lobby/scripts.pory"
+# 545 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_PLUGOINK, 10, 3
+# 546 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_PLUGOINK
+# 547 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_57:
-# 555 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_JARDINO, 10, 3
-# 556 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_JARDINO
-# 557 "data/maps/Lobby/scripts.pory"
+# 549 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_GRITESPEC, 10, 3
+# 550 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_GRITESPEC
+# 551 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_58:
-# 559 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_OCEADINO, 10, 3
-# 560 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_OCEADINO
-# 561 "data/maps/Lobby/scripts.pory"
+# 553 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_MAGIKEN, 10, 3
+# 554 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_MAGIKEN
+# 555 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_59:
-# 563 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_TYRADINO, 10, 3
-# 564 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_TYRADINO
-# 565 "data/maps/Lobby/scripts.pory"
+# 557 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_AYEWIRAZ, 10, 3
+# 558 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_AYEWIRAZ
+# 559 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_60:
-# 567 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_ELECTRODES, 10, 3
-# 568 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_ELECTRODES
-# 569 "data/maps/Lobby/scripts.pory"
+# 561 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_JARDINO, 10, 3
+# 562 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_JARDINO
+# 563 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_61:
-# 571 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_EING, 10, 3
-# 572 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_EING
-# 573 "data/maps/Lobby/scripts.pory"
+# 565 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_OCEADINO, 10, 3
+# 566 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_OCEADINO
+# 567 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_62:
-# 575 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_MICAEL, 10, 3
-# 576 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MICAEL
-# 577 "data/maps/Lobby/scripts.pory"
+# 569 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_TYRADINO, 10, 3
+# 570 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_TYRADINO
+# 571 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_63:
-# 579 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_MOLIKAI, 10, 3
-# 580 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MOLIKAI
-# 581 "data/maps/Lobby/scripts.pory"
+# 573 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_ELECTRODES, 10, 3
+# 574 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_ELECTRODES
+# 575 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_64:
-# 583 "data/maps/Lobby/scripts.pory"
-	showmonpic SPECIES_DIRAEI, 10, 3
-# 584 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8004, SPECIES_DIRAEI
-# 585 "data/maps/Lobby/scripts.pory"
+# 577 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_EING, 10, 3
+# 578 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_EING
+# 579 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_ShowFakemonDexInfo
-	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_49
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
+
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_65:
+# 581 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_MICAEL, 10, 3
+# 582 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_MICAEL
+# 583 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
+
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_66:
+# 585 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_MOLIKAI, 10, 3
+# 586 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_MOLIKAI
+# 587 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
+
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_67:
+# 589 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_DIRAEI, 10, 3
+# 590 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_DIRAEI
+# 591 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
+
+Lobby_EventScript_FakemonDexMenu_ChooseSpecies_68:
+# 593 "data/maps/Lobby/scripts.pory"
+	showmonpic SPECIES_LUGIA_SHADOW, 10, 3
+# 594 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8004, SPECIES_LUGIA_SHADOW
+# 595 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_ShowFakemonDexInfo
+	goto Lobby_EventScript_FakemonDexMenu_ChooseSpecies_52
 
 
 Lobby_EventScript_ShowFakemonDexInfo::
-# 591 "data/maps/Lobby/scripts.pory"
+# 601 "data/maps/Lobby/scripts.pory"
 	special BufferSpeciesDexDescriptionForTextbox
-# 592 "data/maps/Lobby/scripts.pory"
+# 602 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_0
-# 593 "data/maps/Lobby/scripts.pory"
+# 603 "data/maps/Lobby/scripts.pory"
 	special BufferSpeciesTypeNames
-# 594 "data/maps/Lobby/scripts.pory"
+# 604 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Lobby_EventScript_ShowFakemonDexInfo_2
-# 597 "data/maps/Lobby/scripts.pory"
+# 607 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_2
 Lobby_EventScript_ShowFakemonDexInfo_1:
-# 599 "data/maps/Lobby/scripts.pory"
+# 609 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_3
-# 600 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8005, 0
-# 601 "data/maps/Lobby/scripts.pory"
-	special BufferSpeciesAbilityNameAndDescription
-# 602 "data/maps/Lobby/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_6
-Lobby_EventScript_ShowFakemonDexInfo_5:
-# 605 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8005, 1
-# 606 "data/maps/Lobby/scripts.pory"
-	special BufferSpeciesAbilityNameAndDescription
-# 607 "data/maps/Lobby/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_9
-Lobby_EventScript_ShowFakemonDexInfo_8:
 # 610 "data/maps/Lobby/scripts.pory"
-	setvar VAR_0x8005, 2
+	setvar VAR_0x8005, 0
 # 611 "data/maps/Lobby/scripts.pory"
 	special BufferSpeciesAbilityNameAndDescription
 # 612 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_6
+Lobby_EventScript_ShowFakemonDexInfo_5:
+# 615 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 1
+# 616 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesAbilityNameAndDescription
+# 617 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_9
+Lobby_EventScript_ShowFakemonDexInfo_8:
+# 620 "data/maps/Lobby/scripts.pory"
+	setvar VAR_0x8005, 2
+# 621 "data/maps/Lobby/scripts.pory"
+	special BufferSpeciesAbilityNameAndDescription
+# 622 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_ShowFakemonDexInfo_12
 Lobby_EventScript_ShowFakemonDexInfo_11:
-# 615 "data/maps/Lobby/scripts.pory"
+# 625 "data/maps/Lobby/scripts.pory"
 	special BufferSpeciesStats
-# 616 "data/maps/Lobby/scripts.pory"
+# 626 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_5
-# 617 "data/maps/Lobby/scripts.pory"
+# 627 "data/maps/Lobby/scripts.pory"
 	hidemonpic
-# 618 "data/maps/Lobby/scripts.pory"
+# 628 "data/maps/Lobby/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-# 619 "data/maps/Lobby/scripts.pory"
+# 629 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_6
 	return
 
 Lobby_EventScript_ShowFakemonDexInfo_2:
-# 595 "data/maps/Lobby/scripts.pory"
+# 605 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_1
 	goto Lobby_EventScript_ShowFakemonDexInfo_1
 
 Lobby_EventScript_ShowFakemonDexInfo_6:
-# 603 "data/maps/Lobby/scripts.pory"
+# 613 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_4
 	goto Lobby_EventScript_ShowFakemonDexInfo_5
 
 Lobby_EventScript_ShowFakemonDexInfo_9:
-# 608 "data/maps/Lobby/scripts.pory"
+# 618 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_4
 	goto Lobby_EventScript_ShowFakemonDexInfo_8
 
 Lobby_EventScript_ShowFakemonDexInfo_12:
-# 613 "data/maps/Lobby/scripts.pory"
+# 623 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_ShowFakemonDexInfo_Text_4
 	goto Lobby_EventScript_ShowFakemonDexInfo_11
 
 
 Lobby_EventScript_TrainerCardGirl::
-# 624 "data/maps/Lobby/scripts.pory"
+# 634 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_TrainerCardGirl_Text_0, MSGBOX_NPC
 	end
 
 
 Lobby_EventScript_Cope::
-# 629 "data/maps/Lobby/scripts.pory"
+# 639 "data/maps/Lobby/scripts.pory"
 	lock
-# 630 "data/maps/Lobby/scripts.pory"
+# 640 "data/maps/Lobby/scripts.pory"
 	faceplayer
-# 631 "data/maps/Lobby/scripts.pory"
+# 641 "data/maps/Lobby/scripts.pory"
 	checkitem ITEM_DEVON_SCOPE
-# 632 "data/maps/Lobby/scripts.pory"
+# 642 "data/maps/Lobby/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lobby_EventScript_Cope_2
-# 638 "data/maps/Lobby/scripts.pory"
+# 648 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Cope_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 639 "data/maps/Lobby/scripts.pory"
+# 649 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 640 "data/maps/Lobby/scripts.pory"
+# 650 "data/maps/Lobby/scripts.pory"
 	applymovementandwait LOCALID_PLAYER, Lobby_EventScript_Cope_Movement_0
-# 641 "data/maps/Lobby/scripts.pory"
+# 651 "data/maps/Lobby/scripts.pory"
 	waitse
-# 642 "data/maps/Lobby/scripts.pory"
+# 652 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Cope_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
-# 643 "data/maps/Lobby/scripts.pory"
+# 653 "data/maps/Lobby/scripts.pory"
 	giveitem ITEM_DEVON_SCOPE
-# 644 "data/maps/Lobby/scripts.pory"
+# 654 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Cope_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
 Lobby_EventScript_Cope_1:
-# 646 "data/maps/Lobby/scripts.pory"
+# 656 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 Lobby_EventScript_Cope_2:
-# 634 "data/maps/Lobby/scripts.pory"
+# 644 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Cope_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE
 	goto Lobby_EventScript_Cope_1
 
 
 Lobby_EventScript_QREventInfoKid::
-# 651 "data/maps/Lobby/scripts.pory"
+# 661 "data/maps/Lobby/scripts.pory"
 	lock
-# 652 "data/maps/Lobby/scripts.pory"
+# 662 "data/maps/Lobby/scripts.pory"
 	faceplayer
-# 653 "data/maps/Lobby/scripts.pory"
+# 663 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_QREventInfoKid_Text_0, MSGBOX_AUTOCLOSE
-# 654 "data/maps/Lobby/scripts.pory"
+# 664 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
-# 655 "data/maps/Lobby/scripts.pory"
+# 665 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
-# 656 "data/maps/Lobby/scripts.pory"
+# 666 "data/maps/Lobby/scripts.pory"
 	release
 	end
 
 
-Lobby_EventScript_AdminCountNPC::
-# 661 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_Text_AdminCountNPC, MSGBOX_NPC
+Lobby_EventScript_BetaMonQuestionnaire::
+# 671 "data/maps/Lobby/scripts.pory"
+	lock
+# 672 "data/maps/Lobby/scripts.pory"
+	faceplayer
+# 673 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Text_0, MSGBOX_AUTOCLOSE
+# 674 "data/maps/Lobby/scripts.pory"
+	special Special_BufferBetaMonQuestionnaireCounters
+# 675 "data/maps/Lobby/scripts.pory"
+	compare VAR_WAH_CHALLENGE_COMPLETION_COUNT, 0
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_2
+# 682 "data/maps/Lobby/scripts.pory"
+	delay 20
+# 683 "data/maps/Lobby/scripts.pory"
+	setvar VAR_TEMP_0, 0
+# 684 "data/maps/Lobby/scripts.pory"
+	specialvar VAR_RESULT, Special_TryPickBetaMonQuestion
+# 685 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 686 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_PICK_QUESTION, Lobby_EventScript_BetaMonQuestionnaire_5
+# 693 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_PICK_ALL_UNLOCKED, Lobby_EventScript_BetaMonQuestionnaire_6
+# 696 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_2:
+# 676 "data/maps/Lobby/scripts.pory"
+	playse SE_PIN
+# 677 "data/maps/Lobby/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_Surprise
+# 678 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Text_1, MSGBOX_AUTOCLOSE
+# 679 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_BetaMonQuestionnaire_5:
+# 687 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Text_2, MSGBOX_YESNO
+# 688 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_8
+# 691 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_6:
+# 694 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_8:
+# 689 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion
+	return
+
+
+Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft::
+# 701 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft_Text_0, MSGBOX_AUTOCLOSE
+# 702 "data/maps/Lobby/scripts.pory"
+	release
 	end
 
 
+Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions::
+# 707 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions_Text_0, MSGBOX_AUTOCLOSE
+# 708 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
+Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater::
+# 713 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater_Text_0, MSGBOX_AUTOCLOSE
+# 714 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion::
+# 719 "data/maps/Lobby/scripts.pory"
+	special Special_BufferBetaMonQuestionnaireCounters
+# 720 "data/maps/Lobby/scripts.pory"
+	specialvar VAR_RESULT, Special_TryPickBetaMonQuestion
+# 721 "data/maps/Lobby/scripts.pory"
+	switch VAR_RESULT
+# 722 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_PICK_QUESTION, Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_2
+# 728 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_PICK_ALL_UNLOCKED, Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_3
+# 730 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_PICK_NONE_THIS_TALK, Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_4
+# 735 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_2:
+# 723 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_0, MSGBOX_YESNO
+# 724 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_7
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_6:
+# 727 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_3:
+# 729 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_4:
+# 731 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_1, MSGBOX_AUTOCLOSE
+# 732 "data/maps/Lobby/scripts.pory"
+	release
+	end
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_7:
+# 725 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion
+	goto Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_6
+
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion::
+# 740 "data/maps/Lobby/scripts.pory"
+	addvar VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT, 1
+# 741 "data/maps/Lobby/scripts.pory"
+	switch VAR_0x8004
+# 742 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_GOROCHU, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_3
+# 745 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_TAABAN, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_4
+# 748 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_BOMUSHIKAA, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_5
+# 751 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_MADAAMU, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_6
+# 754 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_AKUERIA, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_7
+# 757 "data/maps/Lobby/scripts.pory"
+	case BETA_MON_QUESTION_LATIKEN, Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_8
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1:
+# 761 "data/maps/Lobby/scripts.pory"
+	goto Lobby_EventScript_BetaMonQuestionnaire_NextQuestion
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_3:
+# 743 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Gorochu
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_4:
+# 746 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Taaban
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_5:
+# 749 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_6:
+# 752 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Madaamu
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_7:
+# 755 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Akueria
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_8:
+# 758 "data/maps/Lobby/scripts.pory"
+	call Lobby_EventScript_BetaMonQuestionnaire_Latiken
+	goto Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu::
+# 765 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_0
+# 766 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 767 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_1, 0
+# 768 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_2, 1
+# 769 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_3, 2
+# 770 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_4, 3
+# 771 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 772 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 773 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Gorochu_2
+# 778 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_1:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_2:
+# 774 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_GOROCHU
+# 775 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_5, MSGBOX_AUTOCLOSE
+# 776 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Gorochu_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban::
+# 784 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_0
+# 785 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 786 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_1, 0
+# 787 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_2, 1
+# 788 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_3, 2
+# 789 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_4, 3
+# 790 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 791 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 792 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Taaban_2
+# 797 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_1:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_2:
+# 793 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_TAABAN
+# 794 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_5, MSGBOX_AUTOCLOSE
+# 795 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Taaban_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa::
+# 803 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_0
+# 804 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 805 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_1, 0
+# 806 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_2, 1
+# 807 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_3, 2
+# 808 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_4, 3
+# 809 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 810 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 811 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_2
+# 816 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_1:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_2:
+# 812 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA
+# 813 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_5, MSGBOX_AUTOCLOSE
+# 814 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu::
+# 822 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_0
+# 823 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 824 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_1, 0
+# 825 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_2, 1
+# 826 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_3, 2
+# 827 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_4, 3
+# 828 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 829 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 830 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Madaamu_2
+# 835 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_1:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_2:
+# 831 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_MADAAMU
+# 832 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_5, MSGBOX_AUTOCLOSE
+# 833 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Madaamu_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria::
+# 841 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_0
+# 842 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 843 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_1, 0
+# 844 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_2, 1
+# 845 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_3, 2
+# 846 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_4, 3
+# 847 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 848 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 849 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Akueria_2
+# 854 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_1:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_2:
+# 850 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_AKUERIA
+# 851 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_5, MSGBOX_AUTOCLOSE
+# 852 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Akueria_1
+
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken::
+# 860 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_0, MSGBOX_AUTOCLOSE
+# 861 "data/maps/Lobby/scripts.pory"
+	playmoncry SPECIES_JIRACHI, CRY_MODE_NORMAL
+# 862 "data/maps/Lobby/scripts.pory"
+	waitmoncry
+# 863 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_1
+# 864 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 865 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_2, 0
+# 866 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_3, 1
+# 867 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_4, 2
+# 868 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_5, 3
+# 869 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 870 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 871 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Lobby_EventScript_BetaMonQuestionnaire_Latiken_2
+# 876 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_6, MSGBOX_AUTOCLOSE
+# 877 "data/maps/Lobby/scripts.pory"
+	playmoncry SPECIES_LATIAS, CRY_MODE_NORMAL
+# 878 "data/maps/Lobby/scripts.pory"
+	waitmoncry
+# 879 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_1
+# 880 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 881 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_7, 0
+# 882 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_8, 1
+# 883 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_9, 2
+# 884 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_10, 3
+# 885 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 886 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 887 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_ne Lobby_EventScript_BetaMonQuestionnaire_Latiken_5
+# 892 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_11, MSGBOX_AUTOCLOSE
+# 893 "data/maps/Lobby/scripts.pory"
+	playmoncry SPECIES_BLAZIKEN, CRY_MODE_NORMAL
+# 894 "data/maps/Lobby/scripts.pory"
+	waitmoncry
+# 895 "data/maps/Lobby/scripts.pory"
+	message Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_1
+# 896 "data/maps/Lobby/scripts.pory"
+	waitmessage
+# 897 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_12, 0
+# 898 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_13, 1
+# 899 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_14, 2
+# 900 "data/maps/Lobby/scripts.pory"
+	dynmultipush Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_15, 3
+# 901 "data/maps/Lobby/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE
+# 902 "data/maps/Lobby/scripts.pory"
+	closemessage
+# 903 "data/maps/Lobby/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq Lobby_EventScript_BetaMonQuestionnaire_Latiken_8
+# 908 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_7:
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_2:
+# 872 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_5:
+# 888 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE
+	return
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_8:
+# 904 "data/maps/Lobby/scripts.pory"
+	setflag FLAG_POKEBOX_UNLOCK_BETA_LATIKEN
+# 905 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_16, MSGBOX_AUTOCLOSE
+# 906 "data/maps/Lobby/scripts.pory"
+	call Pokebox_EventScript_ShowUnlocks
+	goto Lobby_EventScript_BetaMonQuestionnaire_Latiken_7
+
+
 Lobby_EventScript_Pokebox::
-# 680 "data/maps/Lobby/scripts.pory"
+# 918 "data/maps/Lobby/scripts.pory"
 	setvar VAR_TEMP_C, 8
-# 681 "data/maps/Lobby/scripts.pory"
+# 919 "data/maps/Lobby/scripts.pory"
 	setvar VAR_TEMP_D, 3
-# 682 "data/maps/Lobby/scripts.pory"
+# 920 "data/maps/Lobby/scripts.pory"
 	setvar VAR_TEMP_E, METATILE_lobby_PC_OFF
-# 683 "data/maps/Lobby/scripts.pory"
+# 921 "data/maps/Lobby/scripts.pory"
 	setvar VAR_TEMP_F, METATILE_lobby_PC_ON
-# 684 "data/maps/Lobby/scripts.pory"
+# 922 "data/maps/Lobby/scripts.pory"
 	call WahRoomsShared_EventScript_Pokebox
 	end
 
 
 Lobby_EventScript_Turbo::
-# 689 "data/maps/Lobby/scripts.pory"
+# 927 "data/maps/Lobby/scripts.pory"
 	msgbox Lobby_EventScript_Turbo_Text_0, MSGBOX_NPC
+	end
+
+
+Lobby_EventScript_Notes::
+# 932 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Notes_Text_0, MSGBOX_SIGN
 	end
 
 
@@ -1328,9 +1813,9 @@ Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1:
 	delay_16
 	step_end
 
-# 640 "data/maps/Lobby/scripts.pory"
+# 650 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Cope_Movement_0:
-# 640 "data/maps/Lobby/scripts.pory"
+# 650 "data/maps/Lobby/scripts.pory"
 	emote_question_mark
 	step_end
 
@@ -1645,56 +2130,56 @@ Lobby_EventScript_FakemonDexMenu_Text_0:
 	.string "¡No quiero arruinar el factor sorpresa!$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_0:
-# 517 "data/maps/Lobby/scripts.pory"
+# 523 "data/maps/Lobby/scripts.pory"
 	.string "¡Todas las especies que has visto son\n"
 	.string "de público conocimiento!\p"
 	.string "¡Ve a combatir a las salas y ya verás de\n"
 	.string "las que estoy hablando!$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_1:
-# 522 "data/maps/Lobby/scripts.pory"
+# 528 "data/maps/Lobby/scripts.pory"
 	.string "¿De cuál especie te gustaría conocer\n"
 	.string "más?$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_2:
-# 525 "data/maps/Lobby/scripts.pory"
+# 531 "data/maps/Lobby/scripts.pory"
 	.string "¡Si quieres saber algo más, aquí estaré!$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_0:
-# 592 "data/maps/Lobby/scripts.pory"
+# 602 "data/maps/Lobby/scripts.pory"
 	.string "Ya que no tienes una Pokedex, su\n"
 	.string "descripción es:{FONT_SMALL}\p"
 	.string "“{STR_VAR_1}”$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_1:
-# 595 "data/maps/Lobby/scripts.pory"
+# 605 "data/maps/Lobby/scripts.pory"
 	.string "Su tipo es: {STR_VAR_2}.$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_2:
-# 597 "data/maps/Lobby/scripts.pory"
+# 607 "data/maps/Lobby/scripts.pory"
 	.string "Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_3:
-# 599 "data/maps/Lobby/scripts.pory"
+# 609 "data/maps/Lobby/scripts.pory"
 	.string "¡Y esto seguramente no lo sabías!\nSus habilidades son:$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_4:
-# 603 "data/maps/Lobby/scripts.pory"
+# 613 "data/maps/Lobby/scripts.pory"
 	.string "{STR_VAR_1}:\n"
 	.string "{FONT_SMALL}“{STR_VAR_2}”$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_5:
-# 616 "data/maps/Lobby/scripts.pory"
+# 626 "data/maps/Lobby/scripts.pory"
 	.string "¡Último dato! ¿Qué tan buenos son sus\n"
 	.string "stats base?\p"
 	.string "{FONT_SMALL}{STR_VAR_1}$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_6:
-# 619 "data/maps/Lobby/scripts.pory"
+# 629 "data/maps/Lobby/scripts.pory"
 	.string "Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.$"
 
 Lobby_EventScript_TrainerCardGirl_Text_0:
-# 624 "data/maps/Lobby/scripts.pory"
+# 634 "data/maps/Lobby/scripts.pory"
 	.string "¿Sabías que en la parte de atrás de tu\n"
 	.string "tarjeta de entrenador puedes ver tus\l"
 	.string "logros?\p"
@@ -1702,17 +2187,17 @@ Lobby_EventScript_TrainerCardGirl_Text_0:
 	.string "para obtener cada uno!$"
 
 Lobby_EventScript_Cope_Text_0:
-# 634 "data/maps/Lobby/scripts.pory"
+# 644 "data/maps/Lobby/scripts.pory"
 	.string "¡Hola {PLAYER}!\p"
 	.string "¿Estás list{OA} para intentar el desafío?$"
 
 Lobby_EventScript_Cope_Text_1:
-# 638 "data/maps/Lobby/scripts.pory"
+# 648 "data/maps/Lobby/scripts.pory"
 	.string "¡Hola {PLAYER}!\p"
 	.string "¿Has visto a Tile?$"
 
 Lobby_EventScript_Cope_Text_2:
-# 642 "data/maps/Lobby/scripts.pory"
+# 652 "data/maps/Lobby/scripts.pory"
 	.string "¿Cómo? ¿No sabes quién es?\n"
 	.string "Es mi famoso Kecleon.\p"
 	.string "Lo he perdido de vista y no sé por dónde\n"
@@ -1723,12 +2208,12 @@ Lobby_EventScript_Cope_Text_2:
 	.string "Toma, llévate esto.$"
 
 Lobby_EventScript_Cope_Text_3:
-# 644 "data/maps/Lobby/scripts.pory"
+# 654 "data/maps/Lobby/scripts.pory"
 	.string "Con el Detector Devon podrás ver dónde\n"
 	.string "se esconde Tile.$"
 
 Lobby_EventScript_QREventInfoKid_Text_0:
-# 653 "data/maps/Lobby/scripts.pory"
+# 663 "data/maps/Lobby/scripts.pory"
 	.string "Un chico de la zona creativa te da un\n"
 	.string "regalo por completar un evento\l"
 	.string "especial.\p"
@@ -1739,14 +2224,289 @@ Lobby_EventScript_QREventInfoKid_Text_0:
 	.string "Eso sí, me gustó el premio por completar\n"
 	.string "el evento, ¡valió la pena!$"
 
+Lobby_EventScript_BetaMonQuestionnaire_Text_0:
+# 673 "data/maps/Lobby/scripts.pory"
+	.string "¡Buenas! Soy el maestro de los\n"
+	.string "cuestionarios.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Text_1:
+# 678 "data/maps/Lobby/scripts.pory"
+	.string "Así que aún no has completado el\n"
+	.string "desafío.\l"
+	.string "...\l"
+	.string "...\p"
+	.string "Cuando lo superes, vuelve y te haré un\n"
+	.string "cuestionario especial.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Text_2:
+# 687 "data/maps/Lobby/scripts.pory"
+	.string "Te haré una pregunta por cada vez que\n"
+	.string "hayas completado el desafío.\p"
+	.string "Has completado el desafío\n"
+	.string "{STR_VAR_1} veces.\p"
+	.string "Ya te hice {STR_VAR_2} preguntas.\p"
+	.string "Te quedan {STR_VAR_3} intentos\n"
+	.string "disponibles.\p"
+	.string "¿Quieres que te haga una pregunta?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft_Text_0:
+# 701 "data/maps/Lobby/scripts.pory"
+	.string "Has completado el desafío\n"
+	.string "{STR_VAR_1} veces.\p"
+	.string "Ya te hice {STR_VAR_2} preguntas.\p"
+	.string "Te quedan {STR_VAR_3} intentos\n"
+	.string "disponibles.\p"
+	.string "Completa el desafío otra vez y vuelve\n"
+	.string "por aquí.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions_Text_0:
+# 707 "data/maps/Lobby/scripts.pory"
+	.string "¡Ya has respondido todas mis\n"
+	.string "preguntas! ¿Qué te parecen los Pokémon\l"
+	.string "que has conseguido?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater_Text_0:
+# 713 "data/maps/Lobby/scripts.pory"
+	.string "De acuerdo. Puedes volver cuando\n"
+	.string "quieras.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_0:
+# 723 "data/maps/Lobby/scripts.pory"
+	.string "Has completado el desafío\n"
+	.string "{STR_VAR_1} veces.\p"
+	.string "Ya te hice {STR_VAR_2} preguntas.\p"
+	.string "Te quedan {STR_VAR_3} intentos\n"
+	.string "disponibles.\p"
+	.string "¿Quieres seguir respondiendo?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_1:
+# 731 "data/maps/Lobby/scripts.pory"
+	.string "Has completado el desafío\n"
+	.string "{STR_VAR_1} veces.\p"
+	.string "Ya te hice {STR_VAR_2} preguntas.\p"
+	.string "Te quedan {STR_VAR_3} intentos\n"
+	.string "disponibles.\p"
+	.string "Por ahora no tengo más preguntas\n"
+	.string "distintas para hacerte.\p"
+	.string "Vuelve a hablarme en otro momento.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_0:
+# 765 "data/maps/Lobby/scripts.pory"
+	.string "¿Qué Pokémon es naranja, tiene una cola\n"
+	.string "larga y a todo el mundo le encanta el\l"
+	.string "que evoluciona en él?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_1:
+# 767 "data/maps/Lobby/scripts.pory"
+	.string "Raichu$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_2:
+# 768 "data/maps/Lobby/scripts.pory"
+	.string "Arcanine$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_3:
+# 769 "data/maps/Lobby/scripts.pory"
+	.string "Floatzel$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_4:
+# 770 "data/maps/Lobby/scripts.pory"
+	.string "Simisear$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_5:
+# 775 "data/maps/Lobby/scripts.pory"
+	.string "Pues con este Pokémon te encontrarás.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_0:
+# 784 "data/maps/Lobby/scripts.pory"
+	.string "Mi amigo siempre va con su Bro detrás.\p"
+	.string "¿Qué Pokémon es mi amigo?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_1:
+# 786 "data/maps/Lobby/scripts.pory"
+	.string "Slowking$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_2:
+# 787 "data/maps/Lobby/scripts.pory"
+	.string "Slowbro$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_3:
+# 788 "data/maps/Lobby/scripts.pory"
+	.string "Slowpoke$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_4:
+# 789 "data/maps/Lobby/scripts.pory"
+	.string "Shellder$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_5:
+# 794 "data/maps/Lobby/scripts.pory"
+	.string "Pues con su Bro te irás.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_0:
+# 803 "data/maps/Lobby/scripts.pory"
+	.string "Blanco como la nieve y una carita mona.\p"
+	.string "¿Quién es?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_1:
+# 805 "data/maps/Lobby/scripts.pory"
+	.string "Whismur$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_2:
+# 806 "data/maps/Lobby/scripts.pory"
+	.string "Aipom$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_3:
+# 807 "data/maps/Lobby/scripts.pory"
+	.string "Dewgong$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_4:
+# 808 "data/maps/Lobby/scripts.pory"
+	.string "Snorunt$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_5:
+# 813 "data/maps/Lobby/scripts.pory"
+	.string "¡Pues este se le parece!$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_0:
+# 822 "data/maps/Lobby/scripts.pory"
+	.string "El Capitán Puerro blande su espada en\n"
+	.string "el bosque.\p"
+	.string "¿Quién es realmente el Capitán Puerro?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_1:
+# 824 "data/maps/Lobby/scripts.pory"
+	.string "Kartana$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_2:
+# 825 "data/maps/Lobby/scripts.pory"
+	.string "Gallade$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_3:
+# 826 "data/maps/Lobby/scripts.pory"
+	.string "Farfetch'd$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_4:
+# 827 "data/maps/Lobby/scripts.pory"
+	.string "Scyther$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_5:
+# 832 "data/maps/Lobby/scripts.pory"
+	.string "Exacto. Ese filo también despertó la\n"
+	.string "curiosidad de Madaamu.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_0:
+# 841 "data/maps/Lobby/scripts.pory"
+	.string "Adivina, adivinanza.\p"
+	.string "¿Qué serpiente azul tiene una evolución\n"
+	.string "naranja?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_1:
+# 843 "data/maps/Lobby/scripts.pory"
+	.string "Gyarados$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_2:
+# 844 "data/maps/Lobby/scripts.pory"
+	.string "Dratini$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_3:
+# 845 "data/maps/Lobby/scripts.pory"
+	.string "Milotic$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_4:
+# 846 "data/maps/Lobby/scripts.pory"
+	.string "Dunsparce$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_5:
+# 851 "data/maps/Lobby/scripts.pory"
+	.string "Pues su primo te ha visto luchar y te\n"
+	.string "espera.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_0:
+# 860 "data/maps/Lobby/scripts.pory"
+	.string "Adivina, adivinanza.\p"
+	.string "¿Qué Pokémon hace este grito?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_1:
+# 863 "data/maps/Lobby/scripts.pory"
+	.string "¿Quién fue?$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_2:
+# 865 "data/maps/Lobby/scripts.pory"
+	.string "Jirachi$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_3:
+# 866 "data/maps/Lobby/scripts.pory"
+	.string "Celebi$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_4:
+# 867 "data/maps/Lobby/scripts.pory"
+	.string "Mew$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_5:
+# 868 "data/maps/Lobby/scripts.pory"
+	.string "Deoxys$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_6:
+# 876 "data/maps/Lobby/scripts.pory"
+	.string "Oh, correcto. Ahora mismo intenta\n"
+	.string "adivinar este.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_7:
+# 881 "data/maps/Lobby/scripts.pory"
+	.string "Latios$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_8:
+# 882 "data/maps/Lobby/scripts.pory"
+	.string "Latias$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_9:
+# 883 "data/maps/Lobby/scripts.pory"
+	.string "Altaria$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_10:
+# 884 "data/maps/Lobby/scripts.pory"
+	.string "Flygon$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_11:
+# 892 "data/maps/Lobby/scripts.pory"
+	.string "Oh, volviste a acertar. Ahora este.$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_12:
+# 897 "data/maps/Lobby/scripts.pory"
+	.string "Blaziken$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_13:
+# 898 "data/maps/Lobby/scripts.pory"
+	.string "Combusken$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_14:
+# 899 "data/maps/Lobby/scripts.pory"
+	.string "Infernape$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_15:
+# 900 "data/maps/Lobby/scripts.pory"
+	.string "Lucario$"
+
+Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_16:
+# 905 "data/maps/Lobby/scripts.pory"
+	.string "Increíble, acertaste otra vez. Es\n"
+	.string "impresionante.\p"
+	.string "Ten esto.$"
+
 Lobby_EventScript_Turbo_Text_0:
-# 689 "data/maps/Lobby/scripts.pory"
+# 927 "data/maps/Lobby/scripts.pory"
 	.string "¿Sabías qué existe un modo turbo para\n"
 	.string "vivir la aventura a toda velocidad?\p"
 	.string "Desde el menú de opciones puedes\n"
 	.string "configurar tu velocidad de texto, de\l"
 	.string "caminar, ¡y un turbo para los combates!\p"
 	.string "¿Te animas a probarlo?$"
+
+Lobby_EventScript_Notes_Text_0:
+# 932 "data/maps/Lobby/scripts.pory"
+	.string "Parecen apuntes llenos de\n"
+	.string "estadísticas y observaciones.\p"
+	.string "Algunas páginas están tan gastadas\n"
+	.string "que cuesta leerlas.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 131 "data/maps/Lobby/scripts.pory"
@@ -1763,13 +2523,6 @@ Lobby_Text_Roxas_PlayerCancelled::
 	.string "legendario? ¡Y aún así ganaste las\l"
 	.string "salas!$"
 
-Lobby_Text_AdminCountNPC::
-# 665 "data/maps/Lobby/scripts.pory"
-	.string "Dicen que son 21 salas para completar\n"
-	.string "el desafío…\p"
-	.string "Para la cantidad de administradores que \n"
-	.string "hubo en la historia de WAH, hay algo que\l"
-	.string "no termina de cuadrar.\p"
-	.string "¿Habrán dejado a algunos afuera de la \n"
-	.string "celebración?\p"
-	.string "¿Cómo lo resolvieron?$"
+Lobby_Text_FailedToUnlock::
+# 913 "data/maps/Lobby/scripts.pory"
+	.string "Oh, ¡fallaste!$"

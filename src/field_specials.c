@@ -85,6 +85,7 @@
 #include "constants/achievements.h"
 #include "constants/characters.h"
 #include "constants/pokemon.h"
+#include "constants/var_values.h"
 #include "constants/vars.h"
 
 #define TAG_ITEM_ICON 5500
@@ -1503,6 +1504,64 @@ u16 Special_FindNextPokeboxUnlock(void)
         }
     }
     return FALSE;
+}
+
+static const u16 sBetaMonQuestionFlags[] =
+{
+    [BETA_MON_QUESTION_GOROCHU] = FLAG_POKEBOX_UNLOCK_BETA_GOROCHU,
+    [BETA_MON_QUESTION_TAABAN] = FLAG_POKEBOX_UNLOCK_BETA_TAABAN,
+    [BETA_MON_QUESTION_BOMUSHIKAA] = FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA,
+    [BETA_MON_QUESTION_MADAAMU] = FLAG_POKEBOX_UNLOCK_BETA_MADAAMU,
+    [BETA_MON_QUESTION_AKUERIA] = FLAG_POKEBOX_UNLOCK_BETA_AKUERIA,
+    [BETA_MON_QUESTION_LATIKEN] = FLAG_POKEBOX_UNLOCK_BETA_LATIKEN,
+};
+
+u16 Special_TryPickBetaMonQuestion(void)
+{
+    u16 askedThisTalk = VarGet(VAR_TEMP_0);
+    u8 candidates[ARRAY_COUNT(sBetaMonQuestionFlags)];
+    u8 count = 0;
+    u8 i;
+    u8 selected;
+
+    for (i = 0; i < ARRAY_COUNT(sBetaMonQuestionFlags); i++)
+    {
+        if (!FlagGet(sBetaMonQuestionFlags[i]))
+            break;
+    }
+    if (i == ARRAY_COUNT(sBetaMonQuestionFlags))
+        return BETA_MON_QUESTION_PICK_ALL_UNLOCKED;
+
+    if (VarGet(VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT) >= VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT))
+        return BETA_MON_QUESTION_PICK_NO_CREDIT;
+
+    for (i = 0; i < ARRAY_COUNT(sBetaMonQuestionFlags); i++)
+    {
+        if (!FlagGet(sBetaMonQuestionFlags[i]) && !(askedThisTalk & (1 << i)))
+            candidates[count++] = i;
+    }
+
+    if (count == 0)
+        return BETA_MON_QUESTION_PICK_NONE_THIS_TALK;
+
+    selected = candidates[Random() % count];
+    gSpecialVar_0x8004 = selected;
+    VarSet(VAR_TEMP_0, askedThisTalk | (1 << selected));
+    return BETA_MON_QUESTION_PICK_QUESTION;
+}
+
+void Special_BufferBetaMonQuestionnaireCounters(void)
+{
+    u16 completed = VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT);
+    u16 asked = VarGet(VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT);
+    u16 available = 0;
+
+    if (completed > asked)
+        available = completed - asked;
+
+    ConvertIntToDecimalStringN(gStringVar1, completed, STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar2, asked, STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar3, available, STR_CONV_MODE_LEFT_ALIGN, 5);
 }
 
 bool8 Special_BufferPokeboxBuyOfferFromSpecies(void)

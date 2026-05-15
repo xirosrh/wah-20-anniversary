@@ -275,91 +275,97 @@ BaroRoom_EventScript_CloseSideDoor::
 BaroRoom_EventScript_BaroBattle::
 # 166 "data/maps/BaroRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, BaroRoom_EventScript_BaroBattle_2
-# 169 "data/maps/BaroRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_BARO
 # 170 "data/maps/BaroRoom/scripts.pory"
-	special ShouldUseAlternativeTeam
+	setvar VAR_0x8004, TEAM_INDEX_BARO
 # 171 "data/maps/BaroRoom/scripts.pory"
+	special ShouldUseAlternativeTeam
+# 172 "data/maps/BaroRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BaroRoom_EventScript_BaroBattle_5
-# 174 "data/maps/BaroRoom/scripts.pory"
+# 176 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_ALTERNATIVE, BaroRoom_Text_BaroDefeated
+# 177 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_BARO_ALTERNATIVE
 BaroRoom_EventScript_BaroBattle_1:
 	return
 
 BaroRoom_EventScript_BaroBattle_2:
 # 167 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
+# 168 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_BARO_MAIN
 	goto BaroRoom_EventScript_BaroBattle_1
 
 BaroRoom_EventScript_BaroBattle_5:
-# 172 "data/maps/BaroRoom/scripts.pory"
+# 173 "data/maps/BaroRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_BARO_MAIN, BaroRoom_Text_BaroDefeated
+# 174 "data/maps/BaroRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_BARO_MAIN
 	goto BaroRoom_EventScript_BaroBattle_1
 
 
 BaroRoom_EventScript_PlugOink::
-# 185 "data/maps/BaroRoom/scripts.pory"
-	lock
-# 186 "data/maps/BaroRoom/scripts.pory"
-	applymovement LOCALID_BAROROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_Movement_0
-# 187 "data/maps/BaroRoom/scripts.pory"
-	waitmovement 0
 # 188 "data/maps/BaroRoom/scripts.pory"
-	playmoncry SPECIES_PLUGOINK, CRY_MODE_NORMAL
+	lock
 # 189 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_DEFAULT
+	applymovement LOCALID_BAROROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_Movement_0
 # 190 "data/maps/BaroRoom/scripts.pory"
-	waitmoncry
+	waitmovement 0
 # 191 "data/maps/BaroRoom/scripts.pory"
-	closemessage
+	playmoncry SPECIES_PLUGOINK, CRY_MODE_NORMAL
 # 192 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_PlugOink_Text_0, MSGBOX_DEFAULT
+# 193 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 194 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 195 "data/maps/BaroRoom/scripts.pory"
 	goto_if_unset FLAG_MET_BARO_ROOM_PLUGOINK, BaroRoom_EventScript_PlugOink_2
 BaroRoom_EventScript_PlugOink_1:
-# 196 "data/maps/BaroRoom/scripts.pory"
+# 199 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
 BaroRoom_EventScript_PlugOink_2:
-# 193 "data/maps/BaroRoom/scripts.pory"
+# 196 "data/maps/BaroRoom/scripts.pory"
 	setflag FLAG_MET_BARO_ROOM_PLUGOINK
-# 194 "data/maps/BaroRoom/scripts.pory"
+# 197 "data/maps/BaroRoom/scripts.pory"
 	call Pokebox_EventScript_ShowUnlocks
 	goto BaroRoom_EventScript_PlugOink_1
 
 
 BaroRoom_EventScript_Sever::
-# 201 "data/maps/BaroRoom/scripts.pory"
-	lock
-# 202 "data/maps/BaroRoom/scripts.pory"
-	faceplayer
-# 203 "data/maps/BaroRoom/scripts.pory"
-	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
 # 204 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_DEFAULT
+	lock
 # 205 "data/maps/BaroRoom/scripts.pory"
-	waitmoncry
+	faceplayer
 # 206 "data/maps/BaroRoom/scripts.pory"
-	closemessage
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
 # 207 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Sever_Text_0, MSGBOX_DEFAULT
+# 208 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 209 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 210 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
 
 BaroRoom_EventScript_Seeg::
-# 212 "data/maps/BaroRoom/scripts.pory"
-	lock
-# 213 "data/maps/BaroRoom/scripts.pory"
-	faceplayer
-# 214 "data/maps/BaroRoom/scripts.pory"
-	playmoncry SPECIES_TREECKO, CRY_MODE_NORMAL
 # 215 "data/maps/BaroRoom/scripts.pory"
-	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_DEFAULT
+	lock
 # 216 "data/maps/BaroRoom/scripts.pory"
-	waitmoncry
+	faceplayer
 # 217 "data/maps/BaroRoom/scripts.pory"
-	closemessage
+	playmoncry SPECIES_TREECKO, CRY_MODE_NORMAL
 # 218 "data/maps/BaroRoom/scripts.pory"
+	msgbox BaroRoom_EventScript_Seeg_Text_0, MSGBOX_DEFAULT
+# 219 "data/maps/BaroRoom/scripts.pory"
+	waitmoncry
+# 220 "data/maps/BaroRoom/scripts.pory"
+	closemessage
+# 221 "data/maps/BaroRoom/scripts.pory"
 	release
 	end
 
@@ -446,19 +452,19 @@ BaroRoom_OnFrame_Movement_5:
 	set_invisible
 	step_end
 
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 BaroRoom_EventScript_PlugOink_Movement_0:
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	face_player
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	lock_facing_direction
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	jump_in_place_down
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	jump_in_place_down
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	unlock_facing_direction
-# 186 "data/maps/BaroRoom/scripts.pory"
+# 189 "data/maps/BaroRoom/scripts.pory"
 	face_player
 	step_end
 
@@ -506,17 +512,17 @@ BaroRoom_OnFrame_Text_8:
 	.string "Bueno, buena suerte y tal.$"
 
 BaroRoom_EventScript_PlugOink_Text_0:
-# 189 "data/maps/BaroRoom/scripts.pory"
+# 192 "data/maps/BaroRoom/scripts.pory"
 	.string "Oink, oink, oink…$"
 
 BaroRoom_EventScript_Sever_Text_0:
-# 204 "data/maps/BaroRoom/scripts.pory"
+# 207 "data/maps/BaroRoom/scripts.pory"
 	.string "¡Sever!$"
 
 BaroRoom_EventScript_Seeg_Text_0:
-# 215 "data/maps/BaroRoom/scripts.pory"
+# 218 "data/maps/BaroRoom/scripts.pory"
 	.string "See, see.$"
 
 BaroRoom_Text_BaroDefeated::
-# 180 "data/maps/BaroRoom/scripts.pory"
+# 183 "data/maps/BaroRoom/scripts.pory"
 	.string "En fin…$"

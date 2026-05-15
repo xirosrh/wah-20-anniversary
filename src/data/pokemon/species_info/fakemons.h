@@ -86,10 +86,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "Congela el aire a su alrededor\n"
-            "para inmovilizar a sus presas.\n"
-            "Se dice que puede bajar la\n"
-            "temperatura varios grados en segundos."),
+            "Este Pokémon de tipo dragón no\n"
+            "puede volar pese a ser ligero:\n"
+            "sus plumas son como algodón.\n"
+            "Corre por praderas y deja aire frío."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -141,7 +141,9 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Al atacar, enchufa su cola en la nariz\n"
+            "y provoca un cortocircuito que potencia\n"
+            "Impactrueno y Chispa."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -191,7 +193,9 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Asustar a un Gritespec es muy fácil,\n"
+            "pero cuidado: si se asusta, su chillido\n"
+            "agudo rompe tímpanos. Vive en cementerios."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -243,7 +247,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Puede crear ilusiones de llamas\n"
+            "muertas y cosas que aparecen y\n"
+            "se desvanecen. Antaño se les\n"
+            "explotaba; hoy está prohibido."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -293,7 +300,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Es muy posesivo con sus cosas.\n"
+            "Siempre está boca abajo y, si\n"
+            "alguien se acerca, gira rápido,\n"
+            "patea y le arranca las uñas."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -344,7 +354,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Su cuerpo parece una fruta, pero almacena\n"
+            "una energía capaz de hacer temblar\n"
+            "comunidades enteras. Quienes lo vieron\n"
+            "aparecer en los primeros tiempos de WaH\n"
+            "lo recuerdan como símbolo de una época\n"
+            "irrepetible."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -405,7 +420,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Nació de una broma tan absurda que acabó\n"
+            "cobrando vida propia. Se dice que, cuando\n"
+            "Eing aparece, esta criatura empieza a tocar\n"
+            "mariachi y nadie sabe si viene a combatir o\n"
+            "a montar una fiesta."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -417,7 +436,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Eing,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 7,
+        .backPicYOffset = 5,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Eing,
         .shinyPalette = gMonShinyPalette_Eing,

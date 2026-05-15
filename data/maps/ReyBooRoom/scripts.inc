@@ -361,26 +361,50 @@ ReyBooRoom_EventScript_BooEncounter_6:
 ReyBooRoom_EventScript_ReyBooBattle::
 # 211 "data/maps/ReyBooRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, ReyBooRoom_EventScript_ReyBooBattle_2
-# 214 "data/maps/ReyBooRoom/scripts.pory"
+# 217 "data/maps/ReyBooRoom/scripts.pory"
 	setvar VAR_0x8004, TEAM_INDEX_REYBOO
-# 215 "data/maps/ReyBooRoom/scripts.pory"
+# 218 "data/maps/ReyBooRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 216 "data/maps/ReyBooRoom/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_5
 # 219 "data/maps/ReyBooRoom/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_7
+# 225 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_ALTERNATIVE, ReyBooRoom_Text_ReyBooDefeated
+# 226 "data/maps/ReyBooRoom/scripts.pory"
+	compare VAR_DIFFICULTY, DIFFICULTY_HARD
+	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_12
 ReyBooRoom_EventScript_ReyBooBattle_1:
 	return
 
 ReyBooRoom_EventScript_ReyBooBattle_2:
 # 212 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
+# 213 "data/maps/ReyBooRoom/scripts.pory"
+	compare VAR_DIFFICULTY, DIFFICULTY_HARD
+	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_5
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 ReyBooRoom_EventScript_ReyBooBattle_5:
-# 217 "data/maps/ReyBooRoom/scripts.pory"
+# 214 "data/maps/ReyBooRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_REYBOO_MAIN_HARD
+	goto ReyBooRoom_EventScript_ReyBooBattle_1
+
+ReyBooRoom_EventScript_ReyBooBattle_7:
+# 220 "data/maps/ReyBooRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated
+# 221 "data/maps/ReyBooRoom/scripts.pory"
+	compare VAR_DIFFICULTY, DIFFICULTY_HARD
+	goto_if_eq ReyBooRoom_EventScript_ReyBooBattle_10
+	goto ReyBooRoom_EventScript_ReyBooBattle_1
+
+ReyBooRoom_EventScript_ReyBooBattle_10:
+# 222 "data/maps/ReyBooRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_REYBOO_MAIN_HARD
+	goto ReyBooRoom_EventScript_ReyBooBattle_1
+
+ReyBooRoom_EventScript_ReyBooBattle_12:
+# 227 "data/maps/ReyBooRoom/scripts.pory"
+	setflag FLAG_POKEBOX_WON_REYBOO_ALT_HARD
 	goto ReyBooRoom_EventScript_ReyBooBattle_1
 
 
@@ -746,7 +770,7 @@ ReyBooRoom_EventScript_BooEncounter_Text_14:
 	.string "¡Volveré!$"
 
 ReyBooRoom_Text_ReyBooDefeated::
-# 225 "data/maps/ReyBooRoom/scripts.pory"
+# 234 "data/maps/ReyBooRoom/scripts.pory"
 	.string "Enhorabuena, pero recuerda, gloria\n"
 	.string "vana, florece y no grana.\p"
 	.string "Todavía te quedan retos por afrontar.$"

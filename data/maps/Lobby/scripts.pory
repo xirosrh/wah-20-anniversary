@@ -513,15 +513,21 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         dynmultipush(gStringVar1, 13)
         addvar(VAR_0x8000, 1)
     }
+    getseenmon(SPECIES_LUGIA_SHADOW)
+    if(var(VAR_RESULT) != 0) {
+        bufferspeciesname(STR_VAR_1, SPECIES_LUGIA_SHADOW)
+        dynmultipush(gStringVar1, 14)
+        addvar(VAR_0x8000, 1)
+    }
     if(var(VAR_0x8000) == 0) {
         msgbox(format("¡Todas las especies que has visto son de público conocimiento!\p¡Ve a combatir a las salas y ya verás de las que estoy hablando!"))
         release
         end
     }
-    dynmultipush("Salir", 14)
+    dynmultipush("Salir", 15)
     msgbox(format("¿De cuál especie te gustaría conocer más?"))
     dynmultistack(0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE)
-    if(var(VAR_RESULT) > 13) {
+    if(var(VAR_RESULT) > 14) {
         msgbox(format("¡Si quieres saber algo más, aquí estaré!"), MSGBOX_AUTOCLOSE)
         release
         end
@@ -582,6 +588,10 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
         case 13:
             showmonpic(SPECIES_DIRAEI, 10, 3)
             setvar(VAR_0x8004, SPECIES_DIRAEI)
+            call(Lobby_EventScript_ShowFakemonDexInfo)
+        case 14:
+            showmonpic(SPECIES_LUGIA_SHADOW, 10, 3)
+            setvar(VAR_0x8004, SPECIES_LUGIA_SHADOW)
             call(Lobby_EventScript_ShowFakemonDexInfo)
     }
     goto(Lobby_EventScript_FakemonDexMenu_ChooseSpecies)
@@ -657,23 +667,251 @@ script Lobby_EventScript_QREventInfoKid {
     end
 }
 
-script Lobby_EventScript_AdminCountNPC {
-    msgbox(Lobby_Text_AdminCountNPC, MSGBOX_NPC)
+script Lobby_EventScript_BetaMonQuestionnaire {
+    lock
+    faceplayer
+    msgbox(format("¡Buenas! Soy el maestro de los cuestionarios."), MSGBOX_AUTOCLOSE)
+    special(Special_BufferBetaMonQuestionnaireCounters)
+    if(var(VAR_WAH_CHALLENGE_COMPLETION_COUNT) == 0) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_Surprise)
+        msgbox(format("Así que aún no has completado el desafío.\l...\l...\pCuando lo superes, vuelve y te haré un cuestionario especial."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    delay(20)
+    setvar(VAR_TEMP_0, 0)
+    specialvar(VAR_RESULT, Special_TryPickBetaMonQuestion)
+    switch(var(VAR_RESULT)) {
+        case BETA_MON_QUESTION_PICK_QUESTION:
+            msgbox(format("Te haré una pregunta por cada vez que hayas completado el desafío.\pHas completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\p¿Quieres que te haga una pregunta?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+            } else {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater)
+            }
+        case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
+           goto(Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions)
+        default:
+           goto(Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft)
+    }
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft {
+     msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pCompleta el desafío otra vez y vuelve por aquí."), MSGBOX_AUTOCLOSE)
+    release
     end
 }
 
-text Lobby_Text_AdminCountNPC {
-    "Dicen que son 21 salas para completar
-     el desafío…
-    
-    Para la cantidad de administradores que 
-    hubo en la historia de WAH, hay algo que
-    no termina de cuadrar.
+script Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions {
+     msgbox(format("¡Ya has respondido todas mis preguntas! ¿Qué te parecen los Pokémon que has conseguido?"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
 
-    ¿Habrán dejado a algunos afuera de la 
-    celebración?
+script Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater {
+    msgbox(format("De acuerdo. Puedes volver cuando quieras."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
 
-    ¿Cómo lo resolvieron?"
+script Lobby_EventScript_BetaMonQuestionnaire_NextQuestion {
+    special(Special_BufferBetaMonQuestionnaireCounters)
+    specialvar(VAR_RESULT, Special_TryPickBetaMonQuestion)
+    switch(var(VAR_RESULT)) {
+        case BETA_MON_QUESTION_PICK_QUESTION:
+            msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\p¿Quieres seguir respondiendo?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+            }
+            goto(Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater)
+        case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
+            goto(Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions)
+        case BETA_MON_QUESTION_PICK_NONE_THIS_TALK:
+            msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pPor ahora no tengo más preguntas distintas para hacerte.\pVuelve a hablarme en otro momento."), MSGBOX_AUTOCLOSE)
+            release
+            end
+        default:
+            goto(Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft)
+    }
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion {
+    addvar(VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT, 1)
+    switch(var(VAR_0x8004)) {
+        case BETA_MON_QUESTION_GOROCHU:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Gorochu)
+            break
+        case BETA_MON_QUESTION_TAABAN:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Taaban)
+            break
+        case BETA_MON_QUESTION_BOMUSHIKAA:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa)
+            break
+        case BETA_MON_QUESTION_MADAAMU:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Madaamu)
+            break
+        case BETA_MON_QUESTION_AKUERIA:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Akueria)
+            break
+        case BETA_MON_QUESTION_LATIKEN:
+            call(Lobby_EventScript_BetaMonQuestionnaire_Latiken)
+            break
+    }
+    goto(Lobby_EventScript_BetaMonQuestionnaire_NextQuestion)
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Gorochu {
+    message(format("¿Qué Pokémon es naranja, tiene una cola larga y a todo el mundo le encanta el que evoluciona en él?"))
+    waitmessage
+    dynmultipush(format("Raichu"), 0)
+    dynmultipush(format("Arcanine"), 1)
+    dynmultipush(format("Floatzel"), 2)
+    dynmultipush(format("Simisear"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 0) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_GOROCHU)
+        msgbox(format("Pues con este Pokémon te encontrarás."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Taaban {
+    message(format("Mi amigo siempre va con su Bro detrás.\p¿Qué Pokémon es mi amigo?"))
+    waitmessage
+    dynmultipush(format("Slowking"), 0)
+    dynmultipush(format("Slowbro"), 1)
+    dynmultipush(format("Slowpoke"), 2)
+    dynmultipush(format("Shellder"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 1) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_TAABAN)
+        msgbox(format("Pues con su Bro te irás."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa {
+    message(format("Blanco como la nieve y una carita mona.\p¿Quién es?"))
+    waitmessage
+    dynmultipush(format("Whismur"), 0)
+    dynmultipush(format("Aipom"), 1)
+    dynmultipush(format("Dewgong"), 2)
+    dynmultipush(format("Snorunt"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 2) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA)
+        msgbox(format("¡Pues este se le parece!"), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Madaamu {
+    message(format("El Capitán Puerro blande su espada en el bosque.\p¿Quién es realmente el Capitán Puerro?"))
+    waitmessage
+    dynmultipush(format("Kartana"), 0)
+    dynmultipush(format("Gallade"), 1)
+    dynmultipush(format("Farfetch'd"), 2)
+    dynmultipush(format("Scyther"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 2) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_MADAAMU)
+        msgbox(format("Exacto. Ese filo también despertó la curiosidad de Madaamu."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Akueria {
+    message(format("Adivina, adivinanza.\p¿Qué serpiente azul tiene una evolución naranja?"))
+    waitmessage
+    dynmultipush(format("Gyarados"), 0)
+    dynmultipush(format("Dratini"), 1)
+    dynmultipush(format("Milotic"), 2)
+    dynmultipush(format("Dunsparce"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 1) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_AKUERIA)
+        msgbox(format("Pues su primo te ha visto luchar y te espera."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_Latiken {
+    msgbox(format("Adivina, adivinanza.\p¿Qué Pokémon hace este grito?"), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_JIRACHI, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Jirachi"), 0)
+    dynmultipush(format("Celebi"), 1)
+    dynmultipush(format("Mew"), 2)
+    dynmultipush(format("Deoxys"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) != 0) {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+        return
+    }
+
+    msgbox(format("Oh, correcto. Ahora mismo intenta adivinar este."), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_LATIAS, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Latios"), 0)
+    dynmultipush(format("Latias"), 1)
+    dynmultipush(format("Altaria"), 2)
+    dynmultipush(format("Flygon"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) != 1) {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+        return
+    }
+
+    msgbox(format("Oh, volviste a acertar. Ahora este."), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_BLAZIKEN, CRY_MODE_NORMAL)
+    waitmoncry
+    message(format("¿Quién fue?"))
+    waitmessage
+    dynmultipush(format("Blaziken"), 0)
+    dynmultipush(format("Combusken"), 1)
+    dynmultipush(format("Infernape"), 2)
+    dynmultipush(format("Lucario"), 3)
+    dynmultistack(0, 0, TRUE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    closemessage
+    if(var(VAR_RESULT) == 0) {
+        setflag(FLAG_POKEBOX_UNLOCK_BETA_LATIKEN)
+        msgbox(format("Increíble, acertaste otra vez. Es impresionante.\pTen esto."), MSGBOX_AUTOCLOSE)
+        call(Pokebox_EventScript_ShowUnlocks)
+    } else {
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
+    }
+    return
+}
+
+text Lobby_Text_FailedToUnlock {
+    format("Oh, ¡fallaste!")
 }
 
 script Lobby_EventScript_Pokebox {
@@ -687,5 +925,10 @@ script Lobby_EventScript_Pokebox {
 
 script Lobby_EventScript_Turbo {
     msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
+    end
+}
+
+script Lobby_EventScript_Notes {
+    msgbox(format("Parecen apuntes llenos de estadísticas y observaciones.\pAlgunas páginas están tan gastadas que cuesta leerlas."), MSGBOX_SIGN)
     end
 }

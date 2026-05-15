@@ -4048,7 +4048,7 @@ Timid Nature
 - Thunderbolt
 
 Ayewiraz @ Assault Vest
-EVs: 252 Atk / 252 Spe / 4 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Play Rough
 - Crunch
@@ -4637,7 +4637,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Seismic Toss
 - Explosion
 
-Memoriam (Mewtwo) /* //TODO Xiros @ Expert Bell */
+Memoriam (Mewtwo) @ Expert Belt
 Ability: Pressure 
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
@@ -4646,7 +4646,8 @@ Timid Nature
 - Recover
 - Calm Mind
 
-Molikai @ Life Orb  /* //TODO Xiros  Ability: Acid Rain */ 
+Molikai @ Life Orb
+Ability: Drizzle
 EVs: 252 Atk / 252 Spe / 4 SpA
 Careful Nature
 - xQ4Zc0E
@@ -7720,7 +7721,7 @@ AI: Basic Trainer
 Mugshot: Green
 Difficulty: Easy
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Multi Attack
@@ -7728,7 +7729,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ Multi Rom */
+Genesect  @ Chill Drive
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Techno Blast
@@ -7736,7 +7737,7 @@ Timid Nature
 - Flash Cannon
 - Bug Buzz
 
-Eternatus @ Black Sludge
+Eternatus
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Dynamax Cannon
@@ -7744,7 +7745,7 @@ Timid Nature
 - Sludge Wave
 - Eternabeam
 
-Necrozma Dusk Mane @ Ultranecrozium Z
+Necrozma Dusk Mane
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Timid Nature
 - Sunsteel Strike
@@ -7780,7 +7781,7 @@ AI: Smart Trainer / Prediction
 Mugshot: Green
 Difficulty: Normal
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Multi Attack
@@ -7788,7 +7789,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ Multi Rom */
+Genesect  @ Chill Drive
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
 - Techno Blast
@@ -7812,7 +7813,7 @@ Timid Nature
 - Prismatic Laser
 - Recover
 
-Arceus   /* @ Legend Plate //TODO Xiros */
+Arceus   @ Pixie Plate
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Judgment
@@ -7840,7 +7841,7 @@ AI: Smart Trainer / Prediction
 Mugshot: Green
 Difficulty: Hard
 
-Silvally /* @ Multi disk TODO Xiros */
+Silvally @ Fairy Memory
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Multi Attack
@@ -7848,7 +7849,7 @@ Jolly Nature
 - Dragon Claw
 - X Scissor
 
-Genesect  /* @ @ Multi Rom */
+Genesect  @ Chill Drive
 EVs: 252 SpA / 252 Spe / 4 HP
 Timid Nature
 - Techno Blast
@@ -7872,7 +7873,7 @@ Timid Nature
 - Prismatic Laser
 - Recover
 
-Arceus   /* @ Legend Plate //TODO Xiros */
+Arceus   @ Pixie Plate
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Judgment
@@ -9616,7 +9617,7 @@ Mugshot: Purple
 Difficulty: Normal
 
 Blastoise  @ Assault Vest
-EVs: 252 SpA / 252 HP / 4 SpD /* //TODO Xiros 4 SpD verify with Micolo */
+EVs: 252 SpA / 252 HP / 4 SpD
 Modest Nature
 - Hydro pump
 - Scald
@@ -9676,7 +9677,7 @@ Mugshot: Purple
 Difficulty: Hard
 
 Blastoise  @ Assault Vest
-EVs: 252 SpA / 252 HP / 4 SpD /* //TODO Xiros 4 SpD verify with Micolo */
+EVs: 252 SpA / 252 HP / 4 SpD
 Modest Nature
 - Hydro pump
 - Scald
@@ -9758,7 +9759,7 @@ Timid Nature
 - Flash Cannon
 - Dazzling Gleam
 
-Heracross /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Heracross 
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Megahorn
@@ -9819,7 +9820,7 @@ Timid Nature
 - Flash Cannon
 - Dazzling Gleam
 
-Heracross @ Assault Vest /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Heracross @ Assault Vest 
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Megahorn
@@ -9880,7 +9881,7 @@ Timid Nature
 - Flash Cannon
 - Dazzling Gleam
 
-Heracross @ Assault Vest /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Heracross @ Assault Vest 
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Megahorn
@@ -9916,7 +9917,7 @@ AI: Basic Trainer
 Mugshot: Purple
 Difficulty: Easy
 
-Feraligatr /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Feraligatr 
 Ability: Sheer force
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
@@ -9949,7 +9950,7 @@ Timid Nature
 - Calm Mind
 - Psychic
 - Shadow Ball
-- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+- Water Pulse
 
 Slowking
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -9979,7 +9980,7 @@ AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Normal
 
-Feraligatr @ Life Orb /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Feraligatr @ Life Orb 
 Ability: Sheer force
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
@@ -10012,7 +10013,7 @@ Timid Nature
 - Calm Mind
 - Psychic
 - Shadow Ball
-- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+- Recover
 
 Slowking @ Leftovers
 EVs: 252 SpA / 252 HP / 4 Spe
@@ -10042,7 +10043,7 @@ AI: Smart Trainer
 Mugshot: Purple
 Difficulty: Hard
 
-Feraligatr @ Life Orb /* //TODO Xiros: Check attacks, micolo had an alternative list */
+Feraligatr @ Life Orb 
 Ability: Sheer force
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
@@ -10075,7 +10076,7 @@ Timid Nature
 - Calm Mind
 - Psychic
 - Shadow Ball
-- Water Pulse /* //TODO Xiros: - Recover was also added, it had 5 attacks, check with Micolo */
+- Recover
 
 Slowking @ Leftovers
 EVs: 252 SpA / 252 HP / 4 Spe

@@ -1437,3 +1437,47 @@ text CollaboratorsRoom_Text_Caco_OnDefeat {
     format("A veces, para uno poder avanzar, debe de aceptar su error.")
 }
 
+script CollaboratorsRoom_EventScript_Notes {
+    msgbox(format("Las notas están llenas de tachones y dibujos extraños.\pEs imposible descifrar lo que quiso escribir."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_MaidenPoster {
+    msgbox(format("El póster muestra a MAIDEN junto a su WOOPER variocolor.\pDetrás, se ve un hermoso {COLOR BLUE}cielo azul{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Library {
+    msgbox(format("La estantería está repleta de libros históricos de WAH.\pUno parece hablar del origen de ELECTRODE SANDÍA."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Coffee {
+    msgbox(format("Es una taza de café. Parece estar hirviendo."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Projector {
+    msgbox(format("Parece un proyector de películas.\nSe encuentra apagado."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Desk {
+    msgbox(format("El cajón guarda antiguos bocetos y diseños.\pMuchos tienen escrito “cancelado” al costado."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Trash {
+    msgbox(format("La papelera está repleta de hojas tachadas.\pDa la impresión de que nada fue fácil de decidir."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Brainstorming {
+    msgbox(format("La pizarra está cubierta de diagramas y flechas.\pParece una sesión de ideas llevada al extremo."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Desk2 {
+    msgbox(format("El cajón guarda decenas de apuntes sobre combates y niveles.\pParece que ajustar la dificultad tomó muchísimo tiempo."), MSGBOX_SIGN)
+    end
+}

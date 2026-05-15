@@ -1633,6 +1633,8 @@ WahRoomsShared_EventScript_AfterBattle::
 # 949 "data/scripts/wah_rooms_shared.pory"
 	call Achievements_EventScript_Eval_Avaricia
 # 950 "data/scripts/wah_rooms_shared.pory"
+	call Pokebox_EventScript_ShowUnlocks
+# 951 "data/scripts/wah_rooms_shared.pory"
 	copyvar VAR_RESULT, VAR_0x8008
 	return
 

@@ -516,12 +516,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_POKEBOX_WON_EING_MAIN           0x1DE //Used WAH
+#define FLAG_POKEBOX_WON_EING_ALTERNATIVE    0x1DF //Used WAH
+#define FLAG_POKEBOX_WON_REYBOO_MAIN_HARD    0x1E0 //Used WAH
+#define FLAG_POKEBOX_WON_REYBOO_ALT_HARD     0x1E1 //Used WAH
+#define FLAG_POKEBOX_WON_BARO_MAIN           0x1E2 //Used WAH
+#define FLAG_POKEBOX_WON_BARO_ALTERNATIVE    0x1E3 //Used WAH
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -1222,12 +1222,12 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define FLAG_POKEBOX_UNLOCK_BETA_GOROCHU                            0x493 // Used WAH
+#define FLAG_POKEBOX_UNLOCK_BETA_TAABAN                             0x494 // Used WAH
+#define FLAG_POKEBOX_UNLOCK_BETA_BOMUSHIKAA                         0x495 // Used WAH
+#define FLAG_POKEBOX_UNLOCK_BETA_MADAAMU                            0x496 // Used WAH
+#define FLAG_POKEBOX_UNLOCK_BETA_AKUERIA                            0x497 // Used WAH
+#define FLAG_POKEBOX_UNLOCK_BETA_LATIKEN                            0x498 // Used WAH
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

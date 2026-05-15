@@ -28,18 +28,21 @@ gText_Difficulty_CharacteristicsHeader::
 gText_Easy_Description::
 	.string "· IA básica\n"
 	.string "· Equipos más accesibles\n"
-	.string "· Pokémon rivales con 0 IVs\ny EVs\n"
-	.string "· Rivales usan pocos ítems$"
+	.string "· Rivales con EVs e IVs en 0\n"
+	.string "· Rivales no usan objetos\ncurativos$"
 
 gText_Normal_Description::
-	.string "· Experiencia equilibrada (placeholder)\n"
-	.string "· Dificultad estándar\n"
-	.string "· Recomendado en general$"
+	.string "· IA inteligente\n"
+	.string ". Encuentros desafiantes\n"
+	.string "· Estadísticas competitivas\n"
+	.string "· Rivales usan objetos$"
 
 gText_Hard_Description::
-	.string "· Máximo desafío (placeholder)\n"
-	.string "· Enemigos más exigentes\n"
-	.string "· Solo para valientes$"
+	.string "· IA inteligente\n"
+	.string "· Tipo de combate: Mantener\n"
+	.string "· Estadísticas competitivas\n"
+	.string ". Equipos más desafiantes\n"
+	.string "· Rivales usan más objetos$"
 
 gText_Cope_Welcome::
 	.string "Ah... genial.\n"
