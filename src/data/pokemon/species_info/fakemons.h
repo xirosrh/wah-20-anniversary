@@ -86,10 +86,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "Congela el aire a su alrededor\n"
-            "para inmovilizar a sus presas.\n"
-            "Se dice que puede bajar la\n"
-            "temperatura varios grados en segundos."),
+            "Este Pokémon de tipo dragón no\n"
+            "puede volar pese a ser ligero:\n"
+            "sus plumas son como algodón.\n"
+            "Corre por praderas y deja aire frío."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -141,7 +141,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Al atacar, enchufa su cola en\n"
+            "la nariz y provoca un\n"
+            "cortocircuito que potencia\n"
+            "Impactrueno y Chispa."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -191,7 +194,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Asustar a un Gritespec es muy\n"
+            "fácil, pero cuidado: si se\n"
+            "asusta, su chillido agudo rompe\n"
+            "tímpanos. Vive en cementerios."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -243,7 +249,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Puede crear ilusiones de llamas\n"
+            "muertas y cosas que aparecen y\n"
+            "se desvanecen. Antaño se les\n"
+            "explotaba; hoy está prohibido."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -293,7 +302,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Es muy posesivo con sus cosas.\n"
+            "Siempre está boca abajo y, si\n"
+            "alguien se acerca, gira rápido,\n"
+            "patea y le arranca las uñas."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
