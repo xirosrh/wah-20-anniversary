@@ -593,6 +593,7 @@ gSpecials::
 	def_special Special_ClearTransparentBox
 	def_special Special_FindNextPokeboxUnlock
 	def_special Special_TryPickBetaMonQuestion
+	def_special Special_BufferBetaMonQuestionnaireCounters
 	def_special HideMapNamePopUpWindow
 	def_special Special_BufferPokeboxBuyOfferFromSpecies
 	def_special Special_UpdateCollaboratorsNoFaintProgress

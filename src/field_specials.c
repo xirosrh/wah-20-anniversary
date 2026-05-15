@@ -1550,6 +1550,20 @@ u16 Special_TryPickBetaMonQuestion(void)
     return BETA_MON_QUESTION_PICK_QUESTION;
 }
 
+void Special_BufferBetaMonQuestionnaireCounters(void)
+{
+    u16 completed = VarGet(VAR_WAH_CHALLENGE_COMPLETION_COUNT);
+    u16 asked = VarGet(VAR_BETA_MON_QUESTIONNAIRE_ASK_COUNT);
+    u16 available = 0;
+
+    if (completed > asked)
+        available = completed - asked;
+
+    ConvertIntToDecimalStringN(gStringVar1, completed, STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar2, asked, STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar3, available, STR_CONV_MODE_LEFT_ALIGN, 5);
+}
+
 bool8 Special_BufferPokeboxBuyOfferFromSpecies(void)
 {
     return PokeboxSpecies_BufferBuyOfferFromSpecies(VarGet(VAR_0x8004));
