@@ -17,14 +17,12 @@ PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles::
 	special DrawWholeMapView
 	return
 
-//TODO Xiros: Probably this will be temp
 PokemonLeague_EliteFour_OpenRoomDoorMetatiles::
 	setmetatile 6, 1, METATILE_EliteFour_OpenDoor_Frame, FALSE
 	setmetatile 6, 2, METATILE_EliteFour_OpenDoor_Opening, FALSE
 	special DrawWholeMapView
 	return
 
-//TODO Xiros: Probably this will be temp
 PokemonLeague_EliteFour_CloseRoomDoorMetatiles::
 	setmetatile 6, 1, METATILE_EliteFour_ClosedDoor_Frame, TRUE
 	setmetatile 6, 2, METATILE_EliteFour_ClosedDoor_Opening, TRUE
