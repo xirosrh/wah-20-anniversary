@@ -191,7 +191,7 @@ const union VoiceGroup voicegroup_fe7_binary[] =
 //used ACOUSTIC_GRAND_PIANO as DRUMKIT_STANDARD
 const union VoiceGroup voicegroup_fe7_standard[] =
 {
-    [DRUMKIT_STANDARD]      = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_STANDARD]      = DRUM_SET(Acimut_Drumkit_Standard),
     [BRIGHT_ACOUSTIC_PIANO] = INSTRUMENT_SPLIT(Instrument_FE7_BrightAcousticPiano, KeySplitTable6),
     [ELECTRIC_GRAND_PIANO]  = INSTRUMENT_SPLIT(Instrument_FE7_ElectricGrandPiano, KeySplitTable6),
     [HONKY_TONK_PIANO]      = INSTRUMENT_SPLIT(Instrument_FE7_HonkyTonkPiano, KeySplitTable7),
@@ -348,7 +348,7 @@ const union VoiceGroup voicegroup_fe7_room[] =
     [HARPSICHORD]           = INSTRUMENT_SPLIT(Instrument_FE7_Harpsichord, KeySplitTable10),
     [CLAVINET]              = INSTRUMENT_SPLIT(Instrument_FE7_Clavinet, KeySplitTable7),
     
-    [DRUMKIT_ROOM]          = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_ROOM]          = DRUM_SET(Acimut_Drumkit_Room),
     [GLOCKENSPIEL]          = INSTRUMENT_SPLIT(Instrument_FE7_Glockenspiel, KeySplitTable12),
     [MUSIC_BOX]             = INSTRUMENT_SPLIT(Instrument_FE7_MusicBox, KeySplitTable11),
     [VIBRAPHONE]            = INSTRUMENT_SPLIT(Instrument_FE7_Vibraphone, KeySplitTable13),
@@ -505,7 +505,7 @@ const union VoiceGroup voicegroup_fe7_power[] =
     [TUBULAR_BELLS]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_014_tubular_bells, 255, 249, 0, 235),
     [DULCIMER]              = INSTRUMENT_SPLIT(Instrument_FE7_Dulcimer, KeySplitTable16),
     
-    [DRUMKIT_POWER]         = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_POWER]         = DRUM_SET(Acimut_Drumkit_Power),
     [PERCUSSIVE_ORGAN]      = INSTRUMENT_SPLIT(Instrument_FE7_PercussiveOrgan, KeySplitTable17),
     [ROCK_ORGAN]            = INSTRUMENT_SPLIT(Instrument_FE7_RockOrgan, KeySplitTable17),
     [CHURCH_ORGAN]          = INSTRUMENT_SPLIT(Instrument_FE7_ChurchOrgan, KeySplitTable13),
@@ -777,7 +777,7 @@ const union VoiceGroup voicegroup_fe7_cm64[] =
     [TELEPHONE_RING]        = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_124_telephone_ring, 255, 0, 255, 235),
     [HELICOPTER]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_125_helicopter, 255, 0, 255, 235),
     [APPLAUSE]              = INSTRUMENT_SPLIT(Instrument_FE7_Applause, KeySplitTable35),
-    [DRUMKIT_CM_64_32L]     = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_CM_64_32L]     = DRUM_SET(Acimut_Drumkit_Standard),
 };
 
 // keysplit para instrumentos que usan samples en octavas.
@@ -808,7 +808,7 @@ const u8 KeySplit_Octaves[] =
 //used ACOUSTIC_GRAND_PIANO as DRUMKIT_STANDARD
 const union VoiceGroup voicegroup_agm_standard[] =
 {
-    [DRUMKIT_STANDARD]      = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_STANDARD]      = DRUM_SET(Acimut_Drumkit_Standard),
     [BRIGHT_ACOUSTIC_PIANO] = INSTRUMENT_SPLIT(FE7_AcousticGrandPiano, KeySplit_FE7_Piano),
     [ELECTRIC_GRAND_PIANO]  = INSTRUMENT_SPLIT(Instrument_FE7_ElectricGrandPiano, KeySplitTable6),
     [HONKY_TONK_PIANO]      = INSTRUMENT_SPLIT(Instrument_FE7_HonkyTonkPiano, KeySplitTable7),
@@ -966,7 +966,7 @@ const union VoiceGroup voicegroup_agm_room[] =
     [HARPSICHORD]           = INSTRUMENT_SPLIT(Instrument_FE7_Harpsichord, KeySplitTable10),
     [CLAVINET]              = INSTRUMENT_SPLIT(Instrument_FE7_Clavinet, KeySplitTable7),
 
-    [DRUMKIT_ROOM]          = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_ROOM]          = DRUM_SET(Acimut_Drumkit_Room),
     [GLOCKENSPIEL]          = INSTRUMENT_SPLIT(Instrument_FE7_Glockenspiel, KeySplitTable12),
     [MUSIC_BOX]             = INSTRUMENT_SPLIT(Instrument_FE7_MusicBox, KeySplitTable11),
     [VIBRAPHONE]            = INSTRUMENT_SPLIT(Instrument_AGM_Vibraphone, KeySplit_Octaves),
@@ -1123,7 +1123,7 @@ const union VoiceGroup voicegroup_agm_power[] =
     [TUBULAR_BELLS]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_FE7_014_tubular_bells, 255, 249, 0, 235),
     [DULCIMER]              = INSTRUMENT_SPLIT(Instrument_FE7_Dulcimer, KeySplitTable16),
 
-    [DRUMKIT_POWER]         = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_POWER]         = DRUM_SET(Acimut_Drumkit_Power),
     [PERCUSSIVE_ORGAN]      = INSTRUMENT_SPLIT(Instrument_FE7_PercussiveOrgan, KeySplitTable17),
     [ROCK_ORGAN]            = INSTRUMENT_SPLIT(Instrument_FE7_RockOrgan, KeySplitTable17),
     [CHURCH_ORGAN]          = INSTRUMENT_SPLIT(Instrument_FE7_ChurchOrgan, KeySplitTable13),
@@ -1395,7 +1395,7 @@ const union VoiceGroup voicegroup_agm_cm64[] =
     [TELEPHONE_RING]        = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_124_Telephone_Ring_60, 255, 0, 255, 165),
     [HELICOPTER]            = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_125_Helicopter_60, 255, 0, 255, 165),
     [APPLAUSE]              = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_126_Applause_60, 255, 0, 255, 165),
-    [DRUMKIT_CM_64_32L]     = DRUM_SET(Acimut_Drumkit_Standard_b14r),
+    [DRUMKIT_CM_64_32L]     = DRUM_SET(Acimut_Drumkit_Standard),
 };
 
 //--------------------------------------------------------------
@@ -1455,7 +1455,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [SLAP_BASS_1]           = INSTRUMENT_SPLIT(Instrument_FE7_Bassoon, KeySplitTable29),
     [SLAP_BASS_2]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),
     [SYNTH_BASS_1]          = DEFAULT_INSTRUMENT,//Sampled Square Wave
-    [SYNTH_BASS_2]          = DRUM_SET(Acimut_Drumkit_Standard_b14r),//[modificar drumset] |----------------
+    [SYNTH_BASS_2]          = DRUM_SET(Acimut_Drumkit_Standard),//[modificar drumset] |----------------
 
     [VIOLIN]                = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_116_Taiko_Drum_60, 255, 0, 255, 165),
     [VIOLA]                 = INSTRUMENT_SPLIT(Instrument_AGM_Electric_Bass_Pick, KeySplit_AGM_Bass),
@@ -1481,7 +1481,7 @@ const union VoiceGroup voicegroup_hgss_main[] =
     [MUTED_TRUMPET]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_080_Lead_1_Square_60, 80, 234, 191, 220),//Sampled Square Wave 12.5%
     [FRENCH_HORN]           = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Major
     [BRASS_SECTION]         = INSTRUMENT(NOTE_C4, 0, gDirectSoundWaveData_Acimut_GM_055_Orchestra_Hit_80, 250, 0, 255, 235),//DP Orchestral Hit Minor
-    [SYNTH_BRASS_1]         = DRUM_SET(Acimut_Drumkit_Standard_b14r),//[modificar drumset] |----------------
+    [SYNTH_BRASS_1]         = DRUM_SET(Acimut_Drumkit_Standard),//[modificar drumset] |----------------
     [SYNTH_BRASS_2]         = INSTRUMENT_SPLIT(Instrument_AGM_Timpani, KeySplit_AGM_Timpani),
 
     [SOPRANO_SAX]           = INSTRUMENT_SPLIT(Instrument_AGM_Synth_Bass_1, KeySplit_AGM_Synth_Bass),

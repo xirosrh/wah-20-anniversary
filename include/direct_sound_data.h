@@ -8,6 +8,7 @@ extern const s8 DirectSoundWaveData_ethnic_flavours_kotsuzumi[];
 extern const s8 DirectSoundWaveData_ethnic_flavours_hyoushigi[];
 
 // ACIMUT'S DRUMKIT b12r 21024Hz
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_27_high_Q_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_28_slap_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_29_scratch_push_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2[];
@@ -68,6 +69,17 @@ extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_84_belltree_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_85_castanets_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_86_mute_surdo_gm2[];
 extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_87_open_surdo_gm2[];
+
+extern const s8 gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Power_36_bass_drum_1[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_35_bass_drum_2[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_36_bass_drum_1[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Power_38_snare_drum_1[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Power_40_snare_drum_2[];
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_38_snare_drum_1[]; //reverb
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_40_snare_drum_2[]; //reverb
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v3_38_snare_drum_1[]; //sc-88
+extern const s8 gDirectSoundWaveData_Acimut_GM_Standard_v3_40_snare_drum_2[]; //sc-88
 
 //--------------------------------------------------------------
 //  Universal Voicegroup FE7 - Instrument samples

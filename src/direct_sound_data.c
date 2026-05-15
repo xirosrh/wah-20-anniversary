@@ -1,18 +1,19 @@
 #include "global.h"
 
 // ACIMUT'S DRUMKIT b14r 21024Hz
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_27_high_Q_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_27_Roland-SC-88-High-Q.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_28_slap_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_28_Korg-N1R-Slap.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_29_scratch_push_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_29_Korg-NS5R-Power-Kick.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_30_Korg-M3R-Kick.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_31_sticks_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_31_Korg-N1R-Sticks.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_29_scratch_push_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_36_Electronic-Kick-3.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_30_scratch_pull_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_35_Electronic-Kick-1.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_31_sticks_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_31_Cross_Sticks.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_32_square_click_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_32_Korg-N1R-Square-Click.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_33_metronome_click_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_33_Yamaha-RM50-Typewriter.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_34_metronome_bell_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_34_Roland-SC-88-Metronome-Bell.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_35_bass_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_35_Yamaha-RM50-Studio-Kick-2.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_36_bass_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_36_Yamaha-RM50-Studio-Kick-1.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_37_side_stick[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_37_Yamaha-RM50-Side-Stick-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_37_side_stick[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_37_Yamaha-TG100-Side-Stick.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_38_snare_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_38_Yamaha-TG100-Snare-Drum.bin");
-ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_39_Yamaha-RM50-Clap.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_39_hand_clap[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_39_Korg-N1R-Clap.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_40_snare_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_40_Yamaha-TG100-Snare-Drum-2.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_41_low_tom_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_41_Roland-SC-88-Low-Tom.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_42_closed_hi_hat[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_42_Yamaha-RM50-Closed-Hi-Hat-1.bin");
@@ -61,6 +62,19 @@ ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_84_belltree_gm2[] = 
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_85_castanets_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_85_Korg-N1R-Castanets.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_86_mute_surdo_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_86_Roland-SC-88-Mute-Surdo.bin");
 ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_87_open_surdo_gm2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_87_Roland-SC-88-Open-Surdo.bin");
+
+// drumkit variants
+
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Power_35_bass_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_35_Korg-NS5R-Power-Kick.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Power_36_bass_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_36_Korg-NS5R-Bass-Drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_35_bass_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_35_Korg-N1R-Bass-Drum-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_36_bass_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_36_Korg-N1R-Bass-Drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Power_38_snare_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_38_Yamaha-TG100-Snare-Drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Power_40_snare_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_40_Korg-NS5R-Snare-Drum.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_38_snare_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_38_Yamaha-RM50-Snare-Drum-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v2_40_snare_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_40_Yamaha-RM50-Reverb-Snare.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v3_38_snare_drum_1[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_38_Roland-SC-88-Snare-Drum-2.bin");
+ALIGNED(4) const s8 gDirectSoundWaveData_Acimut_GM_Standard_v3_40_snare_drum_2[] = INCBIN_S8("sound/direct_sound_samples/Acimut_GM/Acimut_Drumkit_40_Roland-SC-88-Snare-Drum.bin");
 
 
 //--------------------------------------------------------------
