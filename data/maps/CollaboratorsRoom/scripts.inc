@@ -2631,6 +2631,60 @@ CollaboratorsRoom_EventScript_Caco_14:
 	goto CollaboratorsRoom_EventScript_Caco_13
 
 
+CollaboratorsRoom_EventScript_Notes::
+# 1441 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Notes_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_MaidenPoster::
+# 1446 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_MaidenPoster_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Library::
+# 1451 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Library_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Coffee::
+# 1456 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Coffee_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Projector::
+# 1461 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Projector_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Desk::
+# 1466 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Desk_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Trash::
+# 1471 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Trash_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Brainstorming::
+# 1476 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Brainstorming_Text_0, MSGBOX_SIGN
+	end
+
+
+CollaboratorsRoom_EventScript_Desk2::
+# 1481 "data/maps/CollaboratorsRoom/scripts.pory"
+	msgbox CollaboratorsRoom_EventScript_Desk2_Text_0, MSGBOX_SIGN
+	end
+
+
 # 115 "data/maps/CollaboratorsRoom/scripts.pory"
 CollaboratorsRoom_EventScript_Kaktus_Movement_0:
 # 115 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -3804,6 +3858,64 @@ CollaboratorsRoom_EventScript_Caco_Text_1:
 	.string "¿Lo ves? La falta de sueño me hace\n"
 	.string "peligroso.\p"
 	.string "¡Vuelve cuando tengas el café!$"
+
+CollaboratorsRoom_EventScript_Notes_Text_0:
+# 1441 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Las notas están llenas de tachones y\n"
+	.string "dibujos extraños.\p"
+	.string "Es imposible descifrar lo que quiso\n"
+	.string "escribir.$"
+
+CollaboratorsRoom_EventScript_MaidenPoster_Text_0:
+# 1446 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "El póster muestra a MAIDEN junto a su\n"
+	.string "WOOPER variocolor.\p"
+	.string "Detrás, se ve un hermoso {COLOR BLUE}cielo azul{COLOR DARK_GRAY}.$"
+
+CollaboratorsRoom_EventScript_Library_Text_0:
+# 1451 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "La estantería está repleta de libros\n"
+	.string "históricos de WAH.\p"
+	.string "Uno parece hablar del origen de\n"
+	.string "ELECTRODE SANDÍA.$"
+
+CollaboratorsRoom_EventScript_Coffee_Text_0:
+# 1456 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Es una taza de café. Parece estar\n"
+	.string "hirviendo.$"
+
+CollaboratorsRoom_EventScript_Projector_Text_0:
+# 1461 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Parece un proyector de películas.\n"
+	.string "Se encuentra apagado.$"
+
+CollaboratorsRoom_EventScript_Desk_Text_0:
+# 1466 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "El cajón guarda antiguos bocetos y\n"
+	.string "diseños.\p"
+	.string "Muchos tienen escrito “cancelado” al\n"
+	.string "costado.$"
+
+CollaboratorsRoom_EventScript_Trash_Text_0:
+# 1471 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "La papelera está repleta de hojas\n"
+	.string "tachadas.\p"
+	.string "Da la impresión de que nada fue fácil de\n"
+	.string "decidir.$"
+
+CollaboratorsRoom_EventScript_Brainstorming_Text_0:
+# 1476 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "La pizarra está cubierta de diagramas y\n"
+	.string "flechas.\p"
+	.string "Parece una sesión de ideas llevada al\n"
+	.string "extremo.$"
+
+CollaboratorsRoom_EventScript_Desk2_Text_0:
+# 1481 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "El cajón guarda decenas de apuntes\n"
+	.string "sobre combates y niveles.\p"
+	.string "Parece que ajustar la dificultad tomó\n"
+	.string "muchísimo tiempo.$"
 
 CollaboratorsRoom_Text_Gameboycl_OnDefeat::
 # 223 "data/maps/CollaboratorsRoom/scripts.pory"

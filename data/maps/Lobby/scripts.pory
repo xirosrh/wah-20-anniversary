@@ -927,3 +927,8 @@ script Lobby_EventScript_Turbo {
     msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
     end
 }
+
+script Lobby_EventScript_Notes {
+    msgbox(format("Parecen apuntes llenos de estadísticas y observaciones.\pAlgunas páginas están tan gastadas que cuesta leerlas."), MSGBOX_SIGN)
+    end
+}

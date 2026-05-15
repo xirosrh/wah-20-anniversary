@@ -1785,6 +1785,12 @@ Lobby_EventScript_Turbo::
 	end
 
 
+Lobby_EventScript_Notes::
+# 932 "data/maps/Lobby/scripts.pory"
+	msgbox Lobby_EventScript_Notes_Text_0, MSGBOX_SIGN
+	end
+
+
 # 255 "data/maps/Lobby/scripts.pory"
 Lobby_EventScript_Roxas_IntroFirstBattle_Movement_0:
 # 255 "data/maps/Lobby/scripts.pory"
@@ -2494,6 +2500,13 @@ Lobby_EventScript_Turbo_Text_0:
 	.string "configurar tu velocidad de texto, de\l"
 	.string "caminar, ¡y un turbo para los combates!\p"
 	.string "¿Te animas a probarlo?$"
+
+Lobby_EventScript_Notes_Text_0:
+# 932 "data/maps/Lobby/scripts.pory"
+	.string "Parecen apuntes llenos de\n"
+	.string "estadísticas y observaciones.\p"
+	.string "Algunas páginas están tan gastadas\n"
+	.string "que cuesta leerlas.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 131 "data/maps/Lobby/scripts.pory"
