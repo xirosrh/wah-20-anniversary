@@ -684,17 +684,35 @@ script Lobby_EventScript_BetaMonQuestionnaire {
     specialvar(VAR_RESULT, Special_TryPickBetaMonQuestion)
     switch(var(VAR_RESULT)) {
         case BETA_MON_QUESTION_PICK_QUESTION:
-            msgbox(format("Te haré una pregunta por cada vez que hayas completado el desafío.\pHas completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles."), MSGBOX_AUTOCLOSE)
-            goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+            msgbox(format("Te haré una pregunta por cada vez que hayas completado el desafío.\pHas completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\p¿Quieres que te haga una pregunta?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
+            } else {
+                goto(Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater)
+            }
         case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
-            msgbox(format("¡Ya has respondido todas mis preguntas! ¿Qué te parecen los Pokémon que has conseguido?"), MSGBOX_AUTOCLOSE)
-            release
-            end
+           goto(Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions)
         default:
-            msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pCompleta el desafío otra vez y vuelve por aquí."), MSGBOX_AUTOCLOSE)
-            release
-            end
+           goto(Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft)
     }
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft {
+     msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pCompleta el desafío otra vez y vuelve por aquí."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions {
+     msgbox(format("¡Ya has respondido todas mis preguntas! ¿Qué te parecen los Pokémon que has conseguido?"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater {
+    msgbox(format("De acuerdo. Puedes volver cuando quieras."), MSGBOX_AUTOCLOSE)
+    release
+    end
 }
 
 script Lobby_EventScript_BetaMonQuestionnaire_NextQuestion {
@@ -706,21 +724,15 @@ script Lobby_EventScript_BetaMonQuestionnaire_NextQuestion {
             if(var(VAR_RESULT) == YES) {
                 goto(Lobby_EventScript_BetaMonQuestionnaire_AskPickedQuestion)
             }
-            msgbox(format("De acuerdo. Puedes volver cuando quieras."), MSGBOX_AUTOCLOSE)
-            release
-            end
+            goto(Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater)
         case BETA_MON_QUESTION_PICK_ALL_UNLOCKED:
-            msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pYa no quedan más preguntas beta.\pTodos esos Pokémon están disponibles en la Pokébox."), MSGBOX_AUTOCLOSE)
-            release
-            end
+            goto(Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions)
         case BETA_MON_QUESTION_PICK_NONE_THIS_TALK:
             msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pPor ahora no tengo más preguntas distintas para hacerte.\pVuelve a hablarme en otro momento."), MSGBOX_AUTOCLOSE)
             release
             end
         default:
-            msgbox(format("Has completado el desafío {STR_VAR_1} veces.\pYa te hice {STR_VAR_2} preguntas.\pTe quedan {STR_VAR_3} intentos disponibles.\pEso es todo por ahora.\pCompleta el desafío otra vez si quieres otra pregunta."), MSGBOX_AUTOCLOSE)
-            release
-            end
+            goto(Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft)
     }
 }
 
@@ -763,7 +775,7 @@ script Lobby_EventScript_BetaMonQuestionnaire_Gorochu {
         msgbox(format("Pues con este Pokémon te encontrarás."), MSGBOX_AUTOCLOSE)
         call(Pokebox_EventScript_ShowUnlocks)
     } else {
-        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
     }
     return
 }
@@ -782,7 +794,7 @@ script Lobby_EventScript_BetaMonQuestionnaire_Taaban {
         msgbox(format("Pues con su Bro te irás."), MSGBOX_AUTOCLOSE)
         call(Pokebox_EventScript_ShowUnlocks)
     } else {
-        msgbox(format("Oh, fallaste. Vuelve a completar el desafío y podrás intentarlo otra vez."), MSGBOX_AUTOCLOSE)
+        msgbox(Lobby_Text_FailedToUnlock, MSGBOX_AUTOCLOSE)
     }
     return
 }
