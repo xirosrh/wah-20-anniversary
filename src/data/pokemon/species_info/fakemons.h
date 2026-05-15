@@ -141,9 +141,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "Al atacar, enchufa su cola en\n"
-            "la nariz y provoca un\n"
-            "cortocircuito que potencia\n"
+            "Al atacar, enchufa su cola en la nariz\n"
+            "y provoca un cortocircuito que potencia\n"
             "Impactrueno y Chispa."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
@@ -194,10 +193,9 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "Asustar a un Gritespec es muy\n"
-            "fácil, pero cuidado: si se\n"
-            "asusta, su chillido agudo rompe\n"
-            "tímpanos. Vive en cementerios."),
+            "Asustar a un Gritespec es muy fácil,\n"
+            "pero cuidado: si se asusta, su chillido\n"
+            "agudo rompe tímpanos. Vive en cementerios."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -356,7 +354,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Su cuerpo parece una fruta, pero almacena\n"
+            "una energía capaz de hacer temblar\n"
+            "comunidades enteras. Quienes lo vieron\n"
+            "aparecer en los primeros tiempos de WaH\n"
+            "lo recuerdan como símbolo de una época\n"
+            "irrepetible."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -417,7 +420,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            " - "),
+            "Nació de una broma tan absurda que acabó\n"
+            "cobrando vida propia. Se dice que, cuando\n"
+            "Eing aparece, esta criatura empieza a tocar\n"
+            "mariachi y nadie sabe si viene a combatir o\n"
+            "a montar una fiesta."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
