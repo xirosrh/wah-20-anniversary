@@ -2158,7 +2158,7 @@ void ShowPokemonSummaryScreen_SwSh(u8 mode, void *mons, u8 monIndex, u8 maxMonIn
     SummaryScreen_SetShadowAnimDelayTaskId_SwSh(TASK_NONE);
 
     if (gMonSpritesGfxPtr == NULL)
-        CreateMonSpritesGfxManager(MON_SPR_GFX_MANAGER_A, MON_SPR_GFX_MODE_NORMAL);
+        CreateMonSpritesGfxManager();
 
     if (ShouldShowMoveRelearner())
         TryUpdateRelearnType(TRY_SET_UPDATE);
@@ -2746,7 +2746,7 @@ static void CloseSummaryScreen(u8 taskId)
         StopCryAndClearCrySongs();
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
         if (gMonSpritesGfxPtr == NULL)
-            DestroyMonSpritesGfxManager(MON_SPR_GFX_MANAGER_A);
+            DestroyMonSpritesGfxManager();
         FreeSummaryScreen();
         DestroyTask(taskId);
     }
@@ -5513,7 +5513,7 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state, bool32 isShadow)
             else
             {
                 HandleLoadSpecialPokePic(TRUE,
-                                         MonSpritesGfxManager_GetSpritePtr(MON_SPR_GFX_MANAGER_A, B_POSITION_OPPONENT_LEFT),
+                                         MonSpritesGfxManager_GetSpritePtr(),
                                          summary->species2,
                                          summary->pid);
             }
