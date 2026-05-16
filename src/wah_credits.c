@@ -166,7 +166,7 @@ const u8 sTextColor2CreditsWah[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED,
 struct WahCredits
 {
     const u8 *title;
-    const u8 *sListCredits[40];
+    const u8 *sListCredits[50];
 };
 
 static const struct WahCredits sWahCreditsSections[] =
@@ -309,6 +309,12 @@ static const struct WahCredits sWahCreditsSections[] =
 
             COMPOUND_STRING("Ivantxo"),
             COMPOUND_STRING("Seven7hNight"),
+            COMPOUND_STRING(""), //Empty on purpose
+
+            COMPOUND_STRING("CALENTADASTCG"),
+            COMPOUND_STRING(""), //Empty on purpose
+            COMPOUND_STRING(""), //Empty on purpose
+
             NULL
         }
     },
