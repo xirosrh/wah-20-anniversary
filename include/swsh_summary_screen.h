@@ -18,7 +18,7 @@
 #define SWSH_SUMMARY_SHOW_IV_EV                       TRUE      // determines how to show IVs and EVs
 #define SWSH_SUMMARY_SHOW_FRIENDSHIP                  TRUE      // show a heart that fills up to indicate friendship value
 #define SWSH_SUMMARY_SWSH_STATUS_ICONS                TRUE      // use Gen 8 style status icons instead of default ones.
-#define SWSH_SUMMARY_SWSH_TYPE_ICONS                  TRUE      // use Gen 8 style type icons instead of the default ones
+#define SWSH_SUMMARY_SWSH_TYPE_ICONS                  FALSE      // use Gen 8 style type icons instead of the default ones
 #define SWSH_SUMMARY_SWSH_TYPE_ICONS_SV_PAL           FALSE     // use Scarlet/Violet palette for type icons
                                                                 // out of the box the vanilla icons don't fit well, this is mostly a compatibility
 #define SWSH_SUMMARY_SCROLLING_BG                     TRUE      // enables scrolling animated background
