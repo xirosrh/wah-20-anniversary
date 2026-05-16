@@ -1,5 +1,41 @@
 mapscripts Lobby_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Lobby_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_EXPLAIN_NEW_CHALLENGE_MODES_LOBBY, 1: Lobby_OnFrame_ExplainNewChallengeModes
+    ]
+}
+
+script Lobby_OnFrame_ExplainNewChallengeModes {
+    applymovementandwait(LOCALID_LOBBY_COPE, moves(walk_down * 4, face_right))
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    msgbox(format("¡Increíble, {PLAYER}! Has superado el desafío por completo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_HeartWithDelay48)
+    msgbox(format("¡Pero no creas que esto a terminado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
+    msgbox(format("¡Todavía tienes muchas cosas para hacer!\pA partir de ahora haz desbloqueado nuevas formas de jugar el desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¡Ahora puedes combatir en modalidad {COLOR BLUE}batallas dobles{COLOR DARK_GRAY}!\pCada combate será en formato doble: dos Pokémon en campo, ¡el doble de caos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_LEDGE)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
+    msgbox(format("¿Y si quieres pensar un poco más? Entonces las {COLOR RED}batallas inversas{COLOR DARK_GRAY} son para ti!\p¡La tabla de tipos está al revés! Lo resistente será débil, y viceversa.\p¡Ya no podrás combatir en modo automático!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_SmileWithDelay48)
+    msgbox(format("¡Y eso no es todo!\pSin importar la modalidad que elijas, cada administrador tendrá dos equipos posibles para utilizar.\pSu {COLOR BLUE}equipo principal{COLOR DARK_GRAY}, que ya conoces, o un {COLOR RED}equipo alternativo{COLOR DARK_GRAY}.\pNunca sabrás cual te podrá tocar, lo que significa que cada recorrido podría sentirse completamente diferente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    turnobject(LOCALID_LOBBY_COPE, DIR_WEST)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_ThinkingWithDelay48)
+    delay(40)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
+    msgbox(format("¡Casi lo olvidaba!\pTambién puedes explorar la {COLOR BLUE}Sala de Colaboradores{COLOR DARK_GRAY}.\p¡Varios de los creadores del desafío están ansiosos por enfrentarte!\pY si buscas completar todo al 100%, aún quedan muchos {COLOR BLUE}logros{COLOR DARK_GRAY} por conseguir.\pCon todo lo que te queda por hacer, ¡seguro te vas a divertir mucho!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_HappyWithDelay48)
+    applymovementandwait(LOCALID_LOBBY_COPE, moves(walk_up * 4, face_down))
+    setvar(VAR_EXPLAIN_NEW_CHALLENGE_MODES_LOBBY, 2)
+    end
 }
 
 script Lobby_OnTransition {
@@ -16,10 +52,6 @@ script Lobby_EventScript_StartChallenge {
     turnobject(LOCALID_PLAYER, DIR_WEST)
     delay(20)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
-    if (flag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES) == TRUE) {
-        msgbox(format("¡Increíble, {PLAYER}! Has superado el desafío por completo.\pA partir de ahora puedes volver a enfrentarlo en otras modalidades: batallas dobles y batallas inversas.\p¡Seguro que te van a divertir un montón!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
-        clearflag(FLAG_EXPLAIN_NEW_CHALLENGE_MODES)
-    }
     if (!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
         msgbox(format("¿Así que ya estás list{OA} para intentar el desafío?"), MSGBOX_YESNO, speaker = SP_NAME_COPE)
         closemessage

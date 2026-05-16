@@ -144,7 +144,7 @@ HallOfFame_EventScript_SetGameClear_2:
 # 70 "data/maps/HallOfFame/scripts.pory"
 	setflag FLAG_WAH_CHALLENGE_COMPLETED
 # 71 "data/maps/HallOfFame/scripts.pory"
-	setflag FLAG_EXPLAIN_NEW_CHALLENGE_MODES
+	setvar VAR_EXPLAIN_NEW_CHALLENGE_MODES_LOBBY, 1
 	goto HallOfFame_EventScript_SetGameClear_1
 
 HallOfFame_EventScript_SetGameClear_6:
