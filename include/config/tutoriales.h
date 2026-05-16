@@ -1,7 +1,7 @@
 #ifndef GUARD_CONFIG_TUTORIALES_H
 #define GUARD_CONFIG_TUTORIALES_H
 
-#define TUTORIAL_ICONOS_DE_TIPOS    TRUE
+#define TUTORIAL_ICONOS_DE_TIPOS    FALSE
 
 /* Tutorial de Ivantxo
 Si el config es TRUE, los iconos de tipos son sustituidos por otros de estilo moderno (Colores de Pokémon HOME, iconos basados en los de ChefSrGio https://www.deviantart.com/chefsrgio/art/Type-Icons-Masters-Style-980891722, créditos a él).
