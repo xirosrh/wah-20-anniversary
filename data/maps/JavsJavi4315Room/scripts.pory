@@ -230,22 +230,22 @@ script JavsJavi4315Room_EventScript_Javs {
 }
 
 script JavsJavi4315Room_EventScript_PikachuPainting {
-    msgbox(format("El cuadro muestra a un Pikachu con un elegante sombrero gris.\pSu mirada seria intenta imponer respeto, pero sigue siendo adorable."), MSGBOX_SIGN)
+    msgbox(format("Interesante, un Pikachu con ambas orejas…"), MSGBOX_SIGN)
     end
 }
 
 script JavsJavi4315Room_EventScript_SmearglePainting {
-    msgbox(format("El cuadro muestra a Smeargle frente a un lienzo.\pDa la impresión de que acaba de pintarse a sí mismo."), MSGBOX_SIGN)
+    msgbox(format("Dicen que un verdadero artista no firma sus obras… pero firmarlas con la cola debe ser otro nivel."), MSGBOX_SIGN)
     end
 }
 
 script JavsJavi4315Room_EventScript_EeveePainting {
-    msgbox(format("Eevee aparece retratado con un aire distinguido.\pEl marco dorado hace que parezca aún más importante."), MSGBOX_SIGN)
+    msgbox(format("Seguramente este Eevee aún no decide en qué evolucionar porque primero quiere explorar su etapa artística…"), MSGBOX_SIGN)
     end
 }
 
 script JavsJavi4315Room_EventScript_MunchlaxPainting {
-    msgbox(format("El cuadro muestra una habitación sencilla y colorida.\pMunchlax parece haber encontrado el lugar perfecto para esperar la comida."), MSGBOX_SIGN)
+    msgbox(format("Este cuadro transmite paz, naturaleza y hambre… principalmente hambre."), MSGBOX_SIGN)
     end
 }
 

@@ -659,31 +659,25 @@ JavsJavi4315Room_EventScript_Javs_Text_0:
 
 JavsJavi4315Room_EventScript_PikachuPainting_Text_0:
 # 233 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "El cuadro muestra a un Pikachu con un\n"
-	.string "elegante sombrero gris.\p"
-	.string "Su mirada seria intenta imponer\n"
-	.string "respeto, pero sigue siendo adorable.$"
+	.string "Interesante, un Pikachu con ambas\n"
+	.string "orejas…$"
 
 JavsJavi4315Room_EventScript_SmearglePainting_Text_0:
 # 238 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "El cuadro muestra a Smeargle frente a\n"
-	.string "un lienzo.\p"
-	.string "Da la impresión de que acaba de\n"
-	.string "pintarse a sí mismo.$"
+	.string "Dicen que un verdadero artista no firma\n"
+	.string "sus obras… pero firmarlas con la cola\l"
+	.string "debe ser otro nivel.$"
 
 JavsJavi4315Room_EventScript_EeveePainting_Text_0:
 # 243 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Eevee aparece retratado con un aire\n"
-	.string "distinguido.\p"
-	.string "El marco dorado hace que parezca aún\n"
-	.string "más importante.$"
+	.string "Seguramente este Eevee aún no decide\n"
+	.string "en qué evolucionar porque primero\l"
+	.string "quiere explorar su etapa artística…$"
 
 JavsJavi4315Room_EventScript_MunchlaxPainting_Text_0:
 # 248 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "El cuadro muestra una habitación\n"
-	.string "sencilla y colorida.\p"
-	.string "Munchlax parece haber encontrado el\n"
-	.string "lugar perfecto para esperar la comida.$"
+	.string "Este cuadro transmite paz, naturaleza\n"
+	.string "y hambre… principalmente hambre.$"
 
 JavsJavi4315Room_EventScript_Boxes1_Text_0:
 # 254 "data/maps/JavsJavi4315Room/scripts.pory"
