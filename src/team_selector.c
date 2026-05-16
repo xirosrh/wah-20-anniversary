@@ -796,9 +796,7 @@ static void Task_HandleTeamSelector(u8 taskId)
         teamSelectorObj.indexSelectedMon = 0;
         LoadAllDataCurrenteSelectedMon(TRUE);
         UpdateSelectedMonIcon();
-    }
-
-    if ( JOY_NEW(R_BUTTON) && teamSelectorObj.monTeamNum <= TEAM_COUNT - 1 && teamSelectorObj.monTeamNum != TEAM_RANDOM)
+    } else if ( JOY_NEW(R_BUTTON) && teamSelectorObj.monTeamNum <= TEAM_COUNT - 1 && teamSelectorObj.monTeamNum != TEAM_RANDOM)
     {
         PlaySE(SE_SELECT);
         if( teamSelectorObj.monTeamNum !=  TEAM_RANDOM)
@@ -814,9 +812,7 @@ static void Task_HandleTeamSelector(u8 taskId)
         teamSelectorObj.indexSelectedMon = 0;
         LoadAllDataCurrenteSelectedMon(TRUE);
         UpdateSelectedMonIcon();
-    }
-
-    if (JOY_NEW(L_BUTTON) && teamSelectorObj.monTeamNum > 0)
+    } else if (JOY_NEW(L_BUTTON) && teamSelectorObj.monTeamNum > 0)
     {
         PlaySE(SE_SELECT);
         teamSelectorObj.monTeamNum -= 1;
@@ -824,34 +820,26 @@ static void Task_HandleTeamSelector(u8 taskId)
         teamSelectorObj.indexSelectedMon = 0;
         LoadAllDataCurrenteSelectedMon(TRUE);
         UpdateSelectedMonIcon();
-    }
-
-    if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.indexSelectedMon >  0)
+    } else if (JOY_NEW(DPAD_LEFT) && teamSelectorObj.indexSelectedMon >  0)
     {
         PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon -= 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
         UpdateSelectedMonIcon();
-    }
-
-    if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.indexSelectedMon < MAX_TEAM_SIZE-1)
+    } else if (JOY_NEW(DPAD_RIGHT) && teamSelectorObj.indexSelectedMon < MAX_TEAM_SIZE-1)
     {
         PlaySE(SE_SELECT);
         ClearMonSprites(TRUE, FALSE);
         teamSelectorObj.indexSelectedMon += 1;
         LoadAllDataCurrenteSelectedMon(FALSE);
         UpdateSelectedMonIcon();
-    }
-
-    if(JOY_NEW(A_BUTTON))
+    } else if(JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
         CreateMsgWindow();
         gTasks[taskId].func = Task_HandleWantThisTeam;
-    }
-
-    if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
+    } else if (JOY_NEW(B_BUTTON) && teamSelectorObj.fromField)
     {
         PlaySE(SE_SELECT);
         CreateExitConfirmWindow();
