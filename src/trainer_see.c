@@ -1214,7 +1214,7 @@ u8 FldEff_SweatDropIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 4);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SWEAT_DROP_ICON, 4);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
     return 0;
@@ -1226,7 +1226,7 @@ u8 FldEff_ThinkingIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 5);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_THINKING_ICON, 5);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
     return 0;
@@ -1238,7 +1238,7 @@ u8 FldEff_VersusIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 6);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_VERSUS_ICON, 6);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
     return 0;
@@ -1250,7 +1250,7 @@ u8 FldEff_HappyIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 7);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_HAPPY_ICON, 7);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
     return 0;
@@ -1262,7 +1262,7 @@ u8 FldEff_AnnoyedIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 18);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_ANNOYED_ICON, 18);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1275,7 +1275,7 @@ u8 FldEff_MusicNoteIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 19);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_MUSIC_NOTE_ICON, 19);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1288,7 +1288,7 @@ u8 FldEff_WinkIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 17);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_WINK_ICON, 17);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1301,7 +1301,7 @@ u8 FldEff_SleepingIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 8);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SLEEPING_ICON, 8);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
     return 0;
@@ -1313,7 +1313,7 @@ u8 FldEff_SadIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 9);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SAD_ICON, 9);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1326,7 +1326,7 @@ u8 FldEff_SmileIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 10);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SMILE_ICON, 10);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1339,7 +1339,7 @@ u8 FldEff_CryIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 11);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_CRY_ICON, 11);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1352,7 +1352,7 @@ u8 FldEff_AngryIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 12);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_ANGRY_ICON, 12);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1365,7 +1365,7 @@ u8 FldEff_SurpriseIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 13);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SURPRISE_ICON, 13);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1378,7 +1378,7 @@ u8 FldEff_VIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 14);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_V_ICON, 14);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1391,7 +1391,7 @@ u8 FldEff_IdeaIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 15);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_IDEA_ICON, 15);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
@@ -1404,7 +1404,7 @@ u8 FldEff_XdIcon(void)
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 16);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_XD_ICON, 16);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
     }
 
