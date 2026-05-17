@@ -1112,7 +1112,7 @@ static void TaskCopeSpeech_ShowMon(u8 taskId)
         PlaySE(SE_BALL_OPEN);
         StartSpriteAnim(&gSprites[gTasks[taskId].tSpriteCopeBodyId], COPE_SHOW_BALL);
         gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(SPECIES_KECLEON, 87, 85, 5);
-        PokemonSummaryDoMonAnimation(&gSprites[gTasks[taskId].tMonSpriteId], SPECIES_KECLEON, FALSE);
+        PokemonSummaryDoMonAnimation(&gSprites[gTasks[taskId].tMonSpriteId], SPECIES_KECLEON, FALSE, FALSE);
         gTasks[taskId].func = TaskCopeSpeech_WaitMonFinishAnim;
     }
 }
