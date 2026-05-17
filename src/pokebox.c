@@ -435,7 +435,7 @@ static void PrintMsgActions(u8 msgAction)
     CopyWindowToVram(WINDOW_MSG, 3);
 }
 
-static void PrintTextSwapBox()
+static void PrintTextSwapBox(bool8 printLR)
 {
     u8 x;
     
@@ -445,10 +445,10 @@ static void PrintTextSwapBox()
 
     FillWindowPixelBuffer(WINDOW_SWAP_BOX, PIXEL_FILL(0));
 
-    if(pokeBoxObj.currentPageNum > 0)
+    if(pokeBoxObj.currentPageNum > 0 && printLR)
         AddTextPrinterParameterized3(WINDOW_SWAP_BOX, FONT_NORMAL, 0, 0, sTextColorWhitePokebox, 0, gText_L_Button);
 
-    if(pokeBoxObj.currentPageNum < getTotalNumPages()-1)
+    if(pokeBoxObj.currentPageNum < getTotalNumPages()-1 && printLR)
         AddTextPrinterParameterized3(WINDOW_SWAP_BOX, FONT_NORMAL, 112, 0, sTextColorWhitePokebox, 0, gText_R_Button);
 
     ConvertIntToDecimalStringN(gStringVar2, pokeBoxObj.currentPageNum, STR_CONV_MODE_RIGHT_ALIGN, 2);
@@ -822,6 +822,42 @@ static u16 GetSelectedPokemonIndex(void)
          + pokeBoxObj.column;
 }
 
+static void SpriteCB_DisplayMonMosaic(struct Sprite *sprite)
+{
+    sprite->data[0] -= sprite->data[1];
+    if (sprite->data[0] < 0)
+        sprite->data[0] = 0;
+    SetGpuReg(REG_OFFSET_MOSAIC, (sprite->data[0] << 12) | (sprite->data[0] << 8));
+    if (sprite->data[0] == 0)
+    {
+        sprite->oam.mosaic = FALSE;
+        sprite->callback = SpriteCallbackDummy;
+    }
+}
+
+static void StartDisplayMonMosaicEffect(void)
+{
+    struct Sprite *sprite = &gSprites[pokeBoxObj.frontMonId];
+
+    // RefreshDisplayMonData();
+    if (sprite)
+    {
+        sprite->oam.mosaic = TRUE;
+        sprite->data[0] = 10;
+        sprite->data[1] = 1;
+        sprite->callback = SpriteCB_DisplayMonMosaic;
+        SetGpuReg(REG_OFFSET_MOSAIC, (sprite->data[0] << 12) | (sprite->data[0] << 8));
+    }
+}
+
+static u8 IsDisplayMosaicActive(void)
+{
+    struct Sprite *sprite = &gSprites[pokeBoxObj.frontMonId];
+    if(sprite)
+        return sprite->oam.mosaic;
+    return FALSE;
+}
+
 //Carga la info de los pokes de la box
 void LoadCurrentMonData()
 {
@@ -853,6 +889,7 @@ void LoadCurrentMonData()
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
     }
 
+    StartDisplayMonMosaicEffect();
     PrintAllDataMon(species);
 }
 
@@ -914,6 +951,7 @@ void LoadCurrentMonDataPlayerTeam()
     pokeBoxObj.frontMonId = CreateMonPicSprite(species, isShiny, 0, TRUE, 38, 58, 15, TAG_NONE);
     gSprites[pokeBoxObj.frontMonId].oam.priority = 1;
 
+    StartDisplayMonMosaicEffect();
     PrintAllDataMon(species);
 }
 
@@ -1203,7 +1241,7 @@ static void Task_SlideRightBgTeamPlayer(u8 taskId)
         UpdateSelectorPosition(FALSE);
         SetVisibilitySpriteSelector(FALSE);
         LoadCurrentMonData();
-        PrintTextSwapBox();
+        PrintTextSwapBox(TRUE);
         PrintMsgActions(MSG_ACTION_CONTROLS);
         gTasks[taskId].func = Task_HandlePokebox;
     }
@@ -1251,6 +1289,7 @@ static void Task_HandleBuyMon(u8 taskId)
     }
     else if(JOY_NEW(B_BUTTON))
     {
+        PrintTextSwapBox(TRUE);
         ClearMonTextInfoPage(TRUE);
         HidenMonIconsBox(FALSE);
         SetVisibilitySpriteSelector(FALSE);
@@ -1438,7 +1477,7 @@ static void Task_HandlePokebox(u8 taskId)
         {
             PrintMsgActions(MSG_ACTION_NOT_TEAM_FULL);
         }else{
-            BeginNormalPaletteFade(PALETTES_ALL, 10, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_FadeOut;
         }
     }
@@ -1449,7 +1488,7 @@ static void Task_HandlePokebox(u8 taskId)
         LoadMonIconSprites();
         ResetSelectorPosition();
         LoadCurrentMonData();
-        PrintTextSwapBox();
+        PrintTextSwapBox(TRUE);
     }
     else if (JOY_NEW(R_BUTTON) && pokeBoxObj.currentPageNum < getTotalNumPages()-1)
     {
@@ -1458,7 +1497,7 @@ static void Task_HandlePokebox(u8 taskId)
         LoadMonIconSprites();
         ResetSelectorPosition();
         LoadCurrentMonData();
-        PrintTextSwapBox();
+        PrintTextSwapBox(TRUE);
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
@@ -1520,6 +1559,7 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 {
     if (JOY_NEW(SELECT_BUTTON) || JOY_NEW(B_BUTTON))
     {
+        PrintTextSwapBox(TRUE);
         ClearMonTextInfoPage(TRUE);
         HidenMonIconsBox(FALSE);
         SetVisibilitySpriteSelector(FALSE);
@@ -1530,9 +1570,14 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 static void Task_ShowMonInfo(u8 taskId)
 {
     u16 index = GetSelectedPokemonIndex();
-    u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
-    bool8 enoughtMoneyToBuy = PokeboxSpecies_EnoughtMoneyToBuy(secondIndex); 
+    bool8 enoughtMoneyToBuy = FALSE;
+    if (index >= MON_TEAM_SELECTOR_COUNT)
+    {
+        u16 secondIndex = index - MON_TEAM_SELECTOR_COUNT;
+        enoughtMoneyToBuy = PokeboxSpecies_EnoughtMoneyToBuy(secondIndex); 
+    }
 
+    PrintTextSwapBox(FALSE);
     PrintMonTextInfoPage();
 
     if(enoughtMoneyToBuy)
@@ -1769,7 +1814,7 @@ void CB2_InitPokeBoxSetUp(void)
         LoadMonIconSprites();
         LoadCurrentMonData();
         PrintMsgActions(MSG_ACTION_CONTROLS);
-        PrintTextSwapBox();
+        PrintTextSwapBox(TRUE);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         gMain.state++;
     default:

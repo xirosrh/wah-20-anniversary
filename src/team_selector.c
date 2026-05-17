@@ -877,6 +877,42 @@ static void Task_FadeOut(u8 taskId)
     }
 }
 
+static void SpriteCB_DisplayMonMosaic(struct Sprite *sprite)
+{
+    sprite->data[0] -= sprite->data[1];
+    if (sprite->data[0] < 0)
+        sprite->data[0] = 0;
+    SetGpuReg(REG_OFFSET_MOSAIC, (sprite->data[0] << 12) | (sprite->data[0] << 8));
+    if (sprite->data[0] == 0)
+    {
+        sprite->oam.mosaic = FALSE;
+        sprite->callback = SpriteCallbackDummy;
+    }
+}
+
+static void StartDisplayMonMosaicEffect(void)
+{
+    struct Sprite *sprite = &gSprites[teamSelectorObj.frontMonId];
+
+    // RefreshDisplayMonData();
+    if (sprite)
+    {
+        sprite->oam.mosaic = TRUE;
+        sprite->data[0] = 10;
+        sprite->data[1] = 1;
+        sprite->callback = SpriteCB_DisplayMonMosaic;
+        SetGpuReg(REG_OFFSET_MOSAIC, (sprite->data[0] << 12) | (sprite->data[0] << 8));
+    }
+}
+
+static u8 IsDisplayMosaicActive(void)
+{
+    struct Sprite *sprite = &gSprites[teamSelectorObj.frontMonId];
+    if(sprite)
+        return sprite->oam.mosaic;
+    return FALSE;
+}
+
 void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons)
 {
 
@@ -900,6 +936,7 @@ void LoadAllDataCurrenteSelectedMon(bool8 loadMonIcons)
     gSprites[teamSelectorObj.frontMonId].oam.priority = 1;
     LoadItemSprite(mon->itemId);
 
+    StartDisplayMonMosaicEffect();
     PrintLRButtons();
     PrintNameMon(mon);
     PrintMovesMon(mon);
