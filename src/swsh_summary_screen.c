@@ -313,6 +313,7 @@ static void PrintMonNature(void);
 static void PrintMonDexNumberSpecies(void);
 static void PrintMonAbilityName(void);
 static void PrintMonAbilityDescription(void);
+static void PrintRowNameInfoPage(void);
 static void BufferMonTrainerMemo(void);
 static void UNUSED PrintMonTrainerMemo(void);
 static void BufferNatureString(u8);
@@ -416,73 +417,73 @@ static const u8 sMovesPPLayout[]                = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sEggStepsLayout[]               = _("{DYNAMIC 0} steps");
 
 static const u8 sText_Empty[]                   = _("");
-static const u8 sText_Cancel[]                  = _("Cancel");
-static const u8 sText_Switch[]                  = _("Switch");
-static const u8 sText_Rename[]                  = _("Rename");
+static const u8 sText_Cancel[]                  = _("Cancelar");
+static const u8 sText_Switch[]                  = _("Cambiar");
+static const u8 sText_Rename[]                  = _("Mote");
 static const u8 sText_Lv[]                      = _("Lv.");
-static const u8 sText_HP_Title[]                = _("HP");
-static const u8 sText_Attack_Title[]            = _("Attack");
-static const u8 sText_Defense_Title[]           = _("Defense");
-static const u8 sText_SpAtk_Title[]             = _("Sp. Atk");
-static const u8 sText_SpDef_Title[]             = _("Sp. Def");
-static const u8 sText_Speed_Title[]             = _("Speed");
-static const u8 sText_ViewIVs[]                 = _("View IV");
-static const u8 sText_ViewEVs[]                 = _("View EV");
-static const u8 sText_ViewStats[]               = _("View Stats");
+static const u8 sText_HP_Title[]                = _("PS");
+static const u8 sText_Attack_Title[]            = _("Ataque");
+static const u8 sText_Defense_Title[]           = _("Defensa");
+static const u8 sText_SpAtk_Title[]             = _("Atq. Es");
+static const u8 sText_SpDef_Title[]             = _("Def. Es");
+static const u8 sText_Speed_Title[]             = _("Veloc.");
+static const u8 sText_ViewIVs[]                 = _("Ver IV");
+static const u8 sText_ViewEVs[]                 = _("Ver EV");
+static const u8 sText_ViewStats[]               = _("Ver Stats");
 static const u8 sText_Exp[]                     = _("Exp.");
-static const u8 sText_NextLv[]                  = _("Next Lv.");
-static const u8 sText_RentalPkmn[]              = _("Rental Pokémon");
-static const u8 sText_None[]                    = _("None");
-static const u8 sText_Egg[]                     = _("Egg");
+static const u8 sText_NextLv[]                  = _("Siguiente Nv.");
+static const u8 sText_RentalPkmn[]              = _("Pkmn de prestamo");
+static const u8 sText_None[]                    = _("Ninguno");
+static const u8 sText_Egg[]                     = _("Huevo");
 static const u8 sText_Nature[]                  = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}");
 static const u8 sText_MintNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} {EMOJI_LEAF}");
 
 // Trainer Memo page texts
-static const u8 sText_MemoNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} by nature");
-static const u8 sText_MemoMet[]                 = _("Met when it was {LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}\nLocation: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoHatched[]             = _("Hatched from an egg\nLocation: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoTraded[]              = _("Met in a trade");
-static const u8 sText_MemoFateful[]             = _("Met in a fateful encounter\nat {LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
-static const u8 sText_MemoProbablyMet[]         = _("Seems to have met at {LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}\nLocation: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoMetSomewhere[]        = _("Met somewhere at {LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
-static const u8 sText_MemoHatchedSomewhere[]    = _("Hatched from an egg\nsomewhere.");
+static const u8 sText_MemoNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} por naturaleza");
+static const u8 sText_MemoMet[]                 = _("Visto por primera al {LV_2}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoHatched[]             = _("Abierto de un huevo:\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoTraded[]              = _("Intercambiado");
+static const u8 sText_MemoFateful[]             = _("Encuentro fatídico con\n{LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoProbablyMet[]         = _("Visto al {LV_2}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoMetSomewhere[]        = _("Visto en algún lugar al {LV_2}.\n{DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoHatchedSomewhere[]    = _("Abierto de un huevo en\nalgún lugar.");
 
 // Characteristics
-static const u8 sCharacteristic_HP_0[]          = _("Loves to eat");
-static const u8 sCharacteristic_HP_1[]          = _("Takes plenty of siestas");
-static const u8 sCharacteristic_HP_2[]          = _("Nods off a lot");
-static const u8 sCharacteristic_HP_3[]          = _("Scatters things often");
-static const u8 sCharacteristic_HP_4[]          = _("Likes to relax");
+static const u8 sCharacteristic_HP_0[]          = _("Le encanta comer");
+static const u8 sCharacteristic_HP_1[]          = _("Sestea a menudo");
+static const u8 sCharacteristic_HP_2[]          = _("Suele dar cabezadas");
+static const u8 sCharacteristic_HP_3[]          = _("A menudo lo desordena todo");
+static const u8 sCharacteristic_HP_4[]          = _("Le gusta relajarse");
 
-static const u8 sCharacteristic_Atk_0[]         = _("Proud of its power");
-static const u8 sCharacteristic_Atk_1[]         = _("Likes to thrash about");
-static const u8 sCharacteristic_Atk_2[]         = _("A little quick tempered");
-static const u8 sCharacteristic_Atk_3[]         = _("Likes to fight");
-static const u8 sCharacteristic_Atk_4[]         = _("Quick tempered");
+static const u8 sCharacteristic_Atk_0[]         = _("Orgulloso de su fuerza");
+static const u8 sCharacteristic_Atk_1[]         = _("Le gusta alborotar");
+static const u8 sCharacteristic_Atk_2[]         = _("Algo irascible");
+static const u8 sCharacteristic_Atk_3[]         = _("Le gusta luchar");
+static const u8 sCharacteristic_Atk_4[]         = _("Muy irascible");
 
-static const u8 sCharacteristic_Def_0[]         = _("Sturdy body");
-static const u8 sCharacteristic_Def_1[]         = _("Capable of taking hits");
-static const u8 sCharacteristic_Def_2[]         = _("Highly persistent");
-static const u8 sCharacteristic_Def_3[]         = _("Good endurance");
-static const u8 sCharacteristic_Def_4[]         = _("Good perseverance");
+static const u8 sCharacteristic_Def_0[]         = _("Cuerpo robusto");
+static const u8 sCharacteristic_Def_1[]         = _("Capaz de aguantar golpes");
+static const u8 sCharacteristic_Def_2[]         = _("Muy persistente");
+static const u8 sCharacteristic_Def_3[]         = _("Buen aguante");
+static const u8 sCharacteristic_Def_4[]         = _("Gran perseverancia");
 
-static const u8 sCharacteristic_Speed_0[]       = _("Likes to run");
-static const u8 sCharacteristic_Speed_1[]       = _("Alert to sounds");
-static const u8 sCharacteristic_Speed_2[]       = _("Impetuous and silly");
-static const u8 sCharacteristic_Speed_3[]       = _("Somewhat of a clown");
-static const u8 sCharacteristic_Speed_4[]       = _("Quick to flee");
+static const u8 sCharacteristic_Speed_0[]       = _("Le gusta correr");
+static const u8 sCharacteristic_Speed_1[]       = _("Oído atento");
+static const u8 sCharacteristic_Speed_2[]       = _("Impetuoso y tontorrón");
+static const u8 sCharacteristic_Speed_3[]       = _("Payasete");
+static const u8 sCharacteristic_Speed_4[]       = _("Huye rápido");
 
-static const u8 sCharacteristic_SpAtk_0[]       = _("Highly curious");
-static const u8 sCharacteristic_SpAtk_1[]       = _("Mischievous");
-static const u8 sCharacteristic_SpAtk_2[]       = _("Thoroughly cunning");
-static const u8 sCharacteristic_SpAtk_3[]       = _("Often lost in thought");
-static const u8 sCharacteristic_SpAtk_4[]       = _("Very finicky");
+static const u8 sCharacteristic_SpAtk_0[]       = _("Muy curioso");
+static const u8 sCharacteristic_SpAtk_1[]       = _("Divertido");
+static const u8 sCharacteristic_SpAtk_2[]       = _("Astuto");
+static const u8 sCharacteristic_SpAtk_3[]       = _("Suele ensimismarse");
+static const u8 sCharacteristic_SpAtk_4[]       = _("Muy tiquismiquis");
 
-static const u8 sCharacteristic_SpDef_0[]       = _("Strong willed");
-static const u8 sCharacteristic_SpDef_1[]       = _("Somewhat vain");
-static const u8 sCharacteristic_SpDef_2[]       = _("Strongly defiant");
-static const u8 sCharacteristic_SpDef_3[]       = _("Hates to lose");
-static const u8 sCharacteristic_SpDef_4[]       = _("Somewhat stubborn");
+static const u8 sCharacteristic_SpDef_0[]       = _("De fuerte afecto");
+static const u8 sCharacteristic_SpDef_1[]       = _("Un poco vanidoso");
+static const u8 sCharacteristic_SpDef_2[]       = _("Muy rebelde");
+static const u8 sCharacteristic_SpDef_3[]       = _("No le gusta perder");
+static const u8 sCharacteristic_SpDef_4[]       = _("Un poco cabezota");
 
 static const u8 *const sMonCharacteristicTable[MON_CHARACTERISTIC_COUNT] = {
     // HP
@@ -724,9 +725,9 @@ static const struct WindowTemplate sPageInfoTemplate[] =
     },
     [PSS_DATA_WINDOW_INFO_SPECIES] = {
         .bg = 0,
-        .tilemapLeft = 7,
+        .tilemapLeft = 1,
         .tilemapTop = 3,
-        .width = 12,
+        .width = 18,
         .height = 9,
         .paletteNum = 6,
         .baseBlock = 472,
@@ -4263,6 +4264,7 @@ static void PrintInfoPageText(void)
     }
     else
     {
+        PrintRowNameInfoPage();
         PrintMonOTName();
         PrintMonOTID();
         PrintMonDexNumberSpecies();
@@ -4292,6 +4294,9 @@ static void Task_PrintInfoPage(u8 taskId)
         PrintMonNature();
         break;
     case 6:
+        PrintRowNameInfoPage();
+        break;
+    case 7:
         DestroyTask(taskId);
         return;
     }
@@ -4303,7 +4308,7 @@ static void PrintMonDexNumberSpecies(void)
     int windowId;
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
-    u16 dexNum = SpeciesToPokedexNum(summary->species); // not printing pokedex number
+    // u16 dexNum = SpeciesToPokedexNum(summary->species); // not printing pokedex numbertou
 
     windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
     
@@ -4314,26 +4319,26 @@ static void PrintMonDexNumberSpecies(void)
     }
     else
     {
-        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 0, 3, 0, 0);
+        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 50, 3, 0, 0);
         
-        if (dexNum != 0xFFFF)
-        {
-            u8 digitCount = (NATIONAL_DEX_COUNT > 999 && IsNationalPokedexEnabled()) ? 4 : 3;
+        // if (dexNum != 0xFFFF)
+        // {
+        //     u8 digitCount = (NATIONAL_DEX_COUNT > 999 && IsNationalPokedexEnabled()) ? 4 : 3;
 
-            StringCopy(gStringVar1, &gText_NumberClear01[0]);
-            ConvertIntToDecimalStringN(gStringVar2, dexNum, STR_CONV_MODE_LEADING_ZEROS, digitCount);
-            StringAppend(gStringVar1, gStringVar2);
-            ConvertIntToDecimalStringN(gStringVar1, dexNum, STR_CONV_MODE_LEADING_ZEROS, digitCount);
+        //     StringCopy(gStringVar1, &gText_NumberClear01[0]);
+        //     ConvertIntToDecimalStringN(gStringVar2, dexNum, STR_CONV_MODE_LEADING_ZEROS, digitCount);
+        //     StringAppend(gStringVar1, gStringVar2);
+        //     ConvertIntToDecimalStringN(gStringVar1, dexNum, STR_CONV_MODE_LEADING_ZEROS, digitCount);
 
-            if (!IsMonShiny(mon))
-            {
-                PrintTextOnWindow(windowId, gStringVar1, 76, 3, 0, 0);
-            }
-            else
-            {
-                PrintTextOnWindow(windowId, gStringVar1, 76, 3, 0, 2);
-            }
-        }
+        //     if (!IsMonShiny(mon))
+        //     {
+        //         PrintTextOnWindow(windowId, gStringVar1, 106, 3, 0, 0);
+        //     }
+        //     else
+        //     {
+        //         PrintTextOnWindow(windowId, gStringVar1, 106, 3, 0, 2);
+        //     }
+        // }
     }
 
 }
@@ -4343,12 +4348,12 @@ static void PrintMonOTName(void)
     int windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
-        PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, 0);
+        PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 50, 37, 0, 0);
     }
     else
     {
         StringCopy(gStringVar1, sText_RentalPkmn);
-        PrintTextOnWindow(windowId, gStringVar1, 0, 37, 0, 0);
+        PrintTextOnWindow(windowId, gStringVar1, 50, 37, 0, 0);
     }
 }
 
@@ -4357,7 +4362,7 @@ static void PrintMonOTID(void)
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
         ConvertIntToDecimalStringN(gStringVar1, (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 71, 37, 0, 0);
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 101, 37, 0, 0);
     }
 }
 
@@ -4379,7 +4384,27 @@ static void PrintMonNature(void)
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sText_Nature);
     }
 
-    PrintTextOnWindow(windowId, gStringVar4, 0, 54, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar4, 50, 54, 0, 0);
+}
+
+static void PrintRowNameInfoPage(void)
+{
+    u8 i;
+    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
+
+    static const u8 sInfoLabels[][12] = {
+        _("Nombre"),
+        _("Tipo"),
+        _("Entr."),
+        _("Natur.")
+    };
+
+    static const u8 y_pos[] = { 3, 19, 37, 54 };
+
+    for (i = 0; i < ARRAY_COUNT(sInfoLabels); i++)
+    {
+        PrintTextOnWindow(windowId, sInfoLabels[i], 0, y_pos[i], 0, 0);
+    }
 }
 
 static void PrintMonAbilityName(void)
