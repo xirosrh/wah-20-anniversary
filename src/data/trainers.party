@@ -3522,6 +3522,16 @@ AI: Basic Trainer
 Mugshot: Blue
 Difficulty: Easy
 
+0 (Milotic) (M)
+Ability: Marvel Scale
+Shiny: Yes
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
 Benji (Braviary)
 Ability: Keen Eye
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -3539,16 +3549,6 @@ Jolly Nature
 - Flare Blitz
 - Dragon Claw
 - Earthquake
-
-0 (Milotic) (M)
-Ability: Marvel Scale
-Shiny: Yes
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Calm Nature
-- Scald
-- Recover
-- Toxic
-- Ice Beam
 
 Iris (Xerneas)
 Ability: Fairy Aura
@@ -3589,6 +3589,16 @@ AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Normal
 
+0 (Milotic) (M) @ Leftovers
+Ability: Marvel Scale
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -3606,16 +3616,6 @@ Jolly Nature
 - Flare Blitz
 - Dragon Claw
 - Earthquake
-
-0 (Milotic) (M) @ Leftovers
-Ability: Marvel Scale
-Shiny: Yes
-EVs: 252 HP / 4 Def / 252 SpD
-Calm Nature
-- Scald
-- Recover
-- Toxic
-- Ice Beam
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
@@ -3656,6 +3656,16 @@ AI: Smart Trainer
 Mugshot: Blue
 Difficulty: Hard
 
+0 (Milotic) (M) @ Leftovers
+Ability: Marvel Scale
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Scald
+- Recover
+- Toxic
+- Ice Beam
+
 Benji (Braviary) @ Choice Scarf
 Ability: Keen Eye
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -3673,16 +3683,6 @@ Jolly Nature
 - Flare Blitz
 - Dragon Claw
 - Earthquake
-
-0 (Milotic) (M) @ Leftovers
-Ability: Marvel Scale
-Shiny: Yes
-EVs: 252 HP / 4 Def / 252 SpD
-Calm Nature
-- Scald
-- Recover
-- Toxic
-- Ice Beam
 
 Iris (Xerneas) @ Power Herb
 Ability: Fairy Aura
@@ -8417,6 +8417,7 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 Difficulty: Hard
 
 Absol @ Leftovers
@@ -8536,6 +8537,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 Difficulty: Normal
 
 Klinklang @ Leftovers
@@ -8595,6 +8597,7 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Blue
 Difficulty: Hard
 
 Klinklang @ Leftovers
@@ -8826,6 +8829,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 Difficulty: Easy
 
 Weezing
@@ -8887,6 +8891,7 @@ Music: Aqua
 Items: ITEM_MAX_POTION / ITEM_MAX_POTION
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Normal
 
 Weezing @ Choice Scarf
@@ -8948,6 +8953,7 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Yellow
 Difficulty: Hard
 
 Weezing @ Choice Scarf
