@@ -59,7 +59,7 @@ script DragonMountain_Top_EventScript_Abra {
     playmoncry(SPECIES_ABRA, CRY_MODE_ENCOUNTER)
     releaseall
     delay(20)
-    msgbox(format("¿Deseas volver a la sala de Sergio?"), MSGBOX_YESNO)
+    msgbox(format("¿Deseas volver a la sala de Serg!o?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         call(WahRoomsShared_SetPlayerTeleportGfxVars)
         playse(SE_WARP_IN)

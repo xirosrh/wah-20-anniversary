@@ -490,7 +490,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_sweat_drop))
     waitse
-    msgbox(format("Perdona, es la costumbre jeje…\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Perdona, es la costumbre je, je…\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     return
 }
 

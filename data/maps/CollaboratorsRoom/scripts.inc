@@ -3150,7 +3150,7 @@ CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_1:
 
 CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_2:
 # 493 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Perdona, es la costumbre jeje…\p"
+	.string "Perdona, es la costumbre je, je…\p"
 	.string "Bueno, por lo que veo has completado el\n"
 	.string "desafío. ¡Enhorabuena!\p"
 	.string "Pero… ¡será por poco tiempo!\n"

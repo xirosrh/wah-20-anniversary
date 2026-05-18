@@ -698,7 +698,7 @@ DragonMountan_Top_EventScript_Sergio_Movement_12:
 
 DragonMountain_Top_EventScript_Abra_Text_0:
 # 62 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¿Deseas volver a la sala de Sergio?$"
+	.string "¿Deseas volver a la sala de Serg!o?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_0:
 # 85 "data/maps/DragonMountain_Top/scripts.pory"

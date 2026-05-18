@@ -1954,8 +1954,8 @@ Lobby_OnFrame_ExplainNewChallengeModes_Text_5:
 Lobby_OnFrame_ExplainNewChallengeModes_Text_6:
 # 33 "data/maps/Lobby/scripts.pory"
 	.string "¡Casi lo olvidaba!\p"
-	.string "También puedes explorar la {COLOR BLUE}Sala de\n"
-	.string "Colaboradores{COLOR DARK_GRAY}.\p"
+	.string "También puedes explorar la {COLOR BLUE}Zona\n"
+	.string "creativa{COLOR DARK_GRAY}.\p"
 	.string "¡Varios de los creadores del desafío\n"
 	.string "están ansiosos por enfrentarte!\p"
 	.string "Y si buscas completar todo al 100%, aún\n"

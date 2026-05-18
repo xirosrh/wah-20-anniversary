@@ -30,7 +30,7 @@ script Lobby_OnFrame_ExplainNewChallengeModes {
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_ThinkingWithDelay48)
     delay(40)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
-    msgbox(format("¡Casi lo olvidaba!\pTambién puedes explorar la {COLOR BLUE}Sala de Colaboradores{COLOR DARK_GRAY}.\p¡Varios de los creadores del desafío están ansiosos por enfrentarte!\pY si buscas completar todo al 100%, aún quedan muchos {COLOR BLUE}logros{COLOR DARK_GRAY} por conseguir.\pCon todo lo que te queda por hacer, ¡seguro te vas a divertir mucho!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    msgbox(format("¡Casi lo olvidaba!\pTambién puedes explorar la {COLOR BLUE}Zona creativa{COLOR DARK_GRAY}.\p¡Varios de los creadores del desafío están ansiosos por enfrentarte!\pY si buscas completar todo al 100%, aún quedan muchos {COLOR BLUE}logros{COLOR DARK_GRAY} por conseguir.\pCon todo lo que te queda por hacer, ¡seguro te vas a divertir mucho!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_HappyWithDelay48)
     applymovementandwait(LOCALID_LOBBY_COPE, moves(walk_up * 4, face_down))
