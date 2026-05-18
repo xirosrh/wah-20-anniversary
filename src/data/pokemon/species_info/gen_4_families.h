@@ -909,6 +909,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStaraptorLevelUpLearnset,
         .teachableLearnset = sStaraptorTeachableLearnset,
+        .formChangeTable = sStaraptorFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
@@ -6860,6 +6861,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sHeatranLevelUpLearnset,
         .teachableLearnset = sHeatranTeachableLearnset,
+        .formChangeTable = sHeatranFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
@@ -7474,6 +7476,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
+        .formChangeTable = sDarkraiFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
