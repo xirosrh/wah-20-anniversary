@@ -1232,4 +1232,3 @@ const u8 gText_Relearn_TM[] = _("{START_BUTTON} RELEARN TM");
 const u8 gText_Relearn_Tutor[] = _("{START_BUTTON} RELEARN TUTOR");
 const u8 gText_Rename[] = _("MOTE");
 const u8 gText_CannotSendMonToBoxHM[] = _("No puedes enviarlo a la caja,\nporque conoce una MT.{PAUSE_UNTIL_PRESS}");
-const u8 gText_StatEditor[] = _("EDIT STATS");
