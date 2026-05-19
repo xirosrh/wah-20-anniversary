@@ -236,6 +236,7 @@ script DragonMountan_Top_EventScript_Sergio {
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
     clearflag(FLAG_TEMP_2_HIDE_ABRA_2)
     addobject(LOCALID_MOUNTAINTOP_ABRA_2)
+    playse(SE_WARP_OUT)
     updateobjectsprite(LOCALID_MOUNTAINTOP_ABRA_2, OBJ_EVENT_GFX_ABRA_TELEPORTING_1)
     showobjectat(LOCALID_MOUNTAINTOP_ABRA_2, MAP_DRAGON_MOUNTAIN_TOP)
     turnobject(LOCALID_MOUNTAINTOP_ABRA_2, DIR_NORTH)
