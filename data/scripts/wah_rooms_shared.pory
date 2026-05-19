@@ -238,11 +238,11 @@ script WahRoomsShared_DevonScope_UseFromBag {
 }
 
 text WahRoomsShared_DevonScope_Text_Detected {
-    format("¡El detector reacciona!\pHay un POKéMON invisible en esta sala.")
+    format("¡El detector reacciona!\pHay un Pokémon invisible cerca.")
 }
 
 text WahRoomsShared_DevonScope_Text_NotDetected {
-    format("No detecta ningún POKéMON invisible cerca.")
+    format("No detecta ningún Pokémon invisible cerca.")
 }
 
 script WahRoomsShared_Kecleon_Recompensa {

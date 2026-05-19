@@ -1702,9 +1702,9 @@ WahRoomsShared_Text_Pokebox_HelpUnlock::
 WahRoomsShared_DevonScope_Text_Detected::
 # 240 "data/scripts/wah_rooms_shared.pory"
 	.string "¡El detector reacciona!\p"
-	.string "Hay un POKéMON invisible en esta sala.$"
+	.string "Hay un Pokémon invisible cerca.$"
 
 WahRoomsShared_DevonScope_Text_NotDetected::
 # 244 "data/scripts/wah_rooms_shared.pory"
-	.string "No detecta ningún POKéMON invisible\n"
+	.string "No detecta ningún Pokémon invisible\n"
 	.string "cerca.$"
