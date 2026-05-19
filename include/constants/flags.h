@@ -85,7 +85,7 @@
 #define FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI    0x47 // Used WAH
 #define FLAG_TRANSPARENT_BOX 0x48
 #define FLAG_WAH_CHALLENGE_INVERSE_COMPLETED    0x49 // Used WAH
-#define FLAG_UNUSED_0x4A    0x4A // Unused - It was used in testing, so it is prefered to not be used anymore
+#define FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN    0x4A // First shop talk message after WAH Challenge (combat items added to mart)
 #define FLAG_LOBBY_POKEBOX_POST_WAH_UPDATE_SEEN    0x4B // First PC boot message after WAH Challenge (Pokebox software update)
 #define FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES        0x4C // Used WAH achievements
 #define FLAG_FOUND_TILE_KECLEON    0x4D // Used WAH

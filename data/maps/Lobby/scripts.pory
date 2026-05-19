@@ -269,8 +269,14 @@ script Lobby_EventScript_ChallengeHistorian {
 script Lobby_EventScript_Shop {
 	lock
     faceplayer
-    message(format("¡Hola! ¿En qué puedo ayudarte?"))
-	waitmessage
+    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)) {
+        message(format("¡Hola! ¡Hemos ampliado el catálogo!\pAhora también puedes comprar objetos de combate.\p¿En qué puedo ayudarte?"))
+        waitmessage
+        setflag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)
+    }else {
+        message(format("¡Hola! ¿En qué puedo ayudarte?"))
+	    waitmessage
+    }
 	call(WahRoomsShared_EventScript_Shop)
 	release
     end

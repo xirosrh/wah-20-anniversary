@@ -597,3 +597,4 @@ gSpecials::
 	def_special HideMapNamePopUpWindow
 	def_special Special_BufferPokeboxBuyOfferFromSpecies
 	def_special Special_UpdateCollaboratorsNoFaintProgress
+	def_special OpenWahRoomsSharedMart
