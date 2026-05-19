@@ -4746,3 +4746,26 @@ void BufferSpeciesStats(void)
 
     *dest = EOS;
 }
+
+bool8 HasInvisibleKecleonOnCurrentMap(void)
+{
+    u8 i;
+    u8 objectEventCount;
+
+    if (gMapHeader.events == NULL)
+        return FALSE;
+
+    objectEventCount = gMapHeader.events->objectEventCount;
+    for (i = 0; i < objectEventCount; i++)
+    {
+        const struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
+
+        if (template->graphicsId == OBJ_EVENT_GFX_KECLEON
+            && template->movementType == MOVEMENT_TYPE_INVISIBLE
+            && template->flagId != 0
+            && !FlagGet(template->flagId))
+            return TRUE;
+    }
+
+    return FALSE;
+}
