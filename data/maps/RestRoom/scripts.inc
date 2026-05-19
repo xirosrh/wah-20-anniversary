@@ -116,30 +116,48 @@ RestRoom_EventScript_Shop::
 # 72 "data/maps/RestRoom/scripts.pory"
 	faceplayer
 # 73 "data/maps/RestRoom/scripts.pory"
-	message RestRoom_EventScript_Shop_Text_0
-# 74 "data/maps/RestRoom/scripts.pory"
+	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, RestRoom_EventScript_Shop_4
+RestRoom_EventScript_Shop_3:
+# 79 "data/maps/RestRoom/scripts.pory"
+	message RestRoom_EventScript_Shop_Text_1
+# 80 "data/maps/RestRoom/scripts.pory"
 	waitmessage
-# 75 "data/maps/RestRoom/scripts.pory"
+RestRoom_EventScript_Shop_1:
+# 82 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 76 "data/maps/RestRoom/scripts.pory"
+# 83 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Shop
-# 77 "data/maps/RestRoom/scripts.pory"
+# 84 "data/maps/RestRoom/scripts.pory"
 	clearflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 78 "data/maps/RestRoom/scripts.pory"
+# 85 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
+RestRoom_EventScript_Shop_2:
+# 74 "data/maps/RestRoom/scripts.pory"
+	message RestRoom_EventScript_Shop_Text_0
+# 75 "data/maps/RestRoom/scripts.pory"
+	waitmessage
+# 76 "data/maps/RestRoom/scripts.pory"
+	setflag FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN
+	goto RestRoom_EventScript_Shop_1
+
+RestRoom_EventScript_Shop_4:
+# 73 "data/maps/RestRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN, RestRoom_EventScript_Shop_2
+	goto RestRoom_EventScript_Shop_3
+
 
 RestRoom_EventScript_Pokebox::
-# 83 "data/maps/RestRoom/scripts.pory"
+# 90 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_C, 3
-# 84 "data/maps/RestRoom/scripts.pory"
+# 91 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_D, 4
-# 85 "data/maps/RestRoom/scripts.pory"
+# 92 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
-# 86 "data/maps/RestRoom/scripts.pory"
+# 93 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
-# 87 "data/maps/RestRoom/scripts.pory"
+# 94 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Pokebox
 	end
 
@@ -198,5 +216,13 @@ RestRoom_EventScript_PlayerCounterpart_Text_2:
 	.string "¡Qué emocionante!$"
 
 RestRoom_EventScript_Shop_Text_0:
-# 73 "data/maps/RestRoom/scripts.pory"
+# 74 "data/maps/RestRoom/scripts.pory"
+	.string "¡Hola! ¡Hemos ampliado el catálogo!\p"
+	.string "Ahora también puedes comprar objetos\n"
+	.string "de combate.\p"
+	.string "¿En qué puedo ayudarte?\n"
+	.string "¡Aquí somos un poco más caros!$"
+
+RestRoom_EventScript_Shop_Text_1:
+# 79 "data/maps/RestRoom/scripts.pory"
 	.string "¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!$"

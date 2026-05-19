@@ -70,8 +70,15 @@ script RestRoom_EventScript_PlayerCounterpart {
 script RestRoom_EventScript_Shop {
 	lock
     faceplayer
-    message("¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!")
-	waitmessage
+    if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)) {
+        message(format("¡Hola! ¡Hemos ampliado el catálogo!\pAhora también puedes comprar objetos de combate.\p¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!"))
+        waitmessage
+        setflag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)
+    }
+    else {
+        message("¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!")
+        waitmessage
+    }
 	setflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
 	call(WahRoomsShared_EventScript_Shop)
 	clearflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)
