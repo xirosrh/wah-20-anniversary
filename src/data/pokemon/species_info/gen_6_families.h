@@ -2830,6 +2830,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sMeowsticMLevelUpLearnset,
         .teachableLearnset = sMeowsticMTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticMFormChangeTable,
     },
 
     [SPECIES_MEOWSTIC_F] =
@@ -2894,6 +2895,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sMeowsticFLevelUpLearnset,
         .teachableLearnset = sMeowsticFTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
+        .formChangeTable = sMeowsticFFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS

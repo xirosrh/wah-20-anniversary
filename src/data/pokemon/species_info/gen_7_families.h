@@ -1455,6 +1455,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sCrabominableLevelUpLearnset,
         .teachableLearnset = sCrabominableTeachableLearnset,
+        .formChangeTable = sCrabominableFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
@@ -4133,6 +4134,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sGolisopodLevelUpLearnset,
         .teachableLearnset = sGolisopodTeachableLearnset,
+        .formChangeTable = sGolisopodFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
@@ -7098,6 +7100,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sMagearnaLevelUpLearnset,
         .teachableLearnset = sMagearnaTeachableLearnset,
         .formSpeciesIdTable = sMagearnaFormSpeciesIdTable,
+        .formChangeTable = sMagearnaFormChangeTable,
     },
 
     [SPECIES_MAGEARNA_ORIGINAL] =
@@ -7165,6 +7168,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sMagearnaLevelUpLearnset,
         .teachableLearnset = sMagearnaTeachableLearnset,
         .formSpeciesIdTable = sMagearnaFormSpeciesIdTable,
+        .formChangeTable = sMagearnaOriginalFormChangeTable
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
@@ -7697,6 +7701,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sZeraoraLevelUpLearnset,
         .teachableLearnset = sZeraoraTeachableLearnset,
+        .formChangeTable = sZeraoraFormChangeTable,
     },
 
     #if P_GEN_9_MEGA_EVOLUTIONS
