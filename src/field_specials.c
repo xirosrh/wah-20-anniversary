@@ -4746,3 +4746,24 @@ void BufferSpeciesStats(void)
 
     *dest = EOS;
 }
+
+bool8 HasInvisibleKecleonOnCurrentMap(void)
+{
+    u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+    u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 i;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (gObjectEvents[i].active
+            && gObjectEvents[i].mapNum == mapNum
+            && gObjectEvents[i].mapGroup == mapGroup
+            && gObjectEvents[i].graphicsId == OBJ_EVENT_GFX_KECLEON
+            && gObjectEvents[i].movementType == MOVEMENT_TYPE_INVISIBLE)
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}

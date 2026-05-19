@@ -1603,6 +1603,28 @@ static void ItemUseOnFieldCB_TownMap(u8 taskId)
     DestroyTask(taskId);
 }
 
+static void ItemUseOnFieldCB_DevonScope(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(WahRoomsShared_DevonScope_UseFromBag);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_DevonScope(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_DevonScope;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gTasks[taskId].func = ItemUseOnFieldCB_DevonScope;
+    }
+}
+
 void ItemUseOutOfBattle_TownMap(u8 taskId)
 {
     if (!gTasks[taskId].tUsingRegisteredKeyItem)

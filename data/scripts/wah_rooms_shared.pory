@@ -224,6 +224,27 @@ script WahRoomsShared_Kecleon {
     end
 }
 
+script WahRoomsShared_DevonScope_UseFromBag {
+    lockall
+    msgbox(format("{PLAYER} usó el Detector Devon."), MSGBOX_DEFAULT)
+    specialvar(VAR_RESULT, HasInvisibleKecleonOnCurrentMap)
+    if (var(VAR_RESULT)) {
+        msgbox(WahRoomsShared_DevonScope_Text_Detected, MSGBOX_DEFAULT)
+    } else {
+        msgbox(WahRoomsShared_DevonScope_Text_NotDetected, MSGBOX_DEFAULT)
+    }
+    releaseall
+    end
+}
+
+text WahRoomsShared_DevonScope_Text_Detected {
+    format("¡El detector reacciona!\pHay un POKéMON invisible en esta sala.")
+}
+
+text WahRoomsShared_DevonScope_Text_NotDetected {
+    format("No detecta ningún POKéMON invisible cerca.")
+}
+
 script WahRoomsShared_Kecleon_Recompensa {
     random(2)
     switch(var(VAR_RESULT))
