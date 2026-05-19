@@ -523,7 +523,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
             .specie = SPECIES_SKARMORY,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(4, 252, 0, 4, 0, 0),
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
             .isShiny = FALSE,
             .moves = {MOVE_DRILL_RUN, MOVE_IRON_HEAD, MOVE_BRAVE_BIRD, MOVE_ROOST},
         },
