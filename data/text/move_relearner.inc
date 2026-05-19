@@ -15,6 +15,9 @@ MoveRelearner_Text_TMMoves:
 MoveRelearner_Text_TutormoveMoves:
 	.string "Tutor Mov.$"
 
+MoveRelearner_Text_EditEVsIVs:
+	.string "Evs/Ivs$"
+
 MoveRelearner_Text_SeeYa:
 	.string "Nos vemos!$"
 
