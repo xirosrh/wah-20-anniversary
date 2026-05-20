@@ -17,14 +17,16 @@ Common_EventScript_MoveRelearnerDynMultiChoice::
 	istmrelearneractive MoveRelearner_EventScript_PushTMMoves
 	//call_if_set P_FLAG_TUTOR_MOVES, MoveRelearner_EventScript_PushTutorMoves
 .endif @ P_ENABLE_MOVE_RELEARNERS
+	dynmultipush MoveRelearner_Text_EditEVsIVs, 5
 	dynmultipush MoveRelearner_Text_SeeYa, 4
-	dynmultistack 0, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
 	case 0, MoveRelearner_EventScript_TeachLevelUpMoves
 	case 1, MoveRelearner_EventScript_TeachEggMoves
 	case 2, MoveRelearner_EventScript_TeachTMMoves
 	case 3, MoveRelearner_EventScript_TeachTutorMoves
+	case 5, MoveRelearner_EventScript_EditEVsIVs
 	case 4, MoveRelearner_EventScript_PleaseComeAgain
 MoveRelearner_EventScript_PleaseComeAgain:
 	msgbox MoveRelearner_Text_ThankYouComeAgain, MSGBOX_DEFAULT
@@ -65,6 +67,24 @@ MoveRelearner_EventScript_TeachTutorMoves:
 	setmoverelearnerstate MOVE_RELEARNER_TUTOR_MOVES
 	bufferstring STR_VAR_3, MoveRelearner_Text_TutorMoveLWR
 	goto MoveRelearner_EventScript_TeachMove
+	end
+
+@ --- EVS E IVS ---
+MoveRelearner_EventScript_EditEVsIVs:
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, MoveRelearner_EventScript_NoPkmn
+	msgbox MoveRelearner_Text_ChoosePkmn, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MoveRelearner_EventScript_AnythingElse
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, YES, MoveRelearner_EventScript_CantTeachMoveToEgg
+	
+	@ Abre la interfaz gráfica de modificación de Estadísticas si tu rama la tiene nativa.
+	@ Si usas la expansión de RHH, el comando suele ser 'special Script_ViewEVsIVs' o el editor debug.
+	special ChooseMonForEvsIvsEditor
+	waitstate
+	goto MoveRelearner_EventScript_AnythingElse
 	end
 
 MoveRelearner_EventScript_TeachMove::
