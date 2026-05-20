@@ -246,6 +246,9 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Tiempillo"),
             COMPOUND_STRING("Oom"),
 
+            COMPOUND_STRING("Montblanc"),
+            COMPOUND_STRING("Aqua Hideout"),
+
             NULL
         }
     },
@@ -312,7 +315,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING(""), //Empty on purpose
 
             COMPOUND_STRING("CALENTADASTCG"),
-            COMPOUND_STRING(""), //Empty on purpose
+            COMPOUND_STRING("Dark Tyranitar"),
             COMPOUND_STRING(""), //Empty on purpose
 
             NULL
