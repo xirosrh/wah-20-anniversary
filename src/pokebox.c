@@ -126,6 +126,7 @@ static void GetLastLevelUpMoves(u16 specie, u16 *moves);
 static void Task_HandlePokebox(u8 taskId);
 static void Task_HandleTeamPlayerPokebox(u8 taskId);
 static void Task_HandleBuyMon(u8 taskId);
+static void Task_WaitToReturnHandlePokebox(u8 taskId);
 static void Task_ShowMonInfo(u8 taskId);
 static void Task_AddMonTeamPlayer(u8 taskId);
 static void Task_StorageMonInPokebox(u8 taskId);
@@ -1279,6 +1280,7 @@ static void Task_HandleBuyMon(u8 taskId)
                 Pokebox_SetActive(index);
                 PrintMonTextInfoPage();
                 PrintAllDataMon(specie);
+                gTasks[taskId].func = Task_WaitToReturnHandlePokebox;
             }
         }else{
             ClearMonTextInfoPage(TRUE);

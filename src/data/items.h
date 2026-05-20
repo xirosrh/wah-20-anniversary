@@ -1575,13 +1575,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Cápsula habilidad"),
         .pluralName = ITEM_PLURAL_NAME("Cápsulas habilidad"),
-    #if I_PRICE >= GEN_9
-        .price = 100000,
-    #elif I_PRICE >= GEN_7
         .price = 10000,
-    #else
-        .price = 1000,
-    #endif
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "Cambia la habilidad\n"
@@ -1598,7 +1592,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Parche habilidad"),
         .pluralName = ITEM_PLURAL_NAME("Parches habilidad"),
-        .price = (I_PRICE >= GEN_9) ? 250000 : 20,
+        .price = 20000,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "Cambia la habilidad\n"

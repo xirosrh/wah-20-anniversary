@@ -84,6 +84,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_JIRACHI,
+            .ability = ABILITY_SERENE_GRACE,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -97,6 +98,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_MEW,
+            .ability = ABILITY_SYNCHRONIZE,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -110,6 +112,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_CELEBI,
+            .ability = ABILITY_NATURAL_CURE,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
@@ -219,6 +222,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_KAOSUNE,
+            .ability = ABILITY_PRESSURE,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -246,6 +250,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_DUN,
+            .ability = ABILITY_SERENE_GRACE,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -259,6 +264,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_GOROCHU,
+            .ability = ABILITY_LIGHTNING_ROD,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -272,6 +278,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_TAABAN,
+            .ability = ABILITY_SHELL_ARMOR,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -284,6 +291,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_BOMUSHIKAA,
+            .ability = ABILITY_FLAME_BODY,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -310,6 +318,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_AKUERIA,
+            .ability = ABILITY_PRESSURE,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -336,6 +345,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_FREECH,
+            .ability = ABILITY_LEVITATE,
             .nature = NATURE_CALM,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -349,6 +359,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_VOLCARONA,
+            .ability = ABILITY_FLAME_BODY,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -376,6 +387,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_FERALIGATR,
+            .ability = ABILITY_SHEER_FORCE,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -389,6 +401,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_EING,
+            .ability = ABILITY_SOUNDPROOF,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 4, 0),
@@ -402,6 +415,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_MOLIKAI,
+            .ability = ABILITY_SHED_SKIN,
             .nature = NATURE_CAREFUL,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
@@ -415,6 +429,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_OCEADINO,
+            .ability = ABILITY_TORRENT,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -428,6 +443,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_JARDINO,
+            .ability = ABILITY_OVERGROW,
             .nature = NATURE_JOLLY,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
             .isShiny = FALSE,
@@ -440,6 +456,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_TYRADINO,
+            .ability = ABILITY_BLAZE,
             .nature = NATURE_ADAMANT,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
@@ -467,6 +484,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_GRITESPEC,
+            .ability = ABILITY_SYNCHRONIZE,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -480,6 +498,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_AYEWIRAZ,
+            .ability = ABILITY_INTIMIDATE,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -521,6 +540,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_SKARMORY,
+            .ability = ABILITY_STURDY,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -548,6 +568,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_EXCADRILL,
+            .ability = ABILITY_SAND_RUSH,
             .nature = NATURE_ADAMANT,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -561,6 +582,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_AEGISLASH,
+            .ability = ABILITY_STANCE_CHANGE,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -574,6 +596,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_MIMIKYU,
+            .ability = ABILITY_DISGUISE,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -587,6 +610,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_TOXAPEX,
+            .ability = ABILITY_REGENERATOR,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -600,6 +624,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_FERROTHORN,
+            .ability = ABILITY_IRON_BARBS,
             .nature = NATURE_ADAMANT,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
@@ -613,6 +638,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_CORVIKNIGHT,
+            .ability = ABILITY_MIRROR_ARMOR,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -626,6 +652,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_BLISSEY,
+            .ability = ABILITY_NATURAL_CURE,
             .nature = NATURE_CALM,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 252, 0, 252, 0),
@@ -653,6 +680,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_AMOONGUSS,
+            .ability = ABILITY_REGENERATOR,
             .nature = NATURE_ADAMANT,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -666,6 +694,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_PORYGON2,
+            .ability = ABILITY_TRACE,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -679,6 +708,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_HATTERENE,
+            .ability = ABILITY_MAGIC_BOUNCE,
             .nature = NATURE_CALM,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -706,6 +736,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_HEATRAN,
+            .ability = ABILITY_FLASH_FIRE,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -747,6 +778,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_JOLTEON,
+            .ability = ABILITY_VOLT_ABSORB,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -760,6 +792,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_LEAFEON,
+            .ability = ABILITY_CHLOROPHYLL,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -773,6 +806,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_GLACEON,
+            .ability = ABILITY_SNOW_CLOAK,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -786,6 +820,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_SHEDINJA,
+            .ability = ABILITY_WONDER_GUARD,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 252, 0, 4, 0, 0),
@@ -827,6 +862,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_ROTOM,
+            .ability = ABILITY_LEVITATE,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -840,6 +876,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_CHERRIM,
+            .ability = ABILITY_FLOWER_GIFT,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -853,6 +890,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_CACTURNE,
+            .ability = ABILITY_WATER_ABSORB,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -866,6 +904,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_MEGANIUM,
+            .ability = ABILITY_OVERGROW,
             .nature = NATURE_MODEST,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
@@ -907,6 +946,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_DELPHOX,
+            .ability = ABILITY_MAGIC_GUARD,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
