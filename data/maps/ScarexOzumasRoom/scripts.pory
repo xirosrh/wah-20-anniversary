@@ -382,3 +382,8 @@ script ScarexOzumasRoom_EventScript_ScarexBattle {
 text ScarexOzumasRoom_Text_ScarexDefeated {
     format("…")
 }
+
+script ScarexOzumasRoom_EventScript_Bellsprout {
+    msgbox(format("Parece una estatua robada de la Torre Bellsprout."), MSGBOX_SIGN)
+    end
+}

@@ -399,6 +399,24 @@ EingRoom_EventScript_JumpToPlayerDirection_6:
 	goto EingRoom_EventScript_JumpToPlayerDirection_1
 
 
+EingRoom_EventScript_Flotador::
+# 230 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Flotador_Text_0, MSGBOX_SIGN
+	end
+
+
+EingRoom_EventScript_Taburete::
+# 236 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Taburete_Text_0, MSGBOX_SIGN
+	end
+
+
+EingRoom_EventScript_Cubo::
+# 242 "data/maps/EingRoom/scripts.pory"
+	msgbox EingRoom_EventScript_Cubo_Text_0, MSGBOX_SIGN
+	end
+
+
 # 51 "data/maps/EingRoom/scripts.pory"
 EingRoom_OnFrame_Movement_0:
 # 51 "data/maps/EingRoom/scripts.pory"
@@ -584,6 +602,21 @@ EingRoom_EventScript_Eing_Text_5:
 	.string "Enhorabuena chaval{A}, ahora avanza a la\n"
 	.string "siguiente sala y déjame tranquilo, que\l"
 	.string "estaba muy ocupado…$"
+
+EingRoom_EventScript_Flotador_Text_0:
+# 230 "data/maps/EingRoom/scripts.pory"
+	.string "Es un flotador como los que usan los\n"
+	.string "socorristas.$"
+
+EingRoom_EventScript_Taburete_Text_0:
+# 236 "data/maps/EingRoom/scripts.pory"
+	.string "Es un taburete que sirve para sentarse.\p"
+	.string "Pero no te puedes sentar en él.$"
+
+EingRoom_EventScript_Cubo_Text_0:
+# 242 "data/maps/EingRoom/scripts.pory"
+	.string "Es un cubo... ¿de basura?\n"
+	.string "Ah, no. Aquí está el cebo.$"
 
 EingRoom_Text_EingDefeated::
 # 184 "data/maps/EingRoom/scripts.pory"

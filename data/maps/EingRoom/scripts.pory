@@ -225,3 +225,20 @@ script EingRoom_EventScript_JumpToPlayerDirection {
     return
 }
 
+
+script EingRoom_EventScript_Flotador {
+    msgbox(format("Es un flotador como los que usan los socorristas."), MSGBOX_SIGN)
+    end
+}
+
+
+script EingRoom_EventScript_Taburete {
+    msgbox(format("Es un taburete que sirve para sentarse.\pPero no te puedes sentar en él."), MSGBOX_SIGN)
+    end
+}
+
+
+script EingRoom_EventScript_Cubo {
+    msgbox(format("Es un cubo... ¿de basura?\nAh, no. Aquí está el cebo."), MSGBOX_SIGN)
+    end
+}

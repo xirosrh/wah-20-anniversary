@@ -296,6 +296,12 @@ SergioRoom_EventScript_SecurityGuard::
 	end
 
 
+SergioRoom_EventScript_Colmillo::
+# 172 "data/maps/SergioRoom/scripts.pory"
+	msgbox SergioRoom_EventScript_Colmillo_Text_0, MSGBOX_SIGN
+	end
+
+
 # 92 "data/maps/SergioRoom/scripts.pory"
 SergioRoom_OnFrame_AfterSergioBattle_Movement_0:
 # 92 "data/maps/SergioRoom/scripts.pory"
@@ -381,6 +387,11 @@ SergioRoom_EventScript_Abra_Text_0:
 SergioRoom_EventScript_SecurityGuardTrigger_Text_0:
 # 143 "data/maps/SergioRoom/scripts.pory"
 	.string "¡Alto ahí!$"
+
+SergioRoom_EventScript_Colmillo_Text_0:
+# 172 "data/maps/SergioRoom/scripts.pory"
+	.string "Es un colmillo de un Pokémon dragón\n"
+	.string "gigante.$"
 
 SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance::
 # 162 "data/maps/SergioRoom/scripts.pory"
