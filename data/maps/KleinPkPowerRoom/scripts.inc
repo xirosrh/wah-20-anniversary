@@ -645,6 +645,54 @@ KleinPkPowerRoom_EventScript_Klein::
 	end
 
 
+KleinPkPowerRoom_EventScript_Cafe::
+# 359 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Cafe_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Telefono::
+# 364 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Telefono_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Archivador::
+# 369 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Archivador_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Computer::
+# 374 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Computer_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Monitor::
+# 379 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Monitor_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Caja::
+# 384 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Caja_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Cama::
+# 389 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Cama_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_CajaHerramientas::
+# 394 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_CajaHerramientas_Text_0, MSGBOX_SIGN
+	end
+
+
 # 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_0:
 # 40 "data/maps/KleinPkPowerRoom/scripts.pory"
@@ -990,6 +1038,45 @@ KleinPkPowerRoom_EventScript_Klein_Text_0:
 	.string "¿Equipo de Investigación?\n"
 	.string "¿O Equipo de la mierda?\p"
 	.string "Qué te importa a ti el hackeo al Perro.$"
+
+KleinPkPowerRoom_EventScript_Cafe_Text_0:
+# 359 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Este café ya está frío.$"
+
+KleinPkPowerRoom_EventScript_Telefono_Text_0:
+# 364 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es un teléfono negro con el auricular\n"
+	.string "rojo.$"
+
+KleinPkPowerRoom_EventScript_Archivador_Text_0:
+# 369 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es un archivador de metal lleno de\n"
+	.string "carpetas con papeles.$"
+
+KleinPkPowerRoom_EventScript_Computer_Text_0:
+# 374 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es un ordenador de escritorio típico de\n"
+	.string "un funcionario.$"
+
+KleinPkPowerRoom_EventScript_Monitor_Text_0:
+# 379 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es el único monitor secundario que hay\n"
+	.string "en la sala.$"
+
+KleinPkPowerRoom_EventScript_Caja_Text_0:
+# 384 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es una caja abierta.\n"
+	.string "Está vacía.$"
+
+KleinPkPowerRoom_EventScript_Cama_Text_0:
+# 389 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es una cama cutre.\n"
+	.string "Parece muy incómoda.$"
+
+KleinPkPowerRoom_EventScript_CajaHerramientas_Text_0:
+# 394 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Es una caja de herramientas.\n"
+	.string "Tiene muchas herramientas.$"
 
 KleinPkPowerRoom_Text_KleinDefeated::
 # 309 "data/maps/KleinPkPowerRoom/scripts.pory"

@@ -332,6 +332,42 @@ XirosRoom_EventScript_XirosBattle_5:
 	goto XirosRoom_EventScript_XirosBattle_1
 
 
+XirosRoom_EventScript_Tanque::
+# 190 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Tanque_Text_0, MSGBOX_SIGN
+	end
+
+
+XirosRoom_EventScript_Holograma::
+# 195 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Holograma_Text_0, MSGBOX_SIGN
+	end
+
+
+XirosRoom_EventScript_Lampara::
+# 200 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Lampara_Text_0, MSGBOX_SIGN
+	end
+
+
+XirosRoom_EventScript_Server::
+# 205 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Server_Text_0, MSGBOX_SIGN
+	end
+
+
+XirosRoom_EventScript_Pantalla::
+# 210 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Pantalla_Text_0, MSGBOX_SIGN
+	end
+
+
+XirosRoom_EventScript_Unknown::
+# 215 "data/maps/XirosRoom/scripts.pory"
+	msgbox XirosRoom_EventScript_Unknown_Text_0, MSGBOX_SIGN
+	end
+
+
 # 40 "data/maps/XirosRoom/scripts.pory"
 XirosRoom_EventScript_Xiros_Movement_0:
 # 40 "data/maps/XirosRoom/scripts.pory"
@@ -523,6 +559,37 @@ XirosRoom_EventScript_Xiros_Text_16:
 	.string "te estés imaginando quién te espera.\p"
 	.string "Aprovecha la oportunidad, que no todos\n"
 	.string "tienen la suerte de encontrarlo.$"
+
+XirosRoom_EventScript_Tanque_Text_0:
+# 190 "data/maps/XirosRoom/scripts.pory"
+	.string "Es un tanque lleno de un líquido que no\n"
+	.string "parece ser agua.\p"
+	.string "Hay burbujeos en su interior.$"
+
+XirosRoom_EventScript_Holograma_Text_0:
+# 195 "data/maps/XirosRoom/scripts.pory"
+	.string "Es un holograma de un cubo flotando en\n"
+	.string "el aire.$"
+
+XirosRoom_EventScript_Lampara_Text_0:
+# 200 "data/maps/XirosRoom/scripts.pory"
+	.string "Es una lámpara futurista que ilumina\n"
+	.string "con luz azul.$"
+
+XirosRoom_EventScript_Server_Text_0:
+# 205 "data/maps/XirosRoom/scripts.pory"
+	.string "El parpadeo de las luces indica que está\n"
+	.string "realizando cálculos cuánticos.$"
+
+XirosRoom_EventScript_Pantalla_Text_0:
+# 210 "data/maps/XirosRoom/scripts.pory"
+	.string "Parece que muestra cálculos y gráficos\n"
+	.string "muy complejos.$"
+
+XirosRoom_EventScript_Unknown_Text_0:
+# 215 "data/maps/XirosRoom/scripts.pory"
+	.string "Esto es un...\n"
+	.string "¿Qué es esto?$"
 
 XirosRoom_Text_XirosDefeated::
 # 185 "data/maps/XirosRoom/scripts.pory"
