@@ -108,8 +108,8 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     },
     [ACHIEVEMENT_AVARICIA] = {
         .title = COMPOUND_STRING("Avaricia"),
-        .description = COMPOUND_STRING("Acumula 400000 de dinero.\nNo todo en la vida es combatir,\npero ayuda a llenar la cartera."),
-        .target = 400000,
+        .description = COMPOUND_STRING("Acumula 300000 de dinero.\nNo todo en la vida es combatir,\npero ayuda a llenar la cartera."),
+        .target = 300000,
         .check = CheckAvaricia,
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_WITHOUT_LEGENDARIES] = {
