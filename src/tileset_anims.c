@@ -1377,6 +1377,8 @@ const u16 gTilesetAnims_AngelRoom_Screen_FrameMitic[] = INCBIN_U16("data/tileset
 const u16 gTilesetAnims_AngelRoom_Screen_FrameIslasDoradas[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/04.4bpp");
 const u16 gTilesetAnims_AngelRoom_Screen_FrameTrianguloOrigen[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/05.4bpp");
 const u16 gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/06.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameJessieJames2[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/05.4bpp");
+const u16 gTilesetAnims_AngelRoom_Screen_FrameBlueLegend[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/screen/01.4bpp");
 
 const u16 *const gTilesetAnims_AngelRoom_Screen_FirstPart[] = {
     gTilesetAnims_AngelRoom_Screen_FrameOmega,
@@ -1402,8 +1404,15 @@ const u16 *const gTilesetAnims_AngelRoom_Screen_ThirdPart[] = {
 const u16 *const gTilesetAnims_AngelRoom_Screen_FourthPart[] = {
     gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
     gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
-    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
-    gTilesetAnims_AngelRoom_Screen_FrameHoennAdventuresDelta,
+    gTilesetAnims_AngelRoom_Screen_FrameBlueLegend,
+    gTilesetAnims_AngelRoom_Screen_FrameBlueLegend,
+};
+
+const u16 *const gTilesetAnims_AngelRoom_Screen_FifthPart[] = {
+    gTilesetAnims_AngelRoom_Screen_FrameJessieJames2,
+    gTilesetAnims_AngelRoom_Screen_FrameJessieJames2,
+    gTilesetAnims_AngelRoom_Screen_FrameJessieJames2, //Unused
+    gTilesetAnims_AngelRoom_Screen_FrameJessieJames2, //Unused
 };
 
 static void QueueAnimTiles_AngelRoom_Screen_FirstPart(u16 timer)
@@ -1429,6 +1438,12 @@ static void QueueAnimTiles_AngelRoom_Screen_FourthPart(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_FourthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_AngelRoom_Screen_FifthPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Screen_FifthPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Screen_FifthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 7 * TILE_SIZE_4BPP);
+}
+
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameEmpty[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/00.4bpp");
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameOmega[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/01.4bpp");
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameAzulAgua[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/02.4bpp");
@@ -1437,6 +1452,8 @@ const u16 gTilesetAnims_AngelRoom_Trailer_FrameMitic[] = INCBIN_U16("data/tilese
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameIslasDoradas[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/05.4bpp");
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameTrianguloOrigen[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/06.4bpp");
 const u16 gTilesetAnims_AngelRoom_Trailer_FrameHoennAdventuresDelta[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/07.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameJessieJames2[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/08.4bpp");
+const u16 gTilesetAnims_AngelRoom_Trailer_FrameBlueLegend[] = INCBIN_U16("data/tilesets/secondary/room_angel/anim/trailer/09.4bpp");
 
 const u16 *const gTilesetAnims_AngelRoom_Trailer_FirstPart[] = {
     gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
@@ -1481,7 +1498,7 @@ const u16 *const gTilesetAnims_AngelRoom_Trailer_FourthPart[] = {
     gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
     gTilesetAnims_AngelRoom_Trailer_FrameHoennAdventuresDelta,
     gTilesetAnims_AngelRoom_Trailer_FrameEmpty, 
-    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameBlueLegend,
 };
 
 static void QueueAnimTiles_AngelRoom_Trailer_FourthPart(u16 timer)
@@ -1489,6 +1506,21 @@ static void QueueAnimTiles_AngelRoom_Trailer_FourthPart(u16 timer)
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_FourthPart);
     AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_FourthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
 }
+
+
+const u16 *const gTilesetAnims_AngelRoom_Trailer_FifthPart[] = {
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameJessieJames2,
+    gTilesetAnims_AngelRoom_Trailer_FrameEmpty,
+    gTilesetAnims_AngelRoom_Trailer_FrameJessieJames2, //Unused
+};
+
+static void QueueAnimTiles_AngelRoom_Trailer_FifthPart(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AngelRoom_Trailer_FifthPart);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AngelRoom_Trailer_FifthPart[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 7)), 70 * TILE_SIZE_4BPP);
+}
+
 
 static void TilesetAnim_AngelRoom(u16 timer)
 {
@@ -1515,12 +1547,19 @@ static void TilesetAnim_AngelRoom(u16 timer)
             tilesIncrement++;
             VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
         }
-        else if(tilesIncrement < 14)
+        else if(tilesIncrement < 16)
         {
             QueueAnimTiles_AngelRoom_Trailer_FourthPart(tilesIncrement - 12);
             QueueAnimTiles_AngelRoom_Screen_FourthPart(tilesIncrement - 12);
             tilesIncrement++;
-            if(tilesIncrement >= 14)
+            VarSet(VAR_ANGEL_ROOM_TRAILER_FRAMES, tilesIncrement);
+        }
+        else if(tilesIncrement < 18)
+        {
+            QueueAnimTiles_AngelRoom_Trailer_FifthPart(tilesIncrement - 16);
+            QueueAnimTiles_AngelRoom_Screen_FifthPart(tilesIncrement - 16);
+            tilesIncrement++;
+            if(tilesIncrement >= 18)
             {
                 tilesIncrement = 0;
             }
