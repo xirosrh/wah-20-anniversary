@@ -1,7 +1,9 @@
+
 script WahRoomsShared_EventScript_Shop {
-	pokemart(WahRoomsShared_MartItems)
-	msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
-	return
+    special(OpenWahRoomsSharedMart)
+    waitstate
+    msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+    return
 }
 
 script WahRoomsShared_EventScript_Pokebox {
@@ -114,47 +116,6 @@ text WahRoomsShared_Text_Pokebox_HelpUnlock {
     format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
 }
 
-mart WahRoomsShared_MartItems {
-	ITEM_HYPER_POTION
-	ITEM_MAX_POTION
-    ITEM_FULL_RESTORE
-	ITEM_ETHER
-    ITEM_MAX_ETHER
-    ITEM_ELIXIR
-    ITEM_MAX_ELIXIR
-    ITEM_REVIVE
-    ITEM_MAX_REVIVE
-    ITEM_REVIVAL_HERB
-    ITEM_BAXCALIBURITE
-    ITEM_DRAGALGITE
-    ITEM_TYRANITARITE
-    ITEM_DARKRANITE
-    ITEM_ALAKAZITE
-    ITEM_LUCARIONITE
-    ITEM_LUCARIONITE_Z
-    ITEM_MEWTWONITE_X
-    ITEM_MEWTWONITE_Y
-    ITEM_CHARIZARDITE_X
-    ITEM_CHARIZARDITE_Y
-    ITEM_GALLADITE
-    ITEM_GLALITITE
-    ITEM_FROSLASSITE
-    ITEM_CLEFABLITE
-    ITEM_HOUNDOOMINITE
-    ITEM_AGGRONITE
-    ITEM_ZYGARDITE
-    ITEM_VICTREEBELITE
-    ITEM_DRAGONINITE
-    ITEM_GRENINJITE
-    ITEM_MEGANIUMITE
-    ITEM_FERALIGITE
-    ITEM_STARAPTITE
-    ITEM_CHESNAUGHTITE
-    ITEM_DELPHOXITE
-    ITEM_EXCADRITE
-    ITEM_SKARMORITE
-}
-
 script WahRoomsShared_OpenDoor {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_Delay32)
 	playse(SE_DOOR)
@@ -261,6 +222,27 @@ script WahRoomsShared_Kecleon {
     }
     release
     end
+}
+
+script WahRoomsShared_DevonScope_UseFromBag {
+    lockall
+    msgbox(format("{PLAYER} usó el Detector Devon."), MSGBOX_DEFAULT)
+    specialvar(VAR_RESULT, HasInvisibleKecleonOnCurrentMap)
+    if (var(VAR_RESULT)) {
+        msgbox(WahRoomsShared_DevonScope_Text_Detected, MSGBOX_DEFAULT)
+    } else {
+        msgbox(WahRoomsShared_DevonScope_Text_NotDetected, MSGBOX_DEFAULT)
+    }
+    releaseall
+    end
+}
+
+text WahRoomsShared_DevonScope_Text_Detected {
+    format("¡El detector reacciona!\pHay un Pokémon invisible cerca.")
+}
+
+text WahRoomsShared_DevonScope_Text_NotDetected {
+    format("No detecta ningún Pokémon invisible cerca.")
 }
 
 script WahRoomsShared_Kecleon_Recompensa {

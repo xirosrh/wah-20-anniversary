@@ -4573,6 +4573,9 @@ void SetWahChallengeInitialAchievementFlags(void)
         if (species == SPECIES_ELECTRODES)
             FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
     }
+
+    if (!PartyHasRestrictedLegendary())
+        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
 }
 
 // Checks if admin at given index should use ALTERNATIVE team
@@ -4745,4 +4748,27 @@ void BufferSpeciesStats(void)
     dest = BufferSpeciesStats_AppendStat(dest, STAT_SPDEF, GetSpeciesBaseSpDefense(species));
 
     *dest = EOS;
+}
+
+bool8 HasInvisibleKecleonOnCurrentMap(void)
+{
+    u8 i;
+    u8 objectEventCount;
+
+    if (gMapHeader.events == NULL)
+        return FALSE;
+
+    objectEventCount = gMapHeader.events->objectEventCount;
+    for (i = 0; i < objectEventCount; i++)
+    {
+        const struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
+
+        if (template->graphicsId == OBJ_EVENT_GFX_KECLEON
+            && template->movementType == MOVEMENT_TYPE_INVISIBLE
+            && template->flagId != 0
+            && !FlagGet(template->flagId))
+            return TRUE;
+    }
+
+    return FALSE;
 }

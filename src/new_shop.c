@@ -45,6 +45,7 @@
 #include "constants/songs.h"
 #include "constants/event_objects.h"
 #include "constants/flags.h"
+#include "wah_rooms_mart.h"
 
 #ifdef MUDSKIP_SHOP_UI
 
@@ -1938,6 +1939,33 @@ void NewShop_CreatePointsPokemartMenu(const u16 *itemsForSale)
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
+}
+
+#define WAH_MART_BUFFER_SIZE 128
+
+static EWRAM_DATA u16 sWahMartItemBuffer[WAH_MART_BUFFER_SIZE];
+
+static u16 CopyMartItemsUntilNone(const u16 *src, u16 *dest, u16 offset)
+{
+    while (*src != ITEM_NONE)
+    {
+        if (offset >= WAH_MART_BUFFER_SIZE - 1)
+            break;
+        dest[offset++] = *src++;
+    }
+    return offset;
+}
+
+void OpenWahRoomsSharedMart(void)
+{
+    u16 count = 0;
+
+    count = CopyMartItemsUntilNone(WahRoomsShared_MartItems, sWahMartItemBuffer, count);
+    if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED))
+        count = CopyMartItemsUntilNone(WahRoomsShared_MartItems_Combat, sWahMartItemBuffer, count);
+    sWahMartItemBuffer[count] = ITEM_NONE;
+
+    NewShop_CreatePokemartMenu(sWahMartItemBuffer);
 }
 
 #endif // MUDSKIP_SHOP_UI

@@ -14,8 +14,8 @@
 #define I_USE_EVO_HELD_ITEMS_FROM_BAG   FALSE       // Si está habilitado, objetos como Razor Claw o Electirizer serán utilizables desde la bolsa para evolucionar un Pokémon al igual que en LA.
 #define I_TYPE_BOOST_POWER              GEN_LATEST  // En Gen4+, todos los objetos que aumentan el poder de un tipo regular aumentaron su potencia del 10% al 20%. Ej. Charcoal
 #define I_SELL_VALUE_FRACTION           GEN_LATEST  // En Gen9+, los objetos se venden por 1/4 de su valor en lugar de 1/2.
-#define I_PRICE                         GEN_LATEST  // Algunos objetos han variado en valor a lo largo de las generaciones.
-#define I_BERRY_PRICE                   GEN_7       // Desde que las Berries se volvieron inplantables (Gen8+), su precio ha aumentado.
+#define I_PRICE                         GEN_8  // Algunos objetos han variado en valor a lo largo de las generaciones.
+#define I_BERRY_PRICE                   GEN_LATEST       // Desde que las Berries se volvieron inplantables (Gen8+), su precio ha aumentado.
 #define I_POWER_ITEM_BOOST              GEN_LATEST  // En Gen7+, los Power Items otorgan 8 EV en lugar de 4 EV.
 #define I_PREMIER_BALL_BONUS            GEN_LATEST  // En LGPE a partir de (Gen8+ aquí), se te da una Premier Ball por cada 10 Poké Balls de cualquier tipo y en la misma compra. Anteriormente, solo se aplicaba a Poké Balls regulares y solo se podía obtener 1 por compra.
 #define I_ROTOM_CATALOG_THUNDER_SHOCK   GEN_LATEST  // En Gen9+, retornar a Rotom a su forma base hará que aprenda Impactrueno aunque ya sepa otro movimiento.

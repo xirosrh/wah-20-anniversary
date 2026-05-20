@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "constants/achievements.h"
+#include "constants/flags.h"
 #include "constants/vars.h"
 #include "constants/maps.h"
 #include "achievements.h"
@@ -31,9 +32,12 @@ static bool8 CheckDefeatAllCollaborators(u8 id);
 static bool8 CheckDefeatAllCollaboratorsNoFaints(u8 id);
 static bool8 CheckWinWahChallengeHardMode(u8 id);
 static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
+static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id);
 static bool8 CheckFoundTileKecleon(u8 id);
 static bool8 CheckAvaricia(u8 id);
 static bool8 PartyHasElectrodeS(void);
+static bool8 PartyHasLegendary(void);
+static bool8 IsRestrictedLegendary(u16 species);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     [ACHIEVEMENT_WIN_WAH_CHALLENGE] = {
@@ -104,9 +108,15 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     },
     [ACHIEVEMENT_AVARICIA] = {
         .title = COMPOUND_STRING("Avaricia"),
-        .description = COMPOUND_STRING("Acumula 400000 de dinero.\nNo todo en la vida es combatir,\npero ayuda a llenar la cartera."),
-        .target = 400000,
+        .description = COMPOUND_STRING("Acumula 300000 de dinero.\nNo todo en la vida es combatir,\npero ayuda a llenar la cartera."),
+        .target = 300000,
         .check = CheckAvaricia,
+    },
+    [ACHIEVEMENT_WIN_WAH_CHALLENGE_WITHOUT_LEGENDARIES] = {
+        .title = COMPOUND_STRING("Camino sin leyendas"),
+        .description = COMPOUND_STRING("Supera el desafío sin ningún\nPokémon legendario ni mítico\nen tu equipo, de principio a fin."),
+        .target = TRUE,
+        .check = CheckWinWahChallengeWithoutLegendaries,
     },
 };
 
@@ -126,6 +136,14 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
         return FALSE;
 
     return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
+}
+
+static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id)
+{
+    if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
+        return FALSE;
+
+    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES) && !PartyHasLegendary();
 }
 
 static bool8 CheckUnlockAllPokemon(u8 id)
@@ -167,7 +185,35 @@ static bool8 PartyHasElectrodeS(void)
     return FALSE;
 }
 
+static bool8 IsRestrictedLegendary(u16 species)
+{
+    species = SanitizeSpeciesId(species);
 
+    if (species == SPECIES_NONE || species == SPECIES_EGG)
+        return FALSE;
+
+    return gSpeciesInfo[species].isLegendary || gSpeciesInfo[species].isMythical;
+}
+
+static bool8 PartyHasLegendary(void)
+{
+    u32 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (IsRestrictedLegendary(species))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 PartyHasRestrictedLegendary(void)
+{
+    return PartyHasLegendary();
+}
 static bool8 CheckWinWahChallengeDouble(u8 id)
 {
     return FlagGet(FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED) == sAchievements[id].target;

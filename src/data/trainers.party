@@ -2083,6 +2083,7 @@ Modest Nature
 - Frenzy Plant
 
 Magnezone
+Ability: Sturdy
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Modest Nature
 - Thunderbolt
@@ -2109,7 +2110,7 @@ Jolly Nature
 Gyarados
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
-- Frustration
+- Waterfall
 - Dragon Dance
 - Earthquake
 - Double-Edge
@@ -2143,6 +2144,7 @@ Modest Nature
 - Frenzy Plant
 
 Magnezone @ Leftovers
+Ability: Sturdy
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Thunderbolt
@@ -2169,7 +2171,7 @@ Jolly Nature
 Gyarados @ King's Rock
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Frustration
+- Waterfall
 - Dragon Dance
 - Earthquake
 - Double-Edge
@@ -2203,6 +2205,7 @@ Modest Nature
 - Frenzy Plant
 
 Magnezone @ Leftovers
+Ability: Sturdy
 EVs: 252 SpA / 252 Spe / 4 HP
 Modest Nature
 - Thunderbolt
@@ -2229,7 +2232,7 @@ Jolly Nature
 Gyarados @ King's Rock
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
-- Frustration
+- Waterfall
 - Dragon Dance
 - Earthquake
 - Double-Edge
@@ -3158,6 +3161,14 @@ AI: Basic Trainer
 Mugshot: Green
 Difficulty: Easy
 
+Yamask Galar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
+
 Porygon Z
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Download
@@ -3191,14 +3202,6 @@ Jolly Nature
 - False Surrender
 - Drain Punch
 
-Yamask Galar
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Adamant Nature
-- Shadow Claw
-- Earthquake
-- Body Press
-- Stealth Rock
-
 Scolipede @ Scolipite
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
@@ -3218,6 +3221,14 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
 Difficulty: Normal
+
+Yamask Galar @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
 
 Porygon Z @ Choice Scarf
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -3251,14 +3262,6 @@ Jolly Nature
 - Spirit Break
 - False Surrender
 - Drain Punch
-
-Yamask Galar @ Assault Vest
-EVs: 252 Atk / 252 HP / 4 SpD
-Adamant Nature
-- Shadow Claw
-- Earthquake
-- Body Press
-- Stealth Rock
 
 Scolipede @ Scolipite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -3280,6 +3283,14 @@ AI: Smart Trainer
 Mugshot: Green
 Difficulty: Hard
 
+Yamask Galar @ Assault Vest
+EVs: 252 Atk / 252 HP / 4 SpD
+Adamant Nature
+- Shadow Claw
+- Earthquake
+- Body Press
+- Stealth Rock
+
 Porygon Z @ Choice Scarf
 EVs: 252 SpA / 252 Spe / 4 HP
 Ability: Download
@@ -3312,14 +3323,6 @@ Jolly Nature
 - Spirit Break
 - False Surrender
 - Drain Punch
-
-Yamask Galar @ Assault Vest
-EVs: 252 Atk / 252 HP / 4 SpD
-Adamant Nature
-- Shadow Claw
-- Earthquake
-- Body Press
-- Stealth Rock
 
 Scolipede @ Scolipite
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -6681,7 +6684,7 @@ Jolly Nature
 - Sky Attack
 - Aerial Ace
 - Steel Wing
-- Endeavor
+- Facade
 
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
@@ -6717,7 +6720,7 @@ Jolly Nature
 - Sky Attack
 - Aerial Ace
 - Steel Wing
-- Endeavor
+- Facade
 
 === TRAINER_WAH_ADMIN_TOKYN_MAIN ===
 Name: Tokyn
@@ -6753,7 +6756,7 @@ Jolly Nature
 - Sky Attack
 - Aerial Ace
 - Steel Wing
-- Endeavor
+- Facade
 
 === TRAINER_WAH_ADMIN_TOKYN_ALTERNATIVE ===
 Name: Tokyn
@@ -7911,6 +7914,7 @@ Modest Nature
 
 Torkoal
 Shiny: Yes
+Ability: Drought
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Modest Nature
 - Scorching Sands
@@ -7977,6 +7981,7 @@ Modest Nature
 
 Torkoal @ Charcoal
 Shiny: Yes
+Ability: Drought
 EVs: 252 SpA / 252 HP / 4 SpD
 Modest Nature
 - Scorching Sands
@@ -8043,6 +8048,7 @@ Modest Nature
 
 Torkoal @ Charcoal
 Shiny: Yes
+Ability: Drought
 EVs: 252 SpA / 252 HP / 4 SpD
 Modest Nature
 - Scorching Sands

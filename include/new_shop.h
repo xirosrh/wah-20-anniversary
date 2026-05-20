@@ -14,6 +14,7 @@ void NewShop_CreateOutfitShopMenu(const u16 *);
 void NewShop_CreateVariablePokemartMenu(const u16 *);
 void NewShop_CreateCoinPokemartMenu(const u16 *);
 void NewShop_CreatePointsPokemartMenu(const u16 *);
+void OpenWahRoomsSharedMart(void);
 
 #endif // MUDSKIP_SHOP_UI
 

@@ -598,3 +598,5 @@ gSpecials::
 	def_special Special_BufferPokeboxBuyOfferFromSpecies
 	def_special Special_UpdateCollaboratorsNoFaintProgress
 	def_special ChooseMonForEvsIvsEditor
+	def_special OpenWahRoomsSharedMart
+	def_special HasInvisibleKecleonOnCurrentMap
