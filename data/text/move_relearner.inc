@@ -1,5 +1,5 @@
 MoveRelearner_Text_WouldLearnNewMoves:
-	.string "Hola, soy el Mentor experto\p"
+	.string "Hola, soy el Mentor experto.\p"
 	.string "¿Quieres que ajuste el potencial de tu\n"
 	.string "equipo?$"
 
