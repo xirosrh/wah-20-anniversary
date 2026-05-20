@@ -4573,6 +4573,9 @@ void SetWahChallengeInitialAchievementFlags(void)
         if (species == SPECIES_ELECTRODES)
             FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
     }
+
+    if (!PartyHasRestrictedLegendary())
+        FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
 }
 
 // Checks if admin at given index should use ALTERNATIVE team
