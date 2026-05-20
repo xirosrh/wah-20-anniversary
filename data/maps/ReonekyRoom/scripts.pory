@@ -289,3 +289,8 @@ script ReonekyRoom_EventScript_Hydrant {
     msgbox(format("Es un pequeño hidrante pintado de rojo brillante."), MSGBOX_SIGN)
     end
 }
+
+script ReonekyRoom_EventScript_Bidon {
+    msgbox(format("Es un bidón hasta arriba de aceite usado."), MSGBOX_SIGN)
+    end
+}

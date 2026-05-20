@@ -185,3 +185,33 @@ script XirosRoom_EventScript_XirosBattle {
 text XirosRoom_Text_XirosDefeated {
     format("¡Muy buen combate!")
 }
+
+script XirosRoom_EventScript_Tanque {
+    msgbox(format("Es un tanque lleno de un líquido que no parece ser agua.\pHay burbujeos en su interior."), MSGBOX_SIGN)
+    end
+}
+
+script XirosRoom_EventScript_Holograma {
+    msgbox(format("Es un holograma de un cubo flotando en el aire."), MSGBOX_SIGN)
+    end
+}
+
+script XirosRoom_EventScript_Lampara {
+    msgbox(format("Es una lámpara futurista que ilumina con luz azul."), MSGBOX_SIGN)
+    end
+}
+
+script XirosRoom_EventScript_Server {
+    msgbox(format("El parpadeo de las luces indica que está realizando cálculos cuánticos."), MSGBOX_SIGN)
+    end
+}
+
+script XirosRoom_EventScript_Pantalla {
+    msgbox(format("Parece que muestra cálculos y gráficos muy complejos."), MSGBOX_SIGN)
+    end
+}
+
+script XirosRoom_EventScript_Unknown {
+    msgbox(format("Esto es un...\n¿Qué es esto?"), MSGBOX_SIGN)
+    end
+}

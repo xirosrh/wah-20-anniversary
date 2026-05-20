@@ -354,3 +354,43 @@ script KleinPkPowerRoom_EventScript_Klein {
     release
     end
 }
+
+script KleinPkPowerRoom_EventScript_Cafe {
+    msgbox(format("Este café ya está frío."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Telefono {
+    msgbox(format("Es un teléfono negro con el auricular rojo."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Archivador {
+    msgbox(format("Es un archivador de metal lleno de carpetas con papeles."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Computer {
+    msgbox(format("Es un ordenador de escritorio típico de un funcionario."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Monitor {
+    msgbox(format("Es el único monitor secundario que hay en la sala."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Caja {
+    msgbox(format("Es una caja abierta.\nEstá vacía."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Cama {
+    msgbox(format("Es una cama cutre.\nParece muy incómoda."), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_CajaHerramientas {
+    msgbox(format("Es una caja de herramientas.\nTiene muchas herramientas."), MSGBOX_SIGN)
+    end
+}

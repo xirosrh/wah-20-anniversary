@@ -167,3 +167,8 @@ script SergioRoom_EventScript_SecurityGuard {
     msgbox(SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance, MSGBOX_NPC)
     end
 }
+
+script SergioRoom_EventScript_Colmillo {
+    msgbox(format("Es un colmillo de un Pokémon dragón gigante."), MSGBOX_SIGN)
+    end
+}

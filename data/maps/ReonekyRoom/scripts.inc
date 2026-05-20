@@ -453,6 +453,12 @@ ReonekyRoom_EventScript_Hydrant::
 	end
 
 
+ReonekyRoom_EventScript_Bidon::
+# 294 "data/maps/ReonekyRoom/scripts.pory"
+	msgbox ReonekyRoom_EventScript_Bidon_Text_0, MSGBOX_SIGN
+	end
+
+
 # 64 "data/maps/ReonekyRoom/scripts.pory"
 ReonekyRoom_OnFrame_Movement_0:
 # 65 "data/maps/ReonekyRoom/scripts.pory"
@@ -720,6 +726,11 @@ ReonekyRoom_EventScript_Hydrant_Text_0:
 # 289 "data/maps/ReonekyRoom/scripts.pory"
 	.string "Es un pequeño hidrante pintado de rojo\n"
 	.string "brillante.$"
+
+ReonekyRoom_EventScript_Bidon_Text_0:
+# 294 "data/maps/ReonekyRoom/scripts.pory"
+	.string "Es un bidón hasta arriba de aceite\n"
+	.string "usado.$"
 
 ReonekyRoom_Text_ReonekyDefeated::
 # 278 "data/maps/ReonekyRoom/scripts.pory"

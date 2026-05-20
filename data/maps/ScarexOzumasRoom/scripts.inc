@@ -652,6 +652,12 @@ ScarexOzumasRoom_EventScript_ScarexBattle_5:
 	goto ScarexOzumasRoom_EventScript_ScarexBattle_1
 
 
+ScarexOzumasRoom_EventScript_Bellsprout::
+# 387 "data/maps/ScarexOzumasRoom/scripts.pory"
+	msgbox ScarexOzumasRoom_EventScript_Bellsprout_Text_0, MSGBOX_SIGN
+	end
+
+
 # 48 "data/maps/ScarexOzumasRoom/scripts.pory"
 ScarexOzumasRoom_EventScript_EnterRoom_Movement_0:
 # 49 "data/maps/ScarexOzumasRoom/scripts.pory"
@@ -940,6 +946,11 @@ ScarexOzumasRoom_EventScript_Ozumas_Text_12:
 # 226 "data/maps/ScarexOzumasRoom/scripts.pory"
 	.string "Estoy seguro de que lo harás genial.\n"
 	.string "¡Mucha suerte!$"
+
+ScarexOzumasRoom_EventScript_Bellsprout_Text_0:
+# 387 "data/maps/ScarexOzumasRoom/scripts.pory"
+	.string "Parece una estatua robada de la Torre\n"
+	.string "Bellsprout.$"
 
 ScarexOzumasRoom_Text_OzumasDefeated::
 # 251 "data/maps/ScarexOzumasRoom/scripts.pory"
