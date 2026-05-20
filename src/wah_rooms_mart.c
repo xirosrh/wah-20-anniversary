@@ -41,6 +41,8 @@ const u16 WahRoomsShared_MartItems[] =
     ITEM_DELPHOXITE,
     ITEM_EXCADRITE,
     ITEM_SKARMORITE,
+    ITEM_ABILITY_CAPSULE,
+    ITEM_ABILITY_PATCH,
     ITEM_NONE,
 };
 
