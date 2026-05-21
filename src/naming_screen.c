@@ -46,6 +46,7 @@ enum {
 
 #define KBROW_COUNT 4
 #define KBCOL_COUNT 8
+#define KB_WINDOW_FILL_TILE_SKIP 1
 
 enum {
     GFXTAG_BACK_BUTTON,
@@ -1943,13 +1944,17 @@ static const u8 *const sKeyboardTextColors[KBPAGE_COUNT] =
 static void PrintKeyboardKeys(u8 window, u8 page)
 {
     u8 i;
+    u8 widthTiles = GetWindowAttribute(window, WINDOW_WIDTH);
+    u8 heightTiles = GetWindowAttribute(window, WINDOW_HEIGHT);
+    u16 fillX = KB_WINDOW_FILL_TILE_SKIP * 8;
 
-    FillWindowPixelBuffer(window, sFillValues[page]);
+    FillWindowPixelBuffer(window, PIXEL_FILL(0));
+    FillWindowPixelRect(window, sFillValues[page], fillX, 0, widthTiles * 8 - fillX, heightTiles * 8);
 
     for (i = 0; i < KBROW_COUNT; i++)
         AddTextPrinterParameterized3(window, FONT_NORMAL, 0, i * 16 + 1, sKeyboardTextColors[page], 0, sNamingScreenKeyboardText[page][i]);
 
-    PutWindowTilemap(window);
+    PutWindowRectTilemap(window, KB_WINDOW_FILL_TILE_SKIP, 0, widthTiles - KB_WINDOW_FILL_TILE_SKIP, heightTiles);
 }
 
 static const u32 *const sNextKeyboardPageTilemaps[] =
