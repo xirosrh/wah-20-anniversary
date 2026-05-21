@@ -906,6 +906,7 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
     destroy_field_pic(FP_MAD_QR)
     msgbox(format("¿Lo viste?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
     closemessage
+    delay(20)
     if(var(VAR_RESULT) == YES) {
         msgbox(format("Entonces escribe la palabra que viste en el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         special(EnterCode)
@@ -921,7 +922,7 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
             release
             end
         } else {
-            msgbox(format("No… Esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("No… esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             playse(SE_PIN)
             applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_AnnoyedWithDelay48)
             msgbox(format("Vuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
@@ -1078,6 +1079,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
                 msgbox(format("Has vuelto, ¿quieres seguir con el evento?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
             }
             closemessage
+            delay(20)
             if(var(VAR_RESULT) == YES) {
                 goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
             } else {
@@ -1479,5 +1481,45 @@ script CollaboratorsRoom_EventScript_Brainstorming {
 
 script CollaboratorsRoom_EventScript_Desk2 {
     msgbox(format("El cajón guarda decenas de apuntes sobre combates y niveles.\pParece que ajustar la dificultad tomó muchísimo tiempo."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Computer {
+    msgbox(format("La torre de la computadora hace un ruido constante y preocupante.\pParece estar sobrecalentándose."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Notes2 {
+    msgbox(format("Es una hoja que se encuentra en el suelo.\pParece la partitura de una melodía bastante compleja."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Notes3 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen un listado de Pokémon y sus estadísticas.\pHay un Pokémon que se llama Latiken."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Notes4 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen el plano del diseño de una sala, pero están tachados."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Notes5 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen varias ideas que fueron descartadas."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_Notes6 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pEstán vacías."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_ExaminePaperScraps {
+    msgbox(format("Hay pedazos de papel rotos esparcidos por el suelo."), MSGBOX_SIGN)
+    end
+}
+
+script CollaboratorsRoom_EventScript_NotesTable {
+    msgbox(format("Hay varios papeles con apuntes en la mesa.\pIncluye un listado de los Pokémon disponibles para el desafío."), MSGBOX_SIGN)
     end
 }

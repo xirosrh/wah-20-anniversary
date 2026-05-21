@@ -222,7 +222,7 @@ script Lobby_EventScript_ChallengeHistorian {
     lock
     faceplayer
     
-    msgbox(format("¡Hey, {PLAYER}! No trabajo aquí ni nada, pero me encanta sacar estadísticas.\pMe quedo en la sala de espera observando a todos los que entran y lo anoto todo."), MSGBOX_AUTOCLOSE)
+    msgbox(format("¡Ey, {PLAYER}!\pNo trabajo aquí ni nada, pero me encanta sacar estadísticas.\pMe quedo en la sala de espera observando a todos los que entran y lo anoto todo."), MSGBOX_AUTOCLOSE)
     turnobject(VAR_LAST_TALKED, DIR_NORTH)
     if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
         playse(SE_PIN)
