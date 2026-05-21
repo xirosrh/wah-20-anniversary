@@ -402,6 +402,7 @@ static void CB2_InitDifficultySelector(void)
         FillWindowPixelBuffer(WINDOW_NORMAL_BOX, PIXEL_FILL(0));
         FillWindowPixelBuffer(WINDOW_HARD_BOX, PIXEL_FILL(0));
         FillWindowPixelBuffer(WINDOW_DIFFICULTY_BOX, PIXEL_FILL(0));
+        PutWindowTilemap(WINDOW_TITLE_BOX);
         PutWindowTilemap(WINDOW_EASY_BOX);
         PutWindowTilemap(WINDOW_NORMAL_BOX);
         PutWindowTilemap(WINDOW_HARD_BOX);
