@@ -1254,16 +1254,19 @@ static void Task_HandleBuyMon(u8 taskId)
 {
     if (JOY_NEW(DPAD_LEFT))
     {
+        PlaySE(SE_SELECT);
         gTasks[taskId].tCursorBuyMon = TRUE;
         DrawMenuCursorPokebox(WINDOW_MON_INFO_2, TRUE);
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
+        PlaySE(SE_SELECT);
         gTasks[taskId].tCursorBuyMon = FALSE;
         DrawMenuCursorPokebox(WINDOW_MON_INFO_2, FALSE);
     }
     else if (JOY_NEW(A_BUTTON)  )
     {
+        PlaySE(SE_SELECT);
         if(gTasks[taskId].tCursorBuyMon == TRUE)
         {
             u16 index = GetSelectedPokemonIndex() - MON_TEAM_SELECTOR_COUNT;
@@ -1291,6 +1294,7 @@ static void Task_HandleBuyMon(u8 taskId)
     }
     else if(JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SELECT);
         PrintTextSwapBox(TRUE);
         ClearMonTextInfoPage(TRUE);
         HidenMonIconsBox(FALSE);
@@ -1378,11 +1382,13 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
 {
     if(JOY_NEW(START_BUTTON))
     {
+        PlaySE(SE_SELECT);
         //resetar los pokes por los del team original del selector
         ResetMonsToPartyTeamSelector();
     }
     else if (JOY_NEW(B_BUTTON) || JOY_NEW(START_BUTTON))
     {
+        PlaySE(SE_SLIDING_DOOR);
         SetVisibilitySpriteSelector(TRUE);
         ClearMonDataPlayerTeam(TRUE);
         gTasks[taskId].func = Task_SlideRightBgTeamPlayer;
@@ -1395,6 +1401,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     {
         if (pokeBoxObj.col_team < MON_ICON_TEAM_COLS -1)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.col_team += 1;
             UpdateSelectorPosition(TRUE);
             SetVisibilitySpriteSelector(FALSE);
@@ -1406,6 +1413,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     {
         if (pokeBoxObj.col_team > 0)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.col_team -= 1;
             UpdateSelectorPosition(TRUE);
             ClearMonDataPlayerTeam(FALSE);
@@ -1416,6 +1424,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     {
         if (pokeBoxObj.row_team > 0)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.row_team -= 1;
             UpdateSelectorPosition(TRUE);
             ClearMonDataPlayerTeam(FALSE);
@@ -1426,6 +1435,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     {
         if (pokeBoxObj.row_team < MON_ICON_TEAM_ROWS -1)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.row_team += 1;
             UpdateSelectorPosition(TRUE);
             ClearMonDataPlayerTeam(FALSE);
@@ -1434,6 +1444,7 @@ static void Task_HandleTeamPlayerPokebox(u8 taskId)
     }
     
     if (JOY_NEW(DPAD_ANY)) {
+        PlaySE(SE_SELECT);
         PrintMsgActions(MSG_ACTION_CONTROLS_TEAM);
     }
 }
@@ -1449,6 +1460,7 @@ static void Task_HandlePokebox(u8 taskId)
 
     if (JOY_NEW(START_BUTTON))
     {
+        PlaySE(SE_SLIDING_DOOR);
         SetVisibilitySpriteSelector(TRUE);
         ClearWindoMonData(TRUE);
         ClearMonData(TRUE);
@@ -1456,6 +1468,7 @@ static void Task_HandlePokebox(u8 taskId)
     }
     else if (JOY_NEW(SELECT_BUTTON))
     {
+        PlaySE(SE_SELECT);
         HidenMonIconsBox(TRUE);
         SetVisibilitySpriteSelector(TRUE);
         gTasks[taskId].func = Task_ShowMonInfo;
@@ -1466,6 +1479,7 @@ static void Task_HandlePokebox(u8 taskId)
         //si el pokemon no esta activo, muestra la informacion para obternerlo. En caso contrario intenta añadirlo al team
         if(index > MON_TEAM_SELECTOR_COUNT-1 && !Pokebox_IsActive( index - MON_TEAM_SELECTOR_COUNT))
         {
+            PlaySE(SE_SELECT);
             HidenMonIconsBox(TRUE);
             SetVisibilitySpriteSelector(TRUE);
             gTasks[taskId].func = Task_ShowMonInfo;
@@ -1477,14 +1491,17 @@ static void Task_HandlePokebox(u8 taskId)
     {
         if(GetFirstFreeSlotMonParty() != 0xFF)
         {
+            PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_NOT_TEAM_FULL);
         }else{
+            PlaySE(SE_PC_OFF);
             BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_FadeOut;
         }
     }
     else if (JOY_NEW(L_BUTTON) && pokeBoxObj.currentPageNum > 0)
     {
+        PlaySE(SE_SELECT);
         ClearMonData(TRUE);
         pokeBoxObj.currentPageNum -= 1;
         LoadMonIconSprites();
@@ -1494,6 +1511,7 @@ static void Task_HandlePokebox(u8 taskId)
     }
     else if (JOY_NEW(R_BUTTON) && pokeBoxObj.currentPageNum < getTotalNumPages()-1)
     {
+        PlaySE(SE_SELECT);
         ClearMonData(TRUE);
         pokeBoxObj.currentPageNum += 1;
         LoadMonIconSprites();
@@ -1507,6 +1525,7 @@ static void Task_HandlePokebox(u8 taskId)
             newCol++;
         if (pokeBoxObj.boxMonSpritesIds[newRow][newCol] != 0xFF)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.column = newCol;
             UpdateSelectorPosition(FALSE);
             ClearMonData(FALSE);
@@ -1519,6 +1538,7 @@ static void Task_HandlePokebox(u8 taskId)
             newCol--;
         if (pokeBoxObj.boxMonSpritesIds[newRow][newCol] != 0xFF)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.column = newCol;
             UpdateSelectorPosition(FALSE);
             ClearMonData(FALSE);
@@ -1531,6 +1551,7 @@ static void Task_HandlePokebox(u8 taskId)
             newRow--;
         if (pokeBoxObj.boxMonSpritesIds[newRow][newCol] != 0xFF)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.row = newRow;
             UpdateSelectorPosition(FALSE);
             ClearMonData(FALSE);
@@ -1543,6 +1564,7 @@ static void Task_HandlePokebox(u8 taskId)
             newRow++;
         if (pokeBoxObj.boxMonSpritesIds[newRow][newCol] != 0xFF)
         {
+            PlaySE(SE_SELECT);
             pokeBoxObj.row = newRow;
             UpdateSelectorPosition(FALSE);
             ClearMonData(FALSE);
@@ -1552,6 +1574,7 @@ static void Task_HandlePokebox(u8 taskId)
     
     if(JOY_NEW(DPAD_ANY))
     {
+        PlaySE(SE_SELECT);
         PrintMsgActions(MSG_ACTION_CONTROLS);
     }
 }
@@ -1561,6 +1584,7 @@ static void Task_WaitToReturnHandlePokebox(u8 taskId)
 {
     if (JOY_NEW(SELECT_BUTTON) || JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SELECT);
         PrintTextSwapBox(TRUE);
         ClearMonTextInfoPage(TRUE);
         HidenMonIconsBox(FALSE);
@@ -1602,6 +1626,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
 
     if(slot == 0xFF)
     {
+        PlaySE(SE_FAILURE);
         PrintMsgActions(MSG_ACTION_FULL_TEAM);
         gTasks[taskId].func = Task_HandlePokebox;
         return;
@@ -1612,8 +1637,11 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         mon = &gAllTeamMons[index];
 
         if(HasMonInParty(mon->specie))
+        {
+            PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
-        else{
+        }else{
+            PlaySE(SE_SELECT);
             GiveMonTeamFromSelector(slot, mon, FALSE);
             specie = mon->specie;
             addMon = TRUE;
@@ -1625,6 +1653,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
         
         if (pokeboxMon == NULL)
         {
+            PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_LOCK_MON);
             gTasks[taskId].func = Task_HandlePokebox;
             return;
@@ -1632,11 +1661,14 @@ static void Task_AddMonTeamPlayer(u8 taskId)
 
         specie = pokeboxMon->specie;
 
-        if(!Pokebox_IsActive(pokeboxIndex))
+        if(!Pokebox_IsActive(pokeboxIndex)){
+            PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_LOCK_MON);
-        else if(HasMonInParty(specie))
+        }else if(HasMonInParty(specie)){
+            PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
-        else{
+        }else{
+            PlaySE(SE_FAILURE);
             GiveMonFromPokeboxConfig(slot, pokeboxMon);
             addMon = TRUE;
         }
@@ -1687,6 +1719,8 @@ static void Task_StorageMonInPokebox(u8 taskId)
 
     if(!CanStoregeMon(specie, maxNumChangesOnTeam))
     {
+        PlaySE(SE_FAILURE);
+
         if(maxNumChangesOnTeam == 1)
             PrintMsgActions(MSG_ACTION_ONLY_STORAGE_ONE_MON);
         else
@@ -1698,10 +1732,12 @@ static void Task_StorageMonInPokebox(u8 taskId)
 
     if(gPlayerPartyCount == 1)
     {
+        PlaySE(SE_FAILURE);
         PrintMsgActions(MSG_ACTION_ONLY_ONE_MON_IN_TEAM);
     }
     else
     {
+        PlaySE(SE_SELECT);
         u8 indexAddMon = isMonAddFromPc(specie);
         if(indexAddMon != 0xFF)
             pokeBoxObj.speciesAddFromPc[indexAddMon] = SPECIES_NONE;
