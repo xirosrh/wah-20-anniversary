@@ -2363,7 +2363,9 @@ Lobby_EventScript_Cope_Text_1:
 	.string "Debe encontrarse en alguna sala... ¡Es\n"
 	.string "tan escurridizo!\p"
 	.string "Recuerda que puedes usar el Detector\n"
-	.string "Devon para encontrarlo.$"
+	.string "Devon para encontrarlo.\p"
+	.string "¡Seguro cada vez que lo encuentres te\n"
+	.string "dará un premio!$"
 
 Lobby_EventScript_Cope_Text_2:
 # 689 "data/maps/Lobby/scripts.pory"
