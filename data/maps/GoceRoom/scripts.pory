@@ -87,3 +87,7 @@ text GoceRoom_Text_GoceDefeated {
     format("Increíble como han evolucionado en estos últimos 20 años…")
 }
 
+script GoceRoom_EventScript_Ambar {
+    msgbox(format("Hay pequeños fragmentos de ámbar esparcidos por el suelo."), MSGBOX_SIGN)
+    end
+}

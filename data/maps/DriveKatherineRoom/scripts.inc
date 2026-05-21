@@ -689,8 +689,9 @@ DriveKatherineRoom_EventScript_Drive_Text_9:
 DriveKatherineRoom_EventScript_Drive_Text_10:
 # 151 "data/maps/DriveKatherineRoom/scripts.pory"
 	.string "Pero recuerda: no todo se trata de\n"
-	.string "ganar. Lo importante es moverse con\l"
-	.string "gracia… y caer siempre de pie.\p"
+	.string "ganar.\p"
+	.string "Lo importante es moverse con gracia… y\n"
+	.string "caer siempre de pie.\p"
 	.string "Vamos a darle la bienvenida como se\n"
 	.string "merece.$"
 

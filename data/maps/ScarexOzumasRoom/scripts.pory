@@ -215,6 +215,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     delay(20)
     msgbox(format("Más adelante, aguarda una batalla contra alguien muy cercano a mí.\pEs un gran amigo y rival. Quizá lo conozcas, se llama Xiros.\pSerá esa prueba la que determine si realmente puedes ganar el desafío."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
     delay(20)
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction))
     playse(SE_LEDGE)
     applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down))
     waitmovement(0)
@@ -223,6 +224,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     applymovement(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down))
     waitmovement(0)
     waitse
+    applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(unlock_facing_direction, face_player))
     msgbox(format("Estoy seguro de que lo harás genial. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
         call(WahRoomsShared_OpenDoor)

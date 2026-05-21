@@ -63,7 +63,7 @@ TokynWarRoom_EventScript_MainCutscene::
 # 41 "data/maps/TokynWarRoom/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
 # 42 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_MainCutscene_Text_1, speaker = SP_NAME_WAR
+	msgbox TokynWarRoom_EventScript_MainCutscene_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR
 # 43 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 44 "data/maps/TokynWarRoom/scripts.pory"
@@ -280,7 +280,7 @@ TokynWarRoom_EventScript_Tokyn::
 	compare VAR_TEMP_A, 0
 	goto_if_eq TokynWarRoom_EventScript_Tokyn_2
 # 158 "data/maps/TokynWarRoom/scripts.pory"
-	msgbox TokynWarRoom_EventScript_Tokyn_Text_0, speaker = SP_NAME_TOKYN
+	msgbox TokynWarRoom_EventScript_Tokyn_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN
 # 159 "data/maps/TokynWarRoom/scripts.pory"
 	playse SE_PIN
 # 160 "data/maps/TokynWarRoom/scripts.pory"
@@ -581,8 +581,9 @@ TokynWarRoom_EventScript_MainCutscene_Text_5:
 TokynWarRoom_EventScript_MainCutscene_Text_6:
 # 78 "data/maps/TokynWarRoom/scripts.pory"
 	.string "¡Hace años no hacemos eso! Pero me\n"
-	.string "gusta. Una buena celebración merece\l"
-	.string "algo especial.$"
+	.string "gusta.\p"
+	.string "Una buena celebración merece algo\n"
+	.string "especial.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_7:
 # 83 "data/maps/TokynWarRoom/scripts.pory"
@@ -604,8 +605,9 @@ TokynWarRoom_EventScript_MainCutscene_Text_10:
 TokynWarRoom_EventScript_MainCutscene_Text_11:
 # 120 "data/maps/TokynWarRoom/scripts.pory"
 	.string "Gracias por compartir este momento con\n"
-	.string "nosotros. Fue un encuentro digno para\l"
-	.string "esta celebración.\p"
+	.string "nosotros.\p"
+	.string "Fue un encuentro digno para esta\n"
+	.string "celebración.\p"
 	.string "Es increíble cómo un solo combate\n"
 	.string "puede traer de vuelta tantas memorias.$"
 
