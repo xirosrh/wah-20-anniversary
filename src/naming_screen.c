@@ -383,7 +383,7 @@ static void NamingScreen_Dummy(u8, u8);
 static void DrawTextEntry(void);
 static void PrintKeyboardKeys(u8, u8);
 static void DrawKeyboardPageOnDeck(void);
-static void PrintControls(void);
+static void CopyBackgroundRowsToKeyboardBgs(u8 destY, u8 height);
 static void CB2_NamingScreen(void);
 static void ResetVHBlank(void);
 static void SetVBlank(void);
@@ -628,7 +628,7 @@ static bool8 MainState_FadeIn(void)
     NamingScreen_Dummy(1, KEYBOARD_LETTERS_UPPER);
     DrawTextEntry();
     DrawTextEntryBox();
-    PrintControls();
+    CopyBackgroundRowsToKeyboardBgs(0, 2);
     CopyBgTilemapBufferToVram(1);
     CopyBgTilemapBufferToVram(2);
     CopyBgTilemapBufferToVram(3);
@@ -1876,7 +1876,6 @@ static void LoadPalettes(void)
 {
     LoadPalette(gNamingScreenMenu_Pal, BG_PLTT_ID(0), sizeof(gNamingScreenMenu_Pal));
     LoadPalette(sKeyboard_Pal, BG_PLTT_ID(10), sizeof(sKeyboard_Pal));
-    LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), PLTT_SIZE_4BPP);
 }
 
 static void DrawBgTilemap(u8 bg, const void *src)
@@ -1990,17 +1989,25 @@ static void DrawKeyboardPageOnDeck(void)
     DrawBgTilemap(bg, sNextKeyboardPageTilemaps[sNamingScreen->currentPage]);
     PrintKeyboardKeys(windowId, CurrentPageToNextKeyboardId());
     NamingScreen_Dummy(bg, CurrentPageToNextKeyboardId());
+    CopyBackgroundRowsToKeyboardBgs(0, 2);
     CopyBgTilemapBufferToVram(bg_);
 }
 
-static void PrintControls(void)
+static void CopyBackgroundRowsToKeyboardBgs(u8 destY, u8 height)
 {
-    const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY };
+    u16 *src = GetBgTilemapBuffer(3);
+    u16 *dst1 = GetBgTilemapBuffer(1);
+    u16 *dst2 = GetBgTilemapBuffer(2);
+    u8 y, x;
 
-    FillWindowPixelBuffer(sNamingScreen->windows[WIN_BANNER], PIXEL_FILL(15));
-    AddTextPrinterParameterized3(sNamingScreen->windows[WIN_BANNER], FONT_SMALL, 2, 1, color, 0, gText_MoveOkBack);
-    PutWindowTilemap(sNamingScreen->windows[WIN_BANNER]);
-    CopyWindowToVram(sNamingScreen->windows[WIN_BANNER], COPYWIN_FULL);
+    for (y = destY; y < destY + height; y++)
+    {
+        for (x = 0; x < 32; x++)
+        {
+            dst1[y * 32 + x] = src[y * 32 + x];
+            dst2[y * 32 + x] = src[y * 32 + x];
+        }
+    }
 }
 
 static void CB2_NamingScreen(void)
@@ -2037,7 +2044,7 @@ static void VBlankCB_NamingScreen(void)
 
 static void NamingScreen_ShowBgs(void)
 {
-    ShowBg(0);
+    HideBg(0);
     ShowBg(1);
     ShowBg(2);
     ShowBg(3);
