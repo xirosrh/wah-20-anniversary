@@ -20,6 +20,7 @@
 static bool8 CheckPokebox_isBuyMon(u8 id);
 static bool8 CheckPokebox_WahChallengeCompleted(u8 id);
 static bool8 CheckPokebox_WahChallengeDifficultCompleted(u8 id);
+static bool8 CheckPokebox_WahChallengeFiveTimesCompleted(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id);
 static bool8 CheckPokebox_AlexmadEventGiveLegendaries(u8 id);
 static bool8 CheckPokebox_AlexmadEventCompleted(u8 id);
@@ -63,6 +64,7 @@ static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
 static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
 static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Habla con Plug-Oink en la\nsala de Baro.");
 static const u8 sText_PokeboxWahChallengeDifficult[] = _("Gana el desafio en modo\ndifícil.");
+static const u8 sText_PokeboxWahChallengeFiveTimes[] = _("Gana el desafio cinco\nveces.");
 static const u8 sText_PokeboxEingTeams[] = _("Derrota a ambos equipos\nde Eing (principal y\nalternativo).");
 static const u8 sText_PokeboxMolikai[] = _("Derrota a ambos equipos\nde Helix Boo en modo difícil\n(principal y alternativo).");
 static const u8 sText_PokeboxBaroTeams[] = _("Derrota a ambos equipos\nde Baro (principal y\nalternativo).");
@@ -235,20 +237,6 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     },
     {
         .mon = {
-            .specie = SPECIES_DIRAEI,
-            .ability = ABILITY_CONTRARY,
-            .nature = NATURE_TIMID,
-            .itemId = ITEM_NONE,
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-            .isShiny = FALSE,
-            .moves = {MOVE_PSYCHO_BOOST, MOVE_REST, MOVE_DRACO_METEOR, MOVE_HYPNOSIS},
-        },
-        .description = sText_PokeboxWahChallengeDifficult,
-        .money = 0,
-        .check = CheckPokebox_WahChallengeDifficultCompleted
-    },
-    {
-        .mon = {
             .specie = SPECIES_DUN,
             .ability = ABILITY_SERENE_GRACE,
             .nature = NATURE_TIMID,
@@ -260,6 +248,20 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .description = sText_PokeboxWahChallengeDifficult,
         .money = 0,
         .check = CheckPokebox_WahChallengeDifficultCompleted
+    },
+    {
+        .mon = {
+            .specie = SPECIES_DIRAEI,
+            .ability = ABILITY_CONTRARY,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_PSYCHO_BOOST, MOVE_REST, MOVE_DRACO_METEOR, MOVE_HYPNOSIS},
+        },
+        .description = sText_PokeboxWahChallengeFiveTimes,
+        .money = 0,
+        .check = CheckPokebox_WahChallengeFiveTimesCompleted
     },
     {
         .mon = {
@@ -1033,6 +1035,12 @@ static bool8 CheckPokebox_WahChallengeDifficultCompleted(u8 id)
 {
     (void)id;
     return Achievement_IsComplete(ACHIEVEMENT_DEFEAT_WAH_CHALLENGE_HARD_MODE);
+}
+
+static bool8 CheckPokebox_WahChallengeFiveTimesCompleted(u8 id)
+{
+    (void)id;
+    return Achievement_IsComplete(ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES);
 }
 
 static bool8 CheckPokebox_AlexmadEventGiveClones(u8 id)
