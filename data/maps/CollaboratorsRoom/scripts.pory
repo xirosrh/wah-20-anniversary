@@ -1490,7 +1490,7 @@ script CollaboratorsRoom_EventScript_Computer {
 }
 
 script CollaboratorsRoom_EventScript_Notes2 {
-    msgbox(format("Es una hoja que se encuentra en el suelo.\pParece la partitura de una melodía bastante compleja."), MSGBOX_SIGN)
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener la partitura de una melodía bastante compleja."), MSGBOX_SIGN)
     end
 }
 

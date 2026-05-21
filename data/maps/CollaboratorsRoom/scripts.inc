@@ -3977,10 +3977,10 @@ CollaboratorsRoom_EventScript_Computer_Text_0:
 
 CollaboratorsRoom_EventScript_Notes2_Text_0:
 # 1493 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Es una hoja que se encuentra en el\n"
-	.string "suelo.\p"
-	.string "Parece la partitura de una melodía\n"
-	.string "bastante compleja.$"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Parecen tener la partitura de una\n"
+	.string "melodía bastante compleja.$"
 
 CollaboratorsRoom_EventScript_Notes3_Text_0:
 # 1498 "data/maps/CollaboratorsRoom/scripts.pory"
