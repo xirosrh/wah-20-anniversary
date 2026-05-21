@@ -148,7 +148,7 @@ script DriveKatherineRoom_EventScript_Drive {
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
     delay(20)
-    msgbox(format("Pero recuerda: no todo se trata de ganar. Lo importante es moverse con gracia… y caer siempre de pie.\pVamos a darle la bienvenida como se merece."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("Pero recuerda: no todo se trata de ganar.\pLo importante es moverse con gracia… y caer siempre de pie.\pVamos a darle la bienvenida como se merece."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceDown)
     turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
     msgbox(format("¡Entonces, que empiece el banquete!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
