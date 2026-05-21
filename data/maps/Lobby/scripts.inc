@@ -2097,9 +2097,9 @@ Lobby_EventScript_BufferTimeWordFromCountVar_Text_1:
 
 Lobby_EventScript_ChallengeHistorian_Text_0:
 # 225 "data/maps/Lobby/scripts.pory"
-	.string "¡Hey, {PLAYER}! No trabajo aquí ni\n"
-	.string "nada, pero me encanta sacar\l"
-	.string "estadísticas.\p"
+	.string "¡Ey, {PLAYER}!\p"
+	.string "No trabajo aquí ni nada, pero me\n"
+	.string "encanta sacar estadísticas.\p"
 	.string "Me quedo en la sala de espera\n"
 	.string "observando a todos los que entran y lo\l"
 	.string "anoto todo.$"
@@ -2363,7 +2363,9 @@ Lobby_EventScript_Cope_Text_1:
 	.string "Debe encontrarse en alguna sala... ¡Es\n"
 	.string "tan escurridizo!\p"
 	.string "Recuerda que puedes usar el Detector\n"
-	.string "Devon para encontrarlo.$"
+	.string "Devon para encontrarlo.\p"
+	.string "¡Seguro cada vez que lo encuentres te\n"
+	.string "dará un premio!$"
 
 Lobby_EventScript_Cope_Text_2:
 # 689 "data/maps/Lobby/scripts.pory"

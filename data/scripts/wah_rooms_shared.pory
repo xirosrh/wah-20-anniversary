@@ -253,7 +253,7 @@ script WahRoomsShared_Kecleon_Recompensa {
             call(WahRoomsShared_Kecleon_Dinero)
             break
         case 1:
-            call(WahRoomsShared_Kecleon_KitCuracion)
+            call(WahRoomsShared_Kecleon_KitObjetos)
             break
     }
 
@@ -310,52 +310,75 @@ script WahRoomsShared_Kecleon_Dinero {
     return
 }
 
-script WahRoomsShared_Kecleon_KitCuracion_BagFull {
-    msgbox("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del kit.", MSGBOX_DEFAULT)
+script WahRoomsShared_Kecleon_KitObjetos_BagFull {
+    msgbox("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del paquete.", MSGBOX_DEFAULT)
     closemessage
     return
 }
 
-script WahRoomsShared_Kecleon_KitCuracion {
-    msgbox(format("¡Tile te ha entregado un kit de curación!"), MSGBOX_DEFAULT)
+script WahRoomsShared_Kecleon_KitObjetos {
+    msgbox(format("¡Tile te ha entregado un paquete de objetos!"), MSGBOX_DEFAULT)
     closemessage
     delay(10)
-    random(2)
+    random(3)
     switch(var(VAR_RESULT))
     {
         case 0:
+            giveitem(ITEM_ABILITY_CAPSULE, 1)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
+                return
+            }
             giveitem(ITEM_MAX_REVIVE, 1)
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             giveitem(ITEM_REVIVE, 2)
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             giveitem(ITEM_FULL_RESTORE, 3)
             closemessage
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             break
         case 1:
+            giveitem(ITEM_ABILITY_PATCH, 1)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
+                return
+            }
             giveitem(ITEM_REVIVE, 2)
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             giveitem(ITEM_MAX_POTION, 2)
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             giveitem(ITEM_FULL_HEAL, 2)
             closemessage
             if (var(VAR_RESULT) == FALSE) {
-                call(WahRoomsShared_Kecleon_KitCuracion_BagFull)
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
+                return
+            }
+            break
+        case 2:
+            giveitem(ITEM_ABILITY_CAPSULE, 2)
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
+                return
+            }
+            giveitem(ITEM_ABILITY_PATCH, 2)
+            closemessage
+            if (var(VAR_RESULT) == FALSE) {
+                call(WahRoomsShared_Kecleon_KitObjetos_BagFull)
                 return
             }
             break

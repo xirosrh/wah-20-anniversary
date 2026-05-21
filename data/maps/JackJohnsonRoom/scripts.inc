@@ -907,7 +907,7 @@ JackJohnsonRoom_OnFrame::
 # 550 "data/maps/JackJohnsonRoom/scripts.pory"
 	applymovementandwait LOCALID_JACKROOM_JACK, JackJohnsonRoom_OnFrame_Movement_17
 # 555 "data/maps/JackJohnsonRoom/scripts.pory"
-	msgbox JackJohnsonRoom_OnFrame_Text_12, speaker = SP_NAME_JACK_JOHNSON
+	msgbox JackJohnsonRoom_OnFrame_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON
 # 556 "data/maps/JackJohnsonRoom/scripts.pory"
 	turnobject LOCALID_JACKROOM_JACK, DIR_SOUTH
 # 557 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1339,6 +1339,12 @@ JackJohnsonRoom_EventScript_Book2::
 	end
 
 
+JackJohnsonRoom_EventScript_Papers::
+# 769 "data/maps/JackJohnsonRoom/scripts.pory"
+	msgbox JackJohnsonRoom_EventScript_Papers_Text_0, MSGBOX_SIGN
+	end
+
+
 # 386 "data/maps/JackJohnsonRoom/scripts.pory"
 JackJohnsonRoom_OnFrame_Movement_0:
 # 386 "data/maps/JackJohnsonRoom/scripts.pory"
@@ -1694,9 +1700,9 @@ JackJohnsonRoom_OnFrame_Text_15:
 
 JackJohnsonRoom_OnFrame_Text_16:
 # 575 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Magnífico… impecable. Cada movimiento\n"
-	.string "ha caído en su sitio, es un placer ver\l"
-	.string "algo tan bien ejecutado…\p"
+	.string "Magnífico… impecable.\p"
+	.string "Cada movimiento ha caído en su sitio, es\n"
+	.string "un placer ver algo tan bien ejecutado…\p"
 	.string "No suelo disfrutar perdiendo, pero…\n"
 	.string "esto ha sido arte puro.\p"
 	.string "Te abriré el camino.$"
@@ -1768,6 +1774,11 @@ JackJohnsonRoom_EventScript_Book2_Text_0:
 	.string "entre sí.\p"
 	.string "Parece que nadie se puso de acuerdo\n"
 	.string "sobre cuándo fue.$"
+
+JackJohnsonRoom_EventScript_Papers_Text_0:
+# 769 "data/maps/JackJohnsonRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.$"
 
 JackJohnsonRoom_Text_JackDefeated::
 # 697 "data/maps/JackJohnsonRoom/scripts.pory"

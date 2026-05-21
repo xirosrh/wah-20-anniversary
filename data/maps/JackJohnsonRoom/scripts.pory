@@ -552,7 +552,7 @@ script JackJohnsonRoom_OnFrame {
         delay_16
         face_right)
     )
-    msgbox(format("Estuvo cerca… muy cerca, pero hasta que salga impecable, no descansaremos."), speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Estuvo cerca… muy cerca, pero hasta que salga impecable, no descansaremos."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_JACK_JOHNSON)
     turnobject(LOCALID_JACKROOM_JACK, DIR_SOUTH)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
@@ -572,7 +572,7 @@ script JackJohnsonRoom_OnFrame {
     waitse
     call(JackJohnsonRoom_EventScript_JackBattle)
     delay(20)
-    msgbox(format("Magnífico… impecable. Cada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Magnífico… impecable.\pCada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp)
     msgbox(format("Y ustedes… ¡a trabajar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
@@ -762,5 +762,10 @@ script JackJohnsonRoom_EventScript_Book1 {
 
 script JackJohnsonRoom_EventScript_Book2 {
     msgbox(format("Es una cronología de las épocas doradas de WaH.\pCasi todas las páginas se contradicen entre sí.\pParece que nadie se puso de acuerdo sobre cuándo fue."), MSGBOX_SIGN)
+    end
+}
+
+script JackJohnsonRoom_EventScript_Papers {
+    msgbox(format("Son varias hojas que se encuentran en el suelo."), MSGBOX_SIGN)
     end
 }

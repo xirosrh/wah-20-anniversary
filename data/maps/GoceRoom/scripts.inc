@@ -137,6 +137,12 @@ GoceRoom_EventScript_GoceBattle_5:
 	goto GoceRoom_EventScript_GoceBattle_1
 
 
+GoceRoom_EventScript_Ambar::
+# 91 "data/maps/GoceRoom/scripts.pory"
+	msgbox GoceRoom_EventScript_Ambar_Text_0, MSGBOX_SIGN
+	end
+
+
 # 38 "data/maps/GoceRoom/scripts.pory"
 GoceRoom_EventScript_Goce_Movement_0:
 # 38 "data/maps/GoceRoom/scripts.pory"
@@ -194,6 +200,11 @@ GoceRoom_EventScript_Goce_Text_3:
 	.string "Tú acabas de demostrarme que lo está,\n"
 	.string "niñ{OA}.\p"
 	.string "Puedes continuar.$"
+
+GoceRoom_EventScript_Ambar_Text_0:
+# 91 "data/maps/GoceRoom/scripts.pory"
+	.string "Hay pequeños fragmentos de ámbar\n"
+	.string "esparcidos por el suelo.$"
 
 GoceRoom_Text_GoceDefeated::
 # 86 "data/maps/GoceRoom/scripts.pory"
