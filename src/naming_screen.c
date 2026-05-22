@@ -46,6 +46,9 @@ enum {
 
 #define KBROW_COUNT 4
 #define KBCOL_COUNT 8
+#define KB_WINDOW_FILL_TILE_SKIP 1
+// Rows copied from BG3 by removed CopyBackgroundRowsToKeyboardBgs; keep clear limited to this
+#define NAMING_SCREEN_KB_HEADER_ROW_COUNT 2
 
 enum {
     GFXTAG_BACK_BUTTON,
@@ -382,7 +385,7 @@ static void NamingScreen_Dummy(u8, u8);
 static void DrawTextEntry(void);
 static void PrintKeyboardKeys(u8, u8);
 static void DrawKeyboardPageOnDeck(void);
-static void PrintControls(void);
+static void ClearKeyboardBgTopRows(u8 bg);
 static void CB2_NamingScreen(void);
 static void ResetVHBlank(void);
 static void SetVBlank(void);
@@ -621,13 +624,14 @@ static bool8 MainState_FadeIn(void)
     sNamingScreen->currentPage = KBPAGE_LETTERS_UPPER;
     DrawBgTilemap(2, gNamingScreenKeyboardLower_Tilemap);
     DrawBgTilemap(1, gNamingScreenKeyboardUpper_Tilemap);
+    ClearKeyboardBgTopRows(1);
+    ClearKeyboardBgTopRows(2);
     PrintKeyboardKeys(sNamingScreen->windows[WIN_KB_PAGE_2], KEYBOARD_LETTERS_LOWER);
     PrintKeyboardKeys(sNamingScreen->windows[WIN_KB_PAGE_1], KEYBOARD_LETTERS_UPPER);
     NamingScreen_Dummy(2, KEYBOARD_LETTERS_LOWER);
     NamingScreen_Dummy(1, KEYBOARD_LETTERS_UPPER);
     DrawTextEntry();
     DrawTextEntryBox();
-    PrintControls();
     CopyBgTilemapBufferToVram(1);
     CopyBgTilemapBufferToVram(2);
     CopyBgTilemapBufferToVram(3);
@@ -849,6 +853,8 @@ static bool8 PageSwapAnimState_2(struct Task *task)
 
 static bool8 PageSwapAnimState_Done(struct Task *task)
 {
+    sNamingScreen->bg1vOffset = 0;
+    sNamingScreen->bg2vOffset = 0;
     DestroyTask(FindTaskIdByFunc(Task_HandlePageSwapAnim));
     return 0;
 }
@@ -1875,7 +1881,6 @@ static void LoadPalettes(void)
 {
     LoadPalette(gNamingScreenMenu_Pal, BG_PLTT_ID(0), sizeof(gNamingScreenMenu_Pal));
     LoadPalette(sKeyboard_Pal, BG_PLTT_ID(10), sizeof(sKeyboard_Pal));
-    LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), PLTT_SIZE_4BPP);
 }
 
 static void DrawBgTilemap(u8 bg, const void *src)
@@ -1943,13 +1948,17 @@ static const u8 *const sKeyboardTextColors[KBPAGE_COUNT] =
 static void PrintKeyboardKeys(u8 window, u8 page)
 {
     u8 i;
+    u8 widthTiles = GetWindowAttribute(window, WINDOW_WIDTH);
+    u8 heightTiles = GetWindowAttribute(window, WINDOW_HEIGHT);
+    u16 fillX = KB_WINDOW_FILL_TILE_SKIP * 8;
 
-    FillWindowPixelBuffer(window, sFillValues[page]);
+    FillWindowPixelBuffer(window, PIXEL_FILL(0));
+    FillWindowPixelRect(window, sFillValues[page], fillX, 0, widthTiles * 8 - fillX, heightTiles * 8);
 
     for (i = 0; i < KBROW_COUNT; i++)
         AddTextPrinterParameterized3(window, FONT_NORMAL, 0, i * 16 + 1, sKeyboardTextColors[page], 0, sNamingScreenKeyboardText[page][i]);
 
-    PutWindowTilemap(window);
+    PutWindowRectTilemap(window, KB_WINDOW_FILL_TILE_SKIP, 0, widthTiles - KB_WINDOW_FILL_TILE_SKIP, heightTiles);
 }
 
 static const u32 *const sNextKeyboardPageTilemaps[] =
@@ -1983,19 +1992,15 @@ static void DrawKeyboardPageOnDeck(void)
     }
 
     DrawBgTilemap(bg, sNextKeyboardPageTilemaps[sNamingScreen->currentPage]);
+    ClearKeyboardBgTopRows(bg);
     PrintKeyboardKeys(windowId, CurrentPageToNextKeyboardId());
     NamingScreen_Dummy(bg, CurrentPageToNextKeyboardId());
     CopyBgTilemapBufferToVram(bg_);
 }
 
-static void PrintControls(void)
+static void ClearKeyboardBgTopRows(u8 bg)
 {
-    const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY };
-
-    FillWindowPixelBuffer(sNamingScreen->windows[WIN_BANNER], PIXEL_FILL(15));
-    AddTextPrinterParameterized3(sNamingScreen->windows[WIN_BANNER], FONT_SMALL, 2, 1, color, 0, gText_MoveOkBack);
-    PutWindowTilemap(sNamingScreen->windows[WIN_BANNER]);
-    CopyWindowToVram(sNamingScreen->windows[WIN_BANNER], COPYWIN_FULL);
+    FillBgTilemapBufferRect_Palette0(bg, 0, 0, 0, 32, NAMING_SCREEN_KB_HEADER_ROW_COUNT);
 }
 
 static void CB2_NamingScreen(void)
@@ -2032,7 +2037,7 @@ static void VBlankCB_NamingScreen(void)
 
 static void NamingScreen_ShowBgs(void)
 {
-    ShowBg(0);
+    HideBg(0);
     ShowBg(1);
     ShowBg(2);
     ShowBg(3);
