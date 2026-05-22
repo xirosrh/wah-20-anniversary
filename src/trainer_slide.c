@@ -71,6 +71,13 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
     },
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_WAH_ADMIN_XIROS_MAIN] = 
+        {
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Todos mis Pokémon fueron capturados en mi querida región Koren.\p¡Veamos si puedes con ellos!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Empecemos con todo, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Parece que tendremos un combate emocionante!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Tienes mucho potencial, pero no creas que ya ganaste.\pEste es mi último as bajo la manga.{PAUSE_UNTIL_PRESS}"),
+        },
         [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
         {
             [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No lo esperaba, pero excelente trabajo.{PAUSE_UNTIL_PRESS}"),
