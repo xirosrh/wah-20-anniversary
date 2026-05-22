@@ -663,7 +663,10 @@ void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon, boo
     gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
 
     if(editOriginalTeam)
+    {
+        gSaveBlock2Ptr->indexTeamSelect = teamSelectorObj.monTeamNum;
         gSaveBlock2Ptr->playerTeamSelector[slot] = mon->specie;
+    }
 
     ScriptGiveMonParameterized(0, slot, mon->specie, 100, mon->itemId, ball, mon->nature, GetAbilitySlotForSpecies(mon->specie, mon->ability), gender, evs, ivs, tempMoves, shiny, FALSE, typeTera, FALSE);
 }

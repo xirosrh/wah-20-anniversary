@@ -604,6 +604,7 @@ struct SaveBlock2
               u32 miningPlaces;
               u32 achievements;
               u64 monActiveOnPokebox;
+              u8 indexTeamSelect;
               u16 playerTeamSelector[PARTY_SIZE];
 }; // sizeof=0xF2C
 
