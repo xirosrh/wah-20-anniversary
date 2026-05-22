@@ -8714,6 +8714,16 @@ Adamant Nature
 - Seed Bomb
 - Fire Punch
 
+Ludicolo @ Assault Vest
+Shiny: Yes
+Ability: Own Tempo
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Seed Bomb
+- Liquidation
+- Drain Punch
+- Fire Punch
+
 === TRAINER_WAH_ADMIN_KLEIN_MAIN ===
 Name: Klein
 Class: WAH Admin
@@ -8772,6 +8782,16 @@ Adamant Nature
 - Seed Bomb
 - Fire Punch
 
+Ludicolo @ Assault Vest
+Shiny: Yes
+Ability: Own Tempo
+EVs: 4 HP / 252 Atk / 252 SpD
+Jolly Nature
+- Seed Bomb
+- Liquidation
+- Drain Punch
+- Fire Punch
+
 === TRAINER_WAH_ADMIN_KLEIN_MAIN ===
 Name: Klein
 Class: WAH Admin
@@ -8828,6 +8848,16 @@ Adamant Nature
 - Waterfall
 - Drain Punch
 - Seed Bomb
+- Fire Punch
+
+Ludicolo @ Assault Vest
+Shiny: Yes
+Ability: Own Tempo
+EVs: 4 HP / 252 Atk / 252 SpD
+Jolly Nature
+- Seed Bomb
+- Liquidation
+- Drain Punch
 - Fire Punch
 
 === TRAINER_WAH_ADMIN_KLEIN_ALTERNATIVE ===
