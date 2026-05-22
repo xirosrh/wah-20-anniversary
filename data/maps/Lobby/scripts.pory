@@ -690,8 +690,11 @@ script Lobby_EventScript_Cope {
         playse(SE_PIN)
         applymovementandwait(LOCALID_PLAYER, moves(emote_question_mark))
         waitse
-        msgbox(format("¿Cómo? ¿No sabes quién es?\nEs mi famoso Kecleon.\pLo he perdido de vista y no sé por dónde se ha metido... Además, ¡me ha robado el kit de objetos que le doy a los entrenadores del desafío!\pHazme un favor y búscale por mí.\nToma, llévate esto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        msgbox(format("¿Cómo? ¿No sabes quién es?\nEs mi famoso Kecleon.\pLo he perdido de vista y no sé por dónde se ha metido...\pAdemás, ¡me ha robado el kit de objetos que le doy a los entrenadores del desafío!\pHazme un favor y búscale por mí.\nToma, llévate esto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+        delay(10)
         giveitem(ITEM_DEVON_SCOPE)
+        closemessage
+        delay(20)
         msgbox(format("Con el Detector Devon podrás ver dónde se esconde Tile.\pLe he agregado una nueva característica que permite saber si hay un Pokémon invisible cerca.\p¡Espero lo encuentres!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     }
     release

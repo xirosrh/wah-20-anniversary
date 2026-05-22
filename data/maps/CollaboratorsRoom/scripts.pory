@@ -1116,6 +1116,8 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     giveitem(ITEM_TERA_ORB)
     setflag(B_FLAG_TERA_ORB_CHARGED)
     setflag(B_FLAG_TERA_ORB_NO_COST)
+    closemessage
+    delay(10)
     call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
     msgbox(format("Además, ahora podrás encontrar en la PC a algunos legendarios de la Isla Mítica."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
