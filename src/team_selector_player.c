@@ -150,6 +150,13 @@ const struct TeamSelectorPlayer gTeamSelectorPlayer[NUM_PLAYER_TEAMS] =
                     {
                         MON_CHARIZARD, MON_CROBAT_2, MON_GARCHOMP, MON_PIDGEOT, MON_MELMETAL, MON_LUDICOLO},
             },
+        [TEAM_21] =
+            {
+                .teamSize = 6,
+                .team =
+                    {
+                        MON_POLITOED, MON_SWAMPERT, MON_MUSHARNA, MON_NINETALES, MON_VENUSAUR, MON_CASTFORM},
+            },
 
 };
 
@@ -1249,6 +1256,60 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
             .ev =  TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
             .isShiny = TRUE,
             .moves = {MOVE_SEED_BOMB, MOVE_LIQUIDATION, MOVE_DRAIN_PUNCH, MOVE_FIRE_PUNCH},
+        },
+        [MON_POLITOED] = {
+            .specie = SPECIES_POLITOED,
+            .ability = ABILITY_DRIZZLE,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_DAMP_ROCK,
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_RAIN_DANCE, MOVE_HELPING_HAND, MOVE_SCALD, MOVE_ICE_BEAM},
+        },
+        [MON_SWAMPERT] = {
+            .specie = SPECIES_SWAMPERT,
+            .ability = ABILITY_TORRENT,
+            .nature = NATURE_JOLLY,
+            .itemId = ITEM_SWAMPERTITE,
+            .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_WATERFALL, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_ROCK_SLIDE},
+        },
+        [MON_MUSHARNA] = {
+            .specie = SPECIES_MUSHARNA,
+            .ability = ABILITY_SYNCHRONIZE,
+            .nature = NATURE_QUIET,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
+            .isShiny = FALSE,
+            .moves = {MOVE_TRICK_ROOM, MOVE_STORED_POWER, MOVE_CALM_MIND, MOVE_HYPNOSIS},
+        },
+        [MON_NINETALES] = {
+            .specie = SPECIES_NINETALES,
+            .ability = ABILITY_DROUGHT,
+            .nature = NATURE_MODEST,
+            .itemId = ITEM_HEAT_ROCK,
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 4, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_HEAT_WAVE, MOVE_FIRE_BLAST},
+        },
+        [MON_VENUSAUR] = {
+            .specie = SPECIES_VENUSAUR,
+            .ability = ABILITY_CHLOROPHYLL,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_BLACK_SLUDGE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_LEECH_SEED, MOVE_SOLAR_BEAM, MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB},
+        },
+        [MON_CASTFORM] = {
+            .specie = SPECIES_CASTFORM,
+            .ability = ABILITY_FORECAST,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_LEFTOVERS,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_WEATHER_BALL, MOVE_SUNNY_DAY, MOVE_RAIN_DANCE, MOVE_HURRICANE},
         },
 };
 
