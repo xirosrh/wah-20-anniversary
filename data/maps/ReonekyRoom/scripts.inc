@@ -689,7 +689,7 @@ ReonekyRoom_EventScript_Reoneky_Text_2:
 	.string "A estas alturas ya sabrás que hago\n"
 	.string "aquí, así que me presento.\p"
 	.string "Soy Reoneky, experto en llevar el\n"
-	.string "prefijo 'ex' tanto ámbito laboral como\l"
+	.string "prefijo “ex” tanto ámbito laboral como\l"
 	.string "profesional.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_3:

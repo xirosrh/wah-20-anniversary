@@ -15,6 +15,7 @@ script AngelRoom_OnLoad {
     if(flag(FLAG_DEFEATED_ADMIN_ANGEL)){
         call(AngelRoom_EventScript_SetScreenAsClosed)
         call(WahRoomsShared_SetDoorAsOpen)
+        setobjectmovementtype(LOCALID_ANGELROOM_ANGEL, MOVEMENT_TYPE_FACE_DOWN)
     }
     end
 }
