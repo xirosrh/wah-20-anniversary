@@ -693,6 +693,24 @@ KleinPkPowerRoom_EventScript_CajaHerramientas::
 	end
 
 
+KleinPkPowerRoom_EventScript_Notes1::
+# 399 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Notes1_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Notes2::
+# 405 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Notes2_Text_0, MSGBOX_SIGN
+	end
+
+
+KleinPkPowerRoom_EventScript_Notes3::
+# 410 "data/maps/KleinPkPowerRoom/scripts.pory"
+	msgbox KleinPkPowerRoom_EventScript_Notes3_Text_0, MSGBOX_SIGN
+	end
+
+
 # 40 "data/maps/KleinPkPowerRoom/scripts.pory"
 KleinPkPowerRoom_OnFrame_Movement_0:
 # 40 "data/maps/KleinPkPowerRoom/scripts.pory"
@@ -1077,6 +1095,32 @@ KleinPkPowerRoom_EventScript_CajaHerramientas_Text_0:
 # 394 "data/maps/KleinPkPowerRoom/scripts.pory"
 	.string "Es una caja de herramientas.\n"
 	.string "Tiene muchas herramientas.$"
+
+KleinPkPowerRoom_EventScript_Notes1_Text_0:
+# 399 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Parecen apuntes de un manual de\n"
+	.string "soporte técnico.\p"
+	.string "El primer punto dice: “Comprobar que el\n"
+	.string "ordenador está encendido”.$"
+
+KleinPkPowerRoom_EventScript_Notes2_Text_0:
+# 405 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Parece un borrador de anuncio para el\n"
+	.string "foro.\p"
+	.string "Solo se lee: “Mantenimiento de la Wiki\n"
+	.string "programado. Volvemos enseguida.”$"
+
+KleinPkPowerRoom_EventScript_Notes3_Text_0:
+# 410 "data/maps/KleinPkPowerRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Es un recibo de pago que tiene el\n"
+	.string "importe tachado y al lado pone:\l"
+	.string "“PKPower paga.”$"
 
 KleinPkPowerRoom_Text_KleinDefeated::
 # 309 "data/maps/KleinPkPowerRoom/scripts.pory"

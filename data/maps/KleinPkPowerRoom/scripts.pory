@@ -394,3 +394,19 @@ script KleinPkPowerRoom_EventScript_CajaHerramientas {
     msgbox(format("Es una caja de herramientas.\nTiene muchas herramientas."), MSGBOX_SIGN)
     end
 }
+
+script KleinPkPowerRoom_EventScript_Notes1 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen apuntes de un manual de soporte técnico.\pEl primer punto dice: “Comprobar que el ordenador está encendido”."), MSGBOX_SIGN)
+    end
+}
+
+
+script KleinPkPowerRoom_EventScript_Notes2 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParece un borrador de anuncio para el foro.\pSolo se lee: “Mantenimiento de la Wiki programado. Volvemos enseguida.”"), MSGBOX_SIGN)
+    end
+}
+
+script KleinPkPowerRoom_EventScript_Notes3 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pEs un recibo de pago que tiene el importe tachado y al lado pone: “PKPower paga.”"), MSGBOX_SIGN)
+    end
+}
