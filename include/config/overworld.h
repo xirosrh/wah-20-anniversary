@@ -17,7 +17,7 @@
 #define OW_ITEM_DESCRIPTIONS_OFF        0   // Nunca muestra descripciones
 #define OW_ITEM_DESCRIPTIONS_FIRST_TIME 1   // Solo muestra descripciones la primera vez (** Rompe partidas guardadas - mira struct SaveBlock3 **)
 #define OW_ITEM_DESCRIPTIONS_ALWAYS     2   // Siempre muestra descripciones
-#define OW_SHOW_ITEM_DESCRIPTIONS       OW_ITEM_DESCRIPTIONS_OFF    // Si está habilitado, se mostrarán descripciones de objetos al recibirlos.
+#define OW_SHOW_ITEM_DESCRIPTIONS       OW_ITEM_DESCRIPTIONS_ALWAYS    // Si está habilitado, se mostrarán descripciones de objetos al recibirlos.
 
 // Estas definiciones generacionales solo hacen una distinción para Bayas y el OW_PC_MOVE_ORDER
 #define GEN_6_XY GEN_6
