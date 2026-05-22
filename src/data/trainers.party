@@ -2116,12 +2116,13 @@ Jolly Nature
 - Double-Edge
 
 Arcanine
+Ability: Intimidate
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Naive Nature
-- Flamethrower
-- Sunny Day
+Jolly Nature
+- Flare Blitz
+- Play Rough
 - Extreme Speed
-- Facade
+- Morning Sun
 
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
 Name: Jack
@@ -2176,13 +2177,14 @@ Jolly Nature
 - Earthquake
 - Double-Edge
 
-Arcanine @ Quick Claw
-EVs: 252 Spe / 252 SpA / 4 Atk
-Naive Nature
-- Flamethrower
-- Sunny Day
+Arcanine @ Leftovers
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Play Rough
 - Extreme Speed
-- Facade
+- Morning Sun
 
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_MAIN ===
 Name: Jack
@@ -2237,13 +2239,14 @@ Jolly Nature
 - Earthquake
 - Double-Edge
 
-Arcanine @ Quick Claw
-EVs: 252 Spe / 252 SpA / 4 Atk
-Naive Nature
-- Flamethrower
-- Sunny Day
+Arcanine @ Leftovers
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Flare Blitz
+- Play Rough
 - Extreme Speed
-- Facade
+- Morning Sun
 
 === TRAINER_WAH_ADMIN_JACK_JOHNSON_ALTERNATIVE ===
 Name: Jack
@@ -5375,7 +5378,7 @@ Timid Nature
 - Flamethrower
 - Hyper Voice
 
-Lilligant
+Lilligant Hisui
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jolly Nature
 - Trop Kick
@@ -5412,7 +5415,7 @@ Timid Nature
 - Flamethrower
 - Hyper Voice
 
-Lilligant @ Leftovers
+Lilligant Hisui @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Trop Kick
@@ -5449,7 +5452,7 @@ Timid Nature
 - Flamethrower
 - Hyper Voice
 
-Lilligant @ Leftovers
+Lilligant Hisui @ Leftovers
 EVs: 252 Atk / 252 Spe / 4 HP
 Jolly Nature
 - Trop Kick
