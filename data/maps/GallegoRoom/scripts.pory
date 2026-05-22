@@ -200,17 +200,22 @@ script GallegoRoom_EventScript_Saturnape {
 }
 
 script GallegoRoom_EventScript_Gameboy1 {
-    msgbox(format("Es una Gameboy Color. Parece que tiene una partida en marcha en el interior de un bosque enorme.\pVale, voy a salir y… acaba de crashear. Vaya."), MSGBOX_SIGN)
+    msgbox(format("Es una Gameboy Color.\pParece que tiene una partida en marcha en el interior de un bosque enorme.\pVale, voy a salir y… acaba de crashear. Vaya."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Gameboy2 {
-    msgbox(format("Es una Gameboy Color. La partida está guardada antes de la escena de selección de inicial en un juego que no conozco…\p¡Uy! Se acaba de reiniciar nada más entrar en combate. Vaya chasco."), MSGBOX_SIGN)
+    msgbox(format("Es una Gameboy Color.\pLa partida está guardada antes de la escena de selección de inicial en un juego que no conozco…\p¡Uy! Se acaba de reiniciar nada más entrar en combate.\pVaya chasco."), MSGBOX_SIGN)
     end
 }
 
-script GallegoRoom_EventScript_Coffee {
-    msgbox(format("Un café con leche a medio beber. Parece como si alguien se lo hubiese dejado a medias por la prisa."), MSGBOX_SIGN)
+script GallegoRoom_EventScript_DrawingsAndCoffee {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    if(var(VAR_RESULT) == DIR_NORTH) {
+        msgbox(format("Un café con leche a medio beber.\pParece como si alguien se lo hubiese dejado a medias por la prisa."), MSGBOX_SIGN)
+    } else {
+        goto(GallegoRoom_EventScript_Drawings)
+    }
     end
 }
 
@@ -235,7 +240,7 @@ script GallegoRoom_EventScript_Drawer {
 }
 
 script GallegoRoom_EventScript_NES {
-    msgbox(format("Es una NES, un poco polvorienta, pero funciona perfectamente. ¡Qué retro!"), MSGBOX_SIGN)
+    msgbox(format("Es una NES, un poco polvorienta, pero funciona perfectamente.\p¡Qué retro!"), MSGBOX_SIGN)
     end
 }
 

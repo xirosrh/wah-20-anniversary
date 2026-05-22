@@ -103,7 +103,7 @@ script DriveKatherineRoom_EventScript_Drive {
     delay(10)
     turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
     delay(20)
-    special(GetPlayerFacingDirection)
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
     switch(var(VAR_RESULT)) {
         case DIR_NORTH:
             applymovementandwait(LOCALID_PLAYER, moves(walk_down, walk_right))

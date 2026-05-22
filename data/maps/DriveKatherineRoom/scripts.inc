@@ -163,7 +163,7 @@ DriveKatherineRoom_EventScript_Drive::
 # 105 "data/maps/DriveKatherineRoom/scripts.pory"
 	delay 20
 # 106 "data/maps/DriveKatherineRoom/scripts.pory"
-	special GetPlayerFacingDirection
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 107 "data/maps/DriveKatherineRoom/scripts.pory"
 	switch VAR_RESULT
 # 108 "data/maps/DriveKatherineRoom/scripts.pory"
