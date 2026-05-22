@@ -30,7 +30,7 @@ gText_TheDecorWasTransferredToThePC::
 	.string "Se envió {STR_VAR_2} al PC.$"
 
 gText_ObtainedTheItems::
-	.string "Obtuvo {STR_VAR_1} {STR_VAR_2}!$"
+	.string "¡Obtuvo {STR_VAR_1} {STR_VAR_2}!$"
 
 gText_PlayerFoundItems::
 	.string "{PLAYER} encontró {STR_VAR_1} {STR_VAR_2}!$"
