@@ -610,8 +610,9 @@ JavsJavi4315Room_EventScript_MainTrigger_Text_10:
 JavsJavi4315Room_EventScript_PostBattle_Text_0:
 # 186 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "Me pasé semanas planeando esta\n"
-	.string "estrategia… Admito que eso ha dolido\l"
-	.string "más de lo que esperaba.$"
+	.string "estrategia…\p"
+	.string "Admito que eso ha dolido más de lo que\n"
+	.string "esperaba.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_1:
 # 192 "data/maps/JavsJavi4315Room/scripts.pory"
@@ -621,8 +622,8 @@ JavsJavi4315Room_EventScript_PostBattle_Text_1:
 JavsJavi4315Room_EventScript_PostBattle_Text_2:
 # 194 "data/maps/JavsJavi4315Room/scripts.pory"
 	.string "La apertura era perfecta: sol activo y\n"
-	.string "presión desde el turno uno. ¿Qué habré\l"
-	.string "hecho mal?$"
+	.string "presión desde el turno uno.\p"
+	.string "¿Qué habré hecho mal?$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_3:
 # 199 "data/maps/JavsJavi4315Room/scripts.pory"

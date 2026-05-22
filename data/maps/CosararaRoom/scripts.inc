@@ -296,6 +296,24 @@ CosararaRoom_EventScript_SuperComputer::
 	end
 
 
+CosararaRoom_EventScript_Notes1::
+# 189 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Notes1_Text_0, MSGBOX_SIGN
+	return
+
+
+CosararaRoom_EventScript_Notes2::
+# 193 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Notes2_Text_0, MSGBOX_SIGN
+	return
+
+
+CosararaRoom_EventScript_Notes3::
+# 197 "data/maps/CosararaRoom/scripts.pory"
+	msgbox CosararaRoom_EventScript_Notes3_Text_0, MSGBOX_SIGN
+	return
+
+
 # 31 "data/maps/CosararaRoom/scripts.pory"
 CosararaRoom_EventScript_Cosarara_Movement_0:
 # 31 "data/maps/CosararaRoom/scripts.pory"
@@ -429,6 +447,28 @@ CosararaRoom_EventScript_SuperComputer_Text_0:
 	.string "Columnas interminables de símbolos\n"
 	.string "recorren las pantallas.\p"
 	.string "Todo parece una enorme matriz de datos.$"
+
+CosararaRoom_EventScript_Notes1_Text_0:
+# 189 "data/maps/CosararaRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Parecen tener el usuario y contraseña\n"
+	.string "del servidor de Whack a Hack.$"
+
+CosararaRoom_EventScript_Notes2_Text_0:
+# 193 "data/maps/CosararaRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Tienen un inventario de la sala de\n"
+	.string "servidores.$"
+
+CosararaRoom_EventScript_Notes3_Text_0:
+# 197 "data/maps/CosararaRoom/scripts.pory"
+	.string "Son varias hojas que se encuentran en\n"
+	.string "el suelo.\p"
+	.string "Parecen tener impresas varios HTML de\n"
+	.string "la página de Whack a Hack.\p"
+	.string "Tiene fecha 2014.$"
 
 CosararaRoom_Text_CosararaDefeated::
 # 104 "data/maps/CosararaRoom/scripts.pory"

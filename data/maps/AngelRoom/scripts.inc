@@ -609,9 +609,9 @@ AngelRoom_EventScript_Angel_Movement_8:
 
 AngelRoom_EventScript_Angel_Text_0:
 # 27 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Me alegro de verte de nuevo! Espero\n"
-	.string "que sigas siendo tan fuerte como la\l"
-	.string "última vez.$"
+	.string "¡Me alegro de verte de nuevo!\p"
+	.string "Espero que sigas siendo tan fuerte\n"
+	.string "como la última vez.$"
 
 AngelRoom_EventScript_Angel_Text_1:
 # 32 "data/maps/AngelRoom/scripts.pory"
@@ -658,9 +658,10 @@ AngelRoom_EventScript_Angel_Text_8:
 AngelRoom_EventScript_Angel_Text_9:
 # 109 "data/maps/AngelRoom/scripts.pory"
 	.string "Dejo en tus manos el legado de toda mi\n"
-	.string "generación. ¡Espero de verdad que\l"
-	.string "volvamos a encontrarnos algún día y\l"
-	.string "poder volver a pelear juntos!$"
+	.string "generación.\p"
+	.string "¡Espero de verdad que volvamos a\n"
+	.string "encontrarnos algún día y poder volver a\l"
+	.string "pelear juntos!$"
 
 AngelRoom_Text_AngelDefeated::
 # 148 "data/maps/AngelRoom/scripts.pory"

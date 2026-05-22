@@ -184,3 +184,15 @@ script CosararaRoom_EventScript_SuperComputer {
     msgbox(format("Columnas interminables de símbolos recorren las pantallas.\pTodo parece una enorme matriz de datos."), MSGBOX_SIGN)
     end
 }
+
+script CosararaRoom_EventScript_Notes1 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener el usuario y contraseña del servidor de Whack a Hack."), MSGBOX_SIGN)
+}
+
+script CosararaRoom_EventScript_Notes2 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen un inventario de la sala de servidores."), MSGBOX_SIGN)
+}
+
+script CosararaRoom_EventScript_Notes3 {
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener impresas varios HTML de la página de Whack a Hack.\pTiene fecha 2014."), MSGBOX_SIGN)
+}
