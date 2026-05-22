@@ -700,8 +700,8 @@ ReonekyRoom_EventScript_Reoneky_Text_3:
 
 ReonekyRoom_EventScript_Reoneky_Text_4:
 # 234 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Yo no era nadie… Sentía que no era\n"
-	.string "nadie… Y eso lo cambió WaH.\p"
+	.string "Yo no era nadie… sentía que no era\n"
+	.string "nadie… y eso lo cambió WaH.\p"
 	.string "Así que fuera sentimentalismos y\n"
 	.string "presentaciones, vamos al lío.\p"
 	.string "Mente fría, corazón caliente, así es\n"

@@ -47,7 +47,7 @@ CheveRoom_EventScript_Cheve::
 # 35 "data/maps/CheveRoom/scripts.pory"
 	faceplayer
 # 36 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_Cheve_Text_0, speaker = SP_NAME_CHEVE
+	msgbox CheveRoom_EventScript_Cheve_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 37 "data/maps/CheveRoom/scripts.pory"
 	call CheveRoom_EventScript_WalkInPlaceCheveFacingPlayer
 # 38 "data/maps/CheveRoom/scripts.pory"
@@ -61,7 +61,7 @@ CheveRoom_EventScript_Cheve::
 # 42 "data/maps/CheveRoom/scripts.pory"
 	delay 10
 # 43 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_Cheve_Text_2, speaker = SP_NAME_CHEVE
+	msgbox CheveRoom_EventScript_Cheve_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 44 "data/maps/CheveRoom/scripts.pory"
 	playse SE_PIN
 # 45 "data/maps/CheveRoom/scripts.pory"
@@ -253,102 +253,110 @@ CheveRoom_EventScript_CuttableTree_1:
 # 170 "data/maps/CheveRoom/scripts.pory"
 	msgbox CheveRoom_EventScript_CuttableTree_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 171 "data/maps/CheveRoom/scripts.pory"
-	playse SE_PIN
-# 172 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48
-# 173 "data/maps/CheveRoom/scripts.pory"
-	delay 30
-# 174 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_4, speaker = SP_NAME_CHEVE
-# 175 "data/maps/CheveRoom/scripts.pory"
 	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown
+# 172 "data/maps/CheveRoom/scripts.pory"
+	delay 10
+# 173 "data/maps/CheveRoom/scripts.pory"
+	msgbox CheveRoom_EventScript_CuttableTree_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+# 174 "data/maps/CheveRoom/scripts.pory"
+	playse SE_PIN
+# 175 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_XDWithDelay48
 # 176 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+	delay 30
 # 177 "data/maps/CheveRoom/scripts.pory"
-	playse SE_PIN
+	msgbox CheveRoom_EventScript_CuttableTree_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 178 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_SmileWithDelay48
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown
 # 179 "data/maps/CheveRoom/scripts.pory"
-	delay 20
+	delay 10
 # 180 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_6, speaker = SP_NAME_CHEVE
+	msgbox CheveRoom_EventScript_CuttableTree_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 181 "data/maps/CheveRoom/scripts.pory"
-	playse SE_LEDGE
+	playse SE_PIN
 # 182 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_SmileWithDelay48
 # 183 "data/maps/CheveRoom/scripts.pory"
-	waitse
-# 184 "data/maps/CheveRoom/scripts.pory"
-	playse SE_LEDGE
-# 185 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
-# 186 "data/maps/CheveRoom/scripts.pory"
-	waitse
-# 187 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
-# 188 "data/maps/CheveRoom/scripts.pory"
-	playse SE_PIN
-# 189 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48
-# 190 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_8, speaker = SP_NAME_CHEVE
-# 191 "data/maps/CheveRoom/scripts.pory"
-	playse SE_PIN
-# 192 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, CheveRoom_EventScript_CuttableTree_Movement_8
-# 193 "data/maps/CheveRoom/scripts.pory"
-	waitse
-# 194 "data/maps/CheveRoom/scripts.pory"
-	call CheveRoom_EventScript_CheveBattle
-# 195 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
-# 196 "data/maps/CheveRoom/scripts.pory"
-	playse SE_PIN
-# 197 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_SweatDropWithDelay48
-# 198 "data/maps/CheveRoom/scripts.pory"
 	delay 20
+# 184 "data/maps/CheveRoom/scripts.pory"
+	msgbox CheveRoom_EventScript_CuttableTree_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+# 185 "data/maps/CheveRoom/scripts.pory"
+	playse SE_LEDGE
+# 186 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
+# 187 "data/maps/CheveRoom/scripts.pory"
+	waitse
+# 188 "data/maps/CheveRoom/scripts.pory"
+	playse SE_LEDGE
+# 189 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
+# 190 "data/maps/CheveRoom/scripts.pory"
+	waitse
+# 191 "data/maps/CheveRoom/scripts.pory"
+	msgbox CheveRoom_EventScript_CuttableTree_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+# 192 "data/maps/CheveRoom/scripts.pory"
+	playse SE_PIN
+# 193 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WinkWithDelay48
+# 194 "data/maps/CheveRoom/scripts.pory"
+	msgbox CheveRoom_EventScript_CuttableTree_Text_9, speaker = SP_NAME_CHEVE
+# 195 "data/maps/CheveRoom/scripts.pory"
+	playse SE_PIN
+# 196 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, CheveRoom_EventScript_CuttableTree_Movement_8
+# 197 "data/maps/CheveRoom/scripts.pory"
+	waitse
+# 198 "data/maps/CheveRoom/scripts.pory"
+	call CheveRoom_EventScript_CheveBattle
 # 199 "data/maps/CheveRoom/scripts.pory"
 	msgbox CheveRoom_EventScript_CuttableTree_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 200 "data/maps/CheveRoom/scripts.pory"
-	playse SE_LEDGE
-# 201 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
-# 202 "data/maps/CheveRoom/scripts.pory"
-	waitse
-# 203 "data/maps/CheveRoom/scripts.pory"
-	playse SE_LEDGE
-# 204 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
-# 205 "data/maps/CheveRoom/scripts.pory"
-	delay 30
-# 206 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
-# 207 "data/maps/CheveRoom/scripts.pory"
 	playse SE_PIN
+# 201 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_SweatDropWithDelay48
+# 202 "data/maps/CheveRoom/scripts.pory"
+	delay 20
+# 203 "data/maps/CheveRoom/scripts.pory"
+	msgbox CheveRoom_EventScript_CuttableTree_Text_11, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+# 204 "data/maps/CheveRoom/scripts.pory"
+	playse SE_LEDGE
+# 205 "data/maps/CheveRoom/scripts.pory"
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
+# 206 "data/maps/CheveRoom/scripts.pory"
+	waitse
+# 207 "data/maps/CheveRoom/scripts.pory"
+	playse SE_LEDGE
 # 208 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_HeartWithDelay48
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_JumpInPlaceDown
 # 209 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_CuttableTree_Text_12, speaker = SP_NAME_CHEVE
+	delay 30
 # 210 "data/maps/CheveRoom/scripts.pory"
-	call WahRoomsShared_OpenDoor
+	msgbox CheveRoom_EventScript_CuttableTree_Text_12, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 211 "data/maps/CheveRoom/scripts.pory"
-	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown
+	playse SE_PIN
 # 212 "data/maps/CheveRoom/scripts.pory"
-	msgbox CheveRoom_EventScript_Cheve_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_HeartWithDelay48
 # 213 "data/maps/CheveRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ADMIN_CHEVE
+	msgbox CheveRoom_EventScript_CuttableTree_Text_13, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 214 "data/maps/CheveRoom/scripts.pory"
-	removeobject LOCALID_CHEVEROOM_TREE
+	call WahRoomsShared_OpenDoor
 # 215 "data/maps/CheveRoom/scripts.pory"
-	setflag FLAG_TEMP_3
+	applymovementandwait LOCALID_CHEVEROOM_CHEVE, Common_Movement_WalkInPlaceDown
 # 216 "data/maps/CheveRoom/scripts.pory"
-	setobjectxyperm LOCALID_CHEVEROOM_CHEVE, 6, 5
+	msgbox CheveRoom_EventScript_Cheve_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CHEVE
 # 217 "data/maps/CheveRoom/scripts.pory"
-	setobjectmovementtype2 LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN
+	setflag FLAG_DEFEATED_ADMIN_CHEVE
 # 218 "data/maps/CheveRoom/scripts.pory"
-	call WahRoomsShared_EventScript_AfterBattle
+	removeobject LOCALID_CHEVEROOM_TREE
 # 219 "data/maps/CheveRoom/scripts.pory"
+	setflag FLAG_TEMP_3
+# 220 "data/maps/CheveRoom/scripts.pory"
+	setobjectxyperm LOCALID_CHEVEROOM_CHEVE, 6, 5
+# 221 "data/maps/CheveRoom/scripts.pory"
+	setobjectmovementtype2 LOCALID_CHEVEROOM_CHEVE, MOVEMENT_TYPE_FACE_DOWN
+# 222 "data/maps/CheveRoom/scripts.pory"
+	call WahRoomsShared_EventScript_AfterBattle
+# 223 "data/maps/CheveRoom/scripts.pory"
 	release
 	end
 
@@ -369,27 +377,27 @@ CheveRoom_EventScript_CuttableTree_5:
 
 
 CheveRoom_EventScript_CheveBattle::
-# 224 "data/maps/CheveRoom/scripts.pory"
-	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, CheveRoom_EventScript_CheveBattle_2
-# 227 "data/maps/CheveRoom/scripts.pory"
-	setvar VAR_0x8004, TEAM_INDEX_CHEVE
 # 228 "data/maps/CheveRoom/scripts.pory"
+	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, CheveRoom_EventScript_CheveBattle_2
+# 231 "data/maps/CheveRoom/scripts.pory"
+	setvar VAR_0x8004, TEAM_INDEX_CHEVE
+# 232 "data/maps/CheveRoom/scripts.pory"
 	special ShouldUseAlternativeTeam
-# 229 "data/maps/CheveRoom/scripts.pory"
+# 233 "data/maps/CheveRoom/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq CheveRoom_EventScript_CheveBattle_5
-# 232 "data/maps/CheveRoom/scripts.pory"
+# 236 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_ALTERNATIVE, CheveRoom_Text_CheveDefeated
 CheveRoom_EventScript_CheveBattle_1:
 	return
 
 CheveRoom_EventScript_CheveBattle_2:
-# 225 "data/maps/CheveRoom/scripts.pory"
+# 229 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_MAIN, CheveRoom_Text_CheveDefeated
 	goto CheveRoom_EventScript_CheveBattle_1
 
 CheveRoom_EventScript_CheveBattle_5:
-# 230 "data/maps/CheveRoom/scripts.pory"
+# 234 "data/maps/CheveRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAH_ADMIN_CHEVE_MAIN, CheveRoom_Text_CheveDefeated
 	goto CheveRoom_EventScript_CheveBattle_1
 
@@ -468,9 +476,9 @@ CheveRoom_EventScript_CuttableTree_Movement_7:
 	unlock_facing_direction
 	step_end
 
-# 192 "data/maps/CheveRoom/scripts.pory"
+# 196 "data/maps/CheveRoom/scripts.pory"
 CheveRoom_EventScript_CuttableTree_Movement_8:
-# 192 "data/maps/CheveRoom/scripts.pory"
+# 196 "data/maps/CheveRoom/scripts.pory"
 	emote_versus
 	step_end
 
@@ -486,10 +494,10 @@ CheveRoom_EventScript_Cheve_Text_1:
 
 CheveRoom_EventScript_Cheve_Text_2:
 # 43 "data/maps/CheveRoom/scripts.pory"
-	.string "Igual te agradezco la visita. Es lindo\n"
-	.string "cuando alguien vuelve a tu habitación,\l"
-	.string "aunque sea para saludar al árbol que no\l"
-	.string "era árbol.$"
+	.string "Igual te agradezco la visita.\p"
+	.string "Es lindo cuando alguien vuelve a tu\n"
+	.string "habitación, aunque sea para saludar al\l"
+	.string "árbol que no era árbol.$"
 
 CheveRoom_EventScript_Cheve_Text_3:
 # 46 "data/maps/CheveRoom/scripts.pory"
@@ -510,50 +518,53 @@ CheveRoom_EventScript_CuttableTree_Text_2:
 
 CheveRoom_EventScript_CuttableTree_Text_3:
 # 170 "data/maps/CheveRoom/scripts.pory"
-	.string "Caíste redondit{OA}. ¿En serio creíste que\n"
-	.string "yo era un árbol?$"
+	.string "Caíste redondit{OA}.$"
 
 CheveRoom_EventScript_CuttableTree_Text_4:
-# 174 "data/maps/CheveRoom/scripts.pory"
+# 173 "data/maps/CheveRoom/scripts.pory"
+	.string "¿En serio creíste que yo era un árbol?$"
+
+CheveRoom_EventScript_CuttableTree_Text_5:
+# 177 "data/maps/CheveRoom/scripts.pory"
 	.string "Pero bueno… no esperaba que llegaras\n"
 	.string "hasta mi habitación.\p"
 	.string "¡Y menos después de derrotar a mi gran\n"
 	.string "amigo Javi4315!$"
 
-CheveRoom_EventScript_CuttableTree_Text_5:
-# 176 "data/maps/CheveRoom/scripts.pory"
+CheveRoom_EventScript_CuttableTree_Text_6:
+# 180 "data/maps/CheveRoom/scripts.pory"
 	.string "A él lo respeto mucho, así que… digamos\n"
 	.string "que ya me caes bien por eso.$"
 
-CheveRoom_EventScript_CuttableTree_Text_6:
-# 180 "data/maps/CheveRoom/scripts.pory"
+CheveRoom_EventScript_CuttableTree_Text_7:
+# 184 "data/maps/CheveRoom/scripts.pory"
 	.string "Supongo que es mi turno de poner a\n"
 	.string "prueba tu suerte.$"
 
-CheveRoom_EventScript_CuttableTree_Text_7:
-# 187 "data/maps/CheveRoom/scripts.pory"
+CheveRoom_EventScript_CuttableTree_Text_8:
+# 191 "data/maps/CheveRoom/scripts.pory"
 	.string "Aunque aviso… no soy muy fan de los\n"
 	.string "combates largos.\p"
 	.string "Prefiero procrastinar… ¡mi acción\n"
 	.string "favorita!$"
 
-CheveRoom_EventScript_CuttableTree_Text_8:
-# 190 "data/maps/CheveRoom/scripts.pory"
-	.string "¡Vamos!$"
-
 CheveRoom_EventScript_CuttableTree_Text_9:
-# 195 "data/maps/CheveRoom/scripts.pory"
-	.string "Uf… qué paliza.$"
+# 194 "data/maps/CheveRoom/scripts.pory"
+	.string "¡Vamos!$"
 
 CheveRoom_EventScript_CuttableTree_Text_10:
 # 199 "data/maps/CheveRoom/scripts.pory"
+	.string "Uf… qué paliza.$"
+
+CheveRoom_EventScript_CuttableTree_Text_11:
+# 203 "data/maps/CheveRoom/scripts.pory"
 	.string "Me dan ganas de postergar mi revancha\n"
 	.string "hasta el próximo siglo.\p"
 	.string "Pero, eh, no me malinterpretes… ¡fue\n"
 	.string "divertido!$"
 
-CheveRoom_EventScript_CuttableTree_Text_11:
-# 206 "data/maps/CheveRoom/scripts.pory"
+CheveRoom_EventScript_CuttableTree_Text_12:
+# 210 "data/maps/CheveRoom/scripts.pory"
 	.string "Supongo que eso tiene este lugar:\n"
 	.string "siempre alguien nuevo llega a tu\l"
 	.string "habitación, y cuando se va, deja un\l"
@@ -561,13 +572,13 @@ CheveRoom_EventScript_CuttableTree_Text_11:
 	.string "El mío ya tiene bastantes, pero este\n"
 	.string "combate merece uno nuevo.$"
 
-CheveRoom_EventScript_CuttableTree_Text_12:
-# 209 "data/maps/CheveRoom/scripts.pory"
-	.string "Vamos, sigue adelante. Seguro el\n"
-	.string "próximo piso te tiene guardada otra\l"
-	.string "sorpresa.$"
+CheveRoom_EventScript_CuttableTree_Text_13:
+# 213 "data/maps/CheveRoom/scripts.pory"
+	.string "Vamos, sigue adelante.\p"
+	.string "Seguro el próximo piso te tiene\n"
+	.string "guardada otra sorpresa.$"
 
 CheveRoom_Text_CheveDefeated::
-# 238 "data/maps/CheveRoom/scripts.pory"
+# 242 "data/maps/CheveRoom/scripts.pory"
 	.string "¡Muy buen combate! Me recordó a mis\n"
 	.string "enfrentamientos con Xavi.$"

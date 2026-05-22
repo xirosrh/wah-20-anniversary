@@ -231,7 +231,7 @@ script ReonekyRoom_EventScript_Reoneky {
     msgbox(format("Puede parecer que soy un emo, pero me considero más introspectivo que otra cosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_PIN)
     applymovementandwait(LOCALID_REOROOM_REONEKY, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Yo no era nadie… Sentía que no era nadie… Y eso lo cambió WaH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+    msgbox(format("Yo no era nadie… sentía que no era nadie… y eso lo cambió WaH.\pAsí que fuera sentimentalismos y presentaciones, vamos al lío.\pMente fría, corazón caliente, así es como se juega."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(
         lock_facing_direction
