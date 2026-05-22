@@ -47,6 +47,8 @@ enum {
 #define KBROW_COUNT 4
 #define KBCOL_COUNT 8
 #define KB_WINDOW_FILL_TILE_SKIP 1
+// Rows copied from BG3 by removed CopyBackgroundRowsToKeyboardBgs; keep clear limited to this
+#define NAMING_SCREEN_KB_HEADER_ROW_COUNT 2
 
 enum {
     GFXTAG_BACK_BUTTON,
@@ -383,7 +385,7 @@ static void NamingScreen_Dummy(u8, u8);
 static void DrawTextEntry(void);
 static void PrintKeyboardKeys(u8, u8);
 static void DrawKeyboardPageOnDeck(void);
-static void CopyBackgroundRowsToKeyboardBgs(u8 destY, u8 height);
+static void ClearKeyboardBgTopRows(u8 bg);
 static void CB2_NamingScreen(void);
 static void ResetVHBlank(void);
 static void SetVBlank(void);
@@ -622,13 +624,14 @@ static bool8 MainState_FadeIn(void)
     sNamingScreen->currentPage = KBPAGE_LETTERS_UPPER;
     DrawBgTilemap(2, gNamingScreenKeyboardLower_Tilemap);
     DrawBgTilemap(1, gNamingScreenKeyboardUpper_Tilemap);
+    ClearKeyboardBgTopRows(1);
+    ClearKeyboardBgTopRows(2);
     PrintKeyboardKeys(sNamingScreen->windows[WIN_KB_PAGE_2], KEYBOARD_LETTERS_LOWER);
     PrintKeyboardKeys(sNamingScreen->windows[WIN_KB_PAGE_1], KEYBOARD_LETTERS_UPPER);
     NamingScreen_Dummy(2, KEYBOARD_LETTERS_LOWER);
     NamingScreen_Dummy(1, KEYBOARD_LETTERS_UPPER);
     DrawTextEntry();
     DrawTextEntryBox();
-    CopyBackgroundRowsToKeyboardBgs(0, 2);
     CopyBgTilemapBufferToVram(1);
     CopyBgTilemapBufferToVram(2);
     CopyBgTilemapBufferToVram(3);
@@ -850,6 +853,8 @@ static bool8 PageSwapAnimState_2(struct Task *task)
 
 static bool8 PageSwapAnimState_Done(struct Task *task)
 {
+    sNamingScreen->bg1vOffset = 0;
+    sNamingScreen->bg2vOffset = 0;
     DestroyTask(FindTaskIdByFunc(Task_HandlePageSwapAnim));
     return 0;
 }
@@ -1987,27 +1992,15 @@ static void DrawKeyboardPageOnDeck(void)
     }
 
     DrawBgTilemap(bg, sNextKeyboardPageTilemaps[sNamingScreen->currentPage]);
+    ClearKeyboardBgTopRows(bg);
     PrintKeyboardKeys(windowId, CurrentPageToNextKeyboardId());
     NamingScreen_Dummy(bg, CurrentPageToNextKeyboardId());
-    CopyBackgroundRowsToKeyboardBgs(0, 2);
     CopyBgTilemapBufferToVram(bg_);
 }
 
-static void CopyBackgroundRowsToKeyboardBgs(u8 destY, u8 height)
+static void ClearKeyboardBgTopRows(u8 bg)
 {
-    u16 *src = GetBgTilemapBuffer(3);
-    u16 *dst1 = GetBgTilemapBuffer(1);
-    u16 *dst2 = GetBgTilemapBuffer(2);
-    u8 y, x;
-
-    for (y = destY; y < destY + height; y++)
-    {
-        for (x = 0; x < 32; x++)
-        {
-            dst1[y * 32 + x] = src[y * 32 + x];
-            dst2[y * 32 + x] = src[y * 32 + x];
-        }
-    }
+    FillBgTilemapBufferRect_Palette0(bg, 0, 0, 0, 32, NAMING_SCREEN_KB_HEADER_ROW_COUNT);
 }
 
 static void CB2_NamingScreen(void)
