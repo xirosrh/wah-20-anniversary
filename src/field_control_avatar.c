@@ -719,6 +719,11 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
                 ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleFailed);
                 return TRUE;
             }
+            else if (alexmadResult == 3)
+            {
+                ScriptContext_SetupScript(CollaboratorsRoom_EventScript_AlexmadPuzzleSwapComplete);
+                return TRUE;
+            }
         }
         if (ShouldDoWallyCall() == TRUE)
         {

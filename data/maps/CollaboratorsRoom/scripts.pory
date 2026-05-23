@@ -1170,6 +1170,13 @@ script WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer {
     return
 }
 
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleSwapComplete {
+    lockall
+    msgbox(format("Bien ahí, te falta un último paso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
+}
+
 script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     lockall
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer)

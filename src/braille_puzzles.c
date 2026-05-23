@@ -342,6 +342,7 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 #define ALEXMAD_PUZZLE_RESULT_NONE    0
 #define ALEXMAD_PUZZLE_RESULT_SUCCESS 1
 #define ALEXMAD_PUZZLE_RESULT_FAIL    2
+#define ALEXMAD_PUZZLE_RESULT_SWAP_OK 3
 
 static const s8 sAlexmadStepOffsets[][2] =
 {
@@ -382,6 +383,12 @@ u8 ShouldDoAlexmadCornerPuzzle(void)
         return ALEXMAD_PUZZLE_RESULT_NONE;
 
     checkpoint = VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT);
+
+    if (checkpoint == 0 && HasSwappedAlexmadPuzzlePartyLeadAndSixth())
+    {
+        VarSet(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 1);
+        return ALEXMAD_PUZZLE_RESULT_SWAP_OK;
+    }
     if (checkpoint >= ARRAY_COUNT(sAlexmadStepOffsets))
         return ALEXMAD_PUZZLE_RESULT_NONE;
 

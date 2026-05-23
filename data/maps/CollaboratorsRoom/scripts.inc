@@ -2154,6 +2154,13 @@ WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer_6:
 	goto WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer_1
 
 
+CollaboratorsRoom_EventScript_AlexmadPuzzleSwapComplete::
+	lockall
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleSwapComplete_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	goto CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent
+	return
+
+
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed::
 # 1174 "data/maps/CollaboratorsRoom/scripts.pory"
 	lockall
@@ -3697,6 +3704,9 @@ CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_8:
 	.string "KODER hubiera sonreído al verte salir\n"
 	.string "de aquí con tantas cartas en la manga.\p"
 	.string "No lo desperdicies.$"
+
+CollaboratorsRoom_EventScript_AlexmadPuzzleSwapComplete_Text_0:
+	.string "Bien ahí, te falta un último paso.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0:
 # 1178 "data/maps/CollaboratorsRoom/scripts.pory"
