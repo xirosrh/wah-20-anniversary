@@ -937,7 +937,7 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
             msgbox(format("No… esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             playse(SE_PIN)
             applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_AnnoyedWithDelay48)
-            msgbox(format("Vuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("Recuerda que en el video explico los 3 pasos que necesitas para completar el evento.\pLa contraseña es tan solo el primer paso.\pVuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         }
     } else {
         msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
@@ -1201,6 +1201,11 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     playse(SE_FAILURE)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48)
     msgbox(format("No, no… así no es.\pVuelve a hablarme si quieres intentarlo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    if(!flag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN)) {
+        playse(SE_PIN)
+        applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
+        msgbox(format("Recuerda lo que dije, que a veces los últimos serán los…\l…\pMejor vuelve a intentarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    }
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
