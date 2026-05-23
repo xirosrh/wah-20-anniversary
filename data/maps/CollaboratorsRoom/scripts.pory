@@ -26,7 +26,7 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle {
     msgbox("Vaya, vaya…\n¿Así que completaste el desafío?", MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("Entonces ya no eres un{A} novat{OA}. Veamos si sabes aplicar lo aprendido.\pUn combate, sin atajos, sin trucos. ¿List{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Entonces ya no eres un{A} novat{OA}... veamos si sabes aplicar lo aprendido.\pUn combate, sin atajos, sin trucos. ¿List{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     switch(var(VAR_RESULT)) {
         case DIR_NORTH:
@@ -801,7 +801,7 @@ text CollaboratorsRoom_RematchMultichoice_Exit {
 }
 
 script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
-    msgbox(format("La música son matemáticas y puro sentimiento ¡como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("La música son matemáticas y puro sentimiento.\p¡Como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     setspeaker(SP_NAME_ACIMUT)
@@ -1308,9 +1308,9 @@ script CollaboratorsRoom_EventScript_Caco_IntroFirstBattle {
     
     checkplayergender
     if(var(VAR_RESULT) == MALE) {
-        msgbox(format("Esa mirada... No me digas que has ganado el desafío... ¿De verdad eres el nuevo Campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("Esa mirada... No me digas que has ganado el desafío...\p¿De verdad eres el nuevo campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     } else {
-        msgbox(format("Esa mirada... No me digas que has ganado el desafío... ¿De verdad eres la nueva Campeona?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("Esa mirada... No me digas que has ganado el desafío...\p¿De verdad eres la nueva campeona?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     }
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)

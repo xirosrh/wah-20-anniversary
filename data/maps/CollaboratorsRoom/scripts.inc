@@ -2941,8 +2941,8 @@ CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle_Text_0:
 
 CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle_Text_1:
 # 29 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Entonces ya no eres un{A} novat{OA}. Veamos si\n"
-	.string "sabes aplicar lo aprendido.\p"
+	.string "Entonces ya no eres un{A} novat{OA}... veamos\n"
+	.string "si sabes aplicar lo aprendido.\p"
 	.string "Un combate, sin atajos, sin trucos.\n"
 	.string "¿List{OA}?$"
 
@@ -3425,8 +3425,8 @@ CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_3:
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_0:
 # 804 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "La música son matemáticas y puro\n"
-	.string "sentimiento ¡como los combates\l"
-	.string "Pokémon!$"
+	.string "sentimiento.\p"
+	.string "¡Como los combates Pokémon!$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_1:
 # 808 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -3820,14 +3820,14 @@ CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_0:
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_1:
 # 1311 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Esa mirada... No me digas que has ganado\n"
-	.string "el desafío... ¿De verdad eres el nuevo\l"
-	.string "Campeón?$"
+	.string "el desafío...\p"
+	.string "¿De verdad eres el nuevo campeón?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_2:
 # 1313 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Esa mirada... No me digas que has ganado\n"
-	.string "el desafío... ¿De verdad eres la nueva\l"
-	.string "Campeona?$"
+	.string "el desafío...\p"
+	.string "¿De verdad eres la nueva campeona?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_3:
 # 1317 "data/maps/CollaboratorsRoom/scripts.pory"

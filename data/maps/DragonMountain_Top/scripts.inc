@@ -761,9 +761,8 @@ DragonMountan_Top_EventScript_Sergio_Text_10:
 
 DragonMountan_Top_EventScript_Sergio_Text_11:
 # 189 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora por supuesto no te quedes\n"
-	.string "dormido, ¡que hay un montón de cosas\l"
-	.string "por hacer!$"
+	.string "Ahora por supuesto no te quedes dormid{OA},\n"
+	.string "¡que hay un montón de cosas por hacer!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_12:
 # 204 "data/maps/DragonMountain_Top/scripts.pory"
