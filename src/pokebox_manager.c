@@ -959,6 +959,20 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
         .money = 15000,
         .check = CheckPokebox_isBuyMon
     },
+    {
+        .mon = {
+            .specie = SPECIES_REUNICLUS,
+            .ability = ABILITY_MAGIC_GUARD,
+            .nature = NATURE_TIMID,
+            .itemId = ITEM_NONE,
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+            .isShiny = FALSE,
+            .moves = {MOVE_CALM_MIND, MOVE_NASTY_PLOT, MOVE_RECOVER, MOVE_STORED_POWER},
+        },
+        .description = gText_PokeboxBuyThisMon,
+        .money = 15000,
+        .check = CheckPokebox_isBuyMon
+    }
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sPokeboxSpeciesList) <= 64, PokeboxSpeciesListExceedsMonActiveBits);
