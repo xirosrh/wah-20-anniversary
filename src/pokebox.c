@@ -949,6 +949,8 @@ void LoadCurrentMonDataPlayerTeam()
         return;
     }
 
+    isShiny = GetMonData(&gPlayerParty[index], MON_DATA_IS_SHINY);
+
     pokeBoxObj.frontMonId = CreateMonPicSprite(species, isShiny, 0, TRUE, 38, 58, 15, TAG_NONE);
     gSprites[pokeBoxObj.frontMonId].oam.priority = 1;
 
@@ -1356,7 +1358,7 @@ void ResetMonsToPartyTeamSelector()
         if(indexFreeSlot == 0xFF)
             continue;
 
-        mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie)];
+        mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie, gSaveBlock2Ptr->indexTeamSelect)];
         GiveMonTeamFromSelector(indexFreeSlot, mon, FALSE);
 
         col = indexFreeSlot % MON_ICON_TEAM_COLS;

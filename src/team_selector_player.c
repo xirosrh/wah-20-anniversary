@@ -1314,12 +1314,24 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
 };
 
 
-u8 GetIndexMonTeamSelectorBySpecie(u16 specie)
+u8 GetIndexMonTeamSelectorBySpecie(u16 specie, u8 indexTeam)
 {
-    for (u8 i = 0; i < ARRAY_COUNT(gAllTeamMons); i++)
+    u8 i = 0;
+
+    if(indexTeam == 0xFF)
     {
-        if(specie == gAllTeamMons[i].specie)
-            return i;
+        for (i = 0; i < ARRAY_COUNT(gAllTeamMons); i++)
+        {
+            if(specie == gAllTeamMons[i].specie)
+                return i;
+        }
+    }else{
+        for (i = 0; i < ARRAY_COUNT(gTeamSelectorPlayer[indexTeam].team); i++)
+        {
+            u8 index = gTeamSelectorPlayer[indexTeam].team[i];
+            if(specie == gAllTeamMons[index].specie)
+                return index;
+        }
     }
 
     return 0xFF;
