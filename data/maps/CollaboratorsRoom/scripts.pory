@@ -1,5 +1,4 @@
-const VAR_TEMP_COLLABORATORS_NO_FAINT_PROGRESS = VAR_TEMP_0
-
+const VAR_TEMP_1_COLLABORATORS_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING = VAR_TEMP_1
 const COLLABORATOR_NO_FAINT_BIT_KAKTUS = 0
 const COLLABORATOR_NO_FAINT_BIT_GAMEBOYCL = 1
 const COLLABORATOR_NO_FAINT_BIT_ERKEY = 2
@@ -11,7 +10,17 @@ const COLLABORATOR_NO_FAINT_BIT_ALEXMAD = 7
 const COLLABORATOR_NO_FAINT_BIT_RYUZAKI = 8
 const COLLABORATOR_NO_FAINT_BIT_CACO = 9
 
-mapscripts CollaboratorsRoom_MapScripts {}
+mapscripts CollaboratorsRoom_MapScripts {
+    MAP_SCRIPT_ON_RETURN_TO_FIELD: CollaboratorsRoom_OnReturnToField
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1_COLLABORATORS_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING, 1: CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback
+    ]
+}
+
+script CollaboratorsRoom_OnReturnToField {
+    special(QueueAlexmadPartySwapFeedbackIfNeeded)
+    end
+}
 
 script CollaboratorsRoom_EventScript_AfterBattleCollaborators {
     special(Special_UpdateCollaboratorsNoFaintProgress)
@@ -916,6 +925,9 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
             msgbox(format("Perfecto… Veo que sí lo viste.\pEntonces sabes lo que tienes que hacer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
             clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
+            clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING)
+            clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN)
+            setvar(VAR_TEMP_1_COLLABORATORS_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING, 0)
             setvar(VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0)
             getplayerxy(VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y)
             special(InitAlexmadPuzzlePartyOrderCheck)
@@ -1088,6 +1100,19 @@ script CollaboratorsRoom_EventScript_Alexmad {
             }
         }
     }
+}
+
+script CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback {
+    lockall
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer)
+    playse(SE_PIN)
+    applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48)
+    msgbox(format("Bien ahí… solo te falta la última parte del evento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING)
+    setvar(VAR_TEMP_1_COLLABORATORS_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING, 0)
+    setflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN)
+    releaseall
+    end
 }
 
 script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
@@ -1342,7 +1367,7 @@ script CollaboratorsRoom_EventScript_Caco_TalkOnly {
 }
 
 script CollaboratorsRoom_EventScript_Caco_IntroRematch {
-    msgbox(format("¡Puaj! Este café sabe a rayos. Creo que lleva en la taza desde que empezamos, pero debo beberlo...\pEs lo único que mantiene mis neuronas conectadas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("¡Puaj! Este café sabe a rayos.\pCreo que lleva en la taza desde que empezamos, pero debo beberlo...\pEs lo único que mantiene mis neuronas conectadas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
 
     delay(30)
 

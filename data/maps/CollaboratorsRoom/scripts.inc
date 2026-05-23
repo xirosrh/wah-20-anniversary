@@ -1,5 +1,16 @@
 CollaboratorsRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, CollaboratorsRoom_OnReturnToField
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CollaboratorsRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+CollaboratorsRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_TEMP_1, 1, CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback
+	.2byte 0
+
+
+CollaboratorsRoom_OnReturnToField::
+	special QueueAlexmadPartySwapFeedbackIfNeeded
+	end
 
 
 CollaboratorsRoom_EventScript_AfterBattleCollaborators::
@@ -1692,12 +1703,18 @@ CollaboratorsRoom_EventScript_Alexmad_QRFlow_5:
 # 918 "data/maps/CollaboratorsRoom/scripts.pory"
 	clearflag FLAG_TEMP_ALEXMAD_PUZZLE_FAILED
 # 919 "data/maps/CollaboratorsRoom/scripts.pory"
-	setvar VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0
+	clearflag FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING
 # 920 "data/maps/CollaboratorsRoom/scripts.pory"
-	getplayerxy VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y
+	clearflag FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN
 # 921 "data/maps/CollaboratorsRoom/scripts.pory"
-	special InitAlexmadPuzzlePartyOrderCheck
+	setvar VAR_TEMP_1, 0
 # 922 "data/maps/CollaboratorsRoom/scripts.pory"
+	setvar VAR_ALEXMAD_PUZZLE_CHECKPOINT, 0
+# 923 "data/maps/CollaboratorsRoom/scripts.pory"
+	getplayerxy VAR_ALEXMAD_PUZZLE_START_X, VAR_ALEXMAD_PUZZLE_START_Y
+# 924 "data/maps/CollaboratorsRoom/scripts.pory"
+	special InitAlexmadPuzzlePartyOrderCheck
+# 925 "data/maps/CollaboratorsRoom/scripts.pory"
 	release
 	end
 
@@ -1995,6 +2012,19 @@ CollaboratorsRoom_EventScript_Alexmad_39:
 # 1064 "data/maps/CollaboratorsRoom/scripts.pory"
 	call CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle
 	goto CollaboratorsRoom_EventScript_Alexmad_38
+
+
+CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback::
+	lockall
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer
+	playse SE_PIN
+	applymovementandwait LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48
+	msgbox CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD
+	clearflag FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING
+	setvar VAR_TEMP_1, 0
+	setflag FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN
+	releaseall
+	end
 
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete::
@@ -3697,6 +3727,9 @@ CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_8:
 	.string "KODER hubiera sonreído al verte salir\n"
 	.string "de aquí con tantas cartas en la manga.\p"
 	.string "No lo desperdicies.$"
+
+CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback_Text_0:
+	.string "Bien ahí… solo te falta un último paso.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0:
 # 1178 "data/maps/CollaboratorsRoom/scripts.pory"

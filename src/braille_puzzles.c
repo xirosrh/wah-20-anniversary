@@ -9,6 +9,8 @@
 #include "constants/field_effects.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 #include "fieldmap.h"
 #include "party_menu.h"
 #include "fldeff.h"
@@ -410,4 +412,29 @@ u8 ShouldDoAlexmadCornerPuzzle(void)
     FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED);
     FlagClear(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED);
     return ALEXMAD_PUZZLE_RESULT_FAIL;
+}
+
+void QueueAlexmadPartySwapFeedbackIfNeeded(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_COLLABORATORS_ROOM)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_COLLABORATORS_ROOM))
+        return;
+
+    if (!FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED))
+        return;
+
+    if (FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED))
+        return;
+
+    if (FlagGet(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN))
+        return;
+
+    if (VarGet(VAR_ALEXMAD_PUZZLE_CHECKPOINT) != 0)
+        return;
+
+    if (!HasSwappedAlexmadPuzzlePartyLeadAndSixth())
+        return;
+
+    FlagSet(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING);
+    VarSet(VAR_TEMP_1, 1);
 }

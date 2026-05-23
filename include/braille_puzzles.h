@@ -8,5 +8,6 @@ void DoBrailleDigEffect(void);
 void SetUpPuzzleEffectRegisteel(void);
 void SetUpPuzzleEffectRegirock(void);
 u8 ShouldDoAlexmadCornerPuzzle(void);
+void QueueAlexmadPartySwapFeedbackIfNeeded(void);
 
 #endif // GUARD_BRAILLE_PUZZLES_H
