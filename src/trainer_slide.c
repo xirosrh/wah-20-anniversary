@@ -71,6 +71,11 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
     },
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_WAH_ADMIN_SERGIO_MAIN] = 
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Guau! Tienes potencial.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¡Es hora de que conozcas el verdadero poder del mesías!{PAUSE_UNTIL_PRESS}"),
+        },
         [TRAINER_WAH_ADMIN_GALLEGO_MAIN] =
         {
             [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Que Feraligatr y yo seamos de la vieja escuela no quiere decir que no hayamos aprendido trucos nuevos.\p¡Hora de megaevolucionar, compañero!{PAUSE_UNTIL_PRESS}"),
