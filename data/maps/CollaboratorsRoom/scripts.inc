@@ -3891,13 +3891,13 @@ CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_0:
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_1:
 # 1341 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Esa mirada... No me digas que has ganado\n"
+	.string "Esa mirada... no me digas que has ganado\n"
 	.string "el desafío...\p"
 	.string "¿De verdad eres el nuevo campeón?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_2:
 # 1343 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Esa mirada... No me digas que has ganado\n"
+	.string "Esa mirada... no me digas que has ganado\n"
 	.string "el desafío...\p"
 	.string "¿De verdad eres la nueva campeona?$"
 

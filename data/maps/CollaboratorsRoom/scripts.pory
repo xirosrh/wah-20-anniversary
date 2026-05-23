@@ -1338,9 +1338,9 @@ script CollaboratorsRoom_EventScript_Caco_IntroFirstBattle {
     
     checkplayergender
     if(var(VAR_RESULT) == MALE) {
-        msgbox(format("Esa mirada... No me digas que has ganado el desafío...\p¿De verdad eres el nuevo campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("Esa mirada... no me digas que has ganado el desafío...\p¿De verdad eres el nuevo campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     } else {
-        msgbox(format("Esa mirada... No me digas que has ganado el desafío...\p¿De verdad eres la nueva campeona?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("Esa mirada... no me digas que has ganado el desafío...\p¿De verdad eres la nueva campeona?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     }
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
