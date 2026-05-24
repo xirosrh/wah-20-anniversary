@@ -461,12 +461,16 @@ static void PrintTextSwapBox(bool8 printLR)
     CopyWindowToVram(WINDOW_SWAP_BOX, 3);
 }
 
-static void PrintAllDataMon(u16 specie)
+static void PrintAllDataMon(u16 specie, bool8 isPlayerTeam)
 {
-    u8 index = GetSelectedPokemonIndex();
-
-    if(index >= MON_TEAM_SELECTOR_COUNT && !Pokebox_IsActive(index - MON_TEAM_SELECTOR_COUNT))
-        specie = SPECIES_NONE;
+    u8 index = 0;
+    
+    if(!isPlayerTeam) 
+    { 
+        index = GetSelectedPokemonIndex();
+        if(index >= MON_TEAM_SELECTOR_COUNT && !Pokebox_IsActive(index - MON_TEAM_SELECTOR_COUNT))
+            specie = SPECIES_NONE;
+    }
 
     PrintNameMonPokebox(specie);
     LoadMonIconType(WINDOW_MON_TYPE, specie, 0, 3, 0);
@@ -891,7 +895,7 @@ void LoadCurrentMonData()
     }
 
     StartDisplayMonMosaicEffect();
-    PrintAllDataMon(species);
+    PrintAllDataMon(species, FALSE);
 }
 
 //Reordena los sprite en el visor del equipo
@@ -955,7 +959,7 @@ void LoadCurrentMonDataPlayerTeam()
     gSprites[pokeBoxObj.frontMonId].oam.priority = 1;
 
     StartDisplayMonMosaicEffect();
-    PrintAllDataMon(species);
+    PrintAllDataMon(species, TRUE);
 }
 
 //comprueba si el pokemon selecionado del team fue añadido del pc
@@ -1284,7 +1288,7 @@ static void Task_HandleBuyMon(u8 taskId)
                 RemoveMoney(&gSaveBlock1Ptr->money, PokeboxSpecies_GetMoney(index));
                 Pokebox_SetActive(index);
                 PrintMonTextInfoPage();
-                PrintAllDataMon(specie);
+                PrintAllDataMon(specie, FALSE);
                 gTasks[taskId].func = Task_WaitToReturnHandlePokebox;
             }
         }else{
@@ -1670,7 +1674,7 @@ static void Task_AddMonTeamPlayer(u8 taskId)
             PlaySE(SE_FAILURE);
             PrintMsgActions(MSG_ACTION_MON_IN_TEAM);
         }else{
-            PlaySE(SE_FAILURE);
+            PlaySE(SE_SELECT);
             GiveMonFromPokeboxConfig(slot, pokeboxMon);
             addMon = TRUE;
         }
