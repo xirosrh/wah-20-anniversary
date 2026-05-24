@@ -31,6 +31,7 @@
 #include "metatile_behavior.h"
 #include "mystery_gift.h"
 #include "team_selector.h"
+#include "difficulty.h"
 #include "difficulty_selector.h"
 #include "overworld.h"
 #include "party_menu.h"
@@ -72,6 +73,7 @@
 #include "constants/party_menu.h"
 #include "constants/battle_frontier.h"
 #include "constants/flags.h"
+#include "constants/wah_team_indexes.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "constants/rgb.h"
@@ -4592,6 +4594,50 @@ void ShouldUseAlternativeTeam(void)
         teamBits = VarGet(VAR_WAH_ADMIN_TEAMS_HI);
 
     gSpecialVar_Result = (teamBits >> (adminIndex % 16)) & 1;
+}
+
+
+void ShouldReyBooUseAlternativeTeam(void)
+{
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if ((difficulty == DIFFICULTY_EASY || difficulty == DIFFICULTY_NORMAL)
+        && !FlagGet(FLAG_WAH_CHALLENGE_COMPLETED))
+    {
+        gSpecialVar_0x8004 = TEAM_INDEX_REYBOO;
+        ShouldUseAlternativeTeam();
+        return;
+    }
+
+    if (difficulty == DIFFICULTY_HARD && FlagGet(FLAG_WAH_CHALLENGE_COMPLETED))
+    {
+        bool8 wonMain = FlagGet(FLAG_POKEBOX_WON_REYBOO_MAIN_HARD);
+        bool8 wonAlt = FlagGet(FLAG_POKEBOX_WON_REYBOO_ALT_HARD);
+
+        if (wonMain && !wonAlt)
+        {
+            gSpecialVar_Result = 1;
+            return;
+        }
+        if (wonAlt && !wonMain)
+        {
+            gSpecialVar_Result = 0;
+            return;
+        }
+
+        gSpecialVar_0x8004 = TEAM_INDEX_REYBOO;
+        ShouldUseAlternativeTeam();
+        return;
+    }
+
+    if (!FlagGet(FLAG_WAH_CHALLENGE_COMPLETED))
+    {
+        gSpecialVar_Result = 0;
+        return;
+    }
+
+    gSpecialVar_0x8004 = TEAM_INDEX_REYBOO;
+    ShouldUseAlternativeTeam();
 }
 
 void OpenTeamSelectorFromField(void)

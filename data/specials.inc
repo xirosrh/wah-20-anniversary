@@ -580,6 +580,7 @@ gSpecials::
 	def_special RandomizeWahAdminTeams
 	def_special SetWahChallengeInitialAchievementFlags
 	def_special ShouldUseAlternativeTeam
+	def_special ShouldReyBooUseAlternativeTeam
 	def_special OpenTeamSelectorFromField
 	def_special OpenDifficultySelectorFromField
 	def_special BufferSpeciesDexDescription

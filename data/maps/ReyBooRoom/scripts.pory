@@ -214,8 +214,7 @@ script ReyBooRoom_EventScript_ReyBooBattle {
             setflag(FLAG_POKEBOX_WON_REYBOO_MAIN_HARD)
         }
     } else {
-        setvar(VAR_0x8004, TEAM_INDEX_REYBOO)
-        special(ShouldUseAlternativeTeam)
+        special(ShouldReyBooUseAlternativeTeam)
         if (var(VAR_RESULT) == 0) {
             trainerbattle_no_intro(TRAINER_WAH_ADMIN_REYBOO_MAIN, ReyBooRoom_Text_ReyBooDefeated)
             if (var(VAR_DIFFICULTY) == DIFFICULTY_HARD) {
