@@ -308,10 +308,10 @@ script CollaboratorsRoom_EventScript_Erkey {
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
-            msgbox(format("Bien jugado. Cuando las reglas cambian, tú te adaptaste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Bien jugado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             delay(20)
-            msgbox(format("Eso es el espíritu de Whack a Hack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Cuando las reglas cambian, tú te adaptaste.\pEso es el espíritu de Whack a Hack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ERKEY)
@@ -499,7 +499,7 @@ script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_sweat_drop))
     waitse
-    msgbox(format("Perdona, es la costumbre je, je…\pBueno, por lo que veo has completado el desafío. ¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Perdona, es la costumbre je, je…\pBueno, por lo que veo has completado el desafío.\p¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     return
 }
 
@@ -1240,7 +1240,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle {
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
-    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema. Ten, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema.\pTen, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
     msgbox("{FONT_SMALL}“¡Ay, langosta sucia!\nNo es solo cuestión de calandracas\lEs el naufragio del espíritu\lEn el Océano del Carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
@@ -1248,7 +1248,7 @@ script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     delay(20)
     setspeaker(SP_NAME_RYUZAKI)
-    message(format("Profundo y seinen, ¿verdad? Bueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
+    message(format("Profundo y seinen, ¿verdad?\pBueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage

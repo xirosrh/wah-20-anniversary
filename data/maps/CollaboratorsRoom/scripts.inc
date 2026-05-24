@@ -3142,11 +3142,12 @@ CollaboratorsRoom_EventScript_Erkey_Text_0:
 
 CollaboratorsRoom_EventScript_Erkey_Text_1:
 # 311 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Bien jugado. Cuando las reglas cambian,\n"
-	.string "tú te adaptaste.$"
+	.string "Bien jugado.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_2:
 # 314 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Cuando las reglas cambian, tú te\n"
+	.string "adaptaste.\p"
 	.string "Eso es el espíritu de Whack a Hack.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_3:
@@ -3263,7 +3264,8 @@ CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_2:
 # 502 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Perdona, es la costumbre je, je…\p"
 	.string "Bueno, por lo que veo has completado el\n"
-	.string "desafío. ¡Enhorabuena!\p"
+	.string "desafío.\p"
+	.string "¡Enhorabuena!\p"
 	.string "Pero… ¡será por poco tiempo!\n"
 	.string "¡Ha llegado el momento de ponerte a\l"
 	.string "prueba una vez más!$"
@@ -3826,8 +3828,8 @@ CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle_Text_0:
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_0:
 # 1243 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Oh, hola. Tu ausencia me ha dado tiempo\n"
-	.string "a componer un pequeño poema. Ten, te lo\l"
-	.string "comparto.$"
+	.string "a componer un pequeño poema.\p"
+	.string "Ten, te lo comparto.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_1:
 # 1246 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -3835,9 +3837,9 @@ CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_1:
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_2:
 # 1251 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Profundo y seinen, ¿verdad? Bueno,\n"
-	.string "seguramente no viniste a oírme hablar\l"
-	.string "pinga… ¿Nos fajamos?$"
+	.string "Profundo y seinen, ¿verdad?\p"
+	.string "Bueno, seguramente no viniste a oírme\n"
+	.string "hablar pinga… ¿Nos fajamos?$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_3:
 # 1258 "data/maps/CollaboratorsRoom/scripts.pory"
