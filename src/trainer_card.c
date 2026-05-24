@@ -558,6 +558,7 @@ static void Task_TrainerCard(u8 taskId)
         else if(JOY_NEW(DPAD_RIGHT) && sData->optionTaskSelected < Achievement_GetCount() - 1)
         {   
             sData->optionTaskSelected += 1;
+            PlaySE(SE_SELECT);
             FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
             PrintTaskOnCardBack();
             CopyWindowToVram(WIN_CARD_TEXT, 3);
@@ -565,6 +566,7 @@ static void Task_TrainerCard(u8 taskId)
         else if(JOY_NEW(DPAD_LEFT) && sData->optionTaskSelected > 0)
         {   
             sData->optionTaskSelected -= 1;
+            PlaySE(SE_SELECT);
             FillWindowPixelBuffer(WIN_CARD_TEXT, PIXEL_FILL(0));
             PrintTaskOnCardBack();
             CopyWindowToVram(WIN_CARD_TEXT, 3);
