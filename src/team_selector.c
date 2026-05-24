@@ -1139,7 +1139,7 @@ void CB2_InitTeamSelectorSetUp(void)
         InitWindowTeamSelector();
         // LoadMessageBoxAndBorderGfx();
         if (teamSelectorObj.fromField)
-            FadeOutAndPlayNewMapMusic(MUS_WEATHER_GROUDON, 4);
+            FadeOutAndPlayNewMapMusic(MUS_HG_POKEATHLON_LOBBY, 4);
         gMain.state++;
         break;
     case 3:
