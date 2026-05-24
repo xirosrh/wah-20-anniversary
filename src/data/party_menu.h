@@ -832,7 +832,7 @@ struct
     [MENU_CATALOG_FAN]      = {COMPOUND_STRING("Ventilador"),           CursorCb_CatalogFan},
     [MENU_CATALOG_MOWER]    = {COMPOUND_STRING("Cortacésped"),          CursorCb_CatalogMower},
     [MENU_CHANGE_FORM]      = {COMPOUND_STRING("Cambiar forma"),        CursorCb_ChangeForm},
-    [MENU_CHANGE_ABILITY]   = {COMPOUND_STRING("Cambiar habilidad"),    CursorCb_ChangeAbility},
+    [MENU_CHANGE_ABILITY]   = {COMPOUND_STRING("Cambiar hab."),    CursorCb_ChangeAbility},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};

@@ -13747,7 +13747,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ROTOM_CATALOG] =
     {
         .name = ITEM_NAME("Catálogo Rotom"),
-        .price = 0,
+        .price = 3000,
         .importance = 1,
         .description = COMPOUND_STRING(
             "Un catálogo lleno de\n"
@@ -13763,7 +13763,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GRACIDEA] =
     {
         .name = ITEM_NAME("Gracídea"),
-        .price = 0,
+        .price = 3000,
         .importance = 1,
         .description = COMPOUND_STRING(
             "Los ramos hechos con\n"
@@ -13811,7 +13811,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ZYGARDE_CUBE] =
     {
         .name = ITEM_NAME("Arca de Zygarde"),
-        .price = 0,
+        .price = 3000,
         .importance = 1,
         .description = COMPOUND_STRING(
             "Un objeto para almacenar\n"
@@ -14528,7 +14528,7 @@ const struct Item gItemsInfo[] =
     [ITEM_METEORITE] =
     {
         .name = ITEM_NAME("Meteorito"),
-        .price = 0,
+        .price = 3000,
         .description = COMPOUND_STRING(
             "Un meteorito encontrado\n"
             "en la Cascada Meteoro."),
