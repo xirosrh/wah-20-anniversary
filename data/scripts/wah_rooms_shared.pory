@@ -35,8 +35,9 @@ script WahRoomsShared_EventScript_Pokebox_MainMenu {
     waitmessage
     dynmultipush(format("Acceder a PC"), 0)
     dynmultipush(format("¿Cómo funciona?"), 1)
-    dynmultipush(format("Salir"), 2)
-    dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    dynmultipush(format("Discord"), 2)
+    dynmultipush(format("Salir"), 3)
+    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
     delay(10)
     switch(var(VAR_RESULT)) {
@@ -46,9 +47,21 @@ script WahRoomsShared_EventScript_Pokebox_MainMenu {
             goto(WahRoomsShared_EventScript_Pokebox_Shutdown)
         case 1:
             goto(WahRoomsShared_EventScript_Pokebox_HelpMenu)
+        case 2:
+            goto(WahRoomsShared_EventScript_Pokebox_Discord)
         default:
             goto(WahRoomsShared_EventScript_Pokebox_Shutdown)
     }
+}
+
+script WahRoomsShared_EventScript_Pokebox_Discord {
+    msgbox(format("Escanea este QR para acceder a la comunidad de Whack a Hack (https://whackahack.com).\pAhí podrás reportar errores que hayas encontrado al realizar este desafío, dar tu opinión y conocer una gran comunidad."))
+    load_field_pic(FP_WAH_QR, 120, 80)
+    waitbuttonpress
+    closemessage
+    destroy_field_pic(FP_WAH_QR)
+    goto(WahRoomsShared_EventScript_Pokebox_MainMenu)
+
 }
 
 script WahRoomsShared_EventScript_Pokebox_HelpMenu {

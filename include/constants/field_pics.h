@@ -6,5 +6,6 @@
 #define FP_MAGIKARP_JUMPING_LEFT        1
 #define FP_MAGIKARP_JUMPING_RIGHT       2
 #define FP_MAD_QR                       3
+#define FP_WAH_QR                       4
 
 #endif //GUARD_CONSTANTS_FIELD_PICS_H
