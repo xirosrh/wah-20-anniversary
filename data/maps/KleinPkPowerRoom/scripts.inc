@@ -1043,9 +1043,9 @@ KleinPkPowerRoom_EventScript_BotonRojo_Text_6:
 
 KleinPkPowerRoom_EventScript_PkPower_Text_0:
 # 337 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Pero mira que eres pesado eh? ¿Tú no\n"
-	.string "tienes amigos u otra persona a la que\l"
-	.string "molestar?$"
+	.string "Tengo que aprovechar a trabajar ahora\n"
+	.string "que no hay más llamadas.\p"
+	.string "¡Ya vete de aquí!$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_1:
 # 340 "data/maps/KleinPkPowerRoom/scripts.pory"

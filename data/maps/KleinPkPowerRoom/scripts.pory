@@ -334,7 +334,7 @@ script KleinPkPowerRoom_EventScript_PkPower {
     lock
     faceplayer
     if(flag(FLAG_DEFEATED_ADMIN_PKPOWER)) {
-        msgbox(format("¿Pero mira que eres pesado eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+        msgbox(format("Tengo que aprovechar a trabajar ahora que no hay más llamadas.\p¡Ya vete de aquí!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     }
     else {
         msgbox(format("¿No ves que estoy ocupado?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
