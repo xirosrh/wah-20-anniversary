@@ -440,12 +440,12 @@ static const u8 sText_MintNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNA
 
 // Trainer Memo page texts
 static const u8 sText_MemoNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} por naturaleza");
-static const u8 sText_MemoMet[]                 = _("Visto por primera al {LV_2}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoMet[]                 = _("Visto por primera al Nv. {DYNAMIC 6}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
 static const u8 sText_MemoHatched[]             = _("Abierto de un huevo:\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
 static const u8 sText_MemoTraded[]              = _("Intercambiado");
-static const u8 sText_MemoFateful[]             = _("Encuentro fatídico con\n{LV_2}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
-static const u8 sText_MemoProbablyMet[]         = _("Visto al {LV_2}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoMetSomewhere[]        = _("Visto en algún lugar al {LV_2}.\n{DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoFateful[]             = _("Encuentro fatídico con\nNv. {DYNAMIC 6}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoProbablyMet[]         = _("Visto al Nv. {DYNAMIC 6}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoMetSomewhere[]        = _("Visto en algún lugar al Nv. {DYNAMIC 6}.\n{DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
 static const u8 sText_MemoHatchedSomewhere[]    = _("Abierto de un huevo en\nalgún lugar.");
 
 // Characteristics
@@ -4515,7 +4515,7 @@ static void BufferMonEncounter(void)
 
     GetMetLevelString(metLevelString);
     if (DoesMonOTMatchOwner() == TRUE && sum->metLevel == 0)
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(3, gText_EmptyString5);
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gText_EmptyString5);
 
     if (locationFound)
     {
@@ -4603,7 +4603,7 @@ static void GetMetLevelString(u8 *output)
     if (level == 0)
         level = EGG_HATCH_LEVEL;
     ConvertIntToDecimalStringN(output, level, STR_CONV_MODE_LEFT_ALIGN, 3);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(3, output);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, output);
 }
 
 static bool8 DoesMonOTMatchOwner(void)
