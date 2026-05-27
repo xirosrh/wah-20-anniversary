@@ -3009,7 +3009,7 @@ CollaboratorsRoom_EventScript_Kaktus_TalkOnly_Text_0:
 CollaboratorsRoom_EventScript_Kaktus_TalkOnly_Text_1:
 # 57 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Aunque si te soy sincero… el primero que\n"
-	.string "hice me dio tanta verguenza que lo\l"
+	.string "hice me dio tanta vergüenza que lo\l"
 	.string "borré.$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_0:
@@ -3167,12 +3167,12 @@ CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_0:
 	.string "A la mayoría de los de las salas no los\n"
 	.string "conozco, solo a tres.\p"
 	.string "Al resto hasta que no les entregué los\n"
-	.string "Pokémon, no sabía quienes eran.$"
+	.string "Pokémon, no sabía quiénes eran.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_1:
 # 349 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Sí, la mayoría de los Pokémon en este\n"
-	.string "edificio los crié yo, incluídos todos los\l"
+	.string "edificio los crié yo, incluidos todos los\l"
 	.string "que puedes llegar a usar.\p"
 	.string "Todos entrenados por mí y listos para\n"
 	.string "luchar.$"
@@ -3481,7 +3481,7 @@ CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_3:
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_0:
 # 813 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La música son matemáticas y puro\n"
+	.string "La música es matemáticas y puro\n"
 	.string "sentimiento.\p"
 	.string "¡Como los combates Pokémon!$"
 
@@ -3672,7 +3672,7 @@ CollaboratorsRoom_EventScript_Alexmad_Text_4:
 
 CollaboratorsRoom_EventScript_Alexmad_Text_5:
 # 1064 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Tu de nuevo! Tengo dos propuestas\n"
+	.string "¡Tú de nuevo! Tengo dos propuestas\n"
 	.string "para ti.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_6:

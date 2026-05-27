@@ -84,7 +84,7 @@ script GoceRoom_EventScript_GoceBattle {
 }
 
 text GoceRoom_Text_GoceDefeated {
-    format("Increíble como han evolucionado en estos últimos 20 años…")
+    format("Increíble cómo han evolucionado en estos últimos 20 años…")
 }
 
 script GoceRoom_EventScript_Ambar {

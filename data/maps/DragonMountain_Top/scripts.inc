@@ -766,7 +766,7 @@ DragonMountan_Top_EventScript_Sergio_Text_11:
 
 DragonMountan_Top_EventScript_Sergio_Text_12:
 # 204 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Guau! ¡Mira quien apareció aquí!$"
+	.string "¡Guau! ¡Mira quién apareció aquí!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_13:
 # 222 "data/maps/DragonMountain_Top/scripts.pory"
@@ -792,7 +792,7 @@ DragonMountan_Top_EventScript_Sergio_Text_15:
 
 DragonMountan_Top_EventScript_Sergio_Text_16:
 # 232 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora ven, acompañame; es hora de dejar\n"
+	.string "Ahora ven, acompáñame; es hora de dejar\n"
 	.string "registro de tu hazaña en el Salón de la\l"
 	.string "fama.$"
 

@@ -426,10 +426,10 @@ SayerBlaxRoom_OnFrame_Text_2:
 
 SayerBlaxRoom_OnFrame_Text_3:
 # 75 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Cómo, que quieres combatir? Yo me\n"
+	.string "¿Cómo? ¿que quieres combatir? Yo me\n"
 	.string "jubilé hace muchos años chaval{A}.\p"
 	.string "Hemos pasado una pandemia incluso…\n"
-	.string "Pero si insistes… No creas que te lo\l"
+	.string "Pero, si insistes… No creas que te lo\l"
 	.string "pondré fácil.$"
 
 SayerBlaxRoom_OnFrame_Text_4:

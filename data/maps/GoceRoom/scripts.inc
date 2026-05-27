@@ -208,5 +208,5 @@ GoceRoom_EventScript_Ambar_Text_0:
 
 GoceRoom_Text_GoceDefeated::
 # 86 "data/maps/GoceRoom/scripts.pory"
-	.string "Increíble como han evolucionado en\n"
+	.string "Increíble cómo han evolucionado en\n"
 	.string "estos últimos 20 años…$"

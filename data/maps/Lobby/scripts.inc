@@ -1943,13 +1943,13 @@ Lobby_OnFrame_ExplainNewChallengeModes_Text_0:
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_1:
 # 14 "data/maps/Lobby/scripts.pory"
-	.string "¡Pero no creas que esto a terminado!$"
+	.string "¡Pero no creas que esto ha terminado!$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_2:
 # 19 "data/maps/Lobby/scripts.pory"
-	.string "¡Todavía tienes muchas cosas para\n"
+	.string "¡Todavía tienes muchas cosas por\n"
 	.string "hacer!\p"
-	.string "A partir de ahora haz desbloqueado\n"
+	.string "A partir de ahora has desbloqueado\n"
 	.string "nuevas formas de jugar el desafío.$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_3:
@@ -1977,7 +1977,7 @@ Lobby_OnFrame_ExplainNewChallengeModes_Text_5:
 	.string "posibles para utilizar.\p"
 	.string "Su {COLOR BLUE}equipo principal{COLOR DARK_GRAY}, que ya conoces, o\n"
 	.string "un {COLOR RED}equipo alternativo{COLOR DARK_GRAY}.\p"
-	.string "Nunca sabrás cual te podrá tocar, lo\n"
+	.string "Nunca sabrás cuál te podrá tocar, lo\n"
 	.string "que significa que cada recorrido podría\l"
 	.string "sentirse completamente diferente.$"
 
@@ -2059,7 +2059,7 @@ Lobby_EventScript_TeamSelector_Text_0:
 # 145 "data/maps/Lobby/scripts.pory"
 	.string "¡Hola! Soy el encargado de la selección\n"
 	.string "de equipos para el desafío.\p"
-	.string "Veo que equipo actual es bueno, pero\n"
+	.string "Veo que tu equipo actual es bueno, pero\n"
 	.string "creo que puedes conseguir uno mejor.\p"
 	.string "¿Quieres elegir otro equipo?$"
 
@@ -2182,7 +2182,7 @@ Lobby_EventScript_Roxas_IntroFirstBattle_Text_2:
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_3:
 # 300 "data/maps/Lobby/scripts.pory"
-	.string "¿Te acordas de lo que te conté la ultima\n"
+	.string "¿Te acordas de lo que te conté la última\n"
 	.string "vez?$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_4:
@@ -2199,7 +2199,7 @@ Lobby_EventScript_Roxas_IntroFirstBattle_Text_4:
 
 Lobby_EventScript_Roxas_IntroRematch_Text_0:
 # 311 "data/maps/Lobby/scripts.pory"
-	.string "¡Apa, tu de nuevo! ¿Quieres volver a\n"
+	.string "¡Apa, tú de nuevo! ¿Quieres volver a\n"
 	.string "combatir contra mi legendario?$"
 
 Lobby_EventScript_Roxas_ExplainPartyLimit_Text_0:
@@ -2319,7 +2319,7 @@ Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_2:
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_0:
 # 640 "data/maps/Lobby/scripts.pory"
-	.string "Ya que no tienes una Pokedex, su\n"
+	.string "Ya que no tienes una Pokédex, su\n"
 	.string "descripción es:{FONT_SMALL}\p"
 	.string "“{STR_VAR_1}”$"
 
@@ -2681,7 +2681,7 @@ Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_16:
 
 Lobby_EventScript_Turbo_Text_0:
 # 971 "data/maps/Lobby/scripts.pory"
-	.string "¿Sabías qué existe un modo turbo para\n"
+	.string "¿Sabías que existe un modo turbo para\n"
 	.string "vivir la aventura a toda velocidad?\p"
 	.string "Desde el menú de opciones puedes\n"
 	.string "configurar tu velocidad de texto, de\l"

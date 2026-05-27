@@ -54,7 +54,7 @@ script CollaboratorsRoom_EventScript_Kaktus_TalkOnly {
     msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     delay(20)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta verguenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta vergüenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
     goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
@@ -343,10 +343,10 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
 
 script CollaboratorsRoom_EventScript_Micolo_TalkOnly {
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quienes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quiénes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluídos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluidos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     msgbox(format("También ayudé al arquitecto del edificio a tener al Pokémon de sus sueños.\pNo veas lo cansino que era hablando de la ilusión que le daría tenerlo e incluso presumirá de él en su sala como un hipócrita mientras se limpia las babas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
@@ -810,7 +810,7 @@ text CollaboratorsRoom_RematchMultichoice_Exit {
 }
 
 script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
-    msgbox(format("La música son matemáticas y puro sentimiento.\p¡Como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("La música es matemáticas y puro sentimiento.\p¡Como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     setspeaker(SP_NAME_ACIMUT)
@@ -1061,7 +1061,7 @@ script CollaboratorsRoom_EventScript_Alexmad {
             if(var(VAR_TEMP_C) == 1) {
                 msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pPero también podemos ir directo a la batalla.\n¿Qué prefieres?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             } else {
-                msgbox(format("¡Tu de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("¡Tú de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 playse(SE_PIN)
                 applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMark)
                 msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)

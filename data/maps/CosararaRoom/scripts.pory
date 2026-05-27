@@ -194,5 +194,5 @@ script CosararaRoom_EventScript_Notes2 {
 }
 
 script CosararaRoom_EventScript_Notes3 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener impresas varios HTML de la página de Whack a Hack.\pTiene fecha 2014."), MSGBOX_SIGN)
+    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener impresos varios HTML de la página de Whack a Hack.\pTiene fecha 2014."), MSGBOX_SIGN)
 }

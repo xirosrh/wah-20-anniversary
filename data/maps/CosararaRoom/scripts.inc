@@ -466,7 +466,7 @@ CosararaRoom_EventScript_Notes3_Text_0:
 # 197 "data/maps/CosararaRoom/scripts.pory"
 	.string "Son varias hojas que se encuentran en\n"
 	.string "el suelo.\p"
-	.string "Parecen tener impresas varios HTML de\n"
+	.string "Parecen tener impresos varios HTML de\n"
 	.string "la página de Whack a Hack.\p"
 	.string "Tiene fecha 2014.$"
 

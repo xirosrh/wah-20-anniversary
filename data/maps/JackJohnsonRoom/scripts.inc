@@ -1739,7 +1739,7 @@ JackJohnsonRoom_EventScript_NPC4_Text_0:
 
 JackJohnsonRoom_EventScript_BrockPoster_Text_0:
 # 739 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Es un poster con una foto de Oscar\n"
+	.string "Es un póster con una foto de Oscar\n"
 	.string "Brock.\p"
 	.string "¿Realmente tiene esos músculos o será\n"
 	.string "Photoshop?$"

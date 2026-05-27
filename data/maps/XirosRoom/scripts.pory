@@ -58,7 +58,7 @@ script XirosRoom_EventScript_Xiros {
     msgbox(format("Así que llegaste hasta acá, ¡a la sala número veinte!\pUn lugar al que no se llega por casualidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
-    msgbox(format("Voy a tratar de ser más breve que Zero en mi discurso, pero a mi también me gusta reflexionar, así que no prometo nada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Voy a tratar de ser más breve que Zero en mi discurso, pero a mí también me gusta reflexionar, así que no prometo nada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_SweatDropWithDelay48)
     fadescreen(FADE_TO_BLACK)

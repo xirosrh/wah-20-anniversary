@@ -479,7 +479,7 @@ XirosRoom_EventScript_Xiros_Text_4:
 XirosRoom_EventScript_Xiros_Text_5:
 # 61 "data/maps/XirosRoom/scripts.pory"
 	.string "Voy a tratar de ser más breve que Zero\n"
-	.string "en mi discurso, pero a mi también me\l"
+	.string "en mi discurso, pero a mí también me\l"
 	.string "gusta reflexionar, así que no prometo\l"
 	.string "nada…$"
 

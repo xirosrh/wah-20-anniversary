@@ -732,7 +732,7 @@ DavZeroRoom_OnFrame_Text_1:
 
 DavZeroRoom_OnFrame_Text_2:
 # 61 "data/maps/DavZeroRoom/scripts.pory"
-	.string "Ajá, con que por fin has llegado hasta\n"
+	.string "Ajá, conque por fin has llegado hasta\n"
 	.string "aquí.\p"
 	.string "Es un placer verte, ¿me reconoces?$"
 
@@ -834,7 +834,7 @@ DavZeroRoom_OnFrame_Text_17:
 	.string "pongo intenso y esto acabará\l"
 	.string "pareciendo un poema de Benedetti…\p"
 	.string "Y en esta ocasión no traigo rosas para\n"
-	.string "acompañarlo, sino Pokéball.$"
+	.string "acompañarlo, sino Poké Ball.$"
 
 DavZeroRoom_OnFrame_Text_18:
 # 129 "data/maps/DavZeroRoom/scripts.pory"
@@ -868,7 +868,7 @@ DavZeroRoom_OnFrame_Text_22:
 
 DavZeroRoom_OnFrame_Text_23:
 # 154 "data/maps/DavZeroRoom/scripts.pory"
-	.string "¿Sabes? El éxito y la victoria no está\n"
+	.string "¿Sabes? El éxito y la victoria no están\n"
 	.string "en acumular triunfos, ni en aplastar\l"
 	.string "rivales, ni siquiera en vencerme a mí\l"
 	.string "ahora.\p"
@@ -970,8 +970,9 @@ DavZeroRoom_OnFrame_Text_37:
 
 DavZeroRoom_OnFrame_Text_38:
 # 184 "data/maps/DavZeroRoom/scripts.pory"
-	.string "¿No te esperabas esto? Qué quieres que\n"
-	.string "te diga… Yo tan solo soy Zero.$"
+	.string "¿No te esperabas esto?\p"
+	.string "¿Qué quieres que te diga? Yo tan solo\n"
+	.string "soy Zero.$"
 
 DavZeroRoom_EventScript_SchoolGirl_Text_0:
 # 233 "data/maps/DavZeroRoom/scripts.pory"

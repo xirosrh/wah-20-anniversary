@@ -11,12 +11,12 @@ script Lobby_OnFrame_ExplainNewChallengeModes {
     msgbox(format("¡Increíble, {PLAYER}! Has superado el desafío por completo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_HeartWithDelay48)
-    msgbox(format("¡Pero no creas que esto a terminado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    msgbox(format("¡Pero no creas que esto ha terminado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
-    msgbox(format("¡Todavía tienes muchas cosas para hacer!\pA partir de ahora haz desbloqueado nuevas formas de jugar el desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    msgbox(format("¡Todavía tienes muchas cosas por hacer!\pA partir de ahora has desbloqueado nuevas formas de jugar el desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_WalkInPlaceRight)
     msgbox(format("¡Ahora puedes combatir en modalidad {COLOR BLUE}batallas dobles{COLOR DARK_GRAY}!\pCada combate será en formato doble: dos Pokémon en campo, ¡el doble de caos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_LEDGE)
@@ -24,7 +24,7 @@ script Lobby_OnFrame_ExplainNewChallengeModes {
     msgbox(format("¿Y si quieres pensar un poco más? Entonces las {COLOR RED}batallas inversas{COLOR DARK_GRAY} son para ti!\p¡La tabla de tipos está al revés! Lo resistente será débil, y viceversa.\p¡Ya no podrás combatir en modo automático!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_SmileWithDelay48)
-    msgbox(format("¡Y eso no es todo!\pSin importar la modalidad que elijas, cada administrador tendrá dos equipos posibles para utilizar.\pSu {COLOR BLUE}equipo principal{COLOR DARK_GRAY}, que ya conoces, o un {COLOR RED}equipo alternativo{COLOR DARK_GRAY}.\pNunca sabrás cual te podrá tocar, lo que significa que cada recorrido podría sentirse completamente diferente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    msgbox(format("¡Y eso no es todo!\pSin importar la modalidad que elijas, cada administrador tendrá dos equipos posibles para utilizar.\pSu {COLOR BLUE}equipo principal{COLOR DARK_GRAY}, que ya conoces, o un {COLOR RED}equipo alternativo{COLOR DARK_GRAY}.\pNunca sabrás cuál te podrá tocar, lo que significa que cada recorrido podría sentirse completamente diferente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     turnobject(LOCALID_LOBBY_COPE, DIR_WEST)
     playse(SE_PIN)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_ThinkingWithDelay48)
@@ -142,7 +142,7 @@ script Lobby_EventScript_OpenDoor {
 script Lobby_EventScript_TeamSelector {
     lock
     faceplayer
-    msgbox(format("¡Hola! Soy el encargado de la selección de equipos para el desafío.\pVeo que equipo actual es bueno, pero creo que puedes conseguir uno mejor.\p¿Quieres elegir otro equipo?"), MSGBOX_YESNO)
+    msgbox(format("¡Hola! Soy el encargado de la selección de equipos para el desafío.\pVeo que tu equipo actual es bueno, pero creo que puedes conseguir uno mejor.\p¿Quieres elegir otro equipo?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         special(OpenTeamSelectorFromField)
         waitstate
@@ -297,7 +297,7 @@ script Lobby_EventScript_Roxas_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("¿Te acordas de lo que te conté la ultima vez?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
+    msgbox(format("¿Te acordas de lo que te conté la última vez?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
     msgbox(format("Terminé mi investigación en el Archipiélago Suzuka… es una historia larga, tendrías que haberlo visto…\pNo sabes lo que fue… Pero logré dar con el rastro de esa fuerza que estaba causando tantos males y estoy listo para probar si realmente este bicho es tan legendario como dicen las crónicas del archipiélago."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS)
@@ -308,7 +308,7 @@ script Lobby_EventScript_Roxas_IntroFirstBattle {
 }
 
 script Lobby_EventScript_Roxas_IntroRematch {
-    msgbox(format("¡Apa, tu de nuevo! ¿Quieres volver a combatir contra mi legendario?"), MSGBOX_YESNO, speaker = SP_NAME_ROXAS)
+    msgbox(format("¡Apa, tú de nuevo! ¿Quieres volver a combatir contra mi legendario?"), MSGBOX_YESNO, speaker = SP_NAME_ROXAS)
     closemessage
     delay(20)
     if(var(VAR_RESULT) == YES) {
@@ -637,7 +637,7 @@ script Lobby_EventScript_FakemonDexMenu_ChooseSpecies {
 
 script Lobby_EventScript_ShowFakemonDexInfo {
     special(BufferSpeciesDexDescriptionForTextbox)
-    msgbox(format("Ya que no tienes una Pokedex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
+    msgbox(format("Ya que no tienes una Pokédex, su descripción es:{FONT_SMALL}\p“{STR_VAR_1}”"))
     special(BufferSpeciesTypeNames)
     if(var(VAR_RESULT) == 1) {
         msgbox("Su tipo es: {STR_VAR_2}.")
@@ -968,7 +968,7 @@ script Lobby_EventScript_Pokebox {
 }
 
 script Lobby_EventScript_Turbo {
-    msgbox(format("¿Sabías qué existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
+    msgbox(format("¿Sabías que existe un modo turbo para vivir la aventura a toda velocidad?\pDesde el menú de opciones puedes configurar tu velocidad de texto, de caminar, ¡y un turbo para los combates!\p¿Te animas a probarlo?"), MSGBOX_NPC)
     end
 }
 
