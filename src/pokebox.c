@@ -1362,7 +1362,11 @@ void ResetMonsToPartyTeamSelector()
         if(indexFreeSlot == 0xFF)
             continue;
 
-        mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie, gSaveBlock2Ptr->indexTeamSelect)];
+        if(gSaveBlock2Ptr->indexTeamSelect != TEAM_RANDOM)
+            mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie, gSaveBlock2Ptr->indexTeamSelect)];
+        else 
+            mon = &gAllTeamMons[GetIndexMonTeamSelectorBySpecie(specie, 0xFF)];
+            
         GiveMonTeamFromSelector(indexFreeSlot, mon, FALSE);
 
         col = indexFreeSlot % MON_ICON_TEAM_COLS;
