@@ -286,9 +286,9 @@ static void SwapMonMoves(struct Pokemon *, u8, u8);
 static void SwapBoxMonMoves(struct BoxPokemon *, u8, u8);
 static void Task_SetHandleReplaceMoveInput(u8);
 static void Task_HandleReplaceMoveInput(u8);
-static bool8 CanReplaceMove(void);
-static void ShowCantForgetHMsWindow(u8);
-static void Task_HandleInputCantForgetHMsMoves(u8);
+// static bool8 CanReplaceMove(void);
+// static void ShowCantForgetHMsWindow(u8);
+// static void Task_HandleInputCantForgetHMsMoves(u8);
 static void DrawExperienceProgressBar(struct Pokemon *);
 static void ResetWindows(void);
 static void PrintMonPortraitInfo(void);
@@ -344,7 +344,7 @@ static void PrintMoveNameAndPP(u8);
 static void PrintMoveDescription(u16);
 static void PrintNewMoveDetailsOrCancelText(void);
 static void SwapMovesNamesPP(u8, u8);
-static void PrintHMMovesCantBeForgotten(void);
+// static void PrintHMMovesCantBeForgotten(void);
 static void ResetSpriteIds(void);
 static void SetSpriteInvisibility(u8, bool8);
 static void HidePageSpecificSprites(void);
@@ -3665,19 +3665,19 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             }
             else if (JOY_NEW(A_BUTTON))
             {
-                if (CanReplaceMove() == TRUE)
-                {
+                // if (CanReplaceMove() == TRUE)
+                // {
                     StopPokemonAnimations();
                     PlaySE(SE_SELECT);
                     sMoveSlotToReplace = sMonSummaryScreen->firstMoveIndex;
                     gSpecialVar_0x8005 = sMoveSlotToReplace;
                     BeginCloseSummaryScreen(taskId);
-                }
-                else
-                {
-                    PlaySE(SE_FAILURE);
-                    ShowCantForgetHMsWindow(taskId);
-                }
+                // }
+                // else
+                // {
+                //     PlaySE(SE_FAILURE);
+                //     ShowCantForgetHMsWindow(taskId);
+                // }
             }
             else if (JOY_NEW(B_BUTTON))
             {
@@ -3691,72 +3691,72 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
     }
 }
 
-static bool8 CanReplaceMove(void)
-{
-    if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
-        || sMonSummaryScreen->newMove == MOVE_NONE
-        || IsMoveHM(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]) != TRUE)
-        return TRUE;
-    else
-        return FALSE;
-}
+// static bool8 CanReplaceMove(void)
+// {
+//     if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
+//         || sMonSummaryScreen->newMove == MOVE_NONE
+//         || IsMoveHM(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]) != TRUE)
+//         return TRUE;
+//     else
+//         return FALSE;
+// }
 
-static void ShowCantForgetHMsWindow(u8 taskId)
-{
-    PrintHMMovesCantBeForgotten();
-    gTasks[taskId].func = Task_HandleInputCantForgetHMsMoves;
-}
+// static void ShowCantForgetHMsWindow(u8 taskId)
+// {
+//     PrintHMMovesCantBeForgotten();
+//     gTasks[taskId].func = Task_HandleInputCantForgetHMsMoves;
+// }
 
 // This redraws the power/accuracy window when the player scrolls out of the "HM Moves can't be forgotten" message
-static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
-{
-    s16 *data = gTasks[taskId].data;
-    u16 move;
-    if (FuncIsActiveTask(Task_ShowEffectTilemap) != 1)
-    {
-        if (JOY_NEW(DPAD_UP))
-        {
-            data[1] = 1;
-            data[0] = 4;
-            ChangeSelectedMove(&data[0], -1, &sMonSummaryScreen->firstMoveIndex);
-            data[1] = 0;
-            gTasks[taskId].func = Task_HandleReplaceMoveInput;
-        }
-        else if (JOY_NEW(DPAD_DOWN))
-        {
-            data[1] = 1;
-            data[0] = 4;
-            ChangeSelectedMove(&data[0], 1, &sMonSummaryScreen->firstMoveIndex);
-            data[1] = 0;
-            gTasks[taskId].func = Task_HandleReplaceMoveInput;
-        }
-        else if (JOY_NEW(DPAD_LEFT))
-        {
-            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
-            {
-                move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
-                gTasks[taskId].func = Task_HandleReplaceMoveInput;
-                ChangePage(taskId, -1);
-            }
-        }
-        else if (JOY_NEW(DPAD_RIGHT))
-        {
-            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
-            {
-                move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
-                gTasks[taskId].func = Task_HandleReplaceMoveInput;
-                ChangePage(taskId, 1);
-            }
-        }
-        else if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
-            PrintMoveDescription(move);
-            ScheduleBgCopyTilemapToVram(0);
-            gTasks[taskId].func = Task_HandleReplaceMoveInput;
-        }
-    }
-}
+// static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
+// {
+//     s16 *data = gTasks[taskId].data;
+//     u16 move;
+//     if (FuncIsActiveTask(Task_ShowEffectTilemap) != 1)
+//     {
+//         if (JOY_NEW(DPAD_UP))
+//         {
+//             data[1] = 1;
+//             data[0] = 4;
+//             ChangeSelectedMove(&data[0], -1, &sMonSummaryScreen->firstMoveIndex);
+//             data[1] = 0;
+//             gTasks[taskId].func = Task_HandleReplaceMoveInput;
+//         }
+//         else if (JOY_NEW(DPAD_DOWN))
+//         {
+//             data[1] = 1;
+//             data[0] = 4;
+//             ChangeSelectedMove(&data[0], 1, &sMonSummaryScreen->firstMoveIndex);
+//             data[1] = 0;
+//             gTasks[taskId].func = Task_HandleReplaceMoveInput;
+//         }
+//         else if (JOY_NEW(DPAD_LEFT))
+//         {
+//             if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
+//             {
+//                 move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
+//                 gTasks[taskId].func = Task_HandleReplaceMoveInput;
+//                 ChangePage(taskId, -1);
+//             }
+//         }
+//         else if (JOY_NEW(DPAD_RIGHT))
+//         {
+//             if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
+//             {
+//                 move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
+//                 gTasks[taskId].func = Task_HandleReplaceMoveInput;
+//                 ChangePage(taskId, 1);
+//             }
+//         }
+//         else if (JOY_NEW(A_BUTTON | B_BUTTON))
+//         {
+//             move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
+//             PrintMoveDescription(move);
+//             ScheduleBgCopyTilemapToVram(0);
+//             gTasks[taskId].func = Task_HandleReplaceMoveInput;
+//         }
+//     }
+// }
 
 u8 GetMoveSlotToReplace_SwSh(void)
 {
@@ -5296,15 +5296,15 @@ static void SwapMovesNamesPP(u8 moveIndex1, u8 moveIndex2)
     PrintMoveNameAndPP(moveIndex2);
 }
 
-static void PrintHMMovesCantBeForgotten(void)
-{
-    u8 message[200];
-    u8 windowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_DESCRIPTION);
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+// static void PrintHMMovesCantBeForgotten(void)
+// {
+//     u8 message[200];
+//     u8 windowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_DESCRIPTION);
+//     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
 
-    u8 msgFontId = FormatTextByWidth(message, 136, FONT_SHORT_NARROW, gText_HMMovesCantBeForgotten2, GetFontAttribute(FONT_SHORT_NARROW, FONTATTR_LETTER_SPACING));
-    PrintTextOnWindowWithFont(windowId, message, 0, 4, 0, 2, msgFontId);
-}
+//     u8 msgFontId = FormatTextByWidth(message, 136, FONT_SHORT_NARROW, gText_HMMovesCantBeForgotten2, GetFontAttribute(FONT_SHORT_NARROW, FONTATTR_LETTER_SPACING));
+//     PrintTextOnWindowWithFont(windowId, message, 0, 4, 0, 2, msgFontId);
+// }
 
 static void ShowCategoryIcon(u16 move)
 {
