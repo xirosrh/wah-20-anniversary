@@ -238,7 +238,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_DUN,
-            .ability = ABILITY_SERENE_GRACE,
+            .ability = ABILITY_PSYCHIC_SURGE,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -266,7 +266,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_GOROCHU,
-            .ability = ABILITY_LIGHTNING_ROD,
+            .ability = ABILITY_TRANSISTOR,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -280,7 +280,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_TAABAN,
-            .ability = ABILITY_SHELL_ARMOR,
+            .ability = ABILITY_CURSED_BODY,
             .nature = NATURE_JOLLY,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
@@ -293,7 +293,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_BOMUSHIKAA,
-            .ability = ABILITY_FLAME_BODY,
+            .ability = ABILITY_WATER_ABSORB,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -320,7 +320,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_AKUERIA,
-            .ability = ABILITY_PRESSURE,
+            .ability = ABILITY_NO_GUARD,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
@@ -403,7 +403,7 @@ static const struct PokeboxSpecies sPokeboxSpeciesList[] =
     {
         .mon = {
             .specie = SPECIES_EING,
-            .ability = ABILITY_SOUNDPROOF,
+            .ability = ABILITY_WATER_ABSORB,
             .nature = NATURE_TIMID,
             .itemId = ITEM_NONE,
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 4, 0),
