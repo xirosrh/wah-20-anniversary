@@ -50,7 +50,7 @@
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "money.h"
-
+#include "new_shop.h"
 //========== SECCIÓN: VARIABLES ==========//
 
 #define tTimer data[7]
@@ -493,6 +493,8 @@ static void ClearWindoMonData(bool8 clearSwapBox)
 static void PrintAbility(u16 specie, u16 ability)
 {
     u16 indexAbility;
+    u8 widthWindow = sWindowTemplatesPokeBox[WINDOW_MON_INFO].width * 8;
+    u8 abilityDescription[200];
 
     FillWindowPixelBuffer(WINDOW_MON_INFO, PIXEL_FILL(0));
 
@@ -505,7 +507,9 @@ static void PrintAbility(u16 specie, u16 ability)
     }
 
     AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_NORMAL, 0, 0, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].name);
-    AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_SMALL, 0, 16, sTextColorBlackPokebox, 0, gAbilitiesInfo[ability].description);
+
+    FormatTextByWidth(abilityDescription, widthWindow, FONT_SMALL, gAbilitiesInfo[ability].description, GetFontAttribute(FONT_SMALL, FONTATTR_LETTER_SPACING));
+    AddTextPrinterParameterized3(WINDOW_MON_INFO, FONT_SMALL, 0, 16, sTextColorBlackPokebox, 0, abilityDescription);
 
     CopyWindowToVram(WINDOW_MON_INFO, 3);
 }

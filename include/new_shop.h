@@ -16,6 +16,8 @@ void NewShop_CreateCoinPokemartMenu(const u16 *);
 void NewShop_CreatePointsPokemartMenu(const u16 *);
 void OpenWahRoomsSharedMart(void);
 
+void FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str, s16 letterSpacing);
+
 #endif // MUDSKIP_SHOP_UI
 
 #endif // GUARD_NEW_SHOP_H

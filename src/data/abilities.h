@@ -110,7 +110,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_COMPOUND_EYES] =
     {
-        .name = _("Ojo compuesto"),
+        .name = _("Ojo Compuesto"),
         .description = COMPOUND_STRING("Aumenta la precisión."),
         .aiRating = 7,
     },
@@ -523,7 +523,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ROCK_HEAD] =
     {
         .name = _("Cabeza roca"),
-        .description = COMPOUND_STRING("Evita volver a ser golpeado."),
+        .description = COMPOUND_STRING("Evita el daño por retroceso."),
         .aiRating = 5,
     },
 
@@ -686,7 +686,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ADAPTABILITY] =
     {
         .name = _("Adaptable"),
-        .description = COMPOUND_STRING("Potencia ataques de mismo tipo."),
+        .description = COMPOUND_STRING("Potencia ataques de su tipo."),
         .aiRating = 8,
     },
 
@@ -963,7 +963,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DEFIANT] =
     {
         .name = _("Competitivo"),
-        .description = COMPOUND_STRING("Bajón de estadísticas sube ataque."),
+        .description = COMPOUND_STRING("Al bajar stats sube el Atq."),
         .aiRating = 5,
     },
 
