@@ -5717,7 +5717,7 @@ u32 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves)
     {
         const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
 
-        for (u32 i = 0; i < MAX_LEVEL_UP_MOVES && learnset[i].move != LEVEL_UP_MOVE_END; i++)
+        for (u32 i = 0; learnset[i].move != LEVEL_UP_MOVE_END; i++)
         {
             if (learnset[i].level > level)
                 break;
@@ -5738,6 +5738,9 @@ u32 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves)
             }
             if (j < numMoves)
                 continue;
+
+            if (numMoves >= MAX_RELEARNER_MOVES)
+                break;
 
             moves[numMoves++] = learnset[i].move;
         }
@@ -5929,7 +5932,7 @@ bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon)
     {
         const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
 
-        for (u32 i = 0; i < MAX_LEVEL_UP_MOVES && learnset[i].move != LEVEL_UP_MOVE_END; i++)
+        for (u32 i = 0; learnset[i].move != LEVEL_UP_MOVE_END; i++)
         {
             if (learnset[i].level > level)
                 break;
