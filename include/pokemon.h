@@ -827,6 +827,7 @@ u32 GetRelearnerLevelUpMoves(struct Pokemon *mon, u16 *moves);
 u32 GetRelearnerEggMoves(struct Pokemon *mon, u16 *moves);
 u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves);
 u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves);
+u32 GetRelearnerAllMoves(struct Pokemon *mon, u16 *moves);
 bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon);
 bool32 HasRelearnerEggMoves(struct Pokemon *mon);
 bool32 HasRelearnerTMMoves(struct Pokemon *mon);

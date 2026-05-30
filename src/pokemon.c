@@ -5852,6 +5852,100 @@ u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
     return numMoves;
 }
 
+u32 GetRelearnerAllMoves(struct Pokemon *mon, u16 *moves)
+{
+    u32 numMoves = 0;
+    u16 levelMoves[60] = {0};
+    u16 eggMoves[60]   = {0};
+    u16 tmMoves[60]    = {0};
+    u16 tutorMoves[60] = {0};
+
+    u8 numLevel = GetRelearnerLevelUpMoves(mon, levelMoves);
+    u8 numEgg   = GetRelearnerEggMoves(mon, eggMoves);
+    u8 numTM    = GetRelearnerTMMoves(mon, tmMoves);
+    u8 numTutor = GetRelearnerTutorMoves(mon, tutorMoves);
+
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(GetMonData(mon, MON_DATA_SPECIES));
+    
+    u32 i, j;
+    u16 currentMove;
+
+    // --- Movimientos de Nivel ---
+    for (i = 0; i < numLevel; i++) 
+    {
+        moves[numMoves++] = levelMoves[i];
+    }
+
+    // ---  Movimientos Huevo ---
+    for (i = 0; i < numEgg; i++) 
+    {
+        currentMove = eggMoves[i];
+
+        for (j = 0; j < numMoves; j++) 
+        {
+            if (moves[j] == currentMove) 
+                break;
+        }
+
+        if (j == numMoves)
+        { 
+            moves[numMoves++] = currentMove;
+        }
+    }
+    
+    // --- Movimientos TM ---
+    for (i = 0; i < numTM; i++) 
+    {
+        currentMove = tmMoves[i];
+        for (j = 0; j < numMoves; j++) 
+        {
+            if (moves[j] == currentMove) 
+                break;
+        }
+        if (j == numMoves) {
+            moves[numMoves++] = currentMove;
+        }
+    }
+
+    // --- Movimientos Tutor---
+    for (i = 0; i < numTutor; i++) {
+        currentMove = tutorMoves[i];
+        for (j = 0; j < numMoves; j++) 
+        {
+            if (moves[j] == currentMove) 
+                break;
+        }
+        if (j == numMoves)
+        {
+            moves[numMoves++] = currentMove;
+        }
+    }
+
+    // --- Movimientos Enseñables ---
+    if (teachableLearnset != NULL)
+    {
+        for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
+        {
+            currentMove = teachableLearnset[i];
+
+            for (j = 0; j < numMoves; j++)
+            {
+                if (moves[j] == currentMove)
+                    break;
+            }
+
+            if (j == numMoves)
+            {
+                moves[numMoves++] = currentMove;
+            }
+        }
+    }
+    if (P_SORT_MOVES)
+        SortMovesAlphabetically(moves, numMoves);
+
+    return numMoves;
+}
+
 u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves)
 {
     if (!FlagGet(P_FLAG_TUTOR_MOVES) && !P_ENABLE_MOVE_RELEARNERS)

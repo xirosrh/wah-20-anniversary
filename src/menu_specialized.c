@@ -138,7 +138,7 @@ static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
     },
     [RELEARNERWIN_MSG] = {
         .bg = 1,
-        .tilemapLeft = 4,
+        .tilemapLeft = 7,
         .tilemapTop = 15,
         .width = 22,
         .height = 4,

@@ -29,6 +29,7 @@
 #include "task.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "pokemon_icon.h"
 
 /*
  * Move relearner state machine
@@ -166,6 +167,7 @@ enum {
 static EWRAM_DATA struct
 {
     u8 state;
+    u8 monIconId;
     u8 heartSpriteIds[16];                                   /*0x001*/
     u16 movesToLearn[MAX_RELEARNER_MOVES];                   /*0x01A*/
     u8 partyMon;                                             /*0x044*/
@@ -194,6 +196,10 @@ static const u16 sUI_Pal[] = INCBIN_U16("graphics/interface/ui_learn_move.gbapal
 // The arrow sprites in this spritesheet aren't used. The scroll-arrow system provides its own
 // arrow sprites.
 static const u8 sUI_Tiles[] = INCBIN_U8("graphics/interface/ui_learn_move.4bpp");
+
+static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.4bpp.lz");
+static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.bin.lz");
+static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_main_menu/scroll_tiles.gbapal");
 
 static const struct OamData sHeartSpriteOamData =
 {
@@ -352,6 +358,15 @@ static const struct BgTemplate sMoveRelearnerMenuBackgroundTemplates[] =
         .priority = 1,
         .baseTile = 0,
     },
+    {
+        .bg = 2,
+        .charBaseIndex = 2,
+        .mapBaseIndex = 29,
+        .screenSize = 0,
+        .paletteMode = 0,
+        .priority = 2,
+        .baseTile = 0,
+    },
 };
 
 static void DoMoveRelearnerMain(void);
@@ -367,6 +382,7 @@ static void ShowTeachMoveText(u8);
 static s32 GetCurrentSelectedMove(void);
 static void FreeMoveRelearnerResources(void);
 static void RemoveScrollArrows(void);
+static void RemoveMonIcon(void);
 static void HideHeartSpritesAndShowTeachMoveText(bool8);
 
 static void VBlankCB_MoveRelearner(void)
@@ -424,8 +440,11 @@ void CB2_InitLearnMove(void)
         StringCopy(gStringVar3, MoveRelearner_Text_TutorMoveLWR);
         break;
     case MOVE_RELEARNER_LEVEL_UP_MOVES:
-    default:
         StringCopy(gStringVar3, MoveRelearner_Text_LevelUpMoveLWR);
+        break;
+    case MOVE_RELEARNER_ALL_MOVES:
+    default:
+        StringCopy(gStringVar3, MoveRelearner_Text_TutorAllMovesLWR);
         break;
     }
 
@@ -474,8 +493,15 @@ static void InitMoveRelearnerBackgroundLayers(void)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 |
                                   DISPCNT_OBJ_1D_MAP |
                                   DISPCNT_OBJ_ON);
+
+    LZ77UnCompVram(sScrollBgTiles, (void *)VRAM + 0x4000 * sMoveRelearnerMenuBackgroundTemplates[2].charBaseIndex);
+    LZ77UnCompVram(sScrollBgTilemap, (u16 *)BG_SCREEN_ADDR(sMoveRelearnerMenuBackgroundTemplates[2].mapBaseIndex));
+
+    LoadPalette(sScrollBgPalette, 16, 32);
+
     ShowBg(0);
     ShowBg(1);
+    ShowBg(2);
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
 }
 
@@ -808,6 +834,7 @@ static void DoMoveRelearnerMain(void)
 static void FreeMoveRelearnerResources(void)
 {
     RemoveScrollArrows();
+    RemoveMonIcon();
     DestroyListMenuTask(sMoveRelearnerStruct->moveListMenuTask, &sMoveRelearnerMenuState.listOffset, &sMoveRelearnerMenuState.listRow);
     FreeAllWindowBuffers();
     FREE_AND_SET_NULL(sMoveRelearnerStruct);
@@ -883,9 +910,11 @@ static void ShowTeachMoveText(bool8 shouldDoNothingInstead)
 static void CreateUISprites(void)
 {
     int i;
+    u16 specie = GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_SPECIES_OR_EGG);
 
     sMoveRelearnerStruct->moveDisplayArrowTask = TASK_NONE;
     sMoveRelearnerStruct->moveListScrollArrowTask = TASK_NONE;
+    sMoveRelearnerStruct->monIconId = 0xFF;
     AddScrollArrows();
 
     sMoveRelearnerStruct->categoryIconSpriteId = 0xFF;
@@ -906,6 +935,10 @@ static void CreateUISprites(void)
 
     for (i = 0; i < 16; i++)
         gSprites[sMoveRelearnerStruct->heartSpriteIds[i]].invisible = TRUE;
+
+    LoadMonIconPalette(specie); 
+    sMoveRelearnerStruct->monIconId = CreateMonIconNoPersonality(specie, SpriteCB_MonIcon, 24, 130, 0);
+
 }
 
 static void AddScrollArrows(void)
@@ -933,6 +966,15 @@ static void RemoveScrollArrows(void)
     }
 }
 
+static void RemoveMonIcon()
+{
+    if(sMoveRelearnerStruct->monIconId != 0xFF)
+    {
+        FreeMonIconPalettes();
+        DestroySprite(&gSprites[sMoveRelearnerStruct->monIconId]);
+    }
+}
+
 static void CreateLearnableMovesList(void)
 {
     s32 i;
@@ -950,8 +992,11 @@ static void CreateLearnableMovesList(void)
         sMoveRelearnerStruct->numMenuChoices = GetRelearnerTutorMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
         break;
     case MOVE_RELEARNER_LEVEL_UP_MOVES:
-    default:
         sMoveRelearnerStruct->numMenuChoices = GetRelearnerLevelUpMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+        break;
+    case MOVE_RELEARNER_ALL_MOVES:
+        default:
+        sMoveRelearnerStruct->numMenuChoices = GetRelearnerAllMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
         break;
 	}
 
@@ -1023,7 +1068,7 @@ void MoveRelearnerShowHideCategoryIcon(s32 moveId)
     else
     {
         if (sMoveRelearnerStruct->categoryIconSpriteId == 0xFF)
-            sMoveRelearnerStruct->categoryIconSpriteId = CreateSprite(&gSpriteTemplate_CategoryIcons, 55, 40, 0);
+            sMoveRelearnerStruct->categoryIconSpriteId = CreateSprite(&gSpriteTemplate_CategoryIcons, 115, 15, 0);
 
         gSprites[sMoveRelearnerStruct->categoryIconSpriteId].invisible = FALSE;
         StartSpriteAnim(&gSprites[sMoveRelearnerStruct->categoryIconSpriteId], GetBattleMoveCategory(moveId));

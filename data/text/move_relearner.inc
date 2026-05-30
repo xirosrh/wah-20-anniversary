@@ -18,6 +18,9 @@ MoveRelearner_Text_TutormoveMoves:
 MoveRelearner_Text_EditEVsIVs:
 	.string "Evs/Ivs$"
 
+MoveRelearner_Text_TutorAllMoves:
+	.string "Movimientos$"
+
 MoveRelearner_Text_SeeYa:
 	.string "Nos vemos!$"
 
@@ -50,6 +53,9 @@ MoveRelearner_Text_TMMoveLWR::
 
 MoveRelearner_Text_TutorMoveLWR::
 	.string "Tutor Mov.$"
+
+MoveRelearner_Text_TutorAllMovesLWR::
+	.string "Movimientos.$"
 
 MoveRelearner_Text_WhichXmoveShouldTeach:
 	.string "¿Qué {STR_VAR_3} debería enseñarle?$"
