@@ -46,7 +46,7 @@
 #include "script_pokemon_util.h"
 #include "event_data.h"
 #include "pokemon.h"
-
+#include "new_shop.h"
 
 //========== SECCIÓN: VARIABLES ==========//
 
@@ -432,8 +432,11 @@ static void PrintLRButtons()
 
 static void PrintAbilityMon(const struct TeamSelectorMonData *mon)
 {
+    u8 abilityDescription[200];
     u8 indexAbility = 0;
-    u8 abilityNum = (mon->ability != ABILITY_NONE) 
+    u8 widthWindow = sWindowTemplatesTeamSelector[WINDOW_ABILITY_DESCRIPTION].width * 8;
+
+    u16 abilityNum = (mon->ability != ABILITY_NONE) 
     ? mon->ability 
     : teamSelectorObj.teamAbilities[teamSelectorObj.monTeamNum][teamSelectorObj.indexSelectedMon];
 
@@ -452,7 +455,8 @@ static void PrintAbilityMon(const struct TeamSelectorMonData *mon)
 
     AddTextPrinterParameterized3(WINDOW_ABILITY, FONT_SMALL, 0, 0, sTextColorWhite, 0, gAbilitiesInfo[abilityNum].name);
 
-    AddTextPrinterParameterized3(WINDOW_ABILITY_DESCRIPTION, FONT_SMALL, 0, 3, sTextColorBlack, 0, gAbilitiesInfo[abilityNum].description);
+    FormatTextByWidth(abilityDescription, widthWindow, FONT_SMALL, gAbilitiesInfo[abilityNum].description, GetFontAttribute(FONT_SMALL, FONTATTR_LETTER_SPACING));
+    AddTextPrinterParameterized3(WINDOW_ABILITY_DESCRIPTION, FONT_SMALL, 0, 3, sTextColorBlack, 0, abilityDescription);
 
     CopyWindowToVram(WINDOW_ABILITY, 3);
     CopyWindowToVram(WINDOW_ABILITY_DESCRIPTION, 3);

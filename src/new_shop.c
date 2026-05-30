@@ -1162,7 +1162,7 @@ static void LoadSellerMugshot(const u8 *gfx, const u16 *pal)
 }
 
 // credit to Vexx on PRET Discord
-static void FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str, s16 letterSpacing)
+void FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str, s16 letterSpacing)
 {
     u8 *end, *ptr, *curLine, *lastSpace;
 

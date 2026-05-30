@@ -513,7 +513,8 @@ static struct Pokemon *ReturnPartyMon()
 static void SampleUi_DrawMonIcon(u16 dexNum)
 {
     u16 speciesId = dexNum;
-    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
+    bool8 isShiny =  GetMonData(ReturnPartyMon(), MON_DATA_IS_SHINY);
+    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, isShiny, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
 
     gSprites[sStatEditorDataPtr->monIconSpriteId].oam.priority = 0;
 }
