@@ -1298,6 +1298,22 @@ void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u
     CalculateMonStats(mon);
 }
 
+void CopyTrainerPartyEvsToStatEvs(const u8 *trainerEvs, u8 statEvs[NUM_STATS])
+{
+    if (trainerEvs == NULL)
+    {
+        memset(statEvs, 0, NUM_STATS);
+        return;
+    }
+
+    statEvs[STAT_HP] = trainerEvs[0];
+    statEvs[STAT_ATK] = trainerEvs[1];
+    statEvs[STAT_DEF] = trainerEvs[2];
+    statEvs[STAT_SPATK] = trainerEvs[3];
+    statEvs[STAT_SPDEF] = trainerEvs[4];
+    statEvs[STAT_SPEED] = trainerEvs[5];
+}
+
 void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread)
 {
     s32 i;

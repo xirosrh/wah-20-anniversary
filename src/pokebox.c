@@ -705,8 +705,7 @@ static void GiveMonFromPokeboxConfig(u8 slot, const struct TeamSelectorMonData *
     u16 tempMoves[MAX_MON_MOVES];
     enum ShinyMode shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
 
-    if (mon->ev != NULL)
-        memcpy(evs, mon->ev, sizeof(evs));
+    CopyTrainerPartyEvsToStatEvs(mon->ev, evs);
 
     memcpy(tempMoves, mon->moves, sizeof(tempMoves));
     GetIVsByNaturePokebox(mon, ivs);

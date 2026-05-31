@@ -661,7 +661,7 @@ void GiveMonTeamFromSelector(u8 slot, const struct TeamSelectorMonData *mon, boo
 
     shiny = mon->isShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_RANDOM;
     memcpy(tempMoves, mon->moves, sizeof(tempMoves));
-    memcpy(evs, mon->ev, sizeof(evs));
+    CopyTrainerPartyEvsToStatEvs(mon->ev, evs);
     GetIVsByNature(mon, ivs);
 
     gender = (Random() < gSpeciesInfo[mon->specie].genderRatio) ? MON_FEMALE : MON_MALE;
