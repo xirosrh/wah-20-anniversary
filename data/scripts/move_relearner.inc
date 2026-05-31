@@ -114,7 +114,7 @@ MoveRelearner_EventScript_EditEVsIVs:
 	@ Si usas la expansión de RHH, el comando suele ser 'special Script_ViewEVsIVs' o el editor debug.
 	special ChooseMonForEvsIvsEditor
 	waitstate
-	goto MoveRelearner_EventScript_AnythingElse2
+	goto MoveRelearner_EventScript_AnythingElse
 	end
 
 MoveRelearner_EventScript_TeachMove::
@@ -130,7 +130,7 @@ MoveRelearner_EventScript_TeachMove::
 	msgbox MoveRelearner_Text_WhichXmoveShouldTeach, MSGBOX_DEFAULT
 	special TeachMoveRelearnerMove
 	waitstate
-	goto MoveRelearner_EventScript_AnythingElse2
+	goto MoveRelearner_EventScript_AnythingElse
 	end
 
 MoveRelearner_EventScript_NoPkmn:
@@ -149,12 +149,6 @@ MoveRelearner_EventScript_CantTeachMoveToPkmn:
 	end
 
 MoveRelearner_EventScript_AnythingElse::
-	message MoveRelearner_Text_AnythingElse
-	waitmessage
-	goto Common_EventScript_MoveRelearnerDynMultiChoice
-	end
-
-MoveRelearner_EventScript_AnythingElse2::
 	message MoveRelearner_Text_AnythingElse
 	waitmessage
 	goto Common_EventScript_MoveRelearnerDynMultiChoice2
