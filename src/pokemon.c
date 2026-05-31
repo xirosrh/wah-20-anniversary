@@ -6156,6 +6156,20 @@ bool32 HasRelearnerTutorMoves(struct Pokemon *mon)
     return FALSE;
 }
 
+bool32 HasTeachableLearnsetMoves(struct Pokemon *mon)
+{
+    u16 specie = GetMonData(mon, MON_DATA_SPECIES);
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(specie);
+
+    if(specie == SPECIES_MEW)
+        return TRUE;
+        
+    if (teachableLearnset != NULL)
+        return FALSE;
+
+    return TRUE;
+}
+
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)
 {
     u8 numMoves = 0;

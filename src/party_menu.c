@@ -1108,6 +1108,10 @@ static void DisplayPartyPokemonDataForRelearner(u8 slot)
     case MOVE_RELEARNER_TUTOR_MOVES:
         hasMoves = HasRelearnerTutorMoves(mon);
         break;
+    case MOVE_RELEARNER_ALL_MOVES:
+        hasMoves = ( HasRelearnerEggMoves(mon) || HasRelearnerTMMoves(mon) || HasRelearnerTutorMoves(mon) || HasTeachableLearnsetMoves(mon) || HasRelearnerLevelUpMoves(mon));
+        break;
+    case MOVE_RELEARNER_LEVEL_UP_MOVES:
     default:
         hasMoves = HasRelearnerLevelUpMoves(mon);
         break;
@@ -8026,7 +8030,16 @@ static void CB2_ChooseMonForMoveRelearner(void)
         case MOVE_RELEARNER_TUTOR_MOVES:
             gSpecialVar_0x8005 = HasRelearnerTutorMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
-        default:
+        case MOVE_RELEARNER_ALL_MOVES:
+            gSpecialVar_0x8005 = (
+                HasRelearnerEggMoves(&gPlayerParty[gSpecialVar_0x8004]) || 
+                HasRelearnerTMMoves(&gPlayerParty[gSpecialVar_0x8004]) ||
+                HasRelearnerTutorMoves(&gPlayerParty[gSpecialVar_0x8004]) ||
+                HasRelearnerLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004])
+            );
+            break;
+        case MOVE_RELEARNER_LEVEL_UP_MOVES:
+            default:
             gSpecialVar_0x8005 = HasRelearnerLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
         }

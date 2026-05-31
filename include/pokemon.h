@@ -832,6 +832,7 @@ bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon);
 bool32 HasRelearnerEggMoves(struct Pokemon *mon);
 bool32 HasRelearnerTMMoves(struct Pokemon *mon);
 bool32 HasRelearnerTutorMoves(struct Pokemon *mon);
+bool32 HasTeachableLearnsetMoves(struct Pokemon *mon);
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
 u16 SpeciesToPokedexNum(u16 species);
 bool32 IsSpeciesInHoennDex(u16 species);
