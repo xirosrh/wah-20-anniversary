@@ -186,6 +186,8 @@ static EWRAM_DATA struct {
     u16 listOffset;
     u16 listRow;
     bool8 showContestInfo;
+    u16 selectedMove;
+    u8 savedRelearnerState;
 } sMoveRelearnerMenuState = {0};
 
 EWRAM_DATA enum MoveRelearnerStates gMoveRelearnerState = MOVE_RELEARNER_LEVEL_UP_MOVES;
@@ -379,6 +381,7 @@ static void InitMoveRelearnerBackgroundLayers(void);
 static void AddScrollArrows(void);
 static void HandleInput(u8);
 static void ShowTeachMoveText(u8);
+static s32 GetCurrentSelectedMoveFromList(void);
 static s32 GetCurrentSelectedMove(void);
 static void FreeMoveRelearnerResources(void);
 static void RemoveScrollArrows(void);
@@ -427,6 +430,8 @@ void CB2_InitLearnMove(void)
     sMoveRelearnerMenuState.listOffset = 0;
     sMoveRelearnerMenuState.listRow = 0;
     sMoveRelearnerMenuState.showContestInfo = FALSE;
+    sMoveRelearnerMenuState.selectedMove = MOVE_NONE;
+    sMoveRelearnerMenuState.savedRelearnerState = gMoveRelearnerState;
 
     switch (gMoveRelearnerState)
     {
@@ -473,7 +478,13 @@ static void CB2_InitLearnMoveReturnFromSelectMove(void)
 
     InitMoveRelearnerBackgroundLayers();
     InitMoveRelearnerWindows(sMoveRelearnerMenuState.showContestInfo);
+    gMoveRelearnerState = sMoveRelearnerMenuState.savedRelearnerState;
     CreateLearnableMovesList();
+
+    if (sMoveRelearnerMenuState.listOffset >= sMoveRelearnerStruct->numMenuChoices)
+        sMoveRelearnerMenuState.listOffset = 0;
+    if (sMoveRelearnerMenuState.listOffset + sMoveRelearnerMenuState.listRow >= sMoveRelearnerStruct->numMenuChoices)
+        sMoveRelearnerMenuState.listRow = 0;
 
     LoadSpriteSheet(&sMoveRelearnerSpriteSheet);
     LoadSpritePalette(&sMoveRelearnerPalette);
@@ -705,11 +716,16 @@ static void DoMoveRelearnerMain(void)
     case MENU_STATE_SHOW_MOVE_SUMMARY_SCREEN:
         if (!gPaletteFade.active)
         {
+            sMoveRelearnerMenuState.savedRelearnerState = gMoveRelearnerState;
+
+            if (sMoveRelearnerMenuState.selectedMove == MOVE_NONE)
+                sMoveRelearnerMenuState.selectedMove = GetCurrentSelectedMoveFromList();
+
             if (SWSH_SUMMARY_SCREEN)
-                ShowSelectMovePokemonSummaryScreen_SwSh(gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, CB2_InitLearnMoveReturnFromSelectMove, GetCurrentSelectedMove());
+                ShowSelectMovePokemonSummaryScreen_SwSh(gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, CB2_InitLearnMoveReturnFromSelectMove, sMoveRelearnerMenuState.selectedMove);
             else
-                ShowSelectMovePokemonSummaryScreen(gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, CB2_InitLearnMoveReturnFromSelectMove, GetCurrentSelectedMove());
-            
+                ShowSelectMovePokemonSummaryScreen(gPlayerParty, sMoveRelearnerStruct->partyMon, gPlayerPartyCount - 1, CB2_InitLearnMoveReturnFromSelectMove, sMoveRelearnerMenuState.selectedMove);
+
             FreeMoveRelearnerResources();
         }
         break;
@@ -878,6 +894,7 @@ static void HandleInput(bool8 showContest)
     default:
         PlaySE(SE_SELECT);
         RemoveScrollArrows();
+        sMoveRelearnerMenuState.selectedMove = itemId;
         sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEACH_MOVE_PROMPT;
         StringCopy(gStringVar2, GetMoveName(itemId));
         StringExpandPlaceholders(gStringVar4, gText_MoveRelearnerTeachMoveConfirm);
@@ -886,9 +903,16 @@ static void HandleInput(bool8 showContest)
     }
 }
 
-static s32 GetCurrentSelectedMove(void)
+static s32 GetCurrentSelectedMoveFromList(void)
 {
     return sMoveRelearnerStruct->menuItems[sMoveRelearnerMenuState.listRow + sMoveRelearnerMenuState.listOffset].id;
+}
+
+static s32 GetCurrentSelectedMove(void)
+{
+    if (sMoveRelearnerMenuState.selectedMove != MOVE_NONE)
+        return sMoveRelearnerMenuState.selectedMove;
+    return GetCurrentSelectedMoveFromList();
 }
 
 // Theory: This used to make the heart sprites visible again (i.e.

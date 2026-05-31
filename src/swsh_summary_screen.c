@@ -2924,6 +2924,11 @@ static bool32 HasAnyRelearnableMoves(enum MoveRelearnerStates state)
             return HasRelearnerTutorMoves(mon);
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
             return HasRelearnerLevelUpMoves(mon);
+        case MOVE_RELEARNER_ALL_MOVES:
+            return HasRelearnerLevelUpMoves(mon)
+                || HasRelearnerEggMoves(mon)
+                || HasRelearnerTMMoves(mon)
+                || HasRelearnerTutorMoves(mon);
         default:
             return FALSE;
     }

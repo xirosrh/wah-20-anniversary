@@ -5792,6 +5792,9 @@ u32 GetRelearnerEggMoves(struct Pokemon *mon, u16 *moves)
         if (j < numMoves)
             continue;
 
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
+
         moves[numMoves++] = eggMoves[i];
     }
 
@@ -5846,6 +5849,9 @@ u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
         if (j < numMoves)
             continue;
 
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
+
         moves[numMoves++] = allMoves[i];
     }
 
@@ -5858,91 +5864,99 @@ u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
 u32 GetRelearnerAllMoves(struct Pokemon *mon, u16 *moves)
 {
     u32 numMoves = 0;
-    u16 levelMoves[60] = {0};
-    u16 eggMoves[60]   = {0};
-    u16 tmMoves[60]    = {0};
-    u16 tutorMoves[60] = {0};
-
-    u8 numLevel = GetRelearnerLevelUpMoves(mon, levelMoves);
-    u8 numEgg   = GetRelearnerEggMoves(mon, eggMoves);
-    u8 numTM    = GetRelearnerTMMoves(mon, tmMoves);
-    u8 numTutor = GetRelearnerTutorMoves(mon, tutorMoves);
-
-    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(GetMonData(mon, MON_DATA_SPECIES));
-    
-    u32 i, j;
+    u32 i, j, n;
     u16 currentMove;
+    // Buffer temporal reutilizable: cada categoria se procesa y fusiona antes de
+    // reutilizarlo para la siguiente, evitando tener 4 arrays vivos a la vez.
+    u16 temp[MAX_RELEARNER_MOVES] = {0};
 
     // --- Movimientos de Nivel ---
-    for (i = 0; i < numLevel; i++) 
+    n = GetRelearnerLevelUpMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
     {
-        moves[numMoves++] = levelMoves[i];
-    }
-
-    // ---  Movimientos Huevo ---
-    for (i = 0; i < numEgg; i++) 
-    {
-        currentMove = eggMoves[i];
-
-        for (j = 0; j < numMoves; j++) 
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
         {
-            if (moves[j] == currentMove) 
+            if (moves[j] == currentMove)
                 break;
         }
-
         if (j == numMoves)
-        { 
             moves[numMoves++] = currentMove;
-        }
     }
-    
+
+    // --- Movimientos Huevo ---
+    n = GetRelearnerEggMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
+        }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
+    }
+
     // --- Movimientos TM ---
-    for (i = 0; i < numTM; i++) 
+    n = GetRelearnerTMMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
     {
-        currentMove = tmMoves[i];
-        for (j = 0; j < numMoves; j++) 
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
         {
-            if (moves[j] == currentMove) 
-                break;
-        }
-        if (j == numMoves) {
-            moves[numMoves++] = currentMove;
-        }
-    }
-
-    // --- Movimientos Tutor---
-    for (i = 0; i < numTutor; i++) {
-        currentMove = tutorMoves[i];
-        for (j = 0; j < numMoves; j++) 
-        {
-            if (moves[j] == currentMove) 
+            if (moves[j] == currentMove)
                 break;
         }
         if (j == numMoves)
-        {
             moves[numMoves++] = currentMove;
+    }
+
+    // --- Movimientos Tutor ---
+    n = GetRelearnerTutorMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
         }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
     }
 
     // --- Movimientos Enseñables ---
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(GetMonData(mon, MON_DATA_SPECIES));
     if (teachableLearnset != NULL)
     {
-        for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
+        u16 learnedMoves[MAX_MON_MOVES];
+
+        for (i = 0; i < MAX_MON_MOVES; i++)
+            learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+        for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
         {
             currentMove = teachableLearnset[i];
+
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                if (learnedMoves[j] == currentMove)
+                    break;
+            }
+            if (j < MAX_MON_MOVES)
+                continue;
 
             for (j = 0; j < numMoves; j++)
             {
                 if (moves[j] == currentMove)
                     break;
             }
-
             if (j == numMoves)
-            {
                 moves[numMoves++] = currentMove;
-            }
         }
     }
+
     if (P_SORT_MOVES)
         SortMovesAlphabetically(moves, numMoves);
 
@@ -5985,6 +5999,9 @@ u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves)
         }
         if (j < numMoves)
             continue;
+
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
 
         moves[numMoves++] = move;
     }
