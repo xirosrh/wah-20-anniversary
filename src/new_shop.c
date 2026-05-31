@@ -1941,7 +1941,7 @@ void NewShop_CreatePointsPokemartMenu(const u16 *itemsForSale)
     SetShopMenuCallback(ScriptContext_Enable);
 }
 
-#define WAH_MART_BUFFER_SIZE 128
+#define WAH_MART_BUFFER_SIZE 160
 
 static EWRAM_DATA u16 sWahMartItemBuffer[WAH_MART_BUFFER_SIZE];
 

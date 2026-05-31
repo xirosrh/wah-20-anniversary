@@ -1610,7 +1610,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta huraña"),
         .pluralName = ITEM_PLURAL_NAME("Mentas hurañas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Huraña."),
@@ -1627,7 +1627,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta firme"),
         .pluralName = ITEM_PLURAL_NAME("Mentas firmes"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Firme."),
@@ -1644,7 +1644,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta pícara"),
         .pluralName = ITEM_PLURAL_NAME("Mentas pícaras"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Pícara."),
@@ -1661,7 +1661,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta audaz"),
         .pluralName = ITEM_PLURAL_NAME("Mentas audaces"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Audaz."),
@@ -1678,7 +1678,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta osada"),
         .pluralName = ITEM_PLURAL_NAME("Mentas osadas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Osada."),
@@ -1695,7 +1695,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta agitada"),
         .pluralName = ITEM_PLURAL_NAME("Mentas agitadas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Agitada."),
@@ -1712,7 +1712,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta floja"),
         .pluralName = ITEM_PLURAL_NAME("Mentas flojas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Floja."),
@@ -1729,7 +1729,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta relajada"),
         .pluralName = ITEM_PLURAL_NAME("Mentas relajadas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Relajada."),
@@ -1746,7 +1746,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta modesta"),
         .pluralName = ITEM_PLURAL_NAME("Mentas modestas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Modesta."),
@@ -1763,7 +1763,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta afable"),
         .pluralName = ITEM_PLURAL_NAME("Mentas afables"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Afable."),
@@ -1780,7 +1780,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta alocada"),
         .pluralName = ITEM_PLURAL_NAME("Mentas alocadas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Alocada."),
@@ -1797,7 +1797,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta mansa"),
         .pluralName = ITEM_PLURAL_NAME("Mentas mansas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Mansa."),
@@ -1814,7 +1814,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta serena"),
         .pluralName = ITEM_PLURAL_NAME("Mentas serenas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Serena."),
@@ -1831,7 +1831,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta amable"),
         .pluralName = ITEM_PLURAL_NAME("Mentas amables"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Amable."),
@@ -1848,7 +1848,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta cauta"),
         .pluralName = ITEM_PLURAL_NAME("Mentas cautas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Cauta."),
@@ -1865,7 +1865,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta grosera"),
         .pluralName = ITEM_PLURAL_NAME("Mentas groseras"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Grosera."),
@@ -1882,7 +1882,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta miedosa"),
         .pluralName = ITEM_PLURAL_NAME("Mentas miedosas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Miedosa."),
@@ -1899,7 +1899,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta activa"),
         .pluralName = ITEM_PLURAL_NAME("Mentas activas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Activa."),
@@ -1916,7 +1916,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta alegre"),
         .pluralName = ITEM_PLURAL_NAME("Mentas alegres"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Alegre."),
@@ -1933,7 +1933,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta ingenua"),
         .pluralName = ITEM_PLURAL_NAME("Mentas ingenuas"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Ingenua."),
@@ -1950,7 +1950,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Menta seria"),
         .pluralName = ITEM_PLURAL_NAME("Mentas serias"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Cambia la naturaleza\n"
             "del Pokémon a Seria."),
