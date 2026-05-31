@@ -17775,6 +17775,7 @@ static const u16 sGroudonTeachableLearnset[] = {
     MOVE_ROCK_SLIDE,
     MOVE_ROCK_SMASH,
     MOVE_ROCK_TOMB,
+    MOVE_ROCK_POLISH,
     MOVE_ROLLOUT,
     MOVE_SAFEGUARD,
     MOVE_SANDSTORM,
