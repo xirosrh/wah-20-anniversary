@@ -5,6 +5,14 @@ Common_EventScript_MoveRelearner::
 	waitmessage
 	goto Common_EventScript_MoveRelearnerDynMultiChoice
 	end
+	
+Common_EventScript_MoveRelearner2::
+	lockall
+	faceplayer
+	message MoveRelearner_Text_WouldLearnNewMoves
+	waitmessage
+	goto Common_EventScript_MoveRelearnerDynMultiChoice2
+	end
 
 Common_EventScript_MoveRelearnerDynMultiChoice::
 	dynmultipush MoveRelearner_Text_LevelUpMoves, 0
@@ -31,6 +39,22 @@ Common_EventScript_MoveRelearnerDynMultiChoice::
 MoveRelearner_EventScript_PleaseComeAgain:
 	msgbox MoveRelearner_Text_ThankYouComeAgain, MSGBOX_DEFAULT
 	releaseall
+	end
+
+Common_EventScript_MoveRelearnerDynMultiChoice2::
+	@ Cargamos solo las 3 opciones en el menú dinámico
+	dynmultipush MoveRelearner_Text_TutorAllMoves, 0      @ Opción 0: Movimientos
+	dynmultipush MoveRelearner_Text_EditEVsIVs, 1    @ Opción 1: EVs/IVs
+	dynmultipush MoveRelearner_Text_SeeYa, 2          @ Opción 2: Salir
+	
+	dynmultistack 0, 0, FALSE, 6, 0, 0, DYN_MULTICHOICE_CB_NONE
+	closemessage
+	
+	switch VAR_RESULT
+	case 0, MoveRelearner_EventScript_TeachAllMoves
+	case 1, MoveRelearner_EventScript_EditEVsIVs
+	case 2, MoveRelearner_EventScript_PleaseComeAgain
+	case MULTI_B_PRESSED, MoveRelearner_EventScript_PleaseComeAgain
 	end
 
 MoveRelearner_EventScript_PushEggMoves:
@@ -66,6 +90,12 @@ MoveRelearner_EventScript_TeachTMMoves:
 MoveRelearner_EventScript_TeachTutorMoves:
 	setmoverelearnerstate MOVE_RELEARNER_TUTOR_MOVES
 	bufferstring STR_VAR_3, MoveRelearner_Text_TutorMoveLWR
+	goto MoveRelearner_EventScript_TeachMove
+	end
+
+MoveRelearner_EventScript_TeachAllMoves:
+	setmoverelearnerstate MOVE_RELEARNER_ALL_MOVES
+	bufferstring STR_VAR_3, MoveRelearner_Text_TutorAllMovesLWR
 	goto MoveRelearner_EventScript_TeachMove
 	end
 
@@ -121,5 +151,5 @@ MoveRelearner_EventScript_CantTeachMoveToPkmn:
 MoveRelearner_EventScript_AnythingElse::
 	message MoveRelearner_Text_AnythingElse
 	waitmessage
-	goto Common_EventScript_MoveRelearnerDynMultiChoice
+	goto Common_EventScript_MoveRelearnerDynMultiChoice2
 	end

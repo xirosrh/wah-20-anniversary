@@ -1108,6 +1108,10 @@ static void DisplayPartyPokemonDataForRelearner(u8 slot)
     case MOVE_RELEARNER_TUTOR_MOVES:
         hasMoves = HasRelearnerTutorMoves(mon);
         break;
+    case MOVE_RELEARNER_ALL_MOVES:
+        hasMoves = ( HasRelearnerEggMoves(mon) || HasRelearnerTMMoves(mon) || HasRelearnerTutorMoves(mon) || HasTeachableLearnsetMoves(mon) || HasRelearnerLevelUpMoves(mon));
+        break;
+    case MOVE_RELEARNER_LEVEL_UP_MOVES:
     default:
         hasMoves = HasRelearnerLevelUpMoves(mon);
         break;
@@ -5186,8 +5190,8 @@ void ItemUseCB_AbilityPatch(u8 taskId, TaskFunc task)
 
 void Task_Mint(u8 taskId)
 {
-    static const u8 askText[] = _("It might affect {STR_VAR_1}'s stats.\nAre you sure you want to use it?");
-    static const u8 doneText[] = _("{STR_VAR_1}'s stats may have changed due\nto the effects of the {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    static const u8 askText[] = _("Puede afectar a los stats de {STR_VAR_1}.\n¿Estás seguro de querer usarlo?");
+    static const u8 doneText[] = _("¡Los stats de {STR_VAR_1} han cambiado\ndebido a los efectos de la {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
     switch (tState)
@@ -8026,7 +8030,16 @@ static void CB2_ChooseMonForMoveRelearner(void)
         case MOVE_RELEARNER_TUTOR_MOVES:
             gSpecialVar_0x8005 = HasRelearnerTutorMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
-        default:
+        case MOVE_RELEARNER_ALL_MOVES:
+            gSpecialVar_0x8005 = (
+                HasRelearnerEggMoves(&gPlayerParty[gSpecialVar_0x8004]) || 
+                HasRelearnerTMMoves(&gPlayerParty[gSpecialVar_0x8004]) ||
+                HasRelearnerTutorMoves(&gPlayerParty[gSpecialVar_0x8004]) ||
+                HasRelearnerLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004])
+            );
+            break;
+        case MOVE_RELEARNER_LEVEL_UP_MOVES:
+            default:
             gSpecialVar_0x8005 = HasRelearnerLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004]);
             break;
         }

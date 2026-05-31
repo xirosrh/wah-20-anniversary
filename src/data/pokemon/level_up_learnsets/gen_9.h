@@ -9766,6 +9766,7 @@ static const struct LevelUpMove sGroudonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(72, MOVE_FIRE_BLAST),
     LEVEL_UP_MOVE(81, MOVE_SOLAR_BEAM),
     LEVEL_UP_MOVE(90, MOVE_ERUPTION),
+    LEVEL_UP_MOVE(80, MOVE_ROCK_POLISH),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_GROUDON

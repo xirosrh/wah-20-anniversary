@@ -1298,6 +1298,22 @@ void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u
     CalculateMonStats(mon);
 }
 
+void CopyTrainerPartyEvsToStatEvs(const u8 *trainerEvs, u8 statEvs[NUM_STATS])
+{
+    if (trainerEvs == NULL)
+    {
+        memset(statEvs, 0, NUM_STATS);
+        return;
+    }
+
+    statEvs[STAT_HP] = trainerEvs[0];
+    statEvs[STAT_ATK] = trainerEvs[1];
+    statEvs[STAT_DEF] = trainerEvs[2];
+    statEvs[STAT_SPATK] = trainerEvs[3];
+    statEvs[STAT_SPDEF] = trainerEvs[4];
+    statEvs[STAT_SPEED] = trainerEvs[5];
+}
+
 void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread)
 {
     s32 i;
@@ -5792,6 +5808,9 @@ u32 GetRelearnerEggMoves(struct Pokemon *mon, u16 *moves)
         if (j < numMoves)
             continue;
 
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
+
         moves[numMoves++] = eggMoves[i];
     }
 
@@ -5846,7 +5865,112 @@ u32 GetRelearnerTMMoves(struct Pokemon *mon, u16 *moves)
         if (j < numMoves)
             continue;
 
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
+
         moves[numMoves++] = allMoves[i];
+    }
+
+    if (P_SORT_MOVES)
+        SortMovesAlphabetically(moves, numMoves);
+
+    return numMoves;
+}
+
+u32 GetRelearnerAllMoves(struct Pokemon *mon, u16 *moves)
+{
+    u32 numMoves = 0;
+    u32 i, j, n;
+    u16 currentMove;
+    // Buffer temporal reutilizable: cada categoria se procesa y fusiona antes de
+    // reutilizarlo para la siguiente, evitando tener 4 arrays vivos a la vez.
+    u16 temp[MAX_RELEARNER_MOVES] = {0};
+
+    // --- Movimientos de Nivel ---
+    n = GetRelearnerLevelUpMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
+        }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
+    }
+
+    // --- Movimientos Huevo ---
+    n = GetRelearnerEggMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
+        }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
+    }
+
+    // --- Movimientos TM ---
+    n = GetRelearnerTMMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
+        }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
+    }
+
+    // --- Movimientos Tutor ---
+    n = GetRelearnerTutorMoves(mon, temp);
+    for (i = 0; i < n && numMoves < MAX_RELEARNER_MOVES; i++)
+    {
+        currentMove = temp[i];
+        for (j = 0; j < numMoves; j++)
+        {
+            if (moves[j] == currentMove)
+                break;
+        }
+        if (j == numMoves)
+            moves[numMoves++] = currentMove;
+    }
+
+    // --- Movimientos Enseñables ---
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(GetMonData(mon, MON_DATA_SPECIES));
+    if (teachableLearnset != NULL)
+    {
+        u16 learnedMoves[MAX_MON_MOVES];
+
+        for (i = 0; i < MAX_MON_MOVES; i++)
+            learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+        for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE && numMoves < MAX_RELEARNER_MOVES; i++)
+        {
+            currentMove = teachableLearnset[i];
+
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                if (learnedMoves[j] == currentMove)
+                    break;
+            }
+            if (j < MAX_MON_MOVES)
+                continue;
+
+            for (j = 0; j < numMoves; j++)
+            {
+                if (moves[j] == currentMove)
+                    break;
+            }
+            if (j == numMoves)
+                moves[numMoves++] = currentMove;
+        }
     }
 
     if (P_SORT_MOVES)
@@ -5891,6 +6015,9 @@ u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves)
         }
         if (j < numMoves)
             continue;
+
+        if (numMoves >= MAX_RELEARNER_MOVES)
+            break;
 
         moves[numMoves++] = move;
     }
@@ -6043,6 +6170,20 @@ bool32 HasRelearnerTutorMoves(struct Pokemon *mon)
     }
 #endif
     return FALSE;
+}
+
+bool32 HasTeachableLearnsetMoves(struct Pokemon *mon)
+{
+    u16 specie = GetMonData(mon, MON_DATA_SPECIES);
+    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(specie);
+
+    if(specie == SPECIES_MEW)
+        return TRUE;
+        
+    if (teachableLearnset != NULL)
+        return FALSE;
+
+    return TRUE;
 }
 
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)

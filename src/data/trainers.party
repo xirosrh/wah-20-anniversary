@@ -3462,7 +3462,7 @@ Class: WAH Admin
 Pic: Scarex
 Gender: Male
 Music: Aqua
-Items: ITEM_MAX_POTION / ITEM_MAX_POTION
+Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
@@ -10486,7 +10486,7 @@ Quirky Nature
 === TRAINER_WAH_COLLABORATOR_MICOLO ===
 Name: Micolo
 Class: Collaborator
-Pic: Cooltrainer M
+Pic: Micolo
 Gender: Male
 Music: Cool
 Items: Full Restore / Full Restore / Full Restore

@@ -312,7 +312,7 @@ ReonekyRoom_OnFrame::
 # 201 "data/maps/ReonekyRoom/scripts.pory"
 	applymovementandwait LOCALID_REOROOM_REONEKY, ReonekyRoom_OnFrame_Movement_8
 # 202 "data/maps/ReonekyRoom/scripts.pory"
-	directcameramovementtopos 6, 11
+	directcameramovementtopos 6, 10
 # 203 "data/maps/ReonekyRoom/scripts.pory"
 	waitmovement 0
 # 204 "data/maps/ReonekyRoom/scripts.pory"
