@@ -476,5 +476,6 @@ static const struct LevelUpMove sShadowLugiaLevelUpLearnset[] =
     LEVEL_UP_MOVE(81, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(90, MOVE_SHADOW_WING),
     LEVEL_UP_MOVE(96, MOVE_SKY_ATTACK),
+    LEVEL_UP_MOVE(98, MOVE_QUIVER_DANCE),
     LEVEL_UP_END
 };
