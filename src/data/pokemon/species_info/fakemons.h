@@ -1500,9 +1500,9 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_MEWTWO
     [SPECIES_ARMORED_MEWTWO] =
     {
-        .baseHP        = 120,
-        .baseAttack    = 90,
-        .baseDefense   = 110,
+        .baseHP        = 190,
+        .baseAttack    = 10,
+        .baseDefense   = 120,
         .baseSpeed     = 130,
         .baseSpAttack  = 194,
         .baseSpDefense = 154,
@@ -1563,12 +1563,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_MEGA_EVOLUTIONS
     [SPECIES_ARMORED_MEWTWO_MEGA] =
     {
-        .baseHP        = 120,
-        .baseAttack    = 180,
-        .baseDefense   = 190,
-        .baseSpeed     = 220,
+        .baseHP        = 190,
+        .baseAttack    = 10,
+        .baseDefense   = 220,
+        .baseSpeed     = 240,
         .baseSpAttack  = 250,
-        .baseSpDefense = 190,
+        .baseSpDefense = 250,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_STEEL),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 390 : 351,
