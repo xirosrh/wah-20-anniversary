@@ -199,7 +199,7 @@ script ReonekyRoom_OnFrame {
     fadescreen(FADE_FROM_WHITE)
     setvar(VAR_TEMP_0_REONEKY_ROOM_STATE, 1)
     applymovementandwait(LOCALID_REOROOM_REONEKY, moves(walk_right * 2, walk_up, walk_right * 2, walk_up * 2, face_down ))
-    directcameramovementtopos(6, 11)
+    directcameramovementtopos(6, 10)
     waitmovement(0)
     setobjectxyperm(LOCALID_REOROOM_REONEKY, 6, 4)
     setobjectmovementtype2(LOCALID_REOROOM_REONEKY, MOVEMENT_TYPE_FACE_DOWN)
