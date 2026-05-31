@@ -55,7 +55,7 @@ MoveRelearner_Text_TutorMoveLWR::
 	.string "Tutor Mov.$"
 
 MoveRelearner_Text_TutorAllMovesLWR::
-	.string "Movimientos.$"
+	.string "movimientos$"
 
 MoveRelearner_Text_WhichXmoveShouldTeach:
 	.string "¿Qué {STR_VAR_3} debería enseñarle?$"
