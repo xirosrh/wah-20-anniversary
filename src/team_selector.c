@@ -1095,7 +1095,8 @@ static void GenerateRandomTeam()
 
             for (u8 j = 0; j < i; j++)
             {
-                if (teamSelectorObj.monIndexRandomTeam[j] == idx)
+                if (teamSelectorObj.monIndexRandomTeam[j] == idx ||  
+                    GetSpecieTeamSelectorByIndex(teamSelectorObj.monIndexRandomTeam[j]) == GetSpecieTeamSelectorByIndex(teamSelectorObj.monIndexRandomTeam[idx]))
                 {
                     repeated = TRUE;
                     break;

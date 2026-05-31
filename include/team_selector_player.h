@@ -2,6 +2,7 @@
 #define GUARD_TEAM_SELECTOR_PLAYER_H
 
 u8 GetIndexMonTeamSelectorBySpecie(u16 specie, u8 indexTeam);
+u16 GetSpecieTeamSelectorByIndex(u8 index);
 
 enum
 {

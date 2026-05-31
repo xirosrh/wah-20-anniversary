@@ -1313,6 +1313,13 @@ const struct TeamSelectorMonData gAllTeamMons[NUM_MONS_POOL] =
         },
 };
 
+u16 GetSpecieTeamSelectorByIndex(u8 index)
+{
+    if(index > MON_TEAM_SELECTOR_COUNT)
+        return SPECIES_NONE;
+
+    return gAllTeamMons[index].specie;
+}
 
 u8 GetIndexMonTeamSelectorBySpecie(u16 specie, u8 indexTeam)
 {
