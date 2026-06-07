@@ -1268,8 +1268,8 @@
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES    0x4C0 // Used WAH
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
+#define FLAG_WAH_CHALLENGE_FINISHED_WITH_ELECTRODES       0x4C1 // Used WAH achievements
+#define FLAG_WAH_CHALLENGE_FINISHED_WITHOUT_LEGENDARIES   0x4C2 // Used WAH achievements
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag

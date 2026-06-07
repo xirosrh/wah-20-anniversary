@@ -579,6 +579,7 @@ gSpecials::
 	def_special UpdateObjectEventSprite
 	def_special RandomizeWahAdminTeams
 	def_special SetWahChallengeInitialAchievementFlags
+	def_special SetWahChallengeFinalAchievementFlags
 	def_special ShouldUseAlternativeTeam
 	def_special ShouldReyBooUseAlternativeTeam
 	def_special OpenTeamSelectorFromField

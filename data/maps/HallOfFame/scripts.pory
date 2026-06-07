@@ -42,6 +42,7 @@ script HallOfFame_OnFrame {
 	delay(40)
 	setvar(VAR_TEMP_1, 1)
 	call(HallOfFame_EventScript_SetGameClear)
+	special(SetWahChallengeFinalAchievementFlags)
 	call(HallOfFame_EventScript_EvalAchievements)
 	call(EventScript_ResetWahChallenge)
 	fadescreenspeed(FADE_TO_BLACK, 24)

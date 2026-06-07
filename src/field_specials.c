@@ -4561,11 +4561,43 @@ void RandomizeWahAdminTeams(void)
     VarSet(VAR_WAH_ADMIN_TEAMS_HI, Random());
 }
 
+
+
+static bool8 IsRestrictedLegendary(u16 species)
+{
+    species = SanitizeSpeciesId(species);
+
+    if (species == SPECIES_NONE || species == SPECIES_EGG)
+        return FALSE;
+
+    return gSpeciesInfo[species].isLegendary || gSpeciesInfo[species].isMythical;
+}
+
+static bool8 PartyHasLegendary(void)
+{
+    u32 i;
+
+    u8 partyCount = CalculatePlayerPartyCount();
+
+    for (i = 0; i < partyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (IsRestrictedLegendary(species))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+
 void SetWahChallengeInitialAchievementFlags(void)
 {
     u32 i;
 
-    for (i = 0; i < gPlayerPartyCount; i++)
+    u8 partyCount = CalculatePlayerPartyCount();
+
+    for (i = 0; i < partyCount; i++)
     {
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
 
@@ -4576,8 +4608,29 @@ void SetWahChallengeInitialAchievementFlags(void)
             FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES);
     }
 
-    if (!PartyHasRestrictedLegendary())
+    if (!PartyHasLegendary())
         FlagSet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES);
+}
+
+void SetWahChallengeFinalAchievementFlags(void)
+{
+    u32 i;
+
+    u8 partyCount = CalculatePlayerPartyCount();
+
+    for (i = 0; i < partyCount; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        if (species == SPECIES_EGG || species == SPECIES_NONE)
+            continue;
+
+        if (species == SPECIES_ELECTRODES)
+            FlagSet(FLAG_WAH_CHALLENGE_FINISHED_WITH_ELECTRODES);
+    }
+
+    if (!PartyHasLegendary())
+        FlagSet(FLAG_WAH_CHALLENGE_FINISHED_WITHOUT_LEGENDARIES);
 }
 
 // Checks if admin at given index should use ALTERNATIVE team

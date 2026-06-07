@@ -35,9 +35,6 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
 static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id);
 static bool8 CheckFoundTileKecleon(u8 id);
 static bool8 CheckAvaricia(u8 id);
-static bool8 PartyHasElectrodeS(void);
-static bool8 PartyHasLegendary(void);
-static bool8 IsRestrictedLegendary(u16 species);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     [ACHIEVEMENT_WIN_WAH_CHALLENGE] = {
@@ -135,7 +132,8 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id)
     if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
         return FALSE;
 
-    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES) && PartyHasElectrodeS();
+    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITH_ELECTRODES)
+        && FlagGet(FLAG_WAH_CHALLENGE_FINISHED_WITH_ELECTRODES);
 }
 
 static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id)
@@ -143,7 +141,8 @@ static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id)
     if (FlagGet(FLAG_WAH_CHALLENGE_COMPLETED) != sAchievements[id].target)
         return FALSE;
 
-    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES) && !PartyHasLegendary();
+    return FlagGet(FLAG_WAH_CHALLENGE_STARTED_WITHOUT_LEGENDARIES)
+        && FlagGet(FLAG_WAH_CHALLENGE_FINISHED_WITHOUT_LEGENDARIES);
 }
 
 static bool8 CheckUnlockAllPokemon(u8 id)
@@ -172,48 +171,10 @@ static bool8 CheckAvaricia(u8 id)
     return GetMoney(&gSaveBlock1Ptr->money) >= sAchievements[id].target;
 }
 
-static bool8 PartyHasElectrodeS(void)
-{
-    u32 i;
 
-    for (i = 0; i < gPlayerPartyCount; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) == SPECIES_ELECTRODES)
-            return TRUE;
-    }
 
-    return FALSE;
-}
 
-static bool8 IsRestrictedLegendary(u16 species)
-{
-    species = SanitizeSpeciesId(species);
 
-    if (species == SPECIES_NONE || species == SPECIES_EGG)
-        return FALSE;
-
-    return gSpeciesInfo[species].isLegendary || gSpeciesInfo[species].isMythical;
-}
-
-static bool8 PartyHasLegendary(void)
-{
-    u32 i;
-
-    for (i = 0; i < gPlayerPartyCount; i++)
-    {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
-
-        if (IsRestrictedLegendary(species))
-            return TRUE;
-    }
-
-    return FALSE;
-}
-
-bool8 PartyHasRestrictedLegendary(void)
-{
-    return PartyHasLegendary();
-}
 static bool8 CheckWinWahChallengeDouble(u8 id)
 {
     return FlagGet(FLAG_WAH_CHALLENGE_DOUBLE_COMPLETED) == sAchievements[id].target;
