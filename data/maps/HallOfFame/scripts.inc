@@ -173,15 +173,15 @@ HallOfFame_EventScript_SetGameClear_8:
 
 HallOfFame_OnFrame_Text_0:
 # 24 "data/maps/HallOfFame/scripts.pory"
-	.string "¡Bienvenid{OA} al Salón de la Fama!$"
+	.string "Welcome to the Hall of Fame!$"
 
 HallOfFame_OnFrame_Text_1:
 # 27 "data/maps/HallOfFame/scripts.pory"
-	.string "Aquí quedan registrados los nombres y\n"
-	.string "Pokémon de quienes lograron superar\l"
-	.string "este desafío.$"
+	.string "Here the names and Pokémon of those\n"
+	.string "who managed to beat this challenge are\l"
+	.string "recorded.$"
 
 HallOfFame_OnFrame_Text_2:
 # 35 "data/maps/HallOfFame/scripts.pory"
-	.string "¡Es hora de grabar tu nombre en la\n"
-	.string "historia de WAH!$"
+	.string "It's time to carve your name into WAH\n"
+	.string "history!$"

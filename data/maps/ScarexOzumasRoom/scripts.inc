@@ -876,97 +876,97 @@ ScarexOzumasRoom_EventScript_Scarex_Movement_0:
 
 ScarexOzumasRoom_EventScript_EnterRoom_Text_0:
 # 66 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "¿Y Scarex? Se supone ya debería estar\n"
-	.string "aquí.$"
+	.string "Where's Scarex? He should already be\n"
+	.string "here.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_0:
 # 163 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Oye, estuve repitiendo nuestro combate\n"
-	.string "en mi cabeza, y no puedo mentir: me\l"
-	.string "diste una buena paliza.$"
+	.string "Hey, I've been replaying our battle in\n"
+	.string "my head, and I can't lie: you gave me a\l"
+	.string "real thrashing.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_1:
 # 168 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Ya has demostrado tu fuerza. Ahora ve a\n"
-	.string "enfrentarte a Scarex.$"
+	.string "You've proven your strength. Now go\n"
+	.string "face Scarex.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_2:
 # 175 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Bueno, parece que ha llegado el momento\n"
-	.string "que teníamos pendiente.\p"
-	.string "Soy Ozumas, de la sangre de la\n"
-	.string "legendaria dinastía Mendrax.\p"
-	.string "Hace mucho, fuimos muy conocidos, sobre\n"
-	.string "todo por nunca escapar a un reto.$"
+	.string "Well, it seems the moment we had pending\n"
+	.string "has arrived.\p"
+	.string "I'm Ozumas, of the blood of the\n"
+	.string "legendary Mendrax dynasty.\p"
+	.string "Long ago, we were well known, above all\n"
+	.string "for never backing down from a\l"
+	.string "challenge.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_3:
 # 181 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "¿Así que no me conoces? Pues no te\n"
-	.string "preocupes, han pasado muchos años ya.$"
+	.string "So you don't know me? Well, don't worry,\n"
+	.string "many years have passed now.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_4:
 # 184 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Si quieres saber algo de mí, te diré que\n"
-	.string "desde siempre me atrajeron las\l"
-	.string "historias de Johto.\p"
-	.string "Pasé años tratando de contar al mundo\n"
-	.string "sus leyendas.$"
+	.string "If you want to know something about me,\n"
+	.string "I'll say I've always been drawn to the\l"
+	.string "legends of Johto.\p"
+	.string "I spent years trying to tell the world\n"
+	.string "its tales.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_5:
 # 188 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Parece que ya has derrotado a Scarex,\n"
-	.string "así que si logras vencerme, podrás\l"
-	.string "avanzar.$"
+	.string "It seems you've already beaten Scarex,\n"
+	.string "so if you manage to defeat me, you can\l"
+	.string "advance.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_6:
 # 190 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Si quieres avanzar, primero tendrás que\n"
-	.string "derrotar a Scarex y a mí.\p"
-	.string "Parece que yo seré tu primer\n"
-	.string "contrincante.$"
+	.string "If you want to advance, first you'll\n"
+	.string "have to beat both Scarex and me.\p"
+	.string "It seems I'll be your first opponent.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_7:
 # 193 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Vamos a ver qué historia sale de esta\n"
-	.string "batalla.$"
+	.string "Let's see what story comes out of this\n"
+	.string "battle.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_8:
 # 199 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Has demostrado que tienes fuerza y\n"
-	.string "convicción… ¡te felicito!$"
+	.string "You've shown that you have strength\n"
+	.string "and conviction… I congratulate you!$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_9:
 # 207 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Pero si quieres ganar, aún queda un\n"
-	.string "largo camino por delante…$"
+	.string "But if you want to win, there's still a\n"
+	.string "long road ahead…$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_10:
 # 211 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Primero, deberás enfrentarte a Scarex\n"
-	.string "para poder avanzar a la siguiente sala.$"
+	.string "First, you'll have to face Scarex to\n"
+	.string "advance to the next room.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_11:
 # 216 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Más adelante, aguarda una batalla\n"
-	.string "contra alguien muy cercano a mí.\p"
-	.string "Es un gran amigo y rival. Quizá lo\n"
-	.string "conozcas, se llama Xiros.\p"
-	.string "Será esa prueba la que determine si\n"
-	.string "realmente puedes ganar el desafío.$"
+	.string "Further on, a battle awaits against\n"
+	.string "someone very close to me.\p"
+	.string "He's a great friend and rival. Maybe you\n"
+	.string "know him - his name is Xiros.\p"
+	.string "It'll be that test that determines\n"
+	.string "whether you can truly win the\l"
+	.string "challenge.$"
 
 ScarexOzumasRoom_EventScript_Ozumas_Text_12:
 # 228 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Estoy seguro de que lo harás genial.\n"
-	.string "¡Mucha suerte!$"
+	.string "I'm sure you'll do great. Good luck!$"
 
 ScarexOzumasRoom_EventScript_Bellsprout_Text_0:
 # 389 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "Parece una estatua robada de la Torre\n"
-	.string "Bellsprout.$"
+	.string "It looks like a statue stolen from\n"
+	.string "Sprout Tower.$"
 
 ScarexOzumasRoom_Text_OzumasDefeated::
 # 253 "data/maps/ScarexOzumasRoom/scripts.pory"
-	.string "¡Eso ha estado muy guay!$"
+	.string "That was really cool!$"
 
 ScarexOzumasRoom_Text_ScarexDefeated::
 # 384 "data/maps/ScarexOzumasRoom/scripts.pory"

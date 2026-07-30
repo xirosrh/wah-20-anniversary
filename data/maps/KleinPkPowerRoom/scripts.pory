@@ -58,21 +58,21 @@ script KleinPkPowerRoom_OnFrame {
     waitse
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(walk_in_place_up))
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("Aquí el soporte técnico.\n¿En qué puedo ayudarte?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Tech support here.\nHow can I help you?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("¿Que el Güindous no arranca?\n¿Y qué aparece en pantalla?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("So Windoze won't boot?\nAnd what shows up on screen?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("¿Nada?\n¿Pero… tienes el ordenador encendido?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Nothing?\nBut… is the computer even turned on?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
     applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
-    msgbox(format("¡Pues enchúfalo, hombre!\n¡Esas cosas se comprueban antes!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Then plug it in, man!\nYou check that stuff first!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
     playse(SE_POKENAV_HANG_UP)
     waitse
@@ -87,21 +87,21 @@ script KleinPkPowerRoom_OnFrame {
     waitse
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(walk_in_place_up))
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("Aquí el soporte técnico.\n¿Qué necesitas?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Tech support here.\nWhat do you need?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("¿¡Cómo que has perdido el cursor!?\n¿Has probado a mover el ratón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("What do you mean you lost the cursor!?\nHave you tried moving the mouse?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("No será el ratón inalámbrico...\n¿Tiene pilas?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("It's not the wireless mouse, is it...\nDoes it have batteries?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
     applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
-    msgbox(format("¡Joder! ¡Pues pónselas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("For crying out loud! Then put some in!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
     playse(SE_POKENAV_HANG_UP)
     waitse
@@ -116,28 +116,28 @@ script KleinPkPowerRoom_OnFrame {
     waitse
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(walk_in_place_up))
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("Aquí el soporte técnico."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Tech support here."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("¿¡Que cuál es la tecla de “cualquier tecla”!? ¿¡Pero qué pregunta es esa!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Which key is the “any key”!? What kind of question is that!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
-    msgbox(format("¡Pues si el mensaje dice “pulse cualquier tecla”, haz lo que dice!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("Look, if the message says “press any key,” just do what it says!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_thinking))
     delay(60)
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
     playse(SE_PIN)
     applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry))
-    msgbox(format("¡Que no hay ninguna tecla que se llame “cualquier tecla”! ¡Pulsa una tecla cualquiera y ya!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("There is NO key called “any key”! Just press any key at all!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
     playse(SE_POKENAV_HANG_UP)
     waitse
     playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_KLEINROOM_PKPOWER, moves(emote_angry, walk_in_place_up))
-    msgbox(format("¡Esto es increíble! ¿Pero cómo puede haber gente así? ¡Estoy rodeado de inútiles! Pero se va a acabar...\p¡Los voy a echar a todos!\n¡A la puta calle!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+    msgbox(format("This is unbelievable! How can there be people like this? I'm surrounded by idiots! But it's going to end...\pI'm going to fire them all!\nOut on the street!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     waitse
     playse(SE_LEDGE)
     applymovement(LOCALID_KLEINROOM_KLEIN, moves(jump_in_place_down))
@@ -147,7 +147,7 @@ script KleinPkPowerRoom_OnFrame {
     applymovement(LOCALID_KLEINROOM_KLEIN, moves(jump_in_place_down))
     waitse
     waitmovement(LOCALID_KLEINROOM_KLEIN)
-    msgbox(format("¡Eh, tú! ¡Aquí! ¡Ven!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("Hey, you! Over here! Come!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_question_mark face_right))
     waitse
@@ -157,22 +157,22 @@ script KleinPkPowerRoom_OnFrame {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_right * 4 walk_up))
     waitmovement(LOCALID_PLAYER)
     playbgm(MUS_B_PIKE, FALSE)
-    msgbox(format("¿Sabes quién soy?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("Do you know who I am?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_thinking))
     waitse
     waitmovement(LOCALID_PLAYER)
     delay(30)
-    msgbox(format("Claro... Tú qué vas a saber...\nSoy Klein, el webmaster de WaH.\pOye... Tienes que ayudarme, ¡la he liado parda!\pHe hackeado al Perro Sanxe y para colmo me han metido en esta cárcel a la vez que se ha caído el foro...\n¿Puedes liberarme?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("Right... how would you know...\nI'm Klein, the webmaster of WaH.\pListen... you've got to help me, I've really messed up!\pI hacked Perro Sanxe, and to top it off they threw me in this jail right as the forum went down...\nCan you set me free?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_question_mark))
     waitse
     waitmovement(LOCALID_PLAYER)
     delay(30)
-    msgbox(format("¿Que no sabes cómo liberarme? ¡Pues es muy fácil!\p¿Ves ese botón rojo?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("You don't know how to free me? It's super easy!\pSee that red button?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     applymovement(LOCALID_PLAYER, moves(face_left delay_16*4 face_up))
     waitmovement(LOCALID_PLAYER)
-    msgbox(format("¡Sí, ese botón! ¡Púlsalo y podré salir!\p¡Vamos, no me hagas esperar más, que tengo que levantar el foro!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("Yes, that button! Press it and I can get out!\pCome on, don't keep me waiting - I've got a forum to bring back up!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     fadedefaultbgm
     setvar(VAR_TEMP_0, 1)
     release
@@ -183,11 +183,11 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
     lock
     if(flag(FLAG_DEFEATED_ADMIN_PKPOWER))
     {
-        msgbox(format("La celda ya está abierta."), MSGBOX_AUTOCLOSE)
+        msgbox(format("The cell is already open."), MSGBOX_AUTOCLOSE)
     }
     else
     {
-        msgbox(format("¿Quieres pulsar el botón rojo?"), MSGBOX_YESNO)
+        msgbox(format("Press the red button?"), MSGBOX_YESNO)
         closemessage
         if(var(VAR_RESULT) == YES)
         {
@@ -217,14 +217,14 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
             waitse
             waitmovement(LOCALID_KLEINROOM_KLEIN)
             playbgm(MUS_B_PIKE, FALSE)
-            msgbox(format("¡Sí! ¡Soy libre!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+            msgbox(format("Yes! I'm free!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
             applymovement(LOCALID_KLEINROOM_KLEIN, moves(walk_down, walk_left))
             waitmovement(LOCALID_KLEINROOM_KLEIN)
             playse(SE_PIN)
             applymovement(LOCALID_KLEINROOM_KLEIN, moves(emote_question_mark))
             waitse
             waitmovement(LOCALID_KLEINROOM_KLEIN)
-            msgbox(format("Por cierto... ¿Tú quién eras?\n¿No será una trampa para encerrarme de nuevo?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+            msgbox(format("By the way... who were you again?\nThis isn't a trap to lock me up again, is it?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
             playse(SE_PIN)
             applymovement(LOCALID_KLEINROOM_KLEIN, moves(emote_versus))
             waitse
@@ -240,17 +240,17 @@ script KleinPkPowerRoom_EventScript_BotonRojo {
             waitmovement(LOCALID_KLEINROOM_PKPOWER)
             waitse
             playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
-            msgbox(format("¿¡Pero qué!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+            msgbox(format("What the!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
             applymovement(LOCALID_KLEINROOM_PKPOWER, moves(walk_right))
             waitmovement(LOCALID_KLEINROOM_PKPOWER)
             applymovement(LOCALID_PLAYER, moves(face_left))
             waitmovement(LOCALID_PLAYER)
-            msgbox(format("¿Qué estáis haciendo?\n¡Si acabo de pagar la fianza para sacarlo de la cárcel!\p¿No podías quedarte quietecito tú también? Bah, qué más da...\p¡Venga, a levantar el foro!\n¡Que lleva caído todo el día!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+            msgbox(format("What are you two doing?\nI just paid the bail to get him out of jail!\pCouldn't you just stay put too? Bah, whatever...\pCome on, let's get the forum back up!\nIt's been down all day!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
             playse(SE_PIN)
             applymovement(LOCALID_KLEINROOM_PKPOWER, moves(emote_versus))
             waitse
             call(KleinPkPowerRoom_EventScript_PkPowerBattle)
-            msgbox(format("¡Perfecto! ¡Has superado la prueba!\nHay que saber actuar bajo presión.\p¡Vamos, a levantar el foro!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+            msgbox(format("Perfect! You've passed the test!\nYou've got to know how to act under pressure.\pCome on, let's get the forum back up!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
             fadescreen(FADE_TO_BLACK)
             setobjectxy(LOCALID_KLEINROOM_PKPOWER, 2, 4)
             setobjectxyperm(LOCALID_KLEINROOM_PKPOWER, 2, 4)
@@ -307,7 +307,7 @@ script KleinPkPowerRoom_EventScript_KleinBattle {
 }
 
 text KleinPkPowerRoom_Text_KleinDefeated {
-    format("¿Y ahora qué?\n¿Al talego de nuevo?")
+    format("Now what?\nBack to the slammer?")
 }
 
 script KleinPkPowerRoom_EventScript_PkPowerBattle {
@@ -327,17 +327,17 @@ script KleinPkPowerRoom_EventScript_PkPowerBattle {
 }
 
 text KleinPkPowerRoom_Text_PkPowerDefeated {
-    format("¡Vaya tela! ¡A seguir trabajando!")
+    format("What a mess! Back to work!")
 }
 
 script KleinPkPowerRoom_EventScript_PkPower {
     lock
     faceplayer
     if(flag(FLAG_DEFEATED_ADMIN_PKPOWER)) {
-        msgbox(format("Tengo que aprovechar a trabajar ahora que no hay más llamadas.\p¡Ya vete de aquí!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+        msgbox(format("I should get some work done now while there are no more calls.\pNow get out of here!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     }
     else {
-        msgbox(format("¿No ves que estoy ocupado?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
+        msgbox(format("Can't you see I'm busy?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_PKPOWER)
     }
     applymovement(LOCALID_KLEINROOM_PKPOWER, moves(face_up))
     waitmovement(LOCALID_KLEINROOM_PKPOWER)
@@ -348,7 +348,7 @@ script KleinPkPowerRoom_EventScript_PkPower {
 script KleinPkPowerRoom_EventScript_Klein {
     lock
     faceplayer
-    msgbox(format("¿Equipo de Investigación?\n¿O Equipo de la mierda?\pQué te importa a ti el hackeo al Perro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
+    msgbox(format("Research Team?\nOr Team Garbage?\pWhat do you care about the hack on Perro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_KLEIN)
     applymovement(LOCALID_KLEINROOM_KLEIN, moves(face_up))
     waitmovement(LOCALID_KLEINROOM_KLEIN)
     release
@@ -356,57 +356,57 @@ script KleinPkPowerRoom_EventScript_Klein {
 }
 
 script KleinPkPowerRoom_EventScript_Cafe {
-    msgbox(format("Este café ya está frío."), MSGBOX_SIGN)
+    msgbox(format("This coffee's cold now."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Telefono {
-    msgbox(format("Es un teléfono negro con el auricular rojo."), MSGBOX_SIGN)
+    msgbox(format("It's a black phone with a red handset."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Archivador {
-    msgbox(format("Es un archivador de metal lleno de carpetas con papeles."), MSGBOX_SIGN)
+    msgbox(format("It's a metal filing cabinet full of folders and papers."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Computer {
-    msgbox(format("Es un ordenador de escritorio típico de un funcionario."), MSGBOX_SIGN)
+    msgbox(format("It's a desktop computer, the typical kind a civil servant has."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Monitor {
-    msgbox(format("Es el único monitor secundario que hay en la sala."), MSGBOX_SIGN)
+    msgbox(format("It's the only secondary monitor in the room."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Caja {
-    msgbox(format("Es una caja abierta.\nEstá vacía."), MSGBOX_SIGN)
+    msgbox(format("It's an open box.\nIt's empty."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Cama {
-    msgbox(format("Es una cama cutre.\nParece muy incómoda."), MSGBOX_SIGN)
+    msgbox(format("It's a crummy bed.\nIt looks really uncomfortable."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_CajaHerramientas {
-    msgbox(format("Es una caja de herramientas.\nTiene muchas herramientas."), MSGBOX_SIGN)
+    msgbox(format("It's a toolbox.\nIt has many tools."), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Notes1 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen apuntes de un manual de soporte técnico.\pEl primer punto dice: “Comprobar que el ordenador está encendido”."), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pThey look like notes from a tech- support manual.\pThe first point reads: “Check that the computer is turned on.”"), MSGBOX_SIGN)
     end
 }
 
 
 script KleinPkPowerRoom_EventScript_Notes2 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParece un borrador de anuncio para el foro.\pSolo se lee: “Mantenimiento de la Wiki programado. Volvemos enseguida.”"), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pIt looks like a draft announcement for the forum.\pIt only reads: “Wiki maintenance scheduled. Back soon.”"), MSGBOX_SIGN)
     end
 }
 
 script KleinPkPowerRoom_EventScript_Notes3 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pEs un recibo de pago que tiene el importe tachado y al lado pone: “PKPower paga.”"), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pIt's a payment receipt with the amount crossed out, and beside it: “PKPower pays.”"), MSGBOX_SIGN)
     end
 }

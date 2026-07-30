@@ -250,12 +250,12 @@ static const u8 sText_WasMade[] = _(" was made!");
 
 static const u8 *const sBlenderOpponentsNames[] =
 {
-    [BLENDER_MISTER] = COMPOUND_STRING("Señor"),
-    [BLENDER_LADDIE] = COMPOUND_STRING("Señora"),
-    [BLENDER_LASSIE] = COMPOUND_STRING("Señorita"),
+    [BLENDER_MISTER] = COMPOUND_STRING("Mr."),
+    [BLENDER_LADDIE] = COMPOUND_STRING("Mrs."),
+    [BLENDER_LASSIE] = COMPOUND_STRING("Ms."),
     [BLENDER_MASTER] = COMPOUND_STRING("Maestro"),
     [BLENDER_DUDE]   = COMPOUND_STRING("Pibe"),
-    [BLENDER_MISS]   = COMPOUND_STRING("Dama"),
+    [BLENDER_MISS]   = COMPOUND_STRING("MISS"),
 };
 
 static const u8 sText_CommunicationStandby[] = _("Communication standby…");

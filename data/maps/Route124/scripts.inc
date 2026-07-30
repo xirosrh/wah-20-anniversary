@@ -100,5 +100,5 @@ Route124_EventScript_Isabella::
 	end
 
 Route124_Text_HuntersHouse:
-	.string "CASA del BUSCATESOROS$"
+	.string "TREASURE HUNTER'S HOUSE$"
 

@@ -10548,10 +10548,6 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
                 statValue = -2;
             gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
             index = 1;
-            gBattleTextBuff2[index++] = B_BUFF_STRING;
-            gBattleTextBuff2[index++] = STRINGID_STATFELL;
-            gBattleTextBuff2[index++] = STRINGID_STATFELL >> 8;
-            
             if (statValue == -2)
             {
                 gBattleTextBuff2[index++] = B_BUFF_STRING;
@@ -10590,10 +10586,6 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
             statValue = 2;
         gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
         index = 1;
-        gBattleTextBuff2[index++] = B_BUFF_STRING;
-        gBattleTextBuff2[index++] = STRINGID_STATROSE;
-        gBattleTextBuff2[index++] = STRINGID_STATROSE >> 8;
-        
         if (statValue == 2)
         {
             gBattleTextBuff2[index++] = B_BUFF_STRING;

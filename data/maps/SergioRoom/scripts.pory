@@ -117,7 +117,7 @@ script SergioRoom_EventScript_Abra {
     playmoncry(SPECIES_ABRA, CRY_MODE_ENCOUNTER)
     releaseall
     delay(20)
-    msgbox(format("Parece que Abra quiere teletransportarte a otro lugar. ¿Deseas ir?"), MSGBOX_YESNO)
+    msgbox(format("It seems Abra wants to teleport you somewhere else. Do you want to go?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         call(WahRoomsShared_SetPlayerTeleportGfxVars)
         playse(SE_WARP_IN)
@@ -140,7 +140,7 @@ script SergioRoom_EventScript_SecurityGuardTrigger {
     lock
     playse(SE_PIN)
     applymovementandwait(LOCALID_SERGIOROOM_SECURITYGUARD, moves(emote_double_exclamation_mark, face_player))
-    msgbox(format("¡Alto ahí!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Hold it right there!"), MSGBOX_AUTOCLOSE)
     delay(48)
     getdirectiontoface(VAR_TEMP_A, LOCALID_PLAYER, LOCALID_SERGIOROOM_SECURITYGUARD)
     switch(var(VAR_TEMP_A)){
@@ -160,7 +160,7 @@ script SergioRoom_EventScript_SecurityGuardTrigger {
 }
 
 text SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance {
-    format("No puedes avanzar al hall de la fama hasta no derrotar a Serg!o.\p¿Dónde habrá ido?")
+    format("You can't advance to the Hall of Fame until you defeat Serg!o.\pWhere could he have gone?")
 }
 
 script SergioRoom_EventScript_SecurityGuard {
@@ -169,6 +169,6 @@ script SergioRoom_EventScript_SecurityGuard {
 }
 
 script SergioRoom_EventScript_Colmillo {
-    msgbox(format("Es un colmillo de un Pokémon dragón gigante."), MSGBOX_SIGN)
+    msgbox(format("It's a fang from a giant dragon Pokémon."), MSGBOX_SIGN)
     end
 }

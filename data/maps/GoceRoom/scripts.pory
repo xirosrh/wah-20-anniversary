@@ -26,27 +26,27 @@ script GoceRoom_OnTransition {
 
 script GoceRoom_EventScript_Goce {
     if(flag(FLAG_DEFEATED_ADMIN_GOCE)){
-        msgbox(format("Ya puedes avanzar al siguiente desafío.\pTodavía queda mucho por recorrer."), MSGBOX_NPC, speaker = SP_NAME_GOCE)
+        msgbox(format("You may advance to the next challenge now.\pThere's still a long way to go."), MSGBOX_NPC, speaker = SP_NAME_GOCE)
         release
         end
     }
     else {
           lock
         faceplayer
-        msgbox(format("A ver, chiquitín. No fui el más conocido ni estuve demasiado tiempo...\pFui apenas una chispa atrapada en {COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\pPero esa chispa fue el inicio de todo esto, y hoy te toca enfrentarte a ella."), speaker = SP_NAME_GOCE)
+        msgbox(format("Listen, little one. I wasn't the best known nor was I around for very long...\pI was but a spark trapped in {COLOR LIGHT_RED}amber{COLOR DARK_GRAY}.\pBut that spark was the start of all this, and today it's your turn to face it."), speaker = SP_NAME_GOCE)
         playse(SE_PIN)
         applymovement(LOCALID_GOCEROOM_GOCE, moves(emote_versus))
         waitmovement(0)
         waitse
         call(GoceRoom_EventScript_GoceBattle)
         delay(10)
-        msgbox(format("¡Gran batalla! Has podido derrotar al gran fundador, seguro estarás orgullos{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
+        msgbox(format("Great battle! You managed to defeat the great founder - you must be proud."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
         delay(20)
         playse(SE_PIN)
         applymovement(LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48)
         waitmovement(0)
         waitse
-        msgbox(format("Eh, ¿así que no sabes quién soy? Me conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\pIgual, lo que importa no es mi nombre, sino que lo que comenzó siga vivo.\pTú acabas de demostrarme que lo está, niñ{OA}.\pPuedes continuar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
+        msgbox(format("Huh, so you don't know who I am? They knew me as {COLOR RED}Goce{COLOR DARK_GRAY} and as {COLOR RED}Lance{COLOR DARK_GRAY}.\pEither way, what matters isn't my name, but that what began stays alive.\pYou've just proven to me that it is, kid.\pYou may continue."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
         getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
         if(var(VAR_TEMP_0) == 5) {
             applymovementandwait(LOCALID_GOCEROOM_GOCE, 
@@ -84,10 +84,10 @@ script GoceRoom_EventScript_GoceBattle {
 }
 
 text GoceRoom_Text_GoceDefeated {
-    format("Increíble cómo han evolucionado en estos últimos 20 años…")
+    format("Incredible how they've evolved over these last 20 years…")
 }
 
 script GoceRoom_EventScript_Ambar {
-    msgbox(format("Hay pequeños fragmentos de ámbar esparcidos por el suelo."), MSGBOX_SIGN)
+    msgbox(format("There are small fragments of amber scattered across the floor."), MSGBOX_SIGN)
     end
 }

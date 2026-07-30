@@ -1,137 +1,137 @@
 gText_GirlOrBoy::
-	.string "¿Eres chica o chico?$"
+	.string "Are you a girl or a boy?$"
 
 gText_SoItsPlayer::
-	.string "¿Así que eres {PLAYER}?$"
+	.string "So you're {PLAYER}?$"
 
 gText_Cope_YesNo::
-	.string "▶Sí\n{CLEAR_TO 8}No$"
+	.string "▶Yes\n{CLEAR_TO 8}No$"
 
 gText_Cope_NoYes::
-	.string "{CLEAR_TO 8}Sí\n▶No$"
+	.string "{CLEAR_TO 8}Yes\n▶No$"
 
 gText_Choose_Difficulty::
-	.string "Selecciona la Dificultad$"
+	.string "Select the Difficulty$"
 
 gText_Cope_Easy::
-	.string "Fácil$"
+	.string "Easy$"
 
 gText_Cope_Normal::
 	.string "Normal$"
 
 gText_Cope_Hard::
-	.string "Difícil$"
+	.string "Hard$"
 
 gText_Difficulty_CharacteristicsHeader::
-	.string "Características:$"
+	.string "Features:$"
 
 gText_Easy_Description::
-	.string "· IA básica\n"
-	.string "· Equipos más accesibles\n"
-	.string "· Rivales con EVs e IVs en 0\n"
-	.string "· Rivales no usan objetos\ncurativos$"
+	.string "· Basic AI\n"
+	.string "· Easier teams\n"
+	.string "· Rivals with 0 EVs and IVs\n"
+	.string "· Rivals don't use healing\nitems$"
 
 gText_Normal_Description::
-	.string "· IA inteligente\n"
-	.string ". Encuentros desafiantes\n"
-	.string "· Estadísticas competitivas\n"
-	.string "· Rivales usan objetos$"
+	.string "· Smart AI\n"
+	.string "· Challenging matches\n"
+	.string "· Competitive stats\n"
+	.string "· Rivals use items$"
 
 gText_Hard_Description::
-	.string "· IA inteligente\n"
-	.string "· Tipo de combate: Mantener\n"
-	.string "· Estadísticas competitivas\n"
-	.string ". Equipos más desafiantes\n"
-	.string "· Rivales usan más objetos$"
+	.string "· Smart AI\n"
+	.string "· Battle style: Set\n"
+	.string "· Competitive stats\n"
+	.string "· Tougher teams\n"
+	.string "· Rivals use more items$"
 
 gText_Cope_Welcome::
-	.string "Ah... genial.\n"
-	.string "Otro entrenador con ganas de ser\l"
-	.string "baneado.\p"
-	.string "Mi nombre es Cope, pero también me\n" 
-	.string "conocen como Zunex, Zel!x, Patrick...\p" 
+	.string "Ah... great.\n"
+	.string "Another trainer itching to get\l"
+	.string "banned.\p"
+	.string "My name's Cope, but I also go\n" 
+	.string "by Zunex, Zel!x, Patrick...\p" 
 	.string "(...){PAUSE 0x24}(...){PAUSE 0x24}(...){PAUSE 0x24}\p"
-	.string "¿Sigues sin conocerme...? Entonces\n"
-	.string "seguramente me reconozcas por algunos\l"
-	.string "tiles públicos, ¿verdad?\p"
-	.string "Muy bien, vamos al grano.\p"
-	.string "El desafío es simple: cada piso\n"
-	.string "tiene una sala donde habrá un admin\l"
-	.string "con ganas de banearte la existencia.\p"
-	.string "Y no, no hay bugs, ni trucos, ni tiles\n"
-	.string "invisibles mal puestos... creo.\p"
-	.string "¿No es genial?\p"
+	.string "Still don't know me...? Then\n"
+	.string "you probably know me from some\l"
+	.string "public tiles, right?\p"
+	.string "All right, let's get to the point.\p"
+	.string "The challenge is simple: each floor\n"
+	.string "has a room with an admin\l"
+	.string "dying to ban you out of existence.\p"
+	.string "And no, there are no bugs, no tricks, no\n"
+	.string "misplaced invisible tiles... I think.\p"
+	.string "Isn't that great?\p"
 	.string "(...){PAUSE 0x24}(...){PAUSE 0x24}(...){PAUSE 0x24}\p"
-	.string "Y hablando de cosas geniales..."
+	.string "And speaking of great things..."
 	.string "$"
 
 gText_Cope_Pokemon::
-	.string "Te presento a Tile, mi fiel compañero.\p"
-	.string "Nosotros dos funcionamos igual\n"
-	.string "que un sprite con su paleta.\p"
-	.string "Si hay armonía entre colores y sin\n"
-	.string "jaggies a la vista, no hay quien nos\l"
-	.string "pare."
+	.string "Meet Tile, my loyal partner.\p"
+	.string "The two of us work just\n"
+	.string "like a sprite with its palette.\p"
+	.string "With our colors in harmony and no\n"
+	.string "jaggies in sight, nobody can\l"
+	.string "stop us."
 	.string "$"
 
 gText_Cope_ExplainChalenge::
-	.string "Eso es lo que vas a tener que hacer tú.\p"
+	.string "That's exactly what you'll have to do.\p"
 	.string "(...)(...)(...)\p"
-	.string "¡No me mires así! Tranquilo, que no vas\n"
-	.string "a necesitar memorizar offsets.\p"
-	.string "Es muy sencillo: Se te otorgará un\n"
-	.string "equipo y deberás llegar a la\l"
-	.string "cima con él.\p"
-	.string "Supera los errores y los jaggies\n"
-	.string "que aparezcan en el camino.\p"
-	.string "Si lo consigues, la puerta hacia la\n"
-	.string "siguiente sala se abrirá.\l"
-	.string "Prometido.\p"
-	.string "Ahora que ya sabes de qué trata...\n"
-	.string "¡Elige a tu equipo Pokémon!{PAUSE_UNTIL_PRESS}$"
+	.string "Don't look at me like that! Relax, you\n"
+	.string "won't need to memorize any offsets.\p"
+	.string "It's dead simple: you'll be handed a\n"
+	.string "team, and you'll have to reach the\l"
+	.string "top with it.\p"
+	.string "Get past the bugs and jaggies\n"
+	.string "that pop up along the way.\p"
+	.string "If you make it, the door to the\n"
+	.string "next room will open.\l"
+	.string "Promise.\p"
+	.string "Now that you know the deal...\n"
+	.string "Choose your Pokémon team!{PAUSE_UNTIL_PRESS}$"
 
 	
 
 gText_Cope_Farewell::
-	.string "¡Buena elección!\n"
-	.string "Solo puedo desearte mucha suerte.\p"
-	.string "Espero que nos des un buen espectáculo\n"
-	.string "y llegues a la cima; ten en cuenta que\l"
-	.string "este desafío no se lo pierden ni\l"
-	.string "desde el más allá.\p"
-	.string "Si no... bueno, siempre puedes culpar\n"
-	.string "al RNG.\p"
-	.string "¡Venga, que la torre no se va a\n"
-	.string "subir sola!$"
+	.string "Good choice!\n"
+	.string "All I can do is wish you luck.\p"
+	.string "I hope you put on a good show\n"
+	.string "and reach the top. And trust me,\l"
+	.string "not even the folks beyond the grave\l"
+	.string "would miss this challenge.\p"
+	.string "If not... well, you can always blame\n"
+	.string "the RNG.\p"
+	.string "Come on, this tower isn't going to\n"
+	.string "climb itself!$"
 
 gText_Birch_AndYouAre::
-	.string "¿Tú quién eres?$"
+	.string "And who are you?$"
 
 gText_Birch_BoyOrGirl::
-	.string "¿Eres un chico o una chica?$"
+	.string "Are you a boy or a girl?$"
 
 gText_Birch_WhatsYourName::
-	.string "Muy bien.\n"
-	.string "¿Y cómo te llamas?$"
+	.string "All right.\n"
+	.string "And what's your name?$"
 
 gText_Birch_SoItsPlayer::
-	.string "Así que eres {PLAYER}{KUN}…$"
+	.string "So you're {PLAYER}{KUN}…$"
 
 gText_Birch_YourePlayer::
-	.string "¡Ah, sí, ya me acuerdo!\p"
-	.string "Tú te acabas de mudar a mi\n"
-	.string "pueblo natal, VILLA RAÍZ.\l"
-	.string "¿A que sí?\p"
+	.string "Ah, yes, now I remember!\p"
+	.string "You just moved to my\n"
+	.string "hometown, LITTLEROOT.\l"
+	.string "Right?\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "Vale, escucha bien lo que te\n"
-	.string "voy a decir…\p"
-	.string "Tu propia aventura está a punto\n"
-	.string "de comenzar.\p"
-	.string "Adelante, entra en el mundo de los\n"
-	.string "POKéMON: un mundo de ensueño, lleno\l"
-	.string "de aventuras y grandes amigos.\p"
-	.string "Bueno, ven a verme luego. Te espero\n"
-	.string "en mi LABORATORIO POKéMON.\p"
+	.string "Okay, listen closely to what\n"
+	.string "I'm about to tell you…\p"
+	.string "Your very own adventure is about\n"
+	.string "to begin.\p"
+	.string "Go on, step into the world of\n"
+	.string "POKéMON: a dreamlike world full\l"
+	.string "of adventure and great friends.\p"
+	.string "Well, come see me later. I'll be waiting\n"
+	.string "at my POKéMON LAB.\p"
 	.string "$"

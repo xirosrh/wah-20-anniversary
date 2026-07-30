@@ -512,17 +512,17 @@ BaroRoom_EventScript_PlugOink_Movement_0:
 
 BaroRoom_OnFrame_Text_0:
 # 59 "data/maps/BaroRoom/scripts.pory"
-	.string "Erhm… Tú eres {PLAYER}, ¿no?\n"
-	.string "Encantado, soy Baro.$"
+	.string "Erm… You're {PLAYER}, right? Nice to\n"
+	.string "meet you, I'm Baro.$"
 
 BaroRoom_OnFrame_Text_1:
 # 68 "data/maps/BaroRoom/scripts.pory"
-	.string "En fin… En qué jaleos se mete uno…$"
+	.string "Anyway… the messes one gets into…$"
 
 BaroRoom_OnFrame_Text_2:
 # 71 "data/maps/BaroRoom/scripts.pory"
-	.string "¿Yo estaba en una comunidad? ¿En\n"
-	.string "serio? ¿De Pokémon?$"
+	.string "I was in a community? For real? A\n"
+	.string "Pokémon one?$"
 
 BaroRoom_OnFrame_Text_3:
 # 76 "data/maps/BaroRoom/scripts.pory"
@@ -530,28 +530,27 @@ BaroRoom_OnFrame_Text_3:
 
 BaroRoom_OnFrame_Text_4:
 # 80 "data/maps/BaroRoom/scripts.pory"
-	.string "Vaya tiempos… En fin.$"
+	.string "What times those were… anyway.$"
 
 BaroRoom_OnFrame_Text_5:
 # 82 "data/maps/BaroRoom/scripts.pory"
-	.string "Supongo que lo de reminiscir del pasado\n"
-	.string "es apropiado para el momento.\l"
-	.string "Tu viaje y todo eso.\p"
-	.string "En fin, nada, que me han pedido que me\n"
-	.string "pase por aquí a hacer una peleilla\l"
-	.string "contigo. ¿Vamos?$"
+	.string "I suppose reminiscing about the past\n"
+	.string "fits the moment.\l"
+	.string "Your journey and all that.\p"
+	.string "Anyway, they asked me to swing by here\n"
+	.string "for a little scrap with you. Shall we?$"
 
 BaroRoom_OnFrame_Text_6:
 # 88 "data/maps/BaroRoom/scripts.pory"
-	.string "El Pikachu no te lo esperabas, ¿eh?$"
+	.string "You didn't see the Pikachu coming, huh?$"
 
 BaroRoom_OnFrame_Text_7:
 # 92 "data/maps/BaroRoom/scripts.pory"
-	.string "Pues ya estaría. Ya he cumplido. Chao.$"
+	.string "Well, that's that. Duty done. Bye.$"
 
 BaroRoom_OnFrame_Text_8:
 # 104 "data/maps/BaroRoom/scripts.pory"
-	.string "Bueno, buena suerte y tal.$"
+	.string "Well, good luck and all that.$"
 
 BaroRoom_EventScript_PlugOink_Text_0:
 # 192 "data/maps/BaroRoom/scripts.pory"
@@ -559,7 +558,7 @@ BaroRoom_EventScript_PlugOink_Text_0:
 
 BaroRoom_EventScript_Sever_Text_0:
 # 207 "data/maps/BaroRoom/scripts.pory"
-	.string "¡Sever!$"
+	.string "Sever!$"
 
 BaroRoom_EventScript_Seeg_Text_0:
 # 218 "data/maps/BaroRoom/scripts.pory"
@@ -567,42 +566,42 @@ BaroRoom_EventScript_Seeg_Text_0:
 
 BaroRoom_EventScript_Poster_Text_0:
 # 226 "data/maps/BaroRoom/scripts.pory"
-	.string "Una esquina del póster ya comenzó a\n"
-	.string "despegarse de la pared.$"
+	.string "A corner of the poster has already\n"
+	.string "started peeling off the wall.$"
 
 BaroRoom_EventScript_Clothes_Text_0:
 # 231 "data/maps/BaroRoom/scripts.pory"
-	.string "Hay ropa usada tirada por todo el suelo.$"
+	.string "There's used clothing strewn all over\n"
+	.string "the floor.$"
 
 BaroRoom_EventScript_PC_Text_0:
 # 236 "data/maps/BaroRoom/scripts.pory"
-	.string "La computadora tiene abierto un juego\n"
-	.string "todavía en pleno desarrollo.\p"
-	.string "Varias ventanas dicen: “TODO”, “BUG” y\n"
-	.string "“ARREGLAR DESPUÉS”.$"
+	.string "The computer has a game open that's\n"
+	.string "still deep in development.\p"
+	.string "Several windows read: “TODO,” “BUG,”\n"
+	.string "and “FIX LATER.”$"
 
 BaroRoom_EventScript_Coffee_Text_0:
 # 241 "data/maps/BaroRoom/scripts.pory"
-	.string "Hay demasiadas tazas de café para una\n"
-	.string "sola persona.$"
+	.string "There are far too many coffee cups for\n"
+	.string "one person.$"
 
 BaroRoom_EventScript_Coffee2_Text_0:
 # 246 "data/maps/BaroRoom/scripts.pory"
-	.string "El café ya se enfrió hace rato.$"
+	.string "The coffee went cold a while ago.$"
 
 BaroRoom_EventScript_Wardrobe_Text_0:
 # 251 "data/maps/BaroRoom/scripts.pory"
-	.string "El placard está lleno de ropa\n"
-	.string "desordenada.\p"
-	.string "La mayoría parece haber sido guardada\n"
-	.string "a las apuradas.$"
+	.string "The wardrobe is full of messy clothes.\p"
+	.string "Most of it looks like it was put away in\n"
+	.string "a hurry.$"
 
 BaroRoom_EventScript_Drawer_Text_0:
 # 256 "data/maps/BaroRoom/scripts.pory"
-	.string "Dentro hay varios bocetos y diseños de\n"
-	.string "nuevas criaturas de Pokémon.\p"
-	.string "Muchos de los diseños son muy curiosos.$"
+	.string "Inside there are several sketches and\n"
+	.string "designs of new Pokémon creatures.\p"
+	.string "Many of the designs are quite curious.$"
 
 BaroRoom_Text_BaroDefeated::
 # 183 "data/maps/BaroRoom/scripts.pory"
-	.string "En fin…$"
+	.string "Anyway…$"

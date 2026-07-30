@@ -1709,9 +1709,9 @@ static void DrawMonTextEntryBox(void)
 {
     u8 buffer[64];
 
-    u8 *end = StringCopy(buffer, sNamingScreen->template->title);
-    WrapFontIdToFit(buffer, end, FONT_NORMAL, 128 - 64);
-    StringAppendN(end, GetSpeciesName(sNamingScreen->monSpecies), 15);
+    buffer[0] = EOS;
+    StringAppendN(buffer, GetSpeciesName(sNamingScreen->monSpecies), 15);
+    StringAppend(buffer, sNamingScreen->template->title);
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, buffer, 8, 1, 0, 0);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);
@@ -2101,7 +2101,7 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
-static const u8 sText_EnterCode[] = _("Inserta código:");
+static const u8 sText_EnterCode[] = _("Enter code:");
 static const struct NamingScreenTemplate sCodeScreenTemplate =
 {
     .copyExistingString = FALSE,

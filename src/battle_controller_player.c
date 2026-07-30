@@ -2047,7 +2047,7 @@ static void PlayerHandleChooseAction(u32 battler)
 
     if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(B_POSITION_PLAYER_RIGHT))
     {
-        StringCopy(gStringVar1, COMPOUND_STRING("El compañero usará:\n"));
+        StringCopy(gStringVar1, COMPOUND_STRING("The partner will use:\n"));
         u32 move = GetChosenMoveFromPosition(B_POSITION_PLAYER_RIGHT);
         StringAppend(gStringVar1, GetMoveName(move));
         u32 moveTarget = GetBattlerMoveTargetType(B_POSITION_PLAYER_RIGHT, move);

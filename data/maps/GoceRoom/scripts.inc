@@ -173,40 +173,39 @@ GoceRoom_EventScript_Goce_Movement_2:
 
 GoceRoom_EventScript_Goce_Text_0:
 # 29 "data/maps/GoceRoom/scripts.pory"
-	.string "Ya puedes avanzar al siguiente\n"
-	.string "desafío.\p"
-	.string "Todavía queda mucho por recorrer.$"
+	.string "You may advance to the next challenge\n"
+	.string "now.\p"
+	.string "There's still a long way to go.$"
 
 GoceRoom_EventScript_Goce_Text_1:
 # 36 "data/maps/GoceRoom/scripts.pory"
-	.string "A ver, chiquitín. No fui el más conocido\n"
-	.string "ni estuve demasiado tiempo...\p"
-	.string "Fui apenas una chispa atrapada en\n"
-	.string "{COLOR LIGHT_RED}ámbar{COLOR DARK_GRAY}.\p"
-	.string "Pero esa chispa fue el inicio de todo\n"
-	.string "esto, y hoy te toca enfrentarte a ella.$"
+	.string "Listen, little one. I wasn't the best\n"
+	.string "known nor was I around for very long...\p"
+	.string "I was but a spark trapped in {COLOR LIGHT_RED}amber{COLOR DARK_GRAY}.\p"
+	.string "But that spark was the start of all\n"
+	.string "this, and today it's your turn to face\l"
+	.string "it.$"
 
 GoceRoom_EventScript_Goce_Text_2:
 # 43 "data/maps/GoceRoom/scripts.pory"
-	.string "¡Gran batalla! Has podido derrotar al\n"
-	.string "gran fundador, seguro estarás orgullos{OA}.$"
+	.string "Great battle! You managed to defeat\n"
+	.string "the great founder - you must be proud.$"
 
 GoceRoom_EventScript_Goce_Text_3:
 # 49 "data/maps/GoceRoom/scripts.pory"
-	.string "Eh, ¿así que no sabes quién soy? Me\n"
-	.string "conocieron como {COLOR RED}Goce{COLOR DARK_GRAY} y como {COLOR RED}Lance{COLOR DARK_GRAY}.\p"
-	.string "Igual, lo que importa no es mi nombre,\n"
-	.string "sino que lo que comenzó siga vivo.\p"
-	.string "Tú acabas de demostrarme que lo está,\n"
-	.string "niñ{OA}.\p"
-	.string "Puedes continuar.$"
+	.string "Huh, so you don't know who I am? They\n"
+	.string "knew me as {COLOR RED}Goce{COLOR DARK_GRAY} and as {COLOR RED}Lance{COLOR DARK_GRAY}.\p"
+	.string "Either way, what matters isn't my name,\n"
+	.string "but that what began stays alive.\p"
+	.string "You've just proven to me that it is, kid.\p"
+	.string "You may continue.$"
 
 GoceRoom_EventScript_Ambar_Text_0:
 # 91 "data/maps/GoceRoom/scripts.pory"
-	.string "Hay pequeños fragmentos de ámbar\n"
-	.string "esparcidos por el suelo.$"
+	.string "There are small fragments of amber\n"
+	.string "scattered across the floor.$"
 
 GoceRoom_Text_GoceDefeated::
 # 86 "data/maps/GoceRoom/scripts.pory"
-	.string "Increíble cómo han evolucionado en\n"
-	.string "estos últimos 20 años…$"
+	.string "Incredible how they've evolved over\n"
+	.string "these last 20 years…$"

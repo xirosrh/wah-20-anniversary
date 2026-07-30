@@ -7,7 +7,7 @@
 
 Underwater_SealedChamber_Braille_GoUpHere::
 	brailleformat 4, 6, 26, 13, 7, 9
-	.braille "SUBE AHORA"
+	.braille "GO UP HERE"
 	.byte 0x3F
 	.braille "'$"
 
@@ -55,110 +55,110 @@ SealedChamber_OuterRoom_Braille_Comma:
 
 SealedChamber_OuterRoom_Braille_DigHere:
 	brailleformat 7, 4, 23, 15, 10, 7
-	.braille "CAVA AHORA"
+	.braille "DIG HERE"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_FirstWailordLastRelicanth:
 	brailleformat 0, 0, 29, 19, 3, 3
-	.braille "PRIMERO\n"
+	.braille "FIRST\n"
 	.braille "WAILORD"
 	.byte 0x3F
 	.braille "'\n"
-	.braille "AL FINAL\n"
+	.braille "LAST\n"
 	.braille "RELICANTH"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_InThisCaveWeHaveLived:
 	brailleformat 2, 0, 26, 19, 5, 3
-	.braille "ESTA CUEVA\n"
-	.braille "HA SIDO\n"
-	.braille "NUESTRO\n"
-	.braille "HOGAR"
+	.braille "THIS CAVE\n"
+	.braille "HAS BEEN\n"
+	.braille "OUR\n"
+	.braille "HOME"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_WeOweAllToThePokemon:
 	brailleformat 7, 2, 23, 17, 10, 5
-	.braille "LO QUE SOMOS"
+	.braille "WHAT WE ARE"
 	.byte 0x3F
 	.braille ",\n"
-	.braille "SE LO DEBEMOS\n"
-	.braille "A LOS\n"
+	.braille "WE OWE IT\n"
+	.braille "TO THE\n"
 	.braille "POKEMON"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_ButWeSealedThePokemonAway:
 	brailleformat 3, 0, 25, 19, 6, 3
-	.braille "PERO LOS\n"
-	.braille "ENCERRAMOS\n"
-	.braille "PARA\n"
-	.braille "SIEMPRE"
+	.braille "BUT WE\n"
+	.braille "SEALED THEM\n"
+	.braille "AWAY FOR\n"
+	.braille "EVER"
 	.byte 0x3F, 0x10
 	.braille "$"
 
 SealedChamber_InnerRoom_Braille_WeFearedIt:
 	brailleformat 5, 6, 25, 13, 8, 9
-	.braille "TUVIMOS\n"
-	.braille "MIEDO"
+	.braille "WE FELT\n"
+	.braille "FEAR"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_ThoseWithCourageHope:
 	brailleformat 6, 0, 24, 19, 9, 3
-	.braille "QUIENES\n"
-	.braille "POSEEN\n"
-	.braille "VALOR Y\n"
-	.braille "ESPERANZA"
+	.braille "THOSE WHO\n"
+	.braille "POSSESS\n"
+	.braille "COURAGE AND\n"
+	.braille "HOPE"
 	.byte 0x3F
 	.braille "'$"
 
 SealedChamber_InnerRoom_Braille_OpenDoorEternalPokemonWaits:
 	brailleformat 3, 2, 27, 17, 6, 5
-	.braille "ABREN LA\n"
-	.braille "PUERTA HACIA\n"
-	.braille "UN POKEMON\n"
-	.braille "ETERNO"
+	.braille "OPEN THE\n"
+	.braille "DOOR TO\n"
+	.braille "AN ETERNAL\n"
+	.braille "POKEMON"
 	.byte 0x3F
 	.braille "'$"
 
 DesertRuins_Braille_UseRockSmash:
 	brailleformat 1, 0, 27, 19, 4, 3
-	.braille "IZDA"
+	.braille "LEFT"
 	.byte 0x3F
-	.braille "' IZDA"
-	.byte 0x3F
-	.braille "'\n"
-	.braille "ABAJO ABAJO"
+	.braille "' LEFT"
 	.byte 0x3F
 	.braille "'\n"
-	.braille "ENTONCES"
+	.braille "DOWN DOWN"
 	.byte 0x3F
-	.braille ", USA\n"
-	.braille "GOLPE ROCA"
+	.braille "'\n"
+	.braille "THEN"
+	.byte 0x3F
+	.braille ", USE\n"
+	.braille "ROCK SMASH"
 	.byte 0x3F
 	.braille "'$"
 
 IslandCave_Braille_RunLapAroundWall:
 	brailleformat 5, 0, 25, 19, 8, 3
-	.braille "PONTE JUNTO\n"
-	.braille "AL MURO"
+	.braille "STAND BY\n"
+	.braille "THE WALL"
 	.byte 0x3F
 	.braille "'\n"
-	.braille "DA UNA VUELTA\n"
-	.braille "COMPLETA"
+	.braille "RUN ONE LAP\n"
+	.braille "AROUND"
 	.byte 0x3F
 	.braille "'$"
 
 AncientTomb_Braille_ShineInTheMiddle:
 	brailleformat 3, 0, 25, 19, 6, 3
-	.braille "QUIEN DESEE LO\n"
-	.braille "QUE NOSOTROS"
+	.braille "THOSE WHO WISH\n"
+	.braille "LIKE WE DO"
 	.byte 0x3F
 	.braille ",\n"
-	.braille "QUE BRILLE\n"
-	.braille "EN EL CENTRO"
+	.braille "SHINE\n"
+	.braille "IN THE MIDDLE"
 	.byte 0x3F
 	.braille "'$"

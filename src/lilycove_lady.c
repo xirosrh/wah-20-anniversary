@@ -396,7 +396,7 @@ static u8 BufferQuizAuthorName(void)
     sQuizLadyPtr = &gSaveBlock1Ptr->lilycoveLady.quiz;
     if (sQuizLadyPtr->playerName[0] == EOS)
     {
-        StringCopy_PlayerName(gStringVar1, COMPOUND_STRING("Señorita"));
+        StringCopy_PlayerName(gStringVar1, COMPOUND_STRING("Ms."));
         authorNameId = QUIZ_AUTHOR_NAME_LADY;
     }
     else

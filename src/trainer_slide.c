@@ -59,112 +59,112 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
     {
         [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Me gusta ver caras nuevas por aquí, ¡enséñame de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("En mis tiempos, esto que voy a hacer sería impensable, pero... ¡adelante megaevolución!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, ¡buen golpe!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("¡Rayos, parece que me excedí un poco!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Un movimiento muy inteligente, ¡buen trabajo!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Reconozco que a veces, con estas cosas, me equivoco hasta yo.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Muy bien, uno fuera, ¡a por el siguiente!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Pues llegamos al final de este encuentro, pero no bajes la guardia, ¡la lucha aún no ha terminado!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("I like seeing new faces around here - show me what you've got!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Back in my day, what I'm about to do would've been unthinkable, but... go, Mega Evolution!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Not bad, nice hit!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Yikes, I think I overdid it a bit!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("A very clever move, nice work!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("I'll admit that sometimes, with things like this, even I get it wrong.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Nice, one down, on to the next!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Well, we've reached the end of this match, but don't drop your guard - the fight isn't over yet!{PAUSE_UNTIL_PRESS}"),
         },
     },
     [DIFFICULTY_NORMAL] =
     {
         [TRAINER_WAH_ADMIN_SERGIO_MAIN] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Guau! Tienes potencial.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¡Es hora de que conozcas el verdadero poder del mesías!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Wow! You've got potential.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("It's time you witnessed the true power of the messiah!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_GALLEGO_MAIN] =
         {
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Que Feraligatr y yo seamos de la vieja escuela no quiere decir que no hayamos aprendido trucos nuevos.\p¡Hora de megaevolucionar, compañero!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Just because Feraligatr and I are old school doesn't mean we haven't learned new tricks.\pTime to Mega Evolve, partner!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_XIROS_MAIN] = 
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Todos mis Pokémon fueron capturados en mi querida región Koren.\p¡Veamos si puedes con ellos!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Empecemos con todo, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Parece que tendremos un combate emocionante!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Tienes mucho potencial, pero no creas que ya ganaste.\pEste es mi último as bajo la manga.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("All my Pokémon were caught in my beloved Koren region.\pLet's see if you can handle them!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Let's start with a bang - Mega Evolution!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Looks like this'll be an exciting battle!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("You've got potential, but don't think you've won.\pThis is my last ace up the sleeve.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_OMEGA_MAIN] = 
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No lo esperaba, pero excelente trabajo.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ostras, este es mi último Pokémon.{PAUSE_UNTIL_PRESS}")
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("I didn't expect that, but excellent work.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Whoa, this is my last Pokémon.{PAUSE_UNTIL_PRESS}")
         },
         [TRAINER_WAH_ADMIN_CHEVE_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No me lo esperaba… ¡pero mira ésta!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Didn't expect that… but watch this!{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_REONEKY_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tocado…{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Bien, toca entrar en materia.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Mi última baza.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("You got me…{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Alright, time to get serious.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("My last resort.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Hagamos de éste un combate entrañable, ¡veamos de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("El pasado nos enseña a construir un mejor futuro, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, pero más vale maña que fuerza.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Sabes, esto me duele más a mí que a ti... es coña.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Vaya, qué inteligente, eso me gusta...{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("No importa, un error lo tiene cualquiera.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No se te da nada mal, ¡pero esto sólo es el calentamiento!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Este es mi último Pokémon, pero la lucha aún no ha terminado.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Let's make this a memorable battle - show me what you've got!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("The past teaches us to build a better future - Mega Evolution!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Not bad, but skill beats strength.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("This hurts me more than you... just kidding.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Well, how clever, I like that...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("It's fine, anyone can make a mistake.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("You're not bad at all, but this is just the warm-up!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("This is my last Pokémon, but the fight isn't over yet.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_BLAX_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("¡Pero Sayer! ¿Estás en mi equipo o no?{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Uff, hacía tiempo que no me sentía contra las cuerdas de este modo.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Menuda suerte el colega…{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("But Sayer! Are you on my team or not?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Phew, it's been a while since I felt this cornered.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("What luck this guy has…{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_DAVZERO_MAIN] = 
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Cada combate es un espejo… veamos qué reflejas tú.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tranquilo, he recibido peores golpes… de la vida.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Parece que has hecho los deberes.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("La batalla apenas comienza. ¡Enséñame de qué eres capaz!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Me parece que alguien ha estudiado muy poco… ¿Tendré que suspenderte?{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Ha llegado el momento… Aquí se decide todo.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("Este es el límite… ¡y justo aquí es donde yo me crezco!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("¿Listo para ver mi verdadera fuerza?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Every battle is a mirror… let's see what you reflect.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Relax, I've taken worse hits… from life itself.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Looks like you did your homework.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("The battle's just starting. Show me what you've got!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Seems someone didn't study enough… Will I have to fail you?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("The moment has come… It all ends here.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_LOW_HP] = COMPOUND_STRING("This is the limit… and this is where I rise!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Ready to see my true power?{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_COSARARA_MAIN] =
         {
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("¿No serás tú una multicuenta de Jaizu?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("You're not one of Jaizu's alt accounts, are you?{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_ADMIN_EING_MAIN] =
         {
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Venga ya, qué chorra.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Toca sacar el as en la manga.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Todo depende de ti, compañero.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Come on, how silly.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Time to pull the ace from my sleeve.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("It all comes down to you, partner.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_1] =	
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto reminds us of how it all began.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_2] =
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto reminds us of how it all began.{PAUSE_UNTIL_PRESS}"),
         },
         [TRAINER_WAH_COLLABORATOR_GAMEBOY_CL_3] =
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto nos recuerda los inicios.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Johto reminds us of how it all began.{PAUSE_UNTIL_PRESS}"),
         },
     },
     [DIFFICULTY_HARD] =
     {
         [TRAINER_WAH_ADMIN_REYBOO_MAIN] =
         {
-            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Señor Micael, vamos a divertirnos, ¡hagamos de éste un combate inolvidable!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Vamos a darle un poco más de chispa al reto, ¡megaevolución!{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("No está mal, pero necesitarás algo mejor para vencernos.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Sabes, esto nos duele más que a ti... es coña.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Oh, qué inteligente, eso me gusta...{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("…\p¿En serio?{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("No cantes victoria todavía, esto sólo acaba de empezar.{PAUSE_UNTIL_PRESS}"),
-            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("El combate físico llega a su fin, pero el cultural acaba de comenzar.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("Mr. Micael, let's have fun - let's make this an unforgettable battle!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_MEGA_EVOLUTION] = COMPOUND_STRING("Let's add a little more spark to the challenge - Mega Evolution!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Not bad, but you'll need something better to beat us.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("You know, this hurts us more than you... just kidding.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Oh, how clever, I like that...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("…\pSeriously?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("Don't celebrate yet, this is only just beginning.{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("The physical fight is over, but the cultural one's just begun.{PAUSE_UNTIL_PRESS}"),
         },
     },
 };

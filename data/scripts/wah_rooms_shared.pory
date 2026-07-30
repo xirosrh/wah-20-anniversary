@@ -2,7 +2,7 @@
 script WahRoomsShared_EventScript_Shop {
     special(OpenWahRoomsSharedMart)
     waitstate
-    msgbox(format("Gracias por tu visita. ¡Que tengas un buen día!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Thanks for visiting. Have a great day!"), MSGBOX_AUTOCLOSE)
     return
 }
 
@@ -33,10 +33,10 @@ script WahRoomsShared_EventScript_Pokebox_MainMenu {
     playse(SE_PC_LOGIN)
     message(WahRoomsShared_Text_Pokebox_MainPrompt)
     waitmessage
-    dynmultipush(format("Acceder a PC"), 0)
-    dynmultipush(format("¿Cómo funciona?"), 1)
+    dynmultipush(format("Access PC"), 0)
+    dynmultipush(format("How does it work?"), 1)
     dynmultipush(format("Discord"), 2)
-    dynmultipush(format("Salir"), 3)
+    dynmultipush(format("Exit"), 3)
     dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
     delay(10)
@@ -55,7 +55,7 @@ script WahRoomsShared_EventScript_Pokebox_MainMenu {
 }
 
 script WahRoomsShared_EventScript_Pokebox_Discord {
-    msgbox(format("Escanea este QR para acceder a la comunidad de Whack a Hack (https://whackahack.com).\pAhí podrás reportar errores que hayas encontrado al realizar este desafío, dar tu opinión y conocer una gran comunidad."))
+    msgbox(format("Scan this QR code to visit the Whack a Hack community (https://whackahack.com).\pThere you can report any bugs you've found while doing this challenge, share your feedback, and meet a great community."))
     load_field_pic(FP_WAH_QR, 120, 80)
     waitbuttonpress
     closemessage
@@ -67,9 +67,9 @@ script WahRoomsShared_EventScript_Pokebox_Discord {
 script WahRoomsShared_EventScript_Pokebox_HelpMenu {
     message(WahRoomsShared_Text_Pokebox_HelpPrompt)
     waitmessage
-    dynmultipush(format("¿Cuántos Pokémon puedo cambiar?"), 0)
-    dynmultipush(format("¿Cómo desbloqueo nuevos Pokémon?"), 1)
-    dynmultipush(format("Volver"), 2)
+    dynmultipush(format("How many Pokémon can I swap?"), 0)
+    dynmultipush(format("How do I unlock new Pokémon?"), 1)
+    dynmultipush(format("Back"), 2)
     dynmultistack(0, 0, FALSE, 3, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
     delay(10)
@@ -101,32 +101,31 @@ script WahRoomsShared_EventScript_Pokebox_Shutdown {
 }
 
 text WahRoomsShared_Text_Pokebox_SoftwareUpdate {
-    format("¡El software de la PC se ha actualizado!")
+    format("The PC software has been updated!")
 }
 
 text WahRoomsShared_Text_Pokebox_SoftwareUpdateExplanation {
-    format("Ahora puedes cambiar hasta 3 Pokémon de tu equipo y sustituirlos por Pokémon de la caja, en lugar de solo 1.")
+    format("You can now swap up to 3 Pokémon in your party with Pokémon from the box, instead of just 1.")
 }
 
 text WahRoomsShared_Text_Pokebox_MainPrompt {
-    "¿Qué quieres hacer?"
+    "What do you want to do?"
 }
 
 text WahRoomsShared_Text_Pokebox_HelpPrompt {
-    "¿Sobre qué quieres saber?"
+    "What do you want to know about?"
 }
 
 text WahRoomsShared_Text_Pokebox_HelpSwapsBeforeChallenge {
-    format("Puedes reemplazar solo uno de los Pokémon predefinidos del equipo seleccionado por uno de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 5 Pokémon del equipo original.")
+    format("You can replace only one of the predefined Pokémon in the selected team with one from the box.\pYou can do this as many times as you like, but you'll always have at least 5 Pokémon from the original team.")
 }
 
 text WahRoomsShared_Text_Pokebox_HelpSwapsAfterChallenge {
-    format("Puedes reemplazar hasta 3 Pokémon predefinidos del equipo seleccionado por Pokémon de la caja.\pPuedes hacerlo las veces que quieras, pero siempre tendrás al menos 3 Pokémon del equipo original.")
-
+    format("You can replace up to 3 predefined Pokémon in the selected team with Pokémon from the box.\pYou can do this as many times as you like, but you'll always have at least 3 Pokémon from the original team.")
 }
 
 text WahRoomsShared_Text_Pokebox_HelpUnlock {
-    format("Algunos Pokémon se desbloquean comprándolos en la PC.\pOtros, se obtienen avanzando en el juego, consiguiendo Logros o con eventos especiales.\pPara descubrir cómo desbloquear un Pokémon, presiona {COLOR RED}A{COLOR DARK_GRAY} en su sombra.")
+    format("Some Pokémon are unlocked by buying them in the PC.\pOthers are obtained by advancing in the game, getting Achievements, or from special events.\pTo find out how to unlock a Pokémon, press {COLOR RED}A{COLOR DARK_GRAY} on its silhouette.")
 }
 
 script WahRoomsShared_OpenDoor {
@@ -208,7 +207,7 @@ script WahRoomsShared_Kecleon {
         msgbox(Kecleon_Text_WantToUseDevonScope, MSGBOX_YESNO)
         if(var(VAR_RESULT))
         {
-            msgbox(format("{PLAYER} usó el Detector Devon.\p¡Un POKéMON que era invisible\nse ha vuelto completamente visible!"), MSGBOX_AUTOCLOSE)
+            msgbox(format("{PLAYER} used the Devon Detector.\pA POKéMON that was invisible\nhas become completely visible!"), MSGBOX_AUTOCLOSE)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
             applymovementandwait(VAR_LAST_TALKED, Movement_KecleonAppears)
             waitse
@@ -239,7 +238,7 @@ script WahRoomsShared_Kecleon {
 
 script WahRoomsShared_DevonScope_UseFromBag {
     lockall
-    msgbox(format("{PLAYER} usó el Detector Devon."), MSGBOX_DEFAULT)
+    msgbox(format("{PLAYER} used the Devon Detector."), MSGBOX_DEFAULT)
     specialvar(VAR_RESULT, HasInvisibleKecleonOnCurrentMap)
     if (var(VAR_RESULT)) {
         msgbox(WahRoomsShared_DevonScope_Text_Detected, MSGBOX_DEFAULT)
@@ -251,11 +250,11 @@ script WahRoomsShared_DevonScope_UseFromBag {
 }
 
 text WahRoomsShared_DevonScope_Text_Detected {
-    format("¡El detector reacciona!\pHay un Pokémon invisible cerca.")
+    format("The detector reacts!\pAn invisible Pokémon is nearby.")
 }
 
 text WahRoomsShared_DevonScope_Text_NotDetected {
-    format("No detecta ningún Pokémon invisible cerca.")
+    format("It doesn't detect any invisible Pokémon nearby.")
 }
 
 script WahRoomsShared_Kecleon_Recompensa {
@@ -307,16 +306,16 @@ script WahRoomsShared_Kecleon_Dinero {
     switch(var(VAR_RESULT))
     {
         case 0:
-            msgbox(format("¡Tile te ha entregado 5000¥!"), MSGBOX_AUTOCLOSE)
+            msgbox(format("Tile handed you ¥5000!"), MSGBOX_AUTOCLOSE)
             break
         case 1:
-            msgbox(format("¡Tile te ha entregado 8000¥!"), MSGBOX_AUTOCLOSE)
+            msgbox(format("Tile handed you ¥8000!"), MSGBOX_AUTOCLOSE)
             break
         case 2:
-            msgbox(format("¡Tile te ha entregado 10000¥!"), MSGBOX_AUTOCLOSE)
+            msgbox(format("Tile handed you ¥10000!"), MSGBOX_AUTOCLOSE)
             break
         case 3:
-            msgbox(format("¡Tile te ha entregado 15000¥!"), MSGBOX_AUTOCLOSE)
+            msgbox(format("Tile handed you ¥15000!"), MSGBOX_AUTOCLOSE)
             break
     }
     hidemoneybox
@@ -324,13 +323,13 @@ script WahRoomsShared_Kecleon_Dinero {
 }
 
 script WahRoomsShared_Kecleon_KitObjetos_BagFull {
-    msgbox("¡Tu MOCHILA está llena!\nTile no pudo dejarte el resto del paquete.", MSGBOX_DEFAULT)
+    msgbox("Your BAG is full!\nTile couldn't give you the rest of the package.", MSGBOX_DEFAULT)
     closemessage
     return
 }
 
 script WahRoomsShared_Kecleon_KitObjetos {
-    msgbox(format("¡Tile te ha entregado un paquete de objetos!"), MSGBOX_DEFAULT)
+    msgbox(format("Tile handed you a package of items!"), MSGBOX_DEFAULT)
     closemessage
     delay(10)
     random(3)

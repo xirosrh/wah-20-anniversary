@@ -37,16 +37,16 @@ static bool8 CheckPokebox_BetaMonQuestionnaire(u8 id);
 
 static const u8 *sPokeboxMsgActionsList[] =
 {
-    [MSG_ACTION_CONTROLS] = COMPOUND_STRING("{START_BUTTON} Equipo {SELECT_BUTTON} Info. {DPAD_NONE} Mover {A_BUTTON} Añadir"),
-    [MSG_ACTION_CONTROLS_TEAM] = COMPOUND_STRING("{A_BUTTON} Dejar {B_BUTTON} Atras {DPAD_NONE} Mover {START_BUTTON} Resetear"),    
-    [MSG_ACTION_FULL_TEAM]     = COMPOUND_STRING("Tu equipo está completo"),
-    [MSG_ACTION_NOT_TEAM_FULL] = COMPOUND_STRING("Debes tener 6 Pokémon en el equipo"),
-    [MSG_ACTION_LOCK_MON]      = COMPOUND_STRING("Este Pokémon está bloqueado."),
-    [MSG_ACTION_MON_IN_TEAM]   = COMPOUND_STRING("Este Pokémon ya está en el equipo."),
-    [MSG_ACTION_ONLY_ONE_MON_IN_TEAM] = COMPOUND_STRING("Debes tener un Pokémon en el equipo"), 
-    [MSG_ACTION_ADD_MON_PARTY] = COMPOUND_STRING("{STR_VAR_1} añadido al equipo"), 
-    [MSG_ACTION_ONLY_STORAGE_ONE_MON] = COMPOUND_STRING("Solo puedes cambiar un Pokémon del equipo"), 
-    [MSG_ACTION_ONLY_STORAGE_THREE_MON] = COMPOUND_STRING("Solo puedes cambiar tres Pokémon del equipo"), 
+    [MSG_ACTION_CONTROLS] = COMPOUND_STRING("{START_BUTTON} Party {SELECT_BUTTON} Info {DPAD_NONE} Move {A_BUTTON} Add"),
+    [MSG_ACTION_CONTROLS_TEAM] = COMPOUND_STRING("{A_BUTTON} Drop {B_BUTTON} Back {DPAD_NONE} Move {START_BUTTON} Reset"),    
+    [MSG_ACTION_FULL_TEAM]     = COMPOUND_STRING("Your party is full"),
+    [MSG_ACTION_NOT_TEAM_FULL] = COMPOUND_STRING("You must have 6 Pokémon in your party"),
+    [MSG_ACTION_LOCK_MON]      = COMPOUND_STRING("This Pokémon is locked."),
+    [MSG_ACTION_MON_IN_TEAM]   = COMPOUND_STRING("This Pokémon is already on your party."),
+    [MSG_ACTION_ONLY_ONE_MON_IN_TEAM] = COMPOUND_STRING("You must have one Pokémon in your party"), 
+    [MSG_ACTION_ADD_MON_PARTY] = COMPOUND_STRING("{STR_VAR_1} added to your party"), 
+    [MSG_ACTION_ONLY_STORAGE_ONE_MON] = COMPOUND_STRING("You can only swap one Pokémon from your party"), 
+    [MSG_ACTION_ONLY_STORAGE_THREE_MON] = COMPOUND_STRING("You can only swap three Pokémon from your party"), 
 };
 
 const u8 *Get_PokeboxMsgAction(u8 index) 
@@ -57,22 +57,22 @@ const u8 *Get_PokeboxMsgAction(u8 index)
     return sPokeboxMsgActionsList[index];
 }
 
-const u8 gText_PokeboxBuyThisMon[] = _("¿Quieres comprar a\neste Pokémon?");
+const u8 gText_PokeboxBuyThisMon[] = _("Do you want to buy\nthis Pokémon?");
 
-static const u8 sText_PokeboxAlexmadEvent[] = _("Completa el evento especial\nde Alexmad.");
-static const u8 sText_PokeboxWahChallengeOnce[] = _("Gana el desafio una vez.");
-static const u8 sText_PokeboxAchievementAvaricia[] = _("Completa el logro “Avaricia”.");
-static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Habla con Plug-Oink en la\nsala de Baro.");
-static const u8 sText_PokeboxWahChallengeDifficult[] = _("Gana el desafio en modo\ndifícil.");
-static const u8 sText_PokeboxWahChallengeFiveTimes[] = _("Gana el desafio cinco\nveces.");
-static const u8 sText_PokeboxEingTeams[] = _("Derrota a ambos equipos\nde Eing (principal y\nalternativo).");
-static const u8 sText_PokeboxMolikai[] = _("Derrota a ambos equipos\nde Helix Boo en modo difícil\n(principal y alternativo).");
-static const u8 sText_PokeboxBaroTeams[] = _("Derrota a ambos equipos\nde Baro (principal y\nalternativo).");
-static const u8 sText_PokeboxAllAdmins[] = _("Completa el logro de\nderrotar a todos los\nadmins.");
-static const u8 sText_PokeboxAllCollaborators[] = _("Completa el logro de\nderrotar a todos los\ncolaboradores.");
-static const u8 sText_PokeboxWahDouble[] = _("Completa el desafío en modo\nbatallas dobles.");
-static const u8 sText_PokeboxWahInverse[] = _("Completa el desafío en modo\nbatallas inversas.");
-static const u8 sText_PokeboxBetaMonQuestionnaire[] = _("Responde correctamente su\npregunta en el cuestionario\nde la Sala de estar.");
+static const u8 sText_PokeboxAlexmadEvent[] = _("Complete Alexmad's\nspecial event.");
+static const u8 sText_PokeboxWahChallengeOnce[] = _("Win the challenge once.");
+static const u8 sText_PokeboxAchievementAvaricia[] = _("Complete the “Greed” achievement.");
+static const u8 sText_PokeboxMetBaroRoomPlugOink[] = _("Talk to Plug-Oink in\nBaro's room.");
+static const u8 sText_PokeboxWahChallengeDifficult[] = _("Win the challenge on\nHard mode.");
+static const u8 sText_PokeboxWahChallengeFiveTimes[] = _("Win the challenge five\ntimes.");
+static const u8 sText_PokeboxEingTeams[] = _("Defeat both of Eing's teams\n(main and alternate).");
+static const u8 sText_PokeboxMolikai[] = _("Beat both of Helix Boo's\nteams on Hard mode\n(main and alternate).");
+static const u8 sText_PokeboxBaroTeams[] = _("Defeat both of Baro's teams\n(main and alternate).");
+static const u8 sText_PokeboxAllAdmins[] = _("Complete the achievement for\nbeating all the\nadmins.");
+static const u8 sText_PokeboxAllCollaborators[] = _("Complete the achievement for\nbeating all the\ncontributors.");
+static const u8 sText_PokeboxWahDouble[] = _("Complete the challenge in\nDouble Battle mode.");
+static const u8 sText_PokeboxWahInverse[] = _("Complete the challenge in\nInverse Battle mode.");
+static const u8 sText_PokeboxBetaMonQuestionnaire[] = _("Answer their question\ncorrectly in the Living Room\nquiz.");
 
 #define POKEBOX_MON(species_)                                                           \
     {                                                                                   \

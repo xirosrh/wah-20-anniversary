@@ -545,79 +545,79 @@ EingRoom_EventScript_JumpToPlayerDirection_Movement_3:
 
 EingRoom_OnFrame_Text_0:
 # 49 "data/maps/EingRoom/scripts.pory"
-	.string "Malditos Xiros y Serg!o, que se han\n"
-	.string "pirado dejándome a mí con el marrón de\l"
-	.string "administrar la página web y el foro…$"
+	.string "Damn Xiros and Serg!o, running off and\n"
+	.string "leaving me stuck with the hassle of\l"
+	.string "running the website and the forum…$"
 
 EingRoom_OnFrame_Text_1:
 # 55 "data/maps/EingRoom/scripts.pory"
-	.string "¡Y yo sin las malditas credenciales!$"
+	.string "And me without the darn credentials!$"
 
 EingRoom_OnFrame_Text_2:
 # 63 "data/maps/EingRoom/scripts.pory"
-	.string "A ver si las han tirado al fondo del mar\n"
-	.string "como una prueba para desafiarme y ver\l"
-	.string "si soy digno de administrar WAH…\p"
-	.string "¡Voy a ver si las pesco!$"
+	.string "Maybe they threw them to the bottom of\n"
+	.string "the sea as a test to challenge me and\l"
+	.string "see if I'm worthy of running WAH…\p"
+	.string "I'll go see if I can fish them out!$"
 
 EingRoom_OnFrame_Text_3:
 # 92 "data/maps/EingRoom/scripts.pory"
-	.string "¡Maldita sea! ¿Otro entrenador?$"
+	.string "For crying out loud! Another trainer?$"
 
 EingRoom_OnFrame_Text_4:
 # 95 "data/maps/EingRoom/scripts.pory"
-	.string "Esto se está pareciendo a mi rutina de\n"
-	.string "wildbattles dobles del Hoenn\l"
+	.string "This is starting to feel like my routine\n"
+	.string "of double wild battles from Hoenn\l"
 	.string "Adventures…$"
 
 EingRoom_EventScript_Eing_Text_0:
 # 112 "data/maps/EingRoom/scripts.pory"
-	.string "¿Pero mira que eres pesad{OA} eh? ¿Tú no\n"
-	.string "tienes amigos u otra persona a la que\l"
-	.string "molestar?$"
+	.string "Man, you're persistent, huh? Don't you\n"
+	.string "have friends or someone else to\l"
+	.string "bother?$"
 
 EingRoom_EventScript_Eing_Text_1:
 # 127 "data/maps/EingRoom/scripts.pory"
-	.string "¡Coño si tenemos visita! ¿Qué quieres?\n"
-	.string "¿No ves que estoy ocupado?$"
+	.string "Well, if it isn't a visitor! What do you\n"
+	.string "want? Can't you see I'm busy?$"
 
 EingRoom_EventScript_Eing_Text_2:
 # 132 "data/maps/EingRoom/scripts.pory"
-	.string "Si quieres un cambio de nick, tendrás\n"
-	.string "que esperar y como te pongas tont{OA} te\l"
-	.string "baneo, ¿eh?$"
+	.string "If you want a nick change, you'll have\n"
+	.string "to wait, and if you get cheeky I'll ban\l"
+	.string "you, got it?$"
 
 EingRoom_EventScript_Eing_Text_3:
 # 142 "data/maps/EingRoom/scripts.pory"
-	.string "¿Cómo? ¿Que quieres retarme a un\n"
-	.string "combate Pokémon?$"
+	.string "What? You want to challenge me to a\n"
+	.string "Pokémon battle?$"
 
 EingRoom_EventScript_Eing_Text_4:
 # 151 "data/maps/EingRoom/scripts.pory"
-	.string "Está bien, prepárate porque iré con\n"
-	.string "todo, ¡luego no me llores!$"
+	.string "Fine, get ready, because I'm going all\n"
+	.string "out - no crying to me afterward!$"
 
 EingRoom_EventScript_Eing_Text_5:
 # 157 "data/maps/EingRoom/scripts.pory"
-	.string "Enhorabuena chaval{A}, ahora avanza a la\n"
-	.string "siguiente sala y déjame tranquilo, que\l"
-	.string "estaba muy ocupado…$"
+	.string "Congrats, kid; now move on to the next\n"
+	.string "room and leave me be - I was very busy…$"
 
 EingRoom_EventScript_Flotador_Text_0:
 # 230 "data/maps/EingRoom/scripts.pory"
-	.string "Es un flotador como los que usan los\n"
-	.string "socorristas.$"
+	.string "It's a float ring like the ones\n"
+	.string "lifeguards use.$"
 
 EingRoom_EventScript_Taburete_Text_0:
 # 236 "data/maps/EingRoom/scripts.pory"
-	.string "Es un taburete que sirve para sentarse.\p"
-	.string "Pero no te puedes sentar en él.$"
+	.string "It's a stool for sitting on.\p"
+	.string "But you can't sit on it.$"
 
 EingRoom_EventScript_Cubo_Text_0:
 # 242 "data/maps/EingRoom/scripts.pory"
-	.string "Es un cubo... ¿de basura?\n"
-	.string "Ah, no. Aquí está el cebo.$"
+	.string "It's a bucket... for trash?\n"
+	.string "Oh, no. Here's the bait.$"
 
 EingRoom_Text_EingDefeated::
 # 184 "data/maps/EingRoom/scripts.pory"
-	.string "¡Míral{OA}, si parecía tont{OA} al principio!$"
+	.string "Look at that - and they seemed\n"
+	.string "clueless at first!$"

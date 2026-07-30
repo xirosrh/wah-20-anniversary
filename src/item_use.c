@@ -81,20 +81,20 @@ static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Honey(u8 taskId);
 static bool32 IsValidLocationForVsSeeker(void);
 
-static const u8 sText_CantDismountBike[] = _("¡No puedes bajarte de la BICI aquí!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_ItemFinderNearby[] = _("¿Eh?\n¡El zahorí está reaccionando!\p¡Debe de haber un objeto enterrado por aquí!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_ItemFinderOnTop[] = _("¡Oh!\n¡El zahorí vibra con fuerza!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_ItemFinderNothing[] = _("… … … ¡Nada!\nNo hay reacción alguna.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_CoinCase[] = _("Tus monedas:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
-static const u8 sText_PowderQty[] = _("Cant. de polvo: {STR_VAR_1}{PAUSE_UNTIL_PRESS}");
-static const u8 sText_BootedUpTM[] = _("Activaste una MT.");
-static const u8 sText_BootedUpHM[] = _("Activaste una MO.");
-static const u8 sText_TMHMContainedVar1[] = _("Contiene\n{STR_VAR_1}.\p¿Quieres enseñar {STR_VAR_1}\na un Pokémon?");
-static const u8 sText_UsedVar2WildLured[] = _("{PLAYER} usó\n{STR_VAR_2}.\pLos Pokémon salvajes serán atraídos.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} usó\n{STR_VAR_2}.\pLos Pokémon salvajes serán ahuyentados.{PAUSE_UNTIL_PRESS}");
-static const u8 sText_PlayedPokeFluteCatchy[] = _("Tocaste la pokéflauta.\p¡Vaya melodía pegadiza!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_PlayedPokeFlute[] = _("Tocaste la Pokéflauta.");
-static const u8 sText_PokeFluteAwakenedMon[] = _("La Pokéflauta despertó a los\nPokémon dormidos.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_CantDismountBike[] = _("You can't get off the BIKE here!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_ItemFinderNearby[] = _("Huh?\nThe Itemfinder is reacting!\pThere must be an item buried around here!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_ItemFinderOnTop[] = _("Oh!\nThe Itemfinder is buzzing hard!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_ItemFinderNothing[] = _("… … … Nothing!\nThere's no reaction at all.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_CoinCase[] = _("Your COINS:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
+static const u8 sText_PowderQty[] = _("Powder qty: {STR_VAR_1}{PAUSE_UNTIL_PRESS}");
+static const u8 sText_BootedUpTM[] = _("You activated a TM.");
+static const u8 sText_BootedUpHM[] = _("You activated an HM.");
+static const u8 sText_TMHMContainedVar1[] = _("It contains\n{STR_VAR_1}.\pTeach {STR_VAR_1}\nto a Pokémon?");
+static const u8 sText_UsedVar2WildLured[] = _("{PLAYER} used\n{STR_VAR_2}.\pWild Pokémon will be attracted.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} used\n{STR_VAR_2}.\pWild Pokémon will be repelled.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_PlayedPokeFluteCatchy[] = _("You played the Poké Flute.\pWhat a catchy tune!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_PlayedPokeFlute[] = _("You played the Poké Flute.");
+static const u8 sText_PokeFluteAwakenedMon[] = _("The Poké Flute woke up all\nsleeping Pokémon.{PAUSE_UNTIL_PRESS}");
 
 // EWRAM variables
 EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;

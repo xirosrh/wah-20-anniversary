@@ -23,12 +23,12 @@ script AguiarRoom_OnFrame {
     directcameramovementtopos(10, 6)
     waitmovement(0)
     special(HideMapNamePopUpWindow)
-    msgbox(format("¡Pero qué buen programa! Hoy sí que es un día tranquilo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("What a great show! Today really is a quiet day."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovement(LOCALID_AGUIARROOM_AGUIAR, Common_Movement_HappyWithDelay48)
     waitmovement(0)
     delay(20)
-    msgbox(format("Bueno, hora de dar un par de caladas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("Well, time for a couple of drags."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     call(AguiarRoom_EventScript_TurnOffTV)
     delay(30)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR, moves(walk_down, walk_left * 4, walk_up, face_down))
@@ -86,7 +86,7 @@ script AguiarRoom_EventScript_Aguiar {
             updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR)
         }
         faceplayer
-        msgbox(format("Aquí sigo, como siempre: tranquilo, fumando y esperando a ver quién aparece."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+        msgbox(format("Here I am, same as always: relaxed, smoking, and waiting to see who shows up."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
         if(var(VAR_RESULT) != DIR_NORTH){
             turnobject(LOCALID_AGUIARROOM_AGUIAR_SMOKING, DIR_SOUTH)
             updateobjectsprite(LOCALID_AGUIARROOM_AGUIAR_SMOKING, OBJ_EVENT_GFX_AGUIAR_SMOKING)
@@ -109,36 +109,36 @@ script AguiarRoom_EventScript_Aguiar {
     }
     faceplayer
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_FACE_DOWN)
-    msgbox(format("¡Pero mírate! Al final has llegado hasta aquí.\pY yo que pensaba que iba a pasarme el día tirado, con el cigarro y poco más…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("Well, look at you! You made it all the way here after all.\pAnd here I was thinking I'd spend the day lazing around with a cigarette and little else…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
     playse(SE_REPEL)
     waitmovement(0)
     delay(20)
-    msgbox(format("No esperaba visitas, pero oye, me viene de lujo: así me entretengo un rato."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("I wasn't expecting company, but hey, it works out great: gives me something to do for a while."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
-    msgbox(format("Aquí todos se lo toman tan en serio, como si esto fuese cuestión de vida o muerte.\pYo prefiero reírme, dar un par de caladas, y ver qué trae el que se planta delante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("Everyone here takes it so seriously, as if this were a matter of life or death.\pI'd rather laugh, take a couple of drags, and see what whoever shows up has to offer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
     playse(SE_REPEL)
     waitmovement(0)
     delay(20)
-    msgbox(format("No te voy a dar discursos épicos ni consejos de abuelo, que para eso hay otros.\pSi quieres pelear, perfecto. Si pierdo, pues nada, me enciendo otro.\pY si gano… bueno, tampoco me voy a hacer un póster con tu cara, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("I'm not going to give you epic speeches or grandpa advice - there are others for that.\pIf you want to fight, great. If I lose, well, I'll just light up another.\pAnd if I win… well, I'm not going to make a poster of your face, eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_HappyWithDelay48)
     waitse
-    msgbox(format("Así que venga, no le demos más vueltas. Saca a tus Pokémon, que yo ya tengo ganas de ver si al menos me haces dejar el cigarro quieto un rato.\p¡Vamos allá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("So come on, let's not overthink it. Send out your Pokémon - I'm curious to see if you can at least make me set the cigarette down for a bit.\pHere we go!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_AGUIARROOM_AGUIAR_SMOKING, moves(emote_versus))
     waitse
     call(AguiarRoom_EventScript_AguiarBattle)
     delay(10)
-    msgbox(format("¡Pues mira que me la has liado! Y yo pensando que iba a ser otro paseo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("Well, you sure got me! And here I was thinking it'd be another walk in the park…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     applymovement(LOCALID_AGUIARROOM_AGUIAR_SMOKING, Common_Movement_SmokeCigarette)
     playse(SE_REPEL)
     waitmovement(0)
     delay(20)
-    msgbox(format("No está mal, no está nada mal. Ya puedes seguir avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
+    msgbox(format("Not bad, not bad at all. You can go ahead and keep moving."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_AGUIAR)
     call(WahRoomsShared_OpenDoor)
     setflag(FLAG_DEFEATED_ADMIN_AGUIAR)
     setobjectmovementtype2(LOCALID_AGUIARROOM_AGUIAR_SMOKING, MOVEMENT_TYPE_SMOKING_LOOP)
@@ -163,57 +163,57 @@ script AguiarRoom_EventScript_AguiarBattle {
 }
 
 text AguiarRoom_Text_AguiarDefeated {
-    format("¡Vaya combate! Me lo he pasado de\nlujo.")
+    format("What a battle! I had a great\ntime.")
 }
 
 script AguiarRoom_EventScript_Coffee {
-    msgbox(format("La taza de café todavía sigue caliente."), MSGBOX_SIGN)
+    msgbox(format("The cup of coffee is still warm."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Ashtray {
-    msgbox(format("El cenicero está lleno de cigarros recién apagados.\pDefinitivamente, alguien tiene una adicción muy fuerte."), MSGBOX_SIGN)
+    msgbox(format("The ashtray is full of freshly stubbed-out cigarettes.\pSomeone definitely has a serious addiction."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Microwave {
-    msgbox(format("El microondas tiene manchas de comida recalentada."), MSGBOX_SIGN)
+    msgbox(format("The microwave has stains of reheated food."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Trash {
-    msgbox(format("La papelera está llena de restos de cigarro y ceniza."), MSGBOX_SIGN)
+    msgbox(format("The wastebasket is full of cigarette butts and ash."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Refrigerator {
-    msgbox(format("La heladera desprende un aroma increíblemente rico.\pSeguro hay algo delicioso guardado dentro."), MSGBOX_SIGN)
+    msgbox(format("The fridge gives off an incredibly delicious smell.\pThere's surely something tasty stored inside."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_TV {
-    msgbox("Es un televisor de 55 pulgadas.\nDefinitivamente ocupa media sala.", MSGBOX_SIGN)
+    msgbox("It's a 55-inch TV.\nIt definitely takes up half the room.", MSGBOX_SIGN)
     end
 }
 
 
 
 script AguiarRoom_EventScript_Kitchen {
-    msgbox(format("Parece una cocina bastante moderna.\pTodo está impecablemente limpio."), MSGBOX_SIGN)
+    msgbox(format("It looks like a pretty modern kitchen.\pEverything's spotlessly clean."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Switch {
-    msgbox(format("Parece que alguien dejó la Nintendo Switch a mitad de una partida."), MSGBOX_SIGN)
+    msgbox(format("It looks like someone left the Nintendo Switch in the middle of a game."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_Drawer {
-    msgbox(format("Parece que alguien usa este cajón exclusivamente para guardar cigarros."), MSGBOX_SIGN)
+    msgbox(format("It looks like someone uses this drawer exclusively to store cigarettes."), MSGBOX_SIGN)
     end
 }
 
 script AguiarRoom_EventScript_FullOfBooks {
-    msgbox(format("Hay muchos libros de todo tipo."), MSGBOX_SIGN)
+    msgbox(format("There are lots of books of all kinds."), MSGBOX_SIGN)
     end
 }

@@ -32,13 +32,13 @@ script XirosRoom_EventScript_Xiros {
     if(flag(FLAG_DEFEATED_ADMIN_XIROS)) {
         lock
         faceplayer
-        msgbox(format("¿Aún sigues aquí? Ya que estás, aprovecho para decirte una cosa más."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        msgbox(format("Still here? Well, since you are, let me tell you one more thing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
-        msgbox(format("No te obsesiones demasiado con compararte todo el tiempo, porque a veces vas a sentir que estás adelante, y otras veces que te quedaste atrás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        msgbox(format("Don't get too obsessed with comparing yourself all the time, because sometimes you'll feel ahead, and other times that you've fallen behind."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_LEDGE)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(lock_facing_direction, jump_in_place_down, unlock_facing_direction, face_player))
-        msgbox(format("Al final, el camino es largo, y la verdadera carrera es siempre con uno mismo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        msgbox(format("In the end, the road is long, and the real race is always against yourself."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
         playse(SE_LEDGE)
@@ -46,7 +46,7 @@ script XirosRoom_EventScript_Xiros {
         waitse
         playse(SE_LEDGE)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down, unlock_facing_direction, face_player))
-        msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+        msgbox(format("Now keep going, at your own pace, but always moving forward."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
         turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
@@ -55,10 +55,10 @@ script XirosRoom_EventScript_Xiros {
     }
     lock
     faceplayer
-    msgbox(format("Así que llegaste hasta acá, ¡a la sala número veinte!\pUn lugar al que no se llega por casualidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("So you made it here, to room number twenty!\pA place you don't reach by chance."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
-    msgbox(format("Voy a tratar de ser más breve que Zero en mi discurso, pero a mí también me gusta reflexionar, así que no prometo nada…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("I'll try to be briefer than Zero in my speech, but I like to reflect too, so I can't promise anything…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_SweatDropWithDelay48)
     fadescreen(FADE_TO_BLACK)
@@ -67,10 +67,10 @@ script XirosRoom_EventScript_Xiros {
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     fadescreen(FADE_FROM_BLACK)
-    msgbox(format("En el camino te cruzaste con muchas personas, algunas conocidas, otras que quizá solo habías escuchado nombrar alguna vez, pero todas dejaron algo en este recorrido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Along the way you crossed paths with many people, some familiar, others you'd maybe only heard mentioned once, but all of them left something on this journey."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
     delay(20)
-    msgbox(format("Cada encuentro, cada charla y cada combate forma parte de una historia más grande, aunque a veces no lo notemos en el momento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Every encounter, every chat, and every battle is part of a bigger story, even if we don't always notice it in the moment."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HeartWithDelay48)
     delay(20)
@@ -80,14 +80,14 @@ script XirosRoom_EventScript_Xiros {
     waitmovement(0)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Es normal que en algún punto las cosas parezcan difíciles o incluso imposibles, porque nadie nace sabiendo, ni empieza un gran desafío o proyecto teniendo todas las respuestas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("It's normal for things to seem hard or even impossible at some point, because no one is born knowing, nor starts a big challenge or project with all the answers."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Lo importante no es saberlo todo, sino animarse a buscar, porque cuando uno busca de verdad, siempre aparece alguien dispuesto a ayudar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("What matters isn't knowing everything, but daring to search, because when you truly search, someone willing to help always turns up."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovement(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown2)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkDown2)
     waitmovement(0)
     special(RemoveCameraObject)
-    msgbox(format("Es lo lindo de esta comunidad, ¿no crees?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("That's the beautiful thing about this community, don't you think?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(
@@ -119,18 +119,18 @@ script XirosRoom_EventScript_Xiros {
     applymovementandwait(LOCALID_XIROSROOM_ELECTRODE, moves(walk_left, walk_up, walk_in_place_right))
     release
     turnobject(LOCALID_XIROSROOM_XIROS, DIR_WEST)
-    msgbox(format("Este es Electrode Sandía, un símbolo de una época que muchos recuerdan con cariño y nostalgia, cuando todo parecía más simple."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("This is Watermelon Electrode, a symbol of an era many remember with fondness and nostalgia, when everything seemed simpler."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_ThinkingWithDelay48)
     turnobject(LOCALID_XIROSROOM_XIROS, DIR_SOUTH)
     turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_SOUTH)
-    msgbox(format("Personalmente nunca creí que la época dorada fuera un momento que quedó atrás en el tiempo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Personally, I never believed the golden age was a moment left behind in time."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown)
     waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_JumpInPlaceDown)
-    msgbox(format("Para mí, la época dorada es hoy, y también será mañana, mientras sigan existiendo personas con ganas de motivar, ayudar y empujar las cosas un poco más adelante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("For me, the golden age is today, and it'll be tomorrow too, as long as there are still people eager to motivate, help, and push things a little further forward."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceLeft)
     turnobject(LOCALID_XIROSROOM_ELECTRODE, DIR_EAST)
     playse(SE_BALL_OPEN)
@@ -141,7 +141,7 @@ script XirosRoom_EventScript_Xiros {
     fadescreen(FADE_FROM_WHITE)
     delay(20)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkDown)
-    msgbox(format("Hagamos que este momento también cuente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Let's make this moment count too."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(emote_versus, delay_16, walk_in_place_down, delay_16))
     call(XirosRoom_EventScript_XirosBattle)
@@ -153,12 +153,12 @@ script XirosRoom_EventScript_Xiros {
     waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, moves(jump_in_place_down))
-    msgbox(format("¡Wow! ¡Qué gran combate! Me encanta tu forma de combatir.\p¡Sobre todo la pasión que le pones a cada movimiento!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Wow! What a great battle! I love your battling style.\pEspecially the passion you put into every move!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     delay(20)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Todavía te queda un último enfrentamiento, y si conocés un poco la historia de este lugar, seguramente ya te estés imaginando quién te espera.\pAprovecha la oportunidad, que no todos tienen la suerte de encontrarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("You've still got one last showdown, and if you know a bit of this place's history, you can probably already imagine who's waiting for you.\pMake the most of it - not everyone is lucky enough to find him."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     call(WahRoomsShared_OpenDoor)
-    msgbox(format("Ahora sigue, a tu ritmo, pero siempre avanzando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
+    msgbox(format("Now keep going, at your own pace, but always moving forward."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_XIROS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_XIROSROOM_XIROS, Common_Movement_HappyWithDelay48)
     setflag(FLAG_DEFEATED_ADMIN_XIROS)
@@ -183,35 +183,35 @@ script XirosRoom_EventScript_XirosBattle {
 }
 
 text XirosRoom_Text_XirosDefeated {
-    format("¡Muy buen combate!")
+    format("Great battle!")
 }
 
 script XirosRoom_EventScript_Tanque {
-    msgbox(format("Es un tanque lleno de un líquido que no parece ser agua.\pHay burbujeos en su interior."), MSGBOX_SIGN)
+    msgbox(format("It's a tank full of a liquid that doesn't look like water.\pThere's bubbling inside it."), MSGBOX_SIGN)
     end
 }
 
 script XirosRoom_EventScript_Holograma {
-    msgbox(format("Es un holograma de un cubo flotando en el aire."), MSGBOX_SIGN)
+    msgbox(format("It's a hologram of a cube floating in the air."), MSGBOX_SIGN)
     end
 }
 
 script XirosRoom_EventScript_Lampara {
-    msgbox(format("Es una lámpara futurista que ilumina con luz azul."), MSGBOX_SIGN)
+    msgbox(format("It's a futuristic lamp that glows with blue light."), MSGBOX_SIGN)
     end
 }
 
 script XirosRoom_EventScript_Server {
-    msgbox(format("El parpadeo de las luces indica que está realizando cálculos cuánticos."), MSGBOX_SIGN)
+    msgbox(format("The blinking lights show it's running quantum calculations."), MSGBOX_SIGN)
     end
 }
 
 script XirosRoom_EventScript_Pantalla {
-    msgbox(format("Parece que muestra cálculos y gráficos muy complejos."), MSGBOX_SIGN)
+    msgbox(format("It seems to show very complex calculations and graphs."), MSGBOX_SIGN)
     end
 }
 
 script XirosRoom_EventScript_Unknown {
-    msgbox(format("Esto es un...\n¿Qué es esto?"), MSGBOX_SIGN)
+    msgbox(format("This is a...\nWhat is this?"), MSGBOX_SIGN)
     end
 }

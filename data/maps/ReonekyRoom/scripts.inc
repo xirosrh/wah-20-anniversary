@@ -625,114 +625,112 @@ ReonekyRoom_EventScript_Reoneky_Movement_2:
 
 ReonekyRoom_OnFrame_Text_0:
 # 55 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Spitfire, mantén la distancia!$"
+	.string "Spitfire, keep your distance!$"
 
 ReonekyRoom_OnFrame_Text_1:
 # 61 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Esa grúa poseída encarna la injusticia\n"
-	.string "administrativa!$"
+	.string "That possessed tow truck is the\n"
+	.string "embodiment of bureaucratic injustice!$"
 
 ReonekyRoom_OnFrame_Text_2:
 # 77 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¿Te ríes, eh? Aficionada…$"
+	.string "Laughing, huh? Amateur…$"
 
 ReonekyRoom_OnFrame_Text_3:
 # 79 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Estaba estacionado perfectamente, ¡no\n"
-	.string "voy a rendirme ante esta multa injusta!$"
+	.string "I was parked perfectly - I won't give in\n"
+	.string "to this unjust fine!$"
 
 ReonekyRoom_OnFrame_Text_4:
 # 81 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Spitfire, Cabezazo Zen!$"
+	.string "Spitfire, Zen Headbutt!$"
 
 ReonekyRoom_OnFrame_Text_5:
 # 106 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Bien, es la nuestra! ¡Rueda Fuego!$"
+	.string "Now's our chance! Flame Wheel!$"
 
 ReonekyRoom_OnFrame_Text_6:
 # 173 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Venga, a pastar!$"
+	.string "There, off you go!$"
 
 ReonekyRoom_OnFrame_Text_7:
 # 177 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Tú molas, tú mandas colega! ¡Nos\n"
-	.string "libramos del fantasma de la multa!$"
+	.string "You rock, you rule, buddy! We shook off\n"
+	.string "the ghost of the fine!$"
 
 ReonekyRoom_OnFrame_Text_8:
 # 183 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Menos mal que J15 decía que lo tenía\n"
-	.string "controlado, vaya tela…\p"
-	.string "Si es que le tenía que haber hecho caso\n"
-	.string "a Keltill… Va con el Miata tuneao y\l"
-	.string "nunca lo multan, solo lo paran para\l"
-	.string "echarse fotos…$"
+	.string "Good thing J15 said he had it under\n"
+	.string "control, what a mess…\p"
+	.string "I really should have listened to\n"
+	.string "Keltill… He drives his tuned-up Miata\l"
+	.string "and never gets fined, they only pull him\l"
+	.string "over to take photos with it…$"
 
 ReonekyRoom_OnFrame_Text_9:
 # 188 "data/maps/ReonekyRoom/scripts.pory"
-	.string "En fin… Lo has hecho genial colega,\n"
-	.string "¡hora de descansar!$"
+	.string "Anyway… you did great, buddy, time to\n"
+	.string "rest!$"
 
 ReonekyRoom_EventScript_Reoneky_Text_0:
 # 216 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Un golpe de suerte ocurre cuando\n"
-	.string "aprovechas una buena oportunidad!\p"
-	.string "No dejes que te detengan… y, sobre\n"
-	.string "todo, disfruta del momento.$"
+	.string "A stroke of luck happens when you seize\n"
+	.string "a good opportunity!\p"
+	.string "Don't let anyone stop you… and above\n"
+	.string "all, enjoy the moment.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_1:
 # 225 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡Buenas! Vaya espectáculo has\n"
-	.string "presenciado, ¿eh?$"
+	.string "Hey! Quite a show you just witnessed,\n"
+	.string "huh?$"
 
 ReonekyRoom_EventScript_Reoneky_Text_2:
 # 229 "data/maps/ReonekyRoom/scripts.pory"
-	.string "A estas alturas ya sabrás que hago\n"
-	.string "aquí, así que me presento.\p"
-	.string "Soy Reoneky, experto en llevar el\n"
-	.string "prefijo “ex” tanto ámbito laboral como\l"
-	.string "profesional.$"
+	.string "By now you probably know what I do\n"
+	.string "here, so let me introduce myself.\p"
+	.string "I'm Reoneky, expert at carrying the\n"
+	.string "prefix “ex,” in both my work and my\l"
+	.string "career.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_3:
 # 231 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Puede parecer que soy un emo, pero me\n"
-	.string "considero más introspectivo que otra\l"
-	.string "cosa.$"
+	.string "I might look like an emo, but I consider\n"
+	.string "myself more introspective than\l"
+	.string "anything.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_4:
 # 234 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Yo no era nadie… sentía que no era\n"
-	.string "nadie… y eso lo cambió WaH.\p"
-	.string "Así que fuera sentimentalismos y\n"
-	.string "presentaciones, vamos al lío.\p"
-	.string "Mente fría, corazón caliente, así es\n"
-	.string "como se juega.$"
+	.string "I was nobody… I felt like I was nobody…\n"
+	.string "and WaH changed that.\p"
+	.string "So enough with the sentimentality and\n"
+	.string "introductions - let's get to it.\p"
+	.string "Cool head, warm heart, that's how the\n"
+	.string "game is played.$"
 
 ReonekyRoom_EventScript_Reoneky_Text_5:
 # 245 "data/maps/ReonekyRoom/scripts.pory"
-	.string "¡A darle caña!$"
+	.string "Let's give it everything!$"
 
 ReonekyRoom_EventScript_Reoneky_Text_6:
 # 250 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Apuntas maneras. El talento tiene\n"
-	.string "límites; el esfuerzo y la pasión no.$"
+	.string "You show promise. Talent has limits;\n"
+	.string "effort and passion don't.$"
 
 ReonekyRoom_EventScript_Trash_Text_0:
 # 284 "data/maps/ReonekyRoom/scripts.pory"
-	.string "La papelera está completamente vacía.\p"
-	.string "Es posible que la gente haya tirado la\n"
-	.string "basura en la calle.$"
+	.string "The wastebasket is completely empty.\p"
+	.string "People may have thrown their trash out\n"
+	.string "on the street.$"
 
 ReonekyRoom_EventScript_Hydrant_Text_0:
 # 289 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Es un pequeño hidrante pintado de rojo\n"
-	.string "brillante.$"
+	.string "It's a small hydrant painted bright red.$"
 
 ReonekyRoom_EventScript_Bidon_Text_0:
 # 294 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Es un bidón hasta arriba de aceite\n"
-	.string "usado.$"
+	.string "It's a drum filled to the top with used\n"
+	.string "oil.$"
 
 ReonekyRoom_Text_ReonekyDefeated::
 # 278 "data/maps/ReonekyRoom/scripts.pory"
-	.string "Buen combate, he disfrutado como un\n"
-	.string "niño.$"
+	.string "Good battle - I had fun like a kid.$"

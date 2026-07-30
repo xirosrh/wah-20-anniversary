@@ -35,11 +35,11 @@ script TokynWarRoom_EventScript_MainCutscene {
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_SurpriseWithDelay48)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_down * 2, face_right))
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("¡Vaya sorpresa! No esperaba ver una cara nueva por aquí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("What a surprise! I wasn't expecting to see a new face around here."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(walk_down * 2, face_left))
     turnobject(LOCALID_PLAYER, DIR_EAST)
-    msgbox(format("Yo tampoco tengo idea de quién eres, pero eso no importa."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_WAR)
+    msgbox(format("I've got no idea who you are either, but that doesn't matter."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_WAR)
     playse(SE_PIN)
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_exclamation_mark))
     waitmovement(0)
@@ -52,15 +52,15 @@ script TokynWarRoom_EventScript_MainCutscene {
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left, delay_16))
     waitmovement(0)
     waitse
-    msgbox(format("¡Estamos aquí para verlo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
+    msgbox(format("We're here to find out!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     waitmovement(0)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Es un placer poder participar de esta celebración contigo."),MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("It's a pleasure to take part in this celebration with you."),MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HappyWithDelay48)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
-    msgbox(format("¿Qué te parece un combate de a dos, War?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("How about a two-on-two battle, War?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     playse(SE_LEDGE)
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left))
     waitmovement(0)
@@ -70,24 +70,24 @@ script TokynWarRoom_EventScript_MainCutscene {
     waitmovement(0)
     waitse
     turnobject(LOCALID_PLAYER, DIR_EAST)
-    msgbox(format("¿Unir fuerzas como en los viejos tiempos?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
+    msgbox(format("Join forces like in the old days?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     delay(30)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkRight)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("¡Hace años no hacemos eso! Pero me gusta.\pUna buena celebración merece algo especial."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
+    msgbox(format("We haven't done that in years! But I like it.\pA good celebration deserves something special."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkInPlaceLeft)
     delay(20)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Entonces está decidido."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("Then it's decided."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     delay(30)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkInPlaceRight)
-    msgbox(format("¡Vamos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("Let's go!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     delay(20)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_WalkLeft)
     turnobject(LOCALID_PLAYER, DIR_EAST)
-    msgbox(format("¡Que gane el mejor!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
+    msgbox(format("May the best win!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     playse(SE_PIN)
     applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(emote_versus, jump_in_place_right * 2, delay_16))
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(emote_versus, jump_in_place_left * 2, delay_16))
@@ -113,15 +113,15 @@ script TokynWarRoom_EventScript_MainCutscene {
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, moves(jump_in_place_left, walk_left))
     waitse
-    msgbox(format("¡Pero qué locura de combate! Hoy sí que nos diste trabajo en serio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
+    msgbox(format("What a crazy battle! You really gave us a run for our money today."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_WAR)
     delay(40)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_WalkRight)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Gracias por compartir este momento con nosotros.\pFue un encuentro digno para esta celebración.\pEs increíble cómo un solo combate puede traer de vuelta tantas memorias."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("Thanks for sharing this moment with us.\pIt was a match worthy of this celebration.\pIt's amazing how a single battle can bring back so many memories."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48)
     call(WahRoomsShared_OpenDoor)
-    msgbox(format("Ya puedes seguir, pero recuerda: Nunca olvides seguir tus sueños."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("You can go on now, but remember: never forget to follow your dreams."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     applymovement(LOCALID_TOKYNWARROOM_TOKYN, moves(walk_up * 2, face_down))
     applymovement(LOCALID_TOKYNWARROOM_WAR, moves(walk_up * 2, face_down))
     waitmovement(0)
@@ -140,7 +140,7 @@ script TokynWarRoom_EventScript_War {
         call(TokynWarRoom_EventScript_MainCutscene)
         end
     }
-    msgbox(format("¿Quieres otra? ¡Ni loco!\pTokyn me tira charla motivadora si pierdo dos veces seguidas.\pPero estuvo buenísimo, eh."), speaker = SP_NAME_WAR)
+    msgbox(format("Want another? No way!\pTokyn gives me a motivational talk if I lose twice in a row.\pBut it was great, though."), speaker = SP_NAME_WAR)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_WAR, Common_Movement_XDWithDelay48)
     release
@@ -155,10 +155,10 @@ script TokynWarRoom_EventScript_Tokyn {
         call(TokynWarRoom_EventScript_MainCutscene)
         end
     }
-    msgbox(format("Me alegra muchísimo haber sido convocado para esta celebración.\pEstar acá, compartir un combate así… me trajo muy buenos recuerdos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
+    msgbox(format("I'm really glad I was called up for this celebration.\pBeing here, sharing a battle like this… it brought back some great memories."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_TOKYN)
     playse(SE_PIN)
     applymovementandwait(LOCALID_TOKYNWARROOM_TOKYN, Common_Movement_HeartWithDelay48)
-    msgbox(format("Gracias por hacerlo especial."), speaker = SP_NAME_TOKYN)
+    msgbox(format("Thanks for making it special."), speaker = SP_NAME_TOKYN)
     release
     end
 }
@@ -221,9 +221,9 @@ script TokynWarRoom_EventScript_TokynWarBattle {
 }
 
 text TokynWarRoom_Text_TokynDefeated {
-    format("Qué bien se sintió este combate… hacía tiempo que no disfrutaba uno así.")
+    format("This battle felt so good… it'd been a while since I enjoyed one like it.")
 }
 
 text TokynWarRoom_Text_WarDefeated {
-    format("Bueno… ahora sí sé quién eres. Vaya forma de presentarte.")
+    format("Well… now I know who you are. What a way to introduce yourself.")
 }

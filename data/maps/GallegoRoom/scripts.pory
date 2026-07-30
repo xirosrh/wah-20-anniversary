@@ -30,10 +30,10 @@ script GallegoRoom_EventScript_Gallego {
     if(flag(FLAG_DEFEATED_ADMIN_GALLEGO)) {
         lock
         faceplayer
-        msgbox(format("La chispa que ha vuelto a encender mi sueño ha prendido una llama que crece por momentos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+        msgbox(format("The spark that rekindled my dream has lit a flame that grows by the moment."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
         playse(SE_PIN)
         applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48)
-        msgbox(format("¡Continúa en busca del tuyo, y volveremos a encontrarnos en el camino!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+        msgbox(format("Keep chasing yours, and we'll meet again on the road!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
         release
         end
     }
@@ -57,7 +57,7 @@ script GallegoRoom_EventScript_Gallego {
             ))
     }
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(reveal_trainer, walk_in_place_up))
-    msgbox(format("Ay, no, creo que me ha visto… No puedo dejar que me encuentren todavía…\p¿Y si me quedo muy quieto? ¿Seré capaz de escabullirme?"), MSGBOX_AUTOCLOSE_TOP)
+    msgbox(format("Oh no, I think they saw me… I can't let them find me yet…\pWhat if I keep very still? Could I manage to slip away?"), MSGBOX_AUTOCLOSE_TOP)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         emote_thinking,
@@ -71,19 +71,19 @@ script GallegoRoom_EventScript_Gallego {
         face_up,
         delay_16 * 2
     ))
-    msgbox(format("En fin, tendré que aceptarlo, supongo que no podía ocultarme para siempre."), MSGBOX_AUTOCLOSE_TOP)
+    msgbox(format("Well, I'll have to accept it, I guess I couldn't hide forever."), MSGBOX_AUTOCLOSE_TOP)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     faceplayer
     delay(30)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("¡Hola! Soy Gallego13, y llevo años observando desde las sombras.\pCasi podría decir que en vez de irme, me escondí.\pDe vez en cuando echaba un ojo por nuestra querida comunidad, sin decir nada, viendo los avances y cómo evolucionaba…\pNunca quise que fuese tan largo, pero los estudios y después la vida me hicieron perder la noción del tiempo.\pAntes de que me diera cuenta, me acostumbré a ver este mundo desde la distancia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Hi! I'm Gallego13, and for years I've watched from the shadows.\pYou could almost say I didn't leave, I just hid.\pNow and then I'd peek in on our dear community, saying nothing, watching the progress and how it evolved…\pI never meant it to last so long, but studies and then life made me lose all track of time.\pBefore I knew it, I'd gotten used to watching this world from a distance."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
     playse(SE_PIN)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_double_exclamation_mark))
     waitmovement(0)
     waitse
-    msgbox(format("Y mira tú, veinte años ya… ¡veinte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("And look at that, twenty years… twenty!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
@@ -97,17 +97,17 @@ script GallegoRoom_EventScript_Gallego {
         face_player
     ))
     delay(40)
-    msgbox(format("El aniversario me ha pillado totalmente por sorpresa.\p¡Si hasta hace diez años desde que me dejé ver por última vez!\pY aún con esas, ese pedazo de mi vida lo recuerdo como si hubiese sido ayer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("The anniversary caught me completely by surprise.\pIt's even been ten years since I was last seen!\pAnd even so, that piece of my life I remember like it was yesterday."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HeartWithDelay48)
-    msgbox(format("Siempre tuve el sueño de crear un juego que capturara el alma de la segunda generación, con aquella estética y ese “no sé qué” del que siempre he estado enamorado.\pMe pasé años picando piedra entre bytes en hexadecimal y rutinas de ASM, insertando gráficos y música a las bravas en la ROM…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("I always dreamed of making a game that captured the soul of the second generation, with that look and that “certain something” I've always been in love with.\pI spent years grinding away in hex bytes and ASM routines, shoving graphics and music into the ROM by brute force…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     special(SpawnCameraObject)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkUp2)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp2)
     waitmovement(0)
-    msgbox(format("Pero me iba a volver loco con todo aquello… demasiado difícil, los bugs aparecían como setas a cada cambio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("But it was driving me crazy, all of it… too hard, and the bugs sprouted like weeds with every change."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_FacePlayer)
-    msgbox(format("Y justo cuando lo dejé, cuando me rendí, aparecieron las herramientas modernas.\pEl disassembly, los motores… todo lo que habría necesitado entonces, apareció, casi como si fuese una burla a mi esfuerzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("And right when I quit, when I gave up, the modern tools appeared.\pThe disassembly, the engines… all I would've needed back then showed up, almost like a mockery of my effort."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkDown2)
@@ -121,16 +121,16 @@ script GallegoRoom_EventScript_Gallego {
         walk_right
     ))
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    msgbox(format("Como ves, aún conservo mis viejas Game Boy Color."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("As you can see, I still keep my old Game Boy Colors."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     applymovementandwait(LOCALID_PLAYER, moves(walk_down, face_right))
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
     turnobject(LOCALID_GALLEGOROOM_GALLEGO, DIR_NORTH)
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    msgbox(format("Algunas ni siquiera encienden, pero siguen ahí.\pA pesar de todo, después de tanto tiempo, mi sueño todavía vive…\pEl sueño no tiene fin: la maquinaria en mi cabeza todavía no se ha detenido…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Some don't even turn on, but they're still here.\pIn spite of it all, after so much time, my dream still lives on…\pThe dream has no end: the gears in my head still haven't stopped…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     delay(30)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_WalkInPlaceUp)
-    msgbox(format("En fin, suficiente reflexión por ahora."), MSGBOX_AUTOCLOSE, speaker= SP_NAME_GALLEGO)
+    msgbox(format("Anyway, enough reflecting for now."), MSGBOX_AUTOCLOSE, speaker= SP_NAME_GALLEGO)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         walk_left
         walk_up * 3
@@ -138,7 +138,7 @@ script GallegoRoom_EventScript_Gallego {
         face_down
     ))
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp)
-    msgbox(format("Vamos a ver si no se me ha olvidado combatir en este tiempo."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_GALLEGO)
+    msgbox(format("Let's see if I still remember how to battle after all this time."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_GALLEGO)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
@@ -148,21 +148,21 @@ script GallegoRoom_EventScript_Gallego {
         face_player
     ))
     waitse
-    msgbox(format("¡Enséñame cuánto ha evolucionado la nueva generación!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Show me how much the new generation has evolved!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(emote_versus))
     waitmovement(0)
     waitse
     call(GallegoRoom_EventScript_GallegoBattle)
-    msgbox(format("Parece que las nuevas generaciones de entrenadores son mucho más duras de roer.\pPero verte combatir me devuelve la chispa de antaño."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Looks like the new generations of trainers are a much tougher nut to crack.\pBut watching you battle brings back the old spark."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_HappyWithDelay48)
     delay(60)
-    msgbox(format("Es curioso… abandoné justo antes de que todo se volviera más fácil, y aun así, sigo pensando en volver.\pNo puedo negar que soy un cabezota sin remedio…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Funny… I quit right before everything got easier, and even so, I keep thinking of coming back.\pI can't deny I'm a hopeless stubborn fool…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_GALLEGOROOM_GALLEGO, Common_Movement_SweatDropWithDelay48)
     delay(30)
-    msgbox(format("Supongo que algunos sueños no se apagan."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("I guess some dreams just don't burn out."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     playse(SE_LEDGE)
     applymovement(LOCALID_GALLEGOROOM_GALLEGO, moves(
         lock_facing_direction,
@@ -176,9 +176,9 @@ script GallegoRoom_EventScript_Gallego {
         unlock_facing_direction,
         face_player
     ))
-    msgbox(format("Ve, continúa, ¡busca tu sueño y abrázalo con fuerza!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("Go on, keep going, chase your dream and hold it tight!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     call(WahRoomsShared_OpenDoor)
-    msgbox(format("Yo me quedaré aquí un rato más… recordando mis viejos intentos y soñando con un nuevo y emocionante comienzo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
+    msgbox(format("I'll stay here a little longer… remembering my old attempts and dreaming of a new and exciting beginning."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GALLEGO)
     setflag(FLAG_DEFEATED_ADMIN_GALLEGO)
     call(WahRoomsShared_EventScript_AfterBattle)
     release
@@ -186,34 +186,34 @@ script GallegoRoom_EventScript_Gallego {
 }
 
 script GallegoRoom_EventScript_TV {
-    msgbox(format("Parece que tiene a medias una partida del Castlevania original.\pCuriosa forma de liberar el estrés."), MSGBOX_SIGN)
+    msgbox(format("Looks like there's a half-finished game of the original Castlevania.\pA curious way to blow off steam."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Monkfear {
-    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Agua/siniestro.\lEspecie: Acuaterror.\pLínea evolutiva: Monkfear no evoluciona.", MSGBOX_SIGN)
+    msgbox("Looks like a fakémon design with\na second-generation look.\pIt has a data sheet:\nType: Water/Dark.\lSpecies: Aquaterror.\pEvolution line: Monkfear doesn't evolve.", MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Saturnape {
-    msgbox("Parece el diseño de un fakémon con\nestética de segunda generación.\pTiene una ficha:\nTipo: Psíquico.\lEspecie: Mono alien.\pLínea evolutiva: Marskey (LV. 30) >\nSaturnape.", MSGBOX_SIGN)
+    msgbox("Looks like a fakémon design with\na second-generation look.\pIt has a data sheet:\nType: Psychic.\lSpecies: Alien Monkey.\pEvolution line: Marskey (LV. 30) >\nSaturnape.", MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Gameboy1 {
-    msgbox(format("Es una Gameboy Color.\pParece que tiene una partida en marcha en el interior de un bosque enorme.\pVale, voy a salir y… acaba de crashear. Vaya."), MSGBOX_SIGN)
+    msgbox(format("It's a Game Boy Color.\pLooks like there's a game in progress deep inside a huge forest.\pOkay, I'll step out and… it just crashed. Great."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Gameboy2 {
-    msgbox(format("Es una Gameboy Color.\pLa partida está guardada antes de la escena de selección de inicial en un juego que no conozco…\p¡Uy! Se acaba de reiniciar nada más entrar en combate.\pVaya chasco."), MSGBOX_SIGN)
+    msgbox(format("It's a Game Boy Color.\pThe game's saved right before the starter-selection scene in a game I don't recognize…\pOops! It just reset the moment the battle began.\pWhat a letdown."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_DrawingsAndCoffee {
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if(var(VAR_RESULT) == DIR_NORTH) {
-        msgbox(format("Un café con leche a medio beber.\pParece como si alguien se lo hubiese dejado a medias por la prisa."), MSGBOX_SIGN)
+        msgbox(format("A half-drunk latte.\pLooks like someone left it half-finished in a hurry."), MSGBOX_SIGN)
     } else {
         goto(GallegoRoom_EventScript_Drawings)
     }
@@ -221,40 +221,40 @@ script GallegoRoom_EventScript_DrawingsAndCoffee {
 }
 
 script GallegoRoom_EventScript_Drawings {
-    msgbox(format("Parecen diseños de varios fakémon y Pokémon de generaciones posteriores a la segunda en el estilo de la Gameboy Color.\pEstán entremezclados con apuntes muy viejos de la universidad.\pParece que nadie ha puesto orden aquí en una década."), MSGBOX_SIGN)
+    msgbox(format("They look like designs of various fakémon and Pokémon from generations after the second, in the Game Boy Color style.\pThey're mixed in with very old university notes.\pLooks like no one's tidied up here in a decade."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Shelf {
-    msgbox(format("Es una colección de libros y apuntes de la universidad mezclada con tomos de manga.\pNo parece muy organizada."), MSGBOX_SIGN)
+    msgbox(format("It's a collection of books and notes from university mixed with volumes of manga.\pIt doesn't look very organized."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Library {
-    msgbox(format("Hay una fila enorme de tomos negros de tapa dura.\pEn el lomo se puede leer “Berserk” en letras rojas."), MSGBOX_SIGN)
+    msgbox(format("There's a huge row of black hardcover volumes.\pOn the spine you can read “Berserk” in red letters."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Drawer {
-    msgbox(format("Es un mueble lleno de consolas y videojuegos de distintas épocas, apilados en varios compartimentos.\pNo se ve el fondo."), MSGBOX_SIGN)
+    msgbox(format("It's a cabinet full of consoles and video games from different eras, stacked in various compartments.\pYou can't see the back of it."), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_NES {
-    msgbox(format("Es una NES, un poco polvorienta, pero funciona perfectamente.\p¡Qué retro!"), MSGBOX_SIGN)
+    msgbox(format("It's an NES, a little dusty, but it works perfectly.\pSo retro!"), MSGBOX_SIGN)
     end
 }
 
 script GallegoRoom_EventScript_Bin {
     switch(var(VAR_TEMP_0_BIN)) {
         case 0:
-            msgbox(format("Nada, aquí solo hay basura… creo."), MSGBOX_SIGN)
+            msgbox(format("Nothing, just junk here… I think."), MSGBOX_SIGN)
             setvar(VAR_TEMP_0_BIN, 1)
         case 1:
-            msgbox(format("Te he dicho que aquí solo hay basura. Deja de buscar."), MSGBOX_SIGN)
+            msgbox(format("I told you there's only junk here. Stop searching."), MSGBOX_SIGN)
             setvar(VAR_TEMP_0_BIN, 2)
         case 2:
-            msgbox(format("Encuentras al fondo una imagen extraña. Es un diseño claramente de la segunda generación, pero estás seguro de que es Flamigo, un Pokémon reciente.\p¿Qué sentido tiene esto?"), MSGBOX_SIGN)
+            msgbox(format("At the bottom you find a strange image. It's clearly a second- generation design, but you're sure it's Flamigo, a recent Pokémon.\pWhat sense does this make?"), MSGBOX_SIGN)
     }
     end
 }
@@ -275,5 +275,5 @@ script GallegoRoom_EventScript_GallegoBattle {
 }
 
 text GallegoRoom_Text_GallegoDefeated {
-    format("Uff… pues sí que me he quedado anticuado.")
+    format("Phew… I really have fallen behind the times.")
 }

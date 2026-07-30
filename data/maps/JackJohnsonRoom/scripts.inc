@@ -1629,157 +1629,158 @@ JackJohnsonRoom_EventScript_Jack_Movement_0:
 
 JackJohnsonRoom_OnFrame_Text_0:
 # 327 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Es hora de comenzar el ensayo…\n"
-	.string "¡Cortinas!$"
+	.string "Time to begin the rehearsal… Curtains!$"
 
 JackJohnsonRoom_OnFrame_Text_1:
 # 332 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Desde el principio! ¡Quiero que cada\n"
-	.string "movimiento sea perfecto!$"
+	.string "From the top! I want every move to be\n"
+	.string "perfect!$"
 
 JackJohnsonRoom_OnFrame_Text_2:
 # 341 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Luces!$"
+	.string "Lights!$"
 
 JackJohnsonRoom_OnFrame_Text_3:
 # 344 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Empecemos!$"
+	.string "Let's begin!$"
 
 JackJohnsonRoom_OnFrame_Text_4:
 # 356 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Uno, dos… salto ya!$"
+	.string "One, two… jump now!$"
 
 JackJohnsonRoom_OnFrame_Text_5:
 # 370 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Giro! ¡Más energía, que parezca un\n"
-	.string "huracán!$"
+	.string "Spin! More energy, make it look like a\n"
+	.string "hurricane!$"
 
 JackJohnsonRoom_OnFrame_Text_6:
 # 395 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Perfecto! ¡Lo hemos clavado!$"
+	.string "Perfect! We nailed it!$"
 
 JackJohnsonRoom_OnFrame_Text_7:
 # 397 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Formación!$"
+	.string "Formation!$"
 
 JackJohnsonRoom_OnFrame_Text_8:
 # 404 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Ahora!$"
+	.string "Now!$"
 
 JackJohnsonRoom_OnFrame_Text_9:
 # 485 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Preparados para la detonación\n"
-	.string "elegante!$"
+	.string "Ready for the elegant detonation!$"
 
 JackJohnsonRoom_OnFrame_Text_10:
 # 540 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Alto!$"
+	.string "Stop!$"
 
 JackJohnsonRoom_OnFrame_Text_11:
 # 546 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¿Qué estabas haciendo? Ya viste como\n"
-	.string "es esto: una distracción y a volar.$"
+	.string "What were you doing? You saw how this\n"
+	.string "works: one slip and you're out.$"
 
 JackJohnsonRoom_OnFrame_Text_12:
 # 555 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Estuvo cerca… muy cerca, pero hasta\n"
-	.string "que salga impecable, no descansaremos.$"
+	.string "That was close… very close, but until\n"
+	.string "it's flawless, we won't rest.$"
 
 JackJohnsonRoom_OnFrame_Text_13:
 # 561 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¿Y tú? ¿Qué haces ahí parado?$"
+	.string "And you? What are you doing standing\n"
+	.string "there?$"
 
 JackJohnsonRoom_OnFrame_Text_14:
 # 565 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Ven aquí inmediatamente!$"
+	.string "Come here immediately!$"
 
 JackJohnsonRoom_OnFrame_Text_15:
 # 568 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Si no vas a unirte al ensayo… voy a\n"
-	.string "tener que retarte a un combate.$"
+	.string "If you won't join the rehearsal… I'll\n"
+	.string "have to challenge you to a battle.$"
 
 JackJohnsonRoom_OnFrame_Text_16:
 # 575 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Magnífico… impecable.\p"
-	.string "Cada movimiento ha caído en su sitio, es\n"
-	.string "un placer ver algo tan bien ejecutado…\p"
-	.string "No suelo disfrutar perdiendo, pero…\n"
-	.string "esto ha sido arte puro.\p"
-	.string "Te abriré el camino.$"
+	.string "Magnificent… flawless.\p"
+	.string "Every move fell into place; it's a\n"
+	.string "pleasure to see something so well\l"
+	.string "executed…\p"
+	.string "I don't usually enjoy losing, but… this\n"
+	.string "was pure art.\p"
+	.string "I'll open the way for you.$"
 
 JackJohnsonRoom_OnFrame_Text_17:
 # 578 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Y ustedes… ¡a trabajar!$"
+	.string "And you lot… back to work!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_0:
 # 710 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Eso es! ¡Más rápido!$"
+	.string "That's it! Faster!$"
 
 JackJohnsonRoom_EventScript_Jack_Text_1:
 # 713 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¿Sigues ahí? Pues venga, no te quedes\n"
-	.string "mirando…\l"
-	.string "¡Súmate al ensayo!$"
+	.string "Still there? Come on, don't just stand\n"
+	.string "watching…\l"
+	.string "Join the rehearsal!$"
 
 JackJohnsonRoom_EventScript_NPC1_Text_0:
 # 719 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Debemos ser los mejores!$"
+	.string "We must be the best!$"
 
 JackJohnsonRoom_EventScript_NPC2_Text_0:
 # 724 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡No puedo fallar de nuevo!$"
+	.string "I can't fail again!$"
 
 JackJohnsonRoom_EventScript_NPC3_Text_0:
 # 729 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡No me distraigas!$"
+	.string "Don't distract me!$"
 
 JackJohnsonRoom_EventScript_NPC4_Text_0:
 # 734 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "¡Quiero ir a dormir!$"
+	.string "I want to go to sleep!$"
 
 JackJohnsonRoom_EventScript_BrockPoster_Text_0:
 # 739 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Es un póster con una foto de Oscar\n"
+	.string "It's a poster with a photo of Oscar\n"
 	.string "Brock.\p"
-	.string "¿Realmente tiene esos músculos o será\n"
-	.string "Photoshop?$"
+	.string "Does he really have those muscles, or is\n"
+	.string "it Photoshop?$"
 
 JackJohnsonRoom_EventScript_Tree_Text_0:
 # 744 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "El árbol está hecho de cartón y pintura.\n"
-	.string "De lejos parece mucho más real.$"
+	.string "The tree is made of cardboard and\n"
+	.string "paint.\n"
+	.string "From far away it looks much more real.$"
 
 JackJohnsonRoom_EventScript_Boxes_Text_0:
 # 749 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Hay varias cajas llenas de objetos de\n"
-	.string "escenografía.$"
+	.string "There are several boxes full of stage\n"
+	.string "props.$"
 
 JackJohnsonRoom_EventScript_Box_Text_0:
 # 754 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Dentro de esta caja hay más cajas.$"
+	.string "Inside this box there are more boxes.$"
 
 JackJohnsonRoom_EventScript_Book1_Text_0:
 # 759 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "El libro contiene el guion de una obra\n"
-	.string "teatral.\p"
-	.string "Los actos tienen nombres extraños: “La\n"
-	.string "época dorada”, “La fusión” y “El gran\l"
-	.string "caos”.$"
+	.string "The book contains the script of a stage\n"
+	.string "play.\p"
+	.string "The acts have strange names: “The\n"
+	.string "Golden Age,” “The Merger,” and “The\l"
+	.string "Great Chaos.”$"
 
 JackJohnsonRoom_EventScript_Book2_Text_0:
 # 764 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Es una cronología de las épocas\n"
-	.string "doradas de WaH.\p"
-	.string "Casi todas las páginas se contradicen\n"
-	.string "entre sí.\p"
-	.string "Parece que nadie se puso de acuerdo\n"
-	.string "sobre cuándo fue.$"
+	.string "It's a timeline of WaH's golden ages.\p"
+	.string "Almost every page contradicts the\n"
+	.string "others.\p"
+	.string "It seems no one could agree on when it\n"
+	.string "happened.$"
 
 JackJohnsonRoom_EventScript_Papers_Text_0:
 # 769 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.$"
+	.string "There are several papers lying on the\n"
+	.string "floor.$"
 
 JackJohnsonRoom_Text_JackDefeated::
 # 697 "data/maps/JackJohnsonRoom/scripts.pory"
-	.string "Has tomado el mando, enhorabuena.$"
+	.string "You've taken the lead -\n"
+	.string "congratulations.$"

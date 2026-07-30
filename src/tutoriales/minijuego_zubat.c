@@ -84,11 +84,11 @@ static EWRAM_DATA struct Tutorial tutorialObj = {0};
 const u8 sTextoNormal[]= {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 const u8 sTextoLila[]= {0, 6, 12}; // Usa la paleta asignada a Zubat (`BG_PLTT_ID(1)`), el color 6 es violeta, y el 12 es violeta oscuro.
 
-const u8 gText_HowToPlay[] = _("Zubat no ve nada. Ayúdalo a volar por la\n"
-                               "cueva sin chocarse con los {PKMN} salvajes.\p"
-                               "Pulsa {DPAD_UPDOWN} para moverte.\n"
-                               "Pulsa {A_BUTTON} para localizar los obstaculos.");
-const u8 gText_Distance[] = _("Distancia: {STR_VAR_1}m");
+const u8 gText_HowToPlay[] = _("Zubat can't see a thing. Help it fly through the\n"
+                               "cave without hitting the wild {PKMN}.\p"
+                               "Press {DPAD_UPDOWN} to move.\n"
+                               "Press {A_BUTTON} to spot the obstacles.");
+const u8 gText_Distance[] = _("Distance: {STR_VAR_1}m");
 const u8 gText_Lives[] = _(" x {STR_VAR_1}");
 
 enum ZubatStates

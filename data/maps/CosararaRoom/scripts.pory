@@ -32,27 +32,27 @@ script CosararaRoom_EventScript_Cosarara {
         call(CosararaRoom_EventScript_LockPC)
         delay(20)
         faceplayer
-        msgbox(format("¿Y tú eres? Ahhh sí ya me acuerdo de ti, {PLAYER}.\p¡Deseo que te vaya bien!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+        msgbox(format("And you are? Ahhh yes, now I remember you, {PLAYER}.\pI wish you well!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
         applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
         delay(20)
         call(CosararaRoom_EventScript_UnlockPC)
         release
         end
     }
-    msgbox(format("Lo he logrado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("I did it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("He completado una nueva extracción no autorizada de todos los registros de la comunidad.\pLa construimos entre todos, así que creo que tiene un valor que vale la pena preservar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("I've just finished an unauthorized backup of all the community's records.\pWe built it all together, so I think it's worth preserving."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     delay(20)
     faceplayer
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, moves(face_player, emote_question_mark, delay_16, face_up, delay_16 * 2))
-    msgbox(format("Voy a bloquear mi computadora…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("I'm going to lock my computer…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     call(CosararaRoom_EventScript_LockPC)
     delay(20)
     faceplayer
-    msgbox(format("¿Y tú quién eras? ¿Has cambiado de nick recientemente?\pEs que me pierdo, ¡no me da la memoria!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("Wait, who are you again? Did you change your nick recently?\pI lose track so easily… my memory just can't keep up!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_SweatDropWithDelay48)
     delay(20)
@@ -68,14 +68,14 @@ script CosararaRoom_EventScript_Cosarara {
             applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
             break
     }
-    msgbox(format("¿Así que eres {PLAYER} y quieres combatir? Acepto el reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("So you're {PLAYER}, and you want to battle? Challenge accepted!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, moves(emote_versus))
     waitse
     call(CosararaRoom_EventScript_CosararaBattle)
     setflag(FLAG_DEFEATED_ADMIN_COSARARA)
     delay(20)
-    msgbox(format("Ha sido una buena batalla, {PLAYER}. Creo que te recordaré.\pRecuerda no cambiar de nick, ya que me cuesta mucho saber quién es quién.\pYa puedes avanzar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
+    msgbox(format("That was a good battle, {PLAYER}. I think I'll actually remember you this time.\pJust don't go changing your nick - it's so hard for me to tell who's who!\pYou may proceed now."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COSARARA)
     call(WahRoomsShared_OpenDoor)
     delay(20)
     applymovementandwait(LOCALID_COSARARAROOM_COSARARA, Common_Movement_FaceUp)
@@ -102,7 +102,7 @@ script CosararaRoom_EventScript_CosararaBattle {
 }
 
 text CosararaRoom_Text_CosararaDefeated {
-    format("Me ha hecho muy feliz esta batalla.")
+    format("This battle made me very happy.")
 }
 
 script CosararaRoom_EventScript_LockPC {
@@ -136,63 +136,63 @@ script CosararaRoom_EventScript_UnlockPC {
 }
 
 script CosararaRoom_EventScript_Server1 {
-    msgbox(format("Parece una máquina de servidor antigua.\pTiene un panel de control con botones y luces."), MSGBOX_SIGN)
+    msgbox(format("It looks like an old server machine.\pIt has a control panel with buttons and lights."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Server2 {
-    msgbox(format("Una pequeña etiqueta dice: “NO APAGAR”."), MSGBOX_SIGN)
+    msgbox(format("A small label reads: “DO NOT TURN OFF.”"), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Server3 {
-    msgbox(format("El movimiento constante de las luces resulta hipnótico."), MSGBOX_SIGN)
+    msgbox(format("The constant movement of the lights is hypnotic."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Box1 {
-    msgbox(format("La caja está llena de cables perfectamente enrollados."), MSGBOX_SIGN)
+    msgbox(format("The box is full of perfectly coiled cables."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Box2 {
-    msgbox(format("Hay discos y componentes electrónicos guardados con cuidado."), MSGBOX_SIGN)
+    msgbox(format("There are disks and electronic components stored with care."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Box3 {
-    msgbox(format("Una pequeña etiqueta dice: “Hardware obsoleto”."), MSGBOX_SIGN)
+    msgbox(format("A small label reads: “Obsolete hardware.”"), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Box4 {
-    msgbox(format("La caja está vacía."), MSGBOX_SIGN)
+    msgbox(format("The box is empty."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Boxes {
-    msgbox(format("Hay varias cajas apiladas unas sobre otras.\pParece un depósito improvisado."), MSGBOX_SIGN)
+    msgbox(format("There are several boxes stacked on top of each other.\pIt looks like a makeshift storeroom."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_OldComputers {
-    msgbox(format("Son computadoras demasiado viejas para seguir utilizándose.\pParece que nadie quiso deshacerse de ellas."), MSGBOX_SIGN)
+    msgbox(format("They're computers too old to still be used.\pIt seems no one wanted to get rid of them."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_SuperComputer {
-    msgbox(format("Columnas interminables de símbolos recorren las pantallas.\pTodo parece una enorme matriz de datos."), MSGBOX_SIGN)
+    msgbox(format("Endless columns of symbols scroll across the screens.\pIt all looks like a huge data matrix."), MSGBOX_SIGN)
     end
 }
 
 script CosararaRoom_EventScript_Notes1 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener el usuario y contraseña del servidor de Whack a Hack."), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pThey seem to have the username and password for the Whack a Hack server."), MSGBOX_SIGN)
 }
 
 script CosararaRoom_EventScript_Notes2 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen un inventario de la sala de servidores."), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pThey have an inventory of the server room."), MSGBOX_SIGN)
 }
 
 script CosararaRoom_EventScript_Notes3 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener impresos varios HTML de la página de Whack a Hack.\pTiene fecha 2014."), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor.\pThey seem to have several printed HTML pages from the Whack a Hack site.\pIt's dated 2014."), MSGBOX_SIGN)
 }

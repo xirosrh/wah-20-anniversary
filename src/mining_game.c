@@ -84,8 +84,8 @@ struct MiningGame
 
 static EWRAM_DATA struct MiningGame mining = {0};
 
-const u8 sWallDestroy[] = _("¡El muro se ha derrumbado!");
-const u8 sMiningGetItems[] = _("Has obtenido {STR_VAR_1}.");
+const u8 sWallDestroy[] = _("The wall collapsed!");
+const u8 sMiningGetItems[] = _("You obtained {STR_VAR_1}.");
 
 //==========BG GRAPHICS==========//
 

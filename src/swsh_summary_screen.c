@@ -417,73 +417,73 @@ static const u8 sMovesPPLayout[]                = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sEggStepsLayout[]               = _("{DYNAMIC 0} steps");
 
 static const u8 sText_Empty[]                   = _("");
-static const u8 sText_Cancel[]                  = _("Cancelar");
-static const u8 sText_Switch[]                  = _("Cambiar");
-static const u8 sText_Rename[]                  = _("Mote");
+static const u8 sText_Cancel[]                  = _("Cancel");
+static const u8 sText_Switch[]                  = _("Switch");
+static const u8 sText_Rename[]                  = _("Nickname");
 static const u8 sText_Lv[]                      = _("Lv.");
-static const u8 sText_HP_Title[]                = _("PS");
-static const u8 sText_Attack_Title[]            = _("Ataque");
-static const u8 sText_Defense_Title[]           = _("Defensa");
-static const u8 sText_SpAtk_Title[]             = _("Atq. Es");
-static const u8 sText_SpDef_Title[]             = _("Def. Es");
-static const u8 sText_Speed_Title[]             = _("Veloc.");
-static const u8 sText_ViewIVs[]                 = _("Ver IV");
-static const u8 sText_ViewEVs[]                 = _("Ver EV");
-static const u8 sText_ViewStats[]               = _("Ver Stats");
+static const u8 sText_HP_Title[]                = _("HP");
+static const u8 sText_Attack_Title[]            = _("Attack");
+static const u8 sText_Defense_Title[]           = _("Defense");
+static const u8 sText_SpAtk_Title[]             = _("Sp. Atk");
+static const u8 sText_SpDef_Title[]             = _("Sp. Def");
+static const u8 sText_Speed_Title[]             = _("Speed");
+static const u8 sText_ViewIVs[]                 = _("View IVs");
+static const u8 sText_ViewEVs[]                 = _("View EVs");
+static const u8 sText_ViewStats[]               = _("View Stats");
 static const u8 sText_Exp[]                     = _("Exp.");
-static const u8 sText_NextLv[]                  = _("Siguiente Nv.");
-static const u8 sText_RentalPkmn[]              = _("Pkmn de prestamo");
-static const u8 sText_None[]                    = _("Ninguno");
-static const u8 sText_Egg[]                     = _("Huevo");
+static const u8 sText_NextLv[]                  = _("Next Lv.");
+static const u8 sText_RentalPkmn[]              = _("Rental Pkmn");
+static const u8 sText_None[]                    = _("None");
+static const u8 sText_Egg[]                     = _("Egg");
 static const u8 sText_Nature[]                  = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5}");
 static const u8 sText_MintNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} {EMOJI_LEAF}");
 
 // Trainer Memo page texts
-static const u8 sText_MemoNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} por naturaleza");
-static const u8 sText_MemoMet[]                 = _("Visto por primera al Nv. {DYNAMIC 6}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoHatched[]             = _("Abierto de un huevo:\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoNature[]              = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature");
+static const u8 sText_MemoMet[]                 = _("First seen at Lv. {DYNAMIC 6}.\nPlace: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoHatched[]             = _("Hatched from an Egg:\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
 static const u8 sText_MemoTraded[]              = _("Intercambiado");
-static const u8 sText_MemoFateful[]             = _("Encuentro fatídico con\nNv. {DYNAMIC 6}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
-static const u8 sText_MemoProbablyMet[]         = _("Visto al Nv. {DYNAMIC 6}.\nLugar: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
-static const u8 sText_MemoMetSomewhere[]        = _("Visto en algún lugar al Nv. {DYNAMIC 6}.\n{DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
-static const u8 sText_MemoHatchedSomewhere[]    = _("Abierto de un huevo en\nalgún lugar.");
+static const u8 sText_MemoFateful[]             = _("A fateful encounter at\nLv. {DYNAMIC 6}. {DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoProbablyMet[]         = _("Seen at Lv. {DYNAMIC 6}.\nPlace: {DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}");
+static const u8 sText_MemoMetSomewhere[]        = _("Seen somewhere at Lv. {DYNAMIC 6}.\n{DYNAMIC 1}{DYNAMIC 3}{DYNAMIC 1}");
+static const u8 sText_MemoHatchedSomewhere[]    = _("Hatched from an Egg\nsomewhere.");
 
 // Characteristics
-static const u8 sCharacteristic_HP_0[]          = _("Le encanta comer");
-static const u8 sCharacteristic_HP_1[]          = _("Sestea a menudo");
-static const u8 sCharacteristic_HP_2[]          = _("Suele dar cabezadas");
-static const u8 sCharacteristic_HP_3[]          = _("A menudo lo desordena todo");
-static const u8 sCharacteristic_HP_4[]          = _("Le gusta relajarse");
+static const u8 sCharacteristic_HP_0[]          = _("Loves to eat");
+static const u8 sCharacteristic_HP_1[]          = _("Nods off a lot.");
+static const u8 sCharacteristic_HP_2[]          = _("Nods off a lot");
+static const u8 sCharacteristic_HP_3[]          = _("Scatters things often");
+static const u8 sCharacteristic_HP_4[]          = _("Likes to relax");
 
-static const u8 sCharacteristic_Atk_0[]         = _("Orgulloso de su fuerza");
-static const u8 sCharacteristic_Atk_1[]         = _("Le gusta alborotar");
-static const u8 sCharacteristic_Atk_2[]         = _("Algo irascible");
-static const u8 sCharacteristic_Atk_3[]         = _("Le gusta luchar");
-static const u8 sCharacteristic_Atk_4[]         = _("Muy irascible");
+static const u8 sCharacteristic_Atk_0[]         = _("Proud of its power");
+static const u8 sCharacteristic_Atk_1[]         = _("Likes to thrash about");
+static const u8 sCharacteristic_Atk_2[]         = _("Quick tempered.");
+static const u8 sCharacteristic_Atk_3[]         = _("Likes to fight");
+static const u8 sCharacteristic_Atk_4[]         = _("Quick tempered");
 
-static const u8 sCharacteristic_Def_0[]         = _("Cuerpo robusto");
-static const u8 sCharacteristic_Def_1[]         = _("Capaz de aguantar golpes");
-static const u8 sCharacteristic_Def_2[]         = _("Muy persistente");
-static const u8 sCharacteristic_Def_3[]         = _("Buen aguante");
-static const u8 sCharacteristic_Def_4[]         = _("Gran perseverancia");
+static const u8 sCharacteristic_Def_0[]         = _("Sturdy body.");
+static const u8 sCharacteristic_Def_1[]         = _("Capable of taking hits");
+static const u8 sCharacteristic_Def_2[]         = _("Highly persistent");
+static const u8 sCharacteristic_Def_3[]         = _("Good endurance.");
+static const u8 sCharacteristic_Def_4[]         = _("Highly persistent.");
 
-static const u8 sCharacteristic_Speed_0[]       = _("Le gusta correr");
-static const u8 sCharacteristic_Speed_1[]       = _("Oído atento");
-static const u8 sCharacteristic_Speed_2[]       = _("Impetuoso y tontorrón");
+static const u8 sCharacteristic_Speed_0[]       = _("Likes to run");
+static const u8 sCharacteristic_Speed_1[]       = _("Alert to sounds");
+static const u8 sCharacteristic_Speed_2[]       = _("Impetuous and silly");
 static const u8 sCharacteristic_Speed_3[]       = _("Payasete");
-static const u8 sCharacteristic_Speed_4[]       = _("Huye rápido");
+static const u8 sCharacteristic_Speed_4[]       = _("Quick to flee");
 
-static const u8 sCharacteristic_SpAtk_0[]       = _("Muy curioso");
-static const u8 sCharacteristic_SpAtk_1[]       = _("Divertido");
+static const u8 sCharacteristic_SpAtk_0[]       = _("Highly curious");
+static const u8 sCharacteristic_SpAtk_1[]       = _("Mischievous.");
 static const u8 sCharacteristic_SpAtk_2[]       = _("Astuto");
-static const u8 sCharacteristic_SpAtk_3[]       = _("Suele ensimismarse");
-static const u8 sCharacteristic_SpAtk_4[]       = _("Muy tiquismiquis");
+static const u8 sCharacteristic_SpAtk_3[]       = _("Often lost in thought.");
+static const u8 sCharacteristic_SpAtk_4[]       = _("Very finicky");
 
-static const u8 sCharacteristic_SpDef_0[]       = _("De fuerte afecto");
-static const u8 sCharacteristic_SpDef_1[]       = _("Un poco vanidoso");
-static const u8 sCharacteristic_SpDef_2[]       = _("Muy rebelde");
-static const u8 sCharacteristic_SpDef_3[]       = _("No le gusta perder");
-static const u8 sCharacteristic_SpDef_4[]       = _("Un poco cabezota");
+static const u8 sCharacteristic_SpDef_0[]       = _("Strong willed");
+static const u8 sCharacteristic_SpDef_1[]       = _("Somewhat vain");
+static const u8 sCharacteristic_SpDef_2[]       = _("Strongly defiant");
+static const u8 sCharacteristic_SpDef_3[]       = _("Hates to lose");
+static const u8 sCharacteristic_SpDef_4[]       = _("Somewhat stubborn");
 
 static const u8 *const sMonCharacteristicTable[MON_CHARACTERISTIC_COUNT] = {
     // HP
@@ -4398,8 +4398,8 @@ static void PrintRowNameInfoPage(void)
     u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
 
     static const u8 sInfoLabels[][12] = {
-        _("Nombre"),
-        _("Tipo"),
+        _("Name"),
+        _("Type"),
         _("Entr."),
         _("Natur.")
     };

@@ -713,7 +713,7 @@ static void PrintTextStartMenu()
     static const u8 sStartMenuTextColorsBlack[] = {1, 2, 3};
     static const u8 sStartMenuTextColorsWhite[] = {2, 1, 2};
     
-    static const u8 sText_Task[] = _("Logros: {STR_VAR_3}");
+    static const u8 sText_Task[] = _("Achievements: {STR_VAR_3}");
     static const u8 sText_Debug[] = _("{SELECT_BUTTON} Debug");
 
     //OPCION SELECIONADA
@@ -743,8 +743,8 @@ static void PrintTextStartMenu()
     //LOGROS
     ConvertIntToDecimalStringN(gStringVar3, GetCompletedAchievementsCount(), STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar2, sText_Task);
-    x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar1, 80);
-    AddTextPrinterParameterized3(sStartMenuWindowId, FONT_NORMAL, x + (18*8), 1, sStartMenuTextColorsWhite, 0, gStringVar2);
+    x = sWindowTemplate_StartMenu.width * 8 - GetStringWidth(FONT_NORMAL, gStringVar2, 0) - 4;
+    AddTextPrinterParameterized3(sStartMenuWindowId, FONT_NORMAL, x, 1, sStartMenuTextColorsWhite, 0, gStringVar2);
 
     CopyWindowToVram(sStartMenuWindowId, 3);
 }

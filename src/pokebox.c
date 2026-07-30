@@ -441,7 +441,7 @@ static void PrintTextSwapBox(bool8 printLR)
     u8 x;
     
     const u8 gText_L_Button[] = _("{L_BUTTON}");
-    const u8 gText_Box_Name[] = _("CAJA {STR_VAR_2}");
+    const u8 gText_Box_Name[] = _("BOX {STR_VAR_2}");
     const u8 gText_R_Button[] = _("{R_BUTTON}");
 
     FillWindowPixelBuffer(WINDOW_SWAP_BOX, PIXEL_FILL(0));
@@ -542,7 +542,7 @@ static void PrintMoves(u8 windowId, u8 windowTypeId, const u16* moves)
 
 static void PrintDescriptionUnlockMon(u8 windowId, const u8 *description)
 {
-    const u8 gText_TexttaskToUnlockMon[] = _("Misión a completar:");
+    const u8 gText_TexttaskToUnlockMon[] = _("Mission to complete:");
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     AddTextPrinterParameterized3(windowId, FONT_NORMAL, 0, 0, sTextColorBlackPokebox, 0, gText_TexttaskToUnlockMon);
     AddTextPrinterParameterized3(windowId, FONT_SMALL, 0, 12, sTextColorBlackPokebox, 0, description);
@@ -565,9 +565,9 @@ void DrawMenuCursorPokebox(u8 windowId, bool8 isYes)
 
 static void PrintMoneyToBuyMon(u8 windowId, u16 specie, u32 money, bool8 enoughtMoneyToBuy, const u8 *description)
 {
-    const u8 gText_PriceToUnlockMon[] = _("Precio: "); 
-    const u8 gText_NotEnoughtMoneyToBuyMon[] = _("No tienes suficiente dinero"); 
-    const u8 gText_YesNo_Pokebox[] = _("Sí{CLEAR_TO 45}No");
+    const u8 gText_PriceToUnlockMon[] = _("Price: "); 
+    const u8 gText_NotEnoughtMoneyToBuyMon[] = _("You don't have enough money"); 
+    const u8 gText_YesNo_Pokebox[] = _("Yes{CLEAR_TO 45}No");
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     FillWindowPixelBuffer(WINDOW_MON_INFO_2, PIXEL_FILL(0));

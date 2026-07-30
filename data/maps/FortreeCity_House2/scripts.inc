@@ -42,39 +42,40 @@ FortreeCity_House2_EventScript_WrongGuess::
 	end
 
 FortreeCity_House2_Text_HiddenPowersArousedByNature:
-	.string "Los poderes ocultos de la gente y de\n"
-	.string "los POKéMON salen a la luz cuando\l"
-	.string "viven en contacto con la naturaleza.$"
+	.string "People… POKéMON…\p"
+	.string "Their hidden powers are aroused by\n"
+	.string "living in natural environments…$"
 
 FortreeCity_House2_Text_CoinInWhichHand:
-	.string "Deja que compruebe si tus poderes\n"
-	.string "ocultos han despertado…\p"
-	.string "Tengo una moneda en una mano.\p"
-	.string "Ahora dime, ¿está en la mano derecha?\n"
-	.string "¿O quizás en la izquierda?$"
+	.string "Let this old woman see if your hidden\n"
+	.string "power has awoken…\p"
+	.string "I hold a coin in my hand.\p"
+	.string "Now, tell me, have I palmed it in\n"
+	.string "the right hand? Or in the left?$"
 
 FortreeCity_House2_Text_CorrectTryAgainWhichHand:
-	.string "¡Has acertado!\p"
-	.string "Volvamos a intentarlo.\p"
-	.string "¿Dónde guardo la moneda?\n"
-	.string "¿En la mano derecha o en la izquierda?$"
+	.string "Oh! Yes, correct!\p"
+	.string "We shall try again.\p"
+	.string "In which hand have I palmed the coin?\n"
+	.string "The right or left?$"
 
 FortreeCity_House2_Text_CorrectTryAgainWhichHand2:
-	.string "¡Has acertado!\p"
-	.string "Volvamos a intentarlo.\p"
-	.string "¿Dónde guardo la moneda?\n"
-	.string "¿En la mano derecha o en la izquierda?$"
+	.string "Oh! Yes, correct!\p"
+	.string "We shall try again.\p"
+	.string "In which hand have I palmed the coin?\n"
+	.string "The right or left?$"
 
 FortreeCity_House2_Text_YourHiddenPowerHasAwoken:
-	.string "¡Magnífico!\n"
-	.string "¡Tus poderes ocultos están activos!\p"
-	.string "Mira, te voy a dar esto para que puedas\n"
-	.string "hacer lo mismo con tus POKéMON.$"
+	.string "Oh! Splendid!\n"
+	.string "Your hidden power has awoken!\p"
+	.string "Here, take this and awaken the hidden\n"
+	.string "power of your POKéMON.$"
 
 FortreeCity_House2_Text_ExplainHiddenPower:
-	.string "PODER OCULTO es un movimiento\n"
-	.string "que se adapta a cada POKéMON.$"
+	.string "HIDDEN POWER is a move that changes\n"
+	.string "with the POKéMON.$"
 
 FortreeCity_House2_Text_YouGuessedWrong:
-	.string "Pues no. Te has equivocado.$"
+	.string "No, too bad.\n"
+	.string "You guessed wrong.$"
 

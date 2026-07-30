@@ -172,7 +172,7 @@ struct WahCredits
 static const struct WahCredits sWahCreditsSections[] =
 {
     {
-        .title = COMPOUND_STRING("CREADORES PRINCIPALES"),
+        .title = COMPOUND_STRING("MAIN CREATORS"),
         .sListCredits =
         {
             COMPOUND_STRING("Caco5400 & Xiros"),
@@ -180,7 +180,7 @@ static const struct WahCredits sWahCreditsSections[] =
         }
     },
     {
-        .title = COMPOUND_STRING("COLABORADORES"),
+        .title = COMPOUND_STRING("CONTRIBUTORS"),
         .sListCredits = 
         { 
             COMPOUND_STRING("Gameboy_cl"),
@@ -322,7 +322,7 @@ static const struct WahCredits sWahCreditsSections[] =
         }
     },
     {   
-        .title = COMPOUND_STRING("EN MEMORIA DE"),
+        .title = COMPOUND_STRING("IN MEMORY OF"),
         .sListCredits =
         {
             COMPOUND_STRING("Cope"),
@@ -330,10 +330,10 @@ static const struct WahCredits sWahCreditsSections[] =
         }
     },
     {   
-        .title = COMPOUND_STRING("ESTO FUE UNA CELEBRACIÓN DE"),
+        .title = COMPOUND_STRING("THIS WAS A CELEBRATION OF"),
         .sListCredits =
         {
-            COMPOUND_STRING("21 años de Whack a Hack"),
+            COMPOUND_STRING("21 years of Whack a Hack"),
             NULL
         }
     }

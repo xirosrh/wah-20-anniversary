@@ -413,29 +413,29 @@ SayerBlaxRoom_OnFrame_Movement_12:
 
 SayerBlaxRoom_OnFrame_Text_0:
 # 49 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Fuaaah, ¡qué cansancio! Con lo que me\n"
-	.string "hacía falta descansar…$"
+	.string "Phew, so tired! And I really needed that\n"
+	.string "rest, too…$"
 
 SayerBlaxRoom_OnFrame_Text_1:
 # 52 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Ya es el día del aniversario?$"
+	.string "Is it the anniversary already?$"
 
 SayerBlaxRoom_OnFrame_Text_2:
 # 70 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Tú quién eres?$"
+	.string "Who are you?$"
 
 SayerBlaxRoom_OnFrame_Text_3:
 # 75 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Cómo? ¿que quieres combatir? Yo me\n"
-	.string "jubilé hace muchos años chaval{A}.\p"
-	.string "Hemos pasado una pandemia incluso…\n"
-	.string "Pero, si insistes… No creas que te lo\l"
-	.string "pondré fácil.$"
+	.string "What? You want to battle? I retired\n"
+	.string "many years ago, kid.\p"
+	.string "We even lived through a pandemic… But\n"
+	.string "if you insist… don't think I'll make it\l"
+	.string "easy for you.$"
 
 SayerBlaxRoom_OnFrame_Text_4:
 # 85 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "¿Y ahora dónde se ha metido Sayer…? Se\n"
-	.string "supone nos tocaba combatir a los dos.$"
+	.string "And where's Sayer gotten to now…? We\n"
+	.string "were supposed to battle you together.$"
 
 SayerBlaxRoom_OnFrame_Text_5:
 # 101 "data/maps/SayerBlaxRoom/scripts.pory"
@@ -443,43 +443,42 @@ SayerBlaxRoom_OnFrame_Text_5:
 
 SayerBlaxRoom_OnFrame_Text_6:
 # 127 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Ha sido un combate espectacular.$"
+	.string "That was a spectacular battle.$"
 
 SayerBlaxRoom_OnFrame_Text_7:
 # 130 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Confirmamos que estoy más oxidado de\n"
-	.string "lo que pensaba.$"
+	.string "Confirmed: I'm rustier than I thought.$"
 
 SayerBlaxRoom_OnFrame_Text_8:
 # 133 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Todavía te quedan muchos combates por\n"
-	.string "delante, pero aprovecha cada uno de\l"
-	.string "ellos para celebrar estos 20 años del\l"
-	.string "mejor foro de ROM Hacking y fangaming\l"
-	.string "de Pokémon del mundo.\p"
-	.string "Dicho esto… Me vuelvo a dormir. ¡Mucha\n"
-	.string "suerte!$"
+	.string "You've still got many battles ahead, but\n"
+	.string "make the most of every one of them to\l"
+	.string "celebrate these 20 years of the best\l"
+	.string "Pokémon ROM hacking and fangaming\l"
+	.string "forum in the world.\p"
+	.string "That said… I'm going back to sleep. Good\n"
+	.string "luck!$"
 
 SayerBlaxRoom_OnFrame_Text_9:
 # 142 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Y recuerda: No la líes y si puedes, pues\n"
-	.string "si.$"
+	.string "And remember: don't cause trouble, and\n"
+	.string "if you can, well, do.$"
 
 SayerBlaxRoom_EventScript_Blax_Text_0:
 # 155 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Zzz… ¡Ve, BLAxTOISE!\p"
+	.string "Zzz… Go, BLAxTOISE!\p"
 	.string "Zzz…$"
 
 SayerBlaxRoom_EventScript_Sayer_Text_0:
 # 160 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "No me puedo quejar la verdad, quedé\n"
-	.string "bastante contento con la batalla.\p"
-	.string "Avanza, fiera.$"
+	.string "I honestly can't complain, I ended up\n"
+	.string "pretty happy with the battle.\p"
+	.string "Move on, champ.$"
 
 SayerBlaxRoom_Text_BlaxDefeated::
 # 191 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Bueno, pues has ganado. ¡Enhorabuena!$"
+	.string "Well, you won. Congratulations!$"
 
 SayerBlaxRoom_Text_SayerDefeated::
 # 195 "data/maps/SayerBlaxRoom/scripts.pory"
-	.string "Pues sí que la has liado.$"
+	.string "You sure stirred things up.$"

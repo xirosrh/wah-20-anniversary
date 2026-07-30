@@ -37,43 +37,41 @@ Route110_TrickHousePuzzle1_EventScript_Robin::
 	end
 
 Route110_TrickHousePuzzle1_Text_WroteSecretCodeLockOpened::
-	.string "{PLAYER} escribió el código secreto\n"
-	.string "en la puerta.\p"
-	.string "“El MAESTRO TRETA\n"
-	.string "es fabuloso.”\l"
-	.string "Y…\p"
-	.string "¡la puerta se ha abierto!$"
+	.string "{PLAYER} wrote down the secret code\n"
+	.string "on the door.\p"
+	.string "“TRICK MASTER is fabulous.”\n"
+	.string "… … … … … … … …\p"
+	.string "The lock clicked open!$"
 
 Route110_TrickHousePuzzle1_Text_SallyIntro:
-	.string "Me voy a hacer con la victoria gracias\n"
-	.string "al movimiento que acabo de aprender.$"
+	.string "I'll hack and slash my way to victory\n"
+	.string "with the CUT we just learned!$"
 
 Route110_TrickHousePuzzle1_Text_SallyDefeat:
-	.string "Vaya, contigo no funciona…$"
+	.string "Why are you so serious?$"
 
 Route110_TrickHousePuzzle1_Text_SallyPostBattle:
-	.string "Este nuevo movimiento es estupendo.\n"
-	.string "¡No me canso de usarlo!$"
+	.string "I never get tired of hacking\n"
+	.string "and slashing!$"
 
 Route110_TrickHousePuzzle1_Text_EddieIntro:
-	.string "He llegado hasta esta casa tan\n"
-	.string "rara sin querer…$"
+	.string "I wandered into this weird house\n"
+	.string "by accident…$"
 
 Route110_TrickHousePuzzle1_Text_EddieDefeat:
-	.string "Y encima voy y pierdo…$"
+	.string "And now I've lost…$"
 
 Route110_TrickHousePuzzle1_Text_EddiePostBattle:
-	.string "Me he perdido, he perdido luchando\n"
-	.string "y ahora… ¡no sé ni cómo volver a casa!$"
+	.string "I lost my way, I lost a battle, and I'm\n"
+	.string "now even more lost… I can't get out…$"
 
 Route110_TrickHousePuzzle1_Text_RobinIntro:
-	.string "¿Pero quién es ese MAESTRO TRETA?$"
+	.string "Just who is the TRICK MASTER?$"
 
 Route110_TrickHousePuzzle1_Text_RobinDefeat:
-	.string "¡Has vencido porque estaba sumida\n"
-	.string "en mis pensamientos, que conste!$"
+	.string "I lost while I was lost in thought!$"
 
 Route110_TrickHousePuzzle1_Text_RobinPostBattle:
-	.string "¡Qué fuerte eres!\n"
-	.string "¿De dónde sales?$"
+	.string "You're strong!\n"
+	.string "Just who are you?$"
 

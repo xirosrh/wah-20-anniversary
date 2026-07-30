@@ -63,7 +63,7 @@ script ScarexOzumasRoom_EventScript_EnterRoom {
     setobjectxyperm(LOCALID_SCAREXOZUROOM_OZUMAS, 8, 5)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_QuestionMark)
-    msgbox(format("¿Y Scarex? Se supone ya debería estar aquí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("Where's Scarex? He should already be here."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     delay(48)
     waitse
     playse(SE_FALL)
@@ -160,43 +160,43 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     if(flag(FLAG_DEFEATED_ADMIN_OZUMAS)){
         lock
         faceplayer
-        msgbox(format("Oye, estuve repitiendo nuestro combate en mi cabeza, y no puedo mentir: me diste una buena paliza."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+        msgbox(format("Hey, I've been replaying our battle in my head, and I can't lie: you gave me a real thrashing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
         playse(SE_PIN)
         applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_SweatDropWithDelay48)
         if(!flag(FLAG_DEFEATED_ADMIN_SCAREX)){
             delay(20)
-            msgbox(format("Ya has demostrado tu fuerza. Ahora ve a enfrentarte a Scarex."), speaker = SP_NAME_OZUMAS)
+            msgbox(format("You've proven your strength. Now go face Scarex."), speaker = SP_NAME_OZUMAS)
         }
         release
         end
     }
     lock
     faceplayer
-    msgbox(format("Bueno, parece que ha llegado el momento que teníamos pendiente.\pSoy Ozumas, de la sangre de la legendaria dinastía Mendrax.\pHace mucho, fuimos muy conocidos, sobre todo por nunca escapar a un reto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("Well, it seems the moment we had pending has arrived.\pI'm Ozumas, of the blood of the legendary Mendrax dynasty.\pLong ago, we were well known, above all for never backing down from a challenge."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction))
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(jump_in_place_down, unlock_facing_direction, face_player))
     waitse
     delay(20)
-    msgbox(format("¿Así que no me conoces? Pues no te preocupes, han pasado muchos años ya."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("So you don't know me? Well, don't worry, many years have passed now."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, Common_Movement_SmileWithDelay48)
-    msgbox(format("Si quieres saber algo de mí, te diré que desde siempre me atrajeron las historias de Johto.\pPasé años tratando de contar al mundo sus leyendas."), MSGBOX_AUTOCLOSE speaker = SP_NAME_OZUMAS)
+    msgbox(format("If you want to know something about me, I'll say I've always been drawn to the legends of Johto.\pI spent years trying to tell the world its tales."), MSGBOX_AUTOCLOSE speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
     delay(20)
     if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
-        msgbox(format("Parece que ya has derrotado a Scarex, así que si logras vencerme, podrás avanzar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+        msgbox(format("It seems you've already beaten Scarex, so if you manage to defeat me, you can advance."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     } else {
-        msgbox(format("Si quieres avanzar, primero tendrás que derrotar a Scarex y a mí.\pParece que yo seré tu primer contrincante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+        msgbox(format("If you want to advance, first you'll have to beat both Scarex and me.\pIt seems I'll be your first opponent."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     }
     delay(20)
-    msgbox(format("Vamos a ver qué historia sale de esta batalla."), speaker = SP_NAME_OZUMAS)
+    msgbox(format("Let's see what story comes out of this battle."), speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
     playse(SE_PIN)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(emote_versus))
     waitse
     call(ScarexOzumasRoom_EventScript_OzumasBattle)
-    msgbox(format("Has demostrado que tienes fuerza y convicción… ¡te felicito!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("You've shown that you have strength and conviction… I congratulate you!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     playse(SE_PIN)
     if(var(VAR_RESULT) == DIR_NORTH || var(VAR_RESULT) == DIR_SOUTH){
@@ -204,16 +204,16 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     } else {
         applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(emote_thinking, walk_up * 2, walk_down * 3, walk_up, face_player))
     }
-    msgbox(format("Pero si quieres ganar, aún queda un largo camino por delante…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("But if you want to win, there's still a long road ahead…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
     delay(20)
     if(!flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
-        msgbox(format("Primero, deberás enfrentarte a Scarex para poder avanzar a la siguiente sala."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
+        msgbox(format("First, you'll have to face Scarex to advance to the next room."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
         call(ScarexOzumasRoom_EventScript_WalkInPlaceOzumasFacingPlayer)
 
     }
     delay(20)
-    msgbox(format("Más adelante, aguarda una batalla contra alguien muy cercano a mí.\pEs un gran amigo y rival. Quizá lo conozcas, se llama Xiros.\pSerá esa prueba la que determine si realmente puedes ganar el desafío."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
+    msgbox(format("Further on, a battle awaits against someone very close to me.\pHe's a great friend and rival. Maybe you know him - his name is Xiros.\pIt'll be that test that determines whether you can truly win the challenge."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_OZUMAS)
     delay(20)
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(lock_facing_direction))
     playse(SE_LEDGE)
@@ -225,7 +225,7 @@ script ScarexOzumasRoom_EventScript_Ozumas {
     waitmovement(0)
     waitse
     applymovementandwait(LOCALID_SCAREXOZUROOM_OZUMAS, moves(unlock_facing_direction, face_player))
-    msgbox(format("Estoy seguro de que lo harás genial. ¡Mucha suerte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
+    msgbox(format("I'm sure you'll do great. Good luck!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OZUMAS)
     if(flag(FLAG_DEFEATED_ADMIN_SCAREX)) {
         call(WahRoomsShared_OpenDoor)
     }
@@ -251,7 +251,7 @@ script ScarexOzumasRoom_EventScript_OzumasBattle {
 }
 
 text ScarexOzumasRoom_Text_OzumasDefeated {
-    format("¡Eso ha estado muy guay!")
+    format("That was really cool!")
 }
 
 script ScarexOzumasRoom_EventScript_Scarex {
@@ -386,6 +386,6 @@ text ScarexOzumasRoom_Text_ScarexDefeated {
 }
 
 script ScarexOzumasRoom_EventScript_Bellsprout {
-    msgbox(format("Parece una estatua robada de la Torre Bellsprout."), MSGBOX_SIGN)
+    msgbox(format("It looks like a statue stolen from Sprout Tower."), MSGBOX_SIGN)
     end
 }

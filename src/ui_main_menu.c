@@ -883,13 +883,13 @@ static void DestroyMonIcons()
 //
 //  Print The Text For Badges, Name, Playtime
 //
-static const u8 sText_Achievements[] = _("Logros    {STR_VAR_1}");
-static const u8 sText_Victories[] = _("Desafíos {STR_VAR_1}");
-static const u8 sText_Continue[] = _("Continuar");
-static const u8 sText_NewGame[] = _("Nueva partida");
-static const u8 sText_Options[] = _("Opciones");
-static const u8 sText_MysteryGift[] = _("Regalo mist.");
-static const u8 sText_MysteryEvent[] = _("Evento mist.");
+static const u8 sText_Achievements[] = _("Achieve.  {STR_VAR_1}");
+static const u8 sText_Victories[] = _("Challenges {STR_VAR_1}");
+static const u8 sText_Continue[] = _("Continue");
+static const u8 sText_NewGame[] = _("New Game");
+static const u8 sText_Options[] = _("Options");
+static const u8 sText_MysteryGift[] = _("Mystery Gift");
+static const u8 sText_MysteryEvent[] = _("Mystery Evt.");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 headerColors[3] = {0,  2,  3};

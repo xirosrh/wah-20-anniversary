@@ -146,10 +146,10 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 BrendanIntroText:
-    .string "Vamos a palmar.$"
+    .string "We're gonna wipe out.$"
 
 BrendanLoseText:
-    .string "Efectivamente, palmamos.$"
+    .string "Yep, we wiped out.$"
 
 Debug_EventScript_Script_1::
 trainerbattle_single TRAINER_BRENDAN_PLACEHOLDER, BrendanIntroText, BrendanLoseText

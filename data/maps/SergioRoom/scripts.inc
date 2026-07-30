@@ -380,21 +380,20 @@ SergioRoom_EventScript_SecurityGuardTrigger_Movement_0:
 
 SergioRoom_EventScript_Abra_Text_0:
 # 120 "data/maps/SergioRoom/scripts.pory"
-	.string "Parece que Abra quiere\n"
-	.string "teletransportarte a otro lugar.\l"
-	.string "¿Deseas ir?$"
+	.string "It seems Abra wants to teleport you\n"
+	.string "somewhere else. Do you want to go?$"
 
 SergioRoom_EventScript_SecurityGuardTrigger_Text_0:
 # 143 "data/maps/SergioRoom/scripts.pory"
-	.string "¡Alto ahí!$"
+	.string "Hold it right there!$"
 
 SergioRoom_EventScript_Colmillo_Text_0:
 # 172 "data/maps/SergioRoom/scripts.pory"
-	.string "Es un colmillo de un Pokémon dragón\n"
-	.string "gigante.$"
+	.string "It's a fang from a giant dragon\n"
+	.string "Pokémon.$"
 
 SergioRoom_EventScript_SecurityGuardTrigger_CantAdvance::
 # 162 "data/maps/SergioRoom/scripts.pory"
-	.string "No puedes avanzar al hall de la fama\n"
-	.string "hasta no derrotar a Serg!o.\p"
-	.string "¿Dónde habrá ido?$"
+	.string "You can't advance to the Hall of Fame\n"
+	.string "until you defeat Serg!o.\p"
+	.string "Where could he have gone?$"

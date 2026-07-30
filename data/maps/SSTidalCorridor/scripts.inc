@@ -251,87 +251,87 @@ SSTidalCorridor_Movement_SailorReturn:
 	step_end
 
 SSTidalCorridor_Text_ScottBattleFrontierInvite:
-	.string "TRETO: ¡Bueno, bueno!\n"
-	.string "¡{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
-	.string "Me ha surgido algo, así que tengo que\n"
-	.string "desembarcar, pero encantado de verte.\p"
-	.string "¡Enhorabuena por el título\n"
-	.string "de CAMPEÓN de la LIGA!\p"
-	.string "Me gustaría invitarte a un lugar\n"
-	.string "que creo que debes conocer.\p"
-	.string "Es el…\n"
-	.string "¡FRENTE de BATALLA!\p"
-	.string "¡Pero no voy a contarte nada,\n"
-	.string "quiero que seas tú quien lo descubra!\p"
-	.string "He hablado con el CAPITÁN del barco\n"
-	.string "sobre el tema.\p"
-	.string "La próxima vez que tomes un ferry,\n"
-	.string "podrás bajarte en el FRENTE de BATALLA.\p"
-	.string "¡Bueno, {PLAYER}{KUN}, te estaré esperando\n"
-	.string "en el FRENTE de BATALLA!$"
+	.string "SCOTT: Well, hi, hi!\n"
+	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
+	.string "Something's come up, so I have to\n"
+	.string "disembark, but am I glad to see you!\p"
+	.string "Congratulations, LEAGUE CHAMPION!\p"
+	.string "There's a place I'd like to invite\n"
+	.string "someone like you.\p"
+	.string "It's the…\n"
+	.string "BATTLE FRONTIER!\p"
+	.string "What's the place like?\n"
+	.string "You'll understand when you see it!\p"
+	.string "I've spoken with the ship's CAPTAIN\n"
+	.string "about this.\p"
+	.string "The next time you take a ferry,\n"
+	.string "you should be able to sail to\l"
+	.string "the BATTLE FRONTIER.\p"
+	.string "Okay, {PLAYER}{KUN}, I'll be waiting for you\n"
+	.string "at the BATTLE FRONTIER!$"
 
 SSTidal_Text_FastCurrentsHopeYouEnjoyVoyage:
-	.string "Este ferry ha sido construido para\n"
-	.string "navegar en las corrientes rápidas.\p"
-	.string "Os deseamos un agradable viaje.\n"
-	.string "No dudéis en visitar el barco.$"
+	.string "This ferry is built to plow through\n"
+	.string "fast-running currents.\p"
+	.string "We hope you enjoy your voyage with us.\n"
+	.string "Feel free to explore the ship.$"
 
 SSTidal_Text_HopeYouEnjoyVoyage:
-	.string "Os deseamos un agradable viaje\n"
-	.string "en nuestro ferry.$"
+	.string "We hope you enjoy your voyage on\n"
+	.string "our ferry.$"
 
 SSTidal_Text_MadeLandInSlateport:
-	.string "Hemos arribado a CIUDAD PORTUAL.\n"
-	.string "Gracias por navegar con nosotros.$"
+	.string "We have made land in SLATEPORT CITY.\n"
+	.string "Thank you for sailing with us.$"
 
 SSTidal_Text_MadeLandInLilycove:
-	.string "Hemos arribado a CIUDAD CALAGUA.\n"
-	.string "Gracias por navegar con nosotros.$"
+	.string "We have made land in LILYCOVE CITY.\n"
+	.string "Thank you for sailing with us.$"
 
 SSTidalCorridor_Text_CanRestInCabin2:
-	.string "Creo que aún tardaremos algún tiempo\n"
-	.string "en llegar a puerto.\p"
-	.string "Puedes descansar en un camarote si\n"
-	.string "lo deseas. El tuyo es el n.º 2.\p"
-	.string "Tiene una cama blandita y cómoda.\n"
-	.string "¡Vas a dormir como un bebé!$"
+	.string "It'll be some time before we make land,\n"
+	.string "I reckon.\p"
+	.string "You can rest up in your cabin if you'd\n"
+	.string "like. Your cabin's No. 2.\p"
+	.string "The bed in there is soft and plushy.\n"
+	.string "I can attest to how comfy it is!$"
 
 SSTidalCorridor_Text_WeveArrived:
-	.string "¡Hemos llegado a puerto!$"
+	.string "We've arrived!$"
 
 SSTidalCorridor_Text_VisitOtherCabins:
-	.string "Visita otros camarotes, si quieres.\n"
-	.string "Sin duda habrá ENTRENADORES aburridos\l"
-	.string "del viaje que estarán deseando luchar.$"
+	.string "Go visit other cabins.\n"
+	.string "TRAINERS bored of the boat trip will\l"
+	.string "be itching to battle.$"
 
 SSTidalCorridor_Text_EnjoyYourCruise:
-	.string "¡Disfruta del crucero!$"
+	.string "Enjoy your cruise!$"
 
 SSTidalCorridor_Text_HorizonSpreadsBeyondPorthole:
-	.string "La línea del horizonte se pierde\n"
-	.string "en el infinito.$"
+	.string "The horizon spreads beyond\n"
+	.string "the porthole.$"
 
 SSTidalCorridor_Text_BrineyWelcomeAboard:
-	.string "SR. ARENQUE: ¡Hola, {PLAYER}{KUN}!\p"
-	.string "¡Me han hecho capitán honorario\n"
-	.string "del S.S. MAREA!\p"
-	.string "¡Ahora soy el CAPITÁN ARENQUE!\p"
-	.string "¿Sabes? Yo estaba retirado, pero al\n"
-	.string "ver este barco tan majestuoso…\p"
-	.string "se me despertó el bichito del mar.\n"
-	.string "¡Tengo alma de marinero!$"
+	.string "MR. BRINEY: Welcome aboard, {PLAYER}{KUN}!\p"
+	.string "They made me honorary captain of\n"
+	.string "the S.S. TIDAL!\p"
+	.string "You can call me CAPTAIN BRINEY now!\p"
+	.string "You know, I retired once before,\n"
+	.string "but when I saw this majestic ship…\p"
+	.string "Let me just say, it stirred my sleeping\n"
+	.string "soul as a sailor!$"
 
 SSTidalCorridor_Text_Peeko:
-	.string "PEEKO: Piko, pikopikopiko…$"
+	.string "PEEKO: Pihyo pihyohyo…$"
 
 SSTidalCorridor_Text_Cabin1:
-	.string "Camarote 1$"
+	.string "Cabin 1$"
 
 SSTidalCorridor_Text_Cabin2:
-	.string "Camarote 2$"
+	.string "Cabin 2$"
 
 SSTidalCorridor_Text_Cabin3:
-	.string "Camarote 3$"
+	.string "Cabin 3$"
 
 SSTidalCorridor_Text_Cabin4:
-	.string "Camarote 4$"
+	.string "Cabin 4$"

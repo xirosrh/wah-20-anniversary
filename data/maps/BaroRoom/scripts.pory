@@ -56,7 +56,7 @@ script BaroRoom_OnFrame {
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_ExclamationMarkWithDelay48)
     delay(10)
-    msgbox(format("Erhm… Tú eres {PLAYER}, ¿no? Encantado, soy Baro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("Erm… You're {PLAYER}, right? Nice to meet you, I'm Baro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkLeft)
     call(BaroRoom_EventScript_CloseSideDoor)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft2)
@@ -65,10 +65,10 @@ script BaroRoom_OnFrame {
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(walk_up, walk_left *2, face_down))
     applymovementandwait(LOCALID_PLAYER, Common_Movement_FaceUp)
     special(RemoveCameraObject)
-    msgbox(format("En fin… En qué jaleos se mete uno… "), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("Anyway… the messes one gets into… "), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("¿Yo estaba en una comunidad? ¿En serio? ¿De Pokémon?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("I was in a community? For real? A Pokémon one?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     delay(20)
     setspeaker(SP_NAME_BARO)
     playse(SE_PIN)
@@ -77,19 +77,19 @@ script BaroRoom_OnFrame {
     waitmovement(0)
     closemessage
     delay(20)
-    msgbox(format("Vaya tiempos… En fin."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("What times those were… anyway."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     delay(20)
-    msgbox(format("Supongo que lo de reminiscir del pasado es apropiado para el momento.\lTu viaje y todo eso.\pEn fin, nada, que me han pedido que me pase por aquí a hacer una peleilla contigo. ¿Vamos?"), speaker = SP_NAME_BARO)
+    msgbox(format("I suppose reminiscing about the past fits the moment.\lYour journey and all that.\pAnyway, they asked me to swing by here for a little scrap with you. Shall we?"), speaker = SP_NAME_BARO)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_WalkInPlaceDown)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(emote_versus))
     waitse
     call(BaroRoom_EventScript_BaroBattle)
-    msgbox(format("El Pikachu no te lo esperabas, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("You didn't see the Pikachu coming, huh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("Pues ya estaría. Ya he cumplido. Chao."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("Well, that's that. Duty done. Bye."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     special(SpawnCameraObject)
     applymovementandwait(LOCALID_BAROROOM_BARO, moves(
         walk_right * 2, walk_down
@@ -101,7 +101,7 @@ script BaroRoom_OnFrame {
     applymovement(LOCALID_PLAYER, Common_Movement_FaceRight)
     applymovement(LOCALID_BAROROOM_BARO, Common_Movement_FaceLeft)
     waitmovement(0)
-    msgbox(format("Bueno, buena suerte y tal."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
+    msgbox(format("Well, good luck and all that."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_BARO)
     delay(20)
     applymovementandwait(LOCALID_BAROROOM_BARO, Common_Movement_FaceRight)
     call(BaroRoom_EventScript_OpenSideDoor)
@@ -181,7 +181,7 @@ script BaroRoom_OnFrame {
  }
 
  text BaroRoom_Text_BaroDefeated {
-    format("En fin…")
+    format("Anyway…")
  }
 
  script BaroRoom_EventScript_PlugOink {
@@ -204,7 +204,7 @@ script BaroRoom_OnFrame {
     lock
     faceplayer
     playmoncry(SPECIES_POOCHYENA, CRY_MODE_NORMAL)
-    msgbox(format("¡Sever!"), MSGBOX_DEFAULT)
+    msgbox(format("Sever!"), MSGBOX_DEFAULT)
     waitmoncry
     closemessage
     release
@@ -223,36 +223,36 @@ script BaroRoom_OnFrame {
  }
 
  script BaroRoom_EventScript_Poster {
-    msgbox(format("Una esquina del póster ya comenzó a despegarse de la pared."), MSGBOX_SIGN)
+    msgbox(format("A corner of the poster has already started peeling off the wall."), MSGBOX_SIGN)
     end
  }
 
 script BaroRoom_EventScript_Clothes {
-    msgbox(format("Hay ropa usada tirada por todo el suelo."), MSGBOX_SIGN)
+    msgbox(format("There's used clothing strewn all over the floor."), MSGBOX_SIGN)
     end
 }
 
 script BaroRoom_EventScript_PC {
-    msgbox(format("La computadora tiene abierto un juego todavía en pleno desarrollo.\pVarias ventanas dicen: “TODO”, “BUG” y “ARREGLAR DESPUÉS”."), MSGBOX_SIGN)
+    msgbox(format("The computer has a game open that's still deep in development.\pSeveral windows read: “TODO,” “BUG,” and “FIX LATER.”"), MSGBOX_SIGN)
     end
 }
 
 script BaroRoom_EventScript_Coffee {
-    msgbox(format("Hay demasiadas tazas de café para una sola persona."), MSGBOX_SIGN)
+    msgbox(format("There are far too many coffee cups for one person."), MSGBOX_SIGN)
     end
 }
 
 script BaroRoom_EventScript_Coffee2 {
-    msgbox(format("El café ya se enfrió hace rato."), MSGBOX_SIGN)
+    msgbox(format("The coffee went cold a while ago."), MSGBOX_SIGN)
     end
 }
 
 script BaroRoom_EventScript_Wardrobe {
-    msgbox(format("El placard está lleno de ropa desordenada.\pLa mayoría parece haber sido guardada a las apuradas."), MSGBOX_SIGN)
+    msgbox(format("The wardrobe is full of messy clothes.\pMost of it looks like it was put away in a hurry."), MSGBOX_SIGN)
     end
 }
 
 script BaroRoom_EventScript_Drawer {
-    msgbox(format("Dentro hay varios bocetos y diseños de nuevas criaturas de Pokémon.\pMuchos de los diseños son muy curiosos."), MSGBOX_SIGN)
+    msgbox(format("Inside there are several sketches and designs of new Pokémon creatures.\pMany of the designs are quite curious."), MSGBOX_SIGN)
     end
 }

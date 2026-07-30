@@ -27,25 +27,25 @@ script DriveKatherineRoom_EventScript_Katherine {
     if(flag(FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE)) {
         lock
         faceplayer
-        msgbox(format("Siempre vuelve quien se siente bien recibido.\pGracias por pasar otra vez."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+        msgbox(format("Those who feel welcome always come back.\pThanks for stopping by again."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
         playse(SE_PIN)
         applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
-        msgbox(format("¡Miau revoir!"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+        msgbox(format("Meow revoir!"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
         release
         end
     }
     lock
     faceplayer
-        msgbox(format("Oh, holis. Bienvenid{OA} a esta sala, aquí todo está preparado para celebrar."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+        msgbox(format("Oh, hi there. Welcome to this room; here everything's set up to celebrate."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HappyWithDelay48)
-    msgbox(format("¿Así que quieres superar este desafío?"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("So you want to beat this challenge?"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     call(DriveKatherineRoom_EventScript_PlayerWalkInPlace)
     delay(20)
-    msgbox(format("Perfecto. Estaré encantada de echarte una pata… quiero decir, una mano."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("Perfect. I'd be delighted to lend you a paw… I mean, a hand."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
-    msgbox(format("Pero antes, deberías hablar con Drive. Tiene su discurso preparado… y créeme, está deseando soltarlo."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("But first, you should talk to Drive. He's got his speech ready… and believe me, he's dying to deliver it."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     turnobject(LOCALID_DRIVEKATHERINEROOM_KATHERINE, DIR_SOUTH)
     release
     end
@@ -74,10 +74,10 @@ script DriveKatherineRoom_EventScript_Drive {
     if(flag(FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE)) {
         lock
         faceplayer
-        msgbox(format("¡Ah, {ELLA} invitad{OA} de honor regresa!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+        msgbox(format("Ah, the guest of honor returns!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
         playse(SE_PIN)
         applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_HappyWithDelay48)
-        msgbox(format("Si vienes por otro duelo, me temo que la cocina ya cerró."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+        msgbox(format("If you're here for another duel, I'm afraid the kitchen is already closed."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
         release
         end
     }
@@ -96,9 +96,9 @@ script DriveKatherineRoom_EventScript_Drive {
         jump_in_place_down,
         unlock_facing_direction
         face_player))
-    msgbox(format("¡Ah, por fin un comensal con hambre de fiesta!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Ah, at last a diner with an appetite for a party!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     delay(30)
-    msgbox(format("Ven, tenemos un lugar especial para ti."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Come, we've got a special seat for you."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     call(DriveKatherineRoom_EventScript_WalkInPlaceDriveFacingPlayer)
     delay(10)
     turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
@@ -123,37 +123,37 @@ script DriveKatherineRoom_EventScript_Drive {
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_JumpDown)
     waitse
-    msgbox(format("Bienvenid{OA} al gran restaurante de la celebración.\pAquí servimos emociones recién hechas y recuerdos al fuego lento.\pMi nombre es Drive, y hoy seré tu chef y maître del banquete.\pHoy, ¡el plato principal eres tú!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Welcome to the grand restaurant of the celebration.\pHere we serve freshly made emotions and memories slow-cooked over low heat.\pMy name is Drive, and today I'll be your chef and maître d' of the banquet.\pToday, the main course is YOU!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
     delay(30)
-    msgbox(format("Cada plato cuenta una historia, y cada batalla… ¡una receta para el alma!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Every dish tells a story, and every battle… a recipe for the soul!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_smile))
     waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
-    msgbox(format("Empezaremos con un entrante de entusiasmo, un toque de curiosidad y una pizca de locura."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("We'll start with an appetizer of enthusiasm, a touch of curiosity, and a pinch of madness."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("Después, el plato principal: un duelo doble delicioso."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Then, the main course: a delicious double duel."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
     delay(30)
     turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_EAST)
-    msgbox(format("Katherine, ¿listos los ingredientes?"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Katherine, are the ingredients ready?"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceRight)
     delay(20)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(walk_down, face_left))
-    msgbox(format("Todos cortados y preparados, Drive."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("All chopped and prepped, Drive."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
     delay(20)
-    msgbox(format("Pero recuerda: no todo se trata de ganar.\pLo importante es moverse con gracia… y caer siempre de pie.\pVamos a darle la bienvenida como se merece."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("But remember: it's not all about winning.\pWhat matters is moving with grace… and always landing on your feet.\pLet's welcome them as they deserve."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceDown)
     turnobject(LOCALID_DRIVEKATHERINEROOM_DRIVE, DIR_SOUTH)
-    msgbox(format("¡Entonces, que empiece el banquete!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Then, let the banquet begin!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Dos chefs, un banquete, un nuevo desafío.\p¡A tus hornallas, entrenador{A}!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("Two chefs, one banquet, a new challenge.\pTo your stoves, Trainer!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     playse(SE_LEDGE)
     applymovement(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(emote_versus, jump_in_place_down))
     applymovement(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(emote_versus, jump_in_place_down))
@@ -170,15 +170,15 @@ script DriveKatherineRoom_EventScript_Drive {
     waitmovement(0)
     delay(20)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkDown)
-    msgbox(format("Un sabor intenso, equilibrado… inolvidable…"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("An intense, balanced flavor… unforgettable…"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_WalkInPlaceDown)
     delay(20)
-    msgbox(format("Si cada celebración tuviera este toque, el mundo sería un festín eterno."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("If every celebration had this touch, the world would be an eternal feast."), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, Common_Movement_HappyWithDelay48)
     delay(15)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkDown)
-    msgbox(format("Fue una danza perfecta. En cada paso se sentía la alegría de este día, casi como si la sala estuviera ronroneando de emoción.\pGracias por compartirlo con nosotros."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("It was a perfect dance. In every step you could feel the joy of this day, almost as if the room were purring with emotion.\pThank you for sharing it with us."), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_HeartWithDelay48)
     delay(30)
@@ -187,14 +187,14 @@ script DriveKatherineRoom_EventScript_Drive {
     waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_DRIVE, moves(jump_in_place_down))
-    msgbox(format("¡Brindo por eso!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
+    msgbox(format("I'll drink to that!"), MSGBOX_AUTOCLOSE, SP_NAME_DRIVE)
     delay(30)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves(walk_down, face_left))
     turnobject(LOCALID_PLAYER, DIR_EAST)
-    msgbox(format("Has superado esta sala con elegancia. Sigue disfrutando de la celebración… y hasta que nos volvamos a ver…"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("You've cleared this room with elegance. Keep enjoying the celebration… and until we meet again…"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, Common_Movement_WalkInPlaceLeft)
     delay(20)
-    msgbox(format("¡Miau revoir!"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
+    msgbox(format("Meow revoir!"), MSGBOX_AUTOCLOSE, SP_NAME_KATHERINE)
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_DRIVEKATHERINEROOM_KATHERINE, moves (walk_up, face_down))
     setflag(FLAG_DEFEATED_ADMINS_KATHERINE_AND_DRIVE)
@@ -261,29 +261,29 @@ script DriveKatherineRoom_EventScript_DriveKatherineBattle {
 }
 
 text DriveKatherineRoom_Text_DriveDefeated {
-    format("¡Eso sí que fue un festín!")
+    format("Now THAT was a feast!")
 }
 
 text DriveKatherineRoom_Text_KatherineDefeated {
-    format("Suave, armonioso… me ha encantado.")
+    format("Smooth, harmonious… I loved it.")
 }
 
 script DriveKatherineRoom_EventScript_Bottles {
-    msgbox(format("Algunas botellas tienen nombres imposibles de pronunciar.\pHay una que se llama “Whack a Cola”."), MSGBOX_SIGN)
+    msgbox(format("Some bottles have names that are impossible to pronounce.\pThere's one called “Whack a Cola.”"), MSGBOX_SIGN)
     end
 }
 
 script DriveKatherineRoom_EventScript_Dispenser {
-    msgbox(format("El agua del dispensador está increíblemente fría."), MSGBOX_SIGN)
+    msgbox(format("The water from the dispenser is incredibly cold."), MSGBOX_SIGN)
     end
 }
 
 script DriveKatherineRoom_EventScript_Trash {
-    msgbox(format("La papelera desprende un leve olor a comida."), MSGBOX_SIGN)
+    msgbox(format("The wastebasket gives off a faint smell of food."), MSGBOX_SIGN)
     end
 }
 
 script DriveKatherineRoom_EventScript_Cabinet {
-    msgbox(format("El mueble está lleno de platos, vasos y tazas.\pTodo está cuidadosamente organizado por tamaño y tipo."), MSGBOX_SIGN)
+    msgbox(format("The cabinet is full of plates, glasses, and cups.\pEverything's carefully organized by size and type."), MSGBOX_SIGN)
     end
 }

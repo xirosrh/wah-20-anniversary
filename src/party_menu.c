@@ -5000,8 +5000,8 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 
 void Task_AbilityCapsule(u8 taskId)
 {
-    static const u8 askText[] = _("¿Quieres cambiar la habilidad de\n{STR_VAR_1} a {STR_VAR_2}?");
-    static const u8 doneText[] = _("¡{STR_VAR_1} cambió su habilidad\na {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    static const u8 askText[] = _("Change {STR_VAR_1}'s Ability\nto {STR_VAR_2}?");
+    static const u8 doneText[] = _("{STR_VAR_1}'s Ability changed\nto {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
     switch (tState)
@@ -5088,8 +5088,8 @@ void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 
 void Task_AbilityPatch(u8 taskId)
 {
-    static const u8 askText[] = _("¿Quieres cambiar la habilidad de\n{STR_VAR_1} a {STR_VAR_2}?");
-    static const u8 doneText[] = _("¡{STR_VAR_1} cambió su habilidad\na {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    static const u8 askText[] = _("Change {STR_VAR_1}'s Ability\nto {STR_VAR_2}?");
+    static const u8 doneText[] = _("{STR_VAR_1}'s Ability changed\nto {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
     switch (tState)
@@ -5190,8 +5190,8 @@ void ItemUseCB_AbilityPatch(u8 taskId, TaskFunc task)
 
 void Task_Mint(u8 taskId)
 {
-    static const u8 askText[] = _("Puede afectar a los stats de {STR_VAR_1}.\n¿Estás seguro de querer usarlo?");
-    static const u8 doneText[] = _("¡Los stats de {STR_VAR_1} han cambiado\ndebido a los efectos de la {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    static const u8 askText[] = _("This may affect {STR_VAR_1}'s stats.\nAre you sure you want to use it?");
+    static const u8 doneText[] = _("{STR_VAR_1}'s stats changed\ndue to the {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
     switch (tState)

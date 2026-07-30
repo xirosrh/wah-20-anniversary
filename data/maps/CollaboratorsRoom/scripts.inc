@@ -2462,14 +2462,14 @@ CollaboratorsRoom_EventScript_Caco_IntroFirstBattle::
 	compare VAR_RESULT, MALE
 	goto_if_eq CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_2
 # 1343 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
+	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_1:
 # 1345 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
 # 1346 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48
 # 1347 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
+	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
 # 1348 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_LEDGE
 # 1349 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -2479,13 +2479,13 @@ CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_1:
 # 1351 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, CollaboratorsRoom_EventScript_Kaktus_Movement_1
 # 1352 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
+	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
 # 1353 "data/maps/CollaboratorsRoom/scripts.pory"
 	playse SE_PIN
 # 1354 "data/maps/CollaboratorsRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_AngryWithDelay48
 # 1355 "data/maps/CollaboratorsRoom/scripts.pory"
-	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
+	msgbox CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO
 	return
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_2:
@@ -2992,260 +2992,257 @@ CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Movement_1:
 
 CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle_Text_0:
 # 35 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vaya, vaya…\n¿Así que completaste el desafío?$"
+	.string "Well, well…\nSo you completed the challenge?$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle_Text_1:
 # 38 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Entonces ya no eres un{A} novat{OA}... veamos\n"
-	.string "si sabes aplicar lo aprendido.\p"
-	.string "Un combate, sin atajos, sin trucos.\n"
-	.string "¿List{OA}?$"
+	.string "Then you're no rookie anymore... let's\n"
+	.string "see if you can apply what you've\l"
+	.string "learned.\p"
+	.string "One battle, no shortcuts, no tricks.\n"
+	.string "Ready?$"
 
 CollaboratorsRoom_EventScript_Kaktus_TalkOnly_Text_0:
 # 54 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Sabes? Mucha gente en la comunidad\n"
-	.string "empezó viendo tutoriales míos.$"
+	.string "You know? A lot of people in the\n"
+	.string "community started out watching my\l"
+	.string "tutorials.$"
 
 CollaboratorsRoom_EventScript_Kaktus_TalkOnly_Text_1:
 # 57 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Aunque si te soy sincero… el primero que\n"
-	.string "hice me dio tanta vergüenza que lo\l"
-	.string "borré.$"
+	.string "Though to be honest… the first one I\n"
+	.string "made was so embarrassing that I\l"
+	.string "deleted it.$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_0:
 # 64 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ey, ¿qué tal? Mi Ludicolo sigue con\n"
-	.string "ganas de bailar.$"
+	.string "Hey, how's it going? My Ludicolo still\n"
+	.string "feels like dancing.$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_1:
 # 67 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Otro asalto?$"
+	.string "Another round?$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_2:
 # 74 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Vamos!$"
+	.string "Let's go!$"
 
 CollaboratorsRoom_EventScript_Kaktus_IntroRematch_Text_3:
 # 79 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Será en otra oportunidad entonces!$"
+	.string "Another time, then!$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_0:
 # 105 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Acaso perdí?$"
+	.string "Did I just lose?$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_1:
 # 111 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ja… perdí.$"
+	.string "Ha… I lost.$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_2:
 # 115 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Pero esto es lo bonito de esta\n"
-	.string "comunidad.\p"
-	.string "Siempre hay alguien nuevo que te\n"
-	.string "sorprende.$"
+	.string "But this is the beautiful thing about\n"
+	.string "this community.\p"
+	.string "There's always someone new who\n"
+	.string "surprises you.$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_3:
 # 119 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Enhorabuena, crack.$"
+	.string "Congrats, champ.$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_4:
 # 122 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Eres buen{OA}, pero aún te falta entrenar\n"
-	.string "para poder vencerme.$"
+	.string "You're good, but you still need to train\n"
+	.string "to be able to beat me.$"
 
 CollaboratorsRoom_EventScript_Kaktus_Text_5:
 # 128 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Espero la revancha pronto!$"
+	.string "Looking forward to a rematch soon!$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroFirstBattle_Text_0:
 # 140 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No soy competitivo ni ambicioso.$"
+	.string "I'm not competitive or ambitious.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroFirstBattle_Text_1:
 # 143 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Soy más bien una persona mediocre.$"
+	.string "I'm more of a mediocre person, really.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroFirstBattle_Text_2:
 # 146 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Eso puede jugarme en contra.$"
+	.string "That can work against me.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_TalkOnly_Text_0:
 # 151 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Un hack rom es como la arquitectura,\nse construye sobre lo existente.$"
+	.string "A ROM hack is like architecture:\nyou build on what already exists.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_TalkOnly_Text_1:
 # 153 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "El arte aquí no es lo que se cambia,\nsino lo que se quiere transmitir.$"
+	.string "The art here isn't what you change,\nbut what you want to convey.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_Text_0:
 # 161 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Kanto y Johto se unen en el mismo azul,\n"
-	.string "el agua no recuerda fronteras.$"
+	.string "Kanto and Johto meet in the same blue;\n"
+	.string "water remembers no borders.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_Text_1:
 # 164 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Quieres luchar contra uno de mis 3\n"
-	.string "equipos?$"
+	.string "Want to battle one of my 3 teams?$"
 
 CollaboratorsRoom_EventScript_Gameboycl_IntroRematch_Text_2:
 # 176 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Lo mejor de la vida no es competir, sino\n"
-	.string "compartir.$"
+	.string "The best thing in life isn't competing,\n"
+	.string "but sharing.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_Text_0:
 # 216 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Definitivamente prefiero compartir por\n"
-	.string "sobre competir.$"
+	.string "I definitely prefer sharing over\n"
+	.string "competing.$"
 
 CollaboratorsRoom_EventScript_Gameboycl_Text_1:
 # 222 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Cuando te sientas preparad{OA}, vuelve y\n"
-	.string "probamos nuestros equipos en un duelo.$"
+	.string "When you feel ready, come back and we'll\n"
+	.string "test our teams in a duel.$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle_Text_0:
 # 239 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Lo fuerte será débil. Lo débil será\n"
-	.string "decisivo.\p"
-	.string "¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!$"
+	.string "The strong will be weak. The weak will be\n"
+	.string "decisive.\p"
+	.string "Get ready for an {COLOR RED}inverse battle{COLOR DARK_GRAY}!$"
 
 CollaboratorsRoom_EventScript_Erkey_TalkOnly_Text_0:
 # 245 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Aquí cada combate enseña algo.$"
+	.string "Here, every battle teaches something.$"
 
 CollaboratorsRoom_EventScript_Erkey_TalkOnly_Text_1:
 # 248 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Si prestas atención.$"
+	.string "If you pay attention.$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_0:
 # 257 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Otra vez?\n"
-	.string "Las reglas siguen al revés… por si\l"
-	.string "acaso.$"
+	.string "Again?\n"
+	.string "The rules are still reversed… just in\l"
+	.string "case.$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_1:
 # 260 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Quieres volver a luchar?$"
+	.string "Want to battle again?$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_2:
 # 267 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Perfecto. Veamos si esta vez lo\n"
-	.string "dominas.$"
+	.string "Perfect. Let's see if this time you\n"
+	.string "master it.$"
 
 CollaboratorsRoom_EventScript_Erkey_IntroRematch_Text_3:
 # 276 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vuelve cuando quieras.\n"
-	.string "Aquí nada vuelve a la normalidad.$"
+	.string "Come back whenever you want.\n"
+	.string "Here, nothing goes back to normal.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_0:
 # 304 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Lo has sabido manejar a la perfección.$"
+	.string "You handled it perfectly.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_1:
 # 311 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Bien jugado.$"
+	.string "Well played.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_2:
 # 314 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Cuando las reglas cambian, tú te\n"
-	.string "adaptaste.\p"
-	.string "Eso es el espíritu de Whack a Hack.$"
+	.string "When the rules change, you adapted.\p"
+	.string "That's the spirit of Whack a Hack.$"
 
 CollaboratorsRoom_EventScript_Erkey_Text_3:
 # 319 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La costumbre pesa más de lo que parece.\n"
-	.string "Aquí se paga caro.$"
+	.string "Habit weighs more than it seems.\n"
+	.string "Here it costs you dearly.$"
 
 CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle_Text_0:
 # 338 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vaya, has superado el desafío de las\n"
-	.string "salas.\p"
-	.string "Comprobemos pues si eres buen{OA} con los\n"
-	.string "Pokémon que he criado y entrenado.$"
+	.string "Well, you've beaten the room challenge.\p"
+	.string "Let's see, then, if you're good with the\n"
+	.string "Pokémon I've bred and trained.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_0:
 # 346 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "A la mayoría de los de las salas no los\n"
-	.string "conozco, solo a tres.\p"
-	.string "Al resto hasta que no les entregué los\n"
-	.string "Pokémon, no sabía quiénes eran.$"
+	.string "Most of the folks in the rooms I don't\n"
+	.string "know - only three of them.\p"
+	.string "The rest, until I handed them their\n"
+	.string "Pokémon, I had no idea who they were.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_1:
 # 349 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Sí, la mayoría de los Pokémon en este\n"
-	.string "edificio los crié yo, incluidos todos los\l"
-	.string "que puedes llegar a usar.\p"
-	.string "Todos entrenados por mí y listos para\n"
-	.string "luchar.$"
+	.string "Yes, most of the Pokémon in this\n"
+	.string "building I bred myself, including all the\l"
+	.string "ones you might get to use.\p"
+	.string "All trained by me and ready to battle.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_2:
 # 352 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "También ayudé al arquitecto del\n"
-	.string "edificio a tener al Pokémon de sus\l"
-	.string "sueños.\p"
-	.string "No veas lo cansino que era hablando de\n"
-	.string "la ilusión que le daría tenerlo e incluso\l"
-	.string "presumirá de él en su sala como un\l"
-	.string "hipócrita mientras se limpia las babas.$"
+	.string "I also helped the building's architect\n"
+	.string "get the Pokémon of his dreams.\p"
+	.string "You wouldn't believe how tiresome he\n"
+	.string "was going on about how thrilled he'd be,\l"
+	.string "even showing it off in his room like a\l"
+	.string "hypocrite while wiping the drool off his\l"
+	.string "chin.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_3:
 # 355 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Lo que no sabe es que le di un ejemplar\n"
-	.string "casi perfecto, el perfecto lo tengo\l"
-	.string "guardado y listo para ayudarte cuando\l"
-	.string "elijas su equipo.$"
+	.string "What he doesn't know is I gave him a\n"
+	.string "near-perfect specimen; the perfect one\l"
+	.string "I've kept, ready to help you when you\l"
+	.string "pick his team.$"
 
 CollaboratorsRoom_EventScript_Micolo_TalkOnly_Text_4:
 # 363 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "El resto fueron la mano de obra para\n"
-	.string "construir este sitio.$"
+	.string "The rest were the labor that built this\n"
+	.string "place.$"
 
 CollaboratorsRoom_EventScript_Micolo_IntroRematch_Text_0:
 # 371 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Otra batalla? Elegiré de nuevo un\n"
-	.string "Pokémon de mi equipo al azar.$"
+	.string "Another battle? I'll again pick a\n"
+	.string "Pokémon from my team at random.$"
 
 CollaboratorsRoom_EventScript_Micolo_IntroRematch_Text_1:
 # 374 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Te atreves?$"
+	.string "You dare?$"
 
 CollaboratorsRoom_EventScript_Micolo_IntroRematch_Text_2:
 # 386 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Cuando quieras… Mis ejemplares no se\n"
-	.string "van a poner peor por esperar.$"
+	.string "Whenever you like… My specimens won't\n"
+	.string "get any worse for waiting.$"
 
 CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit_Text_0:
 # 394 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Elige dos Pokémon para combatir. Yo\n"
-	.string "escogeré uno de mis ejemplares al azar\l"
-	.string "para enfrentaros.$"
+	.string "Pick two Pokémon to battle. I'll choose\n"
+	.string "one of my specimens at random to face\l"
+	.string "you.$"
 
 CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit_Text_1:
 # 400 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Luchemos con un Pokémon cada uno.\n"
-	.string "Selecciona el tuyo, ¡yo elegiré uno de mi\l"
-	.string "equipo al azar!$"
+	.string "Let's battle with one Pokémon each.\n"
+	.string "Pick yours; I'll choose one from my team\l"
+	.string "at random!$"
 
 CollaboratorsRoom_EventScript_Micolo_Text_0:
 # 443 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Te da miedo enfrentarte a uno de mis\n"
-	.string "ejemplares? Con lo que te costó pasar\l"
-	.string "las salas…$"
+	.string "Afraid to face one of my specimens?\n"
+	.string "After how hard it was to clear the\l"
+	.string "rooms…$"
 
 CollaboratorsRoom_EventScript_Micolo_Text_1:
 # 453 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vaya, me has ganado.$"
+	.string "Well, you beat me.$"
 
 CollaboratorsRoom_EventScript_Micolo_Text_2:
 # 460 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Admito que eres buen{OA}, si contara con mi\n"
-	.string "pequeñín seguro que te hubiera ganado,\l"
-	.string "enhorabuena.$"
+	.string "I admit you're good; if I'd had my little\n"
+	.string "one, I'd surely have beaten you,\l"
+	.string "congratulations.$"
 
 CollaboratorsRoom_EventScript_Micolo_Text_3:
 # 466 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No lo haces mal, pero tendrás que\n"
-	.string "hacerlo muchísimo mejor si quieres\l"
-	.string "ganarme.$"
+	.string "You're not bad, but you'll have to do a\n"
+	.string "whole lot better if you want to beat me.$"
 
 CollaboratorsRoom_EventScript_Lillipup_Text_0:
 # 484 "data/maps/CollaboratorsRoom/scripts.pory"
@@ -3253,880 +3250,862 @@ CollaboratorsRoom_EventScript_Lillipup_Text_0:
 
 CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_0:
 # 494 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Buscas problemas?\n"
-	.string "¡Pues escucha nuestro lema!$"
+	.string "Looking for trouble?\n"
+	.string "Then listen to our motto!$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_1:
 # 498 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Uy, me he equivocado!$"
+	.string "Oops, my mistake!$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle_Text_2:
 # 502 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Perdona, es la costumbre je, je…\p"
-	.string "Bueno, por lo que veo has completado el\n"
-	.string "desafío.\p"
-	.string "¡Enhorabuena!\p"
-	.string "Pero… ¡será por poco tiempo!\n"
-	.string "¡Ha llegado el momento de ponerte a\l"
-	.string "prueba una vez más!$"
+	.string "Sorry, force of habit, heh heh…\p"
+	.string "Well, from what I can see you've\n"
+	.string "completed the challenge.\p"
+	.string "Congratulations!\p"
+	.string "But… not for long!\n"
+	.string "The time has come to put you to the\l"
+	.string "test once more!$"
 
 CollaboratorsRoom_EventScript_MrNightology_TalkOnly_Text_0:
 # 508 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ay, si te contase…\p"
-	.string "La Beta 1 de mi hack la publiqué en 2010\n"
-	.string "y 15 años después, conseguí acabarlo.$"
+	.string "Oh, if only I could tell you…\p"
+	.string "I released Beta 1 of my hack in 2010 and\n"
+	.string "15 years later, I finally finished it.$"
 
 CollaboratorsRoom_EventScript_MrNightology_TalkOnly_Text_1:
 # 512 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Una larga travesía para que al final, la\n"
-	.string "gente te pregunte cuál es el cheat de\l"
-	.string "los caramelos infinitos.$"
+	.string "A long journey, only for people to end\n"
+	.string "up asking you what the cheat for\l"
+	.string "infinite Rare Candies is.$"
 
 CollaboratorsRoom_EventScript_MrNightology_TalkOnly_Text_2:
 # 516 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Te parece normal?\n"
-	.string "En fin… La vida del romhacker.$"
+	.string "Does that seem right to you?\n"
+	.string "Anyway… the life of a ROM hacker.$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_0:
 # 521 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Tú otra vez!$"
+	.string "You again!$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_1:
 # 524 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Te has quedado con ganas de más?$"
+	.string "Still hungry for more?$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_2:
 # 530 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Já! Si ya me lo imaginaba…$"
+	.string "Ha! I figured as much…$"
 
 CollaboratorsRoom_EventScript_MrNightology_IntroRematch_Text_3:
 # 535 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿No?\n"
-	.string "Bueno… Ya volverás.$"
+	.string "No?\n"
+	.string "Well… you'll be back.$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_0:
 # 570 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Tengo un plan genial para derrotarte y\n"
-	.string "para eso lucharé con un amigo.\p"
-	.string "Así que…\n"
-	.string "¡Que aparezca el invitado especial!$"
+	.string "I've got a brilliant plan to beat you,\n"
+	.string "and for that I'll battle with a friend.\p"
+	.string "So…\n"
+	.string "let the special guest appear!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_1:
 # 575 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Estás preparado?\n"
-	.string "¿Sí? Genial.\p"
-	.string "¡Vente p'acá!$"
+	.string "Are you ready?\n"
+	.string "Yes? Great.\p"
+	.string "Get over here!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_2:
 # 594 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Ostras!\n"
-	.string "¿Cómo lo has hecho?$"
+	.string "Whoa!\n"
+	.string "How did you do that?$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_3:
 # 596 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Coño! Transmisión instantánea, bro.\n"
-	.string "¡No me he pasado entrenando en el\l"
-	.string "planeta Yardrat todo este tiempo pa ná!$"
+	.string "Damn! Instant Transmission, bro.\n"
+	.string "I didn't spend all this time training on\l"
+	.string "planet Yardrat for nothing!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_4:
 # 597 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Ah, mira qué bien! ¡Eso me viene genial\n"
-	.string "para que la próxima vez no acabe\l"
-	.string "reventao con tantas horas de bus!$"
+	.string "Ah, how nice! That's perfect so next\n"
+	.string "time I don't end up wrecked from so\l"
+	.string "many hours on the bus!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_5:
 # 601 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Sorprendido, ¿no?\n"
-	.string "Pues ha llegado la hora…\p"
-	.string "¡Prepárate para luchar!$"
+	.string "Surprised, huh?\n"
+	.string "Well, the time has come…\p"
+	.string "Get ready to battle!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_6:
 # 609 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Qué? ¡Pero si era un plan genial!$"
+	.string "What? But it was a brilliant plan!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_7:
 # 609 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿He vuelto a perder?$"
+	.string "Did I lose again?$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_8:
 # 618 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡El Team Rocket despega de nuevooooo…!$"
+	.string "Team Rocket's blasting off agaaaain…!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_9:
 # 623 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Vaya aterrizaje!$"
+	.string "What a landing!$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_10:
 # 629 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Y ReoNeky?\n"
-	.string "Espero que haya aterrizado en su sala.$"
+	.string "And ReoNeky?\n"
+	.string "I hope he landed in his room.$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_11:
 # 633 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Has hecho todo lo que has podido, pero\n"
-	.string "no es suficiente.$"
+	.string "You did everything you could, but it's\n"
+	.string "not enough.$"
 
 CollaboratorsRoom_EventScript_MrNightology_Text_12:
 # 636 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Dale una vuelta a tu estrategia y…\p"
-	.string "¡No nos hagas esperar mucho para la\n"
-	.string "revancha!$"
+	.string "Rethink your strategy and…\p"
+	.string "Don't keep us waiting long for the\n"
+	.string "rematch!$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_0:
 # 664 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Oh! Pues parece que has superado el\n"
-	.string "desafío de las salas.\p"
-	.string "¿Qué te parece si te ponemos a prueba y\n"
-	.string "vemos de lo que eres capaz?$"
+	.string "Oh! Looks like you've beaten the room\n"
+	.string "challenge.\p"
+	.string "How about we put you to the test and\n"
+	.string "see what you're capable of?$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_1:
 # 666 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Hacemos esto un poco más divertido?$"
+	.string "Shall we make this a bit more fun?$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_2:
 # 672 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "O mejor dicho, ¿¡qué te parece si lo\n"
-	.string "hacemos el doble de divertido!?$"
+	.string "Or rather - how about we make it twice\n"
+	.string "as fun!?$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle_Text_3:
 # 681 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Muy bien, entra al mundo de las\n"
-	.string "tinieblas conmigo…$"
+	.string "All right, step into the world of\n"
+	.string "darkness with me…$"
 
 CollaboratorsRoom_EventScript_Gosuto_TalkOnly_Text_0:
 # 686 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Quizás me conoces, quizás no, pero no te\n"
-	.string "culpo; paso como una sombra entre las\l"
-	.string "tinieblas.$"
+	.string "Maybe you know me, maybe not, but I\n"
+	.string "don't blame you; I pass like a shadow\l"
+	.string "through the darkness.$"
 
 CollaboratorsRoom_EventScript_Gosuto_TalkOnly_Text_1:
 # 690 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Pero a pesar de permanecer entre las\n"
-	.string "tinieblas, he aportado a grandes\l"
-	.string "proyectos dando un pequeño grano de\l"
-	.string "arena.$"
+	.string "But despite lurking in the shadows, I've\n"
+	.string "contributed to great projects, doing my\l"
+	.string "small part.$"
 
 CollaboratorsRoom_EventScript_Gosuto_TalkOnly_Text_2:
 # 694 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Que no se diga más y a seguir\n"
-	.string "procesando píxeles!$"
+	.string "Enough said - back to processing\n"
+	.string "pixels!$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_0:
 # 704 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Otro combate? ¿Estás segur{OA} de estar\n"
-	.string "list{OA} para entrar al mundo de las\l"
-	.string "tinieblas?$"
+	.string "Another battle? Are you sure you're\n"
+	.string "ready to enter the world of darkness?$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_1:
 # 711 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ok, veamos si esta vez logras superar\n"
-	.string "tus miedos.$"
+	.string "Okay, let's see if this time you\n"
+	.string "overcome your fears.$"
 
 CollaboratorsRoom_EventScript_Gosuto_IntroRematch_Text_2:
 # 716 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Bien pensado; aunque puedes volver\n"
-	.string "cuando quieras.$"
+	.string "Good thinking; though you can come\n"
+	.string "back whenever you want.$"
 
 CollaboratorsRoom_EventScript_Gosuto_Text_0:
 # 741 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Creo que ya superaste tus miedos y\n"
-	.string "superaste las sombras.$"
+	.string "I think you've already overcome your\n"
+	.string "fears and conquered the shadows.$"
 
 CollaboratorsRoom_EventScript_Gosuto_Text_1:
 # 748 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vaya, parece que encontraste una\n"
-	.string "chispa de suerte.\p"
-	.string "Aprovecha esa luz mientras puedas,\n"
-	.string "porque las sombras son pacientes y las\l"
-	.string "tinieblas siempre terminan ganando al\l"
-	.string "final.$"
+	.string "Well, looks like you found a spark of\n"
+	.string "luck.\p"
+	.string "Make the most of that light while you\n"
+	.string "can, because shadows are patient and\l"
+	.string "the darkness always wins in the end.$"
 
 CollaboratorsRoom_EventScript_Gosuto_Text_2:
 # 753 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No te sientas mal; no cualquiera\n"
-	.string "sobrevive a mis tinieblas.$"
+	.string "Don't feel bad; not everyone survives\n"
+	.string "my darkness.$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_0:
 # 769 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Espera! ¿Escuchas eso?$"
+	.string "Wait! Do you hear that?$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle_Text_1:
 # 772 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Es el sonido de la batalla!$"
+	.string "It's the sound of battle!$"
 
 CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_0:
 # 777 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Un día empecé a descompilar Pokémon\n"
-	.string "FireRed en español para obtener la ROM\l"
-	.string "original compilando pokefirered.$"
+	.string "One day I started decompiling Pokémon\n"
+	.string "FireRed in Spanish to get the original\l"
+	.string "ROM by compiling pokefirered.$"
 
 CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_1:
 # 779 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Tuvieron que pasar dos años para\n"
-	.string "encontrar motivación en el desafío 30\l"
-	.string "días dentro del foro de WaH.\p"
-	.string "Durante ese tiempo logré hacer\n"
-	.string "coincidencia al 100%.$"
+	.string "It took two years to find motivation in\n"
+	.string "the 30-day challenge on the WaH forum.\p"
+	.string "During that time I managed to reach a\n"
+	.string "100% match.$"
 
 CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_2:
 # 788 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Fue el mejor día de mi vida en el mundo\n"
-	.string "del rom hacking, superando un reto\l"
-	.string "personal muy significativo para mí.$"
+	.string "It was the best day of my life in the\n"
+	.string "world of ROM hacking, beating a\l"
+	.string "personal challenge that meant a lot to\l"
+	.string "me.$"
 
 CollaboratorsRoom_EventScript_Acimut_TalkOnly_Text_3:
 # 793 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Por cierto, aquí la música se escucha\n"
-	.string "mejor en estéreo.$"
+	.string "By the way, the music here sounds\n"
+	.string "better in stereo.$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_0:
 # 813 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La música es matemáticas y puro\n"
-	.string "sentimiento.\p"
-	.string "¡Como los combates Pokémon!$"
+	.string "Music is math and pure feeling.\p"
+	.string "Just like Pokémon battles!$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_1:
 # 817 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿List{OA} para la revancha?$"
+	.string "Ready for the rematch?$"
 
 CollaboratorsRoom_EventScript_Acimut_IntroRematch_Text_2:
 # 831 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vuelve cuando quieras. Aquí siempre hay\n"
-	.string "buena música para combatir.$"
+	.string "Come back anytime. There's always good\n"
+	.string "music here to battle to.$"
 
 CollaboratorsRoom_EventScript_Acimut_Text_0:
 # 858 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Qué ha pasado aquí?$"
+	.string "What happened here?$"
 
 CollaboratorsRoom_EventScript_Acimut_Text_1:
 # 864 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ese último movimiento no lo vi venir…$"
+	.string "I didn't see that last move coming…$"
 
 CollaboratorsRoom_EventScript_Acimut_Text_2:
 # 867 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Espero podamos volver a enfrentarnos\n"
-	.string "en un futuro.$"
+	.string "I hope we can face each other again\n"
+	.string "someday.$"
 
 CollaboratorsRoom_EventScript_Acimut_Text_3:
 # 870 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La armonía de tus Pokémon lo es todo…$"
+	.string "The harmony of your Pokémon is\n"
+	.string "everything…$"
 
 CollaboratorsRoom_EventScript_Acimut_Text_4:
 # 874 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Si quieres volver a intentarlo, aquí\n"
-	.string "estaré.$"
+	.string "If you want to try again, I'll be here.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_0:
 # 885 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "20 años… ¿te das cuenta?$"
+	.string "20 years… do you realize?$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_1:
 # 887 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Aquí crecimos entre bugs, tiles mal\n"
-	.string "alineados y scripts que se colgaban en\l"
-	.string "el último mapa.$"
+	.string "We grew up here among bugs, misaligned\n"
+	.string "tiles, and scripts that froze on the\l"
+	.string "last map.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_2:
 # 891 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Ah! Si ves a Baro por ahí… no intentes\n"
-	.string "ser su amigo.\p"
-	.string "Créeme, no termina bien.$"
+	.string "Oh! If you see Baro around… don't try to\n"
+	.string "be his friend.\p"
+	.string "Trust me, it doesn't end well.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_3:
 # 895 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Y si te topas con Serg!o… salúdalo con\n"
-	.string "respeto.\p"
-	.string "Es leyenda.$"
+	.string "And if you run into Serg!o… greet him\n"
+	.string "with respect.\p"
+	.string "He's a legend.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_4:
 # 898 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Todos le tenemos un cariño especial…\n"
-	.string "Y no, no homo.$"
+	.string "We all have a special fondness for him…\n"
+	.string "And no, no homo.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_5:
 # 901 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Me encanta la playa, hacer mapas bien\n"
-	.string "locos y meter bosques dentro de\l"
-	.string "cuevas.\p"
-	.string "Eso dice muchas cosas de mí.$"
+	.string "I love the beach, making really wild\n"
+	.string "maps, and putting forests inside caves.\p"
+	.string "That says a lot about me.$"
 
 CollaboratorsRoom_EventScript_Alexmad_LongIntro_Text_6:
 # 904 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Los hacks dicen muchas cosas de\n"
-	.string "nosotros.\p"
-	.string "Incluso en nuestra vida personal… nos\n"
-	.string "hicieron mejores personas.$"
+	.string "Hacks say a lot about us.\p"
+	.string "Even in our personal lives… they made\n"
+	.string "us better people.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_0:
 # 911 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Escanea el QR con tu móvil y nos vemos\n"
-	.string "en el otro mundo.$"
+	.string "Scan the QR with your phone and see you\n"
+	.string "in the other world.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_1:
 # 916 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Lo viste?$"
+	.string "Did you see it?$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_2:
 # 920 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Entonces escribe la palabra que viste\n"
-	.string "en el video.$"
+	.string "Then type the word you saw in the video.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_3:
 # 925 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Perfecto… Veo que sí lo viste.\p"
-	.string "Entonces sabes lo que tienes que hacer.$"
+	.string "Perfect… I see you did watch it.\p"
+	.string "Then you know what you have to do.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_4:
 # 937 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No… esa no es.$"
+	.string "No… that's not it.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_5:
 # 940 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Recuerda que en el video explico los 3\n"
-	.string "pasos que necesitas para completar el\l"
-	.string "evento.\p"
-	.string "La contraseña es tan solo el primer\n"
-	.string "paso.\p"
-	.string "Vuelve cuando tengas la respuesta\n"
-	.string "correcta.$"
+	.string "Remember, in the video I explain the 3\n"
+	.string "steps you need to complete the event.\p"
+	.string "The password is only the first step.\p"
+	.string "Come back when you have the correct\n"
+	.string "answer.$"
 
 CollaboratorsRoom_EventScript_Alexmad_QRFlow_Text_6:
 # 943 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vuelve cuando estés list{OA}.$"
+	.string "Come back when you're ready.$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle_Text_0:
 # 949 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Cada hack tiene su propia esencia. La\n"
-	.string "personalidad de su creador vive dentro\l"
-	.string "de él.\p"
-	.string "Este lleva lo mejor de grandes nombres\n"
-	.string "de la comunidad.\p"
-	.string "Más de dos décadas evolucionando.\n"
-	.string "Nunca se rindieron… nunca dejaron de\l"
-	.string "crear.\p"
-	.string "Veamos si tú tampoco te rindes.$"
+	.string "Every hack has its own essence. The\n"
+	.string "personality of its creator lives inside\l"
+	.string "it.\p"
+	.string "This one carries the best of great\n"
+	.string "names from the community.\p"
+	.string "More than two decades evolving.\n"
+	.string "They never gave up… never stopped\l"
+	.string "creating.\p"
+	.string "Let's see if you don't give up either.$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_0:
 # 955 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Regresaste…\n"
-	.string "Eso ya dice algo.\p"
-	.string "En WAH aprendimos que rendirse no es\n"
-	.string "una opción.\p"
-	.string "Cada error es una versión nueva… cada\n"
-	.string "derrota es un parche.\p"
-	.string "Y cada parche nos hizo mejores.$"
+	.string "You came back…\n"
+	.string "That already says something.\p"
+	.string "At WAH we learned that giving up isn't\n"
+	.string "an option.\p"
+	.string "Every bug is a new version… every\n"
+	.string "defeat is a patch.\p"
+	.string "And every patch made us better.$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_1:
 # 958 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Otro combate?$"
+	.string "Another battle?$"
 
 CollaboratorsRoom_EventScript_Alexmad_IntroRematch_Text_2:
 # 971 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Cuando quieras volver, aquí estaré.$"
+	.string "Whenever you want to come back, I'll be\n"
+	.string "here.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_0:
 # 988 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Excelente…\n"
-	.string "Eres digno de estar aquí.\p"
-	.string "Me alegra ver que la comunidad nunca\n"
-	.string "dejó de ser la mejor.$"
+	.string "Excellent…\n"
+	.string "You're worthy of being here.\p"
+	.string "I'm glad to see the community never\n"
+	.string "stopped being the best.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_1:
 # 991 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Hoy perdí yo…\n"
-	.string "Pero quizás mañana podría ganar Samee.\p"
-	.string "Nos veremos pronto.$"
+	.string "Today I lost…\n"
+	.string "But maybe tomorrow Samee could win.\p"
+	.string "See you soon.$"
 
 CollaboratorsRoom_EventScript_Alexmad_DoBattle_Text_2:
 # 995 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Veo que no siempre tener el mejor\n"
-	.string "equipo es suficiente.\p"
-	.string "La estrategia pesa más que pulsar A a lo\n"
-	.string "loco.$"
+	.string "I see that having the best team isn't\n"
+	.string "always enough.\p"
+	.string "Strategy matters more than mashing A\n"
+	.string "like crazy.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_0:
 # 1020 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ya sabes lo que tienes que hacer, ¿no?$"
+	.string "You know what you have to do, right?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_1:
 # 1025 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Sm1, sm2 o…$"
+	.string "Sm1, sm2 or…$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_2:
 # 1053 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ya lo lograste.$"
+	.string "You already did it.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_3:
 # 1056 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Me recuerdas a KODER.\p"
-	.string "Siempre fue bueno con los acertijos.\n"
-	.string "Sigue adelante, seguro que te irá bien.$"
+	.string "You remind me of KODER.\p"
+	.string "He was always good with riddles.\n"
+	.string "Keep going, I'm sure you'll do fine.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_4:
 # 1062 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Tengo para ti un evento al puro estilo\n"
-	.string "del Mitic.\p"
-	.string "Pero también podemos ir directo a la\n"
-	.string "batalla.\n"
-	.string "¿Qué prefieres?$"
+	.string "I've got an event for you in true Mitic\n"
+	.string "style.\p"
+	.string "But we can also go straight to the\n"
+	.string "battle.\n"
+	.string "What do you prefer?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_5:
 # 1064 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Tú de nuevo! Tengo dos propuestas\n"
-	.string "para ti.$"
+	.string "You again! I've got two offers for you.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_6:
 # 1067 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Qué quieres hacer?$"
+	.string "What do you want to do?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_7:
 # 1070 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Evento$"
+	.string "Event$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_8:
 # 1070 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Batalla$"
+	.string "Battle$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_9:
 # 1070 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Salir$"
+	.string "Exit$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_10:
 # 1080 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Veamos qué versión eres ahora.$"
+	.string "Let's see which version you are now.$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_11:
 # 1089 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Tengo para ti un evento al puro estilo\n"
-	.string "del Mitic.\p"
-	.string "Dime… ¿lo quieres hacer?$"
+	.string "I've got an event for you in true Mitic\n"
+	.string "style.\p"
+	.string "Tell me… do you want to do it?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_12:
 # 1091 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Has vuelto, ¿quieres seguir con el\n"
-	.string "evento?$"
+	.string "You're back - want to continue with the\n"
+	.string "event?$"
 
 CollaboratorsRoom_EventScript_Alexmad_Text_13:
 # 1098 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vuelve cuando estés list{OA}.\n"
-	.string "El Mitic no espera… pero tampoco se\l"
-	.string "repite.$"
+	.string "Come back when you're ready.\n"
+	.string "The Mitic doesn't wait… but it doesn't\l"
+	.string "repeat either.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback_Text_0:
 # 1110 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Bien ahí… solo te falta la última parte\n"
-	.string "del evento.$"
+	.string "Nice… you're just missing the last part\n"
+	.string "of the event.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_0:
 # 1131 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Lo has logrado! Veo que eres buen{OA}.$"
+	.string "You did it! I see you're good.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_1:
 # 1136 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Me recuerdas a KODER. Siempre fue bueno\n"
-	.string "con los acertijos.\p"
-	.string "Quizás pueda ayudarte en tu camino.$"
+	.string "You remind me of KODER. He was always\n"
+	.string "good with riddles.\p"
+	.string "Maybe I can help you on your way.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2:
 # 1139 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Toma este objeto.\nNo entiendo bien qué hace, pero\lseguro te será útil.$"
+	.string "Take this item.\nI don't quite get what it does, but\lit's sure to be useful.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_3:
 # 1147 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Además, ahora podrás encontrar en la PC\n"
-	.string "a algunos legendarios de la Isla Mítica.$"
+	.string "Also, you can now find some legendaries\n"
+	.string "from the Mythic Island in the PC.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_4:
 # 1152 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Quizá puedas reemplazar a alguno de tus\n"
-	.string "Pokémon con uno de ellos.$"
+	.string "Maybe you can replace one of your\n"
+	.string "Pokémon with one of them.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_5:
 # 1155 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Conoces el poder de los clones?\n"
-	.string "Ahora podrás vivirlo en carne propia.$"
+	.string "Do you know the power of the clones?\n"
+	.string "Now you'll experience it firsthand.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_6:
 # 1160 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Estos clones son mucho más fuertes que\n"
-	.string "los Pokémon originales.\p"
-	.string "Úsalos sabiamente.$"
+	.string "These clones are much stronger than\n"
+	.string "the original Pokémon.\p"
+	.string "Use them wisely.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_7:
 # 1171 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "También te daré acceso a este Pokémon\n"
-	.string "muy especial.\p"
-	.string "Es una herramienta de combate muy\n"
-	.string "codiciada.$"
+	.string "I'll also give you access to this very\n"
+	.string "special Pokémon.\p"
+	.string "It's a highly coveted battle tool.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_8:
 # 1175 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "KODER hubiera sonreído al verte salir\n"
-	.string "de aquí con tantas cartas en la manga.\p"
-	.string "No lo desperdicies.$"
+	.string "KODER would've smiled to see you leave\n"
+	.string "here with so many aces up your sleeve.\p"
+	.string "Don't waste it.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_0:
 # 1203 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No, no… así no es.\p"
-	.string "Vuelve a hablarme si quieres intentarlo\n"
-	.string "de nuevo.$"
+	.string "No, no… that's not it.\p"
+	.string "Talk to me again if you want to try\n"
+	.string "again.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleFailed_Text_1:
 # 1207 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Recuerda lo que dije, que a veces los\n"
-	.string "últimos serán los…\l"
+	.string "Remember what I said, that sometimes\n"
+	.string "the last shall be the…\l"
 	.string "…\p"
-	.string "Mejor vuelve a intentarlo.$"
+	.string "Better try again.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_0:
 # 1213 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Mi nombre es El Gran Jefe Topo, quiero\n"
-	.string "decir, Ryuzaki, aunque recientemente\l"
-	.string "algunos desgraciados me están llamando\l"
-	.string "Ryutopo para desprestigiarme…\p"
-	.string "Y eso que mis animalines favoritos son\n"
-	.string "las nutrias…$"
+	.string "My name is the Great Mole Boss, I mean,\n"
+	.string "Ryuzaki, though lately some lowlifes\l"
+	.string "have been calling me Ryumole to smear\l"
+	.string "my name…\p"
+	.string "And to think my favorite little critters\n"
+	.string "are otters…$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_1:
 # 1216 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Pero hay que admitir que es una\n"
-	.string "conjugación bastante hilarante.$"
+	.string "But I have to admit it's a pretty\n"
+	.string "hilarious mash-up.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_2:
 # 1219 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Lees manga? ¡No me mientas! Sé que sí.\nEn todo caso, aún si no lo haces, hay\luno que me gustaría recomendarte.\pEs Tokyo Ghoul.$"
+	.string "Do you read manga? Don't lie!\nI know you do.\lEither way, even if you don't,\lthere's one I'd like to recommend.\pIt's Tokyo Ghoul.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_3:
 # 1223 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Sí, entiendo esa cara de decepción, ¡no\n"
-	.string "soy un adolescente emo en 2017!$"
+	.string "Yes, I get that disappointed look - I'm\n"
+	.string "not an emo teen in 2017!$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_4:
 # 1226 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Su adaptación fue un relajo, pero no es\n"
-	.string "la burla que probablemente imaginas.\p"
-	.string "El manga trata las bifurcaciones de la\n"
-	.string "introspectiva de sus personajes con\l"
-	.string "tanto amor que resulta ser una\l"
-	.string "experiencia preciosa.$"
+	.string "Its adaptation was a mess, but it's not\n"
+	.string "the joke you're probably imagining.\p"
+	.string "The manga handles the branching\n"
+	.string "introspection of its characters with\l"
+	.string "such love that it becomes a beautiful\l"
+	.string "experience.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_5:
 # 1228 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No te estoy desinformando, puedes\n"
-	.string "confiar en mí.$"
+	.string "I'm not feeding you misinformation, you\n"
+	.string "can trust me.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly_Text_6:
 # 1231 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Es muy especial para mí… tenía que usar\n"
-	.string "descaradamente mi influencia para\l"
-	.string "darle visibilidad.$"
+	.string "It's very special to me… I had to\n"
+	.string "shamelessly use my influence to give it\l"
+	.string "some visibility.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle_Text_0:
 # 1238 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Es hora de la violencia.\nTe mostraré La Verdad Divina.$"
+	.string "It's time for violence.\nI'll show you the Divine Truth.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_0:
 # 1243 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Oh, hola. Tu ausencia me ha dado tiempo\n"
-	.string "a componer un pequeño poema.\p"
-	.string "Ten, te lo comparto.$"
+	.string "Oh, hello. Your absence gave me time to\n"
+	.string "compose a little poem.\p"
+	.string "Here, let me share it.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_1:
 # 1246 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "{FONT_SMALL}“¡Ay, langosta sucia!\nNo es solo cuestión de calandracas\lEs el naufragio del espíritu\lEn el Océano del Carajo”.$"
+	.string "{FONT_SMALL}“Oh, filthy lobster!\nIt's not just a matter of doohickeys\lIt's the shipwreck of the spirit\lIn the Ocean of the Damned.”$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_2:
 # 1251 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Profundo y seinen, ¿verdad?\p"
-	.string "Bueno, seguramente no viniste a oírme\n"
-	.string "hablar pinga… ¿Nos fajamos?$"
+	.string "Deep and seinen, right?\p"
+	.string "Well, you probably didn't come to hear\n"
+	.string "me talk nonsense… Shall we throw down?$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_3:
 # 1258 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Prepárate para conocer la verdadera\n"
-	.string "fuerza de la Jode Jode no Mi: Modelo\l"
-	.string "Duende de La Buena Pipa.$"
+	.string "Get ready to face the true power of the\n"
+	.string "Screw-Screw Fruit: Goblin Model of La\l"
+	.string "Buena Pipa.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch_Text_4:
 # 1263 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Las moscas no pueden simplemente\n"
-	.string "echarse gafas para ver La Luz.$"
+	.string "Flies can't just put on glasses to see\n"
+	.string "The Light.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_0:
 # 1297 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Me fumigaste. Te salvaste de que no\n"
-	.string "estamos en territorio ryutámico.$"
+	.string "You fumigated me. Lucky for you we're\n"
+	.string "not in ryutamic territory.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_1:
 # 1302 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Ah? ¿No íbamos a pelear? Veo que has\n"
-	.string "perfeccionado tus habilidades\l"
-	.string "desinformativas…$"
+	.string "Huh? Weren't we going to fight? I see\n"
+	.string "you've perfected your misinformation\l"
+	.string "skills…$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_2:
 # 1306 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Eres una burla, asere. Recoge tu baraja.$"
+	.string "You're a joke, bro. Pack up your deck.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_3:
 # 1314 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Hola querid{OA} coyote. No esperaba verte\n"
-	.string "por aquí.\p"
-	.string "De hecho, no esperaba verme a mí mismo\n"
-	.string "ni pinga.$"
+	.string "Hello, dear coyote. I wasn't expecting\n"
+	.string "to see you around here.\p"
+	.string "In fact, I wasn't expecting to see\n"
+	.string "myself either, honestly.$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_4:
 # 1317 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La vida da más vueltas que una\n"
-	.string "cantimplora, ¿verdad?$"
+	.string "Life takes more twists than a canteen,\n"
+	.string "right?$"
 
 CollaboratorsRoom_EventScript_Ryuzaki_Text_5:
 # 1320 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Qué? ¿Yo? Oh, no te preocupes, no soy\n"
-	.string "nadie sospechoso.$"
+	.string "What? Me? Oh, don't worry, I'm nobody\n"
+	.string "suspicious.$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_0:
 # 1333 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Tú otra vez? Tienes un aura distinta a\n"
-	.string "la primera vez...\p"
-	.string "Y te aseguro que no son alucinaciones\n"
-	.string "por el café.$"
+	.string "You again? You've got a different aura\n"
+	.string "from the first time...\p"
+	.string "And I assure you it's not hallucinations\n"
+	.string "from the coffee.$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_1:
 # 1341 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Esa mirada... no me digas que has ganado\n"
-	.string "el desafío...\p"
-	.string "¿De verdad eres el nuevo campeón?$"
+	.string "That look... don't tell me you've won the\n"
+	.string "challenge...\p"
+	.string "Are you really the new champion?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_2:
-# 1343 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Esa mirada... no me digas que has ganado\n"
-	.string "el desafío...\p"
-	.string "¿De verdad eres la nueva campeona?$"
+# 1347 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "Wow! I didn't expect that... But I bet I\n"
+	.string "can guess: you didn't bring me a coffee!$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_3:
-# 1347 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Vaya! No esperaba eso... Pero a que\n"
-	.string "adivino: ¡No me has traído un café!$"
+# 1352 "data/maps/CollaboratorsRoom/scripts.pory"
+	.string "I've been cooped up here since we\n"
+	.string "started development and you can't even\l"
+	.string "bring me a lukewarm latte!$"
 
 CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_4:
-# 1352 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Llevo aquí encerrado desde que\n"
-	.string "empezamos el desarrollo ¡y ni siquiera\l"
-	.string "puedes traerme un Latte templado!$"
-
-CollaboratorsRoom_EventScript_Caco_IntroFirstBattle_Text_5:
 # 1355 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Prepárate para sufrir la cólera del\n"
-	.string "desarrollador sin cafeína!$"
+	.string "Get ready to face the wrath of the\n"
+	.string "caffeine-deprived developer!$"
 
 CollaboratorsRoom_EventScript_Caco_TalkOnly_Text_0:
 # 1361 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Has probado ya el PC de la Sala de\n"
-	.string "espera?\p"
-	.string "Porque si sigues buscando el de los\n"
-	.string "Centros Pokémon, vas list{OA}.$"
+	.string "Have you tried the PC in the Waiting\n"
+	.string "Room yet?\p"
+	.string "Because if you keep looking for the one\n"
+	.string "in Pokémon Centers, good luck with\l"
+	.string "that.$"
 
 CollaboratorsRoom_EventScript_Caco_TalkOnly_Text_1:
 # 1363 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Me costó mil noches de insomnio y otros\n"
-	.string "tantos cabezazos contra el teclado\l"
-	.string "lograr que funcionara bien!$"
+	.string "It cost me a thousand sleepless nights\n"
+	.string "and just as many headbutts against the\l"
+	.string "keyboard to get it working right!$"
 
 CollaboratorsRoom_EventScript_Caco_TalkOnly_Text_2:
 # 1366 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Así que ya estás tardando en ir a\n"
-	.string "probarlo!$"
+	.string "So you'd better hurry up and go try it!$"
 
 CollaboratorsRoom_EventScript_Caco_TalkOnly_Text_3:
 # 1368 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Y ni se te ocurra asomar la nariz por\n"
-	.string "aquí de nuevo si no es con una buena\l"
-	.string "taza de café humeante en la mano.\l"
-	.string "¡Venga, muévete!$"
+	.string "And don't you dare poke your nose in\n"
+	.string "here again unless it's with a nice\l"
+	.string "steaming cup of coffee in hand. Come\l"
+	.string "on, get moving!$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_0:
 # 1375 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Puaj! Este café sabe a rayos.\p"
-	.string "Creo que lleva en la taza desde que\n"
-	.string "empezamos, pero debo beberlo...\p"
-	.string "Es lo único que mantiene mis neuronas\n"
-	.string "conectadas.$"
+	.string "Blegh! This coffee tastes awful.\p"
+	.string "I think it's been in the cup since we\n"
+	.string "started, but I have to drink it...\p"
+	.string "It's the only thing keeping my neurons\n"
+	.string "connected.$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_1:
 # 1386 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Eyy! ¿No te han enseñado que no se\n"
-	.string "debe escuchar a hurtadillas?$"
+	.string "Heyy! Didn't anyone teach you not to\n"
+	.string "eavesdrop?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_2:
 # 1388 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Tu cara... me suena de verla antes. ¿Eras\n"
-	.string "un{A} beta-tester o algo así?$"
+	.string "Your face... looks familiar. Were you a\n"
+	.string "beta-tester or something?$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_3:
 # 1391 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Bueno, ya que estás aquí, me vendrá\n"
-	.string "bien para despejar la mente.$"
+	.string "Well, since you're here, it'll do me good\n"
+	.string "to clear my head.$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_4:
 # 1402 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡No te servirá de nada haber programado\n"
-	.string "tu victoria!$"
+	.string "Programming your victory won't do you\n"
+	.string "any good!$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_5:
 # 1407 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Más te vale que la próxima vez traigas\n"
-	.string "cafeína!$"
+	.string "You'd better bring caffeine next time!$"
 
 CollaboratorsRoom_EventScript_Caco_Text_0:
 # 1452 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Vale, lo admito... combates mejor de lo\n"
-	.string "que yo programo.\p"
-	.string "Pero sigo necesitando ese café.$"
+	.string "Okay, I admit it... you battle better\n"
+	.string "than I program.\p"
+	.string "But I still need that coffee.$"
 
 CollaboratorsRoom_EventScript_Caco_Text_1:
 # 1457 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¿Lo ves? La falta de sueño me hace\n"
-	.string "peligroso.\p"
-	.string "¡Vuelve cuando tengas el café!$"
+	.string "See? Lack of sleep makes me dangerous.\p"
+	.string "Come back when you've got the coffee!$"
 
 CollaboratorsRoom_EventScript_Notes_Text_0:
 # 1475 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Las notas están llenas de tachones y\n"
-	.string "dibujos extraños.\p"
-	.string "Es imposible descifrar lo que quiso\n"
-	.string "escribir.$"
+	.string "The notes are full of scribbles and\n"
+	.string "strange drawings.\p"
+	.string "It's impossible to make out what they\n"
+	.string "meant to write.$"
 
 CollaboratorsRoom_EventScript_MaidenPoster_Text_0:
 # 1480 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "El póster muestra a MAIDEN junto a su\n"
-	.string "WOOPER variocolor.\p"
-	.string "Detrás, se ve un hermoso {COLOR BLUE}cielo azul{COLOR DARK_GRAY}.$"
+	.string "The poster shows MAIDEN alongside her\n"
+	.string "shiny WOOPER.\p"
+	.string "Behind them, a beautiful {COLOR BLUE}blue sky{COLOR DARK_GRAY}.$"
 
 CollaboratorsRoom_EventScript_Library_Text_0:
 # 1485 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La estantería está repleta de libros\n"
-	.string "históricos de WAH.\p"
-	.string "Uno parece hablar del origen de\n"
-	.string "ELECTRODE SANDÍA.$"
+	.string "The shelf is packed with historical WAH\n"
+	.string "books.\p"
+	.string "One seems to tell of the origin of\n"
+	.string "WATERMELON ELECTRODE.$"
 
 CollaboratorsRoom_EventScript_Coffee_Text_0:
 # 1490 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Es una taza de café. Parece estar\n"
-	.string "hirviendo.$"
+	.string "It's a cup of coffee. It seems to be\n"
+	.string "boiling.$"
 
 CollaboratorsRoom_EventScript_Projector_Text_0:
 # 1495 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Parece un proyector de películas.\n"
-	.string "Se encuentra apagado.$"
+	.string "It looks like a film projector.\n"
+	.string "It's switched off.$"
 
 CollaboratorsRoom_EventScript_Desk_Text_0:
 # 1500 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "El cajón guarda antiguos bocetos y\n"
-	.string "diseños.\p"
-	.string "Muchos tienen escrito “cancelado” al\n"
-	.string "costado.$"
+	.string "The drawer holds old sketches and\n"
+	.string "designs.\p"
+	.string "Many have “cancelled” written on the\n"
+	.string "side.$"
 
 CollaboratorsRoom_EventScript_Trash_Text_0:
 # 1505 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La papelera está repleta de hojas\n"
-	.string "tachadas.\p"
-	.string "Da la impresión de que nada fue fácil de\n"
-	.string "decidir.$"
+	.string "The wastebasket is full of crossed-out\n"
+	.string "sheets.\p"
+	.string "It gives the impression that nothing\n"
+	.string "was easy to decide.$"
 
 CollaboratorsRoom_EventScript_Brainstorming_Text_0:
 # 1510 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La pizarra está cubierta de diagramas y\n"
-	.string "flechas.\p"
-	.string "Parece una sesión de ideas llevada al\n"
-	.string "extremo.$"
+	.string "The whiteboard is covered in diagrams\n"
+	.string "and arrows.\p"
+	.string "It looks like a brainstorm taken to the\n"
+	.string "extreme.$"
 
 CollaboratorsRoom_EventScript_Desk2_Text_0:
 # 1515 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "El cajón guarda decenas de apuntes\n"
-	.string "sobre combates y niveles.\p"
-	.string "Parece que ajustar la dificultad tomó\n"
-	.string "muchísimo tiempo.$"
+	.string "The drawer holds dozens of notes about\n"
+	.string "battles and levels.\p"
+	.string "It seems tuning the difficulty took a\n"
+	.string "very long time.$"
 
 CollaboratorsRoom_EventScript_Computer_Text_0:
 # 1520 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "La torre de la computadora hace un\n"
-	.string "ruido constante y preocupante.\p"
-	.string "Parece estar sobrecalentándose.$"
+	.string "The computer tower makes a constant,\n"
+	.string "worrying noise.\p"
+	.string "It seems to be overheating.$"
 
 CollaboratorsRoom_EventScript_Notes2_Text_0:
 # 1525 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Parecen tener la partitura de una\n"
-	.string "melodía bastante compleja.$"
+	.string "There are several sheets lying on the\n"
+	.string "floor.\p"
+	.string "They seem to hold the sheet music for a\n"
+	.string "fairly complex melody.$"
 
 CollaboratorsRoom_EventScript_Notes3_Text_0:
 # 1530 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Tienen un listado de Pokémon y sus\n"
-	.string "estadísticas.\p"
-	.string "Hay un Pokémon que se llama Latiken.$"
+	.string "There are several sheets lying on the\n"
+	.string "floor.\p"
+	.string "They have a list of Pokémon and their\n"
+	.string "stats.\p"
+	.string "There's a Pokémon called Latiken.$"
 
 CollaboratorsRoom_EventScript_Notes4_Text_0:
 # 1535 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Tienen el plano del diseño de una sala,\n"
-	.string "pero están tachados.$"
+	.string "There are several sheets lying on the\n"
+	.string "floor.\p"
+	.string "They have the blueprint for a room's\n"
+	.string "design, but it's crossed out.$"
 
 CollaboratorsRoom_EventScript_Notes5_Text_0:
 # 1540 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Tienen varias ideas que fueron\n"
-	.string "descartadas.$"
+	.string "There are several sheets lying on the\n"
+	.string "floor.\p"
+	.string "They have several ideas that were\n"
+	.string "discarded.$"
 
 CollaboratorsRoom_EventScript_Notes6_Text_0:
 # 1545 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Están vacías.$"
+	.string "There are several sheets lying on the\n"
+	.string "floor.\p"
+	.string "They're empty.$"
 
 CollaboratorsRoom_EventScript_ExaminePaperScraps_Text_0:
 # 1550 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Hay pedazos de papel rotos esparcidos\n"
-	.string "por el suelo.$"
+	.string "There are torn scraps of paper\n"
+	.string "scattered across the floor.$"
 
 CollaboratorsRoom_EventScript_NotesTable_Text_0:
 # 1555 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Hay varios papeles con apuntes en la\n"
-	.string "mesa.\p"
-	.string "Incluye un listado de los Pokémon\n"
-	.string "disponibles para el desafío.$"
+	.string "There are several papers with notes on\n"
+	.string "the table.\p"
+	.string "They include a list of the Pokémon\n"
+	.string "available for the challenge.$"
 
 CollaboratorsRoom_Text_Gameboycl_OnDefeat::
 # 232 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Evolucionar también es mirar atrás.$"
+	.string "To evolve is also to look back.$"
 
 CollaboratorsRoom_RematchMultichoice_Rematch::
 # 800 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "¡Luchemos de nuevo!$"
+	.string "Let's battle again!$"
 
 CollaboratorsRoom_RematchMultichoice_TalkOnly::
 # 804 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Prefiero simplemente hablar.$"
+	.string "I'd rather just talk.$"
 
 CollaboratorsRoom_RematchMultichoice_Exit::
 # 808 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "No, gracias.$"
+	.string "No, thanks.$"
 
 CollaboratorsRoom_Text_Alexmad_OnDefeat::
 # 1012 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "20 años de comunidad y aún me\n"
-	.string "sorprenden.$"
+	.string "20 years of community and it still\n"
+	.string "surprises me.$"
 
 CollaboratorsRoom_Text_Ryuzaki_OnDefeat::
 # 1327 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "Ya sabes lo que dicen, la voluntad es la\n"
-	.string "fuerza del alma.$"
+	.string "You know what they say: will is the\n"
+	.string "strength of the soul.$"
 
 CollaboratorsRoom_Text_Caco_OnDefeat::
 # 1470 "data/maps/CollaboratorsRoom/scripts.pory"
-	.string "A veces, para uno poder avanzar, debe\n"
-	.string "de aceptar su error.$"
+	.string "Sometimes, to move forward, one must\n"
+	.string "accept their mistake.$"

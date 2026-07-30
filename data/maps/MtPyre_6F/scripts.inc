@@ -28,43 +28,42 @@ MtPyre_6F_EventScript_Cedric::
 	end
 
 MtPyre_6F_Text_ValerieIntro:
-	.string "Cuando estoy aquí…\n"
-	.string "siento un extraño poder dentro de mí.$"
+	.string "When I'm here…\n"
+	.string "A curious power flows into me…$"
 
 MtPyre_6F_Text_ValerieDefeat:
-	.string "Pues esta vez no lo he sentido mucho…$"
+	.string "The power is ebbing away…$"
 
 MtPyre_6F_Text_ValeriePostBattle:
-	.string "Quizás provenga del espíritu de los\n"
-	.string "POKéMON que a veces acuden aquí…$"
+	.string "Perhaps the power is from the spirits\n"
+	.string "of POKéMON in fitful sleep here…$"
 
 MtPyre_6F_Text_ValerieRegister:
-	.string "Ji, ji, ji… He perdido el combate, pero…\n"
-	.string "todavía puedo sorprenderte…\p"
-	.string "No hace falta ni que ponga mis manos\n"
-	.string "sobre tu POKéNAV… ¡Toma ya!$"
+	.string "Fufufu… I lost the match, but…\n"
+	.string "I have this little ability…\p"
+	.string "Without ever laying my hands on\n"
+	.string "your POKéNAV… Hiyah!$"
 
 MtPyre_6F_Text_ValerieRematchIntro:
-	.string "¡Detrás de ti!\n"
-	.string "¿Qué es eso?$"
+	.string "Behind you…\n"
+	.string "What is it…$"
 
 MtPyre_6F_Text_ValerieRematchDefeat:
-	.string "Pues juraría que había algo…$"
+	.string "Something faded away…$"
 
 MtPyre_6F_Text_ValeriePostRematch:
-	.string "Los POKéMON que descansan aquí\n"
-	.string "pueden ser muy juguetones.$"
+	.string "The POKéMON at rest here…\n"
+	.string "Sometimes, they play…$"
 
 MtPyre_6F_Text_CedricIntro:
-	.string "¿Has perdido el norte?\n"
-	.string "¡No te preocupes, que aquí estoy yo!$"
+	.string "Have you lost your bearings?\n"
+	.string "Have no fear for I am here!$"
 
 MtPyre_6F_Text_CedricDefeat:
-	.string "¿Pero tú no te habías perdido?$"
+	.string "Weren't you lost?$"
 
 MtPyre_6F_Text_CedricPostBattle:
-	.string "Pensaba que era más fácil derrotar\n"
-	.string "a los ENTRENADORES que se pierden.\p"
-	.string "No volveré a intentar un truco\n"
-	.string "tan sucio nunca más…$"
+	.string "I had this feeling that a lost TRAINER\n"
+	.string "would be panicked and easy to beat.\p"
+	.string "It's dirty and I won't try it again…$"
 

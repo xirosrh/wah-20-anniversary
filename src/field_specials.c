@@ -166,13 +166,13 @@ static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
 #endif //FREE_LINK_BATTLE_RECORDS
 
 static const u8 sText_BigGuy[] = _("Chico grande");
-static const u8 sText_BigGirl[] = _("Chica grande");
-static const u8 sText_Son[] = _("hijo");
-static const u8 sText_Daughter[] = _("hija");
-static const u8 sText_99TimesPlus[] = _("más de 99");
-static const u8 sText_1MinutePlus[] = _("más de 1 min");
-static const u8 sText_SpaceSeconds[] = _(" segundos");
-static const u8 sText_SpaceTimes[] = _(" veces");
+static const u8 sText_BigGirl[] = _("Big girl");
+static const u8 sText_Son[] = _("son");
+static const u8 sText_Daughter[] = _("daughter");
+static const u8 sText_99TimesPlus[] = _("over 99");
+static const u8 sText_1MinutePlus[] = _("over 1 min");
+static const u8 sText_SpaceSeconds[] = _(" seconds");
+static const u8 sText_SpaceTimes[] = _(" time(s)");
 
 void Special_ShowDiploma(void)
 {

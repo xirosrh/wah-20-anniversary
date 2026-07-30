@@ -324,12 +324,12 @@ script JackJohnsonRoom_OnFrame {
     directcameramovementtopos(6,9)
     waitmovement(0)
     special(HideMapNamePopUpWindow)
-    msgbox(format("Es hora de comenzar el ensayo… ¡Cortinas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Time to begin the rehearsal… Curtains!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
     directcameramovementtopos(6,7)
     waitmovement(0)
     call(JackJohnsonRoom_EventScript_OpenCurtain)
-    msgbox(format("¡Desde el principio! ¡Quiero que cada movimiento sea perfecto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("From the top! I want every move to be perfect!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkInPlaceUp)
     delay(30)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkInPlaceDown)
@@ -338,10 +338,10 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_NPC4, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
     delay(20)
-    msgbox(format("¡Luces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Lights!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     call(JackJohnsonRoom_EventScript_TurnOnLights)
     delay(20)
-    msgbox(format("¡Empecemos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Let's begin!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkLeftLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_WalkRightLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkLeftLockFacingDirection)
@@ -353,7 +353,7 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_WalkUpLockFacingDirection)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkUpLockFacingDirection)
     waitmovement(0)
-    msgbox(format("¡Uno, dos… salto ya!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("One, two… jump now!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_FirstCombinationNpc1And3)
     applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_FirstCombinationNpc1And3)
     applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_FirstCombinationNpc2And4)
@@ -367,7 +367,7 @@ script JackJohnsonRoom_OnFrame {
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_JumpDownFaceLeft)
     applymovement(LOCALID_JACKROOM_NPC2, Common_Movement_JumpDownFaceRight)
     waitmovement(0)
-    msgbox(format("¡Giro! ¡Más energía, que parezca un huracán!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Spin! More energy, make it look like a hurricane!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_SecondCombinationNpcs)
     applymovement(LOCALID_JACKROOM_NPC2, JackJohnsonRoom_Movement_SecondCombinationNpcs)
     applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_SecondCombinationNpcs)
@@ -392,16 +392,16 @@ script JackJohnsonRoom_OnFrame {
         delay_16 * 2
     ))
     waitmovement(0)
-    msgbox(format("¡Perfecto! ¡Lo hemos clavado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Perfect! We nailed it!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     delay(20)
-    msgbox(format("¡Formación!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Formation!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     lock
     applymovement(LOCALID_JACKROOM_NPC1, Common_Movement_FaceLeft)
     applymovement(LOCALID_JACKROOM_NPC3, Common_Movement_WalkDown)
     applymovement(LOCALID_JACKROOM_NPC4, moves(walk_fast_right * 6, face_down))
     applymovement(LOCALID_JACKROOM_NPC2, moves(walk_up * 3, walk_fast_right * 6, face_down))
     waitmovement(LOCALID_JACKROOM_NPC2)
-    msgbox(format("¡Ahora!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Now!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, JackJohnsonRoom_Movement_JumpRoundNpc1)
     applymovement(LOCALID_JACKROOM_NPC3, JackJohnsonRoom_Movement_JumpRoundNpc3)
     applymovement(LOCALID_JACKROOM_NPC4, JackJohnsonRoom_Movement_JumpRoundNpc4)
@@ -482,7 +482,7 @@ script JackJohnsonRoom_OnFrame {
     fadescreen(FADE_FROM_WHITE)
     playmoncry(SPECIES_ELECTRODE, CRY_MODE_NORMAL)
     waitmoncry
-    msgbox(format("¡Preparados para la detonación elegante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Ready for the elegant detonation!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovement(LOCALID_JACKROOM_NPC1, moves(
         lock_facing_direction
         walk_up * 2
@@ -537,13 +537,13 @@ script JackJohnsonRoom_OnFrame {
     waitmovement(0)
     playse(SE_PIN)
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_DoubleExclamationMarkWithDelay48)
-    msgbox(format("¡Alto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Stop!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     waitmovement(0)
     applymovement(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp6)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp6)
     waitmovement(0)
     turnobject(LOCALID_JACKROOM_JACK, DIR_WEST)
-    msgbox(format("¿Qué estabas haciendo? Ya viste como es esto: una distracción y a volar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("What were you doing? You saw how this works: one slip and you're out."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_NPC2, Common_Movement_SadWithDelay48)
     waitse
@@ -552,30 +552,30 @@ script JackJohnsonRoom_OnFrame {
         delay_16
         face_right)
     )
-    msgbox(format("Estuvo cerca… muy cerca, pero hasta que salga impecable, no descansaremos."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("That was close… very close, but until it's flawless, we won't rest."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_JACK_JOHNSON)
     turnobject(LOCALID_JACKROOM_JACK, DIR_SOUTH)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK,Common_Movement_ExclamationMarkWithDelay48)
     waitse
     playbgm(MUS_WI_TRAINER_BATTLE, FALSE)
-    msgbox(format("¿Y tú? ¿Qué haces ahí parado?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("And you? What are you doing standing there?"), MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_CAMERA, moves(walk_down * 4))
     applymovement(LOCALID_JACKROOM_JACK, moves(walk_down * 3, delay_16))
     waitmovement(0)
-    msgbox(format("¡Ven aquí inmediatamente!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Come here immediately!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkUp3)
     special(RemoveCameraObject)
-    msgbox(format("Si no vas a unirte al ensayo… voy a tener que retarte a un combate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("If you won't join the rehearsal… I'll have to challenge you to a battle."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     playse(SE_PIN)
     applymovementandwait(LOCALID_JACKROOM_JACK, moves(emote_versus))
     waitmovement(0)
     waitse
     call(JackJohnsonRoom_EventScript_JackBattle)
     delay(20)
-    msgbox(format("Magnífico… impecable.\pCada movimiento ha caído en su sitio, es un placer ver algo tan bien ejecutado…\pNo suelo disfrutar perdiendo, pero… esto ha sido arte puro.\pTe abriré el camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Magnificent… flawless.\pEvery move fell into place; it's a pleasure to see something so well executed…\pI don't usually enjoy losing, but… this was pure art.\pI'll open the way for you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_JACKROOM_JACK, Common_Movement_WalkUp)
-    msgbox(format("Y ustedes… ¡a trabajar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("And you lot… back to work!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     setobjectmovementtype2(LOCALID_JACKROOM_NPC1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
     setobjectmovementtype2(LOCALID_JACKROOM_NPC2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
     setobjectmovementtype2(LOCALID_JACKROOM_NPC3, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
@@ -695,7 +695,7 @@ script JackJohnsonRoom_EventScript_JackBattle {
 }
 
 text JackJohnsonRoom_Text_JackDefeated {
-    format("Has tomado el mando, enhorabuena.")
+    format("You've taken the lead - congratulations.")
 }
 
 script JackJohnsonRoom_EventScript_Jack {
@@ -707,65 +707,65 @@ script JackJohnsonRoom_EventScript_Jack {
     applymovement(LOCALID_JACKROOM_JACK, moves(jump_in_place_up))
     waitmovement(0)
     waitse
-    msgbox(format("¡Eso es! ¡Más rápido!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("That's it! Faster!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     delay(20)
     faceplayer
-    msgbox(format("¿Sigues ahí? Pues venga, no te quedes mirando…\l¡Súmate al ensayo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
+    msgbox(format("Still there? Come on, don't just stand watching…\lJoin the rehearsal!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_JACK_JOHNSON)
     turnobject(LOCALID_JACKROOM_JACK, DIR_NORTH)
     end
 }
 
 script JackJohnsonRoom_EventScript_NPC1 {
-    msgbox(format("¡Debemos ser los mejores!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("We must be the best!"), MSGBOX_AUTOCLOSE)
     end
 }
 
 script JackJohnsonRoom_EventScript_NPC2 {
-    msgbox(format("¡No puedo fallar de nuevo!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("I can't fail again!"), MSGBOX_AUTOCLOSE)
     end
 }
 
 script JackJohnsonRoom_EventScript_NPC3 {
-    msgbox(format("¡No me distraigas!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Don't distract me!"), MSGBOX_AUTOCLOSE)
     end
 }
 
 script JackJohnsonRoom_EventScript_NPC4 {
-    msgbox(format("¡Quiero ir a dormir!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("I want to go to sleep!"), MSGBOX_AUTOCLOSE)
     end
 }
 
 script JackJohnsonRoom_EventScript_BrockPoster {
-    msgbox(format("Es un póster con una foto de Oscar Brock.\p¿Realmente tiene esos músculos o será Photoshop?"), MSGBOX_SIGN)
+    msgbox(format("It's a poster with a photo of Oscar Brock.\pDoes he really have those muscles, or is it Photoshop?"), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Tree {
-    msgbox(format("El árbol está hecho de cartón y pintura.\nDe lejos parece mucho más real."), MSGBOX_SIGN)
+    msgbox(format("The tree is made of cardboard and paint.\nFrom far away it looks much more real."), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Boxes {
-    msgbox(format("Hay varias cajas llenas de objetos de escenografía."), MSGBOX_SIGN)
+    msgbox(format("There are several boxes full of stage props."), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Box {
-    msgbox(format("Dentro de esta caja hay más cajas."), MSGBOX_SIGN)
+    msgbox(format("Inside this box there are more boxes."), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Book1 {
-    msgbox(format("El libro contiene el guion de una obra teatral.\pLos actos tienen nombres extraños: “La época dorada”, “La fusión” y “El gran caos”."), MSGBOX_SIGN)
+    msgbox(format("The book contains the script of a stage play.\pThe acts have strange names: “The Golden Age,” “The Merger,” and “The Great Chaos.”"), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Book2 {
-    msgbox(format("Es una cronología de las épocas doradas de WaH.\pCasi todas las páginas se contradicen entre sí.\pParece que nadie se puso de acuerdo sobre cuándo fue."), MSGBOX_SIGN)
+    msgbox(format("It's a timeline of WaH's golden ages.\pAlmost every page contradicts the others.\pIt seems no one could agree on when it happened."), MSGBOX_SIGN)
     end
 }
 
 script JackJohnsonRoom_EventScript_Papers {
-    msgbox(format("Son varias hojas que se encuentran en el suelo."), MSGBOX_SIGN)
+    msgbox(format("There are several papers lying on the floor."), MSGBOX_SIGN)
     end
 }

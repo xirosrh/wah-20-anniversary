@@ -40,7 +40,7 @@ script DavZeroRoom_OnFrame {
     special(SpawnCameraObject)
     directcameramovementtopos(10,5)
     waitmovement(0)
-    msgbox(format("Bien, recordad: las palabras agudas se acentúan cuando acaban en vocal, {COLOR RED}n{COLOR DARK_GRAY} o {COLOR BLUE}s{COLOR DARK_GRAY}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("All right, class, remember: it's 'i' before {COLOR RED}e{COLOR DARK_GRAY}, except after {COLOR BLUE}c{COLOR DARK_GRAY}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovement(LOCALID_ZEROROOM_SCHOOLGIRL, DavZeroRoom_Movement_GirlAndBoyLearning)
     applymovement(LOCALID_ZEROROOM_SCHOOLBOY, DavZeroRoom_Movement_GirlAndBoyLearning)
@@ -52,18 +52,18 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_DoubleExclamationMarkWithDelay48)
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Esperad un segundo… ¡Creo que hoy tenemos compañía!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Hold on a second… I think today we have company!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_left * 3, walk_up, walk_left, face_down))
     applymovement(LOCALID_CAMERA, Common_Movement_WalkLeft4)
     waitmovement(LOCALID_ZEROROOM_DAVZERO)
     special(RemoveCameraObject)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
-    msgbox(format("Ajá, conque por fin has llegado hasta aquí.\pEs un placer verte, ¿me reconoces?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
-    dynmultichoice(0,0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Sí, ¡eres inconfundible!"), format("Me suenas, ¡pareces Machoke!"), format("¿Debería conocerte?"))
+    msgbox(format("Aha, so you've finally made it here.\pIt's a pleasure to see you. Do you recognize me?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    dynmultichoice(0,0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Yes, you're unmistakable!"), format("You look familiar - like a Machoke!"), format("Should I know you?"))
     if(var(VAR_RESULT) == 2)
     {
         delay(20)
-        msgbox(format("En breves sabrás quién soy."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+        msgbox(format("You'll soon find out who I am."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     }
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48)
@@ -73,10 +73,10 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
     applymovementandwait(LOCALID_PLAYER, moves(walk_down * 4, face_left))
     turnobject(LOCALID_ZEROROOM_DAVZERO, DIR_EAST)
-    msgbox(format("He tenido que dejar de hacer mi cuarta serie con 110 kg en press de banca.\pTodo porque escuchaba que un contendiente se acercaba a este nivel.\pY justo me has pillado enseñando las reglas de acentuación a mi alumnado…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("I had to cut short my fourth set at 110 kg on the bench press.\pAll because I heard a contender was reaching this level.\pAnd you caught me right as I was teaching the spelling rules to my students…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("A ver, menos mal que pueden practicar un rato mientras combatimos.\pAunque creo que estarán muy expectantes, porque presiento que este será un combate sin parangón."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Well, at least they can practice a while as we battle.\pThough I think they'll be quite eager to watch, because I sense this'll be a battle without equal."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(emote_happy))
     waitse
@@ -87,32 +87,32 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(jump_in_place_right, delay_16))
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkRight)
-    msgbox(format("Dime… ¿cuál es tu objetivo? ¿quieres desafiar al loco con lanzallamas que te espera al final?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Tell me… what's your goal? Do you want to challenge the flamethrower-wielding madman waiting at the end?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkLeft2)
-    msgbox(format("A estas alturas ya lo sabrás, ya que para llegar aquí te has debido enfrentar a diversos compañeros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("By now you must know, since to get here you've had to face several colleagues of mine."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_JumpInPlaceLeftRight)
-    msgbox(format("¡Pero yo no te lo pondré nada fácil en este combate!\pHe estado entrenando cuerpo, mente y Pokémon esperando tu llegada."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("But I won't make it easy for you in this battle!\pI've been training body, mind, and Pokémon awaiting your arrival."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkRight2)
-    msgbox(format("Pocos aspirantes logran llegar hasta aquí.\pEnhorabuena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Few challengers manage to make it this far.\pCongratulations."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SmileWithDelay48)
-    msgbox(format("Ven, posicionémonos en la zona de combate."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Come, let's take our places in the battle area."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     special(SpawnCameraObject)
     applymovement(LOCALID_ZEROROOM_DAVZERO, moves(walk_up * 3, walk_right, face_down))
     applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
     applymovement(LOCALID_CAMERA, Common_Movement_WalkUp)
     waitmovement(LOCALID_ZEROROOM_DAVZERO)
     special(RemoveCameraObject)
-    msgbox(format("¿Sabes? Muchos creen que un combate es pura fuerza, pero para mí es memoria.\pCada ataque, cada estrategia, cada fallo… es un recordatorio de quiénes fuimos y en qué nos convertimos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("You know? Many think a battle is pure strength, but to me it's memory.\pEvery attack, every strategy, every mistake… is a reminder of who we were and what we became."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Quiero que te quede claro lo siguiente: no soy tu rival.\pSoy la voz que te recuerda que cada paso, incluso dentro de estas cuatro paredes, puede marcarte más de lo que crees."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Let me make this clear: I'm not your rival.\pI'm the voice reminding you that every step, even within these four walls, can shape you more than you think."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
     delay(10)
-    msgbox(format("Hay quien lucha para ganar, y hay quien lucha para no volver a cometer el mismo fallo.\p¿Cuál de esos eres tú? Déjame comprobarlo, ya que tu mirada me produce curiosidad…\pMe hace recordar aquella época loca en la que frecuentaba aquel lugar que antaño fue nuestro hogar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Some fight to win, and some fight to never make the same mistake again.\pWhich of those are you? Let me find out, because your gaze makes me curious…\pIt reminds me of that crazy time when I used to hang around that place that was once our home."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_CryWithDelay48)
-    msgbox(format("Bueno, ya está bien, que al final me pongo intenso y esto acabará pareciendo un poema de Benedetti…\pY en esta ocasión no traigo rosas para acompañarlo, sino Poké Ball."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Well, that's enough - I'm getting too intense and this'll end up sounding like a Benedetti poem…\pAnd this time I didn't bring roses to go with it - just Poké Balls."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     clearflag(FLAG_TEMP_2_DAVZERO_ROOM_HIDE_BALL)
     addobject(LOCALID_ZEROROOM_POKEBALL)
     showobjectat(LOCALID_ZEROROOM_POKEBALL, MAP_DAV_ZERO_ROOM)
@@ -126,7 +126,7 @@ script DavZeroRoom_OnFrame {
     fadescreen(FADE_FROM_WHITE)
     setobjectmovementtype2(LOCALID_ZEROROOM_DAVZERO, MOVEMENT_TYPE_FACE_DOWN)   
     release
-    msgbox(format("¡No te amedrentes ahora!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Don't lose your nerve now!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(emote_versus))
     waitse
@@ -136,14 +136,14 @@ script DavZeroRoom_OnFrame {
     removeobject(LOCALID_ZEROROOM_MILOTIC)
     fadescreen(FADE_FROM_WHITE)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkDown2)
-    msgbox(format("Hoy has sido tú quien ha salido victorios{OA}, y lo reconozco sin rodeos.\pAunque debes tener claro que no siempre te alzarás con la victoria."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Today you're the one who came out victorious, and I'll admit it plainly.\pBut you must understand that you won't always come out on top."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Pero escucha algo: la derrota no es el final de nada.\pAl contrario, es un espejo.\pRefleja lo que todavía no queremos ver de nosotros mismos, aquello que evitamos afrontar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("But listen: defeat is not the end of anything.\pOn the contrary, it's a mirror.\pIt reflects what we still don't want to see in ourselves - the things we avoid facing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Yo también lo he aprendido así, perdiendo, equivocándome, cayendo una y otra vez…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("I learned it that way too, losing, messing up, falling again and again…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     delay(10)
-    msgbox(format("Riéndome."), MSGBOX_AUTOCLOSE, MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Laughing all the while."), MSGBOX_AUTOCLOSE, MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovement(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48)
     waitmovement(0)
@@ -151,37 +151,37 @@ script DavZeroRoom_OnFrame {
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(walk_left))
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, moves(emote_thinking, walk_left, walk_right * 4, walk_left * 2, face_down))
-    msgbox(format("¿Sabes? El éxito y la victoria no están en acumular triunfos, ni en aplastar rivales, ni siquiera en vencerme a mí ahora.\pEl éxito está en levantarte después de caer, en seguir caminando con las cicatrices bien visibles, en no rendirte aunque la vida o un combate te hayan dejado tocado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("You know? Success and victory aren't about piling up wins, or crushing rivals, or even in beating me right now.\pSuccess is getting up after you fall, in walking on with your scars in plain sight, in not giving up even when life or a battle has left you shaken."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     delay(10)
-    msgbox(format("Quiero que entiendas eso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("I want you to understand that."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
     delay(20)
-    msgbox(format("Hoy me has derrotado, y me alegra que lo hayas hecho.\pPorque eso significa que tú también estás aprendiendo lo que de verdad importa…\pY que yo también tengo cosas que aprender."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO    )
+    msgbox(format("Today you beat me, and I'm glad you did.\pBecause it means you're also learning what really matters…\pAnd that I still have things to learn too."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO    )
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HeartWithDelay48)
-    msgbox(format("Quédate con eso, porque es un conocimiento que ningún Pokémon, ningún rival y ninguna medalla pueden quitarte jamás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Hold on to that, because it's knowledge no Pokémon, no rival, and no badge can ever take from you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Definitivamente no me equivocaba: tienes una mirada diferente.\pEstoy orgulloso de que hayas vencido, porque cada victoria como la tuya mantiene viva la llama de este lugar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("I definitely wasn't wrong: you've got a different look in your eye.\pI'm proud that you won, because every victory like yours keeps the flame of this place alive."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_HappyWithDelay48)
     delay(10)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkUp2)
-    msgbox(format("Aquí termina nuestro encuentro, pero no tu camino.\pYo solo fui un obstáculo, como esas mancuernas que parecen imposibles hasta que un día te das cuenta de que puedes con ellas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Our encounter ends here, but not your journey.\pI was just an obstacle, like those dumbbells that seem impossible until one day you realize you can lift them."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_FaceDown)
-    msgbox(format("Y oye, si algún día coincidimos en el gimnasio, no me mires raro si te pido que me ayudes a subir la barra.\pNadie es invencible."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("And hey, if we ever cross paths at the gym, don't give me a weird look if I ask you to spot me on the bar.\pNo one is invincible."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     delay(20)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkDown2)
-    msgbox(format("Ahora ve, compañer{OA}. Sigue tu camino, comete errores y aprende."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Now go, my friend. Follow your path, make mistakes, and learn."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("No tengas miedo de perder.\pLo peor que puedes hacer es dejar de intentarlo por miedo a no estar a la altura.\pYo lo sé bien… demasiadas veces me quedé paralizado pensando en qué dirán de mí, en si mis errores me definían."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("Don't be afraid to lose.\pThe worst thing you can do is stop trying out of fear you won't measure up.\pI know it well… too many times I froze, worrying about what others would say about me, whether my mistakes defined me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("No eres tus fracasos, ni tus caídas, ni lo que el resto piense de ti.\pEres todo lo que haces a pesar de ellos.\pSi hoy has sido capaz de vencerme aquí, en este lugar, recuerda que también serás capaz de enfrentarte a cualquier cosa ahí fuera."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("You are not your failures, your falls, or what others think of you.\pYou are everything you do in spite of them.\pIf today you were able to beat me here, in this place, remember you'll also be able to face anything out there."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_WalkInPlaceDown)
-    msgbox(format("¿Qué pasa, por qué me miras así?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
-    dynmultichoice(0,0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, format("Gran consejo, digno de un sabio."), format("Me hiciste pensar un poco."), format("¿Falta mucho del discurso?"), format("¿Eso fue una clase?"))
-    msgbox(format("¿No te esperabas esto?\p¿Qué quieres que te diga? Yo tan solo soy Zero."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO   )
+    msgbox(format("What is it? Why are you looking at me like that?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    dynmultichoice(0,0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, format("Great advice, worthy of a sage."), format("You made me think a little."), format("Is there much more of this speech?"), format("Was that a lecture?"))
+    msgbox(format("Didn't expect this?\pWhat can I say? I'm just Zero."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO   )
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_SmileWithDelay48)
     special(SpawnCameraObject)
@@ -215,7 +215,7 @@ script DavZeroRoom_EventScript_DavZeroBattle {
 }
 
 text DavZeroRoom_Text_DavZeroDefeated {
-    format("Uf… no puedo negarlo, me has sorprendido.\pHa sido uno de esos combates que a\nmí me gustan: intensos, donde cada movimiento parece pesar el doble\ly cada decisión importa.")
+    format("Phew… I can't deny it, you've surprised me.\pIt was one of those battles I love: intense, where every move seems to weigh twice as much and every decision matters.")
 }
 movement DavZeroRoom_Movement_GirlAndBoyLearning {
     emote_idea
@@ -230,7 +230,7 @@ script DavZeroRoom_EventScript_SchoolGirl {
     }
     lock
     faceplayer
-    msgbox(format("¿Te cuento un secreto? Ya terminé la escuela hace años.\p¡Solamente vengo aquí porque Zero es tan interesante!\pPodría quedarme todo el día escuchándolo hablar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Want to hear a secret? I finished school years ago.\pI only come here because Zero is so interesting!\pI could listen to him talk all day."), MSGBOX_AUTOCLOSE)
     turnobject(LOCALID_ZEROROOM_SCHOOLGIRL, DIR_NORTH)
     release
     end
@@ -243,10 +243,10 @@ script DavZeroRoom_EventScript_SchoolBoy {
     }
     lock
     faceplayer
-    msgbox(format("¡El profe Zero es muy guay!"))
+    msgbox(format("Mr. Zero is super cool!"))
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_SCHOOLBOY, Common_Movement_SmileWithDelay48)
-    msgbox(format("Cuando teníamos seis años nos enseñó inglés y aprendimos los meses del año al ritmo de La Macarena."), MSGBOX_AUTOCLOSE)
+    msgbox(format("When we were six he taught us English, and we learned the months of the year to the tune of La Macarena."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_SurpriseWithDelay48)
     delay(20)
@@ -258,7 +258,7 @@ script DavZeroRoom_EventScript_SchoolBoy {
 script DavZeroRoom_EventScript_Zero {
     lock
     faceplayer
-    msgbox(format("Si quieres otra frase profunda, trae ticket.\pMi trabajo aquí acabó."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
+    msgbox(format("If you want another deep quote, bring a ticket.\pMy work here is done."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_DAVZERO)
     playse(SE_PIN)
     applymovementandwait(LOCALID_ZEROROOM_DAVZERO, Common_Movement_XDWithDelay48)
     turnobject(LOCALID_ZEROROOM_DAVZERO, DIR_SOUTH)
@@ -267,56 +267,56 @@ script DavZeroRoom_EventScript_Zero {
 }
 
 script DavZeroRoom_EventScript_Dumbbells {
-    msgbox(format("Las mancuernas pesan lo suficiente como para no ser decorativas."), MSGBOX_SIGN)
+    msgbox(format("The dumbbells are heavy enough not to be just for show."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_PC {
-    msgbox(format("Es un portátil encendido con un fondo de pantalla del Valencia CF.\pHay más pestañas abiertas que multicuentas del Team NoHack."), MSGBOX_SIGN)
+    msgbox(format("It's a laptop that's on, with a Valencia CF wallpaper.\pThere are more tabs open than Team NoHack has alt accounts."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Notes {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen ser apuntes de ideas para un libro de poesía."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey look like notes of ideas for a poetry book."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Library1 {
-    msgbox(format("Parece una recopilación de libros de poesía.\pUno destaca entre los demás: “Un lustro de soliloquio”.\pEl autor figura como Zero."), MSGBOX_SIGN)
+    msgbox(format("It looks like a collection of poetry books.\pOne stands out from the rest: “A Lustrum of Soliloquy.”\pThe author is listed as Zero."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Library2 {
-    msgbox(format("Esta estantería contiene una serie de fascículos.\pTodos tienen el mismo título: “Historia de Whack a Hack: Desde 2005”.\pEchando una ojeada rápida a algunos, se leen nombres como Deryko, Inmortal Kaktus, Franco Kuchiki, C!ro, Lon, Frax, Acspower o Kalawus."), MSGBOX_SIGN)
+    msgbox(format("This shelf holds a series of installments.\pThey all share the same title: “History of Whack a Hack: Since 2005.”\pSkimming a few of them, you can read names like Deryko, Inmortal Kaktus, Franco Kuchiki, C!ro, Lon, Frax, Acspower, and Kalawus."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Library3 {
-    msgbox(format("Hay material educativo, guías pedagógicas, educación emocional y psicología.\pMuchos apartados sobre resolución de conflictos están subrayados.\pParece que alguien esperaba que sirvieran para algo… Y que también intentó aplicarlos fuera de clase."), MSGBOX_SIGN)
+    msgbox(format("There's educational material, teaching guides, emotional education, and psychology.\pMany sections on conflict resolution are underlined.\pIt seems someone hoped they'd be good for something… and also tried to apply them outside of class."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Tredmill {
-    msgbox(format("Es una cinta de correr con pantalla incorporada.\pEstá puesto un capítulo de One Piece."), MSGBOX_SIGN)
+    msgbox(format("It's a treadmill with a built-in screen.\pAn episode of One Piece is playing."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_TrashCan {
-    msgbox(format("¡Has encontrado el sentido de la vida! Ah no, son botellas abolladas, borradores que no sobrevivieron a la autocrítica y… ¿tarjetas de Fortnite usadas?"), MSGBOX_SIGN)
+    msgbox(format("You've found the meaning of life! Oh wait, it's dented bottles, drafts that didn't survive their author's self-criticism, and… used Fortnite cards?"), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Box1 {
-    msgbox(format("Dentro de esta caja hay consolas. Se llega a ver una SNES y una Nintendo 64 junto a Zelda Majora's Mask.\pTambién hay un cartucho de Super Mario World 2: Yoshi's Island."), MSGBOX_SIGN)
+    msgbox(format("Inside this box are consoles. You can spot a SNES and a Nintendo 64 alongside Zelda: Majora's Mask.\pThere's also a cartridge of Super Mario World 2: Yoshi's Island."), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_Box2 {
-    msgbox(format("Dentro de esta caja hay videojuegos y figuras. Sobresalen dos cuyos títulos son “Mother 3” y “Phoenix Wright: Ace Attorney”."), MSGBOX_SIGN)
+    msgbox(format("Inside this box are video games and figures. Two stand out, titled “Mother 3” and “Phoenix Wright: Ace Attorney.”"), MSGBOX_SIGN)
     end
 }
 
 script DavZeroRoom_EventScript_StackedPlates {
-    msgbox(format("Parecen discos de peso… o donuts gigantes para un Snorlax con una dieta muy estricta."), MSGBOX_SIGN)
+    msgbox(format("They look like weight plates… or giant donuts for a Snorlax on a very strict diet."), MSGBOX_SIGN)
     end
 }

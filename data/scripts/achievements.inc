@@ -165,9 +165,9 @@ Achievements_EventScript_Eval_Avaricia::
 
 Achievements_EventScript_Eval_Common_Text_0:
 # 87 "data/scripts/achievements.pory"
-	.string "¡Felicidades! Has completado el logro:\n"
+	.string "Congratulations! You've earned:\n"
 	.string "“{STR_VAR_1}”$"
 
 Pokebox_EventScript_ShowUnlocks_Text_0:
 # 105 "data/scripts/achievements.pory"
-	.string "¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.$"
+	.string "You've unlocked {STR_VAR_1}!\nIt's now available in the PC.$"

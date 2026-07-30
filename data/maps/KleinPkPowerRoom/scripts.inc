@@ -907,226 +907,227 @@ KleinPkPowerRoom_EventScript_BotonRojo_Movement_11:
 
 KleinPkPowerRoom_OnFrame_Text_0:
 # 61 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Aquí el soporte técnico.\n"
-	.string "¿En qué puedo ayudarte?$"
+	.string "Tech support here.\n"
+	.string "How can I help you?$"
 
 KleinPkPowerRoom_OnFrame_Text_1:
 # 65 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Que el Güindous no arranca?\n"
-	.string "¿Y qué aparece en pantalla?$"
+	.string "So Windoze won't boot?\n"
+	.string "And what shows up on screen?$"
 
 KleinPkPowerRoom_OnFrame_Text_2:
 # 69 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Nada?\n"
-	.string "¿Pero… tienes el ordenador encendido?$"
+	.string "Nothing?\n"
+	.string "But… is the computer even turned on?$"
 
 KleinPkPowerRoom_OnFrame_Text_3:
 # 75 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Pues enchúfalo, hombre!\n"
-	.string "¡Esas cosas se comprueban antes!$"
+	.string "Then plug it in, man!\n"
+	.string "You check that stuff first!$"
 
 KleinPkPowerRoom_OnFrame_Text_4:
 # 90 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Aquí el soporte técnico.\n"
-	.string "¿Qué necesitas?$"
+	.string "Tech support here.\n"
+	.string "What do you need?$"
 
 KleinPkPowerRoom_OnFrame_Text_5:
 # 94 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿¡Cómo que has perdido el cursor!?\n"
-	.string "¿Has probado a mover el ratón?$"
+	.string "What do you mean you lost the cursor!?\n"
+	.string "Have you tried moving the mouse?$"
 
 KleinPkPowerRoom_OnFrame_Text_6:
 # 98 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "No será el ratón inalámbrico...\n"
-	.string "¿Tiene pilas?$"
+	.string "It's not the wireless mouse, is it...\n"
+	.string "Does it have batteries?$"
 
 KleinPkPowerRoom_OnFrame_Text_7:
 # 104 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Joder! ¡Pues pónselas!$"
+	.string "For crying out loud! Then put some in!$"
 
 KleinPkPowerRoom_OnFrame_Text_8:
 # 119 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Aquí el soporte técnico.$"
+	.string "Tech support here.$"
 
 KleinPkPowerRoom_OnFrame_Text_9:
 # 123 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿¡Que cuál es la tecla de “cualquier\n"
-	.string "tecla”!? ¿¡Pero qué pregunta es esa!?$"
+	.string "Which key is the “any key”!? What kind\n"
+	.string "of question is that!?$"
 
 KleinPkPowerRoom_OnFrame_Text_10:
 # 127 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Pues si el mensaje dice “pulse\n"
-	.string "cualquier tecla”, haz lo que dice!$"
+	.string "Look, if the message says “press any\n"
+	.string "key,” just do what it says!$"
 
 KleinPkPowerRoom_OnFrame_Text_11:
 # 133 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Que no hay ninguna tecla que se llame\n"
-	.string "“cualquier tecla”! ¡Pulsa una tecla\l"
-	.string "cualquiera y ya!$"
+	.string "There is NO key called “any key”! Just\n"
+	.string "press any key at all!$"
 
 KleinPkPowerRoom_OnFrame_Text_12:
 # 140 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Esto es increíble! ¿Pero cómo puede\n"
-	.string "haber gente así? ¡Estoy rodeado de\l"
-	.string "inútiles! Pero se va a acabar...\p"
-	.string "¡Los voy a echar a todos!\n"
-	.string "¡A la puta calle!$"
+	.string "This is unbelievable! How can there be\n"
+	.string "people like this? I'm surrounded by\l"
+	.string "idiots! But it's going to end...\p"
+	.string "I'm going to fire them all!\n"
+	.string "Out on the street!$"
 
 KleinPkPowerRoom_OnFrame_Text_13:
 # 150 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Eh, tú! ¡Aquí! ¡Ven!$"
+	.string "Hey, you! Over here! Come!$"
 
 KleinPkPowerRoom_OnFrame_Text_14:
 # 160 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Sabes quién soy?$"
+	.string "Do you know who I am?$"
 
 KleinPkPowerRoom_OnFrame_Text_15:
 # 166 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Claro... Tú qué vas a saber...\n"
-	.string "Soy Klein, el webmaster de WaH.\p"
-	.string "Oye... Tienes que ayudarme, ¡la he liado\n"
-	.string "parda!\p"
-	.string "He hackeado al Perro Sanxe y para colmo\n"
-	.string "me han metido en esta cárcel a la vez\l"
-	.string "que se ha caído el foro...\n"
-	.string "¿Puedes liberarme?$"
+	.string "Right... how would you know...\n"
+	.string "I'm Klein, the webmaster of WaH.\p"
+	.string "Listen... you've got to help me, I've\n"
+	.string "really messed up!\p"
+	.string "I hacked Perro Sanxe, and to top it off\n"
+	.string "they threw me in this jail right as the\l"
+	.string "forum went down...\n"
+	.string "Can you set me free?$"
 
 KleinPkPowerRoom_OnFrame_Text_16:
 # 172 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Que no sabes cómo liberarme? ¡Pues es\n"
-	.string "muy fácil!\p"
-	.string "¿Ves ese botón rojo?$"
+	.string "You don't know how to free me? It's\n"
+	.string "super easy!\p"
+	.string "See that red button?$"
 
 KleinPkPowerRoom_OnFrame_Text_17:
 # 175 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Sí, ese botón! ¡Púlsalo y podré salir!\p"
-	.string "¡Vamos, no me hagas esperar más, que\n"
-	.string "tengo que levantar el foro!$"
+	.string "Yes, that button! Press it and I can get\n"
+	.string "out!\p"
+	.string "Come on, don't keep me waiting - I've\n"
+	.string "got a forum to bring back up!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_0:
 # 186 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "La celda ya está abierta.$"
+	.string "The cell is already open.$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_1:
 # 190 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Quieres pulsar el botón rojo?$"
+	.string "Press the red button?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_2:
 # 220 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Sí! ¡Soy libre!$"
+	.string "Yes! I'm free!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_3:
 # 227 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Por cierto... ¿Tú quién eras?\n"
-	.string "¿No será una trampa para encerrarme de\l"
-	.string "nuevo?$"
+	.string "By the way... who were you again?\n"
+	.string "This isn't a trap to lock me up again, is\l"
+	.string "it?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_4:
 # 243 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿¡Pero qué!?$"
+	.string "What the!?$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_5:
 # 248 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Qué estáis haciendo?\n"
-	.string "¡Si acabo de pagar la fianza para\l"
-	.string "sacarlo de la cárcel!\p"
-	.string "¿No podías quedarte quietecito tú\n"
-	.string "también? Bah, qué más da...\p"
-	.string "¡Venga, a levantar el foro!\n"
-	.string "¡Que lleva caído todo el día!$"
+	.string "What are you two doing?\n"
+	.string "I just paid the bail to get him out of\l"
+	.string "jail!\p"
+	.string "Couldn't you just stay put too? Bah,\n"
+	.string "whatever...\p"
+	.string "Come on, let's get the forum back up!\n"
+	.string "It's been down all day!$"
 
 KleinPkPowerRoom_EventScript_BotonRojo_Text_6:
 # 253 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Perfecto! ¡Has superado la prueba!\n"
-	.string "Hay que saber actuar bajo presión.\p"
-	.string "¡Vamos, a levantar el foro!$"
+	.string "Perfect! You've passed the test!\n"
+	.string "You've got to know how to act under\l"
+	.string "pressure.\p"
+	.string "Come on, let's get the forum back up!$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_0:
 # 337 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Tengo que aprovechar a trabajar ahora\n"
-	.string "que no hay más llamadas.\p"
-	.string "¡Ya vete de aquí!$"
+	.string "I should get some work done now while\n"
+	.string "there are no more calls.\p"
+	.string "Now get out of here!$"
 
 KleinPkPowerRoom_EventScript_PkPower_Text_1:
 # 340 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿No ves que estoy ocupado?$"
+	.string "Can't you see I'm busy?$"
 
 KleinPkPowerRoom_EventScript_Klein_Text_0:
 # 351 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Equipo de Investigación?\n"
-	.string "¿O Equipo de la mierda?\p"
-	.string "Qué te importa a ti el hackeo al Perro.$"
+	.string "Research Team?\n"
+	.string "Or Team Garbage?\p"
+	.string "What do you care about the hack on\n"
+	.string "Perro.$"
 
 KleinPkPowerRoom_EventScript_Cafe_Text_0:
 # 359 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Este café ya está frío.$"
+	.string "This coffee's cold now.$"
 
 KleinPkPowerRoom_EventScript_Telefono_Text_0:
 # 364 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es un teléfono negro con el auricular\n"
-	.string "rojo.$"
+	.string "It's a black phone with a red handset.$"
 
 KleinPkPowerRoom_EventScript_Archivador_Text_0:
 # 369 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es un archivador de metal lleno de\n"
-	.string "carpetas con papeles.$"
+	.string "It's a metal filing cabinet full of\n"
+	.string "folders and papers.$"
 
 KleinPkPowerRoom_EventScript_Computer_Text_0:
 # 374 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es un ordenador de escritorio típico de\n"
-	.string "un funcionario.$"
+	.string "It's a desktop computer, the typical\n"
+	.string "kind a civil servant has.$"
 
 KleinPkPowerRoom_EventScript_Monitor_Text_0:
 # 379 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es el único monitor secundario que hay\n"
-	.string "en la sala.$"
+	.string "It's the only secondary monitor in the\n"
+	.string "room.$"
 
 KleinPkPowerRoom_EventScript_Caja_Text_0:
 # 384 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es una caja abierta.\n"
-	.string "Está vacía.$"
+	.string "It's an open box.\n"
+	.string "It's empty.$"
 
 KleinPkPowerRoom_EventScript_Cama_Text_0:
 # 389 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es una cama cutre.\n"
-	.string "Parece muy incómoda.$"
+	.string "It's a crummy bed.\n"
+	.string "It looks really uncomfortable.$"
 
 KleinPkPowerRoom_EventScript_CajaHerramientas_Text_0:
 # 394 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Es una caja de herramientas.\n"
-	.string "Tiene muchas herramientas.$"
+	.string "It's a toolbox.\n"
+	.string "It has many tools.$"
 
 KleinPkPowerRoom_EventScript_Notes1_Text_0:
 # 399 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Parecen apuntes de un manual de\n"
-	.string "soporte técnico.\p"
-	.string "El primer punto dice: “Comprobar que el\n"
-	.string "ordenador está encendido”.$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "They look like notes from a tech-\n"
+	.string "support manual.\p"
+	.string "The first point reads: “Check that the\n"
+	.string "computer is turned on.”$"
 
 KleinPkPowerRoom_EventScript_Notes2_Text_0:
 # 405 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Parece un borrador de anuncio para el\n"
-	.string "foro.\p"
-	.string "Solo se lee: “Mantenimiento de la Wiki\n"
-	.string "programado. Volvemos enseguida.”$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "It looks like a draft announcement for\n"
+	.string "the forum.\p"
+	.string "It only reads: “Wiki maintenance\n"
+	.string "scheduled. Back soon.”$"
 
 KleinPkPowerRoom_EventScript_Notes3_Text_0:
 # 410 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Es un recibo de pago que tiene el\n"
-	.string "importe tachado y al lado pone:\l"
-	.string "“PKPower paga.”$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "It's a payment receipt with the amount\n"
+	.string "crossed out, and beside it: “PKPower\l"
+	.string "pays.”$"
 
 KleinPkPowerRoom_Text_KleinDefeated::
 # 309 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¿Y ahora qué?\n"
-	.string "¿Al talego de nuevo?$"
+	.string "Now what?\n"
+	.string "Back to the slammer?$"
 
 KleinPkPowerRoom_Text_PkPowerDefeated::
 # 329 "data/maps/KleinPkPowerRoom/scripts.pory"
-	.string "¡Vaya tela! ¡A seguir trabajando!$"
+	.string "What a mess! Back to work!$"

@@ -700,7 +700,7 @@ DragonMountan_Top_EventScript_Sergio_Movement_12:
 
 DragonMountain_Top_EventScript_Abra_Text_0:
 # 62 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¿Deseas volver a la sala de Serg!o?$"
+	.string "Do you want to return to Serg!o's room?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_0:
 # 85 "data/maps/DragonMountain_Top/scripts.pory"
@@ -709,93 +709,90 @@ DragonMountan_Top_EventScript_Sergio_Text_0:
 
 DragonMountan_Top_EventScript_Sergio_Text_1:
 # 91 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Ey ti{OA}! ¿qué tal? ¿de verdad pensabas\n"
-	.string "que no íbamos a hablar?$"
+	.string "Hey there! How's it going? Did you really\n"
+	.string "think we weren't going to talk?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_2:
 # 94 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Soy Serg!o… ¡me alegra ver gente nueva\n"
-	.string "por aquí!$"
+	.string "I'm Serg!o… glad to see new faces\n"
+	.string "around here!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_3:
 # 104 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¿Qué? ¿No te esperabas encontrarme en\n"
-	.string "este pico, a tres pasos de caerme?\p"
-	.string "Yo tampoco.$"
+	.string "What? You didn't expect to find me on\n"
+	.string "this peak, three steps from falling\l"
+	.string "off?\p"
+	.string "Neither did I.$"
 
 DragonMountan_Top_EventScript_Sergio_Text_4:
 # 107 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Quién sabe… a lo mejor es que soy el\n"
-	.string "mesías.$"
+	.string "Who knows… maybe I'm the messiah.$"
 
 DragonMountan_Top_EventScript_Sergio_Text_5:
 # 111 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Dime ti{OA}, ¿qué buscas por aquí?$"
+	.string "Tell me, what are you looking for up\n"
+	.string "here?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_6:
 # 117 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¿Eh? ¿Así que quieres combatir ahora?$"
+	.string "Huh? So you want to battle now?$"
 
 DragonMountan_Top_EventScript_Sergio_Text_7:
 # 119 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Admiro que hayas llegado hasta aquí, sé\n"
-	.string "que a veces soy difícil de encontrar.\p"
-	.string "Pero todavía no estoy listo para\n"
-	.string "combatir.$"
+	.string "I admire that you made it here; I know I\n"
+	.string "can be hard to find sometimes.\p"
+	.string "But I'm not ready to battle yet.$"
 
 DragonMountan_Top_EventScript_Sergio_Text_8:
 # 154 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Ahora sí!$"
+	.string "Now I am!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_9:
 # 157 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ha llegado el momento de combatir, y mis\n"
-	.string "dragones no se contendrán.\p"
-	.string "¡Dragonite, desata toda tu furia sobre\n"
-	.string "el campo de batalla!$"
+	.string "The time to battle has come, and my\n"
+	.string "dragons won't hold back.\p"
+	.string "Dragonite, unleash all your fury on the\n"
+	.string "battlefield!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_10:
 # 187 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Felicidades! ¡Has cumplido el sueño de\n"
-	.string "WAH!$"
+	.string "Congratulations! You've fulfilled WAH's\n"
+	.string "dream!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_11:
 # 189 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora por supuesto no te quedes dormid{OA},\n"
-	.string "¡que hay un montón de cosas por hacer!$"
+	.string "Now of course don't fall asleep on me -\n"
+	.string "there's a ton of things left to do!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_12:
 # 204 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Guau! ¡Mira quién apareció aquí!$"
+	.string "Wow! Look who showed up here!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_13:
 # 222 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Moltres es un Pokémon que siempre nos\n"
-	.string "ha acompañado, porque renacemos de\l"
-	.string "nuestras cenizas como el ave fénix.$"
+	.string "Moltres is a Pokémon that has always\n"
+	.string "been with us, because we're reborn from\l"
+	.string "our ashes like the phoenix.$"
 
 DragonMountan_Top_EventScript_Sergio_Text_14:
 # 225 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Qué locura que ya llevemos 20 años\n"
-	.string "entre todos construyendo esta\l"
-	.string "comunidad.\p"
-	.string "Ha pasado mucho tiempo, pero me siento\n"
-	.string "muy orgulloso de que entre todos\l"
-	.string "hayamos colaborado y puesto en común\l"
-	.string "nuestro conocimiento, buscando\l"
-	.string "mantener el espíritu divertido.$"
+	.string "It's wild that we've spent 20 years all\n"
+	.string "together building this community.\p"
+	.string "A lot of time has passed, but I feel\n"
+	.string "very proud that together we've\l"
+	.string "collaborated and shared our knowledge,\l"
+	.string "striving to keep the spirit fun.$"
 
 DragonMountan_Top_EventScript_Sergio_Text_15:
 # 230 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Mil gracias por haber formado parte de\n"
-	.string "esta celebración!$"
+	.string "A thousand thanks for being part of\n"
+	.string "this celebration!$"
 
 DragonMountan_Top_EventScript_Sergio_Text_16:
 # 232 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "Ahora ven, acompáñame; es hora de dejar\n"
-	.string "registro de tu hazaña en el Salón de la\l"
-	.string "fama.$"
+	.string "Now come, follow me; it's time to record\n"
+	.string "your feat in the Hall of Fame.$"
 
 DragonMountan_Top_Text_SergioDefeated::
 # 291 "data/maps/DragonMountain_Top/scripts.pory"
-	.string "¡Guau! ¡Eso ha sido brutal!$"
+	.string "Wow! That was brutal!$"

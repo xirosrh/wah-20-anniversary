@@ -704,71 +704,71 @@ ReyBooRoom_EventScript_BooEncounter_Movement_18:
 
 ReyBooRoom_EventScript_BooEncounter_Text_0:
 # 39 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Esta es la mejor idea del mundo, con\n"
-	.string "esto podré jubilarme, yupi!\p"
-	.string "¡Vamos a ello!$"
+	.string "This is the best idea in the world - with\n"
+	.string "this I can retire, yippee!\p"
+	.string "Let's do it!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_1:
 # 47 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Adelante, usa Día de Pago!$"
+	.string "Go on, use Pay Day!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_2:
 # 53 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Vamos, saca tu energía cósmica, Día de\n"
-	.string "Pago!$"
+	.string "Come on, unleash your cosmic energy,\n"
+	.string "Pay Day!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_3:
 # 66 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Maldito mono…$"
+	.string "Stupid monkey…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_4:
 # 124 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Menos mal.$"
+	.string "Thank goodness.$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_5:
 # 126 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Madre mía, qué mala bestia…$"
+	.string "Good grief, what a beast…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_6:
 # 131 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Ejem…!$"
+	.string "Ahem…!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_7:
 # 136 "data/maps/ReyBooRoom/scripts.pory"
-	.string "De modo que eres tú quien me ha\n"
-	.string "invocado…$"
+	.string "So it's you who has summoned me…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_8:
 # 146 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Muy bien, has pasado la prueba física…\n"
-	.string "Ahora prepárate para la inesperada…$"
+	.string "Very well, you've passed the physical\n"
+	.string "test… Now prepare for the unexpected\l"
+	.string "one…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_9:
 # 149 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Mis fenomenales poderes!$"
+	.string "My phenomenal powers!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_10:
 # 173 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Batería baja {DOWN_ARROW}$"
+	.string "Low battery {DOWN_ARROW}$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_11:
 # 176 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Maldita sea!$"
+	.string "Dang it!$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_12:
 # 182 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Muy bien…$"
+	.string "Very well…$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_13:
 # 187 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Por esta vez has ganado.$"
+	.string "This time, you've won.$"
 
 ReyBooRoom_EventScript_BooEncounter_Text_14:
 # 191 "data/maps/ReyBooRoom/scripts.pory"
-	.string "¡Volveré!$"
+	.string "I'll be back!$"
 
 ReyBooRoom_Text_ReyBooDefeated::
 # 233 "data/maps/ReyBooRoom/scripts.pory"
-	.string "Enhorabuena, pero recuerda, gloria\n"
-	.string "vana, florece y no grana.\p"
-	.string "Todavía te quedan retos por afrontar.$"
+	.string "Congratulations, but remember: vain\n"
+	.string "glory blooms but bears no fruit.\p"
+	.string "You've still got challenges to face.$"

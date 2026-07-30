@@ -24,8 +24,8 @@ MiningGame_Event_6:
 	goto MiningGame_Event_5
 
 MiningGame_Text_QuieresIntentarPicarla:
-	.string "Esta pared parece un poco suelta.\n"
-	.string "¿Quieres intentar picarla?$"
+	.string "This wall looks a little loose.\n"
+	.string "Want to try digging it up?$"
 
 MiningGame_Text_AquiHasPicadoHacePoco:
-	.string "Aquí has picado hace poco.$"
+	.string "You dug here recently.$"

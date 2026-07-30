@@ -69,160 +69,158 @@ RestRoom_EventScript_Girl1::
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_HeartWithDelay48
 # 41 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Girl1_Text_1, MSGBOX_AUTOCLOSE
-# 44 "data/maps/RestRoom/scripts.pory"
+# 42 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 
 RestRoom_EventScript_Boy2::
-# 49 "data/maps/RestRoom/scripts.pory"
+# 47 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Boy2_Text_0, MSGBOX_NPC
 	end
 
 
 RestRoom_EventScript_PlayerCounterpart::
-# 54 "data/maps/RestRoom/scripts.pory"
+# 52 "data/maps/RestRoom/scripts.pory"
 	lock
-# 55 "data/maps/RestRoom/scripts.pory"
+# 53 "data/maps/RestRoom/scripts.pory"
 	faceplayer
-# 56 "data/maps/RestRoom/scripts.pory"
+# 54 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 57 "data/maps/RestRoom/scripts.pory"
+# 55 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark
-# 58 "data/maps/RestRoom/scripts.pory"
+# 56 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_PlayerCounterpart_Text_0, MSGBOX_AUTOCLOSE
-# 59 "data/maps/RestRoom/scripts.pory"
+# 57 "data/maps/RestRoom/scripts.pory"
 	delay 48
-# 60 "data/maps/RestRoom/scripts.pory"
+# 58 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_PlayerCounterpart_Text_1, MSGBOX_AUTOCLOSE
-# 61 "data/maps/RestRoom/scripts.pory"
+# 59 "data/maps/RestRoom/scripts.pory"
 	delay 10
-# 62 "data/maps/RestRoom/scripts.pory"
+# 60 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 63 "data/maps/RestRoom/scripts.pory"
+# 61 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_Happy
-# 64 "data/maps/RestRoom/scripts.pory"
+# 62 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_PlayerCounterpart_Text_2, MSGBOX_AUTOCLOSE
-# 65 "data/maps/RestRoom/scripts.pory"
+# 63 "data/maps/RestRoom/scripts.pory"
 	delay 48
-# 66 "data/maps/RestRoom/scripts.pory"
+# 64 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 
 RestRoom_EventScript_Shop::
-# 71 "data/maps/RestRoom/scripts.pory"
+# 69 "data/maps/RestRoom/scripts.pory"
 	lock
-# 72 "data/maps/RestRoom/scripts.pory"
+# 70 "data/maps/RestRoom/scripts.pory"
 	faceplayer
-# 73 "data/maps/RestRoom/scripts.pory"
+# 71 "data/maps/RestRoom/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, RestRoom_EventScript_Shop_4
 RestRoom_EventScript_Shop_3:
-# 79 "data/maps/RestRoom/scripts.pory"
+# 77 "data/maps/RestRoom/scripts.pory"
 	message RestRoom_EventScript_Shop_Text_1
-# 80 "data/maps/RestRoom/scripts.pory"
+# 78 "data/maps/RestRoom/scripts.pory"
 	waitmessage
 RestRoom_EventScript_Shop_1:
-# 82 "data/maps/RestRoom/scripts.pory"
+# 80 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 83 "data/maps/RestRoom/scripts.pory"
+# 81 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Shop
-# 84 "data/maps/RestRoom/scripts.pory"
+# 82 "data/maps/RestRoom/scripts.pory"
 	clearflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 85 "data/maps/RestRoom/scripts.pory"
+# 83 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 RestRoom_EventScript_Shop_2:
-# 74 "data/maps/RestRoom/scripts.pory"
+# 72 "data/maps/RestRoom/scripts.pory"
 	message RestRoom_EventScript_Shop_Text_0
-# 75 "data/maps/RestRoom/scripts.pory"
+# 73 "data/maps/RestRoom/scripts.pory"
 	waitmessage
-# 76 "data/maps/RestRoom/scripts.pory"
+# 74 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN
 	goto RestRoom_EventScript_Shop_1
 
 RestRoom_EventScript_Shop_4:
-# 73 "data/maps/RestRoom/scripts.pory"
+# 71 "data/maps/RestRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN, RestRoom_EventScript_Shop_2
 	goto RestRoom_EventScript_Shop_3
 
 
 RestRoom_EventScript_Pokebox::
-# 90 "data/maps/RestRoom/scripts.pory"
+# 88 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_C, 3
-# 91 "data/maps/RestRoom/scripts.pory"
+# 89 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_D, 4
-# 92 "data/maps/RestRoom/scripts.pory"
+# 90 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
-# 93 "data/maps/RestRoom/scripts.pory"
+# 91 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
-# 94 "data/maps/RestRoom/scripts.pory"
+# 92 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Pokebox
 	end
 
 
 RestRoom_EventScript_Boy1_Text_0:
 # 21 "data/maps/RestRoom/scripts.pory"
-	.string "¡Uf, al fin una zona de descanso!$"
+	.string "Phew, finally a rest area!$"
 
 RestRoom_EventScript_Boy1_Text_1:
 # 23 "data/maps/RestRoom/scripts.pory"
-	.string "Por un momento pensé que las 21 salas\n"
-	.string "eran seguidas sin pausa…$"
+	.string "For a moment I thought all 21 rooms\n"
+	.string "were back-to-back with no break…$"
 
 RestRoom_EventScript_Boy1_Text_2:
 # 29 "data/maps/RestRoom/scripts.pory"
-	.string "Me viene costando, necesito prepararme\n"
-	.string "mejor para las próximas salas.\p"
-	.string "Voy a ajustar algunos ataques, comprar\n"
-	.string "objetos curativos y…\p"
-	.string "¡Creo que compraré un {STR_VAR_1}!\n"
-	.string "Vi que en la PC está a solo\l"
-	.string "{STR_VAR_2}, ¡está regalado!$"
+	.string "I'm struggling; I need to prepare better\n"
+	.string "for the next rooms.\p"
+	.string "I'll tweak some moves, buy some healing\n"
+	.string "items, and…\p"
+	.string "I think I'll buy a {STR_VAR_1}! I saw\n"
+	.string "it's only {STR_VAR_2} in the PC - it's\l"
+	.string "a steal!$"
 
 RestRoom_EventScript_Girl1_Text_0:
 # 38 "data/maps/RestRoom/scripts.pory"
-	.string "¡Los diseños de las salas son\n"
-	.string "increíbles!$"
+	.string "The room designs are incredible!$"
 
 RestRoom_EventScript_Girl1_Text_1:
 # 41 "data/maps/RestRoom/scripts.pory"
-	.string "Un teatro, una jungla… ¡hasta un cine!\n"
-	.string "¿Te imaginas cuánto trabajo hay\l"
-	.string "detrás de todo esto?$"
+	.string "A theater, a jungle… even a cinema!\p"
+	.string "Can you imagine how much work goes into\n"
+	.string "all this?$"
 
 RestRoom_EventScript_Boy2_Text_0:
-# 49 "data/maps/RestRoom/scripts.pory"
-	.string "¡Los precios de esta tienda son una\n"
-	.string "estafa!\p"
-	.string "Tendría que haber comprado todo lo\n"
-	.string "necesario antes de entrar.$"
+# 47 "data/maps/RestRoom/scripts.pory"
+	.string "The prices in this shop are a total\n"
+	.string "ripoff!\p"
+	.string "I should have bought everything I\n"
+	.string "needed before coming in.$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_0:
-# 58 "data/maps/RestRoom/scripts.pory"
-	.string "¡Qué sorpresa, {PLAYER}!$"
+# 56 "data/maps/RestRoom/scripts.pory"
+	.string "What a surprise, {PLAYER}!$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_1:
-# 60 "data/maps/RestRoom/scripts.pory"
-	.string "¿Así que también estás participando en\n"
-	.string "el desafío?\p"
-	.string "¡Cada sala nos enseña algo sobre los\n"
-	.string "líderes de la comunidad!\p"
-	.string "¡He aprendido mucho de ellos!$"
+# 58 "data/maps/RestRoom/scripts.pory"
+	.string "So you're taking part in the challenge\n"
+	.string "too?\p"
+	.string "Every room teaches us something about\n"
+	.string "the community's leaders!\p"
+	.string "I've learned a lot from them!$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_2:
-# 64 "data/maps/RestRoom/scripts.pory"
-	.string "¡Qué emocionante!$"
+# 62 "data/maps/RestRoom/scripts.pory"
+	.string "How exciting!$"
 
 RestRoom_EventScript_Shop_Text_0:
-# 74 "data/maps/RestRoom/scripts.pory"
-	.string "¡Hola! ¡Hemos ampliado el catálogo!\p"
-	.string "Ahora también puedes comprar objetos\n"
-	.string "de combate.\p"
-	.string "¿En qué puedo ayudarte?\n"
-	.string "¡Aquí somos un poco más caros!$"
+# 72 "data/maps/RestRoom/scripts.pory"
+	.string "Hi! We've expanded the catalog!\p"
+	.string "Now you can also buy battle items.\p"
+	.string "How can I help you?\n"
+	.string "We're a little pricier here!$"
 
 RestRoom_EventScript_Shop_Text_1:
-# 79 "data/maps/RestRoom/scripts.pory"
-	.string "¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!$"
+# 77 "data/maps/RestRoom/scripts.pory"
+	.string "Hi! How can I help you?\nWe're a little pricier here!$"

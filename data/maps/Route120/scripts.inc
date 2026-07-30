@@ -360,70 +360,70 @@ Route120_EventScript_Callie::
 	end
 
 Route120_Text_StevenGreeting:
-	.string "MÁXIMO: ¿Mmm? Ah, hola, {PLAYER}{KUN}.\n"
-	.string "¡Cuánto tiempo…!\p"
-	.string "Fíjate, aquí hay algo que no puedes ver\n"
-	.string "y no te deja pasar, ¿verdad?\p"
-	.string "Pues si usas este dispositivo sobre\n"
-	.string "ese obstáculo invisible…\p"
-	.string "No, no, mejor no te explico nada y\n"
-	.string "te enseño cómo funciona.\l"
-	.string "Será mucho más claro.\p"
-	.string "{PLAYER}{KUN}, ¿tus POKéMON están\n"
-	.string "listos para luchar?$"
+	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
+	.string "It's been a while.\p"
+	.string "There's something here that you can't\n"
+	.string "see, right?\p"
+	.string "Now, if I were to use this device on\n"
+	.string "the invisible obstacle…\p"
+	.string "No, no. Rather than describing it,\n"
+	.string "I should just show you.\l"
+	.string "That would be more fun.\p"
+	.string "{PLAYER}{KUN}, are your POKéMON ready for\n"
+	.string "battle?$"
 
 Route120_Text_StevenIllWaitHere:
-	.string "MÁXIMO: ¿No?\p"
-	.string "Pues esperaré aquí hasta que lo estén.$"
+	.string "STEVEN: No?\p"
+	.string "I'll wait here, so you can get ready.$"
 
 Route120_Text_StevenReadyForBattle:
-	.string "MÁXIMO: {PLAYER}{KUN}, ¿tus POKéMON\n"
-	.string "están listos para luchar?$"
+	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
+	.string "ready for battle?$"
 
 Route120_Text_StevenShowMeYourPower:
-	.string "MÁXIMO: Bien, entonces muéstrame\n"
-	.string "lo bien que entrenas POKéMON.$"
+	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
+	.string "power as a TRAINER!$"
 
 Route120_Text_StevenUsedDevonScope:
-	.string "MÁXIMO usó el DETECTOR DEVON.\p"
-	.string "¡Un POKéMON que era invisible\n"
-	.string "se ha vuelto completamente visible!\p"
-	.string "¡El POKéMON, asustado, ha atacado!$"
+	.string "STEVEN used the DEVON SCOPE.\p"
+	.string "An invisible POKéMON became completely\n"
+	.string "visible!\p"
+	.string "The startled POKéMON attacked!$"
 
 Route120_Text_StevenGiveDevonScope:
-	.string "MÁXIMO: Ya veo…\n"
-	.string "Tu estilo de combate es intrigante…\p"
-	.string "Es obvio que tus POKéMON han mejorado\n"
-	.string "mucho desde que nos vimos en AZULIZA.\p"
-	.string "Quisiera darte este\n"
-	.string "DETECTOR DEVON.\p"
-	.string "Quién sabe, podría haber otros\n"
-	.string "POKéMON ocultos.$"
+	.string "STEVEN: I see…\n"
+	.string "Your battle style is intriguing.\p"
+	.string "Your POKéMON have obviously grown\n"
+	.string "since I first met you in DEWFORD.\p"
+	.string "I'd like you to have this\n"
+	.string "DEVON SCOPE.\p"
+	.string "Who knows, there may be other\n"
+	.string "concealed POKéMON.$"
 
 Route120_Text_StevenGoodbye:
-	.string "MÁXIMO: {PLAYER}{KUN}…\p"
-	.string "Me gusta ver cómo los ENTRENADORES\n"
-	.string "y los POKéMON trabajan codo con codo.\p"
-	.string "Creo que tú lo estás haciendo muy bien.\p"
-	.string "Bueno, ya volveremos a vernos.$"
+	.string "STEVEN: {PLAYER}{KUN}.\p"
+	.string "I enjoy seeing POKéMON and TRAINERS\n"
+	.string "who strive together.\p"
+	.string "I think you're doing great.\p"
+	.string "Well, let's meet again somewhere.$"
 
 Kecleon_Text_SomethingUnseeable:
-	.string "Algo invisible corta el paso.$"
+	.string "Something unseeable is in the way.$"
 
 Kecleon_Text_WantToUseDevonScope:
-	.string "Algo invisible corta el paso.\p"
-	.string "¿Usas el DETECTOR DEVON?$"
+	.string "Something unseeable is in the way.\p"
+	.string "Want to use the DEVON SCOPE?$"
 
 Kecleon_Text_UseDevonScopeMonAttacked:
-	.string "{PLAYER} usó el DETECTOR DEVON.\p"
-	.string "¡Un POKéMON que era invisible\n"
-	.string "se ha vuelto completamente visible!\p"
-	.string "¡El POKéMON, asustado, ha atacado!$"
+	.string "{PLAYER} used the DEVON SCOPE.\p"
+	.string "An invisible POKéMON became completely\n"
+	.string "visible!\p"
+	.string "The startled POKéMON attacked!$"
 
 Route120_Text_RouteSignFortree:
-	.string "RUTA 120\n"
-	.string "{LEFT_ARROW} CIUDAD ARBORADA$"
+	.string "ROUTE 120\n"
+	.string "{LEFT_ARROW} FORTREE CITY$"
 
 Route120_Text_RouteSign121:
-	.string "{RIGHT_ARROW} RUTA 121\n"
-	.string "{LEFT_ARROW} RUTA 120$"
+	.string "{RIGHT_ARROW} ROUTE 121\n"
+	.string "{LEFT_ARROW} ROUTE 120$"

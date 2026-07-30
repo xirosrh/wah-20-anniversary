@@ -153,6 +153,11 @@ SeafloorCavern_Room9_Movement_ArchieApproachPlayer:
 	walk_right
 	step_end
 
+SeafloorCavern_Room9_Movement_Unused1:
+	walk_left
+	walk_left
+	step_end
+
 SeafloorCavern_Room9_Movement_ArchieListenMessage:
 	walk_left
 	delay_16
@@ -214,102 +219,101 @@ SeafloorCavern_Room9_Movement_Delay32:
 	step_end
 
 SeafloorCavern_Room9_Text_ArchieHoldItRightThere:
-	.string "AQUILES: ¡No te muevas!$"
+	.string "ARCHIE: Hold it right there.$"
 
 SeafloorCavern_Room9_Text_ArchieSoItWasYou:
-	.string "AQUILES: ¡Jua, jua, jua!\n"
-	.string "Así que eres tú otra vez…$"
+	.string "ARCHIE: Fufufu…\n"
+	.string "So it was you, after all.$"
 
 SeafloorCavern_Room9_Text_ArchieBeholdKyogre:
-	.string "AQUILES: ¡Observa!\p"
-	.string "¡Contempla la belleza de la figura\n"
-	.string "durmiente del antiguo POKéMON KYOGRE!\p"
-	.string "He esperado tanto a que llegara\n"
-	.string "este día…$"
+	.string "ARCHIE: Behold!\p"
+	.string "See how beautiful it is, the sleeping\n"
+	.string "form of the ancient POKéMON KYOGRE!\p"
+	.string "I have waited so long for this day to\n"
+	.string "come…$"
 
 SeafloorCavern_Room9_Text_ArchieYouMustDisappear:
-	.string "AQUILES: Me sorprende que hayas\n"
-	.string "logrado llegar hasta aquí.\p"
-	.string "Pero ya da igual.\p"
-	.string "¡Para que mi sueño se cumpla,\n"
-	.string "tengo que quitarte de en medio!$"
+	.string "ARCHIE: It surprises me, how you've\n"
+	.string "managed to chase me here.\p"
+	.string "But that's all over now.\p"
+	.string "For the realization of my dream,\n"
+	.string "you must disappear now!$"
 
 SeafloorCavern_Room9_Text_ArchieDefeat:
-	.string "¡¿Cómo?!\n"
-	.string "¡¿He perdido contra ti?!$"
+	.string "What?!\n"
+	.string "I lost to a mere child like you?!$"
 
 SeafloorCavern_Room9_Text_ArchieWithThisRedOrb:
-	.string "AQUILES: Jua, jua, jua…\p"
-	.string "Debo felicitarte. Realmente tienes\n"
-	.string "un enorme talento.\p"
-	.string "Pero…\n"
-	.string "¡yo tengo esto en mi poder!\p"
-	.string "Con la ESFERA ROJA, puedo hacer\n"
-	.string "que KYOGRE…$"
+	.string "ARCHIE: Fufufu…\p"
+	.string "I commend you. I must recognize that\n"
+	.string "you are truly gifted.\p"
+	.string "But!\n"
+	.string "I have this in my possession!\p"
+	.string "With this RED ORB, I can make KYOGRE…$"
 
 SeafloorCavern_Room9_Text_RedOrbShinesByItself:
-	.string "¡La ESFERA ROJA ha empezado\n"
-	.string "a brillar sola de repente!$"
+	.string "The RED ORB suddenly began shining\n"
+	.string "by itself!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
-	.string "AQUILES: ¡¿Qué?!\p"
-	.string "Yo no he hecho nada.\n"
-	.string "¿Por qué la ESFERA ROJA ha…?\p"
-	.string "¿Adónde ha ido KYOGRE?$"
+	.string "ARCHIE: What?!\p"
+	.string "I didn't do anything.\n"
+	.string "Why did the RED ORB…\p"
+	.string "Where did KYOGRE go?$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside:
-	.string "AQUILES: ¿Mmm…? Es un mensaje\n"
-	.string "de los miembros del exterior…$"
+	.string "ARCHIE: Hm? It's a message from our\n"
+	.string "members outside…$"
 
 SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard:
-	.string "AQUILES: Sí, ¿qué pasa?\p"
-	.string "Mmmm…\n"
-	.string "¿Está lloviendo una burrada?\p"
-	.string "Muy bien, es lo que tenía que pasar.\n"
-	.string "Por eso despertamos a KYOGRE,\l"
-	.string "para hacer realidad la visión del\l"
-	.string "EQUIPO AQUA: un mundo con más agua.\p"
-	.string "¡¿Qué?!\p"
-	.string "¿Que está lloviendo mucho más de lo que\n"
-	.string "calculamos? ¿Tanto que es peligroso?\p"
-	.string "No puede ser…\n"
-	.string "No es posible…\p"
-	.string "¡Mantened vuestras posiciones e\n"
-	.string "intentad controlar la situación!$"
+	.string "ARCHIE: Yes, what is it?\p"
+	.string "Hm…\n"
+	.string "It's raining heavily?\p"
+	.string "Good… That should have happened.\n"
+	.string "That is why we awakened KYOGRE,\l"
+	.string "to realize TEAM AQUA's vision of\l"
+	.string "expanding the sea.\p"
+	.string "What?!\p"
+	.string "It's raining far harder than we\n"
+	.string "envisioned? You're in danger?\p"
+	.string "That can't be…\n"
+	.string "That's just not possible…\p"
+	.string "Hold your position and monitor\n"
+	.string "the situation!$"
 
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear:
-	.string "AQUILES: Hay algo que falla…\p"
-	.string "Se supone que la ESFERA ROJA puede\n"
-	.string "despertar y controlar a KYOGRE…\p"
-	.string "Pero… ¿por qué?\n"
-	.string "¿Por qué ha desaparecido KYOGRE?\p"
-	.string "¡¿Por qué?!$"
+	.string "ARCHIE: There's something wrong…\p"
+	.string "The RED ORB is supposed to awaken\n"
+	.string "and control KYOGRE…\p"
+	.string "But… Why?\n"
+	.string "Why did KYOGRE disappear?\p"
+	.string "Why?!$"
 
 SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought:
-	.string "MAGNO: ¿Qué has hecho?\p"
-	.string "AQUILES, has despertado a KYOGRE,\n"
-	.string "¿verdad?\p"
-	.string "¿Qué ocurrirá si no deja de diluviar\n"
-	.string "nunca más?\p"
-	.string "La tierra firme acabará siendo tragada\n"
-	.string "por el mar…$"
+	.string "MAXIE: What have you wrought?\p"
+	.string "ARCHIE… You've finally awoken KYOGRE,\n"
+	.string "haven't you?\p"
+	.string "What will happen to the world if this\n"
+	.string "downpour continues for all eternity?\p"
+	.string "The world's landmass will drown in\n"
+	.string "the deepening sea…$"
 
 SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty:
-	.string "AQUILES: ¿Qué estás diciendo?\n"
-	.string "¡No te des esas ínfulas conmigo!\p"
-	.string "¿No fuisteis los del EQUIPO MAGMA\n"
-	.string "quienes enfurecisteis a GROUDON?\p"
-	.string "La ESFERA ROJA debería permitirme\n"
-	.string "controlar a KYOGRE…\p"
-	.string "Esto no puede estar pasando…$"
+	.string "ARCHIE: W-what?!\n"
+	.string "Don't get all high and mighty with me!\p"
+	.string "Wasn't it you, TEAM MAGMA, that\n"
+	.string "infuriated GROUDON?\p"
+	.string "So long as I have this RED ORB,\n"
+	.string "I should be able to control KYOGRE…\p"
+	.string "I should be able to control it…$"
 
 SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue:
-	.string "MAGNO: ¡No tenemos tiempo para\n"
-	.string "discutir sobre eso ahora!\p"
-	.string "¡Sal y verás el panorama!\p"
-	.string "¡Comprueba si es éste el mundo\n"
-	.string "que querías crear!$"
+	.string "MAXIE: We don't have the time to\n"
+	.string "argue about it here!\p"
+	.string "Get outside and see for yourself!\p"
+	.string "See if what you've wrought is the\n"
+	.string "world that we desired!$"
 
 SeafloorCavern_Room9_Text_MaxieComeOnPlayer:
-	.string "MAGNO: ¡{PLAYER}, vamos, tú también\n"
-	.string "tienes que salir de aquí!$"
+	.string "MAXIE: {PLAYER}, come on, you have\n"
+	.string "to get out of here, too!$"

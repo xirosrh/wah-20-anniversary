@@ -484,101 +484,101 @@ CheveRoom_EventScript_CuttableTree_Movement_8:
 
 CheveRoom_EventScript_Cheve_Text_0:
 # 36 "data/maps/CheveRoom/scripts.pory"
-	.string "¿Así que volviste? No me digas…\n"
-	.string "¿querés la revancha?$"
+	.string "So you came back? Don't tell me… you\n"
+	.string "want a rematch?$"
 
 CheveRoom_EventScript_Cheve_Text_1:
 # 39 "data/maps/CheveRoom/scripts.pory"
-	.string "Ni lo sueñes. Estoy en pleno proceso\n"
-	.string "creativo… o sea, procrastinando.$"
+	.string "Don't even dream of it. I'm in the middle\n"
+	.string "of a creative process… i.e.,\l"
+	.string "procrastinating.$"
 
 CheveRoom_EventScript_Cheve_Text_2:
 # 43 "data/maps/CheveRoom/scripts.pory"
-	.string "Igual te agradezco la visita.\p"
-	.string "Es lindo cuando alguien vuelve a tu\n"
-	.string "habitación, aunque sea para saludar al\l"
-	.string "árbol que no era árbol.$"
+	.string "I appreciate the visit, though.\p"
+	.string "It's nice when someone comes back to\n"
+	.string "your room, even if it's just to say hi to\l"
+	.string "the tree that wasn't a tree.$"
 
 CheveRoom_EventScript_Cheve_Text_3:
 # 46 "data/maps/CheveRoom/scripts.pory"
-	.string "¡Saludos!$"
+	.string "Greetings!$"
 
 CheveRoom_EventScript_CuttableTree_Text_0:
 # 96 "data/maps/CheveRoom/scripts.pory"
-	.string "¿Por qué me estás mirando así?$"
+	.string "Why are you looking at me like that?$"
 
 CheveRoom_EventScript_CuttableTree_Text_1:
 # 110 "data/maps/CheveRoom/scripts.pory"
-	.string "¿Quieres cortarme?\p"
-	.string "¡No me lastimes, soy Cheve!$"
+	.string "You want to Cut me down?\p"
+	.string "Don't hurt me, I'm Cheve!$"
 
 CheveRoom_EventScript_CuttableTree_Text_2:
 # 125 "data/maps/CheveRoom/scripts.pory"
-	.string "¡Ve, Plantita!$"
+	.string "Go, Sprout!$"
 
 CheveRoom_EventScript_CuttableTree_Text_3:
 # 170 "data/maps/CheveRoom/scripts.pory"
-	.string "Caíste redondit{OA}.$"
+	.string "You fell for it completely.$"
 
 CheveRoom_EventScript_CuttableTree_Text_4:
 # 173 "data/maps/CheveRoom/scripts.pory"
-	.string "¿En serio creíste que yo era un árbol?$"
+	.string "Did you really think I was a tree?$"
 
 CheveRoom_EventScript_CuttableTree_Text_5:
 # 177 "data/maps/CheveRoom/scripts.pory"
-	.string "Pero bueno… no esperaba que llegaras\n"
-	.string "hasta mi habitación.\p"
-	.string "¡Y menos después de derrotar a mi gran\n"
-	.string "amigo Javi4315!$"
+	.string "But hey… I didn't expect you to make it\n"
+	.string "all the way to my room.\p"
+	.string "And even less after beating my great\n"
+	.string "friend Javi4315!$"
 
 CheveRoom_EventScript_CuttableTree_Text_6:
 # 180 "data/maps/CheveRoom/scripts.pory"
-	.string "A él lo respeto mucho, así que… digamos\n"
-	.string "que ya me caes bien por eso.$"
+	.string "I respect him a lot, so… let's say that\n"
+	.string "alone makes me like you.$"
 
 CheveRoom_EventScript_CuttableTree_Text_7:
 # 184 "data/maps/CheveRoom/scripts.pory"
-	.string "Supongo que es mi turno de poner a\n"
-	.string "prueba tu suerte.$"
+	.string "I guess it's my turn to put your luck to\n"
+	.string "the test.$"
 
 CheveRoom_EventScript_CuttableTree_Text_8:
 # 191 "data/maps/CheveRoom/scripts.pory"
-	.string "Aunque aviso… no soy muy fan de los\n"
-	.string "combates largos.\p"
-	.string "Prefiero procrastinar… ¡mi acción\n"
-	.string "favorita!$"
+	.string "Fair warning, though… I'm not a big fan\n"
+	.string "of long battles.\p"
+	.string "I'd rather procrastinate… my favorite\n"
+	.string "activity!$"
 
 CheveRoom_EventScript_CuttableTree_Text_9:
 # 194 "data/maps/CheveRoom/scripts.pory"
-	.string "¡Vamos!$"
+	.string "Let's go!$"
 
 CheveRoom_EventScript_CuttableTree_Text_10:
 # 199 "data/maps/CheveRoom/scripts.pory"
-	.string "Uf… qué paliza.$"
+	.string "Ugh… what a beating.$"
 
 CheveRoom_EventScript_CuttableTree_Text_11:
 # 203 "data/maps/CheveRoom/scripts.pory"
-	.string "Me dan ganas de postergar mi revancha\n"
-	.string "hasta el próximo siglo.\p"
-	.string "Pero, eh, no me malinterpretes… ¡fue\n"
-	.string "divertido!$"
+	.string "Makes me want to put off my rematch\n"
+	.string "until next century.\p"
+	.string "But hey, don't get me wrong… it was fun!$"
 
 CheveRoom_EventScript_CuttableTree_Text_12:
 # 210 "data/maps/CheveRoom/scripts.pory"
-	.string "Supongo que eso tiene este lugar:\n"
-	.string "siempre alguien nuevo llega a tu\l"
-	.string "habitación, y cuando se va, deja un\l"
-	.string "pequeño cuadro más colgado en la pared.\p"
-	.string "El mío ya tiene bastantes, pero este\n"
-	.string "combate merece uno nuevo.$"
+	.string "I guess that's what this place is like:\n"
+	.string "someone new always shows up at your\l"
+	.string "room, and when they leave, they hang\l"
+	.string "one more little painting on the wall.\p"
+	.string "Mine's got quite a few already, but this\n"
+	.string "battle deserves a new one.$"
 
 CheveRoom_EventScript_CuttableTree_Text_13:
 # 213 "data/maps/CheveRoom/scripts.pory"
-	.string "Vamos, sigue adelante.\p"
-	.string "Seguro el próximo piso te tiene\n"
-	.string "guardada otra sorpresa.$"
+	.string "Come on, keep going.\p"
+	.string "I'm sure the next floor has another\n"
+	.string "surprise in store for you.$"
 
 CheveRoom_Text_CheveDefeated::
 # 242 "data/maps/CheveRoom/scripts.pory"
-	.string "¡Muy buen combate! Me recordó a mis\n"
-	.string "enfrentamientos con Xavi.$"
+	.string "Great battle! It reminded me of my\n"
+	.string "showdowns with Xavi.$"

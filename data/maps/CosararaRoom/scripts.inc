@@ -354,122 +354,121 @@ CosararaRoom_EventScript_Cosarara_Movement_2:
 
 CosararaRoom_EventScript_Cosarara_Text_0:
 # 35 "data/maps/CosararaRoom/scripts.pory"
-	.string "¿Y tú eres? Ahhh sí ya me acuerdo de ti,\n"
-	.string "{PLAYER}.\p"
-	.string "¡Deseo que te vaya bien!$"
+	.string "And you are? Ahhh yes, now I remember\n"
+	.string "you, {PLAYER}.\p"
+	.string "I wish you well!$"
 
 CosararaRoom_EventScript_Cosarara_Text_1:
 # 42 "data/maps/CosararaRoom/scripts.pory"
-	.string "Lo he logrado.$"
+	.string "I did it.$"
 
 CosararaRoom_EventScript_Cosarara_Text_2:
 # 46 "data/maps/CosararaRoom/scripts.pory"
-	.string "He completado una nueva extracción no\n"
-	.string "autorizada de todos los registros de la\l"
-	.string "comunidad.\p"
-	.string "La construimos entre todos, así que\n"
-	.string "creo que tiene un valor que vale la pena\l"
-	.string "preservar.$"
+	.string "I've just finished an unauthorized\n"
+	.string "backup of all the community's records.\p"
+	.string "We built it all together, so I think it's\n"
+	.string "worth preserving.$"
 
 CosararaRoom_EventScript_Cosarara_Text_3:
 # 51 "data/maps/CosararaRoom/scripts.pory"
-	.string "Voy a bloquear mi computadora…$"
+	.string "I'm going to lock my computer…$"
 
 CosararaRoom_EventScript_Cosarara_Text_4:
 # 55 "data/maps/CosararaRoom/scripts.pory"
-	.string "¿Y tú quién eras? ¿Has cambiado de nick\n"
-	.string "recientemente?\p"
-	.string "Es que me pierdo, ¡no me da la memoria!$"
+	.string "Wait, who are you again? Did you change\n"
+	.string "your nick recently?\p"
+	.string "I lose track so easily… my memory just\n"
+	.string "can't keep up!$"
 
 CosararaRoom_EventScript_Cosarara_Text_5:
 # 71 "data/maps/CosararaRoom/scripts.pory"
-	.string "¿Así que eres {PLAYER} y quieres\n"
-	.string "combatir? Acepto el reto.$"
+	.string "So you're {PLAYER}, and you want to\n"
+	.string "battle? Challenge accepted!$"
 
 CosararaRoom_EventScript_Cosarara_Text_6:
 # 78 "data/maps/CosararaRoom/scripts.pory"
-	.string "Ha sido una buena batalla, {PLAYER}.\n"
-	.string "Creo que te recordaré.\p"
-	.string "Recuerda no cambiar de nick, ya que me\n"
-	.string "cuesta mucho saber quién es quién.\p"
-	.string "Ya puedes avanzar.$"
+	.string "That was a good battle, {PLAYER}. I\n"
+	.string "think I'll actually remember you this\l"
+	.string "time.\p"
+	.string "Just don't go changing your nick - it's\n"
+	.string "so hard for me to tell who's who!\p"
+	.string "You may proceed now.$"
 
 CosararaRoom_EventScript_Server1_Text_0:
 # 139 "data/maps/CosararaRoom/scripts.pory"
-	.string "Parece una máquina de servidor antigua.\p"
-	.string "Tiene un panel de control con botones y\n"
-	.string "luces.$"
+	.string "It looks like an old server machine.\p"
+	.string "It has a control panel with buttons and\n"
+	.string "lights.$"
 
 CosararaRoom_EventScript_Server2_Text_0:
 # 144 "data/maps/CosararaRoom/scripts.pory"
-	.string "Una pequeña etiqueta dice: “NO\n"
-	.string "APAGAR”.$"
+	.string "A small label reads: “DO NOT TURN OFF.”$"
 
 CosararaRoom_EventScript_Server3_Text_0:
 # 149 "data/maps/CosararaRoom/scripts.pory"
-	.string "El movimiento constante de las luces\n"
-	.string "resulta hipnótico.$"
+	.string "The constant movement of the lights is\n"
+	.string "hypnotic.$"
 
 CosararaRoom_EventScript_Box1_Text_0:
 # 154 "data/maps/CosararaRoom/scripts.pory"
-	.string "La caja está llena de cables\n"
-	.string "perfectamente enrollados.$"
+	.string "The box is full of perfectly coiled\n"
+	.string "cables.$"
 
 CosararaRoom_EventScript_Box2_Text_0:
 # 159 "data/maps/CosararaRoom/scripts.pory"
-	.string "Hay discos y componentes electrónicos\n"
-	.string "guardados con cuidado.$"
+	.string "There are disks and electronic\n"
+	.string "components stored with care.$"
 
 CosararaRoom_EventScript_Box3_Text_0:
 # 164 "data/maps/CosararaRoom/scripts.pory"
-	.string "Una pequeña etiqueta dice: “Hardware\n"
-	.string "obsoleto”.$"
+	.string "A small label reads: “Obsolete\n"
+	.string "hardware.”$"
 
 CosararaRoom_EventScript_Box4_Text_0:
 # 169 "data/maps/CosararaRoom/scripts.pory"
-	.string "La caja está vacía.$"
+	.string "The box is empty.$"
 
 CosararaRoom_EventScript_Boxes_Text_0:
 # 174 "data/maps/CosararaRoom/scripts.pory"
-	.string "Hay varias cajas apiladas unas sobre\n"
-	.string "otras.\p"
-	.string "Parece un depósito improvisado.$"
+	.string "There are several boxes stacked on top\n"
+	.string "of each other.\p"
+	.string "It looks like a makeshift storeroom.$"
 
 CosararaRoom_EventScript_OldComputers_Text_0:
 # 179 "data/maps/CosararaRoom/scripts.pory"
-	.string "Son computadoras demasiado viejas\n"
-	.string "para seguir utilizándose.\p"
-	.string "Parece que nadie quiso deshacerse de\n"
-	.string "ellas.$"
+	.string "They're computers too old to still be\n"
+	.string "used.\p"
+	.string "It seems no one wanted to get rid of\n"
+	.string "them.$"
 
 CosararaRoom_EventScript_SuperComputer_Text_0:
 # 184 "data/maps/CosararaRoom/scripts.pory"
-	.string "Columnas interminables de símbolos\n"
-	.string "recorren las pantallas.\p"
-	.string "Todo parece una enorme matriz de datos.$"
+	.string "Endless columns of symbols scroll\n"
+	.string "across the screens.\p"
+	.string "It all looks like a huge data matrix.$"
 
 CosararaRoom_EventScript_Notes1_Text_0:
 # 189 "data/maps/CosararaRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Parecen tener el usuario y contraseña\n"
-	.string "del servidor de Whack a Hack.$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "They seem to have the username and\n"
+	.string "password for the Whack a Hack server.$"
 
 CosararaRoom_EventScript_Notes2_Text_0:
 # 193 "data/maps/CosararaRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Tienen un inventario de la sala de\n"
-	.string "servidores.$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "They have an inventory of the server\n"
+	.string "room.$"
 
 CosararaRoom_EventScript_Notes3_Text_0:
 # 197 "data/maps/CosararaRoom/scripts.pory"
-	.string "Son varias hojas que se encuentran en\n"
-	.string "el suelo.\p"
-	.string "Parecen tener impresos varios HTML de\n"
-	.string "la página de Whack a Hack.\p"
-	.string "Tiene fecha 2014.$"
+	.string "There are several papers lying on the\n"
+	.string "floor.\p"
+	.string "They seem to have several printed HTML\n"
+	.string "pages from the Whack a Hack site.\p"
+	.string "It's dated 2014.$"
 
 CosararaRoom_Text_CosararaDefeated::
 # 104 "data/maps/CosararaRoom/scripts.pory"
-	.string "Me ha hecho muy feliz esta batalla.$"
+	.string "This battle made me very happy.$"

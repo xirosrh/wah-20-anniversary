@@ -636,7 +636,7 @@ Lobby_EventScript_Roxas::
 # 362 "data/maps/Lobby/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, Lobby_EventScript_Roxas_1
 # 413 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 414 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
 # 415 "data/maps/Lobby/scripts.pory"
@@ -644,7 +644,7 @@ Lobby_EventScript_Roxas::
 # 416 "data/maps/Lobby/scripts.pory"
 	delay 20
 # 417 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_6, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 418 "data/maps/Lobby/scripts.pory"
 	delay 20
 # 419 "data/maps/Lobby/scripts.pory"
@@ -660,17 +660,17 @@ Lobby_EventScript_Roxas::
 # 424 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Lobby_EventScript_Roxas_IntroFirstBattle_Movement_1
 # 425 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_7, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 426 "data/maps/Lobby/scripts.pory"
 	lock
 # 427 "data/maps/Lobby/scripts.pory"
 	delay 20
 # 428 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_8, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 429 "data/maps/Lobby/scripts.pory"
 	call Lobby_EventScript_WalkInPlaceLastTalkedFacingPlayer
 # 430 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_10, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_9, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 # 431 "data/maps/Lobby/scripts.pory"
 	release
 	end
@@ -719,14 +719,14 @@ Lobby_EventScript_Roxas_8:
 	compare VAR_RESULT, MALE
 	goto_if_eq Lobby_EventScript_Roxas_18
 # 402 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 Lobby_EventScript_Roxas_17:
 # 404 "data/maps/Lobby/scripts.pory"
 	playse SE_PIN
 # 405 "data/maps/Lobby/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
 # 406 "data/maps/Lobby/scripts.pory"
-	msgbox Lobby_EventScript_Roxas_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
+	msgbox Lobby_EventScript_Roxas_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_ROXAS
 Lobby_EventScript_Roxas_13:
 # 408 "data/maps/Lobby/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatAllAdmins
@@ -1938,148 +1938,143 @@ Lobby_EventScript_Cope_Movement_0:
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_0:
 # 14 "data/maps/Lobby/scripts.pory"
-	.string "¡Increíble, {PLAYER}! Has superado el\n"
-	.string "desafío por completo.$"
+	.string "Incredible, {PLAYER}! You've beaten\n"
+	.string "the challenge completely.$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_1:
 # 17 "data/maps/Lobby/scripts.pory"
-	.string "¡Pero no creas que esto ha terminado!$"
+	.string "But don't think this is over!$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_2:
 # 22 "data/maps/Lobby/scripts.pory"
-	.string "¡Todavía tienes muchas cosas por\n"
-	.string "hacer!\p"
-	.string "A partir de ahora has desbloqueado\n"
-	.string "nuevas formas de jugar el desafío.$"
+	.string "You've still got plenty left to do!\p"
+	.string "From now on you've unlocked new ways to\n"
+	.string "play the challenge.$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_3:
 # 24 "data/maps/Lobby/scripts.pory"
-	.string "¡Ahora puedes combatir en modalidad\n"
-	.string "{COLOR BLUE}batallas dobles{COLOR DARK_GRAY}!\p"
-	.string "Cada combate será en formato doble:\n"
-	.string "dos Pokémon en campo, ¡el doble de caos!$"
+	.string "Now you can battle in {COLOR BLUE}Double Battle{COLOR DARK_GRAY}\n"
+	.string "mode!\p"
+	.string "Every battle will be a double: two\n"
+	.string "Pokémon out, double the chaos!$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_4:
 # 27 "data/maps/Lobby/scripts.pory"
-	.string "¿Y si quieres pensar un poco más?\n"
-	.string "Entonces las {COLOR RED}batallas inversas{COLOR DARK_GRAY} son\l"
-	.string "para ti!\p"
-	.string "¡La tabla de tipos está al revés! Lo\n"
-	.string "resistente será débil, y viceversa.\p"
-	.string "¡Ya no podrás combatir en modo\n"
-	.string "automático!$"
+	.string "Want to think a bit harder? Then\n"
+	.string "{COLOR RED}Inverse Battles{COLOR DARK_GRAY} are for you!\p"
+	.string "The type chart is flipped! What's\n"
+	.string "resistant becomes weak, and vice versa.\p"
+	.string "You can no longer battle in auto mode!$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_5:
 # 30 "data/maps/Lobby/scripts.pory"
-	.string "¡Y eso no es todo!\p"
-	.string "Sin importar la modalidad que elijas,\n"
-	.string "cada administrador tendrá dos equipos\l"
-	.string "posibles para utilizar.\p"
-	.string "Su {COLOR BLUE}equipo principal{COLOR DARK_GRAY}, que ya conoces, o\n"
-	.string "un {COLOR RED}equipo alternativo{COLOR DARK_GRAY}.\p"
-	.string "Nunca sabrás cuál te podrá tocar, lo\n"
-	.string "que significa que cada recorrido podría\l"
-	.string "sentirse completamente diferente.$"
+	.string "And that's not all!\p"
+	.string "No matter which mode you pick, each\n"
+	.string "admin will have two possible teams to\l"
+	.string "use.\p"
+	.string "Their {COLOR BLUE}main team{COLOR DARK_GRAY}, which you know, or an\n"
+	.string "{COLOR RED}alternate team{COLOR DARK_GRAY}.\p"
+	.string "You'll never know which you'll face,\n"
+	.string "which means each run could feel\l"
+	.string "completely different.$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_6:
 # 36 "data/maps/Lobby/scripts.pory"
-	.string "¡Casi lo olvidaba!\p"
-	.string "También puedes explorar la {COLOR BLUE}Zona\n"
-	.string "creativa{COLOR DARK_GRAY}.\p"
-	.string "¡Varios de los creadores del desafío\n"
-	.string "están ansiosos por enfrentarte!\p"
-	.string "Y si buscas completar todo al 100%, aún\n"
-	.string "quedan muchos {COLOR BLUE}logros{COLOR DARK_GRAY} por conseguir.\p"
-	.string "Con todo lo que te queda por hacer,\n"
-	.string "¡seguro te vas a divertir mucho!$"
+	.string "I almost forgot!\p"
+	.string "You can also explore the {COLOR BLUE}Creative Zone{COLOR DARK_GRAY}.\p"
+	.string "Several of the challenge's creators are\n"
+	.string "eager to take you on!\p"
+	.string "And if you want 100% completion, there\n"
+	.string "are still many {COLOR BLUE}achievements{COLOR DARK_GRAY} to earn.\p"
+	.string "With everything left to do, you're sure\n"
+	.string "to have a blast!$"
 
 Lobby_EventScript_StartChallenge_Text_0:
 # 54 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola {PLAYER}!$"
+	.string "Hi {PLAYER}!$"
 
 Lobby_EventScript_StartChallenge_Text_1:
 # 59 "data/maps/Lobby/scripts.pory"
-	.string "¿Así que ya estás list{OA} para intentar el\n"
-	.string "desafío?$"
+	.string "So you're ready to take on the\n"
+	.string "challenge?$"
 
 Lobby_EventScript_StartChallenge_Text_2:
 # 65 "data/maps/Lobby/scripts.pory"
-	.string "¡Excelente! Adelante, ¡te deseo mucha\n"
-	.string "suerte y sobre todo que te diviertas!$"
+	.string "Excellent! Go ahead - I wish you lots of\n"
+	.string "luck and, above all, have fun!$"
 
 Lobby_EventScript_StartChallenge_Text_3:
 # 72 "data/maps/Lobby/scripts.pory"
-	.string "¿En qué modo quieres afrontar el\n"
-	.string "desafío?$"
+	.string "How do you want to take on the\n"
+	.string "challenge?$"
 
 Lobby_EventScript_StartChallenge_Text_4:
 # 74 "data/maps/Lobby/scripts.pory"
-	.string "Estándar$"
+	.string "Standard$"
 
 Lobby_EventScript_StartChallenge_Text_5:
 # 75 "data/maps/Lobby/scripts.pory"
-	.string "Batallas dobles$"
+	.string "Double Battles$"
 
 Lobby_EventScript_StartChallenge_Text_6:
 # 76 "data/maps/Lobby/scripts.pory"
-	.string "Batallas inversas$"
+	.string "Inverse Battles$"
 
 Lobby_EventScript_StartChallenge_Text_7:
 # 77 "data/maps/Lobby/scripts.pory"
-	.string "Salir$"
+	.string "Exit$"
 
 Lobby_EventScript_StartChallenge_Text_8:
 # 91 "data/maps/Lobby/scripts.pory"
-	.string "¡Excelente! El desafío será en modo\n"
-	.string "batallas dobles.\p"
-	.string "¡Adelante, te deseo mucha suerte y\n"
-	.string "sobre todo que te diviertas!$"
+	.string "Excellent! The challenge will be in\n"
+	.string "Double Battle mode.\p"
+	.string "Go ahead, I wish you lots of luck and,\n"
+	.string "above all, have fun!$"
 
 Lobby_EventScript_StartChallenge_Text_9:
 # 97 "data/maps/Lobby/scripts.pory"
-	.string "¡Excelente! El desafío será en modo\n"
-	.string "batallas inversas.\p"
-	.string "Las efectividades de tipo se invierten:\n"
-	.string "lo que normalmente es súper efectivo\l"
-	.string "será poco efectivo y viceversa.\p"
-	.string "¡Adelante, te deseo mucha suerte y\n"
-	.string "sobre todo que te diviertas!$"
+	.string "Excellent! The challenge will be in\n"
+	.string "Inverse Battle mode.\p"
+	.string "Type effectiveness is inverted: what's\n"
+	.string "normally super effective becomes not\l"
+	.string "very effective, and vice versa.\p"
+	.string "Go ahead, I wish you lots of luck and,\n"
+	.string "above all, have fun!$"
 
 Lobby_StartChallenge_CancelledChallenge_Text_0:
 # 107 "data/maps/Lobby/scripts.pory"
-	.string "¿Así que no te sientes list{OA}?$"
+	.string "So you don't feel ready?$"
 
 Lobby_StartChallenge_CancelledChallenge_Text_1:
 # 109 "data/maps/Lobby/scripts.pory"
-	.string "Recuerda que las personas de la sala de\n"
-	.string "espera pueden ayudar en tu\l"
-	.string "preparación.$"
+	.string "Remember, the people in the waiting\n"
+	.string "room can help with your preparation.$"
 
 Lobby_EventScript_TeamSelector_Text_0:
 # 148 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! Soy el encargado de la selección\n"
-	.string "de equipos para el desafío.\p"
-	.string "Veo que tu equipo actual es bueno, pero\n"
-	.string "creo que puedes conseguir uno mejor.\p"
-	.string "¿Quieres elegir otro equipo?$"
+	.string "Hi! I'm in charge of team selection for\n"
+	.string "the challenge.\p"
+	.string "Your current team is good, but I think\n"
+	.string "you can get a better one.\p"
+	.string "Want to choose another team?$"
 
 Lobby_EventScript_TeamSelector_Text_1:
 # 153 "data/maps/Lobby/scripts.pory"
-	.string "¡Excelente elección! Eso sí es un\n"
-	.string "equipo ganador.\p"
-	.string "¡Ve por la gloria!$"
+	.string "Excellent choice! Now that's a winning\n"
+	.string "team.\p"
+	.string "Go for glory!$"
 
 Lobby_EventScript_DifficultySelector_Text_0:
 # 174 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! Soy la encargada de la selección\n"
-	.string "de dificultad del desafío.\p"
-	.string "No parece que la dificultad actual sea\n"
-	.string "la adecuada para ti.\p"
-	.string "¿Quieres cambiar el nivel de dificultad?$"
+	.string "Hi! I'm in charge of difficulty selection\n"
+	.string "for the challenge.\p"
+	.string "The current difficulty doesn't seem\n"
+	.string "right for you.\p"
+	.string "Want to change the difficulty level?$"
 
 Lobby_EventScript_DifficultySelector_Text_1:
 # 179 "data/maps/Lobby/scripts.pory"
-	.string "¡Listo! La dificultad ha sido actualizada.\n¡Buena suerte con el desafío!$"
+	.string "Done! The difficulty's been updated.\nGood luck with the challenge!$"
 
 Lobby_EventScript_BufferVictoryWordFromCountVar_Text_0:
 # 198 "data/maps/Lobby/scripts.pory"
@@ -2087,253 +2082,242 @@ Lobby_EventScript_BufferVictoryWordFromCountVar_Text_0:
 
 Lobby_EventScript_BufferVictoryWordFromCountVar_Text_1:
 # 203 "data/maps/Lobby/scripts.pory"
-	.string "victoria$"
+	.string "win$"
 
 Lobby_EventScript_BufferVictoryWordFromCountVar_Text_2:
 # 205 "data/maps/Lobby/scripts.pory"
-	.string "victorias$"
+	.string "wins$"
 
 Lobby_EventScript_BufferTimeWordFromCountVar_Text_0:
 # 217 "data/maps/Lobby/scripts.pory"
-	.string "vez$"
+	.string "time$"
 
 Lobby_EventScript_BufferTimeWordFromCountVar_Text_1:
 # 219 "data/maps/Lobby/scripts.pory"
-	.string "veces$"
+	.string "times$"
 
 Lobby_EventScript_ChallengeHistorian_Text_0:
 # 228 "data/maps/Lobby/scripts.pory"
-	.string "¡Ey, {PLAYER}!\p"
-	.string "No trabajo aquí ni nada, pero me\n"
-	.string "encanta sacar estadísticas.\p"
-	.string "Me quedo en la sala de espera\n"
-	.string "observando a todos los que entran y lo\l"
-	.string "anoto todo.$"
+	.string "Hey, {PLAYER}!\p"
+	.string "I don't work here or anything, but I\n"
+	.string "love crunching stats.\p"
+	.string "I hang out in the waiting room watching\n"
+	.string "everyone who comes in, and I note it all\l"
+	.string "down.$"
 
 Lobby_EventScript_ChallengeHistorian_Text_1:
 # 234 "data/maps/Lobby/scripts.pory"
-	.string "Veo que aún no has completado el\n"
-	.string "desafío ni una vez.\p"
-	.string "Todavía no te has ganado un lugar en\n"
-	.string "mis notas.$"
+	.string "I see you haven't completed the\n"
+	.string "challenge even once.\p"
+	.string "You haven't earned a spot in my notes\n"
+	.string "yet.$"
 
 Lobby_EventScript_ChallengeHistorian_Text_2:
 # 246 "data/maps/Lobby/scripts.pory"
-	.string "Según mi cuaderno, en modo estándar\n"
-	.string "llevas {STR_VAR_1} {STR_VAR_2}.\p"
-	.string "¡Nada mal, de verdad!$"
+	.string "According to my notebook, in standard\n"
+	.string "mode you have {STR_VAR_1}\l"
+	.string "{STR_VAR_2}.\p"
+	.string "Not bad at all, really!$"
 
 Lobby_EventScript_ChallengeHistorian_Text_3:
 # 249 "data/maps/Lobby/scripts.pory"
-	.string "En batallas dobles tienes\n"
+	.string "In double battles you have\n"
 	.string "{STR_VAR_1} {STR_VAR_2}.\p"
-	.string "Ahí se nota quién piensa dos turnos por\n"
-	.string "adelantado.$"
+	.string "That's where you see who thinks two\n"
+	.string "turns ahead.$"
 
 Lobby_EventScript_ChallengeHistorian_Text_4:
 # 252 "data/maps/Lobby/scripts.pory"
-	.string "Y en batallas invertidas sumas\n"
+	.string "And in inverse battles you've racked up\n"
 	.string "{STR_VAR_1} {STR_VAR_2}.\p"
-	.string "Ese modo le da vuelta la cabeza a\n"
-	.string "cualquiera.$"
+	.string "That mode turns anyone's head inside\n"
+	.string "out.$"
 
 Lobby_EventScript_ChallengeHistorian_Text_5:
 # 255 "data/maps/Lobby/scripts.pory"
-	.string "En total, has completado el desafío\n"
-	.string "{STR_VAR_1} {STR_VAR_2}.$"
+	.string "In total, you've completed the\n"
+	.string "challenge {STR_VAR_1}\l"
+	.string "{STR_VAR_2}.$"
 
 Lobby_EventScript_ChallengeHistorian_Text_6:
 # 257 "data/maps/Lobby/scripts.pory"
-	.string "¡Si sigues así, voy a tener que comprar\n"
-	.string "otro cuaderno para registrar tus\l"
-	.string "números!$"
+	.string "If you keep this up, I'll have to buy\n"
+	.string "another notebook to record your\l"
+	.string "numbers!$"
 
 Lobby_EventScript_ChallengeHistorian_Text_7:
 # 262 "data/maps/Lobby/scripts.pory"
-	.string "Aún no son tantas victorias, pero sigue\n"
-	.string "así.$"
+	.string "Not that many wins yet, but keep it up.$"
 
 Lobby_EventScript_Shop_Text_0:
 # 276 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! ¡Hemos ampliado el catálogo!\p"
-	.string "Ahora también puedes comprar objetos\n"
-	.string "de combate.\p"
-	.string "¿En qué puedo ayudarte?$"
+	.string "Hi! We've expanded the catalog!\p"
+	.string "Now you can also buy battle items.\p"
+	.string "How can I help you?$"
 
 Lobby_EventScript_Shop_Text_1:
 # 280 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola! ¿En qué puedo ayudarte?$"
+	.string "Hi! How can I help you?$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_0:
 # 291 "data/maps/Lobby/scripts.pory"
-	.string "¡Apa, mira vos! ¡El nuevo campeón!\n"
-	.string "¡Felicidades loco!$"
+	.string "Well, look at you! The new champ!\n"
+	.string "Congrats, man!$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_1:
 # 293 "data/maps/Lobby/scripts.pory"
-	.string "¡Apa, mira vos! ¡La nueva campeona!\n"
-	.string "¡Felicidades loca!$"
+	.string "Well, look at you! The new champ!\n"
+	.string "Congrats, girl!$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_2:
 # 299 "data/maps/Lobby/scripts.pory"
-	.string "Veo que se la diste a esos traidores de\n"
-	.string "las salas… Me alegra que alguien les\l"
-	.string "bajara los humos.$"
+	.string "I see you gave it to those traitors in\n"
+	.string "the rooms… Glad someone finally\l"
+	.string "knocked 'em down a peg.$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_3:
 # 303 "data/maps/Lobby/scripts.pory"
-	.string "¿Te acordas de lo que te conté la última\n"
-	.string "vez?$"
+	.string "Remember what I told you last time?$"
 
 Lobby_EventScript_Roxas_IntroFirstBattle_Text_4:
 # 306 "data/maps/Lobby/scripts.pory"
-	.string "Terminé mi investigación en el\n"
-	.string "Archipiélago Suzuka… es una historia\l"
-	.string "larga, tendrías que haberlo visto…\p"
-	.string "No sabes lo que fue… Pero logré dar con\n"
-	.string "el rastro de esa fuerza que estaba\l"
-	.string "causando tantos males y estoy listo\l"
-	.string "para probar si realmente este bicho es\l"
-	.string "tan legendario como dicen las crónicas\l"
-	.string "del archipiélago.$"
+	.string "I finished my research in the Suzuka\n"
+	.string "Archipelago… it's a long story, you\l"
+	.string "should've seen it…\p"
+	.string "You have no idea… But I picked up the\n"
+	.string "trail of that force that was causing so\l"
+	.string "much trouble, and I'm ready to test if\l"
+	.string "this thing's really as legendary as the\l"
+	.string "archipelago's chronicles claim.$"
 
 Lobby_EventScript_Roxas_IntroRematch_Text_0:
 # 314 "data/maps/Lobby/scripts.pory"
-	.string "¡Apa, tú de nuevo! ¿Quieres volver a\n"
-	.string "combatir contra mi legendario?$"
+	.string "Hey, you again! Want to battle my\n"
+	.string "legendary again?$"
 
 Lobby_EventScript_Roxas_ExplainPartyLimit_Text_0:
 # 330 "data/maps/Lobby/scripts.pory"
-	.string "Vamos a hacerlo más interesante: elige\n"
-	.string "a tres de tus bichos.\p"
-	.string "Yo voy a salir con mi legendario, así que\n"
-	.string "más te vale elegir bien.$"
+	.string "Let's make it interesting: pick three of\n"
+	.string "your critters.\p"
+	.string "I'll send out my legendary, so you'd\n"
+	.string "better choose well.$"
 
 Lobby_EventScript_Roxas_ExplainPartyLimit_Text_1:
 # 336 "data/maps/Lobby/scripts.pory"
-	.string "Vamos a hacerlo más interesante: un\n"
-	.string "mano a mano.\p"
-	.string "Elige a tu mejor bicho y prepárate para\n"
-	.string "enfrentar a mi legendario.$"
+	.string "Let's make it interesting: a\n"
+	.string "one-on-one.\p"
+	.string "Pick your best critter and get ready to\n"
+	.string "face my legendary.$"
 
 Lobby_EventScript_Roxas_Text_0:
 # 385 "data/maps/Lobby/scripts.pory"
-	.string "¡A ver si te la bancas!$"
+	.string "Let's see if you can handle it!$"
 
 Lobby_EventScript_Roxas_Text_1:
 # 387 "data/maps/Lobby/scripts.pory"
-	.string "¡Nooooo!$"
+	.string "Nooooo!$"
 
 Lobby_EventScript_Roxas_Text_2:
 # 394 "data/maps/Lobby/scripts.pory"
-	.string "¡Nooo, me estás cargando! Ni con la\n"
-	.string "fuerza de este Pokémon oscuro te pude\l"
-	.string "ganar.\p"
-	.string "Ahora me cierra por qué a vos te dejaron\n"
-	.string "pasar a las salas y a mí me sacaron de\l"
-	.string "un voleo.\p"
-	.string "Tenés algo distinto, pasta de campeón,\n"
-	.string "no es solo fuerza bruta.\p"
-	.string "La verdad, me cerraste la boca. Bien\n"
-	.string "ganado.$"
+	.string "Noo, you've gotta be kidding! Not even\n"
+	.string "the power of this dark Pokémon could\l"
+	.string "beat you.\p"
+	.string "Now I get why they let you into the\n"
+	.string "rooms and tossed me out on my ear.\p"
+	.string "You've got something special, champ\n"
+	.string "material - not just brute force.\p"
+	.string "Honestly, you shut me up. Well earned.$"
 
 Lobby_EventScript_Roxas_Text_3:
 # 400 "data/maps/Lobby/scripts.pory"
-	.string "Mamita lo que me imaginaba… El poder de\n"
-	.string "este bicho es de otro planeta, ni vos\l"
-	.string "que sos el campeón te la bancaste.$"
+	.string "Man, just like I figured… The power of\n"
+	.string "this thing is out of this world; not even\l"
+	.string "you, the champ, could take it.$"
 
 Lobby_EventScript_Roxas_Text_4:
-# 402 "data/maps/Lobby/scripts.pory"
-	.string "Mamita lo que me imaginaba… El poder de\n"
-	.string "este bicho es de otro planeta, ni vos\l"
-	.string "que sos la campeona te la bancaste.$"
+# 406 "data/maps/Lobby/scripts.pory"
+	.string "If you ever swing by the Suzuka\n"
+	.string "Archipelago, watch yourself, ace, 'cause\l"
+	.string "out there this one won't cut you any\l"
+	.string "slack.\p"
+	.string "Better luck next time.$"
 
 Lobby_EventScript_Roxas_Text_5:
-# 406 "data/maps/Lobby/scripts.pory"
-	.string "Si algún día te das una vuelta por el\n"
-	.string "Archipiélago Suzuka, anda con cuidado\l"
-	.string "maquina, porque allá este no te perdona\l"
-	.string "ni media.\p"
-	.string "Suerte la próxima.$"
+# 413 "data/maps/Lobby/scripts.pory"
+	.string "Don't bother asking… They won't let me\n"
+	.string "through either…$"
 
 Lobby_EventScript_Roxas_Text_6:
-# 413 "data/maps/Lobby/scripts.pory"
-	.string "No te molestes en preguntar… A mí\n"
-	.string "tampoco me dejan pasar estos…$"
+# 417 "data/maps/Lobby/scripts.pory"
+	.string "They say being a WAH Leader in the\n"
+	.string "Suzuka Archipelago for just two weeks\l"
+	.string "isn't “enough of a track record” to\l"
+	.string "take part.$"
 
 Lobby_EventScript_Roxas_Text_7:
-# 417 "data/maps/Lobby/scripts.pory"
-	.string "Dicen que haber sido Líder de WAH en el\n"
-	.string "Archipiélago Suzuka durante solo dos\l"
-	.string "semanas no es “trayectoria suficiente”\l"
-	.string "para participar.$"
+# 425 "data/maps/Lobby/scripts.pory"
+	.string "The nerve of these guys, man!$"
 
 Lobby_EventScript_Roxas_Text_8:
-# 425 "data/maps/Lobby/scripts.pory"
-	.string "¡Unos caraduras, loco!$"
+# 428 "data/maps/Lobby/scripts.pory"
+	.string "But hey, I'm not gonna sit here crying\n"
+	.string "about it.\p"
+	.string "I'm after a ship that vanished west of\n"
+	.string "the Orange Islands, the Suzuka\l"
+	.string "Archipelago.\p"
+	.string "Team Rocket's up to its old tricks, and\n"
+	.string "they say there's a dark creature with\l"
+	.string "red eyes that's dangerous… terrifying…\p"
+	.string "Gotta investigate and see what's up…$"
 
 Lobby_EventScript_Roxas_Text_9:
-# 428 "data/maps/Lobby/scripts.pory"
-	.string "Pero bueno, tampoco me voy a quedar acá\n"
-	.string "llorando.\p"
-	.string "Estoy tras un barco que desapareció al\n"
-	.string "oeste de las Islas Naranja, el\l"
-	.string "archipiélago Suzuka.\p"
-	.string "El Team Rocket anda haciendo de las\n"
-	.string "suyas y dicen que hay un bicho oscuro\l"
-	.string "con ojos rojos que es un peligro…\l"
-	.string "aterrador…\p"
-	.string "Habrá que investigar y ver qué onda…$"
-
-Lobby_EventScript_Roxas_Text_10:
 # 430 "data/maps/Lobby/scripts.pory"
-	.string "Che, discúlpame, mejor me voy a seguir\n"
-	.string "con mis investigaciones.\p"
-	.string "¡Suerte, espero que a vos sí te den\n"
-	.string "bola!$"
+	.string "Hey, sorry, I'd better get back to my\n"
+	.string "research.\p"
+	.string "Good luck - hope they actually give you\n"
+	.string "the time of day!$"
 
 Lobby_EventScript_FakemonDexMenu_Text_0:
 # 465 "data/maps/Lobby/scripts.pory"
-	.string "Soy el experto en las especies\n"
-	.string "exclusivas de Whack a Hack.\p"
-	.string "Te revelaré todo sobre ellas, pero solo\n"
-	.string "de las que hayas visto.\p"
-	.string "¡No quiero arruinar el factor sorpresa!$"
+	.string "I'm the expert on the species exclusive\n"
+	.string "to Whack a Hack.\p"
+	.string "I'll tell you all about them, but only the\n"
+	.string "ones you've seen.\p"
+	.string "I don't want to spoil the surprise!$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_0:
 # 564 "data/maps/Lobby/scripts.pory"
-	.string "¡Todas las especies que has visto son\n"
-	.string "de público conocimiento!\p"
-	.string "¡Ve a combatir a las salas y ya verás de\n"
-	.string "las que estoy hablando!$"
+	.string "Every species you've seen is common\n"
+	.string "knowledge!\p"
+	.string "Go battle in the rooms and you'll see\n"
+	.string "what I'm talking about!$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_1:
 # 569 "data/maps/Lobby/scripts.pory"
-	.string "¿De cuál especie te gustaría conocer\n"
-	.string "más?$"
+	.string "Which species would you like to know\n"
+	.string "more about?$"
 
 Lobby_EventScript_FakemonDexMenu_ChooseSpecies_Text_2:
 # 572 "data/maps/Lobby/scripts.pory"
-	.string "¡Si quieres saber algo más, aquí estaré!$"
+	.string "If you want to know more, I'll be here!$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_0:
 # 643 "data/maps/Lobby/scripts.pory"
-	.string "Ya que no tienes una Pokédex, su\n"
-	.string "descripción es:{FONT_SMALL}\p"
+	.string "Since you don't have a Pokédex, its\n"
+	.string "description is:{FONT_SMALL}\p"
 	.string "“{STR_VAR_1}”$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_1:
 # 646 "data/maps/Lobby/scripts.pory"
-	.string "Su tipo es: {STR_VAR_2}.$"
+	.string "Its type is: {STR_VAR_2}.$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_2:
 # 648 "data/maps/Lobby/scripts.pory"
-	.string "Sus tipos son: {STR_VAR_2} y {STR_VAR_3}.$"
+	.string "Its types are: {STR_VAR_2} and {STR_VAR_3}.$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_3:
 # 650 "data/maps/Lobby/scripts.pory"
-	.string "¡Y esto seguramente no lo sabías!\nSus habilidades son:$"
+	.string "And I bet you didn't know this!\nIts abilities are:$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_4:
 # 654 "data/maps/Lobby/scripts.pory"
@@ -2342,146 +2326,141 @@ Lobby_EventScript_ShowFakemonDexInfo_Text_4:
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_5:
 # 667 "data/maps/Lobby/scripts.pory"
-	.string "¡Último dato! ¿Qué tan buenos son sus\n"
-	.string "stats base?\p"
+	.string "One last fact! How good are its base\n"
+	.string "stats?\p"
 	.string "{FONT_SMALL}{STR_VAR_1}$"
 
 Lobby_EventScript_ShowFakemonDexInfo_Text_6:
 # 670 "data/maps/Lobby/scripts.pory"
-	.string "Y eso es todo sobre {STR_VAR_1}.\nEspero que te haya resultado útil.$"
+	.string "And that's all about {STR_VAR_1}.\nHope you found it useful.$"
 
 Lobby_EventScript_TrainerCardGirl_Text_0:
 # 675 "data/maps/Lobby/scripts.pory"
-	.string "¿Sabías que en la parte de atrás de tu\n"
-	.string "tarjeta de entrenador puedes ver tus\l"
-	.string "logros?\p"
-	.string "¡También puedes ver los requerimientos\n"
-	.string "para obtener cada uno!$"
+	.string "Did you know that on the back of your\n"
+	.string "Trainer Card you can see your\l"
+	.string "achievements?\p"
+	.string "You can also see the requirements for\n"
+	.string "earning each one!$"
 
 Lobby_EventScript_Cope_Text_0:
 # 685 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola {PLAYER}!\p"
-	.string "¿Estás list{OA} para intentar el desafío?$"
+	.string "Hi {PLAYER}!\p"
+	.string "Are you ready to take on the challenge?$"
 
 Lobby_EventScript_Cope_Text_1:
 # 688 "data/maps/Lobby/scripts.pory"
-	.string "¿Y ya has podido encontrar a Tile?\p"
-	.string "Debe encontrarse en alguna sala... ¡Es\n"
-	.string "tan escurridizo!\p"
-	.string "Recuerda que puedes usar el Detector\n"
-	.string "Devon para encontrarlo.\p"
-	.string "¡Seguro cada vez que lo encuentres te\n"
-	.string "dará un premio!$"
+	.string "Have you managed to find Tile yet?\p"
+	.string "He must be in one of the rooms... He's so\n"
+	.string "slippery!\p"
+	.string "Remember you can use the Devon\n"
+	.string "Detector to find him.\p"
+	.string "I bet every time you find him he'll give\n"
+	.string "you a prize!$"
 
 Lobby_EventScript_Cope_Text_2:
 # 692 "data/maps/Lobby/scripts.pory"
-	.string "¡Hola {PLAYER}!\p"
-	.string "¿Has visto a Tile?$"
+	.string "Hi {PLAYER}!\p"
+	.string "Have you seen Tile?$"
 
 Lobby_EventScript_Cope_Text_3:
 # 696 "data/maps/Lobby/scripts.pory"
-	.string "¿Cómo? ¿No sabes quién es?\n"
-	.string "Es mi famoso Kecleon.\p"
-	.string "Lo he perdido de vista y no sé por dónde\n"
-	.string "se ha metido...\p"
-	.string "Además, ¡me ha robado el kit de objetos\n"
-	.string "que le doy a los entrenadores del\l"
-	.string "desafío!\p"
-	.string "Hazme un favor y búscale por mí.\n"
-	.string "Toma, llévate esto.$"
+	.string "What? You don't know who he is?\n"
+	.string "He's my famous Kecleon.\p"
+	.string "I've lost sight of him and have no idea\n"
+	.string "where he's gotten to...\p"
+	.string "On top of that, he stole the item kit I\n"
+	.string "give to the challenge's trainers!\p"
+	.string "Do me a favor and look for him.\n"
+	.string "Here, take this.$"
 
 Lobby_EventScript_Cope_Text_4:
 # 701 "data/maps/Lobby/scripts.pory"
-	.string "Con el Detector Devon podrás ver dónde\n"
-	.string "se esconde Tile.\p"
-	.string "Le he agregado una nueva\n"
-	.string "característica que permite saber si\l"
-	.string "hay un Pokémon invisible cerca.\p"
-	.string "¡Espero lo encuentres!$"
+	.string "With the Devon Scope you can see\n"
+	.string "where Tile is hiding.\p"
+	.string "I've added a new feature that tells you\n"
+	.string "if there's an invisible Pokémon nearby.\p"
+	.string "Hope you find him!$"
 
 Lobby_EventScript_QREventInfoKid_Text_0:
 # 710 "data/maps/Lobby/scripts.pory"
-	.string "Un chico de la zona creativa te da un\n"
-	.string "regalo por completar un evento\l"
-	.string "especial.\p"
-	.string "Es imposible adivinar lo que hay que\n"
-	.string "hacer sin mirar el vídeo.\p"
-	.string "¡Incluso tuve que cambiar de orden a\n"
-	.string "dos de los Pokémon de mi equipo!\p"
-	.string "Eso sí, me gustó el premio por completar\n"
-	.string "el evento, ¡valió la pena!$"
+	.string "A guy in the Creative Zone gives you a\n"
+	.string "gift for completing a special event.\p"
+	.string "There's no way to guess what you have\n"
+	.string "to do without watching the video.\p"
+	.string "I even had to reorder two of the\n"
+	.string "Pokémon on my team!\p"
+	.string "That said, I liked the reward for the\n"
+	.string "event, it was worth it!$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Text_0:
 # 720 "data/maps/Lobby/scripts.pory"
-	.string "¡Buenas! Soy el maestro de los\n"
-	.string "cuestionarios.$"
+	.string "Hey there! I'm the quiz master.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Text_1:
 # 725 "data/maps/Lobby/scripts.pory"
-	.string "Así que aún no has completado el\n"
-	.string "desafío.\l"
+	.string "So you haven't completed the challenge\n"
+	.string "yet.\l"
 	.string "...\l"
 	.string "...\p"
-	.string "Cuando lo superes, vuelve y te haré un\n"
-	.string "cuestionario especial.$"
+	.string "When you beat it, come back and I'll give\n"
+	.string "you a special quiz.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Text_2:
 # 734 "data/maps/Lobby/scripts.pory"
-	.string "Te haré una pregunta por cada vez que\n"
-	.string "hayas completado el desafío.\p"
-	.string "Has completado el desafío\n"
-	.string "{STR_VAR_1} veces.\p"
-	.string "Ya te hice {STR_VAR_2} preguntas.\p"
-	.string "Te quedan {STR_VAR_3} intentos\n"
-	.string "disponibles.\p"
-	.string "¿Quieres que te haga una pregunta?$"
+	.string "I'll ask one question for each time\n"
+	.string "you've completed the challenge.\p"
+	.string "You've completed the challenge\n"
+	.string "{STR_VAR_1} times.\p"
+	.string "I've already asked you {STR_VAR_2}\n"
+	.string "questions.\p"
+	.string "You have {STR_VAR_3} attempts left.\p"
+	.string "Want me to ask you a question?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_NoAttemptsLeft_Text_0:
 # 748 "data/maps/Lobby/scripts.pory"
-	.string "Has completado el desafío\n"
-	.string "{STR_VAR_1} veces.\p"
-	.string "Ya te hice {STR_VAR_2} preguntas.\p"
-	.string "Te quedan {STR_VAR_3} intentos\n"
-	.string "disponibles.\p"
-	.string "Completa el desafío otra vez y vuelve\n"
-	.string "por aquí.$"
+	.string "You've completed the challenge\n"
+	.string "{STR_VAR_1} times.\p"
+	.string "I've already asked you {STR_VAR_2}\n"
+	.string "questions.\p"
+	.string "You have {STR_VAR_3} attempts left.\p"
+	.string "Complete the challenge again and come\n"
+	.string "back here.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_NoMoreQuestions_Text_0:
 # 754 "data/maps/Lobby/scripts.pory"
-	.string "¡Ya has respondido todas mis\n"
-	.string "preguntas! ¿Qué te parecen los Pokémon\l"
-	.string "que has conseguido?$"
+	.string "You've already answered all my\n"
+	.string "questions! What do you think of the\l"
+	.string "Pokémon you've gotten?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_SeeYouLater_Text_0:
 # 760 "data/maps/Lobby/scripts.pory"
-	.string "De acuerdo. Puedes volver cuando\n"
-	.string "quieras.$"
+	.string "All right. Come back whenever you like.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_0:
 # 770 "data/maps/Lobby/scripts.pory"
-	.string "Has completado el desafío\n"
-	.string "{STR_VAR_1} veces.\p"
-	.string "Ya te hice {STR_VAR_2} preguntas.\p"
-	.string "Te quedan {STR_VAR_3} intentos\n"
-	.string "disponibles.\p"
-	.string "¿Quieres seguir respondiendo?$"
+	.string "You've completed the challenge\n"
+	.string "{STR_VAR_1} times.\p"
+	.string "I've already asked you {STR_VAR_2}\n"
+	.string "questions.\p"
+	.string "You have {STR_VAR_3} attempts left.\p"
+	.string "Want to keep answering?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_NextQuestion_Text_1:
 # 778 "data/maps/Lobby/scripts.pory"
-	.string "Has completado el desafío\n"
-	.string "{STR_VAR_1} veces.\p"
-	.string "Ya te hice {STR_VAR_2} preguntas.\p"
-	.string "Te quedan {STR_VAR_3} intentos\n"
-	.string "disponibles.\p"
-	.string "Por ahora no tengo más preguntas\n"
-	.string "distintas para hacerte.\p"
-	.string "Vuelve a hablarme en otro momento.$"
+	.string "You've completed the challenge\n"
+	.string "{STR_VAR_1} times.\p"
+	.string "I've already asked you {STR_VAR_2}\n"
+	.string "questions.\p"
+	.string "You have {STR_VAR_3} attempts left.\p"
+	.string "For now I don't have any more new\n"
+	.string "questions for you.\p"
+	.string "Come talk to me another time.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_0:
 # 812 "data/maps/Lobby/scripts.pory"
-	.string "¿Qué Pokémon es naranja, tiene una cola\n"
-	.string "larga y a todo el mundo le encanta el\l"
-	.string "que evoluciona en él?$"
+	.string "Which Pokémon is orange, has a long tail,\n"
+	.string "and everyone loves the one it evolves\l"
+	.string "into?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_1:
 # 814 "data/maps/Lobby/scripts.pory"
@@ -2501,12 +2480,12 @@ Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_4:
 
 Lobby_EventScript_BetaMonQuestionnaire_Gorochu_Text_5:
 # 822 "data/maps/Lobby/scripts.pory"
-	.string "Pues con este Pokémon te encontrarás.$"
+	.string "Well, this is the Pokémon you'll meet.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_0:
 # 831 "data/maps/Lobby/scripts.pory"
-	.string "Mi amigo siempre va con su Bro detrás.\p"
-	.string "¿Qué Pokémon es mi amigo?$"
+	.string "My friend always has his Bro in tow.\p"
+	.string "Which Pokémon is my friend?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_1:
 # 833 "data/maps/Lobby/scripts.pory"
@@ -2526,12 +2505,12 @@ Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_4:
 
 Lobby_EventScript_BetaMonQuestionnaire_Taaban_Text_5:
 # 841 "data/maps/Lobby/scripts.pory"
-	.string "Pues con su Bro te irás.$"
+	.string "Then off you go with his Bro.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_0:
 # 850 "data/maps/Lobby/scripts.pory"
-	.string "Blanco como la nieve y una carita mona.\p"
-	.string "¿Quién es?$"
+	.string "White as snow with a cute little face.\p"
+	.string "Who is it?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_1:
 # 852 "data/maps/Lobby/scripts.pory"
@@ -2551,13 +2530,13 @@ Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_4:
 
 Lobby_EventScript_BetaMonQuestionnaire_Bomushikaa_Text_5:
 # 860 "data/maps/Lobby/scripts.pory"
-	.string "¡Pues este se le parece!$"
+	.string "Well, this one looks like it!$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_0:
 # 869 "data/maps/Lobby/scripts.pory"
-	.string "El Capitán Puerro blande su espada en\n"
-	.string "el bosque.\p"
-	.string "¿Quién es realmente el Capitán Puerro?$"
+	.string "Captain Leek brandishes his sword in\n"
+	.string "the forest.\p"
+	.string "Who's really Captain Leek?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_1:
 # 871 "data/maps/Lobby/scripts.pory"
@@ -2577,14 +2556,14 @@ Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_4:
 
 Lobby_EventScript_BetaMonQuestionnaire_Madaamu_Text_5:
 # 879 "data/maps/Lobby/scripts.pory"
-	.string "Exacto. Ese filo también despertó la\n"
-	.string "curiosidad de Madaamu.$"
+	.string "Exactly. That blade also sparked\n"
+	.string "Madaamu's curiosity.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_0:
 # 888 "data/maps/Lobby/scripts.pory"
-	.string "Adivina, adivinanza.\p"
-	.string "¿Qué serpiente azul tiene una evolución\n"
-	.string "naranja?$"
+	.string "Riddle me this.\p"
+	.string "Which blue serpent has an orange\n"
+	.string "evolution?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_1:
 # 890 "data/maps/Lobby/scripts.pory"
@@ -2604,17 +2583,17 @@ Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_4:
 
 Lobby_EventScript_BetaMonQuestionnaire_Akueria_Text_5:
 # 898 "data/maps/Lobby/scripts.pory"
-	.string "Pues su primo te ha visto luchar y te\n"
-	.string "espera.$"
+	.string "Well, its cousin has watched you battle\n"
+	.string "and awaits you.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_0:
 # 907 "data/maps/Lobby/scripts.pory"
-	.string "Adivina, adivinanza.\p"
-	.string "¿Qué Pokémon hace este grito?$"
+	.string "Riddle me this.\p"
+	.string "Which Pokémon makes this cry?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_1:
 # 910 "data/maps/Lobby/scripts.pory"
-	.string "¿Quién fue?$"
+	.string "Who was it?$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_2:
 # 912 "data/maps/Lobby/scripts.pory"
@@ -2634,8 +2613,7 @@ Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_5:
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_6:
 # 923 "data/maps/Lobby/scripts.pory"
-	.string "Oh, correcto. Ahora mismo intenta\n"
-	.string "adivinar este.$"
+	.string "Oh, correct. Now try to guess this one.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_7:
 # 928 "data/maps/Lobby/scripts.pory"
@@ -2655,7 +2633,7 @@ Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_10:
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_11:
 # 939 "data/maps/Lobby/scripts.pory"
-	.string "Oh, volviste a acertar. Ahora este.$"
+	.string "Oh, right again. Now this one.$"
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_12:
 # 944 "data/maps/Lobby/scripts.pory"
@@ -2675,41 +2653,41 @@ Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_15:
 
 Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_16:
 # 952 "data/maps/Lobby/scripts.pory"
-	.string "Increíble, acertaste otra vez. Es\n"
-	.string "impresionante.\p"
-	.string "Ten esto.$"
+	.string "Incredible, you got it again. That's\n"
+	.string "impressive.\p"
+	.string "Take this.$"
 
 Lobby_EventScript_Turbo_Text_0:
 # 974 "data/maps/Lobby/scripts.pory"
-	.string "¿Sabías que existe un modo turbo para\n"
-	.string "vivir la aventura a toda velocidad?\p"
-	.string "Desde el menú de opciones puedes\n"
-	.string "configurar tu velocidad de texto, de\l"
-	.string "caminar, ¡y un turbo para los combates!\p"
-	.string "¿Te animas a probarlo?$"
+	.string "Did you know there's a turbo mode to\n"
+	.string "blaze through the adventure at full\l"
+	.string "speed?\p"
+	.string "From the options menu you can set your\n"
+	.string "text speed, walking speed, and turbo\l"
+	.string "mode for battles!\p"
+	.string "Care to give it a try?$"
 
 Lobby_EventScript_Notes_Text_0:
 # 979 "data/maps/Lobby/scripts.pory"
-	.string "Parecen apuntes llenos de\n"
-	.string "estadísticas y observaciones.\p"
-	.string "Algunas páginas están tan gastadas\n"
-	.string "que cuesta leerlas.$"
+	.string "They look like notes full of stats and\n"
+	.string "observations.\p"
+	.string "Some pages are so worn they're hard to\n"
+	.string "read.$"
 
 Lobby_Text_TeamSelector_TeamSelectionCancelled::
 # 166 "data/maps/Lobby/scripts.pory"
-	.string "¡Vaya, vaya! Un{A} chic{OA} valiente, ¿eh?\nAsí que piensas ganar con ESE equipo…\p¡Buena suerte, la vas a necesitar!$"
+	.string "Well, well! A brave kid, huh?\nSo you think you'll win with THAT team...\pGood luck - you're gonna need it!$"
 
 Lobby_Text_DifficultySelector_Cancelled::
 # 191 "data/maps/Lobby/scripts.pory"
-	.string "¡Entendido! Si cambias de opinión,\n"
-	.string "estaré por aquí.$"
+	.string "Got it! If you change your mind, I'll be\n"
+	.string "around.$"
 
 Lobby_Text_Roxas_PlayerCancelled::
 # 438 "data/maps/Lobby/scripts.pory"
-	.string "¿Así que le tenés miedo a mi bicho\n"
-	.string "legendario? ¡Y aún así ganaste las\l"
-	.string "salas!$"
+	.string "So you're scared of my legendary\n"
+	.string "critter? And yet you won the rooms!$"
 
 Lobby_Text_FailedToUnlock::
 # 960 "data/maps/Lobby/scripts.pory"
-	.string "Oh, ¡fallaste!$"
+	.string "Oh, you missed!$"

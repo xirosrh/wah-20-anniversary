@@ -219,108 +219,114 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_ShowToughPainting::
 	end
 
 LilycoveCity_LilycoveMuseum_2F_Text_ThisIsExhibitHall:
-	.string "Ésta es nuestra sala especial\n"
-	.string "de exposiciones.$"
+	.string "This is our special exhibit hall.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ExplainExhibitHall:
-	.string "Como puedes ver, no tenemos expuesto\n"
-	.string "ni un solo cuadro…\p"
-	.string "Aquí no quiero exponer las obras\n"
-	.string "del llamado arte clásico.\p"
-	.string "Dichas obras están en nuestra planta\n"
-	.string "baja.\p"
-	.string "Aquí quiero exponer obras totalmente\n"
-	.string "nuevas, diferentes.\p"
-	.string "¡El arte no se restringe a las obras\n"
-	.string "más famosas de tiempos pasados!\p"
-	.string "Esta sala… quisiera llenarla con…\p"
-	.string "¡obras modernas y atrevidas sobre\n"
-	.string "POKéMON dispuestos a entrar\l"
-	.string "en los anales de la historia!$"
+	.string "As you can plainly see, there is not\n"
+	.string "a single painting on exhibit.\p"
+	.string "Here, I don't wish to exhibit works of\n"
+	.string "so-called classical art.\p"
+	.string "Such classical works you can see on\n"
+	.string "our ground floor.\p"
+	.string "I wish to exhibit work that is far\n"
+	.string "different from the classics.\p"
+	.string "Art, after all, is not restricted to old,\n"
+	.string "famous works!\p"
+	.string "This exhibit hall, I wish to fill it with…\p"
+	.string "Modern and vibrant artworks of\n"
+	.string "POKéMON seemingly ready to spring\l"
+	.string "forth into glorious life!$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit:
-	.string "Discúlpame, no pretendía monopolizar\n"
-	.string "la conversación.\p"
-	.string "En fin, aunque eres joven, se ve que\n"
-	.string "has viajado mucho…\p"
-	.string "Seguro que te cruzarás con muchos\n"
-	.string "POKéMON y obras que los plasmen.\p"
-	.string "Si encontraras algún cuadro de este\n"
-	.string "tipo, ¿podrías obtener la autorización\l"
-	.string "del artista para exponerlo aquí?$"
+	.string "I beg your pardon. I didn't intend\n"
+	.string "to monopolize the conversation.\p"
+	.string "Now, as you are young, and yet\n"
+	.string "obviously well traveled…\p"
+	.string "You must encounter lively POKéMON\n"
+	.string "and works of art depicting them.\p"
+	.string "If you were to come across such\n"
+	.string "a painting, may we ask you to obtain\l"
+	.string "the artist's permission to exhibit\l"
+	.string "it here?$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_WishToFillExhibit:
-	.string "Deseo llenar esta sala de exposiciones\n"
-	.string "con cuadros modernos y atrevidos\l"
-	.string "sobre POKéMON.$"
+	.string "I wish to fill this exhibit hall with\n"
+	.string "modern and vibrant paintings of\l"
+	.string "POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ThanksAddedNewPainting:
-	.string "Gracias a ti, esta pintura formará\n"
-	.string "parte de nuestra colección.\p"
-	.string "Y además plasma a tu POKéMON.\n"
-	.string "¡Es una obra excepcional!\p"
-	.string "Muchísimas gracias.$"
+	.string "Thanks to you, we've added a new\n"
+	.string "painting to our collection!\p"
+	.string "I've heard it depicts your POKéMON.\n"
+	.string "Truly magnificent!\p"
+	.string "Thank you so very, very much!$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsYouPlayer:
-	.string "¡Ah, eres tú, {PLAYER}!$"
+	.string "Ah! It's you!\n"
+	.string "{PLAYER}!$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_PaintingsAttractedMoreGuests:
-	.string "¿No es soberbio?\n"
-	.string "¡Qué colección de arte!\p"
-	.string "¡Todas impecables!\n"
-	.string "¡Todas admirables!\p"
-	.string "Estas obras han atraído a muchos\n"
-	.string "visitantes a nuestro MUSEO.\p"
-	.string "Te lo agradezco de verdad, {PLAYER}.\n"
-	.string "¡Es un sueño hecho realidad!$"
+	.string "Isn't this marvelous?\n"
+	.string "This collection of paintings!\p"
+	.string "Each one of them flawless!\n"
+	.string "None better than another!\p"
+	.string "These paintings have attracted\n"
+	.string "more guests to our ART MUSEUM.\p"
+	.string "Sincerely, I thank you, {PLAYER}.\n"
+	.string "This is my dream come true!$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_TokenOfGratitude:
-	.string "Ésta es sólo una muestra de mi gratitud.$"
+	.string "This is merely a token of my gratitude.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_KeepThisForYou:
-	.string "Te lo guardo hasta que vuelvas\n"
-	.string "por aquí.$"
+	.string "I will keep this for you until we\n"
+	.string "meet again.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_HonorToHaveYouVisit:
-	.string "¡Qué alegría verte, {PLAYER}!\p"
-	.string "Es un honor que tengas tiempo\n"
-	.string "para visitarnos a pesar de tus viajes.\p"
-	.string "Adelante, descansa y disfruta\n"
-	.string "de tu visita.$"
+	.string "Ah, so good to see you, {PLAYER}!\p"
+	.string "It's an honor to have you visit us\n"
+	.string "on your busy journeys.\p"
+	.string "Please, relax and do enjoy your\n"
+	.string "visit with us.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsPinkPictureFrame:
-	.string "Es un marco con motivos rosas.$"
+	.string "It's a picture frame with pink-colored\n"
+	.string "adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsYellowPictureFrame:
-	.string "Es un marco con motivos amarillos.$"
+	.string "It's a picture frame with\n"
+	.string "yellow-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsBluePictureFrame:
-	.string "Es un marco con motivos azules.$"
+	.string "It's a picture frame with\n"
+	.string "blue-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsRedPictureFrame:
-	.string "Es un marco con motivos rojos.$"
+	.string "It's a picture frame with\n"
+	.string "red-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsGreenPictureFrame:
-	.string "Es un marco con motivos verdes.$"
+	.string "It's a picture frame with\n"
+	.string "green-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ItsPaintingOfPokemon:
-	.string "Es un cuadro de un POKéMON.$"
+	.string "It's a painting of POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_NewPaintingsSurprisedMe:
-	.string "Hacía tiempo que no venía, así que me\n"
-	.string "he sorprendido al ver las nuevas obras.\p"
-	.string "¡Cuánto me gustaría que alguien\n"
-	.string "retratara a mi POKéMON también!$"
+	.string "I've been away awhile, so the new\n"
+	.string "paintings up here surprised me.\p"
+	.string "I wish someone would paint my POKéMON\n"
+	.string "this pretty.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_NewPaintingsRatherAmusing:
-	.string "Ajá, así que aquí es donde exponen\n"
-	.string "las nuevas pinturas sobre POKéMON.\p"
-	.string "Pues sí, la verdad es que son\n"
-	.string "bastante divertidas.$"
+	.string "Well… So this is where they show\n"
+	.string "the topical POKéMON paintings.\p"
+	.string "I see, these new paintings are indeed\n"
+	.string "rather amusing.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ThesePaintingsOfYourPokemon:
-	.string "Ahí va, ¿es verdad?\n"
-	.string "¿Son cuadros de tus POKéMON?\p"
-	.string "Ésa debe de ser la mayor alegría que\n"
-	.string "pueden dar a cualquier ENTRENADOR.$"
+	.string "Wow, is that right?\n"
+	.string "These paintings are of your POKéMON.\p"
+	.string "Isn't that just the ultimate joy for\n"
+	.string "a TRAINER?$"
 

@@ -17,38 +17,37 @@ MagmaHideout_1F_EventScript_Grunt2::
 	end
 
 MagmaHideout_1F_Text_Grunt1Intro:
-	.string "Cuando el EQUIPO MAGMA pasa lista,\n"
-	.string "asignan las tareas más importantes\l"
-	.string "a los que llegan primero.\p"
-	.string "Por eso estoy pringando aquí,\n"
-	.string "¡porque siempre llego tarde!$"
+	.string "When TEAM MAGMA has roll call, we get\n"
+	.string "important guarding assignments in\l"
+	.string "the order that we line up.\p"
+	.string "That's why I'm stuck off in this corner.\n"
+	.string "I'm always late to roll call!$"
 
 MagmaHideout_1F_Text_Grunt1Defeat:
-	.string "¡También llego tarde a las sesiones\n"
-	.string "de entrenamiento!\p"
-	.string "Odio tener que reconocerlo,\n"
-	.string "pero no valgo para gran cosa…$"
+	.string "I'm always late for training sessions,\n"
+	.string "too!\p"
+	.string "I hate to say it, but I'm wimpy…$"
 
 MagmaHideout_1F_Text_Grunt1PostBattle:
-	.string "Bueno, voy a intentar esforzarme\n"
-	.string "más de ahora en adelante…$"
+	.string "Okay, I'll try to put a little more\n"
+	.string "effort into things from now on…$"
 
 MagmaHideout_1F_Text_Grunt2Intro:
-	.string "Nuestro líder nos dijo que caváramos\n"
-	.string "en el MONTE CENIZO, y eso hicimos.\p"
-	.string "Cavando, cavando, nos encontramos\n"
-	.string "con algo absolutamente alucinante.\p"
-	.string "¿Que qué era?\p"
-	.string "¡Jua, jua, jua!\n"
-	.string "¡Te lo diré si me ganas!$"
+	.string "Our leader told us to dig into\n"
+	.string "MT. CHIMNEY, so we dug and dug.\p"
+	.string "And in the course of digging, we came\n"
+	.string "across something that blew our minds!\p"
+	.string "What did we find?\p"
+	.string "Fuhahaha!\n"
+	.string "I'll tell you if you beat me!$"
 
 MagmaHideout_1F_Text_Grunt2Defeat:
-	.string "¡Aaaargh!\n"
-	.string "¡Me has ganado!$"
+	.string "Arrgh!\n"
+	.string "Taken down!$"
 
 MagmaHideout_1F_Text_Grunt2PostBattle:
-	.string "Pues pensándolo bien, no te lo voy a\n"
-	.string "decir. Ya lo verás con tus propios ojos.\p"
-	.string "No querrás que te fastidie la sorpresa,\n"
-	.string "¿no?$"
+	.string "I won't tell you after all.\n"
+	.string "You'll find out when you get there!\p"
+	.string "It'd be better if you saved surprises\n"
+	.string "to the end, don't you think?$"
 

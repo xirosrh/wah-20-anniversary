@@ -18,15 +18,15 @@ script RestRoom_OnTransition {
 script RestRoom_EventScript_Boy1 {
     lock
     faceplayer
-    msgbox(format("¡Uf, al fin una zona de descanso!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Phew, finally a rest area!"), MSGBOX_AUTOCLOSE)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Por un momento pensé que las 21 salas eran seguidas sin pausa…"), MSGBOX_AUTOCLOSE)
+    msgbox(format("For a moment I thought all 21 rooms were back-to-back with no break…"), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
     setvar(VAR_0x8004, SPECIES_GRENINJA)
     specialvar(VAR_RESULT, Special_BufferPokeboxBuyOfferFromSpecies)
     if(var(VAR_RESULT) == TRUE) {
-        msgbox(format("Me viene costando, necesito prepararme mejor para las próximas salas.\pVoy a ajustar algunos ataques, comprar objetos curativos y…\p¡Creo que compraré un {STR_VAR_1}! Vi que en la PC está a solo {STR_VAR_2}, ¡está regalado!"), MSGBOX_AUTOCLOSE)
+        msgbox(format("I'm struggling; I need to prepare better for the next rooms.\pI'll tweak some moves, buy some healing items, and…\pI think I'll buy a {STR_VAR_1}! I saw it's only {STR_VAR_2} in the PC - it's a steal!"), MSGBOX_AUTOCLOSE)
     }
     release
     end
@@ -35,18 +35,16 @@ script RestRoom_EventScript_Boy1 {
 script RestRoom_EventScript_Girl1 {
     lock
     faceplayer
-    msgbox(format("¡Los diseños de las salas son increíbles!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("The room designs are incredible!"), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
-    msgbox("Un teatro, una jungla… ¡hasta un cine!
-           ¿Te imaginas cuánto trabajo hay
-           detrás de todo esto?", MSGBOX_AUTOCLOSE)
+    msgbox(format("A theater, a jungle… even a cinema!\pCan you imagine how much work goes into all this?"), MSGBOX_AUTOCLOSE)
     release
     end
 }
 
 script RestRoom_EventScript_Boy2 {
-    msgbox(format("¡Los precios de esta tienda son una estafa!\pTendría que haber comprado todo lo necesario antes de entrar."), MSGBOX_NPC)
+    msgbox(format("The prices in this shop are a total ripoff!\pI should have bought everything I needed before coming in."), MSGBOX_NPC)
     end
 }
 
@@ -55,13 +53,13 @@ script RestRoom_EventScript_PlayerCounterpart {
     faceplayer
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
-    msgbox(format("¡Qué sorpresa, {PLAYER}!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("What a surprise, {PLAYER}!"), MSGBOX_AUTOCLOSE)
     delay(48)
-    msgbox(format("¿Así que también estás participando en el desafío?\p¡Cada sala nos enseña algo sobre los líderes de la comunidad!\p¡He aprendido mucho de ellos!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("So you're taking part in the challenge too?\pEvery room teaches us something about the community's leaders!\pI've learned a lot from them!"), MSGBOX_AUTOCLOSE)
     delay(10)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
-    msgbox(format("¡Qué emocionante!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("How exciting!"), MSGBOX_AUTOCLOSE)
     delay(48)
     release
     end
@@ -71,12 +69,12 @@ script RestRoom_EventScript_Shop {
 	lock
     faceplayer
     if (flag(FLAG_WAH_CHALLENGE_COMPLETED) && !flag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)) {
-        message(format("¡Hola! ¡Hemos ampliado el catálogo!\pAhora también puedes comprar objetos de combate.\p¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!"))
+        message(format("Hi! We've expanded the catalog!\pNow you can also buy battle items.\pHow can I help you?\nWe're a little pricier here!"))
         waitmessage
         setflag(FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN)
     }
     else {
-        message("¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!")
+        message("Hi! How can I help you?\nWe're a little pricier here!")
         waitmessage
     }
 	setflag(FLAG_REST_ROOM_MART_PRICE_MULTIPLIER)

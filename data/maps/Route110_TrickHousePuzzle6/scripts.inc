@@ -43,46 +43,45 @@ Route110_TrickHousePuzzle6_EventScript_Sebastian::
 	end
 
 Route110_TrickHousePuzzle6_Text_WroteSecretCodeLockOpened:
-	.string "{PLAYER} escribió el código secreto\n"
-	.string "en la puerta.\p"
-	.string "“El MAESTRO TRETA\n"
-	.string "es mi inspiración.”\l"
-	.string "Y…\p"
-	.string "¡la puerta se ha abierto!$"
+	.string "{PLAYER} wrote down the secret code\n"
+	.string "on the door.\p"
+	.string "“TRICK MASTER is my life.”\n"
+	.string "… … … … … … … …\p"
+	.string "The lock clicked open!$"
 
 Route110_TrickHousePuzzle6_Text_SophiaIntro:
-	.string "Cuando oí que había una casa rara\n"
-	.string "por aquí, vine a ver cómo era.$"
+	.string "When I heard there was a strange\n"
+	.string "house, I had to check it out.$"
 
 Route110_TrickHousePuzzle6_Text_SophiaDefeat:
-	.string "¡Y me encontré con alguien\n"
-	.string "que me ha dado una paliza!$"
+	.string "I've discovered a tough TRAINER!$"
 
 Route110_TrickHousePuzzle6_Text_SophiaPostBattle:
-	.string "Me lo paso de miedo cotilleando\n"
-	.string "por la casa.\p"
-	.string "¡Es un reto que no dudo en repetir!$"
+	.string "I'm sure having a good time checking\n"
+	.string "this place out.\p"
+	.string "It's a challenge I've found worth\n"
+	.string "repeating!$"
 
 Route110_TrickHousePuzzle6_Text_BennyIntro:
-	.string "Quizás pueda conseguir que mi POKéMON\n"
-	.string "PÁJARO sobrevuele el muro…$"
+	.string "Maybe I could get my BIRD POKéMON\n"
+	.string "to fly over the wall…$"
 
 Route110_TrickHousePuzzle6_Text_BennyDefeat:
-	.string "¡Aaaaah! ¡La pifié!$"
+	.string "Gwaaah! I blew it!$"
 
 Route110_TrickHousePuzzle6_Text_BennyPostBattle:
-	.string "Ejem, ejem… Creo que he perdido\n"
-	.string "porque he intentado hacer trampa…$"
+	.string "Ehehehe… I guess I lost because\n"
+	.string "I was trying to cheat.$"
 
 Route110_TrickHousePuzzle6_Text_SebastianIntro:
-	.string "Estas puertas giratorias me están\n"
-	.string "revolviendo el estómago…$"
+	.string "I'm getting dizzy from these rotating\n"
+	.string "doors…$"
 
 Route110_TrickHousePuzzle6_Text_SebastianDefeat:
-	.string "Todo gira y gira y gira…\n"
-	.string "Ay, ay, ay, no puedo más…$"
+	.string "Everything's spinning around and\n"
+	.string "around. I can't take this anymore…$"
 
 Route110_TrickHousePuzzle6_Text_SebastianPostBattle:
-	.string "No entiendo, a ti no te da ni fu ni fa…\n"
-	.string "¿O estás poniendo cara de póquer?$"
+	.string "You don't seem to be affected at all.\n"
+	.string "Or do you have your poker face on?$"
 

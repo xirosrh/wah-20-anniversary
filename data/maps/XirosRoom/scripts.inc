@@ -448,149 +448,143 @@ XirosRoom_EventScript_Xiros_Movement_7:
 
 XirosRoom_EventScript_Xiros_Text_0:
 # 35 "data/maps/XirosRoom/scripts.pory"
-	.string "¿Aún sigues aquí? Ya que estás,\n"
-	.string "aprovecho para decirte una cosa más.$"
+	.string "Still here? Well, since you are, let me\n"
+	.string "tell you one more thing.$"
 
 XirosRoom_EventScript_Xiros_Text_1:
 # 38 "data/maps/XirosRoom/scripts.pory"
-	.string "No te obsesiones demasiado con\n"
-	.string "compararte todo el tiempo, porque a\l"
-	.string "veces vas a sentir que estás adelante,\l"
-	.string "y otras veces que te quedaste atrás.$"
+	.string "Don't get too obsessed with comparing\n"
+	.string "yourself all the time, because\l"
+	.string "sometimes you'll feel ahead, and other\l"
+	.string "times that you've fallen behind.$"
 
 XirosRoom_EventScript_Xiros_Text_2:
 # 41 "data/maps/XirosRoom/scripts.pory"
-	.string "Al final, el camino es largo, y la\n"
-	.string "verdadera carrera es siempre con uno\l"
-	.string "mismo.$"
+	.string "In the end, the road is long, and the\n"
+	.string "real race is always against yourself.$"
 
 XirosRoom_EventScript_Xiros_Text_3:
 # 49 "data/maps/XirosRoom/scripts.pory"
-	.string "Ahora sigue, a tu ritmo, pero siempre\n"
-	.string "avanzando.$"
+	.string "Now keep going, at your own pace, but\n"
+	.string "always moving forward.$"
 
 XirosRoom_EventScript_Xiros_Text_4:
 # 58 "data/maps/XirosRoom/scripts.pory"
-	.string "Así que llegaste hasta acá, ¡a la sala\n"
-	.string "número veinte!\p"
-	.string "Un lugar al que no se llega por\n"
-	.string "casualidad.$"
+	.string "So you made it here, to room number\n"
+	.string "twenty!\p"
+	.string "A place you don't reach by chance.$"
 
 XirosRoom_EventScript_Xiros_Text_5:
 # 61 "data/maps/XirosRoom/scripts.pory"
-	.string "Voy a tratar de ser más breve que Zero\n"
-	.string "en mi discurso, pero a mí también me\l"
-	.string "gusta reflexionar, así que no prometo\l"
-	.string "nada…$"
+	.string "I'll try to be briefer than Zero in my\n"
+	.string "speech, but I like to reflect too, so I\l"
+	.string "can't promise anything…$"
 
 XirosRoom_EventScript_Xiros_Text_6:
 # 70 "data/maps/XirosRoom/scripts.pory"
-	.string "En el camino te cruzaste con muchas\n"
-	.string "personas, algunas conocidas, otras que\l"
-	.string "quizá solo habías escuchado nombrar\l"
-	.string "alguna vez, pero todas dejaron algo en\l"
-	.string "este recorrido.$"
+	.string "Along the way you crossed paths with\n"
+	.string "many people, some familiar, others you'd\l"
+	.string "maybe only heard mentioned once, but\l"
+	.string "all of them left something on this\l"
+	.string "journey.$"
 
 XirosRoom_EventScript_Xiros_Text_7:
 # 73 "data/maps/XirosRoom/scripts.pory"
-	.string "Cada encuentro, cada charla y cada\n"
-	.string "combate forma parte de una historia\l"
-	.string "más grande, aunque a veces no lo\l"
-	.string "notemos en el momento.$"
+	.string "Every encounter, every chat, and every\n"
+	.string "battle is part of a bigger story, even if\l"
+	.string "we don't always notice it in the moment.$"
 
 XirosRoom_EventScript_Xiros_Text_8:
 # 83 "data/maps/XirosRoom/scripts.pory"
-	.string "Es normal que en algún punto las cosas\n"
-	.string "parezcan difíciles o incluso imposibles,\l"
-	.string "porque nadie nace sabiendo, ni empieza\l"
-	.string "un gran desafío o proyecto teniendo\l"
-	.string "todas las respuestas.$"
+	.string "It's normal for things to seem hard or\n"
+	.string "even impossible at some point, because\l"
+	.string "no one is born knowing, nor starts a big\l"
+	.string "challenge or project with all the\l"
+	.string "answers.$"
 
 XirosRoom_EventScript_Xiros_Text_9:
 # 85 "data/maps/XirosRoom/scripts.pory"
-	.string "Lo importante no es saberlo todo, sino\n"
-	.string "animarse a buscar, porque cuando uno\l"
-	.string "busca de verdad, siempre aparece\l"
-	.string "alguien dispuesto a ayudar.$"
+	.string "What matters isn't knowing everything,\n"
+	.string "but daring to search, because when you\l"
+	.string "truly search, someone willing to help\l"
+	.string "always turns up.$"
 
 XirosRoom_EventScript_Xiros_Text_10:
 # 90 "data/maps/XirosRoom/scripts.pory"
-	.string "Es lo lindo de esta comunidad, ¿no\n"
-	.string "crees?$"
+	.string "That's the beautiful thing about this\n"
+	.string "community, don't you think?$"
 
 XirosRoom_EventScript_Xiros_Text_11:
 # 122 "data/maps/XirosRoom/scripts.pory"
-	.string "Este es Electrode Sandía, un símbolo de\n"
-	.string "una época que muchos recuerdan con\l"
-	.string "cariño y nostalgia, cuando todo parecía\l"
-	.string "más simple.$"
+	.string "This is Watermelon Electrode, a symbol\n"
+	.string "of an era many remember with fondness\l"
+	.string "and nostalgia, when everything seemed\l"
+	.string "simpler.$"
 
 XirosRoom_EventScript_Xiros_Text_12:
 # 127 "data/maps/XirosRoom/scripts.pory"
-	.string "Personalmente nunca creí que la época\n"
-	.string "dorada fuera un momento que quedó\l"
-	.string "atrás en el tiempo.$"
+	.string "Personally, I never believed the golden\n"
+	.string "age was a moment left behind in time.$"
 
 XirosRoom_EventScript_Xiros_Text_13:
 # 133 "data/maps/XirosRoom/scripts.pory"
-	.string "Para mí, la época dorada es hoy, y\n"
-	.string "también será mañana, mientras sigan\l"
-	.string "existiendo personas con ganas de\l"
-	.string "motivar, ayudar y empujar las cosas un\l"
-	.string "poco más adelante.$"
+	.string "For me, the golden age is today, and it'll\n"
+	.string "be tomorrow too, as long as there are\l"
+	.string "still people eager to motivate, help,\l"
+	.string "and push things a little further\l"
+	.string "forward.$"
 
 XirosRoom_EventScript_Xiros_Text_14:
 # 144 "data/maps/XirosRoom/scripts.pory"
-	.string "Hagamos que este momento también\n"
-	.string "cuente.$"
+	.string "Let's make this moment count too.$"
 
 XirosRoom_EventScript_Xiros_Text_15:
 # 156 "data/maps/XirosRoom/scripts.pory"
-	.string "¡Wow! ¡Qué gran combate! Me encanta tu\n"
-	.string "forma de combatir.\p"
-	.string "¡Sobre todo la pasión que le pones a\n"
-	.string "cada movimiento!$"
+	.string "Wow! What a great battle! I love your\n"
+	.string "battling style.\p"
+	.string "Especially the passion you put into\n"
+	.string "every move!$"
 
 XirosRoom_EventScript_Xiros_Text_16:
 # 159 "data/maps/XirosRoom/scripts.pory"
-	.string "Todavía te queda un último\n"
-	.string "enfrentamiento, y si conocés un poco la\l"
-	.string "historia de este lugar, seguramente ya\l"
-	.string "te estés imaginando quién te espera.\p"
-	.string "Aprovecha la oportunidad, que no todos\n"
-	.string "tienen la suerte de encontrarlo.$"
+	.string "You've still got one last showdown, and\n"
+	.string "if you know a bit of this place's\l"
+	.string "history, you can probably already\l"
+	.string "imagine who's waiting for you.\p"
+	.string "Make the most of it - not everyone is\n"
+	.string "lucky enough to find him.$"
 
 XirosRoom_EventScript_Tanque_Text_0:
 # 190 "data/maps/XirosRoom/scripts.pory"
-	.string "Es un tanque lleno de un líquido que no\n"
-	.string "parece ser agua.\p"
-	.string "Hay burbujeos en su interior.$"
+	.string "It's a tank full of a liquid that doesn't\n"
+	.string "look like water.\p"
+	.string "There's bubbling inside it.$"
 
 XirosRoom_EventScript_Holograma_Text_0:
 # 195 "data/maps/XirosRoom/scripts.pory"
-	.string "Es un holograma de un cubo flotando en\n"
-	.string "el aire.$"
+	.string "It's a hologram of a cube floating in\n"
+	.string "the air.$"
 
 XirosRoom_EventScript_Lampara_Text_0:
 # 200 "data/maps/XirosRoom/scripts.pory"
-	.string "Es una lámpara futurista que ilumina\n"
-	.string "con luz azul.$"
+	.string "It's a futuristic lamp that glows with\n"
+	.string "blue light.$"
 
 XirosRoom_EventScript_Server_Text_0:
 # 205 "data/maps/XirosRoom/scripts.pory"
-	.string "El parpadeo de las luces indica que está\n"
-	.string "realizando cálculos cuánticos.$"
+	.string "The blinking lights show it's running\n"
+	.string "quantum calculations.$"
 
 XirosRoom_EventScript_Pantalla_Text_0:
 # 210 "data/maps/XirosRoom/scripts.pory"
-	.string "Parece que muestra cálculos y gráficos\n"
-	.string "muy complejos.$"
+	.string "It seems to show very complex\n"
+	.string "calculations and graphs.$"
 
 XirosRoom_EventScript_Unknown_Text_0:
 # 215 "data/maps/XirosRoom/scripts.pory"
-	.string "Esto es un...\n"
-	.string "¿Qué es esto?$"
+	.string "This is a...\n"
+	.string "What is this?$"
 
 XirosRoom_Text_XirosDefeated::
 # 185 "data/maps/XirosRoom/scripts.pory"
-	.string "¡Muy buen combate!$"
+	.string "Great battle!$"

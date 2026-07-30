@@ -29,19 +29,19 @@ EventScript_TooDark::
 	end
 
 sText_NotFoundNearby:
-	.string "No se pudo encontrar cerca.\n"
-	.string "¡Intenta buscar en otra zona!$"
+	.string "It couldn't be found nearby.\n"
+	.string "Try looking in a different area!$"
 
 sText_TryMovingSlower:
-	.string "¡El Pokémon escapó!\n"
-	.string "Intenta moverte más despacio.$"
+	.string "The Pokémon got away!\n"
+	.string "Try moving more slowly.$"
 
 sText_PokemonGotAway:
-	.string "¡El Pokémon escapó!$"
+	.string "The Pokémon got away!$"
 
 sText_LostSignal:
-	.string "No hay reacción.\n"
-	.string "¡Se perdió la señal!$"
+	.string "There is no reaction.\n"
+	.string "The signal was lost!$"
 
 sText_TooDark:
-	.string "Es demasido oscuro para\nbuscar un Pokémon!$"
+	.string "It's too dark to search\nfor a Pokémon!$"

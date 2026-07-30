@@ -459,102 +459,100 @@ OmegaRoom_EventScript_StartChallenge_Movement_8:
 
 OmegaRoom_EventScript_StartChallenge_Text_0:
 # 59 "data/maps/OmegaRoom/scripts.pory"
-	.string "¡Ostras, un{A} nuev{OA} contrincante!$"
+	.string "Whoa, a new challenger!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_1:
 # 73 "data/maps/OmegaRoom/scripts.pory"
-	.string "¡Bienvenid{OA} al primer encuentro del\n"
-	.string "desafío de esta celebración!\p"
-	.string "Te estábamos esperando.$"
+	.string "Welcome to the first match of this\n"
+	.string "celebration's challenge!\p"
+	.string "We've been expecting you.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_2:
 # 77 "data/maps/OmegaRoom/scripts.pory"
-	.string "¿List{OA} para tu primer combate? ¡Veamos\n"
-	.string "si eres capaz de derrotarme!$"
+	.string "Ready for your first battle? Let's see\n"
+	.string "if you can beat me!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_3:
 # 90 "data/maps/OmegaRoom/scripts.pory"
-	.string "Perfecto, ¡vamos!$"
+	.string "Perfect, let's go!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_4:
 # 104 "data/maps/OmegaRoom/scripts.pory"
-	.string "¡Sí que sacaste los colmillos!$"
+	.string "You really bared your fangs!$"
 
 OmegaRoom_EventScript_StartChallenge_Text_5:
 # 107 "data/maps/OmegaRoom/scripts.pory"
-	.string "Ha sido un buen combate. Me quedo con\n"
-	.string "ganas de más, la verdad.\p"
-	.string "Tocará esperar a que completes el\n"
-	.string "desafío para tener una revancha.$"
+	.string "That was a good battle. It leaves me\n"
+	.string "wanting more, honestly.\p"
+	.string "I'll have to wait until you complete the\n"
+	.string "challenge for a rematch.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_6:
 # 110 "data/maps/OmegaRoom/scripts.pory"
-	.string "De todas formas, esta fue solo la\n"
-	.string "primera sala; todavía tenés un largo\l"
-	.string "camino por delante.$"
+	.string "Either way, this was only the first room;\n"
+	.string "you've still got a long road ahead.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_7:
 # 120 "data/maps/OmegaRoom/scripts.pory"
-	.string "Va a ser interesante ver qué tanto\n"
-	.string "puedes avanzar en este desafío.$"
+	.string "It'll be interesting to see how far you\n"
+	.string "can get in this challenge.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_8:
 # 123 "data/maps/OmegaRoom/scripts.pory"
-	.string "Yo sigo activo por aquí, pero muchos de\n"
-	.string "tus próximos rivales ya se habían\l"
-	.string "retirado… y han vuelto especialmente\l"
-	.string "para esta celebración.\p"
-	.string "Pero recuerda, no subestimes a la vieja\n"
-	.string "guardia. Son tercos, y cuando se ponen\l"
-	.string "en serio, se nota.$"
+	.string "I'm still active around here, but many\n"
+	.string "of your upcoming rivals had already\l"
+	.string "retired… and came back especially for\l"
+	.string "this celebration.\p"
+	.string "But remember, don't underestimate the\n"
+	.string "old guard. They're stubborn, and when\l"
+	.string "they get serious, you'll know it.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_9:
 # 129 "data/maps/OmegaRoom/scripts.pory"
-	.string "Te abriré la puerta para que puedas\n"
-	.string "continuar con tu viaje.$"
+	.string "I'll open the door so you can continue\n"
+	.string "your journey.$"
 
 OmegaRoom_EventScript_StartChallenge_Text_10:
 # 137 "data/maps/OmegaRoom/scripts.pory"
-	.string "Ahora avanza, y demuestra que estás\n"
-	.string "aquí para lograr grandes cosas.$"
+	.string "Now go on, and show you're here to\n"
+	.string "achieve great things.$"
 
 OmegaRoom_EventScript_Omega_Text_0:
 # 195 "data/maps/OmegaRoom/scripts.pory"
-	.string "¿Qué estás esperando? Ve a demostrar a\n"
-	.string "esos viejos que no me has ganado por\l"
-	.string "casualidad.$"
+	.string "What are you waiting for? Go show those\n"
+	.string "old-timers you didn't beat me by luck.$"
 
 OmegaRoom_Eventscript_Capsule_Text_0:
 # 200 "data/maps/OmegaRoom/scripts.pory"
-	.string "Parece una cápsula de experimentación.$"
+	.string "It looks like an experimentation pod.$"
 
 OmegaRoom_EventScript_Machine1_Text_0:
 # 205 "data/maps/OmegaRoom/scripts.pory"
-	.string "La máquina emite un zumbido constante.\p"
-	.string "Parece que nadie la revisa desde hace\n"
-	.string "años.$"
+	.string "The machine gives off a constant hum.\p"
+	.string "It looks like no one's checked it in\n"
+	.string "years.$"
 
 OmegaRoom_EventScript_Machine2_Text_0:
 # 210 "data/maps/OmegaRoom/scripts.pory"
-	.string "La máquina está completamente\n"
-	.string "descuidada.\p"
-	.string "Pequeñas plantas crecieron entre los\n"
-	.string "paneles y las grietas del metal.$"
+	.string "The machine is completely neglected.\p"
+	.string "Small plants have grown between the\n"
+	.string "panels and cracks in the metal.$"
 
 OmegaRoom_EventScript_Machine3_Text_0:
 # 215 "data/maps/OmegaRoom/scripts.pory"
-	.string "La pantalla está llena de fallos y\n"
-	.string "píxeles muertos.\p"
-	.string "Es increíble que el sistema aún siga\n"
-	.string "funcionando.$"
+	.string "The screen is full of glitches and dead\n"
+	.string "pixels.\p"
+	.string "It's amazing the system is still\n"
+	.string "running.$"
 
 OmegaRoom_EventScript_Box_Text_0:
 # 220 "data/maps/OmegaRoom/scripts.pory"
-	.string "La caja está cubierta por una gruesa\n"
-	.string "capa de polvo.\p"
-	.string "Parece que hace años que nadie la toca.$"
+	.string "The box is covered in a thick layer of\n"
+	.string "dust.\p"
+	.string "It looks like no one's touched it in\n"
+	.string "years.$"
 
 OmegaRoom_Text_OmegaDefeated::
 # 190 "data/maps/OmegaRoom/scripts.pory"
-	.string "¡Qué nivel has demostrado! No esperaba\n"
-	.string "un combate tan entretenido.$"
+	.string "That was awesome! I didn't\n"
+	.string "expect such an entertaining battle.$"

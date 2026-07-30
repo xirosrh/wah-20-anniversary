@@ -32,10 +32,10 @@ script CollaboratorsRoom_EventScript_AfterBattleCollaborators {
 
 
 script CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle {
-    msgbox("Vaya, vaya…\n¿Así que completaste el desafío?", MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox("Well, well…\nSo you completed the challenge?", MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("Entonces ya no eres un{A} novat{OA}... veamos si sabes aplicar lo aprendido.\pUn combate, sin atajos, sin trucos. ¿List{OA}?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Then you're no rookie anymore... let's see if you can apply what you've learned.\pOne battle, no shortcuts, no tricks. Ready?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     switch(var(VAR_RESULT)) {
         case DIR_NORTH:
@@ -51,32 +51,32 @@ script CollaboratorsRoom_EventScript_Kaktus_IntroFirstBattle {
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_TalkOnly {
-    msgbox(format("¿Sabes? Mucha gente en la comunidad empezó viendo tutoriales míos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("You know? A lot of people in the community started out watching my tutorials."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     delay(20)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Aunque si te soy sincero… el primero que hice me dio tanta vergüenza que lo borré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Though to be honest… the first one I made was so embarrassing that I deleted it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
     goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Kaktus_IntroRematch {
-    msgbox(format("Ey, ¿qué tal? Mi Ludicolo sigue con ganas de bailar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+    msgbox(format("Hey, how's it going? My Ludicolo still feels like dancing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
     delay(20)
     setspeaker(SP_NAME_INMORTAL_KAKTUS)
-    message(format("¿Otro asalto?"))
+    message(format("Another round?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(format("¡Vamos!"), speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("Let's go!"), speaker = SP_NAME_INMORTAL_KAKTUS)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Kaktus_TalkOnly)
         default:
-            msgbox(format("¡Será en otra oportunidad entonces!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("Another time, then!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             goto(CollaboratorsRoom_EventScript_Kaktus_OnFinishEvent)
     }
 }
@@ -102,30 +102,30 @@ script CollaboratorsRoom_EventScript_Kaktus {
         applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
         waitmovement(0)
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("¿Acaso perdí?"))
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_KAKTUS, format("Did I just lose?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
-            msgbox(format("Ja… perdí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("Ha… I lost."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Pero esto es lo bonito de esta comunidad.\pSiempre hay alguien nuevo que te sorprende."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("But this is the beautiful thing about this community.\pThere's always someone new who surprises you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Enhorabuena, crack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("Congrats, champ."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_KAKTUS)
         } else {
-            msgbox(format("Eres buen{OA}, pero aún te falta entrenar para poder vencerme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("You're good, but you still need to train to be able to beat me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
             playse(SE_LEDGE)
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
             applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
             waitmovement(0)
-            msgbox(format("¡Espero la revancha pronto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
+            msgbox(format("Looking forward to a rematch soon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_INMORTAL_KAKTUS)
         }
         setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_KAKTUS)
         call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
@@ -137,20 +137,20 @@ script CollaboratorsRoom_EventScript_Kaktus {
 
 script CollaboratorsRoom_EventScript_Gameboycl_IntroFirstBattle {
     delay(20)
-    msgbox(format("No soy competitivo ni ambicioso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox(format("I'm not competitive or ambitious."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Soy más bien una persona mediocre."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox(format("I'm more of a mediocre person, really."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     delay(20)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Eso puede jugarme en contra."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox(format("That can work against me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     return
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_TalkOnly {
-    msgbox("Un hack rom es como la arquitectura,\nse construye sobre lo existente.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox("A ROM hack is like architecture:\nyou build on what already exists.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox("El arte aquí no es lo que se cambia,\nsino lo que se quiere transmitir.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox("The art here isn't what you change,\nbut what you want to convey.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
     delay(20)
@@ -158,10 +158,10 @@ script CollaboratorsRoom_EventScript_Gameboycl_TalkOnly {
 }
 
 script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
-    msgbox(format("Kanto y Johto se unen en el mismo azul, el agua no recuerda fronteras."),MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+    msgbox(format("Kanto and Johto meet in the same blue; water remembers no borders."),MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
     delay(20)
     setspeaker(SP_NAME_GAMEBOY_CL)
-    message(format("¿Quieres luchar contra uno de mis 3 equipos?"))
+    message(format("Want to battle one of my 3 teams?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
@@ -173,7 +173,7 @@ script CollaboratorsRoom_EventScript_Gameboycl_IntroRematch {
         case 1:
             goto(CollaboratorsRoom_EventScript_Gameboycl_TalkOnly)
         default:
-            msgbox(format("Lo mejor de la vida no es competir, sino compartir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+            msgbox(format("The best thing in life isn't competing, but sharing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             goto(CollaboratorsRoom_EventScript_Gameboycl_OnFinishEvent)
     }
 }
@@ -213,13 +213,13 @@ script CollaboratorsRoom_EventScript_Gameboycl {
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Definitivamente prefiero compartir por sobre competir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+            msgbox(format("I definitely prefer sharing over competing."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
             waitmovement(0)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GAMEBOYCL)
         } else {
-            msgbox(format("Cuando te sientas preparad{OA}, vuelve y probamos nuestros equipos en un duelo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
+            msgbox(format("When you feel ready, come back and we'll test our teams in a duel."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GAMEBOY_CL)
         }
         setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_GAMEBOYCL)
         call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
@@ -230,22 +230,22 @@ script CollaboratorsRoom_EventScript_Gameboycl {
 }
 
 text CollaboratorsRoom_Text_Gameboycl_OnDefeat {
-    format("Evolucionar también es mirar atrás.")
+    format("To evolve is also to look back.")
 }
 
 script CollaboratorsRoom_EventScript_Erkey_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Lo fuerte será débil. Lo débil será decisivo.\p¡Prepárate para un {COLOR RED}combate inverso{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    msgbox(format("The strong will be weak. The weak will be decisive.\pGet ready for an {COLOR RED}inverse battle{COLOR DARK_GRAY}!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     return
 }
 
 script CollaboratorsRoom_EventScript_Erkey_TalkOnly {
-    msgbox(format("Aquí cada combate enseña algo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    msgbox(format("Here, every battle teaches something."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Si prestas atención."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    msgbox(format("If you pay attention."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
     goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
@@ -254,17 +254,17 @@ script CollaboratorsRoom_EventScript_Erkey_TalkOnly {
 script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Otra vez?\nLas reglas siguen al revés… por si acaso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+    msgbox(format("Again?\nThe rules are still reversed… just in case."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
     delay(20)
     setspeaker(SP_NAME_ERKEY)
-    message(format("¿Quieres volver a luchar?"))
+    message(format("Want to battle again?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(format("Perfecto. Veamos si esta vez lo dominas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Perfect. Let's see if this time you master it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
             waitmovement(0)
@@ -273,7 +273,7 @@ script CollaboratorsRoom_EventScript_Erkey_IntroRematch {
         case 1:
             goto(CollaboratorsRoom_EventScript_Erkey_TalkOnly)
         default:
-            msgbox(format("Vuelve cuando quieras.\nAquí nada vuelve a la normalidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Come back whenever you want.\nHere, nothing goes back to normal."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
             goto(CollaboratorsRoom_EventScript_Erkey_OnFinishEvent)
@@ -301,22 +301,22 @@ script CollaboratorsRoom_EventScript_Erkey {
         waitmovement(0)
         setflag(B_FLAG_NO_WHITEOUT)
         setflag(FLAG_INVERSE_BATTLE)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ERKEY, format("Lo has sabido manejar a la perfección."))
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ERKEY, format("You handled it perfectly."))
         clearflag(FLAG_INVERSE_BATTLE)
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SmileWithDelay48)
-            msgbox(format("Bien jugado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Well played."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             delay(20)
-            msgbox(format("Cuando las reglas cambian, tú te adaptaste.\pEso es el espíritu de Whack a Hack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("When the rules change, you adapted.\pThat's the spirit of Whack a Hack."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ERKEY)
         } else {
-            msgbox(format("La costumbre pesa más de lo que parece.\nAquí se paga caro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
+            msgbox(format("Habit weighs more than it seems.\nHere it costs you dearly."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ERKEY)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
         }
@@ -335,7 +335,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
     playse(SE_LEDGE)
     applymovement(VAR_LAST_TALKED, moves(lock_facing_direction,jump_in_place_down, unlock_facing_direction, face_player))
     waitmovement(0)
-    msgbox(format("Vaya, has superado el desafío de las salas.\pComprobemos pues si eres buen{OA} con los Pokémon que he criado y entrenado."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("Well, you've beaten the room challenge.\pLet's see, then, if you're good with the Pokémon I've bred and trained."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     call(CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit)
     return
@@ -343,16 +343,16 @@ script CollaboratorsRoom_EventScript_Micolo_IntroFirstBattle {
 
 script CollaboratorsRoom_EventScript_Micolo_TalkOnly {
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("A la mayoría de los de las salas no los conozco, solo a tres.\pAl resto hasta que no les entregué los Pokémon, no sabía quiénes eran."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("Most of the folks in the rooms I don't know - only three of them.\pThe rest, until I handed them their Pokémon, I had no idea who they were."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("Sí, la mayoría de los Pokémon en este edificio los crié yo, incluidos todos los que puedes llegar a usar.\pTodos entrenados por mí y listos para luchar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("Yes, most of the Pokémon in this building I bred myself, including all the ones you might get to use.\pAll trained by me and ready to battle."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-    msgbox(format("También ayudé al arquitecto del edificio a tener al Pokémon de sus sueños.\pNo veas lo cansino que era hablando de la ilusión que le daría tenerlo e incluso presumirá de él en su sala como un hipócrita mientras se limpia las babas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("I also helped the building's architect get the Pokémon of his dreams.\pYou wouldn't believe how tiresome he was going on about how thrilled he'd be, even showing it off in his room like a hypocrite while wiping the drool off his chin."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
-    msgbox(format("Lo que no sabe es que le di un ejemplar casi perfecto, el perfecto lo tengo guardado y listo para ayudarte cuando elijas su equipo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("What he doesn't know is I gave him a near-perfect specimen; the perfect one I've kept, ready to help you when you pick his team."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_XD)
     playse(SE_LEDGE)
@@ -360,7 +360,7 @@ script CollaboratorsRoom_EventScript_Micolo_TalkOnly {
     playse(SE_LEDGE)
     applymovement(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
     waitmovement(0)
-    msgbox(format("El resto fueron la mano de obra para construir este sitio."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+    msgbox(format("The rest were the labor that built this place."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
     delay(30)
     goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
 }
@@ -368,10 +368,10 @@ script CollaboratorsRoom_EventScript_Micolo_TalkOnly {
 script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
-    msgbox(format("¿Otra batalla? Elegiré de nuevo un Pokémon de mi equipo al azar."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_MICOLO)
+    msgbox(format("Another battle? I'll again pick a Pokémon from my team at random."), MSGBOX_AUTOCLOSE,speaker = SP_NAME_MICOLO)
     delay(20)
     setspeaker(SP_NAME_MICOLO)
-    message(format("¿Te atreves?"))
+    message(format("You dare?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
@@ -383,7 +383,7 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
         case 1:
             goto(CollaboratorsRoom_EventScript_Micolo_TalkOnly)
         default:
-            msgbox(format("Cuando quieras… Mis ejemplares no se van a poner peor por esperar."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Whenever you like… My specimens won't get any worse for waiting."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             goto(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
     }
 }
@@ -391,13 +391,13 @@ script CollaboratorsRoom_EventScript_Micolo_IntroRematch {
 script CollaboratorsRoom_EventScript_Micolo_ExplainPartyLimit {
     switch(var(VAR_DIFFICULTY)) {
         case DIFFICULTY_EASY:
-            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Pick two Pokémon to battle. I'll choose one of my specimens at random to face you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             break
         case DIFFICULTY_NORMAL:
-            msgbox(format("Elige dos Pokémon para combatir. Yo escogeré uno de mis ejemplares al azar para enfrentaros."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Pick two Pokémon to battle. I'll choose one of my specimens at random to face you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             break
         default:
-            msgbox(format("Luchemos con un Pokémon cada uno. Selecciona el tuyo, ¡yo elegiré uno de mi equipo al azar!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Let's battle with one Pokémon each. Pick yours; I'll choose one from my team at random!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             break
     }
     return
@@ -440,7 +440,7 @@ script CollaboratorsRoom_EventScript_Micolo {
             special(LoadPlayerParty)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-            msgbox(format("¿Te da miedo enfrentarte a uno de mis ejemplares? Con lo que te costó pasar las salas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("Afraid to face one of my specimens? After how hard it was to clear the rooms…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             call(CollaboratorsRoom_EventScript_Micolo_OnFinishEvent)
             end
         }
@@ -450,20 +450,20 @@ script CollaboratorsRoom_EventScript_Micolo {
         waitmovement(0)
         special(ReducePlayerPartyToSelectedMons)
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_MICOLO, format("Vaya, me has ganado."))
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_MICOLO, format("Well, you beat me."))
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         special(LoadPlayerParty)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-            msgbox(format("Admito que eres buen{OA}, si contara con mi pequeñín seguro que te hubiera ganado, enhorabuena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("I admit you're good; if I'd had my little one, I'd surely have beaten you, congratulations."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_MICOLO)
         } else {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-            msgbox(format("No lo haces mal, pero tendrás que hacerlo muchísimo mejor si quieres ganarme."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
+            msgbox(format("You're not bad, but you'll have to do a whole lot better if you want to beat me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MICOLO)
             playse(SE_LEDGE)
             applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
             playse(SE_LEDGE)
@@ -491,48 +491,48 @@ script CollaboratorsRoom_EventScript_Lillipup {
 }
 
 script CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle {
-    msgbox(format("¿Buscas problemas?\n¡Pues escucha nuestro lema!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Looking for trouble?\nThen listen to our motto!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_exclamation_mark))
     waitse
-    msgbox(format("¡Uy, me he equivocado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Oops, my mistake!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_sweat_drop))
     waitse
-    msgbox(format("Perdona, es la costumbre je, je…\pBueno, por lo que veo has completado el desafío.\p¡Enhorabuena!\pPero… ¡será por poco tiempo!\n¡Ha llegado el momento de ponerte a prueba una vez más!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Sorry, force of habit, heh heh…\pWell, from what I can see you've completed the challenge.\pCongratulations!\pBut… not for long!\nThe time has come to put you to the test once more!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     return
 }
 
 script CollaboratorsRoom_EventScript_MrNightology_TalkOnly {
     faceplayer
-    msgbox(format("Ay, si te contase…\pLa Beta 1 de mi hack la publiqué en 2010 y 15 años después, conseguí acabarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Oh, if only I could tell you…\pI released Beta 1 of my hack in 2010 and 15 years later, I finally finished it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_sad))
     waitse
-    msgbox(format("Una larga travesía para que al final, la gente te pregunte cuál es el cheat de los caramelos infinitos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("A long journey, only for people to end up asking you what the cheat for infinite Rare Candies is."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, moves(emote_annoyed))
     waitse
-    msgbox(format("¿Te parece normal?\nEn fin… La vida del romhacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("Does that seem right to you?\nAnyway… the life of a ROM hacker."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_MrNightology_IntroRematch {
-    msgbox(format("¡Tú otra vez!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+    msgbox(format("You again!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
     delay(20)
     setspeaker(SP_NAME_MRNIGHTOLOGY)
-    message(format("¿Te has quedado con ganas de más?"))
+    message(format("Still hungry for more?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(format("¡Já! Si ya me lo imaginaba…"), speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("Ha! I figured as much…"), speaker = SP_NAME_MRNIGHTOLOGY)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_MrNightology_TalkOnly)
         default:
-            msgbox(format("¿No?\nBueno… Ya volverás."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("No?\nWell… you'll be back."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             goto(CollaboratorsRoom_EventScript_MrNightology_OnFinishEvent)
     }
 }
@@ -567,12 +567,12 @@ script CollaboratorsRoom_EventScript_MrNightology {
             call(CollaboratorsRoom_EventScript_MrNightology_IntroFirstBattle)
         }
 
-        msgbox(format("Tengo un plan genial para derrotarte y para eso lucharé con un amigo.\pAsí que…\n¡Que aparezca el invitado especial!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("I've got a brilliant plan to beat you, and for that I'll battle with a friend.\pSo…\nlet the special guest appear!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         applymovementandwait(VAR_LAST_TALKED, moves(face_up))
         playse(SE_POKENAV_ON)
         waitse
         applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_up))
-        msgbox(format("¿Estás preparado?\n¿Sí? Genial.\p¡Vente p'acá!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Are you ready?\nYes? Great.\pGet over here!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         playse(SE_POKENAV_HANG_UP)
         waitse
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
@@ -591,14 +591,14 @@ script CollaboratorsRoom_EventScript_MrNightology {
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(emote_exclamation_mark, walk_in_place_right))
         waitse
-        msgbox(format("¡Ostras!\n¿Cómo lo has hecho?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Whoa!\nHow did you do that?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_left))
-        msgbox(format("¡Coño! Transmisión instantánea, bro.\n¡No me he pasado entrenando en el planeta Yardrat todo este tiempo pa ná!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
-        msgbox(format("¡Ah, mira qué bien! ¡Eso me viene genial para que la próxima vez no acabe reventao con tantas horas de bus!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Damn! Instant Transmission, bro.\nI didn't spend all this time training on planet Yardrat for nothing!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_REONEKY)
+        msgbox(format("Ah, how nice! That's perfect so next time I don't end up wrecked from so many hours on the bus!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
         applymovement(LOCALID_COLLABORATORS_ROOM_MRNIGHTOLOGY, moves(walk_in_place_down))
         applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, moves(walk_in_place_down))
         waitmovement(0)
-        msgbox(format("Sorprendido, ¿no?\nPues ha llegado la hora…\p¡Prepárate para luchar!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+        msgbox(format("Surprised, huh?\nWell, the time has come…\pGet ready to battle!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
         closemessage
         playse(SE_PIN)
         applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, Common_Movement_VersusWithDelay48)
@@ -606,7 +606,7 @@ script CollaboratorsRoom_EventScript_MrNightology {
         waitmovement(0)
         waitse
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_two_trainers(TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY, format("¿Qué? ¡Pero si era un plan genial!"), TRAINER_WAH_COLLABORATOR_REONEKY, format("¿He vuelto a perder?"))
+        trainerbattle_two_trainers(TRAINER_WAH_COLLABORATOR_MRNIGHTOLOGY, format("What? But it was a brilliant plan!"), TRAINER_WAH_COLLABORATOR_REONEKY, format("Did I lose again?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
@@ -615,25 +615,25 @@ script CollaboratorsRoom_EventScript_MrNightology {
             applymovement(LOCALID_COLLABORATORS_ROOM_REONEKY, CollaboratorsRoom_Movement_MrNightology_Despegue)
             waitmovement(0)
             waitse
-            msgbox(format("¡El Team Rocket despega de nuevooooo…!"), MSGBOX_AUTOCLOSE_TOP)
+            msgbox(format("Team Rocket's blasting off agaaaain…!"), MSGBOX_AUTOCLOSE_TOP)
             playse(SE_FALL)
             applymovementandwait(VAR_LAST_TALKED, moves(face_down, slide_down * 8))
             playse(SE_NOT_EFFECTIVE)
             waitse
-            msgbox(format("¡Vaya aterrizaje!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("What a landing!"), MSGBOX_DEFAULT, speaker = SP_NAME_MRNIGHTOLOGY)
             closemessage
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, moves(emote_question_mark))
             waitse
             applymovementandwait(VAR_LAST_TALKED, moves(walk_in_place_right, delay_16, walk_in_place_left, delay_16, walk_in_place_down))
-            msgbox(format("¿Y ReoNeky?\nEspero que haya aterrizado en su sala."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("And ReoNeky?\nI hope he landed in his room."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_MRNIGHTOLOGY)
         }
         else {
-            msgbox(format("Has hecho todo lo que has podido, pero no es suficiente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("You did everything you could, but it's not enough."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             delay(20)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Dale una vuelta a tu estrategia y…\p¡No nos hagas esperar mucho para la revancha!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
+            msgbox(format("Rethink your strategy and…\pDon't keep us waiting long for the rematch!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_MRNIGHTOLOGY)
             fadescreen(FADE_TO_BLACK)
             setobjectxy(LOCALID_COLLABORATORS_ROOM_REONEKY, 11, -3)
             fadescreen(FADE_FROM_BLACK)
@@ -661,15 +661,15 @@ movement CollaboratorsRoom_Movement_MrNightology_Despegue{
 script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("¡Oh! Pues parece que has superado el desafío de las salas.\p¿Qué te parece si te ponemos a prueba y vemos de lo que eres capaz?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("Oh! Looks like you've beaten the room challenge.\pHow about we put you to the test and see what you're capable of?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("¿Hacemos esto un poco más divertido?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("Shall we make this a bit more fun?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_FaceAwayPlayer)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     delay(20)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_FacePlayer)
-    msgbox(format("O mejor dicho, ¿¡qué te parece si lo hacemos el doble de divertido!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("Or rather - how about we make it twice as fun!?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_Happy)
     waitse
@@ -678,20 +678,20 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroFirstBattle {
     waitse
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player, delay_16))
-    msgbox(format("Muy bien, entra al mundo de las tinieblas conmigo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("All right, step into the world of darkness with me…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     return
 }
 
 script CollaboratorsRoom_EventScript_Gosuto_TalkOnly {
-    msgbox(format("Quizás me conoces, quizás no, pero no te culpo; paso como una sombra entre las tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("Maybe you know me, maybe not, but I don't blame you; I pass like a shadow through the darkness."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Pero a pesar de permanecer entre las tinieblas, he aportado a grandes proyectos dando un pequeño grano de arena."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("But despite lurking in the shadows, I've contributed to great projects, doing my small part."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("¡Que no se diga más y a seguir procesando píxeles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+    msgbox(format("Enough said - back to processing pixels!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
@@ -701,19 +701,19 @@ script CollaboratorsRoom_EventScript_Gosuto_IntroRematch {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_QuestionMarkWithDelay48)
     setspeaker(SP_NAME_GOSUTO)
-    message(format("¿Otro combate? ¿Estás segur{OA} de estar list{OA} para entrar al mundo de las tinieblas?"))
+    message(format("Another battle? Are you sure you're ready to enter the world of darkness?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(format("Ok, veamos si esta vez logras superar tus miedos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            msgbox(format("Okay, let's see if this time you overcome your fears."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Gosuto_TalkOnly)
         default:
-            msgbox(format("Bien pensado; aunque puedes volver cuando quieras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            msgbox(format("Good thinking; though you can come back whenever you want."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             goto(CollaboratorsRoom_EventScript_Gosuto_OnFinishEvent)
     }
 }
@@ -738,19 +738,19 @@ script CollaboratorsRoom_EventScript_Gosuto {
         applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
         waitmovement(0)
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GOSUTO, format("Creo que ya superaste tus miedos y superaste las sombras."))
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_GOSUTO, format("I think you've already overcome your fears and conquered the shadows."))
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Vaya, parece que encontraste una chispa de suerte.\pAprovecha esa luz mientras puedas, porque las sombras son pacientes y las tinieblas siempre terminan ganando al final."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            msgbox(format("Well, looks like you found a spark of luck.\pMake the most of that light while you can, because shadows are patient and the darkness always wins in the end."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_GOSUTO)
         } else {
-            msgbox(format("No te sientas mal; no cualquiera sobrevive a mis tinieblas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
+            msgbox(format("Don't feel bad; not everyone survives my darkness."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOSUTO)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
         }
@@ -766,17 +766,17 @@ script CollaboratorsRoom_EventScript_Gosuto {
 script CollaboratorsRoom_EventScript_Acimut_IntroFirstBattle {
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNote)
-    msgbox(format("¡Espera! ¿Escuchas eso?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("Wait! Do you hear that?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     waitse
     applymovementandwait(VAR_LAST_TALKED, moves(delay_16 * 3))
-    msgbox(format("¡Es el sonido de la batalla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("It's the sound of battle!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     return
 }
 
 script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
-    msgbox(format("Un día empecé a descompilar Pokémon FireRed en español para obtener la ROM original compilando pokefirered."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("One day I started decompiling Pokémon FireRed in Spanish to get the original ROM by compiling pokefirered."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Tuvieron que pasar dos años para encontrar motivación en el desafío 30 días dentro del foro de WaH.\pDurante ese tiempo logré hacer coincidencia al 100%."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("It took two years to find motivation in the 30-day challenge on the WaH forum.\pDuring that time I managed to reach a 100% match."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
     waitse
@@ -785,12 +785,12 @@ script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
     waitse
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
-    msgbox(format("Fue el mejor día de mi vida en el mundo del rom hacking, superando un reto personal muy significativo para mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("It was the best day of my life in the world of ROM hacking, beating a personal challenge that meant a lot to me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HeartWithDelay48)
     waitse
     delay(30)
-    msgbox(format("Por cierto, aquí la música se escucha mejor en estéreo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("By the way, the music here sounds better in stereo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     waitse
@@ -798,23 +798,23 @@ script CollaboratorsRoom_EventScript_Acimut_TalkOnly {
 }
 
 text CollaboratorsRoom_RematchMultichoice_Rematch {
-    format("¡Luchemos de nuevo!")
+    format("Let's battle again!")
 }
 
 text CollaboratorsRoom_RematchMultichoice_TalkOnly {
-    format("Prefiero simplemente hablar.")
+    format("I'd rather just talk.")
 }
 
 text CollaboratorsRoom_RematchMultichoice_Exit {
-    format("No, gracias.")
+    format("No, thanks.")
 }
 
 script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
-    msgbox(format("La música es matemáticas y puro sentimiento.\p¡Como los combates Pokémon!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+    msgbox(format("Music is math and pure feeling.\pJust like Pokémon battles!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_MusicNoteWithDelay48)
     setspeaker(SP_NAME_ACIMUT)
-    message(format("¿List{OA} para la revancha?"))
+    message(format("Ready for the rematch?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
@@ -828,7 +828,7 @@ script CollaboratorsRoom_EventScript_Acimut_IntroRematch {
             goto(CollaboratorsRoom_EventScript_Acimut_TalkOnly)
         default:
             fadedefaultbgm()
-            msgbox(format("Vuelve cuando quieras. Aquí siempre hay buena música para combatir."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            msgbox(format("Come back anytime. There's always good music here to battle to."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             goto(CollaboratorsRoom_EventScript_Acimut_OnFinishEvent)
     }
 }
@@ -855,23 +855,23 @@ script CollaboratorsRoom_EventScript_Acimut {
         waitmovement(0)
         delay(30)
         setflag(B_FLAG_NO_WHITEOUT)
-        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ACIMUT, format("¿Qué ha pasado aquí?"))
+        trainerbattle_no_intro(TRAINER_WAH_COLLABORATOR_ACIMUT, format("What happened here?"))
         clearflag(B_FLAG_NO_WHITEOUT)
         specialvar(VAR_RESULT, GetBattleOutcome)
         if(var(VAR_RESULT) == B_OUTCOME_WON) {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
-            msgbox(format("Ese último movimiento no lo vi venir…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            msgbox(format("I didn't see that last move coming…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-            msgbox(format("Espero podamos volver a enfrentarnos en un futuro."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            msgbox(format("I hope we can face each other again someday."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ACIMUT)
         } else {
-            msgbox(format("La armonía de tus Pokémon lo es todo…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            msgbox(format("The harmony of your Pokémon is everything…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
             delay(20)
-            msgbox(format("Si quieres volver a intentarlo, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
+            msgbox(format("If you want to try again, I'll be here."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ACIMUT)
         }
         setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_ACIMUT)
         call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
@@ -882,47 +882,47 @@ script CollaboratorsRoom_EventScript_Acimut {
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_LongIntro {
-    msgbox(format("20 años… ¿te das cuenta?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("20 years… do you realize?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("Aquí crecimos entre bugs, tiles mal alineados y scripts que se colgaban en el último mapa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("We grew up here among bugs, misaligned tiles, and scripts that froze on the last map."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_IdeaWithDelay48)
-    msgbox(format("¡Ah! Si ves a Baro por ahí… no intentes ser su amigo.\pCréeme, no termina bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Oh! If you see Baro around… don't try to be his friend.\pTrust me, it doesn't end well."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Y si te topas con Serg!o… salúdalo con respeto.\pEs leyenda."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("And if you run into Serg!o… greet him with respect.\pHe's a legend."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(10)
-    msgbox(format("Todos le tenemos un cariño especial…\nY no, no homo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("We all have a special fondness for him…\nAnd no, no homo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
-    msgbox(format("Me encanta la playa, hacer mapas bien locos y meter bosques dentro de cuevas.\pEso dice muchas cosas de mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("I love the beach, making really wild maps, and putting forests inside caves.\pThat says a lot about me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Los hacks dicen muchas cosas de nosotros.\pIncluso en nuestra vida personal… nos hicieron mejores personas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Hacks say a lot about us.\pEven in our personal lives… they made us better people."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(10)
     return
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
-    msgbox(format("Escanea el QR con tu móvil y nos vemos en el otro mundo."), speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Scan the QR with your phone and see you in the other world."), speaker = SP_NAME_ALEXMAD)
     load_field_pic(FP_MAD_QR, 120, 80)
     waitbuttonpress
     closemessage
     destroy_field_pic(FP_MAD_QR)
-    msgbox(format("¿Lo viste?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Did you see it?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
     closemessage
     delay(20)
     if(var(VAR_RESULT) == YES) {
-        msgbox(format("Entonces escribe la palabra que viste en el video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Then type the word you saw in the video."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         special(EnterCode)
         waitstate
         special(GetCodeFeedback)
         if (var(VAR_RESULT) == 1) {
-            msgbox(format("Perfecto… Veo que sí lo viste.\pEntonces sabes lo que tienes que hacer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("Perfect… I see you did watch it.\pThen you know what you have to do."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             setflag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)
             clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_FAILED)
             clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING)
@@ -934,28 +934,28 @@ script CollaboratorsRoom_EventScript_Alexmad_QRFlow {
             release
             end
         } else {
-            msgbox(format("No… esa no es."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("No… that's not it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             playse(SE_PIN)
             applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_AnnoyedWithDelay48)
-            msgbox(format("Recuerda que en el video explico los 3 pasos que necesitas para completar el evento.\pLa contraseña es tan solo el primer paso.\pVuelve cuando tengas la respuesta correcta."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("Remember, in the video I explain the 3 steps you need to complete the event.\pThe password is only the first step.\pCome back when you have the correct answer."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         }
     } else {
-        msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Come back when you're ready."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_IntroFirstBattle {
-    msgbox(format("Cada hack tiene su propia esencia. La personalidad de su creador vive dentro de él.\pEste lleva lo mejor de grandes nombres de la comunidad.\pMás de dos décadas evolucionando.\nNunca se rindieron… nunca dejaron de crear.\pVeamos si tú tampoco te rindes."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Every hack has its own essence. The personality of its creator lives inside it.\pThis one carries the best of great names from the community.\pMore than two decades evolving.\nThey never gave up… never stopped creating.\pLet's see if you don't give up either."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     return
 }
 
 script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
-    msgbox(format("Regresaste…\nEso ya dice algo.\pEn WAH aprendimos que rendirse no es una opción.\pCada error es una versión nueva… cada derrota es un parche.\pY cada parche nos hizo mejores."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("You came back…\nThat already says something.\pAt WAH we learned that giving up isn't an option.\pEvery bug is a new version… every defeat is a patch.\pAnd every patch made us better."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     setspeaker(SP_NAME_ALEXMAD)
-    message(format("¿Otro combate?"))
+    message(format("Another battle?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
@@ -968,7 +968,7 @@ script CollaboratorsRoom_EventScript_Alexmad_IntroRematch {
             call(CollaboratorsRoom_EventScript_Alexmad_LongIntro)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
         default:
-            msgbox(format("Cuando quieras volver, aquí estaré."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("Whenever you want to come back, I'll be here."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
     }
 }
@@ -985,18 +985,18 @@ script CollaboratorsRoom_EventScript_Alexmad_DoBattle {
     if(var(VAR_RESULT) == B_OUTCOME_WON) {
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48)
-        msgbox(format("Excelente…\nEres digno de estar aquí.\pMe alegra ver que la comunidad nunca dejó de ser la mejor."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Excellent…\nYou're worthy of being here.\pI'm glad to see the community never stopped being the best."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
-        msgbox(format("Hoy perdí yo…\nPero quizás mañana podría ganar Samee.\pNos veremos pronto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Today I lost…\nBut maybe tomorrow Samee could win.\pSee you soon."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_ALEXMAD)
     } else {
-        msgbox(format("Veo que no siempre tener el mejor equipo es suficiente.\pLa estrategia pesa más que pulsar A a lo loco."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("I see that having the best team isn't always enough.\pStrategy matters more than mashing A like crazy."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
         call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-        msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Come back when you're ready."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     setvar(VAR_0x8004, COLLABORATOR_NO_FAINT_BIT_ALEXMAD)
     call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
@@ -1010,19 +1010,19 @@ script CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent {
 }
 
 text CollaboratorsRoom_Text_Alexmad_OnDefeat {
-    format("20 años de comunidad y aún me sorprenden.")
+    format("20 years of community and it still surprises me.")
 }
 
 script CollaboratorsRoom_EventScript_Alexmad {
     lock
     playse(SE_PIN)
     if(flag(FLAG_TEMP_ALEXMAD_PUZZLE_STARTED)) {
-        msgbox(format("Ya sabes lo que tienes que hacer, ¿no?"), MSGBOX_NPC, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("You know what you have to do, right?"), MSGBOX_NPC, speaker = SP_NAME_ALEXMAD)
         end
     }
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
     if(!flag(FLAG_ALEXMAD_EVENT_COMPLETED)) {
-        msgbox(format("Sm1, sm2 o…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Sm1, sm2 or…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     delay(30)
     playse(SE_PIN)
@@ -1050,24 +1050,24 @@ script CollaboratorsRoom_EventScript_Alexmad {
             }
             goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
         } else {
-            msgbox(format("Ya lo lograste."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("You already did it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             playse(SE_PIN)
             applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
-            msgbox(format("Me recuerdas a KODER.\pSiempre fue bueno con los acertijos.\nSigue adelante, seguro que te irá bien."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+            msgbox(format("You remind me of KODER.\pHe was always good with riddles.\nKeep going, I'm sure you'll do fine."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
         }
     } else {
         if(flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
             if(var(VAR_TEMP_C) == 1) {
-                msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pPero también podemos ir directo a la batalla.\n¿Qué prefieres?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("I've got an event for you in true Mitic style.\pBut we can also go straight to the battle.\nWhat do you prefer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
             } else {
-                msgbox(format("¡Tú de nuevo! Tengo dos propuestas para ti."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("You again! I've got two offers for you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 playse(SE_PIN)
                 applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_QuestionMark)
-                msgbox(format("¿Qué quieres hacer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("What do you want to do?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 delay(60)
             }
-            dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Evento"), format("Batalla"), format("Salir"))
+            dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, format("Event"), format("Battle"), format("Exit"))
             switch(var(VAR_RESULT)) {
                 case 0:
                     goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
@@ -1077,25 +1077,25 @@ script CollaboratorsRoom_EventScript_Alexmad {
                     } else {
                         playse(SE_PIN)
                         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HappyWithDelay48)
-                        msgbox(format("Veamos qué versión eres ahora."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                        msgbox(format("Let's see which version you are now."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                     }
                     goto(CollaboratorsRoom_EventScript_Alexmad_DoBattle)
                 default:
-                    msgbox(format("Vuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                    msgbox(format("Come back when you're ready."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
             }
         } else {
             if(var(VAR_TEMP_C) == 1) {
-                msgbox(format("Tengo para ti un evento al puro estilo del Mitic.\pDime… ¿lo quieres hacer?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("I've got an event for you in true Mitic style.\pTell me… do you want to do it?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
             } else {
-                msgbox(format("Has vuelto, ¿quieres seguir con el evento?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("You're back - want to continue with the event?"), MSGBOX_YESNO, speaker = SP_NAME_ALEXMAD)
             }
             closemessage
             delay(20)
             if(var(VAR_RESULT) == YES) {
                 goto(CollaboratorsRoom_EventScript_Alexmad_QRFlow)
             } else {
-                msgbox(format("Vuelve cuando estés list{OA}.\nEl Mitic no espera… pero tampoco se repite."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+                msgbox(format("Come back when you're ready.\nThe Mitic doesn't wait… but it doesn't repeat either."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
                 goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
             }
         }
@@ -1107,7 +1107,7 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleSwapFeedback {
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("Bien ahí… solo te falta la última parte del evento."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Nice… you're just missing the last part of the event."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     clearflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING)
     setvar(VAR_TEMP_1_COLLABORATORS_ALEXMAD_PUZZLE_SWAP_FEEDBACK_PENDING, 0)
     setflag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN)
@@ -1128,15 +1128,15 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, moves(jump_in_place_right, delay_16))
     waitse
     playse(SE_SUCCESS)
-    msgbox(format("¡Lo has logrado! Veo que eres buen{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("You did it! I see you're good."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     directmovementtopos(LOCALID_PLAYER, 5, 3)
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    msgbox(format("Me recuerdas a KODER. Siempre fue bueno con los acertijos.\pQuizás pueda ayudarte en tu camino."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("You remind me of KODER. He was always good with riddles.\pMaybe I can help you on your way."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
-    msgbox("Toma este objeto.\nNo entiendo bien qué hace, pero\lseguro te será útil.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox("Take this item.\nI don't quite get what it does, but\lit's sure to be useful.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     giveitem(ITEM_TERA_ORB)
     setflag(B_FLAG_TERA_ORB_CHARGED)
@@ -1144,20 +1144,20 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     closemessage
     delay(10)
     call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
-    msgbox(format("Además, ahora podrás encontrar en la PC a algunos legendarios de la Isla Mítica."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Also, you can now find some legendaries from the Mythic Island in the PC."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     setflag(FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES)
     call(Pokebox_EventScript_ShowUnlocks)
     delay(20)
-    msgbox(format("Quizá puedas reemplazar a alguno de tus Pokémon con uno de ellos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Maybe you can replace one of your Pokémon with one of them."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("¿Conoces el poder de los clones?\nAhora podrás vivirlo en carne propia."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Do you know the power of the clones?\nNow you'll experience it firsthand."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     setflag(FLAG_ALEXMAD_EVENT_GIVE_CLONES)
     call(Pokebox_EventScript_ShowUnlocks)
     delay(20)
-    msgbox(format("Estos clones son mucho más fuertes que los Pokémon originales.\pÚsalos sabiamente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("These clones are much stronger than the original Pokémon.\pUse them wisely."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_HeartWithDelay48)
     delay(20)
@@ -1168,11 +1168,11 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     playse(SE_PIN)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
     call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
-    msgbox(format("También te daré acceso a este Pokémon muy especial.\pEs una herramienta de combate muy codiciada."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("I'll also give you access to this very special Pokémon.\pIt's a highly coveted battle tool."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     setflag(FLAG_ALEXMAD_EVENT_COMPLETED)
     call(Pokebox_EventScript_ShowUnlocks)
     call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
-    msgbox(format("KODER hubiera sonreído al verte salir de aquí con tantas cartas en la manga.\pNo lo desperdicies."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("KODER would've smiled to see you leave here with so many aces up your sleeve.\pDon't waste it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
@@ -1200,67 +1200,67 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleFailed {
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_FacePlayer)
     playse(SE_FAILURE)
     applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_XWithDelay48)
-    msgbox(format("No, no… así no es.\pVuelve a hablarme si quieres intentarlo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("No, no… that's not it.\pTalk to me again if you want to try again."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     if(!flag(FLAG_TEMP_ALEXMAD_PUZZLE_SWAP_FEEDBACK_SHOWN)) {
         playse(SE_PIN)
         applymovementandwait(LOCALID_COLLABORATORS_ROOM_ALEXMAD, Common_Movement_ThinkingWithDelay48)
-        msgbox(format("Recuerda lo que dije, que a veces los últimos serán los…\l…\pMejor vuelve a intentarlo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+        msgbox(format("Remember what I said, that sometimes the last shall be the…\l…\pBetter try again."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     }
     goto(CollaboratorsRoom_EventScript_Alexmad_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly {
-    msgbox(format("Mi nombre es El Gran Jefe Topo, quiero decir, Ryuzaki, aunque recientemente algunos desgraciados me están llamando Ryutopo para desprestigiarme…\pY eso que mis animalines favoritos son las nutrias…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("My name is the Great Mole Boss, I mean, Ryuzaki, though lately some lowlifes have been calling me Ryumole to smear my name…\pAnd to think my favorite little critters are otters…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
-    msgbox(format("Pero hay que admitir que es una conjugación bastante hilarante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("But I have to admit it's a pretty hilarious mash-up."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox("¿Lees manga? ¡No me mientas! Sé que sí.\nEn todo caso, aún si no lo haces, hay\luno que me gustaría recomendarte.\pEs Tokyo Ghoul.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox("Do you read manga? Don't lie!\nI know you do.\lEither way, even if you don't,\lthere's one I'd like to recommend.\pIt's Tokyo Ghoul.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark)
     waitse
-    msgbox(format("Sí, entiendo esa cara de decepción, ¡no soy un adolescente emo en 2017!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Yes, I get that disappointed look - I'm not an emo teen in 2017!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox(format("Su adaptación fue un relajo, pero no es la burla que probablemente imaginas.\pEl manga trata las bifurcaciones de la introspectiva de sus personajes con tanto amor que resulta ser una experiencia preciosa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Its adaptation was a mess, but it's not the joke you're probably imagining.\pThe manga handles the branching introspection of its characters with such love that it becomes a beautiful experience."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("No te estoy desinformando, puedes confiar en mí."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("I'm not feeding you misinformation, you can trust me."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Es muy especial para mí… tenía que usar descaradamente mi influencia para darle visibilidad."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("It's very special to me… I had to shamelessly use my influence to give it some visibility."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
     goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_IntroFirstBattle {
-    msgbox("Es hora de la violencia.\nTe mostraré La Verdad Divina.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox("It's time for violence.\nI'll show you the Divine Truth.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     return
 }
 
 script CollaboratorsRoom_EventScript_Ryuzaki_IntroRematch {
-    msgbox(format("Oh, hola. Tu ausencia me ha dado tiempo a componer un pequeño poema.\pTen, te lo comparto."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox(format("Oh, hello. Your absence gave me time to compose a little poem.\pHere, let me share it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
     delay(20)
-    msgbox("{FONT_SMALL}“¡Ay, langosta sucia!\nNo es solo cuestión de calandracas\lEs el naufragio del espíritu\lEn el Océano del Carajo”.", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+    msgbox("{FONT_SMALL}“Oh, filthy lobster!\nIt's not just a matter of doohickeys\lIt's the shipwreck of the spirit\lIn the Ocean of the Damned.”", MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
     delay(20)
     setspeaker(SP_NAME_RYUZAKI)
-    message(format("Profundo y seinen, ¿verdad?\pBueno, seguramente no viniste a oírme hablar pinga… ¿Nos fajamos?"))
+    message(format("Deep and seinen, right?\pWell, you probably didn't come to hear me talk nonsense… Shall we throw down?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
     delay(20)
     switch(var(VAR_RESULT)) {
         case 0:
-            msgbox(format("Prepárate para conocer la verdadera fuerza de la Jode Jode no Mi: Modelo Duende de La Buena Pipa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("Get ready to face the true power of the Screw-Screw Fruit: Goblin Model of La Buena Pipa."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
         default:
-            msgbox(format("Las moscas no pueden simplemente echarse gafas para ver La Luz."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("Flies can't just put on glasses to see The Light."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
@@ -1294,16 +1294,16 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_XWithDelay48)
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Me fumigaste. Te salvaste de que no estamos en territorio ryutámico."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("You fumigated me. Lucky for you we're not in ryutamic territory."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_RYUZAKI)
         } elif(var(VAR_RESULT) == B_OUTCOME_FORFEITED) {
-            msgbox(format("¿Ah? ¿No íbamos a pelear? Veo que has perfeccionado tus habilidades desinformativas…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("Huh? Weren't we going to fight? I see you've perfected your misinformation skills…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
         } else {
-            msgbox(format("Eres una burla, asere. Recoge tu baraja."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+            msgbox(format("You're a joke, bro. Pack up your deck."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
         }
@@ -1311,13 +1311,13 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
         call(CollaboratorsRoom_EventScript_AfterBattleCollaborators)
         goto(CollaboratorsRoom_EventScript_Ryuzaki_OnFinishEvent)
     } else {
-        msgbox(format("Hola querid{OA} coyote. No esperaba verte por aquí.\pDe hecho, no esperaba verme a mí mismo ni pinga."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        msgbox(format("Hello, dear coyote. I wasn't expecting to see you around here.\pIn fact, I wasn't expecting to see myself either, honestly."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
         playse(SE_PIN)
         applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-        msgbox(format("La vida da más vueltas que una cantimplora, ¿verdad?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        msgbox(format("Life takes more twists than a canteen, right?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
         call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         delay(20)
-        msgbox(format("¿Qué? ¿Yo? Oh, no te preocupes, no soy nadie sospechoso."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
+        msgbox(format("What? Me? Oh, don't worry, I'm nobody suspicious."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RYUZAKI)
         delay(20)
         call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
         goto(CollaboratorsRoom_EventScript_Ryuzaki_TalkOnly)
@@ -1325,12 +1325,12 @@ script CollaboratorsRoom_EventScript_Ryuzaki {
 }
 
 text CollaboratorsRoom_Text_Ryuzaki_OnDefeat {
-    format("Ya sabes lo que dicen, la voluntad es la fuerza del alma.")
+    format("You know what they say: will is the strength of the soul.")
 }
 
 script CollaboratorsRoom_EventScript_Caco_IntroFirstBattle {
     faceplayer
-    msgbox(format("¿Tú otra vez? Tienes un aura distinta a la primera vez...\pY te aseguro que no son alucinaciones por el café."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("You again? You've got a different aura from the first time...\pAnd I assure you it's not hallucinations from the coffee."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     delay(30)
 
     playse(SE_LEDGE)
@@ -1338,41 +1338,41 @@ script CollaboratorsRoom_EventScript_Caco_IntroFirstBattle {
     
     checkplayergender
     if(var(VAR_RESULT) == MALE) {
-        msgbox(format("Esa mirada... no me digas que has ganado el desafío...\p¿De verdad eres el nuevo campeón?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("That look... don't tell me you've won the challenge...\pAre you really the new champion?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     } else {
-        msgbox(format("Esa mirada... no me digas que has ganado el desafío...\p¿De verdad eres la nueva campeona?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+        msgbox(format("That look... don't tell me you've won the challenge...\pAre you really the new champion?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     }
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
-    msgbox(format("¡Vaya! No esperaba eso... Pero a que adivino: ¡No me has traído un café!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Wow! I didn't expect that... But I bet I can guess: you didn't bring me a coffee!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down))
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-    msgbox(format("Llevo aquí encerrado desde que empezamos el desarrollo ¡y ni siquiera puedes traerme un Latte templado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("I've been cooped up here since we started development and you can't even bring me a lukewarm latte!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_AngryWithDelay48)
-    msgbox(format("¡Prepárate para sufrir la cólera del desarrollador sin cafeína!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Get ready to face the wrath of the caffeine-deprived developer!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     return
 }
 
 script CollaboratorsRoom_EventScript_Caco_TalkOnly {
     faceplayer
-    msgbox(format("¿Has probado ya el PC de la Sala de espera?\pPorque si sigues buscando el de los Centros Pokémon, vas list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Have you tried the PC in the Waiting Room yet?\pBecause if you keep looking for the one in Pokémon Centers, good luck with that."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-    msgbox(format("¡Me costó mil noches de insomnio y otros tantos cabezazos contra el teclado lograr que funcionara bien!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("It cost me a thousand sleepless nights and just as many headbutts against the keyboard to get it working right!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
-    msgbox(format("¡Así que ya estás tardando en ir a probarlo!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("So you'd better hurry up and go try it!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     delay(10)
-    msgbox(format("Y ni se te ocurra asomar la nariz por aquí de nuevo si no es con una buena taza de café humeante en la mano. ¡Venga, muévete!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("And don't you dare poke your nose in here again unless it's with a nice steaming cup of coffee in hand. Come on, get moving!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(lock_facing_direction, jump_in_place_down, unlock_facing_direction, face_player))
     goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
 }
 
 script CollaboratorsRoom_EventScript_Caco_IntroRematch {
-    msgbox(format("¡Puaj! Este café sabe a rayos.\pCreo que lleva en la taza desde que empezamos, pero debo beberlo...\pEs lo único que mantiene mis neuronas conectadas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Blegh! This coffee tastes awful.\pI think it's been in the cup since we started, but I have to drink it...\pIt's the only thing keeping my neurons connected."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
 
     delay(30)
 
@@ -1383,15 +1383,15 @@ script CollaboratorsRoom_EventScript_Caco_IntroRematch {
     applymovementandwait(VAR_LAST_TALKED, moves(face_player, lock_facing_direction, jump_in_place_down))
     playse(SE_LEDGE)
     applymovementandwait(VAR_LAST_TALKED, moves(jump_in_place_down, unlock_facing_direction, face_player))
-    msgbox(format("¡Eyy! ¿No te han enseñado que no se debe escuchar a hurtadillas?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Heyy! Didn't anyone teach you not to eavesdrop?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     delay(10)
-    msgbox(format("Tu cara... me suena de verla antes. ¿Eras un{A} beta-tester o algo así?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Your face... looks familiar. Were you a beta-tester or something?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     playse(SE_PIN)
     applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
-    msgbox(format("Bueno, ya que estás aquí, me vendrá bien para despejar la mente."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+    msgbox(format("Well, since you're here, it'll do me good to clear my head."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
     delay(10)
     setspeaker(SP_NAME_CACO)
-    message(format("¿Qué quieres hacer?"))
+    message(format("What do you want to do?"))
     waitmessage
     dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
     closemessage
@@ -1399,12 +1399,12 @@ script CollaboratorsRoom_EventScript_Caco_IntroRematch {
     switch(var(VAR_RESULT)) {
         case 0:
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("¡No te servirá de nada haber programado tu victoria!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            msgbox(format("Programming your victory won't do you any good!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
             return
         case 1:
             goto(CollaboratorsRoom_EventScript_Caco_TalkOnly)
         default:
-            msgbox(format("¡Más te vale que la próxima vez traigas cafeína!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            msgbox(format("You'd better bring caffeine next time!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             goto(CollaboratorsRoom_EventScript_Caco_OnFinishEvent)
@@ -1449,12 +1449,12 @@ script CollaboratorsRoom_EventScript_Caco {
         
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
             call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
-            msgbox(format("Vale, lo admito... combates mejor de lo que yo programo.\pPero sigo necesitando ese café."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            msgbox(format("Okay, I admit it... you battle better than I program.\pBut I still need that coffee."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_AnnoyedWithDelay48)
             setflag(FLAG_DEFEATED_COLLABORATORS_ROOM_CACO)
         } else {
-            msgbox(format("¿Lo ves? La falta de sueño me hace peligroso.\p¡Vuelve cuando tengas el café!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
+            msgbox(format("See? Lack of sleep makes me dangerous.\pCome back when you've got the coffee!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_CACO)
             playse(SE_PIN)
             applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
         }
@@ -1468,90 +1468,90 @@ script CollaboratorsRoom_EventScript_Caco {
 }
 
 text CollaboratorsRoom_Text_Caco_OnDefeat {
-    format("A veces, para uno poder avanzar, debe de aceptar su error.")
+    format("Sometimes, to move forward, one must accept their mistake.")
 }
 
 script CollaboratorsRoom_EventScript_Notes {
-    msgbox(format("Las notas están llenas de tachones y dibujos extraños.\pEs imposible descifrar lo que quiso escribir."), MSGBOX_SIGN)
+    msgbox(format("The notes are full of scribbles and strange drawings.\pIt's impossible to make out what they meant to write."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_MaidenPoster {
-    msgbox(format("El póster muestra a MAIDEN junto a su WOOPER variocolor.\pDetrás, se ve un hermoso {COLOR BLUE}cielo azul{COLOR DARK_GRAY}."), MSGBOX_SIGN)
+    msgbox(format("The poster shows MAIDEN alongside her shiny WOOPER.\pBehind them, a beautiful {COLOR BLUE}blue sky{COLOR DARK_GRAY}."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Library {
-    msgbox(format("La estantería está repleta de libros históricos de WAH.\pUno parece hablar del origen de ELECTRODE SANDÍA."), MSGBOX_SIGN)
+    msgbox(format("The shelf is packed with historical WAH books.\pOne seems to tell of the origin of WATERMELON ELECTRODE."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Coffee {
-    msgbox(format("Es una taza de café. Parece estar hirviendo."), MSGBOX_SIGN)
+    msgbox(format("It's a cup of coffee. It seems to be boiling."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Projector {
-    msgbox(format("Parece un proyector de películas.\nSe encuentra apagado."), MSGBOX_SIGN)
+    msgbox(format("It looks like a film projector.\nIt's switched off."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Desk {
-    msgbox(format("El cajón guarda antiguos bocetos y diseños.\pMuchos tienen escrito “cancelado” al costado."), MSGBOX_SIGN)
+    msgbox(format("The drawer holds old sketches and designs.\pMany have “cancelled” written on the side."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Trash {
-    msgbox(format("La papelera está repleta de hojas tachadas.\pDa la impresión de que nada fue fácil de decidir."), MSGBOX_SIGN)
+    msgbox(format("The wastebasket is full of crossed-out sheets.\pIt gives the impression that nothing was easy to decide."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Brainstorming {
-    msgbox(format("La pizarra está cubierta de diagramas y flechas.\pParece una sesión de ideas llevada al extremo."), MSGBOX_SIGN)
+    msgbox(format("The whiteboard is covered in diagrams and arrows.\pIt looks like a brainstorm taken to the extreme."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Desk2 {
-    msgbox(format("El cajón guarda decenas de apuntes sobre combates y niveles.\pParece que ajustar la dificultad tomó muchísimo tiempo."), MSGBOX_SIGN)
+    msgbox(format("The drawer holds dozens of notes about battles and levels.\pIt seems tuning the difficulty took a very long time."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Computer {
-    msgbox(format("La torre de la computadora hace un ruido constante y preocupante.\pParece estar sobrecalentándose."), MSGBOX_SIGN)
+    msgbox(format("The computer tower makes a constant, worrying noise.\pIt seems to be overheating."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Notes2 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pParecen tener la partitura de una melodía bastante compleja."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey seem to hold the sheet music for a fairly complex melody."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Notes3 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen un listado de Pokémon y sus estadísticas.\pHay un Pokémon que se llama Latiken."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey have a list of Pokémon and their stats.\pThere's a Pokémon called Latiken."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Notes4 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen el plano del diseño de una sala, pero están tachados."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey have the blueprint for a room's design, but it's crossed out."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Notes5 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pTienen varias ideas que fueron descartadas."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey have several ideas that were discarded."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_Notes6 {
-    msgbox(format("Son varias hojas que se encuentran en el suelo.\pEstán vacías."), MSGBOX_SIGN)
+    msgbox(format("There are several sheets lying on the floor.\pThey're empty."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_ExaminePaperScraps {
-    msgbox(format("Hay pedazos de papel rotos esparcidos por el suelo."), MSGBOX_SIGN)
+    msgbox(format("There are torn scraps of paper scattered across the floor."), MSGBOX_SIGN)
     end
 }
 
 script CollaboratorsRoom_EventScript_NotesTable {
-    msgbox(format("Hay varios papeles con apuntes en la mesa.\pIncluye un listado de los Pokémon disponibles para el desafío."), MSGBOX_SIGN)
+    msgbox(format("There are several papers with notes on the table.\pThey include a list of the Pokémon available for the challenge."), MSGBOX_SIGN)
     end
 }

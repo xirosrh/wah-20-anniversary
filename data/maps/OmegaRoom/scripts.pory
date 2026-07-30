@@ -56,7 +56,7 @@ script OmegaRoom_EventScript_StartChallenge {
     waitse
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
-    msgbox(format("¡Ostras, un{A} nuev{OA} contrincante!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)  
+    msgbox(format("Whoa, a new challenger!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)  
     delay(50)
     directcameramovementtopos(6, 9)
     waitmovement(0)
@@ -70,11 +70,11 @@ script OmegaRoom_EventScript_StartChallenge {
     playse(SE_PIN)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_QuestionMarkWithDelay48)
     delay(30)
-    msgbox(format("¡Bienvenid{OA} al primer encuentro del desafío de esta celebración!\pTe estábamos esperando."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("Welcome to the first match of this celebration's challenge!\pWe've been expecting you."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_HappyWithDelay48)
     delay(20)
-    msgbox(format("¿List{OA} para tu primer combate? ¡Veamos si eres capaz de derrotarme!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("Ready for your first battle? Let's see if you can beat me!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown)
     delay(20)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
@@ -87,7 +87,7 @@ script OmegaRoom_EventScript_StartChallenge {
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down, delay_16))
     waitmovement(0)
     waitse
-    msgbox(format("Perfecto, ¡vamos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("Perfect, let's go!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(emote_versus))
     waitmovement(0)
@@ -101,13 +101,13 @@ script OmegaRoom_EventScript_StartChallenge {
     delay(40)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_Surprise)
-    msgbox(format("¡Sí que sacaste los colmillos!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("You really bared your fangs!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     delay(48)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkDown)
-    msgbox(format("Ha sido un buen combate. Me quedo con ganas de más, la verdad.\pTocará esperar a que completes el desafío para tener una revancha."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("That was a good battle. It leaves me wanting more, honestly.\pI'll have to wait until you complete the challenge for a rematch."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown)
-    msgbox(format("De todas formas, esta fue solo la primera sala; todavía tenés un largo camino por delante."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("Either way, this was only the first room; you've still got a long road ahead."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_LEDGE)
     applymovement(LOCALID_OMEGAROOM_OMEGA, moves(jump_in_place_down))
     waitmovement(0)
@@ -117,16 +117,16 @@ script OmegaRoom_EventScript_StartChallenge {
     waitmovement(0)
     waitse
     delay(30)
-    msgbox(format("Va a ser interesante ver qué tanto puedes avanzar en este desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("It'll be interesting to see how far you can get in this challenge."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     waitmovement(0)
     delay(30)
-    msgbox(format("Yo sigo activo por aquí, pero muchos de tus próximos rivales ya se habían retirado… y han vuelto especialmente para esta celebración.\pPero recuerda, no subestimes a la vieja guardia. Son tercos, y cuando se ponen en serio, se nota."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("I'm still active around here, but many of your upcoming rivals had already retired… and came back especially for this celebration.\pBut remember, don't underestimate the old guard. They're stubborn, and when they get serious, you'll know it."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     playse(SE_PIN)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_SweatDropWithDelay48)
     delay(20)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, Common_Movement_WalkInPlaceDown)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
-    msgbox(format("Te abriré la puerta para que puedas continuar con tu viaje."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("I'll open the door so you can continue your journey."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     special(SpawnCameraObject)
     directcameramovementtopos(6, 4)
     waitmovement(0)
@@ -134,7 +134,7 @@ script OmegaRoom_EventScript_StartChallenge {
     directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
     waitmovement(0)
     special(RemoveCameraObject)
-    msgbox(format("Ahora avanza, y demuestra que estás aquí para lograr grandes cosas."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
+    msgbox(format("Now go on, and show you're here to achieve great things."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_OMEGA)
     applymovementandwait(LOCALID_OMEGAROOM_OMEGA, moves(walk_up * 2, face_down))
     setflag(FLAG_DEFEATED_ADMIN_OMEGA)
     setvar(VAR_TEMP_0, 1)
@@ -188,35 +188,35 @@ script OmegaRoom_EventScript_OmegaBattle {
 }
 
 text OmegaRoom_Text_OmegaDefeated {
-    format("¡Qué nivel has demostrado! No esperaba un combate tan entretenido.")
+    format("That was awesome! I didn't expect such an entertaining battle.")
 }
 
 script OmegaRoom_EventScript_Omega {
-    msgbox(format("¿Qué estás esperando? Ve a demostrar a esos viejos que no me has ganado por casualidad."), MSGBOX_NPC, speaker = SP_NAME_OMEGA)
+    msgbox(format("What are you waiting for? Go show those old-timers you didn't beat me by luck."), MSGBOX_NPC, speaker = SP_NAME_OMEGA)
     end
 }
 
 script OmegaRoom_Eventscript_Capsule {
-    msgbox(format("Parece una cápsula de experimentación."), MSGBOX_SIGN)
+    msgbox(format("It looks like an experimentation pod."), MSGBOX_SIGN)
     end
 }
 
 script OmegaRoom_EventScript_Machine1 {
-    msgbox(format("La máquina emite un zumbido constante.\pParece que nadie la revisa desde hace años."), MSGBOX_SIGN)
+    msgbox(format("The machine gives off a constant hum.\pIt looks like no one's checked it in years."), MSGBOX_SIGN)
     end
 }
 
 script OmegaRoom_EventScript_Machine2 {
-    msgbox(format("La máquina está completamente descuidada.\pPequeñas plantas crecieron entre los paneles y las grietas del metal."), MSGBOX_SIGN)
+    msgbox(format("The machine is completely neglected.\pSmall plants have grown between the panels and cracks in the metal."), MSGBOX_SIGN)
     end
 }
 
 script OmegaRoom_EventScript_Machine3 {
-    msgbox(format("La pantalla está llena de fallos y píxeles muertos.\pEs increíble que el sistema aún siga funcionando."), MSGBOX_SIGN)
+    msgbox(format("The screen is full of glitches and dead pixels.\pIt's amazing the system is still running."), MSGBOX_SIGN)
     end
 }
 
 script OmegaRoom_EventScript_Box {
-    msgbox(format("La caja está cubierta por una gruesa capa de polvo.\pParece que hace años que nadie la toca."), MSGBOX_SIGN)
+    msgbox(format("The box is covered in a thick layer of dust.\pIt looks like no one's touched it in years."), MSGBOX_SIGN)
     end
 }

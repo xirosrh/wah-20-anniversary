@@ -383,120 +383,122 @@ AguiarRoom_EventScript_Aguiar_Movement_0:
 
 AguiarRoom_OnFrame_Text_0:
 # 26 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Pero qué buen programa! Hoy sí que es\n"
-	.string "un día tranquilo.$"
+	.string "What a great show! Today really is a\n"
+	.string "quiet day.$"
 
 AguiarRoom_OnFrame_Text_1:
 # 31 "data/maps/AguiarRoom/scripts.pory"
-	.string "Bueno, hora de dar un par de caladas.$"
+	.string "Well, time for a couple of drags.$"
 
 AguiarRoom_EventScript_Aguiar_Text_0:
 # 89 "data/maps/AguiarRoom/scripts.pory"
-	.string "Aquí sigo, como siempre: tranquilo,\n"
-	.string "fumando y esperando a ver quién\l"
-	.string "aparece.$"
+	.string "Here I am, same as always: relaxed,\n"
+	.string "smoking, and waiting to see who shows\l"
+	.string "up.$"
 
 AguiarRoom_EventScript_Aguiar_Text_1:
 # 112 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Pero mírate! Al final has llegado hasta\n"
-	.string "aquí.\p"
-	.string "Y yo que pensaba que iba a pasarme el\n"
-	.string "día tirado, con el cigarro y poco más…$"
+	.string "Well, look at you! You made it all the way\n"
+	.string "here after all.\p"
+	.string "And here I was thinking I'd spend the\n"
+	.string "day lazing around with a cigarette and\l"
+	.string "little else…$"
 
 AguiarRoom_EventScript_Aguiar_Text_2:
 # 117 "data/maps/AguiarRoom/scripts.pory"
-	.string "No esperaba visitas, pero oye, me viene\n"
-	.string "de lujo: así me entretengo un rato.$"
+	.string "I wasn't expecting company, but hey, it\n"
+	.string "works out great: gives me something to\l"
+	.string "do for a while.$"
 
 AguiarRoom_EventScript_Aguiar_Text_3:
 # 121 "data/maps/AguiarRoom/scripts.pory"
-	.string "Aquí todos se lo toman tan en serio,\n"
-	.string "como si esto fuese cuestión de vida o\l"
-	.string "muerte.\p"
-	.string "Yo prefiero reírme, dar un par de\n"
-	.string "caladas, y ver qué trae el que se planta\l"
-	.string "delante.$"
+	.string "Everyone here takes it so seriously, as\n"
+	.string "if this were a matter of life or death.\p"
+	.string "I'd rather laugh, take a couple of\n"
+	.string "drags, and see what whoever shows up\l"
+	.string "has to offer.$"
 
 AguiarRoom_EventScript_Aguiar_Text_4:
 # 126 "data/maps/AguiarRoom/scripts.pory"
-	.string "No te voy a dar discursos épicos ni\n"
-	.string "consejos de abuelo, que para eso hay\l"
-	.string "otros.\p"
-	.string "Si quieres pelear, perfecto. Si pierdo,\n"
-	.string "pues nada, me enciendo otro.\p"
-	.string "Y si gano… bueno, tampoco me voy a\n"
-	.string "hacer un póster con tu cara, ¿eh?$"
+	.string "I'm not going to give you epic speeches\n"
+	.string "or grandpa advice - there are others\l"
+	.string "for that.\p"
+	.string "If you want to fight, great. If I lose,\n"
+	.string "well, I'll just light up another.\p"
+	.string "And if I win… well, I'm not going to make\n"
+	.string "a poster of your face, eh?$"
 
 AguiarRoom_EventScript_Aguiar_Text_5:
 # 130 "data/maps/AguiarRoom/scripts.pory"
-	.string "Así que venga, no le demos más vueltas.\n"
-	.string "Saca a tus Pokémon, que yo ya tengo\l"
-	.string "ganas de ver si al menos me haces dejar\l"
-	.string "el cigarro quieto un rato.\p"
-	.string "¡Vamos allá!$"
+	.string "So come on, let's not overthink it. Send\n"
+	.string "out your Pokémon - I'm curious to see if\l"
+	.string "you can at least make me set the\l"
+	.string "cigarette down for a bit.\p"
+	.string "Here we go!$"
 
 AguiarRoom_EventScript_Aguiar_Text_6:
 # 136 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Pues mira que me la has liado! Y yo\n"
-	.string "pensando que iba a ser otro paseo…$"
+	.string "Well, you sure got me! And here I was\n"
+	.string "thinking it'd be another walk in the\l"
+	.string "park…$"
 
 AguiarRoom_EventScript_Aguiar_Text_7:
 # 141 "data/maps/AguiarRoom/scripts.pory"
-	.string "No está mal, no está nada mal. Ya puedes\n"
-	.string "seguir avanzando.$"
+	.string "Not bad, not bad at all. You can go\n"
+	.string "ahead and keep moving.$"
 
 AguiarRoom_EventScript_Coffee_Text_0:
 # 170 "data/maps/AguiarRoom/scripts.pory"
-	.string "La taza de café todavía sigue caliente.$"
+	.string "The cup of coffee is still warm.$"
 
 AguiarRoom_EventScript_Ashtray_Text_0:
 # 175 "data/maps/AguiarRoom/scripts.pory"
-	.string "El cenicero está lleno de cigarros\n"
-	.string "recién apagados.\p"
-	.string "Definitivamente, alguien tiene una\n"
-	.string "adicción muy fuerte.$"
+	.string "The ashtray is full of freshly\n"
+	.string "stubbed-out cigarettes.\p"
+	.string "Someone definitely has a serious\n"
+	.string "addiction.$"
 
 AguiarRoom_EventScript_Microwave_Text_0:
 # 180 "data/maps/AguiarRoom/scripts.pory"
-	.string "El microondas tiene manchas de comida\n"
-	.string "recalentada.$"
+	.string "The microwave has stains of reheated\n"
+	.string "food.$"
 
 AguiarRoom_EventScript_Trash_Text_0:
 # 185 "data/maps/AguiarRoom/scripts.pory"
-	.string "La papelera está llena de restos de\n"
-	.string "cigarro y ceniza.$"
+	.string "The wastebasket is full of cigarette\n"
+	.string "butts and ash.$"
 
 AguiarRoom_EventScript_Refrigerator_Text_0:
 # 190 "data/maps/AguiarRoom/scripts.pory"
-	.string "La heladera desprende un aroma\n"
-	.string "increíblemente rico.\p"
-	.string "Seguro hay algo delicioso guardado\n"
-	.string "dentro.$"
+	.string "The fridge gives off an incredibly\n"
+	.string "delicious smell.\p"
+	.string "There's surely something tasty stored\n"
+	.string "inside.$"
 
 AguiarRoom_EventScript_TV_Text_0:
 # 195 "data/maps/AguiarRoom/scripts.pory"
-	.string "Es un televisor de 55 pulgadas.\nDefinitivamente ocupa media sala.$"
+	.string "It's a 55-inch TV.\nIt definitely takes up half the room.$"
 
 AguiarRoom_EventScript_Kitchen_Text_0:
 # 202 "data/maps/AguiarRoom/scripts.pory"
-	.string "Parece una cocina bastante moderna.\p"
-	.string "Todo está impecablemente limpio.$"
+	.string "It looks like a pretty modern kitchen.\p"
+	.string "Everything's spotlessly clean.$"
 
 AguiarRoom_EventScript_Switch_Text_0:
 # 207 "data/maps/AguiarRoom/scripts.pory"
-	.string "Parece que alguien dejó la Nintendo\n"
-	.string "Switch a mitad de una partida.$"
+	.string "It looks like someone left the Nintendo\n"
+	.string "Switch in the middle of a game.$"
 
 AguiarRoom_EventScript_Drawer_Text_0:
 # 212 "data/maps/AguiarRoom/scripts.pory"
-	.string "Parece que alguien usa este cajón\n"
-	.string "exclusivamente para guardar cigarros.$"
+	.string "It looks like someone uses this drawer\n"
+	.string "exclusively to store cigarettes.$"
 
 AguiarRoom_EventScript_FullOfBooks_Text_0:
 # 217 "data/maps/AguiarRoom/scripts.pory"
-	.string "Hay muchos libros de todo tipo.$"
+	.string "There are lots of books of all kinds.$"
 
 AguiarRoom_Text_AguiarDefeated::
 # 165 "data/maps/AguiarRoom/scripts.pory"
-	.string "¡Vaya combate! Me lo he pasado de\n"
-	.string "lujo.$"
+	.string "What a battle! I had a great\n"
+	.string "time.$"

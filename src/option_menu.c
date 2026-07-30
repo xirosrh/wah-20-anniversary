@@ -83,23 +83,23 @@ EWRAM_DATA static u16 sBgScrollX = 0;
 EWRAM_DATA static u16 sBgScrollY = 0;
 EWRAM_DATA static u8 sBgScrollFrameCounter = 0;
 
-static const u8 gText_Option[]             = _("Opciones");
-static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Lento");
-static const u8 gText_TextSpeedMid[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Medio");
-static const u8 gText_TextSpeedFast[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Rápido");
-static const u8 gText_TextSpeedInstant[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Instantáneo");
-static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Sí");
+static const u8 gText_Option[]             = _("OPTION");
+static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
+static const u8 gText_TextSpeedMid[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MID");
+static const u8 gText_TextSpeedFast[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Fast");
+static const u8 gText_TextSpeedInstant[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Instant");
+static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Yes");
 static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}No");
 static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mono");
-static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Estéreo");
+static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Stereo");
 static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
 static const u8 gText_ButtonTypeLR[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
 static const u8 gText_WalkSpeedNormal[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
-static const u8 gText_WalkSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Rápido");
-static const u8 gText_WalkSpeedFaster[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Muy rápido");
-static const u8 gText_WalkSpeedMax[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Máximo");
-static const u8 gText_SpeedupOff[]         = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Apagado");
+static const u8 gText_WalkSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Fast");
+static const u8 gText_WalkSpeedFaster[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Faster");
+static const u8 gText_WalkSpeedMax[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Max");
+static const u8 gText_SpeedupOff[]         = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Off");
 static const u8 gText_SpeedupX[]           = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}x");
 
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text.gbapal");
@@ -108,13 +108,13 @@ static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equa
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
-    [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("Veloc. texto"),
-    [MENUITEM_BATTLESCENE] = COMPOUND_STRING("Anim. combate"),
-    [MENUITEM_SOUND]       = COMPOUND_STRING("Sonido"),
-    [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("Controles"),
-    [MENUITEM_WALKSPEED]   = COMPOUND_STRING("Vel. caminar"),
-    [MENUITEM_SPEEDUP]     = COMPOUND_STRING("Turbo batalla"),
-    [MENUITEM_CANCEL]      = COMPOUND_STRING("Salir"),
+    [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("TEXT SPEED"),
+    [MENUITEM_BATTLESCENE] = COMPOUND_STRING("BATTLE SCENE"),
+    [MENUITEM_SOUND]       = COMPOUND_STRING("SOUND"),
+    [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
+    [MENUITEM_WALKSPEED]   = COMPOUND_STRING("Walk Speed"),
+    [MENUITEM_SPEEDUP]     = COMPOUND_STRING("Battle Turbo"),
+    [MENUITEM_CANCEL]      = COMPOUND_STRING("CANCEL"),
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =

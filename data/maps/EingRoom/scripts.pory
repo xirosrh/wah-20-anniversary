@@ -46,13 +46,13 @@ script EingRoom_OnFrame {
     waitmovement(0)
     special(HideMapNamePopUpWindow)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceDown)
-    msgbox(format("Malditos Xiros y Serg!o, que se han pirado dejándome a mí con el marrón de administrar la página web y el foro…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Damn Xiros and Serg!o, running off and leaving me stuck with the hassle of running the website and the forum…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_down))
     waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(emote_angry))
-    msgbox(format("¡Y yo sin las malditas credenciales!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("And me without the darn credentials!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     delay(30)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(walk_right * 2, walk_left * 2, walk_right * 2, walk_left * 2))
     playse(SE_LEDGE)
@@ -60,7 +60,7 @@ script EingRoom_OnFrame {
     waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(emote_idea))
-    msgbox(format("A ver si las han tirado al fondo del mar como una prueba para desafiarme y ver si soy digno de administrar WAH…\p¡Voy a ver si las pesco!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Maybe they threw them to the bottom of the sea as a test to challenge me and see if I'm worthy of running WAH…\pI'll go see if I can fish them out!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(walk_left, walk_in_place_left))
     hideobjectat(LOCALID_EINGROOM_EING, MAP_EING_ROOM)
     clearflag(FLAG_TEMP_1_EING_ROOM_HIDE_EING_FISHING)
@@ -89,10 +89,10 @@ script EingRoom_OnFrame {
     waitse
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(emote_angry))
-    msgbox(format("¡Maldita sea! ¿Otro entrenador?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("For crying out loud! Another trainer?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     delay(30)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_FaceRight)
-    msgbox(format("Esto se está pareciendo a mi rutina de wildbattles dobles del Hoenn Adventures…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("This is starting to feel like my routine of double wild battles from Hoenn Adventures…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     turnobject(LOCALID_EINGROOM_EING, DIR_WEST)
     directcameramovementtoposwithvars(VAR_TEMP_A, VAR_TEMP_B)
     waitmovement(0)
@@ -109,7 +109,7 @@ script EingRoom_EventScript_Eing {
     if(flag(FLAG_DEFEATED_ADMIN_EING)) {
         playse(SE_PIN)
         applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
-        msgbox(format("¿Pero mira que eres pesad{OA} eh? ¿Tú no tienes amigos u otra persona a la que molestar?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+        msgbox(format("Man, you're persistent, huh? Don't you have friends or someone else to bother?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
         delay(50)
         turnobject(LOCALID_EINGROOM_EING, DIR_WEST)
         release
@@ -124,12 +124,12 @@ script EingRoom_EventScript_Eing {
     playse(SE_LEDGE)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(jump_in_place_down, unlock_facing_direction, face_player))
     waitse
-    msgbox(format("¡Coño si tenemos visita! ¿Qué quieres? ¿No ves que estoy ocupado?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Well, if it isn't a visitor! What do you want? Can't you see I'm busy?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Angry)
     call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
     delay(40)
-    msgbox(format("Si quieres un cambio de nick, tendrás que esperar y como te pongas tont{OA} te baneo, ¿eh?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("If you want a nick change, you'll have to wait, and if you get cheeky I'll ban you, got it?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     fadescreen(FADE_TO_BLACK)
     delay(30)
     fadescreen(FADE_FROM_BLACK)
@@ -139,7 +139,7 @@ script EingRoom_EventScript_Eing {
         jump_in_place_down, 
         unlock_facing_direction, 
         face_player))
-    msgbox(format("¿Cómo? ¿Que quieres retarme a un combate Pokémon?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("What? You want to challenge me to a Pokémon battle?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, moves(
         face_away_player
@@ -148,13 +148,13 @@ script EingRoom_EventScript_Eing {
     ))
     delay(30)
     call(EingRoom_EventScript_JumpToPlayerDirection)
-    msgbox(format("Está bien, prepárate porque iré con todo, ¡luego no me llores!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Fine, get ready, because I'm going all out - no crying to me afterward!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     playse(SE_PIN)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_Versus)
     call(EingRoom_EventScript_WalkInPlaceEingFacingPlayer)
     delay(30)
     call(EingRoom_EventScript_EingBattle)
-    msgbox(format("Enhorabuena chaval{A}, ahora avanza a la siguiente sala y déjame tranquilo, que estaba muy ocupado…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
+    msgbox(format("Congrats, kid; now move on to the next room and leave me be - I was very busy…"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_EING)
     call(WahRoomsShared_OpenDoor)
     applymovementandwait(LOCALID_EINGROOM_EING, Common_Movement_WalkInPlaceLeft)
     setflag(FLAG_DEFEATED_ADMIN_EING)
@@ -182,7 +182,7 @@ script EingRoom_EventScript_EingBattle {
 }
 
 text EingRoom_Text_EingDefeated {
-    format("¡Míral{OA}, si parecía tont{OA} al principio!")
+    format("Look at that - and they seemed clueless at first!")
 }
 
 script EingRoom_EventScript_WalkInPlaceEingFacingPlayer {
@@ -227,18 +227,18 @@ script EingRoom_EventScript_JumpToPlayerDirection {
 
 
 script EingRoom_EventScript_Flotador {
-    msgbox(format("Es un flotador como los que usan los socorristas."), MSGBOX_SIGN)
+    msgbox(format("It's a float ring like the ones lifeguards use."), MSGBOX_SIGN)
     end
 }
 
 
 script EingRoom_EventScript_Taburete {
-    msgbox(format("Es un taburete que sirve para sentarse.\pPero no te puedes sentar en él."), MSGBOX_SIGN)
+    msgbox(format("It's a stool for sitting on.\pBut you can't sit on it."), MSGBOX_SIGN)
     end
 }
 
 
 script EingRoom_EventScript_Cubo {
-    msgbox(format("Es un cubo... ¿de basura?\nAh, no. Aquí está el cebo."), MSGBOX_SIGN)
+    msgbox(format("It's a bucket... for trash?\nOh, no. Here's the bait."), MSGBOX_SIGN)
     end
 }

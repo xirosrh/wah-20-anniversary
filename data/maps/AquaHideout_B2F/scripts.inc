@@ -87,72 +87,73 @@ AquaHideout_B2F_EventScript_Grunt8::
 	end
 
 AquaHideout_B2F_Text_MattIntro:
-	.string "Jo, jo, jo…\p"
-	.string "¿Has llegado hasta aquí?\n"
-	.string "Creo que te hemos subestimado.\p"
-	.string "¡Pero ya está bien de tonterías!\p"
-	.string "Yo soy más fuerte que los SOLDADOS\n"
-	.string "con los que has luchado hasta ahora.\p"
-	.string "No voy a limitarme a hacerte perder\n"
-	.string "tiempo… ¡Te voy a pulverizar!$"
+	.string "Hehehe…\p"
+	.string "Got here already, did you?\n"
+	.string "We underestimated you!\p"
+	.string "But this is it!\p"
+	.string "I'm a cut above the GRUNTS you've seen\n"
+	.string "so far.\p"
+	.string "I'm not stalling for time.\n"
+	.string "I'm going to pulverize you!$"
 
 AquaHideout_B2F_Text_MattDefeat:
-	.string "Jo, jo, jo…\n"
-	.string "Yo tampoco lo he logrado…$"
+	.string "Hehehe…\n"
+	.string "So, I lost, too…$"
 
 AquaHideout_B2F_Text_OurBossGotThroughHisPreparations:
-	.string "¡Jo, jo, jo!\p"
-	.string "¡Mientras me divertía contigo,\n"
-	.string "nuestro JEFE terminó los preparativos!$"
+	.string "Hehehe!\p"
+	.string "While I was toying with you, our BOSS\n"
+	.string "got through his preparations!$"
 
 AquaHideout_B2F_Text_MattPostBattle:
-	.string "¡Jo, jo, jo!\p"
-	.string "Nuestro JEFE ya ha ido a ocultarse\n"
-	.string "a una cueva submarina.\p"
-	.string "Si quieres encontrarlo, tendrás que\n"
-	.string "buscarlo en el gran mar que hay\l"
-	.string "más allá de CALAGUA.\p"
-	.string "¿Pero acaso podrás encontrar\n"
-	.string "siquiera el mar? ¡Jo, jo, jo!$"
+	.string "Hehehe!\p"
+	.string "Our BOSS has already gone on his way to\n"
+	.string "some cave under the sea!\p"
+	.string "If you're going to give chase, you'd\n"
+	.string "better search the big, wide sea beyond\l"
+	.string "LILYCOVE.\p"
+	.string "But will you find it then?\n"
+	.string "Hehehe!$"
 
 AquaHideout_B2F_Text_Grunt4Intro:
-	.string "¡Jua, jua, jua! ¡Estoy harto de esperar!\n"
-	.string "¡Me debes un combate!$"
+	.string "Wahahah, I grew weary of waiting!\n"
+	.string "You owe me a battle, too!$"
 
 AquaHideout_B2F_Text_Grunt4Defeat:
-	.string "Total, podía haberme quedado\n"
-	.string "esperando…$"
+	.string "Tired of waiting…\n"
+	.string "Lost and dazed…$"
 
 AquaHideout_B2F_Text_Grunt4PostBattle:
-	.string "El JEFE no va a estar satisfecho…$"
+	.string "BOSS…\n"
+	.string "Is this good enough?$"
 
 AquaHideout_B2F_Text_Grunt6Intro:
-	.string "Baldosas teletransportadoras:\n"
-	.string "¡el orgullo de la GUARIDA!\p"
-	.string "No tienes ni idea de dónde estás,\n"
-	.string "¿verdad?\p"
-	.string "Aturullar al enemigo para luego caer\n"
-	.string "sobre ellos. ¡Ése es nuestro plan!$"
+	.string "Warp panels, the HIDEOUT's pride\n"
+	.string "and joy!\p"
+	.string "You're clueless about where you are,\n"
+	.string "aren't you?\p"
+	.string "Fluster and tire out the enemy, then\n"
+	.string "lower the boom! That's our plan!$"
 
 AquaHideout_B2F_Text_Grunt6Defeat:
-	.string "¿Y tú qué desayunas?\n"
-	.string "¿Cómo es que no te cansas?$"
+	.string "What's wrong with you?\n"
+	.string "You're not tired at all!$"
 
 AquaHideout_B2F_Text_Grunt6PostBattle:
-	.string "Esto me recuerda… que no me acuerdo\n"
-	.string "de dónde puse la MASTER BALL.\p"
-	.string "Si no la protejo bien, el JEFE me va\n"
-	.string "a machacar…$"
+	.string "That reminds me… I can't remember\n"
+	.string "where I put the MASTER BALL.\p"
+	.string "If I fail to guard it, our BOSS will\n"
+	.string "chew me out…$"
 
 AquaHideout_B2F_Text_Grunt8Intro:
-	.string "Lo primero que aprendí al entrar en el\n"
-	.string "EQUIPO AQUA fue cómo están conectadas\l"
-	.string "estas baldosas teletransportadoras.$"
+	.string "When I joined TEAM AQUA, the first\n"
+	.string "thing I had to learn was how these\l"
+	.string "warp panels connected.$"
 
 AquaHideout_B2F_Text_Grunt8Defeat:
-	.string "Debería pensar en algo más que en las\n"
-	.string "baldosas teletransportadoras…$"
+	.string "I was too occupied thinking about\n"
+	.string "the warp panels…$"
 
 AquaHideout_B2F_Text_Grunt8PostBattle:
-	.string "Tengo que encontrar la manera\n"
-	.string "de luchar de forma más eficaz…$"
+	.string "I'll have to learn about how I can\n"
+	.string "battle more effectively…$"

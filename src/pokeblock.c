@@ -202,19 +202,19 @@ static const struct BgTemplate sBgTemplatesForPokeblockMenu[] =
 const u8 *const gPokeblockNames[] =
 {
     [PBLOCK_CLR_NONE]      = NULL,
-    [PBLOCK_CLR_RED]       = COMPOUND_STRING("{POKEBLOCK} rojo"),
-    [PBLOCK_CLR_BLUE]      = COMPOUND_STRING("{POKEBLOCK} azul"),
+    [PBLOCK_CLR_RED]       = COMPOUND_STRING("RED {POKEBLOCK}"),
+    [PBLOCK_CLR_BLUE]      = COMPOUND_STRING("BLUE {POKEBLOCK}"),
     [PBLOCK_CLR_PINK]      = COMPOUND_STRING("{POKEBLOCK} rosa"),
     [PBLOCK_CLR_GREEN]     = COMPOUND_STRING("{POKEBLOCK} verde"),
     [PBLOCK_CLR_YELLOW]    = COMPOUND_STRING("{POKEBLOCK} amarillo"),
-    [PBLOCK_CLR_PURPLE]    = COMPOUND_STRING("{POKEBLOCK} morado"),
-    [PBLOCK_CLR_INDIGO]    = COMPOUND_STRING("{POKEBLOCK} añil"),
-    [PBLOCK_CLR_BROWN]     = COMPOUND_STRING("{POKEBLOCK} marrón"),
+    [PBLOCK_CLR_PURPLE]    = COMPOUND_STRING("PURPLE {POKEBLOCK}"),
+    [PBLOCK_CLR_INDIGO]    = COMPOUND_STRING("Indigo {POKEBLOCK}"),
+    [PBLOCK_CLR_BROWN]     = COMPOUND_STRING("Brown {POKEBLOCK}"),
     [PBLOCK_CLR_LITE_BLUE] = COMPOUND_STRING("{POKEBLOCK} celeste"),
     [PBLOCK_CLR_OLIVE]     = COMPOUND_STRING("{POKEBLOCK} oliva"),
     [PBLOCK_CLR_GRAY]      = COMPOUND_STRING("{POKEBLOCK} gris"),
     [PBLOCK_CLR_BLACK]     = COMPOUND_STRING("{POKEBLOCK} negro"),
-    [PBLOCK_CLR_WHITE]     = COMPOUND_STRING("{POKEBLOCK} blanco"),
+    [PBLOCK_CLR_WHITE]     = COMPOUND_STRING("WHITE {POKEBLOCK}"),
     [PBLOCK_CLR_GOLD]      = COMPOUND_STRING("{POKEBLOCK} dorado")
 };
 
@@ -707,11 +707,11 @@ static void DrawPokeblockMenuTitleText(void)
     const u8 *itemName = GetItemName(ITEM_POKEBLOCK_CASE);
     PrintOnPokeblockWindow(WIN_TITLE, itemName, GetStringCenterAlignXOffset(FONT_NORMAL, itemName, 0x48));
 
-    PrintOnPokeblockWindow(WIN_SPICY,  COMPOUND_STRING("Picante"),  0);
-    PrintOnPokeblockWindow(WIN_DRY,    COMPOUND_STRING("Seco"),    0);
-    PrintOnPokeblockWindow(WIN_SWEET,  COMPOUND_STRING("Dulce"),  0);
-    PrintOnPokeblockWindow(WIN_BITTER, COMPOUND_STRING("Amargo"), 0);
-    PrintOnPokeblockWindow(WIN_SOUR,   COMPOUND_STRING("Ácido"),   0);
+    PrintOnPokeblockWindow(WIN_SPICY,  COMPOUND_STRING("SPICY"),  0);
+    PrintOnPokeblockWindow(WIN_DRY,    COMPOUND_STRING("DRY"),    0);
+    PrintOnPokeblockWindow(WIN_SWEET,  COMPOUND_STRING("SWEET"),  0);
+    PrintOnPokeblockWindow(WIN_BITTER, COMPOUND_STRING("BITTER"), 0);
+    PrintOnPokeblockWindow(WIN_SOUR,   COMPOUND_STRING("Sour"),   0);
 
     for (i = 0; i < WIN_ACTIONS_TALL; i++)
         PutWindowTilemap(i);

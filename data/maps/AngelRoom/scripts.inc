@@ -611,61 +611,58 @@ AngelRoom_EventScript_Angel_Movement_8:
 
 AngelRoom_EventScript_Angel_Text_0:
 # 28 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Me alegro de verte de nuevo!\p"
-	.string "Espero que sigas siendo tan fuerte\n"
-	.string "como la última vez.$"
+	.string "Good to see you again!\p"
+	.string "I hope you're still as strong as last\n"
+	.string "time.$"
 
 AngelRoom_EventScript_Angel_Text_1:
 # 33 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Mola muchísimo tener un cine propio\n"
-	.string "dentro de mi sala!\p"
-	.string "Aquí las obras maestras se disfrutan\n"
-	.string "de verdad.$"
+	.string "It's so cool having my own cinema inside\n"
+	.string "my room!\p"
+	.string "Here, masterpieces are truly enjoyed.$"
 
 AngelRoom_EventScript_Angel_Text_2:
 # 46 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Cuánto tiempo!$"
+	.string "Long time no see!$"
 
 AngelRoom_EventScript_Angel_Text_3:
 # 48 "data/maps/AngelRoom/scripts.pory"
-	.string "Ha pasado mucho desde la última vez,\n"
-	.string "¿verdad?\p"
-	.string "Espero que este reencuentro… ¡SEA\n"
-	.string "MEMORABLE!$"
+	.string "It's been a while since last time, hasn't\n"
+	.string "it?\p"
+	.string "I hope this reunion… is MEMORABLE!$"
 
 AngelRoom_EventScript_Angel_Text_4:
 # 69 "data/maps/AngelRoom/scripts.pory"
-	.string "Veamos tu potencial.$"
+	.string "Let's see your potential.$"
 
 AngelRoom_EventScript_Angel_Text_5:
 # 86 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Ven! ¡Atácame con todo lo que tengas!$"
+	.string "Come! Hit me with everything you've got!$"
 
 AngelRoom_EventScript_Angel_Text_6:
 # 91 "data/maps/AngelRoom/scripts.pory"
-	.string "¡Increíble! ¡El poder de la nueva\n"
-	.string "generación es asombroso!$"
+	.string "Incredible! The power of the new\n"
+	.string "generation is astounding!$"
 
 AngelRoom_EventScript_Angel_Text_7:
 # 95 "data/maps/AngelRoom/scripts.pory"
-	.string "No esperaba perder… Y aun así, no me\n"
-	.string "dejaste opciones.\p"
-	.string "Sin duda, la función ha terminado.$"
+	.string "I didn't expect to lose… And even so,\n"
+	.string "you left me no choice.\p"
+	.string "The show is over, no doubt about it.$"
 
 AngelRoom_EventScript_Angel_Text_8:
 # 98 "data/maps/AngelRoom/scripts.pory"
-	.string "Te abriré la puerta para que puedas\n"
-	.string "continuar con tu viaje.$"
+	.string "I'll open the door so you can continue\n"
+	.string "your journey.$"
 
 AngelRoom_EventScript_Angel_Text_9:
 # 110 "data/maps/AngelRoom/scripts.pory"
-	.string "Dejo en tus manos el legado de toda mi\n"
-	.string "generación.\p"
-	.string "¡Espero de verdad que volvamos a\n"
-	.string "encontrarnos algún día y poder volver a\l"
-	.string "pelear juntos!$"
+	.string "I leave the legacy of my whole\n"
+	.string "generation in your hands.\p"
+	.string "I truly hope we meet again someday and\n"
+	.string "get to fight side by side once more!$"
 
 AngelRoom_Text_AngelDefeated::
 # 149 "data/maps/AngelRoom/scripts.pory"
-	.string "¿Así que este es el poder de la nueva\n"
-	.string "generación?$"
+	.string "So this is the power of the new\n"
+	.string "generation?$"

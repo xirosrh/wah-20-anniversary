@@ -315,79 +315,78 @@ Route110_TrickHousePuzzle7_EventScript_Everett::
 	end
 
 Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened::
-	.string "{PLAYER} escribió el código secreto\n"
-	.string "en la puerta.\p"
-	.string "“El MAESTRO TRETA\n"
-	.string "es achuchable.”\l"
-	.string "Y…\p"
-	.string "¡la puerta se ha abierto!$"
+	.string "{PLAYER} wrote down the secret code\n"
+	.string "on the door.\p"
+	.string "“TRICK MASTER is huggable.”\n"
+	.string "… … … … … … … …\p"
+	.string "The lock clicked open!$"
 
 Route110_TrickHousePuzzle7_Text_JoshuaIntro:
-	.string "El MAESTRO TRETA siempre desaparece\n"
-	.string "como un fantasma. ¿Cómo lo hace?$"
+	.string "The TRICK MASTER always vanishes\n"
+	.string "like smoke. How does he do it?$"
 
 Route110_TrickHousePuzzle7_Text_JoshuaDefeat:
-	.string "¡Ayyyy! ¡Eres muy fuerte!\n"
-	.string "¿Cómo lo haces?$"
+	.string "Aiyeeeh! You're much too strong!\n"
+	.string "How do you do it?$"
 
 Route110_TrickHousePuzzle7_Text_JoshuaPostBattle:
-	.string "Ojalá pudiera aparecer y desaparecer\n"
-	.string "como un fantasma yo también…$"
+	.string "I wish I could appear and disappear as\n"
+	.string "if I were smoke, too.$"
 
 Route110_TrickHousePuzzle7_Text_PatriciaIntro:
-	.string "Dar vueltas alrededor de un círculo\n"
-	.string "mágico atrae a los malos espíritus…$"
+	.string "Going around the same spot…\n"
+	.string "It begets ill fortune…$"
 
 Route110_TrickHousePuzzle7_Text_PatriciaDefeat:
-	.string "¡Me has derrotado!\n"
-	.string "Eso no puede ser bueno…$"
+	.string "Defeated!\n"
+	.string "It's a bad sign…$"
 
 Route110_TrickHousePuzzle7_Text_PatriciaPostBattle:
-	.string "He dado como diez vueltas en círculo…\n"
-	.string "Habré atraído a algún mal espíritu…$"
+	.string "I've circled the same spot over ten\n"
+	.string "times now… It's ill fortune…$"
 
 Route110_TrickHousePuzzle7_Text_AlexisIntro:
-	.string "Si ganas, pasarás por aquí\n"
-	.string "antes que yo, lo presiento…$"
+	.string "Whoever wins will get through here\n"
+	.string "first. That's the feeling I get.$"
 
 Route110_TrickHousePuzzle7_Text_AlexisDefeat:
-	.string "¡Oh!…\n"
-	.string "En fin, tú sigue adelante…$"
+	.string "Oh!\n"
+	.string "Well, go ahead, then!$"
 
 Route110_TrickHousePuzzle7_Text_AlexisPostBattle:
-	.string "Estás resolviendo los acertijos\n"
-	.string "de la CASA TRETA. Vamos, eso creo…$"
+	.string "You're solving all the puzzles in the\n"
+	.string "TRICK HOUSE. That's the feeling I get.$"
 
 Route110_TrickHousePuzzle7_Text_MarielaIntro:
-	.string "¡Jo, jo, jo! ¡Por fin!\n"
-	.string "¡Venga, acabemos de una vez!$"
+	.string "Nufufufu, here at last!\n"
+	.string "Let's get right with it!$"
 
 Route110_TrickHousePuzzle7_Text_MarielaDefeat:
-	.string "Ganas de pura chiripa.$"
+	.string "You're so casual about winning!$"
 
 Route110_TrickHousePuzzle7_Text_MarielaPostBattle:
-	.string "¡Bah! ¡A mí no me afecta perder!\n"
-	.string "¡Para nada!$"
+	.string "Humph! I'm not upset!\n"
+	.string "Not me!$"
 
 Route110_TrickHousePuzzle7_Text_AlvaroIntro:
-	.string "¡Presentía que no tardarías en llegar!$"
+	.string "I ever so closely watched you coming!$"
 
 Route110_TrickHousePuzzle7_Text_AlvaroDefeat:
-	.string "Lástima que no predijera el resultado…$"
+	.string "This outcome I didn't see coming…$"
 
 Route110_TrickHousePuzzle7_Text_AlvaroPostBattle:
-	.string "Lo cierto es que hemos elegido un sitio\n"
-	.string "un poco raro para conocernos, ¿verdad?\p"
-	.string "Claro que los dos somos un pelín raros…\n"
-	.string "En fin, ¡suerte!$"
+	.string "Well, anyway, we both picked a weird\n"
+	.string "place to get acquainted.\p"
+	.string "As one weirdo to another,\n"
+	.string "let's do our best!$"
 
 Route110_TrickHousePuzzle7_Text_EverettIntro:
-	.string "Qué poco espacio hay aquí…$"
+	.string "It's awfully cramped in here…$"
 
 Route110_TrickHousePuzzle7_Text_EverettDefeat:
-	.string "Ciertamente hay que reconocer tu valor.$"
+	.string "Oh, yes, strong you are.$"
 
 Route110_TrickHousePuzzle7_Text_EverettPostBattle:
-	.string "Pensaba cambiarte el sitio si ganaba,\n"
-	.string "pero…$"
+	.string "I was hoping to switch places with you\n"
+	.string "when I beat you, but…$"
 

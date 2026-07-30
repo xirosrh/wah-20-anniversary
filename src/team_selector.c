@@ -340,8 +340,8 @@ static void CreateMsgWindow()
     u8 windowId;
     u8 x;
 
-    const u8 gText_WantThisTeam[] = _("¿Seguro que quieres este equipo?");
-    const u8 gText_YesNo[] = _("Sí{CLEAR_TO 88}No");
+    const u8 gText_WantThisTeam[] = _("Are you sure you want this team?");
+    const u8 gText_YesNo[] = _("Yes{CLEAR_TO 88}No");
 
     windowId = AddWindow(&sMsgTeamSelector_WindowTemplate);
     teamSelectorObj.windowIdMsg = windowId;
@@ -375,8 +375,8 @@ static void CreateExitConfirmWindow(void)
     u8 windowId;
     u8 x;
 
-    const u8 gText_WantToExit[] = _("¿Quieres salir?");
-    const u8 gText_YesNo[] = _("Sí{CLEAR_TO 88}No");
+    const u8 gText_WantToExit[] = _("Do you want to exit?");
+    const u8 gText_YesNo[] = _("Yes{CLEAR_TO 88}No");
 
     windowId = AddWindow(&sMsgTeamSelector_WindowTemplate);
     teamSelectorObj.windowIdMsg = windowId;

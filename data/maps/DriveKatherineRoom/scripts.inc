@@ -606,160 +606,159 @@ DriveKatherineRoom_EventScript_Drive_Movement_10:
 
 DriveKatherineRoom_EventScript_Katherine_Text_0:
 # 30 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Siempre vuelve quien se siente bien\n"
-	.string "recibido.\p"
-	.string "Gracias por pasar otra vez.$"
+	.string "Those who feel welcome always come\n"
+	.string "back.\p"
+	.string "Thanks for stopping by again.$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_1:
 # 33 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Miau revoir!$"
+	.string "Meow revoir!$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_2:
 # 39 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Oh, holis. Bienvenid{OA} a esta sala, aquí\n"
-	.string "todo está preparado para celebrar.$"
+	.string "Oh, hi there. Welcome to this room; here\n"
+	.string "everything's set up to celebrate.$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_3:
 # 42 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¿Así que quieres superar este desafío?$"
+	.string "So you want to beat this challenge?$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_4:
 # 45 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Perfecto. Estaré encantada de echarte\n"
-	.string "una pata… quiero decir, una mano.$"
+	.string "Perfect. I'd be delighted to lend you a\n"
+	.string "paw… I mean, a hand.$"
 
 DriveKatherineRoom_EventScript_Katherine_Text_5:
 # 48 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Pero antes, deberías hablar con Drive.\n"
-	.string "Tiene su discurso preparado… y créeme,\l"
-	.string "está deseando soltarlo.$"
+	.string "But first, you should talk to Drive. He's\n"
+	.string "got his speech ready… and believe me,\l"
+	.string "he's dying to deliver it.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_0:
 # 77 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Ah, {ELLA} invitad{OA} de honor regresa!$"
+	.string "Ah, the guest of honor returns!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_1:
 # 80 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Si vienes por otro duelo, me temo que la\n"
-	.string "cocina ya cerró.$"
+	.string "If you're here for another duel, I'm\n"
+	.string "afraid the kitchen is already closed.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_2:
 # 99 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Ah, por fin un comensal con hambre de\n"
-	.string "fiesta!$"
+	.string "Ah, at last a diner with an appetite for\n"
+	.string "a party!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_3:
 # 101 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Ven, tenemos un lugar especial para ti.$"
+	.string "Come, we've got a special seat for you.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_4:
 # 126 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Bienvenid{OA} al gran restaurante de la\n"
-	.string "celebración.\p"
-	.string "Aquí servimos emociones recién hechas\n"
-	.string "y recuerdos al fuego lento.\p"
-	.string "Mi nombre es Drive, y hoy seré tu chef y\n"
-	.string "maître del banquete.\p"
-	.string "Hoy, ¡el plato principal eres tú!$"
+	.string "Welcome to the grand restaurant of the\n"
+	.string "celebration.\p"
+	.string "Here we serve freshly made emotions\n"
+	.string "and memories slow-cooked over low heat.\p"
+	.string "My name is Drive, and today I'll be your\n"
+	.string "chef and maître d' of the banquet.\p"
+	.string "Today, the main course is YOU!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_5:
 # 129 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Cada plato cuenta una historia, y cada\n"
-	.string "batalla… ¡una receta para el alma!$"
+	.string "Every dish tells a story, and every\n"
+	.string "battle… a recipe for the soul!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_6:
 # 135 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Empezaremos con un entrante de\n"
-	.string "entusiasmo, un toque de curiosidad y\l"
-	.string "una pizca de locura.$"
+	.string "We'll start with an appetizer of\n"
+	.string "enthusiasm, a touch of curiosity, and a\l"
+	.string "pinch of madness.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_7:
 # 139 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Después, el plato principal: un duelo\n"
-	.string "doble delicioso.$"
+	.string "Then, the main course: a delicious\n"
+	.string "double duel.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_8:
 # 143 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Katherine, ¿listos los ingredientes?$"
+	.string "Katherine, are the ingredients ready?$"
 
 DriveKatherineRoom_EventScript_Drive_Text_9:
 # 147 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Todos cortados y preparados, Drive.$"
+	.string "All chopped and prepped, Drive.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_10:
 # 151 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Pero recuerda: no todo se trata de\n"
-	.string "ganar.\p"
-	.string "Lo importante es moverse con gracia… y\n"
-	.string "caer siempre de pie.\p"
-	.string "Vamos a darle la bienvenida como se\n"
-	.string "merece.$"
+	.string "But remember: it's not all about\n"
+	.string "winning.\p"
+	.string "What matters is moving with grace… and\n"
+	.string "always landing on your feet.\p"
+	.string "Let's welcome them as they deserve.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_11:
 # 154 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Entonces, que empiece el banquete!$"
+	.string "Then, let the banquet begin!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_12:
 # 156 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Dos chefs, un banquete, un nuevo\n"
-	.string "desafío.\p"
-	.string "¡A tus hornallas, entrenador{A}!$"
+	.string "Two chefs, one banquet, a new\n"
+	.string "challenge.\p"
+	.string "To your stoves, Trainer!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_13:
 # 173 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Un sabor intenso, equilibrado…\n"
-	.string "inolvidable…$"
+	.string "An intense, balanced flavor…\n"
+	.string "unforgettable…$"
 
 DriveKatherineRoom_EventScript_Drive_Text_14:
 # 176 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Si cada celebración tuviera este toque,\n"
-	.string "el mundo sería un festín eterno.$"
+	.string "If every celebration had this touch,\n"
+	.string "the world would be an eternal feast.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_15:
 # 181 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Fue una danza perfecta. En cada paso\n"
-	.string "se sentía la alegría de este día, casi\l"
-	.string "como si la sala estuviera ronroneando\l"
-	.string "de emoción.\p"
-	.string "Gracias por compartirlo con nosotros.$"
+	.string "It was a perfect dance. In every step\n"
+	.string "you could feel the joy of this day,\l"
+	.string "almost as if the room were purring with\l"
+	.string "emotion.\p"
+	.string "Thank you for sharing it with us.$"
 
 DriveKatherineRoom_EventScript_Drive_Text_16:
 # 190 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Brindo por eso!$"
+	.string "I'll drink to that!$"
 
 DriveKatherineRoom_EventScript_Drive_Text_17:
 # 194 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Has superado esta sala con elegancia.\n"
-	.string "Sigue disfrutando de la celebración… y\l"
-	.string "hasta que nos volvamos a ver…$"
+	.string "You've cleared this room with elegance.\n"
+	.string "Keep enjoying the celebration… and\l"
+	.string "until we meet again…$"
 
 DriveKatherineRoom_EventScript_Bottles_Text_0:
 # 272 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Algunas botellas tienen nombres\n"
-	.string "imposibles de pronunciar.\p"
-	.string "Hay una que se llama “Whack a Cola”.$"
+	.string "Some bottles have names that are\n"
+	.string "impossible to pronounce.\p"
+	.string "There's one called “Whack a Cola.”$"
 
 DriveKatherineRoom_EventScript_Dispenser_Text_0:
 # 277 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "El agua del dispensador está\n"
-	.string "increíblemente fría.$"
+	.string "The water from the dispenser is\n"
+	.string "incredibly cold.$"
 
 DriveKatherineRoom_EventScript_Trash_Text_0:
 # 282 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "La papelera desprende un leve olor a\n"
-	.string "comida.$"
+	.string "The wastebasket gives off a faint smell\n"
+	.string "of food.$"
 
 DriveKatherineRoom_EventScript_Cabinet_Text_0:
 # 287 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "El mueble está lleno de platos, vasos y\n"
-	.string "tazas.\p"
-	.string "Todo está cuidadosamente organizado\n"
-	.string "por tamaño y tipo.$"
+	.string "The cabinet is full of plates, glasses,\n"
+	.string "and cups.\p"
+	.string "Everything's carefully organized by\n"
+	.string "size and type.$"
 
 DriveKatherineRoom_Text_DriveDefeated::
 # 263 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "¡Eso sí que fue un festín!$"
+	.string "Now THAT was a feast!$"
 
 DriveKatherineRoom_Text_KatherineDefeated::
 # 267 "data/maps/DriveKatherineRoom/scripts.pory"
-	.string "Suave, armonioso… me ha encantado.$"
+	.string "Smooth, harmonious… I loved it.$"

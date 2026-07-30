@@ -566,151 +566,146 @@ JavsJavi4315Room_EventScript_PostBattle_Movement_3:
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_0:
 # 52 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Tío… ¡pero qué pedazo de tiles nos han\n"
-	.string "colocado aquí!$"
+	.string "Dude… what amazing tiles they gave us\n"
+	.string "in here!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_1:
 # 60 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "A que molan mucho, ¿verdad, Javier?$"
+	.string "They're super cool, right, Javier?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_2:
 # 65 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Que no me llamo Javier…$"
+	.string "My name's not Javier…$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_3:
 # 70 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Y eso no es todo, ¡mira esas paletas!\n"
-	.string "Tan bien contrastadas y matizadas…\l"
-	.string "¿serán privadas?$"
+	.string "And that's not all - look at those\n"
+	.string "palettes! So well contrasted and\l"
+	.string "shaded… are they private?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_4:
 # 96 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Hombre… ¡hasta que alguien ha caído por\n"
-	.string "aquí!$"
+	.string "Well… someone finally wandered in here!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_5:
 # 99 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Sabías que, de todas las desgracias\n"
-	.string "que te pudieron haber pasado hoy, caer\l"
-	.string "en nuestro piso era la peor?$"
+	.string "Did you know that, of all the\n"
+	.string "misfortunes that could've happened to\l"
+	.string "you today, landing on our floor was the\l"
+	.string "worst?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_6:
 # 103 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "No has presenciado un enfrentamiento\n"
-	.string "en equipos como el nuestro ni en tus\l"
-	.string "mejores sueños…\p"
-	.string "¡Y no volverás a verlo, así que\n"
-	.string "disfrútalo!$"
+	.string "You've never seen a team battle like\n"
+	.string "ours, not even in your wildest dreams…\p"
+	.string "And you won't see it again, so enjoy it!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_7:
 # 108 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Aquí la estrategia manda, ¡que no se te\n"
-	.string "olvide!$"
+	.string "Here strategy rules - don't you forget\n"
+	.string "it!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_8:
 # 111 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Listo, Javs?$"
+	.string "Ready, Javs?$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_9:
 # 114 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¡Listo, Javi69!$"
+	.string "Ready, Javi69!$"
 
 JavsJavi4315Room_EventScript_MainTrigger_Text_10:
 # 125 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¡Ahora!$"
+	.string "Now!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_0:
 # 189 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Me pasé semanas planeando esta\n"
-	.string "estrategia…\p"
-	.string "Admito que eso ha dolido más de lo que\n"
-	.string "esperaba.$"
+	.string "I spent weeks planning this strategy…\p"
+	.string "I admit that hurt more than I expected.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_1:
 # 195 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¡Y eso que armé mi equipo exactamente\n"
-	.string "como me pediste!$"
+	.string "And I built my team exactly like you\n"
+	.string "asked me to!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_2:
 # 197 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "La apertura era perfecta: sol activo y\n"
-	.string "presión desde el turno uno.\p"
-	.string "¿Qué habré hecho mal?$"
+	.string "The opening was perfect: sun up and\n"
+	.string "pressure from turn one.\p"
+	.string "What could I have done wrong?$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_3:
 # 202 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "La estrategia estuvo bien, pero\n"
-	.string "simplemente tuvimos un{A} oponente\l"
-	.string "demasiado fuerte.$"
+	.string "The strategy was fine, but we simply\n"
+	.string "had an opponent that was too strong.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_4:
 # 207 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¡Al menos nos divertimos!$"
+	.string "At least we had fun!$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_5:
 # 214 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Te abriremos la puerta, que ya te falta\n"
-	.string "menos de la mitad.$"
+	.string "We'll open the door for you - you're less\n"
+	.string "than halfway from the end now.$"
 
 JavsJavi4315Room_EventScript_PostBattle_Text_6:
 # 218 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Nosotros nos quedaremos por aquí\n"
-	.string "contemplando la sala.$"
+	.string "We'll stay around here admiring the\n"
+	.string "room.$"
 
 JavsJavi4315Room_EventScript_Javi4315_Text_0:
 # 230 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Siempre quise crear algo que se sintiera\n"
-	.string "{COLOR GREEN}inmortal{COLOR DARK_GRAY}.\p"
-	.string "Supongo que por eso sigo aquí, dándole\n"
-	.string "vueltas a todo.$"
+	.string "I always wanted to create something\n"
+	.string "that felt {COLOR GREEN}immortal{COLOR DARK_GRAY}.\p"
+	.string "I guess that's why I'm still here,\n"
+	.string "turning it all over in my head.$"
 
 JavsJavi4315Room_EventScript_Javs_Text_0:
 # 235 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Te gusta cómo se ve la sala?\p"
-	.string "¡Ni se te ocurra copiar sus colores sin\n"
-	.string "mi permiso!$"
+	.string "Do you like how the room looks?\p"
+	.string "Don't you dare copy its colors without\n"
+	.string "my permission!$"
 
 JavsJavi4315Room_EventScript_PikachuPainting_Text_0:
 # 240 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Interesante, un Pikachu con ambas\n"
-	.string "orejas…$"
+	.string "Interesting, a Pikachu with both ears…$"
 
 JavsJavi4315Room_EventScript_SmearglePainting_Text_0:
 # 245 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Dicen que un verdadero artista no firma\n"
-	.string "sus obras… pero firmarlas con la cola\l"
-	.string "debe ser otro nivel.$"
+	.string "They say a true artist doesn't sign\n"
+	.string "their work… but signing it with your tail\l"
+	.string "must be another level.$"
 
 JavsJavi4315Room_EventScript_EeveePainting_Text_0:
 # 250 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Seguramente este Eevee aún no decide\n"
-	.string "en qué evolucionar porque primero\l"
-	.string "quiere explorar su etapa artística…$"
+	.string "This Eevee probably hasn't decided\n"
+	.string "what to evolve into because first it\l"
+	.string "wants to explore its artistic phase…$"
 
 JavsJavi4315Room_EventScript_MunchlaxPainting_Text_0:
 # 255 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Este cuadro transmite paz, naturaleza\n"
-	.string "y hambre… principalmente hambre.$"
+	.string "This painting radiates peace, nature,\n"
+	.string "and hunger… mostly hunger.$"
 
 JavsJavi4315Room_EventScript_Boxes1_Text_0:
 # 261 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Una caja tiene una etiqueta que dice:\n"
-	.string "“No apilar”.\p"
-	.string "Naturalmente, tiene otra caja encima.$"
+	.string "One box has a label that reads: “Do not\n"
+	.string "stack.”\p"
+	.string "Naturally, it has another box on top of\n"
+	.string "it.$"
 
 JavsJavi4315Room_EventScript_Boxes2_Text_0:
 # 266 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "Hay varias cajas cuidadosamente\n"
-	.string "selladas.\p"
-	.string "Probablemente guardan marcos,\n"
-	.string "catálogos y obras que aún no fueron\l"
-	.string "montadas.$"
+	.string "There are several carefully sealed\n"
+	.string "boxes.\p"
+	.string "They probably hold frames, catalogs,\n"
+	.string "and works that haven't been mounted\l"
+	.string "yet.$"
 
 JavsJavi4315Room_Text_Javi4315Defeated::
 # 174 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Acaso hemos perdido, Javs?$"
+	.string "Did we actually lose, Javs?$"
 
 JavsJavi4315Room_Text_JavsDefeated::
 # 178 "data/maps/JavsJavi4315Room/scripts.pory"
-	.string "¿Cómo puede ser? ¡Mi estrategia era\n"
-	.string "infalible!$"
+	.string "How can this be? My strategy was\n"
+	.string "foolproof!$"

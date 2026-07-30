@@ -551,95 +551,92 @@ TokynWarRoom_EventScript_MainCutscene_Movement_13:
 
 TokynWarRoom_EventScript_MainCutscene_Text_0:
 # 38 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Vaya sorpresa! No esperaba ver una\n"
-	.string "cara nueva por aquí.$"
+	.string "What a surprise! I wasn't expecting to\n"
+	.string "see a new face around here.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_1:
 # 42 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Yo tampoco tengo idea de quién eres,\n"
-	.string "pero eso no importa.$"
+	.string "I've got no idea who you are either, but\n"
+	.string "that doesn't matter.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_2:
 # 55 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Estamos aquí para verlo!$"
+	.string "We're here to find out!$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_3:
 # 59 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Es un placer poder participar de esta\n"
-	.string "celebración contigo.$"
+	.string "It's a pleasure to take part in this\n"
+	.string "celebration with you.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_4:
 # 63 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¿Qué te parece un combate de a dos,\n"
-	.string "War?$"
+	.string "How about a two-on-two battle, War?$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_5:
 # 73 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¿Unir fuerzas como en los viejos\n"
-	.string "tiempos?$"
+	.string "Join forces like in the old days?$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_6:
 # 78 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Hace años no hacemos eso! Pero me\n"
-	.string "gusta.\p"
-	.string "Una buena celebración merece algo\n"
-	.string "especial.$"
+	.string "We haven't done that in years! But I\n"
+	.string "like it.\p"
+	.string "A good celebration deserves something\n"
+	.string "special.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_7:
 # 83 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Entonces está decidido.$"
+	.string "Then it's decided.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_8:
 # 86 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Vamos!$"
+	.string "Let's go!$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_9:
 # 90 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Que gane el mejor!$"
+	.string "May the best win!$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_10:
 # 116 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¡Pero qué locura de combate! Hoy sí que\n"
-	.string "nos diste trabajo en serio.$"
+	.string "What a crazy battle! You really gave us\n"
+	.string "a run for our money today.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_11:
 # 120 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Gracias por compartir este momento con\n"
-	.string "nosotros.\p"
-	.string "Fue un encuentro digno para esta\n"
-	.string "celebración.\p"
-	.string "Es increíble cómo un solo combate\n"
-	.string "puede traer de vuelta tantas memorias.$"
+	.string "Thanks for sharing this moment with us.\p"
+	.string "It was a match worthy of this\n"
+	.string "celebration.\p"
+	.string "It's amazing how a single battle can\n"
+	.string "bring back so many memories.$"
 
 TokynWarRoom_EventScript_MainCutscene_Text_12:
 # 124 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Ya puedes seguir, pero recuerda: Nunca\n"
-	.string "olvides seguir tus sueños.$"
+	.string "You can go on now, but remember: never\n"
+	.string "forget to follow your dreams.$"
 
 TokynWarRoom_EventScript_War_Text_0:
 # 143 "data/maps/TokynWarRoom/scripts.pory"
-	.string "¿Quieres otra? ¡Ni loco!\p"
-	.string "Tokyn me tira charla motivadora si\n"
-	.string "pierdo dos veces seguidas.\p"
-	.string "Pero estuvo buenísimo, eh.$"
+	.string "Want another? No way!\p"
+	.string "Tokyn gives me a motivational talk if I\n"
+	.string "lose twice in a row.\p"
+	.string "But it was great, though.$"
 
 TokynWarRoom_EventScript_Tokyn_Text_0:
 # 158 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Me alegra muchísimo haber sido\n"
-	.string "convocado para esta celebración.\p"
-	.string "Estar acá, compartir un combate así… me\n"
-	.string "trajo muy buenos recuerdos.$"
+	.string "I'm really glad I was called up for this\n"
+	.string "celebration.\p"
+	.string "Being here, sharing a battle like this…\n"
+	.string "it brought back some great memories.$"
 
 TokynWarRoom_EventScript_Tokyn_Text_1:
 # 161 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Gracias por hacerlo especial.$"
+	.string "Thanks for making it special.$"
 
 TokynWarRoom_Text_TokynDefeated::
 # 223 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Qué bien se sintió este combate… hacía\n"
-	.string "tiempo que no disfrutaba uno así.$"
+	.string "This battle felt so good… it'd been a\n"
+	.string "while since I enjoyed one like it.$"
 
 TokynWarRoom_Text_WarDefeated::
 # 227 "data/maps/TokynWarRoom/scripts.pory"
-	.string "Bueno… ahora sí sé quién eres. Vaya\n"
-	.string "forma de presentarte.$"
+	.string "Well… now I know who you are. What a way\n"
+	.string "to introduce yourself.$"

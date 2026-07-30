@@ -84,7 +84,7 @@ script Achievements_EventScript_Eval_Common {
         playse(SE_APPLAUSE)
         special(Special_StartAchievementConfetti)
         setflag(FLAG_TRANSPARENT_BOX)
-        msgbox(format("¡Felicidades! Has completado el logro:\n“{STR_VAR_1}”"), MSGBOX_AUTOCLOSE_CENTER)
+        msgbox("Congratulations! You've earned:\n“{STR_VAR_1}”", MSGBOX_AUTOCLOSE_CENTER)
         special(Special_ClearTransparentBox)
         waitse
         special(Special_StopAchievementConfetti)
@@ -102,7 +102,7 @@ script Pokebox_EventScript_ShowUnlocks {
     playse(SE_PIN)
     showmonpic(VAR_0x8005, 10, 3)
     bufferspeciesname(STR_VAR_1, VAR_0x8005)
-    msgbox("¡Has desbloqueado a {STR_VAR_1}!\nYa está disponible en la PC.", MSGBOX_AUTOCLOSE)
+    msgbox("You've unlocked {STR_VAR_1}!\nIt's now available in the PC.", MSGBOX_AUTOCLOSE)
     hidemonpic
     call(Achievements_EventScript_Eval_UnlockAllPokemon)
     call(Pokebox_EventScript_ShowUnlocks)
