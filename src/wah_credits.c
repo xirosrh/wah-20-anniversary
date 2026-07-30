@@ -202,6 +202,14 @@ static const struct WahCredits sWahCreditsSections[] =
             NULL
         },
     },
+    { 
+        .title = COMPOUND_STRING("TRADUCCIÓN A INGLÉS"),
+        .sListCredits =
+        {
+            COMPOUND_STRING("Raizen"),
+            NULL
+        },
+    },
     {
         .title = COMPOUND_STRING("CREDITOS"),
         .sListCredits =
@@ -339,22 +347,6 @@ static const struct WahCredits sWahCreditsSections[] =
     }
 };
 
-// static const u8 trainnerWahList[][2] =
-// {
-//     {TRAINER_PIC_OMEGA, TRAINER_NONE},
-//     {TRAINER_PIC_XIROS, TRAINER_NONE},
-//     {TRAINER_PIC_GALLEGO, TRAINER_PIC_KATHERINE},
-//     {TRAINER_PIC_DRIVE, TRAINER_NONE},
-//     {TRAINER_PIC_BOO, TRAINER_NONE},
-//     {TRAINER_PIC_SERGIO, TRAINER_NONE},
-//     {TRAINER_PIC_REONEKY, TRAINER_NONE},
-//     {TRAINER_PIC_JAVS, TRAINER_NONE},
-//     {TRAINER_PIC_OZUMAS, TRAINER_NONE},
-//     {TRAINER_PIC_SAYER, TRAINER_NONE},
-//     {TRAINER_PIC_DRIVE, TRAINER_NONE},
-//     {TRAINER_PIC_JACK_JOHNSON, TRAINER_NONE},
-//     {TRAINER_PIC_ZERO, TRAINER_NONE}
-// };
 
 static const u8 trainnerWahList[][2] =
 {
@@ -378,6 +370,7 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_MICOLO, TRAINER_PIC_ERKEY },
     {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
     {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
+    {TRAINER_PIC_ACIMUT, TRAINER_NONE }, //TODO Xiros: Raizen instead of acimut
 };
 
 static const u16 sWahCreditsPokemonList[] =
