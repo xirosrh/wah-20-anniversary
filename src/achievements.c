@@ -35,6 +35,7 @@ static bool8 CheckWinWahChallengeWithElectrodeS(u8 id);
 static bool8 CheckWinWahChallengeWithoutLegendaries(u8 id);
 static bool8 CheckFoundTileKecleon(u8 id);
 static bool8 CheckAvaricia(u8 id);
+static bool8 CheckDefeatTranslatorRaizen(u8 id);
 
 static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     [ACHIEVEMENT_WIN_WAH_CHALLENGE] = {
@@ -115,6 +116,12 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .target = TRUE,
         .check = CheckWinWahChallengeWithoutLegendaries,
     },
+    [ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN] = {
+        .title = COMPOUND_STRING("Perdido en la traducción"),
+        .description = COMPOUND_STRING("Derrota al traductor en la sala\nde descanso. Hay victorias que\nno necesitan traducción."),
+        .target = TRUE,
+        .check = CheckDefeatTranslatorRaizen,
+    },
 };
 
 static bool8 CheckWinWahChallenge(u8 id)
@@ -169,6 +176,11 @@ static bool8 CheckFoundTileKecleon(u8 id)
 static bool8 CheckAvaricia(u8 id)
 {
     return GetMoney(&gSaveBlock1Ptr->money) >= sAchievements[id].target;
+}
+
+static bool8 CheckDefeatTranslatorRaizen(u8 id)
+{
+    return FlagGet(FLAG_DEFEATED_REST_ROOM_RAIZEN) == sAchievements[id].target;
 }
 
 

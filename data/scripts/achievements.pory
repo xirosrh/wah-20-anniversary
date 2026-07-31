@@ -113,3 +113,9 @@ script Achievements_EventScript_Eval_Avaricia {
     call(Achievements_EventScript_Eval_Common)
     return
 }
+
+script Achievements_EventScript_Eval_DefeatTranslatorRaizen {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}

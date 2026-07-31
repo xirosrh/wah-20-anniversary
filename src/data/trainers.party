@@ -12083,25 +12083,16 @@ Jolly Nature
 - Earthquake
 
 
-=== TRAINER_WILTON_5 ===
-Name: WILTON
-Class: Cooltrainer
+=== TRAINER_WAH_TRANSLATOR_RAIZEN ===
+Name: Raizen
+Class: Translator
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
 Manectric
-Level: 35
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Wailmer
-Level: 35
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
-
-Hariyama
 Level: 35
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
