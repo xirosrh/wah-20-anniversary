@@ -84,8 +84,8 @@ EWRAM_DATA static u16 sBgScrollY = 0;
 EWRAM_DATA static u8 sBgScrollFrameCounter = 0;
 
 static const u8 gText_Option[]             = _("OPTION");
-static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
-static const u8 gText_TextSpeedMid[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MID");
+static const u8 gText_TextSpeedSlow[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Slow");
+static const u8 gText_TextSpeedMid[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mid");
 static const u8 gText_TextSpeedFast[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Fast");
 static const u8 gText_TextSpeedInstant[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Instant");
 static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Yes");

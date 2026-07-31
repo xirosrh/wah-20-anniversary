@@ -595,18 +595,18 @@ static const u8 sGenderColors[2][3] =
 };
 
 static const u8 sText_MenuTitle[] = _("Editor Evs/Ivs");
-static const u8 sText_MenuHP[] = _("PS");
+static const u8 sText_MenuHP[] = _("HP");
 static const u8 sText_MenuAttack[] = _("Attack");
-static const u8 sText_MenuSpAttack[] = _("Atq. Esp");
+static const u8 sText_MenuSpAttack[] = _("Sp. Atk");
 static const u8 sText_MenuDefense[] = _("Defense");
-static const u8 sText_MenuSpDefense[] = _("Def. Esp");
-static const u8 sText_MenuSpeed[] = _("Veloc.");
+static const u8 sText_MenuSpDefense[] = _("Sp. Def");
+static const u8 sText_MenuSpeed[] = _("Speed");
 static const u8 sText_MenuTotal[] = _("Total");
 static const u8 sText_MenuStat[] = _("Stat");
 static const u8 sText_MenuActual[] = _("Actual");
 static const u8 sText_MenuEV[] = _("EV");
 static const u8 sText_MenuIV[] = _("IV");
-static const u8 sText_MonLevel[]         = _("Nv.{CLEAR 1}{STR_VAR_1}");
+static const u8 sText_MonLevel[]         = _("Lv.{CLEAR 1}{STR_VAR_1}");
 
 static const u8 sText_MenuLRButtonTextMain[]   = _("Change Pkmn");
 static const u8 sText_MenuAButtonTextMain[]    = _("Edit Stats");

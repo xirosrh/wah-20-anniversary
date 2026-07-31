@@ -1144,7 +1144,7 @@ script CollaboratorsRoom_EventScript_AlexmadPuzzleComplete {
     closemessage
     delay(10)
     call(WahRoomsShared_EventScript_WalkInPlaceAlexmadFacingPlayer)
-    msgbox(format("Also, you can now find some legendaries from the Mythic Island in the PC."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
+    msgbox(format("Also, you can now find some legendaries from the Mitic Island in the PC."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_ALEXMAD)
     delay(20)
     setflag(FLAG_ALEXMAD_EVENT_GIVE_LEGENDARIES)
     call(Pokebox_EventScript_ShowUnlocks)

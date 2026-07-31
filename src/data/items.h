@@ -6928,7 +6928,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SCOVILLAINITE] =
     {
-        .name = ITEM_NAME("Scovillainita"),
+        .name = ITEM_NAME("Scovillainite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Scovillain\nMega Evolve in battle."),
@@ -6958,7 +6958,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_DARKRANITE] =
     {
-        .name = ITEM_NAME("Darkranita"),
+        .name = ITEM_NAME("Darkranite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Darkrai\nMega Evolve in battle."),
@@ -6973,7 +6973,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ZERAORITE] =
     {
-        .name = ITEM_NAME("Zeraorita"),
+        .name = ITEM_NAME("Zeraorite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Zeraora\nMega Evolve in battle."),
@@ -6988,7 +6988,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_RAICHUNITE_X] =
     {
-        .name = ITEM_NAME("Raichunita X"),
+        .name = ITEM_NAME("Raichunite X"),
         .pluralName = ITEM_PLURAL_NAME("Raichunitas X"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -7004,7 +7004,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_RAICHUNITE_Y] =
     {
-        .name = ITEM_NAME("Raichunita Y"),
+        .name = ITEM_NAME("Raichunite Y"),
         .pluralName = ITEM_PLURAL_NAME("Raichunitas Y"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -7020,7 +7020,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CHIMECHITE] =
     {
-        .name = ITEM_NAME("Chimechita"),
+        .name = ITEM_NAME("Chimechite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Chimecho\nMega Evolve in battle."),
@@ -7035,7 +7035,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ABSOLITE_Z] =
     {
-        .name = ITEM_NAME("Absolita Z"),
+        .name = ITEM_NAME("Absolite Z"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Absol\nMega Evolve in battle."),
@@ -7050,7 +7050,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_STARAPTITE] =
     {
-        .name = ITEM_NAME("Staraptorita"),
+        .name = ITEM_NAME("Staraptite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Staraptor\nMega Evolve in battle."),
@@ -7065,7 +7065,7 @@ const struct Item gItemsInfo[] =
 
     [ ITEM_GARCHOMPITE_Z] =
     {
-        .name = ITEM_NAME("Garchompita Z"),
+        .name = ITEM_NAME("Garchompite Z"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Garchomp\nMega Evolve in battle."),
@@ -7080,7 +7080,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_LUCARIONITE_Z] =
     {
-        .name = ITEM_NAME("Lucarita Z"),
+        .name = ITEM_NAME("Lucarionite Z"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Lucario\nMega Evolve in battle."),
@@ -7095,7 +7095,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_GOLURKITE] =
     {
-        .name = ITEM_NAME("Golurkita"),
+        .name = ITEM_NAME("Golurkite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Golurk\nMega Evolve in battle."),
@@ -7110,7 +7110,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_MEOWSTICITE] =
     {
-        .name = ITEM_NAME("Meowsticita"),
+        .name = ITEM_NAME("Meowsticite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sMeowsticiteDesc,
@@ -7125,7 +7125,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CRABOMINITE] =
     {
-        .name = ITEM_NAME("Crabominablita"),
+        .name = ITEM_NAME("Crabominite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Crabominable\nMega Evolve in battle."),
@@ -7140,7 +7140,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_GOLISOPITE] =
     {
-        .name = ITEM_NAME("Golisopodita"),
+        .name = ITEM_NAME("Golisopodite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Golisopod\nMega Evolve in battle."),
@@ -7155,7 +7155,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_MAGEARNITE] =
     {
-        .name = ITEM_NAME("Magearnita"),
+        .name = ITEM_NAME("Magearnite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Magearna\nMega Evolve in battle."),
@@ -7170,7 +7170,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_GLIMMORANITE] =
     {
-        .name = ITEM_NAME("Glimmoranita"),
+        .name = ITEM_NAME("Glimmoranite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Glimmora\nMega Evolve in battle."),
@@ -7185,7 +7185,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_TATSUGIRINITE] =
     {
-        .name = ITEM_NAME("Tatsugarinita"),
+        .name = ITEM_NAME("Tatsugarinite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Tatsugiri\nMega Evolve in battle."),
@@ -7200,7 +7200,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BAXCALIBURITE] =
     {
-        .name = ITEM_NAME("Baxcaliburita"),
+        .name = ITEM_NAME("Baxcaliburite"),
         .price = MEGA_STONE_PRICE,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone lets Baxcalibur\nMega Evolve in battle."),

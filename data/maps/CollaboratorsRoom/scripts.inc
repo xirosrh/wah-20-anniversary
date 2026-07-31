@@ -3722,7 +3722,7 @@ CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_2:
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_3:
 # 1147 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "Also, you can now find some legendaries\n"
-	.string "from the Mythic Island in the PC.$"
+	.string "from the Mitic Island in the PC.$"
 
 CollaboratorsRoom_EventScript_AlexmadPuzzleComplete_Text_4:
 # 1152 "data/maps/CollaboratorsRoom/scripts.pory"

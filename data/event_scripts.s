@@ -895,8 +895,8 @@ gText_SandstormIsVicious::
 	.string "fuerte. No se puede avanzar.$"
 
 gText_SelectWithoutRegisteredItem::
-	.string "Puedes asignar cualquier objeto\n"
-	.string "de la MOCHILA al Botón SELECT.$"
+	.string "You can assign any Item\n"
+	.string "from the BAG to the SELECT button.$"
 
 gText_PokemonTrainerSchoolEmail::
 	.string "Tienes un correo electrónico de la\n"
