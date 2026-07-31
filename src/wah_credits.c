@@ -326,6 +326,7 @@ static const struct WahCredits sWahCreditsSections[] =
             COMPOUND_STRING("Dark Tyranitar"),
             COMPOUND_STRING(""), //Empty on purpose
 
+            COMPOUND_STRING("A Start Gaming"),
             NULL
         }
     },
@@ -347,7 +348,7 @@ static const struct WahCredits sWahCreditsSections[] =
     }
 };
 
-
+ 
 static const u8 trainnerWahList[][2] =
 {
     {TRAINER_PIC_CACO, TRAINER_PIC_XIROS},
