@@ -1765,8 +1765,8 @@ WahRoomsShared_Text_Pokebox_MainPrompt::
 
 WahRoomsShared_Text_Pokebox_RandomTeamBlocked::
 # 120 "data/scripts/wah_rooms_shared.pory"
-	.string "No puedes acceder a la PokéBox durante\n"
-	.string "el desafío con Equipo aleatorio.\p"
+	.string "No puedes acceder a la PC durante el\n"
+	.string "desafío con Equipo aleatorio.\p"
 	.string "Tu equipo original se restaurará cuando\n"
 	.string "termine el desafío.$"
 
