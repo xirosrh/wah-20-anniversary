@@ -55,6 +55,7 @@
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
+#include "wah_challenge.h"
 #include "window.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
