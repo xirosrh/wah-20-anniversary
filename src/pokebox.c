@@ -1848,6 +1848,7 @@ void CB2_InitPokeBoxSetUp(void)
         pokeBoxObj.selectorId = CreateSelectorSprite();
 
         pokeBoxObj.currentPageNum = 0;
+        ResetSelectorPosition();
         pokeBoxObj.row_team = 0;
         pokeBoxObj.col_team = 0;
         pokeBoxObj.numMonAddFromPC = 0;
