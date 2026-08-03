@@ -26,6 +26,7 @@ static bool8 CheckUnlockAllPokemon(u8 id);
 static bool8 CheckWinWahChallenge(u8 id);
 static bool8 CheckWinWahChallengeDouble(u8 id);
 static bool8 CheckWinWahChallengeInverse(u8 id);
+static bool8 CheckWinWahChallengeRandom(u8 id);
 static bool8 CheckDefeatAllAdmins(u8 id);
 static bool8 CheckWinWahChallengeXTimes(u8 id);
 static bool8 CheckDefeatAllCollaborators(u8 id);
@@ -118,9 +119,15 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     },
     [ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN] = {
         .title = COMPOUND_STRING("Perdido en la traducción"),
-        .description = COMPOUND_STRING("Derrota al traductor en la sala\nde descanso. Hay victorias que\nno necesitan traducción."),
+        .description = COMPOUND_STRING("Derrota al traductor en la zona\nde descanso. Hay victorias que\nno necesitan traducción."),
         .target = TRUE,
         .check = CheckDefeatTranslatorRaizen,
+    },
+    [ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM] = {
+        .title = COMPOUND_STRING("Pura suerte"),
+        .description = COMPOUND_STRING("Supera el desafío en modo\nequipo aleatorio.\n¿La suerte estará de tu lado?"),
+        .target = TRUE,
+        .check = CheckWinWahChallengeRandom,
     },
 };
 
@@ -195,6 +202,11 @@ static bool8 CheckWinWahChallengeDouble(u8 id)
 static bool8 CheckWinWahChallengeInverse(u8 id)
 {
     return FlagGet(FLAG_WAH_CHALLENGE_INVERSE_COMPLETED) == sAchievements[id].target;
+}
+
+static bool8 CheckWinWahChallengeRandom(u8 id)
+{
+    return FlagGet(FLAG_WAH_CHALLENGE_RANDOM_COMPLETED) == sAchievements[id].target;
 }
 
 static bool8 CheckWinWahChallengeXTimes(u8 id)

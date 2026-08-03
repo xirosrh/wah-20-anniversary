@@ -69,6 +69,7 @@
 #include "fake_rtc.h"
 #include "save.h"
 #include "team_selector.h"
+#include "wah_challenge.h"
 #include "wah_credits.h"
 
 enum FollowerNPCCreateDebugMenu
@@ -386,8 +387,6 @@ extern const u8 Debug_BerryPestsDisabled[];
 extern const u8 Debug_BerryWeedsDisabled[];
 
 extern const u8 Common_EventScript_MoveRelearner[];
-extern void RandomizeWahAdminTeams(void);
-
 #include "data/map_group_count.h"
 
 // Text

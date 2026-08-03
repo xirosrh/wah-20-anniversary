@@ -591,10 +591,9 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
-	.include "data/scripts/wah_challenge.inc"
 
 EventScript_WhiteOut::
-	call EventScript_ResetWahChallenge
+	special ResetWahChallenge
 	end
 
 EventScript_AfterWhiteOutHeal::
