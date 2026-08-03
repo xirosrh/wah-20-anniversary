@@ -20,6 +20,12 @@ script Achievements_EventScript_Eval_WinWahChallenge_Inverse {
     return
 }
 
+script Achievements_EventScript_Eval_WinWahChallenge_Random {
+    setvar(VAR_0x8004, ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
 script Achievements_EventScript_Eval_DefeatAllAdmins {
     setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_ALL_ADMINS)
     call(Achievements_EventScript_Eval_Common)
@@ -110,6 +116,12 @@ script Pokebox_EventScript_ShowUnlocks {
 }
 script Achievements_EventScript_Eval_Avaricia {
     setvar(VAR_0x8004, ACHIEVEMENT_AVARICIA)
+    call(Achievements_EventScript_Eval_Common)
+    return
+}
+
+script Achievements_EventScript_Eval_DefeatTranslatorRaizen {
+    setvar(VAR_0x8004, ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN)
     call(Achievements_EventScript_Eval_Common)
     return
 }

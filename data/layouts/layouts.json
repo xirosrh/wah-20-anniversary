@@ -4335,7 +4335,7 @@
       "id": "LAYOUT_REST_ROOM",
       "name": "RestRoom_Layout",
       "width": 11,
-      "height": 11,
+      "height": 14,
       "primary_tileset": "gTileset_RoomGeneral",
       "secondary_tileset": "gTileset_lobby",
       "border_filepath": "data/layouts/RestRoom/border.bin",

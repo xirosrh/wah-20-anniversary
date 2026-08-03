@@ -26,6 +26,9 @@ script Lobby_OnFrame_ExplainNewChallengeModes {
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_JumpInPlaceRight)
     msgbox(format("Want to think a bit harder? Then {COLOR RED}Inverse Battles{COLOR DARK_GRAY} are for you!\pThe type chart is flipped! What's resistant becomes weak, and vice versa.\pYou can no longer battle in auto mode!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     playse(SE_PIN)
+    applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("Si confías en tu suerte, puedes probar el modo {COLOR GREEN}Equipo aleatorio{COLOR DARK_GRAY}.\pAl comenzar recibirás un equipo con 6 Pokémon aleatorios de los Pokémon disponibles.\pNo podrás modificar ese equipo durante el recorrido, y recuperarás el tuyo cuando termine el desafío."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    playse(SE_PIN)
     applymovementandwait(LOCALID_LOBBY_COPE, Common_Movement_SmileWithDelay48)
     msgbox(format("And that's not all!\pNo matter which mode you pick, each admin will have two possible teams to use.\pTheir {COLOR BLUE}main team{COLOR DARK_GRAY}, which you know, or an {COLOR RED}alternate team{COLOR DARK_GRAY}.\pYou'll never know which you'll face, which means each run could feel completely different."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     turnobject(LOCALID_LOBBY_COPE, DIR_WEST)
@@ -74,8 +77,9 @@ script Lobby_EventScript_StartChallenge {
     dynmultipush(format("Standard"), 0)
     dynmultipush(format("Double Battles"), 1)
     dynmultipush(format("Inverse Battles"), 2)
+    dynmultipush(format("Equipo aleatorio"), 3)
     dynmultipush(format("Exit"), 4)
-    dynmultistack(0, 0, FALSE, 4, 0, 0, DYN_MULTICHOICE_CB_NONE)
+    dynmultistack(0, 0, FALSE, 5, 0, 0, DYN_MULTICHOICE_CB_NONE)
     closemessage
     delay(10)
     switch(var(VAR_RESULT)) {
@@ -96,6 +100,16 @@ script Lobby_EventScript_StartChallenge {
             setflag(FLAG_INVERSE_BATTLE)
             msgbox(format("Excellent! The challenge will be in Inverse Battle mode.\pType effectiveness is inverted: what's normally super effective becomes not very effective, and vice versa.\pGo ahead, I wish you lots of luck and, above all, have fun!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
             goto(Lobby_StartChallenge_EnterOmegaRoom)
+        case 3:
+            setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_RANDOM)
+            special(Special_StartWahRandomTeam)
+            if (var(VAR_RESULT) == FALSE) {
+                setvar(VAR_WAH_CHALLENGE_MODE, VAR_VALUE_WAH_CHALLENGE_MODE_NONE)
+                goto(Lobby_StartChallenge_RandomTeamFailed)
+            }
+            applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            msgbox(format("¡Excelente! Afrontarás el desafío con un equipo elegido completamente al azar.\p¡Adelante, te deseo mucha suerte y sobre todo que te diviertas!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+            goto(Lobby_StartChallenge_EnterOmegaRoom)
         default:
             goto(Lobby_StartChallenge_CancelledChallenge)
     }
@@ -107,6 +121,14 @@ script Lobby_StartChallenge_CancelledChallenge {
     msgbox(format("So you don't feel ready?"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     delay(60)
     msgbox(format("Remember, the people in the waiting room can help with your preparation."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
+    applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
+    turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
+    release
+    end
+}
+
+script Lobby_StartChallenge_RandomTeamFailed {
+    msgbox(format("No pude preparar seis Pokémon distintos para el desafío.\pComprueba que llevas un equipo completo e inténtalo de nuevo."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_COPE)
     applymovementandwait(LOCALID_PLAYER, Common_Movement_WalkDown)
     turnobject(LOCALID_LOBBY_COPE, DIR_SOUTH)
     release
@@ -250,6 +272,9 @@ script Lobby_EventScript_ChallengeHistorian {
     copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT)
     call(Lobby_EventScript_BufferVictoryWordFromCountVar)
     msgbox(format("And in inverse battles you've racked up {STR_VAR_1} {STR_VAR_2}.\pThat mode turns anyone's head inside out."))
+    copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_RANDOM_COMPLETION_COUNT)
+    call(Lobby_EventScript_BufferVictoryWordFromCountVar)
+    msgbox(format("Con equipos aleatorios llevas {STR_VAR_1} {STR_VAR_2}.\p¡Ahí nunca sabes qué compañeros te van a tocar!"))
     copyvar(VAR_0x8004, VAR_WAH_CHALLENGE_COMPLETION_COUNT)
     call(Lobby_EventScript_BufferTimeWordFromCountVar)
     msgbox(format("In total, you've completed the challenge {STR_VAR_1} {STR_VAR_2}."))

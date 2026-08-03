@@ -554,5 +554,5 @@ OmegaRoom_EventScript_Box_Text_0:
 
 OmegaRoom_Text_OmegaDefeated::
 # 190 "data/maps/OmegaRoom/scripts.pory"
-	.string "That was awesome! I didn't\n"
-	.string "expect such an entertaining battle.$"
+	.string "That was awesome! I didn't expect such\n"
+	.string "an entertaining battle.$"

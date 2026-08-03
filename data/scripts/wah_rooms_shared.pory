@@ -8,6 +8,11 @@ script WahRoomsShared_EventScript_Shop {
 
 script WahRoomsShared_EventScript_Pokebox {
     lock
+    if (var(VAR_WAH_CHALLENGE_MODE) == VAR_VALUE_WAH_CHALLENGE_MODE_RANDOM) {
+        msgbox(WahRoomsShared_Text_Pokebox_RandomTeamBlocked, MSGBOX_AUTOCLOSE)
+        release
+        return
+    }
     waitse
     playse(SE_PC_ON)
     setmetatile(VAR_TEMP_C, VAR_TEMP_D, VAR_TEMP_F, FALSE)
@@ -110,6 +115,10 @@ text WahRoomsShared_Text_Pokebox_SoftwareUpdateExplanation {
 
 text WahRoomsShared_Text_Pokebox_MainPrompt {
     "What do you want to do?"
+}
+
+text WahRoomsShared_Text_Pokebox_RandomTeamBlocked {
+    format("No puedes acceder a la PC durante el desafío con Equipo aleatorio.\pTu equipo original se restaurará cuando termine el desafío.")
 }
 
 text WahRoomsShared_Text_Pokebox_HelpPrompt {

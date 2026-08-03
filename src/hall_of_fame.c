@@ -18,6 +18,7 @@
 #include "window.h"
 #include "credits.h"
 #include "wah_credits.h"
+#include "wah_challenge.h"
 #include "bg.h"
 #include "constants/game_stat.h"
 #include "util.h"
@@ -35,6 +36,8 @@
 #include "data.h"
 #include "confetti_util.h"
 #include "constants/rgb.h"
+#include "constants/var_values.h"
+#include "constants/vars.h"
 
 #define HALL_OF_FAME_MAX_TEAMS 30
 #define TAG_CONFETTI 1001
@@ -460,6 +463,13 @@ static void Task_Hof_InitMonData(u8 taskId)
             sHofMonPtr->mon[i].nickname[0] = EOS;
         }
     }
+
+    // The Hall of Fame now owns a copy of the winning team. Reset the
+    // challenge before the final save; random mode also restores the original
+    // party from PokemonStorage.
+    if (!gTasks[taskId].tDontSaveData
+     && VarGet(VAR_WAH_CHALLENGE_MODE) != VAR_VALUE_WAH_CHALLENGE_MODE_NONE)
+        ResetWahChallenge();
 
     sHofFadePalettes = 0;
     gTasks[taskId].tDisplayedMonId = 0;

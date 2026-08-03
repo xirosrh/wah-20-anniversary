@@ -44,7 +44,6 @@ script HallOfFame_OnFrame {
 	call(HallOfFame_EventScript_SetGameClear)
 	special(SetWahChallengeFinalAchievementFlags)
 	call(HallOfFame_EventScript_EvalAchievements)
-	call(EventScript_ResetWahChallenge)
 	fadescreenspeed(FADE_TO_BLACK, 24)
 	special(GameClear)
 	waitstate
@@ -59,6 +58,8 @@ script HallOfFame_EventScript_EvalAchievements {
 			call(Achievements_EventScript_Eval_WinWahChallenge_Double)
 		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
 			call(Achievements_EventScript_Eval_WinWahChallenge_Inverse)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_RANDOM:
+			call(Achievements_EventScript_Eval_WinWahChallenge_Random)
 	}
 	call(Achievements_EventScript_Eval_WinWahChallenge_5Times)
 	call(Achievements_EventScript_Eval_WinWahChallenge_HardMode)
@@ -81,6 +82,9 @@ script HallOfFame_EventScript_SetGameClear {
 		case VAR_VALUE_WAH_CHALLENGE_MODE_INVERSE:
 			setflag(FLAG_WAH_CHALLENGE_INVERSE_COMPLETED)
 			addvar(VAR_WAH_CHALLENGE_INVERSE_COMPLETION_COUNT, 1)
+		case VAR_VALUE_WAH_CHALLENGE_MODE_RANDOM:
+			setflag(FLAG_WAH_CHALLENGE_RANDOM_COMPLETED)
+			addvar(VAR_WAH_CHALLENGE_RANDOM_COMPLETION_COUNT, 1)
 	}
 	addvar(VAR_WAH_CHALLENGE_COMPLETION_COUNT, 1)
 	return
