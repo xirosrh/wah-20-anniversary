@@ -67,6 +67,109 @@ script RestRoom_EventScript_PlayerCounterpart {
     end
 }
 
+script RestRoom_EventScript_Raizen_TalkOnly {
+    msgbox(format("Aunque no lo parezca, vengo de muy lejos.\pDe Konoha, nada menos."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48)
+    msgbox(format("Soy traductor.\pMe llamaron para que todo lo que ocurre aquí pudiera conocerse también en otras tierras."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("No es una misión de rango S, ¡pero alguien tenía que hacerla!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48)
+    goto(RestRoom_EventScript_Raizen_OnFinishEvent)
+}
+
+script RestRoom_EventScript_Raizen_IntroFirstBattle {
+    msgbox(format("¡Así que has completado el desafío!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+    msgbox(format("Para mí, ser traductor es sencillo.\pLo difícil será traducir la paliza que pienso darte."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    msgbox(format("¡Vamos, enséñame de qué eres capaz!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    return
+}
+
+script RestRoom_EventScript_Raizen_IntroRematch {
+    msgbox(format("¡Has regresado!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48)
+    msgbox(format("¿Vienes por la revancha? Admito que no esperaba recibir otra misión tan pronto.\pEsta vez no habrá pergaminos ni palabras que traducir.\pSolo tú, yo y nuestros Pokémon."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+    call(WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer)
+    setspeaker(SP_NAME_RAIZEN)
+    message(format("¿Qué dices?"))
+    waitmessage
+    dynmultichoice(0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit)
+    closemessage
+    delay(20)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("¡Misión aceptada!"), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+            msgbox(format("Prepárate, porque esta vez pienso completarla."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+            return
+        case 1:
+            goto(RestRoom_EventScript_Raizen_TalkOnly)
+        default:
+            msgbox(format("Entendido. Dejaré esta misión pendiente.\pVuelve cuando estés list{OA}."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+            playse(SE_PIN)
+            applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+            goto(RestRoom_EventScript_Raizen_OnFinishEvent)
+    }
+}
+
+script RestRoom_EventScript_Raizen_OnFinishEvent {
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    release
+    end
+}
+
+script RestRoom_EventScript_Raizen {
+    lock
+    faceplayer
+    if(!flag(FLAG_WAH_CHALLENGE_COMPLETED)) {
+        goto(RestRoom_EventScript_Raizen_TalkOnly)
+    }
+
+    if(flag(FLAG_DEFEATED_REST_ROOM_RAIZEN)) {
+        call(RestRoom_EventScript_Raizen_IntroRematch)
+    } else {
+        call(RestRoom_EventScript_Raizen_IntroFirstBattle)
+    }
+
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, Common_Movement_VersusWithDelay48)
+    applymovement(LOCALID_PLAYER, Common_Movement_VersusWithDelay48)
+    waitmovement(0)
+    setflag(B_FLAG_NO_WHITEOUT)
+    trainerbattle_no_intro(TRAINER_WAH_TRANSLATOR_RAIZEN, RestRoom_Text_Raizen_OnDefeat)
+    clearflag(B_FLAG_NO_WHITEOUT)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+
+    if(var(VAR_RESULT) == B_OUTCOME_WON) {
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48)
+        msgbox(format("¡Incomprensible!\pMi estrategia no tuvo traducción en el campo de batalla."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_SadWithDelay48)
+        if(!flag(FLAG_DEFEATED_REST_ROOM_RAIZEN)) {
+            setflag(FLAG_DEFEATED_REST_ROOM_RAIZEN)
+            call(Achievements_EventScript_Eval_DefeatTranslatorRaizen)
+        }
+    } else {
+        msgbox(format("El resultado es claro en cualquier idioma: aún te falta mucho por aprender."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN)
+        playse(SE_PIN)
+        applymovementandwait(VAR_LAST_TALKED, Common_Movement_WinkWithDelay48)
+    }
+
+    call(WahRoomsShared_EventScript_AfterBattle)
+    goto(RestRoom_EventScript_Raizen_OnFinishEvent)
+}
+
+text RestRoom_Text_Raizen_OnDefeat {
+    format("No he entendido nada...")
+}
+
 script RestRoom_EventScript_Shop {
 	lock
     faceplayer

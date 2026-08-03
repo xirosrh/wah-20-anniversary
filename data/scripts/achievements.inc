@@ -163,6 +163,14 @@ Achievements_EventScript_Eval_Avaricia::
 	return
 
 
+Achievements_EventScript_Eval_DefeatTranslatorRaizen::
+# 118 "data/scripts/achievements.pory"
+	setvar VAR_0x8004, ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN
+# 119 "data/scripts/achievements.pory"
+	call Achievements_EventScript_Eval_Common
+	return
+
+
 Achievements_EventScript_Eval_Common_Text_0:
 # 87 "data/scripts/achievements.pory"
 	.string "¡Felicidades! Has completado el logro:\n"
