@@ -319,11 +319,12 @@
 #define OBJ_EVENT_GFX_REONEKY_TELEPORTING_1       312
 #define OBJ_EVENT_GFX_REONEKY_TELEPORTING_2       313
 #define OBJ_EVENT_GFX_LOBBY_MASK_BOY              314
+#define OBJ_EVENT_GFX_ASTARTGAMING                 315
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        315
+#define NUM_OBJ_EVENT_GFX                        316
 
 
 // These are dynamic object gfx ids.
@@ -506,6 +507,7 @@
 #define OBJ_EVENT_PAL_TAG_LOBBY_MASK_BOY          0x1182
 #define OBJ_EVENT_PAL_TAG_BOY_3                   0x1183
 #define OBJ_EVENT_PAL_TAG_GIRL_1                  0x1184
+#define OBJ_EVENT_PAL_TAG_ASTARTGAMING            0x1185
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

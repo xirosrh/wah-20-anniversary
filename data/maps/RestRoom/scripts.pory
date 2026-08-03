@@ -50,6 +50,15 @@ script RestRoom_EventScript_Boy2 {
     end
 }
 
+script RestRoom_EventScript_AStartGaming {
+    lock
+    faceplayer
+    msgbox(format("En un principio iba a colaborar como traductor en los esfuerzos de internacionalización.\pPero al final aquí estoy, ¡disfrutando mientras supero el desafío!"), MSGBOX_NPC, speaker = SP_NAME_A_START_GAMING)
+    playse(SE_PIN)
+    applymovementandwait(VAR_LAST_TALKED, Common_Movement_HappyWithDelay48)
+    end
+}
+
 script RestRoom_EventScript_PlayerCounterpart {
     lock
     faceplayer

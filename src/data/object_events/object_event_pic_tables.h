@@ -493,6 +493,18 @@ static const struct SpriteFrameImage sPicTable_Caco[] = {
     overworld_ascending_frames(gObjectEventPic_Caco, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_AStartGaming[] = {
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 2),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 2),
+    overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
     overworld_ascending_frames(gObjectEventPic_Beauty, 2, 4),
 };

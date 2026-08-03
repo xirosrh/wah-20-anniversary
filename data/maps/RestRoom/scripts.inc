@@ -80,264 +80,278 @@ RestRoom_EventScript_Boy2::
 	end
 
 
-RestRoom_EventScript_PlayerCounterpart::
+RestRoom_EventScript_AStartGaming::
 # 54 "data/maps/RestRoom/scripts.pory"
 	lock
 # 55 "data/maps/RestRoom/scripts.pory"
 	faceplayer
 # 56 "data/maps/RestRoom/scripts.pory"
-	playse SE_PIN
+	msgbox RestRoom_EventScript_AStartGaming_Text_0, MSGBOX_NPC, speaker = SP_NAME_A_START_GAMING
 # 57 "data/maps/RestRoom/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark
-# 58 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_PlayerCounterpart_Text_0, MSGBOX_AUTOCLOSE
-# 59 "data/maps/RestRoom/scripts.pory"
-	delay 48
-# 60 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_PlayerCounterpart_Text_1, MSGBOX_AUTOCLOSE
-# 61 "data/maps/RestRoom/scripts.pory"
-	delay 10
-# 62 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
+# 58 "data/maps/RestRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
+	end
+
+
+RestRoom_EventScript_PlayerCounterpart::
 # 63 "data/maps/RestRoom/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_Happy
+	lock
 # 64 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_PlayerCounterpart_Text_2, MSGBOX_AUTOCLOSE
+	faceplayer
 # 65 "data/maps/RestRoom/scripts.pory"
-	delay 48
+	playse SE_PIN
 # 66 "data/maps/RestRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMark
+# 67 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_0, MSGBOX_AUTOCLOSE
+# 68 "data/maps/RestRoom/scripts.pory"
+	delay 48
+# 69 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_1, MSGBOX_AUTOCLOSE
+# 70 "data/maps/RestRoom/scripts.pory"
+	delay 10
+# 71 "data/maps/RestRoom/scripts.pory"
+	playse SE_PIN
+# 72 "data/maps/RestRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_Happy
+# 73 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_PlayerCounterpart_Text_2, MSGBOX_AUTOCLOSE
+# 74 "data/maps/RestRoom/scripts.pory"
+	delay 48
+# 75 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 
 RestRoom_EventScript_Raizen_TalkOnly::
-# 71 "data/maps/RestRoom/scripts.pory"
+# 80 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_TalkOnly_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 72 "data/maps/RestRoom/scripts.pory"
+# 81 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 73 "data/maps/RestRoom/scripts.pory"
+# 82 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_ThinkingWithDelay48
-# 74 "data/maps/RestRoom/scripts.pory"
+# 83 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_TalkOnly_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 75 "data/maps/RestRoom/scripts.pory"
+# 84 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 76 "data/maps/RestRoom/scripts.pory"
+# 85 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_TalkOnly_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 77 "data/maps/RestRoom/scripts.pory"
+# 86 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 78 "data/maps/RestRoom/scripts.pory"
+# 87 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SweatDropWithDelay48
-# 79 "data/maps/RestRoom/scripts.pory"
+# 88 "data/maps/RestRoom/scripts.pory"
 	goto RestRoom_EventScript_Raizen_OnFinishEvent
 	return
 
 
 RestRoom_EventScript_Raizen_IntroFirstBattle::
-# 83 "data/maps/RestRoom/scripts.pory"
+# 92 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_IntroFirstBattle_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 84 "data/maps/RestRoom/scripts.pory"
+# 93 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 85 "data/maps/RestRoom/scripts.pory"
+# 94 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48
-# 86 "data/maps/RestRoom/scripts.pory"
+# 95 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_IntroFirstBattle_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 87 "data/maps/RestRoom/scripts.pory"
+# 96 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 88 "data/maps/RestRoom/scripts.pory"
+# 97 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_IntroFirstBattle_Text_2, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
 	return
 
 
 RestRoom_EventScript_Raizen_IntroRematch::
-# 93 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 94 "data/maps/RestRoom/scripts.pory"
-	playse SE_PIN
-# 95 "data/maps/RestRoom/scripts.pory"
-	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48
-# 96 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 97 "data/maps/RestRoom/scripts.pory"
-	call WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer
-# 98 "data/maps/RestRoom/scripts.pory"
-	setspeaker SP_NAME_RAIZEN
-# 99 "data/maps/RestRoom/scripts.pory"
-	message RestRoom_EventScript_Raizen_IntroRematch_Text_2
-# 100 "data/maps/RestRoom/scripts.pory"
-	waitmessage
-# 101 "data/maps/RestRoom/scripts.pory"
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
 # 102 "data/maps/RestRoom/scripts.pory"
-	closemessage
+	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
 # 103 "data/maps/RestRoom/scripts.pory"
-	delay 20
-# 104 "data/maps/RestRoom/scripts.pory"
-	switch VAR_RESULT
-# 105 "data/maps/RestRoom/scripts.pory"
-	case 0, RestRoom_EventScript_Raizen_IntroRematch_2
-# 111 "data/maps/RestRoom/scripts.pory"
-	case 1, RestRoom_EventScript_Raizen_IntroRematch_3
-# 114 "data/maps/RestRoom/scripts.pory"
-	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 115 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 116 "data/maps/RestRoom/scripts.pory"
+# 104 "data/maps/RestRoom/scripts.pory"
+	applymovementandwait VAR_LAST_TALKED, Common_Movement_DoubleExclamationMarkWithDelay48
+# 105 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
+# 106 "data/maps/RestRoom/scripts.pory"
+	call WahRoomsShared_EventScript_WalkInPlaceLastTalkedFacingPlayer
+# 107 "data/maps/RestRoom/scripts.pory"
+	setspeaker SP_NAME_RAIZEN
+# 108 "data/maps/RestRoom/scripts.pory"
+	message RestRoom_EventScript_Raizen_IntroRematch_Text_2
+# 109 "data/maps/RestRoom/scripts.pory"
+	waitmessage
+# 110 "data/maps/RestRoom/scripts.pory"
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, CollaboratorsRoom_RematchMultichoice_Rematch, CollaboratorsRoom_RematchMultichoice_TalkOnly, CollaboratorsRoom_RematchMultichoice_Exit
+# 111 "data/maps/RestRoom/scripts.pory"
+	closemessage
+# 112 "data/maps/RestRoom/scripts.pory"
+	delay 20
+# 113 "data/maps/RestRoom/scripts.pory"
+	switch VAR_RESULT
+# 114 "data/maps/RestRoom/scripts.pory"
+	case 0, RestRoom_EventScript_Raizen_IntroRematch_2
+# 120 "data/maps/RestRoom/scripts.pory"
+	case 1, RestRoom_EventScript_Raizen_IntroRematch_3
+# 123 "data/maps/RestRoom/scripts.pory"
+	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_5, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
+# 124 "data/maps/RestRoom/scripts.pory"
+	playse SE_PIN
+# 125 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
-# 117 "data/maps/RestRoom/scripts.pory"
+# 126 "data/maps/RestRoom/scripts.pory"
 	goto RestRoom_EventScript_Raizen_OnFinishEvent
 	return
 
 RestRoom_EventScript_Raizen_IntroRematch_2:
-# 106 "data/maps/RestRoom/scripts.pory"
+# 115 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_3, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 107 "data/maps/RestRoom/scripts.pory"
+# 116 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 108 "data/maps/RestRoom/scripts.pory"
+# 117 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_HappyWithDelay48
-# 109 "data/maps/RestRoom/scripts.pory"
+# 118 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_IntroRematch_Text_4, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
 	return
 
 RestRoom_EventScript_Raizen_IntroRematch_3:
-# 112 "data/maps/RestRoom/scripts.pory"
+# 121 "data/maps/RestRoom/scripts.pory"
 	goto RestRoom_EventScript_Raizen_TalkOnly
 	return
 
 
 RestRoom_EventScript_Raizen_OnFinishEvent::
-# 122 "data/maps/RestRoom/scripts.pory"
+# 131 "data/maps/RestRoom/scripts.pory"
 	turnobject VAR_LAST_TALKED, DIR_SOUTH
-# 123 "data/maps/RestRoom/scripts.pory"
+# 132 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 
 RestRoom_EventScript_Raizen::
-# 128 "data/maps/RestRoom/scripts.pory"
+# 137 "data/maps/RestRoom/scripts.pory"
 	lock
-# 129 "data/maps/RestRoom/scripts.pory"
+# 138 "data/maps/RestRoom/scripts.pory"
 	faceplayer
-# 130 "data/maps/RestRoom/scripts.pory"
+# 139 "data/maps/RestRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_CHALLENGE_COMPLETED, RestRoom_EventScript_Raizen_2
 RestRoom_EventScript_Raizen_1:
-# 134 "data/maps/RestRoom/scripts.pory"
+# 143 "data/maps/RestRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_REST_ROOM_RAIZEN, RestRoom_EventScript_Raizen_5
-# 137 "data/maps/RestRoom/scripts.pory"
+# 146 "data/maps/RestRoom/scripts.pory"
 	call RestRoom_EventScript_Raizen_IntroFirstBattle
 RestRoom_EventScript_Raizen_4:
-# 140 "data/maps/RestRoom/scripts.pory"
-	playse SE_PIN
-# 141 "data/maps/RestRoom/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
-# 142 "data/maps/RestRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
-# 143 "data/maps/RestRoom/scripts.pory"
-	waitmovement 0
-# 144 "data/maps/RestRoom/scripts.pory"
-	setflag B_FLAG_NO_WHITEOUT
-# 145 "data/maps/RestRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_WAH_TRANSLATOR_RAIZEN, RestRoom_Text_Raizen_OnDefeat
-# 146 "data/maps/RestRoom/scripts.pory"
-	clearflag B_FLAG_NO_WHITEOUT
-# 147 "data/maps/RestRoom/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
 # 149 "data/maps/RestRoom/scripts.pory"
+	playse SE_PIN
+# 150 "data/maps/RestRoom/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_VersusWithDelay48
+# 151 "data/maps/RestRoom/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_VersusWithDelay48
+# 152 "data/maps/RestRoom/scripts.pory"
+	waitmovement 0
+# 153 "data/maps/RestRoom/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 154 "data/maps/RestRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_WAH_TRANSLATOR_RAIZEN, RestRoom_Text_Raizen_OnDefeat
+# 155 "data/maps/RestRoom/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 156 "data/maps/RestRoom/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 158 "data/maps/RestRoom/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq RestRoom_EventScript_Raizen_9
-# 160 "data/maps/RestRoom/scripts.pory"
+# 169 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_Text_1, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 161 "data/maps/RestRoom/scripts.pory"
+# 170 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 162 "data/maps/RestRoom/scripts.pory"
+# 171 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_WinkWithDelay48
 RestRoom_EventScript_Raizen_8:
-# 165 "data/maps/RestRoom/scripts.pory"
+# 174 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_AfterBattle
-# 166 "data/maps/RestRoom/scripts.pory"
+# 175 "data/maps/RestRoom/scripts.pory"
 	goto RestRoom_EventScript_Raizen_OnFinishEvent
 	return
 
 RestRoom_EventScript_Raizen_2:
-# 131 "data/maps/RestRoom/scripts.pory"
+# 140 "data/maps/RestRoom/scripts.pory"
 	goto RestRoom_EventScript_Raizen_TalkOnly
 	goto RestRoom_EventScript_Raizen_1
 
 RestRoom_EventScript_Raizen_5:
-# 135 "data/maps/RestRoom/scripts.pory"
+# 144 "data/maps/RestRoom/scripts.pory"
 	call RestRoom_EventScript_Raizen_IntroRematch
 	goto RestRoom_EventScript_Raizen_4
 
 RestRoom_EventScript_Raizen_9:
-# 150 "data/maps/RestRoom/scripts.pory"
+# 159 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 151 "data/maps/RestRoom/scripts.pory"
+# 160 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SurpriseWithDelay48
-# 152 "data/maps/RestRoom/scripts.pory"
+# 161 "data/maps/RestRoom/scripts.pory"
 	msgbox RestRoom_EventScript_Raizen_Text_0, MSGBOX_AUTOCLOSE, speaker = SP_NAME_RAIZEN
-# 153 "data/maps/RestRoom/scripts.pory"
+# 162 "data/maps/RestRoom/scripts.pory"
 	playse SE_PIN
-# 154 "data/maps/RestRoom/scripts.pory"
+# 163 "data/maps/RestRoom/scripts.pory"
 	applymovementandwait VAR_LAST_TALKED, Common_Movement_SadWithDelay48
-# 155 "data/maps/RestRoom/scripts.pory"
+# 164 "data/maps/RestRoom/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_REST_ROOM_RAIZEN, RestRoom_EventScript_Raizen_12
 	goto RestRoom_EventScript_Raizen_8
 
 RestRoom_EventScript_Raizen_12:
-# 156 "data/maps/RestRoom/scripts.pory"
+# 165 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_DEFEATED_REST_ROOM_RAIZEN
-# 157 "data/maps/RestRoom/scripts.pory"
+# 166 "data/maps/RestRoom/scripts.pory"
 	call Achievements_EventScript_Eval_DefeatTranslatorRaizen
 	goto RestRoom_EventScript_Raizen_8
 
 
 RestRoom_EventScript_Shop::
-# 174 "data/maps/RestRoom/scripts.pory"
+# 183 "data/maps/RestRoom/scripts.pory"
 	lock
-# 175 "data/maps/RestRoom/scripts.pory"
+# 184 "data/maps/RestRoom/scripts.pory"
 	faceplayer
-# 176 "data/maps/RestRoom/scripts.pory"
+# 185 "data/maps/RestRoom/scripts.pory"
 	goto_if_set FLAG_WAH_CHALLENGE_COMPLETED, RestRoom_EventScript_Shop_4
 RestRoom_EventScript_Shop_3:
-# 182 "data/maps/RestRoom/scripts.pory"
+# 191 "data/maps/RestRoom/scripts.pory"
 	message RestRoom_EventScript_Shop_Text_1
-# 183 "data/maps/RestRoom/scripts.pory"
+# 192 "data/maps/RestRoom/scripts.pory"
 	waitmessage
 RestRoom_EventScript_Shop_1:
-# 185 "data/maps/RestRoom/scripts.pory"
+# 194 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 186 "data/maps/RestRoom/scripts.pory"
+# 195 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Shop
-# 187 "data/maps/RestRoom/scripts.pory"
+# 196 "data/maps/RestRoom/scripts.pory"
 	clearflag FLAG_REST_ROOM_MART_PRICE_MULTIPLIER
-# 188 "data/maps/RestRoom/scripts.pory"
+# 197 "data/maps/RestRoom/scripts.pory"
 	release
 	end
 
 RestRoom_EventScript_Shop_2:
-# 177 "data/maps/RestRoom/scripts.pory"
+# 186 "data/maps/RestRoom/scripts.pory"
 	message RestRoom_EventScript_Shop_Text_0
-# 178 "data/maps/RestRoom/scripts.pory"
+# 187 "data/maps/RestRoom/scripts.pory"
 	waitmessage
-# 179 "data/maps/RestRoom/scripts.pory"
+# 188 "data/maps/RestRoom/scripts.pory"
 	setflag FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN
 	goto RestRoom_EventScript_Shop_1
 
 RestRoom_EventScript_Shop_4:
-# 176 "data/maps/RestRoom/scripts.pory"
+# 185 "data/maps/RestRoom/scripts.pory"
 	goto_if_unset FLAG_WAH_MART_COMBAT_ITEMS_ANNOUNCEMENT_SEEN, RestRoom_EventScript_Shop_2
 	goto RestRoom_EventScript_Shop_3
 
 
 RestRoom_EventScript_Pokebox::
-# 193 "data/maps/RestRoom/scripts.pory"
+# 202 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_C, 3
-# 194 "data/maps/RestRoom/scripts.pory"
+# 203 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_D, 4
-# 195 "data/maps/RestRoom/scripts.pory"
+# 204 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_E, METATILE_lobby_PC_RESTROOM_OFF
-# 196 "data/maps/RestRoom/scripts.pory"
+# 205 "data/maps/RestRoom/scripts.pory"
 	setvar VAR_TEMP_F, METATILE_lobby_PC_RESTROOM_ON
-# 197 "data/maps/RestRoom/scripts.pory"
+# 206 "data/maps/RestRoom/scripts.pory"
 	call WahRoomsShared_EventScript_Pokebox
 	end
 
@@ -379,12 +393,20 @@ RestRoom_EventScript_Boy2_Text_0:
 	.string "Tendría que haber comprado todo lo\n"
 	.string "necesario antes de entrar.$"
 
+RestRoom_EventScript_AStartGaming_Text_0:
+# 56 "data/maps/RestRoom/scripts.pory"
+	.string "En un principio iba a colaborar como\n"
+	.string "traductor en los esfuerzos de\l"
+	.string "internacionalización.\p"
+	.string "Pero al final aquí estoy, ¡disfrutando\n"
+	.string "mientras supero el desafío!$"
+
 RestRoom_EventScript_PlayerCounterpart_Text_0:
-# 58 "data/maps/RestRoom/scripts.pory"
+# 67 "data/maps/RestRoom/scripts.pory"
 	.string "¡Qué sorpresa, {PLAYER}!$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_1:
-# 60 "data/maps/RestRoom/scripts.pory"
+# 69 "data/maps/RestRoom/scripts.pory"
 	.string "¿Así que también estás participando en\n"
 	.string "el desafío?\p"
 	.string "¡Cada sala nos enseña algo sobre los\n"
@@ -392,47 +414,47 @@ RestRoom_EventScript_PlayerCounterpart_Text_1:
 	.string "¡He aprendido mucho de ellos!$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_2:
-# 64 "data/maps/RestRoom/scripts.pory"
+# 73 "data/maps/RestRoom/scripts.pory"
 	.string "¡Qué emocionante!$"
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_0:
-# 71 "data/maps/RestRoom/scripts.pory"
+# 80 "data/maps/RestRoom/scripts.pory"
 	.string "Aunque no lo parezca, vengo de muy\n"
 	.string "lejos.\p"
 	.string "De Konoha, nada menos.$"
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_1:
-# 74 "data/maps/RestRoom/scripts.pory"
+# 83 "data/maps/RestRoom/scripts.pory"
 	.string "Soy traductor.\p"
 	.string "Me llamaron para que todo lo que ocurre\n"
 	.string "aquí pudiera conocerse también en\l"
 	.string "otras tierras.$"
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_2:
-# 76 "data/maps/RestRoom/scripts.pory"
+# 85 "data/maps/RestRoom/scripts.pory"
 	.string "No es una misión de rango S, ¡pero\n"
 	.string "alguien tenía que hacerla!$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_0:
-# 83 "data/maps/RestRoom/scripts.pory"
+# 92 "data/maps/RestRoom/scripts.pory"
 	.string "¡Así que has completado el desafío!$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_1:
-# 86 "data/maps/RestRoom/scripts.pory"
+# 95 "data/maps/RestRoom/scripts.pory"
 	.string "Para mí, ser traductor es sencillo.\p"
 	.string "Lo difícil será traducir la paliza que\n"
 	.string "pienso darte.$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_2:
-# 88 "data/maps/RestRoom/scripts.pory"
+# 97 "data/maps/RestRoom/scripts.pory"
 	.string "¡Vamos, enséñame de qué eres capaz!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_0:
-# 93 "data/maps/RestRoom/scripts.pory"
+# 102 "data/maps/RestRoom/scripts.pory"
 	.string "¡Has regresado!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_1:
-# 96 "data/maps/RestRoom/scripts.pory"
+# 105 "data/maps/RestRoom/scripts.pory"
 	.string "¿Vienes por la revancha? Admito que no\n"
 	.string "esperaba recibir otra misión tan\l"
 	.string "pronto.\p"
@@ -441,38 +463,38 @@ RestRoom_EventScript_Raizen_IntroRematch_Text_1:
 	.string "Solo tú, yo y nuestros Pokémon.$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_2:
-# 99 "data/maps/RestRoom/scripts.pory"
+# 108 "data/maps/RestRoom/scripts.pory"
 	.string "¿Qué dices?$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_3:
-# 106 "data/maps/RestRoom/scripts.pory"
+# 115 "data/maps/RestRoom/scripts.pory"
 	.string "¡Misión aceptada!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_4:
-# 109 "data/maps/RestRoom/scripts.pory"
+# 118 "data/maps/RestRoom/scripts.pory"
 	.string "Prepárate, porque esta vez pienso\n"
 	.string "completarla.$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_5:
-# 114 "data/maps/RestRoom/scripts.pory"
+# 123 "data/maps/RestRoom/scripts.pory"
 	.string "Entendido. Dejaré esta misión\n"
 	.string "pendiente.\p"
 	.string "Vuelve cuando estés list{OA}.$"
 
 RestRoom_EventScript_Raizen_Text_0:
-# 152 "data/maps/RestRoom/scripts.pory"
+# 161 "data/maps/RestRoom/scripts.pory"
 	.string "¡Incomprensible!\p"
 	.string "Mi estrategia no tuvo traducción en el\n"
 	.string "campo de batalla.$"
 
 RestRoom_EventScript_Raizen_Text_1:
-# 160 "data/maps/RestRoom/scripts.pory"
+# 169 "data/maps/RestRoom/scripts.pory"
 	.string "El resultado es claro en cualquier\n"
 	.string "idioma: aún te falta mucho por\l"
 	.string "aprender.$"
 
 RestRoom_EventScript_Shop_Text_0:
-# 177 "data/maps/RestRoom/scripts.pory"
+# 186 "data/maps/RestRoom/scripts.pory"
 	.string "¡Hola! ¡Hemos ampliado el catálogo!\p"
 	.string "Ahora también puedes comprar objetos\n"
 	.string "de combate.\p"
@@ -480,9 +502,9 @@ RestRoom_EventScript_Shop_Text_0:
 	.string "¡Aquí somos un poco más caros!$"
 
 RestRoom_EventScript_Shop_Text_1:
-# 182 "data/maps/RestRoom/scripts.pory"
+# 191 "data/maps/RestRoom/scripts.pory"
 	.string "¡Hola! ¿En qué puedo ayudarte?\n¡Aquí somos un poco más caros!$"
 
 RestRoom_Text_Raizen_OnDefeat::
-# 169 "data/maps/RestRoom/scripts.pory"
+# 178 "data/maps/RestRoom/scripts.pory"
 	.string "No he entendido nada...$"

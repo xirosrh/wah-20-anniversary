@@ -46,6 +46,7 @@ enum SpeakerNames {
     SP_NAME_RYUZAKI,
     SP_NAME_CACO,
     SP_NAME_RAIZEN,
+    SP_NAME_A_START_GAMING,
     SP_NAME_COUNT
 };
 
