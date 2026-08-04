@@ -394,11 +394,10 @@ RestRoom_EventScript_Boy2_Text_0:
 
 RestRoom_EventScript_AStartGaming_Text_0:
 # 54 "data/maps/RestRoom/scripts.pory"
-	.string "En un principio iba a colaborar como\n"
-	.string "traductor en los esfuerzos de\l"
-	.string "internacionalización.\p"
-	.string "Pero al final aquí estoy, ¡disfrutando\n"
-	.string "mientras supero el desafío!$"
+	.string "Originally I was going to help out as a\n"
+	.string "translator on the localization effort.\p"
+	.string "But in the end, here I am, having a blast\n"
+	.string "while I clear the challenge!$"
 
 RestRoom_EventScript_PlayerCounterpart_Text_0:
 # 65 "data/maps/RestRoom/scripts.pory"
@@ -418,79 +417,76 @@ RestRoom_EventScript_PlayerCounterpart_Text_2:
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_0:
 # 78 "data/maps/RestRoom/scripts.pory"
-	.string "Aunque no lo parezca, vengo de muy\n"
-	.string "lejos.\p"
-	.string "De Konoha, nada menos.$"
+	.string "Believe it or not, I come from far away.\p"
+	.string "From Konoha, no less.$"
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_1:
 # 81 "data/maps/RestRoom/scripts.pory"
-	.string "Soy traductor.\p"
-	.string "Me llamaron para que todo lo que ocurre\n"
-	.string "aquí pudiera conocerse también en\l"
-	.string "otras tierras.$"
+	.string "I'm a translator.\p"
+	.string "They called me in so everything that\n"
+	.string "happens here could be known in other\l"
+	.string "lands too.$"
 
 RestRoom_EventScript_Raizen_TalkOnly_Text_2:
 # 83 "data/maps/RestRoom/scripts.pory"
-	.string "No es una misión de rango S, ¡pero\n"
-	.string "alguien tenía que hacerla!$"
+	.string "It's not an S-rank mission, but someone\n"
+	.string "had to do it!$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_0:
 # 90 "data/maps/RestRoom/scripts.pory"
-	.string "¡Así que has completado el desafío!$"
+	.string "So you've completed the challenge!$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_1:
 # 93 "data/maps/RestRoom/scripts.pory"
-	.string "Para mí, ser traductor es sencillo.\p"
-	.string "Lo difícil será traducir la paliza que\n"
-	.string "pienso darte.$"
+	.string "For me, being a translator is easy.\p"
+	.string "The hard part will be translating the\n"
+	.string "beatdown I'm about to give you.$"
 
 RestRoom_EventScript_Raizen_IntroFirstBattle_Text_2:
 # 95 "data/maps/RestRoom/scripts.pory"
-	.string "¡Vamos, enséñame de qué eres capaz!$"
+	.string "Come on, show me what you've got!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_0:
 # 100 "data/maps/RestRoom/scripts.pory"
-	.string "¡Has regresado!$"
+	.string "You're back!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_1:
 # 103 "data/maps/RestRoom/scripts.pory"
-	.string "¿Vienes por la revancha? Admito que no\n"
-	.string "esperaba recibir otra misión tan\l"
-	.string "pronto.\p"
-	.string "Esta vez no habrá pergaminos ni\n"
-	.string "palabras que traducir.\p"
-	.string "Solo tú, yo y nuestros Pokémon.$"
+	.string "Here for a rematch? I'll admit I didn't\n"
+	.string "expect another mission this soon.\p"
+	.string "This time there'll be no scrolls or words\n"
+	.string "to translate.\p"
+	.string "Just you, me, and our Pokémon.$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_2:
 # 106 "data/maps/RestRoom/scripts.pory"
-	.string "¿Qué dices?$"
+	.string "What do you say?$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_3:
 # 113 "data/maps/RestRoom/scripts.pory"
-	.string "¡Misión aceptada!$"
+	.string "Mission accepted!$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_4:
 # 116 "data/maps/RestRoom/scripts.pory"
-	.string "Prepárate, porque esta vez pienso\n"
-	.string "completarla.$"
+	.string "Get ready, because this time I intend\n"
+	.string "to finish it.$"
 
 RestRoom_EventScript_Raizen_IntroRematch_Text_5:
 # 121 "data/maps/RestRoom/scripts.pory"
-	.string "Entendido. Dejaré esta misión\n"
-	.string "pendiente.\p"
-	.string "Vuelve cuando estés list{OA}.$"
+	.string "Understood. I'll leave this mission\n"
+	.string "pending.\p"
+	.string "Come back when you're ready.$"
 
 RestRoom_EventScript_Raizen_Text_0:
 # 159 "data/maps/RestRoom/scripts.pory"
-	.string "¡Incomprensible!\p"
-	.string "Mi estrategia no tuvo traducción en el\n"
-	.string "campo de batalla.$"
+	.string "Incomprehensible!\p"
+	.string "My strategy got lost in translation on\n"
+	.string "the battlefield.$"
 
 RestRoom_EventScript_Raizen_Text_1:
 # 167 "data/maps/RestRoom/scripts.pory"
-	.string "El resultado es claro en cualquier\n"
-	.string "idioma: aún te falta mucho por\l"
-	.string "aprender.$"
+	.string "The result is clear in any language: you\n"
+	.string "still have a lot to learn.$"
 
 RestRoom_EventScript_Shop_Text_0:
 # 184 "data/maps/RestRoom/scripts.pory"
@@ -505,4 +501,4 @@ RestRoom_EventScript_Shop_Text_1:
 
 RestRoom_Text_Raizen_OnDefeat::
 # 176 "data/maps/RestRoom/scripts.pory"
-	.string "No he entendido nada...$"
+	.string "I didn't understand a word of that...$"

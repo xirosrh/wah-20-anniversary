@@ -2020,14 +2020,13 @@ Lobby_OnFrame_ExplainNewChallengeModes_Text_4:
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_5:
 # 30 "data/maps/Lobby/scripts.pory"
-	.string "Si confías en tu suerte, puedes probar\n"
-	.string "el modo {COLOR GREEN}Equipo aleatorio{COLOR DARK_GRAY}.\p"
-	.string "Al comenzar recibirás un equipo con 6\n"
-	.string "Pokémon aleatorios de los Pokémon\l"
-	.string "disponibles.\p"
-	.string "No podrás modificar ese equipo durante\n"
-	.string "el recorrido, y recuperarás el tuyo\l"
-	.string "cuando termine el desafío.$"
+	.string "If you trust your luck, you can try\n"
+	.string "{COLOR GREEN}Random Team{COLOR DARK_GRAY} mode.\p"
+	.string "When you start, you'll get a team of 6\n"
+	.string "random Pokémon from the available ones.\p"
+	.string "You can't change that team during the\n"
+	.string "run, and you'll get yours back when the\l"
+	.string "challenge ends.$"
 
 Lobby_OnFrame_ExplainNewChallengeModes_Text_6:
 # 33 "data/maps/Lobby/scripts.pory"
@@ -2085,7 +2084,7 @@ Lobby_EventScript_StartChallenge_Text_6:
 
 Lobby_EventScript_StartChallenge_Text_7:
 # 80 "data/maps/Lobby/scripts.pory"
-	.string "Equipo aleatorio$"
+	.string "Random Team$"
 
 Lobby_EventScript_StartChallenge_Text_8:
 # 81 "data/maps/Lobby/scripts.pory"
@@ -2110,11 +2109,11 @@ Lobby_EventScript_StartChallenge_Text_10:
 
 Lobby_EventScript_StartChallenge_Text_11:
 # 111 "data/maps/Lobby/scripts.pory"
-	.string "¡Excelente! Afrontarás el desafío con\n"
-	.string "un equipo elegido completamente al\l"
-	.string "azar.\p"
-	.string "¡Adelante, te deseo mucha suerte y\n"
-	.string "sobre todo que te diviertas!$"
+	.string "Excellent! You'll take on the challenge\n"
+	.string "with a completely randomly-chosen\l"
+	.string "team.\p"
+	.string "Go ahead! I wish you lots of luck, and\n"
+	.string "above all, have fun!$"
 
 Lobby_StartChallenge_CancelledChallenge_Text_0:
 # 121 "data/maps/Lobby/scripts.pory"
@@ -2127,10 +2126,10 @@ Lobby_StartChallenge_CancelledChallenge_Text_1:
 
 Lobby_StartChallenge_RandomTeamFailed_Text_0:
 # 131 "data/maps/Lobby/scripts.pory"
-	.string "No pude preparar seis Pokémon\n"
-	.string "distintos para el desafío.\p"
-	.string "Comprueba que llevas un equipo\n"
-	.string "completo e inténtalo de nuevo.$"
+	.string "I couldn't prepare six different\n"
+	.string "Pokémon for the challenge.\p"
+	.string "Make sure you have a full team and try\n"
+	.string "again.$"
 
 Lobby_EventScript_TeamSelector_Text_0:
 # 170 "data/maps/Lobby/scripts.pory"
@@ -2217,10 +2216,10 @@ Lobby_EventScript_ChallengeHistorian_Text_4:
 
 Lobby_EventScript_ChallengeHistorian_Text_5:
 # 277 "data/maps/Lobby/scripts.pory"
-	.string "Con equipos aleatorios llevas\n"
+	.string "With random teams you've got\n"
 	.string "{STR_VAR_1} {STR_VAR_2}.\p"
-	.string "¡Ahí nunca sabes qué compañeros te van\n"
-	.string "a tocar!$"
+	.string "You never know which teammates you'll\n"
+	.string "end up with!$"
 
 Lobby_EventScript_ChallengeHistorian_Text_6:
 # 280 "data/maps/Lobby/scripts.pory"

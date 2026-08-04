@@ -118,14 +118,14 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
         .check = CheckWinWahChallengeWithoutLegendaries,
     },
     [ACHIEVEMENT_DEFEAT_TRANSLATOR_RAIZEN] = {
-        .title = COMPOUND_STRING("Perdido en la traducción"),
-        .description = COMPOUND_STRING("Derrota al traductor en la zona\nde descanso. Hay victorias que\nno necesitan traducción."),
+        .title = COMPOUND_STRING("Lost in Translation"),
+        .description = COMPOUND_STRING("Defeat the translator in the\nrest area. Some victories\ndon't need translation."),
         .target = TRUE,
         .check = CheckDefeatTranslatorRaizen,
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_RANDOM] = {
-        .title = COMPOUND_STRING("Pura suerte"),
-        .description = COMPOUND_STRING("Supera el desafío en modo\nequipo aleatorio.\n¿La suerte estará de tu lado?"),
+        .title = COMPOUND_STRING("Pure Luck"),
+        .description = COMPOUND_STRING("Beat the challenge in\nRandom Team mode.\nWill luck be on your side?"),
         .target = TRUE,
         .check = CheckWinWahChallengeRandom,
     },

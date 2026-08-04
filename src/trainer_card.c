@@ -1071,7 +1071,7 @@ static void PrintTaskOnCardBack()
     const u8 gText_LeftArrowTrainerCard[] = _("{LEFT_ARROW}");
     const u8 gText_RightArrowTrainerCard[] = _("{RIGHT_ARROW}");
 
-    const u8 gText_CompletedTaskTrainerCard[] = _("Completada");
+    const u8 gText_CompletedTaskTrainerCard[] = _("Completed");
     const u8 gText_InProgressTakTrainerCard[] = _("Pending");
 
     bool8 statusTask = Achievement_IsComplete(sData->optionTaskSelected);
