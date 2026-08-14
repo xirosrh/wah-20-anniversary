@@ -91,6 +91,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kaktus;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ryuzaki;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Caco;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AStartGaming;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raizen;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aguiar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StagePerformer1;
@@ -638,6 +639,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RYUZAKI] =                  &gObjectEventGraphicsInfo_Ryuzaki,
     [OBJ_EVENT_GFX_CACO] =                     &gObjectEventGraphicsInfo_Caco,
     [OBJ_EVENT_GFX_ASTARTGAMING] =              &gObjectEventGraphicsInfo_AStartGaming,
+    [OBJ_EVENT_GFX_RAIZEN] =                    &gObjectEventGraphicsInfo_Raizen,
     [OBJ_EVENT_GFX_MAY_TELEPORTING_1] =        &gObjectEventGraphicsInfo_MayTeleporting1,
     [OBJ_EVENT_GFX_MAY_TELEPORTING_2] =        &gObjectEventGraphicsInfo_MayTeleporting2,
 };
