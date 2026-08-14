@@ -505,6 +505,10 @@ static const struct SpriteFrameImage sPicTable_AStartGaming[] = {
     overworld_frame(gObjectEventPic_AStartGaming, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Raizen[] = {
+    overworld_ascending_frames(gObjectEventPic_Raizen, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Beauty[] = {
     overworld_ascending_frames(gObjectEventPic_Beauty, 2, 4),
 };

@@ -6400,6 +6400,8 @@ u16 GetBattleBGM(void)
             case TRAINER_WAH_COLLABORATOR_CACO_2:
             case TRAINER_WAH_COLLABORATOR_CACO_3:
                 return MUS_VS_CHAMPION;
+            case TRAINER_WAH_TRANSLATOR_RAIZEN:
+                return MUS_RG_VS_GYM_LEADER;
             default:
                 return MUS_VS_AQUA_MAGMA;
             }
