@@ -1296,7 +1296,7 @@ static void PrintProfilePhraseOnCard(void)
 
 static void PrintVersion(void)
 {
-    static const u8 sText_VersionVestigios[] = _("v 1.1.2");
+    static const u8 sText_VersionVestigios[] = _("v 1.2.0");
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 170, 124, sTrainerCardTextColorsWhite, TEXT_SKIP_DRAW, sText_VersionVestigios);
 }
 
