@@ -3922,8 +3922,8 @@ CollaboratorsRoom_EventScript_Caco_TalkOnly_Text_3:
 # 1368 "data/maps/CollaboratorsRoom/scripts.pory"
 	.string "And don't you dare poke your nose in\n"
 	.string "here again unless it's with a nice\l"
-	.string "steaming cup of coffee in hand. Come\l"
-	.string "on, get moving!$"
+	.string "steaming cup of coffee in hand.\p"
+	.string "Come on, get moving!$"
 
 CollaboratorsRoom_EventScript_Caco_IntroRematch_Text_0:
 # 1375 "data/maps/CollaboratorsRoom/scripts.pory"

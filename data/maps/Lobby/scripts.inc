@@ -2425,9 +2425,9 @@ Lobby_EventScript_ShowFakemonDexInfo_Text_6:
 
 Lobby_EventScript_TrainerCardGirl_Text_0:
 # 700 "data/maps/Lobby/scripts.pory"
-	.string "Did you know that on the back of your\n"
-	.string "Trainer Card you can see your\l"
-	.string "achievements?\p"
+	.string "Did you know that you can see your\n"
+	.string "achievements on the back of your\l"
+	.string "Trainer Card?\p"
 	.string "You can also see the requirements for\n"
 	.string "earning each one!$"
 
@@ -2748,9 +2748,9 @@ Lobby_EventScript_BetaMonQuestionnaire_Latiken_Text_16:
 
 Lobby_EventScript_Turbo_Text_0:
 # 999 "data/maps/Lobby/scripts.pory"
-	.string "Did you know there's a turbo mode to\n"
-	.string "blaze through the adventure at full\l"
-	.string "speed?\p"
+	.string "Did you know there's a turbo mode you\n"
+	.string "can use to blaze through the adventure\l"
+	.string "at full speed?\p"
 	.string "From the options menu you can set your\n"
 	.string "text speed, walking speed, and a turbo\l"
 	.string "for battles!\p"

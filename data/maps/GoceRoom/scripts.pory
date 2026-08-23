@@ -40,7 +40,7 @@ script GoceRoom_EventScript_Goce {
         waitse
         call(GoceRoom_EventScript_GoceBattle)
         delay(10)
-        msgbox(format("Great battle! You managed to defeat the great founder - you must be proud."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
+        msgbox(format("That was a great battle! You managed to defeat the great founder. You must be proud."), MSGBOX_AUTOCLOSE, speaker = SP_NAME_GOCE)
         delay(20)
         playse(SE_PIN)
         applymovement(LOCALID_GOCEROOM_GOCE, Common_Movement_QuestionMarkWithDelay48)
@@ -84,7 +84,7 @@ script GoceRoom_EventScript_GoceBattle {
 }
 
 text GoceRoom_Text_GoceDefeated {
-    format("Incredible how they've evolved over these last 20 years…")
+    format("It's incredible how they've evolved over these last 20 years…")
 }
 
 script GoceRoom_EventScript_Ambar {

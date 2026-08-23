@@ -4394,22 +4394,10 @@ static void PrintMonNature(void)
 
 static void PrintRowNameInfoPage(void)
 {
-    u8 i;
-    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
-
-    static const u8 sInfoLabels[][12] = {
-        _("Name"),
-        _("Type"),
-        _("Entr."),
-        _("Natur.")
-    };
-
-    static const u8 y_pos[] = { 3, 19, 37, 54 };
-
-    for (i = 0; i < ARRAY_COUNT(sInfoLabels); i++)
-    {
-        PrintTextOnWindow(windowId, sInfoLabels[i], 0, y_pos[i], 0, 0);
-    }
+    // The row labels (Name / Type / Trainer / Nature) are already drawn in English
+    // by the background tilemap graphic. Printing them again here caused a
+    // double-draw overlap, so the redundant text is disabled.
+    AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
 }
 
 static void PrintMonAbilityName(void)

@@ -697,7 +697,7 @@ script Lobby_EventScript_ShowFakemonDexInfo {
 }
 
 script Lobby_EventScript_TrainerCardGirl {
-    msgbox(format("Did you know that on the back of your Trainer Card you can see your achievements?\pYou can also see the requirements for earning each one!"), MSGBOX_NPC)
+    msgbox(format("Did you know that you can see your achievements on the back of your Trainer Card?\pYou can also see the requirements for earning each one!"), MSGBOX_NPC)
     end
 }
 
@@ -996,7 +996,7 @@ script Lobby_EventScript_Pokebox {
 }
 
 script Lobby_EventScript_Turbo {
-    msgbox(format("Did you know there's a turbo mode to blaze through the adventure at full speed?\pFrom the options menu you can set your text speed, walking speed, and a turbo for battles!\pCare to give it a try?"), MSGBOX_NPC)
+    msgbox(format("Did you know there's a turbo mode you can use to blaze through the adventure at full speed?\pFrom the options menu you can set your text speed, walking speed, and a turbo for battles!\pCare to give it a try?"), MSGBOX_NPC)
     end
 }
 

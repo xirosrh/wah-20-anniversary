@@ -77,7 +77,7 @@ static const struct AchievementEntry sAchievements[ACHIEVEMENT_COUNT] = {
     },
     [ACHIEVEMENT_WIN_WAH_CHALLENGE_5_TIMES] = {
         .title = COMPOUND_STRING("Recurring Nightmare"),
-        .description = COMPOUND_STRING("Beat the challenge five times.\nIt's not luck anymore. It's obsession."),
+        .description = COMPOUND_STRING("Beat the challenge five times.\nIt's not luck anymore.\nIt's obsession."),
         .target = 5,
         .check = CheckWinWahChallengeXTimes,
     },
