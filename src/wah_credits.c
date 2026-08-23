@@ -371,7 +371,7 @@ static const u8 trainnerWahList[][2] =
     {TRAINER_PIC_MICOLO, TRAINER_PIC_ERKEY },
     {TRAINER_PIC_ROXAS, TRAINER_PIC_RYUZAKI},
     {TRAINER_PIC_KAKTUS, TRAINER_PIC_MRNIGHTOLOGY},
-    {TRAINER_PIC_ACIMUT, TRAINER_NONE }, //TODO Xiros: Raizen instead of acimut
+    {TRAINER_PIC_RAIZEN, TRAINER_NONE }, 
 };
 
 static const u16 sWahCreditsPokemonList[] =

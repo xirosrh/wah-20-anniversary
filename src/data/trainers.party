@@ -12082,19 +12082,190 @@ Jolly Nature
 - Fire Punch
 - Earthquake
 
-
 === TRAINER_WAH_TRANSLATOR_RAIZEN ===
 Name: Raizen
 Class: Translator
-Pic: Cooltrainer M
+Pic: Raizen
 Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Easy
 
-Manectric
-Level: 35
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Tyranitar
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Dragon Dance
+- Rock Slide
+- Crunch
+- Iron Head
+
+Dragapult 
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Dragon Darts
+- Phantom Force 
+- Dragon Claw
+- Sucker Punch
+
+Kingambit
+Ability: Supreme Overlord
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature 
+- Kowtow Cleave 
+- Sucker Punch 
+- Iron Head 
+- X Scissor
+
+Zeraora
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature 
+- Plasma Fists
+- Drain Punch
+- Knock Off
+- Mega Kick
+
+Lucario @ Lucarionite 
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature 
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Vacuum Wave
+
+Greninja @ Greninjite
+Ability: Protean
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Timid Nature
+- Water Shuriken
+- Scald
+- Dark Pulse
+- Sludge Bomb
+
+=== TRAINER_WAH_TRANSLATOR_RAIZEN ===
+Name: Raizen
+Class: Translator
+Pic: Raizen
+Gender: Male
+Music: Cool
+Double Battle: No
+Items: ITEM_MAX_POTION / ITEM_MAX_POTION
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Normal
+
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Dragon Dance
+- Rock Slide
+- Crunch
+- Iron Head
+
+Dragapult @ Leftovers 
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Darts
+- Phantom Force 
+- Dragon Claw
+- Sucker Punch
+
+Kingambit @ Leftovers 
+Ability: Supreme Overlord
+EVs: 252 Atk / 252 Spe / 4 HP 
+Adamant Nature 
+- Kowtow Cleave 
+- Sucker Punch 
+- Iron Head 
+- X Scissor
+
+Zeraora @ Leftovers 
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature 
+- Plasma Fists
+- Drain Punch
+- Knock Off
+- Mega Kick
+
+Lucario @ Lucarionite 
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature 
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Vacuum Wave
+
+Greninja @ Greninjite
+Ability: Protean
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Water Shuriken
+- Scald
+- Dark Pulse
+- Sludge Bomb
+
+=== TRAINER_WAH_TRANSLATOR_RAIZEN ===
+Name: Raizen
+Class: Translator
+Pic: Raizen
+Gender: Male
+Music: Cool
+Double Battle: No
+Items: Full Restore / Full Restore / Full Restore
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Tyranitar @ Leftovers
+EVs: 252 Atk / 252 HP / 4 Spe
+Adamant Nature
+- Dragon Dance
+- Rock Slide
+- Crunch
+- Iron Head
+
+Dragapult @ Leftovers 
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+- Dragon Darts
+- Phantom Force 
+- Dragon Claw
+- Sucker Punch
+
+Kingambit @ Leftovers 
+Ability: Supreme Overlord
+EVs: 252 Atk / 252 Spe / 4 HP 
+Adamant Nature 
+- Kowtow Cleave 
+- Sucker Punch 
+- Iron Head 
+- X Scissor
+
+Zeraora @ Leftovers 
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature 
+- Plasma Fists
+- Drain Punch
+- Knock Off
+- Mega Kick
+
+Lucario @ Lucarionite 
+EVs: 252 SpA / 252 Spe / 4 HP
+Timid Nature 
+- Aura Sphere
+- Flash Cannon
+- Earth Power
+- Vacuum Wave
+
+Greninja @ Greninjite
+Ability: Protean
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Water Shuriken
+- Scald
+- Dark Pulse
+- Sludge Bomb
 
 === TRAINER_WARREN ===
 Name: WARREN
