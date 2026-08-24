@@ -58,5 +58,5 @@ tools/aif2pcm/aif2pcm
 *.fastSmol
 *.smolTM
 __pycache__
-.claude/
-CLAUDE.md
+*.dll
+*.locked

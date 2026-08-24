@@ -188,9 +188,9 @@ GoceRoom_EventScript_Goce_Text_1:
 
 GoceRoom_EventScript_Goce_Text_2:
 # 43 "data/maps/GoceRoom/scripts.pory"
-	.string "That was a great battle! You managed\n"
-	.string "to defeat the great founder.\l"
-	.string "You must be proud.$"
+	.string "That was a great battle! You managed to\n"
+	.string "defeat the great founder. You must be\l"
+	.string "proud.$"
 
 GoceRoom_EventScript_Goce_Text_3:
 # 49 "data/maps/GoceRoom/scripts.pory"
